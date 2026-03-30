@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { HeroVisual } from '@/components/HeroVisual';
 
 export const metadata: Metadata = {
   title: 'MonBalconSolaire — Calculez vos économies solaires en 30 secondes',
@@ -13,38 +14,46 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-pale/60 via-cream to-green-pale/40 pointer-events-none" />
-        <div className="container-brand relative py-20 md:py-28 lg:py-32">
-          <div className="max-w-2xl">
-            <div className="badge-green mb-6">Guide indépendant 2026</div>
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tight leading-[1.08] mb-6">
-              Produisez votre électricité
-              <br />
-              <span className="text-green">depuis votre balcon</span>
-            </h1>
-            <p className="text-lg md:text-xl text-charcoal-light leading-relaxed mb-8 max-w-xl">
-              Comparez les meilleurs kits solaires plug-and-play, calculez vos économies réelles et passez au solaire sans travaux — même en appartement, même locataire.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/calculateur" className="btn-primary text-base py-4 px-8">
-                ☀ Calculer mes économies →
-              </Link>
-              <Link href="/comparatif" className="btn-secondary text-base py-4 px-8">
-                Voir le comparatif 2026
-              </Link>
+        <div className="container-brand relative py-16 md:py-24 lg:py-28">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: text */}
+            <div>
+              <div className="badge-green mb-6">Guide indépendant 2026</div>
+              <h1 className="text-4xl md:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.08] mb-6">
+                Produisez votre électricité
+                <br />
+                <span className="text-green">depuis votre balcon</span>
+              </h1>
+              <p className="text-lg md:text-xl text-charcoal-light leading-relaxed mb-8 max-w-xl">
+                Comparez les meilleurs kits solaires plug-and-play, calculez vos économies réelles et passez au solaire sans travaux — même en appartement, même locataire.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/calculateur" className="btn-primary text-base py-4 px-8">
+                  Calculer mes économies →
+                </Link>
+                <Link href="/comparatif" className="btn-secondary text-base py-4 px-8">
+                  Voir le comparatif 2026
+                </Link>
+              </div>
+              <div className="flex items-center gap-6 mt-8 text-sm text-stone">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-green" />
+                  100% gratuit
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-green" />
+                  Indépendant
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-green" />
+                  Sans inscription
+                </span>
+              </div>
             </div>
-            <div className="flex items-center gap-6 mt-8 text-sm text-stone">
-              <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-green" />
-                100% gratuit
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-green" />
-                Indépendant
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-green" />
-                Sans inscription
-              </span>
+
+            {/* Right: visual */}
+            <div className="hidden lg:block">
+              <HeroVisual />
             </div>
           </div>
         </div>
