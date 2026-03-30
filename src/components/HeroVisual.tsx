@@ -117,12 +117,12 @@ export function HeroVisual() {
                 <span className="text-[10px] text-stone-light">estimation</span>
               </div>
             </div>
-            <div className="flex items-end gap-[5px] h-[72px]">
+            <div className="flex items-end gap-[5px]" style={{ height: '72px' }}>
               {MONTHLY_DATA.map((d, i) => {
-                const height = (d.kwh / MAX_KWH) * 100;
+                const heightPx = Math.round((d.kwh / MAX_KWH) * 68);
                 const isHighSeason = d.kwh >= 60;
                 return (
-                  <div key={i} className="flex-1 flex flex-col items-center gap-1">
+                  <div key={i} className="flex-1 flex flex-col items-center" style={{ height: '100%', justifyContent: 'flex-end' }}>
                     <div
                       className={`w-full rounded-t-sm transition-all ease-out ${
                         isHighSeason
@@ -130,17 +130,24 @@ export function HeroVisual() {
                           : 'bg-green-light/60'
                       }`}
                       style={{
-                        height: animated ? `${height}%` : '0%',
+                        height: animated ? `${heightPx}px` : '0px',
+                        minHeight: animated ? '2px' : '0px',
                         transitionDuration: '800ms',
                         transitionDelay: `${800 + i * 80}ms`,
                       }}
                     />
-                    <span className="text-[8px] text-stone-light leading-none">
-                      {d.month}
-                    </span>
                   </div>
                 );
               })}
+            </div>
+            <div className="flex gap-[5px] mt-1">
+              {MONTHLY_DATA.map((d, i) => (
+                <div key={i} className="flex-1 text-center">
+                  <span className="text-[8px] text-stone-light leading-none">
+                    {d.month}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
