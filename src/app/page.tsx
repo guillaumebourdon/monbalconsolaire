@@ -84,12 +84,12 @@ export default function HomePage() {
       <section className="section-padding">
         <div className="container-brand">
           <div className="text-center mb-14">
-            <span className="badge-amber mb-4 inline-block">Comment ça marche</span>
+            <span className="badge-amber mb-4 inline-block">Comment ça marché</span>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
               Le solaire de balcon en 3 étapes
             </h2>
             <p className="text-charcoal-light max-w-lg mx-auto">
-              Pas besoin d&apos;être électricien. Un kit solaire plug-and-play s&apos;installe en quelques minutes, sans travaux.
+              Pas besoin d&apos;être électricien. Un kit solaire plug-and-play s&apos;installé en quelques minutes, sans travaux.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -97,7 +97,7 @@ export default function HomePage() {
               {
                 step: '1',
                 title: 'Calculez votre potentiel',
-                desc: 'Entrez votre ville et l\'orientation de votre balcon. Notre calculateur estime vos économies en 30 secondes.',
+                desc: 'Entrez votre ville et l\'orientation de votre balcon. Notre calculateur estimé vos économies en 30 secondes.',
                 color: 'bg-amber-pale text-amber-dark',
               },
               {
@@ -109,7 +109,7 @@ export default function HomePage() {
               {
                 step: '3',
                 title: 'Branchez et économisez',
-                desc: 'Posez le kit sur votre balcon, branchez-le sur une prise, et commencez à produire votre électricité. C\'est tout.',
+                desc: 'Posez le kit sur votre balcon, branchéz-le sur une prise, et commencez à produire votre électricité. C\'est tout.',
                 color: 'bg-amber-pale text-amber-dark',
               },
             ].map((item, i) => (

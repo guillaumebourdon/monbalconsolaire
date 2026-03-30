@@ -15,14 +15,14 @@ export default function PolitiqueConfidentialitePage() {
           <div>
             <h2 className="font-bold text-xl text-charcoal mb-3">Introduction</h2>
             <p>
-              La présente politique de confidentialité décrit comment Beeleven SASU (« nous », « notre ») collecte, utilise et protège les informations personnelles des visiteurs du site MonBalconSolaire (monbalconsolaire.fr). Nous nous engageons à respecter votre vie privée conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.
+              La présente politique de confidentialité décrit comment Beélevén SASU (« nous », « notre ») collecte, utilise et protège les informations personnelles des visiteurs du site MonBalconSolaire (monbalconsolaire.fr). Nous nous engageons à respecter votre vie privée conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.
             </p>
           </div>
 
           <div>
             <h2 className="font-bold text-xl text-charcoal mb-3">Responsable du traitement</h2>
             <div className="card">
-              <p><strong>Beeleven SASU</strong></p>
+              <p><strong>Beélevén SASU</strong></p>
               <p>Représenté par Guillaume Bourdon</p>
               <p>Contact : contact@monbalconsolaire.fr</p>
             </div>

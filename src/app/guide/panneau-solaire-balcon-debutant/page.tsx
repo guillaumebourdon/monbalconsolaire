@@ -5,31 +5,31 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
-  title: 'Panneau solaire balcon : le guide complet pour debutants (2026)',
-  description: 'Tout savoir sur le panneau solaire de balcon en 2026 : installation, reglementation, cout, rentabilite, droits des locataires. Guide complet et independant.',
+  title: 'Panneau solaire balcon : le guide complet pour débutants (2026)',
+  description: 'Tout savoir sur le panneau solaire de balcon en 2026 : installation, réglementation, cout, rentabilité, droits des locataires. Guide complet et indépendant.',
 };
 
 const faqData = [
-  { question: 'Peut-on installer un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchent sur une prise electrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
-  { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installe a moins de 1,80m de hauteur, aucune declaration prealable de travaux n\'est necessaire. Seule la declaration CACSI aupres d\'Enedis est obligatoire (informative, gratuite, 2 minutes en ligne).' },
-  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 450W produit en moyenne 400 a 650 kWh par an selon la region et l\'orientation. Cela correspond a 80-130 euros d\'economies annuelles au tarif EDF actuel.' },
-  { question: 'Un panneau solaire fonctionne-t-il par temps nuageux ?', answer: 'Oui, mais avec un rendement reduit (10-25% de la puissance maximale). Les panneaux solaires fonctionnent avec la lumiere, pas uniquement le soleil direct. La production annuelle tient compte des jours nuageux.' },
-  { question: 'Que devient le surplus d\'electricite ?', answer: 'Pour les kits plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien, mais vous n\'etes pas remunere non plus pour ce surplus.' },
-  { question: 'Faut-il une batterie avec un panneau solaire de balcon ?', answer: 'Non, une batterie n\'est pas indispensable. Sans batterie, vous consommez l\'electricite produite en temps reel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coute cher (500-1400 euros supplementaires).' },
+  { question: 'Peut-on installér un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchént sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
+  { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installé a moins de 1,80m de hauteur, aucune déclaration préalable de travaux n\'est nécessaire. Seule la déclaration CACSI aupres d\'Enedis est obligatoire (informative, gratuite, 2 minutes en ligne).' },
+  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 450W produit en moyenne 400 a 650 kWh par an selon la region et l\'orientation. Cela correspond a 80-130 euros d\'économies annuelles au tarif EDF actuel.' },
+  { question: 'Un panneau solaire fonctionne-t-il par temps nuageux ?', answer: 'Oui, mais avec un rendement réduit (10-25% de la puissance maximale). Les panneaux solaires fonctionnent avec la lumiere, pas uniquement le soleil direct. La production annuelle tient compte des jours nuageux.' },
+  { question: 'Que devient le surplus d\'électricité ?', answer: 'Pour les kits plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien, mais vous n\'etes pas remunere non plus pour ce surplus.' },
+  { question: 'Faut-il une batterie avec un panneau solaire de balcon ?', answer: 'Non, une batterie n\'est pas indispensable. Sans batterie, vous consommez l\'électricité produite en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coute cher (500-1400 euros supplémentaires).' },
 ];
 
 export default function GuidePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon : le guide complet pour debutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.vercel.app/guide/panneau-solaire-balcon-debutant" datePublished="2026-03-30" />
+      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.vercel.app/guide/panneau-solaire-balcon-débutant" datePublished="2026-03-30" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
-          <Breadcrumbs items={[{ label: "Guides", href: "/guide" }, { label: "Guide debutants" }]} />
+          <Breadcrumbs items={[{ label: "Guides", href: "/guide" }, { label: "Guide débutants" }]} />
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide complet</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : le guide complet pour debutants</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installer un kit solaire sur votre balcon en 2026 : fonctionnement, prix, rentabilite, reglementation, et les erreurs a eviter.</p>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : le guide complet pour débutants</h1>
+            <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installér un kit solaire sur votre balcon en 2026 : fonctionnement, prix, rentabilité, réglementation, et les erreurs a éviter.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>15 min de lecture</span></div>
           </div>
 
@@ -37,21 +37,21 @@ export default function GuidePage() {
             <h2 className="font-bold text-lg mb-3">Ce que vous allez apprendre</h2>
             <ul className="space-y-2 text-sm text-charcoal-light">
               <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Comment fonctionne un kit solaire plug-and-play (en termes simples)</li>
-              <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Combien ca coute et combien ca rapporte reellement</li>
-              <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Ce que dit la loi : droits des locataires, copropriete, demarches</li>
+              <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Combien ca coute et combien ca rapporte réellement</li>
+              <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Ce que dit la loi : droits des locataires, copropriété, démarchés</li>
               <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Comment choisir le bon kit pour votre situation</li>
-              <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Les 5 erreurs a eviter absolument</li>
+              <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Les 5 erreurs a éviter absolument</li>
             </ul>
           </div>
 
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Comment fonctionne un panneau solaire de balcon ?</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Un kit solaire plug-and-play, c&apos;est un panneau photovoltaique relie a un micro-onduleur, le tout se branchant sur une prise electrique classique 230V. Le panneau convertit la lumiere du soleil en electricite. Le micro-onduleur transforme cette electricite (courant continu) en courant alternatif compatible avec votre installation domestique.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Une fois branche, le courant produit par le panneau circule dans votre reseau domestique et alimente vos appareils en priorite : refrigerateur, box internet, appareils en veille, eclairage. C&apos;est ce qu&apos;on appelle le <strong>talon de consommation</strong> — l&apos;electricite que votre logement consomme en permanence, meme quand vous n&apos;y etes pas.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Concretement, votre compteur Linky voit moins d&apos;electricite arriver du reseau pendant la journee, car une partie est fournie par votre panneau. Votre facture EDF baisse d&apos;autant.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Un kit solaire plug-and-play, c&apos;est un panneau photovoltaique relie a un micro-onduleur, le tout se branchant sur une prise électrique classique 230V. Le panneau convertit la lumiere du soleil en électricité. Le micro-onduleur transforme cette électricité (courant continu) en courant alternatif compatible avec votre installation domestique.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Une fois branché, le courant produit par le panneau circule dans votre reseau domestique et alimente vos appareils en priorite : refrigerateur, box internet, appareils en veille, eclairage. C&apos;est ce qu&apos;on appelle le <strong>talon de consommation</strong> — l&apos;électricité que votre logement consomme en permanence, meme quand vous n&apos;y etes pas.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Concrêtement, votre compteur Linky voit moins d&apos;électricité arriver du reseau pendant la journee, car une partie est fournie par votre panneau. Votre facture EDF baisse d&apos;autant.</p>
               <div className="card bg-green-pale/30 border-green/10 my-6">
-                <p className="text-sm text-green-dark"><strong>Le point cle :</strong> vous ne stockez pas l&apos;electricite (sauf avec une batterie en option). Vous la consommez au moment ou elle est produite. Les appareils qui tournent en journee (frigo, box, veilles) sont alimentes par votre panneau au lieu du reseau EDF.</p>
+                <p className="text-sm text-green-dark"><strong>Le point cle :</strong> vous ne stockez pas l&apos;électricité (sauf avec une batterie en option). Vous la consommez au moment ou elle est produite. Les appareils qui tournent en journee (frigo, box, veilles) sont alimentes par votre panneau au lieu du reseau EDF.</p>
               </div>
             </section>
 
@@ -61,12 +61,12 @@ export default function GuidePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">En mars 2026, les kits solaires plug-and-play pour balcon coutent entre <span className="data-highlight">299 &euro;</span> (Beem Kit 300W) et <span className="data-highlight">690 &euro;</span> (Sunethic F500). Le milieu de gamme se situe autour de <span className="data-highlight">599 &euro;</span> avec le Sunology PLAY2 ou le Beem On.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">A cela, pas de couts caches : l&apos;hebergement est gratuit (votre balcon), l&apos;installation est gratuite (vous le faites vous-meme en quelques minutes), et la maintenance est quasi-inexistante (un coup de chiffon sur le panneau de temps en temps).</p>
 
-              <h3 className="font-bold text-lg mb-3 mt-6">La rentabilite reelle</h3>
+              <h3 className="font-bold text-lg mb-3 mt-6">La rentabilité réelle</h3>
               <p className="text-charcoal-light leading-relaxed mb-4">Avec le tarif EDF a <span className="data-highlight">0,1940 &euro;/kWh</span> (fevrier 2026), voici ce que vous pouvez attendre :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">Region</th><th className="text-center p-3">Production (450W)</th><th className="text-center p-3">Economies/an</th><th className="text-center p-3 rounded-tr-xl">ROI</th>
+                    <th className="text-left p-3 rounded-tl-xl">Region</th><th className="text-center p-3">Production (450W)</th><th className="text-center p-3">Économies/an</th><th className="text-center p-3 rounded-tr-xl">ROI</th>
                   </tr></thead>
                   <tbody>
                     {[
@@ -86,27 +86,27 @@ export default function GuidePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : donnees PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, tarif EDF 0,1940 &euro;/kWh. Les panneaux sont garantis 25 ans.</p>
+              <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, tarif EDF 0,1940 &euro;/kWh. Les panneaux sont garantis 25 ans.</p>
 
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
-                <p className="font-semibold mb-2">Quelle rentabilite pour VOTRE balcon ?</p>
-                <p className="text-sm text-charcoal-light mb-4">Entrez votre ville et votre exposition pour un resultat personnalise.</p>
-                <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes economies &rarr;</Link>
+                <p className="font-semibold mb-2">Quelle rentabilité pour VOTRE balcon ?</p>
+                <p className="text-sm text-charcoal-light mb-4">Entrez votre ville et votre exposition pour un résultat personnalise.</p>
+                <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes économies &rarr;</Link>
               </div>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce que dit la loi en 2026</h2>
               <h3 className="font-bold text-lg mb-3">Pour les locataires</h3>
-              <p className="text-charcoal-light leading-relaxed mb-4">Bonne nouvelle : un kit solaire plug-and-play <strong>amovible</strong> (pose au sol ou accroche sans percage) ne constitue pas une modification du logement. Vous n&apos;avez besoin ni de l&apos;accord du proprietaire ni de l&apos;autorisation de la copropriete, tant que le kit peut etre retire sans laisser de traces.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">En revanche, si vous percez le mur ou la rambarde pour fixer le panneau, cela devient une modification du logement et necessite l&apos;accord du proprietaire.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Bonne nouvelle : un kit solaire plug-and-play <strong>amovible</strong> (pose au sol ou accroche sans perçage) ne constitue pas une modification du logement. Vous n&apos;avez besoin ni de l&apos;accord du propriétaire ni de l&apos;autorisation de la copropriété, tant que le kit peut etre retire sans laisser de traces.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">En revanche, si vous percez le mur ou la rambarde pour fixer le panneau, cela devient une modification du logement et nécessite l&apos;accord du propriétaire.</p>
 
-              <h3 className="font-bold text-lg mb-3 mt-6">Demarches obligatoires</h3>
+              <h3 className="font-bold text-lg mb-3 mt-6">Démarchés obligatoires</h3>
               <div className="space-y-3 my-4">
                 {[
-                  { title: 'Declaration CACSI aupres d\'Enedis', desc: 'Obligatoire. Informative (pas d\'accord a obtenir). Se fait en ligne en 2 minutes sur le site Enedis. Gratuit.', status: 'Obligatoire' },
-                  { title: 'Declaration prealable de travaux en mairie', desc: 'Uniquement si le panneau est installe a plus de 1,80m de hauteur ou en zone classee (monuments historiques, etc.).', status: 'Selon cas' },
-                  { title: 'Accord de la copropriete', desc: 'Uniquement si l\'installation modifie l\'aspect exterieur du batiment (fixation permanente en facade). Pas necessaire pour un kit amovible.', status: 'Selon cas' },
+                  { title: 'Déclaration CACSI aupres d\'Enedis', desc: 'Obligatoire. Informative (pas d\'accord a obtenir). Se fait en ligne en 2 minutes sur le site Enedis. Gratuit.', status: 'Obligatoire' },
+                  { title: 'Déclaration préalable de travaux en mairie', desc: 'Uniquement si le panneau est installé a plus de 1,80m de hauteur ou en zone classée (monuments historiques, etc.).', status: 'Selon cas' },
+                  { title: 'Accord de la copropriété', desc: 'Uniquement si l\'installation modifié l\'aspect exterieur du batiment (fixation permanente en facade). Pas nécessaire pour un kit amovible.', status: 'Selon cas' },
                   { title: 'Attestation Consuel', desc: 'Non requise pour les kits plug-and-play pre-assembles en usine comme le Sunology PLAY2 (certification CE sur l\'ensemble du kit).', status: 'Non requis' },
                 ].map((d, i) => (
                   <div key={i} className="card">
@@ -119,31 +119,31 @@ export default function GuidePage() {
               </div>
 
               <div className="card bg-amber-pale/30 border-amber/10 my-6">
-                <p className="text-sm text-amber-dark"><strong>Attention — Norme NF C 15-100 (sept. 2025) :</strong> La mise a jour de la norme limite la puissance a 900W par circuit de prise. Avec un seul kit de 450W, vous etes largement dans les clous. Si vous envisagez 2 kits ou plus, renseignez-vous sur les evolutions reglementaires en cours (periode transitoire jusqu&apos;au 31 mai 2026).</p>
+                <p className="text-sm text-amber-dark"><strong>Attention — Norme NF C 15-100 (sept. 2025) :</strong> La mise a jour de la norme limite la puissance a 900W par circuit de prise. Avec un seul kit de 450W, vous etes largement dans les clous. Si vous envisagez 2 kits ou plus, renseignez-vous sur les évolutions reglementaires en cours (période transitoire jusqu&apos;au 31 mai 2026).</p>
               </div>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Comment choisir le bon kit</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le choix depend de 4 criteres principaux :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le choix depend de 4 critères principaux :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card"><h4 className="font-bold text-sm mb-2 text-green">1. Votre espace disponible</h4><p className="text-xs text-charcoal-light">Un seul grand panneau (Sunology PLAY2 : 1,76 x 1,13m) ou 4 petits panneaux (Beem Kit : ~80cm chacun) ? Mesurez votre balcon avant de choisir.</p></div>
                 <div className="card"><h4 className="font-bold text-sm mb-2 text-green">2. Votre budget</h4><p className="text-xs text-charcoal-light">De 299&euro; (Beem Kit 300W) a 690&euro; (Sunethic F500). Tous sont rentables en 3-6 ans, mais le budget initial varie du simple au double.</p></div>
                 <div className="card"><h4 className="font-bold text-sm mb-2 text-green">3. Votre orientation</h4><p className="text-xs text-charcoal-light">Sud = 100% du potentiel. Est/Ouest = 80%. Nord = 45%. Si votre balcon est plein nord, un kit solaire n&apos;est probablement pas rentable.</p></div>
-                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">4. Locataire ou proprietaire</h4><p className="text-xs text-charcoal-light">Locataire ? Privilegiez un kit 100% amovible (Sunology PLAY2 avec ballasts, ou Beem On). Proprietaire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
+                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">4. Locataire ou propriétaire</h4><p className="text-xs text-charcoal-light">Locataire ? Privilegiez un kit 100% amovible (Sunology PLAY2 avec ballasts, ou Beem On). Propriétaire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
               </div>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold text-sm hover:underline">&rarr; Voir notre comparatif complet des kits solaires 2026</Link>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Les 5 erreurs a eviter</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Les 5 erreurs a éviter</h2>
               <div className="space-y-4 my-6">
                 {[
                   { title: 'Acheter un kit trop puissant pour son balcon', desc: 'Un panneau en partie a l\'ombre produit beaucoup moins. Mieux vaut un petit kit bien expose qu\'un grand kit partiellement ombre.' },
                   { title: 'Ignorer l\'orientation', desc: 'Un balcon plein nord produit 55% de moins qu\'un balcon plein sud. Verifiez votre orientation avant d\'investir.' },
-                  { title: 'Oublier la declaration Enedis', desc: 'Meme si c\'est une formalite, la declaration CACSI est obligatoire. Faites-la dans le mois suivant l\'installation.' },
-                  { title: 'Utiliser une multiprise', desc: 'Ne branchez jamais votre kit sur une multiprise ou une rallonge non adaptee. Utilisez une prise murale dediee avec terre, protegee par un differentiel 30mA.' },
-                  { title: 'Surestimer ses economies', desc: 'Un kit de 450W ne couvre pas toute votre consommation. Il efface le talon de consommation (frigo, box, veilles) mais pas le chauffage ou le chauffe-eau electrique.' },
+                  { title: 'Oublier la déclaration Enedis', desc: 'Meme si c\'est une formalite, la déclaration CACSI est obligatoire. Faites-la dans le mois suivant l\'installation.' },
+                  { title: 'Utiliser une multiprise', desc: 'Ne branchéz jamais votre kit sur une multiprise ou une rallonge non adaptée. Utilisez une prise murale dédiée avec terre, protegee par un différentiel 30mA.' },
+                  { title: 'Surestimér ses économies', desc: 'Un kit de 450W ne couvre pas toute votre consommation. Il efface le talon de consommation (frigo, box, veilles) mais pas le chauffage ou le chauffe-eau électrique.' },
                 ].map((e, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">Erreur n&deg;{i+1} : {e.title}</h4>
@@ -167,13 +167,13 @@ export default function GuidePage() {
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
               <p className="font-semibold text-lg mb-2">Pret a passer au solaire ?</p>
-              <p className="text-sm text-charcoal-light mb-4">Decouvrez en 30 secondes combien vous pouvez economiser avec un kit solaire sur votre balcon.</p>
-              <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes economies &rarr;</Link>
+              <p className="text-sm text-charcoal-light mb-4">Decouvrez en 30 secondes combien vous pouvez économiser avec un kit solaire sur votre balcon.</p>
+              <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes économies &rarr;</Link>
             </div>
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europeenne), EDF tarifs reglementes (fevrier 2026), Enedis, ADEME, sites fabricants (Sunology, Beem, Sunethic). Ce guide est independant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre methode</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europeenne), EDF tarifs réglementés (fevrier 2026), Enedis, ADEME, sites fabricants (Sunology, Beem, Sunethic). Ce guide est indépendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre méthode</Link>.</p>
             </div>
           </div>
         </div>

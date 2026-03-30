@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Comparatifs kits solaires balcon 2026',
-  description: 'Tous nos comparatifs independants de kits solaires plug-and-play pour balcon : Sunology, Beem, Sunethic. Prix, puissance, rentabilite.',
+  description: 'Tous nos comparatifs indépendants de kits solaires plug-and-play pour balcon : Sunology, Beem, Sunethic. Prix, puissance, rentabilité.',
 };
 
 const articles = [
   {
     slug: 'meilleur-kit-solaire-2026',
     title: 'Meilleur kit solaire plug and play 2026 : comparatif complet',
-    excerpt: 'Sunology PLAY2, Beem On, Beem Kit, Sunethic F500 : tableau comparatif detaille, points forts/faibles, verdict par profil.',
+    excerpt: 'Sunology PLAY2, Beem On, Beem Kit, Sunethic F500 : tableau comparatif détaillé, points forts/faibles, verdict par profil.',
     badge: 'Article phare',
     date: '30 mars 2026',
     readTime: '12 min',
@@ -18,7 +18,7 @@ const articles = [
 ];
 
 const comingSoon = [
-  { title: 'Sunology vs Beem : quel kit choisir ?', desc: 'Comparaison directe des deux leaders du marche francais.' },
+  { title: 'Sunology vs Beem : quel kit choisir ?', desc: 'Comparaison directe des deux leaders du marché français.' },
   { title: 'Kit solaire avec batterie 2026 : comparatif stockage', desc: 'Sunology PLAY MAX vs Beem Battery vs EcoFlow : quel systeme de stockage choisir ?' },
   { title: 'Meilleur kit solaire petit budget (moins de 400\u20ac)', desc: 'Les meilleures options pour debuter dans le solaire sans se ruiner.' },
 ];
@@ -29,7 +29,7 @@ export default function ComparatifIndexPage() {
       <div className="container-brand max-w-4xl">
         <div className="badge-green mb-4 inline-block">Comparatifs</div>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Comparatifs de kits solaires</h1>
-        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Des comparatifs independants, sources et transparents pour vous aider a choisir le kit solaire adapte a votre balcon.</p>
+        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Des comparatifs indépendants, sources et transparents pour vous aider a choisir le kit solaire adapté a votre balcon.</p>
 
         <div className="space-y-6 mb-12">
           {articles.map((a) => (

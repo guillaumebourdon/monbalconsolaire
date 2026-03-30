@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Mentions légales',
-  description: 'Mentions légales du site MonBalconSolaire, édité par Beeleven SASU.',
+  description: 'Mentions légales du site MonBalconSolaire, édité par Beélevén SASU.',
 };
 
 export default function MentionsLegalesPage() {
@@ -16,7 +16,7 @@ export default function MentionsLegalesPage() {
             <h2 className="font-bold text-xl text-charcoal mb-3">Éditeur du site</h2>
             <p>Le site MonBalconSolaire (monbalconsolaire.fr) est édité par :</p>
             <div className="card mt-3">
-              <p><strong>Raison sociale :</strong> Beeleven SASU</p>
+              <p><strong>Raison sociale :</strong> Beélevén SASU</p>
               <p><strong>Forme juridique :</strong> Société par actions simplifiée unipersonnelle</p>
               <p><strong>Siège social :</strong> Paris, France</p>
               <p><strong>SIRET :</strong> [À compléter]</p>
@@ -39,7 +39,7 @@ export default function MentionsLegalesPage() {
           <div>
             <h2 className="font-bold text-xl text-charcoal mb-3">Propriété intellectuelle</h2>
             <p>
-              L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, mise en page) est la propriété exclusive de Beeleven SASU, sauf mention contraire explicite. Toute reproduction, représentation, modification ou exploitation de tout ou partie du site sans autorisation écrite préalable est interdite.
+              L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, mise en page) est la propriété exclusive de Beélevén SASU, sauf mention contraire explicite. Toute reproduction, représentation, modification ou exploitation de tout ou partie du site sans autorisation écrite préalable est interdite.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function MentionsLegalesPage() {
               MonBalconSolaire participe à des programmes d'affiliation, notamment le programme partenaire Sunology (partner.sunology.eu) et le programme Amazon Partenaires. Cela signifie que nous pouvons recevoir une commission si vous effectuez un achat après avoir cliqué sur un lien affilié présent sur notre site.
             </p>
             <p className="mt-2">
-              Cette commission ne modifie en aucun cas le prix que vous payez. Notre contenu éditorial est indépendant de ces partenariats commerciaux. Les produits recommandés le sont sur la base de critères objectifs (rapport qualité-prix, performances, avis utilisateurs).
+              Cette commission ne modifié en aucun cas le prix que vous payez. Notre contenu éditorial est indépendant de ces partenariats commerciaux. Les produits recommandés le sont sur la base de critères objectifs (rapport qualité-prix, performances, avis utilisateurs).
             </p>
           </div>
 

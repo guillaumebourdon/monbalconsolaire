@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Avis & tests kits solaires balcon 2026',
-  description: 'Avis detailles et tests des kits solaires plug-and-play : Sunology PLAY2, Beem On, Sunethic F500. Retours d\'experience et donnees reelles.',
+  description: 'Avis détaillés et tests des kits solaires plug-and-play : Sunology PLAY2, Beem On, Sunethic F500. Retours d\'experience et données réelles.',
 };
 
 const reviews = [
@@ -19,7 +19,7 @@ const reviews = [
 
 const comingSoon = [
   { title: 'Beem On 460W : avis et test complet', desc: 'Le concurrent direct du Sunology PLAY2. 460 Wc, 599\u20ac.' },
-  { title: 'Beem Kit 300W : avis et test complet', desc: 'L\'entree de gamme a 299\u20ac. Ideal pour tester le solaire.' },
+  { title: 'Beem Kit 300W : avis et test complet', desc: 'L\'entrée de gamme a 299\u20ac. Ideal pour tester le solaire.' },
   { title: 'Sunethic F500 : avis et test complet', desc: 'Le kit Made in France. 500 Wc, 690\u20ac.' },
 ];
 
@@ -29,7 +29,7 @@ export default function AvisIndexPage() {
       <div className="container-brand max-w-4xl">
         <div className="badge-amber mb-4 inline-block">Avis & tests</div>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Avis et tests de kits solaires</h1>
-        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Des avis detailles, sources et honnetes sur les kits solaires plug-and-play les plus populaires en France.</p>
+        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Des avis détaillés, sources et honnetes sur les kits solaires plug-and-play les plus populaires en France.</p>
 
         <div className="space-y-6 mb-10">
           {reviews.map((r) => (

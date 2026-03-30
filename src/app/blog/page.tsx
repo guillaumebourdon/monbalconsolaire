@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Blog solaire balcon — MonBalconSolaire',
-  description: 'Articles, analyses et donnees sur le solaire de balcon en France. Rentabilite, actualites, prix de l\'electricite, conseils.',
+  description: 'Articles, analyses et données sur le solaire de balcon en France. Rentabilité, actualites, prix de l\'électricité, conseils.',
 };
 
 const articles = [
   {
     slug: 'combien-rapporte-panneau-solaire-balcon',
-    title: 'Combien rapporte un panneau solaire de balcon ? Calcul reel',
-    excerpt: 'Chiffres reels de production et d\'economies pour 7 villes francaises. Formule de calcul transparente, donnees PVGIS, 3 scenarios de prix EDF.',
+    title: 'Combien rapporte un panneau solaire de balcon ? Calcul réel',
+    excerpt: 'Chiffres réels de production et d\'économies pour 7 villes françaises. Formule de calcul transparente, données PVGIS, 3 scenarios de prix EDF.',
     badge: 'Analyse chiffree',
     date: '30 mars 2026',
     readTime: '10 min',
@@ -18,9 +18,9 @@ const articles = [
 ];
 
 const comingSoon = [
-  { title: 'Prix de l\'electricite 2026 : faut-il s\'inquieter ?', desc: 'Analyse de l\'evolution tarifaire et impact sur la rentabilite du solaire.' },
+  { title: 'Prix de l\'électricité 2026 : faut-il s\'inquieter ?', desc: 'Analyse de l\'évolution tarifaire et impact sur la rentabilité du solaire.' },
   { title: '5 accessoires indispensables pour votre kit solaire de balcon', desc: 'Wattmetre, rallonge etanche, prise connectee : les complements utiles.' },
-  { title: 'Panneau solaire en hiver : combien ca produit vraiment ?', desc: 'Donnees reelles de production hivernale par region.' },
+  { title: 'Panneau solaire en hiver : combien ca produit vraiment ?', desc: 'Données réelles de production hivernale par region.' },
 ];
 
 export default function BlogIndexPage() {
@@ -29,7 +29,7 @@ export default function BlogIndexPage() {
       <div className="container-brand max-w-4xl">
         <div className="badge-amber mb-4 inline-block">Blog</div>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Blog MonBalconSolaire</h1>
-        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Analyses, donnees et conseils sur le solaire de balcon en France.</p>
+        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Analyses, données et conseils sur le solaire de balcon en France.</p>
 
         <div className="space-y-6 mb-12">
           {articles.map((a) => (

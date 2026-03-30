@@ -64,7 +64,7 @@ export default function AProposPage() {
 
           <h2 className="font-bold text-2xl text-charcoal pt-4">Qui sommes-nous</h2>
           <p>
-            MonBalconSolaire est édité par Beeleven SASU, société de services numériques basée à Paris. Le site est développé et maintenu par Guillaume Bourdon.
+            MonBalconSolaire est édité par Beélevén SASU, société de services numériques basée à Paris. Le site est développé et maintenu par Guillaume Bourdon.
           </p>
 
           <div className="card-lg text-center bg-gradient-to-br from-amber-pale/50 to-green-pale/30 border-amber/10 mt-8">

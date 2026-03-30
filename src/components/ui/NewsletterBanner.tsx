@@ -31,10 +31,10 @@ export function NewsletterBanner() {
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         <div className="flex-1">
           <h3 className="font-bold text-lg mb-1">
-            &#9889; 7 erreurs a eviter avant d&apos;acheter un kit solaire
+            &#9889; 7 erreurs a éviter avant d&apos;acheter un kit solaire
           </h3>
           <p className="text-sm text-charcoal-light leading-relaxed">
-            Recevez notre guide gratuit par email + nos meilleurs conseils pour economiser avec le solaire de balcon.
+            Recevez notre guide gratuit par email + nos meilleurs conseils pour économiser avec le solaire de balcon.
           </p>
         </div>
         <form onSubmit={handleSubmit} className="flex gap-2 min-w-0 md:min-w-[320px]">
@@ -55,7 +55,7 @@ export function NewsletterBanner() {
           </button>
         </form>
       </div>
-      <p className="text-[11px] text-stone mt-3">Pas de spam. Desabonnement en 1 clic. <a href="/politique-confidentialite" className="text-green hover:underline">Politique de confidentialite</a></p>
+      <p className="text-[11px] text-stone mt-3">Pas de spam. Désabonnement en 1 clic. <a href="/politique-confidentialite" className="text-green hover:underline">Politique de confidentialite</a></p>
     </div>
   );
 }

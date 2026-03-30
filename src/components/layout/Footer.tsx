@@ -58,7 +58,7 @@ export function Footer() {
             Cela nous permet de maintenir ce site gratuit et indépendant. Notre contenu éditorial n'est jamais influencé par ces partenariats.
           </p>
           <p className="text-xs text-stone-light mt-4">
-            © {new Date().getFullYear()} MonBalconSolaire — Beeleven SASU — Tous droits réservés.
+            © {new Date().getFullYear()} MonBalconSolaire — Beélevén SASU — Tous droits réservés.
           </p>
         </div>
       </div>

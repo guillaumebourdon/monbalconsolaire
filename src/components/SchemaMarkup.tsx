@@ -13,7 +13,7 @@ export function SchemaOrganization() {
     },
     parentOrganization: {
       '@type': 'Organization',
-      name: 'Beeleven SASU',
+      name: 'Beélevén SASU',
     },
     sameAs: [],
   };
