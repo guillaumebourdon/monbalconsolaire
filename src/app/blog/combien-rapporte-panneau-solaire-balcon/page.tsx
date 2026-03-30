@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
   title: 'Combien rapporte un panneau solaire de balcon ? Calcul reel (2026)',
@@ -31,6 +33,7 @@ export default function CombienRapportePage() {
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
+          <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Combien rapporte un panneau solaire" }]} />
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Analyse chiffree</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Combien rapporte un panneau solaire de balcon ? Calcul reel</h1>
@@ -158,6 +161,7 @@ export default function CombienRapportePage() {
               </div>
             </section>
 
+            <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed"><strong>Methodologie :</strong> productions calculees a partir des donnees PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, coefficient de pertes 0,85. Tarif EDF 0,1940&euro;/kWh TTC (option base 6 kVA, fevrier 2026). Ce contenu est independant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus</Link>.</p>
             </div>

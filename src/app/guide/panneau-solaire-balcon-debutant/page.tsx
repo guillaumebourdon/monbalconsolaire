@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon : le guide complet pour debutants (2026)',
@@ -23,6 +25,7 @@ export default function GuidePage() {
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
+          <Breadcrumbs items={[{ label: "Guides", href: "/guide" }, { label: "Guide debutants" }]} />
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide complet</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : le guide complet pour debutants</h1>
@@ -168,6 +171,7 @@ export default function GuidePage() {
               <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes economies &rarr;</Link>
             </div>
 
+            <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europeenne), EDF tarifs reglementes (fevrier 2026), Enedis, ADEME, sites fabricants (Sunology, Beem, Sunethic). Ce guide est independant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre methode</Link>.</p>
             </div>

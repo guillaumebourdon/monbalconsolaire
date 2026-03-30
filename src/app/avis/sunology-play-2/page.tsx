@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
   title: 'Sunology PLAY 2 avis 2026 : test complet et retour d\'experience',
@@ -21,6 +23,7 @@ export default function AvisPage() {
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
+          <Breadcrumbs items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY2" }]} />
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Avis et test</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis : test complet et retour d&apos;experience (2026)</h1>
@@ -161,6 +164,7 @@ export default function AvisPage() {
               </div>
             </section>
 
+            <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> cet avis est independant. Les liens vers Sunology sont des liens d&apos;affiliation. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>

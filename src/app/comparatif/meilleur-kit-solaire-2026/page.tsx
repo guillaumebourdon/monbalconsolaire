@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
   title: 'Meilleur kit solaire plug and play 2026 : comparatif complet',
@@ -43,6 +45,7 @@ export default function ComparatifPage() {
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
+          <Breadcrumbs items={[{ label: "Comparatifs", href: "/comparatif" }, { label: "Meilleur kit solaire 2026" }]} />
 
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Comparatif 2026</div>
@@ -272,6 +275,7 @@ export default function ComparatifPage() {
               </div>
             </section>
 
+            <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> ce comparatif est independant. MonBalconSolaire ne vend aucun produit. Certains liens sont des liens d&apos;affiliation : si vous achetez via ces liens, nous recevons une commission sans surcout pour vous. Notre classement est base sur des criteres objectifs et n&apos;est pas influence par ces partenariats. Donnees verifiees en mars 2026.</p>
             </div>

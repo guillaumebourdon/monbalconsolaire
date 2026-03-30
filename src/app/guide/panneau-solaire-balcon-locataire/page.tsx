@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon locataire : droits, regles et astuces (2026)',
@@ -22,6 +24,7 @@ export default function LocatairePage() {
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
+          <Breadcrumbs items={[{ label: "Guides", href: "/guide" }, { label: "Locataires" }]} />
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide locataire</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon locataire : droits, regles et astuces</h1>

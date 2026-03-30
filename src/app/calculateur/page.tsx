@@ -1,42 +1,16 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
-
-// Simplified solar data by department (kWh/kWc/year)
-const SOLAR_DATA: Record<string, { name: string; kwh: number }> = {
-  '06': { name: 'Alpes-Maritimes', kwh: 1450 },
-  '13': { name: 'Bouches-du-Rhône', kwh: 1500 },
-  '31': { name: 'Haute-Garonne', kwh: 1300 },
-  '33': { name: 'Gironde', kwh: 1250 },
-  '34': { name: 'Hérault', kwh: 1450 },
-  '35': { name: 'Ille-et-Vilaine', kwh: 1100 },
-  '44': { name: 'Loire-Atlantique', kwh: 1200 },
-  '59': { name: 'Nord', kwh: 1000 },
-  '67': { name: 'Bas-Rhin', kwh: 1100 },
-  '69': { name: 'Rhône', kwh: 1300 },
-  '75': { name: 'Paris', kwh: 1100 },
-  '76': { name: 'Seine-Maritime', kwh: 1000 },
-  '83': { name: 'Var', kwh: 1500 },
-  '84': { name: 'Vaucluse', kwh: 1450 },
-};
-
-// Regions with default values for departments not listed
-const REGIONS: Record<string, { label: string; kwh: number }> = {
-  'nord': { label: 'Nord de la France (Lille, Paris, Strasbourg...)', kwh: 1050 },
-  'ouest': { label: 'Ouest (Rennes, Nantes, Bordeaux...)', kwh: 1200 },
-  'est': { label: 'Est (Lyon, Grenoble, Dijon...)', kwh: 1250 },
-  'sud-ouest': { label: 'Sud-Ouest (Toulouse, Montpellier...)', kwh: 1350 },
-  'sud-est': { label: 'Sud-Est (Marseille, Nice, Toulon...)', kwh: 1480 },
-};
+import { CITIES, CityData } from '@/data/cities';
 
 const ORIENTATIONS = [
-  { value: 'sud', label: 'Sud', coeff: 1.0, emoji: '🌞' },
-  { value: 'sud-est', label: 'Sud-Est', coeff: 0.93, emoji: '🌤' },
-  { value: 'sud-ouest', label: 'Sud-Ouest', coeff: 0.93, emoji: '🌤' },
-  { value: 'est', label: 'Est', coeff: 0.80, emoji: '⛅' },
-  { value: 'ouest', label: 'Ouest', coeff: 0.80, emoji: '⛅' },
-  { value: 'nord', label: 'Nord', coeff: 0.45, emoji: '☁️' },
+  { value: 'sud', label: 'Sud', coeff: 1.0, emoji: '\u2600\ufe0f', desc: '100% du potentiel' },
+  { value: 'sud-est', label: 'Sud-Est', coeff: 0.93, emoji: '\ud83c\udf24', desc: '93% du potentiel' },
+  { value: 'sud-ouest', label: 'Sud-Ouest', coeff: 0.93, emoji: '\ud83c\udf24', desc: '93% du potentiel' },
+  { value: 'est', label: 'Est', coeff: 0.80, emoji: '\u26c5', desc: '80% du potentiel' },
+  { value: 'ouest', label: 'Ouest', coeff: 0.80, emoji: '\u26c5', desc: '80% du potentiel' },
+  { value: 'nord', label: 'Nord', coeff: 0.45, emoji: '\u2601\ufe0f', desc: '45% du potentiel' },
 ];
 
 const KITS = [
@@ -46,238 +20,258 @@ const KITS = [
   { name: 'Sunethic F500', power: 0.50, price: 690, brand: 'Sunethic', badge: 'Made in France' },
 ];
 
-const TARIF_KWH = 0.194; // EDF tarif réglementé feb 2026
+const TARIF_KWH = 0.194;
 
 export default function CalculateurPage() {
   const [step, setStep] = useState(1);
-  const [region, setRegion] = useState('');
+  const [city, setCity] = useState<CityData | null>(null);
+  const [cityQuery, setCityQuery] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const [orientation, setOrientation] = useState('');
   const [consoMensuelle, setConsoMensuelle] = useState('');
+  const [shareStatus, setShareStatus] = useState<'idle' | 'copied'>('idle');
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const totalSteps = 3;
+  const filteredCities = useMemo(() => {
+    if (!cityQuery || cityQuery.length < 2) return [];
+    const q = cityQuery.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return CITIES.filter(c => {
+      const name = c.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      return name.startsWith(q) || name.includes(q);
+    }).slice(0, 8);
+  }, [cityQuery]);
 
   const results = useMemo(() => {
-    if (!region || !orientation || !consoMensuelle) return null;
+    if (!city || !orientation || !consoMensuelle) return null;
+    const orientData = ORIENTATIONS.find(o => o.value === orientation);
+    if (!orientData) return null;
 
-    const regionData = REGIONS[region];
-    const orientData = ORIENTATIONS.find((o) => o.value === orientation);
-    if (!regionData || !orientData) return null;
-
-    const consoAnnuelle = parseFloat(consoMensuelle) * 12;
-    const rendementBase = regionData.kwh; // kWh/kWc/year
-
-    return KITS.map((kit) => {
-      const production = kit.power * rendementBase * orientData.coeff * 0.85; // 0.85 = pertes système
+    return KITS.map(kit => {
+      const production = kit.power * city.irradiation * orientData.coeff * 0.85;
       const economies = production * TARIF_KWH;
       const roi = kit.price / economies;
       const score = Math.min(100, Math.round((economies / kit.price) * 100 * 3.5));
-
-      return {
-        ...kit,
-        production: Math.round(production),
-        economies: Math.round(economies),
-        roi: parseFloat(roi.toFixed(1)),
-        score,
-      };
+      return { ...kit, production: Math.round(production), economies: Math.round(economies), roi: parseFloat(roi.toFixed(1)), score };
     }).sort((a, b) => b.score - a.score);
-  }, [region, orientation, consoMensuelle]);
+  }, [city, orientation, consoMensuelle]);
 
   const bestKit = results?.[0];
 
+  const handleShare = () => {
+    const url = window.location.origin + '/calculateur';
+    const text = city && bestKit
+      ? `Mon balcon a ${city.name} a un score solaire de ${bestKit.score}/100 ! Je peux economiser ${bestKit.economies}\u20ac/an avec un kit solaire. Testez le votre :`
+      : 'Calculez combien vous pouvez economiser avec un panneau solaire sur votre balcon :';
+    if (navigator.share) {
+      navigator.share({ title: 'MonBalconSolaire - Score solaire', text, url });
+    } else {
+      navigator.clipboard.writeText(`${text} ${url}`);
+      setShareStatus('copied');
+      setTimeout(() => setShareStatus('idle'), 2000);
+    }
+  };
+
+  useEffect(() => {
+    const handleClickOutside = () => setShowSuggestions(false);
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
   return (
-    <>
-      <section className="section-padding">
-        <div className="container-brand max-w-2xl">
-          <div className="text-center mb-10">
-            <div className="badge-amber mb-4 inline-block">Calculateur gratuit</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-              Votre balcon est-il rentable pour le solaire ?
-            </h1>
-            <p className="text-charcoal-light">
-              Répondez à 3 questions simples. Résultat en 30 secondes.
-            </p>
-          </div>
+    <section className="section-padding">
+      <div className="container-brand max-w-2xl">
+        <div className="text-center mb-10">
+          <div className="badge-amber mb-4 inline-block">Calculateur gratuit</div>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Votre balcon est-il rentable pour le solaire ?</h1>
+          <p className="text-charcoal-light">Repondez a 3 questions simples. Resultat en 30 secondes.</p>
+        </div>
 
-          {/* Progress bar */}
-          <div className="flex items-center gap-3 mb-8">
-            {[1, 2, 3].map((s) => (
-              <div key={s} className="flex-1">
-                <div className={`h-1.5 rounded-full transition-all duration-500 ${step >= s ? 'bg-gradient-to-r from-amber to-amber-light' : 'bg-border'}`} />
-              </div>
-            ))}
-            <span className="text-xs text-stone font-mono font-medium ml-2">
-              {step <= totalSteps ? `${step}/${totalSteps}` : 'Résultats'}
-            </span>
-          </div>
-
-          {/* STEP 1: Region */}
-          {step === 1 && (
-            <div className="card-lg">
-              <h2 className="font-bold text-xl mb-2">Où se trouve votre balcon ?</h2>
-              <p className="text-sm text-stone mb-6">Sélectionnez votre région pour estimer l&apos;ensoleillement.</p>
-              <div className="grid gap-3">
-                {Object.entries(REGIONS).map(([key, data]) => (
-                  <button
-                    key={key}
-                    onClick={() => { setRegion(key); setStep(2); }}
-                    className={`text-left p-4 rounded-brand border transition-all duration-200 hover:border-green hover:bg-green-pale ${region === key ? 'border-green bg-green-pale' : 'border-border bg-cream'}`}
-                  >
-                    <span className="font-semibold text-sm">{data.label}</span>
-                    <span className="block text-xs text-stone mt-1 font-mono">{data.kwh} kWh/kWc/an d&apos;ensoleillement</span>
-                  </button>
-                ))}
-              </div>
+        <div className="flex items-center gap-3 mb-8">
+          {[1, 2, 3].map(s => (
+            <div key={s} className="flex-1">
+              <div className={`h-1.5 rounded-full transition-all duration-500 ${step >= s ? 'bg-gradient-to-r from-amber to-amber-light' : 'bg-border'}`} />
             </div>
-          )}
+          ))}
+          <span className="text-xs text-stone font-mono font-medium ml-2">{step <= 3 ? `${step}/3` : 'Resultats'}</span>
+        </div>
 
-          {/* STEP 2: Orientation */}
-          {step === 2 && (
-            <div className="card-lg">
-              <h2 className="font-bold text-xl mb-2">Quelle est l&apos;orientation de votre balcon ?</h2>
-              <p className="text-sm text-stone mb-6">L&apos;orientation détermine combien de soleil votre panneau recevra.</p>
-              <div className="grid grid-cols-2 gap-3">
-                {ORIENTATIONS.map((o) => (
-                  <button
-                    key={o.value}
-                    onClick={() => { setOrientation(o.value); setStep(3); }}
-                    className={`text-left p-4 rounded-brand border transition-all duration-200 hover:border-green hover:bg-green-pale ${orientation === o.value ? 'border-green bg-green-pale' : 'border-border bg-cream'}`}
-                  >
-                    <span className="text-xl mb-1 block">{o.emoji}</span>
-                    <span className="font-semibold text-sm">{o.label}</span>
-                    <span className="block text-xs text-stone mt-1">{Math.round(o.coeff * 100)}% du potentiel max</span>
-                  </button>
-                ))}
-              </div>
-              <button onClick={() => setStep(1)} className="text-sm text-stone hover:text-green mt-4">← Retour</button>
-            </div>
-          )}
-
-          {/* STEP 3: Consumption */}
-          {step === 3 && (
-            <div className="card-lg">
-              <h2 className="font-bold text-xl mb-2">Quelle est votre facture EDF mensuelle ?</h2>
-              <p className="text-sm text-stone mb-6">Une estimation suffit. Nous l&apos;utilisons pour calculer le % de couverture.</p>
-              <div className="relative mb-6">
-                <input
-                  type="number"
-                  placeholder="Ex : 80"
-                  value={consoMensuelle}
-                  onChange={(e) => setConsoMensuelle(e.target.value)}
-                  className="w-full p-4 pr-16 rounded-brand border border-border bg-cream text-lg font-semibold focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
-                />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-stone font-medium">€/mois</span>
-              </div>
-              <div className="flex gap-2 mb-6">
-                {['50', '80', '120', '160'].map((v) => (
-                  <button
-                    key={v}
-                    onClick={() => setConsoMensuelle(v)}
-                    className="px-4 py-2 rounded-lg bg-cream border border-border text-sm font-medium hover:border-green hover:bg-green-pale transition-all"
-                  >
-                    {v}€
-                  </button>
-                ))}
-              </div>
-              <button
-                onClick={() => consoMensuelle && setStep(4)}
-                disabled={!consoMensuelle}
-                className="btn-primary w-full justify-center disabled:opacity-40 disabled:cursor-not-allowed text-base py-4"
-              >
-                ☀ Voir mes résultats →
-              </button>
-              <button onClick={() => setStep(2)} className="text-sm text-stone hover:text-green mt-4 block">← Retour</button>
-            </div>
-          )}
-
-          {/* RESULTS */}
-          {step === 4 && results && bestKit && (
-            <div className="space-y-6">
-              {/* Score card */}
-              <div className="card-lg bg-gradient-to-br from-amber-pale via-white to-green-pale/30 border-amber/15">
-                <div className="text-center">
-                  <p className="text-sm text-stone font-medium mb-2">Score solaire de votre balcon</p>
-                  <div className="text-6xl font-extrabold text-amber-dark font-sans mb-1">
-                    {bestKit.score}<span className="text-2xl text-stone font-normal">/100</span>
-                  </div>
-                  <div className="w-full max-w-xs mx-auto mt-4 mb-2">
-                    <div className="h-3 bg-amber/10 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-amber to-amber-light rounded-full transition-all duration-1000"
-                        style={{ width: `${bestKit.score}%` }}
-                      />
-                    </div>
-                    <div className="flex justify-between mt-1 text-[11px] text-stone">
-                      <span>Faible</span>
-                      <span>Excellent</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-charcoal-light mt-4">
-                    {bestKit.score >= 70
-                      ? 'Votre balcon a un excellent potentiel solaire ! Un kit serait rentable.'
-                      : bestKit.score >= 40
-                        ? 'Potentiel correct. Un kit peut être intéressant avec le bon choix.'
-                        : 'Potentiel limité. L\'orientation réduit significativement la production.'}
-                  </p>
-                </div>
-              </div>
-
-              {/* Key numbers */}
-              <div className="grid grid-cols-3 gap-4">
-                <div className="card text-center">
-                  <div className="font-mono font-medium text-green text-2xl">{bestKit.production}</div>
-                  <div className="text-xs text-stone mt-1 font-medium">kWh/an produits</div>
-                </div>
-                <div className="card text-center">
-                  <div className="font-mono font-medium text-amber-dark text-2xl">{bestKit.economies}€</div>
-                  <div className="text-xs text-stone mt-1 font-medium">économies/an</div>
-                </div>
-                <div className="card text-center">
-                  <div className="font-mono font-medium text-green text-2xl">{bestKit.roi}</div>
-                  <div className="text-xs text-stone mt-1 font-medium">ans de ROI</div>
-                </div>
-              </div>
-
-              {/* Kit recommendations */}
-              <div>
-                <h3 className="font-bold text-lg mb-4">Kits recommandés pour votre balcon</h3>
-                <div className="space-y-4">
-                  {results.map((kit, i) => (
-                    <div key={i} className={`card flex items-center gap-4 ${i === 0 ? 'border-green/30 bg-green-pale/30' : ''}`}>
-                      {i === 0 && <div className="badge-green text-[10px]">Recommandé</div>}
-                      <div className="flex-1">
-                        <div className="font-bold">{kit.name}</div>
-                        <div className="text-xs text-stone">{kit.brand} — {kit.power * 1000} Wc</div>
+        {/* STEP 1: City */}
+        {step === 1 && (
+          <div className="card-lg">
+            <h2 className="font-bold text-xl mb-2">Ou se trouve votre balcon ?</h2>
+            <p className="text-sm text-stone mb-6">Tapez le nom de votre ville pour obtenir des donnees d&apos;ensoleillement precises.</p>
+            <div className="relative" onClick={e => e.stopPropagation()}>
+              <input
+                ref={inputRef}
+                type="text"
+                placeholder="Ex : Lyon, Marseille, Paris..."
+                value={cityQuery}
+                onChange={e => { setCityQuery(e.target.value); setShowSuggestions(true); setCity(null); }}
+                onFocus={() => setShowSuggestions(true)}
+                className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
+                autoComplete="off"
+              />
+              {showSuggestions && filteredCities.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 overflow-hidden">
+                  {filteredCities.map((c, i) => (
+                    <button
+                      key={i}
+                      onClick={() => { setCity(c); setCityQuery(c.name); setShowSuggestions(false); setStep(2); }}
+                      className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0"
+                    >
+                      <div>
+                        <span className="font-semibold text-sm">{c.name}</span>
+                        <span className="text-xs text-stone ml-2">({c.department}) — {c.region}</span>
                       </div>
-                      <div className="text-right">
-                        <div className="font-mono font-medium text-green">{kit.price}€</div>
-                        <div className="text-xs text-stone">{kit.economies}€/an d&apos;éco.</div>
-                      </div>
-                    </div>
+                      <span className="text-xs font-mono text-amber-dark">{c.irradiation} kWh/kWc</span>
+                    </button>
                   ))}
                 </div>
-              </div>
-
-              {/* CTA */}
-              <div className="card-lg text-center bg-gradient-to-br from-green-pale to-white border-green/10">
-                <p className="text-charcoal-light mb-4">Pour un comparatif détaillé de chaque kit avec avantages et inconvénients :</p>
-                <Link href="/comparatif" className="btn-primary text-base py-3.5 px-8">
-                  Voir le comparatif complet →
-                </Link>
-              </div>
-
-              {/* Disclaimer */}
-              <p className="text-xs text-stone-light text-center leading-relaxed">
-                Estimation basée sur les données PVGIS (Commission européenne) et le tarif EDF réglementé de 0,1940 €/kWh (février 2026).
-                Les résultats réels peuvent varier selon l'ombrage, l'inclinaison et votre consommation réelle.
-                <br />
-                <button onClick={() => { setStep(1); setRegion(''); setOrientation(''); setConsoMensuelle(''); }} className="text-green hover:underline mt-2 inline-block">
-                  ↻ Recommencer le calcul
-                </button>
-              </p>
+              )}
+              {cityQuery.length >= 2 && filteredCities.length === 0 && showSuggestions && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand p-4 z-10">
+                  <p className="text-sm text-stone">Aucune ville trouvee. Essayez une grande ville proche.</p>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </section>
-    </>
+            {city && (
+              <div className="mt-4 card bg-green-pale/30 border-green/10">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <span className="font-semibold text-sm">{city.name}</span>
+                    <span className="text-xs text-stone ml-2">{city.region}</span>
+                  </div>
+                  <span className="font-mono text-sm text-green font-medium">{city.irradiation} kWh/kWc/an</span>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* STEP 2: Orientation */}
+        {step === 2 && (
+          <div className="card-lg">
+            <h2 className="font-bold text-xl mb-2">Quelle est l&apos;orientation de votre balcon ?</h2>
+            <p className="text-sm text-stone mb-6">L&apos;orientation determine combien de soleil votre panneau recevra.</p>
+            <div className="grid grid-cols-2 gap-3">
+              {ORIENTATIONS.map(o => (
+                <button
+                  key={o.value}
+                  onClick={() => { setOrientation(o.value); setStep(3); }}
+                  className={`text-left p-4 rounded-brand border transition-all duration-200 hover:border-green hover:bg-green-pale ${orientation === o.value ? 'border-green bg-green-pale' : 'border-border bg-cream'}`}
+                >
+                  <span className="text-xl mb-1 block">{o.emoji}</span>
+                  <span className="font-semibold text-sm">{o.label}</span>
+                  <span className="block text-xs text-stone mt-1">{o.desc}</span>
+                </button>
+              ))}
+            </div>
+            <button onClick={() => setStep(1)} className="text-sm text-stone hover:text-green mt-4">&larr; Retour</button>
+          </div>
+        )}
+
+        {/* STEP 3: Consumption */}
+        {step === 3 && (
+          <div className="card-lg">
+            <h2 className="font-bold text-xl mb-2">Quelle est votre facture EDF mensuelle ?</h2>
+            <p className="text-sm text-stone mb-6">Une estimation suffit. Nous l&apos;utilisons pour calculer le % de couverture.</p>
+            <div className="relative mb-6">
+              <input
+                type="number"
+                placeholder="Ex : 80"
+                value={consoMensuelle}
+                onChange={e => setConsoMensuelle(e.target.value)}
+                className="w-full p-4 pr-16 rounded-brand border border-border bg-cream text-lg font-semibold focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
+              />
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-stone font-medium">&euro;/mois</span>
+            </div>
+            <div className="flex gap-2 mb-6">
+              {['50', '80', '120', '160'].map(v => (
+                <button key={v} onClick={() => setConsoMensuelle(v)} className="px-4 py-2 rounded-lg bg-cream border border-border text-sm font-medium hover:border-green hover:bg-green-pale transition-all">{v}&euro;</button>
+              ))}
+            </div>
+            <button
+              onClick={() => consoMensuelle && setStep(4)}
+              disabled={!consoMensuelle}
+              className="btn-primary w-full justify-center disabled:opacity-40 disabled:cursor-not-allowed text-base py-4"
+            >
+              Voir mes resultats &rarr;
+            </button>
+            <button onClick={() => setStep(2)} className="text-sm text-stone hover:text-green mt-4 block">&larr; Retour</button>
+          </div>
+        )}
+
+        {/* RESULTS */}
+        {step === 4 && results && bestKit && (
+          <div className="space-y-6">
+            <div className="card-lg bg-gradient-to-br from-amber-pale via-white to-green-pale/30 border-amber/15">
+              <div className="text-center">
+                <p className="text-sm text-stone font-medium mb-2">Score solaire de votre balcon {city && <>a <strong>{city.name}</strong></>}</p>
+                <div className="text-6xl font-extrabold text-amber-dark font-sans mb-1">{bestKit.score}<span className="text-2xl text-stone font-normal">/100</span></div>
+                {city && <p className="text-xs text-stone mt-1">Orientation {orientation} &middot; {city.irradiation} kWh/kWc/an</p>}
+                <div className="w-full max-w-xs mx-auto mt-4 mb-2">
+                  <div className="h-3 bg-amber/10 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-amber to-amber-light rounded-full" style={{ width: `${bestKit.score}%` }} />
+                  </div>
+                  <div className="flex justify-between mt-1 text-[11px] text-stone"><span>Faible</span><span>Excellent</span></div>
+                </div>
+                <p className="text-sm text-charcoal-light mt-4">
+                  {bestKit.score >= 70 ? 'Excellent potentiel solaire ! Un kit serait tres rentable.'
+                    : bestKit.score >= 40 ? 'Potentiel correct. Un kit peut etre interessant avec le bon choix.'
+                    : 'Potentiel limite. L\'orientation reduit significativement la production.'}
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                { v: `${bestKit.production}`, u: 'kWh/an produits', c: 'text-green' },
+                { v: `${bestKit.economies}\u20ac`, u: 'economies/an', c: 'text-amber-dark' },
+                { v: `${bestKit.roi}`, u: 'ans de ROI', c: 'text-green' },
+              ].map((s, i) => (
+                <div key={i} className="card text-center">
+                  <div className={`font-mono font-medium text-2xl ${s.c}`}>{s.v}</div>
+                  <div className="text-xs text-stone mt-1 font-medium">{s.u}</div>
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <h3 className="font-bold text-lg mb-4">Kits recommandes pour votre balcon</h3>
+              <div className="space-y-3">
+                {results.map((kit, i) => (
+                  <div key={i} className={`card flex items-center gap-4 ${i === 0 ? 'border-green/30 bg-green-pale/30' : ''}`}>
+                    {i === 0 && <div className="badge-green text-[10px]">Recommande</div>}
+                    <div className="flex-1">
+                      <div className="font-bold">{kit.name}</div>
+                      <div className="text-xs text-stone">{kit.brand} — {kit.power * 1000} Wc</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="font-mono font-medium text-green">{kit.price}&euro;</div>
+                      <div className="text-xs text-stone">{kit.economies}&euro;/an</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Share button */}
+            <div className="flex gap-3">
+              <button onClick={handleShare} className="btn-secondary flex-1 justify-center text-sm">
+                {shareStatus === 'copied' ? '\u2705 Lien copie !' : '\ud83d\udcf2 Partager mes resultats'}
+              </button>
+              <Link href="/comparatif/meilleur-kit-solaire-2026" className="btn-primary flex-1 justify-center text-sm">
+                Voir le comparatif &rarr;
+              </Link>
+            </div>
+
+            <p className="text-xs text-stone-light text-center leading-relaxed">
+              Estimation basee sur les donnees PVGIS (Commission europeenne) et le tarif EDF de 0,1940 &euro;/kWh (fevrier 2026).{' '}
+              <button onClick={() => { setStep(1); setCity(null); setCityQuery(''); setOrientation(''); setConsoMensuelle(''); }} className="text-green hover:underline">&circlearrowleft; Recommencer</button>
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
