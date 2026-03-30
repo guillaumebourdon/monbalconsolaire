@@ -13,8 +13,6 @@ const articles = [
   { slug: 'kit-solaire-batterie-2026', title: 'Kit solaire avec batterie 2026 : comparatif stockage', excerpt: 'Sunology PLAY MAX, STOREY, EcoFlow PowerStream : faut-il une batterie ? Comparatif et calcul de rentabilité honnête.', badge: 'Stockage', date: '30 mars 2026', readTime: '10 min' },
 ];
 
-const comingSoon: { title: string; desc: string }[] = [];
-
 export default function ComparatifIndexPage() {
   return (
     <section className="section-padding">
@@ -33,12 +31,6 @@ export default function ComparatifIndexPage() {
             </Link>
           ))}
         </div>
-        {comingSoon.length > 0 && (<><h2 className="font-bold text-xl mb-4 text-charcoal">Prochains comparatifs</h2>
-        <div className="space-y-4">
-          {comingSoon.map((c, i) => (
-            <div key={i} className="card bg-cream/50"><h3 className="font-semibold text-sm">{c.title}</h3><p className="text-xs text-stone mt-1">{c.desc}</p><span className="text-xs text-amber-dark font-medium mt-2 inline-block">À venir prochainement</span></div>
-          ))}
-        </div></>)}
       </div>
     </section>
   );
