@@ -39,9 +39,9 @@ export default function AProposPage() {
             Notre contenu éditorial n'est jamais influencé par ces partenariats. Si un kit n'est pas adapté à votre situation, nous vous le dirons — même si c'est le kit qui nous rapporte le plus de commission.
           </p>
 
-          <h2 className="font-bold text-2xl text-charcoal pt-4">Nos sources de données</h2>
+          <h2 className="font-bold text-2xl text-charcoal pt-4">Nos sourcés de données</h2>
           <p>
-            Toutes les données utilisées dans notre calculateur et nos articles proviennent de sources publiques et vérifiables :
+            Toutes les données utilisées dans notre calculateur et nos articles proviennent de sourcés publiques et vérifiables :
           </p>
           <ul className="list-none space-y-2 pl-0">
             <li className="flex items-start gap-2">

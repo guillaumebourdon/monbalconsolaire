@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Ai-je le droit d\'installér un panneau solaire sur mon balcon en tant que locataire ?', answer: 'Oui, a condition que l\'installation soit amovible (pas de perçage, pas de modification du batiment). Un kit pose au sol ou en appui sur la rambarde sans fixation permanente ne nécessite pas l\'accord du propriétaire.' },
+  { question: 'Ai-je le droit d\'installér un panneau solaire sur mon balcon en tant que locataire ?', answer: 'Oui, à condition que l\'installation soit amovible (pas de perçage, pas de modification du batiment). Un kit pose au sol ou en appui sur la rambarde sans fixation permanente ne nécessite pas l\'accord du propriétaire.' },
   { question: 'Faut-il prévenir mon propriétaire ?', answer: 'Legalement non, si l\'installation est amovible. Par courtoisie et pour éviter tout malentendu, un simple message informatif est recommandé. Certains propriétaires apprecient meme l\'initiative (ca valorise le logement).' },
-  { question: 'Et la copropriété ?', answer: 'Si votre kit est pose au sol sur votre balcon sans modifiér l\'aspect du batiment, la copropriété n\'a pas son mot a dire. Si vous fixez le panneau en facade ou sur la rambarde de maniere visible et permanente, il faut obtenir l\'accord de l\'assemblee générale des copropriétaires.' },
+  { question: 'Et la copropriété ?', answer: 'Si votre kit est pose au sol sur votre balcon sans modifiér l\'aspect du batiment, la copropriété n\'a pas son mot à dire. Si vous fixez le panneau en facade ou sur la rambarde de maniere visible et permanente, il faut obtenir l\'accord de l\'assemblee générale des copropriétaires.' },
   { question: 'Que se passe-t-il si le syndic refuse ?', answer: 'Le syndic ne peut refuser une installation amovible qui ne modifié pas les parties communes. Si le refus concerne une fixation en facade, vous pouvez proposer un kit au sol (Sunology PLAY2 avec ballasts) qui ne nécessite aucune autorisation.' },
-  { question: 'Puis-je emporter mon panneau en demenageant ?', answer: 'Oui, c\'est l\'un des grands avantages des kits plug-and-play. Il suffit de debranchér, vider les ballasts, et emmener le kit dans votre nouveau logement. Pensez a refaire la déclaration CACSI aupres d\'Enedis pour la nouvelle adresse.' },
+  { question: 'Puis-je emporter mon panneau en demenageant ?', answer: 'Oui, c\'est l\'un des grands avantages des kits plug-and-play. Il suffit de debranchér, vider les ballasts, et emmener le kit dans votre nouveau logement. Pensez à refaire la déclaration CACSI aupres d\'Enedis pour la nouvelle adresse.' },
 ];
 
 export default function LocatairePage() {
@@ -33,7 +33,7 @@ export default function LocatairePage() {
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
-            <h2 className="font-bold text-lg mb-3">L&apos;essentiel a retenir</h2>
+            <h2 className="font-bold text-lg mb-3">L&apos;essentiel à retenir</h2>
             <ul className="space-y-2 text-sm text-charcoal-light">
               <li className="flex gap-2"><span className="text-green font-bold">&check;</span> Oui, un locataire peut installér un kit solaire plug-and-play sur son balcon</li>
               <li className="flex gap-2"><span className="text-green font-bold">&check;</span> Aucune autorisation du propriétaire si l&apos;installation est amovible</li>
@@ -46,7 +46,7 @@ export default function LocatairePage() {
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Locataire et panneau solaire : ce que dit la loi</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le principe juridique est simple : un locataire a le droit de jouir de son logement comme il l&apos;entend, a condition de ne pas le dégrader et de le restituer en bon etat. Un kit solaire plug-and-play <strong>amovible</strong> — c&apos;est-a-dire pose au sol sur le balcon sans perçage, sans fixation permanente, et retirable sans laisser de traces — ne constitue pas une modification du logement.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le principe juridique est simple : un locataire à le droit de jouir de son logement comme il l&apos;entend, à condition de ne pas le dégrader et de le restituer en bon etat. Un kit solaire plug-and-play <strong>amovible</strong> — c&apos;est-a-dire pose au sol sur le balcon sans perçage, sans fixation permanente, et retirable sans laisser de traces — ne constitue pas une modification du logement.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est exactement comme poser un barbecue, une jardiniere ou un meuble sur votre balcon : vous n&apos;avez pas besoin de l&apos;accord du propriétaire.</p>
 
               <div className="card bg-amber-pale/30 border-amber/10 my-6">
@@ -111,7 +111,7 @@ export default function LocatairePage() {
                   { t: 'Optimisez l\'orientation', d: 'Meme sur un balcon, vous avez souvent une marge de manoeuvre. Tournez le panneau au maximum vers le sud. Chaque degre compte.' },
                   { t: 'Ajustez l\'inclinaison par saison', d: 'Le Sunology PLAY2 permet 3 inclinaisons (27, 35, 42 degres). Inclinez plus en hiver (42) et moins en ete (27) pour suivre la course du soleil.' },
                   { t: 'Surface réfléchissante derriere', d: 'Si votre panneau est bifacial, posez-le devant un mur clair ou un sol clair. Le gain peut atteindre 5-15% de production supplémentaire.' },
-                  { t: 'Consommez pendant la journee', d: 'Sans batterie, vous consommez en temps réel. Programmez votre machine a laver, lave-vaisselle et chauffe-eau aux heures de soleil (10h-16h).' },
+                  { t: 'Consommez pendant la journee', d: 'Sans batterie, vous consommez en temps réel. Programmez votre machine à laver, lave-vaisselle et chauffe-eau aux heures de soleil (10h-16h).' },
                   { t: 'Nettoyez régulièrement', d: 'Un panneau poussiereux perd 5-10% de rendement. Un coup de chiffon humide tous les 2-3 mois suffit.' },
                 ].map((a, i) => (
                   <div key={i} className="card">
@@ -136,7 +136,7 @@ export default function LocatairePage() {
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
               <p className="font-semibold text-lg mb-2">Combien pouvez-vous économiser ?</p>
-              <p className="text-sm text-charcoal-light mb-4">Meme en appartement, votre balcon a du potentiel. Testez en 30 secondes.</p>
+              <p className="text-sm text-charcoal-light mb-4">Meme en appartement, votre balcon à du potentiel. Testez en 30 secondes.</p>
               <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes économies &rarr;</Link>
             </div>
           </div>

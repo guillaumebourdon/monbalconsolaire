@@ -10,7 +10,7 @@ const articles = [
   {
     slug: 'panneau-solaire-balcon-débutant',
     title: 'Panneau solaire balcon : le guide complet pour débutants',
-    excerpt: 'Fonctionnement, prix, rentabilité par ville, réglementation, erreurs a éviter. Tout ce qu\'il faut savoir avant de se lancer.',
+    excerpt: 'Fonctionnement, prix, rentabilité par ville, réglementation, erreurs à éviter. Tout ce qu\'il faut savoir avant de se lancer.',
     badge: 'Guide essentiel',
     date: '30 mars 2026',
     readTime: '15 min',
@@ -27,7 +27,7 @@ const articles = [
 
 const comingSoon = [
   { title: 'Panneau solaire balcon : réglementation 2026 complete', desc: 'Norme NF C 15-100, déclaration Enedis, copropriété : tout ce que dit la loi.' },
-  { title: 'Comment installér un kit solaire sur un balcon (pas a pas)', desc: 'Guide d\'installation illustre pour chaque type de kit.' },
+  { title: 'Comment installér un kit solaire sur un balcon (pas à pas)', desc: 'Guide d\'installation illustre pour chaque type de kit.' },
   { title: 'Panneau solaire balcon : quelle orientation choisir ?', desc: 'Sud, est, ouest, nord : impact sur la production et nos recommandations.' },
 ];
 
@@ -59,7 +59,7 @@ export default function GuideIndexPage() {
             <div key={i} className="card bg-cream/50">
               <h3 className="font-semibold text-sm">{c.title}</h3>
               <p className="text-xs text-stone mt-1">{c.desc}</p>
-              <span className="text-xs text-amber-dark font-medium mt-2 inline-block">A venir prochainement</span>
+              <span className="text-xs text-amber-dark font-medium mt-2 inline-block">À venir prochainement</span>
             </div>
           ))}
         </div>

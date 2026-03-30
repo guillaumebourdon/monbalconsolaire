@@ -60,7 +60,7 @@ export default function CalculateurPage() {
   const handleShare = () => {
     const url = window.location.origin + '/calculateur';
     const text = city && bestKit
-      ? `Mon balcon a ${city.name} a un score solaire de ${bestKit.score}/100 ! Je peux économiser ${bestKit.économies}\u20ac/an avec un kit solaire. Testez le votre :`
+      ? `Mon balcon à ${city.name} à un score solaire de ${bestKit.score}/100 ! Je peux économiser ${bestKit.économies}\u20ac/an avec un kit solaire. Testez le votre :`
       : 'Calculez combien vous pouvez économiser avec un panneau solaire sur votre balcon :';
     if (navigator.share) {
       navigator.share({ title: 'MonBalconSolaire - Score solaire', text, url });
@@ -83,7 +83,7 @@ export default function CalculateurPage() {
         <div className="text-center mb-10">
           <div className="badge-amber mb-4 inline-block">Calculateur gratuit</div>
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Votre balcon est-il rentable pour le solaire ?</h1>
-          <p className="text-charcoal-light">Répondez a 3 questions simples. Résultat en 30 secondes.</p>
+          <p className="text-charcoal-light">Répondez à 3 questions simples. Résultat en 30 secondes.</p>
         </div>
 
         <div className="flex items-center gap-3 mb-8">

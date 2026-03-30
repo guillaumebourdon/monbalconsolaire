@@ -10,8 +10,8 @@ const articles = [
   {
     slug: 'combien-rapporte-panneau-solaire-balcon',
     title: 'Combien rapporte un panneau solaire de balcon ? Calcul réel',
-    excerpt: 'Chiffres réels de production et d\'économies pour 7 villes françaises. Formule de calcul transparente, données PVGIS, 3 scenarios de prix EDF.',
-    badge: 'Analyse chiffree',
+    excerpt: 'Chiffres réels de production et d\'économies pour 7 villes françaises. Formule de calcul transparente, données PVGIS, 3 scénarios de prix EDF.',
+    badge: 'Analyse chiffrée',
     date: '30 mars 2026',
     readTime: '10 min',
   },
@@ -51,7 +51,7 @@ export default function BlogIndexPage() {
             <div key={i} className="card bg-cream/50">
               <h3 className="font-semibold text-sm">{c.title}</h3>
               <p className="text-xs text-stone mt-1">{c.desc}</p>
-              <span className="text-xs text-amber-dark font-medium mt-2 inline-block">A venir prochainement</span>
+              <span className="text-xs text-amber-dark font-medium mt-2 inline-block">À venir prochainement</span>
             </div>
           ))}
         </div>

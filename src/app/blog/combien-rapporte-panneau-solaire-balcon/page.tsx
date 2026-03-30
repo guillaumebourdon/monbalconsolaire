@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Combien rapporte un panneau solaire de balcon par an ?', answer: 'Avec un kit de 450W et le tarif EDF a 0,1940 euros/kWh, comptez 70 a 130 euros d\'économies par an selon votre region et votre exposition. Cela correspond a une production de 360 a 650 kWh par an.' },
-  { question: 'Est-ce que ca vaut le coup a Paris ?', answer: 'Oui. Un kit de 450W a Paris produit environ 400-480 kWh/an (exposition sud). Soit 78-93 euros d\'économies annuelles. Le ROI est atteint en 5-6 ans pour une garantie de 25 ans. C\'est moins rentable que Marseille mais ca reste un bon investissement.' },
-  { question: 'Le prix de l\'électricité va-t-il encore augmenter ?', answer: 'Tres probablement. La tendance sur 10 ans est de +4 a 5% par an. La fin de l\'ARENH en janvier 2026 pourrait accelerer la hausse. Chaque augmentation du tarif EDF améliore automatiquement la rentabilité de votre panneau.' },
+  { question: 'Combien rapporte un panneau solaire de balcon par an ?', answer: 'Avec un kit de 450W et le tarif EDF à 0,1940 euros/kWh, comptez 70 à 130 euros d\'économies par an selon votre region et votre exposition. Cela correspond à une production de 360 à 650 kWh par an.' },
+  { question: 'Est-ce que ca vaut le coup à Paris ?', answer: 'Oui. Un kit de 450W à Paris produit environ 400-480 kWh/an (exposition sud). Soit 78-93 euros d\'économies annuelles. Le ROI est atteint en 5-6 ans pour une garantie de 25 ans. C\'est moins rentable que Marseille mais ca reste un bon investissement.' },
+  { question: 'Le prix de l\'électricité va-t-il encore augmenter ?', answer: 'Tres probablement. La tendance sur 10 ans est de +4 à 5% par an. La fin de l\'ARENH en janvier 2026 pourrait accelerer la hausse. Chaque augmentation du tarif EDF améliore automatiquement la rentabilité de votre panneau.' },
   { question: 'Faut-il une batterie pour etre rentable ?', answer: 'Non. Sans batterie, vous consommez l\'électricité en temps réel (talon de consommation). C\'est deja rentable. Une batterie augmente l\'autoconsommation mais coute 500-1400 euros supplémentaires, ce qui allonge le temps de retour sur investissement.' },
 ];
 
@@ -35,7 +35,7 @@ export default function CombienRapportePage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Combien rapporte un panneau solaire" }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Analyse chiffree</div>
+            <div className="badge-amber mb-4 inline-block">Analyse chiffrée</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Combien rapporte un panneau solaire de balcon ? Calcul réel</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Pas de promesses marketing, pas d&apos;estimations floues. Voici les chiffres réels de production et d&apos;économies pour 7 villes françaises, bases sur les données officielles PVGIS et le tarif EDF 2026.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
@@ -85,7 +85,7 @@ export default function CombienRapportePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne). Tarif EDF 0,1940 &euro;/kWh (fevrier 2026). Coefficient de pertes : 0,85. Kit 450W = Sunology PLAY2 a 599&euro;. Kit 300W = Beem Kit a 299&euro;.</p>
+              <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne). Tarif EDF 0,1940 &euro;/kWh (fevrier 2026). Coefficient de pertes : 0,85. Kit 450W = Sunology PLAY2 à 599&euro;. Kit 300W = Beem Kit à 299&euro;.</p>
             </section>
 
             <section>
@@ -97,7 +97,7 @@ export default function CombienRapportePage() {
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h4 className="font-bold text-sm mb-1">A Paris avec un Beem Kit 300W</h4>
-                  <p className="text-xs text-charcoal-light">Vous produisez 281 kWh/an. C&apos;est moins, mais a 299&euro; le kit, le retour sur investissement est atteint en 3 ans et 10 mois. Sur 25 ans, vous économiséz plus de 1 375&euro; — soit 4,6x votre investissement initial.</p>
+                  <p className="text-xs text-charcoal-light">Vous produisez 281 kWh/an. C&apos;est moins, mais à 299&euro; le kit, le retour sur investissement est atteint en 3 ans et 10 mois. Sur 25 ans, vous économiséz plus de 1 375&euro; — soit 4,6x votre investissement initial.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1">A Lille avec un Sunology PLAY2</h4>
@@ -108,7 +108,7 @@ export default function CombienRapportePage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">L&apos;impact des hausses de prix de l&apos;électricité</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Les chiffres ci-dessus sont calcules avec le tarif actuel de 0,1940&euro;/kWh. Mais le prix de l&apos;électricité a augmente de 55% entre 2012 et 2026, soit une moyenne de +4 a 5% par an. Si cette tendance se poursuit :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Les chiffres ci-dessus sont calcules avec le tarif actuel de 0,1940&euro;/kWh. Mais le prix de l&apos;électricité à augmente de 55% entre 2012 et 2026, soit une moyenne de +4 à 5% par an. Si cette tendance se poursuit :</p>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 {[
                   { scenario: 'Tarif stable', tarif: '0,1940 \u20ac', eco25: '~2 400 \u20ac', desc: 'Hypothese basse (peu probable)' },
@@ -131,8 +131,8 @@ export default function CombienRapportePage() {
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 {[
                   { t: 'Orientation', impact: 'Fort', d: 'Sud = 100%. Sud-est/ouest = 93%. Est/Ouest = 80%. Nord = 45%. Un balcon nord divise la production par 2.' },
-                  { t: 'Ombrage', impact: 'Fort', d: 'Un arbre, un immeuble voisin, un auvent qui projette de l\'ombre sur le panneau réduit drastiquement la production. Meme une ombre partielle a un impact important.' },
-                  { t: 'Inclinaison', impact: 'Moyen', d: 'L\'optimal est 30-35 degres en France. Un panneau a plat (0 degres) perd ~15%. Un panneau vertical (90 degres, contre un mur) perd ~30%.' },
+                  { t: 'Ombrage', impact: 'Fort', d: 'Un arbre, un immeuble voisin, un auvent qui projette de l\'ombre sur le panneau réduit drastiquement la production. Meme une ombre partielle à un impact important.' },
+                  { t: 'Inclinaison', impact: 'Moyen', d: 'L\'optimal est 30-35 degres en France. Un panneau à plat (0 degres) perd ~15%. Un panneau vertical (90 degres, contre un mur) perd ~30%.' },
                   { t: 'Region', impact: 'Moyen', d: 'L\'ecart entre Marseille et Lille est d\'environ 50% de production. Mais le solaire reste rentable partout en France.' },
                 ].map((f, i) => (
                   <div key={i} className="card">

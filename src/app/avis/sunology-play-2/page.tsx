@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Le Sunology PLAY2 est-il vraiment rentable ?', answer: 'Oui. A 599 euros avec une production moyenne de 520 kWh/an (region lyonnaise, exposition sud), les économies sont d\'environ 100 euros/an au tarif EDF actuel. Le retour sur investissement est atteint en 3,5 a 5 ans selon la region, pour une garantie de 25 ans.' },
-  { question: 'Combien produit le Sunology PLAY2 en conditions réelles ?', answer: 'Les retours utilisateurs montrent une production de 450 kWh/an (region parisienne, exposition est) a plus de 650 kWh/an (Marseille, exposition sud). Sunology annonce 565 kWh/an comme moyenne nationale.' },
+  { question: 'Le Sunology PLAY2 est-il vraiment rentable ?', answer: 'Oui. A 599 euros avec une production moyenne de 520 kWh/an (region lyonnaise, exposition sud), les économies sont d\'environ 100 euros/an au tarif EDF actuel. Le retour sur investissement est atteint en 3,5 à 5 ans selon la region, pour une garantie de 25 ans.' },
+  { question: 'Combien produit le Sunology PLAY2 en conditions réelles ?', answer: 'Les retours utilisateurs montrent une production de 450 kWh/an (region parisienne, exposition est) à plus de 650 kWh/an (Marseille, exposition sud). Sunology annonce 565 kWh/an comme moyenne nationale.' },
   { question: 'Le PLAY2 fonctionne-t-il en appartement ?', answer: 'Oui. Le PLAY2 peut etre installé au sol sur un balcon ou une terrasse avec ses ballasts. Pour les balcons étroits, Sunology propose le modele CITY, spécifiquement concu pour les garde-corps.' },
-  { question: 'Quelle est la différence entre le PLAY2 et le PLAY MAX ?', answer: 'Le PLAY MAX inclut une batterie VAULT de 700 Wh (5h d\'autonomie supplémentaire) pour 1 179 euros. Le PLAY2 a 599 euros ne stocke pas : l\'électricité est consommee en temps réel ou injectee sur le reseau.' },
+  { question: 'Quelle est la différence entre le PLAY2 et le PLAY MAX ?', answer: 'Le PLAY MAX inclut une batterie VAULT de 700 Wh (5h d\'autonomie supplémentaire) pour 1 179 euros. Le PLAY2 à 599 euros ne stocke pas : l\'électricité est consommee en temps réel ou injectee sur le reseau.' },
 ];
 
 export default function AvisPage() {
@@ -63,10 +63,10 @@ export default function AvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Installation en 1 minute', d: 'Le chassis est pre-assemble en usine. Aucun outil, aucune vis, aucune connaissance technique. C\'est le kit le plus rapide a installér du marché.' },
-                  { t: 'Technologie bifaciale performante', d: 'Les cellules N-Type TOPCon bi-verre captent la lumiere sur les deux faces. Gain de 5 a 15% en pratique si la surface derriere est réfléchissante (mur clair, sol clair).' },
+                  { t: 'Installation en 1 minute', d: 'Le chassis est pre-assemble en usine. Aucun outil, aucune vis, aucune connaissance technique. C\'est le kit le plus rapide à installér du marché.' },
+                  { t: 'Technologie bifaciale performante', d: 'Les cellules N-Type TOPCon bi-verre captent la lumiere sur les deux faces. Gain de 5 à 15% en pratique si la surface derriere est réfléchissante (mur clair, sol clair).' },
                   { t: 'Suivi WiFi intégré', d: 'Le micro-onduleur est connecte en WiFi. Pas besoin de boitier supplémentaire. L\'app STREAM est claire et gratuite : production instantanee, historique, économies estimées.' },
-                  { t: 'Certification CE complete', d: 'Sunology est le seul fabricant a avoir la certification CE sur l\'ensemble du kit (panneau + onduleur + chassis), pas seulement sur le panneau.' },
+                  { t: 'Certification CE complete', d: 'Sunology est le seul fabricant à avoir la certification CE sur l\'ensemble du kit (panneau + onduleur + chassis), pas seulement sur le panneau.' },
                   { t: 'Evolutif jusqu\'a 1 800 Wc', d: 'Vous pouvez connecter jusqu\'a 4 stations PLAY2 en serie sur un meme circuit de prises pour multiplier votre production.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
@@ -111,7 +111,7 @@ export default function AvisPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed">En résumé : la production réelle est globalement conforme aux estimations de Sunology, a condition d&apos;avoir une exposition correcte (sud, sud-est ou sud-ouest). En exposition est ou ouest, attendez-vous a 15-20% de moins.</p>
+              <p className="text-charcoal-light leading-relaxed">En résumé : la production réelle est globalement conforme aux estimations de Sunology, à condition d&apos;avoir une exposition correcte (sud, sud-est ou sud-ouest). En exposition est ou ouest, attendez-vous à 15-20% de moins.</p>
             </section>
 
             <section>

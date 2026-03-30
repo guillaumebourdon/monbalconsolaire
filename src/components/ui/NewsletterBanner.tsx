@@ -31,7 +31,7 @@ export function NewsletterBanner() {
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         <div className="flex-1">
           <h3 className="font-bold text-lg mb-1">
-            &#9889; 7 erreurs a éviter avant d&apos;acheter un kit solaire
+            &#9889; 7 erreurs à éviter avant d&apos;acheter un kit solaire
           </h3>
           <p className="text-sm text-charcoal-light leading-relaxed">
             Recevez notre guide gratuit par email + nos meilleurs conseils pour économiser avec le solaire de balcon.

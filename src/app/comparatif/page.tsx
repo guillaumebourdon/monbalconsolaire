@@ -19,8 +19,8 @@ const articles = [
 
 const comingSoon = [
   { title: 'Sunology vs Beem : quel kit choisir ?', desc: 'Comparaison directe des deux leaders du marché français.' },
-  { title: 'Kit solaire avec batterie 2026 : comparatif stockage', desc: 'Sunology PLAY MAX vs Beem Battery vs EcoFlow : quel systeme de stockage choisir ?' },
-  { title: 'Meilleur kit solaire petit budget (moins de 400\u20ac)', desc: 'Les meilleures options pour debuter dans le solaire sans se ruiner.' },
+  { title: 'Kit solaire avec batterie 2026 : comparatif stockage', desc: 'Sunology PLAY MAX vs Beem Battery vs EcoFlow : quel système de stockage choisir ?' },
+  { title: 'Meilleur kit solaire petit budget (moins de 400\u20ac)', desc: 'Les meilleures options pour débuter dans le solaire sans se ruiner.' },
 ];
 
 export default function ComparatifIndexPage() {
@@ -29,7 +29,7 @@ export default function ComparatifIndexPage() {
       <div className="container-brand max-w-4xl">
         <div className="badge-green mb-4 inline-block">Comparatifs</div>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Comparatifs de kits solaires</h1>
-        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Des comparatifs indépendants, sources et transparents pour vous aider a choisir le kit solaire adapté a votre balcon.</p>
+        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Des comparatifs indépendants, sourcés et transparents pour vous aider à choisir le kit solaire adapté à votre balcon.</p>
 
         <div className="space-y-6 mb-12">
           {articles.map((a) => (
@@ -51,7 +51,7 @@ export default function ComparatifIndexPage() {
             <div key={i} className="card bg-cream/50">
               <h3 className="font-semibold text-sm">{c.title}</h3>
               <p className="text-xs text-stone mt-1">{c.desc}</p>
-              <span className="text-xs text-amber-dark font-medium mt-2 inline-block">A venir prochainement</span>
+              <span className="text-xs text-amber-dark font-medium mt-2 inline-block">À venir prochainement</span>
             </div>
           ))}
         </div>
