@@ -18,7 +18,7 @@ const faqData = [
 export default function InstallerKitPage() {
   return (
     <>
-      <SchemaArticle title="Comment installer un kit solaire sur un balcon : guide pas à pas" description="Guide d'installation complet pour kit solaire de balcon." url="https://monbalconsolaire.vercel.app/guide/installer-kit-solaire-balcon" datePublished="2026-03-30" />
+      <SchemaArticle title="Comment installer un kit solaire sur un balcon : guide pas à pas" description="Guide d'installation complet pour kit solaire de balcon." url="https://monbalconsolaire.vercel.app/guide/installer-kit-solaire-balcon" datePublished="2026-03-28" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -27,7 +27,7 @@ export default function InstallerKitPage() {
             <div className="badge-green mb-4 inline-block">Guide pratique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Comment installer un kit solaire sur un balcon : guide pas à pas</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">De l&apos;ouverture du carton au premier kWh produit : toutes les étapes pour installer votre kit solaire plug-and-play sans erreur.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>28 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">

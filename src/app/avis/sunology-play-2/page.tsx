@@ -19,7 +19,7 @@ const faqData = [
 export default function AvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.vercel.app/avis/sunology-play-2" datePublished="2026-03-30" />
+      <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.vercel.app/avis/sunology-play-2" datePublished="2026-03-19" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -28,7 +28,7 @@ export default function AvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis et test</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis : test complet et retour d&apos;experience (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Sunology PLAY2 est le kit solaire plug-and-play le plus vendu en France avec plus de 100 000 foyers équipés. Mais vaut-il vraiment ses 599&euro; ? Analyse détaillée.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/20 border-green/15 mb-10">

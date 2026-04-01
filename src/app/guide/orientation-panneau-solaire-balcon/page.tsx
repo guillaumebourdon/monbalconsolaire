@@ -20,7 +20,7 @@ const faqData = [
 export default function OrientationPage() {
   return (
     <>
-      <SchemaArticle title="Quelle orientation pour un panneau solaire de balcon ?" description="Impact de l'orientation sur la production solaire de balcon." url="https://monbalconsolaire.vercel.app/guide/orientation-panneau-solaire-balcon" datePublished="2026-03-30" />
+      <SchemaArticle title="Quelle orientation pour un panneau solaire de balcon ?" description="Impact de l'orientation sur la production solaire de balcon." url="https://monbalconsolaire.vercel.app/guide/orientation-panneau-solaire-balcon" datePublished="2026-03-29" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -29,7 +29,7 @@ export default function OrientationPage() {
             <div className="badge-green mb-4 inline-block">Guide pratique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Quelle orientation pour un panneau solaire de balcon ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sud, sud-est, est, ouest, nord : votre orientation change tout. Voici l&apos;impact réel sur la production, les économies et la rentabilité de votre kit solaire.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>29 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">

@@ -20,7 +20,7 @@ const faqData = [
 export default function LocatairePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon locataire : droits, regles et astuces" description="Guide complet pour les locataires souhaitant installér un panneau solaire sur leur balcon." url="https://monbalconsolaire.vercel.app/guide/panneau-solaire-balcon-locataire" datePublished="2026-03-30" />
+      <SchemaArticle title="Panneau solaire balcon locataire : droits, regles et astuces" description="Guide complet pour les locataires souhaitant installér un panneau solaire sur leur balcon." url="https://monbalconsolaire.vercel.app/guide/panneau-solaire-balcon-locataire" datePublished="2026-03-20" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -29,7 +29,7 @@ export default function LocatairePage() {
             <div className="badge-green mb-4 inline-block">Guide locataire</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon locataire : droits, regles et astuces</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous etes locataire et vous voulez reduire votre facture d&apos;électricité avec un panneau solaire ? Bonne nouvelle : c&apos;est possible, legal et simple. Voici tout ce qu&apos;il faut savoir.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">

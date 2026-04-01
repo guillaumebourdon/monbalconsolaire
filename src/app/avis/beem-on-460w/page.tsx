@@ -18,7 +18,7 @@ const faqData = [
 export default function BeemOnAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem On 460W avis : test complet et retour d'expérience" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.vercel.app/avis/beem-on-460w" datePublished="2026-03-30" />
+      <SchemaArticle title="Beem On 460W avis : test complet et retour d'expérience" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.vercel.app/avis/beem-on-460w" datePublished="2026-03-26" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -27,7 +27,7 @@ export default function BeemOnAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis et test</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 460W avis : test complet et retour d&apos;expérience (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Beem On est le concurrent direct du Sunology PLAY2. Même prix, 10 Wc de plus, mais est-il vraiment meilleur ? Notre analyse complète.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/20 border-amber/15 mb-10">

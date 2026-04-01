@@ -19,7 +19,7 @@ const faqData = [
 export default function SunologyVsBeemPage() {
   return (
     <>
-      <SchemaArticle title="Sunology vs Beem 2026 : quel kit solaire choisir ?" description="Comparaison détaillée Sunology PLAY2 vs Beem On 460W." url="https://monbalconsolaire.vercel.app/comparatif/sunology-vs-beem" datePublished="2026-03-30" />
+      <SchemaArticle title="Sunology vs Beem 2026 : quel kit solaire choisir ?" description="Comparaison détaillée Sunology PLAY2 vs Beem On 460W." url="https://monbalconsolaire.vercel.app/comparatif/sunology-vs-beem" datePublished="2026-03-24" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -28,7 +28,7 @@ export default function SunologyVsBeemPage() {
             <div className="badge-green mb-4 inline-block">Comparatif 2026</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology vs Beem : quel kit solaire choisir en 2026 ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Les deux leaders français du solaire plug-and-play s&apos;affrontent. PLAY2 contre Beem On : on compare tout, point par point.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>24 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">

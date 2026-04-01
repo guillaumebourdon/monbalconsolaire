@@ -41,7 +41,7 @@ const sunologySpecs = [
 export default function ComparatifPage() {
   return (
     <>
-      <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.vercel.app/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-30" dateModified="2026-03-30" />
+      <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.vercel.app/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-17" dateModified="2026-03-30" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -52,7 +52,7 @@ export default function ComparatifPage() {
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Meilleur kit solaire plug and play 2026 : comparatif complet</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sunology PLAY2, Beem On, Sunethic F500 : quel kit choisir pour votre balcon ? Nous avons analyse les prix, les performances réelles et la rentabilité de chaque kit. Verdict indépendant.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>Mis à jour le 30 mars 2026</span>
+              <span>Mis à jour le 17 mars 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>

@@ -18,7 +18,7 @@ const faqData = [
 export default function PetitBudgetPage() {
   return (
     <>
-      <SchemaArticle title="Meilleur kit solaire petit budget 2026 : moins de 400€" description="Comparatif des kits solaires les plus abordables en 2026." url="https://monbalconsolaire.vercel.app/comparatif/kit-solaire-petit-budget" datePublished="2026-03-30" />
+      <SchemaArticle title="Meilleur kit solaire petit budget 2026 : moins de 400€" description="Comparatif des kits solaires les plus abordables en 2026." url="https://monbalconsolaire.vercel.app/comparatif/kit-solaire-petit-budget" datePublished="2026-03-25" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -27,7 +27,7 @@ export default function PetitBudgetPage() {
             <div className="badge-amber mb-4 inline-block">Petit budget</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Meilleur kit solaire petit budget : moins de 400€</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous voulez tester le solaire de balcon sans vous ruiner ? Voici les meilleures options à moins de 400€ en 2026.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>25 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="space-y-10">

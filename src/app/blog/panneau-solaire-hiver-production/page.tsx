@@ -18,7 +18,7 @@ const faqData = [
 export default function HiverProductionPage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire en hiver : combien ça produit vraiment ?" description="Données réelles de production solaire hivernale par région." url="https://monbalconsolaire.vercel.app/blog/panneau-solaire-hiver-production" datePublished="2026-03-30" />
+      <SchemaArticle title="Panneau solaire en hiver : combien ça produit vraiment ?" description="Données réelles de production solaire hivernale par région." url="https://monbalconsolaire.vercel.app/blog/panneau-solaire-hiver-production" datePublished="2026-03-31" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -27,7 +27,7 @@ export default function HiverProductionPage() {
             <div className="badge-green mb-4 inline-block">Données réelles</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire en hiver : combien ça produit vraiment ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">La question que tout le monde se pose : est-ce que ça vaut le coup quand il fait gris ? Spoiler : oui, et voici les chiffres.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>31 mars 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
           </div>
 
           <div className="space-y-10">

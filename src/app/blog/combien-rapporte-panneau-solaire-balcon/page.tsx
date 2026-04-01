@@ -29,7 +29,7 @@ const cityData = [
 export default function CombienRapportePage() {
   return (
     <>
-      <SchemaArticle title="Combien rapporte un panneau solaire de balcon ? Calcul réel" description="Calcul réel de la rentabilité d'un panneau solaire de balcon par ville." url="https://monbalconsolaire.vercel.app/blog/combien-rapporte-panneau-solaire-balcon" datePublished="2026-03-30" />
+      <SchemaArticle title="Combien rapporte un panneau solaire de balcon ? Calcul réel" description="Calcul réel de la rentabilité d'un panneau solaire de balcon par ville." url="https://monbalconsolaire.vercel.app/blog/combien-rapporte-panneau-solaire-balcon" datePublished="2026-03-21" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -38,7 +38,7 @@ export default function CombienRapportePage() {
             <div className="badge-amber mb-4 inline-block">Analyse chiffrée</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Combien rapporte un panneau solaire de balcon ? Calcul réel</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Pas de promesses marketing, pas d&apos;estimations floues. Voici les chiffres réels de production et d&apos;économies pour 7 villes françaises, bases sur les données officielles PVGIS et le tarif EDF 2026.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>21 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">

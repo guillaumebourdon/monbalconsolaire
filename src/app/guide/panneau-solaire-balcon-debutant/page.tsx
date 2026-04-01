@@ -21,7 +21,7 @@ const faqData = [
 export default function GuidePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.vercel.app/guide/panneau-solaire-balcon-débutant" datePublished="2026-03-30" />
+      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.vercel.app/guide/panneau-solaire-balcon-débutant" datePublished="2026-03-18" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -30,7 +30,7 @@ export default function GuidePage() {
             <div className="badge-green mb-4 inline-block">Guide complet</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : le guide complet pour débutants</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installér un kit solaire sur votre balcon en 2026 : fonctionnement, prix, rentabilité, réglementation, et les erreurs à éviter.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026</span><span>&middot;</span><span>15 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>18 mars 2026</span><span>&middot;</span><span>15 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
