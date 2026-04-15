@@ -18,7 +18,7 @@ const faqData = [
 export default function HiverProductionPage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire en hiver : combien ça produit vraiment ?" description="Données réelles de production solaire hivernale par région." url="https://monbalconsolaire.vercel.app/blog/panneau-solaire-hiver-production" datePublished="2026-03-31" />
+      <SchemaArticle title="Panneau solaire en hiver : combien ça produit vraiment ?" description="Données réelles de production solaire hivernale par région." url="https://monbalconsolaire.fr/blog/panneau-solaire-hiver-production" datePublished="2026-03-31" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

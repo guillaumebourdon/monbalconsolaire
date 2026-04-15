@@ -20,7 +20,7 @@ const faqData = [
 export default function OrientationPage() {
   return (
     <>
-      <SchemaArticle title="Quelle orientation pour un panneau solaire de balcon ?" description="Impact de l'orientation sur la production solaire de balcon." url="https://monbalconsolaire.vercel.app/guide/orientation-panneau-solaire-balcon" datePublished="2026-03-29" />
+      <SchemaArticle title="Quelle orientation pour un panneau solaire de balcon ?" description="Impact de l'orientation sur la production solaire de balcon." url="https://monbalconsolaire.fr/guide/orientation-panneau-solaire-balcon" datePublished="2026-03-29" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

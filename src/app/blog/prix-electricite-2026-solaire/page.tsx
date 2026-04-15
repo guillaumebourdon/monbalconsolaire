@@ -18,7 +18,7 @@ const faqData = [
 export default function PrixElectricitePage() {
   return (
     <>
-      <SchemaArticle title="Prix de l'électricité 2026 : pourquoi le solaire devient incontournable" description="Analyse de l'évolution du prix de l'électricité en France." url="https://monbalconsolaire.vercel.app/blog/prix-electricite-2026-solaire" datePublished="2026-03-30" />
+      <SchemaArticle title="Prix de l'électricité 2026 : pourquoi le solaire devient incontournable" description="Analyse de l'évolution du prix de l'électricité en France." url="https://monbalconsolaire.fr/blog/prix-electricite-2026-solaire" datePublished="2026-03-30" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

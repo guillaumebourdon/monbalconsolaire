@@ -19,7 +19,7 @@ const faqData = [
 export default function SunologyVsBeemPage() {
   return (
     <>
-      <SchemaArticle title="Sunology vs Beem 2026 : quel kit solaire choisir ?" description="Comparaison détaillée Sunology PLAY2 vs Beem On 460W." url="https://monbalconsolaire.vercel.app/comparatif/sunology-vs-beem" datePublished="2026-03-24" />
+      <SchemaArticle title="Sunology vs Beem 2026 : quel kit solaire choisir ?" description="Comparaison détaillée Sunology PLAY2 vs Beem On 460W." url="https://monbalconsolaire.fr/comparatif/sunology-vs-beem" datePublished="2026-03-24" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

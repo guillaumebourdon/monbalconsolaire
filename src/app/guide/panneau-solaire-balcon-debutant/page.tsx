@@ -21,7 +21,7 @@ const faqData = [
 export default function GuidePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.vercel.app/guide/panneau-solaire-balcon-débutant" datePublished="2026-03-18" />
+      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-débutant" datePublished="2026-03-18" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

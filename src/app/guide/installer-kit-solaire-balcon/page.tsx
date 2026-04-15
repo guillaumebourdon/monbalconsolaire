@@ -18,7 +18,7 @@ const faqData = [
 export default function InstallerKitPage() {
   return (
     <>
-      <SchemaArticle title="Comment installer un kit solaire sur un balcon : guide pas à pas" description="Guide d'installation complet pour kit solaire de balcon." url="https://monbalconsolaire.vercel.app/guide/installer-kit-solaire-balcon" datePublished="2026-03-28" />
+      <SchemaArticle title="Comment installer un kit solaire sur un balcon : guide pas à pas" description="Guide d'installation complet pour kit solaire de balcon." url="https://monbalconsolaire.fr/guide/installer-kit-solaire-balcon" datePublished="2026-03-28" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

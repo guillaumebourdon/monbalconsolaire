@@ -20,7 +20,7 @@ const faqData = [
 export default function LocatairePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon locataire : droits, regles et astuces" description="Guide complet pour les locataires souhaitant installér un panneau solaire sur leur balcon." url="https://monbalconsolaire.vercel.app/guide/panneau-solaire-balcon-locataire" datePublished="2026-03-20" />
+      <SchemaArticle title="Panneau solaire balcon locataire : droits, regles et astuces" description="Guide complet pour les locataires souhaitant installér un panneau solaire sur leur balcon." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-locataire" datePublished="2026-03-20" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

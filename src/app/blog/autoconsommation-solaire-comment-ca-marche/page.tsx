@@ -20,7 +20,7 @@ const faqData = [
 export default function AutoconsommationPage() {
   return (
     <>
-      <SchemaArticle title="Autoconsommation solaire : comment ca marche concretement ?" description="L'autoconsommation solaire expliquee simplement." url="https://monbalconsolaire.vercel.app/blog/autoconsommation-solaire-comment-ca-marche" datePublished="2026-04-03" />
+      <SchemaArticle title="Autoconsommation solaire : comment ca marche concretement ?" description="L'autoconsommation solaire expliquee simplement." url="https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche" datePublished="2026-04-03" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

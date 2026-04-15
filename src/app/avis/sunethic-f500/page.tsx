@@ -18,7 +18,7 @@ const faqData = [
 export default function SunethicAvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunethic F500 avis : test du kit solaire Made in France" description="Avis complet sur le Sunethic F500." url="https://monbalconsolaire.vercel.app/avis/sunethic-f500" datePublished="2026-03-27" />
+      <SchemaArticle title="Sunethic F500 avis : test du kit solaire Made in France" description="Avis complet sur le Sunethic F500." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

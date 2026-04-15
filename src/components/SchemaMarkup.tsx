@@ -3,8 +3,8 @@ export function SchemaOrganization() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'MonBalconSolaire',
-    url: 'https://monbalconsolaire.vercel.app',
-    logo: 'https://monbalconsolaire.vercel.app/logo.png',
+    url: 'https://monbalconsolaire.fr',
+    logo: 'https://monbalconsolaire.fr/logo.png',
     description: 'Le guide indépendant des kits solaires pour balcon et appartement en France.',
     foundingDate: '2026',
     founder: {
@@ -31,7 +31,7 @@ export function SchemaWebSite() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'MonBalconSolaire',
-    url: 'https://monbalconsolaire.vercel.app',
+    url: 'https://monbalconsolaire.fr',
     description: 'Comparez les meilleurs kits solaires pour balcon, calculez vos économies réelles et passez au solaire sans travaux.',
     publisher: {
       '@type': 'Organization',
@@ -41,7 +41,7 @@ export function SchemaWebSite() {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://monbalconsolaire.vercel.app/blog?q={search_term_string}',
+        urlTemplate: 'https://monbalconsolaire.fr/blog?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -78,18 +78,18 @@ export function SchemaArticle({
     url,
     datePublished,
     dateModified: dateModified || datePublished,
-    image: image || 'https://monbalconsolaire.vercel.app/og-default.png',
+    image: image || 'https://monbalconsolaire.fr/og-default.png',
     author: {
       '@type': 'Organization',
       name: 'MonBalconSolaire',
-      url: 'https://monbalconsolaire.vercel.app',
+      url: 'https://monbalconsolaire.fr',
     },
     publisher: {
       '@type': 'Organization',
       name: 'MonBalconSolaire',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://monbalconsolaire.vercel.app/logo.png',
+        url: 'https://monbalconsolaire.fr/logo.png',
       },
     },
   };

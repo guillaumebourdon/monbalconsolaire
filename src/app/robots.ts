@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://monbalconsolaire.vercel.app/sitemap.xml',
+    sitemap: 'https://monbalconsolaire.fr/sitemap.xml',
   };
 }

@@ -18,7 +18,7 @@ const faqData = [
 export default function AccessoiresPage() {
   return (
     <>
-      <SchemaArticle title="5 accessoires indispensables pour votre kit solaire de balcon" description="Les accessoires qui ameliorent votre kit solaire de balcon." url="https://monbalconsolaire.vercel.app/blog/accessoires-kit-solaire-balcon" datePublished="2026-04-04" />
+      <SchemaArticle title="5 accessoires indispensables pour votre kit solaire de balcon" description="Les accessoires qui ameliorent votre kit solaire de balcon." url="https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon" datePublished="2026-04-04" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

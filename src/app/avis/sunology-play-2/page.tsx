@@ -19,7 +19,7 @@ const faqData = [
 export default function AvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.vercel.app/avis/sunology-play-2" datePublished="2026-03-19" />
+      <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

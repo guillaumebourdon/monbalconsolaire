@@ -29,7 +29,7 @@ const cityData = [
 export default function CombienRapportePage() {
   return (
     <>
-      <SchemaArticle title="Combien rapporte un panneau solaire de balcon ? Calcul réel" description="Calcul réel de la rentabilité d'un panneau solaire de balcon par ville." url="https://monbalconsolaire.vercel.app/blog/combien-rapporte-panneau-solaire-balcon" datePublished="2026-03-21" />
+      <SchemaArticle title="Combien rapporte un panneau solaire de balcon ? Calcul réel" description="Calcul réel de la rentabilité d'un panneau solaire de balcon par ville." url="https://monbalconsolaire.fr/blog/combien-rapporte-panneau-solaire-balcon" datePublished="2026-03-21" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

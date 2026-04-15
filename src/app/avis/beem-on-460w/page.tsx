@@ -18,7 +18,7 @@ const faqData = [
 export default function BeemOnAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem On 460W avis : test complet et retour d'expérience" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.vercel.app/avis/beem-on-460w" datePublished="2026-03-26" />
+      <SchemaArticle title="Beem On 460W avis : test complet et retour d'expérience" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

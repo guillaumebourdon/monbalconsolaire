@@ -19,7 +19,7 @@ const faqData = [
 export default function BeemKit300WAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem Kit 300W avis : test du kit solaire petit budget" description="Avis complet sur le Beem Kit 300W à 299€." url="https://monbalconsolaire.vercel.app/avis/beem-kit-300w" datePublished="2026-04-01" />
+      <SchemaArticle title="Beem Kit 300W avis : test du kit solaire petit budget" description="Avis complet sur le Beem Kit 300W à 299€." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

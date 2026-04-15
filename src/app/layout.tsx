@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     'comparatif kit solaire',
     'calculateur solaire',
   ],
-  authors: [{ name: 'MonBalconSolaire', url: 'https://monbalconsolaire.vercel.app' }],
+  authors: [{ name: 'MonBalconSolaire', url: 'https://monbalconsolaire.fr' }],
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://monbalconsolaire.vercel.app',
+    url: 'https://monbalconsolaire.fr',
     siteName: 'MonBalconSolaire',
     title: 'MonBalconSolaire — Le guide indépendant du solaire de balcon',
     description:
