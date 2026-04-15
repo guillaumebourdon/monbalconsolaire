@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Guides solaire balcon 2026',
-  description: 'Guides pratiques pour installér un kit solaire sur votre balcon. Réglementation, installation, rentabilité, droits des locataires.',
+  description: 'Guides pratiques pour installer un kit solaire sur votre balcon. Réglementation, installation, rentabilité, droits des locataires.',
 };
 
 const articles = [
@@ -37,7 +37,7 @@ export default function GuideIndexPage() {
       <div className="container-brand max-w-4xl">
         <div className="badge-green mb-4 inline-block">Guides pratiques</div>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Guides du solaire de balcon</h1>
-        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Tout ce qu&apos;il faut savoir pour installér un kit solaire sur votre balcon : réglementation, installation, droits des locataires, optimisation.</p>
+        <p className="text-charcoal-light text-lg mb-10 max-w-2xl">Tout ce qu&apos;il faut savoir pour installer un kit solaire sur votre balcon : réglementation, installation, droits des locataires, optimisation.</p>
 
         <div className="space-y-6 mb-12">
           {articles.map((a) => (
