@@ -11,6 +11,7 @@ const articles = [
   { slug: 'prix-electricite-2026-solaire', title: 'Prix de l electricite 2026 : pourquoi le solaire devient incontournable', excerpt: 'Evolution du tarif EDF, fin de l ARENH, projections 2030.', badge: 'Analyse', date: '30 mars 2026', readTime: '7 min' },
   { slug: 'panneau-solaire-hiver-production', title: 'Panneau solaire en hiver : combien ca produit vraiment ?', excerpt: 'Donnees de production mois par mois pour 3 villes.', badge: 'Donnees reelles', date: '31 mars 2026', readTime: '7 min' },
   { slug: 'autoconsommation-solaire-comment-ca-marche', title: 'Autoconsommation solaire : comment ca marche concretement ?', excerpt: 'Le principe explique simplement : talon de consommation, surplus, compteur Linky.', badge: 'Comprendre', date: '3 avril 2026', readTime: '8 min' },
+  { slug: 'accessoires-kit-solaire-balcon', title: '5 accessoires indispensables pour votre kit solaire de balcon', excerpt: 'Prise connectee, rallonge etanche, protege-surtension : les accessoires qui ameliorent votre installation.', badge: 'Equipement', date: '4 avril 2026', readTime: '6 min' },
 ];
 
 export default function BlogIndexPage() {
