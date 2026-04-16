@@ -11,6 +11,7 @@ const guides = [
   { slug: '/guide/panneau-solaire-balcon-locataire', title: 'Panneau solaire balcon locataire : droits, r\u00e8gles et astuces', badge: 'Locataires', readTime: '8 min' },
   { slug: '/guide/installer-kit-solaire-balcon', title: 'Comment installer un kit solaire sur un balcon : guide pas \u00e0 pas', badge: 'Installation', readTime: '8 min' },
   { slug: '/guide/orientation-panneau-solaire-balcon', title: 'Quelle orientation pour un panneau solaire de balcon ?', badge: 'Orientation', readTime: '8 min' },
+  { slug: '/guide/reglementation-panneau-solaire-balcon-2026', title: 'Panneau solaire balcon : ru00e9glementation 2026 complu00e8te', badge: 'Ru00e9glementation', readTime: '9 min' },
 ];
 
 const articles = [
