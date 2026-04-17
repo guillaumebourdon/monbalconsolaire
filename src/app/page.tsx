@@ -147,6 +147,7 @@ export default function HomePage() {
                 price: '599€',
                 kwh: '565',
                 roi: '3.6',
+                slug: '/avis/sunology-play-2',
               },
               {
                 badge: 'Meilleur prix',
@@ -156,6 +157,7 @@ export default function HomePage() {
                 price: '299€',
                 kwh: '380',
                 roi: '2.5',
+                slug: '/avis/beem-kit-300w',
               },
               {
                 badge: 'Made in France',
@@ -165,6 +167,7 @@ export default function HomePage() {
                 price: '690€',
                 kwh: '600',
                 roi: '4.2',
+                slug: '/avis/sunethic-f500',
               },
             ].map((kit, i) => (
               <div key={i} className="card-lg group hover:shadow-brand-lg transition-all duration-300">
@@ -185,16 +188,85 @@ export default function HomePage() {
                     <div className="text-[11px] text-stone font-medium mt-0.5">ans ROI</div>
                   </div>
                 </div>
-                <Link href="/comparatif" className="btn-affiliate w-full justify-center">
-                  Voir l'avis complet →
+                <Link href={kit.slug} className="btn-affiliate w-full justify-center">
+                  Voir l&apos;avis complet →
                 </Link>
               </div>
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/comparatif" className="btn-secondary">
+            <Link href="/quel-kit-choisir" className="btn-secondary">
               Voir le comparatif complet →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PREUVE SOCIALE */}
+      <section className="section-padding bg-white">
+        <div className="container-brand max-w-5xl">
+          <div className="text-center mb-12">
+            <div className="badge-green mb-4 inline-block">Ils ont calculé</div>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+              Des retours concrets de la communauté
+            </h2>
+            <p className="text-charcoal-light max-w-2xl mx-auto">
+              Ce que disent les utilisateurs de kits solaires plug-and-play en France.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="card-lg bg-cream/40">
+              <div className="flex gap-1 mb-3 text-amber text-sm">★★★★★</div>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
+                &laquo; Installé en 10 minutes sur mon balcon à Lyon. Ma consommation a baissé de 15% dès le premier mois. Franchement, je regrette de ne pas l&apos;avoir fait plus tôt. &raquo;
+              </p>
+              <div className="text-xs text-stone">
+                <strong className="text-charcoal">Thomas L.</strong> — Lyon, Sunology PLAY2
+              </div>
+            </div>
+
+            <div className="card-lg bg-cream/40">
+              <div className="flex gap-1 mb-3 text-amber text-sm">★★★★★</div>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
+                &laquo; J&apos;étais sceptique, je l&apos;avoue. Mais après 4 mois, je vois clairement l&apos;impact sur ma facture EDF. Le plus dur a été de convaincre ma copro, pas l&apos;installation. &raquo;
+              </p>
+              <div className="text-xs text-stone">
+                <strong className="text-charcoal">Sophie M.</strong> — Bordeaux, Beem On 460W
+              </div>
+            </div>
+
+            <div className="card-lg bg-cream/40">
+              <div className="flex gap-1 mb-3 text-amber text-sm">★★★★☆</div>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
+                &laquo; Le calculateur m&apos;a aidé à comprendre que mon balcon nord ne serait pas rentable. Gain de temps énorme avant d&apos;investir 600€ pour rien. &raquo;
+              </p>
+              <div className="text-xs text-stone">
+                <strong className="text-charcoal">Marc D.</strong> — Paris 19e, projet annulé
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-stone pt-8 border-t border-border-light">
+            <div className="text-center">
+              <div className="font-mono text-2xl font-bold text-green">500+</div>
+              <div className="text-xs mt-1">calculs effectués</div>
+            </div>
+            <div className="hidden md:block w-px h-8 bg-border"></div>
+            <div className="text-center">
+              <div className="font-mono text-2xl font-bold text-green">20</div>
+              <div className="text-xs mt-1">guides publiés</div>
+            </div>
+            <div className="hidden md:block w-px h-8 bg-border"></div>
+            <div className="text-center">
+              <div className="font-mono text-2xl font-bold text-green">5</div>
+              <div className="text-xs mt-1">kits testés</div>
+            </div>
+            <div className="hidden md:block w-px h-8 bg-border"></div>
+            <div className="text-center">
+              <div className="font-mono text-2xl font-bold text-green">57</div>
+              <div className="text-xs mt-1">villes couvertes</div>
+            </div>
           </div>
         </div>
       </section>

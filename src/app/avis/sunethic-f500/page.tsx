@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Sunethic F500 avis 2026 : test du kit solaire Made in France',
@@ -30,12 +31,17 @@ export default function SunethicAvisPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>27 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
-          <div className="card-lg bg-green-pale/20 border-green/15 mb-10">
-            <div className="flex items-start justify-between flex-wrap gap-4">
-              <div><div className="badge-green mb-2">Made in France</div><h3 className="font-bold text-xl">Sunethic F500</h3><p className="text-sm text-stone">Le choix éthique et puissant. Meilleure note Trustpilot du marché.</p></div>
-              <div className="text-right"><div className="font-mono text-3xl font-bold text-green">7.5<span className="text-lg text-stone">/10</span></div></div>
-            </div>
-          </div>
+          <ProductHero
+            brand="Sunethic"
+            name="F500"
+            power="500 Wc"
+            price="690 €"
+            score="7.5/10"
+            tagline="Le choix éthique et puissant. Made in France, meilleure note Trustpilot."
+            affiliateUrl="https://sunethic.fr/products/f500"
+            affiliateLabel="Voir sur le site du fabricant"
+            accentColor="green"
+          />
 
           <div className="space-y-10">
             <section>

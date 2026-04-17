@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Sunology PLAY 2 avis 2026 : test complet et retour d\'experience',
@@ -31,12 +32,17 @@ export default function AvisPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
-          <div className="card-lg bg-green-pale/20 border-green/15 mb-10">
-            <div className="flex items-start justify-between flex-wrap gap-4">
-              <div><div className="badge-green mb-2">Notre verdict</div><h3 className="font-bold text-xl">Sunology PLAY2</h3><p className="text-sm text-stone">Le meilleur kit solaire plug-and-play pour la majorite des utilisateurs.</p></div>
-              <div className="text-right"><div className="font-mono text-3xl font-bold text-green">8.5<span className="text-lg text-stone">/10</span></div></div>
-            </div>
-          </div>
+          <ProductHero
+            brand="Sunology"
+            name="PLAY 2"
+            power="450 Wc"
+            price="599 €"
+            score="8.5/10"
+            tagline="Le meilleur kit solaire plug-and-play pour la majorité des utilisateurs en France."
+            affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
+            affiliateLabel="Voir le PLAY 2 sur Sunology"
+            accentColor="green"
+          />
 
           <div className="space-y-10">
             <section>

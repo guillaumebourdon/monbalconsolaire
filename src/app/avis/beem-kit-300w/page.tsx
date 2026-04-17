@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Beem Kit 300W avis 2026 : test du kit solaire petit budget',
@@ -31,12 +32,17 @@ export default function BeemKit300WAvisPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
-          <div className="card-lg bg-amber-pale/20 border-amber/15 mb-10">
-            <div className="flex items-start justify-between flex-wrap gap-4">
-              <div><div className="badge-amber mb-2">Notre verdict</div><h3 className="font-bold text-xl">Beem Kit 300W</h3><p className="text-sm text-stone">Le meilleur choix pour découvrir le solaire sans se ruiner.</p></div>
-              <div className="text-right"><div className="font-mono text-3xl font-bold text-amber-dark">7.5<span className="text-lg text-stone">/10</span></div></div>
-            </div>
-          </div>
+          <ProductHero
+            brand="Beem Energy"
+            name="Kit 300W"
+            power="300 Wc"
+            price="299 €"
+            score="7.5/10"
+            tagline="Le meilleur choix pour découvrir le solaire sans se ruiner."
+            affiliateUrl="https://beemenergy.fr/products/beem-kit"
+            affiliateLabel="Voir sur le site du fabricant"
+            accentColor="amber"
+          />
 
           <div className="space-y-10">
             <section>

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Sunology PLAY MAX avis 2026 : kit solaire + batterie, ça vaut le coup ?',
@@ -31,12 +32,17 @@ export default function PlayMaxAvisPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>2 avril 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
-          <div className="card-lg bg-amber-pale/20 border-amber/15 mb-10">
-            <div className="flex items-start justify-between flex-wrap gap-4">
-              <div><div className="badge-amber mb-2">Notre verdict</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Intéressant si vous consommez le soir. Sinon, le PLAY2 seul suffit.</p></div>
-              <div className="text-right"><div className="font-mono text-3xl font-bold text-amber-dark">7<span className="text-lg text-stone">/10</span></div></div>
-            </div>
-          </div>
+          <ProductHero
+            brand="Sunology"
+            name="PLAY MAX"
+            power="450 Wc + 700 Wh"
+            price="1 179 €"
+            score="7/10"
+            tagline="Kit solaire avec batterie intégrée. Pour ceux qui consomment le soir."
+            affiliateUrl="https://sunology.eu/products/play-max"
+            affiliateLabel="Voir sur le site du fabricant"
+            accentColor="amber"
+          />
 
           <div className="space-y-10">
             <section>

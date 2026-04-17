@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Beem On 460W avis 2026 : test complet et retour d\'expérience',
@@ -30,12 +31,17 @@ export default function BeemOnAvisPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
-          <div className="card-lg bg-amber-pale/20 border-amber/15 mb-10">
-            <div className="flex items-start justify-between flex-wrap gap-4">
-              <div><div className="badge-amber mb-2">Notre verdict</div><h3 className="font-bold text-xl">Beem On 460W</h3><p className="text-sm text-stone">Excellent rapport qualité/prix, le meilleur concurrent du Sunology PLAY2.</p></div>
-              <div className="text-right"><div className="font-mono text-3xl font-bold text-amber-dark">8<span className="text-lg text-stone">/10</span></div></div>
-            </div>
-          </div>
+          <ProductHero
+            brand="Beem Energy"
+            name="Beem On 460W"
+            power="460 Wc"
+            price="599 €"
+            score="8/10"
+            tagline="Excellent rapport qualité/prix. Le meilleur concurrent du Sunology PLAY2."
+            affiliateUrl="https://beemenergy.fr/products/beem-on-460w"
+            affiliateLabel="Voir sur le site du fabricant"
+            accentColor="amber"
+          />
 
           <div className="space-y-10">
             <section>
