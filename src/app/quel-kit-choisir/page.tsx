@@ -1,89 +1,234 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Quel kit solaire choisir en 2026 ? Comparatifs et avis',
-  description: 'Comparatifs independants et avis detailles des meilleurs kits solaires plug-and-play pour balcon.',
-};
+type ArticleType = 'comparatif' | 'avis';
 
-const comparatifs = [
-  { slug: '/comparatif/meilleur-kit-solaire-2026', title: 'Meilleur kit solaire plug and play 2026 : comparatif complet', excerpt: 'Sunology PLAY2, Beem On, Beem Kit, Sunethic F500 : tableau comparatif, points forts/faibles, verdict par profil.', badge: 'Article phare' },
-  { slug: '/comparatif/sunology-vs-beem', title: 'Sunology vs Beem : quel kit choisir en 2026 ?', excerpt: 'Les deux leaders francais s affrontent. Comparaison point par point.', badge: 'Match direct' },
-  { slug: '/comparatif/kit-solaire-petit-budget', title: 'Meilleur kit solaire petit budget : moins de 400 euros', excerpt: 'Beem Kit 300W, kits Amazon : les meilleures options pour debuter.', badge: 'Petit budget' },
-  { slug: '/comparatif/kit-solaire-batterie-2026', title: 'Kit solaire avec batterie 2026 : comparatif stockage', excerpt: 'Sunology PLAY MAX, STOREY, EcoFlow : faut-il une batterie ?', badge: 'Stockage' },
-  { slug: '/comparatif/300w-vs-400w-vs-500w-puissance', title: '300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?', excerpt: 'Comparatif des 3 puissances les plus vendues : prix, production, profil adapté.', badge: 'Puissance' },
+interface Article {
+  slug: string;
+  title: string;
+  excerpt: string;
+  type: ArticleType;
+  badge: string;
+  tags: string[];
+  score?: string;
+  price?: string;
+  readTime?: string;
+}
+
+const ARTICLES: Article[] = [
+  {
+    slug: '/comparatif/meilleur-kit-solaire-2026',
+    title: 'Meilleur kit solaire plug and play 2026 : comparatif complet',
+    excerpt: 'Sunology PLAY2, Beem On, Beem Kit, Sunethic F500 : tableau comparatif, points forts/faibles, verdict par profil.',
+    type: 'comparatif',
+    badge: 'Article phare',
+    tags: ['best', 'comparatif'],
+    readTime: '12 min',
+  },
+  {
+    slug: '/comparatif/sunology-vs-beem',
+    title: 'Sunology vs Beem : quel kit choisir en 2026 ?',
+    excerpt: 'Les deux leaders français s\'affrontent. Comparaison point par point.',
+    type: 'comparatif',
+    badge: 'Match direct',
+    tags: ['marque', 'comparatif'],
+    readTime: '10 min',
+  },
+  {
+    slug: '/comparatif/kit-solaire-petit-budget',
+    title: 'Meilleur kit solaire petit budget : moins de 400 €',
+    excerpt: 'Beem Kit 300W, kits Amazon : les meilleures options pour débuter.',
+    type: 'comparatif',
+    badge: 'Petit budget',
+    tags: ['budget', 'comparatif'],
+    readTime: '8 min',
+  },
+  {
+    slug: '/comparatif/kit-solaire-batterie-2026',
+    title: 'Kit solaire avec batterie 2026 : comparatif stockage',
+    excerpt: 'Sunology PLAY MAX, STOREY, EcoFlow : faut-il une batterie ?',
+    type: 'comparatif',
+    badge: 'Stockage',
+    tags: ['stockage', 'comparatif'],
+    readTime: '10 min',
+  },
+  {
+    slug: '/comparatif/300w-vs-400w-vs-500w-puissance',
+    title: '300W vs 400W vs 500W : quelle puissance choisir ?',
+    excerpt: 'Comparatif des 3 puissances les plus vendues : prix, production, profil adapté.',
+    type: 'comparatif',
+    badge: 'Puissance',
+    tags: ['puissance', 'comparatif'],
+    readTime: '8 min',
+  },
+  {
+    slug: '/avis/sunology-play-2',
+    title: 'Sunology PLAY 2',
+    excerpt: 'Le leader du marché français. Notre test complet après 3 mois d\'usage.',
+    type: 'avis',
+    badge: 'Choix n°1',
+    tags: ['best', 'marque'],
+    score: '8.5/10',
+    price: '599 €',
+  },
+  {
+    slug: '/avis/beem-on-460w',
+    title: 'Beem On 460W',
+    excerpt: 'Le concurrent direct du PLAY2, avec un excellent rapport qualité/prix.',
+    type: 'avis',
+    badge: 'Qualité/prix',
+    tags: ['marque'],
+    score: '8/10',
+    price: '599 €',
+  },
+  {
+    slug: '/avis/sunethic-f500',
+    title: 'Sunethic F500',
+    excerpt: 'Made in France, éthique, puissant. Meilleure note Trustpilot du marché.',
+    type: 'avis',
+    badge: 'Made in France',
+    tags: ['puissance', 'marque'],
+    score: '7.5/10',
+    price: '690 €',
+  },
+  {
+    slug: '/avis/beem-kit-300w',
+    title: 'Beem Kit 300W',
+    excerpt: 'Le meilleur choix pour découvrir le solaire sans se ruiner.',
+    type: 'avis',
+    badge: 'Petit budget',
+    tags: ['budget'],
+    score: '7.5/10',
+    price: '299 €',
+  },
+  {
+    slug: '/avis/sunology-play-max',
+    title: 'Sunology PLAY MAX',
+    excerpt: 'Kit solaire avec batterie intégrée. Pour ceux qui consomment le soir.',
+    type: 'avis',
+    badge: 'Kit + batterie',
+    tags: ['stockage', 'marque'],
+    score: '7/10',
+    price: '1 179 €',
+  },
 ];
 
-const avis = [
-  { slug: '/avis/sunology-play-2', title: 'Sunology PLAY 2', score: '8.5/10', price: '599 \u20ac', badge: 'Choix n\u00b01' },
-  { slug: '/avis/beem-on-460w', title: 'Beem On 460W', score: '8/10', price: '599 \u20ac', badge: 'Qualit\u00e9/prix' },
-  { slug: '/avis/sunethic-f500', title: 'Sunethic F500', score: '7.5/10', price: '690 \u20ac', badge: 'Made in France' },
-  { slug: '/avis/beem-kit-300w', title: 'Beem Kit 300W', score: '7.5/10', price: '299 \u20ac', badge: 'Petit budget' },
-  { slug: '/avis/sunology-play-max', title: 'Sunology PLAY MAX', score: '7/10', price: '1 179 \u20ac', badge: 'Kit + batterie' },
+const FILTERS = [
+  { id: 'all', label: 'Tout voir', emoji: '✨' },
+  { id: 'best', label: 'Meilleurs choix', emoji: '⭐' },
+  { id: 'budget', label: 'Petit budget', emoji: '💰' },
+  { id: 'puissance', label: 'Par puissance', emoji: '⚡' },
+  { id: 'stockage', label: 'Avec batterie', emoji: '🔋' },
+  { id: 'marque', label: 'Par marque', emoji: '🏷️' },
 ];
 
 export default function QuelKitChoisirPage() {
+  const [filter, setFilter] = useState<string>('all');
+
+  const filteredArticles = filter === 'all'
+    ? ARTICLES
+    : ARTICLES.filter(a => a.tags.includes(filter));
+
   return (
     <section className="section-padding">
       <div className="container-brand max-w-4xl">
         <div className="text-center mb-8">
           <div className="badge-green mb-4 inline-block">Comparatifs &amp; avis</div>
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Quel kit solaire choisir ?</h1>
-          <p className="text-lg text-charcoal-light max-w-2xl mx-auto">Comparatifs ind&eacute;pendants et avis d&eacute;taill&eacute;s pour trouver le kit adapt&eacute; &agrave; votre balcon.</p>
+          <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
+            Comparatifs indépendants et avis détaillés pour trouver le kit adapté à votre balcon.
+          </p>
         </div>
 
-        <div className="flex justify-center gap-3 mb-12">
-          <a href="#comparatifs" className="px-5 py-2.5 bg-green text-white text-sm font-semibold rounded-xl hover:bg-green-dark transition-colors">Comparatifs (4)</a>
-          <a href="#avis" className="px-5 py-2.5 bg-amber-pale text-amber-dark text-sm font-semibold rounded-xl hover:bg-amber-light/30 transition-colors">Avis &amp; tests (5)</a>
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {FILTERS.map((f) => (
+            <button
+              key={f.id}
+              onClick={() => setFilter(f.id)}
+              className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ${
+                filter === f.id
+                  ? 'bg-green text-white shadow-brand'
+                  : 'bg-cream text-charcoal-light hover:bg-cream-dark'
+              }`}
+            >
+              <span className="mr-1.5">{f.emoji}</span>
+              {f.label}
+            </button>
+          ))}
         </div>
 
-        <div id="comparatifs" className="scroll-mt-24">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-1.5 h-8 bg-green rounded-full"></div>
-            <h2 className="font-extrabold text-2xl">Comparatifs</h2>
-            <span className="text-xs text-stone bg-cream-dark px-2 py-1 rounded-lg">{comparatifs.length} articles</span>
-          </div>
-          <div className="space-y-4 mb-14">
-            {comparatifs.map((c) => (
-              <Link key={c.slug} href={c.slug} className="card-lg block hover:shadow-brand-lg transition-shadow duration-300 group">
-                <div className="badge-green mb-3">{c.badge}</div>
-                <h3 className="font-bold text-lg group-hover:text-green transition-colors mb-2">{c.title}</h3>
-                <p className="text-sm text-charcoal-light">{c.excerpt}</p>
-                <span className="text-green font-semibold text-sm mt-3 inline-block">Lire le comparatif &rarr;</span>
-              </Link>
-            ))}
-          </div>
-        </div>
+        <p className="text-xs text-stone text-center mb-6">
+          {filteredArticles.length} {filteredArticles.length === 1 ? 'article' : 'articles'}
+          {filter !== 'all' && ` dans « ${FILTERS.find(f => f.id === filter)?.label} »`}
+        </p>
 
-        <div id="avis" className="scroll-mt-24">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-1.5 h-8 bg-amber rounded-full"></div>
-            <h2 className="font-extrabold text-2xl">Avis et tests</h2>
-            <span className="text-xs text-stone bg-cream-dark px-2 py-1 rounded-lg">{avis.length} produits test&eacute;s</span>
-          </div>
-          <div className="space-y-4 mb-12">
-            {avis.map((a) => (
-              <Link key={a.slug} href={a.slug} className="card-lg block hover:shadow-brand-lg transition-shadow duration-300 group">
-                <div className="flex items-center justify-between flex-wrap gap-4">
-                  <div>
-                    <div className="badge-amber mb-2">{a.badge}</div>
-                    <h3 className="font-bold text-lg group-hover:text-green transition-colors">{a.title}</h3>
+        <div className="space-y-4 mb-12">
+          {filteredArticles.map((a) => (
+            <Link
+              key={a.slug}
+              href={a.slug}
+              className="card-lg block hover:shadow-brand-lg transition-all duration-300 group"
+            >
+              <div className="flex items-start justify-between gap-4 flex-wrap">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md ${
+                      a.type === 'comparatif' ? 'bg-green text-white' : 'bg-amber text-white'
+                    }`}>
+                      {a.type === 'comparatif' ? 'Comparatif' : 'Avis produit'}
+                    </span>
+                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-md ${
+                      a.type === 'comparatif' ? 'bg-green-pale text-green' : 'bg-amber-pale text-amber-dark'
+                    }`}>
+                      {a.badge}
+                    </span>
                   </div>
-                  <div className="text-right">
-                    <div className="font-mono text-2xl font-bold text-green">{a.score}</div>
-                    <div className="text-sm text-stone font-mono">{a.price}</div>
+                  <h3 className="font-bold text-lg md:text-xl group-hover:text-green transition-colors mb-2 leading-tight">
+                    {a.title}
+                  </h3>
+                  <p className="text-sm text-charcoal-light leading-relaxed">{a.excerpt}</p>
+                  <div className="flex items-center gap-3 mt-3 text-xs text-stone">
+                    {a.readTime && <span>⏱ {a.readTime}</span>}
+                    {a.price && <span className="font-mono font-semibold text-charcoal">{a.price}</span>}
                   </div>
                 </div>
-                <span className="text-green font-semibold text-sm mt-3 inline-block">Lire l&apos;avis complet &rarr;</span>
-              </Link>
-            ))}
-          </div>
+
+                {a.score && (
+                  <div className="text-right flex-shrink-0">
+                    <div className="font-mono text-2xl font-bold text-green">{a.score}</div>
+                    <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-0.5">Note</div>
+                  </div>
+                )}
+              </div>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">
+                {a.type === 'comparatif' ? 'Lire le comparatif' : 'Lire l\'avis complet'} →
+              </span>
+            </Link>
+          ))}
         </div>
 
+        {filteredArticles.length === 0 && (
+          <div className="card-lg text-center mb-12">
+            <p className="text-charcoal-light">Aucun article ne correspond à ce filtre pour le moment.</p>
+            <button
+              onClick={() => setFilter('all')}
+              className="text-green font-semibold text-sm mt-3 hover:underline"
+            >
+              Voir tous les articles →
+            </button>
+          </div>
+        )}
+
         <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
-          <p className="font-semibold text-lg mb-2">Pas s&ucirc;r de votre choix ?</p>
-          <p className="text-sm text-charcoal-light mb-4">Notre calculateur vous recommande le kit adapt&eacute; &agrave; votre situation.</p>
-          <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes &eacute;conomies &rarr;</Link>
+          <p className="font-semibold text-lg mb-2">Pas sûr de votre choix ?</p>
+          <p className="text-sm text-charcoal-light mb-4">
+            Notre calculateur vous recommande le kit adapté à votre situation.
+          </p>
+          <Link href="/calculateur" className="btn-primary inline-flex">
+            Calculer mes économies →
+          </Link>
         </div>
       </div>
     </section>
