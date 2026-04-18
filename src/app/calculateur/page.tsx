@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { CITIES, CityData } from '@/data/cities';
+import { CityData } from '@/data/cities';
 import { DEPARTMENTS, DepartmentData } from '@/data/departments';
 
 const ORIENTATIONS = [
@@ -26,28 +26,34 @@ const TARIF_KWH = 0.194;
 export default function CalculateurPage() {
   const [step, setStep] = useState(1);
   const [city, setCity] = useState<CityData | null>(null);
-  const [cityQuery, setCityQuery] = useState('');
+  const [query, setQuery] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [useDepartment, setUseDepartment] = useState(false);
-  const [selectedDept, setSelectedDept] = useState<string>('');
   const [orientation, setOrientation] = useState('');
   const [consoMensuelle, setConsoMensuelle] = useState('');
   const [shareStatus, setShareStatus] = useState<'idle' | 'copied'>('idle');
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const filteredCities = useMemo(() => {
-    if (!cityQuery || cityQuery.length < 2) return [];
-    const q = cityQuery.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    return CITIES.filter(c => {
-      const name = c.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      return name.startsWith(q) || name.includes(q);
-    }).slice(0, 8);
-  }, [cityQuery]);
+  const filteredDepartments = useMemo(() => {
+    if (!query || query.length < 1) return [];
+    const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    return DEPARTMENTS.filter(d => {
+      // Match par code (début de code : 7 → 70-79, 75 → 75)
+      if (d.code.toLowerCase().startsWith(q)) return true;
+      // Match par nom
+      const name = d.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      return name.includes(q);
+    }).sort((a, b) => {
+      // Tri numérique strict par code (01, 02, ..., 75, ..., 95, 2A, 2B)
+      const aNum = parseInt(a.code, 10);
+      const bNum = parseInt(b.code, 10);
+      if (isNaN(aNum) && isNaN(bNum)) return a.code.localeCompare(b.code);
+      if (isNaN(aNum)) return 1;
+      if (isNaN(bNum)) return -1;
+      return aNum - bNum;
+    }).slice(0, 10);
+  }, [query]);
 
-  // Construire un "CityData" à partir d'un département pour garder la même logique
-  const handleDepartmentSelect = (deptCode: string) => {
-    const dept = DEPARTMENTS.find(d => d.code === deptCode);
-    if (!dept) return;
+  const handleDepartmentSelect = (dept: DepartmentData) => {
     const cityFromDept: CityData = {
       name: dept.name,
       department: dept.code,
@@ -55,8 +61,7 @@ export default function CalculateurPage() {
       irradiation: dept.irradiation,
     };
     setCity(cityFromDept);
-    setCityQuery(dept.name);
-    setSelectedDept(deptCode);
+    setQuery(`${dept.code} — ${dept.name}`);
     setShowSuggestions(false);
     setStep(2);
   };
@@ -115,100 +120,57 @@ export default function CalculateurPage() {
           <span className="text-xs text-stone font-mono font-medium ml-2">{step <= 3 ? `${step}/3` : 'Résultats'}</span>
         </div>
 
-        {/* STEP 1: City */}
+        {/* STEP 1: Département */}
         {step === 1 && (
           <div className="card-lg">
-            <h2 className="font-bold text-xl mb-2">Ou se trouve votre balcon ?</h2>
-            <p className="text-sm text-stone mb-6">
-              {useDepartment
-                ? 'Sélectionnez votre département pour obtenir des données d\u0027ensoleillement.'
-                : 'Tapez le nom de votre ville ou sélectionnez votre département.'}
-            </p>
+            <h2 className="font-bold text-xl mb-2">Quel est votre département ?</h2>
+            <p className="text-sm text-stone mb-6">Tapez le numéro (ex : 75) ou le nom de votre département.</p>
 
-            {!useDepartment && (
-              <>
-                <div className="relative" onClick={e => e.stopPropagation()}>
-                  <input
-                    ref={inputRef}
-                    type="text"
-                    placeholder="Ex : Lyon, Marseille, Paris..."
-                    value={cityQuery}
-                    onChange={e => { setCityQuery(e.target.value); setShowSuggestions(true); setCity(null); }}
-                    onFocus={() => setShowSuggestions(true)}
-                    className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
-                    autoComplete="off"
-                  />
-                  {showSuggestions && filteredCities.length > 0 && (
-                    <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 overflow-hidden">
-                      {filteredCities.map((c, i) => (
-                        <button
-                          key={i}
-                          onClick={() => { setCity(c); setCityQuery(c.name); setShowSuggestions(false); setStep(2); }}
-                          className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0"
-                        >
-                          <div>
-                            <span className="font-semibold text-sm">{c.name}</span>
-                            <span className="text-xs text-stone ml-2">({c.department}) — {c.region}</span>
-                          </div>
-                          <span className="text-xs font-mono text-amber-dark">{c.irradiation} kWh/kWc</span>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                  {cityQuery.length >= 2 && filteredCities.length === 0 && showSuggestions && (
-                    <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand p-4 z-10">
-                      <p className="text-sm text-charcoal-light mb-3">Aucune ville trouvée avec ce nom.</p>
-                      <button
-                        onClick={() => { setUseDepartment(true); setShowSuggestions(false); setCityQuery(''); }}
-                        className="text-sm font-semibold text-green hover:underline"
-                      >
-                        → Choisir par département
-                      </button>
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-4 text-center">
-                  <button
-                    onClick={() => { setUseDepartment(true); setCityQuery(''); setCity(null); }}
-                    className="text-sm text-stone hover:text-green transition-colors"
-                  >
-                    Vous ne trouvez pas votre ville ? <span className="font-semibold underline">Choisir par département</span>
-                  </button>
-                </div>
-              </>
-            )}
-
-            {useDepartment && (
-              <>
-                <select
-                  value={selectedDept}
-                  onChange={e => handleDepartmentSelect(e.target.value)}
-                  className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
-                >
-                  <option value="">— Sélectionnez votre département —</option>
-                  {DEPARTMENTS.map((d) => (
-                    <option key={d.code} value={d.code}>
-                      {d.code} — {d.name} ({d.region})
-                    </option>
+            <div className="relative" onClick={e => e.stopPropagation()}>
+              <input
+                ref={inputRef}
+                type="text"
+                placeholder="Ex : 75, Paris, 13, Bouches-du-Rhône..."
+                value={query}
+                onChange={e => { setQuery(e.target.value); setShowSuggestions(true); setCity(null); }}
+                onFocus={() => setShowSuggestions(true)}
+                className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
+                autoComplete="off"
+              />
+              {showSuggestions && filteredDepartments.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 overflow-hidden max-h-80 overflow-y-auto">
+                  {filteredDepartments.map((d) => (
+                    <button
+                      key={d.code}
+                      onClick={() => handleDepartmentSelect(d)}
+                      className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0"
+                    >
+                      <div>
+                        <span className="font-mono text-sm text-amber-dark font-semibold mr-2">{d.code}</span>
+                        <span className="font-semibold text-sm">{d.name}</span>
+                        <span className="text-xs text-stone ml-2">— {d.region}</span>
+                      </div>
+                      <span className="text-xs font-mono text-green whitespace-nowrap">{d.irradiation} kWh/kWc</span>
+                    </button>
                   ))}
-                </select>
-
-                <div className="mt-4 text-center">
-                  <button
-                    onClick={() => { setUseDepartment(false); setSelectedDept(''); setCity(null); }}
-                    className="text-sm text-stone hover:text-green transition-colors"
-                  >
-                    ← Revenir à la recherche par ville
-                  </button>
                 </div>
-              </>
-            )}
+              )}
+              {query.length >= 1 && filteredDepartments.length === 0 && showSuggestions && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand p-4 z-10">
+                  <p className="text-sm text-stone">Aucun département trouvé. Essayez un code (ex : 75) ou un nom.</p>
+                </div>
+              )}
+            </div>
+
+            <p className="text-xs text-stone mt-3 text-center">
+              96 départements français couverts — données PVGIS officielles
+            </p>
 
             {city && (
               <div className="mt-4 card bg-green-pale/30 border-green/10">
                 <div className="flex justify-between items-center">
                   <div>
+                    <span className="font-mono text-sm text-amber-dark font-semibold mr-2">{city.department}</span>
                     <span className="font-semibold text-sm">{city.name}</span>
                     <span className="text-xs text-stone ml-2">{city.region}</span>
                   </div>
@@ -338,7 +300,7 @@ export default function CalculateurPage() {
 
             <p className="text-xs text-stone-light text-center leading-relaxed">
               Estimation basee sur les données PVGIS (Commission europeenne) et le tarif EDF de 0,1940 &euro;/kWh (fevrier 2026).{' '}
-              <button onClick={() => { setStep(1); setCity(null); setCityQuery(''); setOrientation(''); setConsoMensuelle(''); }} className="text-green hover:underline">&circlearrowleft; Recommencer</button>
+              <button onClick={() => { setStep(1); setCity(null); setQuery(''); setOrientation(''); setConsoMensuelle(''); }} className="text-green hover:underline">&circlearrowleft; Recommencer</button>
             </p>
           </div>
         )}
