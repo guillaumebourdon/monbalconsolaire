@@ -162,8 +162,9 @@ export default function CalculateurPage() {
               )}
             </div>
 
-            <p className="text-xs text-stone mt-3 text-center">
-              96 départements français couverts — données PVGIS officielles
+            <p className="text-xs text-stone mt-3 text-center leading-relaxed">
+              96 départements français couverts — données <strong>PVGIS officielles</strong>.<br />
+              <span className="text-stone-light">Votre département suffit : l&apos;irradiation varie de moins de 3 % entre une ville et son département.</span>
             </p>
 
             {city && (
