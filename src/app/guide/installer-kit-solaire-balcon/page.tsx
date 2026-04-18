@@ -126,6 +126,23 @@ export default function InstallerKitPage() {
                 ))}
               </div>
             </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
+              <div className="space-y-3">
+                <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation choisir</h4>
+                  <p className="text-xs text-charcoal-light mt-1">L'impact réel sur la production</p>
+                </Link>
+                <Link href="/blog/accessoires-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Les équipements pour optimiser</p>
+                </Link>
+                <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
+                </Link>
+              </div>
+            </section>
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">

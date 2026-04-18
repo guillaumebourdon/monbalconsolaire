@@ -146,6 +146,23 @@ export default function CoproprietePage() {
                 ))}
               </div>
             </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
+              <div className="space-y-3">
+                <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, 900W</p>
+                </Link>
+                <Link href="/guide/panneau-solaire-balcon-locataire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide locataires</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Vos droits en tant que locataire</p>
+                </Link>
+                <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutants</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le guide complet pour démarrer</p>
+                </Link>
+              </div>
+            </section>
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Loi du 10 juillet 1965, Code de l&apos;&eacute;nergie, AFNOR NF C 15-100. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>

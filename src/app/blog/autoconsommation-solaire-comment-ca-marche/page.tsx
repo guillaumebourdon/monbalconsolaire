@@ -147,6 +147,23 @@ export default function AutoconsommationPage() {
                 ))}
               </div>
             </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
+              <div className="space-y-3">
+                <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé de rentabilité</p>
+                </Link>
+                <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits avec batterie 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Pour ceux qui consomment le soir</p>
+                </Link>
+                <Link href="/blog/prix-electricite-2026-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prix de l'électricité 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Pourquoi le solaire devient incontournable</p>
+                </Link>
+              </div>
+            </section>
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Enedis, PVGIS, EDF tarifs 2026. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>

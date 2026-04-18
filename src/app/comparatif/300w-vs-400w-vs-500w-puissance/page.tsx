@@ -209,6 +209,23 @@ export default function PuissanceComparatif() {
                 ))}
               </div>
             </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
+              <div className="space-y-3">
+                <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h4>
+                  <p className="text-xs text-charcoal-light mt-1">La meilleure option petit budget</p>
+                </Link>
+                <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
+                </Link>
+                <Link href="/avis/sunethic-f500" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunethic F500</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Made in France, 500W bifacial</p>
+                </Link>
+              </div>
+            </section>
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Donn&eacute;es PVGIS, sp&eacute;cifications fabricants 2026, Norme NF C 15-100. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>

@@ -134,6 +134,24 @@ export default function LocatairePage() {
               </div>
             </section>
 
+            <section className="mb-10">
+              <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
+              <div className="space-y-3">
+                <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, 900W</p>
+                </Link>
+                <Link href="/guide/panneau-solaire-copropriete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Solaire en copropriété</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Règles, votes, modèle de courrier</p>
+                </Link>
+                <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutants</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le guide complet pour démarrer</p>
+                </Link>
+              </div>
+            </section>
+
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
               <p className="font-semibold text-lg mb-2">Combien pouvez-vous économiser ?</p>
               <p className="text-sm text-charcoal-light mb-4">Meme en appartement, votre balcon à du potentiel. Testez en 30 secondes.</p>

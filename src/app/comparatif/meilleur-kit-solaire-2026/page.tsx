@@ -274,6 +274,23 @@ export default function ComparatifPage() {
                 ))}
               </div>
             </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
+              <div className="space-y-3">
+                <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
+                </Link>
+                <Link href="/avis/beem-on-460w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 460W</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Excellent rapport qualité/prix</p>
+                </Link>
+                <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
+                </Link>
+              </div>
+            </section>
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
