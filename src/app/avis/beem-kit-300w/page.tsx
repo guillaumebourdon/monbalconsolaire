@@ -39,7 +39,7 @@ export default function BeemKit300WAvisPage() {
             price="299 €"
             score="7.5/10"
             tagline="Le meilleur choix pour découvrir le solaire sans se ruiner."
-            affiliateUrl="https://beemenergy.fr/products/beem-kit"
+            affiliateUrl="https://beemenergy.fr/products/kit-beem"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
           />

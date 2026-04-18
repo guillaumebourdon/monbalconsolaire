@@ -38,7 +38,7 @@ export default function BeemOnAvisPage() {
             price="599 €"
             score="8/10"
             tagline="Excellent rapport qualité/prix. Le meilleur concurrent du Sunology PLAY2."
-            affiliateUrl="https://beemenergy.fr/products/beem-on-460w"
+            affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
           />

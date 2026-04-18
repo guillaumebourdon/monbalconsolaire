@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { HeroVisual } from '@/components/HeroVisual';
+import { siteStats } from '@/lib/stats';
 
 export const metadata: Metadata = {
   title: 'MonBalconSolaire — Calculez vos économies solaires en 30 secondes',
@@ -249,23 +250,23 @@ export default function HomePage() {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-stone pt-8 border-t border-border-light">
             <div className="text-center">
-              <div className="font-mono text-2xl font-bold text-green">500+</div>
+              <div className="font-mono text-2xl font-bold text-green">{siteStats.calculsEffectues}</div>
               <div className="text-xs mt-1">calculs effectués</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
             <div className="text-center">
-              <div className="font-mono text-2xl font-bold text-green">20</div>
+              <div className="font-mono text-2xl font-bold text-green">{siteStats.articlesPublies}</div>
               <div className="text-xs mt-1">guides publiés</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
             <div className="text-center">
-              <div className="font-mono text-2xl font-bold text-green">5</div>
+              <div className="font-mono text-2xl font-bold text-green">{siteStats.kitsTestes}</div>
               <div className="text-xs mt-1">kits testés</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
             <div className="text-center">
-              <div className="font-mono text-2xl font-bold text-green">57</div>
-              <div className="text-xs mt-1">villes couvertes</div>
+              <div className="font-mono text-2xl font-bold text-green">{siteStats.departementsCouverts}</div>
+              <div className="text-xs mt-1">départements couverts</div>
             </div>
           </div>
         </div>

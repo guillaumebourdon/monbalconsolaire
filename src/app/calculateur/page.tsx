@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { CITIES, CityData } from '@/data/cities';
+import { DEPARTMENTS, DepartmentData } from '@/data/departments';
 
 const ORIENTATIONS = [
   { value: 'sud', label: 'Sud', coeff: 1.0, emoji: '\u2600\ufe0f', desc: '100% du potentiel' },
@@ -27,6 +28,8 @@ export default function CalculateurPage() {
   const [city, setCity] = useState<CityData | null>(null);
   const [cityQuery, setCityQuery] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [useDepartment, setUseDepartment] = useState(false);
+  const [selectedDept, setSelectedDept] = useState<string>('');
   const [orientation, setOrientation] = useState('');
   const [consoMensuelle, setConsoMensuelle] = useState('');
   const [shareStatus, setShareStatus] = useState<'idle' | 'copied'>('idle');
@@ -40,6 +43,23 @@ export default function CalculateurPage() {
       return name.startsWith(q) || name.includes(q);
     }).slice(0, 8);
   }, [cityQuery]);
+
+  // Construire un "CityData" à partir d'un département pour garder la même logique
+  const handleDepartmentSelect = (deptCode: string) => {
+    const dept = DEPARTMENTS.find(d => d.code === deptCode);
+    if (!dept) return;
+    const cityFromDept: CityData = {
+      name: dept.name,
+      department: dept.code,
+      region: dept.region,
+      irradiation: dept.irradiation,
+    };
+    setCity(cityFromDept);
+    setCityQuery(dept.name);
+    setSelectedDept(deptCode);
+    setShowSuggestions(false);
+    setStep(2);
+  };
 
   const results = useMemo(() => {
     if (!city || !orientation || !consoMensuelle) return null;
@@ -99,41 +119,92 @@ export default function CalculateurPage() {
         {step === 1 && (
           <div className="card-lg">
             <h2 className="font-bold text-xl mb-2">Ou se trouve votre balcon ?</h2>
-            <p className="text-sm text-stone mb-6">Tapez le nom de votre ville pour obtenir des données d&apos;ensoleillement précises.</p>
-            <div className="relative" onClick={e => e.stopPropagation()}>
-              <input
-                ref={inputRef}
-                type="text"
-                placeholder="Ex : Lyon, Marseille, Paris..."
-                value={cityQuery}
-                onChange={e => { setCityQuery(e.target.value); setShowSuggestions(true); setCity(null); }}
-                onFocus={() => setShowSuggestions(true)}
-                className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
-                autoComplete="off"
-              />
-              {showSuggestions && filteredCities.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 overflow-hidden">
-                  {filteredCities.map((c, i) => (
-                    <button
-                      key={i}
-                      onClick={() => { setCity(c); setCityQuery(c.name); setShowSuggestions(false); setStep(2); }}
-                      className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0"
-                    >
-                      <div>
-                        <span className="font-semibold text-sm">{c.name}</span>
-                        <span className="text-xs text-stone ml-2">({c.department}) — {c.region}</span>
-                      </div>
-                      <span className="text-xs font-mono text-amber-dark">{c.irradiation} kWh/kWc</span>
-                    </button>
+            <p className="text-sm text-stone mb-6">
+              {useDepartment
+                ? 'Sélectionnez votre département pour obtenir des données d\u0027ensoleillement.'
+                : 'Tapez le nom de votre ville ou sélectionnez votre département.'}
+            </p>
+
+            {!useDepartment && (
+              <>
+                <div className="relative" onClick={e => e.stopPropagation()}>
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    placeholder="Ex : Lyon, Marseille, Paris..."
+                    value={cityQuery}
+                    onChange={e => { setCityQuery(e.target.value); setShowSuggestions(true); setCity(null); }}
+                    onFocus={() => setShowSuggestions(true)}
+                    className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
+                    autoComplete="off"
+                  />
+                  {showSuggestions && filteredCities.length > 0 && (
+                    <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 overflow-hidden">
+                      {filteredCities.map((c, i) => (
+                        <button
+                          key={i}
+                          onClick={() => { setCity(c); setCityQuery(c.name); setShowSuggestions(false); setStep(2); }}
+                          className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0"
+                        >
+                          <div>
+                            <span className="font-semibold text-sm">{c.name}</span>
+                            <span className="text-xs text-stone ml-2">({c.department}) — {c.region}</span>
+                          </div>
+                          <span className="text-xs font-mono text-amber-dark">{c.irradiation} kWh/kWc</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  {cityQuery.length >= 2 && filteredCities.length === 0 && showSuggestions && (
+                    <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand p-4 z-10">
+                      <p className="text-sm text-charcoal-light mb-3">Aucune ville trouvée avec ce nom.</p>
+                      <button
+                        onClick={() => { setUseDepartment(true); setShowSuggestions(false); setCityQuery(''); }}
+                        className="text-sm font-semibold text-green hover:underline"
+                      >
+                        → Choisir par département
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-4 text-center">
+                  <button
+                    onClick={() => { setUseDepartment(true); setCityQuery(''); setCity(null); }}
+                    className="text-sm text-stone hover:text-green transition-colors"
+                  >
+                    Vous ne trouvez pas votre ville ? <span className="font-semibold underline">Choisir par département</span>
+                  </button>
+                </div>
+              </>
+            )}
+
+            {useDepartment && (
+              <>
+                <select
+                  value={selectedDept}
+                  onChange={e => handleDepartmentSelect(e.target.value)}
+                  className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
+                >
+                  <option value="">— Sélectionnez votre département —</option>
+                  {DEPARTMENTS.map((d) => (
+                    <option key={d.code} value={d.code}>
+                      {d.code} — {d.name} ({d.region})
+                    </option>
                   ))}
+                </select>
+
+                <div className="mt-4 text-center">
+                  <button
+                    onClick={() => { setUseDepartment(false); setSelectedDept(''); setCity(null); }}
+                    className="text-sm text-stone hover:text-green transition-colors"
+                  >
+                    ← Revenir à la recherche par ville
+                  </button>
                 </div>
-              )}
-              {cityQuery.length >= 2 && filteredCities.length === 0 && showSuggestions && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand p-4 z-10">
-                  <p className="text-sm text-stone">Aucune ville trouvee. Essayez une grande ville proche.</p>
-                </div>
-              )}
-            </div>
+              </>
+            )}
+
             {city && (
               <div className="mt-4 card bg-green-pale/30 border-green/10">
                 <div className="flex justify-between items-center">

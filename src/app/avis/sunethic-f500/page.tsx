@@ -38,7 +38,7 @@ export default function SunethicAvisPage() {
             price="690 €"
             score="7.5/10"
             tagline="Le choix éthique et puissant. Made in France, meilleure note Trustpilot."
-            affiliateUrl="https://sunethic.fr/products/f500"
+            affiliateUrl="https://sunethic.fr/produits"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="green"
           />
