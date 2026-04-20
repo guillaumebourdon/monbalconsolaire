@@ -272,6 +272,86 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* LEAD MAGNET */}
+      <section className="section-padding bg-charcoal text-cream">
+        <div className="container-brand max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-amber text-charcoal mb-4">
+                Guide gratuit
+              </div>
+              <h2 className="font-extrabold text-3xl md:text-4xl mb-4 leading-tight">
+                7 erreurs à <span className="text-amber italic">éviter</span><br />
+                avant d&apos;acheter un kit solaire
+              </h2>
+              <p className="text-cream/80 text-lg leading-relaxed mb-6">
+                Les pièges que personne ne vous dit. 12 pages, 15 minutes de lecture, indispensable avant d&apos;investir 300 à 800 €.
+              </p>
+              <Link
+                href="/guide-gratuit"
+                className="inline-flex items-center gap-2 bg-amber text-charcoal font-bold text-sm uppercase tracking-wider px-6 py-3 rounded-brand hover:bg-amber-bright transition-colors"
+              >
+                📄 Télécharger le guide
+              </Link>
+              <p className="text-xs text-cream/50 mt-3">
+                Téléchargement immédiat · Pas besoin d&apos;email · PDF 120 Ko
+              </p>
+            </div>
+
+            {/* Preview PDF */}
+            <div className="md:justify-self-end">
+              <Link
+                href="/guide-gratuit"
+                className="block relative bg-cream rounded-brand shadow-2xl aspect-[1/1.414] w-full max-w-[280px] mx-auto p-6 overflow-hidden transform hover:rotate-0 rotate-2 transition-transform duration-300"
+              >
+                <div className="absolute -top-10 -right-10 w-40 h-40 opacity-60">
+                  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="sunHome" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#E8961A" stopOpacity="0.4"/>
+                        <stop offset="100%" stopColor="#E8961A" stopOpacity="0"/>
+                      </radialGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="100" fill="url(#sunHome)"/>
+                    <circle cx="100" cy="100" r="45" fill="none" stroke="#E8961A" strokeWidth="0.5" opacity="0.6"/>
+                    <circle cx="100" cy="100" r="35" fill="#E8961A" opacity="0.15"/>
+                  </svg>
+                </div>
+
+                <div className="relative z-10 border-b border-charcoal pb-2 flex justify-between items-start text-charcoal">
+                  <span className="font-serif font-bold text-[9px]">Monbalconsolaire<span className="text-amber font-black">.</span>fr</span>
+                  <span className="text-[7px] tracking-widest uppercase text-stone">N° 01/2026</span>
+                </div>
+
+                <div className="relative z-10 mt-10">
+                  <div className="text-[8px] tracking-widest uppercase text-green-dark font-semibold mb-2">— L&apos;essentiel</div>
+                  <h3 className="font-serif font-bold text-xl leading-tight text-charcoal">
+                    Sept <span className="italic text-green">erreurs</span><br />
+                    à éviter<br />
+                    avant d&apos;acheter<br />
+                    un kit solaire
+                  </h3>
+                </div>
+
+                <div className="absolute bottom-6 left-6 right-6 border-t border-charcoal pt-3 flex items-end">
+                  <div className="flex gap-3">
+                    <div>
+                      <div className="font-serif font-bold text-base text-charcoal leading-none">07</div>
+                      <div className="text-[6px] tracking-widest uppercase text-stone mt-0.5">Erreurs</div>
+                    </div>
+                    <div>
+                      <div className="font-serif font-bold text-base text-charcoal leading-none">15&apos;</div>
+                      <div className="text-[6px] tracking-widest uppercase text-stone mt-0.5">Lecture</div>
+                    </div>
+                  </div>
+                  <div className="ml-auto font-serif italic text-amber font-bold text-xs">Gratuit.</div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA CALCULATOR */}
       <section className="section-padding">
         <div className="container-brand">
