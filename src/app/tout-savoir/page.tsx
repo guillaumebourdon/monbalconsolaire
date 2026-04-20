@@ -117,6 +117,15 @@ const ARTICLES: Article[] = [
     tags: ['optimisation'],
     readTime: '6 min',
   },
+  {
+    slug: '/blog/kit-solaire-plug-and-play-arnaque',
+    title: 'Kit solaire plug-and-play : arnaque ou bon investissement ?',
+    excerpt: 'Analyse honnête du marché en 2026 : vraies arnaques, idées reçues, ROI réel.',
+    type: 'analyse',
+    badge: 'Analyse',
+    tags: ['debutant', 'rentabilite'],
+    readTime: '10 min',
+  },
 ];
 
 const FILTERS = [
