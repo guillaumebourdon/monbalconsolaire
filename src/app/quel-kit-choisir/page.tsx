@@ -15,6 +15,8 @@ interface Article {
   score?: string;
   price?: string;
   readTime?: string;
+  publishedAt: string;
+  updatedAt?: string;
 }
 
 const ARTICLES: Article[] = [
@@ -25,6 +27,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Article phare',
     tags: ['best', 'comparatif'],
+    publishedAt: '2026-03-17',
     readTime: '12 min',
   },
   {
@@ -34,6 +37,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Match direct',
     tags: ['marque', 'comparatif'],
+    publishedAt: '2026-03-24',
     readTime: '10 min',
   },
   {
@@ -43,6 +47,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Petit budget',
     tags: ['budget', 'comparatif'],
+    publishedAt: '2026-03-25',
     readTime: '8 min',
   },
   {
@@ -52,6 +57,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Stockage',
     tags: ['stockage', 'comparatif'],
+    publishedAt: '2026-03-31',
     readTime: '10 min',
   },
   {
@@ -61,6 +67,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Puissance',
     tags: ['puissance', 'comparatif'],
+    publishedAt: '2026-04-18',
     readTime: '8 min',
   },
   {
@@ -70,6 +77,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Choix n°1',
     tags: ['best', 'marque'],
+    publishedAt: '2026-03-19',
     score: '8.5/10',
     price: '599 €',
   },
@@ -80,6 +88,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Qualité/prix',
     tags: ['marque'],
+    publishedAt: '2026-03-26',
     score: '8/10',
     price: '599 €',
   },
@@ -90,6 +99,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Made in France',
     tags: ['puissance', 'marque'],
+    publishedAt: '2026-03-27',
     score: '7.5/10',
     price: '690 €',
   },
@@ -100,6 +110,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Petit budget',
     tags: ['budget'],
+    publishedAt: '2026-04-01',
     score: '7.5/10',
     price: '299 €',
   },
@@ -110,6 +121,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Kit + batterie',
     tags: ['stockage', 'marque'],
+    publishedAt: '2026-04-02',
     score: '7/10',
     price: '1 179 €',
   },
@@ -127,9 +139,30 @@ const FILTERS = [
 export default function QuelKitChoisirPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const filteredArticles = filter === 'all'
+  const NOW = new Date('2026-04-19').getTime();
+  const NEW_THRESHOLD_DAYS = 14;
+  const UPDATED_THRESHOLD_DAYS = 30;
+
+  const isNew = (dateIso: string) => {
+    const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
+    return diff <= NEW_THRESHOLD_DAYS;
+  };
+  const isUpdated = (dateIso?: string) => {
+    if (!dateIso) return false;
+    const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
+    return diff <= UPDATED_THRESHOLD_DAYS;
+  };
+
+  const filteredArticles = (filter === 'all'
     ? ARTICLES
-    : ARTICLES.filter(a => a.tags.includes(filter));
+    : ARTICLES.filter(a => a.tags.includes(filter))
+  )
+    .slice()
+    .sort((a, b) => {
+      const aDate = Math.max(new Date(a.publishedAt).getTime(), a.updatedAt ? new Date(a.updatedAt).getTime() : 0);
+      const bDate = Math.max(new Date(b.publishedAt).getTime(), b.updatedAt ? new Date(b.updatedAt).getTime() : 0);
+      return bDate - aDate;
+    });
 
   return (
     <section className="section-padding">
@@ -184,6 +217,16 @@ export default function QuelKitChoisirPage() {
                     }`}>
                       {a.badge}
                     </span>
+                    {isNew(a.publishedAt) && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-green text-white animate-pulse">
+                        🆕 Nouveau
+                      </span>
+                    )}
+                    {!isNew(a.publishedAt) && isUpdated(a.updatedAt) && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-amber-pale text-amber-dark">
+                        ✨ Mis à jour
+                      </span>
+                    )}
                   </div>
                   <h3 className="font-bold text-lg md:text-xl group-hover:text-green transition-colors mb-2 leading-tight">
                     {a.title}

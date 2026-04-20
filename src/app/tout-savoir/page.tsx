@@ -13,6 +13,8 @@ interface Article {
   badge: string;
   tags: string[];
   readTime: string;
+  publishedAt: string;
+  updatedAt?: string;
 }
 
 const ARTICLES: Article[] = [
@@ -24,6 +26,7 @@ const ARTICLES: Article[] = [
     type: 'guide',
     badge: 'Guide essentiel',
     tags: ['debutant', 'guide'],
+    publishedAt: '2026-03-18',
     readTime: '15 min',
   },
   {
@@ -33,6 +36,7 @@ const ARTICLES: Article[] = [
     type: 'guide',
     badge: 'Locataires',
     tags: ['reglementation', 'guide'],
+    publishedAt: '2026-03-20',
     readTime: '8 min',
   },
   {
@@ -42,6 +46,7 @@ const ARTICLES: Article[] = [
     type: 'guide',
     badge: 'Installation',
     tags: ['installation', 'guide'],
+    publishedAt: '2026-03-28',
     readTime: '8 min',
   },
   {
@@ -51,6 +56,7 @@ const ARTICLES: Article[] = [
     type: 'guide',
     badge: 'Orientation',
     tags: ['optimisation', 'guide'],
+    publishedAt: '2026-03-29',
     readTime: '8 min',
   },
   {
@@ -60,6 +66,7 @@ const ARTICLES: Article[] = [
     type: 'guide',
     badge: 'Réglementation',
     tags: ['reglementation', 'guide'],
+    publishedAt: '2026-04-14',
     readTime: '9 min',
   },
   {
@@ -69,6 +76,7 @@ const ARTICLES: Article[] = [
     type: 'guide',
     badge: 'Copropriété',
     tags: ['reglementation', 'guide'],
+    publishedAt: '2026-04-17',
     readTime: '8 min',
   },
   // Analyses / blog
@@ -79,6 +87,7 @@ const ARTICLES: Article[] = [
     type: 'analyse',
     badge: 'Analyse chiffrée',
     tags: ['rentabilite'],
+    publishedAt: '2026-03-21',
     readTime: '10 min',
   },
   {
@@ -88,6 +97,7 @@ const ARTICLES: Article[] = [
     type: 'analyse',
     badge: 'Marché',
     tags: ['rentabilite'],
+    publishedAt: '2026-03-30',
     readTime: '7 min',
   },
   {
@@ -97,6 +107,7 @@ const ARTICLES: Article[] = [
     type: 'analyse',
     badge: 'Données réelles',
     tags: ['optimisation'],
+    publishedAt: '2026-03-31',
     readTime: '7 min',
   },
   {
@@ -106,6 +117,7 @@ const ARTICLES: Article[] = [
     type: 'analyse',
     badge: 'Comprendre',
     tags: ['debutant'],
+    publishedAt: '2026-04-03',
     readTime: '8 min',
   },
   {
@@ -115,6 +127,8 @@ const ARTICLES: Article[] = [
     type: 'analyse',
     badge: 'Équipement',
     tags: ['optimisation'],
+    publishedAt: '2026-04-04',
+    updatedAt: '2026-04-18',
     readTime: '6 min',
   },
   {
@@ -124,6 +138,7 @@ const ARTICLES: Article[] = [
     type: 'analyse',
     badge: 'Analyse',
     tags: ['debutant', 'rentabilite'],
+    publishedAt: '2026-04-19',
     readTime: '10 min',
   },
 ];
@@ -140,9 +155,32 @@ const FILTERS = [
 export default function ToutSavoirPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const filteredArticles = filter === 'all'
+  // Date de référence : aujourd'hui (on sort le badge "Nouveau" pendant 14 jours)
+  const NOW = new Date('2026-04-19').getTime();
+  const NEW_THRESHOLD_DAYS = 14;
+  const UPDATED_THRESHOLD_DAYS = 30;
+
+  const isNew = (dateIso: string) => {
+    const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
+    return diff <= NEW_THRESHOLD_DAYS;
+  };
+  const isUpdated = (dateIso?: string) => {
+    if (!dateIso) return false;
+    const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
+    return diff <= UPDATED_THRESHOLD_DAYS;
+  };
+
+  const filteredArticles = (filter === 'all'
     ? ARTICLES
-    : ARTICLES.filter(a => a.tags.includes(filter));
+    : ARTICLES.filter(a => a.tags.includes(filter))
+  )
+    .slice()
+    .sort((a, b) => {
+      // Tri par date la plus récente (publishedAt ou updatedAt, on prend le max)
+      const aDate = Math.max(new Date(a.publishedAt).getTime(), a.updatedAt ? new Date(a.updatedAt).getTime() : 0);
+      const bDate = Math.max(new Date(b.publishedAt).getTime(), b.updatedAt ? new Date(b.updatedAt).getTime() : 0);
+      return bDate - aDate;
+    });
 
   return (
     <section className="section-padding">
@@ -199,6 +237,16 @@ export default function ToutSavoirPage() {
                     }`}>
                       {a.badge}
                     </span>
+                    {isNew(a.publishedAt) && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-green text-white animate-pulse">
+                        🆕 Nouveau
+                      </span>
+                    )}
+                    {!isNew(a.publishedAt) && isUpdated(a.updatedAt) && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-amber-pale text-amber-dark">
+                        ✨ Mis à jour
+                      </span>
+                    )}
                   </div>
                   <h3 className="font-bold text-lg md:text-xl group-hover:text-green transition-colors mb-2 leading-tight">
                     {a.title}

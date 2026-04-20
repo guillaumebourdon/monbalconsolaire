@@ -11,6 +11,8 @@ interface Article {
   tags: string[];
   readTime: string;
   priceRange?: string;
+  publishedAt: string;
+  updatedAt?: string;
 }
 
 const ARTICLES: Article[] = [
@@ -20,6 +22,8 @@ const ARTICLES: Article[] = [
     excerpt: 'Prise connectée, wattmètre, rallonge étanche, support réglable : les indispensables pour maximiser votre installation.',
     badge: 'Guide essentiel',
     tags: ['essentiels', 'amazon'],
+    publishedAt: '2026-04-04',
+    updatedAt: '2026-04-18',
     readTime: '6 min',
     priceRange: '15-80 €',
   },
@@ -36,7 +40,25 @@ const FILTERS = [
 
 export default function AccessoiresPage() {
   const [filter, setFilter] = useState<string>('all');
-  const filteredArticles = filter === 'all' ? ARTICLES : ARTICLES.filter(a => a.tags.includes(filter));
+
+  const NOW = new Date('2026-04-19').getTime();
+  const isNew = (dateIso: string) => {
+    const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
+    return diff <= 14;
+  };
+  const isUpdated = (dateIso?: string) => {
+    if (!dateIso) return false;
+    const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
+    return diff <= 30;
+  };
+
+  const filteredArticles = (filter === 'all' ? ARTICLES : ARTICLES.filter(a => a.tags.includes(filter)))
+    .slice()
+    .sort((a, b) => {
+      const aDate = Math.max(new Date(a.publishedAt).getTime(), a.updatedAt ? new Date(a.updatedAt).getTime() : 0);
+      const bDate = Math.max(new Date(b.publishedAt).getTime(), b.updatedAt ? new Date(b.updatedAt).getTime() : 0);
+      return bDate - aDate;
+    });
 
   return (
     <section className="section-padding">
@@ -77,6 +99,16 @@ export default function AccessoiresPage() {
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-amber text-white">Accessoires</span>
                     <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-pale text-amber-dark">{a.badge}</span>
+                    {isNew(a.publishedAt) && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-green text-white animate-pulse">
+                        🆕 Nouveau
+                      </span>
+                    )}
+                    {!isNew(a.publishedAt) && isUpdated(a.updatedAt) && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-amber-pale text-amber-dark">
+                        ✨ Mis à jour
+                      </span>
+                    )}
                   </div>
                   <h3 className="font-bold text-lg md:text-xl group-hover:text-green transition-colors mb-2 leading-tight">{a.title}</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">{a.excerpt}</p>
