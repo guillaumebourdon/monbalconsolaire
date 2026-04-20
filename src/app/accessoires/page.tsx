@@ -18,16 +18,25 @@ interface Article {
 const ARTICLES: Article[] = [
   {
     slug: '/blog/accessoires-kit-solaire-balcon',
-    title: '5 accessoires indispensables pour votre kit solaire de balcon',
+    title: '8 accessoires indispensables pour votre kit solaire de balcon',
     excerpt: 'Prise connectée, wattmètre, rallonge étanche, support réglable : les indispensables pour maximiser votre installation.',
     badge: 'Guide essentiel',
     tags: ['essentiels', 'amazon'],
     publishedAt: '2026-04-04',
     updatedAt: '2026-04-18',
-    readTime: '6 min',
+    readTime: '8 min',
     priceRange: '15-80 €',
   },
-  // Les futurs articles s'ajouteront ici
+  {
+    slug: '/blog/mini-kits-solaires-amazon',
+    title: 'Mini kits solaires Amazon < 300 € : lesquels valent le coup ?',
+    excerpt: 'Analyse honnête des mini kits disponibles sur Amazon : pièges à éviter, sélection des 5 modèles qui tiennent leurs promesses.',
+    badge: 'Sélection Amazon',
+    tags: ['amazon'],
+    publishedAt: '2026-04-20',
+    readTime: '9 min',
+    priceRange: '180-320 €',
+  },
 ];
 
 const FILTERS = [
@@ -41,7 +50,7 @@ const FILTERS = [
 export default function AccessoiresPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const NOW = new Date('2026-04-19').getTime();
+  const NOW = new Date('2026-04-20').getTime();
   const isNew = (dateIso: string) => {
     const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
     return diff <= 14;
