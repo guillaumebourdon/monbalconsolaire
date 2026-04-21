@@ -37,6 +37,16 @@ const ARTICLES: Article[] = [
     readTime: '9 min',
     priceRange: '180-320 €',
   },
+  {
+    slug: '/blog/batteries-portables-solaires-comparatif',
+    title: 'Batteries portables solaires : comparatif 2026 (EcoFlow, Bluetti, Jackery)',
+    excerpt: '6 modèles comparés en détail : EcoFlow DELTA 2, Bluetti AC180, Jackery Explorer, Anker SOLIX. Capacité, puissance, usages réels.',
+    badge: 'Comparatif 2026',
+    tags: ['batteries'],
+    publishedAt: '2026-04-21',
+    readTime: '10 min',
+    priceRange: '299-1 099 €',
+  },
 ];
 
 const FILTERS = [
@@ -50,7 +60,7 @@ const FILTERS = [
 export default function AccessoiresPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const NOW = new Date('2026-04-20').getTime();
+  const NOW = new Date('2026-04-21').getTime();
   const isNew = (dateIso: string) => {
     const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
     return diff <= 14;
