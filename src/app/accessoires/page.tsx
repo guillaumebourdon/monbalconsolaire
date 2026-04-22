@@ -47,6 +47,16 @@ const ARTICLES: Article[] = [
     readTime: '10 min',
     priceRange: '299-1 099 €',
   },
+  {
+    slug: '/blog/lampes-solaires-balcon-2026',
+    title: 'Lampes solaires extérieures pour balcon : 10 modèles sélectionnés',
+    excerpt: 'Guirlandes, appliques, projecteurs, lanternes : la sélection des meilleures lampes solaires en 2026, du budget serré au premium design.',
+    badge: 'Sélection 2026',
+    tags: ['eclairage'],
+    publishedAt: '2026-04-22',
+    readTime: '10 min',
+    priceRange: '20-180 €',
+  },
 ];
 
 const FILTERS = [
@@ -60,7 +70,7 @@ const FILTERS = [
 export default function AccessoiresPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const NOW = new Date('2026-04-21').getTime();
+  const NOW = new Date('2026-04-22').getTime();
   const isNew = (dateIso: string) => {
     const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
     return diff <= 14;
