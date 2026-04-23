@@ -79,6 +79,16 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-04-17',
     readTime: '8 min',
   },
+  {
+    slug: '/guide/declaration-cacsi-enedis-panneau-solaire',
+    title: 'Déclaration CACSI Enedis : le guide pas à pas',
+    excerpt: 'La procédure obligatoire pour déclarer votre kit solaire à Enedis. Gratuite, 25 minutes, pas à pas.',
+    type: 'guide',
+    badge: 'Démarches Enedis',
+    tags: ['reglementation', 'guide'],
+    publishedAt: '2026-04-23',
+    readTime: '9 min',
+  },
   // Analyses / blog
   {
     slug: '/blog/combien-rapporte-panneau-solaire-balcon',
@@ -156,7 +166,7 @@ export default function ToutSavoirPage() {
   const [filter, setFilter] = useState<string>('all');
 
   // Date de référence : aujourd'hui (on sort le badge "Nouveau" pendant 14 jours)
-  const NOW = new Date('2026-04-22').getTime();
+  const NOW = new Date('2026-04-23').getTime();
   const NEW_THRESHOLD_DAYS = 14;
   const UPDATED_THRESHOLD_DAYS = 30;
 
