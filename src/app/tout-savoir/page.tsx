@@ -151,6 +151,16 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-04-19',
     readTime: '10 min',
   },
+  {
+    slug: '/blog/panneau-solaire-balcon-nord',
+    title: 'Panneau solaire balcon nord : est-ce rentable en 2026 ?',
+    excerpt: 'Analyse honnête avec chiffres par ville, seuls cas où ça reste intéressant, et alternatives.',
+    type: 'analyse',
+    badge: 'Rentabilité',
+    tags: ['rentabilite', 'debutant'],
+    publishedAt: '2026-04-24',
+    readTime: '10 min',
+  },
 ];
 
 const FILTERS = [
@@ -166,7 +176,7 @@ export default function ToutSavoirPage() {
   const [filter, setFilter] = useState<string>('all');
 
   // Date de référence : aujourd'hui (on sort le badge "Nouveau" pendant 14 jours)
-  const NOW = new Date('2026-04-23').getTime();
+  const NOW = new Date('2026-04-24').getTime();
   const NEW_THRESHOLD_DAYS = 14;
   const UPDATED_THRESHOLD_DAYS = 30;
 
