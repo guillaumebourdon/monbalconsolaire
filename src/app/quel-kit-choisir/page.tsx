@@ -125,6 +125,17 @@ const ARTICLES: Article[] = [
     score: '7/10',
     price: '1 179 €',
   },
+  {
+    slug: '/avis/sunology-city',
+    title: 'Sunology CITY',
+    excerpt: 'Le kit pensé pour les balcons étroits : fixation garde-corps sans perçage.',
+    type: 'avis',
+    badge: 'Balcon étroit',
+    tags: ['marque', 'compact'],
+    publishedAt: '2026-04-27',
+    score: '7,5/10',
+    price: '549 €',
+  },
 ];
 
 const FILTERS = [
@@ -139,7 +150,7 @@ const FILTERS = [
 export default function QuelKitChoisirPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const NOW = new Date('2026-04-24').getTime();
+  const NOW = new Date('2026-04-27').getTime();
   const NEW_THRESHOLD_DAYS = 14;
   const UPDATED_THRESHOLD_DAYS = 30;
 

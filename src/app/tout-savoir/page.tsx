@@ -176,7 +176,7 @@ export default function ToutSavoirPage() {
   const [filter, setFilter] = useState<string>('all');
 
   // Date de référence : aujourd'hui (on sort le badge "Nouveau" pendant 14 jours)
-  const NOW = new Date('2026-04-24').getTime();
+  const NOW = new Date('2026-04-27').getTime();
   const NEW_THRESHOLD_DAYS = 14;
   const UPDATED_THRESHOLD_DAYS = 30;
 
