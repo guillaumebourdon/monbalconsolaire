@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { CopyableTemplate } from '@/components/ui/CopyableTemplate';
 
 export const metadata: Metadata = {
   title: 'Déclaration CACSI Enedis panneau solaire : guide pas à pas (2026)',
@@ -158,7 +159,7 @@ export default function DeclarationCacsiEnedisPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>23 avril 2026</span>
               <span>&middot;</span>
-              <span>9 min de lecture</span>
+              <span>12 min de lecture</span>
             </div>
           </div>
 
@@ -311,6 +312,195 @@ export default function DeclarationCacsiEnedisPage() {
                     Rare mais possible. Un syndic ou un agent municipal peut vous demander une preuve de conformité réglementaire. La CACSI est la seule preuve officielle que votre installation est connue et validée par le gestionnaire de réseau.
                   </p>
                 </div>
+              </div>
+            </section>
+
+            {/* Détails techniques avancés */}
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Détails techniques à connaître pour le formulaire</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">
+                Le formulaire CACSI demande quelques informations techniques précises. Voici ce qu&apos;il faut renseigner exactement, avec les valeurs typiques pour les kits du marché en 2026.
+              </p>
+
+              <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
+                <table className="w-full text-sm border-collapse min-w-[600px]">
+                  <thead>
+                    <tr className="bg-green text-white">
+                      <th className="text-left p-3 rounded-tl-xl">Champ formulaire</th>
+                      <th className="text-left p-3">Valeur à saisir</th>
+                      <th className="text-left p-3 rounded-tr-xl">Exemple kit Sunology PLAY 2</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-border-light bg-white">
+                      <td className="p-3 font-semibold">Puissance crête (kWc)</td>
+                      <td className="p-3 text-xs">Diviser la puissance en watts par 1000</td>
+                      <td className="p-3 font-mono text-xs">0,45 kWc (450 W)</td>
+                    </tr>
+                    <tr className="border-b border-border-light bg-cream/50">
+                      <td className="p-3 font-semibold">Type d&apos;installation</td>
+                      <td className="p-3 text-xs">Photovoltaïque - Autoconsommation totale</td>
+                      <td className="p-3 font-mono text-xs">Plug-and-play sur prise</td>
+                    </tr>
+                    <tr className="border-b border-border-light bg-white">
+                      <td className="p-3 font-semibold">Marque du panneau</td>
+                      <td className="p-3 text-xs">Voir étiquette ou fiche produit</td>
+                      <td className="p-3 font-mono text-xs">Trina Solar / DMEGC</td>
+                    </tr>
+                    <tr className="border-b border-border-light bg-cream/50">
+                      <td className="p-3 font-semibold">Marque micro-onduleur</td>
+                      <td className="p-3 text-xs">Voir étiquette CE du boîtier</td>
+                      <td className="p-3 font-mono text-xs">Enphase IQ7 / Hoymiles HM-400</td>
+                    </tr>
+                    <tr className="border-b border-border-light bg-white">
+                      <td className="p-3 font-semibold">Tension de raccordement</td>
+                      <td className="p-3 text-xs">230 V monophasé pour tous les kits balcon</td>
+                      <td className="p-3 font-mono text-xs">230 V (50 Hz)</td>
+                    </tr>
+                    <tr className="border-b border-border-light bg-cream/50">
+                      <td className="p-3 font-semibold">Norme de conformité</td>
+                      <td className="p-3 text-xs">VDE-AR-N 4105 + NF C 15-100</td>
+                      <td className="p-3 font-mono text-xs">Normes européennes 2026</td>
+                    </tr>
+                    <tr className="border-b border-border-light bg-white">
+                      <td className="p-3 font-semibold">Mode de raccordement</td>
+                      <td className="p-3 text-xs">Sur circuit prise existante</td>
+                      <td className="p-3 font-mono text-xs">Pas de tableau dédié</td>
+                    </tr>
+                    <tr className="bg-cream/50">
+                      <td className="p-3 font-semibold">Puissance de souscription</td>
+                      <td className="p-3 text-xs">Voir contrat fournisseur (en kVA)</td>
+                      <td className="p-3 font-mono text-xs">6 kVA (logement standard)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="card-lg bg-amber-pale/20 border-amber/20 mt-6">
+                <h3 className="font-bold text-base mb-2">⚠️ Attention au certificat anti-injection</h3>
+                <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+                  La CACSI exige techniquement un dispositif &laquo; anti-injection &raquo; (ou anti-refoulement) qui empêche l&apos;électricité produite de remonter sur le réseau public quand votre consommation est nulle. Concrètement :
+                </p>
+                <ul className="text-sm text-charcoal-light space-y-2 pl-5">
+                  <li>&bull; <strong>Sunology, Beem, Sunethic, DualSun</strong> : leurs micro-onduleurs intègrent cette fonction de série. Aucun dispositif additionnel à installer.</li>
+                  <li>&bull; <strong>Kits AliExpress / génériques</strong> : pas toujours certifiés. Vérifiez la fiche technique avant l&apos;achat. Sans cette certification, votre dossier CACSI peut être rejeté.</li>
+                  <li>&bull; <strong>Mention dans le formulaire</strong> : cochez la case &laquo; Installation équipée d&apos;un dispositif anti-injection conforme &raquo; et joignez l&apos;attestation CE du micro-onduleur.</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* Modèles de lettres */}
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Modèles de lettres prêts à l&apos;emploi</h2>
+              <p className="text-charcoal-light leading-relaxed mb-6">
+                Voici 3 modèles de courriers que vous pouvez copier-coller, personnaliser, et envoyer dans les minutes qui suivent. Les <strong>[zones entre crochets]</strong> sont à remplacer par vos informations.
+              </p>
+
+              <CopyableTemplate
+                trackingLabel="cacsi_lettre_assurance"
+                title="Lettre à votre assurance habitation"
+                description="À envoyer dès réception de votre CACSI signée par Enedis, pour activer la couverture en cas de sinistre."
+                recipient="Service contrats / sinistres de votre assureur (par email ou courrier recommandé)"
+                subject="Déclaration d'installation photovoltaïque sur mon contrat habitation [N° de contrat]"
+                body={`Madame, Monsieur,
+
+Je suis titulaire du contrat d'assurance habitation référence [VOTRE NUMÉRO DE CONTRAT] pour le logement situé au [VOTRE ADRESSE COMPLÈTE].
+
+Je vous informe que j'ai installé un kit solaire photovoltaïque plug-and-play sur le balcon de mon logement le [DATE D'INSTALLATION]. Cette installation a été déclarée à Enedis dans le cadre d'une Convention d'Autoconsommation Sans Injection (CACSI), validée le [DATE DE VALIDATION ENEDIS].
+
+Caractéristiques de l'installation :
+- Marque et modèle du kit : [EX : SUNOLOGY PLAY 2]
+- Puissance : [EX : 450 W, soit 0,45 kWc]
+- Mode de raccordement : prise domestique standard (plug-and-play)
+- Micro-onduleur : [EX : ENPHASE IQ7+] - certifié CE et conforme aux normes VDE-AR-N 4105 et NF C 15-100
+
+Vous trouverez en pièces jointes :
+- La Convention CACSI signée par Enedis
+- L'attestation CE du micro-onduleur
+- La fiche technique du kit
+
+Je vous remercie de bien vouloir prendre en compte cette déclaration et de me confirmer que mon contrat habitation couvre bien les éventuels sinistres liés à cette installation. Je vous saurais gré également de m'indiquer si une mise à jour de cotisation est nécessaire.
+
+Dans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+
+[VOTRE PRÉNOM ET NOM]
+[VOTRE ADRESSE]
+[VOTRE EMAIL]
+[VOTRE TÉLÉPHONE]
+
+Pièces jointes :
+1. CACSI signée Enedis (PDF)
+2. Attestation CE micro-onduleur (PDF)
+3. Fiche technique du kit (PDF)`}
+              />
+
+              <CopyableTemplate
+                trackingLabel="cacsi_email_enedis"
+                title="Email pour relancer Enedis (dossier en attente)"
+                description="Si votre dossier CACSI n'a pas reçu de retour après 4 semaines. À envoyer au service raccordement Enedis."
+                recipient="raccordement-enedis@enedis.fr (ou via votre espace client Enedis Connect)"
+                subject="Relance dossier CACSI [VOTRE N° DE DOSSIER ENR-XXXX-XXXX]"
+                body={`Madame, Monsieur,
+
+Je vous contacte concernant ma demande de Convention d'Autoconsommation Sans Injection (CACSI) déposée le [DATE DE DÉPÔT INITIAL] sous le numéro de dossier [ENR-XXXX-XXXX-XXXX].
+
+Plus de 4 semaines se sont écoulées depuis le dépôt de mon dossier complet, sans retour de votre part. Je vous saurais gré de bien vouloir me confirmer la réception de ce dernier et m'indiquer le délai prévu pour la finalisation de la convention.
+
+Mes informations :
+- PDL/PRM : [VOTRE NUMÉRO À 14 CHIFFRES]
+- Adresse : [VOTRE ADRESSE COMPLÈTE]
+- Type d'installation : Kit solaire photovoltaïque plug-and-play
+- Puissance déclarée : [EX : 0,45 kWc]
+- Marque : [EX : SUNOLOGY PLAY 2]
+
+Mon installation est opérationnelle depuis le [DATE], et je souhaite régulariser ma situation administrative dans les meilleurs délais, notamment pour pouvoir transmettre la convention signée à mon assureur habitation.
+
+Je reste à votre disposition pour fournir tout complément d'information utile au traitement de mon dossier.
+
+Cordialement,
+
+[VOTRE PRÉNOM ET NOM]
+[VOTRE EMAIL]
+[VOTRE TÉLÉPHONE]
+PDL/PRM : [VOTRE NUMÉRO À 14 CHIFFRES]`}
+              />
+
+              <CopyableTemplate
+                trackingLabel="cacsi_lettre_proprietaire"
+                title="Lettre au propriétaire (locataires)"
+                description="Pour informer votre propriétaire de l'installation. Recommandé même si non obligatoire — protège en cas de litige sur la caution."
+                recipient="Votre propriétaire ou agence immobilière (courrier recommandé avec AR conseillé)"
+                subject="Information : installation d'un kit solaire de balcon dans le logement loué"
+                body={`Madame, Monsieur,
+
+Je suis locataire du logement situé au [VOTRE ADRESSE COMPLÈTE], dans le cadre du bail signé le [DATE DE SIGNATURE DU BAIL].
+
+Par la présente, je souhaite vous informer de mon intention d'installer (ou : avoir installé le [DATE]) un kit solaire photovoltaïque plug-and-play sur le balcon du logement. Cette installation, sans aucun impact structurel sur le logement, présente les caractéristiques suivantes :
+
+- Type : kit solaire plug-and-play (branchement sur prise standard)
+- Puissance : [EX : 450 W, soit 0,45 kWc]
+- Modèle : [EX : SUNOLOGY PLAY 2]
+- Mode d'installation : pose au sol avec ballasts de lestage, sans aucune fixation murale ni perçage
+
+L'installation respecte la réglementation française (norme NF C 15-100, déclaration CACSI Enedis) et est entièrement réversible : aucun dommage ne sera causé au balcon, et l'ensemble peut être démonté en moins d'une heure lors de mon départ du logement.
+
+Mon installation est par ailleurs déclarée auprès d'Enedis (Convention d'Autoconsommation Sans Injection référence [ENR-XXXX-XXXX-XXXX]) et de mon assureur habitation.
+
+Je tenais à vous informer par souci de transparence, conformément à l'esprit de bonne entente entre bailleur et locataire. N'hésitez pas à me contacter si vous souhaitez de plus amples informations.
+
+Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations respectueuses.
+
+[VOTRE PRÉNOM ET NOM]
+[VOTRE ADRESSE]
+[VOTRE EMAIL]
+[VOTRE TÉLÉPHONE]
+Date : [JOUR/MOIS/ANNÉE]`}
+              />
+
+              <div className="card bg-green-pale/20 border-green/20 mt-6">
+                <p className="text-sm text-charcoal-light leading-relaxed">
+                  <strong>💡 Conseil :</strong> envoyez ces courriers en <strong>recommandé avec accusé de réception</strong> ou par <strong>email avec confirmation de lecture</strong>. En cas de litige ultérieur, ces preuves d&apos;envoi seront déterminantes.
+                </p>
               </div>
             </section>
 
