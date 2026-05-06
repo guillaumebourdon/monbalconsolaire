@@ -136,6 +136,17 @@ const ARTICLES: Article[] = [
     score: '7,5/10',
     price: '549 €',
   },
+  {
+    slug: '/avis/ecoflow-powerstream',
+    title: 'EcoFlow PowerStream',
+    excerpt: 'Le micro-onduleur intelligent : panneaux + batterie + réseau pilotés par app. Le plus modulaire du marché.',
+    type: 'avis',
+    badge: 'Système modulaire',
+    tags: ['stockage', 'marque'],
+    publishedAt: '2026-04-28',
+    score: '8/10',
+    price: '599 €',
+  },
 ];
 
 const FILTERS = [
@@ -150,7 +161,7 @@ const FILTERS = [
 export default function QuelKitChoisirPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const NOW = new Date('2026-04-28').getTime();
+  const NOW = new Date('2026-05-06').getTime();
   const NEW_THRESHOLD_DAYS = 14;
   const UPDATED_THRESHOLD_DAYS = 30;
 
