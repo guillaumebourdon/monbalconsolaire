@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Autoconsommation solaire : comment ca marche concretement ? (2026)',
   description: 'L\'autoconsommation solaire expliquee simplement : comment votre panneau alimente vos appareils, le role du compteur Linky, et ce qui se passe la nuit.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche',
+  },
 };
 
 const faqData = [

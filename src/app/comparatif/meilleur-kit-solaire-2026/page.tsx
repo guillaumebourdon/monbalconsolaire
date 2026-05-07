@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Meilleur kit solaire plug and play 2026 : comparatif complet',
   description: 'Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026 : Sunology PLAY2, Beem On, Sunethic F500. Prix, puissance, rentabilité, avis.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026',
+  },
 };
 
 const faqData = [

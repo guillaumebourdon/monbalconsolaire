@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Meilleur kit solaire petit budget 2026 : moins de 400€',
   description: 'Quel kit solaire de balcon acheter pour moins de 400€ en 2026 ? Comparatif des options les plus abordables : Beem Kit 300W, kits Amazon, alternatives.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/comparatif/kit-solaire-petit-budget',
+  },
 };
 
 const faqData = [

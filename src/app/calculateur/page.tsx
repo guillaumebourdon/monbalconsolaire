@@ -123,12 +123,13 @@ export default function CalculateurPage() {
         {/* STEP 1: Département */}
         {step === 1 && (
           <div className="card-lg">
-            <h2 className="font-bold text-xl mb-2">Quel est votre département ?</h2>
-            <p className="text-sm text-stone mb-6">Tapez le numéro (ex : 75) ou le nom de votre département.</p>
+            <label htmlFor="dept-input" className="font-bold text-xl mb-2 block">Quel est votre département ?</label>
+            <p id="dept-hint" className="text-sm text-stone mb-6">Tapez le numéro (ex : 75) ou le nom de votre département.</p>
 
             <div className="relative" onClick={e => e.stopPropagation()}>
               <input
                 ref={inputRef}
+                id="dept-input"
                 type="text"
                 placeholder="Ex : 75, Paris, 13, Bouches-du-Rhône..."
                 value={query}
@@ -136,12 +137,19 @@ export default function CalculateurPage() {
                 onFocus={() => setShowSuggestions(true)}
                 className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
                 autoComplete="off"
+                role="combobox"
+                aria-expanded={showSuggestions && filteredDepartments.length > 0}
+                aria-controls="dept-listbox"
+                aria-describedby="dept-hint"
+                aria-autocomplete="list"
               />
               {showSuggestions && filteredDepartments.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 overflow-hidden max-h-80 overflow-y-auto">
+                <div id="dept-listbox" role="listbox" aria-label="Départements" className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 overflow-hidden max-h-80 overflow-y-auto">
                   {filteredDepartments.map((d) => (
                     <button
                       key={d.code}
+                      role="option"
+                      aria-selected={city?.department === d.code}
                       onClick={() => handleDepartmentSelect(d)}
                       className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0"
                     >
@@ -207,14 +215,17 @@ export default function CalculateurPage() {
         {/* STEP 3: Consumption */}
         {step === 3 && (
           <div className="card-lg">
-            <h2 className="font-bold text-xl mb-2">Quelle est votre facture EDF mensuelle ?</h2>
-            <p className="text-sm text-stone mb-6">Une estimation suffit. Nous l&apos;utilisons pour calculer le % de couverture.</p>
+            <label htmlFor="conso-input" className="font-bold text-xl mb-2 block">Quelle est votre facture EDF mensuelle ?</label>
+            <p id="conso-hint" className="text-sm text-stone mb-6">Une estimation suffit. Nous l&apos;utilisons pour calculer le % de couverture.</p>
             <div className="relative mb-6">
               <input
+                id="conso-input"
                 type="number"
                 placeholder="Ex : 80"
                 value={consoMensuelle}
                 onChange={e => setConsoMensuelle(e.target.value)}
+                aria-describedby="conso-hint"
+                aria-required="true"
                 className="w-full p-4 pr-16 rounded-brand border border-border bg-cream text-lg font-semibold focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-stone font-medium">&euro;/mois</span>

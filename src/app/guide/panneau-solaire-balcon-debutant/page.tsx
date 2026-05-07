@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon : le guide complet pour débutants (2026)',
   description: 'Tout savoir sur le panneau solaire de balcon en 2026 : installation, réglementation, cout, rentabilité, droits des locataires. Guide complet et indépendant.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant',
+  },
 };
 
 const faqData = [

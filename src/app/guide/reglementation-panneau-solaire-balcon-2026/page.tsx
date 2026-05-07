@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon : reglementation 2026 complete',
   description: 'Norme NF C 15-100, declaration Enedis CACSI, copropriete, limite 900W : tout ce que dit la loi sur les kits solaires plug-and-play en 2026.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026',
+  },
 };
 
 const faqData = [

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -8,6 +8,9 @@ import { ProductHero } from '@/components/ui/ProductHero';
 export const metadata: Metadata = {
   title: 'Sunology PLAY 2 avis 2026 : test complet et retour d\'experience',
   description: 'Avis complet sur le Sunology PLAY2 en 2026 : prix, installation, production réelle, points forts et faibles. Le kit solaire vaut-il ses 599 euros ?',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/avis/sunology-play-2',
+  },
 };
 
 const faqData = [
@@ -22,6 +25,7 @@ export default function AvisPage() {
     <>
       <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" />
       <SchemaFAQ questions={faqData} />
+      <SchemaProduct name="Sunology PLAY 2" brand="Sunology" description="Kit solaire plug-and-play 450 Wc avec micro-onduleur WiFi intégré, chassis ajustable et garantie 25 ans." price={599} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY2" }]} />

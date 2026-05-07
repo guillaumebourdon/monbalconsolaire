@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -8,6 +8,9 @@ import { ProductHero } from '@/components/ui/ProductHero';
 export const metadata: Metadata = {
   title: 'Beem Kit 300W avis 2026 : test du kit solaire petit budget',
   description: 'Avis complet sur le Beem Kit 300W à 299€ : le kit solaire de balcon le moins cher du marché. 4 panneaux, installation, production réelle, rentabilité.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/avis/beem-kit-300w',
+  },
 };
 
 const faqData = [
@@ -22,6 +25,7 @@ export default function BeemKit300WAvisPage() {
     <>
       <SchemaArticle title="Beem Kit 300W avis : test du kit solaire petit budget" description="Avis complet sur le Beem Kit 300W à 299€." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" />
       <SchemaFAQ questions={faqData} />
+      <SchemaProduct name="Beem Kit 300W" brand="Beem Energy" description="Kit solaire modulaire 4 panneaux de 75W, le meilleur ratio prix/puissance du marché avec garantie 25 ans." price={299} ratingValue={7.5} url="https://monbalconsolaire.fr/avis/beem-kit-300w" />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />

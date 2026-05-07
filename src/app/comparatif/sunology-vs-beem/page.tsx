@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Sunology vs Beem 2026 : quel kit solaire choisir ?',
   description: 'Comparaison détaillée Sunology PLAY2 vs Beem On 460W : prix, puissance, installation, app, garantie. Quel kit solaire plug-and-play choisir en 2026 ?',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/comparatif/sunology-vs-beem',
+  },
 };
 
 const faqData = [
@@ -150,6 +153,16 @@ export default function SunologyVsBeemPage() {
                 ))}
               </div>
             </section>
+            <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
+              <p className="font-semibold text-lg mb-2">Sunology ou Beem : lequel est le plus rentable chez vous ?</p>
+              <p className="text-sm text-charcoal-light mb-4">
+                Notre calculateur compare les kits selon votre département et votre orientation.
+              </p>
+              <Link href="/calculateur" className="btn-primary inline-flex">
+                Calculer mes économies →
+              </Link>
+            </div>
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">

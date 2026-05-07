@@ -2,8 +2,11 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Comparatifs kits solaires balcon 2026',
-  description: 'Tous nos comparatifs indépendants de kits solaires plug-and-play pour balcon : Sunology, Beem, Sunethic. Prix, puissance, rentabilité.',
+  title: 'Comparatifs kits solaires balcon 2026 — Sunology, Beem, Sunethic',
+  description: 'Comparatifs indépendants des meilleurs kits solaires plug-and-play pour balcon en 2026. Prix, puissance, rentabilité : trouvez le kit adapté à votre situation.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/comparatif',
+  },
 };
 
 const articles = [

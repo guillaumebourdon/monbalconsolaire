@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Panneau solaire en hiver : combien ça produit vraiment ? (2026)',
   description: 'Un panneau solaire de balcon produit-il en hiver ? Données réelles de production hivernale par région, conseils pour optimiser, et impact sur la rentabilité.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-hiver-production',
+  },
 };
 
 const faqData = [
@@ -93,11 +96,12 @@ export default function HiverProductionPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed">C&apos;est logique : en hiver, les jours sont plus courts et le soleil est plus bas. Mais la production n&apos;est jamais nulle — même par temps couvert, un panneau produit 10 à 25% de sa capacité maximale grâce à la lumière diffuse.</p>
+              <p className="text-charcoal-light leading-relaxed">C&apos;est logique : en hiver, les jours sont plus courts et le soleil est plus bas. Mais la production n&apos;est jamais nulle — même par temps couvert, un panneau produit 10 à 25% de sa capacité maximale grâce à la lumière diffuse. Si votre balcon reçoit peu de lumière directe, notre article sur <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green font-semibold hover:underline">l&apos;optimisation de la production en cas d&apos;ombre</Link> vous donnera des solutions concrètes.</p>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">3 astuces pour optimiser la production hivernale</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">L&apos;orientation et l&apos;inclinaison de votre panneau sont encore plus déterminantes en hiver qu&apos;en été. Consultez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green font-semibold hover:underline">guide sur l&apos;orientation optimale</Link> pour maximiser chaque rayon de soleil.</p>
               <div className="space-y-3">
                 {[
                   { t: 'Augmentez l\'inclinaison', d: 'En hiver, le soleil est plus bas sur l\'horizon. Passez à 40-42° d\'inclinaison (au lieu de 27-30° en été). Le Sunology PLAY2 propose 3 angles ajustables pour ça.' },
@@ -115,7 +119,7 @@ export default function HiverProductionPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Faut-il s&apos;inquiéter de la production hivernale ?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4"><strong>Non.</strong> La rentabilité d&apos;un panneau solaire se calcule sur l&apos;année complète, pas sur un mois. La production estivale compense largement la baisse hivernale. C&apos;est d&apos;ailleurs comme ça que les données PVGIS et les fabricants calculent le ROI : sur la production annuelle totale.</p>
-              <p className="text-charcoal-light leading-relaxed">Et paradoxalement, c&apos;est en hiver que chaque kWh produit a le plus de valeur : c&apos;est la saison où votre consommation est la plus élevée (chauffage d&apos;appoint, éclairage plus long) et où le prix de l&apos;électricité pèse le plus sur votre facture.</p>
+              <p className="text-charcoal-light leading-relaxed">Et paradoxalement, c&apos;est en hiver que chaque kWh produit a le plus de valeur : c&apos;est la saison où votre consommation est la plus élevée (chauffage d&apos;appoint, éclairage plus long) et où le prix de l&apos;électricité pèse le plus sur votre facture. Pour maximiser la valeur de chaque kWh hivernal, une <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green font-semibold hover:underline">batterie de stockage</Link> peut être un complément intéressant.</p>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">

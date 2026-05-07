@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Quelle orientation pour un panneau solaire de balcon ? (Guide 2026)',
   description: 'Sud, est, ouest, nord : quel impact sur la production de votre panneau solaire de balcon ? Coefficients réels, astuces d\'optimisation, et cas concrets.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/guide/orientation-panneau-solaire-balcon',
+  },
 };
 
 const faqData = [

@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Politique de confidentialité',
   description: 'Politique de confidentialité du site MonBalconSolaire. Informations sur la collecte et le traitement des données personnelles.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/politique-confidentialite',
+  },
 };
 
 export default function PolitiqueConfidentialitePage() {

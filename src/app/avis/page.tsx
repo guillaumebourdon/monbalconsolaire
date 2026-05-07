@@ -2,14 +2,19 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Avis et tests kits solaires balcon 2026',
-  description: 'Avis detailles et tests des kits solaires plug-and-play les plus populaires en France.',
+  title: 'Avis kits solaires balcon 2026 — Tests indépendants et notes',
+  description: 'Avis détaillés et tests indépendants des kits solaires plug-and-play : Sunology PLAY2, Beem On, Sunethic F500, Beem Kit 300W. Notes, specs et verdict honnête.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/avis',
+  },
 };
 
 const reviews = [
   { slug: 'sunology-play-2', title: 'Sunology PLAY 2 : avis et test complet', excerpt: 'Le kit solaire le plus vendu en France (100 000+ foyers). 450 Wc, 599 euros, installation en 1 minute.', badge: 'Choix n 1', score: '8.5/10', price: '599 euros' },
   { slug: 'beem-on-460w', title: 'Beem On 460W : avis et test complet', excerpt: 'Le concurrent direct du Sunology PLAY2. 460 Wc, 599 euros, meilleur ratio euros/Wc en mono-panneau.', badge: 'Rapport qualite/prix', score: '8/10', price: '599 euros' },
+  { slug: 'ecoflow-powerstream', title: 'EcoFlow PowerStream : test complet et verdict', excerpt: 'Le micro-onduleur intelligent : panneaux + batterie + reseau pilotes par app. Le plus modulaire du marche.', badge: 'Systeme modulaire', score: '8/10', price: '599 euros' },
   { slug: 'sunethic-f500', title: 'Sunethic F500 : avis du kit Made in France', excerpt: 'Le kit le plus puissant (500 Wc) et le seul fabrique en France. 690 euros.', badge: 'Made in France', score: '7.5/10', price: '690 euros' },
+  { slug: 'sunology-city', title: 'Sunology CITY : le kit pour balcons etroits', excerpt: 'Le kit pense pour les balcons etroits : fixation garde-corps sans percage. 549 euros.', badge: 'Balcon etroit', score: '7.5/10', price: '549 euros' },
   { slug: 'beem-kit-300w', title: 'Beem Kit 300W : avis du kit petit budget', excerpt: 'Le kit le moins cher du marche francais. 4 panneaux modulaires, 299 euros, ROI en 2,5 ans.', badge: 'Petit budget', score: '7.5/10', price: '299 euros' },
   { slug: 'sunology-play-max', title: 'Sunology PLAY MAX : kit + batterie, ca vaut le coup ?', excerpt: 'Le bundle PLAY2 + batterie VAULT 700 Wh pour 1 179 euros. Stockez le solaire pour le soir.', badge: 'Kit + batterie', score: '7/10', price: '1 179 euros' },
 ];

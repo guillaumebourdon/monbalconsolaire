@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -8,6 +8,9 @@ import { ProductHero } from '@/components/ui/ProductHero';
 export const metadata: Metadata = {
   title: 'Sunology PLAY MAX avis 2026 : kit solaire + batterie, ça vaut le coup ?',
   description: 'Avis complet sur le Sunology PLAY MAX : kit 450W + batterie VAULT 700 Wh pour 1 179€. Production, stockage, rentabilité. Faut-il prendre la batterie ?',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/avis/sunology-play-max',
+  },
 };
 
 const faqData = [
@@ -22,6 +25,7 @@ export default function PlayMaxAvisPage() {
     <>
       <SchemaArticle title="Sunology PLAY MAX avis : kit + batterie, ça vaut le coup ?" description="Avis complet sur le Sunology PLAY MAX avec batterie VAULT." url="https://monbalconsolaire.fr/avis/sunology-play-max" datePublished="2026-04-02" />
       <SchemaFAQ questions={faqData} />
+      <SchemaProduct name="Sunology PLAY MAX" brand="Sunology" description="Kit solaire 450 Wc avec batterie VAULT 700 Wh intégrée pour stocker le surplus et consommer le soir." price={1179} ratingValue={7} url="https://monbalconsolaire.fr/avis/sunology-play-max" />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology PLAY MAX' }]} />

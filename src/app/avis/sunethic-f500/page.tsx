@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -8,6 +8,9 @@ import { ProductHero } from '@/components/ui/ProductHero';
 export const metadata: Metadata = {
   title: 'Sunethic F500 avis 2026 : test du kit solaire Made in France',
   description: 'Avis complet sur le Sunethic F500 : le kit solaire de balcon fabriqué en France. 500 Wc, 690€. Production, qualité, rentabilité. Notre verdict.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/avis/sunethic-f500',
+  },
 };
 
 const faqData = [
@@ -21,6 +24,7 @@ export default function SunethicAvisPage() {
     <>
       <SchemaArticle title="Sunethic F500 avis : test du kit solaire Made in France" description="Avis complet sur le Sunethic F500." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" />
       <SchemaFAQ questions={faqData} />
+      <SchemaProduct name="Sunethic F500" brand="Sunethic" description="Kit solaire plug-and-play 500 Wc fabriqué en France avec garantie 25 ans et meilleure note Trustpilot du marché." price={690} ratingValue={7.5} url="https://monbalconsolaire.fr/avis/sunethic-f500" />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunethic F500' }]} />

@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Batteries portables solaires 2026 : EcoFlow, Bluetti, Jackery comparés',
   description: 'Comparatif complet des meilleures batteries portables solaires en 2026 : EcoFlow DELTA 2, Bluetti AC180, Jackery Explorer, Anker SOLIX. Capacité, prix, usages réels.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif',
+  },
 };
 
 const faqData = [

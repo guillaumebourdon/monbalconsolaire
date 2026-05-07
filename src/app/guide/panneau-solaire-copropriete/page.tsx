@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Panneau solaire en copropriete : regles, votes et astuces (2026)',
   description: 'Installer un kit solaire sur votre balcon en copropriete : reglement, assemblee generale, syndic, droits du coproprietaire et du locataire.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-copropriete',
+  },
 };
 
 const faqData = [
@@ -146,6 +149,16 @@ export default function CoproprietePage() {
                 ))}
               </div>
             </section>
+            <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
+              <p className="font-semibold text-lg mb-2">Votre copropriété autorise le solaire ? Calculez vos économies</p>
+              <p className="text-sm text-charcoal-light mb-4">
+                Estimez la production et la rentabilité d&apos;un kit solaire sur votre balcon en 30 secondes.
+              </p>
+              <Link href="/calculateur" className="btn-primary inline-flex">
+                Calculer mes économies →
+              </Link>
+            </div>
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">

@@ -91,7 +91,7 @@ export function ProductHero({
           <Link
             href={affiliateUrl}
             target="_blank"
-            rel="noopener nofollow sponsored"
+            rel="noopener noreferrer nofollow sponsored"
             onClick={handleAffiliateClick}
             className="btn-primary w-full justify-center text-sm"
           >

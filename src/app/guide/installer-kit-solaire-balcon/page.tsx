@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Comment installer un kit solaire sur un balcon : guide pas à pas (2026)',
   description: 'Guide d\'installation complet pour poser un kit solaire plug-and-play sur votre balcon. Étapes, erreurs à éviter, sécurité, branchement électrique.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/guide/installer-kit-solaire-balcon',
+  },
 };
 
 const faqData = [

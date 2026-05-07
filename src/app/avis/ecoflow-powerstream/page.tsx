@@ -1,13 +1,16 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'EcoFlow PowerStream avis 2026 : le micro-onduleur intelligent décortiqué',
+  title: 'EcoFlow PowerStream avis 2026 : test complet et verdict',
   description: 'Avis complet sur EcoFlow PowerStream : système modulaire panneaux + batterie + réseau. Test, prix, configuration, points forts et limites en 2026.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/avis/ecoflow-powerstream',
+  },
 };
 
 const faqData = [
@@ -140,6 +143,7 @@ export default function EcoflowPowerstreamPage() {
         datePublished="2026-04-28"
       />
       <SchemaFAQ questions={faqData} />
+      <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow PowerStream' }]} />

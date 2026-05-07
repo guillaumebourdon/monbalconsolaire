@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Mentions légales',
   description: 'Mentions légales du site MonBalconSolaire, édité par Beélevén SASU.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/mentions-legales',
+  },
 };
 
 export default function MentionsLegalesPage() {

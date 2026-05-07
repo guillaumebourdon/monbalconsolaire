@@ -102,6 +102,65 @@ export function SchemaArticle({
   );
 }
 
+export function SchemaProduct({
+  name,
+  brand,
+  description,
+  price,
+  currency = 'EUR',
+  ratingValue,
+  ratingMax = 10,
+  reviewAuthor = 'MonBalconSolaire',
+  url,
+}: {
+  name: string;
+  brand: string;
+  description: string;
+  price: number;
+  currency?: string;
+  ratingValue: number;
+  ratingMax?: number;
+  reviewAuthor?: string;
+  url: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name,
+    brand: {
+      '@type': 'Brand',
+      name: brand,
+    },
+    description,
+    offers: {
+      '@type': 'Offer',
+      price,
+      priceCurrency: currency,
+      availability: 'https://schema.org/InStock',
+      url,
+    },
+    review: {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue,
+        bestRating: ratingMax,
+      },
+      author: {
+        '@type': 'Organization',
+        name: reviewAuthor,
+      },
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export function SchemaFAQ({ questions }: { questions: { question: string; answer: string }[] }) {
   const schema = {
     '@context': 'https://schema.org',

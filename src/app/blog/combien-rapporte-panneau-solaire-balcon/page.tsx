@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Combien rapporte un panneau solaire de balcon ? Calcul réel (2026)',
   description: 'Combien rapporte réellement un panneau solaire de balcon en 2026 ? Exemples chiffres par ville (Paris, Lyon, Marseille, Lille, Nantes). Calcul transparent.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/combien-rapporte-panneau-solaire-balcon',
+  },
 };
 
 const faqData = [
@@ -55,7 +58,7 @@ export default function CombienRapportePage() {
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Production et économies par ville</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Voici les estimations pour les 7 principales zones climatiques de France, avec deux kits de reference : le Sunology PLAY2 (450 Wc, 599&euro;) et le Beem Kit 300W (300 Wc, 299&euro;). Toutes les estimations supposent une orientation plein sud et une inclinaison optimale de 30-35 degres.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Voici les estimations pour les 7 principales zones climatiques de France, avec deux kits de reference : le Sunology PLAY2 (450 Wc, 599&euro;) et le Beem Kit 300W (300 Wc, 299&euro;). Toutes les estimations supposent une orientation plein sud et une inclinaison optimale de 30-35 degres. Pour comprendre pourquoi l&apos;orientation change tout, consultez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green font-semibold hover:underline">guide complet sur l&apos;orientation</Link>.</p>
 
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[700px]">
@@ -86,6 +89,9 @@ export default function CombienRapportePage() {
                 </table>
               </div>
               <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne). Tarif EDF 0,1940 &euro;/kWh (fevrier 2026). Coefficient de pertes : 0,85. Kit 450W = Sunology PLAY2 à 599&euro;. Kit 300W = Beem Kit à 299&euro;.</p>
+              <p className="text-sm text-charcoal-light mt-2">
+                → Retrouvez ces kits dans notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">comparatif des meilleurs kits solaires 2026</Link>.
+              </p>
             </section>
 
             <section>
@@ -124,6 +130,9 @@ export default function CombienRapportePage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed"><strong>Le point cle :</strong> un panneau solaire est un investissement qui se bonifie avec le temps. Plus l&apos;électricité augmente, plus votre panneau vous fait économiser. C&apos;est une protection naturelle contre l&apos;inflation énergétique.</p>
+              <p className="text-sm text-charcoal-light mt-2">
+                → Lire aussi : <Link href="/blog/prix-electricite-2026-solaire" className="text-green font-semibold hover:underline">Prix de l&apos;électricité 2026 : pourquoi le solaire devient incontournable</Link>
+              </p>
             </section>
 
             <section>

@@ -5,8 +5,11 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
-  title: 'Lampes solaires extérieures pour balcon : 10 modèles sélectionnés (2026)',
+  title: 'Lampes solaires balcon : 10 modèles sélectionnés (2026)',
   description: 'Comparatif des meilleures lampes solaires extérieures pour balcon en 2026 : guirlandes, appliques, projecteurs, lanternes. Sélection honnête et critères de choix.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/lampes-solaires-balcon-2026',
+  },
 };
 
 const faqData = [
@@ -237,7 +240,7 @@ export default function LampesSolairesPage() {
                 Un balcon sans éclairage, c&apos;est un balcon inutilisable dès 20h en hiver. Deux solutions classiques s&apos;offrent à vous : tirer une rallonge depuis l&apos;intérieur (souvent peu pratique, parfois dangereux), ou opter pour des lampes solaires (zéro câble, zéro consommation, installation immédiate).
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Les avantages des lampes solaires sont évidents :
+                Les avantages des lampes solaires sont évidents (à condition que votre balcon reçoive suffisamment de soleil -- si vous avez un doute, notre article sur <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green font-semibold hover:underline">l&apos;impact de l&apos;ombre sur la production solaire</Link> vous aidera à évaluer votre situation) :
               </p>
               <ul className="text-charcoal-light leading-relaxed space-y-2 mb-4 pl-5">
                 <li>&bull; <strong>Pas d&apos;installation électrique</strong> : pas de tranchée, pas d&apos;électricien, pas d&apos;autorisation</li>
@@ -246,7 +249,7 @@ export default function LampesSolairesPage() {
                 <li>&bull; <strong>Résistantes aux intempéries</strong> (avec bonne certification IP)</li>
               </ul>
               <p className="text-charcoal-light leading-relaxed">
-                Mais attention : toutes les lampes solaires ne se valent pas. Le marché est saturé de modèles chinois bas de gamme à 10-15 € qui grillent après 3 mois. L&apos;investissement intelligent se fait entre 25 et 60 € selon l&apos;usage.
+                Mais attention : toutes les lampes solaires ne se valent pas. Le marché est saturé de modèles chinois bas de gamme à 10-15 € qui grillent après 3 mois. L&apos;investissement intelligent se fait entre 25 et 60 € selon l&apos;usage. Et si vous cherchez d&apos;autres équipements pour votre balcon, découvrez nos <Link href="/blog/accessoires-kit-solaire-balcon" className="text-green font-semibold hover:underline">8 accessoires indispensables pour un kit solaire</Link>.
               </p>
             </section>
 

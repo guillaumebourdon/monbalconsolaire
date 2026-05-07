@@ -5,8 +5,11 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
-  title: 'Mini kits solaires Amazon < 300 € : lesquels valent vraiment le coup ? (2026)',
+  title: 'Mini kits solaires Amazon < 300 € : notre sélection 2026',
   description: 'Mini kits solaires Amazon à moins de 300 € : analyse honnête des modèles disponibles, pièges à éviter, et sélection des 5 kits qui valent vraiment leur prix.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/mini-kits-solaires-amazon',
+  },
 };
 
 const faqData = [

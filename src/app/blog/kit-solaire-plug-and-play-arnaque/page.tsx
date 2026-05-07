@@ -5,8 +5,11 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
-  title: 'Kit solaire plug-and-play : arnaque ou bon investissement ? (2026)',
+  title: 'Kit solaire plug-and-play : arnaque ou bon investissement ?',
   description: 'Les kits solaires plug-and-play sont-ils une arnaque ou un vrai investissement ? Analyse honnête des chiffres, des promesses, des pièges et du ROI réel en 2026.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/kit-solaire-plug-and-play-arnaque',
+  },
 };
 
 const faqData = [
@@ -69,7 +72,7 @@ export default function ArnaqueInvestissementPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le mot-clé « kit solaire arnaque » est tapé plusieurs centaines de fois par mois sur Google. Cette méfiance vient de trois sources distinctes, qu&apos;il faut bien distinguer.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">D&apos;abord, <strong>le mauvais souvenir collectif de l&apos;arnaque photovoltaïque des années 2010</strong>. Des milliers de foyers ont été démarchés avec des crédits à 10 000€ pour des installations surfacturées. Le plug-and-play n&apos;a rien à voir : prix fixe, pas de crédit, pas de démarchage.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Ensuite, <strong>des attentes irréalistes</strong>. Beaucoup imaginent que 600€ d&apos;investissement suffit à être autonome en électricité. C&apos;est faux : un kit 450W couvre 5 à 15% de la consommation moyenne d&apos;un ménage. C&apos;est déjà très bien, mais il faut le savoir.</p>
-              <p className="text-charcoal-light leading-relaxed">Enfin, <strong>des vraies arnaques</strong> existent, notamment sur les plateformes étrangères et via le démarchage. Elles donnent une mauvaise image à tout le marché.</p>
+              <p className="text-charcoal-light leading-relaxed">Enfin, <strong>des vraies arnaques</strong> existent, notamment sur les plateformes étrangères et via le démarchage. Elles donnent une mauvaise image à tout le marché. Pour y voir clair sur le cadre légal, consultez notre <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green font-semibold hover:underline">guide sur la réglementation 2026</Link>.</p>
             </section>
 
             <section>
@@ -107,7 +110,7 @@ export default function ArnaqueInvestissementPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 6 critères d&apos;un kit fiable</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Pour éviter les mauvaises surprises, vérifiez ces six critères avant d&apos;acheter :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Pour éviter les mauvaises surprises, vérifiez ces six critères avant d&apos;acheter. Notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">comparatif des meilleurs kits solaires 2026</Link> les passe tous en revue pour les marques fiables du marché.</p>
               <div className="space-y-3">
                 {criteres_fiable.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-green">

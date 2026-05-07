@@ -8,6 +8,9 @@ import { CopyableTemplate } from '@/components/ui/CopyableTemplate';
 export const metadata: Metadata = {
   title: 'Déclaration CACSI Enedis panneau solaire : guide pas à pas (2026)',
   description: 'Comment déclarer votre kit solaire de balcon à Enedis via la CACSI : procédure pas à pas, formulaire, pièces à joindre, délais. Guide gratuit et à jour 2026.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/guide/declaration-cacsi-enedis-panneau-solaire',
+  },
 };
 
 const faqData = [
@@ -505,12 +508,12 @@ Date : [JOUR/MOIS/ANNÉE]`}
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
-              <p className="font-semibold text-lg mb-2">Pas encore de kit solaire ?</p>
+              <p className="font-semibold text-lg mb-2">Votre kit est déclaré — combien va-t-il vous rapporter ?</p>
               <p className="text-sm text-charcoal-light mb-4">
-                Calculez d&apos;abord la rentabilité de votre balcon en 30 secondes : département, orientation, puissance. Vous saurez si ça vaut le coup avant d&apos;entrer dans les démarches.
+                Estimez vos économies réelles selon votre département et votre orientation.
               </p>
               <Link href="/calculateur" className="btn-primary inline-flex">
-                Calculer ma rentabilité →
+                Calculer mes économies →
               </Link>
             </div>
 

@@ -2,33 +2,70 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Guides solaire balcon 2026',
-  description: 'Guides pratiques pour installer un kit solaire sur votre balcon. Réglementation, installation, rentabilité, droits des locataires.',
+  title: 'Guides pratiques solaire de balcon 2026 — Installation et réglementation',
+  description: 'Guides pas à pas pour installer un kit solaire sur votre balcon : réglementation 2026, droits des locataires, copropriété, déclaration Enedis, orientation optimale.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/guide',
+  },
 };
 
 const articles = [
   {
-    slug: 'panneau-solaire-balcon-débutant',
-    title: 'Panneau solaire balcon : le guide complet pour débutants',
-    excerpt: 'Fonctionnement, prix, rentabilité par ville, réglementation, erreurs à éviter. Tout ce qu\'il faut savoir avant de se lancer.',
-    badge: 'Guide essentiel',
-    date: '30 mars 2026',
-    readTime: '15 min',
+    slug: 'declaration-cacsi-enedis-panneau-solaire',
+    title: 'Declaration CACSI Enedis : le guide pas a pas',
+    excerpt: 'La procedure complete pour declarer votre kit a Enedis. Avec modeles de lettres prets a copier.',
+    badge: 'Demarches Enedis',
+    date: '23 avril 2026',
+    readTime: '12 min',
+  },
+  {
+    slug: 'panneau-solaire-copropriete',
+    title: 'Panneau solaire en copropriete : regles, votes et astuces',
+    excerpt: 'Quand faut-il l\'accord du syndic ? Modele de courrier, vote en AG, cas pratiques.',
+    badge: 'Copropriete',
+    date: '17 avril 2026',
+    readTime: '8 min',
+  },
+  {
+    slug: 'reglementation-panneau-solaire-balcon-2026',
+    title: 'Panneau solaire balcon : reglementation 2026 complete',
+    excerpt: 'Norme NF C 15-100, CACSI Enedis, copropriete, limite 900W : tout ce que dit la loi.',
+    badge: 'Reglementation',
+    date: '14 avril 2026',
+    readTime: '9 min',
+  },
+  {
+    slug: 'orientation-panneau-solaire-balcon',
+    title: 'Quelle orientation pour un panneau solaire de balcon ?',
+    excerpt: 'Sud, sud-est, ouest, nord : l\'impact reel de l\'orientation sur votre production.',
+    badge: 'Orientation',
+    date: '29 mars 2026',
+    readTime: '8 min',
+  },
+  {
+    slug: 'installer-kit-solaire-balcon',
+    title: 'Comment installer un kit solaire sur un balcon : pas a pas',
+    excerpt: 'Le guide d\'installation detaille, etape par etape, avec les outils necessaires.',
+    badge: 'Installation',
+    date: '28 mars 2026',
+    readTime: '8 min',
   },
   {
     slug: 'panneau-solaire-balcon-locataire',
     title: 'Panneau solaire balcon locataire : droits, regles et astuces',
-    excerpt: 'Vos droits en tant que locataire, réglementation copropriété, kits adaptés, et astuces pour maximiser la production en appartement.',
+    excerpt: 'Vos droits en tant que locataire, reglementation copropriete, kits adaptes.',
     badge: 'Locataires',
-    date: '30 mars 2026',
+    date: '20 mars 2026',
     readTime: '8 min',
   },
-];
-
-const comingSoon = [
-  { title: 'Panneau solaire balcon : réglementation 2026 complete', desc: 'Norme NF C 15-100, déclaration Enedis, copropriété : tout ce que dit la loi.' },
-  { title: 'Comment installér un kit solaire sur un balcon (pas à pas)', desc: 'Guide d\'installation illustre pour chaque type de kit.' },
-  { title: 'Panneau solaire balcon : quelle orientation choisir ?', desc: 'Sud, est, ouest, nord : impact sur la production et nos recommandations.' },
+  {
+    slug: 'panneau-solaire-balcon-debutant',
+    title: 'Panneau solaire balcon : le guide complet pour debutants',
+    excerpt: 'Fonctionnement, prix, rentabilite par ville, reglementation, erreurs a eviter.',
+    badge: 'Guide essentiel',
+    date: '18 mars 2026',
+    readTime: '15 min',
+  },
 ];
 
 export default function GuideIndexPage() {
@@ -53,16 +90,6 @@ export default function GuideIndexPage() {
           ))}
         </div>
 
-        <h2 className="font-bold text-xl mb-4 text-charcoal">Prochains guides</h2>
-        <div className="space-y-4">
-          {comingSoon.map((c, i) => (
-            <div key={i} className="card bg-cream/50">
-              <h3 className="font-semibold text-sm">{c.title}</h3>
-              <p className="text-xs text-stone mt-1">{c.desc}</p>
-              <span className="text-xs text-amber-dark font-medium mt-2 inline-block">À venir prochainement</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

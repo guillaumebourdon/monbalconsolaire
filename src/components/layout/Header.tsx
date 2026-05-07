@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const navLinks = [
   { href: '/comment-ca-marche', label: 'Comment ça marche' },
@@ -13,12 +13,20 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-border">
       <div className="container-brand">
         <div className="flex items-center justify-between h-16 md:h-18">
           <Link href="/" className="flex items-center gap-2 group">
-            <svg width="32" height="32" viewBox="0 0 80 80" fill="none" className="group-hover:scale-105 transition-transform">
+            <svg width="32" height="32" viewBox="0 0 80 80" fill="none" aria-label="MonBalconSolaire" role="img" className="group-hover:scale-105 transition-transform">
               <rect x="0" y="0" width="80" height="80" rx="8" fill="none" stroke="#3D7A4A" strokeWidth="2.5"/>
               <rect x="4" y="52" width="72" height="4" rx="2" fill="#3D7A4A"/>
               <rect x="10.75" y="56" width="2.5" height="14" rx="1" fill="#3D7A4A"/>
@@ -53,7 +61,7 @@ export function Header() {
             <Link href="/calculateur" className="btn-primary text-sm py-2.5 px-5">Calculer mes economies →</Link>
           </div>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-lg hover:bg-cream-dark transition-colors" aria-label="Menu">
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-cream-dark transition-colors" aria-label="Menu" aria-expanded={isOpen}>
             <div className="w-5 h-4 flex flex-col justify-between">
               <span className={`w-full h-0.5 bg-charcoal rounded transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
               <span className={`w-full h-0.5 bg-charcoal rounded transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />

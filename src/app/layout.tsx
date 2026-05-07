@@ -1,10 +1,27 @@
 import type { Metadata } from 'next';
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SchemaOrganization, SchemaWebSite } from '@/components/SchemaMarkup';
+import { CookieConsent } from '@/components/ui/CookieConsent';
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://monbalconsolaire.fr'),
   title: {
     default: 'MonBalconSolaire — Le guide indépendant du solaire de balcon',
     template: '%s | MonBalconSolaire',
@@ -21,6 +38,9 @@ export const metadata: Metadata = {
     'calculateur solaire',
   ],
   authors: [{ name: 'MonBalconSolaire', url: 'https://monbalconsolaire.fr' }],
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr',
+  },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
@@ -30,41 +50,40 @@ export const metadata: Metadata = {
     description:
       'Comparez les kits solaires, calculez vos économies réelles et passez au solaire sans travaux.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MonBalconSolaire — Le guide indépendant du solaire de balcon',
+    description:
+      'Comparez les kits solaires, calculez vos économies réelles et passez au solaire sans travaux.',
+  },
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: 'd5dwLbFhABiXLEeUIqNt-kbwWtibmsGUtVJSpVSd2aY',
+    other: {
+      'msvalidate.01': '05DB5632ABECB301EBD515E6E5ED1F84',
+    },
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${plusJakarta.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
-        <meta name="google-site-verification" content="d5dwLbFhABiXLEeUIqNt-kbwWtibmsGUtVJSpVSd2aY" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CXQTZXKCR"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-7CXQTZXKCR');
-            `,
-          }}
-        />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col font-sans">
+        <a href="#main-content" className="skip-to-content">Aller au contenu principal</a>
         <SchemaOrganization />
         <SchemaWebSite />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

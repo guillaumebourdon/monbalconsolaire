@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+              <svg width="28" height="28" viewBox="0 0 80 80" fill="none" aria-label="MonBalconSolaire" role="img">
                 <rect x="0" y="0" width="80" height="80" rx="8" fill="none" stroke="#3D7A4A" strokeWidth="2.5"/>
                 <rect x="4" y="52" width="72" height="4" rx="2" fill="#3D7A4A"/>
                 <rect x="10.75" y="56" width="2.5" height="14" rx="1" fill="#3D7A4A"/>
@@ -63,7 +63,7 @@ export function Footer() {
             <strong className="text-stone">Transparence affiliation :</strong> MonBalconSolaire est un guide independant. Nous ne vendons aucun produit.
             Certains liens presents sur ce site sont des liens affilies : si vous effectuez un achat via ces liens, nous recevons une commission sans surcout pour vous.
           </p>
-          <p className="text-xs text-stone-light mt-4">&copy; {new Date().getFullYear()} MonBalconSolaire &mdash; Beeleven SASU &mdash; Tous droits reserves.</p>
+          <p className="text-xs text-stone-light mt-4" suppressHydrationWarning>&copy; {new Date().getFullYear()} MonBalconSolaire &mdash; Beeleven SASU &mdash; Tous droits reserves.</p>
         </div>
       </div>
     </footer>

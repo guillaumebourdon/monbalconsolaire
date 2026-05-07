@@ -4,6 +4,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Comment ca marche : le solaire de balcon explique simplement',
   description: 'Branchez, produisez, economisez. Le fonctionnement d un kit solaire plug-and-play explique en 3 etapes, sans jargon.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/comment-ca-marche',
+  },
 };
 
 export default function CommentCaMarchePage() {

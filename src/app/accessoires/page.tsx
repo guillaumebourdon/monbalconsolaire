@@ -159,15 +159,6 @@ export default function AccessoiresPage() {
           </div>
         )}
 
-        <div className="card-lg bg-amber-pale/20 border-amber/10 mb-12">
-          <h2 className="font-bold text-lg mb-2">💡 À venir cette semaine</h2>
-          <ul className="text-sm text-charcoal-light space-y-2">
-            <li>• Mini kits solaires Amazon à moins de 300 € : lesquels valent le coup ?</li>
-            <li>• Batteries portables solaires (EcoFlow, Bluetti) : comparatif 2026</li>
-            <li>• Lampes solaires extérieures pour balcon : 10 modèles sélectionnés</li>
-          </ul>
-        </div>
-
         <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
           <p className="font-semibold text-lg mb-2">Votre balcon est-il adapté au solaire ?</p>
           <p className="text-sm text-charcoal-light mb-4">Calculez votre production potentielle avant d'investir dans des accessoires.</p>

@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/blog/panneau-solaire-ombre-optimiser-production',
+    title: 'Panneau solaire et ombre : comment optimiser la production',
+    excerpt: 'Ombre partielle, arbre, mur voisin : quel impact sur votre kit solaire et comment maximiser la production.',
+    type: 'analyse',
+    badge: 'Optimisation',
+    tags: ['optimisation'],
+    publishedAt: '2026-05-06',
+    readTime: '10 min',
+  },
+  {
     slug: '/blog/combien-rapporte-panneau-solaire-balcon',
     title: 'Combien rapporte un panneau solaire de balcon ? Calcul réel',
     excerpt: 'Analyse chiffrée de la rentabilité selon la région, l\'orientation et le modèle.',

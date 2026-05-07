@@ -6,13 +6,13 @@
 export const siteStats = {
   // Preuve sociale - home page
   calculsEffectues: '500+',
-  articlesPublies: 30, // À incrémenter à chaque nouvel article
-  kitsTestes: 5,       // À incrémenter quand on ajoute un avis
+  articlesPublies: 30, // À incrémenter à chaque nouvel article (guides + blog + comparatifs + avis)
+  kitsTestes: 7,       // À incrémenter quand on ajoute un avis
   departementsCouverts: 96, // Couverture France métropolitaine complète
   villesCouvertes: 57, // Villes avec données précises en autocomplétion
 
   // Dernière mise à jour des données
-  derniereMajStats: 'avril 2026',
+  derniereMajStats: 'mai 2026',
 
   // Tarif EDF (à surveiller et mettre à jour quand changement)
   prixKwhEDF: 0.1940,

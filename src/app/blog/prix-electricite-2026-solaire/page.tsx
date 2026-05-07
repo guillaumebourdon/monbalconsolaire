@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Prix de l\'électricité 2026 : pourquoi le solaire devient incontournable',
   description: 'Analyse de l\'évolution du prix de l\'électricité en France en 2026 et impact sur la rentabilité du solaire de balcon. Données, projections, calculs.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/prix-electricite-2026-solaire',
+  },
 };
 
 const faqData = [
@@ -92,12 +95,15 @@ export default function PrixElectricitePage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed"><strong>Le constat :</strong> un kit solaire de balcon acheté aujourd&apos;hui à 599€ pourrait générer entre 2 500€ et 4 500€ d&apos;économies sur sa durée de vie, selon l&apos;évolution des tarifs. C&apos;est un investissement qui se bonifie avec le temps.</p>
+              <p className="text-sm text-charcoal-light mt-2">
+                → Lire aussi : <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="text-green font-semibold hover:underline">Combien rapporte un panneau solaire de balcon ? Calcul réel par ville</Link>
+              </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le solaire comme protection anti-inflation</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Un panneau solaire fonctionne comme une assurance contre les hausses de prix de l&apos;électricité. Chaque kWh que vous produisez vous-même est un kWh que vous n&apos;achetez pas à EDF — quel que soit le tarif futur.</p>
-              <p className="text-charcoal-light leading-relaxed">C&apos;est la raison pour laquelle de plus en plus de Français s&apos;équipent : le solaire n&apos;est plus un geste écologique symbolique, c&apos;est un investissement financier rationnel avec un retour mesurable et garanti.</p>
+              <p className="text-charcoal-light leading-relaxed">C&apos;est la raison pour laquelle de plus en plus de Français s&apos;équipent : le solaire n&apos;est plus un geste écologique symbolique, c&apos;est un investissement financier rationnel avec un retour mesurable et garanti. Pour commencer sans trop investir, consultez notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green font-semibold hover:underline">sélection de kits solaires petit budget</Link>.</p>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-amber-pale/50 via-white to-green-pale/30 border-amber/10 text-center">

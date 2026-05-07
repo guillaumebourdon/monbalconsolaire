@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -8,6 +8,9 @@ import { ProductHero } from '@/components/ui/ProductHero';
 export const metadata: Metadata = {
   title: 'Sunology CITY avis 2026 : le kit pensé pour les balcons étroits',
   description: 'Avis complet sur le Sunology CITY : test, prix, production réelle, fixation garde-corps. Le kit solaire spécialisé balcon est-il vraiment adapté à votre situation ?',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/avis/sunology-city',
+  },
 };
 
 const faqData = [
@@ -119,6 +122,7 @@ export default function SunologyCityPage() {
         datePublished="2026-04-27"
       />
       <SchemaFAQ questions={faqData} />
+      <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} url="https://monbalconsolaire.fr/avis/sunology-city" />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology CITY' }]} />

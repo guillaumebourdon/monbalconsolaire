@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon nord : est-ce rentable en 2026 ?',
   description: 'Balcon plein nord : un panneau solaire peut-il être rentable ? Analyse honnête avec chiffres de production réels, coefficients PVGIS, et alternatives.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-balcon-nord',
+  },
 };
 
 const faqData = [
@@ -178,7 +181,7 @@ export default function BalconNordPage() {
                 <li>&bull; <strong>Le rayonnement diffus</strong> (lumière réfléchie par le ciel, les nuages, les surfaces) : représente 20-40 % de la production au sud, 80-90 % au nord.</li>
               </ul>
               <p className="text-charcoal-light leading-relaxed mt-3">
-                Au nord, le panneau ne reçoit jamais de soleil direct : il se contente de la lumière diffuse, qui est présente toute la journée mais 3-4 fois moins intense. D&apos;où la perte de production.
+                Au nord, le panneau ne reçoit jamais de soleil direct : il se contente de la lumière diffuse, qui est présente toute la journée mais 3-4 fois moins intense. D&apos;où la perte de production. Pour comprendre en détail l&apos;impact de chaque orientation, consultez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green font-semibold hover:underline">guide complet sur l&apos;orientation</Link>.
               </p>
             </section>
 
@@ -268,7 +271,7 @@ export default function BalconNordPage() {
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1">✅ Cas 1 : Kit petit budget dans le Sud</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Dans le Sud (PACA, Occitanie, Corse), même orienté nord, un kit 300 W à 299 € (Beem Kit par exemple) produit ~200 kWh/an, soit 40 €/an d&apos;économies. ROI de 7-8 ans. Acceptable, surtout si le kit est évolutif (ajout batterie plus tard).
+                    Dans le Sud (PACA, Occitanie, Corse), même orienté nord, un kit 300 W à 299 € (Beem Kit par exemple) produit ~200 kWh/an, soit 40 €/an d&apos;économies. ROI de 7-8 ans. Acceptable, surtout si le kit est évolutif (ajout batterie plus tard). Voir notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green font-semibold hover:underline">sélection de kits petit budget</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
@@ -293,7 +296,7 @@ export default function BalconNordPage() {
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Balcon nord avec obstruction</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Si un immeuble vous fait face, qu&apos;un arbre bloque la lumière, ou que vous êtes en bas d&apos;une cour intérieure : la production chute à 100-150 kWh/an maximum. À ce niveau, le ROI dépasse 20 ans, c&apos;est au-delà de la durée de vie garantie du kit.
+                    Si un immeuble vous fait face, qu&apos;un arbre bloque la lumière, ou que vous êtes en bas d&apos;une cour intérieure : la production chute à 100-150 kWh/an maximum. À ce niveau, le ROI dépasse 20 ans, c&apos;est au-delà de la durée de vie garantie du kit. Pour évaluer l&apos;impact exact de l&apos;ombre sur votre balcon, lisez notre guide <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green font-semibold hover:underline">panneau solaire et ombre : comment optimiser</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">

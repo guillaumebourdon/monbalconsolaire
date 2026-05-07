@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { HeroVisual } from '@/components/HeroVisual';
+import dynamic from 'next/dynamic';
 import { siteStats } from '@/lib/stats';
+
+const HeroVisual = dynamic(() => import('@/components/HeroVisual').then(m => m.HeroVisual), {
+  ssr: false,
+  loading: () => <div className="aspect-square bg-cream-dark/30 rounded-brand-xl animate-pulse" />,
+});
 
 export const metadata: Metadata = {
   title: 'MonBalconSolaire — Calculez vos économies solaires en 30 secondes',
@@ -85,12 +90,12 @@ export default function HomePage() {
       <section className="section-padding">
         <div className="container-brand">
           <div className="text-center mb-14">
-            <span className="badge-amber mb-4 inline-block">Comment ça marché</span>
+            <span className="badge-amber mb-4 inline-block">Comment ça marche</span>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
               Le solaire de balcon en 3 étapes
             </h2>
             <p className="text-charcoal-light max-w-lg mx-auto">
-              Pas besoin d&apos;être électricien. Un kit solaire plug-and-play s&apos;installé en quelques minutes, sans travaux.
+              Pas besoin d&apos;être électricien. Un kit solaire plug-and-play s&apos;installe en quelques minutes, sans travaux.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -98,7 +103,7 @@ export default function HomePage() {
               {
                 step: '1',
                 title: 'Calculez votre potentiel',
-                desc: 'Entrez votre ville et l\'orientation de votre balcon. Notre calculateur estimé vos économies en 30 secondes.',
+                desc: 'Entrez votre ville et l\'orientation de votre balcon. Notre calculateur estime vos économies en 30 secondes.',
                 color: 'bg-amber-pale text-amber-dark',
               },
               {
@@ -110,7 +115,7 @@ export default function HomePage() {
               {
                 step: '3',
                 title: 'Branchez et économisez',
-                desc: 'Posez le kit sur votre balcon, branchéz-le sur une prise, et commencez à produire votre électricité. C\'est tout.',
+                desc: 'Posez le kit sur votre balcon, branchez-le sur une prise, et commencez à produire votre électricité. C\'est tout.',
                 color: 'bg-amber-pale text-amber-dark',
               },
             ].map((item, i) => (
@@ -348,6 +353,47 @@ export default function HomePage() {
                 </div>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTENT HUBS */}
+      <section className="section-padding">
+        <div className="container-brand">
+          <div className="text-center mb-14">
+            <span className="badge-green mb-4 inline-block">Ressources</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+              Explorez nos guides et analyses
+            </h2>
+            <p className="text-charcoal-light max-w-lg mx-auto">
+              Tout ce qu&apos;il faut savoir avant de passer au solaire de balcon : guides pratiques, analyses chiffrées, réglementation.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/tout-savoir" className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+              <div className="text-2xl mb-3">📚</div>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Tout savoir</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed">Guides pratiques, analyses chiffrées et réglementation en un seul endroit.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Explorer →</span>
+            </Link>
+            <Link href="/guide" className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+              <div className="text-2xl mb-3">🔧</div>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Guides pratiques</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed">Installation, orientation, réglementation, copropriété, déclaration Enedis.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les guides →</span>
+            </Link>
+            <Link href="/blog" className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+              <div className="text-2xl mb-3">📊</div>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Blog &amp; analyses</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed">Rentabilité, prix de l&apos;électricité, production hivernale, autoconsommation.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les articles →</span>
+            </Link>
+            <Link href="/accessoires" className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+              <div className="text-2xl mb-3">🔌</div>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Accessoires</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed">Prises connectées, batteries portables, lampes solaires et mini kits Amazon.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Voir les accessoires →</span>
+            </Link>
           </div>
         </div>
       </section>

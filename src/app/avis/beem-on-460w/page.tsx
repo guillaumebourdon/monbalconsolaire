@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -8,6 +8,9 @@ import { ProductHero } from '@/components/ui/ProductHero';
 export const metadata: Metadata = {
   title: 'Beem On 460W avis 2026 : test complet et retour d\'expérience',
   description: 'Avis détaillé sur le Beem On 460W en 2026 : prix, installation, production réelle, avantages et inconvénients. Le concurrent du Sunology PLAY2 vaut-il le coup ?',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/avis/beem-on-460w',
+  },
 };
 
 const faqData = [
@@ -21,6 +24,7 @@ export default function BeemOnAvisPage() {
     <>
       <SchemaArticle title="Beem On 460W avis : test complet et retour d'expérience" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" />
       <SchemaFAQ questions={faqData} />
+      <SchemaProduct name="Beem On 460W" brand="Beem Energy" description="Kit solaire plug-and-play 460 Wc bifacial TOPCon avec micro-onduleur APSystems et suivi via app Beem." price={599} ratingValue={8} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />

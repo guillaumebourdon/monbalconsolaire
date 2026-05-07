@@ -7,6 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 export const metadata: Metadata = {
   title: '8 accessoires indispensables pour votre kit solaire de balcon (2026)',
   description: 'Wattmetre, rallonge etanche, prise connectee, support, protege-surtension : les accessoires Amazon pour optimiser votre installation solaire de balcon.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon',
+  },
 };
 
 const faqData = [

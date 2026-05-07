@@ -2,8 +2,11 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'À propos',
+  title: 'À propos de MonBalconSolaire — Guide indépendant solaire balcon',
   description: 'MonBalconSolaire est un guide indépendant des kits solaires pour balcon en France. Découvrez notre méthode, nos valeurs et notre engagement de transparence.',
+  alternates: {
+    canonical: 'https://monbalconsolaire.fr/a-propos',
+  },
 };
 
 export default function AProposPage() {
