@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const reviews = [
+  { slug: 'zendure-solarflow', title: 'Zendure SolarFlow : 840 W pour 488 €, trop beau ?', excerpt: 'Batterie 1,92 kWh + onduleur 800 W integres pour moins de 500 euros. Le meilleur rapport qualite-prix du marche.', badge: 'Nouveau', score: '8.5/10', price: '488 euros' },
   { slug: 'sunology-play-2', title: 'Sunology PLAY 2 : avis et test complet', excerpt: 'Le kit solaire le plus vendu en France (100 000+ foyers). 450 Wc, 599 euros, installation en 1 minute.', badge: 'Choix n 1', score: '8.5/10', price: '599 euros' },
   { slug: 'beem-on-460w', title: 'Beem On 460W : avis et test complet', excerpt: 'Le concurrent direct du Sunology PLAY2. 460 Wc, 599 euros, meilleur ratio euros/Wc en mono-panneau.', badge: 'Rapport qualite/prix', score: '8/10', price: '599 euros' },
   { slug: 'ecoflow-powerstream', title: 'EcoFlow PowerStream : test complet et verdict', excerpt: 'Le micro-onduleur intelligent : panneaux + batterie + reseau pilotes par app. Le plus modulaire du marche.', badge: 'Systeme modulaire', score: '8/10', price: '599 euros' },
