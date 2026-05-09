@@ -147,6 +147,17 @@ const ARTICLES: Article[] = [
     score: '8/10',
     price: '599 €',
   },
+  {
+    slug: '/avis/zendure-solarflow',
+    title: 'Zendure SolarFlow 800 Plus',
+    excerpt: 'Batterie 1,92 kWh + onduleur 800 W intégrés pour ~488 €. Le meilleur rapport qualité-prix du marché.',
+    type: 'avis',
+    badge: 'Rapport qualité/prix',
+    tags: ['stockage', 'budget', 'marque'],
+    publishedAt: '2026-05-07',
+    score: '8.5/10',
+    price: '488 €',
+  },
 ];
 
 const FILTERS = [
