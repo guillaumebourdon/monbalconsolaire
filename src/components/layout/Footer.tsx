@@ -29,15 +29,15 @@ export function Footer() {
                 <span className="text-charcoal">MonBalcon</span><span className="text-amber">Solaire</span>
               </span>
             </Link>
-            <p className="text-sm text-stone leading-relaxed">Le guide independant des kits solaires pour balcon et appartement en France.</p>
+            <p className="text-sm text-stone leading-relaxed">Le guide ind&eacute;pendant des kits solaires pour balcon et appartement en France.</p>
           </div>
 
           <div>
-            <h4 className="font-bold text-sm text-charcoal mb-4">Decouvrir</h4>
+            <h4 className="font-bold text-sm text-charcoal mb-4">D&eacute;couvrir</h4>
             <ul className="space-y-2.5">
-              <li><Link href="/comment-ca-marche" className="text-sm text-stone hover:text-green transition-colors">Comment ca marche</Link></li>
-              <li><Link href="/calculateur" className="text-sm text-stone hover:text-green transition-colors">Calculateur de rentabilite</Link></li>
-              <li><Link href="/a-propos" className="text-sm text-stone hover:text-green transition-colors">A propos</Link></li>
+              <li><Link href="/comment-ca-marche" className="text-sm text-stone hover:text-green transition-colors">Comment &ccedil;a marche</Link></li>
+              <li><Link href="/calculateur" className="text-sm text-stone hover:text-green transition-colors">Calculateur de rentabilit&eacute;</Link></li>
+              <li><Link href="/a-propos" className="text-sm text-stone hover:text-green transition-colors">&Agrave; propos</Link></li>
             </ul>
           </div>
 
@@ -50,20 +50,20 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-sm text-charcoal mb-4">Legal</h4>
+            <h4 className="font-bold text-sm text-charcoal mb-4">L&eacute;gal</h4>
             <ul className="space-y-2.5">
-              <li><Link href="/mentions-legales" className="text-sm text-stone hover:text-green transition-colors">Mentions legales</Link></li>
-              <li><Link href="/politique-confidentialite" className="text-sm text-stone hover:text-green transition-colors">Confidentialite</Link></li>
+              <li><Link href="/mentions-legales" className="text-sm text-stone hover:text-green transition-colors">Mentions l&eacute;gales</Link></li>
+              <li><Link href="/politique-confidentialite" className="text-sm text-stone hover:text-green transition-colors">Confidentialit&eacute;</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone-light leading-relaxed max-w-3xl">
-            <strong className="text-stone">Transparence affiliation :</strong> MonBalconSolaire est un guide independant. Nous ne vendons aucun produit.
-            Certains liens presents sur ce site sont des liens affilies : si vous effectuez un achat via ces liens, nous recevons une commission sans surcout pour vous.
+            <strong className="text-stone">Transparence affiliation :</strong> MonBalconSolaire est un guide ind&eacute;pendant. Nous ne vendons aucun produit.
+            Certains liens pr&eacute;sents sur ce site sont des liens affili&eacute;s : si vous effectuez un achat via ces liens, nous recevons une commission sans surco&ucirc;t pour vous.
           </p>
-          <p className="text-xs text-stone-light mt-4" suppressHydrationWarning>&copy; {new Date().getFullYear()} MonBalconSolaire &mdash; Beeleven SASU &mdash; Tous droits reserves.</p>
+          <p className="text-xs text-stone-light mt-4" suppressHydrationWarning>&copy; {new Date().getFullYear()} MonBalconSolaire &mdash; Be&eacute;lev&eacute;n SASU &mdash; Tous droits r&eacute;serv&eacute;s.</p>
         </div>
       </div>
     </footer>

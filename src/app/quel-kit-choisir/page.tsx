@@ -193,7 +193,7 @@ const FILTERS = [
 export default function QuelKitChoisirPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const NOW = new Date('2026-05-06').getTime();
+  const NOW = Date.now();
   const NEW_THRESHOLD_DAYS = 14;
   const UPDATED_THRESHOLD_DAYS = 30;
 

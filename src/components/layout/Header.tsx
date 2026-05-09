@@ -58,7 +58,7 @@ export function Header() {
           </nav>
 
           <div className="hidden md:block">
-            <Link href="/calculateur" className="btn-primary text-sm py-2.5 px-5">Calculer mes economies →</Link>
+            <Link href="/calculateur" className="btn-primary text-sm py-2.5 px-5">Calculer mes &eacute;conomies &rarr;</Link>
           </div>
 
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-cream-dark transition-colors" aria-label="Menu" aria-expanded={isOpen}>
@@ -79,7 +79,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="mt-3 px-4">
-                <Link href="/calculateur" onClick={() => setIsOpen(false)} className="btn-primary w-full justify-center text-sm">Calculer mes economies →</Link>
+                <Link href="/calculateur" onClick={() => setIsOpen(false)} className="btn-primary w-full justify-center text-sm">Calculer mes &eacute;conomies &rarr;</Link>
               </div>
             </nav>
           </div>

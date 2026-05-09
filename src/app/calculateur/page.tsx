@@ -19,9 +19,12 @@ const KITS = [
   { name: 'Beem Kit 300W', power: 0.30, price: 299, brand: 'Beem Energy', badge: 'Petit budget' },
   { name: 'Beem On 460W', power: 0.46, price: 599, brand: 'Beem Energy', badge: 'Modulaire' },
   { name: 'Sunethic F500', power: 0.50, price: 690, brand: 'Sunethic', badge: 'Made in France' },
+  { name: 'Zendure SolarFlow', power: 0.84, price: 900, brand: 'Zendure', badge: 'Avec batterie' },
+  { name: 'EcoFlow PowerStream', power: 0.80, price: 800, brand: 'EcoFlow', badge: 'Modulaire+' },
+  { name: 'DualSun PREASY', power: 0.42, price: 870, brand: 'DualSun', badge: 'Made in France' },
 ];
 
-const TARIF_KWH = 0.194;
+const TARIF_KWH = 0.2516;
 
 export default function CalculateurPage() {
   const [step, setStep] = useState(1);
@@ -311,7 +314,7 @@ export default function CalculateurPage() {
             </div>
 
             <p className="text-xs text-stone-light text-center leading-relaxed">
-              Estimation basee sur les données PVGIS (Commission europeenne) et le tarif EDF de 0,1940 &euro;/kWh (fevrier 2026).{' '}
+              Estimation basée sur les données PVGIS (Commission européenne) et le tarif EDF de 0,2516 &euro;/kWh (mai 2026).{' '}
               <button onClick={() => { setStep(1); setCity(null); setQuery(''); setOrientation(''); setConsoMensuelle(''); }} className="text-green hover:underline">&circlearrowleft; Recommencer</button>
             </p>
           </div>

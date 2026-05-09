@@ -70,7 +70,7 @@ const FILTERS = [
 export default function AccessoiresPage() {
   const [filter, setFilter] = useState<string>('all');
 
-  const NOW = new Date('2026-05-06').getTime();
+  const NOW = Date.now();
   const isNew = (dateIso: string) => {
     const diff = (NOW - new Date(dateIso).getTime()) / (1000 * 60 * 60 * 24);
     return diff <= 14;

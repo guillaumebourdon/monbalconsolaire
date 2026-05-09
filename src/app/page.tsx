@@ -70,8 +70,8 @@ export default function HomePage() {
         <div className="container-brand">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: '0,1940€', label: 'Prix du kWh EDF en 2026', suffix: '/kWh' },
-              { value: '429-699€', label: 'Prix d\'un kit solaire balcon', suffix: '' },
+              { value: '0,2516€', label: 'Prix du kWh EDF en 2026', suffix: '/kWh' },
+              { value: '299-900€', label: 'Prix d\'un kit solaire balcon', suffix: '' },
               { value: '3-5 ans', label: 'Retour sur investissement', suffix: '' },
               { value: '25 ans', label: 'Garantie des panneaux', suffix: '' },
             ].map((item, i) => (
@@ -151,29 +151,29 @@ export default function HomePage() {
                 brand: 'Sunology',
                 power: '450 Wc',
                 price: '599€',
-                kwh: '565',
-                roi: '3.6',
+                kwh: '465',
+                roi: '5.1',
                 slug: '/avis/sunology-play-2',
               },
               {
-                badge: 'Meilleur prix',
+                badge: 'Meilleur stockage',
+                name: 'Zendure SolarFlow',
+                brand: 'Zendure',
+                power: '840 W + batterie',
+                price: '900€',
+                kwh: '870',
+                roi: '5.1',
+                slug: '/avis/zendure-solarflow',
+              },
+              {
+                badge: 'Petit budget',
                 name: 'Beem Kit 300W',
                 brand: 'Beem Energy',
                 power: '300 Wc',
                 price: '299€',
-                kwh: '380',
-                roi: '2.5',
+                kwh: '310',
+                roi: '4.3',
                 slug: '/avis/beem-kit-300w',
-              },
-              {
-                badge: 'Made in France',
-                name: 'Sunethic F500',
-                brand: 'Sunethic',
-                power: '500 Wc',
-                price: '690€',
-                kwh: '600',
-                roi: '4.2',
-                slug: '/avis/sunethic-f500',
               },
             ].map((kit, i) => (
               <div key={i} className="card-lg group hover:shadow-brand-lg transition-all duration-300">
