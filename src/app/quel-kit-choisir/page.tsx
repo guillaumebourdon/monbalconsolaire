@@ -21,6 +21,16 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/zendure-vs-sunology-vs-beem',
+    title: 'Zendure vs Sunology vs Beem : le match 2026',
+    excerpt: 'Stockage à prix cassé vs simplicité absolue vs flexibilité : comparatif complet des 3 approches.',
+    type: 'comparatif',
+    badge: 'Match 2026',
+    tags: ['best', 'comparatif', 'stockage', 'marque'],
+    publishedAt: '2026-05-09',
+    readTime: '12 min',
+  },
+  {
     slug: '/comparatif/meilleur-kit-solaire-2026',
     title: 'Meilleur kit solaire plug and play 2026 : comparatif complet',
     excerpt: 'Sunology PLAY2, Beem On, Beem Kit, Sunethic F500 : tableau comparatif, points forts/faibles, verdict par profil.',
