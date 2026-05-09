@@ -158,6 +158,17 @@ const ARTICLES: Article[] = [
     price: '599 €',
   },
   {
+    slug: '/avis/dualsun-preasy',
+    title: 'DualSun PREASY',
+    excerpt: 'Panneau pliable 420 Wc assemblé en France, design aspect bois premium. Le challenger Made in France.',
+    type: 'avis',
+    badge: 'Made in France',
+    tags: ['marque'],
+    publishedAt: '2026-05-09',
+    score: '6.5/10',
+    price: '870 €',
+  },
+  {
     slug: '/avis/zendure-solarflow',
     title: 'Zendure SolarFlow 800 Plus',
     excerpt: 'Batterie 1,92 kWh + onduleur 800 W intégrés pour ~488 €. Le meilleur rapport qualité-prix du marché.',
