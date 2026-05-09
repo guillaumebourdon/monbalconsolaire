@@ -14,6 +14,7 @@ const articles = [
   { slug: 'sunology-vs-beem', title: 'Sunology vs Beem : quel kit solaire choisir en 2026 ?', excerpt: 'Les deux leaders français du solaire plug-and-play s\'affrontent. Comparaison point par point : prix, puissance, installation, app.', badge: 'Match direct', date: '30 mars 2026', readTime: '10 min' },
   { slug: 'kit-solaire-petit-budget', title: 'Meilleur kit solaire petit budget : moins de 400€', excerpt: 'Beem Kit 300W, kits Amazon : quelles sont les meilleures options pour débuter dans le solaire sans se ruiner ?', badge: 'Petit budget', date: '30 mars 2026', readTime: '8 min' },
   { slug: 'kit-solaire-batterie-2026', title: 'Kit solaire avec batterie 2026 : comparatif stockage', excerpt: 'Sunology PLAY MAX, STOREY, EcoFlow PowerStream : faut-il une batterie ? Comparatif et calcul de rentabilité honnête.', badge: 'Stockage', date: '30 mars 2026', readTime: '10 min' },
+  { slug: '300w-vs-400w-vs-500w-puissance', title: '300W vs 400W vs 500W : quelle puissance choisir ?', excerpt: 'Comparatif des 3 puissances les plus vendues : prix au Wc, production réelle, profil adapté à chaque gamme.', badge: 'Puissance', date: '18 avril 2026', readTime: '8 min' },
 ];
 
 const comingSoon: { title: string; desc: string }[] = [];

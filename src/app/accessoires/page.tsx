@@ -142,7 +142,9 @@ export default function AccessoiresPage() {
                   <h3 className="font-bold text-lg md:text-xl group-hover:text-green transition-colors mb-2 leading-tight">{a.title}</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">{a.excerpt}</p>
                   <div className="flex items-center gap-3 mt-3 text-xs text-stone">
-                    <span>⏱ {a.readTime}</span>
+                    <span>{new Date(a.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                    <span>&middot;</span>
+                    <span>{a.readTime}</span>
                     {a.priceRange && <span className="font-mono font-semibold text-charcoal">{a.priceRange}</span>}
                   </div>
                 </div>

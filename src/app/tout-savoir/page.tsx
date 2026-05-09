@@ -284,7 +284,9 @@ export default function ToutSavoirPage() {
                   </h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">{a.excerpt}</p>
                   <div className="flex items-center gap-3 mt-3 text-xs text-stone">
-                    <span>⏱ {a.readTime}</span>
+                    <span>{new Date(a.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                    <span>&middot;</span>
+                    <span>{a.readTime}</span>
                   </div>
                 </div>
               </div>

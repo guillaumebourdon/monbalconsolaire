@@ -266,7 +266,8 @@ export default function QuelKitChoisirPage() {
                   </h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">{a.excerpt}</p>
                   <div className="flex items-center gap-3 mt-3 text-xs text-stone">
-                    {a.readTime && <span>⏱ {a.readTime}</span>}
+                    <span>{new Date(a.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                    {a.readTime && <><span>&middot;</span><span>{a.readTime}</span></>}
                     {a.price && <span className="font-mono font-semibold text-charcoal">{a.price}</span>}
                   </div>
                 </div>
