@@ -307,18 +307,18 @@ export default function SunologyCityPage() {
                   <li>&bull; <strong>Production annuelle</strong> : 340 kWh/an</li>
                   <li>&bull; <strong>Autoconsommation</strong> : 60% en moyenne (le reste injecté gratuitement)</li>
                   <li>&bull; <strong>kWh économisés</strong> : 204 kWh/an</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 204 &times; 0,1940 € = <strong>40 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 549 € / 40 € = <strong>13,7 ans</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 204 &times; 0,2516 € = <strong>51 €/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : 549 € / 51 € = <strong>10,8 ans</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                À première vue, 13 ans c&apos;est long. Mais ce calcul ignore deux paramètres importants :
+                À première vue, près de 11 ans c&apos;est long. Mais ce calcul ignore deux paramètres importants :
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>1. La hausse du tarif EDF.</strong> Sur les 10 dernières années, le prix du kWh a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 60-70 €/an dès la 5ème année, et le ROI tombe à <strong>10-11 ans</strong>.
+                <strong>1. La hausse du tarif EDF.</strong> Sur les 10 dernières années, le prix du kWh a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 75-90 €/an dès la 5ème année, et le ROI tombe à <strong>8-9 ans</strong>.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                <strong>2. La durée de vie du kit.</strong> Le CITY est garanti 25 ans. Une fois le ROI atteint, chaque année produit 50-70 € d&apos;économies pures. Sur la durée totale, le gain net est de <strong>1 200 à 1 800 €</strong>. C&apos;est moins rentable qu&apos;un PLAY 2, mais ça reste positif.
+                <strong>2. La durée de vie du kit.</strong> Le CITY est garanti 25 ans. Une fois le ROI atteint, chaque année produit 60-90 € d&apos;économies pures. Sur la durée totale, le gain net est de <strong>1 500 à 2 200 €</strong>. C&apos;est moins rentable qu&apos;un PLAY 2, mais ça reste positif.
               </p>
             </section>
 

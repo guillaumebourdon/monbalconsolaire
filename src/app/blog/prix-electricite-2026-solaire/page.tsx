@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Quel est le prix du kWh en 2026 ?', answer: 'Le tarif réglementé EDF est de 0,1940€/kWh TTC en option base 6 kVA depuis le 1er février 2026. C\'est une baisse de 0,6% par rapport à août 2025, mais le tarif reste 55% plus élevé qu\'en 2012.' },
+  { question: 'Quel est le prix du kWh en 2026 ?', answer: 'Le tarif réglementé EDF est de 0,2516€/kWh TTC en option base 6 kVA depuis le 1er mai 2026. C\'est une hausse de 29,7% par rapport à février 2026, et le tarif est désormais 101% plus élevé qu\'en 2012.' },
   { question: 'Le prix de l\'électricité va-t-il augmenter en 2026-2027 ?', answer: 'Très probablement. La fin du dispositif ARENH en janvier 2026 modifie le mécanisme de fixation des prix. Les analystes prévoient une hausse de 3 à 5% par an en moyenne sur les prochaines années.' },
   { question: 'Combien le solaire fait-il économiser face aux hausses ?', answer: 'Chaque hausse de 1% du tarif EDF augmente automatiquement les économies de votre panneau. Un kit à 599€ qui économise 100€/an en 2026 pourrait économiser 130-160€/an en 2030 si le tarif augmente de 5%/an.' },
 ];
@@ -36,7 +36,7 @@ export default function PrixElectricitePage() {
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">L&apos;évolution du prix du kWh en France</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">En février 2026, le tarif réglementé EDF s&apos;établit à <span className="data-highlight">0,1940 €/kWh TTC</span> en option base (6 kVA). Ce tarif a légèrement baissé de 0,6% par rapport à août 2025, grâce à une baisse des coûts d&apos;approvisionnement sur les marchés de gros.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">En mai 2026, le tarif réglementé EDF s&apos;établit à <span className="data-highlight">0,2516 €/kWh TTC</span> en option base (6 kVA). Ce tarif a augmenté de 29,7% par rapport à février 2026, en raison de la fin de l&apos;ARENH et de la hausse des coûts de réseau.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Mais cette baisse ponctuelle masque la tendance de fond :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[400px]">
@@ -53,6 +53,7 @@ export default function PrixElectricitePage() {
                       ['2024', '0,2516 €', '+8,6%', '+101%'],
                       ['2025 (août)', '0,1952 €', '-14,4%*', '+56%'],
                       ['2026 (fév.)', '0,1940 €', '-0,6%', '+55%'],
+                      ['2026 (mai)', '0,2516 €', '+29,7%', '+101%'],
                     ].map(([y, t, v, c], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{y}</td>
@@ -72,7 +73,7 @@ export default function PrixElectricitePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">L&apos;ARENH (Accès Régulé à l&apos;Électricité Nucléaire Historique) obligeait EDF à vendre une partie de sa production nucléaire à ses concurrents à un prix fixe de 42€/MWh. Ce mécanisme a expiré le 31 décembre 2025.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Son remplacement par un nouveau mécanisme de régulation est en cours de finalisation, mais la plupart des analystes s&apos;accordent sur un point : le prix plancher de l&apos;électricité en France va structurellement augmenter dans les années à venir, en raison des investissements massifs nécessaires dans le parc nucléaire (Grand Carénage, nouveaux EPR) et les réseaux.</p>
               <div className="card bg-amber-pale/30 border-amber/10">
-                <p className="text-sm text-amber-dark"><strong>Projection CRE :</strong> le tarif réglementé pourrait atteindre 0,22 à 0,25 €/kWh d&apos;ici 2030 selon les scénarios, soit une hausse de 13 à 29% par rapport à aujourd&apos;hui.</p>
+                <p className="text-sm text-amber-dark"><strong>Projection CRE :</strong> le tarif réglementé pourrait atteindre 0,29 à 0,32 €/kWh d&apos;ici 2030 selon les scénarios, soit une hausse de 15 à 27% par rapport à aujourd&apos;hui.</p>
               </div>
             </section>
 
@@ -81,9 +82,9 @@ export default function PrixElectricitePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Chaque centime d&apos;augmentation du kWh améliore automatiquement la rentabilité de votre panneau solaire. Voici l&apos;impact sur un kit Sunology PLAY2 (599€, 520 kWh/an en région lyonnaise) :</p>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 {[
-                  { tarif: '0,1940 €', label: 'Tarif actuel (2026)', eco: '101 €/an', roi: '4,1 ans', total25: '~2 520 €' },
-                  { tarif: '0,2200 €', label: 'Projection basse (2030)', eco: '114 €/an', roi: '3,6 ans', total25: '~3 400 €' },
-                  { tarif: '0,2500 €', label: 'Projection haute (2030)', eco: '130 €/an', roi: '3,2 ans', total25: '~4 500 €' },
+                  { tarif: '0,2516 €', label: 'Tarif actuel (mai 2026)', eco: '131 €/an', roi: '4,6 ans', total25: '~3 275 €' },
+                  { tarif: '0,2900 €', label: 'Projection basse (2030)', eco: '151 €/an', roi: '4,0 ans', total25: '~4 200 €' },
+                  { tarif: '0,3200 €', label: 'Projection haute (2030)', eco: '166 €/an', roi: '3,6 ans', total25: '~5 200 €' },
                 ].map((s, i) => (
                   <div key={i} className="card text-center">
                     <div className="text-xs text-stone font-semibold mb-2">{s.label}</div>
@@ -94,7 +95,7 @@ export default function PrixElectricitePage() {
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed"><strong>Le constat :</strong> un kit solaire de balcon acheté aujourd&apos;hui à 599€ pourrait générer entre 2 500€ et 4 500€ d&apos;économies sur sa durée de vie, selon l&apos;évolution des tarifs. C&apos;est un investissement qui se bonifie avec le temps.</p>
+              <p className="text-charcoal-light leading-relaxed"><strong>Le constat :</strong> un kit solaire de balcon acheté aujourd&apos;hui à 599€ pourrait générer entre 3 200€ et 5 200€ d&apos;économies sur sa durée de vie, selon l&apos;évolution des tarifs. C&apos;est un investissement qui se bonifie avec le temps.</p>
               <p className="text-sm text-charcoal-light mt-2">
                 → Lire aussi : <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="text-green font-semibold hover:underline">Combien rapporte un panneau solaire de balcon ? Calcul réel par ville</Link>
               </p>

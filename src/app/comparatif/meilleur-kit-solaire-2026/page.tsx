@@ -15,17 +15,17 @@ export const metadata: Metadata = {
 const faqData = [
   { question: 'Quel est le meilleur kit solaire plug-and-play en 2026 ?', answer: 'Le Sunology PLAY2 offre le meilleur équilibre entre puissance (450 Wc), qualité de fabrication (garantie 25 ans) et facilité d\'installation (1 minute). Pour les petits budgets, le Beem Kit 300W à 299 euros est imbattable.' },
   { question: 'Combien coute un kit solaire pour balcon ?', answer: 'Les prix vont de 299 euros (Beem Kit 300W) à 690 euros (Sunethic F500). Le milieu de gamme se situe autour de 599 euros avec le Sunology PLAY2 ou le Beem On 460W.' },
-  { question: 'Un kit solaire de balcon est-il rentable ?', answer: 'Oui. Avec le tarif EDF à 0,1940 euros/kWh en 2026, un kit de 450W produit 400-650 kWh/an selon la region, soit 80-130 euros d\'économies annuelles. Le retour sur investissement est de 3 à 6 ans pour une garantie de 25 ans.' },
+  { question: 'Un kit solaire de balcon est-il rentable ?', answer: 'Oui. Avec le tarif EDF à 0,2516 euros/kWh en 2026, un kit de 450W produit 400-650 kWh/an selon la region, soit 100-165 euros d\'économies annuelles. Le retour sur investissement est de 4 à 6 ans pour une garantie de 25 ans.' },
   { question: 'Peut-on installér un panneau solaire sur un balcon en tant que locataire ?', answer: 'Oui. Les kits plug-and-play installés au sol ou en appui sur une rambarde (sans perçage) ne nécessitent ni autorisation de travaux ni accord du propriétaire, tant que l\'installation est amovible et ne modifié pas le batiment.' },
   { question: 'Quelle est la différence entre Sunology et Beem ?', answer: 'Sunology propose un panneau unique de 450W avec chassis intégré (installation en 1 min). Beem propose soit un panneau unique (Beem On 460W) soit un kit de 4 petits panneaux (Beem Kit 420W). Beem est légèrement moins cher et plus modulaire, Sunology à une finition plus premium.' },
 ];
 
 const kits = [
-  { name: 'Sunology PLAY2', power: '450 Wc', price: '599\u20ac', ratio: '1,33\u20ac', prod: '520 kWh', roi: '3,6 ans', guarantee: '25 ans', highlight: true },
-  { name: 'Beem On 460W', power: '460 Wc', price: '599\u20ac', ratio: '1,30\u20ac', prod: '530 kWh', roi: '3,5 ans', guarantee: '25 ans', highlight: false },
-  { name: 'Beem Kit 300W', power: '300 Wc', price: '299\u20ac', ratio: '1,00\u20ac', prod: '350 kWh', roi: '2,5 ans', guarantee: '25 ans', highlight: false },
-  { name: 'Beem Kit 420W', power: '420 Wc', price: '599\u20ac', ratio: '1,43\u20ac', prod: '480 kWh', roi: '4 ans', guarantee: '25 ans', highlight: false },
-  { name: 'Sunethic F500', power: '500 Wc', price: '690\u20ac', ratio: '1,38\u20ac', prod: '570 kWh', roi: '4,2 ans', guarantee: '25 ans', highlight: false },
+  { name: 'Sunology PLAY2', power: '450 Wc', price: '599\u20ac', ratio: '1,33\u20ac', prod: '520 kWh', roi: '4,6 ans', guarantee: '25 ans', highlight: true },
+  { name: 'Beem On 460W', power: '460 Wc', price: '599\u20ac', ratio: '1,30\u20ac', prod: '530 kWh', roi: '4,5 ans', guarantee: '25 ans', highlight: false },
+  { name: 'Beem Kit 300W', power: '300 Wc', price: '299\u20ac', ratio: '1,00\u20ac', prod: '350 kWh', roi: '3,4 ans', guarantee: '25 ans', highlight: false },
+  { name: 'Beem Kit 420W', power: '420 Wc', price: '599\u20ac', ratio: '1,43\u20ac', prod: '480 kWh', roi: '5,0 ans', guarantee: '25 ans', highlight: false },
+  { name: 'Sunethic F500', power: '500 Wc', price: '690\u20ac', ratio: '1,38\u20ac', prod: '570 kWh', roi: '4,8 ans', guarantee: '25 ans', highlight: false },
 ];
 
 const sunologySpecs = [
@@ -63,7 +63,7 @@ export default function ComparatifPage() {
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En résumé</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed mb-3">En 2026, trois kits solaires plug-and-play dominent le marché français pour le balcon et l&apos;appartement. Le <strong>Sunology PLAY2</strong> (450 Wc, 599&euro;) offre le meilleur équilibre qualité/prix/facilité. Le <strong>Beem Kit 300W</strong> (299&euro;) est le choix budget. Le <strong>Sunethic F500</strong> (500 Wc, 690&euro;) seduit par son Made in France. Tous se rentabilisent en 3 à 6 ans.</p>
+            <p className="text-charcoal-light text-sm leading-relaxed mb-3">En 2026, trois kits solaires plug-and-play dominent le marché français pour le balcon et l&apos;appartement. Le <strong>Sunology PLAY2</strong> (450 Wc, 599&euro;) offre le meilleur équilibre qualité/prix/facilité. Le <strong>Beem Kit 300W</strong> (299&euro;) est le choix budget. Le <strong>Sunethic F500</strong> (500 Wc, 690&euro;) seduit par son Made in France. Tous se rentabilisent en 3 à 5 ans.</p>
             <Link href="/calculateur" className="text-green font-semibold text-sm hover:underline">&rarr; Calculez vos économies personnalisees avec notre simulateur gratuit</Link>
           </div>
 
@@ -80,8 +80,8 @@ export default function ComparatifPage() {
 
             <section id="section-1">
               <h2 className="text-2xl font-extrabold mb-4">1. Pourquoi un kit solaire de balcon en 2026 ?</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le prix de l&apos;électricité en France à augmente de 55% entre 2012 et 2026. En fevrier 2026, le tarif réglementé EDF s&apos;etablit à <span className="data-highlight">0,1940 &euro;/kWh TTC</span> en option base. Meme si ce tarif à légèrement baisse (-0,6% par rapport à 2025), la tendance sur 10 ans reste à la hausse de 4 à 5% par an en moyenne.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Parallelement, le prix des kits solaires plug-and-play à baisse de 15 à 20% en 2025-2026. Un kit de qualité demarre aujourd&apos;hui à <span className="data-highlight">299 &euro;</span> et les modeles de reference coutent autour de <span className="data-highlight">599 &euro;</span>. Le retour sur investissement se situe entre 3 et 6 ans, pour une garantie de 25 ans.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le prix de l&apos;électricité en France à augmente de 55% entre 2012 et 2026. En mai 2026, le tarif réglementé EDF s&apos;etablit à <span className="data-highlight">0,2516 &euro;/kWh TTC</span> en option base. Ce tarif à augmente par rapport à début 2026, et la tendance sur 10 ans reste à la hausse de 4 à 5% par an en moyenne.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Parallelement, le prix des kits solaires plug-and-play à baisse de 15 à 20% en 2025-2026. Un kit de qualité demarre aujourd&apos;hui à <span className="data-highlight">299 &euro;</span> et les modeles de reference coutent autour de <span className="data-highlight">599 &euro;</span>. Le retour sur investissement se situe entre 3 et 5 ans, pour une garantie de 25 ans.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">La bonne nouvelle pour les locataires et propriétaires d&apos;appartement : ces kits se branchént sur une simple prise électrique, ne nécessitent aucun travaux, et peuvent etre installés en quelques minutes. Seule une déclaration informative aupres d&apos;Enedis (convention CACSI) est requise.</p>
               <div className="card bg-green-pale/30 border-green/10 my-6">
                 <p className="text-sm text-green-dark"><strong>Point réglementation 2026 :</strong> La norme NF C 15-100 mise à jour en septembre 2025 limite la puissance à 900W par circuit de prise. Une période transitoire court jusqu&apos;au 31 mai 2026. Au-dela de 900W, un circuit dédié peut etre nécessaire.</p>
@@ -132,7 +132,7 @@ export default function ComparatifPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-3">* Production estimée pour une installation en region lyonnaise, orientation sud, inclinaison 30&deg;. Source : données PVGIS. Le ROI est calcule avec le tarif EDF de 0,1940 &euro;/kWh (fevrier 2026).</p>
+              <p className="text-xs text-stone mt-3">* Production estimée pour une installation en region lyonnaise, orientation sud, inclinaison 30&deg;. Source : données PVGIS. Le ROI est calcule avec le tarif EDF de 0,2516 &euro;/kWh (mai 2026).</p>
             </section>
 
             <section id="section-4">
@@ -205,7 +205,7 @@ export default function ComparatifPage() {
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">299 &euro;</div><div className="text-xs text-stone">300 Wc</div></div>
                 </div>
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est l&apos;entrée de gamme ideale pour decouvrir le solaire de balcon sans se ruiner. A <span className="data-highlight">299 &euro;</span>, c&apos;est le meilleur ratio &euro;/Wc du marché (<span className="data-highlight">1,00 &euro;/Wc</span>). Meme avec une production plus modeste (~350 kWh/an en region lyonnaise), le retour sur investissement est atteint en seulement 2 à 3 ans.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est l&apos;entrée de gamme ideale pour decouvrir le solaire de balcon sans se ruiner. A <span className="data-highlight">299 &euro;</span>, c&apos;est le meilleur ratio &euro;/Wc du marché (<span className="data-highlight">1,00 &euro;/Wc</span>). Meme avec une production plus modeste (~350 kWh/an en region lyonnaise), le retour sur investissement est atteint en seulement 3 à 4 ans.</p>
 
               <h4 className="font-bold mb-2 mt-6">Pour qui ?</h4>
               <p className="text-charcoal-light leading-relaxed">C&apos;est le kit ideal pour tester l&apos;autoconsommation à moindre cout avant d&apos;investir dans un kit plus puissant. Ses 4 petits panneaux s&apos;adaptént aux espaces restreints et aux configurations inhabituelles (mur étroit, garde-corps, angle de balcon).</p>
@@ -252,7 +252,7 @@ export default function ComparatifPage() {
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
                   <h4 className="font-bold text-amber-dark mb-1">Pour les petits budgets &rarr; Beem Kit 300W (299&euro;)</h4>
-                  <p className="text-sm text-charcoal-light">Le meilleur ratio &euro;/Wc du marché. Idéal pour tester l&apos;autoconsommation à moindre cout, avec un ROI en seulement 2-3 ans.</p>
+                  <p className="text-sm text-charcoal-light">Le meilleur ratio &euro;/Wc du marché. Idéal pour tester l&apos;autoconsommation à moindre cout, avec un ROI en seulement 3-4 ans.</p>
                 </div>
                 <div className="card-lg">
                   <h4 className="font-bold mb-1">Pour le Made in France &rarr; Sunethic F500 (690&euro;)</h4>

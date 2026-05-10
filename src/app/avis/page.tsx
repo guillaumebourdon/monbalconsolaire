@@ -10,15 +10,15 @@ export const metadata: Metadata = {
 };
 
 const reviews = [
-  { slug: 'dualsun-preasy', title: 'DualSun PREASY : le nouveau challenger Made in France', excerpt: 'Panneau pliable 420 Wc, assemble en France, design aspect bois. Beau mais cher face a la concurrence.', badge: 'Nouveau', score: '6.5/10', price: '870 euros' },
-  { slug: 'zendure-solarflow', title: 'Zendure SolarFlow : 840 W pour 488 €, trop beau ?', excerpt: 'Batterie 1,92 kWh + onduleur 800 W integres pour moins de 500 euros. Le meilleur rapport qualite-prix du marche.', badge: 'Rapport qualite/prix', score: '8.5/10', price: '488 euros' },
-  { slug: 'sunology-play-2', title: 'Sunology PLAY 2 : avis et test complet', excerpt: 'Le kit solaire le plus vendu en France (100 000+ foyers). 450 Wc, 599 euros, installation en 1 minute.', badge: 'Choix n 1', score: '8.5/10', price: '599 euros' },
-  { slug: 'beem-on-460w', title: 'Beem On 460W : avis et test complet', excerpt: 'Le concurrent direct du Sunology PLAY2. 460 Wc, 599 euros, meilleur ratio euros/Wc en mono-panneau.', badge: 'Rapport qualite/prix', score: '8/10', price: '599 euros' },
-  { slug: 'ecoflow-powerstream', title: 'EcoFlow PowerStream : test complet et verdict', excerpt: 'Le micro-onduleur intelligent : panneaux + batterie + reseau pilotes par app. Le plus modulaire du marche.', badge: 'Systeme modulaire', score: '8/10', price: '599 euros' },
-  { slug: 'sunethic-f500', title: 'Sunethic F500 : avis du kit Made in France', excerpt: 'Le kit le plus puissant (500 Wc) et le seul fabrique en France. 690 euros.', badge: 'Made in France', score: '7.5/10', price: '690 euros' },
-  { slug: 'sunology-city', title: 'Sunology CITY : le kit pour balcons etroits', excerpt: 'Le kit pense pour les balcons etroits : fixation garde-corps sans percage. 549 euros.', badge: 'Balcon etroit', score: '7.5/10', price: '549 euros' },
-  { slug: 'beem-kit-300w', title: 'Beem Kit 300W : avis du kit petit budget', excerpt: 'Le kit le moins cher du marche francais. 4 panneaux modulaires, 299 euros, ROI en 2,5 ans.', badge: 'Petit budget', score: '7.5/10', price: '299 euros' },
-  { slug: 'sunology-play-max', title: 'Sunology PLAY MAX : kit + batterie, ca vaut le coup ?', excerpt: 'Le bundle PLAY2 + batterie VAULT 700 Wh pour 1 179 euros. Stockez le solaire pour le soir.', badge: 'Kit + batterie', score: '7/10', price: '1 179 euros' },
+  { slug: 'dualsun-preasy', title: 'DualSun PREASY : le nouveau challenger Made in France', excerpt: 'Panneau pliable 420 Wc, assembl\u00e9 en France, design aspect bois. Beau mais cher face \u00e0 la concurrence.', badge: 'Nouveau', score: '6.5/10', price: '870 \u20ac' },
+  { slug: 'zendure-solarflow', title: 'Zendure SolarFlow : 840 W pour 488 \u20ac, trop beau ?', excerpt: 'Batterie 1,92 kWh + onduleur 800 W int\u00e9gr\u00e9s pour moins de 500 \u20ac. Le meilleur rapport qualit\u00e9-prix du march\u00e9.', badge: 'Qualit\u00e9/prix', score: '8.5/10', price: '488 \u20ac' },
+  { slug: 'sunology-play-2', title: 'Sunology PLAY 2 : avis et test complet', excerpt: 'Le kit solaire le plus vendu en France (100 000+ foyers). 450 Wc, 599 \u20ac, installation en 1 minute.', badge: 'Choix n\u00b01', score: '8.5/10', price: '599 \u20ac' },
+  { slug: 'beem-on-460w', title: 'Beem On 460W : avis et test complet', excerpt: 'Le concurrent direct du Sunology PLAY2. 460 Wc, 599 \u20ac, meilleur ratio \u20ac/Wc en mono-panneau.', badge: 'Qualit\u00e9/prix', score: '8/10', price: '599 \u20ac' },
+  { slug: 'ecoflow-powerstream', title: 'EcoFlow PowerStream : test complet et verdict', excerpt: 'Le micro-onduleur intelligent : panneaux + batterie + r\u00e9seau pilot\u00e9s par app. Le plus modulaire du march\u00e9.', badge: 'Syst\u00e8me modulaire', score: '8/10', price: '599 \u20ac' },
+  { slug: 'sunethic-f500', title: 'Sunethic F500 : avis du kit Made in France', excerpt: 'Le kit le plus puissant (500 Wc) et le seul fabriqu\u00e9 en France. 690 \u20ac.', badge: 'Made in France', score: '7.5/10', price: '690 \u20ac' },
+  { slug: 'sunology-city', title: 'Sunology CITY : le kit pour balcons \u00e9troits', excerpt: 'Le kit pens\u00e9 pour les balcons \u00e9troits : fixation garde-corps sans per\u00e7age. 549 \u20ac.', badge: 'Balcon \u00e9troit', score: '7.5/10', price: '549 \u20ac' },
+  { slug: 'beem-kit-300w', title: 'Beem Kit 300W : avis du kit petit budget', excerpt: 'Le kit le moins cher du march\u00e9 fran\u00e7ais. 4 panneaux modulaires, 299 \u20ac, ROI en 3,6 ans.', badge: 'Petit budget', score: '7.5/10', price: '299 \u20ac' },
+  { slug: 'sunology-play-max', title: 'Sunology PLAY MAX : kit + batterie, \u00e7a vaut le coup ?', excerpt: 'Le bundle PLAY2 + batterie VAULT 700 Wh pour 1 179 \u20ac. Stockez le solaire pour le soir.', badge: 'Kit + batterie', score: '7/10', price: '1 179 \u20ac' },
 ];
 
 export default function AvisIndexPage() {

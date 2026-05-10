@@ -128,13 +128,13 @@ export default function ArnaqueInvestissementPage() {
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Production annuelle</strong> : environ 500 kWh (orientation sud, Lyon)</li>
                   <li>&bull; <strong>Autoconsommation réelle</strong> : 60% soit 300 kWh directement économisés</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 300 kWh &times; 0,1940 &euro;/kWh = <strong>58 &euro;/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 599 &euro; / 58 &euro; = <strong>10,3 ans</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 300 kWh &times; 0,2516 &euro;/kWh = <strong>75 &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : 599 &euro; / 75 &euro; = <strong>8,0 ans</strong></li>
                 </ul>
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">&laquo; Alors c&apos;est une arnaque, le ROI est catastrophique ! &raquo; pense peut-être un lecteur. Pas si vite. Ce calcul ignore deux réalités.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°1 : le prix de l&apos;électricité augmente.</strong> Sur les 10 dernières années, le tarif EDF a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 85-100&euro;/an dès la 5ème année, et le ROI tombe à 7-8 ans au lieu de 10.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°2 : la durée de vie.</strong> Le kit est garanti 25 ans. Après le ROI atteint, chaque année produit entre 70 et 150&euro; d&apos;économies pures. Sur la durée totale, le gain net est de <strong>1 500 à 2 500&euro;</strong>. Ce n&apos;est pas révolutionnaire, mais ce n&apos;est clairement pas une arnaque.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">&laquo; Alors c&apos;est une arnaque, le ROI est long ! &raquo; pense peut-être un lecteur. Pas si vite. Ce calcul ignore deux réalités.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°1 : le prix de l&apos;électricité augmente.</strong> Sur les 10 dernières années, le tarif EDF a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 110-130&euro;/an dès la 5ème année, et le ROI tombe à 5-6 ans au lieu de 8.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°2 : la durée de vie.</strong> Le kit est garanti 25 ans. Après le ROI atteint, chaque année produit entre 90 et 180&euro; d&apos;économies pures. Sur la durée totale, le gain net est de <strong>2 000 à 3 500&euro;</strong>. Ce n&apos;est pas révolutionnaire, mais ce n&apos;est clairement pas une arnaque.</p>
               <p className="text-charcoal-light leading-relaxed">Pour un calcul précis selon votre département et votre exposition, utilisez notre calculateur.</p>
             </section>
 

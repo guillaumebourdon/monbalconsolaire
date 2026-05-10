@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faqData = [
   { question: 'Peut-on installér un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchént sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
   { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installé à moins de 1,80m de hauteur, aucune déclaration préalable de travaux n\'est nécessaire. Seule la déclaration CACSI aupres d\'Enedis est obligatoire (informative, gratuite, 2 minutes en ligne).' },
-  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 450W produit en moyenne 400 à 650 kWh par an selon la region et l\'orientation. Cela correspond à 80-130 euros d\'économies annuelles au tarif EDF actuel.' },
+  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 450W produit en moyenne 400 à 650 kWh par an selon la region et l\'orientation. Cela correspond à 100-165 euros d\'économies annuelles au tarif EDF actuel.' },
   { question: 'Un panneau solaire fonctionne-t-il par temps nuageux ?', answer: 'Oui, mais avec un rendement réduit (10-25% de la puissance maximale). Les panneaux solaires fonctionnent avec la lumiere, pas uniquement le soleil direct. La production annuelle tient compte des jours nuageux.' },
   { question: 'Que devient le surplus d\'électricité ?', answer: 'Pour les kits plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien, mais vous n\'etes pas remunere non plus pour ce surplus.' },
   { question: 'Faut-il une batterie avec un panneau solaire de balcon ?', answer: 'Non, une batterie n\'est pas indispensable. Sans batterie, vous consommez l\'électricité produite en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coute cher (500-1400 euros supplémentaires).' },
@@ -65,7 +65,7 @@ export default function GuidePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">A cela, pas de couts caches : l&apos;hebergement est gratuit (votre balcon), l&apos;installation est gratuite (vous le faites vous-meme en quelques minutes), et la maintenance est quasi-inexistante (un coup de chiffon sur le panneau de temps en temps).</p>
 
               <h3 className="font-bold text-lg mb-3 mt-6">La rentabilité réelle</h3>
-              <p className="text-charcoal-light leading-relaxed mb-4">Avec le tarif EDF à <span className="data-highlight">0,1940 &euro;/kWh</span> (fevrier 2026), voici ce que vous pouvez attendre :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Avec le tarif EDF à <span className="data-highlight">0,2516 &euro;/kWh</span> (mai 2026), voici ce que vous pouvez attendre :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
@@ -73,11 +73,11 @@ export default function GuidePage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Marseille / PACA', '580-650 kWh', '112-126 \u20ac', '3-4 ans'],
-                      ['Lyon / Rhone-Alpes', '480-550 kWh', '93-107 \u20ac', '4-5 ans'],
-                      ['Nantes / Ouest', '420-500 kWh', '81-97 \u20ac', '4-5 ans'],
-                      ['Paris / Ile-de-France', '400-480 kWh', '78-93 \u20ac', '5-6 ans'],
-                      ['Lille / Nord', '360-430 kWh', '70-83 \u20ac', '5-7 ans'],
+                      ['Marseille / PACA', '580-650 kWh', '146-164 \u20ac', '4 ans'],
+                      ['Lyon / Rhone-Alpes', '480-550 kWh', '121-138 \u20ac', '4-5 ans'],
+                      ['Nantes / Ouest', '420-500 kWh', '106-126 \u20ac', '5-6 ans'],
+                      ['Paris / Ile-de-France', '400-480 kWh', '101-121 \u20ac', '5-6 ans'],
+                      ['Lille / Nord', '360-430 kWh', '91-108 \u20ac', '6-7 ans'],
                     ].map(([r, p, e, roi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{r}</td>
@@ -89,7 +89,7 @@ export default function GuidePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, tarif EDF 0,1940 &euro;/kWh. Les panneaux sont garantis 25 ans.</p>
+              <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, tarif EDF 0,2516 &euro;/kWh. Les panneaux sont garantis 25 ans.</p>
 
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
                 <p className="font-semibold mb-2">Quelle rentabilité pour VOTRE balcon ?</p>
@@ -131,7 +131,7 @@ export default function GuidePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le choix depend de 4 critères principaux :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card"><h4 className="font-bold text-sm mb-2 text-green">1. Votre espace disponible</h4><p className="text-xs text-charcoal-light">Un seul grand panneau (Sunology PLAY2 : 1,76 x 1,13m) ou 4 petits panneaux (Beem Kit : ~80cm chacun) ? Mesurez votre balcon avant de choisir.</p></div>
-                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">2. Votre budget</h4><p className="text-xs text-charcoal-light">De 299&euro; (Beem Kit 300W) à 690&euro; (Sunethic F500). Tous sont rentables en 3-6 ans, mais le budget initial varie du simple au double.</p></div>
+                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">2. Votre budget</h4><p className="text-xs text-charcoal-light">De 299&euro; (Beem Kit 300W) à 690&euro; (Sunethic F500). Tous sont rentables en 4-7 ans, mais le budget initial varie du simple au double.</p></div>
                 <div className="card"><h4 className="font-bold text-sm mb-2 text-green">3. Votre orientation</h4><p className="text-xs text-charcoal-light">Sud = 100% du potentiel. Est/Ouest = 80%. Nord = 45%. Si votre balcon est plein nord, un kit solaire n&apos;est probablement pas rentable.</p></div>
                 <div className="card"><h4 className="font-bold text-sm mb-2 text-green">4. Locataire ou propriétaire</h4><p className="text-xs text-charcoal-light">Locataire ? Privilegiez un kit 100% amovible (Sunology PLAY2 avec ballasts, ou Beem On). Propriétaire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
               </div>
@@ -193,7 +193,7 @@ export default function GuidePage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europeenne), EDF tarifs réglementés (fevrier 2026), Enedis, ADEME, sites fabricants (Sunology, Beem, Sunethic). Ce guide est indépendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre méthode</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europeenne), EDF tarifs réglementés (mai 2026), Enedis, ADEME, sites fabricants (Sunology, Beem, Sunethic). Ce guide est indépendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre méthode</Link>.</p>
             </div>
           </div>
         </div>

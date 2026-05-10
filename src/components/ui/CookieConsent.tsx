@@ -64,8 +64,8 @@ export function CookieConsent() {
             <div className="bg-charcoal text-cream rounded-brand-lg shadow-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="flex-1 text-sm leading-relaxed">
                 <p>
-                  Ce site utilise Google Analytics pour mesurer l&apos;audience de maniere anonyme.
-                  Aucune donnee personnelle n&apos;est vendue ni partagee.{' '}
+                  Ce site utilise Google Analytics pour mesurer l&apos;audience de mani&egrave;re anonyme.
+                  Aucune donn&eacute;e personnelle n&apos;est vendue ni partag&eacute;e.{' '}
                   <a href="/politique-confidentialite" className="text-amber underline underline-offset-2">
                     En savoir plus
                   </a>

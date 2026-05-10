@@ -14,6 +14,16 @@ const ORIENTATIONS = [
   { value: 'nord', label: 'Nord', coeff: 0.45, emoji: '\u2601\ufe0f', desc: '45% du potentiel' },
 ];
 
+const KIT_SLUGS: Record<string, string> = {
+  'Sunology PLAY2': '/avis/sunology-play-2',
+  'Beem Kit 300W': '/avis/beem-kit-300w',
+  'Beem On 460W': '/avis/beem-on-460w',
+  'Sunethic F500': '/avis/sunethic-f500',
+  'Zendure SolarFlow': '/avis/zendure-solarflow',
+  'EcoFlow PowerStream': '/avis/ecoflow-powerstream',
+  'DualSun PREASY': '/avis/dualsun-preasy',
+};
+
 const KITS = [
   { name: 'Sunology PLAY2', power: 0.45, price: 599, brand: 'Sunology', badge: 'Meilleur choix' },
   { name: 'Beem Kit 300W', power: 0.30, price: 299, brand: 'Beem Energy', badge: 'Petit budget' },
@@ -288,17 +298,18 @@ export default function CalculateurPage() {
               <h3 className="font-bold text-lg mb-4">Kits recommandés pour votre balcon</h3>
               <div className="space-y-3">
                 {results.map((kit, i) => (
-                  <div key={i} className={`card flex items-center gap-4 ${i === 0 ? 'border-green/30 bg-green-pale/30' : ''}`}>
+                  <Link key={i} href={KIT_SLUGS[kit.name] || '/quel-kit-choisir'} className={`card flex items-center gap-4 hover:shadow-brand-lg transition-all group ${i === 0 ? 'border-green/30 bg-green-pale/30' : ''}`}>
                     {i === 0 && <div className="badge-green text-[10px]">Recommandé</div>}
                     <div className="flex-1">
-                      <div className="font-bold">{kit.name}</div>
+                      <div className="font-bold group-hover:text-green transition-colors">{kit.name}</div>
                       <div className="text-xs text-stone">{kit.brand} — {kit.power * 1000} Wc</div>
                     </div>
                     <div className="text-right">
                       <div className="font-mono font-medium text-green">{kit.price}&euro;</div>
                       <div className="text-xs text-stone">{kit.économies}&euro;/an</div>
                     </div>
-                  </div>
+                    <span className="text-green text-sm font-semibold hidden md:inline">&rarr;</span>
+                  </Link>
                 ))}
               </div>
             </div>

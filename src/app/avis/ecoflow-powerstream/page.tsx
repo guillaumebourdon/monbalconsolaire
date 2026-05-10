@@ -93,7 +93,7 @@ const setup_recommande = [
     profil: 'Configuration équilibrée',
     config: 'PowerStream + 2 panneaux 400W + batterie DELTA 2 (1 kWh)',
     prix: '~ 1 800 €',
-    explication: 'Le setup le plus rentable. Production 760-900 kWh/an, batterie pour stocker le surplus du midi et le restituer le soir. ROI 12-15 ans.',
+    explication: 'Le setup le plus rentable. Production 760-900 kWh/an, batterie pour stocker le surplus du midi et le restituer le soir. ROI 9-11 ans.',
   },
   {
     profil: 'Maximum d\'autonomie',
@@ -363,18 +363,18 @@ export default function EcoflowPowerstreamPage() {
                   <li>&bull; <strong>Production annuelle</strong> : 850 kWh/an (2 panneaux 400W, sud, Lyon)</li>
                   <li>&bull; <strong>Autoconsommation grâce à la batterie</strong> : 80% (vs 50% sans batterie)</li>
                   <li>&bull; <strong>kWh économisés</strong> : 680 kWh/an</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 680 × 0,1940 € = <strong>132 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 1 800 € / 132 € = <strong>13,6 ans</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 680 × 0,2516 € = <strong>171 €/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : 1 800 € / 171 € = <strong>10,5 ans</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                À première vue, c&apos;est un peu long. Mais deux paramètres améliorent significativement le calcul :
+                C&apos;est correct, mais deux paramètres améliorent significativement le calcul :
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>1. Hausse du tarif EDF.</strong> Avec une augmentation moyenne de 4-5% par an, les économies réelles passent à 180-200 €/an dès la 5ème année. ROI réel : <strong>10-11 ans</strong>.
+                <strong>1. Hausse du tarif EDF.</strong> Avec une augmentation moyenne de 4-5% par an, les économies réelles passent à 220-240 €/an dès la 5ème année. ROI réel : <strong>8-9 ans</strong>.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                <strong>2. Polyvalence de la batterie.</strong> La DELTA 2 sert aussi de groupe électrogène portable (camping, coupures de courant, voiture électrique en mobilité). Sa valeur d&apos;usage hors solaire est de l&apos;ordre de 300-500 € sur 10 ans. Cela ramène le ROI effectif à <strong>9-10 ans</strong>.
+                <strong>2. Polyvalence de la batterie.</strong> La DELTA 2 sert aussi de groupe électrogène portable (camping, coupures de courant, voiture électrique en mobilité). Sa valeur d&apos;usage hors solaire est de l&apos;ordre de 300-500 € sur 10 ans. Cela ramène le ROI effectif à <strong>7-8 ans</strong>.
               </p>
             </section>
 
