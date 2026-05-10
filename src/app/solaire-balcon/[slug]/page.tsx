@@ -112,30 +112,24 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
           </div>
 
           <div className="grid grid-cols-3 gap-4 mb-10">
-            <div className="relative overflow-hidden rounded-brand-xl border border-amber/15 bg-gradient-to-br from-amber-pale/50 via-white to-amber-pale/20 p-6 text-center shadow-brand">
-              <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-amber/5 blur-xl" />
-              <div className="relative">
-                <div className="text-3xl mb-2">{irradiationEmoji}</div>
-                <div className="font-mono font-extrabold text-amber-dark text-3xl leading-none">{dept.irradiation}</div>
-                <div className="text-xs text-stone font-medium mt-2 uppercase tracking-wider">kWh/kWc/an</div>
+            {[
+              { label: 'Irradiation', value: `${dept.irradiation}`, unit: 'kWh/kWc/an', sub: `Potentiel ${irradiationLevel}`, color: 'amber' as const },
+              { label: '\u00c9conomies/an', value: `${best.economies}\u202f\u20ac`, unit: '', sub: `avec le ${best.name}`, color: 'green' as const },
+              { label: 'Retour sur invest.', value: `${best.roi} ans`, unit: '', sub: 'garanti 25 ans', color: 'green' as const },
+            ].map((kpi, i) => (
+              <div key={i} className={`relative overflow-hidden rounded-brand-xl border p-6 text-center shadow-brand flex flex-col justify-center ${
+                kpi.color === 'amber'
+                  ? 'border-amber/15 bg-gradient-to-br from-amber-pale/50 via-white to-amber-pale/20'
+                  : 'border-green/15 bg-gradient-to-br from-green-pale/50 via-white to-green-pale/20'
+              }`}>
+                <div className="text-[10px] text-stone font-semibold uppercase tracking-widest mb-3">{kpi.label}</div>
+                <div className={`font-mono font-extrabold text-2xl md:text-3xl leading-none ${kpi.color === 'amber' ? 'text-amber-dark' : 'text-green'}`}>
+                  {kpi.value}
+                </div>
+                {kpi.unit && <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-1">{kpi.unit}</div>}
+                <div className="text-xs text-charcoal-light mt-2">{kpi.sub}</div>
               </div>
-            </div>
-            <div className="relative overflow-hidden rounded-brand-xl border border-green/15 bg-gradient-to-br from-green-pale/50 via-white to-green-pale/20 p-6 text-center shadow-brand">
-              <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-green/5 blur-xl" />
-              <div className="relative">
-                <div className="text-xs text-stone font-semibold uppercase tracking-wider mb-2">Économies/an</div>
-                <div className="font-mono font-extrabold text-green text-3xl leading-none">{best.economies}&thinsp;&euro;</div>
-                <div className="text-xs text-charcoal-light mt-2">avec le {best.name}</div>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-brand-xl border border-green/15 bg-gradient-to-br from-green-pale/50 via-white to-green-pale/20 p-6 text-center shadow-brand">
-              <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-green/5 blur-xl" />
-              <div className="relative">
-                <div className="text-xs text-stone font-semibold uppercase tracking-wider mb-2">Retour sur investissement</div>
-                <div className="font-mono font-extrabold text-green text-3xl leading-none">{best.roi}<span className="text-lg ml-1">ans</span></div>
-                <div className="text-xs text-charcoal-light mt-2">garanti 25 ans</div>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="relative overflow-hidden rounded-brand-xl border border-green/10 bg-gradient-to-br from-green-pale/40 via-white to-cream p-8 shadow-brand mb-10">
