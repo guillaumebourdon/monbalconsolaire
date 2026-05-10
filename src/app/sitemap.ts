@@ -1,8 +1,25 @@
 import { MetadataRoute } from 'next';
+import { DEPARTMENTS } from '@/data/departments';
 
 const BASE_URL = 'https://monbalconsolaire.fr';
 
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const departmentPages: MetadataRoute.Sitemap = DEPARTMENTS.map(d => ({
+    url: `${BASE_URL}/solaire-balcon/${slugify(d.name)}`,
+    lastModified: '2026-05-10',
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
   return [
     // Pages principales
     { url: BASE_URL, lastModified: '2026-05-06', changeFrequency: 'weekly', priority: 1.0 },
@@ -65,5 +82,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/a-propos`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.3 },
     { url: `${BASE_URL}/mentions-legales`, lastModified: '2026-03-17', changeFrequency: 'yearly', priority: 0.1 },
     { url: `${BASE_URL}/politique-confidentialite`, lastModified: '2026-03-17', changeFrequency: 'yearly', priority: 0.1 },
+
+    // Pages par département (SEO programmatique)
+    { url: `${BASE_URL}/solaire-balcon`, lastModified: '2026-05-10', changeFrequency: 'monthly', priority: 0.7 },
+    ...departmentPages,
   ];
 }
