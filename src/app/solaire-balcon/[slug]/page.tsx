@@ -59,8 +59,12 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
   const dept = getDeptBySlug(params.slug);
   if (!dept) notFound();
 
-  const results = KITS.map(k => calcKit(k, dept.irradiation)).sort((a, b) => b.economies - a.economies);
+  const allResults = KITS.map(k => calcKit(k, dept.irradiation));
+  const results = [...allResults].sort((a, b) => a.roi - b.roi);
   const best = results[0];
+  const bestBudget = allResults.find(r => r.name === 'Beem Kit 300W')!;
+  const bestBatterie = allResults.find(r => r.name === 'Zendure SolarFlow')!;
+  const bestFrance = allResults.find(r => r.name === 'Sunethic F500') || allResults.find(r => r.name === 'DualSun PREASY')!;
 
   const irradiationLevel = dept.irradiation >= 1400 ? 'excellent' : dept.irradiation >= 1200 ? 'bon' : dept.irradiation >= 1050 ? 'correct' : 'modéré';
   const irradiationEmoji = dept.irradiation >= 1400 ? '\u2600\ufe0f' : dept.irradiation >= 1200 ? '\ud83c\udf24\ufe0f' : '\u26c5';
@@ -80,7 +84,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     },
     {
       question: `Quel est le meilleur kit solaire pour un balcon dans le ${dept.name} ?`,
-      answer: `Le ${best.name} offre le meilleur rendement dans le ${dept.name} avec ${best.production} kWh/an de production et ${best.economies} €/an d'économies (ROI ${best.roi} ans). Pour un budget serré, le Beem Kit 300W à 299 € est aussi rentable avec un ROI de ${results.find(r => r.name === 'Beem Kit 300W')?.roi || 0} ans.`,
+      answer: `Le ${best.name} offre le meilleur retour sur investissement dans le ${dept.name} : ROI de ${best.roi} ans pour ${best.economies} €/an d'économies. Pour un petit budget, le Beem Kit 300W à 299 € a un ROI de ${bestBudget.roi} ans. Et pour du stockage, le Zendure SolarFlow (${bestBatterie.economies} €/an) permet de consommer le soir l'énergie produite le jour.`,
     },
     {
       question: 'Faut-il une autorisation pour installer un kit solaire sur un balcon ?',
@@ -182,37 +186,61 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation pour le {dept.name}</h2>
-              <div className="space-y-4">
-                <div className="card-lg border-l-4 border-l-green">
-                  <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
-                    <div>
-                      <h3 className="font-bold text-base">{best.name}</h3>
-                      <p className="text-xs text-stone uppercase tracking-wider font-semibold mt-1">{best.badge}</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-mono font-bold text-green text-lg">{best.economies} &euro;/an</div>
-                      <div className="text-xs text-stone">ROI {best.roi} ans</div>
-                    </div>
+              <div className="card-lg border-l-4 border-l-green mb-6">
+                <div className="badge-green mb-3 text-[10px]">Meilleur ROI</div>
+                <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
+                  <div>
+                    <h3 className="font-bold text-lg">{best.name}</h3>
+                    <p className="text-xs text-stone mt-1">{best.price} € &middot; {best.production} kWh/an &middot; {Math.round(best.autocons * 100)} % autoconsommé</p>
                   </div>
-                  <p className="text-sm text-charcoal-light leading-relaxed mb-3">
-                    Dans le {dept.name}, le {best.name} produit <strong>{best.production} kWh/an</strong> en orientation sud.
-                    {best.autocons > 0.5
-                      ? ` Grâce à la batterie intégrée, vous autoconsommez ${Math.round(best.autocons * 100)} % de cette production.`
-                      : ` Vous autoconsommez environ 45 % de cette production (le reste est injecté gratuitement sur le réseau).`}
-                    {' '}Sur 25 ans de garantie, c&apos;est <strong>{Math.round(best.economies * 25).toLocaleString('fr-FR')} € d&apos;économies cumulées</strong> (sans compter la hausse du tarif EDF).
-                  </p>
-                  <Link href={best.slug} className="btn-primary text-sm py-2.5 inline-flex">
-                    Voir l&apos;avis complet &rarr;
-                  </Link>
+                  <div className="text-right">
+                    <div className="font-mono font-bold text-green text-xl">{best.roi} ans</div>
+                    <div className="text-xs text-stone">de ROI</div>
+                  </div>
                 </div>
+                <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+                  Dans le {dept.name}, le {best.name} offre le <strong>retour sur investissement le plus rapide</strong> : {best.economies} €/an d&apos;économies pour {best.price} € investis.
+                  {' '}Sur 25 ans, c&apos;est <strong>{Math.round(best.economies * 25).toLocaleString('fr-FR')} € d&apos;économies cumulées</strong>.
+                </p>
+                <Link href={best.slug} className="btn-primary text-sm py-2.5 inline-flex">
+                  Voir l&apos;avis complet &rarr;
+                </Link>
+              </div>
 
-                {results.find(r => r.name === 'Beem Kit 300W') && (
-                  <div className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">Alternative petit budget</h4>
-                    <p className="text-xs text-charcoal-light leading-relaxed">
-                      Le <Link href="/avis/beem-kit-300w" className="text-green hover:underline font-semibold">Beem Kit 300W</Link> à 299 € offre {results.find(r => r.name === 'Beem Kit 300W')?.economies} €/an d&apos;économies avec un ROI de {results.find(r => r.name === 'Beem Kit 300W')?.roi} ans. Le meilleur ratio pour tester le solaire sans gros investissement.
-                    </p>
-                  </div>
+              <h3 className="font-bold text-base mb-3">Selon votre profil</h3>
+              <div className="grid md:grid-cols-3 gap-3">
+                {best.name !== bestBudget.name && (
+                  <Link href={bestBudget.slug} className="card hover:shadow-brand-lg transition-all group">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-amber-dark mb-2">Petit budget</div>
+                    <h4 className="font-bold text-sm group-hover:text-green transition-colors">{bestBudget.name}</h4>
+                    <div className="flex items-baseline gap-2 mt-2">
+                      <span className="font-mono font-bold text-green">{bestBudget.price} €</span>
+                      <span className="text-xs text-stone">ROI {bestBudget.roi} ans</span>
+                    </div>
+                    <p className="text-xs text-charcoal-light mt-2">{bestBudget.economies} €/an d&apos;économies. Id&eacute;al pour d&eacute;couvrir le solaire.</p>
+                  </Link>
+                )}
+                {best.name !== bestBatterie.name && (
+                  <Link href={bestBatterie.slug} className="card hover:shadow-brand-lg transition-all group">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-amber-dark mb-2">Avec batterie</div>
+                    <h4 className="font-bold text-sm group-hover:text-green transition-colors">{bestBatterie.name}</h4>
+                    <div className="flex items-baseline gap-2 mt-2">
+                      <span className="font-mono font-bold text-green">{bestBatterie.price} €</span>
+                      <span className="text-xs text-stone">ROI {bestBatterie.roi} ans</span>
+                    </div>
+                    <p className="text-xs text-charcoal-light mt-2">{bestBatterie.economies} €/an. Stockez le jour, consommez le soir.</p>
+                  </Link>
+                )}
+                {best.name !== bestFrance.name && (
+                  <Link href={bestFrance.slug} className="card hover:shadow-brand-lg transition-all group">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-amber-dark mb-2">Made in France</div>
+                    <h4 className="font-bold text-sm group-hover:text-green transition-colors">{bestFrance.name}</h4>
+                    <div className="flex items-baseline gap-2 mt-2">
+                      <span className="font-mono font-bold text-green">{bestFrance.price} €</span>
+                      <span className="text-xs text-stone">ROI {bestFrance.roi} ans</span>
+                    </div>
+                    <p className="text-xs text-charcoal-light mt-2">{bestFrance.economies} €/an. Assembl&eacute; en France.</p>
+                  </Link>
                 )}
               </div>
             </section>
