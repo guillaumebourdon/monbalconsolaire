@@ -113,21 +113,20 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
           <div className="grid grid-cols-3 gap-4 mb-10">
             {[
-              { label: 'Irradiation', value: `${dept.irradiation}`, unit: 'kWh/kWc/an', sub: `Potentiel ${irradiationLevel}`, color: 'amber' as const },
-              { label: '\u00c9conomies/an', value: `${best.economies}\u202f\u20ac`, unit: '', sub: `avec le ${best.name}`, color: 'green' as const },
-              { label: 'Retour sur invest.', value: `${best.roi} ans`, unit: '', sub: 'garanti 25 ans', color: 'green' as const },
+              { label: 'Irradiation', value: `${dept.irradiation}`, suffix: ' kWh', sub: `Potentiel ${irradiationLevel}`, color: 'amber' as const },
+              { label: '\u00c9conomies/an', value: `${best.economies}`, suffix: ' \u20ac', sub: `avec le ${best.name}`, color: 'green' as const },
+              { label: 'Retour sur invest.', value: `${best.roi}`, suffix: ' ans', sub: 'garanti 25 ans', color: 'green' as const },
             ].map((kpi, i) => (
-              <div key={i} className={`relative overflow-hidden rounded-brand-xl border p-6 text-center shadow-brand flex flex-col justify-center ${
+              <div key={i} className={`rounded-brand-xl border p-5 md:p-6 text-center shadow-brand ${
                 kpi.color === 'amber'
-                  ? 'border-amber/15 bg-gradient-to-br from-amber-pale/50 via-white to-amber-pale/20'
-                  : 'border-green/15 bg-gradient-to-br from-green-pale/50 via-white to-green-pale/20'
+                  ? 'border-amber/15 bg-gradient-to-br from-amber-pale/40 via-white to-white'
+                  : 'border-green/15 bg-gradient-to-br from-green-pale/40 via-white to-white'
               }`}>
-                <div className="text-[10px] text-stone font-semibold uppercase tracking-widest mb-3">{kpi.label}</div>
-                <div className={`font-mono font-extrabold text-2xl md:text-3xl leading-none ${kpi.color === 'amber' ? 'text-amber-dark' : 'text-green'}`}>
-                  {kpi.value}
+                <div className="text-[10px] text-stone font-semibold uppercase tracking-widest">{kpi.label}</div>
+                <div className={`font-mono font-extrabold text-2xl md:text-3xl leading-none my-3 ${kpi.color === 'amber' ? 'text-amber-dark' : 'text-green'}`}>
+                  {kpi.value}<span className="text-base font-bold">{kpi.suffix}</span>
                 </div>
-                {kpi.unit && <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-1">{kpi.unit}</div>}
-                <div className="text-xs text-charcoal-light mt-2">{kpi.sub}</div>
+                <div className="text-xs text-charcoal-light">{kpi.sub}</div>
               </div>
             ))}
           </div>
