@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const articles = [
+  { slug: 'talon-consommation-solaire', title: 'Talon de consommation : comment le calculer et l\'effacer avec le solaire', excerpt: 'Le bruit de fond electrique de votre foyer coute 300-900 euros/an. Voici comment le mesurer et le couvrir avec un kit solaire.', badge: 'Comprendre', date: '10 mai 2026', readTime: '10 min' },
   { slug: 'panneau-solaire-ombre-optimiser-production', title: 'Panneau solaire et ombre : comment optimiser la production', excerpt: 'Ombre partielle, arbre, mur voisin : quel impact et comment maximiser la production de votre kit.', badge: 'Optimisation', date: '6 mai 2026', readTime: '10 min' },
   { slug: 'panneau-solaire-balcon-nord', title: 'Panneau solaire balcon nord : est-ce rentable en 2026 ?', excerpt: 'Analyse honnete avec chiffres par ville, seuls cas ou ca reste interessant, et alternatives.', badge: 'Rentabilite', date: '24 avril 2026', readTime: '10 min' },
   { slug: 'lampes-solaires-balcon-2026', title: 'Lampes solaires balcon : 10 modeles selectionnes (2026)', excerpt: 'Guirlandes, appliques, projecteurs, lanternes : la selection des meilleures lampes solaires.', badge: 'Selection 2026', date: '22 avril 2026', readTime: '10 min' },

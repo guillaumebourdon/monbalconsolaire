@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/blog/talon-consommation-solaire',
+    title: 'Talon de consommation : comment le calculer et l\'effacer avec le solaire',
+    excerpt: 'Le bruit de fond électrique coûte 300-900 €/an. Comment le mesurer avec Linky et le couvrir avec un kit solaire.',
+    type: 'analyse',
+    badge: 'Comprendre',
+    tags: ['debutant', 'rentabilite'],
+    publishedAt: '2026-05-10',
+    readTime: '10 min',
+  },
+  {
     slug: '/blog/panneau-solaire-ombre-optimiser-production',
     title: 'Panneau solaire et ombre : comment optimiser la production',
     excerpt: 'Ombre partielle, arbre, mur voisin : quel impact sur votre kit solaire et comment maximiser la production.',
