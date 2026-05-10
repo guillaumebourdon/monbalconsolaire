@@ -112,24 +112,36 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
           </div>
 
           <div className="grid grid-cols-3 gap-4 mb-10">
-            <div className="card text-center">
-              <div className="text-2xl mb-1">{irradiationEmoji}</div>
-              <div className="font-mono font-bold text-amber-dark text-xl">{dept.irradiation}</div>
-              <div className="text-xs text-stone mt-1">kWh/kWc/an</div>
+            <div className="relative overflow-hidden rounded-brand-xl border border-amber/15 bg-gradient-to-br from-amber-pale/50 via-white to-amber-pale/20 p-6 text-center shadow-brand">
+              <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-amber/5 blur-xl" />
+              <div className="relative">
+                <div className="text-3xl mb-2">{irradiationEmoji}</div>
+                <div className="font-mono font-extrabold text-amber-dark text-3xl leading-none">{dept.irradiation}</div>
+                <div className="text-xs text-stone font-medium mt-2 uppercase tracking-wider">kWh/kWc/an</div>
+              </div>
             </div>
-            <div className="card text-center">
-              <div className="font-mono font-bold text-green text-xl">{best.economies} &euro;</div>
-              <div className="text-xs text-stone mt-1">économies/an (meilleur kit)</div>
+            <div className="relative overflow-hidden rounded-brand-xl border border-green/15 bg-gradient-to-br from-green-pale/50 via-white to-green-pale/20 p-6 text-center shadow-brand">
+              <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-green/5 blur-xl" />
+              <div className="relative">
+                <div className="text-xs text-stone font-semibold uppercase tracking-wider mb-2">Économies/an</div>
+                <div className="font-mono font-extrabold text-green text-3xl leading-none">{best.economies}&thinsp;&euro;</div>
+                <div className="text-xs text-charcoal-light mt-2">avec le {best.name}</div>
+              </div>
             </div>
-            <div className="card text-center">
-              <div className="font-mono font-bold text-green text-xl">{best.roi} ans</div>
-              <div className="text-xs text-stone mt-1">retour sur investissement</div>
+            <div className="relative overflow-hidden rounded-brand-xl border border-green/15 bg-gradient-to-br from-green-pale/50 via-white to-green-pale/20 p-6 text-center shadow-brand">
+              <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-green/5 blur-xl" />
+              <div className="relative">
+                <div className="text-xs text-stone font-semibold uppercase tracking-wider mb-2">Retour sur investissement</div>
+                <div className="font-mono font-extrabold text-green text-3xl leading-none">{best.roi}<span className="text-lg ml-1">ans</span></div>
+                <div className="text-xs text-charcoal-light mt-2">garanti 25 ans</div>
+              </div>
             </div>
           </div>
 
-          <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
-            <h2 className="font-bold text-lg mb-3">Le potentiel solaire du {dept.name}</h2>
-            <p className="text-sm text-charcoal-light leading-relaxed">
+          <div className="relative overflow-hidden rounded-brand-xl border border-green/10 bg-gradient-to-br from-green-pale/40 via-white to-cream p-8 shadow-brand mb-10">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-green to-green-light rounded-l-brand-xl" />
+            <h2 className="font-bold text-lg mb-3 pl-4">Le potentiel solaire du {dept.name}</h2>
+            <p className="text-sm text-charcoal-light leading-relaxed pl-4">
               Le département du {dept.name} ({dept.code}) en {dept.region} bénéficie d&apos;une irradiation solaire de <strong>{dept.irradiation} kWh/kWc/an</strong>, un potentiel <strong>{irradiationLevel}</strong>.
               {dept.irradiation >= 1300 && ' C\'est l\'un des départements les plus favorables au solaire en France.'}
               {dept.irradiation < 1100 && ' Même avec un ensoleillement plus faible que le sud, un kit solaire reste rentable grâce au prix élevé de l\'électricité (0,2516 €/kWh).'}
