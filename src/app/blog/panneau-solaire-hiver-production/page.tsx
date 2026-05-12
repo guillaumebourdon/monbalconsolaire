@@ -153,6 +153,10 @@ export default function HiverProductionPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h4>
                   <p className="text-xs text-charcoal-light mt-1">Talon, surplus, injection</p>
                 </Link>
+                <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu : que faire ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Les 7 causes de sous-production et comment les corriger</p>
+                </Link>
               </div>
             </section>
 

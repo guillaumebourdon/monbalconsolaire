@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/blog/panneau-solaire-produit-moins-que-prevu',
+    title: 'Mon panneau solaire produit moins que pr\u00e9vu : que faire ?',
+    excerpt: 'Diagnostic en 7 points : ombre, orientation, salissure, hiver, Linky. Solutions concr\u00e8tes.',
+    type: 'analyse',
+    badge: 'Diagnostic',
+    tags: ['optimisation', 'debutant'],
+    publishedAt: '2026-05-12',
+    readTime: '11 min',
+  },
+  {
     slug: '/blog/talon-consommation-solaire',
     title: 'Talon de consommation : comment le calculer et l\'effacer avec le solaire',
     excerpt: 'Le bruit de fond électrique coûte 300-900 €/an. Comment le mesurer avec Linky et le couvrir avec un kit solaire.',

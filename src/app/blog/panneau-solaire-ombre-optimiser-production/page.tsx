@@ -398,6 +398,10 @@ export default function PanneauSolaireOmbrePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Calcul réel de rentabilité pour 7 villes</p>
                 </Link>
+                <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu : que faire ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points et solutions concrètes</p>
+                </Link>
               </div>
             </section>
 

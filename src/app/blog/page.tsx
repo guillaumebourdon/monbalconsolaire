@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const articles = [
+  { slug: 'panneau-solaire-produit-moins-que-prevu', title: 'Mon panneau solaire produit moins que pr\u00e9vu : que faire ?', excerpt: 'Diagnostic en 7 points : ombre, orientation, salissure, hiver, Linky. Solutions concr\u00e8tes par ordre de co\u00fbt.', badge: 'Diagnostic', date: '12 mai 2026', readTime: '11 min' },
   { slug: 'talon-consommation-solaire', title: 'Talon de consommation : comment le calculer et l\'effacer avec le solaire', excerpt: 'Le bruit de fond \u00e9lectrique de votre foyer co\u00fbte 300-900 \u20ac/an. Voici comment le mesurer et le couvrir avec un kit solaire.', badge: 'Comprendre', date: '10 mai 2026', readTime: '10 min' },
   { slug: 'panneau-solaire-ombre-optimiser-production', title: 'Panneau solaire et ombre : comment optimiser la production', excerpt: 'Ombre partielle, arbre, mur voisin : quel impact et comment maximiser la production de votre kit.', badge: 'Optimisation', date: '6 mai 2026', readTime: '10 min' },
   { slug: 'panneau-solaire-balcon-nord', title: 'Panneau solaire balcon nord : est-ce rentable en 2026 ?', excerpt: 'Analyse honn\u00eate avec chiffres par ville, seuls cas o\u00f9 \u00e7a reste int\u00e9ressant, et alternatives.', badge: 'Rentabilit\u00e9', date: '24 avril 2026', readTime: '10 min' },
