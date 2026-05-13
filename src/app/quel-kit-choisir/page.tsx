@@ -21,6 +21,16 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/meilleur-kit-solaire-terrasse-2026',
+    title: 'Meilleur kit solaire pour terrasse 2026',
+    excerpt: 'Plus d\'espace, pose au sol, multi-panneaux : les meilleurs setups pour terrasse.',
+    type: 'comparatif',
+    badge: 'Terrasse',
+    tags: ['best', 'comparatif'],
+    publishedAt: '2026-05-13',
+    readTime: '10 min',
+  },
+  {
     slug: '/comparatif/zendure-vs-sunology-vs-beem',
     title: 'Zendure vs Sunology vs Beem : le match 2026',
     excerpt: 'Stockage à prix cassé vs simplicité absolue vs flexibilité : comparatif complet des 3 approches.',
