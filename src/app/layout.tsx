@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SchemaOrganization, SchemaWebSite } from '@/components/SchemaMarkup';
 import { CookieConsent } from '@/components/ui/CookieConsent';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
+        <ScrollReveal />
         <CookieConsent />
       </body>
     </html>

@@ -24,16 +24,16 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: text */}
             <div>
-              <div className="badge-green mb-6">Guide indépendant 2026</div>
-              <h1 className="text-4xl md:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.08] mb-6">
+              <div className="badge-green mb-6 reveal">Guide indépendant 2026</div>
+              <h1 className="text-4xl md:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.08] mb-6 reveal" style={{ transitionDelay: '80ms' }}>
                 Produisez votre électricité
                 <br />
                 <span className="text-green">depuis votre balcon</span>
               </h1>
-              <p className="text-lg md:text-xl text-charcoal-light leading-relaxed mb-8 max-w-xl">
+              <p className="text-lg md:text-xl text-charcoal-light leading-relaxed mb-8 max-w-xl reveal" style={{ transitionDelay: '160ms' }}>
                 Comparez les meilleurs kits solaires plug-and-play, calculez vos économies réelles et passez au solaire sans travaux — même en appartement, même locataire.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 reveal" style={{ transitionDelay: '240ms' }}>
                 <Link href="/calculateur" className="btn-primary text-base py-4 px-8">
                   Calculer mes économies →
                 </Link>
@@ -41,7 +41,7 @@ export default function HomePage() {
                   Voir le comparatif 2026
                 </Link>
               </div>
-              <div className="flex items-center gap-6 mt-8 text-sm text-stone">
+              <div className="flex items-center gap-6 mt-8 text-sm text-stone reveal" style={{ transitionDelay: '320ms' }}>
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-green" />
                   100% gratuit
@@ -68,14 +68,14 @@ export default function HomePage() {
       {/* KEY NUMBERS */}
       <section className="section-padding bg-white">
         <div className="container-brand">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 reveal-group">
             {[
               { value: '0,2516€', label: 'Prix du kWh EDF en 2026', suffix: '/kWh' },
               { value: '299-900€', label: 'Prix d\'un kit solaire balcon', suffix: '' },
               { value: '3-5 ans', label: 'Retour sur investissement', suffix: '' },
               { value: '25 ans', label: 'Garantie des panneaux', suffix: '' },
             ].map((item, i) => (
-              <div key={i} className="text-center p-6 rounded-brand-lg bg-cream">
+              <div key={i} className="text-center p-6 rounded-brand-lg bg-cream reveal">
                 <div className="font-mono font-medium text-amber-dark text-xl md:text-2xl mb-1">
                   {item.value}
                 </div>
@@ -98,7 +98,7 @@ export default function HomePage() {
               Pas besoin d&apos;être électricien. Un kit solaire plug-and-play s&apos;installe en quelques minutes, sans travaux.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 reveal-group">
             {[
               {
                 step: '1',
@@ -119,7 +119,7 @@ export default function HomePage() {
                 color: 'bg-amber-pale text-amber-dark',
               },
             ].map((item, i) => (
-              <div key={i} className="card-lg text-center group hover:shadow-brand-lg transition-shadow duration-300">
+              <div key={i} className="card-lg text-center group hover:shadow-brand-lg transition-shadow duration-300 reveal">
                 <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center text-lg font-extrabold mx-auto mb-5`}>
                   {item.step}
                 </div>
@@ -143,7 +143,7 @@ export default function HomePage() {
               Comparaison indépendante des meilleurs kits plug-and-play disponibles en France.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 reveal-group">
             {[
               {
                 badge: 'Meilleur choix',
@@ -182,7 +182,7 @@ export default function HomePage() {
                 slug: '/avis/beem-on-460w',
               },
             ].map((kit, i) => (
-              <Link key={i} href={kit.slug} className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+              <Link key={i} href={kit.slug} className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
                 <div className="badge-green mb-3 text-[10px]">{kit.badge}</div>
                 <h3 className="font-bold text-lg mb-1 group-hover:text-green transition-colors">{kit.name}</h3>
                 <p className="text-xs text-stone mb-4">{kit.brand} &mdash; {kit.power}</p>
@@ -217,8 +217,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="card-lg bg-cream/40">
+          <div className="grid md:grid-cols-3 gap-6 mb-8 reveal-group">
+            <div className="card-lg bg-cream/40 reveal">
               <div className="flex gap-1 mb-3 text-amber text-sm">★★★★★</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
                 &laquo; Installé en 10 minutes sur mon balcon à Lyon. Ma consommation a baissé de 15% dès le premier mois. Franchement, je regrette de ne pas l&apos;avoir fait plus tôt. &raquo;
@@ -228,7 +228,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="card-lg bg-cream/40">
+            <div className="card-lg bg-cream/40 reveal">
               <div className="flex gap-1 mb-3 text-amber text-sm">★★★★★</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
                 &laquo; J&apos;étais sceptique, je l&apos;avoue. Mais après 4 mois, je vois clairement l&apos;impact sur ma facture EDF. Le plus dur a été de convaincre ma copro, pas l&apos;installation. &raquo;
@@ -238,7 +238,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="card-lg bg-cream/40">
+            <div className="card-lg bg-cream/40 reveal">
               <div className="flex gap-1 mb-3 text-amber text-sm">★★★★☆</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
                 &laquo; Le calculateur m&apos;a aidé à comprendre que mon balcon nord ne serait pas rentable. Gain de temps énorme avant d&apos;investir 600€ pour rien. &raquo;
@@ -365,26 +365,26 @@ export default function HomePage() {
               Tout ce qu&apos;il faut savoir avant de passer au solaire de balcon : guides pratiques, analyses chiffrées, réglementation.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link href="/tout-savoir" className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-group">
+            <Link href="/tout-savoir" className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="text-2xl mb-3">📚</div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Tout savoir</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Guides pratiques, analyses chiffrées et réglementation en un seul endroit.</p>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Explorer →</span>
             </Link>
-            <Link href="/guide" className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+            <Link href="/guide" className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="text-2xl mb-3">🔧</div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Guides pratiques</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Installation, orientation, réglementation, copropriété, déclaration Enedis.</p>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les guides →</span>
             </Link>
-            <Link href="/blog" className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+            <Link href="/blog" className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="text-2xl mb-3">📊</div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Blog &amp; analyses</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Rentabilité, prix de l&apos;électricité, production hivernale, autoconsommation.</p>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les articles →</span>
             </Link>
-            <Link href="/accessoires" className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+            <Link href="/accessoires" className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="text-2xl mb-3">🔌</div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Accessoires</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Prises connectées, batteries portables, lampes solaires et mini kits Amazon.</p>
@@ -403,7 +403,7 @@ export default function HomePage() {
               Derniers articles publi&eacute;s
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 gap-5 reveal-group">
             <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card-lg group hover:shadow-brand-lg transition-all">
               <div className="badge-green mb-3 text-[10px]">Comparatif</div>
               <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h3>
@@ -434,7 +434,7 @@ export default function HomePage() {
       {/* CTA CALCULATOR */}
       <section className="section-padding">
         <div className="container-brand">
-          <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/40 border-green/10 text-center py-14">
+          <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/40 border-green/10 text-center py-14 reveal-scale">
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
               Votre balcon est-il rentable pour le solaire ?
             </h2>
