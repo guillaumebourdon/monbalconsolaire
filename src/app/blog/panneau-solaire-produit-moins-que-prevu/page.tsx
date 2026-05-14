@@ -348,7 +348,7 @@ export default function PanneauProduitMoinsPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données PVGIS (Commission européenne), fiches techniques constructeurs, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire (mai 2026). Tarif EDF base mai 2026 : 0,2516 €/kWh.{' '}
+                <strong>Méthodologie :</strong> données PVGIS (Commission européenne), fiches techniques constructeurs, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire (mai 2026). Tarif EDF base mai 2026 : 0,1940 €/kWh.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

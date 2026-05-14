@@ -66,7 +66,7 @@ export default function GuidePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Pas de co&ucirc;ts cach&eacute;s : l&apos;h&eacute;bergement est gratuit (votre balcon), l&apos;installation est gratuite (vous le faites vous-m&ecirc;me en quelques minutes), et la maintenance est quasi-inexistante (un coup de chiffon sur le panneau de temps en temps).</p>
 
               <h3 className="font-bold text-lg mb-3 mt-6">La rentabilité réelle</h3>
-              <p className="text-charcoal-light leading-relaxed mb-4">Avec le tarif EDF à <span className="data-highlight">0,2516 &euro;/kWh</span> (mai 2026), voici ce que vous pouvez attendre :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Avec le tarif EDF à <span className="data-highlight">0,1940 &euro;/kWh</span> (mai 2026), voici ce que vous pouvez attendre :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
@@ -90,7 +90,7 @@ export default function GuidePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, tarif EDF 0,2516 &euro;/kWh. Les panneaux sont garantis 25 ans.</p>
+              <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, tarif EDF 0,1940 &euro;/kWh. Les panneaux sont garantis 25 ans.</p>
 
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
                 <p className="font-semibold mb-2">Quelle rentabilité pour VOTRE balcon ?</p>

@@ -19,7 +19,7 @@ const faqData = [
   },
   {
     question: 'Lequel a le meilleur retour sur investissement ?',
-    answer: 'Le Zendure SolarFlow 800 Plus + 2 panneaux 420 W (~900 € total) offre un ROI de ~5 ans grâce au stockage qui augmente l\'autoconsommation à 80 %. Le Sunology PLAY 2 seul (599 €) a un ROI de ~5-6 ans aussi, mais sans stockage vous perdez 50 % de production quand vous n\'êtes pas chez vous. Le Beem On (599 €) est similaire au PLAY 2.',
+    answer: 'Le Zendure SolarFlow 800 Plus + 2 panneaux 420 W (~900 € total) offre un ROI de ~7 ans grâce au stockage qui augmente l\'autoconsommation à 80 %. Le Sunology PLAY 2 seul (599 €) a un ROI de ~7-8 ans aussi, mais sans stockage vous perdez 50 % de production quand vous n\'êtes pas chez vous. Le Beem On (599 €) est similaire au PLAY 2.',
   },
   {
     question: 'Peut-on combiner un Sunology ou Beem avec un Zendure SolarFlow ?',
@@ -181,8 +181,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">1,92 kWh</td>
                       <td className="text-center p-2.5 font-mono">870 kWh</td>
                       <td className="text-center p-2.5 font-mono">80 %</td>
-                      <td className="text-center p-2.5 font-mono text-green">175 €</td>
-                      <td className="text-center p-2.5 font-mono text-green">5,1 ans</td>
+                      <td className="text-center p-2.5 font-mono text-green">135 €</td>
+                      <td className="text-center p-2.5 font-mono text-green">6,7 ans</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Sunology PLAY 2</td>
@@ -190,8 +190,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">—</td>
                       <td className="text-center p-2.5 font-mono">465 kWh</td>
                       <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">105 €</td>
-                      <td className="text-center p-2.5 font-mono">5,7 ans</td>
+                      <td className="text-center p-2.5 font-mono">81 €</td>
+                      <td className="text-center p-2.5 font-mono">7,4 ans</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-2.5">Sunology PLAY MAX</td>
@@ -199,8 +199,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">0,7 kWh</td>
                       <td className="text-center p-2.5 font-mono">465 kWh</td>
                       <td className="text-center p-2.5 font-mono">65 %</td>
-                      <td className="text-center p-2.5 font-mono">130 €</td>
-                      <td className="text-center p-2.5 font-mono">9,1 ans</td>
+                      <td className="text-center p-2.5 font-mono">100 €</td>
+                      <td className="text-center p-2.5 font-mono">11,8 ans</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Beem On 460W</td>
@@ -208,8 +208,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">—</td>
                       <td className="text-center p-2.5 font-mono">475 kWh</td>
                       <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">107 €</td>
-                      <td className="text-center p-2.5 font-mono">5,6 ans</td>
+                      <td className="text-center p-2.5 font-mono">82 €</td>
+                      <td className="text-center p-2.5 font-mono">7,3 ans</td>
                     </tr>
                     <tr className="bg-cream/50">
                       <td className="p-2.5">Beem Kit 300W</td>
@@ -217,14 +217,14 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">—</td>
                       <td className="text-center p-2.5 font-mono">310 kWh</td>
                       <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">70 €</td>
-                      <td className="text-center p-2.5 font-mono">4,3 ans</td>
+                      <td className="text-center p-2.5 font-mono">54 €</td>
+                      <td className="text-center p-2.5 font-mono">5,5 ans</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="text-xs text-stone italic">
-                Calculs basés sur : exposition sud, Lyon, tarif EDF base 0,2516 €/kWh (mai 2026). Production = puissance × irradiation × coeff orientation × 0,85.
+                Calculs basés sur : exposition sud, Lyon, tarif EDF base 0,1940 €/kWh (mai 2026). Production = puissance × irradiation × coeff orientation × 0,85.
               </p>
             </section>
 
@@ -391,7 +391,7 @@ export default function ZendureVsSunologyVsBeemPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données constructeurs, fiches techniques officielles (Zendure, Sunology, Beem), retours utilisateurs forum-photovoltaique.fr et Reddit (mai 2026). Tarif EDF base mai 2026 : 0,2516 €/kWh. Production calculée pour Lyon, exposition sud, coefficient 0,85.{' '}
+                <strong>Méthodologie :</strong> données constructeurs, fiches techniques officielles (Zendure, Sunology, Beem), retours utilisateurs forum-photovoltaique.fr et Reddit (mai 2026). Tarif EDF base mai 2026 : 0,1940 €/kWh. Production calculée pour Lyon, exposition sud, coefficient 0,85.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

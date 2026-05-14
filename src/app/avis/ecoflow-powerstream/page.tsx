@@ -363,7 +363,7 @@ export default function EcoflowPowerstreamPage() {
                   <li>&bull; <strong>Production annuelle</strong> : 850 kWh/an (2 panneaux 400W, sud, Lyon)</li>
                   <li>&bull; <strong>Autoconsommation grâce à la batterie</strong> : 80% (vs 50% sans batterie)</li>
                   <li>&bull; <strong>kWh économisés</strong> : 680 kWh/an</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 680 × 0,2516 € = <strong>171 €/an</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 680 × 0,1940 € = <strong>171 €/an</strong></li>
                   <li>&bull; <strong>ROI simple</strong> : 1 800 € / 171 € = <strong>10,5 ans</strong></li>
                 </ul>
               </div>

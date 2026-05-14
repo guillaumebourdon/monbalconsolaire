@@ -75,7 +75,7 @@ export default function OrientationPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Données PVGIS, inclinaison 35°, tarif EDF 0,2516€/kWh, coefficient de pertes 0,85.</p>
+              <p className="text-xs text-stone">Données PVGIS, inclinaison 35°, tarif EDF 0,1940€/kWh, coefficient de pertes 0,85.</p>
             </section>
 
             <section>

@@ -27,7 +27,7 @@ const faqData = [
   },
   {
     question: 'Quel est le meilleur kit solaire pour une terrasse en 2026 ?',
-    answer: 'Pour une terrasse, le setup Zendure SolarFlow + 2 panneaux 420 W (~900 €) offre le meilleur rapport qualité-prix : 840 W de puissance, batterie 1,92 kWh intégrée, et un ROI de ~5 ans. Si vous voulez la simplicité absolue, 2 Sunology PLAY 2 (1 198 €) sont aussi un excellent choix : 900 Wc, installation en 2 minutes, zéro configuration.',
+    answer: 'Pour une terrasse, le setup Zendure SolarFlow + 2 panneaux 420 W (~900 €) offre le meilleur rapport qualité-prix : 840 W de puissance, batterie 1,92 kWh intégrée, et un ROI de ~7 ans. Si vous voulez la simplicité absolue, 2 Sunology PLAY 2 (1 198 €) sont aussi un excellent choix : 900 Wc, installation en 2 minutes, zéro configuration.',
   },
   {
     question: 'La pose au sol est-elle aussi efficace que la fixation murale ?',
@@ -43,9 +43,9 @@ const setups = [
     production: '400-570 kWh/an',
     ideal: 'Petite terrasse, premier achat, budget limité',
     kits: [
-      { name: 'Sunology PLAY 2', power: '450 Wc', price: '599 €', roi: '4,6 ans', avantage: 'Installation 1 min, WiFi natif', slug: '/avis/sunology-play-2' },
-      { name: 'Beem On 460W', power: '460 Wc', price: '599 €', roi: '4,5 ans', avantage: 'Paiement 10x, option ZEN', slug: '/avis/beem-on-460w' },
-      { name: 'Sunethic F500', power: '500 Wc', price: '690 €', roi: '4,8 ans', avantage: 'Plus puissant, Made in France', slug: '/avis/sunethic-f500' },
+      { name: 'Sunology PLAY 2', power: '450 Wc', price: '599 €', roi: '6,0 ans', avantage: 'Installation 1 min, WiFi natif', slug: '/avis/sunology-play-2' },
+      { name: 'Beem On 460W', power: '460 Wc', price: '599 €', roi: '5,8 ans', avantage: 'Paiement 10x, option ZEN', slug: '/avis/beem-on-460w' },
+      { name: 'Sunethic F500', power: '500 Wc', price: '690 €', roi: '6,2 ans', avantage: 'Plus puissant, Made in France', slug: '/avis/sunethic-f500' },
     ],
   },
   {
@@ -55,9 +55,9 @@ const setups = [
     production: '800-1 100 kWh/an',
     ideal: 'Terrasse standard, meilleur rapport production/investissement',
     kits: [
-      { name: 'Zendure SolarFlow + 2\u00d7420 W', power: '840 Wc + batterie', price: '~900 €', roi: '5,1 ans', avantage: 'Batterie 1,92 kWh, autoconsommation 80 %', slug: '/avis/zendure-solarflow' },
-      { name: '2\u00d7 Sunology PLAY 2', power: '900 Wc', price: '1 198 €', roi: '5,7 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
-      { name: '2\u00d7 Beem On 460W', power: '920 Wc', price: '1 198 €', roi: '5,6 ans', avantage: 'Paiement 10x possible, meilleur ratio €/Wc', slug: '/avis/beem-on-460w' },
+      { name: 'Zendure SolarFlow + 2\u00d7420 W', power: '840 Wc + batterie', price: '~900 €', roi: '6,6 ans', avantage: 'Batterie 1,92 kWh, autoconsommation 80 %', slug: '/avis/zendure-solarflow' },
+      { name: '2\u00d7 Sunology PLAY 2', power: '900 Wc', price: '1 198 €', roi: '7,4 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
+      { name: '2\u00d7 Beem On 460W', power: '920 Wc', price: '1 198 €', roi: '7,3 ans', avantage: 'Paiement 10x possible, meilleur ratio €/Wc', slug: '/avis/beem-on-460w' },
     ],
   },
   {
@@ -67,8 +67,8 @@ const setups = [
     production: '800-1 100 kWh/an + stockage nuit',
     ideal: 'Grande terrasse, autoconsommation maximale, gros talon de consommation',
     kits: [
-      { name: 'EcoFlow PowerStream + 2\u00d7400 W + DELTA 2', power: '800 Wc + 1 kWh', price: '~1 800 €', roi: '10,5 ans', avantage: 'Backup coupure réseau, batterie portable', slug: '/avis/ecoflow-powerstream' },
-      { name: 'Zendure SolarFlow + 2\u00d7420 W + AB2000', power: '840 Wc + 3,84 kWh', price: '~1 500 €', roi: '7,2 ans', avantage: 'Stockage doublé, couvre la nuit entière', slug: '/avis/zendure-solarflow' },
+      { name: 'EcoFlow PowerStream + 2\u00d7400 W + DELTA 2', power: '800 Wc + 1 kWh', price: '~1 800 €', roi: '13,6 ans', avantage: 'Backup coupure réseau, batterie portable', slug: '/avis/ecoflow-powerstream' },
+      { name: 'Zendure SolarFlow + 2\u00d7420 W + AB2000', power: '840 Wc + 3,84 kWh', price: '~1 500 €', roi: '9,3 ans', avantage: 'Stockage doublé, couvre la nuit entière', slug: '/avis/zendure-solarflow' },
     ],
   },
 ];
@@ -196,13 +196,13 @@ export default function MeilleurKitTerrasse2026Page() {
                   <li>&bull; <strong>Setup</strong> : Zendure SolarFlow + 2 panneaux 420 W = <strong>~900 €</strong></li>
                   <li>&bull; <strong>Production</strong> : 840 W × 1 300 kWh/kWc × 0,85 = <strong>929 kWh/an</strong></li>
                   <li>&bull; <strong>Autoconsommation (avec batterie)</strong> : 80 % = <strong>743 kWh valorisés</strong></li>
-                  <li>&bull; <strong>Économies</strong> : 743 × 0,2516 € = <strong>187 €/an</strong></li>
-                  <li>&bull; <strong>ROI</strong> : 900 / 187 = <strong className="text-green">4,8 ans</strong></li>
-                  <li>&bull; <strong>Sur 25 ans</strong> : <strong className="text-green">4 675 € d&apos;économies cumulées</strong> (sans hausse EDF)</li>
+                  <li>&bull; <strong>Économies</strong> : 743 × 0,1940 € = <strong>144 €/an</strong></li>
+                  <li>&bull; <strong>ROI</strong> : 900 / 144 = <strong className="text-green">6,3 ans</strong></li>
+                  <li>&bull; <strong>Sur 25 ans</strong> : <strong className="text-green">3 600 € d&apos;économies cumulées</strong> (sans hausse EDF)</li>
                 </ul>
               </div>
               <p className="text-xs text-stone mt-3">
-                Avec la hausse du tarif EDF (+4-5 %/an en tendance), les économies r&eacute;elles passent à 220+ €/an d&egrave;s la 3&egrave;me année. <Link href="/calculateur" className="text-green hover:underline">Calculez pour votre département</Link>.
+                Avec la hausse du tarif EDF (+4-5 %/an en tendance), les économies r&eacute;elles passent à 170+ €/an d&egrave;s la 3&egrave;me année. <Link href="/calculateur" className="text-green hover:underline">Calculez pour votre département</Link>.
               </p>
             </section>
 
@@ -210,7 +210,7 @@ export default function MeilleurKitTerrasse2026Page() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation</h2>
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10">
                 <p className="text-charcoal-light leading-relaxed mb-4">
-                  Si vous avez une terrasse, <strong>ne vous limitez pas à un seul panneau</strong>. L&apos;espace est votre atout principal. Le setup <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow + 2 panneaux 420 W</Link> (~900 €) offre le meilleur compromis : 840 W de puissance, batterie intégrée pour le soir, ROI de 5 ans.
+                  Si vous avez une terrasse, <strong>ne vous limitez pas à un seul panneau</strong>. L&apos;espace est votre atout principal. Le setup <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow + 2 panneaux 420 W</Link> (~900 €) offre le meilleur compromis : 840 W de puissance, batterie intégrée pour le soir, ROI de 7 ans.
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
                   Si le budget est serré, <Link href="/avis/beem-kit-300w" className="text-green hover:underline font-semibold">un Beem Kit 300W à 299 €</Link> est un excellent point de départ. Si la simplicité prime, <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">2 Sunology PLAY 2</Link> se posent et se branchent en 2 minutes.
@@ -272,7 +272,7 @@ export default function MeilleurKitTerrasse2026Page() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie :</strong> donn&eacute;es PVGIS, fiches techniques constructeurs, tarif EDF base mai 2026 : 0,2516 €/kWh. Production calcul&eacute;e pour Lyon, orientation sud, inclinaison 30°, coefficient 0,85.{' '}
+                <strong>M&eacute;thodologie :</strong> donn&eacute;es PVGIS, fiches techniques constructeurs, tarif EDF base mai 2026 : 0,1940 €/kWh. Production calcul&eacute;e pour Lyon, orientation sud, inclinaison 30°, coefficient 0,85.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.
               </p>
             </div>

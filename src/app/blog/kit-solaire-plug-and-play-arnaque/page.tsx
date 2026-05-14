@@ -128,7 +128,7 @@ export default function ArnaqueInvestissementPage() {
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Production annuelle</strong> : environ 500 kWh (orientation sud, Lyon)</li>
                   <li>&bull; <strong>Autoconsommation réelle</strong> : 60% soit 300 kWh directement économisés</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 300 kWh &times; 0,2516 &euro;/kWh = <strong>75 &euro;/an</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 300 kWh &times; 0,1940 &euro;/kWh = <strong>75 &euro;/an</strong></li>
                   <li>&bull; <strong>ROI simple</strong> : 599 &euro; / 75 &euro; = <strong>8,0 ans</strong></li>
                 </ul>
               </div>

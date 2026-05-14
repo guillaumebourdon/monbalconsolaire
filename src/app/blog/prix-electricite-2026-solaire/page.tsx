@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Quel est le prix du kWh en 2026 ?', answer: 'Le tarif réglementé EDF est de 0,2516€/kWh TTC en option base 6 kVA depuis le 1er mai 2026. C\'est une hausse de 29,7% par rapport à février 2026, et le tarif est désormais 101% plus élevé qu\'en 2012.' },
+  { question: 'Quel est le prix du kWh en 2026 ?', answer: 'Le tarif réglementé EDF est de 0,1940€/kWh TTC en option base 6 kVA depuis le 1er mai 2026. C\'est une hausse de 29,7% par rapport à février 2026, et le tarif est désormais 101% plus élevé qu\'en 2012.' },
   { question: 'Le prix de l\'électricité va-t-il augmenter en 2026-2027 ?', answer: 'Très probablement. La fin du dispositif ARENH en janvier 2026 modifie le mécanisme de fixation des prix. Les analystes prévoient une hausse de 3 à 5% par an en moyenne sur les prochaines années.' },
   { question: 'Combien le solaire fait-il économiser face aux hausses ?', answer: 'Chaque hausse de 1% du tarif EDF augmente automatiquement les économies de votre panneau. Un kit à 599€ qui économise 100€/an en 2026 pourrait économiser 130-160€/an en 2030 si le tarif augmente de 5%/an.' },
 ];
@@ -36,7 +36,7 @@ export default function PrixElectricitePage() {
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">L&apos;évolution du prix du kWh en France</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">En mai 2026, le tarif réglementé EDF s&apos;établit à <span className="data-highlight">0,2516 €/kWh TTC</span> en option base (6 kVA). Ce tarif a augmenté de 29,7% par rapport à février 2026, en raison de la fin de l&apos;ARENH et de la hausse des coûts de réseau.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">En mai 2026, le tarif réglementé EDF s&apos;établit à <span className="data-highlight">0,1940 €/kWh TTC</span> en option base (6 kVA). Ce tarif a augmenté de 29,7% par rapport à février 2026, en raison de la fin de l&apos;ARENH et de la hausse des coûts de réseau.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Mais cette baisse ponctuelle masque la tendance de fond :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[400px]">
@@ -50,10 +50,10 @@ export default function PrixElectricitePage() {
                       ['2018', '0,1541 €', '+1,7%', '+23%'],
                       ['2020', '0,1582 €', '+2,4%', '+27%'],
                       ['2023', '0,2276 €', '+10%', '+82%'],
-                      ['2024', '0,2516 €', '+8,6%', '+101%'],
+                      ['2024', '0,1940 €', '+8,6%', '+101%'],
                       ['2025 (août)', '0,1952 €', '-14,4%*', '+56%'],
                       ['2026 (fév.)', '0,1940 €', '-0,6%', '+55%'],
-                      ['2026 (mai)', '0,2516 €', '+29,7%', '+101%'],
+                      ['2026 (mai)', '0,1940 €', '+29,7%', '+101%'],
                     ].map(([y, t, v, c], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{y}</td>
@@ -82,7 +82,7 @@ export default function PrixElectricitePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Chaque centime d&apos;augmentation du kWh améliore automatiquement la rentabilité de votre panneau solaire. Voici l&apos;impact sur un kit Sunology PLAY2 (599€, 520 kWh/an en région lyonnaise) :</p>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 {[
-                  { tarif: '0,2516 €', label: 'Tarif actuel (mai 2026)', eco: '131 €/an', roi: '4,6 ans', total25: '~3 275 €' },
+                  { tarif: '0,1940 €', label: 'Tarif actuel (mai 2026)', eco: '131 €/an', roi: '4,6 ans', total25: '~3 275 €' },
                   { tarif: '0,2900 €', label: 'Projection basse (2030)', eco: '151 €/an', roi: '4,0 ans', total25: '~4 200 €' },
                   { tarif: '0,3200 €', label: 'Projection haute (2030)', eco: '166 €/an', roi: '3,6 ans', total25: '~5 200 €' },
                 ].map((s, i) => (

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
 };
 
-const TARIF_KWH = 0.2516;
+const TARIF_KWH = 0.1940;
 const COEFF = 0.85;
 
 function slugify(name: string): string {
@@ -85,7 +85,7 @@ export default function SolaireBalconIndexPage() {
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone leading-relaxed">
-            <strong>Méthodologie :</strong> irradiation PVGIS (Commission européenne), kit 450 Wc, orientation sud, inclinaison 30°, coefficient 0,85, autoconsommation 45 %, tarif EDF 0,2516 €/kWh (mai 2026).{' '}
+            <strong>Méthodologie :</strong> irradiation PVGIS (Commission européenne), kit 450 Wc, orientation sud, inclinaison 30°, coefficient 0,85, autoconsommation 45 %, tarif EDF 0,1940 €/kWh (mai 2026).{' '}
             <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
           </p>
         </div>

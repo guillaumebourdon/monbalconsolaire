@@ -34,7 +34,7 @@ const KITS = [
   { name: 'DualSun PREASY', power: 0.42, price: 870, brand: 'DualSun', badge: 'Made in France' },
 ];
 
-const TARIF_KWH = 0.2516;
+const TARIF_KWH = 0.1940;
 
 export default function CalculateurPage() {
   const [step, setStep] = useState(1);
@@ -325,7 +325,7 @@ export default function CalculateurPage() {
             </div>
 
             <p className="text-xs text-stone-light text-center leading-relaxed">
-              Estimation basée sur les données PVGIS (Commission européenne) et le tarif EDF de 0,2516 &euro;/kWh (mai 2026).{' '}
+              Estimation bas&eacute;e sur les donn&eacute;es PVGIS (Commission europ&eacute;enne) et le tarif EDF de 0,1940 &euro;/kWh (mai 2026).{' '}
               <button onClick={() => { setStep(1); setCity(null); setQuery(''); setOrientation(''); setConsoMensuelle(''); }} className="text-green hover:underline">&circlearrowleft; Recommencer</button>
             </p>
           </div>

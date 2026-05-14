@@ -70,10 +70,10 @@ export default function HomePage() {
         <div className="container-brand">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 reveal-group">
             {[
-              { value: '0,2516€', label: 'Prix du kWh EDF en 2026', suffix: '/kWh' },
-              { value: '299-900€', label: 'Prix d\'un kit solaire balcon', suffix: '' },
-              { value: '3-5 ans', label: 'Retour sur investissement', suffix: '' },
-              { value: '25 ans', label: 'Garantie des panneaux', suffix: '' },
+              { value: '80-130\u20ac/an', label: 'd\'\u00e9conomies selon votre r\u00e9gion' },
+              { value: '25 ans', label: 'Garantie des panneaux' },
+              { value: '299-900\u20ac', label: 'Prix d\'un kit solaire balcon' },
+              { value: '5-7 ans', label: 'Retour sur investissement' },
             ].map((item, i) => (
               <div key={i} className="text-center p-6 rounded-brand-lg bg-cream reveal">
                 <div className="font-mono font-medium text-amber-dark text-xl md:text-2xl mb-1">
@@ -204,70 +204,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PREUVE SOCIALE */}
+      {/* CAS TYPES */}
       <section className="section-padding bg-white">
         <div className="container-brand max-w-5xl">
           <div className="text-center mb-12">
-            <div className="badge-green mb-4 inline-block">Ils ont calculé</div>
+            <div className="badge-green mb-4 inline-block">Simulations</div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-              Des retours concrets de la communauté
+              Cas types &mdash; exemples de simulation
             </h2>
             <p className="text-charcoal-light max-w-2xl mx-auto">
-              Ce que disent les utilisateurs de kits solaires plug-and-play en France.
+              Trois profils r&eacute;els simul&eacute;s avec notre calculateur. Les r&eacute;sultats varient selon la r&eacute;gion, l&apos;orientation et le kit choisi.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8 reveal-group">
-            <div className="card-lg bg-cream/40 reveal">
-              <div className="flex gap-1 mb-3 text-amber text-sm">★★★★★</div>
-              <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
-                &laquo; Installé en 10 minutes sur mon balcon à Lyon. Ma consommation a baissé de 15% dès le premier mois. Franchement, je regrette de ne pas l&apos;avoir fait plus tôt. &raquo;
+            <div className="card-lg reveal">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Lyon, balcon sud</div>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-4">
+                Appartement T3, actif en journ&eacute;e. Sunology PLAY 2 (450 Wc, 599 &euro;). Production estim&eacute;e : <strong>497 kWh/an</strong>. &Eacute;conomies : <strong>97 &euro;/an</strong>.
               </p>
-              <div className="text-xs text-stone">
-                <strong className="text-charcoal">Thomas L.</strong> — Lyon, Sunology PLAY2
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono font-bold text-green">ROI 6,2 ans</span>
+                <span className="badge-green text-[9px]">&#10003; Rentable</span>
               </div>
             </div>
 
-            <div className="card-lg bg-cream/40 reveal">
-              <div className="flex gap-1 mb-3 text-amber text-sm">★★★★★</div>
-              <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
-                &laquo; J&apos;étais sceptique, je l&apos;avoue. Mais après 4 mois, je vois clairement l&apos;impact sur ma facture EDF. Le plus dur a été de convaincre ma copro, pas l&apos;installation. &raquo;
+            <div className="card-lg reveal">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Marseille, terrasse sud</div>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-4">
+                Maison, t&eacute;l&eacute;travail. Zendure SolarFlow + 2 &times; 420 W (900 &euro;). Production : <strong>1 083 kWh/an</strong>. Avec batterie (80 % autocons.) : <strong>168 &euro;/an</strong>.
               </p>
-              <div className="text-xs text-stone">
-                <strong className="text-charcoal">Sophie M.</strong> — Bordeaux, Beem On 460W
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono font-bold text-green">ROI 5,4 ans</span>
+                <span className="badge-green text-[9px]">&#10003; Rentable</span>
               </div>
             </div>
 
-            <div className="card-lg bg-cream/40 reveal">
-              <div className="flex gap-1 mb-3 text-amber text-sm">★★★★☆</div>
-              <p className="text-sm text-charcoal-light leading-relaxed mb-4 italic">
-                &laquo; Le calculateur m&apos;a aidé à comprendre que mon balcon nord ne serait pas rentable. Gain de temps énorme avant d&apos;investir 600€ pour rien. &raquo;
+            <div className="card-lg reveal">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-amber-dark mb-3">Profil type &mdash; Lille, balcon nord-est</div>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-4">
+                Appartement T2, balcon nord-est. Beem Kit 300W (299 &euro;). Production estim&eacute;e : <strong>208 kWh/an</strong>. &Eacute;conomies : <strong>40 &euro;/an</strong>.
               </p>
-              <div className="text-xs text-stone">
-                <strong className="text-charcoal">Marc D.</strong> — Paris 19e, projet annulé
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono font-bold text-amber-dark">ROI 7,5 ans</span>
+                <span className="badge-amber text-[9px]">&#9888; Marginal</span>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-stone pt-8 border-t border-border-light">
-            <div className="text-center">
-              <div className="font-mono text-2xl font-bold text-green">{siteStats.calculsEffectues}</div>
-              <div className="text-xs mt-1">calculs effectués</div>
-            </div>
-            <div className="hidden md:block w-px h-8 bg-border"></div>
+          <p className="text-xs text-stone text-center mb-8">
+            Simulations bas&eacute;es sur les donn&eacute;es PVGIS et le tarif r&eacute;glement&eacute; EDF en vigueur (0,1940 &euro;/kWh). R&eacute;sultats indicatifs, variant selon votre situation r&eacute;elle.
+          </p>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-stone pt-8 border-t border-border-light reveal">
             <div className="text-center">
               <div className="font-mono text-2xl font-bold text-green">{siteStats.articlesPublies}</div>
-              <div className="text-xs mt-1">guides publiés</div>
+              <div className="text-xs mt-1">guides publi&eacute;s</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
             <div className="text-center">
-              <div className="font-mono text-2xl font-bold text-green">{siteStats.kitsTestes}</div>
-              <div className="text-xs mt-1">kits testés</div>
+              <div className="font-mono text-2xl font-bold text-green">{siteStats.kitsAnalyses}</div>
+              <div className="text-xs mt-1">kits analys&eacute;s</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
             <div className="text-center">
               <div className="font-mono text-2xl font-bold text-green">{siteStats.departementsCouverts}</div>
-              <div className="text-xs mt-1">départements couverts</div>
+              <div className="text-xs mt-1">d&eacute;partements couverts</div>
             </div>
           </div>
         </div>

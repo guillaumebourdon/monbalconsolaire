@@ -386,8 +386,8 @@ export default function ZendureSolarflowPage() {
                   <li>&bull; <strong>Production annuelle</strong> : 870 kWh/an (2 × 420 W, sud, Lyon)</li>
                   <li>&bull; <strong>Autoconsommation avec batterie</strong> : 80 % (vs 45 % sans batterie)</li>
                   <li>&bull; <strong>kWh valorisés</strong> : 696 kWh/an</li>
-                  <li>&bull; <strong>Tarif EDF 2026</strong> : 0,2516 €/kWh (tarif base mai 2026)</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 696 × 0,2516 € = <strong>175 €/an</strong></li>
+                  <li>&bull; <strong>Tarif EDF 2026</strong> : 0,1940 €/kWh (tarif base mai 2026)</li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 696 × 0,1940 € = <strong>175 €/an</strong></li>
                   <li>&bull; <strong>ROI simple</strong> : 900 € / 175 € = <strong>5,1 ans</strong></li>
                 </ul>
               </div>
@@ -498,7 +498,7 @@ export default function ZendureSolarflowPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire (mai 2026). Tarif EDF base mai 2026 : 0,2516 €/kWh. Article rédigé sans rémunération de Zendure.{' '}
+                <strong>Méthodologie :</strong> données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire (mai 2026). Tarif EDF base mai 2026 : 0,1940 €/kWh. Article rédigé sans rémunération de Zendure.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

@@ -316,8 +316,8 @@ export default function DualsunPreasyPage() {
                   <li>&bull; <strong>Production annuelle</strong> : 435 kWh/an (420 Wc, sud, Lyon, coeff 0,85)</li>
                   <li>&bull; <strong>Autoconsommation sans batterie</strong> : 45 %</li>
                   <li>&bull; <strong>kWh valorisés</strong> : 196 kWh/an</li>
-                  <li>&bull; <strong>Tarif EDF mai 2026</strong> : 0,2516 €/kWh</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 196 × 0,2516 € = <strong>49 €/an</strong></li>
+                  <li>&bull; <strong>Tarif EDF mai 2026</strong> : 0,1940 €/kWh</li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 196 × 0,1940 € = <strong>49 €/an</strong></li>
                   <li>&bull; <strong>ROI simple</strong> : 870 € / 49 € = <strong>17,8 ans</strong></li>
                 </ul>
               </div>
@@ -448,7 +448,7 @@ export default function DualsunPreasyPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données constructeur DualSun, fiche technique officielle PREASY, test Révolution Énergétique (sept. 2024 - jan. 2025), prix constatés chez revendeurs (mai 2026). Tarif EDF base mai 2026 : 0,2516 €/kWh. Article rédigé sans rémunération de DualSun.{' '}
+                <strong>Méthodologie :</strong> données constructeur DualSun, fiche technique officielle PREASY, test Révolution Énergétique (sept. 2024 - jan. 2025), prix constatés chez revendeurs (mai 2026). Tarif EDF base mai 2026 : 0,1940 €/kWh. Article rédigé sans rémunération de DualSun.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

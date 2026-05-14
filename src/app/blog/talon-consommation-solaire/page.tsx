@@ -109,8 +109,8 @@ export default function TalonConsommationPage() {
                   <div className="text-xs text-stone mt-1">kWh/an consommés en talon</div>
                 </div>
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-amber-dark text-2xl">330-880 €</div>
-                  <div className="text-xs text-stone mt-1">Coût annuel (0,2516 €/kWh)</div>
+                  <div className="font-mono font-bold text-amber-dark text-2xl">252-679 €</div>
+                  <div className="text-xs text-stone mt-1">Coût annuel (0,1940 €/kWh)</div>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">
@@ -181,7 +181,7 @@ export default function TalonConsommationPage() {
                     <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
                     <div>
                       <h4 className="font-bold text-sm mb-1">Calculez le coût annuel</h4>
-                      <p className="text-xs text-charcoal-light leading-relaxed">Talon annuel = VA × 24h × 365j / 1 000 = kWh/an. Multipliez par 0,2516 € pour le coût.</p>
+                      <p className="text-xs text-charcoal-light leading-relaxed">Talon annuel = VA × 24h × 365j / 1 000 = kWh/an. Multipliez par 0,1940 € pour le coût.</p>
                     </div>
                   </div>
                 </div>
@@ -191,8 +191,8 @@ export default function TalonConsommationPage() {
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; Linky affiche : <strong className="font-mono">220 VA</strong></li>
                   <li>&bull; Consommation annuelle : 220 × 24 × 365 / 1 000 = <strong className="font-mono">1 927 kWh/an</strong></li>
-                  <li>&bull; Coût annuel : 1 927 × 0,2516 = <strong className="font-mono text-amber-dark">485 €/an</strong></li>
-                  <li>&bull; C&apos;est <strong>485 € par an qui partent en silence</strong>, sans que vous utilisiez activement quoi que ce soit.</li>
+                  <li>&bull; Coût annuel : 1 927 × 0,1940 = <strong className="font-mono text-amber-dark">374 €/an</strong></li>
+                  <li>&bull; C&apos;est <strong>374 € par an qui partent en silence</strong>, sans que vous utilisiez activement quoi que ce soit.</li>
                 </ul>
               </div>
             </section>
@@ -331,11 +331,11 @@ export default function TalonConsommationPage() {
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Talon annuel</strong> : 200 W × 24h × 365j / 1 000 = <strong className="font-mono">1 752 kWh/an</strong></li>
-                  <li>&bull; <strong>Coût sans solaire</strong> : 1 752 × 0,2516 = <strong className="font-mono text-amber-dark">441 €/an</strong></li>
+                  <li>&bull; <strong>Coût sans solaire</strong> : 1 752 × 0,1940 = <strong className="font-mono text-amber-dark">340 €/an</strong></li>
                   <li>&bull; <strong>Kit Sunology PLAY 2</strong> (450 Wc, 599 €) → produit 465 kWh/an</li>
-                  <li>&bull; <strong>Autoconsommation à 45 %</strong> = 209 kWh valorisés → <strong className="font-mono text-green">53 €/an</strong> d&apos;économies</li>
+                  <li>&bull; <strong>Autoconsommation à 45 %</strong> = 209 kWh valorisés → <strong className="font-mono text-green">41 €/an</strong> d&apos;économies</li>
                   <li>&bull; <strong>Zendure SolarFlow + 2 × 420 W</strong> (900 €) → 870 kWh/an, 80 % autoconsommé</li>
-                  <li>&bull; <strong>696 kWh valorisés</strong> → <strong className="font-mono text-green">175 €/an</strong> d&apos;économies</li>
+                  <li>&bull; <strong>696 kWh valorisés</strong> → <strong className="font-mono text-green">135 €/an</strong> d&apos;économies</li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed">
@@ -394,7 +394,7 @@ export default function TalonConsommationPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données de consommation ADEME, fiches techniques constructeurs, relevés Linky communautaires forum-photovoltaique.fr (mai 2026). Tarif EDF base mai 2026 : 0,2516 €/kWh.{' '}
+                <strong>Méthodologie :</strong> données de consommation ADEME, fiches techniques constructeurs, relevés Linky communautaires forum-photovoltaique.fr (mai 2026). Tarif EDF base mai 2026 : 0,1940 €/kWh.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

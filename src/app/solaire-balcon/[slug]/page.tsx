@@ -6,7 +6,7 @@ import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
-const TARIF_KWH = 0.2516;
+const TARIF_KWH = 0.1940;
 const COEFF_PERTES = 0.85;
 
 const KITS = [
@@ -141,7 +141,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
             <p className="text-sm text-charcoal-light leading-relaxed pl-4">
               Le département du {dept.name} ({dept.code}) en {dept.region} bénéficie d&apos;une irradiation solaire de <strong>{dept.irradiation} kWh/kWc/an</strong>, un potentiel <strong>{irradiationLevel}</strong>.
               {dept.irradiation >= 1300 && ' C\'est l\'un des départements les plus favorables au solaire en France.'}
-              {dept.irradiation < 1100 && ' Même avec un ensoleillement plus faible que le sud, un kit solaire reste rentable grâce au prix élevé de l\'électricité (0,2516 €/kWh).'}
+              {dept.irradiation < 1100 && ' Même avec un ensoleillement plus faible que le sud, un kit solaire reste rentable grâce au prix élevé de l\'électricité (0,1940 €/kWh).'}
               {dept.irradiation >= 1100 && dept.irradiation < 1300 && ' Un kit solaire de balcon y est pleinement rentable avec un retour sur investissement de 4 à 7 ans.'}
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Calcul : puissance × {dept.irradiation} kWh/kWc × 0,85 (pertes) × autoconsommation × 0,2516 €/kWh. Orientation sud. Autoconsommation 45 % sans batterie, 80 % avec batterie (Zendure).
+                Calcul : puissance × {dept.irradiation} kWh/kWc × 0,85 (pertes) × autoconsommation × 0,1940 €/kWh. Orientation sud. Autoconsommation 45 % sans batterie, 80 % avec batterie (Zendure).
               </p>
             </section>
 
@@ -316,7 +316,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> irradiation PVGIS (Commission européenne), orientation sud, inclinaison 30°, coefficient de pertes 0,85. Tarif EDF base mai 2026 : 0,2516 €/kWh. Autoconsommation 45 % sans batterie, 80 % avec batterie.{' '}
+                <strong>Méthodologie :</strong> irradiation PVGIS (Commission européenne), orientation sud, inclinaison 30°, coefficient de pertes 0,85. Tarif EDF base mai 2026 : 0,1940 €/kWh. Autoconsommation 45 % sans batterie, 80 % avec batterie.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
             </div>

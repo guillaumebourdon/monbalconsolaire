@@ -129,7 +129,7 @@ export default function BeemKit300WAvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Orientation sud, inclinaison 30°, tarif EDF 0,2516€/kWh. Source : PVGIS.</p>
+              <p className="text-xs text-stone">Orientation sud, inclinaison 30°, tarif EDF 0,1940€/kWh. Source : PVGIS.</p>
             </section>
 
             <section>

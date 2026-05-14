@@ -307,7 +307,7 @@ export default function SunologyCityPage() {
                   <li>&bull; <strong>Production annuelle</strong> : 340 kWh/an</li>
                   <li>&bull; <strong>Autoconsommation</strong> : 60% en moyenne (le reste injecté gratuitement)</li>
                   <li>&bull; <strong>kWh économisés</strong> : 204 kWh/an</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 204 &times; 0,2516 € = <strong>51 €/an</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 204 &times; 0,1940 € = <strong>51 €/an</strong></li>
                   <li>&bull; <strong>ROI simple</strong> : 549 € / 51 € = <strong>10,8 ans</strong></li>
                 </ul>
               </div>
