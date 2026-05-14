@@ -143,16 +143,15 @@ export default function HomePage() {
               Comparaison indépendante des meilleurs kits plug-and-play disponibles en France.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
-                badge: '☀ Meilleur choix',
+                badge: 'Meilleur choix',
                 name: 'Sunology PLAY2',
                 brand: 'Sunology',
                 power: '450 Wc',
-                price: '599€',
-                kwh: '465',
-                roi: '5.1',
+                price: '599\u20ac',
+                roi: '4,6 ans',
                 slug: '/avis/sunology-play-2',
               },
               {
@@ -160,9 +159,8 @@ export default function HomePage() {
                 name: 'Zendure SolarFlow',
                 brand: 'Zendure',
                 power: '840 W + batterie',
-                price: '900€',
-                kwh: '870',
-                roi: '5.1',
+                price: '900\u20ac',
+                roi: '5,1 ans',
                 slug: '/avis/zendure-solarflow',
               },
               {
@@ -170,34 +168,32 @@ export default function HomePage() {
                 name: 'Beem Kit 300W',
                 brand: 'Beem Energy',
                 power: '300 Wc',
-                price: '299€',
-                kwh: '310',
-                roi: '4.3',
+                price: '299\u20ac',
+                roi: '3,4 ans',
                 slug: '/avis/beem-kit-300w',
               },
+              {
+                badge: 'Modulaire',
+                name: 'Beem On 460W',
+                brand: 'Beem Energy',
+                power: '460 Wc',
+                price: '599\u20ac',
+                roi: '4,5 ans',
+                slug: '/avis/beem-on-460w',
+              },
             ].map((kit, i) => (
-              <div key={i} className="card-lg group hover:shadow-brand-lg transition-all duration-300">
-                <div className="badge-green mb-4">{kit.badge}</div>
-                <h3 className="font-bold text-xl mb-1">{kit.name}</h3>
-                <p className="text-sm text-stone mb-5">{kit.brand} — {kit.power} bifacial</p>
-                <div className="grid grid-cols-3 gap-3 mb-5">
-                  <div className="text-center p-3 bg-cream rounded-brand">
-                    <div className="font-mono font-medium text-green text-lg">{kit.price}</div>
-                    <div className="text-[11px] text-stone font-medium mt-0.5">Prix</div>
-                  </div>
-                  <div className="text-center p-3 bg-cream rounded-brand">
-                    <div className="font-mono font-medium text-green text-lg">{kit.kwh}</div>
-                    <div className="text-[11px] text-stone font-medium mt-0.5">kWh/an</div>
-                  </div>
-                  <div className="text-center p-3 bg-cream rounded-brand">
-                    <div className="font-mono font-medium text-green text-lg">{kit.roi}</div>
-                    <div className="text-[11px] text-stone font-medium mt-0.5">ans ROI</div>
-                  </div>
+              <Link key={i} href={kit.slug} className="card-lg group hover:shadow-brand-lg transition-all duration-300">
+                <div className="badge-green mb-3 text-[10px]">{kit.badge}</div>
+                <h3 className="font-bold text-lg mb-1 group-hover:text-green transition-colors">{kit.name}</h3>
+                <p className="text-xs text-stone mb-4">{kit.brand} &mdash; {kit.power}</p>
+                <div className="flex items-baseline justify-between mb-4">
+                  <div className="font-mono font-bold text-green text-xl">{kit.price}</div>
+                  <div className="text-xs text-stone">ROI {kit.roi}</div>
                 </div>
-                <Link href={kit.slug} className="btn-affiliate w-full justify-center">
-                  Voir l&apos;avis complet →
-                </Link>
-              </div>
+                <span className="btn-affiliate w-full justify-center text-xs">
+                  Voir l&apos;avis &rarr;
+                </span>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -393,6 +389,43 @@ export default function HomePage() {
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Accessoires</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Prises connectées, batteries portables, lampes solaires et mini kits Amazon.</p>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Voir les accessoires →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* DERNIERS ARTICLES */}
+      <section className="section-padding bg-white">
+        <div className="container-brand">
+          <div className="text-center mb-10">
+            <span className="badge-amber mb-4 inline-block">Nouveaut&eacute;s</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+              Derniers articles publi&eacute;s
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card-lg group hover:shadow-brand-lg transition-all">
+              <div className="badge-green mb-3 text-[10px]">Comparatif</div>
+              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h3>
+              <p className="text-xs text-charcoal-light leading-relaxed">Pose au sol, multi-panneaux, 3 setups par budget.</p>
+              <div className="text-xs text-stone mt-3">13 mai 2026 &middot; 10 min</div>
+            </Link>
+            <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card-lg group hover:shadow-brand-lg transition-all">
+              <div className="badge-amber mb-3 text-[10px]">Diagnostic</div>
+              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
+              <p className="text-xs text-charcoal-light leading-relaxed">Diagnostic en 7 points et solutions concr&egrave;tes.</p>
+              <div className="text-xs text-stone mt-3">12 mai 2026 &middot; 11 min</div>
+            </Link>
+            <Link href="/blog/talon-consommation-solaire" className="card-lg group hover:shadow-brand-lg transition-all">
+              <div className="badge-amber mb-3 text-[10px]">Comprendre</div>
+              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h3>
+              <p className="text-xs text-charcoal-light leading-relaxed">Le bruit de fond &eacute;lectrique co&ucirc;te 300-900 &euro;/an.</p>
+              <div className="text-xs text-stone mt-3">10 mai 2026 &middot; 10 min</div>
+            </Link>
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/blog" className="btn-secondary">
+              Tous les articles &rarr;
             </Link>
           </div>
         </div>
