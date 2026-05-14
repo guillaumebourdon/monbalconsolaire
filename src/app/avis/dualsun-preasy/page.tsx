@@ -317,32 +317,32 @@ export default function DualsunPreasyPage() {
                   <li>&bull; <strong>Autoconsommation sans batterie</strong> : 45 %</li>
                   <li>&bull; <strong>kWh valorisés</strong> : 196 kWh/an</li>
                   <li>&bull; <strong>Tarif EDF mai 2026</strong> : 0,1940 €/kWh</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 196 × 0,1940 € = <strong>49 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 870 € / 49 € = <strong>17,8 ans</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 196 × 0,1940 € = <strong>38 €/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : 870 € / 38 € = <strong>22,9 ans</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>Presque 18 ans de ROI.</strong> À titre de comparaison :
+                <strong>Presque 23 ans de ROI.</strong> À titre de comparaison :
               </p>
               <div className="grid md:grid-cols-3 gap-3">
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-amber-dark text-xl">17,8 ans</div>
+                  <div className="font-mono font-bold text-amber-dark text-xl">22,9 ans</div>
                   <div className="text-xs text-stone mt-1">DualSun PREASY</div>
                   <div className="text-xs text-stone">(870 €, 420 Wc)</div>
                 </div>
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-green text-xl">5,7 ans</div>
+                  <div className="font-mono font-bold text-green text-xl">7,3 ans</div>
                   <div className="text-xs text-stone mt-1">Sunology PLAY 2</div>
                   <div className="text-xs text-stone">(599 €, 450 Wc)</div>
                 </div>
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-green text-xl">5,1 ans</div>
+                  <div className="font-mono font-bold text-green text-xl">6,7 ans</div>
                   <div className="text-xs text-stone mt-1">Zendure + 2 panneaux</div>
                   <div className="text-xs text-stone">(900 €, 840 W + batterie)</div>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
-                Pour le même budget que le PREASY (870 €), le setup Zendure SolarFlow + 2 panneaux offre le double de puissance, du stockage, et un ROI 3,5x plus rapide. C&apos;est difficile à justifier économiquement.
+                Pour le même budget que le PREASY (870 €), le setup Zendure SolarFlow + 2 panneaux offre le double de puissance, du stockage, et un ROI 3,4x plus rapide. C&apos;est difficile à justifier économiquement.
               </p>
             </section>
 
@@ -369,7 +369,7 @@ export default function DualsunPreasyPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous cherchez la rentabilité</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 18 ans, le PREASY est le kit le moins rentable du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 2 (ROI 5-6 ans) ou un Zendure SolarFlow (ROI 5 ans avec batterie).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 23 ans, le PREASY est le kit le moins rentable du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 2 (ROI 7-8 ans) ou un Zendure SolarFlow (ROI 6-7 ans avec batterie).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est limité</h4>

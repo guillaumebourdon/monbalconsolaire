@@ -377,7 +377,7 @@ export default function ZendureSolarflowPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité : ROI en 5-6 ans</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité : ROI en 6-7 ans</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Prenons le setup recommandé : <strong>SolarFlow 800 Plus + 2 panneaux 420 W</strong>, à environ 900 €, installé à Lyon en exposition sud.
               </p>
@@ -387,15 +387,15 @@ export default function ZendureSolarflowPage() {
                   <li>&bull; <strong>Autoconsommation avec batterie</strong> : 80 % (vs 45 % sans batterie)</li>
                   <li>&bull; <strong>kWh valorisés</strong> : 696 kWh/an</li>
                   <li>&bull; <strong>Tarif EDF 2026</strong> : 0,1940 €/kWh (tarif base mai 2026)</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 696 × 0,1940 € = <strong>175 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 900 € / 175 € = <strong>5,1 ans</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 696 × 0,1940 € = <strong>135 €/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : 900 € / 135 € = <strong>6,7 ans</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>5 ans de ROI pour un système avec batterie</strong>, c&apos;est du jamais vu. À titre de comparaison, l&apos;EcoFlow PowerStream + DELTA 2 tourne autour de 13-14 ans de ROI, et le Sunology PLAY MAX autour de 9-10 ans.
+                <strong>Moins de 7 ans de ROI pour un système avec batterie</strong>, c&apos;est du jamais vu. À titre de comparaison, l&apos;EcoFlow PowerStream + DELTA 2 tourne autour de 13-14 ans de ROI, et le Sunology PLAY MAX autour de 9-10 ans.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                Avec la hausse du tarif EDF (+4-5 %/an en tendance), les économies réelles passent à 200-220 €/an dès la 3ème année. Et la batterie LFP est garantie 6 000 cycles : vous avez <strong>10+ ans de bénéfice net</strong> après remboursement du système.
+                Avec la hausse du tarif EDF (+4-5 %/an en tendance), les économies réelles passent à 160-180 €/an dès la 3ème année. Et la batterie LFP est garantie 6 000 cycles : vous avez <strong>10+ ans de bénéfice net</strong> après remboursement du système.
               </p>
             </section>
 
@@ -442,7 +442,7 @@ export default function ZendureSolarflowPage() {
                   <strong>Non, ce n&apos;est pas trop beau.</strong> Le Zendure SolarFlow 800 Plus fait exactement ce qu&apos;il promet : du stockage solaire plug-and-play à un prix qui n&apos;existait pas avant. Le &laquo; piège &raquo;, si on peut appeler ça un piège, c&apos;est l&apos;absence de backup hors réseau et la limite à 800 W en sortie.
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
-                  Pour un appartement avec balcon, c&apos;est <strong>le meilleur investissement solaire en 2026</strong>. Le ROI de 5 ans avec batterie était impensable il y a encore un an. Zendure a changé la donne.
+                  Pour un appartement avec balcon, c&apos;est <strong>le meilleur investissement solaire en 2026</strong>. Le ROI de moins de 7 ans avec batterie était impensable il y a encore un an. Zendure a changé la donne.
                 </p>
                 <p className="font-semibold text-lg text-center mt-6 mb-2">Notre verdict : 8.5/10</p>
                 <p className="text-sm text-charcoal-light text-center">

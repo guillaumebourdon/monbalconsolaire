@@ -246,7 +246,7 @@ export default function TalonConsommationPage() {
                   <li><span className="text-green font-bold mr-2">1.</span> Le talon consomme <strong>en continu</strong> → chaque watt produit par le panneau est autoconsommé instantanément</li>
                   <li><span className="text-green font-bold mr-2">2.</span> Pas de surplus perdu → le talon &laquo; absorbe &raquo; toute la production tant que le soleil est là</li>
                   <li><span className="text-green font-bold mr-2">3.</span> Taux d&apos;autoconsommation maximal → 80-100 % de la production est valorisée</li>
-                  <li><span className="text-green font-bold mr-2">4.</span> Rentabilité optimale → ROI de 4-6 ans car aucune perte</li>
+                  <li><span className="text-green font-bold mr-2">4.</span> Rentabilité optimale → ROI de 6-8 ans car aucune perte</li>
                 </ul>
               </div>
 
@@ -262,7 +262,7 @@ export default function TalonConsommationPage() {
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
                     Un kit mono-panneau suffit : <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link> (450 Wc, 599 €) ou <Link href="/avis/beem-on-460w" className="text-green hover:underline font-semibold">Beem On 460W</Link> (599 €). Production moyenne de 150-200 W en journée, pile sur votre talon.
                   </p>
-                  <p className="text-xs text-stone">ROI estimé : 4-6 ans · Économies : 100-130 €/an</p>
+                  <p className="text-xs text-stone">ROI estimé : 6-8 ans · Économies : 80-100 €/an</p>
                 </div>
                 <div className="card-lg border-l-4 border-l-green">
                   <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
@@ -274,7 +274,7 @@ export default function TalonConsommationPage() {
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
                     Visez 800-840 W de panneaux : <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow + 2 panneaux 420 W</Link> (~900 €). Avec la batterie 1,92 kWh, vous couvrez aussi une partie du talon de nuit.
                   </p>
-                  <p className="text-xs text-stone">ROI estimé : 5-6 ans · Économies : 150-200 €/an</p>
+                  <p className="text-xs text-stone">ROI estimé : 6-7 ans · Économies : 130-145 €/an</p>
                 </div>
                 <div className="card-lg border-l-4 border-l-amber">
                   <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
@@ -303,7 +303,7 @@ export default function TalonConsommationPage() {
                     <li>&bull; Vous couvrez le talon <strong>de jour uniquement</strong> (~10-14h)</li>
                     <li>&bull; Taux d&apos;autoconsommation : 40-50 %</li>
                     <li>&bull; Budget : 299-599 € (1 kit)</li>
-                    <li>&bull; ROI : 4-6 ans</li>
+                    <li>&bull; ROI : 6-8 ans</li>
                     <li>&bull; <strong>Suffisant pour la plupart des foyers</strong></li>
                   </ul>
                 </div>
@@ -313,7 +313,7 @@ export default function TalonConsommationPage() {
                     <li>&bull; Vous couvrez le talon <strong>jour ET nuit</strong></li>
                     <li>&bull; Taux d&apos;autoconsommation : 70-85 %</li>
                     <li>&bull; Budget : 488-900 € (SolarFlow + panneaux)</li>
-                    <li>&bull; ROI : 5-6 ans</li>
+                    <li>&bull; ROI : 6-7 ans</li>
                     <li>&bull; <strong>Intéressant si talon &gt; 200 W</strong></li>
                   </ul>
                 </div>
@@ -339,7 +339,7 @@ export default function TalonConsommationPage() {
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                Avec le setup Zendure, vous effacez <strong>40 % de votre talon annuel</strong> (696 kWh sur 1 752). Avec la hausse du tarif EDF (+4-5 %/an), les économies passent à 200+ €/an dès la 3ème année.
+                Avec le setup Zendure, vous effacez <strong>40 % de votre talon annuel</strong> (696 kWh sur 1 752). Avec la hausse du tarif EDF (+4-5 %/an), les économies passent à 160+ €/an dès la 3ème année.
               </p>
             </section>
 

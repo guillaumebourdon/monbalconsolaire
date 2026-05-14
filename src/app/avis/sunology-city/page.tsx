@@ -307,12 +307,12 @@ export default function SunologyCityPage() {
                   <li>&bull; <strong>Production annuelle</strong> : 340 kWh/an</li>
                   <li>&bull; <strong>Autoconsommation</strong> : 60% en moyenne (le reste injecté gratuitement)</li>
                   <li>&bull; <strong>kWh économisés</strong> : 204 kWh/an</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 204 &times; 0,1940 € = <strong>51 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 549 € / 51 € = <strong>10,8 ans</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 204 &times; 0,1940 € = <strong>40 €/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : 549 € / 40 € = <strong>13,7 ans</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                À première vue, près de 11 ans c&apos;est long. Mais ce calcul ignore deux paramètres importants :
+                À première vue, près de 14 ans c&apos;est long. Mais ce calcul ignore deux paramètres importants :
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 <strong>1. La hausse du tarif EDF.</strong> Sur les 10 dernières années, le prix du kWh a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 75-90 €/an dès la 5ème année, et le ROI tombe à <strong>8-9 ans</strong>.

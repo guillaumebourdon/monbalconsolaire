@@ -190,8 +190,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">—</td>
                       <td className="text-center p-2.5 font-mono">465 kWh</td>
                       <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">81 €</td>
-                      <td className="text-center p-2.5 font-mono">7,4 ans</td>
+                      <td className="text-center p-2.5 font-mono">41 €</td>
+                      <td className="text-center p-2.5 font-mono">14,6 ans</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-2.5">Sunology PLAY MAX</td>
@@ -199,8 +199,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">0,7 kWh</td>
                       <td className="text-center p-2.5 font-mono">465 kWh</td>
                       <td className="text-center p-2.5 font-mono">65 %</td>
-                      <td className="text-center p-2.5 font-mono">100 €</td>
-                      <td className="text-center p-2.5 font-mono">11,8 ans</td>
+                      <td className="text-center p-2.5 font-mono">59 €</td>
+                      <td className="text-center p-2.5 font-mono">20,0 ans</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Beem On 460W</td>
@@ -208,8 +208,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">—</td>
                       <td className="text-center p-2.5 font-mono">475 kWh</td>
                       <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">82 €</td>
-                      <td className="text-center p-2.5 font-mono">7,3 ans</td>
+                      <td className="text-center p-2.5 font-mono">42 €</td>
+                      <td className="text-center p-2.5 font-mono">14,3 ans</td>
                     </tr>
                     <tr className="bg-cream/50">
                       <td className="p-2.5">Beem Kit 300W</td>
@@ -217,8 +217,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">—</td>
                       <td className="text-center p-2.5 font-mono">310 kWh</td>
                       <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">54 €</td>
-                      <td className="text-center p-2.5 font-mono">5,5 ans</td>
+                      <td className="text-center p-2.5 font-mono">27 €</td>
+                      <td className="text-center p-2.5 font-mono">11,1 ans</td>
                     </tr>
                   </tbody>
                 </table>
@@ -256,7 +256,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                   <h3 className="font-bold text-base text-green mb-2">Choisissez Zendure SolarFlow si :</h3>
                   <ul className="text-sm text-charcoal-light space-y-1.5">
                     <li>→ Vous consommez surtout le soir (actifs la journée)</li>
-                    <li>→ Vous voulez le meilleur ROI avec stockage (~5 ans)</li>
+                    <li>→ Vous voulez le meilleur ROI avec stockage (~7 ans)</li>
                     <li>→ Vous êtes à l&apos;aise avec un minimum de configuration</li>
                     <li>→ Vous êtes en tarif heures pleines/creuses (optimisation auto)</li>
                     <li>→ Vous prévoyez d&apos;agrandir le système plus tard</li>

@@ -205,7 +205,7 @@ export default function ComparatifPage() {
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">299 &euro;</div><div className="text-xs text-stone">300 Wc</div></div>
                 </div>
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est l&apos;entrée de gamme ideale pour decouvrir le solaire de balcon sans se ruiner. A <span className="data-highlight">299 &euro;</span>, c&apos;est le meilleur ratio &euro;/Wc du marché (<span className="data-highlight">1,00 &euro;/Wc</span>). Meme avec une production plus modeste (~350 kWh/an en region lyonnaise), le retour sur investissement est atteint en seulement 3 à 4 ans.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est l&apos;entrée de gamme ideale pour decouvrir le solaire de balcon sans se ruiner. A <span className="data-highlight">299 &euro;</span>, c&apos;est le meilleur ratio &euro;/Wc du marché (<span className="data-highlight">1,00 &euro;/Wc</span>). Meme avec une production plus modeste (~350 kWh/an en region lyonnaise), le retour sur investissement est atteint en seulement 4 à 5 ans.</p>
 
               <h4 className="font-bold mb-2 mt-6">Pour qui ?</h4>
               <p className="text-charcoal-light leading-relaxed">C&apos;est le kit ideal pour tester l&apos;autoconsommation à moindre cout avant d&apos;investir dans un kit plus puissant. Ses 4 petits panneaux s&apos;adaptént aux espaces restreints et aux configurations inhabituelles (mur étroit, garde-corps, angle de balcon).</p>
@@ -252,7 +252,7 @@ export default function ComparatifPage() {
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
                   <h4 className="font-bold text-amber-dark mb-1">Pour les petits budgets &rarr; Beem Kit 300W (299&euro;)</h4>
-                  <p className="text-sm text-charcoal-light">Le meilleur ratio &euro;/Wc du marché. Idéal pour tester l&apos;autoconsommation à moindre cout, avec un ROI en seulement 4-5 ans.</p>
+                  <p className="text-sm text-charcoal-light">Le meilleur ratio &euro;/Wc du marché. Idéal pour tester l&apos;autoconsommation à moindre cout, avec un ROI en seulement 4-5 ans (au tarif 0,1940 EUR/kWh).</p>
                 </div>
                 <div className="card-lg">
                   <h4 className="font-bold mb-1">Pour le Made in France &rarr; Sunethic F500 (690&euro;)</h4>

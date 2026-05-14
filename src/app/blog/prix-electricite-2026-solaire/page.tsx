@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faqData = [
   { question: 'Quel est le prix du kWh en 2026 ?', answer: 'Le tarif réglementé EDF est de 0,1940€/kWh TTC en option base 6 kVA depuis le 1er mai 2026. C\'est une hausse de 29,7% par rapport à février 2026, et le tarif est désormais 101% plus élevé qu\'en 2012.' },
   { question: 'Le prix de l\'électricité va-t-il augmenter en 2026-2027 ?', answer: 'Très probablement. La fin du dispositif ARENH en janvier 2026 modifie le mécanisme de fixation des prix. Les analystes prévoient une hausse de 3 à 5% par an en moyenne sur les prochaines années.' },
-  { question: 'Combien le solaire fait-il économiser face aux hausses ?', answer: 'Chaque hausse de 1% du tarif EDF augmente automatiquement les économies de votre panneau. Un kit à 599€ qui économise 100€/an en 2026 pourrait économiser 130-160€/an en 2030 si le tarif augmente de 5%/an.' },
+  { question: 'Combien le solaire fait-il économiser face aux hausses ?', answer: 'Chaque hausse de 1% du tarif EDF augmente automatiquement les économies de votre panneau. Un kit à 599€ qui économise ~101€/an en 2026 pourrait économiser 130-160€/an en 2030 si le tarif augmente de 5%/an.' },
 ];
 
 export default function PrixElectricitePage() {
@@ -82,7 +82,7 @@ export default function PrixElectricitePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Chaque centime d&apos;augmentation du kWh améliore automatiquement la rentabilité de votre panneau solaire. Voici l&apos;impact sur un kit Sunology PLAY2 (599€, 520 kWh/an en région lyonnaise) :</p>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 {[
-                  { tarif: '0,1940 €', label: 'Tarif actuel (mai 2026)', eco: '131 €/an', roi: '4,6 ans', total25: '~3 275 €' },
+                  { tarif: '0,1940 €', label: 'Tarif actuel (mai 2026)', eco: '101 €/an', roi: '5,9 ans', total25: '~2 525 €' },
                   { tarif: '0,2900 €', label: 'Projection basse (2030)', eco: '151 €/an', roi: '4,0 ans', total25: '~4 200 €' },
                   { tarif: '0,3200 €', label: 'Projection haute (2030)', eco: '166 €/an', roi: '3,6 ans', total25: '~5 200 €' },
                 ].map((s, i) => (
@@ -95,7 +95,7 @@ export default function PrixElectricitePage() {
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed"><strong>Le constat :</strong> un kit solaire de balcon acheté aujourd&apos;hui à 599€ pourrait générer entre 3 200€ et 5 200€ d&apos;économies sur sa durée de vie, selon l&apos;évolution des tarifs. C&apos;est un investissement qui se bonifie avec le temps.</p>
+              <p className="text-charcoal-light leading-relaxed"><strong>Le constat :</strong> un kit solaire de balcon acheté aujourd&apos;hui à 599€ pourrait générer entre 2 500€ et 5 200€ d&apos;économies sur sa durée de vie, selon l&apos;évolution des tarifs. C&apos;est un investissement qui se bonifie avec le temps.</p>
               <p className="text-sm text-charcoal-light mt-2">
                 → Lire aussi : <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="text-green font-semibold hover:underline">Combien rapporte un panneau solaire de balcon ? Calcul réel par ville</Link>
               </p>

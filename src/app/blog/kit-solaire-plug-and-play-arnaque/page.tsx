@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Un kit solaire plug-and-play est-il vraiment rentable ?', answer: 'Oui, mais pas partout. Au sud d\'une ligne Lyon-Bordeaux, un kit 450W exposé plein sud atteint la rentabilité en 4-5 ans. Au nord et à l\'ouest, il faut plutôt compter 6-8 ans. Sur une garantie de 25 ans, le bénéfice net reste largement positif dans 95% des cas.' },
+  { question: 'Un kit solaire plug-and-play est-il vraiment rentable ?', answer: 'Oui, mais pas partout. Au sud d\'une ligne Lyon-Bordeaux, un kit 450W exposé plein sud atteint la rentabilité en 5-7 ans. Au nord et à l\'ouest, il faut plutôt compter 7-10 ans. Sur une garantie de 25 ans, le bénéfice net reste largement positif dans 95% des cas.' },
   { question: 'Pourquoi certaines personnes disent que c\'est une arnaque ?', answer: 'Trois raisons principales. D\'abord, quelques fabricants (pas les leaders) surestiment la production avec des chiffres théoriques impossibles. Ensuite, des acheteurs mal conseillés installent leur kit à l\'ombre ou mal orienté et ne produisent rien. Enfin, certains attendent "l\'indépendance énergétique" alors qu\'un kit 450W ne couvre que 5-10% de la conso moyenne.' },
   { question: 'Y a-t-il des vraies arnaques sur le marché ?', answer: 'Oui, sur AliExpress et sur certaines annonces Leboncoin. Panneaux d\'occasion vendus neufs, puissances exagérées, micro-onduleurs non conformes CE. Les kits vendus par Sunology, Beem, Sunethic, DualSun et EcoFlow respectent les normes françaises. En cas de doute, exigez les certifications NF/CE.' },
-  { question: 'Combien de temps met-on pour rentabiliser son kit ?', answer: 'Entre 3 et 8 ans selon : la puissance du kit, votre exposition, votre ville, le prix payé. Un Beem Kit 300W à 299€ installé plein sud à Marseille rentabilise en moins de 3 ans. Un Sunology PLAY 2 à 599€ à Lille exposé est se rentabilise en 6-7 ans.' },
+  { question: 'Combien de temps met-on pour rentabiliser son kit ?', answer: 'Entre 4 et 10 ans selon : la puissance du kit, votre exposition, votre ville, le prix payé. Un Beem Kit 300W à 299€ installé plein sud à Marseille rentabilise en 4 ans. Un Sunology PLAY 2 à 599€ à Lille exposé est se rentabilise en 8-10 ans.' },
   { question: 'Que se passe-t-il si je déménage avant la fin du retour sur investissement ?', answer: 'Vous pouvez emporter votre kit : c\'est un gros avantage du plug-and-play vs une installation classique. Démontage en 15 minutes. Vous pouvez aussi le revendre d\'occasion : le marché secondaire est actif (-40% à -50% du prix neuf selon l\'âge et l\'état).' },
   { question: 'Ai-je vraiment besoin d\'un professionnel pour installer ?', answer: 'Non. C\'est tout l\'intérêt du plug-and-play : installation en 15-60 minutes, pas d\'électricien, pas de déclaration fiscale, juste un CACSI gratuit à envoyer à Enedis. Certains fabricants tentent de vous vendre une "installation pro" à 200€ — inutile.' },
 ];
@@ -128,13 +128,13 @@ export default function ArnaqueInvestissementPage() {
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Production annuelle</strong> : environ 500 kWh (orientation sud, Lyon)</li>
                   <li>&bull; <strong>Autoconsommation réelle</strong> : 60% soit 300 kWh directement économisés</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 300 kWh &times; 0,1940 &euro;/kWh = <strong>75 &euro;/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 599 &euro; / 75 &euro; = <strong>8,0 ans</strong></li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 300 kWh &times; 0,1940 &euro;/kWh = <strong>58 &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : 599 &euro; / 58 &euro; = <strong>10,3 ans</strong></li>
                 </ul>
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">&laquo; Alors c&apos;est une arnaque, le ROI est long ! &raquo; pense peut-être un lecteur. Pas si vite. Ce calcul ignore deux réalités.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°1 : le prix de l&apos;électricité augmente.</strong> Sur les 10 dernières années, le tarif EDF a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 110-130&euro;/an dès la 5ème année, et le ROI tombe à 5-6 ans au lieu de 8.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°2 : la durée de vie.</strong> Le kit est garanti 25 ans. Après le ROI atteint, chaque année produit entre 90 et 180&euro; d&apos;économies pures. Sur la durée totale, le gain net est de <strong>2 000 à 3 500&euro;</strong>. Ce n&apos;est pas révolutionnaire, mais ce n&apos;est clairement pas une arnaque.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">&laquo; Alors c&apos;est une arnaque, le ROI est long ! &raquo; pense peut-être un lecteur. Mais ce calcul ignore deux réalités.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°1 : le prix de l&apos;électricité augmente.</strong> Sur les 10 dernières années, le tarif EDF a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 90-110&euro;/an dès la 5ème année, et le ROI tombe à 6-7 ans au lieu de 10.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°2 : la durée de vie.</strong> Le kit est garanti 25 ans. Après le ROI atteint, chaque année produit entre 70 et 140&euro; d&apos;économies pures. Sur la durée totale, le gain net est de <strong>1 500 à 2 800&euro;</strong>. Ce n&apos;est pas révolutionnaire, mais ce n&apos;est clairement pas une arnaque.</p>
               <p className="text-charcoal-light leading-relaxed">Pour un calcul précis selon votre département et votre exposition, utilisez notre calculateur.</p>
             </section>
 

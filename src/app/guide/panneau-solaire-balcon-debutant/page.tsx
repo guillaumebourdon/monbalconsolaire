@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faqData = [
   { question: 'Peut-on installér un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchént sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
   { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installé à moins de 1,80m de hauteur, aucune déclaration préalable de travaux n\'est nécessaire. Seule la déclaration CACSI aupres d\'Enedis est obligatoire (informative, gratuite, 2 minutes en ligne).' },
-  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 450W produit en moyenne 400 à 650 kWh par an selon la region et l\'orientation. Cela correspond à 100-165 euros d\'économies annuelles au tarif EDF actuel.' },
+  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 450W produit en moyenne 400 à 650 kWh par an selon la region et l\'orientation. Cela correspond à 78-126 euros d\'économies annuelles au tarif EDF actuel.' },
   { question: 'Un panneau solaire fonctionne-t-il par temps nuageux ?', answer: 'Oui, mais avec un rendement réduit (10-25% de la puissance maximale). Les panneaux solaires fonctionnent avec la lumiere, pas uniquement le soleil direct. La production annuelle tient compte des jours nuageux.' },
   { question: 'Que devient le surplus d\'électricité ?', answer: 'Pour les kits plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien, mais vous n\'etes pas remunere non plus pour ce surplus.' },
   { question: 'Faut-il une batterie avec un panneau solaire de balcon ?', answer: 'Non, une batterie n\'est pas indispensable. Sans batterie, vous consommez l\'électricité produite en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coute cher (500-1400 euros supplémentaires).' },
@@ -74,11 +74,11 @@ export default function GuidePage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Marseille / PACA', '580-650 kWh', '146-164 \u20ac', '4 ans'],
-                      ['Lyon / Rhone-Alpes', '480-550 kWh', '121-138 \u20ac', '4-5 ans'],
-                      ['Nantes / Ouest', '420-500 kWh', '106-126 \u20ac', '5-6 ans'],
-                      ['Paris / Ile-de-France', '400-480 kWh', '101-121 \u20ac', '5-6 ans'],
-                      ['Lille / Nord', '360-430 kWh', '91-108 \u20ac', '6-7 ans'],
+                      ['Marseille / PACA', '580-650 kWh', '113-126 \u20ac', '5-5 ans'],
+                      ['Lyon / Rhone-Alpes', '480-550 kWh', '93-107 \u20ac', '6-6 ans'],
+                      ['Nantes / Ouest', '420-500 kWh', '81-97 \u20ac', '6-7 ans'],
+                      ['Paris / Ile-de-France', '400-480 kWh', '78-93 \u20ac', '6-8 ans'],
+                      ['Lille / Nord', '360-430 kWh', '70-83 \u20ac', '7-9 ans'],
                     ].map(([r, p, e, roi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{r}</td>
