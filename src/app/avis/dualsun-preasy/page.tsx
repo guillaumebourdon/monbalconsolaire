@@ -128,7 +128,7 @@ export default function DualsunPreasyPage() {
               DualSun, fabricant français reconnu pour ses panneaux hybrides, se lance dans le plug-and-play avec le <strong>PREASY</strong>. Un panneau pliable de 420 Wc, assemblé en France, avec un design soigné. Sur le papier, c&apos;est séduisant. Mais à <strong>870-900 €</strong> chez les revendeurs, est-ce que ça vaut le coup face à un Sunology PLAY 2 à 599 € ?
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 mai 2026</span>
+              <span>9 mai 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -145,12 +145,25 @@ export default function DualsunPreasyPage() {
             affiliateLabel=""
             accentColor="amber"
           />
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en 30 secondes</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
               Le DualSun PREASY est un <strong>beau produit bien conçu</strong>, avec un vrai savoir-faire français et un design unique sur le marché. Mais le prix est un problème majeur : <strong>870-900 € pour 420 Wc</strong>, c&apos;est 45 % plus cher qu&apos;un Sunology PLAY 2 qui offre 30 Wc de plus. Le PREASY s&apos;adresse à ceux qui veulent absolument du Made in France et un design premium, et qui acceptent de payer ce surcoût. Pour tous les autres, Sunology et Beem restent de meilleurs choix.
             </p>
+          </div>
+
+          <div className="card-lg bg-amber-pale/30 border-amber/10 border-l-4 border-l-amber mb-6">
+            <div className="flex items-start gap-3">
+              <span className="text-xl">&#9888;&#65039;</span>
+              <div>
+                <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial : ROI long</h3>
+                <p className="text-sm text-charcoal-light leading-relaxed">
+                  Avec un ROI de 10,5 ans, le PREASY s&apos;adresse &agrave; un public attach&eacute; &agrave; la production fran&ccedil;aise et au design premium. Si la rentabilit&eacute; est votre crit&egrave;re principal, le Beem Kit 300W (5,5 ans) ou le Sunology PLAY 2 (7,1 ans) sont de meilleurs choix.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-10">
@@ -275,6 +288,22 @@ export default function DualsunPreasyPage() {
             </section>
 
             <section>
+              <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
+              <div className="space-y-2">
+                {[
+                  'Rentabilité financière prioritaire',
+                  'Budget limité',
+                  'Pas attaché au Made in France premium',
+                ].map((point, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
+                    <span className="text-amber-dark font-bold">&#10007;</span>
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
               <h2 className="text-2xl font-extrabold mb-4">Face à la concurrence : le tableau qui fait mal</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Le PREASY joue dans la même catégorie que le Sunology PLAY 2 et le Beem On 460W. Voici comment il se positionne :
@@ -313,36 +342,36 @@ export default function DualsunPreasyPage() {
               </p>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production annuelle</strong> : 435 kWh/an (420 Wc, sud, Lyon, coeff 0,85)</li>
-                  <li>&bull; <strong>Autoconsommation sans batterie</strong> : 45 %</li>
-                  <li>&bull; <strong>kWh valorisés</strong> : 196 kWh/an</li>
-                  <li>&bull; <strong>Tarif EDF mai 2026</strong> : 0,1940 €/kWh</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 196 × 0,1940 € = <strong>38 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 870 € / 38 € = <strong>22,9 ans</strong></li>
+                  <li>&bull; <strong>Production annuelle</strong> : 428 kWh/an (420 Wc, sud, Lyon, PR 0,85)</li>
+                  <li>&bull; <strong>Autoconsommation sans batterie</strong> : 85%</li>
+                  <li>&bull; <strong>Tarif EDF mai 2026</strong> : 0,1940 &euro;/kWh (+3,3%/an d&apos;inflation CRE)</li>
+                  <li>&bull; <strong>Économies annuelles</strong> : <strong>71 &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI</strong> : <strong>10,5 ans</strong></li>
+                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>2 677 &euro;</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>Presque 23 ans de ROI.</strong> À titre de comparaison :
+                <strong>10,5 ans de ROI.</strong> &Agrave; titre de comparaison :
               </p>
               <div className="grid md:grid-cols-3 gap-3">
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-amber-dark text-xl">22,9 ans</div>
+                  <div className="font-mono font-bold text-amber-dark text-xl">10,5 ans</div>
                   <div className="text-xs text-stone mt-1">DualSun PREASY</div>
-                  <div className="text-xs text-stone">(870 €, 420 Wc)</div>
+                  <div className="text-xs text-stone">(870 &euro;, 420 Wc)</div>
                 </div>
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-green text-xl">7,3 ans</div>
+                  <div className="font-mono font-bold text-green text-xl">7,1 ans</div>
                   <div className="text-xs text-stone mt-1">Sunology PLAY 2</div>
-                  <div className="text-xs text-stone">(599 €, 450 Wc)</div>
+                  <div className="text-xs text-stone">(599 &euro;, 450 Wc)</div>
                 </div>
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-green text-xl">6,7 ans</div>
+                  <div className="font-mono font-bold text-green text-xl">5,3 ans</div>
                   <div className="text-xs text-stone mt-1">Zendure + 2 panneaux</div>
-                  <div className="text-xs text-stone">(900 €, 840 W + batterie)</div>
+                  <div className="text-xs text-stone">(900 &euro;, 840 W + batterie)</div>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
-                Pour le même budget que le PREASY (870 €), le setup Zendure SolarFlow + 2 panneaux offre le double de puissance, du stockage, et un ROI 3,4x plus rapide. C&apos;est difficile à justifier économiquement.
+                Pour le même budget que le PREASY (870 &euro;), le setup Zendure SolarFlow + 2 panneaux offre le double de puissance, du stockage, et un ROI 2x plus rapide (5,3 ans vs 10,5 ans). C&apos;est difficile à justifier économiquement.
               </p>
             </section>
 
@@ -369,7 +398,7 @@ export default function DualsunPreasyPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous cherchez la rentabilité</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 23 ans, le PREASY est le kit le moins rentable du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 2 (ROI 7-8 ans) ou un Zendure SolarFlow (ROI 6-7 ans avec batterie).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 10,5 ans, le PREASY est l&apos;un des kits les moins rentables du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 2 (ROI 7,1 ans) ou un Zendure SolarFlow (ROI 5,3 ans avec batterie).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est limité</h4>
@@ -448,7 +477,7 @@ export default function DualsunPreasyPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données constructeur DualSun, fiche technique officielle PREASY, test Révolution Énergétique (sept. 2024 - jan. 2025), prix constatés chez revendeurs (mai 2026). Tarif EDF base mai 2026 : 0,1940 €/kWh. Article rédigé sans rémunération de DualSun.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur DualSun, fiche technique officielle PREASY, test Révolution Énergétique (sept. 2024 - jan. 2025), prix constatés chez revendeurs (mai 2026). Article rédigé sans rémunération de DualSun.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

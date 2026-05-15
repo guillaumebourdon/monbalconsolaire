@@ -157,7 +157,7 @@ export default function EcoflowPowerstreamPage() {
               Le PowerStream n&apos;est pas un kit solaire classique, c&apos;est un <strong>écosystème modulaire</strong> qui articule panneaux, batterie et réseau domestique avec une intelligence rare sur le marché grand public. Test complet : ce qu&apos;il fait vraiment, son prix réel, et pour qui c&apos;est le bon choix.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>28 avril 2026</span>
+              <span>28 avril 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -174,12 +174,25 @@ export default function EcoflowPowerstreamPage() {
             affiliateLabel="Voir le PowerStream sur EcoFlow"
             accentColor="amber"
           />
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
               Le PowerStream EcoFlow (599 €) est <strong>l&apos;option la plus intelligente du marché</strong> pour ceux qui veulent un système solaire modulaire et évolutif. Son application mobile et son optimisation d&apos;autoconsommation sont sans équivalent. <strong>Mais</strong> il ne convient pas à tout le monde : il faut accepter de payer plus cher au départ (1 800 € minimum pour un setup complet) et de configurer un peu. Pour la simplicité pure, restez sur un Sunology PLAY 2.
             </p>
+          </div>
+
+          <div className="card-lg bg-amber-pale/30 border-amber/10 border-l-4 border-l-amber mb-6">
+            <div className="flex items-start gap-3">
+              <span className="text-xl">&#9888;&#65039;</span>
+              <div>
+                <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial : ROI long</h3>
+                <p className="text-sm text-charcoal-light leading-relaxed">
+                  Avec un ROI de 10,2 ans, le PowerStream est pertinent si vous &ecirc;tes d&eacute;j&agrave; dans l&apos;&eacute;cosyst&egrave;me EcoFlow ou si le backup r&eacute;seau est important pour vous. Pour un premier achat orient&eacute; rentabilit&eacute;, le Zendure SolarFlow (5,3 ans) ou le Sunology PLAY 2 (7,1 ans) sont plus adapt&eacute;s.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-10">
@@ -354,27 +367,38 @@ export default function EcoflowPowerstreamPage() {
             </section>
 
             <section>
+              <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
+              <div className="space-y-2">
+                {[
+                  'ROI rapide recherché',
+                  'Pas de station EcoFlow existante',
+                  'Faible consommation',
+                ].map((point, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
+                    <span className="text-amber-dark font-bold">&#10007;</span>
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
               <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité (setup équilibré)</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Prenons le setup le plus représentatif : <strong>PowerStream + 2 panneaux 400W + DELTA 2 (1 kWh)</strong>, à environ 1 800 €, installé à Lyon en exposition sud.
               </p>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production annuelle</strong> : 850 kWh/an (2 panneaux 400W, sud, Lyon)</li>
-                  <li>&bull; <strong>Autoconsommation grâce à la batterie</strong> : 80% (vs 50% sans batterie)</li>
-                  <li>&bull; <strong>kWh économisés</strong> : 680 kWh/an</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 680 × 0,1940 € = <strong>132 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 1 800 € / 132 € = <strong>13,6 ans</strong></li>
+                  <li>&bull; <strong>Production annuelle</strong> : 816 kWh/an (2 panneaux 400W, sud, Lyon, PR 0,85)</li>
+                  <li>&bull; <strong>Autoconsommation avec batterie</strong> : 95%</li>
+                  <li>&bull; <strong>Tarif EDF 2026</strong> : 0,1940 &euro;/kWh (+3,3%/an d&apos;inflation CRE)</li>
+                  <li>&bull; <strong>Économies annuelles</strong> : <strong>150 &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI</strong> : <strong>10,2 ans</strong></li>
+                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>5 704 &euro;</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                C&apos;est correct, mais deux paramètres améliorent significativement le calcul :
-              </p>
-              <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>1. Hausse du tarif EDF.</strong> Avec une augmentation moyenne de 4-5% par an, les économies réelles passent à 160-180 €/an dès la 5ème année. ROI réel : <strong>10-11 ans</strong>.
-              </p>
-              <p className="text-charcoal-light leading-relaxed">
-                <strong>2. Polyvalence de la batterie.</strong> La DELTA 2 sert aussi de groupe électrogène portable (camping, coupures de courant, voiture électrique en mobilité). Sa valeur d&apos;usage hors solaire est de l&apos;ordre de 300-500 € sur 10 ans. Cela ramène le ROI effectif à <strong>7-8 ans</strong>.
+                Le ROI de 10,2 ans est correct pour un système avec batterie et backup réseau. La polyvalence de la batterie DELTA 2 (groupe électrogène portable, camping, coupures de courant) ajoute une valeur d&apos;usage hors solaire de l&apos;ordre de 300-500 &euro; sur 10 ans. Sur 25 ans : <strong>5 704 &euro;</strong> d&apos;économies cumulées.
               </p>
             </section>
 
@@ -449,7 +473,7 @@ export default function EcoflowPowerstreamPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données EcoFlow officielles, fiches techniques constructeur, retours utilisateurs Reddit r/EcoFlow et forum-photovoltaique.fr (avril 2026). Article rédigé sans rémunération d&apos;EcoFlow.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données EcoFlow officielles, fiches techniques constructeur, retours utilisateurs Reddit r/EcoFlow et forum-photovoltaique.fr (avril 2026). Article rédigé sans rémunération d&apos;EcoFlow.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>
