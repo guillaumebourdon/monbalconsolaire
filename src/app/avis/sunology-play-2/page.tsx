@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -88,6 +89,8 @@ export default function AvisPage() {
               </div>
             </section>
 
+            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play2-kit-solaire" label="Vérifier la disponibilité" variant="secondary" position="after-pros" />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
@@ -103,6 +106,14 @@ export default function AvisPage() {
                 ))}
               </div>
             </section>
+
+            <div className="card-lg bg-cream/50 border-border text-center my-8">
+              <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
+              <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
+              <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
+                Calculer mon ROI avec le Sunology PLAY 2 →
+              </Link>
+            </div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
@@ -140,6 +151,7 @@ export default function AvisPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed">En résumé : la production réelle est globalement conforme aux estimations de Sunology, à condition d&apos;avoir une exposition correcte (sud, sud-est ou sud-ouest). En exposition est ou ouest, attendez-vous à 15-20% de moins.</p>
+              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play2-kit-solaire" label="Voir si livraison rapide" variant="secondary" position="after-stats" />
             </section>
 
             <section>
@@ -177,8 +189,10 @@ export default function AvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le Sunology PLAY2 merite sa place de leader. L&apos;installation en 1 minute, la certification CE complete, le suivi WiFi natif et la garantie 25 ans en font le kit le plus abouti du marché. A 599&euro;, la rentabilité est réelle (ROI 7,1 ans, 76 &euro;/an d&apos;économies, 2 871 &euro; sur 25 ans) et la qualité de fabrication est au rendez-vous.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Il n&apos;est pas parfait : l&apos;encombrement peut poser probleme sur les petits balcons, et le gain bifacial est souvent surévalué dans le marketing. Mais pour la majorite des utilisateurs, c&apos;est le choix le plus sur et le plus simple.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-green text-xl font-extrabold">8.5/10</span></strong></p>
-              <div className="btn-affiliate inline-flex mt-4">Voir le Sunology PLAY2 sur sunology.eu &rarr;</div>
+              <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY2 &rarr;</a>
             </section>
+
+            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play2-kit-solaire" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="599 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions frequentes</h2>

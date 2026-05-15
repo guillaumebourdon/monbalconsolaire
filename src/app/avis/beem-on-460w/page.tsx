@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -85,6 +86,8 @@ export default function BeemOnAvisPage() {
               </div>
             </section>
 
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play" label="Vérifier le stock" variant="secondary" position="after-pros" />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
@@ -100,6 +103,16 @@ export default function BeemOnAvisPage() {
                 ))}
               </div>
             </section>
+
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play" label="Vérifier le délai livraison" variant="secondary" position="after-stats" />
+
+            <div className="card-lg bg-cream/50 border-border text-center my-8">
+              <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
+              <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
+              <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
+                Calculer mon ROI avec le Beem On 460W →
+              </Link>
+            </div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
@@ -122,8 +135,10 @@ export default function BeemOnAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le Beem On 460W est un excellent kit solaire plug-and-play. À 599€, il offre le meilleur ratio €/Wc en mono-panneau et le paiement en 10x est un vrai avantage. L&apos;option Beem ZEN simplifie les démarches pour les moins à l&apos;aise avec l&apos;administratif.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Il perd face au <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> sur l&apos;installation (5 min vs 1 min), l&apos;encombrement (13 cm plus long), et le WiFi natif. Mais ces différences sont mineures — les deux kits sont d&apos;excellents choix.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">8/10</span></strong></p>
-              <div className="btn-affiliate inline-flex mt-4">Voir le Beem On sur beemenergy.fr →</div>
+              <a href="https://beemenergy.fr/products/beem-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem On &rarr;</a>
             </section>
+
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play" label="Voir l'offre actuelle sur Beem" variant="box" position="footer-box" price="599 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

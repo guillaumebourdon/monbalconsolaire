@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -275,6 +276,8 @@ export default function DualsunPreasyPage() {
               </div>
             </section>
 
+            <AffiliateCTA productName="DualSun PREASY" merchantName="DualSun" affiliateUrl="" label="Voir sur DualSun" variant="secondary" position="after-pros" />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 5 points faibles à connaître</h2>
               <div className="space-y-3">
@@ -286,6 +289,14 @@ export default function DualsunPreasyPage() {
                 ))}
               </div>
             </section>
+
+            <div className="card-lg bg-cream/50 border-border text-center my-8">
+              <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
+              <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
+              <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
+                Calculer mon ROI avec le DualSun PREASY →
+              </Link>
+            </div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
@@ -459,6 +470,8 @@ export default function DualsunPreasyPage() {
             </section>
 
             <NewsletterBanner />
+
+            <AffiliateCTA productName="DualSun PREASY" merchantName="DualSun" affiliateUrl="" label="Voir l'offre actuelle sur DualSun" variant="box" position="footer-box" price="870 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

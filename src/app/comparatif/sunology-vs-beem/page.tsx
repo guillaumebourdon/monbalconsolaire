@@ -125,17 +125,17 @@ export default function SunologyVsBeemPage() {
                     <li>→ Vous avez un petit balcon (panneau plus compact)</li>
                     <li>→ La certification CE complète vous rassure</li>
                   </ul>
-                  <div className="btn-affiliate inline-flex mt-4 text-xs">Voir le Sunology PLAY2 →</div>
+                  <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4 text-xs">Voir le Sunology PLAY2 &rarr;</a>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
                   <h4 className="font-bold text-amber-dark mb-2">Choisissez Beem si :</h4>
                   <ul className="text-sm text-charcoal-light space-y-1">
-                    <li>→ Vous voulez payer en 10x sans frais</li>
-                    <li>→ Vous préférez qu&apos;on s&apos;occupe des démarches (ZEN)</li>
-                    <li>→ Vous cherchez un kit à 299€ pour tester</li>
-                    <li>→ Vous voulez le meilleur ratio €/Wc</li>
+                    <li>&rarr; Vous voulez payer en 10x sans frais</li>
+                    <li>&rarr; Vous pr&eacute;f&eacute;rez qu&apos;on s&apos;occupe des d&eacute;marches (ZEN)</li>
+                    <li>&rarr; Vous cherchez un kit &agrave; 299&euro; pour tester</li>
+                    <li>&rarr; Vous voulez le meilleur ratio &euro;/Wc</li>
                   </ul>
-                  <div className="btn-affiliate inline-flex mt-4 text-xs">Voir le Beem On →</div>
+                  <a href="https://beemenergy.fr/products/beem-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4 text-xs">Voir le Beem On &rarr;</a>
                 </div>
               </div>
             </section>

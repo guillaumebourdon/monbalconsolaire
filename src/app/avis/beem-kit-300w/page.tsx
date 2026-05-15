@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -87,6 +88,8 @@ export default function BeemKit300WAvisPage() {
               </div>
             </section>
 
+            <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir l'offre du moment" variant="secondary" position="after-pros" />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
@@ -103,6 +106,14 @@ export default function BeemKit300WAvisPage() {
                 ))}
               </div>
             </section>
+
+            <div className="card-lg bg-cream/50 border-border text-center my-8">
+              <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
+              <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
+              <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
+                Calculer mon ROI avec le Beem Kit 300W →
+              </Link>
+            </div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
@@ -148,6 +159,7 @@ export default function BeemKit300WAvisPage() {
               </div>
               <p className="text-xs text-stone">ROI calcul&eacute; avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud.</p>
               <p className="text-xs text-stone mt-1">Sur 25 ans : <strong>1 914 &euro;</strong> d&apos;&eacute;conomies cumul&eacute;es (+3,3%/an d&apos;inflation).</p>
+              <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Calculer le délai de livraison" variant="secondary" position="after-stats" />
             </section>
 
             <section>
@@ -210,13 +222,15 @@ export default function BeemKit300WAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est un excellent kit d&apos;entrée de gamme. À 299€, le risque est minimal et le ROI est le plus rapide du marché (5,5 ans). C&apos;est le kit parfait pour découvrir l&apos;autoconsommation solaire sans se ruiner.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Ses limites sont claires : puissance modeste (300W), installation plus longue (1h), et esthétique discutable avec 4 panneaux séparés. Si ces points vous gênent et que vous pouvez mettre 599€, le <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On 460W</Link> ou le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> sont de meilleurs choix.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7.5/10</span></strong> — Le meilleur rapport qualité/prix pour débuter.</p>
-              <div className="btn-affiliate inline-flex mt-4">Voir le Beem Kit 300W sur beemenergy.fr →</div>
+              <a href="https://beemenergy.fr/products/kit-beem" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem Kit 300W &rarr;</a>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
               <p className="font-semibold mb-2">Combien pouvez-vous économiser avec un kit à 299€ ?</p>
               <Link href="/calculateur" className="btn-primary inline-flex mt-2">Calculer mes économies →</Link>
             </div>
+
+            <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir l'offre actuelle sur Beem" variant="box" position="footer-box" price="299 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

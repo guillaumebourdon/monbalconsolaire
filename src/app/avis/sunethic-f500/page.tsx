@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -85,6 +86,8 @@ export default function SunethicAvisPage() {
               </div>
             </section>
 
+            <AffiliateCTA productName="Sunethic F500" merchantName="Sunethic" affiliateUrl="https://sunethic.fr/produits" label="Découvrir sur le site officiel" variant="secondary" position="after-pros" />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
@@ -100,6 +103,16 @@ export default function SunethicAvisPage() {
                 ))}
               </div>
             </section>
+
+            <AffiliateCTA productName="Sunethic F500" merchantName="Sunethic" affiliateUrl="https://sunethic.fr/produits" label="Voir conditions de livraison" variant="secondary" position="after-stats" />
+
+            <div className="card-lg bg-cream/50 border-border text-center my-8">
+              <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
+              <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
+              <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
+                Calculer mon ROI avec le Sunethic F500 →
+              </Link>
+            </div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
@@ -123,6 +136,8 @@ export default function SunethicAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Mais le surcoût de 91€ par rapport au <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> ou au <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On</Link> est difficile à justifier sur le seul plan financier. ROI de 7,4 ans avec 84 &euro;/an d&apos;économies et 3 190 &euro; sur 25 ans (+3,3%/an d&apos;inflation CRE).</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-green text-xl font-extrabold">7.5/10</span></strong> — Un kit premium pour ceux qui privilégient le Made in France et la puissance maximale.</p>
             </section>
+
+            <AffiliateCTA productName="Sunethic F500" merchantName="Sunethic" affiliateUrl="https://sunethic.fr/produits" label="Voir l'offre actuelle sur Sunethic" variant="box" position="footer-box" price="690 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

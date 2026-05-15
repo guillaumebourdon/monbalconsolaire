@@ -170,7 +170,7 @@ export default function ComparatifPage() {
 
               <h4 className="font-bold mb-2 mt-6">Production réelle : ce que disent les utilisateurs</h4>
               <p className="text-charcoal-light leading-relaxed mb-3">D&apos;apres les retours d&apos;utilisateurs vérifiés, la production annuelle du PLAY2 varie selon la region et l&apos;exposition. A Marseille avec une bonne exposition sud, certains utilisateurs rapportent plus de 650 kWh/an. En region parisienne avec une exposition est, la production tourne plutot autour de 450 kWh/an. Sunology annonce officiellement 565 kWh/an comme estimation moyenne.</p>
-              <div className="btn-affiliate inline-flex mt-4">Voir le Sunology PLAY2 sur sunology.eu &rarr;</div>
+              <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Sunology PLAY2 &rarr;</a>
             </section>
 
             <section id="section-5">
@@ -196,7 +196,7 @@ export default function ComparatifPage() {
                   <li key={i} className="flex gap-2"><span className="text-red-500 font-bold">-</span> {s}</li>
                 ))}
               </ul>
-              <div className="btn-affiliate inline-flex mt-4">Voir le Beem On sur beemenergy.fr &rarr;</div>
+              <a href="https://beemenergy.fr/products/beem-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem On &rarr;</a>
             </section>
 
             <section id="section-6">

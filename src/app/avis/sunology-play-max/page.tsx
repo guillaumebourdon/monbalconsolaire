@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -126,6 +127,8 @@ export default function PlayMaxAvisPage() {
               </div>
             </section>
 
+            <AffiliateCTA productName="Sunology PLAY MAX" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-max" label="Voir le PLAY MAX en stock" variant="secondary" position="after-pros" />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
@@ -142,6 +145,14 @@ export default function PlayMaxAvisPage() {
                 ))}
               </div>
             </section>
+
+            <div className="card-lg bg-cream/50 border-border text-center my-8">
+              <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
+              <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
+              <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
+                Calculer mon ROI avec le Sunology PLAY MAX →
+              </Link>
+            </div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
@@ -189,13 +200,15 @@ export default function PlayMaxAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le PLAY MAX est un produit bien pensé pour ceux qui veulent maximiser leur autoconsommation et/ou qui ont besoin d&apos;une batterie nomade. Le bundle à 1 179€ est le plus accessible du marché pour un kit + batterie.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Mais soyons honnêtes : pour la majorité des utilisateurs, le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY2 seul à 599€</Link> reste le meilleur investissement. Le ROI est nettement plus rapide (7,1 ans vs 11,7 ans) et le talon de consommation absorbe déjà une bonne partie de la production en journée. La batterie est un &quot;nice to have&quot;, pas un &quot;must have&quot;.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong> — Bon produit, mais le PLAY2 seul est un meilleur investissement pour la plupart.</p>
-              <div className="btn-affiliate inline-flex mt-4">Voir le Sunology PLAY MAX sur sunology.eu →</div>
+              <a href="https://sunology.eu/products/play-max" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY MAX &rarr;</a>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
               <p className="font-semibold mb-2">Avec ou sans batterie, combien pouvez-vous économiser ?</p>
               <Link href="/calculateur" className="btn-primary inline-flex mt-2">Calculer mes économies →</Link>
             </div>
+
+            <AffiliateCTA productName="Sunology PLAY MAX" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-max" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="1 179 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

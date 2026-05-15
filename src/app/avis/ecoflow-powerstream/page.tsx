@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -354,6 +355,8 @@ export default function EcoflowPowerstreamPage() {
               </div>
             </section>
 
+            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/powerstream-microinverter" label="Voir sur EcoFlow" variant="secondary" position="after-pros" />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 4 points faibles à connaître</h2>
               <div className="space-y-3">
@@ -365,6 +368,14 @@ export default function EcoflowPowerstreamPage() {
                 ))}
               </div>
             </section>
+
+            <div className="card-lg bg-cream/50 border-border text-center my-8">
+              <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
+              <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
+              <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
+                Calculer mon ROI avec le EcoFlow PowerStream →
+              </Link>
+            </div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
@@ -455,6 +466,8 @@ export default function EcoflowPowerstreamPage() {
             </section>
 
             <NewsletterBanner />
+
+            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/powerstream-microinverter" label="Voir l'offre actuelle sur EcoFlow" variant="box" position="footer-box" price="599 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
