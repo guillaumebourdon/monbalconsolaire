@@ -81,7 +81,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/panneau-solaire-produit-moins-que-prevu`, lastModified: '2026-05-12', changeFrequency: 'monthly', priority: 0.7 },
 
     // Pages secondaires
-    { url: `${BASE_URL}/a-propos`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${BASE_URL}/methodologie`, lastModified: '2026-05-15', changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/a-propos`, lastModified: '2026-05-15', changeFrequency: 'monthly', priority: 0.3 },
     { url: `${BASE_URL}/mentions-legales`, lastModified: '2026-03-17', changeFrequency: 'yearly', priority: 0.1 },
     { url: `${BASE_URL}/politique-confidentialite`, lastModified: '2026-03-17', changeFrequency: 'yearly', priority: 0.1 },
 

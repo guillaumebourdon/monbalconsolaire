@@ -145,7 +145,7 @@ export default function ZendureSolarflowPage() {
               Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour moins de 500 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Test complet, calcul de rentabilité et verdict honnête.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>7 mai 2026</span>
+              <span>7 mai 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -162,6 +162,7 @@ export default function ZendureSolarflowPage() {
             affiliateLabel=""
             accentColor="amber"
           />
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en 30 secondes</h2>
@@ -341,6 +342,22 @@ export default function ZendureSolarflowPage() {
             </section>
 
             <section>
+              <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
+              <div className="space-y-2">
+                {[
+                  'Budget < 800 €',
+                  'Vous voulez zéro configuration',
+                  'Démontage fréquent prévu',
+                ].map((point, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
+                    <span className="text-amber-dark font-bold">&#10007;</span>
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
               <h2 className="text-2xl font-extrabold mb-4">Comparatif : SolarFlow vs la concurrence</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Comment se positionne le SolarFlow 800 Plus face aux systèmes avec batterie du marché ?
@@ -383,19 +400,19 @@ export default function ZendureSolarflowPage() {
               </p>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production annuelle</strong> : 870 kWh/an (2 × 420 W, sud, Lyon)</li>
-                  <li>&bull; <strong>Autoconsommation avec batterie</strong> : 80 % (vs 45 % sans batterie)</li>
-                  <li>&bull; <strong>kWh valorisés</strong> : 696 kWh/an</li>
-                  <li>&bull; <strong>Tarif EDF 2026</strong> : 0,1940 €/kWh (tarif base mai 2026)</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 696 × 0,1940 € = <strong>135 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 900 € / 135 € = <strong>6,7 ans</strong></li>
+                  <li>&bull; <strong>Production annuelle</strong> : 857 kWh/an (2 &times; 420 W, sud, Lyon, PR 0,85)</li>
+                  <li>&bull; <strong>Autoconsommation avec batterie</strong> : 95%</li>
+                  <li>&bull; <strong>Tarif EDF 2026</strong> : 0,1940 &euro;/kWh (+3,3%/an d&apos;inflation CRE)</li>
+                  <li>&bull; <strong>Économies annuelles</strong> : <strong>158 &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI</strong> : <strong>5,3 ans</strong></li>
+                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>5 991 &euro;</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>Moins de 7 ans de ROI pour un système avec batterie</strong>, c&apos;est du jamais vu. À titre de comparaison, l&apos;EcoFlow PowerStream + DELTA 2 tourne autour de 13-14 ans de ROI, et le Sunology PLAY MAX autour de 9-10 ans.
+                <strong>5,3 ans de ROI pour un système avec batterie</strong>, c&apos;est du jamais vu. &Agrave; titre de comparaison, l&apos;EcoFlow PowerStream + DELTA 2 tourne autour de 10,2 ans de ROI, et le Sunology PLAY MAX autour de 11,7 ans.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                Avec la hausse du tarif EDF (+4-5 %/an en tendance), les économies réelles passent à 160-180 €/an dès la 3ème année. Et la batterie LFP est garantie 6 000 cycles : vous avez <strong>10+ ans de bénéfice net</strong> après remboursement du système.
+                Avec l&apos;inflation tarifaire de 3,3%/an (CRE), les économies augmentent chaque année. Et la batterie LFP est garantie 6 000 cycles : vous avez <strong>10+ ans de bénéfice net</strong> après remboursement du système. Sur 25 ans : <strong>5 991 &euro;</strong> d&apos;économies cumulées.
               </p>
             </section>
 

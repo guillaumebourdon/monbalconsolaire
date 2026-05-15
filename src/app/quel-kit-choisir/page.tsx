@@ -239,6 +239,13 @@ export default function QuelKitChoisirPage() {
           </p>
         </div>
 
+        <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
+          <span className="text-stone text-sm mt-0.5">&#8505;</span>
+          <p className="text-xs text-stone leading-relaxed">
+            <strong>Transparence :</strong> certains liens de cette page sont affili&eacute;s. Notre classement est bas&eacute; sur le prix, la puissance, la facilit&eacute; d&apos;installation, la garantie et l&apos;ad&eacute;quation au profil. Aucun fabricant ne nous paie pour &ecirc;tre mieux not&eacute;. <a href="/methodologie" className="text-green hover:underline">Voir notre m&eacute;thodologie &rarr;</a>
+          </p>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {FILTERS.map((f) => (
             <button

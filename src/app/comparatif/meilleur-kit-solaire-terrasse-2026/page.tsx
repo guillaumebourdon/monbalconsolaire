@@ -100,6 +100,8 @@ export default function MeilleurKitTerrasse2026Page() {
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
+
+          <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">n            <span className="text-stone text-sm mt-0.5">ℹ</span>n            <p className="text-xs text-stone leading-relaxed">n              <strong>Transparence :</strong> certains liens de cette page sont affiliés. Notre classement est basé sur le prix, la puissance, la facilité d'installation, la garantie et l'adéquation au profil. Aucun fabricant ne nous paie pour être mieux noté. <a href="/methodologie" className="text-green hover:underline">Voir notre méthodologie →</a>n            </p>n          </div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">

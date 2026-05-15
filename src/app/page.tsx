@@ -73,7 +73,7 @@ export default function HomePage() {
               { value: '80-130\u20ac/an', label: 'd\'\u00e9conomies selon votre r\u00e9gion' },
               { value: '25 ans', label: 'Garantie des panneaux' },
               { value: '299-900\u20ac', label: 'Prix d\'un kit solaire balcon' },
-              { value: '5-7 ans', label: 'Retour sur investissement' },
+              { value: '5-8 ans', label: 'Selon le kit et votre exposition' },
             ].map((item, i) => (
               <div key={i} className="text-center p-6 rounded-brand-lg bg-cream reveal">
                 <div className="font-mono font-medium text-amber-dark text-xl md:text-2xl mb-1">

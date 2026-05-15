@@ -38,6 +38,7 @@ export function Footer() {
               <li><Link href="/comment-ca-marche" className="text-sm text-stone hover:text-green transition-colors">Comment &ccedil;a marche</Link></li>
               <li><Link href="/calculateur" className="text-sm text-stone hover:text-green transition-colors">Calculateur de rentabilit&eacute;</Link></li>
               <li><Link href="/a-propos" className="text-sm text-stone hover:text-green transition-colors">&Agrave; propos</Link></li>
+              <li><Link href="/methodologie" className="text-sm text-stone hover:text-green transition-colors">M&eacute;thodologie</Link></li>
             </ul>
           </div>
 

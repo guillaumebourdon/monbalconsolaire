@@ -136,7 +136,7 @@ export default function SunologyCityPage() {
               Le CITY est le seul kit solaire plug-and-play du marché conçu spécifiquement pour s&apos;accrocher au garde-corps d&apos;un balcon urbain. Test complet : prix, production réelle, installation, et les vrais cas où il vaut le coup.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>27 avril 2026</span>
+              <span>27 avril 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -153,6 +153,7 @@ export default function SunologyCityPage() {
             affiliateLabel="Voir le CITY sur Sunology"
             accentColor="amber"
           />
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
@@ -298,27 +299,38 @@ export default function SunologyCityPage() {
             </section>
 
             <section>
+              <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
+              <div className="space-y-2">
+                {[
+                  'Votre garde-corps n\'est pas droit ou fait + de 12 cm',
+                  'Vous voulez du stockage',
+                  'Exposition nord',
+                ].map((point, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
+                    <span className="text-amber-dark font-bold">&#10007;</span>
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
               <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Prenons un cas type : Paris, balcon étroit exposé sud-ouest, kit Sunology CITY à 549 €.
               </p>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production annuelle</strong> : 340 kWh/an</li>
-                  <li>&bull; <strong>Autoconsommation</strong> : 60% en moyenne (le reste injecté gratuitement)</li>
-                  <li>&bull; <strong>kWh économisés</strong> : 204 kWh/an</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 204 &times; 0,1940 € = <strong>40 €/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 549 € / 40 € = <strong>13,7 ans</strong></li>
+                  <li>&bull; <strong>Production annuelle</strong> : 408 kWh/an (400 Wc, Lyon sud, PR 0,85)</li>
+                  <li>&bull; <strong>Autoconsommation</strong> : 85%</li>
+                  <li>&bull; <strong>kWh économisés</strong> : 347 kWh/an</li>
+                  <li>&bull; <strong>Économies annuelles</strong> : <strong>68 &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI</strong> : <strong>7,3 ans</strong> (+3,3%/an d&apos;inflation CRE)</li>
+                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>2 583 &euro;</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                À première vue, près de 14 ans c&apos;est long. Mais ce calcul ignore deux paramètres importants :
-              </p>
-              <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>1. La hausse du tarif EDF.</strong> Sur les 10 dernières années, le prix du kWh a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 75-90 €/an dès la 5ème année, et le ROI tombe à <strong>8-9 ans</strong>.
-              </p>
-              <p className="text-charcoal-light leading-relaxed">
-                <strong>2. La durée de vie du kit.</strong> Le CITY est garanti 25 ans. Une fois le ROI atteint, chaque année produit 60-90 € d&apos;économies pures. Sur la durée totale, le gain net est de <strong>1 500 à 2 200 €</strong>. C&apos;est moins rentable qu&apos;un PLAY 2, mais ça reste positif.
+                Avec l&apos;inflation tarifaire de 3,3%/an (CRE), le ROI est atteint en <strong>7,3 ans</strong>. Le CITY est garanti 25 ans. Une fois le ROI atteint, chaque année produit des économies pures. Sur la durée totale, le gain net est de <strong>2 583 &euro;</strong>. C&apos;est moins rentable qu&apos;un PLAY 2, mais ça reste très positif.
               </p>
             </section>
 
@@ -393,7 +405,7 @@ export default function SunologyCityPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données PVGIS, fiches techniques fabricant Sunology, retours utilisateurs Trustpilot et forums spécialisés (avril 2026). Article rédigé sans rémunération de Sunology.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données PVGIS, fiches techniques fabricant Sunology, retours utilisateurs Trustpilot et forums spécialisés (avril 2026). Article rédigé sans rémunération de Sunology.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

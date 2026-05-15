@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Le Sunology PLAY2 est-il vraiment rentable ?', answer: 'Oui. A 599 euros avec une production moyenne de 520 kWh/an (region lyonnaise, exposition sud), les économies sont d\'environ 100 euros/an au tarif EDF actuel. Le retour sur investissement est atteint en 3,5 à 5 ans selon la region, pour une garantie de 25 ans.' },
+  { question: 'Le Sunology PLAY2 est-il vraiment rentable ?', answer: 'Oui. A 599 euros avec une production moyenne de 459 kWh/an (region lyonnaise, exposition sud), les économies sont d\'environ 76 euros/an. Le retour sur investissement est atteint en 7,1 ans (+3,3%/an d\'inflation CRE). Sur 25 ans, les économies cumulées atteignent 2 871 euros.' },
   { question: 'Combien produit le Sunology PLAY2 en conditions réelles ?', answer: 'Les retours utilisateurs montrent une production de 450 kWh/an (region parisienne, exposition est) à plus de 650 kWh/an (Marseille, exposition sud). Sunology annonce 565 kWh/an comme moyenne nationale.' },
   { question: 'Le PLAY2 fonctionne-t-il en appartement ?', answer: 'Oui. Le PLAY2 peut etre installé au sol sur un balcon ou une terrasse avec ses ballasts. Pour les balcons étroits, Sunology propose le modele CITY, spécifiquement concu pour les garde-corps.' },
   { question: 'Quelle est la différence entre le PLAY2 et le PLAY MAX ?', answer: 'Le PLAY MAX inclut une batterie VAULT de 700 Wh (5h d\'autonomie supplémentaire) pour 1 179 euros. Le PLAY2 à 599 euros ne stocke pas : l\'électricité est consommee en temps réel ou injectee sur le reseau.' },
@@ -33,7 +33,7 @@ export default function AvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis et test</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis : test complet et retour d&apos;experience (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Sunology PLAY2 est le kit solaire plug-and-play le plus vendu en France avec plus de 100 000 foyers équipés. Mais vaut-il vraiment ses 599&euro; ? Analyse détaillée.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; Mis &agrave; jour le 15 mai 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -47,6 +47,7 @@ export default function AvisPage() {
             affiliateLabel="Voir le PLAY 2 sur Sunology"
             accentColor="green"
           />
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 
           <div className="space-y-10">
             <section>
@@ -104,8 +105,25 @@ export default function AvisPage() {
             </section>
 
             <section>
+              <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
+              <div className="space-y-2">
+                {[
+                  'Balcon < 1,80 m de large',
+                  'Consommation surtout le soir (pas de batterie)',
+                  'Exposition nord ou très ombragée',
+                  'Copropriété interdisant les installations en façade',
+                ].map((point, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
+                    <span className="text-amber-dark font-bold">&#10007;</span>
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
               <h2 className="text-2xl font-extrabold mb-4">Production réelle : les chiffres des utilisateurs</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Sunology annonce une production annuelle de <span className="data-highlight">565 kWh</span> avec un retour sur investissement de <span className="data-highlight">3,6 ans</span>. Voici ce que rapportent les utilisateurs réels :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Sunology annonce une production annuelle de <span className="data-highlight">565 kWh</span>. Avec notre méthodologie (PR 0,85, autoconsommation 85%, inflation 3,3%/an CRE), le ROI réaliste est de <span className="data-highlight">7,1 ans</span> avec <span className="data-highlight">76 &euro;/an</span> d&apos;économies et <span className="data-highlight">2 871 &euro;</span> sur 25 ans. Voici ce que rapportent les utilisateurs réels :</p>
               <div className="space-y-3 my-6">
                 {[
                   { loc: 'Marseille, exposition sud', prod: '650+ kWh/an', comment: 'Au-dessus des promesses. 2,8-3,2 kWh/jour en ete, ~1 kWh/jour en hiver.' },
@@ -156,7 +174,7 @@ export default function AvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le Sunology PLAY2 merite sa place de leader. L&apos;installation en 1 minute, la certification CE complete, le suivi WiFi natif et la garantie 25 ans en font le kit le plus abouti du marché. A 599&euro;, la rentabilité est réelle (3-5 ans selon la region) et la qualité de fabrication est au rendez-vous.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le Sunology PLAY2 merite sa place de leader. L&apos;installation en 1 minute, la certification CE complete, le suivi WiFi natif et la garantie 25 ans en font le kit le plus abouti du marché. A 599&euro;, la rentabilité est réelle (ROI 7,1 ans, 76 &euro;/an d&apos;économies, 2 871 &euro; sur 25 ans) et la qualité de fabrication est au rendez-vous.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Il n&apos;est pas parfait : l&apos;encombrement peut poser probleme sur les petits balcons, et le gain bifacial est souvent surévalué dans le marketing. Mais pour la majorite des utilisateurs, c&apos;est le choix le plus sur et le plus simple.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-green text-xl font-extrabold">8.5/10</span></strong></p>
               <div className="btn-affiliate inline-flex mt-4">Voir le Sunology PLAY2 sur sunology.eu &rarr;</div>
@@ -193,6 +211,7 @@ export default function AvisPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Méthodologie ROI :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud.</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> cet avis est indépendant. Les liens vers Sunology sont des liens d&apos;affiliation. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>

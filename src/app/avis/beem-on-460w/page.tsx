@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const faqData = [
   { question: 'Le Beem On 460W est-il un bon kit solaire ?', answer: 'Oui. Avec 460 Wc pour 599€, c\'est le meilleur ratio €/Wc en mono-panneau (1,30€). La qualité est au rendez-vous (4,7/5 Trustpilot) et la garantie de 25 ans est standard.' },
   { question: 'Beem On vs Sunology PLAY2 : lequel choisir ?', answer: 'Les deux sont excellents au même prix (599€). Sunology gagne sur l\'installation (1 min vs 5 min) et le WiFi natif. Beem gagne sur le paiement en 10x et l\'option Beem ZEN (démarches Enedis).' },
-  { question: 'Combien produit le Beem On 460W ?', answer: 'Entre 420 et 630 kWh/an selon la région et l\'orientation. En région lyonnaise, exposition sud, comptez ~530 kWh/an soit environ 103€ d\'économies annuelles.' },
+  { question: 'Combien produit le Beem On 460W ?', answer: 'Entre 420 et 630 kWh/an selon la région et l\'orientation. En région lyonnaise, exposition sud, comptez ~469 kWh/an soit environ 77€ d\'économies annuelles. ROI de 7,0 ans et 2 933€ sur 25 ans (+3,3%/an d\'inflation CRE).' },
 ];
 
 export default function BeemOnAvisPage() {
@@ -32,7 +32,7 @@ export default function BeemOnAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis et test</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 460W avis : test complet et retour d&apos;expérience (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Beem On est le concurrent direct du Sunology PLAY2. Même prix, 10 Wc de plus, mais est-il vraiment meilleur ? Notre analyse complète.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026 &middot; Mis &agrave; jour le 15 mai 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -46,6 +46,7 @@ export default function BeemOnAvisPage() {
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
           />
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 
           <div className="space-y-10">
             <section>
@@ -101,6 +102,22 @@ export default function BeemOnAvisPage() {
             </section>
 
             <section>
+              <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
+              <div className="space-y-2">
+                {[
+                  'Pas de garde-corps droit de 1,40 m+',
+                  'Vents forts réguliers',
+                  'Absent toute la journée sans décalage possible',
+                ].map((point, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
+                    <span className="text-amber-dark font-bold">&#10007;</span>
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Beem On 460W est un excellent kit solaire plug-and-play. À 599€, il offre le meilleur ratio €/Wc en mono-panneau et le paiement en 10x est un vrai avantage. L&apos;option Beem ZEN simplifie les démarches pour les moins à l&apos;aise avec l&apos;administratif.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Il perd face au <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> sur l&apos;installation (5 min vs 1 min), l&apos;encombrement (13 cm plus long), et le WiFi natif. Mais ces différences sont mineures — les deux kits sont d&apos;excellents choix.</p>
@@ -139,6 +156,7 @@ export default function BeemOnAvisPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Méthodologie ROI :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. &Eacute;conomies : 77 &euro;/an, ROI 7,0 ans, 2 933 &euro; sur 25 ans.</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> avis indépendant. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>
