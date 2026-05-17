@@ -29,13 +29,14 @@ export const LAST_UPDATED_ISO = '2026-05-15';
 
 // ─── Fonctions de calcul ──────────────────────────────────
 
-type CalcInput = {
+export type CalcInput = {
   kitPriceEur: number;
   kitPowerWc: number;
   productibleKwhPerKwc?: number;
   orientationCoef?: number;
   hasBattery?: boolean;
   includeInflation?: boolean;
+  autoconsoOverride?: number;
 };
 
 export function calculateProductionKwh(input: CalcInput): number {
@@ -47,7 +48,7 @@ export function calculateProductionKwh(input: CalcInput): number {
 
 export function calculateFirstYearSavings(input: CalcInput): number {
   const production = calculateProductionKwh(input);
-  const autoconso = input.hasBattery ? AUTOCONSO_BATTERY : AUTOCONSO_STANDARD;
+  const autoconso = input.autoconsoOverride ?? (input.hasBattery ? AUTOCONSO_BATTERY : AUTOCONSO_STANDARD);
   return production * autoconso * KWH_PRICE_EUR;
 }
 

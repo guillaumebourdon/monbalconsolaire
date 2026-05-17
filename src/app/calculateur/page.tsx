@@ -1,332 +1,488 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useEffect, useCallback, Suspense } from 'react';
 import Link from 'next/link';
-import { CityData } from '@/data/cities';
-import { DEPARTMENTS, DepartmentData } from '@/data/departments';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { DEPARTMENTS } from '@/data/departments';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import {
+  calculateProductionKwh,
+  calculateROIYears,
+  calculateFirstYearSavings,
+  calculateTotalSavings25Years,
+  type CalcInput,
+} from '@/lib/pricing';
 
-const ORIENTATIONS = [
-  { value: 'sud', label: 'Sud', coeff: 1.0, emoji: '\u2600\ufe0f', desc: '100% du potentiel' },
-  { value: 'sud-est', label: 'Sud-Est', coeff: 0.93, emoji: '\ud83c\udf24', desc: '93% du potentiel' },
-  { value: 'sud-ouest', label: 'Sud-Ouest', coeff: 0.93, emoji: '\ud83c\udf24', desc: '93% du potentiel' },
-  { value: 'est', label: 'Est', coeff: 0.80, emoji: '\u26c5', desc: '80% du potentiel' },
-  { value: 'ouest', label: 'Ouest', coeff: 0.80, emoji: '\u26c5', desc: '80% du potentiel' },
-  { value: 'nord', label: 'Nord', coeff: 0.45, emoji: '\u2601\ufe0f', desc: '45% du potentiel' },
+export default function CalculateurWrapper() {
+  return (
+    <Suspense fallback={<div className="section-padding"><div className="container-brand max-w-2xl text-center"><div className="animate-pulse h-8 bg-cream-dark rounded-brand w-48 mx-auto" /></div></div>}>
+      <CalculateurPage />
+    </Suspense>
+  );
+}
+
+// ─── Kit catalog ──────────────────────────────────────────
+const KITS = [
+  { id: 'beem-kit-300w', name: 'Beem Kit 300W', brand: 'Beem Energy', power: 300, price: 299, hasBattery: false, slug: '/avis/beem-kit-300w', affiliateUrl: 'https://beemenergy.fr/products/kit-beem', minWidth: 'narrow', maxBudget: 400 },
+  { id: 'sunology-play-2', name: 'Sunology PLAY 2', brand: 'Sunology', power: 450, price: 599, hasBattery: false, slug: '/avis/sunology-play-2', affiliateUrl: 'https://sunology.eu/products/play2-kit-solaire', minWidth: 'medium', maxBudget: 800 },
+  { id: 'beem-on-460w', name: 'Beem On 460W', brand: 'Beem Energy', power: 460, price: 599, hasBattery: false, slug: '/avis/beem-on-460w', affiliateUrl: 'https://beemenergy.fr/products/beem-kit-solaire-plug-play', minWidth: 'medium', maxBudget: 800 },
+  { id: 'sunethic-f500', name: 'Sunethic F500', brand: 'Sunethic', power: 500, price: 690, hasBattery: false, slug: '/avis/sunethic-f500', affiliateUrl: 'https://sunethic.fr/produits', minWidth: 'medium', maxBudget: 800 },
+  { id: 'sunology-city', name: 'Sunology CITY', brand: 'Sunology', power: 405, price: 549, hasBattery: false, slug: '/avis/sunology-city', affiliateUrl: 'https://sunology.eu/products/city-kit-solaire-balcon', minWidth: 'narrow', maxBudget: 800 },
+  { id: 'zendure-solarflow', name: 'Zendure SolarFlow', brand: 'Zendure', power: 840, price: 900, hasBattery: true, slug: '/avis/zendure-solarflow', affiliateUrl: '', minWidth: 'wide', maxBudget: 1500 },
+  { id: 'sunology-play-max', name: 'Sunology PLAY MAX', brand: 'Sunology', power: 450, price: 1179, hasBattery: true, slug: '/avis/sunology-play-max', affiliateUrl: 'https://sunology.eu/products/play-max', minWidth: 'medium', maxBudget: 1500, editorial: 'ROI long (11,7 ans). Int\u00e9ressant pour l\u2019autonomie nocturne.' },
+  { id: 'ecoflow-powerstream', name: 'EcoFlow PowerStream', brand: 'EcoFlow', power: 800, price: 1800, hasBattery: true, slug: '/avis/ecoflow-powerstream', affiliateUrl: 'https://fr.ecoflow.com/products/powerstream-microinverter', minWidth: 'wide', maxBudget: 9999, editorial: 'ROI long (10,2 ans). Pour l\u2019\u00e9cosyst\u00e8me EcoFlow ou le backup r\u00e9seau.' },
+  { id: 'dualsun-preasy', name: 'DualSun PREASY', brand: 'DualSun', power: 420, price: 870, hasBattery: false, slug: '/avis/dualsun-preasy', affiliateUrl: '', minWidth: 'medium', maxBudget: 1500, editorial: 'ROI long (10,5 ans). Choix Made in France et design premium.' },
 ];
 
-const KIT_SLUGS: Record<string, string> = {
-  'Sunology PLAY2': '/avis/sunology-play-2',
-  'Beem Kit 300W': '/avis/beem-kit-300w',
-  'Beem On 460W': '/avis/beem-on-460w',
-  'Sunethic F500': '/avis/sunethic-f500',
-  'Zendure SolarFlow': '/avis/zendure-solarflow',
-  'EcoFlow PowerStream': '/avis/ecoflow-powerstream',
-  'DualSun PREASY': '/avis/dualsun-preasy',
+// ─── Options ──────────────────────────────────────────────
+const ORIENTATIONS = [
+  { value: 'sud', label: 'Sud', coeff: 1.0, emoji: '\u2600\ufe0f' },
+  { value: 'sud-est-ouest', label: 'Sud-Est / Sud-Ouest', coeff: 0.95, emoji: '\ud83c\udf24\ufe0f' },
+  { value: 'est-ouest', label: 'Est / Ouest', coeff: 0.80, emoji: '\u26c5' },
+  { value: 'nord-est-ouest', label: 'Nord-Est / Nord-Ouest', coeff: 0.65, emoji: '\ud83c\udf25\ufe0f' },
+  { value: 'nord', label: 'Nord', coeff: 0.50, emoji: '\u2601\ufe0f' },
+  { value: 'unknown', label: 'Je ne sais pas', coeff: 0.90, emoji: '\ud83e\udd14' },
+];
+
+const SURFACES = [
+  { value: 'narrow', label: 'Moins de 1m de large', emoji: '\ud83d\udccf' },
+  { value: 'medium', label: '1 \u00e0 2m de large', emoji: '\ud83d\udcd0' },
+  { value: 'wide', label: 'Plus de 2m ou terrasse', emoji: '\ud83c\udfe1' },
+  { value: 'unknown', label: 'Je ne sais pas', emoji: '\ud83e\udd14' },
+];
+
+const PRESENCES = [
+  { value: 'home', label: 'Pr\u00e9sent toute la journ\u00e9e', desc: 'Retraite, t\u00e9l\u00e9travail complet', autoconso: 0.90, autoconsoB: 0.95 },
+  { value: 'mixed', label: 'Mixte (t\u00e9l\u00e9travail 2-3j)', desc: 'Pr\u00e9sent la moiti\u00e9 de la semaine', autoconso: 0.75, autoconsoB: 0.92 },
+  { value: 'away', label: 'Absent en semaine', desc: 'Bureau ou d\u00e9placements', autoconso: 0.55, autoconsoB: 0.88 },
+];
+
+const BUDGETS = [
+  { value: '400', label: 'Moins de 400 \u20ac', max: 400 },
+  { value: '800', label: '400 \u2013 800 \u20ac', max: 800 },
+  { value: '1500', label: '800 \u2013 1 500 \u20ac', max: 1500 },
+  { value: 'none', label: 'Pas de limite', max: 99999 },
+];
+
+const SURFACE_COMPAT: Record<string, string[]> = {
+  narrow: ['narrow'],
+  medium: ['narrow', 'medium'],
+  wide: ['narrow', 'medium', 'wide'],
+  unknown: ['narrow', 'medium'],
 };
 
-const KITS = [
-  { name: 'Sunology PLAY2', power: 0.45, price: 599, brand: 'Sunology', badge: 'Meilleur choix' },
-  { name: 'Beem Kit 300W', power: 0.30, price: 299, brand: 'Beem Energy', badge: 'Petit budget' },
-  { name: 'Beem On 460W', power: 0.46, price: 599, brand: 'Beem Energy', badge: 'Modulaire' },
-  { name: 'Sunethic F500', power: 0.50, price: 690, brand: 'Sunethic', badge: 'Made in France' },
-  { name: 'Zendure SolarFlow', power: 0.84, price: 900, brand: 'Zendure', badge: 'Avec batterie' },
-  { name: 'EcoFlow PowerStream', power: 0.80, price: 800, brand: 'EcoFlow', badge: 'Modulaire+' },
-  { name: 'DualSun PREASY', power: 0.42, price: 870, brand: 'DualSun', badge: 'Made in France' },
-];
+// ─── GA4 helper ───────────────────────────────────────────
+function gtag(event: string, params: Record<string, string | number>) {
+  if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag) {
+    (window as unknown as { gtag: (...a: unknown[]) => void }).gtag('event', event, params);
+  }
+}
 
-const TARIF_KWH = 0.1940;
+// ─── Component ────────────────────────────────────────────
+function CalculateurPage() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
-export default function CalculateurPage() {
+  const prefilledKit = searchParams.get('kit') || '';
+
   const [step, setStep] = useState(1);
-  const [city, setCity] = useState<CityData | null>(null);
+  const [deptCode, setDeptCode] = useState(searchParams.get('dept') || '');
   const [query, setQuery] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [orientation, setOrientation] = useState('');
-  const [consoMensuelle, setConsoMensuelle] = useState('');
-  const [shareStatus, setShareStatus] = useState<'idle' | 'copied'>('idle');
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [orientation, setOrientation] = useState(searchParams.get('orientation') || '');
+  const [surface, setSurface] = useState(searchParams.get('surface') || '');
+  const [presence, setPresence] = useState(searchParams.get('presence') || '');
+  const [budget, setBudget] = useState(searchParams.get('budget') || '');
+  const [noInflation, setNoInflation] = useState(false);
+  const [forceAutoconso60, setForceAutoconso60] = useState(false);
 
-  const filteredDepartments = useMemo(() => {
+  const dept = DEPARTMENTS.find(d => d.code === deptCode);
+
+  // Auto-advance if all params in URL
+  useEffect(() => {
+    const d = searchParams.get('dept');
+    const o = searchParams.get('orientation');
+    const s = searchParams.get('surface');
+    const p = searchParams.get('presence');
+    const b = searchParams.get('budget');
+    if (d && o && s && p && b) {
+      setDeptCode(d); setOrientation(o); setSurface(s); setPresence(p); setBudget(b);
+      setStep(6);
+    }
+    gtag('calculator_started', {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const filteredDepts = useMemo(() => {
     if (!query || query.length < 1) return [];
     const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
     return DEPARTMENTS.filter(d => {
-      // Match par code (début de code : 7 → 70-79, 75 → 75)
       if (d.code.toLowerCase().startsWith(q)) return true;
-      // Match par nom
-      const name = d.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      return name.includes(q);
+      return d.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(q);
     }).sort((a, b) => {
-      // Tri numérique strict par code (01, 02, ..., 75, ..., 95, 2A, 2B)
-      const aNum = parseInt(a.code, 10);
-      const bNum = parseInt(b.code, 10);
-      if (isNaN(aNum) && isNaN(bNum)) return a.code.localeCompare(b.code);
-      if (isNaN(aNum)) return 1;
-      if (isNaN(bNum)) return -1;
-      return aNum - bNum;
+      const an = parseInt(a.code, 10), bn = parseInt(b.code, 10);
+      if (isNaN(an) && isNaN(bn)) return a.code.localeCompare(b.code);
+      if (isNaN(an)) return 1; if (isNaN(bn)) return -1;
+      return an - bn;
     }).slice(0, 10);
   }, [query]);
 
-  const handleDepartmentSelect = (dept: DepartmentData) => {
-    const cityFromDept: CityData = {
-      name: dept.name,
-      department: dept.code,
-      region: dept.region,
-      irradiation: dept.irradiation,
-    };
-    setCity(cityFromDept);
-    setQuery(`${dept.code} — ${dept.name}`);
-    setShowSuggestions(false);
-    setStep(2);
-  };
-
-  const results = useMemo(() => {
-    if (!city || !orientation || !consoMensuelle) return null;
-    const orientData = ORIENTATIONS.find(o => o.value === orientation);
-    if (!orientData) return null;
-
-    return KITS.map(kit => {
-      const production = kit.power * city.irradiation * orientData.coeff * 0.85;
-      const économies = production * TARIF_KWH;
-      const roi = kit.price / économies;
-      const score = Math.min(100, Math.round((économies / kit.price) * 100 * 3.5));
-      return { ...kit, production: Math.round(production), économies: Math.round(économies), roi: parseFloat(roi.toFixed(1)), score };
-    }).sort((a, b) => b.score - a.score);
-  }, [city, orientation, consoMensuelle]);
-
-  const bestKit = results?.[0];
-
-  const handleShare = () => {
-    const url = window.location.origin + '/calculateur';
-    const text = city && bestKit
-      ? `Mon balcon à ${city.name} à un score solaire de ${bestKit.score}/100 ! Je peux économiser ${bestKit.économies}\u20ac/an avec un kit solaire. Testez le votre :`
-      : 'Calculez combien vous pouvez économiser avec un panneau solaire sur votre balcon :';
-    if (navigator.share) {
-      navigator.share({ title: 'MonBalconSolaire - Score solaire', text, url });
-    } else {
-      navigator.clipboard.writeText(`${text} ${url}`);
-      setShareStatus('copied');
-      setTimeout(() => setShareStatus('idle'), 2000);
-    }
-  };
-
-  useEffect(() => {
-    const handleClickOutside = () => setShowSuggestions(false);
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+  const goStep = useCallback((n: number) => {
+    setStep(n);
+    if (n > 1 && n <= 6) gtag('calculator_step_completed', { step: n - 1 });
   }, []);
+
+  const selectDept = (code: string, name: string) => {
+    setDeptCode(code);
+    setQuery(`${code} \u2014 ${name}`);
+    setShowSuggestions(false);
+    goStep(2);
+  };
+
+  const selectOrientation = (v: string) => { setOrientation(v); goStep(3); };
+  const selectSurface = (v: string) => { setSurface(v); goStep(4); };
+  const selectPresence = (v: string) => { setPresence(v); goStep(5); };
+  const selectBudget = (v: string) => {
+    setBudget(v);
+    goStep(6);
+    gtag('calculator_completed', {
+      department: deptCode, orientation, surface, presence: v, budget: v,
+    });
+  };
+
+  // Update URL on results
+  useEffect(() => {
+    if (step === 6 && deptCode && orientation && surface && presence && budget) {
+      const params = new URLSearchParams({ dept: deptCode, orientation, surface, presence, budget });
+      if (prefilledKit) params.set('kit', prefilledKit);
+      router.replace(`/calculateur?${params.toString()}`, { scroll: false });
+    }
+  }, [step, deptCode, orientation, surface, presence, budget, prefilledKit, router]);
+
+  // ─── Recommendation engine ──────────────────────────────
+  const recommendations = useMemo(() => {
+    if (step < 6 || !dept) return null;
+    const orientData = ORIENTATIONS.find(o => o.value === orientation);
+    const presenceData = PRESENCES.find(p => p.value === presence);
+    const budgetData = BUDGETS.find(b => b.value === budget);
+    if (!orientData || !presenceData || !budgetData) return null;
+
+    const surfaceAllowed = SURFACE_COMPAT[surface] || SURFACE_COMPAT['medium'];
+
+    const scored = KITS
+      .filter(k => surfaceAllowed.includes(k.minWidth) && k.price <= budgetData.max)
+      .map(k => {
+        const ac = forceAutoconso60 ? 0.60 : (k.hasBattery ? presenceData.autoconsoB : presenceData.autoconso);
+        const input: CalcInput = {
+          kitPriceEur: k.price,
+          kitPowerWc: k.power,
+          productibleKwhPerKwc: dept.irradiation,
+          orientationCoef: orientData.coeff,
+          hasBattery: k.hasBattery,
+          includeInflation: !noInflation,
+          autoconsoOverride: ac,
+        };
+        const production = calculateProductionKwh(input);
+        const firstYear = Math.round(calculateFirstYearSavings(input));
+        const roi = calculateROIYears(input);
+        const total25 = calculateTotalSavings25Years(input);
+        return { ...k, production, firstYear, roi, total25, autoconso: ac };
+      })
+      .sort((a, b) => a.roi - b.roi);
+
+    if (scored.length === 0) return { picks: [], others: [], all: scored };
+
+    const picks: Array<typeof scored[0] & { label: string; reasons: string[] }> = [];
+    const used = new Set<string>();
+
+    // Best choice = best ROI, non-editorial
+    const bestChoice = scored.find(k => !k.editorial && !used.has(k.id));
+    if (bestChoice) {
+      used.add(bestChoice.id);
+      const reasons: string[] = [];
+      if (orientData.coeff >= 0.95) reasons.push('Adapt\u00e9 \u00e0 votre exposition ' + orientData.label.toLowerCase());
+      if (presenceData.autoconso >= 0.75) reasons.push('ROI optimis\u00e9 gr\u00e2ce \u00e0 votre pr\u00e9sence en journ\u00e9e');
+      if (bestChoice.roi <= 7) reasons.push('Rentabilis\u00e9 en moins de 7 ans');
+      if (reasons.length === 0) reasons.push('Meilleur retour sur investissement pour votre profil');
+      picks.push({ ...bestChoice, label: 'Meilleur choix', reasons });
+      gtag('kit_recommended', { product_name: bestChoice.name, position: 'best_choice', roi_years: bestChoice.roi });
+    }
+
+    // Best price = cheapest
+    const bestPrice = scored.filter(k => !used.has(k.id)).sort((a, b) => a.price - b.price)[0];
+    if (bestPrice && bestPrice.id !== bestChoice?.id) {
+      used.add(bestPrice.id);
+      picks.push({ ...bestPrice, label: 'Meilleur prix', reasons: ['Le kit le moins cher qui correspond \u00e0 votre profil', `ROI de ${bestPrice.roi} ans pour seulement ${bestPrice.price} \u20ac`] });
+      gtag('kit_recommended', { product_name: bestPrice.name, position: 'best_price', roi_years: bestPrice.roi });
+    }
+
+    // Best storage = best ROI among battery kits
+    const bestStorage = scored.filter(k => k.hasBattery && !used.has(k.id)).sort((a, b) => a.roi - b.roi)[0];
+    if (bestStorage) {
+      used.add(bestStorage.id);
+      picks.push({ ...bestStorage, label: 'Avec stockage', reasons: ['Batterie int\u00e9gr\u00e9e : consommez le soir', `Autoconsommation ${Math.round(bestStorage.autoconso * 100)}% vs ${Math.round((presenceData.autoconso) * 100)}% sans batterie`] });
+      gtag('kit_recommended', { product_name: bestStorage.name, position: 'best_storage', roi_years: bestStorage.roi });
+    }
+
+    // Others = editorial kits that match but not picked
+    const others = scored.filter(k => k.editorial && !used.has(k.id));
+
+    // If prefilled kit, put it first
+    if (prefilledKit) {
+      const idx = picks.findIndex(p => p.id === prefilledKit);
+      if (idx > 0) { const [item] = picks.splice(idx, 1); picks.unshift(item); }
+    }
+
+    return { picks, others, all: scored };
+  }, [step, dept, orientation, presence, budget, surface, noInflation, forceAutoconso60, prefilledKit]);
+
+  const totalSteps = prefilledKit ? 3 : 5;
+  const displayStep = prefilledKit ? Math.min(step, 4) : step;
+  const progressPct = Math.min(((displayStep - 1) / totalSteps) * 100, 100);
+
+  // If prefilled kit, skip surface + budget
+  useEffect(() => {
+    if (prefilledKit && step === 3 && !surface) { setSurface('medium'); }
+    if (prefilledKit && step === 4 && !budget) { setBudget('none'); }
+    if (prefilledKit && step === 3 && surface) { goStep(4); }
+    if (prefilledKit && step === 4 && budget) { goStep(6); }
+  }, [prefilledKit, step, surface, budget, goStep]);
+
+  const presenceLabel = PRESENCES.find(p => p.value === presence)?.label || '';
+  const orientLabel = ORIENTATIONS.find(o => o.value === orientation)?.label || '';
 
   return (
     <section className="section-padding">
       <div className="container-brand max-w-2xl">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <div className="badge-amber mb-4 inline-block">Calculateur gratuit</div>
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Votre balcon est-il rentable pour le solaire ?</h1>
-          <p className="text-charcoal-light">Répondez à 3 questions simples. Résultat en 30 secondes.</p>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+            {step < 6 ? 'Trouvez le kit solaire id\u00e9al pour votre balcon' : 'Vos r\u00e9sultats personnalis\u00e9s'}
+          </h1>
+          {step < 6 && <p className="text-charcoal-light">R&eacute;pondez &agrave; {totalSteps} questions. R&eacute;sultat en 30 secondes.</p>}
         </div>
 
-        <div className="flex items-center gap-3 mb-8">
-          {[1, 2, 3].map(s => (
-            <div key={s} className="flex-1">
-              <div className={`h-1.5 rounded-full transition-all duration-500 ${step >= s ? 'bg-gradient-to-r from-amber to-amber-light' : 'bg-border'}`} />
+        {/* Progress bar */}
+        {step < 6 && (
+          <div className="mb-8">
+            <div className="h-1.5 bg-border rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-amber to-green rounded-full transition-all duration-500" style={{ width: `${progressPct}%` }} />
             </div>
-          ))}
-          <span className="text-xs text-stone font-mono font-medium ml-2">{step <= 3 ? `${step}/3` : 'Résultats'}</span>
-        </div>
+            <div className="text-xs text-stone text-right mt-1 font-mono">{Math.min(displayStep, totalSteps)}/{totalSteps}</div>
+          </div>
+        )}
 
-        {/* STEP 1: Département */}
+        {/* STEP 1: D\u00e9partement */}
         {step === 1 && (
-          <div className="card-lg">
-            <label htmlFor="dept-input" className="font-bold text-xl mb-2 block">Quel est votre département ?</label>
-            <p id="dept-hint" className="text-sm text-stone mb-6">Tapez le numéro (ex : 75) ou le nom de votre département.</p>
-
+          <div className="card-lg reveal">
+            <label htmlFor="dept-input" className="font-bold text-xl mb-2 block">Quel est votre d&eacute;partement ?</label>
+            <p className="text-sm text-stone mb-6">Tapez le num&eacute;ro ou le nom de votre d&eacute;partement.</p>
             <div className="relative" onClick={e => e.stopPropagation()}>
               <input
-                ref={inputRef}
                 id="dept-input"
                 type="text"
-                placeholder="Ex : 75, Paris, 13, Bouches-du-Rhône..."
+                placeholder="Ex : 75, Paris, 13, Bouches-du-Rh\u00f4ne..."
                 value={query}
-                onChange={e => { setQuery(e.target.value); setShowSuggestions(true); setCity(null); }}
+                onChange={e => { setQuery(e.target.value); setShowSuggestions(true); }}
                 onFocus={() => setShowSuggestions(true)}
                 className="w-full p-4 rounded-brand border border-border bg-cream text-base font-medium focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
                 autoComplete="off"
-                role="combobox"
-                aria-expanded={showSuggestions && filteredDepartments.length > 0}
-                aria-controls="dept-listbox"
-                aria-describedby="dept-hint"
-                aria-autocomplete="list"
               />
-              {showSuggestions && filteredDepartments.length > 0 && (
-                <div id="dept-listbox" role="listbox" aria-label="Départements" className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 overflow-hidden max-h-80 overflow-y-auto">
-                  {filteredDepartments.map((d) => (
-                    <button
-                      key={d.code}
-                      role="option"
-                      aria-selected={city?.department === d.code}
-                      onClick={() => handleDepartmentSelect(d)}
-                      className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0"
-                    >
-                      <div>
-                        <span className="font-mono text-sm text-amber-dark font-semibold mr-2">{d.code}</span>
-                        <span className="font-semibold text-sm">{d.name}</span>
-                        <span className="text-xs text-stone ml-2">— {d.region}</span>
-                      </div>
-                      <span className="text-xs font-mono text-green whitespace-nowrap">{d.irradiation} kWh/kWc</span>
+              {showSuggestions && filteredDepts.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 max-h-80 overflow-y-auto">
+                  {filteredDepts.map(d => (
+                    <button key={d.code} onClick={() => selectDept(d.code, d.name)} className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0">
+                      <div><span className="font-mono text-sm text-amber-dark font-semibold mr-2">{d.code}</span><span className="font-semibold text-sm">{d.name}</span></div>
+                      <span className="text-xs font-mono text-green">{d.irradiation} kWh</span>
                     </button>
                   ))}
                 </div>
               )}
-              {query.length >= 1 && filteredDepartments.length === 0 && showSuggestions && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand p-4 z-10">
-                  <p className="text-sm text-stone">Aucun département trouvé. Essayez un code (ex : 75) ou un nom.</p>
-                </div>
-              )}
             </div>
-
-            <p className="text-xs text-stone mt-3 text-center leading-relaxed">
-              96 départements français couverts — données <strong>PVGIS officielles</strong>.<br />
-              <span className="text-stone-light">Votre département suffit : l&apos;irradiation varie de moins de 3 % entre une ville et son département.</span>
-            </p>
-
-            {city && (
-              <div className="mt-4 card bg-green-pale/30 border-green/10">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <span className="font-mono text-sm text-amber-dark font-semibold mr-2">{city.department}</span>
-                    <span className="font-semibold text-sm">{city.name}</span>
-                    <span className="text-xs text-stone ml-2">{city.region}</span>
-                  </div>
-                  <span className="font-mono text-sm text-green font-medium">{city.irradiation} kWh/kWc/an</span>
-                </div>
-              </div>
-            )}
           </div>
         )}
 
         {/* STEP 2: Orientation */}
         {step === 2 && (
-          <div className="card-lg">
+          <div className="card-lg reveal">
             <h2 className="font-bold text-xl mb-2">Quelle est l&apos;orientation de votre balcon ?</h2>
-            <p className="text-sm text-stone mb-6">L&apos;orientation determine combien de soleil votre panneau recevra.</p>
+            <p className="text-sm text-stone mb-6">L&apos;orientation d&eacute;termine combien de soleil votre panneau re&ccedil;oit.</p>
             <div className="grid grid-cols-2 gap-3">
               {ORIENTATIONS.map(o => (
-                <button
-                  key={o.value}
-                  onClick={() => { setOrientation(o.value); setStep(3); }}
-                  className={`text-left p-4 rounded-brand border transition-all duration-200 hover:border-green hover:bg-green-pale ${orientation === o.value ? 'border-green bg-green-pale' : 'border-border bg-cream'}`}
-                >
+                <button key={o.value} onClick={() => selectOrientation(o.value)} className="text-left p-4 rounded-brand border border-border bg-cream hover:border-green hover:bg-green-pale transition-all">
                   <span className="text-xl mb-1 block">{o.emoji}</span>
                   <span className="font-semibold text-sm">{o.label}</span>
-                  <span className="block text-xs text-stone mt-1">{o.desc}</span>
                 </button>
               ))}
             </div>
-            <button onClick={() => setStep(1)} className="text-sm text-stone hover:text-green mt-4">&larr; Retour</button>
+            <button onClick={() => goStep(1)} className="text-sm text-stone hover:text-green mt-4">&larr; Retour</button>
           </div>
         )}
 
-        {/* STEP 3: Consumption */}
-        {step === 3 && (
-          <div className="card-lg">
-            <label htmlFor="conso-input" className="font-bold text-xl mb-2 block">Quelle est votre facture EDF mensuelle ?</label>
-            <p id="conso-hint" className="text-sm text-stone mb-6">Une estimation suffit. Nous l&apos;utilisons pour calculer le % de couverture.</p>
-            <div className="relative mb-6">
-              <input
-                id="conso-input"
-                type="number"
-                placeholder="Ex : 80"
-                value={consoMensuelle}
-                onChange={e => setConsoMensuelle(e.target.value)}
-                aria-describedby="conso-hint"
-                aria-required="true"
-                className="w-full p-4 pr-16 rounded-brand border border-border bg-cream text-lg font-semibold focus:outline-none focus:border-green focus:ring-2 focus:ring-green/20 transition-all"
-              />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-stone font-medium">&euro;/mois</span>
-            </div>
-            <div className="flex gap-2 mb-6">
-              {['50', '80', '120', '160'].map(v => (
-                <button key={v} onClick={() => setConsoMensuelle(v)} className="px-4 py-2 rounded-lg bg-cream border border-border text-sm font-medium hover:border-green hover:bg-green-pale transition-all">{v}&euro;</button>
+        {/* STEP 3: Surface */}
+        {step === 3 && !prefilledKit && (
+          <div className="card-lg reveal">
+            <h2 className="font-bold text-xl mb-2">Quelle surface disponible ?</h2>
+            <p className="text-sm text-stone mb-6">La largeur de votre balcon ou terrasse.</p>
+            <div className="grid grid-cols-2 gap-3">
+              {SURFACES.map(s => (
+                <button key={s.value} onClick={() => selectSurface(s.value)} className="text-left p-4 rounded-brand border border-border bg-cream hover:border-green hover:bg-green-pale transition-all">
+                  <span className="text-xl mb-1 block">{s.emoji}</span>
+                  <span className="font-semibold text-sm">{s.label}</span>
+                </button>
               ))}
             </div>
-            <button
-              onClick={() => consoMensuelle && setStep(4)}
-              disabled={!consoMensuelle}
-              className="btn-primary w-full justify-center disabled:opacity-40 disabled:cursor-not-allowed text-base py-4"
-            >
-              Voir mes résultats &rarr;
-            </button>
-            <button onClick={() => setStep(2)} className="text-sm text-stone hover:text-green mt-4 block">&larr; Retour</button>
+            <button onClick={() => goStep(2)} className="text-sm text-stone hover:text-green mt-4">&larr; Retour</button>
+          </div>
+        )}
+
+        {/* STEP 4: Pr\u00e9sence */}
+        {step === 4 && (
+          <div className="card-lg reveal">
+            <h2 className="font-bold text-xl mb-2">&Ecirc;tes-vous chez vous en journ&eacute;e ?</h2>
+            <p className="text-sm text-stone mb-6">D&eacute;termine votre taux d&apos;autoconsommation (= combien de solaire vous utilisez vraiment).</p>
+            <div className="space-y-3">
+              {PRESENCES.map(p => (
+                <button key={p.value} onClick={() => selectPresence(p.value)} className="w-full text-left p-4 rounded-brand border border-border bg-cream hover:border-green hover:bg-green-pale transition-all">
+                  <span className="font-semibold text-sm block">{p.label}</span>
+                  <span className="text-xs text-stone">{p.desc}</span>
+                </button>
+              ))}
+            </div>
+            <button onClick={() => goStep(prefilledKit ? 2 : 3)} className="text-sm text-stone hover:text-green mt-4">&larr; Retour</button>
+          </div>
+        )}
+
+        {/* STEP 5: Budget */}
+        {step === 5 && !prefilledKit && (
+          <div className="card-lg reveal">
+            <h2 className="font-bold text-xl mb-2">Quel est votre budget maximum ?</h2>
+            <p className="text-sm text-stone mb-6">On vous recommandera uniquement des kits dans votre enveloppe.</p>
+            <div className="grid grid-cols-2 gap-3">
+              {BUDGETS.map(b => (
+                <button key={b.value} onClick={() => selectBudget(b.value)} className="text-left p-4 rounded-brand border border-border bg-cream hover:border-green hover:bg-green-pale transition-all">
+                  <span className="font-semibold text-sm">{b.label}</span>
+                </button>
+              ))}
+            </div>
+            <button onClick={() => goStep(4)} className="text-sm text-stone hover:text-green mt-4">&larr; Retour</button>
           </div>
         )}
 
         {/* RESULTS */}
-        {step === 4 && results && bestKit && (
-          <div className="space-y-6">
-            <div className="card-lg bg-gradient-to-br from-amber-pale via-white to-green-pale/30 border-amber/15">
-              <div className="text-center">
-                <p className="text-sm text-stone font-medium mb-2">Score solaire de votre balcon {city && <>a <strong>{city.name}</strong></>}</p>
-                <div className="text-6xl font-extrabold text-amber-dark font-sans mb-1">{bestKit.score}<span className="text-2xl text-stone font-normal">/100</span></div>
-                {city && <p className="text-xs text-stone mt-1">Orientation {orientation} &middot; {city.irradiation} kWh/kWc/an</p>}
-                <div className="w-full max-w-xs mx-auto mt-4 mb-2">
-                  <div className="h-3 bg-amber/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-amber to-amber-light rounded-full" style={{ width: `${bestKit.score}%` }} />
-                  </div>
-                  <div className="flex justify-between mt-1 text-[11px] text-stone"><span>Faible</span><span>Excellent</span></div>
-                </div>
-                <p className="text-sm text-charcoal-light mt-4">
-                  {bestKit.score >= 70 ? 'Excellent potentiel solaire ! Un kit serait tres rentable.'
-                    : bestKit.score >= 40 ? 'Potentiel correct. Un kit peut etre intéressant avec le bon choix.'
-                    : 'Potentiel limite. L\'orientation réduit significativement la production.'}
-                </p>
+        {step === 6 && recommendations && (
+          <div className="space-y-6 reveal">
+            {/* Profile recap */}
+            <div className="card bg-cream/50 text-sm text-charcoal-light">
+              <strong className="text-charcoal">Votre profil :</strong> {dept?.name} ({deptCode}), orientation {orientLabel.toLowerCase()}, {presenceLabel.toLowerCase()}{budget !== 'none' ? `, budget \u2264 ${BUDGETS.find(b => b.value === budget)?.label.replace('Moins de ', '').replace('Pas de limite', '')}` : ''}
+            </div>
+
+            {/* No results */}
+            {recommendations.picks.length === 0 && (
+              <div className="card-lg text-center">
+                <p className="text-lg font-bold mb-2">Aucun kit ne correspond exactement</p>
+                <p className="text-sm text-charcoal-light mb-4">Votre combinaison surface/budget est tr&egrave;s contrainte. Consid&eacute;rez le Beem Kit 300W (299 &euro;) comme point d&apos;entr&eacute;e universel.</p>
+                <Link href="/avis/beem-kit-300w" className="btn-primary inline-flex text-sm">Voir le Beem Kit 300W &rarr;</Link>
               </div>
-            </div>
+            )}
 
-            <div className="grid grid-cols-3 gap-4">
-              {[
-                { v: `${bestKit.production}`, u: 'kWh/an produits', c: 'text-green' },
-                { v: `${bestKit.économies}\u20ac`, u: 'économies/an', c: 'text-amber-dark' },
-                { v: `${bestKit.roi}`, u: 'ans de ROI', c: 'text-green' },
-              ].map((s, i) => (
-                <div key={i} className="card text-center">
-                  <div className={`font-mono font-medium text-2xl ${s.c}`}>{s.v}</div>
-                  <div className="text-xs text-stone mt-1 font-medium">{s.u}</div>
-                </div>
-              ))}
-            </div>
+            {/* Kit cards */}
+            {recommendations.picks.length > 0 && (
+              <div className="grid md:grid-cols-3 gap-4">
+                {recommendations.picks.map((kit, i) => (
+                  <div key={kit.id} className={`card-lg flex flex-col ${i === 0 ? 'border-green/30 bg-green-pale/10 md:scale-[1.02]' : ''}`}>
+                    <div className={`text-[10px] font-bold uppercase tracking-widest mb-3 ${i === 0 ? 'text-green' : 'text-amber-dark'}`}>
+                      {i === 0 ? '\ud83e\udd47' : i === 1 ? '\ud83e\udd48' : '\ud83e\udd49'} {kit.label}
+                    </div>
+                    <h3 className="font-bold text-base mb-0.5">{kit.name}</h3>
+                    <p className="text-xs text-stone mb-3">{kit.brand}</p>
 
-            <div>
-              <h3 className="font-bold text-lg mb-4">Kits recommandés pour votre balcon</h3>
-              <div className="space-y-3">
-                {results.map((kit, i) => (
-                  <Link key={i} href={KIT_SLUGS[kit.name] || '/quel-kit-choisir'} className={`card flex items-center gap-4 hover:shadow-brand-lg transition-all group ${i === 0 ? 'border-green/30 bg-green-pale/30' : ''}`}>
-                    {i === 0 && <div className="badge-green text-[10px]">Recommandé</div>}
-                    <div className="flex-1">
-                      <div className="font-bold group-hover:text-green transition-colors">{kit.name}</div>
-                      <div className="text-xs text-stone">{kit.brand} — {kit.power * 1000} Wc</div>
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className="font-mono font-extrabold text-2xl text-green">{kit.roi}&thinsp;ans</span>
+                      <span className="text-xs text-stone">de ROI</span>
                     </div>
-                    <div className="text-right">
-                      <div className="font-mono font-medium text-green">{kit.price}&euro;</div>
-                      <div className="text-xs text-stone">{kit.économies}&euro;/an</div>
+                    <div className="text-xs text-charcoal-light mb-3">
+                      {kit.firstYear}&thinsp;&euro;/an d&apos;&eacute;conomies &middot; {kit.total25.toLocaleString('fr-FR')}&thinsp;&euro; sur 25 ans
                     </div>
-                    <span className="text-green text-sm font-semibold hidden md:inline">&rarr;</span>
-                  </Link>
+
+                    <ul className="text-xs text-charcoal-light space-y-1 mb-4 flex-1">
+                      {kit.reasons.map((r, j) => (
+                        <li key={j} className="flex items-start gap-1.5"><span className="text-green font-bold mt-0.5">&check;</span>{r}</li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-auto space-y-2">
+                      <div className="font-mono font-bold text-lg text-center mb-2">{kit.price}&thinsp;&euro;</div>
+                      {kit.affiliateUrl ? (
+                        <AffiliateCTA
+                          productName={kit.name}
+                          merchantName={kit.brand}
+                          affiliateUrl={kit.affiliateUrl}
+                          label={`Voir le prix sur ${kit.brand}`}
+                          variant="primary"
+                          position="calculator_result"
+                        />
+                      ) : (
+                        <Link href={kit.slug} className="btn-primary w-full justify-center text-sm inline-flex">Voir l&apos;avis complet &rarr;</Link>
+                      )}
+                      <Link href={kit.slug} className="text-green text-xs font-semibold hover:underline block text-center">Lire l&apos;avis complet &rarr;</Link>
+                    </div>
+                  </div>
                 ))}
               </div>
-            </div>
+            )}
 
-            {/* Share button */}
-            <div className="flex gap-3">
-              <button onClick={handleShare} className="btn-secondary flex-1 justify-center text-sm">
-                {shareStatus === 'copied' ? '\u2705 Lien copie !' : '\ud83d\udcf2 Partager mes résultats'}
+            {/* Other kits (editorial) */}
+            {recommendations.others.length > 0 && (
+              <div className="mt-6">
+                <h3 className="font-bold text-sm mb-3 text-stone">Autres kits &agrave; consid&eacute;rer</h3>
+                <div className="space-y-2">
+                  {recommendations.others.map(k => (
+                    <Link key={k.id} href={k.slug} className="card flex items-center justify-between hover:shadow-brand-lg transition-all group py-3 px-5">
+                      <div>
+                        <span className="font-semibold text-sm group-hover:text-green transition-colors">{k.name}</span>
+                        <span className="text-xs text-stone ml-2">{k.price} &euro; &middot; ROI {k.roi} ans</span>
+                      </div>
+                      <span className="text-xs text-amber-dark">{k.editorial}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Adjust assumptions */}
+            <details className="card mt-6">
+              <summary className="font-semibold text-sm cursor-pointer list-none flex items-center justify-between">
+                Ajuster les hypoth&egrave;ses de calcul
+                <span className="text-stone text-xs">&#9660;</span>
+              </summary>
+              <div className="mt-4 space-y-3">
+                <label className="flex items-center gap-3 text-sm text-charcoal-light cursor-pointer">
+                  <input type="checkbox" checked={noInflation} onChange={e => setNoInflation(e.target.checked)} className="w-4 h-4 rounded border-border text-green focus:ring-green" />
+                  D&eacute;sactiver l&apos;inflation kWh (mode prudent)
+                </label>
+                <label className="flex items-center gap-3 text-sm text-charcoal-light cursor-pointer">
+                  <input type="checkbox" checked={forceAutoconso60} onChange={e => setForceAutoconso60(e.target.checked)} className="w-4 h-4 rounded border-border text-green focus:ring-green" />
+                  Forcer autoconsommation &agrave; 60% (pire sc&eacute;nario)
+                </label>
+                <p className="text-[10px] text-stone">
+                  Hypoth&egrave;ses par d&eacute;faut : inflation 3,3%/an (CRE 2012-2026), Performance Ratio 0,85, autoconsommation selon votre profil. <Link href="/methodologie" className="text-green hover:underline">Voir notre m&eacute;thodologie</Link>.
+                </p>
+              </div>
+            </details>
+
+            {/* Actions */}
+            <div className="flex gap-3 mt-4">
+              <button onClick={() => { setStep(1); setDeptCode(''); setQuery(''); setOrientation(''); setSurface(''); setPresence(''); setBudget(''); }} className="btn-secondary flex-1 justify-center text-sm">
+                Recommencer
               </button>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="btn-primary flex-1 justify-center text-sm">
-                Voir le comparatif &rarr;
+                Voir le comparatif complet &rarr;
               </Link>
             </div>
 
-            <p className="text-xs text-stone-light text-center leading-relaxed">
-              Estimation bas&eacute;e sur les donn&eacute;es PVGIS (Commission europ&eacute;enne) et le tarif EDF de 0,1940 &euro;/kWh (mai 2026).{' '}
-              <button onClick={() => { setStep(1); setCity(null); setQuery(''); setOrientation(''); setConsoMensuelle(''); }} className="text-green hover:underline">&circlearrowleft; Recommencer</button>
+            <p className="text-[10px] text-stone text-center mt-4">
+              Calcul bas&eacute; sur les donn&eacute;es PVGIS, tarif EDF 0,1940 &euro;/kWh, inflation 3,3%/an (CRE). <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie compl&egrave;te</Link>.
             </p>
           </div>
         )}
