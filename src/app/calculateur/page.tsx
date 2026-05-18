@@ -169,8 +169,12 @@ function CalculateurPage() {
 
     const surfaceAllowed = SURFACE_COMPAT[surface] || SURFACE_COMPAT['medium'];
 
+    // Score ALL kits that fit surface (include +15% over budget for "stretch" kits)
+    const budgetMax = budgetData.max;
+    const budgetStretch = Math.round(budgetMax * 1.15);
+
     const scored = KITS
-      .filter(k => surfaceAllowed.includes(k.minWidth) && k.price <= budgetData.max)
+      .filter(k => surfaceAllowed.includes(k.minWidth) && k.price <= budgetStretch)
       .map(k => {
         const ac = forceAutoconso60 ? 0.60 : (k.hasBattery ? presenceData.autoconsoB : presenceData.autoconso);
         const input: CalcInput = {
@@ -186,17 +190,24 @@ function CalculateurPage() {
         const firstYear = Math.round(calculateFirstYearSavings(input));
         const roi = calculateROIYears(input);
         const total25 = calculateTotalSavings25Years(input);
-        return { ...k, production, firstYear, roi, total25, autoconso: ac };
+        const overBudget = k.price > budgetMax;
+        return { ...k, production, firstYear, roi, total25, autoconso: ac, overBudget };
       })
       .sort((a, b) => a.roi - b.roi);
 
-    if (scored.length === 0) return { picks: [], others: [], all: scored };
+    // Check honesty threshold: if best ROI > 12, recommend against
+    const bestRoi = scored.length > 0 ? scored[0].roi : 99;
+    const honestNo = bestRoi > 12;
+
+    if (scored.length === 0 || honestNo) {
+      return { picks: [], others: [], all: scored, honestNo: true, orientation: orientData.label, presence: presenceData.label };
+    }
 
     const picks: Array<typeof scored[0] & { label: string; reasons: string[] }> = [];
     const used = new Set<string>();
 
-    // Best choice = best ROI, non-editorial
-    const bestChoice = scored.find(k => !k.editorial && !used.has(k.id));
+    // Best choice = best ROI, non-editorial, within budget
+    const bestChoice = scored.find(k => !k.editorial && !k.overBudget && !used.has(k.id));
     if (bestChoice) {
       used.add(bestChoice.id);
       const reasons: string[] = [];
@@ -208,19 +219,21 @@ function CalculateurPage() {
       gtag('kit_recommended', { product_name: bestChoice.name, position: 'best_choice', roi_years: bestChoice.roi });
     }
 
-    // Best price = cheapest
-    const bestPrice = scored.filter(k => !used.has(k.id)).sort((a, b) => a.price - b.price)[0];
-    if (bestPrice && bestPrice.id !== bestChoice?.id) {
+    // Best price = cheapest NOT already used
+    const bestPrice = scored.filter(k => !used.has(k.id) && !k.overBudget).sort((a, b) => a.price - b.price)[0];
+    if (bestPrice) {
       used.add(bestPrice.id);
-      picks.push({ ...bestPrice, label: 'Meilleur prix', reasons: ['Le kit le moins cher qui correspond \u00e0 votre profil', `ROI de ${bestPrice.roi} ans pour seulement ${bestPrice.price} \u20ac`] });
+      picks.push({ ...bestPrice, label: 'Meilleur prix', reasons: ['Le kit le moins cher pour votre profil', `ROI de ${bestPrice.roi} ans pour seulement ${bestPrice.price} \u20ac`] });
       gtag('kit_recommended', { product_name: bestPrice.name, position: 'best_price', roi_years: bestPrice.roi });
     }
 
-    // Best storage = best ROI among battery kits
+    // Best storage = best ROI among battery kits NOT already used (include stretch budget)
     const bestStorage = scored.filter(k => k.hasBattery && !used.has(k.id)).sort((a, b) => a.roi - b.roi)[0];
     if (bestStorage) {
       used.add(bestStorage.id);
-      picks.push({ ...bestStorage, label: 'Avec stockage', reasons: ['Batterie int\u00e9gr\u00e9e : consommez le soir', `Autoconsommation ${Math.round(bestStorage.autoconso * 100)}% vs ${Math.round((presenceData.autoconso) * 100)}% sans batterie`] });
+      const storageReasons = ['Batterie int\u00e9gr\u00e9e : consommez le soir', `Autoconsommation ${Math.round(bestStorage.autoconso * 100)}% vs ${Math.round((presenceData.autoconso) * 100)}% sans batterie`];
+      if (bestStorage.overBudget) storageReasons.push(`L\u00e9g\u00e8rement au-dessus de votre budget (${bestStorage.price} \u20ac)`);
+      picks.push({ ...bestStorage, label: 'Avec stockage', reasons: storageReasons });
       gtag('kit_recommended', { product_name: bestStorage.name, position: 'best_storage', roi_years: bestStorage.roi });
     }
 
@@ -377,12 +390,32 @@ function CalculateurPage() {
               <strong className="text-charcoal">Votre profil :</strong> {dept?.name} ({deptCode}), orientation {orientLabel.toLowerCase()}, {presenceLabel.toLowerCase()}{budget !== 'none' ? `, budget \u2264 ${BUDGETS.find(b => b.value === budget)?.label.replace('Moins de ', '').replace('Pas de limite', '')}` : ''}
             </div>
 
-            {/* No results */}
-            {recommendations.picks.length === 0 && (
+            {/* Honest no-go */}
+            {recommendations.picks.length === 0 && recommendations.honestNo && (
+              <div className="card-lg border-l-4 border-l-amber">
+                <h2 className="font-bold text-lg mb-3">Dans votre cas, un kit solaire balcon n&apos;est probablement pas rentable</h2>
+                <p className="text-sm text-charcoal-light leading-relaxed mb-4">
+                  Avec votre configuration (orientation {orientLabel.toLowerCase()}, {presenceLabel.toLowerCase()}), le ROI d&eacute;passerait <strong>12 ans</strong>, ce qui n&apos;est pas raisonnable pour un kit plug-and-play.
+                </p>
+                <p className="text-sm text-charcoal-light leading-relaxed mb-4">Avant d&apos;investir, nous vous recommandons de :</p>
+                <ul className="text-sm text-charcoal-light space-y-2 mb-6">
+                  <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> V&eacute;rifier si vous avez une exposition alternative exploitable</li>
+                  <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> Comparer avec une batterie virtuelle EDF (sans investissement mat&eacute;riel)</li>
+                  <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> <Link href="/blog/panneau-solaire-balcon-nord" className="text-green hover:underline">Lire notre guide sur les balcons nord et peu expos&eacute;s</Link></li>
+                </ul>
+                <p className="text-sm text-charcoal-light mb-4">
+                  Si vous voulez quand m&ecirc;me tester pour des raisons &eacute;cologiques, le Beem Kit 300W reste accessible &agrave; 299 &euro;.
+                </p>
+                <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="secondary" position="calculator_fallback" />
+              </div>
+            )}
+
+            {/* No match (budget/surface too restrictive but not honest-no) */}
+            {recommendations.picks.length === 0 && !recommendations.honestNo && (
               <div className="card-lg text-center">
                 <p className="text-lg font-bold mb-2">Aucun kit ne correspond exactement</p>
-                <p className="text-sm text-charcoal-light mb-4">Votre combinaison surface/budget est tr&egrave;s contrainte. Consid&eacute;rez le Beem Kit 300W (299 &euro;) comme point d&apos;entr&eacute;e universel.</p>
-                <Link href="/avis/beem-kit-300w" className="btn-primary inline-flex text-sm">Voir le Beem Kit 300W &rarr;</Link>
+                <p className="text-sm text-charcoal-light mb-4">Votre combinaison surface/budget est tr&egrave;s contrainte. Le Beem Kit 300W (299 &euro;) est le point d&apos;entr&eacute;e le plus accessible.</p>
+                <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="primary" position="calculator_fallback" />
               </div>
             )}
 
@@ -395,7 +428,8 @@ function CalculateurPage() {
                       {i === 0 ? '\ud83e\udd47' : i === 1 ? '\ud83e\udd48' : '\ud83e\udd49'} {kit.label}
                     </div>
                     <h3 className="font-bold text-base mb-0.5">{kit.name}</h3>
-                    <p className="text-xs text-stone mb-3">{kit.brand}</p>
+                    <p className="text-xs text-stone mb-1">{kit.brand}</p>
+                    {kit.overBudget && <p className="text-[10px] text-amber-dark font-semibold mb-2">L&eacute;g&egrave;rement au-dessus de votre budget</p>}
 
                     <div className="flex items-baseline gap-2 mb-1">
                       <span className="font-mono font-extrabold text-2xl text-green">{kit.roi}&thinsp;ans</span>
