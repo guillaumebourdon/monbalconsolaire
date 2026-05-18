@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 erreurs bonus — MonBalconSolaire</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --cream: #FBF8F1;
+    --green: #3D7A4A;
+    --green-light: #5A9E68;
+    --green-pale: #F0F6F1;
+    --amber: #E8961A;
+    --amber-pale: #FEF6E4;
+    --amber-dark: #C47D0E;
+    --charcoal: #2C2C28;
+    --charcoal-light: #4A4A44;
+    --stone: #8A8A80;
+    --border: #E5E0D4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: A4; margin: 0; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 48px 56px;
+    background: var(--cream);
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  /* Cover */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 297mm;
+    padding: 56px;
+    background: linear-gradient(135deg, var(--amber-pale) 0%, var(--cream) 40%, var(--green-pale) 100%);
+  }
+
+  .cover-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--charcoal);
+    padding-bottom: 12px;
+  }
+
+  .logo { font-weight: 800; font-size: 13px; }
+  .logo span { color: var(--amber); }
+  .edition { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone); }
+
+  .cover-title { margin-top: 80px; }
+
+  .cover-title .pre {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--amber-dark);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .cover-title h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-title h1 em { color: var(--amber-dark); font-style: italic; }
+
+  .cover-subtitle {
+    font-size: 16px;
+    color: var(--charcoal-light);
+    margin-top: 24px;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--amber);
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 8px;
+    margin-top: 32px;
+  }
+
+  .cover-footer {
+    border-top: 2px solid var(--charcoal);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 32px;
+    font-size: 10px;
+    color: var(--stone);
+  }
+
+  .page-header .logo-small { font-weight: 800; font-size: 11px; color: var(--charcoal); }
+  .page-header .logo-small span { color: var(--amber); }
+
+  .erreur-block { margin-bottom: 36px; }
+
+  .erreur-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .erreur-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--amber);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .erreur-title { font-size: 20px; font-weight: 800; line-height: 1.2; }
+
+  .erreur-subtitle {
+    font-size: 11px;
+    color: var(--amber-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+  }
+
+  .erreur-body {
+    padding-left: 56px;
+    color: var(--charcoal-light);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .erreur-body p { margin-bottom: 8px; }
+
+  .tip-box {
+    background: var(--green-pale);
+    border-left: 3px solid var(--green);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .tip-box strong { color: var(--green); }
+
+  .warning-box {
+    background: var(--amber-pale);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .warning-box strong { color: var(--amber-dark); }
+
+  .page-num {
+    position: absolute;
+    bottom: 32px;
+    right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--stone);
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="cover-header">
+    <div class="logo">MonBalcon<span>Solaire</span>.fr</div>
+    <div class="edition">Bonus exclusif / 2026</div>
+  </div>
+
+  <div class="cover-title">
+    <div class="pre">— Réservé aux inscrits</div>
+    <h1>Cinq erreurs<br><em>bonus</em><br>que personne<br>ne mentionne</h1>
+    <p class="cover-subtitle">Les erreurs cachées que même les comparateurs sérieux ne couvrent pas. Ce document complète notre guide "7 erreurs à éviter" avec 5 pièges supplémentaires.</p>
+    <div class="cover-badge">Exclusif abonnés</div>
+  </div>
+
+  <div class="cover-footer">
+    <div style="font-size: 12px; color: var(--stone);">Supplément au guide "7 erreurs à éviter"</div>
+    <div style="font-style: italic; font-weight: 700; color: var(--amber); font-size: 16px;">Non publié sur le site.</div>
+  </div>
+</div>
+
+<!-- PAGE 2: Erreurs 8-10 -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-small">MonBalcon<span>Solaire</span></div>
+    <div>5 erreurs bonus — Exclusif abonnés 2026</div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">8</div>
+      <div>
+        <div class="erreur-title">Ne pas vérifier la garantie du micro-onduleur</div>
+        <div class="erreur-subtitle">Le composant le plus fragile du kit</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Tout le monde parle de la garantie du panneau (25-30 ans). Personne ne vérifie celle du <strong>micro-onduleur</strong>, le boîtier qui convertit le courant continu en 230V. C'est pourtant le composant qui tombe en panne en premier.</p>
+      <p>Un micro-onduleur garanti 5 ans vous coûtera un remplacement de 100-150 € autour de l'année 7-8. Un onduleur garanti 25 ans (Sunology, Beem) ne vous coûtera rien.</p>
+      <div class="tip-box">
+        <strong>✓ Le réflexe :</strong> Exigez au minimum 10 ans de garantie sur le micro-onduleur. Les marques sérieuses offrent 25 ans. Si la fiche produit ne mentionne pas la garantie onduleur séparément, c'est mauvais signe.
+      </div>
+    </div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">9</div>
+      <div>
+        <div class="erreur-title">Oublier de déclarer l'installation à l'assureur</div>
+        <div class="erreur-subtitle">Le trou dans la couverture</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Votre assurance habitation couvre les biens mobiliers sur votre balcon. Mais en cas de sinistre (grêle, vol, chute du panneau sur un piéton), l'assureur peut <strong>contester si vous n'avez pas déclaré</strong> l'existence du kit.</p>
+      <p>La déclaration est gratuite — un simple email avec photo suffit. Elle ne modifie généralement pas votre prime.</p>
+      <div class="warning-box">
+        <strong>⚠ Risque réel :</strong> Si votre panneau tombe du 5e étage et blesse quelqu'un, votre responsabilité civile est engagée. Sans déclaration préalable, votre assureur peut refuser de couvrir les dommages. Un email de 2 minutes vous protège.
+      </div>
+    </div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">10</div>
+      <div>
+        <div class="erreur-title">Sous-estimer le poids pour le garde-corps</div>
+        <div class="erreur-subtitle">36 kg sur une rambarde, ça se calcule</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Un kit Sunology PLAY 2 pèse 24 kg. Un DualSun PREASY pèse 36 kg. Ajoutez les ballasts (15-24 kg d'eau ou sable par côté) et vous arrivez à <strong>50-80 kg</strong> concentrés sur une petite surface.</p>
+      <p>Sur un balcon ancien (avant 1990), vérifiez que le garde-corps et la dalle supportent cette charge. En cas de doute, posez le kit au sol plutôt qu'en appui sur la rambarde.</p>
+      <div class="tip-box">
+        <strong>✓ Le réflexe :</strong> Vérifiez visuellement l'état du garde-corps (rouille, scellements). En copropriété, le syndic peut vous renseigner sur la charge admissible. En cas de doute, posez au sol avec inclinaison — c'est même souvent plus productif.
+      </div>
+    </div>
+  </div>
+
+  <div class="page-num">2</div>
+</div>
+
+<!-- PAGE 3: Erreurs 11-12 -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-small">MonBalcon<span>Solaire</span></div>
+    <div>5 erreurs bonus — Exclusif abonnés 2026</div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">11</div>
+      <div>
+        <div class="erreur-title">Ne pas anticiper le remplacement de la batterie</div>
+        <div class="erreur-subtitle">Le coût caché des kits avec stockage</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Les kits avec batterie (Sunology PLAY MAX, Zendure SolarFlow, EcoFlow PowerStream) ont un composant à durée de vie limitée : la batterie. Une batterie LiFePO4 dure 6 000-8 000 cycles, soit <strong>8-12 ans</strong> en usage quotidien. Après, la capacité chute sous 80 %.</p>
+      <p>Le remplacement coûte 300-800 € selon le modèle. Si vous calculez votre ROI sans intégrer ce coût, vous surestimez votre rentabilité de 15-25 %.</p>
+      <div class="tip-box">
+        <strong>✓ Le réflexe :</strong> Pour un calcul honnête, ajoutez le prix d'un remplacement batterie à l'année 10 dans votre calcul sur 25 ans. Si le ROI reste acceptable, foncez. Sinon, un kit sans batterie est plus rentable à long terme.
+      </div>
+    </div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">12</div>
+      <div>
+        <div class="erreur-title">Confondre Wc (puissance crête) et W (puissance réelle)</div>
+        <div class="erreur-subtitle">La confusion qui fausse toutes les attentes</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Un panneau "450 Wc" ne produit <strong>jamais</strong> 450 W en conditions réelles. Le Wc (Watt-crête) correspond aux conditions de test standard : 1 000 W/m² d'ensoleillement, 25°C de température cellule. En vrai, votre panneau produit 300-380 W au meilleur de la journée, et 50-150 W par temps couvert.</p>
+      <p>C'est normal et intégré dans tous les calculs sérieux (coefficient 0,85). Mais si vous comparez votre production réelle au Wc affiché, vous aurez toujours l'impression que "ça ne marche pas aussi bien que promis".</p>
+      <div class="warning-box">
+        <strong>⚠ L'erreur :</strong> Voir 300 W s'afficher sur l'app quand le panneau est marqué 450 Wc, et penser que c'est défaillant. 300 W à midi par beau temps, c'est excellent pour un 450 Wc. C'est 67 % de la crête — pile dans la fourchette attendue.
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, var(--green-pale), #fff, var(--amber-pale)); border-radius: 16px; border: 1px solid rgba(61,122,74,0.1); text-align: center;">
+    <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 12px;">Vous avez les cartes en main.</h2>
+    <p style="font-size: 14px; color: var(--charcoal-light); max-width: 380px; margin: 0 auto 16px;">12 erreurs identifiées. Maintenant, calculez la rentabilité exacte de votre balcon.</p>
+    <strong style="color: var(--green); font-size: 15px;">monbalconsolaire.fr/calculateur</strong>
+  </div>
+
+  <div style="margin-top: 40px; font-size: 11px; color: var(--stone); line-height: 1.6; border-top: 1px solid var(--border); padding-top: 16px;">
+    <strong>Ce document est exclusif aux abonnés MonBalconSolaire.</strong> Merci de ne pas le partager publiquement.<br>
+    © 2026 MonBalconSolaire — Beeleven SASU — contact@monbalconsolaire.fr
+  </div>
+
+  <div class="page-num">3</div>
+</div>
+
+</body>
+</html>

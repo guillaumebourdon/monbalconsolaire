@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 erreurs à éviter avant d'acheter un kit solaire de balcon</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --cream: #FBF8F1;
+    --green: #3D7A4A;
+    --green-light: #5A9E68;
+    --green-pale: #F0F6F1;
+    --amber: #E8961A;
+    --amber-pale: #FEF6E4;
+    --amber-dark: #C47D0E;
+    --charcoal: #2C2C28;
+    --charcoal-light: #4A4A44;
+    --stone: #8A8A80;
+    --border: #E5E0D4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 48px 56px;
+    background: var(--cream);
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  /* Cover page */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 297mm;
+    padding: 56px;
+    background: linear-gradient(135deg, var(--cream) 0%, #fff 50%, var(--green-pale) 100%);
+  }
+
+  .cover-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--charcoal);
+    padding-bottom: 12px;
+  }
+
+  .logo { font-weight: 800; font-size: 13px; }
+  .logo span { color: var(--amber); }
+
+  .edition { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone); }
+
+  .cover-title {
+    margin-top: 80px;
+  }
+
+  .cover-title .pre {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .cover-title h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-title h1 em {
+    color: var(--green);
+    font-style: italic;
+  }
+
+  .cover-subtitle {
+    font-size: 16px;
+    color: var(--charcoal-light);
+    margin-top: 24px;
+    max-width: 380px;
+    line-height: 1.6;
+  }
+
+  .cover-footer {
+    border-top: 2px solid var(--charcoal);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 32px;
+  }
+
+  .cover-stat .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .cover-stat .label {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--stone);
+    margin-top: 4px;
+  }
+
+  .cover-free {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--amber);
+    font-size: 18px;
+  }
+
+  /* Sun decoration */
+  .sun-deco {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,150,26,0.15) 0%, transparent 70%);
+  }
+
+  .sun-circle {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--amber);
+    opacity: 0.2;
+  }
+
+  /* Content pages */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 32px;
+    font-size: 10px;
+    color: var(--stone);
+  }
+
+  .page-header .logo-small { font-weight: 800; font-size: 11px; color: var(--charcoal); }
+  .page-header .logo-small span { color: var(--amber); }
+
+  .erreur-block {
+    margin-bottom: 36px;
+  }
+
+  .erreur-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .erreur-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--green);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .erreur-title {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .erreur-subtitle {
+    font-size: 11px;
+    color: var(--amber-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+  }
+
+  .erreur-body {
+    padding-left: 56px;
+    color: var(--charcoal-light);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .erreur-body p { margin-bottom: 8px; }
+
+  .tip-box {
+    background: var(--green-pale);
+    border-left: 3px solid var(--green);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .tip-box strong { color: var(--green); }
+
+  .warning-box {
+    background: var(--amber-pale);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .warning-box strong { color: var(--amber-dark); }
+
+  /* Back cover */
+  .back-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 297mm;
+    padding: 80px 56px;
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+
+  .back-logo { font-weight: 800; font-size: 20px; margin-bottom: 24px; }
+  .back-logo span { color: var(--amber); }
+
+  .back-cover h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .back-cover p {
+    font-size: 16px;
+    color: rgba(251,248,241,0.7);
+    max-width: 400px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .back-cta {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--green);
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .back-url {
+    margin-top: 32px;
+    font-size: 12px;
+    color: rgba(251,248,241,0.4);
+  }
+
+  .page-num {
+    position: absolute;
+    bottom: 32px;
+    right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--stone);
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="sun-deco"></div>
+  <div class="sun-circle"></div>
+
+  <div class="cover-header">
+    <div class="logo">MonBalcon<span>Solaire</span>.fr</div>
+    <div class="edition">N° 01 / 2026</div>
+  </div>
+
+  <div class="cover-title">
+    <div class="pre">— L'essentiel avant de se lancer</div>
+    <h1>Sept <em>erreurs</em><br>à éviter<br>avant d'acheter<br>un kit solaire<br>de balcon</h1>
+    <p class="cover-subtitle">Les pièges que personne ne vous dit avant d'investir 300 à 900 € dans un kit solaire plug-and-play. Analyse indépendante, sans affiliation cachée.</p>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="num">07</div>
+        <div class="label">Erreurs</div>
+      </div>
+      <div class="cover-stat">
+        <div class="num">15'</div>
+        <div class="label">Lecture</div>
+      </div>
+      <div class="cover-stat">
+        <div class="num">12</div>
+        <div class="label">Pages</div>
+      </div>
+    </div>
+    <div class="cover-free">Gratuit.</div>
+  </div>
+</div>
+
+<!-- PAGE 2-3: Erreurs 1-3 -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-small">MonBalcon<span>Solaire</span></div>
+    <div>7 erreurs à éviter — Guide gratuit 2026</div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">1</div>
+      <div>
+        <div class="erreur-title">Acheter sans vérifier l'orientation du balcon</div>
+        <div class="erreur-subtitle">L'erreur la plus coûteuse</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Un panneau orienté plein sud produit <strong>100 % de son potentiel</strong>. Orienté est ou ouest, il perd 20 %. Orienté nord, il perd 50 % ou plus. Avant d'investir 599 €, sortez la boussole de votre téléphone et vérifiez.</p>
+      <p>Sur un balcon nord, le ROI passe de 7 ans à plus de 14 ans. Autant dire que ce n'est plus rentable sur la durée de vie du kit.</p>
+      <div class="tip-box">
+        <strong>✓ Le réflexe :</strong> Ouvrez l'app Boussole sur votre téléphone, face à votre balcon. Sud = 180°. Si vous êtes entre 135° et 225°, c'est bon. Sinon, utilisez notre calculateur pour vérifier la rentabilité exacte : monbalconsolaire.fr/calculateur
+      </div>
+    </div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">2</div>
+      <div>
+        <div class="erreur-title">Attendre l'indépendance énergétique</div>
+        <div class="erreur-subtitle">L'attente la plus irréaliste</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Un kit solaire de balcon ne vous rendra <strong>jamais autonome</strong>. Un panneau de 450 Wc produit 400-650 kWh/an, soit 10-15 % de la consommation d'un foyer moyen (4 700 kWh). C'est un complément, pas un remplacement.</p>
+      <p>L'objectif réaliste : couvrir votre <strong>talon de consommation</strong> (frigo, box, veilles) pendant les heures ensoleillées. Ça représente 80-130 € d'économies par an, ce qui rentabilise le kit en 5-8 ans.</p>
+      <div class="warning-box">
+        <strong>⚠ Le piège :</strong> Les publicités qui promettent "produisez toute votre électricité" sont mensongères. Un kit de balcon produit l'équivalent de 1 à 2 mois de consommation annuelle, pas 12.
+      </div>
+    </div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">3</div>
+      <div>
+        <div class="erreur-title">Choisir un kit AliExpress ou no-name</div>
+        <div class="erreur-subtitle">L'économie qui coûte cher</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Des kits à 150-200 € existent sur AliExpress et Amazon. Le problème : <strong>pas de certification CE complète</strong> (panneau + onduleur + structure), pas de garantie applicable en France, pas de SAV, et souvent une puissance réelle très inférieure à celle annoncée.</p>
+      <p>Un micro-onduleur non certifié peut provoquer des interférences électromagnétiques ou, dans le pire des cas, un incendie. L'économie de 300 € ne vaut pas le risque.</p>
+      <div class="tip-box">
+        <strong>✓ Le réflexe :</strong> Vérifiez la certification CE complète, la garantie (25 ans pour le panneau, 10+ ans pour l'onduleur), et l'existence d'un SAV en France. Sunology, Beem, Sunethic et EcoFlow cochent toutes les cases.
+      </div>
+    </div>
+  </div>
+
+  <div class="page-num">2</div>
+</div>
+
+<!-- PAGE 4-5: Erreurs 4-5 -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-small">MonBalcon<span>Solaire</span></div>
+    <div>7 erreurs à éviter — Guide gratuit 2026</div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">4</div>
+      <div>
+        <div class="erreur-title">Oublier la déclaration CACSI à Enedis</div>
+        <div class="erreur-subtitle">Une obligation légale souvent ignorée</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Tout système photovoltaïque connecté au réseau doit être déclaré via la <strong>Convention d'Autoconsommation Sans Injection (CACSI)</strong>. C'est gratuit et ça prend 25 minutes en ligne.</p>
+      <p>Sans cette déclaration, votre compteur Linky peut mal comptabiliser votre consommation, et en cas de contrôle Enedis, vous risquez une mise en demeure.</p>
+      <div class="tip-box">
+        <strong>✓ Le réflexe :</strong> Faites la déclaration dans la semaine suivant l'installation. Guide pas à pas sur monbalconsolaire.fr/guide/declaration-cacsi-enedis-panneau-solaire
+      </div>
+    </div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">5</div>
+      <div>
+        <div class="erreur-title">Négliger le parafoudre en zone orageuse</div>
+        <div class="erreur-subtitle">30 € qui évitent 300 € de casse</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Un orage peut envoyer une surtension dans votre installation via le réseau électrique. Le micro-onduleur et votre box internet sont les premiers touchés. Un <strong>protège-surtension</strong> (parafoudre de prise) à 20-30 € protège toute la chaîne.</p>
+      <p>En zone à risque (sud-est, Pyrénées, Massif Central), c'est indispensable. Ailleurs, c'est une assurance bon marché.</p>
+      <div class="tip-box">
+        <strong>✓ Le réflexe :</strong> Branchez une multiprise parafoudre entre votre prise murale et le câble du kit. Marques fiables : Belkin, Brennenstuhl, Legrand. Budget : 20-35 €.
+      </div>
+    </div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">6</div>
+      <div>
+        <div class="erreur-title">Installer en location sans prévenir</div>
+        <div class="erreur-subtitle">Un réflexe qui peut coûter le bail</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Un kit plug-and-play posé au sol ou en appui sur un garde-corps (sans perçage) est considéré comme un <strong>bien mobilier amovible</strong>. En théorie, pas besoin d'autorisation. En pratique, mieux vaut prévenir le propriétaire et vérifier le règlement de copropriété.</p>
+      <p>En cas de perçage du garde-corps ou de fixation définitive, l'accord écrit du propriétaire est obligatoire.</p>
+      <div class="warning-box">
+        <strong>⚠ Notre conseil :</strong> Envoyez un email à votre propriétaire / syndic avec une photo du kit et une description de l'installation. Dans 90 % des cas, la réponse est positive. Les 10 % restants vous évitent un conflit.
+      </div>
+    </div>
+  </div>
+
+  <div class="page-num">3</div>
+</div>
+
+<!-- PAGE 6: Erreur 7 + Conclusion -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-small">MonBalcon<span>Solaire</span></div>
+    <div>7 erreurs à éviter — Guide gratuit 2026</div>
+  </div>
+
+  <div class="erreur-block">
+    <div class="erreur-header">
+      <div class="erreur-num">7</div>
+      <div>
+        <div class="erreur-title">Ne pas comparer le prix au kWc</div>
+        <div class="erreur-subtitle">Le vrai indicateur pour ne pas se faire avoir</div>
+      </div>
+    </div>
+    <div class="erreur-body">
+      <p>Le prix affiché ne veut rien dire seul. Ce qui compte, c'est le <strong>prix par Watt-crête (€/Wc)</strong> : prix du kit ÷ puissance en Wc. C'est le seul indicateur qui permet de comparer des kits de puissances différentes.</p>
+      <p>Exemples : Sunology PLAY 2 = 599 € / 450 Wc = <strong>1,33 €/Wc</strong>. Beem On 460W = 599 € / 460 Wc = <strong>1,30 €/Wc</strong>. DualSun PREASY = 870 € / 420 Wc = <strong>2,07 €/Wc</strong>.</p>
+      <div class="tip-box">
+        <strong>✓ Le réflexe :</strong> Avant d'acheter, calculez le €/Wc. En dessous de 1,50 €/Wc, c'est un bon rapport qualité-prix. Au-dessus de 2,00 €/Wc, il faut une très bonne raison (Made in France, design, batterie intégrée).
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, var(--green-pale), #fff, var(--amber-pale)); border-radius: 16px; border: 1px solid rgba(61,122,74,0.1); text-align: center;">
+    <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 12px;">Prêt à passer au solaire ?</h2>
+    <p style="font-size: 14px; color: var(--charcoal-light); margin-bottom: 8px; max-width: 400px; margin-left: auto; margin-right: auto;">Calculez votre rentabilité personnalisée en 30 secondes. Département, orientation, profil de consommation — on fait le calcul pour vous.</p>
+    <div style="margin-top: 16px;">
+      <strong style="color: var(--green); font-size: 15px;">monbalconsolaire.fr/calculateur</strong>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; font-size: 11px; color: var(--stone); line-height: 1.6; border-top: 1px solid var(--border); padding-top: 16px;">
+    <strong>Méthodologie :</strong> données PVGIS (Commission européenne), tarif EDF 0,1940 €/kWh (mai 2026), fiches techniques constructeurs. Ce guide est indépendant — aucun fabricant ne nous finance.<br>
+    <strong>Transparence :</strong> certains liens sur monbalconsolaire.fr sont des liens affiliés. Ce PDF n'en contient aucun.<br>
+    © 2026 MonBalconSolaire — Beeleven SASU — contact@monbalconsolaire.fr
+  </div>
+
+  <div class="page-num">4</div>
+</div>
+
+<!-- BACK COVER -->
+<div class="page back-cover">
+  <div class="back-logo">MonBalcon<span>Solaire</span>.fr</div>
+  <h2>Merci pour votre lecture.</h2>
+  <p>Ce guide vous a été utile ? Partagez-le à quelqu'un qui hésite à passer au solaire de balcon.</p>
+  <a href="https://monbalconsolaire.fr/calculateur" class="back-cta">Calculer mes économies →</a>
+  <div class="back-url">monbalconsolaire.fr</div>
+</div>
+
+</body>
+</html>
