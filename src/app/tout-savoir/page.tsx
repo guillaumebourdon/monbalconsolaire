@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/blog/kit-solaire-pluie-grele',
+    title: 'Kit solaire balcon : que faire quand il pleut ou gr\u00eale ?',
+    excerpt: 'Production sous la pluie, r\u00e9sistance \u00e0 la gr\u00eale, neige, vent, assurance.',
+    type: 'analyse',
+    badge: 'Guide pratique',
+    tags: ['optimisation', 'debutant'],
+    publishedAt: '2026-05-18',
+    readTime: '9 min',
+  },
+  {
     slug: '/blog/panneau-solaire-produit-moins-que-prevu',
     title: 'Mon panneau solaire produit moins que pr\u00e9vu : que faire ?',
     excerpt: 'Diagnostic en 7 points : ombre, orientation, salissure, hiver, Linky. Solutions concr\u00e8tes.',
