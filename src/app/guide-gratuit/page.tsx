@@ -45,6 +45,7 @@ export default function GuideGratuitPage() {
                 <p className="font-bold text-base mb-1">Recevez le guide + bonus exclusifs</p>
                 <ul className="text-xs text-charcoal-light space-y-1">
                   <li>&#127873; 5 erreurs suppl&eacute;mentaires non publi&eacute;es sur le site</li>
+                  <li>&#128200; Excel de simulation ROI personnalisable</li>
                   <li>&#128202; Liste des codes promo en cours</li>
                 </ul>
               </div>

@@ -47,7 +47,16 @@ export async function POST(request: Request) {
       const bonusBuffer = await readFile(bonusPath);
       attachments.push({ name: '5-erreurs-bonus.pdf', content: bonusBuffer.toString('base64') });
     } catch {
-      // Bonus not yet produced — email template mentions "arrives dans 48h"
+      // Bonus not yet produced
+    }
+
+    // Try Excel simulation if it exists
+    try {
+      const xlsxPath = join(process.cwd(), 'public', 'bonus', 'simulation-solaire-balcon.xlsx');
+      const xlsxBuffer = await readFile(xlsxPath);
+      attachments.push({ name: 'simulation-solaire-balcon.xlsx', content: xlsxBuffer.toString('base64') });
+    } catch {
+      // Excel not yet produced
     }
 
     const html = pdfBonusHtml(email);

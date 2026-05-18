@@ -99,7 +99,8 @@ Merci pour votre inscription ! Vous trouverez le guide en pi\u00e8ce jointe de c
 <h3 style="font-size:15px;font-weight:700;margin:0 0 8px;">Ce que vous recevez :</h3>
 <ul style="padding-left:16px;margin:0;font-size:13px;color:#4A4A44;line-height:1.8;">
 <li>\u2705 Guide PDF "7 erreurs \u00e0 \u00e9viter" (12 pages)</li>
-<li>\u23f3 Bonus exclusif "5 erreurs suppl\u00e9mentaires" (arrive sous 48h)</li>
+<li>\u2705 Bonus exclusif "5 erreurs suppl\u00e9mentaires" non publi\u00e9es</li>
+<li>\u2705 Excel de simulation ROI personnalisable (formules incluses)</li>
 <li>\ud83d\udcca Liste des codes promo en cours</li>
 </ul>
 </div>

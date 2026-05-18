@@ -14,7 +14,7 @@ export function NewsletterBanner() {
             7 erreurs &agrave; &eacute;viter avant d&apos;acheter un kit solaire
           </h3>
           <p className="text-sm text-charcoal-light leading-relaxed">
-            Les pi&egrave;ges que personne ne vous dit + 5 erreurs bonus exclusives.
+            Les pi&egrave;ges que personne ne vous dit + 5 erreurs bonus + Excel de simulation.
           </p>
         </div>
         <div className="md:w-72">
