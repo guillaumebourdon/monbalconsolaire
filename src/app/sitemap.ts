@@ -83,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Pages secondaires
     { url: `${BASE_URL}/methodologie`, lastModified: '2026-05-15', changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/codes-promo`, lastModified: '2026-05-18', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/a-propos`, lastModified: '2026-05-15', changeFrequency: 'monthly', priority: 0.3 },
     { url: `${BASE_URL}/mentions-legales`, lastModified: '2026-03-17', changeFrequency: 'yearly', priority: 0.1 },
     { url: `${BASE_URL}/politique-confidentialite`, lastModified: '2026-03-17', changeFrequency: 'yearly', priority: 0.1 },

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { DEPARTMENTS } from '@/data/departments';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { EmailCapture } from '@/components/ui/EmailCapture';
 import {
   calculateProductionKwh,
   calculateROIYears,
@@ -481,6 +482,31 @@ function CalculateurPage() {
                     </Link>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {/* Email capture */}
+            {recommendations.picks.length > 0 && (
+              <div className="card-lg bg-gradient-to-br from-amber-pale/30 via-white to-green-pale/20 border-amber/10 mt-6">
+                <div className="flex items-start gap-3 mb-3">
+                  <span className="text-xl">&#128233;</span>
+                  <div>
+                    <h3 className="font-bold text-sm mb-1">Recevoir le rapport d&eacute;taill&eacute; par email</h3>
+                    <p className="text-xs text-charcoal-light">Production mois par mois, &eacute;conomies sur 25 ans, conseils d&apos;installation.</p>
+                  </div>
+                </div>
+                <EmailCapture
+                  endpoint="/api/email/send-report"
+                  source="calculator"
+                  buttonLabel="Recevoir le rapport"
+                  successMessage="Rapport envoy&eacute; ! V&eacute;rifiez votre bo&icirc;te email."
+                  extraData={{
+                    profile: { dept: dept?.name || deptCode, orientation: orientLabel, surface, presence: presenceLabel, budget: BUDGETS.find(b => b.value === budget)?.label || budget },
+                    kits: recommendations.picks.map(k => ({ name: k.name, brand: k.brand, price: k.price, roi: k.roi, firstYear: k.firstYear, total25: k.total25, reasons: k.reasons, affiliateUrl: k.affiliateUrl, slug: k.slug })),
+                    annualProduction: recommendations.picks[0]?.production || 0,
+                  }}
+                  compact
+                />
               </div>
             )}
 

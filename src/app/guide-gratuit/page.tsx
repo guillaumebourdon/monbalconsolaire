@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { EmailCapture } from '@/components/ui/EmailCapture';
 
 export default function GuideGratuitPage() {
   const handleDownloadTracking = () => {
@@ -38,19 +39,21 @@ export default function GuideGratuitPage() {
               Les pièges que personne ne vous dit avant d&apos;investir 300 à 800 € dans un kit solaire plug-and-play. Analyse indépendante, sans affiliation cachée. <strong>12 pages, gratuit, téléchargement immédiat.</strong>
             </p>
 
-            {/* CTA principal */}
+            {/* CTA principal — email gated */}
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/20 mb-6">
-              <a
-                href="/guide-7-erreurs-kit-solaire.pdf"
-                download
-                onClick={handleDownloadTracking}
-                className="btn-primary w-full justify-center text-base py-4 px-6"
-              >
-                📄 Télécharger le guide (PDF, 120 Ko)
-              </a>
-              <p className="text-xs text-stone mt-3 text-center">
-                Téléchargement immédiat · Pas besoin d&apos;email · Partage libre
-              </p>
+              <div className="text-center mb-4">
+                <p className="font-bold text-base mb-1">Recevez le guide + bonus exclusifs</p>
+                <ul className="text-xs text-charcoal-light space-y-1">
+                  <li>&#127873; 5 erreurs suppl&eacute;mentaires non publi&eacute;es sur le site</li>
+                  <li>&#128202; Liste des codes promo en cours</li>
+                </ul>
+              </div>
+              <EmailCapture
+                endpoint="/api/email/send-guide"
+                source="pdf_guide"
+                buttonLabel="Recevoir le guide + bonus"
+                successMessage="Guide envoy&eacute; par email ! V&eacute;rifiez votre bo&icirc;te."
+              />
             </div>
 
             {/* Avantages */}
@@ -143,15 +146,14 @@ export default function GuideGratuitPage() {
 
               {/* Footer de la carte */}
               <div className="bg-charcoal text-cream p-4 text-center">
-                <div className="text-[10px] uppercase tracking-widest text-amber mb-1">Guide PDF</div>
-                <div className="text-sm font-semibold mb-3">12 pages · Édition digitale</div>
+                <div className="text-[10px] uppercase tracking-widest text-amber mb-1">Guide PDF + bonus</div>
+                <div className="text-sm font-semibold mb-3">12 pages + 5 erreurs bonus</div>
                 <a
-                  href="/guide-7-erreurs-kit-solaire.pdf"
-                  download
-                  onClick={handleDownloadTracking}
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                   className="inline-block bg-amber text-charcoal font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-brand hover:bg-amber-bright transition-colors"
                 >
-                  Télécharger ↓
+                  Recevoir par email &uarr;
                 </a>
               </div>
             </div>
