@@ -71,7 +71,7 @@ export function Header() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border-light">
+          <div className="md:hidden py-4 border-t border-border-light menu-enter">
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="px-4 py-3 text-sm font-medium text-charcoal-light hover:text-green rounded-lg hover:bg-green-pale transition-all">

@@ -19,16 +19,19 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-pale/60 via-cream to-green-pale/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-pale/60 via-cream to-green-pale/40 pointer-events-none hero-gradient" />
+        {/* Floating ambient orbs */}
+        <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-amber/5 blur-3xl float float-delay-1 pointer-events-none" />
+        <div className="absolute bottom-10 left-[5%] w-48 h-48 rounded-full bg-green/5 blur-3xl float-slow float-delay-2 pointer-events-none" />
         <div className="container-brand relative py-16 md:py-24 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: text */}
             <div>
-              <div className="badge-green mb-6 reveal">Guide indépendant 2026</div>
+              <div className="badge-green mb-6 reveal-blur">Guide ind&eacute;pendant 2026</div>
               <h1 className="text-4xl md:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.08] mb-6 reveal" style={{ transitionDelay: '80ms' }}>
-                Produisez votre électricité
+                Produisez votre &eacute;lectricit&eacute;
                 <br />
-                <span className="text-green">depuis votre balcon</span>
+                <span className="text-shimmer">depuis votre balcon</span>
               </h1>
               <p className="text-lg md:text-xl text-charcoal-light leading-relaxed mb-8 max-w-xl reveal" style={{ transitionDelay: '160ms' }}>
                 Comparez les meilleurs kits solaires plug-and-play, calculez vos économies réelles et passez au solaire sans travaux — même en appartement, même locataire.
@@ -58,7 +61,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: visual */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:block float-slow">
               <HeroVisual />
             </div>
           </div>
@@ -256,18 +259,18 @@ export default function HomePage() {
             Simulations bas&eacute;es sur les donn&eacute;es PVGIS et le tarif r&eacute;glement&eacute; EDF en vigueur (0,1940 &euro;/kWh). R&eacute;sultats indicatifs, variant selon votre situation r&eacute;elle.
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-stone pt-8 border-t border-border-light reveal">
-            <div className="text-center">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-stone pt-8 border-t border-border-light">
+            <div className="text-center number-pop">
               <div className="font-mono text-2xl font-bold text-green">{siteStats.articlesPublies}</div>
               <div className="text-xs mt-1">guides publi&eacute;s</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
-            <div className="text-center">
+            <div className="text-center number-pop" style={{ animationDelay: '0.15s' }}>
               <div className="font-mono text-2xl font-bold text-green">{siteStats.kitsAnalyses}</div>
               <div className="text-xs mt-1">kits analys&eacute;s</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
-            <div className="text-center">
+            <div className="text-center number-pop" style={{ animationDelay: '0.3s' }}>
               <div className="font-mono text-2xl font-bold text-green">{siteStats.departementsCouverts}</div>
               <div className="text-xs mt-1">d&eacute;partements couverts</div>
             </div>
@@ -276,10 +279,12 @@ export default function HomePage() {
       </section>
 
       {/* LEAD MAGNET */}
-      <section className="section-padding bg-charcoal text-cream">
-        <div className="container-brand max-w-5xl">
+      <section className="section-padding bg-charcoal text-cream relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-amber/5 blur-3xl float pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-green/5 blur-3xl float-slow float-delay-2 pointer-events-none" />
+        <div className="container-brand max-w-5xl relative">
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
+            <div className="reveal-left">
               <div className="inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-amber text-charcoal mb-4">
                 Guide gratuit
               </div>
@@ -302,7 +307,7 @@ export default function HomePage() {
             </div>
 
             {/* Preview PDF */}
-            <div className="md:justify-self-end">
+            <div className="md:justify-self-end reveal-right float-slow">
               <Link
                 href="/guide-gratuit"
                 className="block relative bg-cream rounded-brand shadow-2xl aspect-[1/1.414] w-full max-w-[280px] mx-auto p-6 overflow-hidden transform hover:rotate-0 rotate-2 transition-transform duration-300"
@@ -368,25 +373,25 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-group">
-            <Link href="/tout-savoir" className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
+            <Link href="/tout-savoir" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="text-2xl mb-3">📚</div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Tout savoir</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Guides pratiques, analyses chiffrées et réglementation en un seul endroit.</p>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Explorer →</span>
             </Link>
-            <Link href="/guide" className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
+            <Link href="/guide" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="text-2xl mb-3">🔧</div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Guides pratiques</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Installation, orientation, réglementation, copropriété, déclaration Enedis.</p>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les guides →</span>
             </Link>
-            <Link href="/blog" className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
+            <Link href="/blog" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="text-2xl mb-3">📊</div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Blog &amp; analyses</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Rentabilité, prix de l&apos;électricité, production hivernale, autoconsommation.</p>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les articles →</span>
             </Link>
-            <Link href="/accessoires" className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
+            <Link href="/accessoires" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="text-2xl mb-3">🔌</div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Accessoires</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Prises connectées, batteries portables, lampes solaires et mini kits Amazon.</p>
