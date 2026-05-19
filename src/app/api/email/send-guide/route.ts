@@ -64,6 +64,9 @@ export async function POST(request: Request) {
       attachments,
     });
 
+    if (!result.success) {
+      return NextResponse.json({ error: (result as Record<string, unknown>).error || 'Erreur envoi email', attachments: attachments.length }, { status: 502 });
+    }
     return NextResponse.json({ success: true, queued: result.queued || false, attachments: attachments.length });
   } catch (error) {
     console.error('[api/email/send-guide]', error);

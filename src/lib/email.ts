@@ -50,8 +50,8 @@ export async function sendEmail(params: SendEmailParams): Promise<{ success: boo
     if (!res.ok) {
       const err = await res.text();
       console.error('[email] Brevo error:', res.status, err);
-      emailQueue.push({ to: params.to, subject: params.subject, html: params.html, text: params.text, tags: params.tags || [] });
-      return { success: true, queued: true };
+      // Don't queue silently — propagate the error so we can debug
+      return { success: false, queued: false, error: `Brevo ${res.status}: ${err.substring(0, 200)}` } as { success: boolean; queued?: boolean };
     }
 
     return { success: true };
