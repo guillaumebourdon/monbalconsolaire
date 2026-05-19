@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
-import { readFile } from 'fs/promises';
-import { join } from 'path';
 import { sendEmail } from '@/lib/email';
 import { captureLead } from '@/lib/leads';
 import { pdfBonusHtml } from '@/lib/email-templates';
 
 const rateMap = new Map<string, number[]>();
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : 'https://monbalconsolaire.fr';
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -14,6 +15,17 @@ function isRateLimited(ip: string): boolean {
   timestamps.push(now);
   rateMap.set(ip, timestamps);
   return false;
+}
+
+async function fetchFileAsBase64(url: string): Promise<string | null> {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const buffer = await res.arrayBuffer();
+    return Buffer.from(buffer).toString('base64');
+  } catch {
+    return null;
+  }
 }
 
 export async function POST(request: Request) {
@@ -31,37 +43,21 @@ export async function POST(request: Request) {
 
     await captureLead(email, 'pdf_guide');
 
-    // Read PDF from public folder
+    // Fetch attachments via HTTP (works in serverless)
     const attachments: Array<{ name: string; content: string }> = [];
-    try {
-      const pdfPath = join(process.cwd(), 'public', 'guide-7-erreurs-kit-solaire.pdf');
-      const pdfBuffer = await readFile(pdfPath);
-      attachments.push({ name: 'guide-7-erreurs-kit-solaire.pdf', content: pdfBuffer.toString('base64') });
-    } catch {
-      console.warn('[send-guide] PDF not found, sending without attachment');
-    }
 
-    // Try bonus PDF if it exists
-    try {
-      const bonusPath = join(process.cwd(), 'public', 'bonus', '5-erreurs-bonus.pdf');
-      const bonusBuffer = await readFile(bonusPath);
-      attachments.push({ name: '5-erreurs-bonus.pdf', content: bonusBuffer.toString('base64') });
-    } catch {
-      // Bonus not yet produced
-    }
+    const guideB64 = await fetchFileAsBase64(`${BASE_URL}/guide-7-erreurs-kit-solaire.pdf`);
+    if (guideB64) attachments.push({ name: 'guide-7-erreurs-kit-solaire.pdf', content: guideB64 });
 
-    // Try Excel simulation if it exists
-    try {
-      const xlsxPath = join(process.cwd(), 'public', 'bonus', 'simulation-solaire-balcon.xlsx');
-      const xlsxBuffer = await readFile(xlsxPath);
-      attachments.push({ name: 'simulation-solaire-balcon.xlsx', content: xlsxBuffer.toString('base64') });
-    } catch {
-      // Excel not yet produced
-    }
+    const bonusB64 = await fetchFileAsBase64(`${BASE_URL}/bonus/5-erreurs-bonus.pdf`);
+    if (bonusB64) attachments.push({ name: '5-erreurs-bonus.pdf', content: bonusB64 });
+
+    const xlsxB64 = await fetchFileAsBase64(`${BASE_URL}/bonus/simulation-solaire-balcon.xlsx`);
+    if (xlsxB64) attachments.push({ name: 'simulation-solaire-balcon.xlsx', content: xlsxB64 });
 
     const html = pdfBonusHtml(email);
 
-    await sendEmail({
+    const result = await sendEmail({
       to: email,
       subject: 'Votre guide "7 erreurs \u00e0 \u00e9viter" + bonus',
       html,
@@ -70,9 +66,9 @@ export async function POST(request: Request) {
       attachments,
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, queued: result.queued || false, attachments: attachments.length });
   } catch (error) {
     console.error('[api/email/send-guide]', error);
-    return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 });
+    return NextResponse.json({ error: `Erreur: ${error instanceof Error ? error.message : 'inconnue'}` }, { status: 500 });
   }
 }
