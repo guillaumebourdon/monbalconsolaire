@@ -288,7 +288,7 @@ function CalculateurPage() {
 
         {/* STEP 1: D\u00e9partement */}
         {step === 1 && (
-          <div className="card-lg reveal">
+          <div className="card-lg">
             <label htmlFor="dept-input" className="font-bold text-xl mb-2 block">Quel est votre d&eacute;partement ?</label>
             <p className="text-sm text-stone mb-6">Tapez le num&eacute;ro ou le nom de votre d&eacute;partement.</p>
             <div className="relative" onClick={e => e.stopPropagation()}>
@@ -318,7 +318,7 @@ function CalculateurPage() {
 
         {/* STEP 2: Orientation */}
         {step === 2 && (
-          <div className="card-lg reveal">
+          <div className="card-lg">
             <h2 className="font-bold text-xl mb-2">Quelle est l&apos;orientation de votre balcon ?</h2>
             <p className="text-sm text-stone mb-6">L&apos;orientation d&eacute;termine combien de soleil votre panneau re&ccedil;oit.</p>
             <div className="grid grid-cols-2 gap-3">
@@ -335,7 +335,7 @@ function CalculateurPage() {
 
         {/* STEP 3: Surface */}
         {step === 3 && !prefilledKit && (
-          <div className="card-lg reveal">
+          <div className="card-lg">
             <h2 className="font-bold text-xl mb-2">Quelle surface disponible ?</h2>
             <p className="text-sm text-stone mb-6">La largeur de votre balcon ou terrasse.</p>
             <div className="grid grid-cols-2 gap-3">
@@ -352,7 +352,7 @@ function CalculateurPage() {
 
         {/* STEP 4: Pr\u00e9sence */}
         {step === 4 && (
-          <div className="card-lg reveal">
+          <div className="card-lg">
             <h2 className="font-bold text-xl mb-2">&Ecirc;tes-vous chez vous en journ&eacute;e ?</h2>
             <p className="text-sm text-stone mb-6">D&eacute;termine votre taux d&apos;autoconsommation (= combien de solaire vous utilisez vraiment).</p>
             <div className="space-y-3">
@@ -369,7 +369,7 @@ function CalculateurPage() {
 
         {/* STEP 5: Budget */}
         {step === 5 && !prefilledKit && (
-          <div className="card-lg reveal">
+          <div className="card-lg">
             <h2 className="font-bold text-xl mb-2">Quel est votre budget maximum ?</h2>
             <p className="text-sm text-stone mb-6">On vous recommandera uniquement des kits dans votre enveloppe.</p>
             <div className="grid grid-cols-2 gap-3">
@@ -385,7 +385,7 @@ function CalculateurPage() {
 
         {/* RESULTS */}
         {step === 6 && recommendations && (
-          <div className="space-y-6 reveal">
+          <div className="space-y-6">
             {/* Profile recap */}
             <div className="card bg-cream/50 text-sm text-charcoal-light">
               <strong className="text-charcoal">Votre profil :</strong> {dept?.name} ({deptCode}), orientation {orientLabel.toLowerCase()}, {presenceLabel.toLowerCase()}{budget !== 'none' ? `, budget \u2264 ${BUDGETS.find(b => b.value === budget)?.label.replace('Moins de ', '').replace('Pas de limite', '')}` : ''}
