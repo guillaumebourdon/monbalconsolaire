@@ -55,8 +55,12 @@ export async function captureLead(email: string, source: string, profile?: Recor
   const existing = await redisGet(key);
 
   if (existing) {
-    if (!existing.sources.includes(source)) existing.sources.push(source);
-    if (!existing.tags.includes(source)) existing.tags.push(source);
+    const sources = Array.isArray(existing.sources) ? existing.sources : [];
+    const tags = Array.isArray(existing.tags) ? existing.tags : [];
+    if (!sources.includes(source)) sources.push(source);
+    if (!tags.includes(source)) tags.push(source);
+    existing.sources = sources;
+    existing.tags = tags;
     if (profile) existing.profile = { ...existing.profile, ...profile };
     await redisSet(key, existing);
   } else {
