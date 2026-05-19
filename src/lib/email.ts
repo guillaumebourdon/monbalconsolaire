@@ -88,3 +88,4 @@ export function getUnsubscribeUrl(email: string): string {
   const token = generateUnsubToken(email);
   return `https://monbalconsolaire.fr/api/email/unsubscribe?email=${encodeURIComponent(email)}&token=${token}`;
 }
+// deploy trigger 1779221020
