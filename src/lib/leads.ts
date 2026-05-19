@@ -27,14 +27,23 @@ async function getRedisClient() {
   return { url, token };
 }
 
+function parseLead(raw: unknown): Lead | null {
+  if (!raw) return null;
+  if (typeof raw === 'object' && raw !== null && 'email' in raw) return raw as Lead;
+  if (typeof raw === 'string') {
+    try { return JSON.parse(raw) as Lead; } catch { return null; }
+  }
+  return null;
+}
+
 async function redisGet(key: string): Promise<Lead | null> {
   const client = await getRedisClient();
-  if (!client) return memoryStore.get(key) || null;
+  if (!client) return parseLead(memoryStore.get(key));
   try {
     const res = await fetch(`${client.url}/get/${key}`, { headers: { Authorization: `Bearer ${client.token}` } });
     const data = await res.json();
-    return data.result ? JSON.parse(data.result) : null;
-  } catch { return memoryStore.get(key) || null; }
+    return parseLead(data.result);
+  } catch { return parseLead(memoryStore.get(key)); }
 }
 
 async function redisSet(key: string, value: Lead): Promise<void> {
