@@ -60,26 +60,37 @@ async function redisSet(key: string, value: Lead): Promise<void> {
 }
 
 export async function captureLead(email: string, source: string, profile?: Record<string, string>): Promise<void> {
-  const key = hashEmail(email.toLowerCase().trim());
-  const existing = await redisGet(key);
+  try {
+    const key = hashEmail(email.toLowerCase().trim());
+    const raw = await redisGet(key);
+    const existing = raw && typeof raw === 'object' ? raw : null;
 
-  if (existing) {
-    const sources = Array.isArray(existing.sources) ? existing.sources : [];
-    const tags = Array.isArray(existing.tags) ? existing.tags : [];
-    if (!sources.includes(source)) sources.push(source);
-    if (!tags.includes(source)) tags.push(source);
-    existing.sources = sources;
-    existing.tags = tags;
-    if (profile) existing.profile = { ...existing.profile, ...profile };
-    await redisSet(key, existing);
-  } else {
-    await redisSet(key, {
-      email: email.toLowerCase().trim(),
-      sources: [source],
-      tags: [source],
-      profile,
-      captured_at: new Date().toISOString(),
-    });
+    if (existing && existing.email) {
+      const sources = Array.isArray(existing.sources) ? existing.sources : [];
+      const tags = Array.isArray(existing.tags) ? existing.tags : [];
+      if (!sources.includes(source)) sources.push(source);
+      if (!tags.includes(source)) tags.push(source);
+      const updated: Lead = {
+        email: existing.email,
+        sources,
+        tags,
+        profile: profile ? { ...existing.profile, ...profile } : existing.profile,
+        captured_at: existing.captured_at || new Date().toISOString(),
+        unsubscribed: existing.unsubscribed,
+      };
+      await redisSet(key, updated);
+    } else {
+      await redisSet(key, {
+        email: email.toLowerCase().trim(),
+        sources: [source],
+        tags: [source],
+        profile,
+        captured_at: new Date().toISOString(),
+      });
+    }
+  } catch (err) {
+    // Never block email sending because of lead storage failure
+    console.error('[leads] captureLead error (non-blocking):', err);
   }
 }
 
