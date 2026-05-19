@@ -4,9 +4,7 @@ import { captureLead } from '@/lib/leads';
 import { pdfBonusHtml } from '@/lib/email-templates';
 
 const rateMap = new Map<string, number[]>();
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : 'https://monbalconsolaire.fr';
+const BASE_URL = 'https://monbalconsolaire.fr';
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
