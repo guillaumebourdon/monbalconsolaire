@@ -116,8 +116,13 @@ function CalculateurPage() {
 
   const filteredDepts = useMemo(() => {
     if (!query || query.length < 1) return [];
-    const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    let q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    // Si l'utilisateur tape un code postal (5 chiffres), on prend les 2 premiers pour matcher le département
+    if (/^\d{3,5}$/.test(q)) q = q.substring(0, 2);
+    // Cas spécial Corse : 20xxx → 2A et 2B
+    const isCorse = q === '20';
     return DEPARTMENTS.filter(d => {
+      if (isCorse && (d.code === '2A' || d.code === '2B')) return true;
       if (d.code.toLowerCase().startsWith(q)) return true;
       return d.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(q);
     }).sort((a, b) => {
@@ -295,7 +300,7 @@ function CalculateurPage() {
               <input
                 id="dept-input"
                 type="text"
-                placeholder="Ex : 75, Paris, 13, Bouches-du-Rh\u00f4ne..."
+                placeholder={"Ex : 75, Paris, 13, Bouches-du-Rh\u00f4ne..."}
                 value={query}
                 onChange={e => { setQuery(e.target.value); setShowSuggestions(true); }}
                 onFocus={() => setShowSuggestions(true)}
