@@ -127,6 +127,7 @@ export function SchemaProduct({
     '@context': 'https://schema.org',
     '@type': 'Product',
     name,
+    image: 'https://monbalconsolaire.fr/opengraph-image',
     brand: {
       '@type': 'Brand',
       name: brand,
