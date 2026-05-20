@@ -4,7 +4,7 @@ export function SchemaOrganization() {
     '@type': 'Organization',
     name: 'MonBalconSolaire',
     url: 'https://monbalconsolaire.fr',
-    logo: 'https://monbalconsolaire.fr/logo.png',
+    logo: 'https://monbalconsolaire.fr/favicon.png',
     description: 'Le guide indépendant des kits solaires pour balcon et appartement en France.',
     foundingDate: '2026',
     founder: {
@@ -78,7 +78,7 @@ export function SchemaArticle({
     url,
     datePublished,
     dateModified: dateModified || datePublished,
-    image: image || 'https://monbalconsolaire.fr/og-default.png',
+    image: image || 'https://monbalconsolaire.fr/opengraph-image',
     author: {
       '@type': 'Organization',
       name: 'MonBalconSolaire',
@@ -89,7 +89,7 @@ export function SchemaArticle({
       name: 'MonBalconSolaire',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://monbalconsolaire.fr/logo.png',
+        url: 'https://monbalconsolaire.fr/favicon.png',
       },
     },
   };
