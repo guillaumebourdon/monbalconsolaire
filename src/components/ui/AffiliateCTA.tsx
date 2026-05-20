@@ -66,7 +66,7 @@ export function AffiliateCTA({
         >
           {label} &rarr;
         </a>
-        <p className="text-[10px] text-stone mt-3">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Lien commercial</p>
+        <p className="text-[10px] text-stone mt-3">Prix v&eacute;rifi&eacute; en mai 2026 &middot; Lien commercial</p>
       </div>
     );
   }

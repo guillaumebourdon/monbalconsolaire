@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Prix de l\'électricité 2026 : pourquoi le solaire devient incontournable',
@@ -124,6 +125,17 @@ export default function PrixElectricitePage() {
                 ))}
               </div>
             </section>
+            <div className="my-8">
+              <AffiliateCTA
+                productName="Sunology PLAY 2"
+                merchantName="Sunology"
+                affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
+                label="Profiter du solaire maintenant"
+                variant="box"
+                position="article_bottom"
+              />
+            </div>
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">

@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const navLinks = [
-  { href: '/comment-ca-marche', label: 'Comment ça marche' },
   { href: '/quel-kit-choisir', label: 'Quel kit choisir ?' },
   { href: '/tout-savoir', label: 'Tout savoir' },
   { href: '/accessoires', label: 'Accessoires' },
+  { href: '/codes-promo', label: 'Codes promo' },
 ];
 
 export function Header() {

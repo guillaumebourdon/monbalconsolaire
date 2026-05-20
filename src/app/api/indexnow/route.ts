@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const INDEXNOW_KEY = 'e1e73fac57094269a2a4848ef8f53108';
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || 'e1e73fac57094269a2a4848ef8f53108';
 const HOST = 'monbalconsolaire.fr';
 
 export async function POST(request: NextRequest) {
@@ -33,5 +33,6 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  return NextResponse.json({ key: INDEXNOW_KEY, host: HOST });
+  // Ne pas exposer la clé complète
+  return NextResponse.json({ host: HOST });
 }

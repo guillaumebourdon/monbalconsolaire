@@ -19,11 +19,11 @@ export default function MentionsLegalesPage() {
             <h2 className="font-bold text-xl text-charcoal mb-3">Éditeur du site</h2>
             <p>Le site MonBalconSolaire (monbalconsolaire.fr) est édité par :</p>
             <div className="card mt-3">
-              <p><strong>Raison sociale :</strong> Beélevén SASU</p>
-              <p><strong>Forme juridique :</strong> Société par actions simplifiée unipersonnelle</p>
-              <p><strong>Siège social :</strong> Paris, France</p>
-              <p><strong>SIRET :</strong> [À compléter]</p>
-              <p><strong>Numéro TVA :</strong> [À compléter]</p>
+              <p><strong>Raison sociale :</strong> Beeleven SASU</p>
+              <p><strong>Forme juridique :</strong> Soci&eacute;t&eacute; par actions simplifi&eacute;e unipersonnelle</p>
+              <p><strong>Si&egrave;ge social :</strong> Paris, France {/* TODO Guillaume: remplacer par adresse compl&egrave;te avec code postal */}</p>
+              <p><strong>SIRET :</strong> {/* TODO Guillaume: ajouter ton num&eacute;ro SIRET */} Non communiqu&eacute;</p>
+              <p><strong>RCS :</strong> Paris {/* TODO Guillaume: ajouter num&eacute;ro RCS */}</p>
               <p><strong>Directeur de la publication :</strong> Guillaume Bourdon</p>
               <p><strong>Contact :</strong> contact@monbalconsolaire.fr</p>
             </div>
@@ -52,7 +52,7 @@ export default function MentionsLegalesPage() {
               MonBalconSolaire participe à des programmes d'affiliation, notamment le programme partenaire Sunology (partner.sunology.eu) et le programme Amazon Partenaires. Cela signifie que nous pouvons recevoir une commission si vous effectuez un achat après avoir cliqué sur un lien affilié présent sur notre site.
             </p>
             <p className="mt-2">
-              Cette commission ne modifié en aucun cas le prix que vous payez. Notre contenu éditorial est indépendant de ces partenariats commerciaux. Les produits recommandés le sont sur la base de critères objectifs (rapport qualité-prix, performances, avis utilisateurs).
+              Cette commission ne modifie en aucun cas le prix que vous payez. Notre contenu éditorial est indépendant de ces partenariats commerciaux. Les produits recommandés le sont sur la base de critères objectifs (rapport qualité-prix, performances, avis utilisateurs).
             </p>
           </div>
 

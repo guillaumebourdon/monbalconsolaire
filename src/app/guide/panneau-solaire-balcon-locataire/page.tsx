@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon locataire : droits, regles et astuces (2026)',
@@ -145,6 +146,17 @@ export default function LocatairePage() {
               <Link href="/calculateur" className="btn-primary inline-flex">
                 Calculer mes économies →
               </Link>
+            </div>
+
+            <div className="my-8">
+              <AffiliateCTA
+                productName="Beem Kit 300W"
+                merchantName="Beem Energy"
+                affiliateUrl="https://beemenergy.fr/products/kit-beem"
+                label="Le kit idéal pour les locataires"
+                variant="box"
+                position="article_bottom"
+              />
             </div>
 
             <section className="mb-10">

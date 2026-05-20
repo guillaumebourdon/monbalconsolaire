@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon : le guide complet pour débutants (2026)',
@@ -174,6 +175,17 @@ export default function GuidePage() {
               <p className="text-sm text-charcoal-light mb-4">Decouvrez en 30 secondes combien vous pouvez économiser avec un kit solaire sur votre balcon.</p>
               <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes économies &rarr;</Link>
             </div>
+            <div className="my-8">
+              <AffiliateCTA
+                productName="Sunology PLAY 2"
+                merchantName="Sunology"
+                affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
+                label="Voir le kit le plus populaire"
+                variant="box"
+                position="article_bottom"
+              />
+            </div>
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">

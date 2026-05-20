@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire en copropriete : regles, votes et astuces (2026)',
@@ -157,6 +158,17 @@ export default function CoproprietePage() {
               <Link href="/calculateur" className="btn-primary inline-flex">
                 Calculer mes économies →
               </Link>
+            </div>
+
+            <div className="my-8">
+              <AffiliateCTA
+                productName="Sunology PLAY 2"
+                merchantName="Sunology"
+                affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
+                label="Voir le Sunology PLAY 2"
+                variant="box"
+                position="article_bottom"
+              />
             </div>
 
             <section className="mb-10">

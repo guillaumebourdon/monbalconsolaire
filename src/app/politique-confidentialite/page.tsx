@@ -44,8 +44,8 @@ export default function PolitiqueConfidentialitePage() {
                 <p className="text-sm">Adresse email uniquement, si vous choisissez de vous inscrire. Base légale : consentement explicite.</p>
               </div>
               <div className="border-t border-border-light pt-3">
-                <p className="font-semibold text-charcoal">Données de navigation (analytics)</p>
-                <p className="text-sm">Pages visitées, durée de visite, source du trafic. Collectées via Vercel Analytics de manière anonymisée, sans cookies de pistage. Aucune donnée personnelle identifiable n&apos;est collectée.</p>
+                <p className="font-semibold text-charcoal">Donn&eacute;es de navigation (analytics)</p>
+                <p className="text-sm">Pages visit&eacute;es, dur&eacute;e de visite, source du trafic. Collect&eacute;es via Google Analytics (GA4) uniquement apr&egrave;s votre consentement explicite (banni&egrave;re cookies). Les donn&eacute;es sont anonymis&eacute;es. Aucun cookie n&apos;est d&eacute;pos&eacute; avant votre acceptation.</p>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function PolitiqueConfidentialitePage() {
           <div>
             <h2 className="font-bold text-xl text-charcoal mb-3">Cookies</h2>
             <p>
-              MonBalconSolaire utilise Vercel Analytics, un outil de mesure d'audience respectueux de la vie privée qui ne dépose aucun cookie de pistage. Aucun cookie publicitaire n'est utilisé sur ce site.
+              MonBalconSolaire utilise Google Analytics (GA4) pour mesurer l&apos;audience du site. Les cookies GA4 ne sont d&eacute;pos&eacute;s qu&apos;apr&egrave;s votre consentement explicite via la banni&egrave;re de cookies. Si vous refusez, aucun cookie de suivi n&apos;est d&eacute;pos&eacute;. Aucun cookie publicitaire n&apos;est utilis&eacute; sur ce site.
             </p>
             <p className="mt-2">
               Les liens d'affiliation (Sunology, Amazon) peuvent déposer des cookies de suivi lorsque vous cliquez dessus. Ces cookies sont gérés par les sites tiers concernés et sont soumis à leurs propres politiques de confidentialité.

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Autoconsommation solaire : comment ca marche concretement ? (2026)',
@@ -150,6 +151,17 @@ export default function AutoconsommationPage() {
                 ))}
               </div>
             </section>
+            <div className="my-8">
+              <AffiliateCTA
+                productName="Beem On 460W"
+                merchantName="Beem Energy"
+                affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play"
+                label="Voir le Beem On 460W"
+                variant="box"
+                position="article_bottom"
+              />
+            </div>
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">

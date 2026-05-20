@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon nord : est-ce rentable en 2026 ?',
@@ -389,6 +390,17 @@ export default function BalconNordPage() {
               <Link href="/calculateur" className="btn-primary inline-flex">
                 Calculer ma production →
               </Link>
+            </div>
+
+            <div className="my-8">
+              <AffiliateCTA
+                productName="Beem Kit 300W"
+                merchantName="Beem Energy"
+                affiliateUrl="https://beemenergy.fr/products/kit-beem"
+                label="Voir le Beem Kit 300W"
+                variant="box"
+                position="article_bottom"
+              />
             </div>
 
             <section className="mb-10">
