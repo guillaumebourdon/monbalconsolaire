@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/blog/prises-connectees-suivi-solaire',
+    title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
+    excerpt: 'Tapo P110, Shelly, Meross : les prises pour mesurer votre production en temps r\u00e9el.',
+    type: 'analyse',
+    badge: 'S\u00e9lection 2026',
+    tags: ['optimisation'],
+    publishedAt: '2026-05-20',
+    readTime: '8 min',
+  },
+  {
     slug: '/blog/kit-solaire-pluie-grele',
     title: 'Kit solaire balcon : que faire quand il pleut ou gr\u00eale ?',
     excerpt: 'Production sous la pluie, r\u00e9sistance \u00e0 la gr\u00eale, neige, vent, assurance.',

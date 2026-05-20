@@ -79,6 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/panneau-solaire-ombre-optimiser-production`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/talon-consommation-solaire`, lastModified: '2026-05-10', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/panneau-solaire-produit-moins-que-prevu`, lastModified: '2026-05-12', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/blog/prises-connectees-suivi-solaire`, lastModified: '2026-05-20', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/kit-solaire-pluie-grele`, lastModified: '2026-05-18', changeFrequency: 'monthly', priority: 0.7 },
 
     // Pages secondaires

@@ -17,6 +17,16 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/blog/prises-connectees-suivi-solaire',
+    title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
+    excerpt: 'Tapo P110, Shelly Plug S, Tapo P410M : comparatif des prises pour mesurer votre production en temps r\u00e9el.',
+    badge: 'S\u00e9lection 2026',
+    tags: ['essentiels'],
+    publishedAt: '2026-05-20',
+    readTime: '8 min',
+    priceRange: '15-25 \u20ac',
+  },
+  {
     slug: '/blog/accessoires-kit-solaire-balcon',
     title: '8 accessoires indispensables pour votre kit solaire de balcon',
     excerpt: 'Prise connectée, wattmètre, rallonge étanche, support réglable : les indispensables pour maximiser votre installation.',

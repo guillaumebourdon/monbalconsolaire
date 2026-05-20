@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const articles = [
+  { slug: 'prises-connectees-suivi-solaire', title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026', excerpt: 'Tapo P110, Shelly Plug S, Meross : comparatif des prises pour mesurer la production de votre kit solaire.', badge: 'S\u00e9lection 2026', date: '20 mai 2026', readTime: '8 min' },
   { slug: 'kit-solaire-pluie-grele', title: 'Kit solaire balcon : que faire quand il pleut ou gr\u00eale ?', excerpt: 'Production sous la pluie, r\u00e9sistance \u00e0 la gr\u00eale, neige, assurance. R\u00e9ponses concr\u00e8tes et chiffr\u00e9es.', badge: 'Guide pratique', date: '18 mai 2026', readTime: '9 min' },
   { slug: 'panneau-solaire-produit-moins-que-prevu', title: 'Mon panneau solaire produit moins que pr\u00e9vu : que faire ?', excerpt: 'Diagnostic en 7 points : ombre, orientation, salissure, hiver, Linky. Solutions concr\u00e8tes par ordre de co\u00fbt.', badge: 'Diagnostic', date: '12 mai 2026', readTime: '11 min' },
   { slug: 'talon-consommation-solaire', title: 'Talon de consommation : comment le calculer et l\'effacer avec le solaire', excerpt: 'Le bruit de fond \u00e9lectrique de votre foyer co\u00fbte 300-900 \u20ac/an. Voici comment le mesurer et le couvrir avec un kit solaire.', badge: 'Comprendre', date: '10 mai 2026', readTime: '10 min' },
