@@ -427,27 +427,27 @@ function CalculateurPage() {
 
             {/* Kit cards */}
             {recommendations.picks.length > 0 && (
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className={`grid gap-5 ${recommendations.picks.length === 1 ? 'max-w-md mx-auto' : recommendations.picks.length === 2 ? 'md:grid-cols-2 max-w-2xl mx-auto' : 'md:grid-cols-3'}`}>
                 {recommendations.picks.map((kit, i) => (
-                  <div key={kit.id} className={`card-lg flex flex-col ${i === 0 ? 'border-green/30 bg-green-pale/10 md:scale-[1.02]' : ''}`}>
+                  <div key={kit.id} className={`card-lg flex flex-col ${i === 0 ? 'border-green/30 bg-green-pale/10' : ''}`}>
                     <div className={`text-[10px] font-bold uppercase tracking-widest mb-3 ${i === 0 ? 'text-green' : 'text-amber-dark'}`}>
                       {i === 0 ? '\ud83e\udd47' : i === 1 ? '\ud83e\udd48' : '\ud83e\udd49'} {kit.label}
                     </div>
-                    <h3 className="font-bold text-base mb-0.5">{kit.name}</h3>
-                    <p className="text-xs text-stone mb-1">{kit.brand}</p>
+                    <h3 className="font-bold text-lg mb-0.5">{kit.name}</h3>
+                    <p className="text-xs text-stone mb-3">{kit.brand}</p>
                     {kit.overBudget && <p className="text-[10px] text-amber-dark font-semibold mb-2">L&eacute;g&egrave;rement au-dessus de votre budget</p>}
 
-                    <div className="flex items-baseline gap-2 mb-1">
-                      <span className="font-mono font-extrabold text-2xl text-green">{kit.roi}&thinsp;ans</span>
+                    <div className="flex items-baseline gap-2 mb-2">
+                      <span className="font-mono font-extrabold text-3xl text-green whitespace-nowrap">{kit.roi} ans</span>
                       <span className="text-xs text-stone">de ROI</span>
                     </div>
-                    <div className="text-xs text-charcoal-light mb-3">
-                      {kit.firstYear}&thinsp;&euro;/an d&apos;&eacute;conomies &middot; {kit.total25.toLocaleString('fr-FR')}&thinsp;&euro; sur 25 ans
+                    <div className="text-sm text-charcoal-light mb-4">
+                      {kit.firstYear} &euro;/an &middot; {kit.total25.toLocaleString('fr-FR')} &euro; sur 25 ans
                     </div>
 
-                    <ul className="text-xs text-charcoal-light space-y-1 mb-4 flex-1">
+                    <ul className="text-sm text-charcoal-light space-y-1.5 mb-5 flex-1">
                       {kit.reasons.map((r, j) => (
-                        <li key={j} className="flex items-start gap-1.5"><span className="text-green font-bold mt-0.5">&check;</span>{r}</li>
+                        <li key={j} className="flex items-start gap-2"><span className="text-green font-bold mt-0.5">{'\u2713'}</span>{r}</li>
                       ))}
                     </ul>
 
