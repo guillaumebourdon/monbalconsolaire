@@ -20,10 +20,11 @@ export default function MentionsLegalesPage() {
             <p>Le site MonBalconSolaire (monbalconsolaire.fr) est édité par :</p>
             <div className="card mt-3">
               <p><strong>Raison sociale :</strong> Beeleven SASU</p>
-              <p><strong>Forme juridique :</strong> Soci&eacute;t&eacute; par actions simplifi&eacute;e unipersonnelle</p>
-              <p><strong>Si&egrave;ge social :</strong> Paris, France {/* TODO Guillaume: remplacer par adresse compl&egrave;te avec code postal */}</p>
-              <p><strong>SIRET :</strong> {/* TODO Guillaume: ajouter ton num&eacute;ro SIRET */} Non communiqu&eacute;</p>
-              <p><strong>RCS :</strong> Paris {/* TODO Guillaume: ajouter num&eacute;ro RCS */}</p>
+              <p><strong>Forme juridique :</strong> Soci&eacute;t&eacute; par actions simplifi&eacute;e (associ&eacute; unique)</p>
+              <p><strong>Si&egrave;ge social :</strong> 7 rue Curial, 75019 Paris</p>
+              <p><strong>RCS :</strong> Paris 102 307 345</p>
+              <p><strong>Capital social :</strong> 1 000 &euro;</p>
+              <p><strong>N&deg; TVA intracommunautaire :</strong> FR75 102 307 345</p>
               <p><strong>Directeur de la publication :</strong> Guillaume Bourdon</p>
               <p><strong>Contact :</strong> contact@monbalconsolaire.fr</p>
             </div>
