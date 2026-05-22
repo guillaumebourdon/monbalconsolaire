@@ -369,8 +369,12 @@ export default function TalonConsommationPage() {
                   <p className="text-xs text-charcoal-light mt-1">Calcul réel de rentabilité par ville et par kit</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu : que faire ?</h4>
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi 0 W au Linky est souvent une bonne nouvelle</p>
+                </Link>
+                <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : pourquoi c&apos;est mieux pour le talon</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Production &eacute;tal&eacute;e = autoconsommation naturelle 50-60 %</p>
                 </Link>
               </div>
             </section>

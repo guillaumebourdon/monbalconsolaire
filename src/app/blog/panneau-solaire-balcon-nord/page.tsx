@@ -415,8 +415,12 @@ export default function BalconNordPage() {
                   <p className="text-xs text-charcoal-light mt-1">Les meilleurs choix sous 400 € pour limiter le risque</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé par ville avec chiffres réels</p>
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien &ccedil;a rapporte ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le calcul d&eacute;taill&eacute; par ville avec chiffres r&eacute;els</p>
+                </Link>
+                <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : production et rentabilit&eacute;</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Moins de perte qu&apos;on croit + avantage autoconsommation</p>
                 </Link>
               </div>
             </section>

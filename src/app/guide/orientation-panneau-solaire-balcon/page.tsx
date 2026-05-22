@@ -179,8 +179,12 @@ export default function OrientationPage() {
                   <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé de rentabilité</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production inférieure aux attentes ?</h4>
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production inf&eacute;rieure aux attentes ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points : ombre, orientation, salissure, Linky</p>
+                </Link>
+                <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : production et rentabilit&eacute;</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Les chiffres r&eacute;els et l&apos;avantage cach&eacute; de l&apos;autoconsommation</p>
                 </Link>
               </div>
             </section>
