@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/blog/panneau-solaire-est-ouest',
+    title: 'Panneau solaire balcon est/ouest : production et rentabilit\u00e9',
+    excerpt: '80 % du potentiel sud, ROI 8-10 ans, meilleure autoconsommation naturelle.',
+    type: 'analyse',
+    badge: 'Orientation',
+    tags: ['optimisation', 'rentabilite'],
+    publishedAt: '2026-05-22',
+    readTime: '10 min',
+  },
+  {
     slug: '/blog/prises-connectees-suivi-solaire',
     title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
     excerpt: 'Tapo P110, Shelly, Meross : les prises pour mesurer votre production en temps r\u00e9el.',
