@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SchemaOrganization />
         <SchemaWebSite />
         <Header />
-        <main id="main-content" className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1 page-enter">{children}</main>
         <Footer />
         <ScrollProgress />
         <ScrollReveal />
