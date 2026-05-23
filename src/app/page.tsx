@@ -5,7 +5,22 @@ import { siteStats } from '@/lib/stats';
 
 const HeroVisual = dynamic(() => import('@/components/HeroVisual').then(m => m.HeroVisual), {
   ssr: false,
-  loading: () => <div className="aspect-square bg-cream-dark/30 rounded-brand-xl animate-pulse" />,
+  loading: () => (
+    <div className="aspect-square bg-white rounded-brand-xl border border-border shadow-brand p-6 animate-pulse">
+      <div className="space-y-4">
+        <div className="h-10 bg-cream-dark/40 rounded-xl w-24 mx-auto" />
+        <div className="h-3 bg-cream-dark/30 rounded-full w-full" />
+        <div className="h-3 bg-cream-dark/30 rounded-full w-3/4" />
+        <div className="grid grid-cols-3 gap-2 mt-4">
+          <div className="h-14 bg-cream-dark/20 rounded-brand" />
+          <div className="h-14 bg-cream-dark/20 rounded-brand" />
+          <div className="h-14 bg-cream-dark/20 rounded-brand" />
+        </div>
+        <div className="flex gap-1 mt-2">{Array.from({length:12}).map((_,i) => <div key={i} className="flex-1 bg-cream-dark/20 rounded-sm" style={{height: `${20 + Math.sin(i*0.8)*15}px`}} />)}</div>
+        <div className="h-12 bg-cream-dark/20 rounded-brand mt-2" />
+      </div>
+    </div>
+  ),
 });
 
 export const metadata: Metadata = {
@@ -90,6 +105,7 @@ export default function HomePage() {
       </section>
 
       {/* HOW IT WORKS */}
+      <div className="container-brand"><hr className="border-border-light" /></div>
       <section className="section-padding">
         <div className="container-brand">
           <div className="text-center mb-14">
@@ -106,25 +122,28 @@ export default function HomePage() {
               {
                 step: '1',
                 title: 'Calculez votre potentiel',
-                desc: 'Entrez votre ville et l\'orientation de votre balcon. Notre calculateur estime vos économies en 30 secondes.',
+                desc: 'Entrez votre ville et l\'orientation de votre balcon. Notre calculateur estime vos \u00e9conomies en 30 secondes.',
                 color: 'bg-amber-pale text-amber-dark',
+                icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>',
               },
               {
                 step: '2',
                 title: 'Comparez les kits',
-                desc: 'Sunology, Beem ou Sunethic ? Nos comparatifs neutres et sourcés vous aident à choisir le kit adapté à votre situation.',
+                desc: 'Sunology, Beem ou Sunethic ? Nos comparatifs neutres et sourc\u00e9s vous aident \u00e0 choisir le kit adapt\u00e9.',
                 color: 'bg-green-lighter text-green',
+                icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M21 3l-7 7"/><path d="M3 3l7 7"/><path d="M16 21h5v-5"/><path d="M8 21H3v-5"/><path d="M21 21l-7-7"/><path d="M3 21l7-7"/></svg>',
               },
               {
                 step: '3',
-                title: 'Branchez et économisez',
-                desc: 'Posez le kit sur votre balcon, branchez-le sur une prise, et commencez à produire votre électricité. C\'est tout.',
+                title: 'Branchez et \u00e9conomisez',
+                desc: 'Posez le kit sur votre balcon, branchez-le sur une prise, et commencez \u00e0 produire votre \u00e9lectricit\u00e9. C\'est tout.',
                 color: 'bg-amber-pale text-amber-dark',
+                icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg>',
               },
             ].map((item, i) => (
               <div key={i} className="card-lg text-center group hover:shadow-brand-lg transition-shadow duration-300 reveal">
-                <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center text-lg font-extrabold mx-auto mb-5`}>
-                  {item.step}
+                <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mx-auto mb-5`}>
+                  <span className="font-extrabold text-lg">{item.step}</span>
                 </div>
                 <h3 className="font-bold text-lg mb-3">{item.title}</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed">{item.desc}</p>
@@ -361,6 +380,7 @@ export default function HomePage() {
       </section>
 
       {/* CONTENT HUBS */}
+      <div className="container-brand"><hr className="border-border-light" /></div>
       <section className="section-padding">
         <div className="container-brand">
           <div className="text-center mb-14">
@@ -374,28 +394,36 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-group">
             <Link href="/tout-savoir" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
-              <div className="text-2xl mb-3">📚</div>
+              <div className="w-10 h-10 rounded-brand bg-green-pale flex items-center justify-center mb-3 group-hover:bg-green/10 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D7A4A" strokeWidth="2" strokeLinecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Tout savoir</h3>
-              <p className="text-sm text-charcoal-light leading-relaxed">Guides pratiques, analyses chiffrées et réglementation en un seul endroit.</p>
-              <span className="text-green font-semibold text-sm mt-3 inline-block">Explorer →</span>
+              <p className="text-sm text-charcoal-light leading-relaxed">Guides pratiques, analyses chiffr&eacute;es et r&eacute;glementation en un seul endroit.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Explorer &rarr;</span>
             </Link>
             <Link href="/guide" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
-              <div className="text-2xl mb-3">🔧</div>
+              <div className="w-10 h-10 rounded-brand bg-green-pale flex items-center justify-center mb-3 group-hover:bg-green/10 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D7A4A" strokeWidth="2" strokeLinecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Guides pratiques</h3>
-              <p className="text-sm text-charcoal-light leading-relaxed">Installation, orientation, réglementation, copropriété, déclaration Enedis.</p>
-              <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les guides →</span>
+              <p className="text-sm text-charcoal-light leading-relaxed">Installation, orientation, r&eacute;glementation, copropri&eacute;t&eacute;, d&eacute;claration Enedis.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les guides &rarr;</span>
             </Link>
             <Link href="/blog" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
-              <div className="text-2xl mb-3">📊</div>
+              <div className="w-10 h-10 rounded-brand bg-amber-pale flex items-center justify-center mb-3 group-hover:bg-amber/10 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C47D0E" strokeWidth="2" strokeLinecap="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+              </div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Blog &amp; analyses</h3>
-              <p className="text-sm text-charcoal-light leading-relaxed">Rentabilité, prix de l&apos;électricité, production hivernale, autoconsommation.</p>
-              <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les articles →</span>
+              <p className="text-sm text-charcoal-light leading-relaxed">Rentabilit&eacute;, prix de l&apos;&eacute;lectricit&eacute;, production hivernale, autoconsommation.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les articles &rarr;</span>
             </Link>
             <Link href="/accessoires" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
-              <div className="text-2xl mb-3">🔌</div>
+              <div className="w-10 h-10 rounded-brand bg-green-pale flex items-center justify-center mb-3 group-hover:bg-green/10 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D7A4A" strokeWidth="2" strokeLinecap="round"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg>
+              </div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Accessoires</h3>
-              <p className="text-sm text-charcoal-light leading-relaxed">Prises connectées, batteries portables, lampes solaires et mini kits Amazon.</p>
-              <span className="text-green font-semibold text-sm mt-3 inline-block">Voir les accessoires →</span>
+              <p className="text-sm text-charcoal-light leading-relaxed">Prises connect&eacute;es, batteries portables, lampes solaires et mini kits Amazon.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Voir les accessoires &rarr;</span>
             </Link>
           </div>
         </div>
