@@ -42,10 +42,8 @@ export function SearchModal() {
 
   if (!isOpen) {
     return (
-      <button onClick={open} className="flex items-center gap-2 px-3 py-1.5 rounded-brand bg-cream border border-border text-sm text-stone hover:border-green/30 hover:text-charcoal transition-all" aria-label="Rechercher">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span className="hidden md:inline">Rechercher</span>
-        <kbd className="hidden md:inline text-[10px] text-stone bg-white border border-border-light rounded px-1.5 py-0.5 ml-1 font-mono">{'\u2318'}K</kbd>
+      <button onClick={open} className="p-2 rounded-lg text-stone hover:text-green hover:bg-green-pale transition-all" aria-label="Rechercher" title="Rechercher (\u2318K)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
     );
   }
