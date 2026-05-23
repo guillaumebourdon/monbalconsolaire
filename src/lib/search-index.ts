@@ -28,6 +28,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Sunology PLAY MAX : kit + batterie', description: 'Le bundle PLAY 2 + batterie VAULT 700 Wh. 1 179 \u20ac.', url: '/avis/sunology-play-max', category: 'Avis', badge: '7/10' },
   { title: 'EcoFlow PowerStream : syst\u00e8me modulaire', description: 'Micro-onduleur intelligent avec batterie portable et app avanc\u00e9e.', url: '/avis/ecoflow-powerstream', category: 'Avis', badge: '8/10' },
   { title: 'Zendure SolarFlow : 840W pour 488 \u20ac', description: 'Batterie 1,92 kWh + onduleur 800 W int\u00e9gr\u00e9s. Meilleur rapport qualit\u00e9-prix.', url: '/avis/zendure-solarflow', category: 'Avis', badge: '8.5/10' },
+  { title: 'IKEA Solstr\u00e5le : le kit solaire IKEA pour balcon', description: 'Kit plug-and-play IKEA \u00e0 449 \u20ac avec EcoFlow. Analyse, specs, comparaison. Pas encore disponible en France.', url: '/avis/ikea-solstrale-balcon', category: 'Avis', badge: 'Analyse' },
   { title: 'DualSun PREASY : le challenger Made in France', description: 'Panneau pliable 420 Wc, design aspect bois. Beau mais cher.', url: '/avis/dualsun-preasy', category: 'Avis', badge: '6.5/10' },
 
   // ─── Comparatifs ───

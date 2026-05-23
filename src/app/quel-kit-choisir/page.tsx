@@ -168,6 +168,17 @@ const ARTICLES: Article[] = [
     price: '599 €',
   },
   {
+    slug: '/avis/ikea-solstrale-balcon',
+    title: 'IKEA Solstr\u00e5le balcon',
+    excerpt: 'Kit IKEA \u00d7 EcoFlow \u00e0 449 \u20ac (900 Wc). Pas encore disponible en France.',
+    type: 'avis',
+    badge: 'IKEA',
+    tags: ['marque'],
+    publishedAt: '2026-05-23',
+    score: '\u2014',
+    price: '449 \u20ac (DE)',
+  },
+  {
     slug: '/avis/dualsun-preasy',
     title: 'DualSun PREASY',
     excerpt: 'Panneau pliable 420 Wc assemblé en France, design aspect bois premium. Le challenger Made in France.',
