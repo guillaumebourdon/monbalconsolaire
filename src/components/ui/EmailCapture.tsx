@@ -57,7 +57,8 @@ export function EmailCapture({
 
   if (status === 'success') {
     return (
-      <div className={`${compact ? 'p-3' : 'p-5'} bg-green-pale/50 rounded-brand border border-green/10 text-center`}>
+      <div className={`${compact ? 'p-3' : 'p-5'} bg-green-pale rounded-brand border border-green/20 text-center reveal-scale is-visible`}>
+        <div className="text-2xl mb-1">{'\u2713'}</div>
         <p className="text-sm font-semibold text-green">{successMessage}</p>
       </div>
     );
@@ -88,6 +89,7 @@ export function EmailCapture({
         disabled={status === 'loading'}
         className={`btn-primary text-sm ${compact ? 'py-3 px-5 whitespace-nowrap' : 'w-full justify-center py-3'} disabled:opacity-50`}
       >
+        {status === 'loading' && <span className="spinner mr-2" />}
         {status === 'loading' ? 'Envoi...' : buttonLabel}
       </button>
       {status === 'error' && <p className="text-xs text-red-500">{errorMsg}</p>}

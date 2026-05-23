@@ -33,13 +33,13 @@ export function HeroVisual() {
     let current = 0;
     const target = 78;
     const interval = setInterval(() => {
-      current += 2;
+      current += 1;
       if (current >= target) {
         current = target;
         clearInterval(interval);
       }
       setScoreValue(current);
-    }, 20);
+    }, 30);
     return () => clearInterval(interval);
   }, [animated]);
 

@@ -34,7 +34,7 @@ export function Footer() {
 
           <div>
             <h4 className="font-bold text-sm text-charcoal mb-4">D&eacute;couvrir</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               <li><Link href="/comment-ca-marche" className="text-sm text-stone hover:text-green transition-colors">Comment &ccedil;a marche</Link></li>
               <li><Link href="/calculateur" className="text-sm text-stone hover:text-green transition-colors">Calculateur de rentabilit&eacute;</Link></li>
               <li><Link href="/a-propos" className="text-sm text-stone hover:text-green transition-colors">&Agrave; propos</Link></li>
@@ -44,7 +44,7 @@ export function Footer() {
 
           <div>
             <h4 className="font-bold text-sm text-charcoal mb-4">Contenu</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               <li><Link href="/quel-kit-choisir" className="text-sm text-stone hover:text-green transition-colors">Quel kit choisir ?</Link></li>
               <li><Link href="/tout-savoir" className="text-sm text-stone hover:text-green transition-colors">Tout savoir</Link></li>
               <li><Link href="/codes-promo" className="text-sm text-stone hover:text-green transition-colors">Codes promo</Link></li>
@@ -53,7 +53,7 @@ export function Footer() {
 
           <div>
             <h4 className="font-bold text-sm text-charcoal mb-4">L&eacute;gal</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               <li><Link href="/mentions-legales" className="text-sm text-stone hover:text-green transition-colors">Mentions l&eacute;gales</Link></li>
               <li><Link href="/politique-confidentialite" className="text-sm text-stone hover:text-green transition-colors">Confidentialit&eacute;</Link></li>
             </ul>

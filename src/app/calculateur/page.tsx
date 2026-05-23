@@ -309,8 +309,8 @@ function CalculateurPage() {
               />
               {showSuggestions && filteredDepts.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-brand border border-border shadow-brand-lg z-10 max-h-80 overflow-y-auto">
-                  {filteredDepts.map(d => (
-                    <button key={d.code} onClick={() => selectDept(d.code, d.name)} className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0">
+                  {filteredDepts.map((d, i) => (
+                    <button key={d.code} onClick={() => selectDept(d.code, d.name)} className="w-full text-left px-4 py-3 hover:bg-green-pale transition-colors flex justify-between items-center border-b border-border-light last:border-0 suggestion-enter" style={{ animationDelay: `${i * 25}ms` }}>
                       <div><span className="font-mono text-sm text-amber-dark font-semibold mr-2">{d.code}</span><span className="font-semibold text-sm">{d.name}</span></div>
                       <span className="text-xs font-mono text-green">{d.irradiation} kWh</span>
                     </button>
@@ -330,7 +330,8 @@ function CalculateurPage() {
               {ORIENTATIONS.map(o => (
                 <button key={o.value} onClick={() => selectOrientation(o.value)} className="text-left p-4 rounded-brand border border-border bg-cream hover:border-green hover:bg-green-pale transition-all">
                   <span className="text-xl mb-1 block">{o.emoji}</span>
-                  <span className="font-semibold text-sm">{o.label}</span>
+                  <span className="font-semibold text-sm block">{o.label}</span>
+                  <span className="text-[10px] text-stone mt-0.5 block">{o.coeff === 1.0 ? 'Optimal' : o.coeff >= 0.9 ? 'Tr\u00e8s bon' : o.coeff >= 0.8 ? 'Bon' : o.coeff >= 0.65 ? 'R\u00e9duit' : 'Limit\u00e9'}</span>
                 </button>
               ))}
             </div>

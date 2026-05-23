@@ -19,7 +19,7 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-pale/60 via-cream to-green-pale/40 pointer-events-none hero-gradient" />
+        <div className="absolute inset-0 bg-gradient-to-br from-green-pale/20 via-cream to-amber-pale/10 pointer-events-none hero-gradient" />
         {/* Floating ambient orbs */}
         <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-amber/5 blur-3xl float float-delay-1 pointer-events-none" />
         <div className="absolute bottom-10 left-[5%] w-48 h-48 rounded-full bg-green/5 blur-3xl float-slow float-delay-2 pointer-events-none" />
