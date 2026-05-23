@@ -43,21 +43,6 @@ export default function HomePage() {
         <Parallax speed={0.25} className="absolute bottom-10 left-[5%] pointer-events-none">
           <div className="w-48 h-48 rounded-full bg-green/5 blur-3xl float-slow float-delay-2" />
         </Parallax>
-        {/* Subtle solar panel SVG decoration */}
-        <Parallax speed={0.08} className="absolute top-32 left-[15%] pointer-events-none hidden lg:block">
-          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" opacity="0.04">
-            <rect x="10" y="30" width="100" height="60" rx="4" stroke="#3D7A4A" strokeWidth="1.5"/>
-            <line x1="10" y1="50" x2="110" y2="50" stroke="#3D7A4A" strokeWidth="0.8"/>
-            <line x1="10" y1="70" x2="110" y2="70" stroke="#3D7A4A" strokeWidth="0.8"/>
-            <line x1="36" y1="30" x2="36" y2="90" stroke="#3D7A4A" strokeWidth="0.8"/>
-            <line x1="62" y1="30" x2="62" y2="90" stroke="#3D7A4A" strokeWidth="0.8"/>
-            <line x1="88" y1="30" x2="88" y2="90" stroke="#3D7A4A" strokeWidth="0.8"/>
-            <circle cx="60" cy="15" r="8" fill="#E8961A" opacity="0.3"/>
-            <line x1="60" y1="5" x2="60" y2="2" stroke="#E8961A" strokeWidth="1" opacity="0.3"/>
-            <line x1="50" y1="8" x2="47" y2="5" stroke="#E8961A" strokeWidth="1" opacity="0.3"/>
-            <line x1="70" y1="8" x2="73" y2="5" stroke="#E8961A" strokeWidth="1" opacity="0.3"/>
-          </svg>
-        </Parallax>
         <div className="container-brand relative py-16 md:py-24 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: text */}
@@ -324,16 +309,6 @@ export default function HomePage() {
         </Parallax>
         <Parallax speed={0.2} className="absolute bottom-0 left-0 pointer-events-none">
           <div className="w-72 h-72 rounded-full bg-green/5 blur-3xl float-slow float-delay-2" />
-        </Parallax>
-        {/* Solar panel grid decoration */}
-        <Parallax speed={0.06} className="absolute bottom-16 right-[8%] pointer-events-none hidden lg:block">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.06">
-            <rect x="5" y="15" width="70" height="45" rx="3" stroke="#F0ECE0" strokeWidth="1"/>
-            <line x1="5" y1="30" x2="75" y2="30" stroke="#F0ECE0" strokeWidth="0.6"/>
-            <line x1="5" y1="45" x2="75" y2="45" stroke="#F0ECE0" strokeWidth="0.6"/>
-            <line x1="28" y1="15" x2="28" y2="60" stroke="#F0ECE0" strokeWidth="0.6"/>
-            <line x1="52" y1="15" x2="52" y2="60" stroke="#F0ECE0" strokeWidth="0.6"/>
-          </svg>
         </Parallax>
         <div className="container-brand max-w-5xl relative">
           <div className="grid md:grid-cols-2 gap-10 items-center">
