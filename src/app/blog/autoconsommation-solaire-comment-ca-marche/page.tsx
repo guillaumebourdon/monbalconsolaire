@@ -178,8 +178,12 @@ export default function AutoconsommationPage() {
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi le solaire devient incontournable</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu</h4>
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h4>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic : ombre, orientation, Linky, autoconsommation invisible</p>
+                </Link>
+                <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h4>
+                  <p className="text-xs text-charcoal-light mt-1">8 astuces pour passer de 40 % &agrave; 85 %</p>
                 </Link>
               </div>
             </section>

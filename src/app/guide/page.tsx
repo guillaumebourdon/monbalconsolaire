@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'optimiser-autoconsommation-solaire',
+    title: 'Comment optimiser son autoconsommation solaire au quotidien',
+    excerpt: '8 astuces class\u00e9es par impact pour passer de 40 % \u00e0 85 % d\u2019autoconsommation, dont 6 gratuites.',
+    badge: 'Optimisation',
+    date: '25 mai 2026',
+    readTime: '10 min',
+  },
+  {
     slug: 'declaration-cacsi-enedis-panneau-solaire',
     title: 'D\u00e9claration CACSI Enedis : le guide pas \u00e0 pas',
     excerpt: 'La proc\u00e9dure compl\u00e8te pour d\u00e9clarer votre kit \u00e0 Enedis. Avec mod\u00e8les de lettres pr\u00eats \u00e0 copier.',

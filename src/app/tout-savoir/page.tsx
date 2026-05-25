@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/guide/optimiser-autoconsommation-solaire',
+    title: 'Comment optimiser son autoconsommation solaire au quotidien',
+    excerpt: '8 astuces pour passer de 40 % \u00e0 85 % d\u2019autoconsommation, dont 6 gratuites.',
+    type: 'guide',
+    badge: 'Optimisation',
+    tags: ['optimisation'],
+    publishedAt: '2026-05-25',
+    readTime: '10 min',
+  },
+  {
     slug: '/blog/panneau-solaire-est-ouest',
     title: 'Panneau solaire balcon est/ouest : production et rentabilit\u00e9',
     excerpt: '80 % du potentiel sud, ROI 8-10 ans, meilleure autoconsommation naturelle.',
