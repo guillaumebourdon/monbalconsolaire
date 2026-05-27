@@ -197,8 +197,12 @@ export default function CombienRapportePage() {
                   <p className="text-xs text-charcoal-light mt-1">Le guide complet pour démarrer</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Checklist de diagnostic et solutions par ordre de coût</p>
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Checklist de diagnostic et solutions par ordre de co&ucirc;t</p>
+                </Link>
+                <Link href="/blog/bilan-6-mois-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan 6 mois avec un kit solaire de balcon</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Production r&eacute;elle vs pr&eacute;visions &mdash; comparez avec notre v&eacute;cu</p>
                 </Link>
               </div>
             </section>

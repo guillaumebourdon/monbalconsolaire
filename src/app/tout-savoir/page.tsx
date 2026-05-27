@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/blog/bilan-6-mois-kit-solaire',
+    title: 'Bilan apr\u00e8s 6 mois avec un kit solaire de balcon',
+    excerpt: 'Production r\u00e9elle, \u00e9conomies, probl\u00e8mes. Retour d\u2019exp\u00e9rience honn\u00eate.',
+    type: 'analyse',
+    badge: 'V\u00e9cu',
+    tags: ['rentabilite'],
+    publishedAt: '2026-05-27',
+    readTime: '10 min',
+  },
+  {
     slug: '/guide/optimiser-autoconsommation-solaire',
     title: 'Comment optimiser son autoconsommation solaire au quotidien',
     excerpt: '8 astuces pour passer de 40 % \u00e0 85 % d\u2019autoconsommation, dont 6 gratuites.',

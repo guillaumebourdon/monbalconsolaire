@@ -448,23 +448,23 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-5 reveal-group">
-            <Link href="/blog/prises-connectees-suivi-solaire" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
-              <div className="badge-amber mb-3 text-[10px]">S&eacute;lection 2026</div>
-              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Meilleures prises connect&eacute;es pour suivi solaire</h3>
-              <p className="text-xs text-charcoal-light leading-relaxed">Tapo P110, Shelly, Meross : mesurer votre production.</p>
-              <div className="text-xs text-stone mt-3">20 mai 2026 &middot; 8 min</div>
+            <Link href="/blog/bilan-6-mois-kit-solaire" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
+              <div className="badge-amber mb-3 text-[10px]">V&eacute;cu</div>
+              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Bilan 6 mois avec un kit solaire de balcon</h3>
+              <p className="text-xs text-charcoal-light leading-relaxed">Production r&eacute;elle, &eacute;conomies, probl&egrave;mes. Retour honn&ecirc;te.</p>
+              <div className="text-xs text-stone mt-3">27 mai 2026 &middot; 10 min</div>
             </Link>
-            <Link href="/blog/kit-solaire-pluie-grele" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
-              <div className="badge-amber mb-3 text-[10px]">Guide pratique</div>
-              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Kit solaire : que faire quand il pleut ou gr&ecirc;le ?</h3>
-              <p className="text-xs text-charcoal-light leading-relaxed">Production, r&eacute;sistance, assurance. R&eacute;ponses concr&egrave;tes.</p>
-              <div className="text-xs text-stone mt-3">18 mai 2026 &middot; 9 min</div>
+            <Link href="/guide/optimiser-autoconsommation-solaire" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
+              <div className="badge-green mb-3 text-[10px]">Guide</div>
+              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h3>
+              <p className="text-xs text-charcoal-light leading-relaxed">8 astuces pour passer de 40 % &agrave; 85 %.</p>
+              <div className="text-xs text-stone mt-3">25 mai 2026 &middot; 10 min</div>
             </Link>
-            <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
-              <div className="badge-green mb-3 text-[10px]">Comparatif</div>
-              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h3>
-              <p className="text-xs text-charcoal-light leading-relaxed">Pose au sol, multi-panneaux, 3 setups par budget.</p>
-              <div className="text-xs text-stone mt-3">13 mai 2026 &middot; 10 min</div>
+            <Link href="/avis/ikea-solstrale-balcon" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
+              <div className="badge-amber mb-3 text-[10px]">Analyse</div>
+              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">IKEA Solstr&aring;le : le kit solaire IKEA pour balcon</h3>
+              <p className="text-xs text-charcoal-light leading-relaxed">449 &euro; avec EcoFlow. Pas encore en France.</p>
+              <div className="text-xs text-stone mt-3">23 mai 2026 &middot; 9 min</div>
             </Link>
           </div>
           <div className="text-center mt-8">

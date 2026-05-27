@@ -6,7 +6,7 @@
 export const siteStats = {
   // Preuve sociale - home page
   calculsEffectues: '500+',
-  articlesPublies: 41, // À incrémenter à chaque nouvel article (guides + blog + comparatifs + avis)
+  articlesPublies: 42, // À incrémenter à chaque nouvel article (guides + blog + comparatifs + avis)
   kitsAnalyses: 9,     // À incrémenter quand on ajoute un avis
   departementsCouverts: 96, // Couverture France métropolitaine complète
   villesCouvertes: 57, // Villes avec données précises en autocomplétion
