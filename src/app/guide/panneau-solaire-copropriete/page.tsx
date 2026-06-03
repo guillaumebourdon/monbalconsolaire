@@ -183,8 +183,12 @@ export default function CoproprietePage() {
                   <p className="text-xs text-charcoal-light mt-1">Vos droits en tant que locataire</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutants</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Le guide complet pour démarrer</p>
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide d&eacute;butants</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le guide complet pour d&eacute;marrer</p>
+                </Link>
+                <Link href="/guide/panneau-solaire-assurance-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">D&eacute;claration, RC, sinistres couverts en copropri&eacute;t&eacute;</p>
                 </Link>
               </div>
             </section>

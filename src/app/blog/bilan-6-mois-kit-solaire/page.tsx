@@ -300,6 +300,10 @@ export default function Bilan6MoisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h4>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic si vos chiffres diff&egrave;rent des n&ocirc;tres</p>
                 </Link>
+                <Link href="/guide/panneau-solaire-assurance-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Gr&ecirc;le, vol, chute : v&eacute;rifiez votre couverture</p>
+                </Link>
               </div>
             </section>
 
