@@ -72,7 +72,7 @@ export default function ComparatifPage() {
           <div className="card mb-10">
             <h3 className="font-bold text-sm mb-3 text-stone">Sommaire</h3>
             <nav className="space-y-2 text-sm">
-              {['Pourquoi un kit solaire de balcon en 2026 ?', 'Nos critères de sélection', 'Tableau comparatif', 'Sunology PLAY2 — Notre choix n\u00b01', 'Beem On 460W — Le meilleur rapport qualité/prix', 'Beem Kit 300W — Le choix petit budget', 'Sunethic F500 — Le Made in France', 'Verdict : quel kit choisir ?', 'Questions frequentes'].map((item, i) => (
+              {['Pourquoi un kit solaire de balcon en 2026 ?', 'Nos critères de sélection', 'Tableau comparatif', 'Sunology PLAY2 : notre choix n\u00b01', 'Beem On 460W : meilleur rapport qualité/prix', 'Beem Kit 300W : le choix petit budget', 'Sunethic F500 : le Made in France', 'Verdict : quel kit choisir ?', 'Questions frequentes'].map((item, i) => (
                 <a key={i} href={`#section-${i+1}`} className="block text-green hover:underline">{i+1}. {item}</a>
               ))}
             </nav>
@@ -138,10 +138,10 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-4">
-              <h2 className="text-2xl font-extrabold mb-4">4. Sunology PLAY2 — Notre choix n&deg;1</h2>
+              <h2 className="text-2xl font-extrabold mb-4">4. Sunology PLAY2 : notre choix n&deg;1</h2>
               <div className="card-lg border-green/20 bg-green-pale/20 mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
-                  <div><div className="badge-green mb-2">Meilleur choix global</div><h3 className="font-bold text-xl">Sunology PLAY2</h3><p className="text-sm text-stone">par Sunology — Nantes, France — depuis 2019</p></div>
+                  <div><div className="badge-green mb-2">Meilleur choix global</div><h3 className="font-bold text-xl">Sunology PLAY2</h3><p className="text-sm text-stone">par Sunology · Nantes, France · depuis 2019</p></div>
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-green">599 &euro;</div><div className="text-xs text-stone">450 Wc bifacial</div></div>
                 </div>
               </div>
@@ -174,10 +174,10 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-5">
-              <h2 className="text-2xl font-extrabold mb-4">5. Beem On 460W — Le meilleur rapport qualité/prix</h2>
+              <h2 className="text-2xl font-extrabold mb-4">5. Beem On 460W : meilleur rapport qualité/prix</h2>
               <div className="card-lg mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
-                  <div><div className="badge-amber mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Beem On 460W</h3><p className="text-sm text-stone">par Beem Energy — Nantes, France</p></div>
+                  <div><div className="badge-amber mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Beem On 460W</h3><p className="text-sm text-stone">par Beem Energy · Nantes, France</p></div>
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">599 &euro;</div><div className="text-xs text-stone">460 Wc bifacial</div></div>
                 </div>
               </div>
@@ -200,10 +200,10 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-6">
-              <h2 className="text-2xl font-extrabold mb-4">6. Beem Kit 300W — Le choix petit budget</h2>
+              <h2 className="text-2xl font-extrabold mb-4">6. Beem Kit 300W : le choix petit budget</h2>
               <div className="card-lg mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
-                  <div><div className="badge-amber mb-2">Petit budget</div><h3 className="font-bold text-xl">Beem Kit 300W</h3><p className="text-sm text-stone">par Beem Energy — 4 panneaux modulaires</p></div>
+                  <div><div className="badge-amber mb-2">Petit budget</div><h3 className="font-bold text-xl">Beem Kit 300W</h3><p className="text-sm text-stone">par Beem Energy · 4 panneaux modulaires</p></div>
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">299 &euro;</div><div className="text-xs text-stone">300 Wc</div></div>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-7">
-              <h2 className="text-2xl font-extrabold mb-4">7. Sunethic F500 — Le Made in France</h2>
+              <h2 className="text-2xl font-extrabold mb-4">7. Sunethic F500 : le Made in France</h2>
               <div className="card-lg mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
                   <div><div className="badge-green mb-2">Made in France</div><h3 className="font-bold text-xl">Sunethic F500</h3><p className="text-sm text-stone">Fabriqué et assemble en France</p></div>

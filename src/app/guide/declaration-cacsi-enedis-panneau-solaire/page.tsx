@@ -382,7 +382,7 @@ export default function DeclarationCacsiEnedisPage() {
               <div className="card-lg bg-amber-pale/20 border-amber/20 mt-6">
                 <h3 className="font-bold text-base mb-2">⚠️ Attention au certificat anti-injection</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed mb-3">
-                  La CACSI exige techniquement un dispositif &laquo; anti-injection &raquo; (ou anti-refoulement) qui empêche l&apos;électricité produite de remonter sur le réseau public quand votre consommation est nulle. Concrètement :
+                  La CACSI exige techniquement un dispositif &laquo; anti-injection &raquo; (ou anti-refoulement) qui empêche l&apos;électricité produite de remonter sur le réseau public quand votre consommation est nulle. En pratique :
                 </p>
                 <ul className="text-sm text-charcoal-light space-y-2 pl-5">
                   <li>&bull; <strong>Sunology, Beem, Sunethic, DualSun</strong> : leurs micro-onduleurs intègrent cette fonction de série. Aucun dispositif additionnel à installer.</li>

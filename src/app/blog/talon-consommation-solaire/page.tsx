@@ -231,7 +231,7 @@ export default function TalonConsommationPage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
-                <strong>Résultat :</strong> en appliquant ces gestes, vous pouvez réduire votre talon de <strong>50 à 100 W</strong>, soit 100-220 €/an d&apos;économies sans investissement.
+                En appliquant ces gestes, vous pouvez réduire votre talon de <strong>50 à 100 W</strong>, soit 100-220 €/an d&apos;économies sans investissement.
               </p>
             </section>
 

@@ -113,7 +113,7 @@ export default function BatteriePage() {
               <div className="space-y-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div><div className="badge-green mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Kit 450W + batterie VAULT 700 Wh — Plug-and-play</p></div>
+                    <div><div className="badge-green mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Kit 450W + batterie VAULT 700 Wh · Plug-and-play</p></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-green">1 179 €</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PLAY MAX est le bundle le plus accessible du marché : le kit PLAY2 (450W) + la batterie nomade VAULT (700 Wh) pour 1 179€. La VAULT est compacte, portable (utilisable en camping/pique-nique), et offre ~5 heures d&apos;autonomie sur le talon de consommation.</p>
@@ -132,7 +132,7 @@ export default function BatteriePage() {
 
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div><div className="badge-amber mb-2">Plus de capacité</div><h3 className="font-bold text-xl">Sunology STOREY</h3><p className="text-sm text-stone">Batterie fixe 2,2 kWh — Compatible PLAY2</p></div>
+                    <div><div className="badge-amber mb-2">Plus de capacité</div><h3 className="font-bold text-xl">Sunology STOREY</h3><p className="text-sm text-stone">Batterie fixe 2,2 kWh · Compatible PLAY2</p></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">1 390 €</div><div className="text-xs text-stone">(batterie seule)</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">La STOREY est la solution fixe de Sunology : 2,2 kWh de capacité, branchée sur une prise, elle stocke le surplus solaire pour une utilisation le soir et la nuit. C&apos;est 3x la capacité de la VAULT, avec une gestion plus intelligente de la charge/décharge.</p>
