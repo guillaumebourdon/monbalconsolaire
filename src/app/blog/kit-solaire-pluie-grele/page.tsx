@@ -263,6 +263,10 @@ export default function KitSolairePluieGrelePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire : pas &agrave; pas</h4>
                   <p className="text-xs text-charcoal-light mt-1">Lestage, fixation, c&acirc;blage</p>
                 </Link>
+                <Link href="/guide/panneau-solaire-assurance-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Gr&ecirc;le, vol, chute, RC : tout ce qui est garanti</p>
+                </Link>
               </div>
             </section>
 

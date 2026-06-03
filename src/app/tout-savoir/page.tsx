@@ -92,6 +92,16 @@ const ARTICLES: Article[] = [
   },
   // Analyses / blog
   {
+    slug: '/guide/panneau-solaire-assurance-balcon',
+    title: 'Panneau solaire balcon : que couvre votre assurance ?',
+    excerpt: 'Gr\u00eale, vol, chute, RC. Ce qu\u2019il faut d\u00e9clarer et ce qui est garanti.',
+    type: 'guide',
+    badge: 'Assurance',
+    tags: ['reglementation'],
+    publishedAt: '2026-06-03',
+    readTime: '8 min',
+  },
+  {
     slug: '/blog/bilan-6-mois-kit-solaire',
     title: 'Bilan apr\u00e8s 6 mois avec un kit solaire de balcon',
     excerpt: 'Production r\u00e9elle, \u00e9conomies, probl\u00e8mes. Retour d\u2019exp\u00e9rience honn\u00eate.',

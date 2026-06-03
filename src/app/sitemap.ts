@@ -52,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/guide/orientation-panneau-solaire-balcon`, lastModified: '2026-03-29', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/reglementation-panneau-solaire-balcon-2026`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/panneau-solaire-copropriete`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/guide/panneau-solaire-assurance-balcon`, lastModified: '2026-06-03', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/optimiser-autoconsommation-solaire`, lastModified: '2026-05-25', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/declaration-cacsi-enedis-panneau-solaire`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.8 },
 

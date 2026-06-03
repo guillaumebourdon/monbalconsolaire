@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'panneau-solaire-assurance-balcon',
+    title: 'Panneau solaire balcon : que couvre votre assurance ?',
+    excerpt: 'Gr\u00eale, vol, chute, responsabilit\u00e9 civile. Ce qu\u2019il faut d\u00e9clarer et ce qui est garanti.',
+    badge: 'Assurance',
+    date: '3 juin 2026',
+    readTime: '8 min',
+  },
+  {
     slug: 'optimiser-autoconsommation-solaire',
     title: 'Comment optimiser son autoconsommation solaire au quotidien',
     excerpt: '8 astuces class\u00e9es par impact pour passer de 40 % \u00e0 85 % d\u2019autoconsommation, dont 6 gratuites.',
