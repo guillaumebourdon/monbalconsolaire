@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const articles = [
+  { slug: 'entretien-nettoyage-panneau-solaire-balcon', title: 'Entretien et nettoyage d\u2019un panneau solaire de balcon', excerpt: 'Fr\u00e9quence, produits, erreurs \u00e0 \u00e9viter, impact sur la production. Guide pratique avec checklist saisonni\u00e8re.', badge: 'Guide pratique', date: '4 juin 2026', readTime: '9 min' },
   { slug: 'bilan-6-mois-kit-solaire', title: 'Bilan apr\u00e8s 6 mois avec un kit solaire de balcon', excerpt: 'Production r\u00e9elle mois par mois, \u00e9conomies constat\u00e9es, probl\u00e8mes rencontr\u00e9s. Retour d\u2019exp\u00e9rience honn\u00eate.', badge: 'Retour d\u2019exp\u00e9rience', date: '27 mai 2026', readTime: '10 min' },
   { slug: 'panneau-solaire-est-ouest', title: 'Panneau solaire balcon est/ouest : production et rentabilit\u00e9', excerpt: 'Votre balcon est orient\u00e9 est ou ouest ? 80 % du potentiel sud, ROI 8-10 ans, et un avantage cach\u00e9 en autoconsommation.', badge: 'Orientation', date: '22 mai 2026', readTime: '10 min' },
   { slug: 'prises-connectees-suivi-solaire', title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026', excerpt: 'Tapo P110, Shelly Plug S, Meross : comparatif des prises pour mesurer la production de votre kit solaire.', badge: 'S\u00e9lection 2026', date: '20 mai 2026', readTime: '8 min' },

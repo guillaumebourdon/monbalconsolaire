@@ -69,6 +69,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Panneau solaire balcon est/ouest : production', description: '80 % du potentiel sud, ROI 8-10 ans, avantage autoconsommation.', url: '/blog/panneau-solaire-est-ouest', category: 'Blog', badge: 'Orientation' },
   { title: 'Batteries portables solaires : comparatif 2026', description: 'EcoFlow, Bluetti, Jackery : 6 mod\u00e8les compar\u00e9s.', url: '/blog/batteries-portables-solaires-comparatif', category: 'Blog', badge: 'Batteries' },
   { title: 'Lampes solaires balcon : 10 mod\u00e8les 2026', description: 'Guirlandes, appliques, projecteurs, lanternes.', url: '/blog/lampes-solaires-balcon-2026', category: 'Blog', badge: '\u00c9clairage' },
+  { title: 'Entretien et nettoyage panneau solaire balcon', description: 'Fréquence, produits, erreurs à éviter, checklist saisonnière.', url: '/blog/entretien-nettoyage-panneau-solaire-balcon', category: 'Blog', badge: 'Entretien' },
 ];
 
 function normalize(str: string): string {

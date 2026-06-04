@@ -86,6 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/panneau-solaire-est-ouest`, lastModified: '2026-05-22', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/prises-connectees-suivi-solaire`, lastModified: '2026-05-20', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/kit-solaire-pluie-grele`, lastModified: '2026-05-18', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/blog/entretien-nettoyage-panneau-solaire-balcon`, lastModified: '2026-06-04', changeFrequency: 'monthly', priority: 0.7 },
 
     // Pages secondaires
     { url: `${BASE_URL}/methodologie`, lastModified: '2026-05-15', changeFrequency: 'monthly', priority: 0.5 },
