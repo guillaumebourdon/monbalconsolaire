@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const reviews = [
+  { slug: 'beem-on-500w', title: 'Beem On 500 Wc : le nouveau rapport qualit\u00e9-prix du march\u00e9', excerpt: '429 \u20ac pour 500 Wc bifacial TOPCon, soit 0,86 \u20ac/Wc. Le kit le plus rentable du march\u00e9 fran\u00e7ais en 2026.', badge: 'Nouveau', score: '8.5/10', price: '429 \u20ac' },
   { slug: 'ikea-solstrale-balcon', title: 'IKEA Solstr\u00e5le : le kit solaire IKEA pour balcon', excerpt: 'IKEA lance un kit plug-and-play \u00e0 449 \u20ac avec EcoFlow. Analyse compl\u00e8te, mais pas encore disponible en France.', badge: 'Analyse', score: '\u2014', price: '449 \u20ac (DE)' },
   { slug: 'dualsun-preasy', title: 'DualSun PREASY : le nouveau challenger Made in France', excerpt: 'Panneau pliable 420 Wc, assembl\u00e9 en France, design aspect bois. Beau mais cher face \u00e0 la concurrence.', badge: 'Nouveau', score: '6.5/10', price: '870 \u20ac' },
   { slug: 'zendure-solarflow', title: 'Zendure SolarFlow : 840 W pour 488 \u20ac, trop beau ?', excerpt: 'Batterie 1,92 kWh + onduleur 800 W int\u00e9gr\u00e9s pour moins de 500 \u20ac. Le meilleur rapport qualit\u00e9-prix du march\u00e9.', badge: 'Qualit\u00e9/prix', score: '8.5/10', price: '488 \u20ac' },
