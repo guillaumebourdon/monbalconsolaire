@@ -30,6 +30,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Zendure SolarFlow : 840W pour 488 \u20ac', description: 'Batterie 1,92 kWh + onduleur 800 W int\u00e9gr\u00e9s. Meilleur rapport qualit\u00e9-prix.', url: '/avis/zendure-solarflow', category: 'Avis', badge: '8.5/10' },
   { title: 'IKEA Solstr\u00e5le : le kit solaire IKEA pour balcon', description: 'Kit plug-and-play IKEA \u00e0 449 \u20ac avec EcoFlow. Analyse, specs, comparaison. Pas encore disponible en France.', url: '/avis/ikea-solstrale-balcon', category: 'Avis', badge: 'Analyse' },
   { title: 'DualSun PREASY : le challenger Made in France', description: 'Panneau pliable 420 Wc, design aspect bois. Beau mais cher.', url: '/avis/dualsun-preasy', category: 'Avis', badge: '6.5/10' },
+  { title: 'Beem On 500 Wc : le rapport qualité-prix du marché', description: '429€ pour 500 Wc bifacial TOPCon, soit 0,86€/Wc. Le kit le plus rentable en 2026.', url: '/avis/beem-on-500w', category: 'Avis', badge: '8.5/10' },
   { title: 'Bluetti Balco 260 : tout-en-un onduleur + batterie', description: 'Onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. 849€ sans panneaux. IP65, extensible à 15 kWh.', url: '/avis/bluetti-balco-260', category: 'Avis', badge: '7/10' },
 
   // ─── Comparatifs ───
