@@ -26,13 +26,14 @@ export default function CalculateurWrapper() {
 const KITS = [
   { id: 'beem-kit-300w', name: 'Beem Kit 300W', brand: 'Beem Energy', power: 300, price: 299, hasBattery: false, slug: '/avis/beem-kit-300w', affiliateUrl: 'https://beemenergy.fr/products/kit-beem', minWidth: 'narrow', maxBudget: 400 },
   { id: 'sunology-play-2', name: 'Sunology PLAY 2', brand: 'Sunology', power: 450, price: 599, hasBattery: false, slug: '/avis/sunology-play-2', affiliateUrl: 'https://sunology.eu/products/play2-kit-solaire', minWidth: 'medium', maxBudget: 800 },
-  { id: 'beem-on-460w', name: 'Beem On 460W', brand: 'Beem Energy', power: 460, price: 599, hasBattery: false, slug: '/avis/beem-on-460w', affiliateUrl: 'https://beemenergy.fr/products/beem-kit-solaire-plug-play', minWidth: 'medium', maxBudget: 800 },
+  { id: 'beem-on-500w', name: 'Beem On 500 Wc', brand: 'Beem Energy', power: 500, price: 429, hasBattery: false, slug: '/avis/beem-on-500w', affiliateUrl: 'https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge', minWidth: 'medium', maxBudget: 800 },
   { id: 'sunethic-f500', name: 'Sunethic F500', brand: 'Sunethic', power: 500, price: 690, hasBattery: false, slug: '/avis/sunethic-f500', affiliateUrl: 'https://sunethic.fr/produits', minWidth: 'medium', maxBudget: 800 },
   { id: 'sunology-city', name: 'Sunology CITY', brand: 'Sunology', power: 405, price: 549, hasBattery: false, slug: '/avis/sunology-city', affiliateUrl: 'https://sunology.eu/products/city-kit-solaire-balcon', minWidth: 'narrow', maxBudget: 800 },
   { id: 'zendure-solarflow', name: 'Zendure SolarFlow', brand: 'Zendure', power: 840, price: 900, hasBattery: true, slug: '/avis/zendure-solarflow', affiliateUrl: '', minWidth: 'wide', maxBudget: 1500 },
   { id: 'sunology-play-max', name: 'Sunology PLAY MAX', brand: 'Sunology', power: 450, price: 1179, hasBattery: true, slug: '/avis/sunology-play-max', affiliateUrl: 'https://sunology.eu/products/play-max', minWidth: 'medium', maxBudget: 1500, editorial: 'ROI long (11,7 ans). Int\u00e9ressant pour l\u2019autonomie nocturne.' },
   { id: 'ecoflow-powerstream', name: 'EcoFlow PowerStream', brand: 'EcoFlow', power: 800, price: 1800, hasBattery: true, slug: '/avis/ecoflow-powerstream', affiliateUrl: 'https://fr.ecoflow.com/products/powerstream-microinverter', minWidth: 'wide', maxBudget: 9999, editorial: 'ROI long (10,2 ans). Pour l\u2019\u00e9cosyst\u00e8me EcoFlow ou le backup r\u00e9seau.' },
   { id: 'dualsun-preasy', name: 'DualSun PREASY', brand: 'DualSun', power: 420, price: 870, hasBattery: false, slug: '/avis/dualsun-preasy', affiliateUrl: '', minWidth: 'medium', maxBudget: 1500, editorial: 'ROI long (10,5 ans). Choix Made in France et design premium.' },
+  { id: 'bluetti-balco-260', name: 'Bluetti Balco 260', brand: 'Bluetti', power: 1000, price: 1100, hasBattery: true, slug: '/avis/bluetti-balco-260', affiliateUrl: 'https://fr.bluettipower.eu/pages/bluetti-balco-260', minWidth: 'wide', maxBudget: 1500, editorial: 'Tout-en-un onduleur + batterie 2,56 kWh. Panneaux non inclus (prix estim\u00e9 avec 2\u00d7500 Wc).' },
 ];
 
 // ─── Options ──────────────────────────────────────────────

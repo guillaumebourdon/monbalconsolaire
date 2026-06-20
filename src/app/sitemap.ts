@@ -37,10 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog`, lastModified: '2026-05-06', changeFrequency: 'daily', priority: 0.7 },
 
     // Comparatifs
-    { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-2026`, lastModified: '2026-03-17', changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/comparatif/sunology-vs-beem`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-2026`, lastModified: '2026-06-20', changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/comparatif/sunology-vs-beem`, lastModified: '2026-06-20', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/kit-solaire-petit-budget`, lastModified: '2026-03-25', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/comparatif/kit-solaire-batterie-2026`, lastModified: '2026-03-31', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/kit-solaire-batterie-2026`, lastModified: '2026-06-20', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/300w-vs-400w-vs-500w-puissance`, lastModified: '2026-04-18', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/zendure-vs-sunology-vs-beem`, lastModified: '2026-05-09', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-terrasse-2026`, lastModified: '2026-05-13', changeFrequency: 'monthly', priority: 0.8 },

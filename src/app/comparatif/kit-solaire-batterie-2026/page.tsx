@@ -91,7 +91,8 @@ export default function BatteriePage() {
                       ['Sunology VAULT', '700 Wh', '~580€', '829€/kWh', '~5h', 'Nomade + plug-and-play', true],
                       ['Sunology STOREY', '2,2 kWh', '1 390€', '632€/kWh', '~15h', 'Fixe plug-and-play', false],
                       ['Beem Battery', '2,2 kWh', '~5 500€**', '2 500€/kWh', '~15h', 'Fixe plug-and-play', false],
-                      ['EcoFlow PowerStream', '2 kWh', '~1 800€***', '900€/kWh', '~13h', 'Modulaire', false],
+                      ['EcoFlow PowerStream', '2 kWh', '~1 800\u20ac***', '900\u20ac/kWh', '~13h', 'Modulaire', false],
+                      ['Bluetti Balco 260', '2,56 kWh', '849\u20ac****', '332\u20ac/kWh', '~17h', 'Tout-en-un (sans panneaux)', false],
                     ].map(([n, c, p, r, a, t, best], i) => (
                       <tr key={i} className={`border-b border-border-light ${best ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{n} {best && <span className="badge-green ml-2 text-[10px]">Meilleur prix</span>}</td>
@@ -105,7 +106,7 @@ export default function BatteriePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">* Autonomie estimée pour un talon de consommation de 140W. ** Prix du bundle kit + batterie Beem (6 190€ - 690€ pour le kit seul estimé). *** Prix du bundle batterie + micro-onduleur EcoFlow, sans panneau.</p>
+              <p className="text-xs text-stone">* Autonomie estim&eacute;e pour un talon de consommation de 140W. ** Prix du bundle kit + batterie Beem (6 190&euro; - 690&euro; pour le kit seul estim&eacute;). *** Prix du bundle batterie + micro-onduleur EcoFlow, sans panneau. **** Bluetti Balco 260 : prix du bo&icirc;tier seul, panneaux non inclus.</p>
             </section>
 
             <section>
@@ -141,10 +142,29 @@ export default function BatteriePage() {
 
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div><div className="badge-amber mb-2">Modulaire</div><h3 className="font-bold text-xl">EcoFlow PowerStream</h3><p className="text-sm text-stone">Système modulaire batterie + micro-onduleur</p></div>
-                    <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">~1 800 €</div><div className="text-xs text-stone">(sans panneau)</div></div>
+                    <div><div className="badge-amber mb-2">Modulaire</div><h3 className="font-bold text-xl">EcoFlow PowerStream</h3><p className="text-sm text-stone">Syst&egrave;me modulaire batterie + micro-onduleur</p></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">~1 800 &euro;</div><div className="text-xs text-stone">(sans panneau)</div></div>
                   </div>
-                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PowerStream d&apos;EcoFlow est une approche différente : un micro-onduleur intelligent qui gère la charge/décharge automatiquement selon votre consommation en temps réel. Compatible avec les batteries portables EcoFlow (DELTA, RIVER). Le système est modulaire mais le coût total est élevé.</p>
+                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PowerStream d&apos;EcoFlow est une approche diff&eacute;rente : un micro-onduleur intelligent qui g&egrave;re la charge/d&eacute;charge automatiquement selon votre consommation en temps r&eacute;el. Compatible avec les batteries portables EcoFlow (DELTA, RIVER). Le syst&egrave;me est modulaire mais le co&ucirc;t total est &eacute;lev&eacute;.</p>
+                </div>
+
+                <div className="card-lg">
+                  <div className="flex items-start justify-between flex-wrap gap-4">
+                    <div><div className="badge-amber mb-2">Tout-en-un</div><h3 className="font-bold text-xl">Bluetti Balco 260</h3><p className="text-sm text-stone">Onduleur SiC + batterie LFP 2,56 kWh int&eacute;gr&eacute;s &middot; IP65</p></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">849 &euro;</div><div className="text-xs text-stone">(sans panneaux)</div></div>
+                  </div>
+                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le Balco 260 de Bluetti int&egrave;gre onduleur, batterie et 4 MPPT dans un seul bo&icirc;tier IP65. La batterie de 2,56&nbsp;kWh est extensible jusqu&apos;&agrave; 15&nbsp;kWh. C&apos;est le meilleur prix/kWh du march&eacute; (332&nbsp;&euro;/kWh), mais les panneaux ne sont pas inclus. <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
+                  <h4 className="font-bold text-sm mt-4 mb-2">Points forts</h4>
+                  <ul className="space-y-1 text-sm text-charcoal-light">
+                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Meilleur prix/kWh du march&eacute; (332&nbsp;&euro;/kWh)</li>
+                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Secours &eacute;lectrique 1&nbsp;200&nbsp;W en cas de coupure</li>
+                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Extensible jusqu&apos;&agrave; 15&nbsp;kWh</li>
+                  </ul>
+                  <h4 className="font-bold text-sm mt-4 mb-2">Points faibles</h4>
+                  <ul className="space-y-1 text-sm text-charcoal-light">
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Panneaux non inclus (co&ucirc;t total &gt;1&nbsp;100&nbsp;&euro;)</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> App Bluetti historiquement faible (refonte en cours)</li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -193,6 +213,10 @@ export default function BatteriePage() {
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h4>
                   <p className="text-xs text-charcoal-light mt-1">Talon, surplus, injection</p>
+                </Link>
+                <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le tout-en-un onduleur + batterie 2,56&nbsp;kWh</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>

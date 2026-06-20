@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Sunology ou Beem : lequel est le moins cher ?', answer: 'Les deux sont à 599€ pour leurs modèles phares (PLAY2 et Beem On). Beem propose aussi un kit à 299€ (Beem Kit 300W) pour les petits budgets. Sunology n\'a pas d\'offre d\'entrée de gamme équivalente.' },
-  { question: 'Quel kit produit le plus d\'électricité ?', answer: 'Le Beem On produit légèrement plus grâce à ses 460 Wc contre 450 Wc pour le Sunology PLAY2. La différence est minime en pratique : environ 10 kWh/an de plus, soit ~2€/an d\'économies supplémentaires.' },
+  { question: 'Sunology ou Beem : lequel est le moins cher ?', answer: 'Beem a pris l\'avantage en 2026 : le Beem On 500 Wc est \u00e0 429\u20ac contre 599\u20ac pour le Sunology PLAY2. C\'est 170\u20ac de moins pour 50 Wc de plus. Beem propose aussi le Kit 300W \u00e0 299\u20ac.' },
+  { question: 'Quel kit produit le plus d\'\u00e9lectricit\u00e9 ?', answer: 'Le Beem On 500 Wc produit plus gr\u00e2ce \u00e0 ses 500 Wc contre 450 Wc pour le Sunology PLAY2, soit environ 510 vs 520 kWh/an. La diff\u00e9rence de production est faible, mais le prix est tr\u00e8s diff\u00e9rent (429\u20ac vs 599\u20ac).' },
   { question: 'Lequel s\'installe le plus rapidement ?', answer: 'Le Sunology PLAY2 s\'installe en 1 minute (châssis pré-assemblé en usine). Le Beem On nécessite environ 5 minutes d\'assemblage. Les deux sont très simples.' },
   { question: 'Quelle est la meilleure app de suivi ?', answer: 'Sunology STREAM et Beem App offrent des fonctionnalités similaires (production en temps réel, historique, économies). La différence : Sunology utilise le WiFi intégré au micro-onduleur, Beem nécessite un boîtier Beembox séparé (inclus).' },
 ];
@@ -22,7 +22,7 @@ const faqData = [
 export default function SunologyVsBeemPage() {
   return (
     <>
-      <SchemaArticle title="Sunology vs Beem 2026 : quel kit solaire choisir ?" description="Comparaison détaillée Sunology PLAY2 vs Beem On 460W." url="https://monbalconsolaire.fr/comparatif/sunology-vs-beem" datePublished="2026-03-24" />
+      <SchemaArticle title="Sunology vs Beem 2026 : quel kit solaire choisir ?" description="Comparaison détaillée Sunology PLAY2 vs Beem On 460W." url="https://monbalconsolaire.fr/comparatif/sunology-vs-beem" datePublished="2026-03-24" dateModified="2026-06-20" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -31,7 +31,7 @@ export default function SunologyVsBeemPage() {
             <div className="badge-green mb-4 inline-block">Comparatif 2026</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology vs Beem : quel kit solaire choisir en 2026 ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Les deux leaders français du solaire plug-and-play s&apos;affrontent. PLAY2 contre Beem On : on compare tout, point par point.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>24 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>Mis &agrave; jour le 20 juin 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">n            <span className="text-stone text-sm mt-0.5">ℹ</span>n            <p className="text-xs text-stone leading-relaxed">n              <strong>Transparence :</strong> certains liens de cette page sont affiliés. Notre classement est basé sur le prix, la puissance, la facilité d'installation, la garantie et l'adéquation au profil. Aucun fabricant ne nous paie pour être mieux noté. <a href="/methodologie" className="text-green hover:underline">Voir notre méthodologie →</a>n            </p>n          </div>
           </div>
@@ -40,7 +40,7 @@ export default function SunologyVsBeemPage() {
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Le verdict rapide</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed"><strong>Sunology PLAY2</strong> pour ceux qui veulent l&apos;installation la plus simple possible (1 min, zéro outil) et un suivi WiFi sans boîtier supplémentaire. <strong>Beem On</strong> pour ceux qui cherchent 10 Wc de plus, un paiement en 10x sans frais, et la prise en charge des démarches Enedis (option Beem ZEN).</p>
+            <p className="text-charcoal-light text-sm leading-relaxed"><strong>Sunology PLAY2</strong> (599&euro;) pour ceux qui veulent l&apos;installation la plus simple (1 min, z&eacute;ro outil) et un suivi WiFi natif. <strong>Beem On 500 Wc</strong> (429&euro;) pour le meilleur rapport qualit&eacute;-prix du march&eacute; : 170&euro; de moins pour 50 Wc de plus. Le nouveau Beem On change la donne.</p>
           </div>
 
           <div className="space-y-10">
@@ -49,25 +49,25 @@ export default function SunologyVsBeemPage() {
               <div className="overflow-x-auto -mx-5 md:mx-0">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">Critère</th><th className="text-center p-3">Sunology PLAY2</th><th className="text-center p-3 rounded-tr-xl">Beem On 460W</th>
+                    <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3">Sunology PLAY2</th><th className="text-center p-3 rounded-tr-xl">Beem On 500 Wc</th>
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Prix', '599 €', '599 €'],
-                      ['Puissance', '450 Wc', '460 Wc'],
+                      ['Prix', '599 \u20ac', '429 \u20ac'],
+                      ['Puissance', '450 Wc', '500 Wc'],
                       ['Technologie', 'N-Type TOPCon bifacial', 'TOPCon bifacial'],
-                      ['Dimensions', '176 x 113 cm', '189 x 113 cm'],
-                      ['Poids', '24,1 kg', '~26 kg'],
+                      ['Dimensions', '176 x 113 cm', '195 x 113 cm'],
+                      ['Poids', '24,1 kg', '27,6 kg'],
                       ['Installation', '1 minute', '5 minutes'],
-                      ['Micro-onduleur', 'TSUN 450W WiFi', 'APSystems + Beembox'],
+                      ['Micro-onduleur', 'TSUN 450W WiFi', '550W + Beembox'],
                       ['App de suivi', 'STREAM (WiFi natif)', 'Beem App (via Beembox)'],
                       ['Garantie', '25 ans + 30 ans perf.', '25 ans'],
                       ['Certification CE', 'Kit complet', 'Panneau seul'],
                       ['Batterie compatible', 'VAULT 700Wh (option)', 'Beem Battery (option)'],
-                      ['Paiement fractionné', 'Non', '4x ou 10x sans frais'],
-                      ['Aide démarches', 'Non', 'Option Beem ZEN'],
+                      ['Paiement fractionn\u00e9', 'Non', '10x sans frais'],
+                      ['Aide d\u00e9marches', 'Non', 'Option Beem ZEN (49\u20ac)'],
                       ['Trustpilot', '4,6/5 (3 000+ avis)', '4,7/5 (1 200+ avis)'],
-                      ['€/Wc', '1,33 €', '1,30 €'],
+                      ['\u20ac/Wc', '1,33 \u20ac', '0,86 \u20ac'],
                     ].map(([c, s, b], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{c}</td>
@@ -101,10 +101,10 @@ export default function SunologyVsBeemPage() {
               <h2 className="text-2xl font-extrabold mb-4">Où Beem gagne</h2>
               <div className="space-y-3">
                 {[
-                  { t: '10 Wc de plus pour le même prix', d: '460 Wc contre 450 Wc. La différence est faible (~10 kWh/an, soit ~2€/an) mais elle existe. Le ratio €/Wc de Beem (1,30€) est légèrement meilleur que celui de Sunology (1,33€).' },
-                  { t: 'Paiement en 10x sans frais', d: 'Beem propose le paiement fractionné en 4x ou 10x sans frais. Sunology ne propose pas cette option. Pour 599€, ça fait ~60€/mois sur 10 mois.' },
-                  { t: 'Option Beem ZEN', d: 'Pour 49€ de plus, Beem prend en charge toutes vos démarches administratives : déclaration CACSI Enedis, convention d\'autoconsommation. Sunology vous laisse faire vous-même (c\'est simple, mais c\'est un plus pour les moins à l\'aise).' },
-                  { t: 'Gamme plus large', d: 'Beem propose le Beem Kit 300W à 299€ (entrée de gamme), le Beem On 460W (milieu de gamme) et le Beem Kit 420W à 599€ (4 panneaux modulaires). Sunology a le PLAY2 et le CITY (balcon) mais pas d\'offre à 299€.' },
+                  { t: 'Prix imbattable : 429\u20ac vs 599\u20ac', d: 'Le Beem On 500 Wc co\u00fbte 170\u20ac de moins que le PLAY2 pour 50 Wc de plus. Le ratio \u20ac/Wc est de 0,86\u20ac contre 1,33\u20ac. C\'est le changement majeur de 2026.' },
+                  { t: 'Paiement en 10x sans frais', d: 'Beem propose le paiement fractionn\u00e9 en 10x sans frais. Pour 429\u20ac, \u00e7a fait ~43\u20ac/mois. D\u00e8s le premier mois, le kit produit plus que la mensualit\u00e9.' },
+                  { t: 'Option Beem ZEN', d: 'Pour 49\u20ac de plus, Beem prend en charge toutes vos d\u00e9marches administratives : d\u00e9claration CACSI Enedis, convention d\'autoconsommation. Sunology vous laisse faire vous-m\u00eame.' },
+                  { t: 'Gamme plus large', d: 'Beem propose le Kit 300W \u00e0 299\u20ac (entr\u00e9e de gamme), le Beem On 500 Wc \u00e0 429\u20ac (best-seller), et le Beem On Max pour les grandes surfaces. Sunology a le PLAY2 et le CITY mais pas d\'offre sous 500\u20ac.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">{p.t}</h4>
@@ -127,15 +127,15 @@ export default function SunologyVsBeemPage() {
                   </ul>
                   <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4 text-xs">Voir le Sunology PLAY2 &rarr;</a>
                 </div>
-                <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2">Choisissez Beem si :</h4>
+                <div className="card-lg border-green/20 bg-green-pale/20">
+                  <h4 className="font-bold text-green mb-2">Choisissez Beem si :</h4>
                   <ul className="text-sm text-charcoal-light space-y-1">
+                    <li>&rarr; Le prix est votre priorit&eacute; (429&euro; vs 599&euro;)</li>
+                    <li>&rarr; Vous voulez le meilleur ratio &euro;/Wc (0,86&euro;)</li>
                     <li>&rarr; Vous voulez payer en 10x sans frais</li>
                     <li>&rarr; Vous pr&eacute;f&eacute;rez qu&apos;on s&apos;occupe des d&eacute;marches (ZEN)</li>
-                    <li>&rarr; Vous cherchez un kit &agrave; 299&euro; pour tester</li>
-                    <li>&rarr; Vous voulez le meilleur ratio &euro;/Wc</li>
                   </ul>
-                  <a href="https://beemenergy.fr/products/beem-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4 text-xs">Voir le Beem On &rarr;</a>
+                  <a href="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4 text-xs">Voir le Beem On 500 Wc &rarr;</a>
                 </div>
               </div>
             </section>
@@ -174,9 +174,9 @@ export default function SunologyVsBeemPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
                 </Link>
-                <Link href="/avis/beem-on-460w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 460W</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Excellent rapport qualité/prix</p>
+                <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix &agrave; 429&nbsp;&euro;</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>

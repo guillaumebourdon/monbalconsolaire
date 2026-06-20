@@ -13,19 +13,19 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Quel est le meilleur kit solaire plug-and-play en 2026 ?', answer: 'Le Sunology PLAY2 offre le meilleur équilibre entre puissance (450 Wc), qualité de fabrication (garantie 25 ans) et facilité d\'installation (1 minute). Pour les petits budgets, le Beem Kit 300W à 299 euros est imbattable.' },
-  { question: 'Combien coute un kit solaire pour balcon ?', answer: 'Les prix vont de 299 euros (Beem Kit 300W) à 690 euros (Sunethic F500). Le milieu de gamme se situe autour de 599 euros avec le Sunology PLAY2 ou le Beem On 460W.' },
+  { question: 'Quel est le meilleur kit solaire plug-and-play en 2026 ?', answer: 'Le Beem On 500 Wc (429\u20ac, 0,86\u20ac/Wc) offre le meilleur rapport qualit\u00e9-prix du march\u00e9 en 2026 avec un ROI de 4,8 ans. Le Sunology PLAY2 (599\u20ac) reste le choix n\u00b01 pour la facilit\u00e9 d\'installation (1 minute). Pour les petits budgets, le Beem Kit 300W \u00e0 299\u20ac est imbattable.' },
+  { question: 'Combien coute un kit solaire pour balcon ?', answer: 'Les prix vont de 299\u20ac (Beem Kit 300W) \u00e0 690\u20ac (Sunethic F500). Le meilleur rapport qualit\u00e9-prix est le Beem On 500 Wc \u00e0 429\u20ac. Le Sunology PLAY2 est \u00e0 599\u20ac.' },
   { question: 'Un kit solaire de balcon est-il rentable ?', answer: 'Oui. Avec le tarif EDF à 0,1940 euros/kWh en 2026, un kit de 450W produit 400-650 kWh/an selon la region, soit 78-126 euros d\'économies annuelles. Le retour sur investissement est de 5 à 8 ans pour une garantie de 25 ans.' },
   { question: 'Peut-on installér un panneau solaire sur un balcon en tant que locataire ?', answer: 'Oui. Les kits plug-and-play installés au sol ou en appui sur une rambarde (sans perçage) ne nécessitent ni autorisation de travaux ni accord du propriétaire, tant que l\'installation est amovible et ne modifié pas le batiment.' },
   { question: 'Quelle est la différence entre Sunology et Beem ?', answer: 'Sunology propose un panneau unique de 450W avec chassis intégré (installation en 1 min). Beem propose soit un panneau unique (Beem On 460W) soit un kit de 4 petits panneaux (Beem Kit 420W). Beem est légèrement moins cher et plus modulaire, Sunology à une finition plus premium.' },
 ];
 
 const kits = [
-  { name: 'Sunology PLAY2', power: '450 Wc', price: '599\u20ac', ratio: '1,33\u20ac', prod: '520 kWh', roi: '5,9 ans', guarantee: '25 ans', highlight: true},
-  { name: 'Beem On 460W', power: '460 Wc', price: '599\u20ac', ratio: '1,30\u20ac', prod: '530 kWh', roi: '5,8 ans', guarantee: '25 ans', highlight: false },
+  { name: 'Beem On 500 Wc', power: '500 Wc', price: '429\u20ac', ratio: '0,86\u20ac', prod: '510 kWh', roi: '4,8 ans', guarantee: '25 ans', highlight: true },
+  { name: 'Sunology PLAY2', power: '450 Wc', price: '599\u20ac', ratio: '1,33\u20ac', prod: '520 kWh', roi: '5,9 ans', guarantee: '25 ans', highlight: false },
   { name: 'Beem Kit 300W', power: '300 Wc', price: '299\u20ac', ratio: '1,00\u20ac', prod: '350 kWh', roi: '4,4 ans', guarantee: '25 ans', highlight: false },
-  { name: 'Beem Kit 420W', power: '420 Wc', price: '599\u20ac', ratio: '1,43\u20ac', prod: '480 kWh', roi: '6,4 ans', guarantee: '25 ans', highlight: false },
   { name: 'Sunethic F500', power: '500 Wc', price: '690\u20ac', ratio: '1,38\u20ac', prod: '570 kWh', roi: '6,2 ans', guarantee: '25 ans', highlight: false },
+  { name: 'Beem On 460W', power: '460 Wc', price: '599\u20ac', ratio: '1,30\u20ac', prod: '530 kWh', roi: '5,8 ans', guarantee: '25 ans', highlight: false },
 ];
 
 const sunologySpecs = [
@@ -44,7 +44,7 @@ const sunologySpecs = [
 export default function ComparatifPage() {
   return (
     <>
-      <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-17" dateModified="2026-03-30" />
+      <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-17" dateModified="2026-06-20" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -55,7 +55,7 @@ export default function ComparatifPage() {
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Meilleur kit solaire plug and play 2026 : comparatif complet</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sunology PLAY2, Beem On, Sunethic F500 : quel kit choisir pour votre balcon ? Nous avons analyse les prix, les performances réelles et la rentabilité de chaque kit. Verdict indépendant.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>Mis à jour le 17 mars 2026</span>
+              <span>Mis &agrave; jour le 20 juin 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -65,7 +65,7 @@ export default function ComparatifPage() {
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En résumé</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed mb-3">En 2026, trois kits solaires plug-and-play dominent le marché français pour le balcon et l&apos;appartement. Le <strong>Sunology PLAY2</strong> (450 Wc, 599&euro;) offre le meilleur équilibre qualité/prix/facilité. Le <strong>Beem Kit 300W</strong> (299&euro;) est le choix budget. Le <strong>Sunethic F500</strong> (500 Wc, 690&euro;) seduit par son Made in France. Tous se rentabilisent en 4 à 6 ans.</p>
+            <p className="text-charcoal-light text-sm leading-relaxed mb-3">En 2026, le march&eacute; a boug&eacute;. Le <strong>Beem On 500 Wc</strong> (429&euro;, 0,86&euro;/Wc) s&apos;impose comme le meilleur rapport qualit&eacute;-prix avec un ROI de 4,8 ans. Le <strong>Sunology PLAY2</strong> (599&euro;) reste le choix n&deg;1 pour la facilit&eacute; d&apos;installation. Le <strong>Beem Kit 300W</strong> (299&euro;) est le choix budget. Tous se rentabilisent en 4 &agrave; 6 ans.</p>
             <Link href="/calculateur" className="text-green font-semibold text-sm hover:underline">&rarr; Calculez vos économies personnalisees avec notre simulateur gratuit</Link>
           </div>
 
@@ -174,29 +174,29 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-5">
-              <h2 className="text-2xl font-extrabold mb-4">5. Beem On 460W : meilleur rapport qualité/prix</h2>
-              <div className="card-lg mb-6">
+              <h2 className="text-2xl font-extrabold mb-4">5. Beem On 500 Wc : le nouveau rapport qualit&eacute;-prix du march&eacute;</h2>
+              <div className="card-lg border-green/20 bg-green-pale/20 mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
-                  <div><div className="badge-amber mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Beem On 460W</h3><p className="text-sm text-stone">par Beem Energy · Nantes, France</p></div>
-                  <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">599 &euro;</div><div className="text-xs text-stone">460 Wc bifacial</div></div>
+                  <div><div className="badge-green mb-2">Meilleur rapport qualit&eacute;/prix</div><h3 className="font-bold text-xl">Beem On 500 Wc</h3><p className="text-sm text-stone">par Beem Energy &middot; Nantes, France &middot; nouveau mod&egrave;le 2026</p></div>
+                  <div className="text-right"><div className="font-mono text-2xl font-bold text-green">429 &euro;</div><div className="text-xs text-stone">500 Wc bifacial TOPCon</div></div>
                 </div>
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem On est le concurrent direct du Sunology PLAY2. Meme format (panneau unique), meme prix (599&euro;), mais 10 Wc de plus (460 vs 450). Note de 4,7/5 sur Trustpilot avec plus de 1 200 avis.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem On nouvelle g&eacute;n&eacute;ration casse les prix : 429&nbsp;&euro; pour 500&nbsp;Wc bifacial TOPCon, soit <span className="data-highlight">0,86&nbsp;&euro;/Wc</span>. C&apos;est 170&nbsp;&euro; de moins que l&apos;ancien mod&egrave;le (460&nbsp;Wc &agrave; 599&nbsp;&euro;) pour 40&nbsp;Wc de plus. Le ratio &euro;/Wc est imbattable sur le segment premium.</p>
 
               <h4 className="font-bold mb-2 mt-6">Points forts</h4>
               <ul className="space-y-2 text-sm text-charcoal-light">
-                {['Ratio \u20ac/Wc légèrement meilleur que Sunology (1,30\u20ac vs 1,33\u20ac)', 'Installation en 5 minutes, technologie TOPCon bifaciale', 'Compatible avec la Beem Battery pour le stockage', 'Beembox incluse pour le suivi via app mobile', 'Option Beem ZEN : prise en charge complete des démarchés Enedis', 'Paiement en 4x ou 10x sans frais'].map((s, i) => (
+                {['Meilleur ratio \u20ac/Wc du march\u00e9 : 0,86\u20ac/Wc (vs 1,33\u20ac pour le PLAY2)', 'ROI record de 4,8 ans (Lyon, sud)', '500 Wc bifacial TOPCon, micro-onduleur 550W', 'Paiement en 10x sans frais (~43\u20ac/mois)', 'Option Beem ZEN : prise en charge des d\u00e9marches Enedis (49\u20ac)', 'Disponible chez Leroy Merlin et Boulanger'].map((s, i) => (
                   <li key={i} className="flex gap-2"><span className="text-green font-bold">+</span> {s}</li>
                 ))}
               </ul>
 
               <h4 className="font-bold mb-2 mt-6">Points faibles</h4>
               <ul className="space-y-2 text-sm text-charcoal-light">
-                {['Panneau 20% plus grand que le Sunology PLAY2 pour une puissance similaire', 'Installation légèrement plus longue (5 min vs 1 min pour Sunology)', 'Batterie Beem Battery tres chere (a partir de 6 190\u20ac kit + batterie)'].map((s, i) => (
+                {['Beembox obligatoire pour le suivi (bo\u00eetier suppl\u00e9mentaire vs WiFi natif Sunology)', 'Panneau imposant : 1,95 m de haut (le PLAY2 fait 1,76 m)', 'Beem Energy en proc\u00e9dure de sauvegarde \u2014 SAV \u00e0 surveiller'].map((s, i) => (
                   <li key={i} className="flex gap-2"><span className="text-red-500 font-bold">-</span> {s}</li>
                 ))}
               </ul>
-              <a href="https://beemenergy.fr/products/beem-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem On &rarr;</a>
+              <a href="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem On 500 Wc &rarr;</a>
             </section>
 
             <section id="section-6">
@@ -249,16 +249,20 @@ export default function ComparatifPage() {
               <h2 className="text-2xl font-extrabold mb-4">8. Verdict : quel kit choisir ?</h2>
               <div className="space-y-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-1">Pour la plupart des gens &rarr; Sunology PLAY2 (599&euro;)</h4>
-                  <p className="text-sm text-charcoal-light">Le meilleur équilibre entre puissance, qualité de fabrication, facilité d&apos;installation et suivi. L&apos;installation en 1 minute et la certification CE sur l&apos;ensemble du kit en font le choix le plus sur.</p>
+                  <h4 className="font-bold text-green mb-1">Le meilleur rapport qualit&eacute;-prix &rarr; Beem On 500 Wc (429&euro;)</h4>
+                  <p className="text-sm text-charcoal-light">0,86&nbsp;&euro;/Wc, ROI en 4,8 ans. Le kit le plus rentable du march&eacute; fran&ccedil;ais. Si le budget et la rentabilit&eacute; sont vos priorit&eacute;s, c&apos;est le choix &eacute;vident. Seul b&eacute;mol : la situation financi&egrave;re de Beem Energy.</p>
+                </div>
+                <div className="card-lg border-green/20 bg-green-pale/10">
+                  <h4 className="font-bold text-green mb-1">Pour la facilit&eacute; d&apos;installation &rarr; Sunology PLAY2 (599&euro;)</h4>
+                  <p className="text-sm text-charcoal-light">Installation en 1 minute, WiFi natif, certification CE compl&egrave;te. Le choix le plus s&ucirc;r pour ceux qui veulent la simplicit&eacute; maximale et un &eacute;cosyst&egrave;me &eacute;prouv&eacute; (100&nbsp;000+ foyers).</p>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
                   <h4 className="font-bold text-amber-dark mb-1">Pour les petits budgets &rarr; Beem Kit 300W (299&euro;)</h4>
-                  <p className="text-sm text-charcoal-light">Le meilleur ratio &euro;/Wc du marché. Idéal pour tester l&apos;autoconsommation à moindre cout, avec un ROI en seulement 4-5 ans (au tarif 0,1940 EUR/kWh).</p>
+                  <p className="text-sm text-charcoal-light">Id&eacute;al pour tester l&apos;autoconsommation &agrave; moindre co&ucirc;t, avec un ROI en seulement 4-5 ans.</p>
                 </div>
                 <div className="card-lg">
                   <h4 className="font-bold mb-1">Pour le Made in France &rarr; Sunethic F500 (690&euro;)</h4>
-                  <p className="text-sm text-charcoal-light">Si vous privilégiez la fabrication française et que le budget n&apos;est pas la priorite, le Sunethic F500 est le choix éthique avec la meilleure puissance du marché.</p>
+                  <p className="text-sm text-charcoal-light">Si vous privil&eacute;giez la fabrication fran&ccedil;aise et que le budget n&apos;est pas la priorit&eacute;, le Sunethic F500 est le choix &eacute;thique.</p>
                 </div>
               </div>
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
@@ -286,9 +290,9 @@ export default function ComparatifPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
                 </Link>
-                <Link href="/avis/beem-on-460w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 460W</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Excellent rapport qualité/prix</p>
+                <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix &agrave; 429&nbsp;&euro;</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
@@ -299,7 +303,7 @@ export default function ComparatifPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> ce comparatif est indépendant. MonBalconSolaire ne vend aucun produit. Certains liens sont des liens d&apos;affiliation : si vous achetez via ces liens, nous recevons une commission sans surcout pour vous. Notre classément est base sur des critères objectifs et n&apos;est pas influence par ces partenariats. Données vérifiées en mars 2026.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> ce comparatif est indépendant. MonBalconSolaire ne vend aucun produit. Certains liens sont des liens d&apos;affiliation : si vous achetez via ces liens, nous recevons une commission sans surcout pour vous. Notre classément est base sur des critères objectifs et n&apos;est pas influence par ces partenariats. Donn&eacute;es v&eacute;rifi&eacute;es en juin 2026.</p>
             </div>
           </div>
         </div>
