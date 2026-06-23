@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Jackery SolarVault 3 Pro avis 2026 : stockage 3 kWh LFP \u00e0 839 \u20ac',
-  description: 'Avis d\u00e9taill\u00e9 Jackery SolarVault 3 Pro : batterie LFP 2,52 kWh, 4 MPPT, 839\u00a0\u20ac en promo. Specs, comparatif, rentabilit\u00e9 et verdict honn\u00eate.',
+  title: 'Jackery SolarVault 3 Pro avis 2026 : stockage 2,5 kWh LFP \u00e0 839 \u20ac',
+  description: 'Avis d\u00e9taill\u00e9 Jackery SolarVault 3 Pro : batterie LFP 2,52 kWh, 4 MPPT pour 4 000 W, 839 \u20ac en promo Prime Day. Specs, comparatif Bluetti Balco 260, verdict honn\u00eate.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro',
   },
@@ -19,14 +19,14 @@ const faqData = [
   { question: 'Quelle est la capacit\u00e9 de la batterie du SolarVault 3 Pro ?', answer: 'La batterie int\u00e9gr\u00e9e est de 2,52 kWh en LFP (lithium fer phosphate). Elle est extensible jusqu\u2019\u00e0 15,12 kWh avec des modules BP2500 empilables (2,52 kWh chacun, jusqu\u2019\u00e0 5 modules par tour).' },
   { question: 'Le SolarVault 3 Pro est-il \u00e9tanche ?', answer: 'Oui. Il est certifi\u00e9 IP65, donc r\u00e9sistant \u00e0 la pluie et \u00e0 la poussi\u00e8re. Il peut rester en ext\u00e9rieur toute l\u2019ann\u00e9e, y compris sur un balcon expos\u00e9. Il fonctionne de -20\u00b0C \u00e0 55\u00b0C.' },
   { question: 'Jackery SolarVault 3 Pro vs Bluetti Balco 260 : lequel choisir ?', answer: 'Les deux sont tr\u00e8s proches : m\u00eame concept (onduleur + batterie sans panneaux), m\u00eame gamme de prix. Le SolarVault 3 Pro a une batterie l\u00e9g\u00e8rement plus petite (2,52 vs 2,56 kWh) mais accepte plus de solaire (4\u00a0000 W vs 2\u00a0400 W) et int\u00e8gre un syst\u00e8me anti-incendie. Le Balco 260 a un onduleur SiC \u00e0 meilleur rendement (96,1%). En promo, le Jackery est moins cher (839\u00a0\u20ac vs 849\u00a0\u20ac).' },
-  { question: 'Peut-on utiliser le SolarVault 3 Pro en cas de coupure de courant ?', answer: 'Oui. Le SolarVault 3 Pro dispose d\u2019une sortie off-grid de 1\u00a0200 W. En cas de coupure, il peut alimenter directement vos appareils. C\u2019est un avantage face aux kits classiques plug-and-play qui s\u2019arr\u00eatent sans r\u00e9seau.' },
+  { question: 'Peut-on utiliser le SolarVault 3 Pro en cas de coupure de courant ?', answer: 'Non sur le mod\u00e8le Pro de base. Il injecte sur le r\u00e9seau mais n\'a pas de prise de secours off-grid. Si c\'est une priorit\u00e9, orientez-vous vers le SolarVault 3 Pro Max AC (gamme sup\u00e9rieure avec prise de secours) ou le Bluetti Balco 260 qui propose une sortie off-grid 1 200 W \u00e0 849 \u20ac.' },
   { question: 'O\u00f9 acheter le Jackery SolarVault 3 Pro en France ?', answer: 'Sur le site officiel fr.jackery.com et sur Amazon.fr. En juin 2026, Jackery propose des promotions Mid-Year Sale (16-30 juin) et Amazon Prime Day (23-26 juin) avec des r\u00e9ductions significatives.' },
 ];
 
 export default function JackerySolarVault3ProAvisPage() {
   return (
     <>
-      <SchemaArticle title="Jackery SolarVault 3 Pro avis : stockage domestique 3 kWh LFP" description="Avis d&eacute;taill&eacute; sur le Jackery SolarVault 3 Pro en 2026." url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" datePublished="2026-06-23" />
+      <SchemaArticle title="Jackery SolarVault 3 Pro avis 2026 : stockage 2,5 kWh LFP à 839€" description="Avis détaillé sur le Jackery SolarVault 3 Pro en 2026." url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" datePublished="2026-06-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Jackery SolarVault 3 Pro" brand="Jackery" description="Syst&egrave;me de stockage solaire plug-and-play : onduleur + batterie LFP 2,52 kWh + 4 MPPT. IP65, extensible &agrave; 15,12 kWh, gestion IA." price={839} ratingValue={8} url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" />
       <article className="section-padding">
