@@ -444,6 +444,10 @@ export default function BatteriesPortablesPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mini kits solaires Amazon &lt; 300 €</h4>
                   <p className="text-xs text-charcoal-light mt-1">Les kits portables à petit budget pour tester le solaire</p>
                 </Link>
+                <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Batterie LFP 2,52&nbsp;kWh + onduleur &agrave; 839&nbsp;&euro; en promo</p>
+                </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment ça marche</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le principe du talon, surplus et stockage expliqué simplement</p>

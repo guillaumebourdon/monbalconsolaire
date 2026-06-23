@@ -259,6 +259,10 @@ export default function BluettiBalco260AvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Tous les syst&egrave;mes avec stockage compar&eacute;s</p>
                 </Link>
+                <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le concurrent &agrave; 839&nbsp;&euro; avec 4&nbsp;000&nbsp;W d&apos;entr&eacute;e solaire</p>
+                </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le kit sans batterie le plus rentable &agrave; 429&nbsp;&euro;</p>

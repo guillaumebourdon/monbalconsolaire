@@ -218,6 +218,10 @@ export default function BatteriePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le tout-en-un onduleur + batterie 2,56&nbsp;kWh</p>
                 </Link>
+                <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Stockage LFP 2,52&nbsp;kWh &agrave; 839&nbsp;&euro; en promo</p>
+                </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
