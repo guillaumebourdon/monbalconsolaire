@@ -32,6 +32,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'DualSun PREASY : le challenger Made in France', description: 'Panneau pliable 420 Wc, design aspect bois. Beau mais cher.', url: '/avis/dualsun-preasy', category: 'Avis', badge: '6.5/10' },
   { title: 'Beem On 500 Wc : le rapport qualité-prix du marché', description: '429€ pour 500 Wc bifacial TOPCon, soit 0,86€/Wc. Le kit le plus rentable en 2026.', url: '/avis/beem-on-500w', category: 'Avis', badge: '8.5/10' },
   { title: 'Bluetti Balco 260 : tout-en-un onduleur + batterie', description: 'Onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. 849€ sans panneaux. IP65, extensible à 15 kWh.', url: '/avis/bluetti-balco-260', category: 'Avis', badge: '7/10' },
+  { title: 'Jackery SolarVault 3 Pro : stockage 3 kWh LFP', description: 'Batterie LFP 2,52 kWh + onduleur + 4 MPPT. 839€ en promo, gestion IA, anti-incendie. Extensible à 15 kWh.', url: '/avis/jackery-solarvault-3-pro', category: 'Avis', badge: '8/10' },
 
   // ─── Comparatifs ───
   { title: 'Meilleur kit solaire 2026 : comparatif complet', description: 'Sunology, Beem, Sunethic compar\u00e9s. Tableau, points forts/faibles, verdict.', url: '/comparatif/meilleur-kit-solaire-2026', category: 'Comparatif', badge: 'Article phare' },

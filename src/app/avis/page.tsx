@@ -10,7 +10,8 @@ export const metadata: Metadata = {
 };
 
 const reviews = [
-  { slug: 'bluetti-balco-260', title: 'Bluetti Balco 260 : le tout-en-un onduleur + batterie', excerpt: 'Onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT dans un seul bo\u00eetier IP65. 849\u00a0\u20ac sans panneaux.', badge: 'Nouveau', score: '7/10', price: '849 \u20ac' },
+  { slug: 'jackery-solarvault-3-pro', title: 'Jackery SolarVault 3 Pro : stockage 3 kWh LFP \u00e0 839 \u20ac', excerpt: 'Batterie LFP 2,52 kWh + onduleur + 4 MPPT, gestion IA et anti-incendie. 839\u00a0\u20ac en promo, sans panneaux.', badge: 'Nouveau', score: '8/10', price: '839 \u20ac' },
+  { slug: 'bluetti-balco-260', title: 'Bluetti Balco 260 : le tout-en-un onduleur + batterie', excerpt: 'Onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT dans un seul bo\u00eetier IP65. 849\u00a0\u20ac sans panneaux.', badge: 'Stockage tout-en-un', score: '7/10', price: '849 \u20ac' },
   { slug: 'beem-on-500w', title: 'Beem On 500 Wc : le nouveau rapport qualit\u00e9-prix du march\u00e9', excerpt: '429 \u20ac pour 500 Wc bifacial TOPCon, soit 0,86 \u20ac/Wc. Le kit le plus rentable du march\u00e9 fran\u00e7ais en 2026.', badge: 'Qualit\u00e9/prix', score: '8.5/10', price: '429 \u20ac' },
   { slug: 'ikea-solstrale-balcon', title: 'IKEA Solstr\u00e5le : le kit solaire IKEA pour balcon', excerpt: 'IKEA lance un kit plug-and-play \u00e0 449 \u20ac avec EcoFlow. Analyse compl\u00e8te, mais pas encore disponible en France.', badge: 'Analyse', score: '\u2014', price: '449 \u20ac (DE)' },
   { slug: 'dualsun-preasy', title: 'DualSun PREASY : le nouveau challenger Made in France', excerpt: 'Panneau pliable 420 Wc, assembl\u00e9 en France, design aspect bois. Beau mais cher face \u00e0 la concurrence.', badge: 'Nouveau', score: '6.5/10', price: '870 \u20ac' },

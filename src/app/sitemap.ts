@@ -69,6 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/dualsun-preasy`, lastModified: '2026-05-09', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/beem-on-500w`, lastModified: '2026-06-15', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/bluetti-balco-260`, lastModified: '2026-06-20', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/avis/jackery-solarvault-3-pro`, lastModified: '2026-06-23', changeFrequency: 'monthly', priority: 0.7 },
 
     // Blog
     { url: `${BASE_URL}/blog/combien-rapporte-panneau-solaire-balcon`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.7 },
