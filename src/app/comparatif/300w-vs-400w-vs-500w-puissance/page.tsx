@@ -23,7 +23,7 @@ const faqData = [
 export default function PuissanceComparatif() {
   return (
     <>
-      <SchemaArticle title="300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?" description="Comparatif des puissances de panneaux solaires plug-and-play." url="https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance" datePublished="2026-04-19" />
+      <SchemaArticle title="300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?" description="Comparatif des puissances de panneaux solaires plug-and-play." url="https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance" datePublished="2026-04-19" dateModified="2026-06-20" />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -60,15 +60,15 @@ export default function PuissanceComparatif() {
                   </thead>
                   <tbody>
                     {[
-                      ['Prix moyen', '280-350 \u20ac', '500-600 \u20ac', '600-750 \u20ac'],
-                      ['Prix au watt', '~1,00 \u20ac/W', '~1,30 \u20ac/W', '~1,30 \u20ac/W'],
+                      ['Prix moyen', '280-350 \u20ac', '500-600 \u20ac', '429-690 \u20ac'],
+                      ['Prix au watt', '~1,00 \u20ac/W', '~1,30 \u20ac/W', '~0,86-1,38 \u20ac/W'],
                       ['Production Paris (sud)', '~360 kWh/an', '~480 kWh/an', '~600 kWh/an'],
                       ['Production Marseille (sud)', '~480 kWh/an', '~640 kWh/an', '~800 kWh/an'],
                       ['\u00c9conomies annuelles', '~70-95 \u20ac', '~95-125 \u20ac', '~115-155 \u20ac'],
                       ['ROI moyen', '3-4 ans', '4-5 ans', '4-5 ans'],
                       ['Dimensions panneau', '~82 x 69 cm (x4)', '~175 x 100 cm', '~180 x 110 cm'],
                       ['Poids', '~15 kg total', '~20 kg', '~22 kg'],
-                      ['Exemple de kit', 'Beem Kit 300W', 'Sunology PLAY 2 (450W)', 'Sunethic F500'],
+                      ['Exemple de kit', 'Beem Kit 300W', 'Sunology PLAY 2 (450W)', 'Beem On 500 Wc (429 \u20ac)'],
                     ].map(([label, p300, p400, p500], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{label}</td>
@@ -111,7 +111,7 @@ export default function PuissanceComparatif() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le 400-450W : le sweet spot</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est la puissance la plus vendue en France en 2026. Le Sunology PLAY 2 (450W) et le Beem On (460W) dominent ce segment. C&apos;est le <strong>meilleur compromis rentabilit&eacute;/encombrement</strong> pour un balcon standard.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est la puissance la plus vendue en France en 2026. Le Sunology PLAY 2 (450W) domine ce segment. Beem a fait &eacute;voluer son mod&egrave;le vers le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429 &euro;</Link>, d&eacute;sormais dans la cat&eacute;gorie 500W. C&apos;est le <strong>meilleur compromis rentabilit&eacute;/encombrement</strong> pour un balcon standard.</p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
                   <h4 className="font-bold text-green mb-2">&#9989; Points forts</h4>
@@ -131,12 +131,12 @@ export default function PuissanceComparatif() {
                   </ul>
                 </div>
               </div>
-              <p className="text-charcoal-light leading-relaxed">Le 400-450W convient : <strong>majorit&eacute; des balcons fran&ccedil;ais, foyers cherchant un bon compromis, premi&egrave;re installation</strong>. Voir nos avis <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY 2</Link> et <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On 460W</Link>.</p>
+              <p className="text-charcoal-light leading-relaxed">Le 400-450W convient : <strong>majorit&eacute; des balcons fran&ccedil;ais, foyers cherchant un bon compromis, premi&egrave;re installation</strong>. Voir notre avis <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY 2</Link>.</p>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le 500W : pour qui ?</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Les kits 500W repoussent la limite de production d&apos;un seul panneau. Sunethic F500 (500W) est la r&eacute;f&eacute;rence de ce segment.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Les kits 500W repoussent la limite de production d&apos;un seul panneau. Le <strong>Beem On 500 Wc &agrave; 429 &euro;</strong> (0,86 &euro;/Wc, ROI ~4,8 ans) est d&eacute;sormais la meilleure affaire de ce segment. Le Sunethic F500 (690 &euro;) reste une alternative Made in France.</p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
                   <h4 className="font-bold text-green mb-2">&#9989; Points forts</h4>
@@ -150,14 +150,14 @@ export default function PuissanceComparatif() {
                 <div className="card-lg border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h4>
                   <ul className="text-sm text-charcoal-light space-y-2">
-                    <li>Prix le plus &eacute;lev&eacute; (600-750&euro;)</li>
+                    <li>Prix variable (429-690&euro; selon marque)</li>
                     <li>Panneau tr&egrave;s grand et lourd (22 kg)</li>
                     <li>Plus difficile &agrave; installer seul</li>
                     <li>Cumul limit&eacute; (2 x 500W = 1000W)</li>
                   </ul>
                 </div>
               </div>
-              <p className="text-charcoal-light leading-relaxed">Le 500W convient : <strong>grands balcons ou terrasses, foyers &agrave; forte consommation diurne</strong>. Voir notre <Link href="/avis/sunethic-f500" className="text-green hover:underline">avis Sunethic F500</Link>.</p>
+              <p className="text-charcoal-light leading-relaxed">Le 500W convient : <strong>grands balcons ou terrasses, foyers &agrave; forte consommation diurne</strong>. Voir nos avis <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (meilleur prix) et <Link href="/avis/sunethic-f500" className="text-green hover:underline">Sunethic F500</Link> (Made in France).</p>
             </section>
 
             <section>
@@ -182,7 +182,7 @@ export default function PuissanceComparatif() {
                 {[
                   { profil: 'Petit budget (< 400€)', reco: '300W modulaire', detail: 'Le Beem Kit 300W est le meilleur choix. ROI en 3-4 ans.' },
                   { profil: 'Balcon standard 10 m²', reco: '400-450W', detail: 'Sunology PLAY 2 ou Beem On : 1 panneau, installation en 2 min.' },
-                  { profil: 'Grand balcon ou terrasse', reco: '500W ou 2 x 400W', detail: 'Maximisez la production sans d\u00e9passer les 900W du circuit.' },
+                  { profil: 'Grand balcon ou terrasse', reco: '500W (Beem On 429\u20ac)', detail: 'Beem On 500 Wc : meilleur prix du march\u00e9 \u00e0 0,86 \u20ac/Wc, ROI ~4,8 ans.' },
                   { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (450W + 700Wh) ou EcoFlow PowerStream.' },
                   { profil: 'Locataire', reco: '400-450W', detail: 'Un seul panneau se d\u00e9monte en 1 minute pour le d\u00e9m\u00e9nagement.' },
                 ].map((p, i) => (

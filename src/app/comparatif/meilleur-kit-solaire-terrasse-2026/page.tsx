@@ -38,14 +38,14 @@ const faqData = [
 const setups = [
   {
     titre: 'Setup compact : 1 panneau (450-500 Wc)',
-    budget: '599-690 €',
+    budget: '429-690 €',
     surface: '~2 m²',
     production: '400-570 kWh/an',
     ideal: 'Petite terrasse, premier achat, budget limité',
     kits: [
+      { name: 'Beem On 500 Wc', power: '500 Wc', price: '429 €', roi: '4,8 ans', avantage: 'Meilleur prix (0,86 €/Wc), paiement 10x', slug: '/avis/beem-on-500w' },
       { name: 'Sunology PLAY 2', power: '450 Wc', price: '599 €', roi: '6,0 ans', avantage: 'Installation 1 min, WiFi natif', slug: '/avis/sunology-play-2' },
-      { name: 'Beem On 460W', power: '460 Wc', price: '599 €', roi: '5,8 ans', avantage: 'Paiement 10x, option ZEN', slug: '/avis/beem-on-460w' },
-      { name: 'Sunethic F500', power: '500 Wc', price: '690 €', roi: '6,2 ans', avantage: 'Plus puissant, Made in France', slug: '/avis/sunethic-f500' },
+      { name: 'Sunethic F500', power: '500 Wc', price: '690 €', roi: '6,2 ans', avantage: 'Made in France, bifacial', slug: '/avis/sunethic-f500' },
     ],
   },
   {
@@ -57,7 +57,7 @@ const setups = [
     kits: [
       { name: 'Zendure SolarFlow + 2\u00d7420 W', power: '840 Wc + batterie', price: '~900 €', roi: '6,6 ans', avantage: 'Batterie 1,92 kWh, autoconsommation 80 %', slug: '/avis/zendure-solarflow' },
       { name: '2\u00d7 Sunology PLAY 2', power: '900 Wc', price: '1 198 €', roi: '7,4 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
-      { name: '2\u00d7 Beem On 460W', power: '920 Wc', price: '1 198 €', roi: '7,3 ans', avantage: 'Paiement 10x possible, meilleur ratio €/Wc', slug: '/avis/beem-on-460w' },
+      { name: '2\u00d7 Beem On 500 Wc', power: '1 000 Wc', price: '858 €', roi: '5,1 ans', avantage: 'Meilleur ratio \u20ac/Wc du march\u00e9 (0,86 \u20ac/Wc)', slug: '/avis/beem-on-500w' },
     ],
   },
   {
@@ -81,6 +81,7 @@ export default function MeilleurKitTerrasse2026Page() {
         description="Comparatif des meilleurs kits solaires plug-and-play pour terrasse en 2026."
         url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-terrasse-2026"
         datePublished="2026-05-13"
+        dateModified="2026-06-20"
       />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
@@ -215,7 +216,7 @@ export default function MeilleurKitTerrasse2026Page() {
                   Si vous avez une terrasse, <strong>ne vous limitez pas à un seul panneau</strong>. L&apos;espace est votre atout principal. Le setup <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow + 2 panneaux 420 W</Link> (~900 €) offre le meilleur compromis : 840 W de puissance, batterie intégrée pour le soir, ROI de 7 ans.
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
-                  Si le budget est serré, <Link href="/avis/beem-kit-300w" className="text-green hover:underline font-semibold">un Beem Kit 300W à 299 €</Link> est un excellent point de départ. Si la simplicité prime, <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">2 Sunology PLAY 2</Link> se posent et se branchent en 2 minutes.
+                  Si le budget est serr&eacute;, le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc &agrave; 429 &euro;</Link> offre le meilleur rapport qualit&eacute;-prix du march&eacute; (0,86 &euro;/Wc, ROI ~4,8 ans). Si la simplicit&eacute; prime, <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">2 Sunology PLAY 2</Link> se posent et se branchent en 2 minutes.
                 </p>
                 <p className="text-charcoal-light leading-relaxed">
                   Et si vous voulez maximiser l&apos;autonomie avec un backup réseau, le <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline font-semibold">EcoFlow PowerStream + DELTA 2</Link> est le seul système qui fonctionne en cas de coupure de courant.
@@ -274,7 +275,7 @@ export default function MeilleurKitTerrasse2026Page() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie :</strong> donn&eacute;es PVGIS, fiches techniques constructeurs, tarif EDF base mai 2026 : 0,1940 €/kWh. Production calcul&eacute;e pour Lyon, orientation sud, inclinaison 30°, coefficient 0,85.{' '}
+                <strong>M&eacute;thodologie :</strong> donn&eacute;es PVGIS, fiches techniques constructeurs, tarif EDF base juin 2026 : 0,1940 €/kWh. Production calcul&eacute;e pour Lyon, orientation sud, inclinaison 30°, coefficient 0,85.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.
               </p>
             </div>
