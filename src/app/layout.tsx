@@ -7,6 +7,7 @@ import { SchemaOrganization, SchemaWebSite } from '@/components/SchemaMarkup';
 import { CookieConsent } from '@/components/ui/CookieConsent';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <ScrollProgress />
         <ScrollReveal />
+        <SpeedInsights />
         <CookieConsent />
       </body>
     </html>
