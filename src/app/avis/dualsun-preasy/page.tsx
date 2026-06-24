@@ -115,7 +115,7 @@ export default function DualsunPreasyPage() {
         datePublished="2026-05-09"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="DualSun PREASY" brand="DualSun" description="Panneau solaire pliable plug-and-play 420 Wc, TOPCon bifacial, assemblé en France, châssis aspect bois, micro-onduleur Hoymiles 400 W." price={870} ratingValue={6.5} ratingCount={200} url="https://monbalconsolaire.fr/avis/dualsun-preasy" />
+      <SchemaProduct name="DualSun PREASY" brand="DualSun" description="Panneau solaire pliable plug-and-play 420 Wc, TOPCon bifacial, assemblé en France, châssis aspect bois, micro-onduleur Hoymiles 400 W." price={870} ratingValue={6.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/dualsun-preasy" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'DualSun PREASY' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

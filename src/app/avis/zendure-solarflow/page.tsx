@@ -133,7 +133,7 @@ export default function ZendureSolarflowPage() {
         dateModified="2026-06-20"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={488} ratingValue={8.5} ratingCount={800} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
+      <SchemaProduct name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={488} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

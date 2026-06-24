@@ -26,7 +26,7 @@ export default function AvisPage() {
     <>
       <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-05-15" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Sunology PLAY 2" brand="Sunology" description="Kit solaire plug-and-play 450 Wc avec micro-onduleur WiFi intégré, chassis ajustable et garantie 25 ans." price={599} ratingValue={8.5} ratingCount={3000} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
+      <SchemaProduct name="Sunology PLAY 2" brand="Sunology" description="Kit solaire plug-and-play 450 Wc avec micro-onduleur WiFi intégré, chassis ajustable et garantie 25 ans." price={599} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
       <SchemaBreadcrumb items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY2" }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">

@@ -145,7 +145,7 @@ export default function EcoflowPowerstreamPage() {
         dateModified="2026-06-20"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} ratingCount={500} url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
+      <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow PowerStream' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
