@@ -21,6 +21,13 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: '/(.*)',
+        has: [{ type: 'host', value: '(?!monbalconsolaire\\.fr).*' }],
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
     ];
   },
 };
