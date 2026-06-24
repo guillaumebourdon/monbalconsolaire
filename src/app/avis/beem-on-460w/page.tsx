@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -23,9 +23,10 @@ const faqData = [
 export default function BeemOnAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem On 460W avis : test complet et retour d'expérience" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" />
+      <SchemaArticle title="Beem On 460W avis : test complet et retour d'expérience" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" dateModified="2026-06-20" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Beem On 460W" brand="Beem Energy" description="Kit solaire plug-and-play 460 Wc bifacial TOPCon avec micro-onduleur APSystems et suivi via app Beem." price={599} ratingValue={8} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
+      <SchemaProduct name="Beem On 460W" brand="Beem Energy" description="Kit solaire plug-and-play 460 Wc bifacial TOPCon avec micro-onduleur APSystems et suivi via app Beem." price={599} ratingValue={8} ratingCount={1200} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
+      <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />

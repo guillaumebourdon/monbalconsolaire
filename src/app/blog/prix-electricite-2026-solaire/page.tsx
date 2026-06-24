@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -24,6 +24,7 @@ export default function PrixElectricitePage() {
     <>
       <SchemaArticle title="Prix de l'électricité 2026 : pourquoi le solaire devient incontournable" description="Analyse de l'évolution du prix de l'électricité en France." url="https://monbalconsolaire.fr/blog/prix-electricite-2026-solaire" datePublished="2026-03-30" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Prix de l\'électricité 2026' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: 'Prix de l\'électricité 2026' }]} />

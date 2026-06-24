@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -26,6 +26,7 @@ export default function CoproprietePage() {
     <>
       <SchemaArticle title="Panneau solaire en copropriete : regles, votes et astuces" description="Installer un kit solaire sur votre balcon en copropriete." url="https://monbalconsolaire.fr/guide/panneau-solaire-copropriete" datePublished="2026-04-17" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Copropri\u00e9t\u00e9' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Copropri\u00e9t\u00e9' }]} />

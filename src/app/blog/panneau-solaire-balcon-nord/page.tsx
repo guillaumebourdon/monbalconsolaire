@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -140,6 +140,7 @@ export default function BalconNordPage() {
         datePublished="2026-04-24"
       />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Panneau solaire balcon nord' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: 'Panneau solaire balcon nord' }]} />

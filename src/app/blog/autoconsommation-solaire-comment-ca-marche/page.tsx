@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -26,6 +26,7 @@ export default function AutoconsommationPage() {
     <>
       <SchemaArticle title="Autoconsommation solaire : comment ca marche concretement ?" description="L'autoconsommation solaire expliquee simplement." url="https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche" datePublished="2026-04-03" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Autoconsommation solaire' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: 'Autoconsommation solaire' }]} />

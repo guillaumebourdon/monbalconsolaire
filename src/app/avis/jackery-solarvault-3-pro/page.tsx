@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -28,7 +28,8 @@ export default function JackerySolarVault3ProAvisPage() {
     <>
       <SchemaArticle title="Jackery SolarVault 3 Pro avis 2026 : stockage 2,5 kWh LFP à 839€" description="Avis détaillé sur le Jackery SolarVault 3 Pro en 2026." url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" datePublished="2026-06-23" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Jackery SolarVault 3 Pro" brand="Jackery" description="Syst&egrave;me de stockage solaire plug-and-play : onduleur + batterie LFP 2,52 kWh + 4 MPPT. IP65, extensible &agrave; 15,12 kWh, gestion IA." price={839} ratingValue={8} url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" />
+      <SchemaProduct name="Jackery SolarVault 3 Pro" brand="Jackery" description="Syst&egrave;me de stockage solaire plug-and-play : onduleur + batterie LFP 2,52 kWh + 4 MPPT. IP65, extensible &agrave; 15,12 kWh, gestion IA." price={839} ratingValue={8} ratingCount={300} url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" />
+      <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Jackery SolarVault 3 Pro' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Jackery SolarVault 3 Pro' }]} />

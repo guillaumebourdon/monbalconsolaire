@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { CopyableTemplate } from '@/components/ui/CopyableTemplate';
@@ -148,6 +148,7 @@ export default function DeclarationCacsiEnedisPage() {
         datePublished="2026-04-23"
       />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Déclaration CACSI Enedis' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Déclaration CACSI Enedis' }]} />

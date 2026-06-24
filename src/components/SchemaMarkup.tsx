@@ -110,6 +110,7 @@ export function SchemaProduct({
   currency = 'EUR',
   ratingValue,
   ratingMax = 10,
+  ratingCount,
   reviewAuthor = 'MonBalconSolaire',
   url,
 }: {
@@ -120,6 +121,7 @@ export function SchemaProduct({
   currency?: string;
   ratingValue: number;
   ratingMax?: number;
+  ratingCount?: number;
   reviewAuthor?: string;
   url: string;
 }) {
@@ -146,12 +148,22 @@ export function SchemaProduct({
         '@type': 'Rating',
         ratingValue,
         bestRating: ratingMax,
+        worstRating: 1,
       },
       author: {
         '@type': 'Organization',
         name: reviewAuthor,
       },
     },
+    ...(ratingCount ? {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue,
+        bestRating: ratingMax,
+        worstRating: 1,
+        ratingCount,
+      },
+    } : {}),
   };
 
   return (
@@ -182,4 +194,19 @@ export function SchemaFAQ({ questions }: { questions: { question: string; answer
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );
+}
+
+export function SchemaBreadcrumb({ items }: { items: { label: string; href?: string }[] }) {
+  const allItems = [{ label: 'Accueil', href: '/' }, ...items];
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: allItems.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.label,
+      ...(item.href ? { item: `https://monbalconsolaire.fr${item.href}` } : {}),
+    })),
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 }

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -26,6 +26,7 @@ export default function ReglementationPage() {
     <>
       <SchemaArticle title="Panneau solaire balcon : reglementation 2026 complete" description="Tout ce que dit la loi sur les kits solaires plug-and-play en 2026." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />

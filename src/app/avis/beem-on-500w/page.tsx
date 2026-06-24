@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -27,7 +27,8 @@ export default function BeemOn500WcAvisPage() {
     <>
       <SchemaArticle title="Beem On 500 Wc avis : le nouveau rapport qualité-prix du marché" description="Avis détaillé sur le Beem On 500 Wc en 2026." url="https://monbalconsolaire.fr/avis/beem-on-500w" datePublished="2026-06-15" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Beem On 500 Wc" brand="Beem Energy" description="Kit solaire plug-and-play 500 Wc bifacial TOPCon avec micro-onduleur 550W et suivi via app Beem." price={429} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/beem-on-500w" />
+      <SchemaProduct name="Beem On 500 Wc" brand="Beem Energy" description="Kit solaire plug-and-play 500 Wc bifacial TOPCon avec micro-onduleur 550W et suivi via app Beem." price={429} ratingValue={8.5} ratingCount={1200} url="https://monbalconsolaire.fr/avis/beem-on-500w" />
+      <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 500 Wc' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 500 Wc' }]} />

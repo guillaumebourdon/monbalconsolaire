@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -43,6 +43,7 @@ export default function MiniKitsAmazonPage() {
     <>
       <SchemaArticle title="Mini kits solaires Amazon < 300 € : lesquels valent vraiment le coup ?" description="Analyse honnête des mini kits solaires Amazon à moins de 300 € en 2026." url="https://monbalconsolaire.fr/blog/mini-kits-solaires-amazon" datePublished="2026-04-20" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Mini kits Amazon < 300 €' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Mini kits Amazon < 300 €' }]} />

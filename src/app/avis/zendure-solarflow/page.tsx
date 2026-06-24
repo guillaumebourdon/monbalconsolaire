@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -130,9 +130,11 @@ export default function ZendureSolarflowPage() {
         description="Avis complet sur le Zendure SolarFlow 800 Plus en 2026."
         url="https://monbalconsolaire.fr/avis/zendure-solarflow"
         datePublished="2026-05-07"
+        dateModified="2026-06-20"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={488} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
+      <SchemaProduct name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={488} ratingValue={8.5} ratingCount={800} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
+      <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow' }]} />

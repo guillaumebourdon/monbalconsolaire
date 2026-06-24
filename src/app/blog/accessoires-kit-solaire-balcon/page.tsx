@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
@@ -37,6 +37,7 @@ export default function AccessoiresPage() {
     <>
       <SchemaArticle title="8 accessoires indispensables pour votre kit solaire de balcon" description="Les accessoires Amazon pour optimiser votre kit solaire de balcon : suivi, securite, nettoyage." url="https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon" datePublished="2026-04-04" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: '8 accessoires indispensables' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Accessoires', href: '/accessoires' }, { label: '8 accessoires indispensables' }]} />

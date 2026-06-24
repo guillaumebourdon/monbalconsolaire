@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
@@ -24,6 +24,7 @@ export default function SunologyVsBeemPage() {
     <>
       <SchemaArticle title="Sunology vs Beem 2026 : quel kit solaire choisir ?" description="Comparaison détaillée Sunology PLAY2 vs Beem On 460W." url="https://monbalconsolaire.fr/comparatif/sunology-vs-beem" datePublished="2026-03-24" dateModified="2026-06-20" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Sunology vs Beem' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Sunology vs Beem' }]} />

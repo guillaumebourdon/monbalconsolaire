@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
@@ -22,8 +22,9 @@ const faqData = [
 export default function BatteriePage() {
   return (
     <>
-      <SchemaArticle title="Kit solaire avec batterie 2026 : comparatif stockage" description="Comparatif des solutions de stockage solaire plug-and-play en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026" datePublished="2026-03-31" />
+      <SchemaArticle title="Kit solaire avec batterie 2026 : comparatif stockage" description="Comparatif des solutions de stockage solaire plug-and-play en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026" datePublished="2026-03-31" dateModified="2026-06-20" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Kits avec batterie' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Kits avec batterie' }]} />

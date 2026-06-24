@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
@@ -25,6 +25,7 @@ export default function OrientationPage() {
     <>
       <SchemaArticle title="Quelle orientation pour un panneau solaire de balcon ?" description="Impact de l'orientation sur la production solaire de balcon." url="https://monbalconsolaire.fr/guide/orientation-panneau-solaire-balcon" datePublished="2026-03-29" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Orientation' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Guides', href: '/guide' }, { label: 'Orientation' }]} />

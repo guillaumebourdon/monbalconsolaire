@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
@@ -46,6 +46,7 @@ export default function ComparatifPage() {
     <>
       <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-17" dateModified="2026-06-20" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: "Comparatifs", href: "/comparatif" }, { label: "Meilleur kit solaire 2026" }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: "Comparatifs", href: "/comparatif" }, { label: "Meilleur kit solaire 2026" }]} />

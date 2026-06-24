@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -123,7 +123,8 @@ export default function SunologyCityPage() {
         datePublished="2026-04-27"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} url="https://monbalconsolaire.fr/avis/sunology-city" />
+      <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} ratingCount={3000} url="https://monbalconsolaire.fr/avis/sunology-city" />
+      <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology CITY' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology CITY' }]} />

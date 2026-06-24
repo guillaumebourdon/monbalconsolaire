@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
@@ -23,6 +23,7 @@ export default function PetitBudgetPage() {
     <>
       <SchemaArticle title="Meilleur kit solaire petit budget 2026 : moins de 400€" description="Comparatif des kits solaires les plus abordables en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-petit-budget" datePublished="2026-03-25" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Petit budget' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Petit budget' }]} />

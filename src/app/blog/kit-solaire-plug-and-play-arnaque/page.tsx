@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -52,6 +52,7 @@ export default function ArnaqueInvestissementPage() {
     <>
       <SchemaArticle title="Kit solaire plug-and-play : arnaque ou bon investissement ?" description="Analyse honnête du marché des kits solaires plug-and-play en 2026 : arnaques, vrais risques, ROI réel, critères de choix." url="https://monbalconsolaire.fr/blog/kit-solaire-plug-and-play-arnaque" datePublished="2026-04-19" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Arnaque ou investissement ?' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: 'Arnaque ou investissement ?' }]} />

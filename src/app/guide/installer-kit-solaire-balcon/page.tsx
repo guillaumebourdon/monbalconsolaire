@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -24,6 +24,7 @@ export default function InstallerKitPage() {
     <>
       <SchemaArticle title="Comment installer un kit solaire sur un balcon : guide pas à pas" description="Guide d'installation complet pour kit solaire de balcon." url="https://monbalconsolaire.fr/guide/installer-kit-solaire-balcon" datePublished="2026-03-28" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Installation pas à pas' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Guides', href: '/guide' }, { label: 'Installation pas à pas' }]} />

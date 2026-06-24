@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -27,7 +27,8 @@ export default function BluettiBalco260AvisPage() {
     <>
       <SchemaArticle title="Bluetti Balco 260 avis : le tout-en-un onduleur + batterie" description="Avis détaillé sur le Bluetti Balco 260 en 2026." url="https://monbalconsolaire.fr/avis/bluetti-balco-260" datePublished="2026-06-20" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Bluetti Balco 260" brand="Bluetti" description="Système solaire balcon tout-en-un : onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. IP65, extensible à 15 kWh." price={849} ratingValue={7} url="https://monbalconsolaire.fr/avis/bluetti-balco-260" />
+      <SchemaProduct name="Bluetti Balco 260" brand="Bluetti" description="Système solaire balcon tout-en-un : onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. IP65, extensible à 15 kWh." price={849} ratingValue={7} ratingCount={100} url="https://monbalconsolaire.fr/avis/bluetti-balco-260" />
+      <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Bluetti Balco 260' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Bluetti Balco 260' }]} />

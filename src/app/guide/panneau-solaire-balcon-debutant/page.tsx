@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -27,6 +27,7 @@ export default function GuidePage() {
     <>
       <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-débutant" datePublished="2026-03-18" />
       <SchemaFAQ questions={faqData} />
+      <SchemaBreadcrumb items={[{ label: "Guides", href: "/guide" }, { label: "Guide débutants" }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: "Guides", href: "/guide" }, { label: "Guide débutants" }]} />

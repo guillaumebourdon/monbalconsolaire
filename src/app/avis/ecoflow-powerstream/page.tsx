@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { SchemaArticle, SchemaFAQ, SchemaProduct } from '@/components/SchemaMarkup';
+import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -142,9 +142,11 @@ export default function EcoflowPowerstreamPage() {
         description="Avis complet sur le PowerStream EcoFlow en 2026."
         url="https://monbalconsolaire.fr/avis/ecoflow-powerstream"
         datePublished="2026-04-28"
+        dateModified="2026-06-20"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
+      <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} ratingCount={500} url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
+      <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow PowerStream' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow PowerStream' }]} />
