@@ -25,9 +25,9 @@ const HeroVisual = dynamic(() => import('@/components/HeroVisual').then(m => m.H
 });
 
 export const metadata: Metadata = {
-  title: 'MonBalconSolaire — Calculez vos économies solaires en 30 secondes',
+  title: 'Kit solaire balcon 2026 : comparatif et calculateur gratuit',
   description:
-    'Le guide indépendant des kits solaires pour balcon. Comparez Sunology, Zendure, Beem, EcoFlow, Sunethic. Calculez vos économies réelles avec notre simulateur gratuit.',
+    'Guide ind\u00e9pendant des kits solaires pour balcon. Comparez Sunology, Beem, Zendure, EcoFlow. Calculez vos \u00e9conomies r\u00e9elles en 30 secondes.',
 };
 
 export default function HomePage() {

@@ -7,7 +7,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Beem On 500 Wc avis 2026 : le nouveau rapport qualité-prix du marché',
+  title: 'Beem On 500 Wc avis 2026 : 429\u20ac, meilleur ratio \u20ac/Wc',
   description: 'Avis détaillé sur le Beem On 500 Wc en 2026 : 429€ pour 500 Wc bifacial TOPCon, 0,86€/Wc. Test complet, production réelle, comparatif et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-on-500w',

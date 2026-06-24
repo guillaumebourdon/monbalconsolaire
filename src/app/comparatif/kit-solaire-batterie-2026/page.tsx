@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
-  title: 'Kit solaire avec batterie 2026 : comparatif stockage plug-and-play',
+  title: 'Kit solaire avec batterie 2026 : comparatif stockage',
   description: 'Comparatif des kits solaires plug-and-play avec batterie en 2026 : Sunology PLAY MAX, Beem Battery, EcoFlow PowerStream. Prix, capacité, rentabilité.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026',

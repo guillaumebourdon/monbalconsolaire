@@ -5,7 +5,7 @@ import { EmailCapture } from '@/components/ui/EmailCapture';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
-  title: 'Codes promo solaire balcon 2026 : Sunology, Beem, Sunethic, Zendure',
+  title: 'Codes promo kits solaires 2026 : Sunology, Beem, Zendure',
   description: 'Tous les codes promo et bons plans actifs pour acheter votre kit solaire balcon. Mis \u00e0 jour chaque semaine. Inscrivez-vous pour les codes exclusifs.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/codes-promo',

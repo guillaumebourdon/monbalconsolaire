@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Calculateur solaire balcon — Estimez vos économies en 30 secondes',
+  title: 'Calculateur solaire gratuit : rentabilit\u00e9 en 30 secondes',
   description:
-    'Calculez gratuitement la rentabilité d\'un kit solaire sur votre balcon : production, économies annuelles et retour sur investissement selon votre département et orientation.',
+    'Entrez votre d\u00e9partement, orientation, budget. Notre simulateur recommande le kit adapt\u00e9 et calcule votre ROI. Gratuit, sans inscription.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/calculateur',
   },

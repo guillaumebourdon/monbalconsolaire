@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Beem On 460W avis 2026 : test complet et retour d\'expérience',
-  description: 'Avis détaillé sur le Beem On 460W en 2026 : prix, installation, production réelle, avantages et inconvénients. Le concurrent du Sunology PLAY2 vaut-il le coup ?',
+  title: 'Beem On 460W avis : test du rival Sunology PLAY2 (599\u20ac)',
+  description: 'Avis Beem On 460W : 599\u20ac, 460 Wc bifacial TOPCon. Installation, app Beem, comparaison Sunology PLAY2. Note 8/10. Remplac\u00e9 par le Beem On 500 Wc \u00e0 429\u20ac.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-on-460w',
   },

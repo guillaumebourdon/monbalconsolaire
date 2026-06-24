@@ -6,8 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { CopyableTemplate } from '@/components/ui/CopyableTemplate';
 
 export const metadata: Metadata = {
-  title: 'Déclaration CACSI Enedis panneau solaire : guide pas à pas (2026)',
-  description: 'Comment déclarer votre kit solaire de balcon à Enedis via la CACSI : procédure pas à pas, formulaire, pièces à joindre, délais. Guide gratuit et à jour 2026.',
+  title: 'D\u00e9claration Enedis panneau solaire : guide CACSI pas \u00e0 pas',
+  description: 'Comment d\u00e9clarer votre kit solaire \u00e0 Enedis. Formulaire CACSI, pi\u00e8ces obligatoires, d\u00e9lais. Proc\u00e9dure simplifi\u00e9e, guide gratuit et \u00e0 jour 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/declaration-cacsi-enedis-panneau-solaire',
   },

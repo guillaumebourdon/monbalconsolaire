@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
-  title: '300W vs 400W vs 500W : quelle puissance de panneau solaire choisir ?',
+  title: '300W vs 400W vs 500W : quelle puissance pour son balcon ?',
   description: 'Comparatif des puissances 300W, 400W et 500W pour un panneau solaire de balcon. Production, prix, ROI, profil adapte : le guide complet 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance',

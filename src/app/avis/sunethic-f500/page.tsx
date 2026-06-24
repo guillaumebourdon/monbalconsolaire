@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Sunethic F500 avis 2026 : test du kit solaire Made in France',
-  description: 'Avis complet sur le Sunethic F500 : le kit solaire de balcon fabriqué en France. 500 Wc, 690€. Production, qualité, rentabilité. Notre verdict.',
+  title: 'Sunethic F500 avis : kit solaire Made in France 500 Wc (690\u20ac)',
+  description: 'Test complet du Sunethic F500 : 500 Wc, fabrication fran\u00e7aise, 690\u20ac, note Trustpilot 4.8/5, garantie 25 ans. Production r\u00e9elle et verdict honn\u00eate.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunethic-f500',
   },

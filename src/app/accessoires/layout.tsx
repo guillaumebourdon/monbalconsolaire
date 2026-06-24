@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Accessoires pour kit solaire de balcon — MonBalconSolaire',
-  description: 'Prises connectées, batteries portables, lampes solaires, mini kits Amazon : les accessoires pour optimiser votre installation solaire de balcon.',
+  title: 'Accessoires kit solaire balcon : prises, batteries, lampes 2026',
+  description: 'Prises connect\u00e9es, batteries portables, lampes solaires, rallonges. Tous les accessoires pour optimiser votre installation solaire balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/accessoires',
   },

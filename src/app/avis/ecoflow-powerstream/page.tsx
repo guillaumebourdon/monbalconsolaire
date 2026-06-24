@@ -7,7 +7,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'EcoFlow PowerStream avis 2026 : test complet et verdict',
+  title: 'EcoFlow PowerStream avis : syst\u00e8me solaire modulaire + batterie',
   description: 'Avis complet sur EcoFlow PowerStream : système modulaire panneaux + batterie + réseau. Test, prix, configuration, points forts et limites en 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/ecoflow-powerstream',
