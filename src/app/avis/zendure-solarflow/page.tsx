@@ -164,8 +164,8 @@ export default function ZendureSolarflowPage() {
             affiliateUrl=""
             affiliateLabel=""
             accentColor="amber"
-            image="/images/produits/zendure-solarflow-2.jpg"
-            imageAlt="Zendure SolarFlow - batterie et hub solaire installés"
+            image="/images/produits/zendure-solarflow-front.png"
+            imageAlt="Zendure SolarFlow - hub et batterie AB2000"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 

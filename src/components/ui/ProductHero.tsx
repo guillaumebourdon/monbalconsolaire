@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -36,6 +37,7 @@ export function ProductHero({
   image,
   imageAlt,
 }: ProductHeroProps) {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const bgClass = accentColor === 'green' ? 'from-green-pale/40 to-amber-pale/20' : 'from-amber-pale/40 to-green-pale/20';
   const borderClass = accentColor === 'green' ? 'border-green/15' : 'border-amber/15';
 
@@ -51,19 +53,28 @@ export function ProductHero({
   };
 
   return (
+    <>
     <div className={`card-lg bg-gradient-to-br ${bgClass} ${borderClass} mb-10 overflow-hidden relative`}>
       <div className="grid md:grid-cols-5 gap-6 items-center">
         <div className="md:col-span-2">
           <div className="aspect-square bg-gradient-to-br from-white to-cream-dark rounded-2xl p-8 shadow-brand flex items-center justify-center relative overflow-hidden">
             {image ? (
-              <Image
-                src={image}
-                alt={imageAlt || `${brand} ${name}`}
-                width={400}
-                height={400}
-                className="object-contain w-full h-full"
-                priority
-              />
+              <div
+                className="w-full h-full flex items-center justify-center cursor-pointer"
+                onClick={() => setLightboxOpen(true)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter') setLightboxOpen(true); }}
+              >
+                <Image
+                  src={image}
+                  alt={imageAlt || `${brand} ${name}`}
+                  width={400}
+                  height={400}
+                  className="object-contain w-full h-full"
+                  priority
+                />
+              </div>
             ) : (
               <div className="relative w-full h-full max-w-[220px] mx-auto flex items-center justify-center">
                 <div className="absolute top-2 right-2 w-12 h-12 bg-amber/30 rounded-full blur-xl"></div>
@@ -117,5 +128,30 @@ export function ProductHero({
         </div>
       </div>
     </div>
+
+    {lightboxOpen && image && (
+      <div
+        className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-pointer"
+        onClick={() => setLightboxOpen(false)}
+      >
+        <div className="relative max-w-4xl max-h-[90vh] w-full">
+          <Image
+            src={image}
+            alt={imageAlt || `${brand} ${name}`}
+            width={1200}
+            height={1200}
+            className="object-contain w-full h-full rounded-xl"
+          />
+          <button
+            className="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white text-xl transition-colors"
+            onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
+          >
+            &#x2715;
+          </button>
+        </div>
+      </div>
+    )}
+
+    </>
   );
 }

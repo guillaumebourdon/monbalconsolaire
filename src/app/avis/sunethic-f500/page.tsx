@@ -47,7 +47,7 @@ export default function SunethicAvisPage() {
             affiliateUrl="https://sunethic.fr/produits"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="green"
-            image="/images/produits/sunethic-f500-1.webp"
+            image="/images/produits/sunethic-f500-2.webp"
             imageAlt="Sunethic F500 - panneau solaire 500 Wc Made in France"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
