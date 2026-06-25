@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Bilan apr\u00e8s 6 mois avec un kit solaire de balcon : retour d\u2019exp\u00e9rience',
@@ -101,6 +102,10 @@ export default function Bilan6MoisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le setup</h2>
               <div className="card-lg bg-cream/40">
+                <div className="flex items-start gap-3 mb-3">
+                  <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="md" />
+                  <span className="text-sm text-charcoal-light font-semibold">Le kit testé pendant 6 mois</span>
+                </div>
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Kit :</strong> Sunology PLAY 2 (450 Wc, 599 &euro;)</li>
                   <li>&bull; <strong>Installation :</strong> 5 d&eacute;cembre 2025, 10 minutes chrono</li>
@@ -304,6 +309,10 @@ export default function Bilan6MoisPage() {
                 <Link href="/guide/panneau-solaire-assurance-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Gr&ecirc;le, vol, chute : v&eacute;rifiez votre couverture</p>
+                </Link>
+                <Link href="/blog/kit-solaire-balcon-avis-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : tous les avis 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Synth&egrave;se Trustpilot, forums et retours r&eacute;els</p>
                 </Link>
               </div>
             </section>

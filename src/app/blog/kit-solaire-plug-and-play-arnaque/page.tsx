@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Kit solaire plug-and-play : arnaque ou bon investissement ?',
@@ -125,7 +126,10 @@ export default function ArnaqueInvestissementPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le vrai calcul de rentabilité (sans blabla)</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Prenons un exemple concret pour couper court aux débats. Un ménage moyen en région lyonnaise qui achète un kit Sunology PLAY 2 (599€, 450W) :</p>
+              <div className="flex items-start gap-3 mb-4">
+                <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="md" />
+                <p className="text-charcoal-light leading-relaxed">Prenons un exemple concret pour couper court aux débats. Un ménage moyen en région lyonnaise qui achète un kit Sunology PLAY 2 (599€, 450W) :</p>
+              </div>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Production annuelle</strong> : environ 500 kWh (orientation sud, Lyon)</li>
@@ -190,6 +194,10 @@ export default function ArnaqueInvestissementPage() {
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, 900W — tout ce qui est légal</p>
+                </Link>
+                <Link href="/blog/kit-solaire-balcon-avis-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : avis et retours 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Ce que pensent vraiment les utilisateurs</p>
                 </Link>
               </div>
             </section>

@@ -401,14 +401,22 @@ export default function HomePage() {
               Tout ce qu&apos;il faut savoir avant de passer au solaire de balcon : guides pratiques, analyses chiffrées, réglementation.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-group">
-            <Link href="/tout-savoir" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
-              <div className="w-10 h-10 rounded-brand bg-green-pale flex items-center justify-center mb-3 group-hover:bg-green/10 transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D7A4A" strokeWidth="2" strokeLinecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-group">
+            <Link href="/avis" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
+              <div className="w-10 h-10 rounded-brand bg-amber-pale flex items-center justify-center mb-3 group-hover:bg-amber/10 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C47D0E" strokeWidth="2" strokeLinecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </div>
-              <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Tout savoir</h3>
-              <p className="text-sm text-charcoal-light leading-relaxed">Guides pratiques, analyses chiffr&eacute;es et r&eacute;glementation en un seul endroit.</p>
-              <span className="text-green font-semibold text-sm mt-3 inline-block">Explorer &rarr;</span>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Avis produits</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed">Analyses d&eacute;taill&eacute;es des kits Sunology, Beem, Zendure, EcoFlow, Bluetti, Jackery.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Voir les avis &rarr;</span>
+            </Link>
+            <Link href="/comparatif" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
+              <div className="w-10 h-10 rounded-brand bg-green-pale flex items-center justify-center mb-3 group-hover:bg-green/10 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D7A4A" strokeWidth="2" strokeLinecap="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M21 3l-7 7"/><path d="M3 3l7 7"/><path d="M16 21h5v-5"/><path d="M8 21H3v-5"/><path d="M21 21l-7-7"/><path d="M3 21l7-7"/></svg>
+              </div>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Comparatifs</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed">Tableaux comparatifs neutres : meilleur kit, petit budget, avec batterie, terrasse.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Voir les comparatifs &rarr;</span>
             </Link>
             <Link href="/guide" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="w-10 h-10 rounded-brand bg-green-pale flex items-center justify-center mb-3 group-hover:bg-green/10 transition-colors">
@@ -425,6 +433,14 @@ export default function HomePage() {
               <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Blog &amp; analyses</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">Rentabilit&eacute;, prix de l&apos;&eacute;lectricit&eacute;, production hivernale, autoconsommation.</p>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Lire les articles &rarr;</span>
+            </Link>
+            <Link href="/tout-savoir" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
+              <div className="w-10 h-10 rounded-brand bg-green-pale flex items-center justify-center mb-3 group-hover:bg-green/10 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D7A4A" strokeWidth="2" strokeLinecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-green transition-colors">Tout savoir</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed">Guides, analyses et r&eacute;glementation en un seul endroit.</p>
+              <span className="text-green font-semibold text-sm mt-3 inline-block">Explorer &rarr;</span>
             </Link>
             <Link href="/accessoires" className="card-lg card-glow group hover:shadow-brand-lg transition-all duration-300 reveal">
               <div className="w-10 h-10 rounded-brand bg-green-pale flex items-center justify-center mb-3 group-hover:bg-green/10 transition-colors">
@@ -447,24 +463,36 @@ export default function HomePage() {
               Derniers articles publi&eacute;s
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-5 reveal-group">
-            <Link href="/blog/bilan-6-mois-kit-solaire" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
-              <div className="badge-amber mb-3 text-[10px]">V&eacute;cu</div>
-              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Bilan 6 mois avec un kit solaire de balcon</h3>
-              <p className="text-xs text-charcoal-light leading-relaxed">Production r&eacute;elle, &eacute;conomies, probl&egrave;mes. Retour honn&ecirc;te.</p>
-              <div className="text-xs text-stone mt-3">27 mai 2026 &middot; 10 min</div>
+          <div className="space-y-3 max-w-3xl mx-auto reveal-group">
+            <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+              <div className="flex items-center justify-between mb-1">
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Jackery SolarVault 3 Pro : stockage 2,5 kWh LFP</h3>
+                <span className="text-xs text-stone whitespace-nowrap ml-4">23 juin 2026</span>
+              </div>
             </Link>
-            <Link href="/guide/optimiser-autoconsommation-solaire" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
-              <div className="badge-green mb-3 text-[10px]">Guide</div>
-              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h3>
-              <p className="text-xs text-charcoal-light leading-relaxed">8 astuces pour passer de 40 % &agrave; 85 %.</p>
-              <div className="text-xs text-stone mt-3">25 mai 2026 &middot; 10 min</div>
+            <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+              <div className="flex items-center justify-between mb-1">
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Bluetti Balco 260 : tout-en-un onduleur + batterie</h3>
+                <span className="text-xs text-stone whitespace-nowrap ml-4">20 juin 2026</span>
+              </div>
             </Link>
-            <Link href="/avis/ikea-solstrale-balcon" className="card-lg card-glow group hover:shadow-brand-lg transition-all">
-              <div className="badge-amber mb-3 text-[10px]">Analyse</div>
-              <h3 className="font-bold text-base mb-2 group-hover:text-green transition-colors">IKEA Solstr&aring;le : le kit solaire IKEA pour balcon</h3>
-              <p className="text-xs text-charcoal-light leading-relaxed">449 &euro; avec EcoFlow. Pas encore en France.</p>
-              <div className="text-xs text-stone mt-3">23 mai 2026 &middot; 9 min</div>
+            <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+              <div className="flex items-center justify-between mb-1">
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Beem On 500 Wc : meilleur rapport qualit&eacute;-prix</h3>
+                <span className="text-xs text-stone whitespace-nowrap ml-4">15 juin 2026</span>
+              </div>
+            </Link>
+            <Link href="/blog/micro-onduleur-solaire-fonctionnement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+              <div className="flex items-center justify-between mb-1">
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Micro-onduleur solaire : fonctionnement et choix</h3>
+                <span className="text-xs text-stone whitespace-nowrap ml-4">6 juin 2026</span>
+              </div>
+            </Link>
+            <Link href="/blog/entretien-nettoyage-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+              <div className="flex items-center justify-between mb-1">
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Entretien panneau solaire : guide pratique</h3>
+                <span className="text-xs text-stone whitespace-nowrap ml-4">4 juin 2026</span>
+              </div>
             </Link>
           </div>
           <div className="text-center mt-8">

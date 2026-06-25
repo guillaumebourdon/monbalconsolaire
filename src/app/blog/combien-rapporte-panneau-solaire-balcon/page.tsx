@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Combien rapporte un panneau solaire de balcon ? Calcul réel (2026)',
@@ -100,12 +101,22 @@ export default function CombienRapportePage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce que ces chiffres signifient concrêtement</h2>
               <div className="space-y-4 my-6">
                 <div className="card border-l-4 border-l-green">
+                  <div className="flex items-start gap-3">
+                  <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />
+                  <div>
                   <h4 className="font-bold text-sm mb-1">A Marseille avec un Sunology PLAY2</h4>
                   <p className="text-xs text-charcoal-light">Vous produisez 575 kWh/an, soit l&apos;equivalent de la consommation d&apos;un refrigerateur + une box internet + tous vos appareils en veille pendant un an. Économies : 112&euro;/an. Le kit est rembourse en 5 ans et 4 mois. Sur 25 ans de garantie, vous économiséz plus de 2 800&euro;.</p>
                 </div>
+                  </div>
+                </div>
                 <div className="card border-l-4 border-l-amber">
+                  <div className="flex items-start gap-3">
+                  <ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" />
+                  <div>
                   <h4 className="font-bold text-sm mb-1">A Paris avec un Beem Kit 300W</h4>
                   <p className="text-xs text-charcoal-light">Vous produisez 281 kWh/an. C&apos;est moins, mais à 299&euro; le kit, le retour sur investissement est atteint en 5 ans et 5 mois. Sur 25 ans, vous économiséz plus de 1 375&euro; — soit 4,6x votre investissement initial.</p>
+                </div>
+                  </div>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1">A Lille avec un Sunology PLAY2</h4>
@@ -204,6 +215,10 @@ export default function CombienRapportePage() {
                 <Link href="/blog/bilan-6-mois-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan 6 mois avec un kit solaire de balcon</h4>
                   <p className="text-xs text-charcoal-light mt-1">Production r&eacute;elle vs pr&eacute;visions &mdash; comparez avec notre v&eacute;cu</p>
+                </Link>
+                <Link href="/blog/kit-solaire-balcon-avis-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : avis et retours 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Synth&egrave;se des avis Trustpilot, forums et utilisateurs</p>
                 </Link>
               </div>
             </section>
