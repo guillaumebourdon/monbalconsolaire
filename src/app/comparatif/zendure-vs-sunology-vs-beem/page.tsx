@@ -6,7 +6,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 export const metadata: Metadata = {
   title: 'Zendure vs Sunology vs Beem 2026 : le match complet',
-  description: 'Comparatif Zendure SolarFlow 800 Plus vs Sunology PLAY 2 vs Beem On 500 Wc : prix, stockage, puissance, app, rentabilité. Quel système choisir en 2026 ?',
+  description: 'Comparatif Zendure SolarFlow 800 Plus vs Sunology PLAY 2 vs Beem On 500 Wc : prix, prix/Wc, stockage, puissance, app, rentabilité. Quel système choisir en 2026 ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/zendure-vs-sunology-vs-beem',
   },
@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const faqData = [
   {
     question: 'Zendure, Sunology ou Beem : lequel est le moins cher ?',
-    answer: 'Pour un kit complet sans batterie, le Beem On 500 Wc à 429 € (0,86 €/Wc) est le moins cher du marché en juin 2026. Mais si on compare des systèmes avec stockage, le Zendure SolarFlow 800 Plus (~488 € pour 1,92 kWh + onduleur 800 W) est imbattable : le Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 1 179 €, soit 2,4x plus cher pour 2,7x moins de stockage.',
+    answer: 'Pour un kit complet sans batterie, le Beem On 500 Wc à 429 € (0,86 €/Wc) est le moins cher du marché en juin 2026. Mais si on compare des systèmes avec stockage, le Zendure SolarFlow 800 Plus (~479 € pour 1,92 kWh + onduleur 800 W) est imbattable : le Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 1 179 €, soit 2,5x plus cher pour 2,7x moins de stockage.',
   },
   {
     question: 'Lequel a le meilleur retour sur investissement ?',
-    answer: 'Le Zendure SolarFlow 800 Plus + 2 panneaux 420 W (~900 € total) offre un ROI de ~7 ans grâce au stockage qui augmente l\'autoconsommation à 80 %. Le Sunology PLAY 2 seul (599 €) a un ROI de ~7-8 ans aussi, mais sans stockage vous perdez 50 % de production quand vous n\'êtes pas chez vous. Le Beem On 500 Wc (429 €) offre le meilleur ROI sans batterie : ~4,8 ans grâce à son prix agressif.',
+    answer: 'Le Zendure SolarFlow 800 Plus + 2 panneaux 420 W (~900 € total) offre un ROI de ~7 ans grâce au stockage qui augmente l\'autoconsommation à 80 %. Le Sunology PLAY 2 seul (599 €) a un ROI de ~14,6 ans sans stockage (41 €/an d\'économies à 45 % d\'autoconsommation). Le Beem On 500 Wc (429 €) offre le meilleur ROI sans batterie : ~9,5 ans (45 €/an d\'économies à 45 % d\'autoconsommation). Avec le Zendure, le stockage transforme radicalement l\'équation.',
   },
   {
     question: 'Peut-on combiner un Sunology ou Beem avec un Zendure SolarFlow ?',
@@ -40,7 +40,8 @@ const faqData = [
 ];
 
 const tableauComparatif = [
-  ['Prix du système', '~488 €', '599 €', '429 €'],
+  ['Prix du système', '~479 €', '599 €', '429 €'],
+  ['Prix/Wc', '— (panneaux non inclus)', '1,33 €/Wc', '0,86 €/Wc'],
   ['Ce qui est inclus', 'Onduleur 800 W + batterie 1,92 kWh', 'Panneau 450 Wc + onduleur + châssis', 'Panneau 500 Wc + onduleur + support'],
   ['Panneaux inclus', 'Non (à acheter séparément)', 'Oui (1 panneau 450 Wc)', 'Oui (1 panneau 500 Wc)'],
   ['Stockage batterie', '1,92 kWh (LiFePO4)', 'Non (VAULT 700 Wh en option à 580 €)', 'Non (Beem Battery en option)'],
@@ -69,7 +70,7 @@ export default function ZendureVsSunologyVsBeemPage() {
         description="Comparatif complet des 3 systèmes solaires plug-and-play les plus populaires en 2026."
         url="https://monbalconsolaire.fr/comparatif/zendure-vs-sunology-vs-beem"
         datePublished="2026-05-09"
-        dateModified="2026-06-20"
+        dateModified="2026-06-25"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Zendure vs Sunology vs Beem' }]} />
@@ -83,23 +84,28 @@ export default function ZendureVsSunologyVsBeemPage() {
               Zendure vs Sunology vs Beem : le match 2026
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Trois approches radicalement différentes du solaire de balcon. Le <strong>Zendure SolarFlow 800 Plus</strong> mise sur le stockage à prix cassé. Le <strong>Sunology PLAY 2</strong> sur la simplicité absolue. Le <strong>Beem On</strong> sur la flexibilité et le service. On compare tout.
+              Trois approches radicalement différentes du solaire de balcon. Le <strong>Zendure SolarFlow 800 Plus</strong> mise sur le stockage à prix cassé. Le <strong>Sunology PLAY 2</strong> sur la simplicité absolue. Le <strong>Beem On 500 Wc</strong> sur le meilleur prix/Wc du march&eacute; (0,86 &euro;/Wc). On compare tout.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 mai 2026</span>
+              <span>9 mai 2026 &middot; mis &agrave; jour 25 juin 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
 
-          <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">n            <span className="text-stone text-sm mt-0.5">ℹ</span>n            <p className="text-xs text-stone leading-relaxed">n              <strong>Transparence :</strong> certains liens de cette page sont affiliés. Notre classement est basé sur le prix, la puissance, la facilité d'installation, la garantie et l'adéquation au profil. Aucun fabricant ne nous paie pour être mieux noté. <a href="/methodologie" className="text-green hover:underline">Voir notre méthodologie →</a>n            </p>n          </div>
+          <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
+            <span className="text-stone text-sm mt-0.5">&#8505;</span>
+            <p className="text-xs text-stone leading-relaxed">
+              <strong>Transparence :</strong> certains liens de cette page sont affili&eacute;s. Notre classement est bas&eacute; sur le prix, la puissance, la facilit&eacute; d&apos;installation, la garantie et l&apos;ad&eacute;quation au profil. Aucun fabricant ne nous paie pour &ecirc;tre mieux not&eacute;. <a href="/methodologie" className="text-green hover:underline">Voir notre m&eacute;thodologie &rarr;</a>
+            </p>
+          </div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Le verdict en 10 secondes</h2>
             <div className="space-y-2 text-sm text-charcoal-light leading-relaxed">
-              <p><strong>Zendure SolarFlow 800 Plus</strong> — Le meilleur rapport qualité-prix SI vous voulez du stockage. Batterie 1,92 kWh + onduleur pour ~488 €. Mais panneaux non inclus, installation plus longue.</p>
-              <p><strong>Sunology PLAY 2</strong> — Le plus simple. Branchez et oubliez en 1 minute. Idéal si vous ne voulez pas de batterie et voulez juste économiser sur votre facture.</p>
-              <p><strong>Beem On 500 Wc</strong> — Le meilleur rapport qualit&eacute;-prix sans batterie. 429 &euro; pour 500 Wc (0,86 &euro;/Wc), ROI ~4,8 ans. Paiement en 10x, option d&eacute;marches Enedis. Le choix pragmatique.</p>
+              <p><strong>Zendure SolarFlow 800 Plus</strong> — Le meilleur rapport qualit&eacute;-prix SI vous voulez du stockage. Batterie 1,92 kWh + onduleur pour ~479 &euro;. Mais panneaux non inclus, installation plus longue.</p>
+              <p><strong>Sunology PLAY 2</strong> — Le plus simple. Branchez et oubliez en 1 minute. Id&eacute;al si vous ne voulez pas de batterie et voulez juste &eacute;conomiser sur votre facture.</p>
+              <p><strong>Beem On 500 Wc</strong> — Le meilleur rapport qualit&eacute;-prix sans batterie. 429 &euro; pour 500 Wc (0,86 &euro;/Wc), le plus bas du march&eacute;. ROI ~9,5 ans. Paiement en 10x, option d&eacute;marches Enedis. Le choix pragmatique.</p>
             </div>
           </div>
 
@@ -126,9 +132,9 @@ export default function ZendureVsSunologyVsBeemPage() {
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Beem</h4>
-                  <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Service d&apos;abord</p>
+                  <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Prix/Wc d&apos;abord</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Marque fran&ccedil;aise, gamme &eacute;tendue (300W &agrave; 500 Wc). Paiement fractionn&eacute;, option d&eacute;marches Enedis. Le meilleur &euro;/Wc du march&eacute; (0,86 &euro;/Wc).
+                    Marque fran&ccedil;aise, gamme &eacute;tendue (300 Wc &agrave; 500 Wc). Le meilleur &euro;/Wc du march&eacute; (0,86 &euro;/Wc). Paiement fractionn&eacute;, option d&eacute;marches Enedis.
                   </p>
                 </div>
               </div>
@@ -163,7 +169,7 @@ export default function ZendureVsSunologyVsBeemPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le vrai comparatif : coût total et rentabilité</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Le piège, c&apos;est de comparer les prix affichés. Le Zendure à 488 € semble moins cher que le Sunology à 599 €. Mais le Zendure ne contient pas de panneaux. Comparons des <strong>setups complets</strong> :
+                Le pi&egrave;ge, c&apos;est de comparer les prix affich&eacute;s. Le Zendure &agrave; 479 &euro; semble moins cher que le Sunology &agrave; 599 &euro;. Mais le Zendure ne contient pas de panneaux. Comparons des <strong>setups complets</strong> :
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-xs border-collapse min-w-[600px]">
@@ -228,7 +234,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                 </table>
               </div>
               <p className="text-xs text-stone italic">
-                Calculs basés sur : exposition sud, Lyon, tarif EDF base 0,1940 €/kWh (mai 2026). Production = puissance × irradiation × coeff orientation × 0,85.
+                Calculs bas&eacute;s sur : exposition sud, Lyon, tarif EDF base 0,1940 &euro;/kWh (juin 2026). Production = puissance &times; irradiation &times; coeff orientation &times; 0,85.
               </p>
             </section>
 
@@ -240,7 +246,7 @@ export default function ZendureVsSunologyVsBeemPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Le stockage n&apos;est plus un luxe</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Avant le SolarFlow, ajouter du stockage coûtait 580-900 € de plus (VAULT Sunology, DELTA EcoFlow). À 488 € pour 1,92 kWh + onduleur, Zendure rend le stockage plus accessible que la plupart des kits sans batterie. C&apos;est un changement de paradigme.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Avant le SolarFlow, ajouter du stockage co&ucirc;tait 580-900 &euro; de plus (VAULT Sunology, DELTA EcoFlow). &Agrave; 479 &euro; pour 1,92 kWh + onduleur, Zendure rend le stockage plus accessible que la plupart des kits sans batterie. C&apos;est un changement de paradigme.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">L&apos;autoconsommation passe de 45 % à 80 %</h4>
@@ -292,7 +298,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                     <li>&rarr; Vous voulez le meilleur prix sans batterie (429 &euro;, 0,86 &euro;/Wc)</li>
                     <li>&rarr; Vous voulez payer en 10x sans frais (~43 &euro;/mois)</li>
                     <li>&rarr; Les d&eacute;marches administratives vous stressent (option ZEN)</li>
-                    <li>&rarr; Vous cherchez un ROI rapide sans batterie (~4,8 ans)</li>
+                    <li>&rarr; Vous cherchez le meilleur prix/Wc du march&eacute; (0,86 &euro;/Wc) — ROI ~9,5 ans</li>
                   </ul>
                   <div className="mt-4 pt-3 border-t border-green/10">
                     <p className="text-xs text-stone">Budget : 299-429 &euro; tout compris</p>
@@ -320,9 +326,9 @@ export default function ZendureVsSunologyVsBeemPage() {
                   <tbody>
                     <tr className="border-b border-border-light bg-green-pale/20 font-semibold">
                       <td className="p-2.5">Zendure SolarFlow 800 Plus</td>
-                      <td className="text-center p-2.5 font-mono">488 €</td>
+                      <td className="text-center p-2.5 font-mono">479 €</td>
                       <td className="text-center p-2.5 font-mono">1,92 kWh</td>
-                      <td className="text-center p-2.5 font-mono text-green">254 €/kWh</td>
+                      <td className="text-center p-2.5 font-mono text-green">249 €/kWh</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Sunology PLAY MAX (VAULT)</td>
@@ -378,7 +384,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Le leader français du plug-and-play, testé en conditions réelles</p>
+                  <p className="text-xs text-charcoal-light mt-1">Le leader français du plug-and-play, analysé en détail</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
