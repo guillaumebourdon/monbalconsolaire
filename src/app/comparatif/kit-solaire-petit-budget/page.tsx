@@ -54,7 +54,7 @@ export default function PetitBudgetPage() {
               <div className="space-y-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/beem-kit-300-1.png" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="lg" /><div><div className="badge-green mb-2">Notre choix n°1</div><h3 className="font-bold text-xl">Beem Kit 300W</h3><p className="text-sm text-stone">par Beem Energy · 4 panneaux modulaires · Garantie 25 ans</p></div></div>
+                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="lg" /><div><div className="badge-green mb-2">Notre choix n°1</div><h3 className="font-bold text-xl">Beem Kit 300W</h3><p className="text-sm text-stone">par Beem Energy · 4 panneaux modulaires · Garantie 25 ans</p></div></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-green">299 €</div><div className="text-xs text-stone">1,00 €/Wc</div></div>
                   </div>
                   <div className="mt-4 space-y-2 text-sm text-charcoal-light">

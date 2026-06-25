@@ -54,7 +54,7 @@ export default function SunologyVsBeemPage() {
               <div className="overflow-x-auto -mx-5 md:mx-0">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />Sunology PLAY2</div></th><th className="text-center p-3 rounded-tr-xl"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/beem-on-500-1.png" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" />Beem On 500 Wc</div></th>
+                    <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />Sunology PLAY2</div></th><th className="text-center p-3 rounded-tr-xl"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" />Beem On 500 Wc</div></th>
                   </tr></thead>
                   <tbody>
                     {[
@@ -137,7 +137,7 @@ export default function SunologyVsBeemPage() {
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start gap-4 mb-3">
-                    <ProductThumb src="/images/produits/beem-on-500-1.png" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="lg" />
+                    <ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="lg" />
                     <h4 className="font-bold text-green mb-2">Choisissez Beem si :</h4>
                   </div>
                   <ul className="text-sm text-charcoal-light space-y-1">

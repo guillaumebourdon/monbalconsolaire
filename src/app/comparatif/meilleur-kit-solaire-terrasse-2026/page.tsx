@@ -161,11 +161,11 @@ export default function MeilleurKitTerrasse2026Page() {
                 <div className="space-y-3">
                   {setup.kits.map((kit, ki) => {
                     const kitThumbMap: Record<string, { src: string; href: string }> = {
-                      'Beem On 500 Wc': { src: '/images/produits/beem-on-500-1.png', href: '/avis/beem-on-500w' },
+                      'Beem On 500 Wc': { src: '/images/produits/beem-on-500-1.webp', href: '/avis/beem-on-500w' },
                       'Sunology PLAY 2': { src: '/images/produits/sunology-play-2-1.webp', href: '/avis/sunology-play-2' },
                       'Sunethic F500': { src: '/images/produits/sunethic-f500-2.webp', href: '/avis/sunethic-f500' },
-                      'Zendure SolarFlow': { src: '/images/produits/zendure-solarflow-front.png', href: '/avis/zendure-solarflow' },
-                      'EcoFlow PowerStream': { src: '/images/produits/ecoflow-powerstream-2.png', href: '/avis/ecoflow-powerstream' },
+                      'Zendure SolarFlow': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
+                      'EcoFlow PowerStream': { src: '/images/produits/ecoflow-powerstream-2.webp', href: '/avis/ecoflow-powerstream' },
                     };
                     const kitThumb = Object.entries(kitThumbMap).find(([key]) => kit.name.includes(key))?.[1];
                     return (

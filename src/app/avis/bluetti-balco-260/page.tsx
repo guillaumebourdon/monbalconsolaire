@@ -49,7 +49,7 @@ export default function BluettiBalco260AvisPage() {
             affiliateUrl="https://fr.bluettipower.eu/pages/bluetti-balco-260"
             affiliateLabel="Voir sur le site Bluetti"
             accentColor="amber"
-            image="/images/produits/bluetti-balco-260-front.png"
+            image="/images/produits/bluetti-balco-260-front.webp"
             imageAlt="Bluetti Balco 260 - boîtier onduleur + batterie LFP vue de face"
           />
           <p className="text-xs text-stone mt-2 italic">Prix annonc&eacute; en juin 2026 &middot; Panneaux solaires non inclus</p>

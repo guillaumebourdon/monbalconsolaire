@@ -118,7 +118,7 @@ export default function ZendureVsSunologyVsBeemPage() {
               </p>
               <div className="grid md:grid-cols-3 gap-3 my-6">
                 <div className="card border-l-4 border-l-green">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/zendure-solarflow-front.png" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" /><h4 className="font-bold text-sm text-green">Zendure</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" /><h4 className="font-bold text-sm text-green">Zendure</h4></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Stockage d&apos;abord</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Marque chinoise spécialisée batteries. Vend l&apos;onduleur + batterie, vous achetez les panneaux ailleurs. Approche modulaire, prix agressif sur le stockage.
@@ -132,7 +132,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/beem-on-500-1.png" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" /><h4 className="font-bold text-sm text-green">Beem</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" /><h4 className="font-bold text-sm text-green">Beem</h4></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Prix/Wc d&apos;abord</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Marque fran&ccedil;aise, gamme &eacute;tendue (300 Wc &agrave; 500 Wc). Le meilleur &euro;/Wc du march&eacute; (0,86 &euro;/Wc). Paiement fractionn&eacute;, option d&eacute;marches Enedis.
@@ -148,9 +148,9 @@ export default function ZendureVsSunologyVsBeemPage() {
                   <thead>
                     <tr className="bg-green text-white">
                       <th className="text-left p-2.5 rounded-tl-xl font-semibold">Critère</th>
-                      <th className="text-center p-2.5 font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/zendure-solarflow-front.png" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" />Zendure SolarFlow</div></th>
+                      <th className="text-center p-2.5 font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" />Zendure SolarFlow</div></th>
                       <th className="text-center p-2.5 font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />Sunology PLAY 2</div></th>
-                      <th className="text-center p-2.5 rounded-tr-xl font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/beem-on-500-1.png" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" />Beem On 500 Wc</div></th>
+                      <th className="text-center p-2.5 rounded-tr-xl font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" />Beem On 500 Wc</div></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -265,7 +265,7 @@ export default function ZendureVsSunologyVsBeemPage() {
               <div className="space-y-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
                   <div className="flex items-start gap-4 mb-3">
-                    <ProductThumb src="/images/produits/zendure-solarflow-front.png" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="lg" />
+                    <ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="lg" />
                     <h3 className="font-bold text-base text-green mb-2">Choisissez Zendure SolarFlow si :</h3>
                   </div>
                   <ul className="text-sm text-charcoal-light space-y-1.5">
@@ -301,7 +301,7 @@ export default function ZendureVsSunologyVsBeemPage() {
 
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
                   <div className="flex items-start gap-4 mb-3">
-                    <ProductThumb src="/images/produits/beem-on-500-1.png" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="lg" />
+                    <ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="lg" />
                     <h3 className="font-bold text-base text-green mb-2">Choisissez Beem On 500 Wc si :</h3>
                   </div>
                   <ul className="text-sm text-charcoal-light space-y-1.5">

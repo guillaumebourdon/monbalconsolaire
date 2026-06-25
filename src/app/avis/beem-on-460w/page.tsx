@@ -47,7 +47,7 @@ export default function BeemOnAvisPage() {
             affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
-            image="/images/produits/beem-on-460-2.png"
+            image="/images/produits/beem-on-460-2.webp"
             imageAlt="Beem On 460W - panneau solaire bifacial TOPCon"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
