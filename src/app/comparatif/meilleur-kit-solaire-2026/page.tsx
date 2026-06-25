@@ -62,7 +62,12 @@ export default function ComparatifPage() {
               <span>12 min de lecture</span>
             </div>
 
-          <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">n            <span className="text-stone text-sm mt-0.5">ℹ</span>n            <p className="text-xs text-stone leading-relaxed">n              <strong>Transparence :</strong> certains liens de cette page sont affiliés. Notre classement est basé sur le prix, la puissance, la facilité d'installation, la garantie et l'adéquation au profil. Aucun fabricant ne nous paie pour être mieux noté. <a href="/methodologie" className="text-green hover:underline">Voir notre méthodologie →</a>n            </p>n          </div>
+          <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
+            <span className="text-stone text-sm mt-0.5">&#x2139;</span>
+            <p className="text-xs text-stone leading-relaxed">
+              <strong>Transparence :</strong> certains liens de cette page sont affili&eacute;s. Notre classement est bas&eacute; sur le prix, la puissance, la facilit&eacute; d&apos;installation, la garantie et l&apos;ad&eacute;quation au profil. Aucun fabricant ne nous paie pour &ecirc;tre mieux not&eacute;. <a href="/methodologie" className="text-green hover:underline">Voir notre m&eacute;thodologie &rarr;</a>
+            </p>
+          </div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
@@ -74,8 +79,8 @@ export default function ComparatifPage() {
           <div className="card mb-10">
             <h3 className="font-bold text-sm mb-3 text-stone">Sommaire</h3>
             <nav className="space-y-2 text-sm">
-              {['Pourquoi un kit solaire de balcon en 2026 ?', 'Nos critères de sélection', 'Tableau comparatif', 'Sunology PLAY2 : notre choix n\u00b01', 'Beem On 460W : meilleur rapport qualité/prix', 'Beem Kit 300W : le choix petit budget', 'Sunethic F500 : le Made in France', 'Verdict : quel kit choisir ?', 'Questions frequentes'].map((item, i) => (
-                <a key={i} href={`#section-${i+1}`} className="block text-green hover:underline">{i+1}. {item}</a>
+              {['Pourquoi un kit solaire de balcon en 2026\u00a0?', 'Nos crit\u00e8res de s\u00e9lection', 'Tableau comparatif', 'Sunology PLAY2 : notre choix n\u00b01', 'Beem On 500 Wc : meilleur rapport qualit\u00e9-prix', 'Beem Kit 300W : le choix petit budget', 'Sunethic F500 : le Made in France', 'Verdict : quel kit choisir\u00a0?', 'Questions fr\u00e9quentes'].map((item, i) => (
+                <a key={i} href={`#section-${i+1}`} className="block text-green hover:underline">{item}</a>
               ))}
             </nav>
           </div>
@@ -83,7 +88,7 @@ export default function ComparatifPage() {
           <div className="space-y-10">
 
             <section id="section-1">
-              <h2 className="text-2xl font-extrabold mb-4">1. Pourquoi un kit solaire de balcon en 2026 ?</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Pourquoi un kit solaire de balcon en 2026&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le prix de l&apos;électricité en France à augmente de 55% entre 2012 et 2026. En mai 2026, le tarif réglementé EDF s&apos;etablit à <span className="data-highlight">0,1940 &euro;/kWh TTC</span> en option base. Ce tarif à augmente par rapport à début 2026, et la tendance sur 10 ans reste à la hausse de 4 à 5% par an en moyenne.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Parallelement, le prix des kits solaires plug-and-play à baisse de 15 à 20% en 2025-2026. Un kit de qualité demarre aujourd&apos;hui à <span className="data-highlight">299 &euro;</span> et les modeles de reference coutent autour de <span className="data-highlight">599 &euro;</span>. Le retour sur investissement se situe entre 4 et 6 ans, pour une garantie de 25 ans.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">La bonne nouvelle pour les locataires et propriétaires d&apos;appartement : ces kits se branchént sur une simple prise électrique, ne nécessitent aucun travaux, et peuvent etre installés en quelques minutes. Seule une déclaration informative aupres d&apos;Enedis (convention CACSI) est requise.</p>
@@ -93,7 +98,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-2">
-              <h2 className="text-2xl font-extrabold mb-4">2. Nos critères de sélection</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Nos crit&egrave;res de s&eacute;lection</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Pour ce comparatif, nous evaluons chaque kit sur 6 critères objectifs et mesurables :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 {[
@@ -111,7 +116,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-3">
-              <h2 className="text-2xl font-extrabold mb-4">3. Tableau comparatif</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Tableau comparatif</h2>
               <div className="overflow-x-auto -mx-5 md:mx-0">
                 <table className="w-full text-sm border-collapse min-w-[640px]">
                   <thead>
@@ -140,7 +145,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-4">
-              <h2 className="text-2xl font-extrabold mb-4">4. Sunology PLAY2 : notre choix n&deg;1</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Sunology PLAY2 : notre choix n&deg;1</h2>
               <div className="card-lg border-green/20 bg-green-pale/20 mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
                   <div className="flex items-start gap-4">
@@ -179,7 +184,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-5">
-              <h2 className="text-2xl font-extrabold mb-4">5. Beem On 500 Wc : le nouveau rapport qualit&eacute;-prix du march&eacute;</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Beem On 500 Wc : le nouveau rapport qualit&eacute;-prix du march&eacute;</h2>
               <div className="card-lg border-green/20 bg-green-pale/20 mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
                   <div className="flex items-start gap-4">
@@ -208,7 +213,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-6">
-              <h2 className="text-2xl font-extrabold mb-4">6. Beem Kit 300W : le choix petit budget</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Beem Kit 300W : le choix petit budget</h2>
               <div className="card-lg mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
                   <div className="flex items-start gap-4">
@@ -232,7 +237,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-7">
-              <h2 className="text-2xl font-extrabold mb-4">7. Sunethic F500 : le Made in France</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Sunethic F500 : le Made in France</h2>
               <div className="card-lg mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
                   <div className="flex items-start gap-4">
@@ -260,7 +265,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-8">
-              <h2 className="text-2xl font-extrabold mb-4">8. Verdict : quel kit choisir ?</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Verdict : quel kit choisir&nbsp;?</h2>
               <div className="space-y-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h4 className="font-bold text-green mb-1">Le meilleur rapport qualit&eacute;-prix &rarr; Beem On 500 Wc (429&euro;)</h4>
@@ -287,7 +292,7 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-9">
-              <h2 className="text-2xl font-extrabold mb-6">9. Questions frequentes</h2>
+              <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>
               <div className="space-y-4">
                 {faqData.map((faq, i) => (
                   <details key={i} className="card group" open={i === 0}>
