@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Kit solaire avec batterie 2026 : comparatif stockage',
@@ -97,16 +98,22 @@ export default function BatteriePage() {
                       ['Beem Battery', '2,2 kWh', '~5 500€**', '2 500€/kWh', '~15h', 'Fixe plug-and-play', false],
                       ['EcoFlow PowerStream', '2 kWh', '~1 800\u20ac***', '900\u20ac/kWh', '~13h', 'Modulaire', false],
                       ['Bluetti Balco 260', '2,56 kWh', '849\u20ac****', '332\u20ac/kWh', '~17h', 'Tout-en-un (sans panneaux)', false],
-                    ].map(([n, c, p, r, a, t, best], i) => (
+                    ].map(([n, c, p, r, a, t, best], i) => {
+                      const thumbMap: Record<string, { src: string; href: string }> = {
+                        'EcoFlow PowerStream': { src: '/images/produits/ecoflow-powerstream-2.png', href: '/avis/ecoflow-powerstream' },
+                        'Bluetti Balco 260': { src: '/images/produits/bluetti-balco-260-front.png', href: '/avis/bluetti-balco-260' },
+                      };
+                      const thumb = thumbMap[n as string];
+                      return (
                       <tr key={i} className={`border-b border-border-light ${best ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold">{n} {best && <span className="badge-green ml-2 text-[10px]">Meilleur prix</span>}</td>
+                        <td className="p-3 font-semibold"><div className="flex items-center gap-3">{thumb && <ProductThumb src={thumb.src} alt={n as string} href={thumb.href} size="sm" />}<span>{n} {best && <span className="badge-green ml-2 text-[10px]">Meilleur prix</span>}</span></div></td>
                         <td className="text-center p-3 font-mono text-sm">{c}</td>
                         <td className="text-center p-3 font-mono text-sm text-amber-dark">{p}</td>
                         <td className="text-center p-3 font-mono text-sm">{r}</td>
                         <td className="text-center p-3">{a}</td>
                         <td className="text-center p-3 text-xs">{t}</td>
                       </tr>
-                    ))}
+                    );})}
                   </tbody>
                 </table>
               </div>
@@ -118,7 +125,7 @@ export default function BatteriePage() {
               <div className="space-y-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div><div className="badge-green mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Kit 450W + batterie VAULT 700 Wh · Plug-and-play</p></div>
+                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/sunology-play-max-1.webp" alt="Sunology PLAY MAX" href="/avis/sunology-play-max" size="lg" /><div><div className="badge-green mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Kit 450W + batterie VAULT 700 Wh · Plug-and-play</p></div></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-green">1 179 €</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PLAY MAX est le bundle le plus accessible du marché : le kit PLAY2 (450W) + la batterie nomade VAULT (700 Wh) pour 1 179€. La VAULT est compacte, portable (utilisable en camping/pique-nique), et offre ~5 heures d&apos;autonomie sur le talon de consommation.</p>
@@ -146,7 +153,7 @@ export default function BatteriePage() {
 
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div><div className="badge-amber mb-2">Modulaire</div><h3 className="font-bold text-xl">EcoFlow PowerStream</h3><p className="text-sm text-stone">Syst&egrave;me modulaire batterie + micro-onduleur</p></div>
+                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/ecoflow-powerstream-2.png" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="lg" /><div><div className="badge-amber mb-2">Modulaire</div><h3 className="font-bold text-xl">EcoFlow PowerStream</h3><p className="text-sm text-stone">Syst&egrave;me modulaire batterie + micro-onduleur</p></div></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">~1 800 &euro;</div><div className="text-xs text-stone">(sans panneau)</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PowerStream d&apos;EcoFlow est une approche diff&eacute;rente : un micro-onduleur intelligent qui g&egrave;re la charge/d&eacute;charge automatiquement selon votre consommation en temps r&eacute;el. Compatible avec les batteries portables EcoFlow (DELTA, RIVER). Le syst&egrave;me est modulaire mais le co&ucirc;t total est &eacute;lev&eacute;.</p>
@@ -154,7 +161,7 @@ export default function BatteriePage() {
 
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div><div className="badge-amber mb-2">Tout-en-un</div><h3 className="font-bold text-xl">Bluetti Balco 260</h3><p className="text-sm text-stone">Onduleur SiC + batterie LFP 2,56 kWh int&eacute;gr&eacute;s &middot; IP65</p></div>
+                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/bluetti-balco-260-front.png" alt="Bluetti Balco 260" href="/avis/bluetti-balco-260" size="lg" /><div><div className="badge-amber mb-2">Tout-en-un</div><h3 className="font-bold text-xl">Bluetti Balco 260</h3><p className="text-sm text-stone">Onduleur SiC + batterie LFP 2,56 kWh int&eacute;gr&eacute;s &middot; IP65</p></div></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">849 &euro;</div><div className="text-xs text-stone">(sans panneaux)</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le Balco 260 de Bluetti int&egrave;gre onduleur, batterie et 4 MPPT dans un seul bo&icirc;tier IP65. La batterie de 2,56&nbsp;kWh est extensible jusqu&apos;&agrave; 15&nbsp;kWh. C&apos;est le meilleur prix/kWh du march&eacute; (332&nbsp;&euro;/kWh), mais les panneaux ne sont pas inclus. <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>

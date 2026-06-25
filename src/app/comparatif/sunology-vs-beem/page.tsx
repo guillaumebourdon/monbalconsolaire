@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Sunology vs Beem 2026 : quel kit solaire choisir ?',
@@ -53,7 +54,7 @@ export default function SunologyVsBeemPage() {
               <div className="overflow-x-auto -mx-5 md:mx-0">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3">Sunology PLAY2</th><th className="text-center p-3 rounded-tr-xl">Beem On 500 Wc</th>
+                    <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />Sunology PLAY2</div></th><th className="text-center p-3 rounded-tr-xl"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/beem-on-500-1.png" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" />Beem On 500 Wc</div></th>
                   </tr></thead>
                   <tbody>
                     {[
@@ -122,7 +123,10 @@ export default function SunologyVsBeemPage() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2">Choisissez Sunology si :</h4>
+                  <div className="flex items-start gap-4 mb-3">
+                    <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="lg" />
+                    <h4 className="font-bold text-green mb-2">Choisissez Sunology si :</h4>
+                  </div>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>→ Vous voulez l&apos;installation la plus rapide</li>
                     <li>→ Vous préférez le WiFi natif sans boîtier</li>
@@ -132,7 +136,10 @@ export default function SunologyVsBeemPage() {
                   <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4 text-xs">Voir le Sunology PLAY2 &rarr;</a>
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2">Choisissez Beem si :</h4>
+                  <div className="flex items-start gap-4 mb-3">
+                    <ProductThumb src="/images/produits/beem-on-500-1.png" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="lg" />
+                    <h4 className="font-bold text-green mb-2">Choisissez Beem si :</h4>
+                  </div>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>&rarr; Le prix est votre priorit&eacute; (429&euro; vs 599&euro;)</li>
                     <li>&rarr; Vous voulez le meilleur ratio &euro;/Wc (0,86&euro;)</li>

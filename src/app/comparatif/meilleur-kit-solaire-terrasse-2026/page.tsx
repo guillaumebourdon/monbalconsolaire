@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Meilleur kit solaire pour terrasse 2026 : comparatif complet',
@@ -158,12 +159,24 @@ export default function MeilleurKitTerrasse2026Page() {
                   </div>
                 </div>
                 <div className="space-y-3">
-                  {setup.kits.map((kit, ki) => (
+                  {setup.kits.map((kit, ki) => {
+                    const kitThumbMap: Record<string, { src: string; href: string }> = {
+                      'Beem On 500 Wc': { src: '/images/produits/beem-on-500-1.png', href: '/avis/beem-on-500w' },
+                      'Sunology PLAY 2': { src: '/images/produits/sunology-play-2-1.webp', href: '/avis/sunology-play-2' },
+                      'Sunethic F500': { src: '/images/produits/sunethic-f500-2.webp', href: '/avis/sunethic-f500' },
+                      'Zendure SolarFlow': { src: '/images/produits/zendure-solarflow-front.png', href: '/avis/zendure-solarflow' },
+                      'EcoFlow PowerStream': { src: '/images/produits/ecoflow-powerstream-2.png', href: '/avis/ecoflow-powerstream' },
+                    };
+                    const kitThumb = Object.entries(kitThumbMap).find(([key]) => kit.name.includes(key))?.[1];
+                    return (
                     <Link key={ki} href={kit.slug} className={`card block hover:shadow-brand-lg transition-all group ${ki === 0 ? 'border-l-4 border-l-green' : ''}`}>
                       <div className="flex items-start justify-between gap-4 flex-wrap">
-                        <div>
-                          <h3 className="font-bold text-sm group-hover:text-green transition-colors">{kit.name}</h3>
-                          <p className="text-xs text-stone mt-0.5">{kit.power} &middot; {kit.avantage}</p>
+                        <div className="flex items-start gap-3">
+                          {kitThumb && <ProductThumb src={kitThumb.src} alt={kit.name} href={kitThumb.href} size="sm" />}
+                          <div>
+                            <h3 className="font-bold text-sm group-hover:text-green transition-colors">{kit.name}</h3>
+                            <p className="text-xs text-stone mt-0.5">{kit.power} &middot; {kit.avantage}</p>
+                          </div>
                         </div>
                         <div className="text-right flex-shrink-0">
                           <div className="font-mono font-bold text-green">{kit.price}</div>
@@ -171,7 +184,7 @@ export default function MeilleurKitTerrasse2026Page() {
                         </div>
                       </div>
                     </Link>
-                  ))}
+                  );})}
                 </div>
               </section>
             ))}
