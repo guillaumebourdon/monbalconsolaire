@@ -54,6 +54,13 @@
 - `NewsletterBanner` — capture email (pas de props)
 - `EmailCapture` — formulaire email (honeypot, rate limit)
 - `CookieConsent` — bandeau cookies
+- `ProductThumb` — miniature produit cliquable (src, alt, href, size: sm|md|lg) + tracking GA4
+
+### Images produit
+- Stockées dans `public/images/produits/{slug}-{n}.{ext}`
+- **ProductHero** : prop `image` + `imageAlt` pour la photo principale dans les avis
+- **ProductThumb** : miniatures dans les tableaux comparatifs (size="sm") et cartes produit (size="lg")
+- Lightbox intégré au ProductHero : clic sur l'image → plein écran
 
 ## Calculateur V2
 
