@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Meilleur kit solaire plug and play 2026 : comparatif complet',
@@ -21,11 +22,11 @@ const faqData = [
 ];
 
 const kits = [
-  { name: 'Beem On 500 Wc', power: '500 Wc', price: '429\u20ac', ratio: '0,86\u20ac', prod: '510 kWh', roi: '4,8 ans', guarantee: '25 ans', highlight: true },
-  { name: 'Sunology PLAY2', power: '450 Wc', price: '599\u20ac', ratio: '1,33\u20ac', prod: '520 kWh', roi: '5,9 ans', guarantee: '25 ans', highlight: false },
-  { name: 'Beem Kit 300W', power: '300 Wc', price: '299\u20ac', ratio: '1,00\u20ac', prod: '350 kWh', roi: '4,4 ans', guarantee: '25 ans', highlight: false },
-  { name: 'Sunethic F500', power: '500 Wc', price: '690\u20ac', ratio: '1,38\u20ac', prod: '570 kWh', roi: '6,2 ans', guarantee: '25 ans', highlight: false },
-  { name: 'Beem On 460W', power: '460 Wc', price: '599\u20ac', ratio: '1,30\u20ac', prod: '530 kWh', roi: '5,8 ans', guarantee: '25 ans', highlight: false },
+  { name: 'Beem On 500 Wc', power: '500 Wc', price: '429\u20ac', ratio: '0,86\u20ac', prod: '510 kWh', roi: '4,8 ans', guarantee: '25 ans', highlight: true, image: '/images/produits/beem-on-500-1.png', slug: '/avis/beem-on-500w' },
+  { name: 'Sunology PLAY2', power: '450 Wc', price: '599\u20ac', ratio: '1,33\u20ac', prod: '520 kWh', roi: '5,9 ans', guarantee: '25 ans', highlight: false, image: '/images/produits/sunology-play-2-1.webp', slug: '/avis/sunology-play-2' },
+  { name: 'Beem Kit 300W', power: '300 Wc', price: '299\u20ac', ratio: '1,00\u20ac', prod: '350 kWh', roi: '4,4 ans', guarantee: '25 ans', highlight: false, image: '/images/produits/beem-kit-300-1.png', slug: '/avis/beem-kit-300w' },
+  { name: 'Sunethic F500', power: '500 Wc', price: '690\u20ac', ratio: '1,38\u20ac', prod: '570 kWh', roi: '6,2 ans', guarantee: '25 ans', highlight: false, image: '/images/produits/sunethic-f500-2.webp', slug: '/avis/sunethic-f500' },
+  { name: 'Beem On 460W', power: '460 Wc', price: '599\u20ac', ratio: '1,30\u20ac', prod: '530 kWh', roi: '5,8 ans', guarantee: '25 ans', highlight: false, image: '/images/produits/beem-on-460-2.png', slug: '/avis/beem-on-460w' },
 ];
 
 const sunologySpecs = [
@@ -123,7 +124,7 @@ export default function ComparatifPage() {
                   <tbody>
                     {kits.map((kit, i) => (
                       <tr key={i} className={`border-b border-border-light ${kit.highlight ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold">{kit.name} {kit.highlight && <span className="badge-green ml-2 text-[10px]">Choix n&deg;1</span>}</td>
+                        <td className="p-3 font-semibold"><div className="flex items-center gap-3"><ProductThumb src={kit.image} alt={kit.name} href={kit.slug} size="sm" /><span>{kit.name} {kit.highlight && <span className="badge-green ml-2 text-[10px]">Choix n&deg;1</span>}</span></div></td>
                         <td className="text-center p-3 font-mono text-sm">{kit.power}</td>
                         <td className="text-center p-3 font-mono text-sm font-medium text-amber-dark">{kit.price}</td>
                         <td className="text-center p-3 font-mono text-sm">{kit.ratio}</td>
@@ -142,7 +143,10 @@ export default function ComparatifPage() {
               <h2 className="text-2xl font-extrabold mb-4">4. Sunology PLAY2 : notre choix n&deg;1</h2>
               <div className="card-lg border-green/20 bg-green-pale/20 mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
-                  <div><div className="badge-green mb-2">Meilleur choix global</div><h3 className="font-bold text-xl">Sunology PLAY2</h3><p className="text-sm text-stone">par Sunology · Nantes, France · depuis 2019</p></div>
+                  <div className="flex items-start gap-4">
+                    <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="lg" />
+                    <div><div className="badge-green mb-2">Meilleur choix global</div><h3 className="font-bold text-xl">Sunology PLAY2</h3><p className="text-sm text-stone">par Sunology &middot; Nantes, France &middot; depuis 2019</p></div>
+                  </div>
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-green">599 &euro;</div><div className="text-xs text-stone">450 Wc bifacial</div></div>
                 </div>
               </div>
@@ -178,7 +182,10 @@ export default function ComparatifPage() {
               <h2 className="text-2xl font-extrabold mb-4">5. Beem On 500 Wc : le nouveau rapport qualit&eacute;-prix du march&eacute;</h2>
               <div className="card-lg border-green/20 bg-green-pale/20 mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
-                  <div><div className="badge-green mb-2">Meilleur rapport qualit&eacute;/prix</div><h3 className="font-bold text-xl">Beem On 500 Wc</h3><p className="text-sm text-stone">par Beem Energy &middot; Nantes, France &middot; nouveau mod&egrave;le 2026</p></div>
+                  <div className="flex items-start gap-4">
+                    <ProductThumb src="/images/produits/beem-on-500-1.png" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="lg" />
+                    <div><div className="badge-green mb-2">Meilleur rapport qualit&eacute;/prix</div><h3 className="font-bold text-xl">Beem On 500 Wc</h3><p className="text-sm text-stone">par Beem Energy &middot; Nantes, France &middot; nouveau mod&egrave;le 2026</p></div>
+                  </div>
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-green">429 &euro;</div><div className="text-xs text-stone">500 Wc bifacial TOPCon</div></div>
                 </div>
               </div>
@@ -204,7 +211,10 @@ export default function ComparatifPage() {
               <h2 className="text-2xl font-extrabold mb-4">6. Beem Kit 300W : le choix petit budget</h2>
               <div className="card-lg mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
-                  <div><div className="badge-amber mb-2">Petit budget</div><h3 className="font-bold text-xl">Beem Kit 300W</h3><p className="text-sm text-stone">par Beem Energy · 4 panneaux modulaires</p></div>
+                  <div className="flex items-start gap-4">
+                    <ProductThumb src="/images/produits/beem-kit-300-1.png" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="lg" />
+                    <div><div className="badge-amber mb-2">Petit budget</div><h3 className="font-bold text-xl">Beem Kit 300W</h3><p className="text-sm text-stone">par Beem Energy &middot; 4 panneaux modulaires</p></div>
+                  </div>
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">299 &euro;</div><div className="text-xs text-stone">300 Wc</div></div>
                 </div>
               </div>
@@ -225,7 +235,10 @@ export default function ComparatifPage() {
               <h2 className="text-2xl font-extrabold mb-4">7. Sunethic F500 : le Made in France</h2>
               <div className="card-lg mb-6">
                 <div className="flex items-start justify-between flex-wrap gap-4">
-                  <div><div className="badge-green mb-2">Made in France</div><h3 className="font-bold text-xl">Sunethic F500</h3><p className="text-sm text-stone">Fabriqué et assemble en France</p></div>
+                  <div className="flex items-start gap-4">
+                    <ProductThumb src="/images/produits/sunethic-f500-2.webp" alt="Sunethic F500" href="/avis/sunethic-f500" size="lg" />
+                    <div><div className="badge-green mb-2">Made in France</div><h3 className="font-bold text-xl">Sunethic F500</h3><p className="text-sm text-stone">Fabriqu&eacute; et assembl&eacute; en France</p></div>
+                  </div>
                   <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">690 &euro;</div><div className="text-xs text-stone">500 Wc</div></div>
                 </div>
               </div>
