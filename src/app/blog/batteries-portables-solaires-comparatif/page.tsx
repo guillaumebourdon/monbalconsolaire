@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Batteries portables solaires 2026 : EcoFlow, Bluetti, Jackery comparés',
@@ -256,6 +257,10 @@ export default function BatteriesPortablesPage() {
                   </p>
                 </div>
                 <div className="card-lg border-l-4 border-l-green">
+                  <div className="flex items-center gap-2 mb-2">
+                    <ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" />
+                    <ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="sm" />
+                  </div>
                   <h3 className="font-bold text-base mb-2">🏠 Batterie solaire fixe</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-3">
                     Boîtier mural branché en permanence sur votre kit solaire de balcon. Stocke l&apos;excédent pour le soir.

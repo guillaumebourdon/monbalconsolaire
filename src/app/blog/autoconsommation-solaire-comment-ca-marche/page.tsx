@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Autoconsommation solaire : comment ca marche concretement ? (2026)',
@@ -75,7 +76,10 @@ export default function AutoconsommationPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">Un kit solaire de 450W produit en moyenne 200-350W en journ&eacute;e (selon l&apos;ensoleillement). C&apos;est pile la bonne puissance pour <strong>effacer le talon de consommation</strong> &mdash; c&apos;est-&agrave;-dire que votre frigo, votre box et vos veilles sont aliment&eacute;s par le soleil au lieu du r&eacute;seau EDF.</p>
+              <div className="flex items-start gap-3 mb-4">
+                <ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="md" />
+                <p className="text-charcoal-light leading-relaxed">Un kit solaire de 450W produit en moyenne 200-350W en journ&eacute;e (selon l&apos;ensoleillement). C&apos;est pile la bonne puissance pour <strong>effacer le talon de consommation</strong> &mdash; c&apos;est-&agrave;-dire que votre frigo, votre box et vos veilles sont aliment&eacute;s par le soleil au lieu du r&eacute;seau EDF.</p>
+              </div>
               <div className="card bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-amber-dark"><strong>C&apos;est pour &ccedil;a qu&apos;un kit de 450W suffit.</strong> Vous n&apos;avez pas besoin de couvrir toute votre consommation &mdash; juste le talon. Et le talon, c&apos;est l&apos;&eacute;lectricit&eacute; que vous consommez de toute fa&ccedil;on, que vous soyez l&agrave; ou pas.</p>
               </div>

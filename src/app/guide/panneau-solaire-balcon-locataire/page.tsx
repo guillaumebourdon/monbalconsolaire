@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon locataire : droits, regles et astuces (2026)',
@@ -90,13 +91,13 @@ export default function LocatairePage() {
               <div className="space-y-4 my-6">
                 <div className="card-lg border-green/15 bg-green-pale/10">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div><div className="badge-green mb-1 text-[10px]">Recommandé locataires</div><h4 className="font-bold">Sunology PLAY2</h4><p className="text-xs text-stone">Ballasts inclus, aucun perçage, 100% amovible, 1 min d&apos;installation</p></div>
+                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><div><div className="badge-green mb-1 text-[10px]">Recommandé locataires</div><h4 className="font-bold">Sunology PLAY2</h4><p className="text-xs text-stone">Ballasts inclus, aucun perçage, 100% amovible, 1 min d&apos;installation</p></div></div>
                     <span className="font-mono font-bold text-green text-lg">599&euro;</span>
                   </div>
                 </div>
                 <div className="card-lg">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div><div className="badge-amber mb-1 text-[10px]">Petit budget</div><h4 className="font-bold">Beem Kit 300W</h4><p className="text-xs text-stone">4 petits panneaux, s&apos;adaptént aux espaces étroits, amovibles</p></div>
+                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" /><div><div className="badge-amber mb-1 text-[10px]">Petit budget</div><h4 className="font-bold">Beem Kit 300W</h4><p className="text-xs text-stone">4 petits panneaux, s&apos;adaptént aux espaces étroits, amovibles</p></div></div>
                     <span className="font-mono font-bold text-amber-dark text-lg">299&euro;</span>
                   </div>
                 </div>

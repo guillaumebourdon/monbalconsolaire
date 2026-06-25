@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Talon de consommation : comment le calculer et l\'effacer avec le solaire',
@@ -255,9 +256,12 @@ export default function TalonConsommationPage() {
               <div className="space-y-4">
                 <div className="card-lg border-l-4 border-l-green">
                   <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
-                    <div>
+                    <div className="flex items-start gap-3">
+                      <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />
+                      <div>
                       <h4 className="font-bold text-base">Talon 100-200 W (appartement standard)</h4>
                       <p className="text-xs text-stone uppercase tracking-wider font-semibold mt-1">Frigo + box + veilles</p>
+                      </div>
                     </div>
                   </div>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">

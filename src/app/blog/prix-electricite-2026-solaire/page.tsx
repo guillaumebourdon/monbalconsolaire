@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Prix de l\'électricité 2026 : pourquoi le solaire devient incontournable',
@@ -81,7 +82,10 @@ export default function PrixElectricitePage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Impact sur la rentabilité du solaire de balcon</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Chaque centime d&apos;augmentation du kWh améliore automatiquement la rentabilité de votre panneau solaire. Voici l&apos;impact sur un kit Sunology PLAY2 (599€, 520 kWh/an en région lyonnaise) :</p>
+              <div className="flex items-start gap-3 mb-4">
+                <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="md" />
+                <p className="text-charcoal-light leading-relaxed">Chaque centime d&apos;augmentation du kWh améliore automatiquement la rentabilité de votre panneau solaire. Voici l&apos;impact sur un kit Sunology PLAY2 (599€, 520 kWh/an en région lyonnaise) :</p>
+              </div>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 {[
                   { tarif: '0,1940 €', label: 'Tarif actuel (mai 2026)', eco: '101 €/an', roi: '5,9 ans', total25: '~2 525 €' },

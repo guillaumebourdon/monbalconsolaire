@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon : le guide complet pour débutants (2026)',
@@ -63,6 +64,10 @@ export default function GuidePage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Combien ca coute ? Et combien ca rapporte ?</h2>
               <h3 className="font-bold text-lg mb-3">Le cout d&apos;un kit solaire de balcon</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />
+                <ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" />
+              </div>
               <p className="text-charcoal-light leading-relaxed mb-4">En 2026, les kits solaires plug-and-play pour balcon co&ucirc;tent entre <span className="data-highlight">299 &euro;</span> (Beem Kit 300W) et <span className="data-highlight">900 &euro;</span> (Zendure SolarFlow + 2 panneaux avec batterie). Le milieu de gamme se situe autour de <span className="data-highlight">599 &euro;</span> avec le Sunology PLAY2 ou le Beem On.</p>
               <p className="text-charcoal-light leading-relaxed mb-4"><strong>Nouveaut&eacute; 2026 :</strong> le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> (488 &euro;) int&egrave;gre une batterie 1,92 kWh + onduleur. Ajoutez 2 panneaux (~400 &euro;) et vous avez un syst&egrave;me complet avec stockage pour ~900 &euro;. C&apos;est la premi&egrave;re fois que le stockage solaire est accessible en plug-and-play &agrave; ce prix.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Pas de co&ucirc;ts cach&eacute;s : l&apos;h&eacute;bergement est gratuit (votre balcon), l&apos;installation est gratuite (vous le faites vous-m&ecirc;me en quelques minutes), et la maintenance est quasi-inexistante (un coup de chiffon sur le panneau de temps en temps).</p>

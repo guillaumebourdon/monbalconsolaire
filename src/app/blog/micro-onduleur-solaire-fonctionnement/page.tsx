@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Micro-onduleur solaire : comment ça marche et lequel choisir ?',
@@ -375,12 +376,18 @@ export default function MicroOnduleurPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="card-lg">
-                  <h3 className="font-bold text-base mb-2">EcoFlow PowerStream</h3>
+                  <div className="flex items-start gap-3 mb-2">
+                  <ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="sm" />
+                  <h3 className="font-bold text-base">EcoFlow PowerStream</h3>
+                  </div>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">Injecte sur le r&eacute;seau ET charge une batterie EcoFlow (Delta, River) simultan&eacute;ment. L&apos;app Eco-AI d&eacute;cide automatiquement quoi faire du surplus.</p>
                   <p className="text-xs text-stone"><Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
                 </div>
                 <div className="card-lg">
-                  <h3 className="font-bold text-base mb-2">Zendure SolarFlow</h3>
+                  <div className="flex items-start gap-3 mb-2">
+                  <ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" />
+                  <h3 className="font-bold text-base">Zendure SolarFlow</h3>
+                  </div>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">Syst&egrave;me bidirectionnel : stocke le surplus en journ&eacute;e et le restitue le soir. Nouveau mod&egrave;le SolarFlow Mix lanc&eacute; en avril 2026.</p>
                   <p className="text-xs text-stone"><Link href="/avis/zendure-solarflow" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
                 </div>
