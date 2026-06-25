@@ -245,9 +245,9 @@ export default function BeemOn500WcAvisPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
-                <Link href="/avis/beem-on-460w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 460W</h4>
-                  <p className="text-xs text-charcoal-light mt-1">L&apos;ancien mod&egrave;le &agrave; 599&nbsp;&euro; &mdash; encore disponible en d&eacute;stockage</p>
+                <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Comparatif complet des 3 syst&egrave;mes &mdash; avec le tableau prix/Wc mis &agrave; jour juin 2026</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
