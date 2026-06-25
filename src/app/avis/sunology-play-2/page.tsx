@@ -48,6 +48,8 @@ export default function AvisPage() {
             affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
             affiliateLabel="Voir le PLAY 2 sur Sunology"
             accentColor="green"
+            image="/images/produits/sunology-play-2-1.webp"
+            imageAlt="Sunology PLAY 2 - station solaire plug-and-play avec support intégré"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 

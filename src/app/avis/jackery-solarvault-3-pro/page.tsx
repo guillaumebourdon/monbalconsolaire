@@ -50,6 +50,8 @@ export default function JackerySolarVault3ProAvisPage() {
             affiliateUrl="https://fr.jackery.com/products/solarvault-3-pro"
             affiliateLabel="Voir sur Jackery"
             accentColor="amber"
+            image="/images/produits/jackery-solarvault-3-pro-1.png"
+            imageAlt="Jackery SolarVault 3 Pro - batterie LFP stockage domestique"
           />
           <p className="text-xs text-stone mt-2 italic">Prix promo juin 2026 (MSRP 1&nbsp;139&nbsp;&euro;) &middot; Panneaux solaires non inclus</p>
 

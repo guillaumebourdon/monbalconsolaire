@@ -176,6 +176,8 @@ export default function EcoflowPowerstreamPage() {
             affiliateUrl="https://fr.ecoflow.com/products/powerstream-microinverter"
             affiliateLabel="Voir le PowerStream sur EcoFlow"
             accentColor="amber"
+            image="/images/produits/ecoflow-powerstream-2.png"
+            imageAlt="EcoFlow PowerStream - système modulaire panneaux + batterie + onduleur"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 

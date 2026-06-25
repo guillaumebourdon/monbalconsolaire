@@ -48,6 +48,8 @@ export default function BeemKit300WAvisPage() {
             affiliateUrl="https://beemenergy.fr/products/kit-beem"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
+            image="/images/produits/beem-kit-300-1.png"
+            imageAlt="Beem Kit 300W - 4 panneaux solaires modulaires"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 

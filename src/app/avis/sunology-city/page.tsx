@@ -154,6 +154,8 @@ export default function SunologyCityPage() {
             affiliateUrl="https://sunology.eu/products/city-kit-solaire-balcon"
             affiliateLabel="Voir le CITY sur Sunology"
             accentColor="amber"
+            image="/images/produits/sunology-city-1.png"
+            imageAlt="Sunology CITY - kit solaire pour balcons étroits vue arrière"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 

@@ -48,6 +48,8 @@ export default function PlayMaxAvisPage() {
             affiliateUrl="https://sunology.eu/products/play-max"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
+            image="/images/produits/sunology-play-max-1.webp"
+            imageAlt="Sunology PLAY MAX - kit solaire avec batterie VAULT 700 Wh"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 
