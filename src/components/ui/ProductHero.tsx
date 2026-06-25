@@ -131,23 +131,23 @@ export function ProductHero({
 
     {lightboxOpen && image && (
       <div
-        className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-pointer"
+        className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-8 cursor-pointer backdrop-blur-sm"
         onClick={() => setLightboxOpen(false)}
       >
-        <div className="relative max-w-4xl max-h-[90vh] w-full">
+        <button
+          className="absolute top-6 right-6 w-12 h-12 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white text-2xl transition-colors"
+          onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
+        >
+          &#x2715;
+        </button>
+        <div className="relative max-w-3xl max-h-[85vh] bg-white rounded-2xl p-8 shadow-2xl" onClick={(e) => e.stopPropagation()}>
           <Image
             src={image}
             alt={imageAlt || `${brand} ${name}`}
             width={1200}
             height={1200}
-            className="object-contain w-full h-full rounded-xl"
+            className="object-contain w-full h-full"
           />
-          <button
-            className="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white text-xl transition-colors"
-            onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
-          >
-            &#x2715;
-          </button>
         </div>
       </div>
     )}
