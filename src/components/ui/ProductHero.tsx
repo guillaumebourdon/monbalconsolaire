@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProductHeroProps {
   brand: string;
@@ -12,6 +13,8 @@ interface ProductHeroProps {
   affiliateUrl: string;
   affiliateLabel?: string;
   accentColor?: 'green' | 'amber';
+  image?: string;
+  imageAlt?: string;
 }
 
 declare global {
@@ -30,6 +33,8 @@ export function ProductHero({
   affiliateUrl,
   affiliateLabel = 'Voir sur le site du fabricant',
   accentColor = 'green',
+  image,
+  imageAlt,
 }: ProductHeroProps) {
   const bgClass = accentColor === 'green' ? 'from-green-pale/40 to-amber-pale/20' : 'from-amber-pale/40 to-green-pale/20';
   const borderClass = accentColor === 'green' ? 'border-green/15' : 'border-amber/15';
@@ -50,21 +55,32 @@ export function ProductHero({
       <div className="grid md:grid-cols-5 gap-6 items-center">
         <div className="md:col-span-2">
           <div className="aspect-square bg-gradient-to-br from-white to-cream-dark rounded-2xl p-8 shadow-brand flex items-center justify-center relative overflow-hidden">
-            <div className="relative w-full h-full max-w-[220px] mx-auto flex items-center justify-center">
-              <div className="absolute top-2 right-2 w-12 h-12 bg-amber/30 rounded-full blur-xl"></div>
-              <div className="absolute top-4 right-4 w-6 h-6 bg-amber rounded-full"></div>
-              <div className="w-full h-[70%] bg-gradient-to-br from-charcoal to-charcoal-light rounded-lg shadow-xl relative overflow-hidden border-4 border-white/20">
-                <div className="grid grid-cols-6 grid-rows-8 gap-px h-full p-2">
-                  {Array.from({ length: 48 }).map((_, i) => (
-                    <div key={i} className="bg-white/5 rounded-sm"></div>
-                  ))}
+            {image ? (
+              <Image
+                src={image}
+                alt={imageAlt || `${brand} ${name}`}
+                width={400}
+                height={400}
+                className="object-contain w-full h-full"
+                priority
+              />
+            ) : (
+              <div className="relative w-full h-full max-w-[220px] mx-auto flex items-center justify-center">
+                <div className="absolute top-2 right-2 w-12 h-12 bg-amber/30 rounded-full blur-xl"></div>
+                <div className="absolute top-4 right-4 w-6 h-6 bg-amber rounded-full"></div>
+                <div className="w-full h-[70%] bg-gradient-to-br from-charcoal to-charcoal-light rounded-lg shadow-xl relative overflow-hidden border-4 border-white/20">
+                  <div className="grid grid-cols-6 grid-rows-8 gap-px h-full p-2">
+                    {Array.from({ length: 48 }).map((_, i) => (
+                      <div key={i} className="bg-white/5 rounded-sm"></div>
+                    ))}
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                <div className="absolute bottom-2 left-2 text-xs font-bold text-charcoal/60 bg-white/80 px-2 py-0.5 rounded">
+                  {brand}
+                </div>
               </div>
-              <div className="absolute bottom-2 left-2 text-xs font-bold text-charcoal/60 bg-white/80 px-2 py-0.5 rounded">
-                {brand}
-              </div>
-            </div>
+            )}
           </div>
         </div>
 

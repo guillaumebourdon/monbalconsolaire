@@ -49,6 +49,8 @@ export default function BeemOn500WcAvisPage() {
             affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
+            image="/images/produits/beem-on-500-1.png"
+            imageAlt="Beem On 500 Wc - panneau solaire bifacial TOPCon avec micro-onduleur"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/06/2026 &middot; Peut varier selon les promos</p>
 
