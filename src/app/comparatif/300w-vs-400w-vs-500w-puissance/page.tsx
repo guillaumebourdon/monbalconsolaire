@@ -224,6 +224,10 @@ export default function PuissanceComparatif() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/combien-panneaux-solaires-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien de panneaux peut-on mettre sur un balcon&nbsp;?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Limite 800&nbsp;Wc, configurations l&eacute;gales et branchement s&eacute;rie/parall&egrave;le</p>
+                </Link>
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h4>
                   <p className="text-xs text-charcoal-light mt-1">La meilleure option petit budget</p>
