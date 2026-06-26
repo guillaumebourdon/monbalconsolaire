@@ -74,6 +74,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Lampes solaires balcon : 10 mod\u00e8les 2026', description: 'Guirlandes, appliques, projecteurs, lanternes.', url: '/blog/lampes-solaires-balcon-2026', category: 'Blog', badge: '\u00c9clairage' },
   { title: 'Entretien et nettoyage panneau solaire balcon', description: 'Fréquence, produits, erreurs à éviter, checklist saisonnière.', url: '/blog/entretien-nettoyage-panneau-solaire-balcon', category: 'Blog', badge: 'Entretien' },
   { title: 'Micro-onduleur solaire : fonctionnement et choix', description: 'Comparatif Hoymiles, APsystems, Enphase, TSUN. Quel onduleur dans chaque kit.', url: '/blog/micro-onduleur-solaire-fonctionnement', category: 'Blog', badge: 'Technique' },
+  { title: 'Combien de panneaux solaires sur un balcon ?', description: 'Limite 800 Wc, nombre de panneaux selon la puissance, s\u00e9rie ou parall\u00e8le : r\u00e8gles et limites en France.', url: '/blog/combien-panneaux-solaires-balcon', category: 'Blog', badge: 'R\u00e9glementation' },
   { title: 'Kit solaire balcon : avis et retours 2026', description: 'Synth\u00e8se des avis Trustpilot, forums et retours r\u00e9els sur Sunology, Beem, Zendure, EcoFlow.', url: '/blog/kit-solaire-balcon-avis-2026', category: 'Blog', badge: 'Avis' },
 ];
 

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const articles = [
+  { slug: 'combien-panneaux-solaires-balcon', title: 'Combien de panneaux solaires sur un balcon ? R\u00e8gles et limites', excerpt: 'Limite 800 Wc, nombre de panneaux selon la puissance, s\u00e9rie ou parall\u00e8le : ce que la r\u00e9glementation fran\u00e7aise impose concr\u00e8tement.', badge: 'R\u00e9glementation', date: '26 juin 2026', readTime: '9 min' },
   { slug: 'kit-solaire-balcon-avis-2026', title: 'Kit solaire balcon : avis et retours d\u2019exp\u00e9rience 2026', excerpt: 'Trustpilot, forums, Reddit : synth\u00e8se des vrais retours utilisateurs sur Sunology, Beem, Zendure, EcoFlow.', badge: 'Avis utilisateurs', date: '20 juin 2026', readTime: '12 min' },
   { slug: 'micro-onduleur-solaire-fonctionnement', title: 'Micro-onduleur solaire : comment \u00e7a marche et lequel choisir ?', excerpt: 'Fonctionnement, comparatif Hoymiles vs APsystems vs Enphase, quel mod\u00e8le dans chaque kit, crit\u00e8res de choix et prix.', badge: 'Guide technique', date: '6 juin 2026', readTime: '10 min' },
   { slug: 'entretien-nettoyage-panneau-solaire-balcon', title: 'Entretien et nettoyage d\u2019un panneau solaire de balcon', excerpt: 'Fr\u00e9quence, produits, erreurs \u00e0 \u00e9viter, impact sur la production. Guide pratique avec checklist saisonni\u00e8re.', badge: 'Guide pratique', date: '4 juin 2026', readTime: '9 min' },
