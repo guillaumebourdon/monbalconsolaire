@@ -18,6 +18,47 @@ interface Article {
 }
 
 const ARTICLES: Article[] = [
+  // Articles récents (juin 2026)
+  {
+    slug: '/blog/combien-panneaux-solaires-balcon',
+    title: 'Combien de panneaux solaires sur un balcon ? Règles et limites',
+    excerpt: 'Limite 800 Wc, nombre de panneaux selon la puissance, série ou parallèle : ce que la réglementation française impose concrètement.',
+    type: 'analyse',
+    badge: 'Réglementation',
+    tags: ['reglementation', 'debutant'],
+    publishedAt: '2026-06-26',
+    readTime: '9 min',
+  },
+  {
+    slug: '/blog/kit-solaire-balcon-avis-2026',
+    title: 'Kit solaire balcon : avis et retours d\u2019expérience 2026',
+    excerpt: 'Trustpilot, forums, Reddit : synthèse des vrais retours utilisateurs sur Sunology, Beem, Zendure, EcoFlow.',
+    type: 'analyse',
+    badge: 'Avis utilisateurs',
+    tags: ['debutant'],
+    publishedAt: '2026-06-20',
+    readTime: '12 min',
+  },
+  {
+    slug: '/blog/micro-onduleur-solaire-fonctionnement',
+    title: 'Micro-onduleur solaire : comment ça marche et lequel choisir ?',
+    excerpt: 'Fonctionnement, comparatif Hoymiles vs APsystems vs Enphase, quel modèle dans chaque kit, critères de choix et prix.',
+    type: 'analyse',
+    badge: 'Guide technique',
+    tags: ['optimisation', 'debutant'],
+    publishedAt: '2026-06-06',
+    readTime: '10 min',
+  },
+  {
+    slug: '/blog/entretien-nettoyage-panneau-solaire-balcon',
+    title: 'Entretien et nettoyage d\u2019un panneau solaire de balcon',
+    excerpt: 'Fréquence, produits, erreurs à éviter, impact sur la production. Guide pratique avec checklist saisonnière.',
+    type: 'analyse',
+    badge: 'Guide pratique',
+    tags: ['optimisation'],
+    publishedAt: '2026-06-04',
+    readTime: '9 min',
+  },
   // Guides pratiques
   {
     slug: '/guide/panneau-solaire-balcon-debutant',
@@ -251,6 +292,36 @@ const ARTICLES: Article[] = [
     tags: ['rentabilite', 'debutant'],
     publishedAt: '2026-04-24',
     readTime: '10 min',
+  },
+  {
+    slug: '/blog/lampes-solaires-balcon-2026',
+    title: 'Lampes solaires balcon : 10 modèles sélectionnés (2026)',
+    excerpt: 'Guirlandes, appliques, projecteurs, lanternes : la sélection des meilleures lampes solaires.',
+    type: 'analyse',
+    badge: 'Sélection 2026',
+    tags: ['optimisation'],
+    publishedAt: '2026-04-22',
+    readTime: '10 min',
+  },
+  {
+    slug: '/blog/batteries-portables-solaires-comparatif',
+    title: 'Batteries portables solaires 2026 : EcoFlow, Bluetti, Jackery comparés',
+    excerpt: '6 modèles comparés en détail : capacité, puissance, usages réels.',
+    type: 'analyse',
+    badge: 'Comparatif 2026',
+    tags: ['optimisation'],
+    publishedAt: '2026-04-21',
+    readTime: '10 min',
+  },
+  {
+    slug: '/blog/mini-kits-solaires-amazon',
+    title: 'Mini kits solaires Amazon < 300 euros : notre sélection 2026',
+    excerpt: 'Analyse honnête des mini kits disponibles sur Amazon : pièges à éviter et 5 modèles qui valent le coup.',
+    type: 'analyse',
+    badge: 'Sélection Amazon',
+    tags: ['debutant', 'rentabilite'],
+    publishedAt: '2026-04-20',
+    readTime: '9 min',
   },
 ];
 

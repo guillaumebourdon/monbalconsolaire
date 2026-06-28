@@ -233,6 +233,11 @@ Fichier : `src/lib/search-index.ts`
 { title: '...', description: '...', url: '/{type}/{slug}', category: 'Avis|Blog|Guide', badge: 'X/10 ou label' }
 ```
 
+### Étape 6bis — Mettre à jour les pages hub
+
+- Pour les articles **blog** et **guide** : ajouter dans `src/app/tout-savoir/page.tsx` (tableau ARTICLES)
+- Pour les articles **avis** et **comparatif** : ajouter dans `src/app/quel-kit-choisir/page.tsx` si pertinent
+
 ### Étape 7 — Build + Commit + Push
 
 ```bash
