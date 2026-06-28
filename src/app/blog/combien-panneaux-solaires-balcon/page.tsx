@@ -7,7 +7,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Combien de panneaux solaires sur un balcon ? R&egrave;gles et limites (2026)',
-  description: 'Limite 900W, nombre de panneaux selon la puissance, s&eacute;rie ou parall&egrave;le : tout ce que la r&eacute;glementation fran&ccedil;aise impose pour un kit solaire balcon.',
+  description: 'Limite 800 Wc, nombre de panneaux selon la puissance, s&eacute;rie ou parall&egrave;le : tout ce que la r&eacute;glementation fran&ccedil;aise impose pour un kit solaire balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/combien-panneaux-solaires-balcon',
   },
@@ -45,7 +45,7 @@ export default function CombienPanneauxBalconPage() {
     <>
       <SchemaArticle
         title="Combien de panneaux solaires sur un balcon ? R&egrave;gles et limites"
-        description="Limite 900W, nombre de panneaux selon la puissance, s&eacute;rie ou parall&egrave;le : tout ce que la r&eacute;glementation impose."
+        description="Limite 800 Wc, nombre de panneaux selon la puissance, s&eacute;rie ou parall&egrave;le : tout ce que la r&eacute;glementation impose."
         url="https://monbalconsolaire.fr/blog/combien-panneaux-solaires-balcon"
         datePublished="2026-06-26"
       />
@@ -62,7 +62,7 @@ export default function CombienPanneauxBalconPage() {
               Combien de panneaux solaires peut-on mettre sur un balcon&nbsp;? R&egrave;gles et limites
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              La limite de 900W, le nombre de panneaux selon leur puissance, et la vraie diff&eacute;rence entre s&eacute;rie et parall&egrave;le. Ce que la r&eacute;glementation fran&ccedil;aise impose concr&egrave;tement.
+              La limite de 800&nbsp;Wc (puissance-cr&ecirc;te panneaux), le nombre de panneaux selon leur puissance, et la vraie diff&eacute;rence entre s&eacute;rie et parall&egrave;le. Ce que la r&eacute;glementation fran&ccedil;aise impose concr&egrave;tement.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>26 juin 2026</span>
@@ -77,7 +77,7 @@ export default function CombienPanneauxBalconPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">La limite de 800&nbsp;Wc&nbsp;: d&apos;o&ugrave; vient-elle&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                En France, les kits solaires plug-and-play sont encadr&eacute;s par l&apos;arr&ecirc;t&eacute; du 9 mai 2017 modifi&eacute; en 2024, qui fixe la puissance maximale des installations d&apos;autoconsommation sur prise standard &agrave; <strong>800 Wc c&ocirc;t&eacute; panneaux</strong>. C&apos;est la puissance-cr&ecirc;te des modules photovolta&iuml;ques, pas la puissance AC injecc&eacute;e.
+                En France, les kits solaires plug-and-play sont encadr&eacute;s par l&apos;arr&ecirc;t&eacute; du 9 mai 2017 modifi&eacute; en 2024, qui fixe la puissance maximale des installations d&apos;autoconsommation sur prise standard &agrave; <strong>800 Wc c&ocirc;t&eacute; panneaux</strong>. C&apos;est la puissance-cr&ecirc;te des modules photovolta&iuml;ques, pas la puissance AC inject&eacute;e.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 C&ocirc;t&eacute; sortie onduleur, la norme NF&nbsp;C&nbsp;15-100 autorise l&apos;injection jusqu&apos;&agrave; <span className="data-highlight">3,68 kVA</span> sur un circuit 16A. Mais les kits plug-and-play sont limit&eacute;s &agrave; 800-900W AC par les r&egrave;gles propres &agrave; ce cadre simplifi&eacute;. Au-del&agrave;, vous sortez du r&eacute;gime simplifi&eacute; et avez besoin d&apos;un circuit d&eacute;di&eacute; et d&apos;une d&eacute;claration compl&egrave;te.
@@ -370,7 +370,7 @@ export default function CombienPanneauxBalconPage() {
               <div className="space-y-3">
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
-                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI Enedis, copropri&eacute;t&eacute;, limite 900W</p>
+                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI Enedis, copropri&eacute;t&eacute;, limite 800 Wc</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W&nbsp;: quelle puissance choisir&nbsp;?</h4>

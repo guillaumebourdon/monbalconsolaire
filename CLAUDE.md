@@ -35,7 +35,7 @@
 | Section | Dossier | Nombre | Index |
 |---------|---------|--------|-------|
 | Avis produits | `src/app/avis/[slug]/` | ~13 | `avis/page.tsx` |
-| Blog | `src/app/blog/[slug]/` | ~19 | `blog/page.tsx` |
+| Blog | `src/app/blog/[slug]/` | ~21 | `blog/page.tsx` |
 | Guides | `src/app/guide/[slug]/` | ~9 | `guide/page.tsx` |
 | Comparatifs | `src/app/comparatif/[slug]/` | 7 | `comparatif/page.tsx` |
 | Départements | `src/app/solaire-balcon/[slug]/` | 96 | SSG programmatique |

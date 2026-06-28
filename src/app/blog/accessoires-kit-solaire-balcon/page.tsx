@@ -194,6 +194,10 @@ export default function AccessoiresPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h4>
                   <p className="text-xs text-charcoal-light mt-1">Talon, surplus, injection</p>
                 </Link>
+                <Link href="/blog/lampes-solaires-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Lampes solaires de balcon 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Compl&eacute;tez votre installation avec un &eacute;clairage solaire</p>
+                </Link>
               </div>
             </section>
 

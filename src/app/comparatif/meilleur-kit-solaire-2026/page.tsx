@@ -317,6 +317,10 @@ export default function ComparatifPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
                 </Link>
+                <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire terrasse 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Les kits adapt&eacute;s aux grandes surfaces</p>
+                </Link>
               </div>
             </section>
 

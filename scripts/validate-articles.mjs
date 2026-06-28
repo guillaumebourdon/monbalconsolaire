@@ -44,7 +44,7 @@ for (const section of SECTIONS) {
 
   const indexFile = readFileSync(join(sectionDir, 'page.tsx'), 'utf-8');
   const slugs = readdirSync(sectionDir, { withFileTypes: true })
-    .filter(d => d.isDirectory())
+    .filter(d => d.isDirectory() && !d.name.startsWith('['))
     .map(d => d.name);
 
   console.log(`\n\x1b[1m${section.toUpperCase()}\x1b[0m (${slugs.length} articles)`);
