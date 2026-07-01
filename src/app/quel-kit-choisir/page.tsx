@@ -212,6 +212,17 @@ const ARTICLES: Article[] = [
     price: '839 \u20ac',
   },
   {
+    slug: '/avis/zendure-solarflow-mix',
+    title: 'Zendure SolarFlow Mix',
+    excerpt: '3 mod\u00e8les, 8-50 kWh LFP, 4 kW bidirectionnel, IA Zenki. Le stockage r\u00e9sidentiel complet \u00e0 partir de 1 999 \u20ac.',
+    type: 'avis',
+    badge: 'Tout-en-un r\u00e9sidentiel',
+    tags: ['stockage', 'marque', 'best'],
+    publishedAt: '2026-06-30',
+    score: '8/10',
+    price: '1 999 \u20ac',
+  },
+  {
     slug: '/avis/bluetti-balco-260',
     title: 'Bluetti Balco 260',
     excerpt: 'Tout-en-un onduleur SiC + batterie LFP 2,56 kWh, sortie off-grid 1 200 W. 849 \u20ac sans panneaux.',
