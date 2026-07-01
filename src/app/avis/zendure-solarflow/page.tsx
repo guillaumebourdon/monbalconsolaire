@@ -498,6 +498,10 @@ export default function ZendureSolarflowPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow Mix : le tout-en-un r&eacute;sidentiel 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le successeur pour maison : 8-50&nbsp;kWh, 4&nbsp;kW, IA Zenki. &Agrave; partir de 1&nbsp;999&nbsp;&euro;</p>
+                </Link>
                 <Link href="/avis/ecoflow-powerstream" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent modulaire avec backup réseau et batterie portable polyvalente</p>

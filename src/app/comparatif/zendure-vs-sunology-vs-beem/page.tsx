@@ -390,7 +390,11 @@ export default function ZendureVsSunologyVsBeemPage() {
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Le test complet du système qui casse les prix du stockage</p>
+                  <p className="text-xs text-charcoal-light mt-1">Le test complet du syst&egrave;me qui casse les prix du stockage</p>
+                </Link>
+                <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le nouveau tout-en-un r&eacute;sidentiel : 8-50&nbsp;kWh, 4&nbsp;kW, &agrave; partir de 1&nbsp;999&nbsp;&euro;</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
