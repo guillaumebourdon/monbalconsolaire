@@ -223,6 +223,10 @@ export default function AvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
+                <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W : quelle puissance choisir ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Mis &agrave; jour juillet 2026 &mdash; production, ROI et recommandation par profil</p>
+                </Link>
               </div>
             </section>
 
