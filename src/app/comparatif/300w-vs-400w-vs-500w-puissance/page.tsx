@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 const faqData = [
   { question: 'Quelle puissance choisir pour un balcon ?', answer: 'Pour un balcon standard (8-15 m2), un kit de 400 a 500W offre le meilleur compromis rentabilite/espace. Les 300W conviennent aux tres petits balcons ou aux budgets serres. Au-dela de 500W, il faut un espace plus grand et verifier la norme NF C 15-100 (900W max par circuit).' },
+  { question: '500W suffisent-ils pour un balcon ?', answer: 'Oui, pour la plupart des usages. Un kit 500 Wc produit ~600 kWh/an a Paris (sud) et jusqu\'a 800 kWh/an a Marseille. Cela couvre environ 12-13% de la consommation annuelle moyenne d\'un foyer francais (4 800 kWh/an), soit 95 a 155 €/an d\'economies. Un 500W couvre bien le frigo, l\'ordinateur, l\'eclairage LED et la TV durant la journee. Pour la lessive ou la cuisine, la production simultanee ne suffit pas seule. Si vous avez un grand balcon et une bonne orientation, le 500W (Beem On a 429€) est le meilleur choix.' },
   { question: 'Un kit 500W produit-il plus qu\'un kit 300W ?', answer: 'Oui, proportionnellement. Un 500W produit environ 1,67 fois plus qu\'un 300W (a orientation egale). En Ile-de-France : ~600 kWh/an pour un 500W contre ~360 kWh/an pour un 300W. Mais le prix au watt est souvent meilleur sur les 300W d\'entree de gamme.' },
   { question: 'Peut-on cumuler plusieurs kits ?', answer: 'Oui, jusqu\'a 900W total par circuit de prise (norme NF C 15-100). Au-dela, il faut une ligne dediee depuis le tableau. Concretement : 2 kits 400W = 800W (ok), 2 kits 500W = 1000W (ligne dediee requise).' },
   { question: 'Le rendement est-il identique entre un 300W et un 500W ?', answer: 'Non. Les panneaux recents (2024-2026) affichent un rendement de 20-23% quel que soit la puissance totale. Le 500W n\'est pas plus "rentable au watt" par principe. La difference vient surtout de la taille du panneau (plus de surface = plus de watts).' },
@@ -24,7 +25,7 @@ const faqData = [
 export default function PuissanceComparatif() {
   return (
     <>
-      <SchemaArticle title="300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?" description="Comparatif des puissances de panneaux solaires plug-and-play." url="https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance" datePublished="2026-04-19" dateModified="2026-06-20" />
+      <SchemaArticle title="300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?" description="Comparatif des puissances de panneaux solaires plug-and-play." url="https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance" datePublished="2026-04-19" dateModified="2026-07-02" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Quel kit choisir', href: '/quel-kit-choisir' }, { label: 'Puissance 300W vs 400W vs 500W' }]} />
       <article className="section-padding">
@@ -34,7 +35,7 @@ export default function PuissanceComparatif() {
             <div className="badge-green mb-4 inline-block">Comparatif puissance</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">300, 400 ou 500 watts ? Plus de puissance ne signifie pas toujours plus de rentabilite. Analyse des 3 paliers les plus vendus en 2026 : prix, production reelle, profil adapte.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 avril 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 avril 2026</span><span>&middot;</span><span className="text-green font-medium">Mis &agrave; jour juillet 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
             <span className="text-stone text-sm mt-0.5">&#x2139;</span>
