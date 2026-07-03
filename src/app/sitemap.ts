@@ -46,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-terrasse-2026`, lastModified: '2026-05-13', changeFrequency: 'monthly', priority: 0.8 },
 
     // Guides
+    { url: `${BASE_URL}/guide/batterie-solaire-balcon-guide`, lastModified: '2026-07-03', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/panneau-solaire-balcon-debutant`, lastModified: '2026-03-18', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/panneau-solaire-balcon-locataire`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/installer-kit-solaire-balcon`, lastModified: '2026-03-28', changeFrequency: 'monthly', priority: 0.8 },

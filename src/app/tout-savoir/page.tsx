@@ -18,7 +18,17 @@ interface Article {
 }
 
 const ARTICLES: Article[] = [
-  // Articles récents (juin 2026)
+  // Articles récents (juillet 2026)
+  {
+    slug: '/guide/batterie-solaire-balcon-guide',
+    title: 'Batterie solaire balcon : comment choisir la bonne capacité',
+    excerpt: 'Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif des solutions disponibles. Le guide pour ne pas se tromper.',
+    type: 'guide',
+    badge: 'Batterie',
+    tags: ['optimisation', 'debutant'],
+    publishedAt: '2026-07-03',
+    readTime: '12 min',
+  },
   {
     slug: '/blog/combien-panneaux-solaires-balcon',
     title: 'Combien de panneaux solaires sur un balcon ? Règles et limites',

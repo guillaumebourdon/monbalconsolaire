@@ -45,6 +45,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Meilleur kit solaire terrasse 2026', description: 'Pose au sol, multi-panneaux, 3 setups par budget.', url: '/comparatif/meilleur-kit-solaire-terrasse-2026', category: 'Comparatif', badge: 'Terrasse' },
 
   // ─── Guides ───
+  { title: 'Batterie solaire balcon : choisir la bonne capacité', description: 'Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif Bluetti Balco, Zendure, EcoFlow. Guide complet 2026.', url: '/guide/batterie-solaire-balcon-guide', category: 'Guide', badge: 'Nouveau' },
   { title: 'Guide complet solaire balcon pour d\u00e9butants', description: 'Tout savoir avant de se lancer : principes, co\u00fbts, production.', url: '/guide/panneau-solaire-balcon-debutant', category: 'Guide', badge: 'D\u00e9butant' },
   { title: 'Panneau solaire balcon locataire', description: 'Vos droits en tant que locataire, r\u00e9glementation, kits adapt\u00e9s.', url: '/guide/panneau-solaire-balcon-locataire', category: 'Guide', badge: 'Locataire' },
   { title: 'Comment installer un kit solaire : pas \u00e0 pas', description: 'Guide d\u2019installation d\u00e9taill\u00e9 avec les outils n\u00e9cessaires.', url: '/guide/installer-kit-solaire-balcon', category: 'Guide', badge: 'Installation' },

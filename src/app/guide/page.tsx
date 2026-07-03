@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'batterie-solaire-balcon-guide',
+    title: 'Batterie solaire balcon : comment choisir la bonne capacité',
+    excerpt: 'Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif des solutions disponibles. Le guide pour ne pas se tromper.',
+    badge: 'Nouveau',
+    date: '3 juillet 2026',
+    readTime: '12 min',
+  },
+  {
     slug: 'panneau-solaire-assurance-balcon',
     title: 'Panneau solaire balcon : que couvre votre assurance ?',
     excerpt: 'Gr\u00eale, vol, chute, responsabilit\u00e9 civile. Ce qu\u2019il faut d\u00e9clarer et ce qui est garanti.',
