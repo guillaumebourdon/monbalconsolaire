@@ -442,6 +442,10 @@ export default function BatteriesPortablesPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/guide/batterie-solaire-balcon-guide" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide : quelle capacité de batterie pour votre balcon ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">700 Wh, 2 kWh, 5 kWh — le guide complet pour ne pas se tromper</p>
+                </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits avec batterie 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Sunology VAULT, Beem Battery : les solutions fixes pour optimiser l&apos;autoconsommation</p>

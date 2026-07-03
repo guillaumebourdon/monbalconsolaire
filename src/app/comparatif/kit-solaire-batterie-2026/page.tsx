@@ -217,6 +217,10 @@ export default function BatteriePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/guide/batterie-solaire-balcon-guide" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide : comment choisir la bonne capacité de batterie</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Seuils 700 Wh, 2 kWh, 5 kWh — le calcul ROI honnête selon votre profil</p>
+                </Link>
                 <Link href="/avis/sunology-play-max" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h4>
                   <p className="text-xs text-charcoal-light mt-1">Kit + batterie intégrée</p>
