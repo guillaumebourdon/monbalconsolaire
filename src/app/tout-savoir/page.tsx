@@ -30,6 +30,16 @@ const ARTICLES: Article[] = [
     readTime: '12 min',
   },
   {
+    slug: '/blog/consommation-veille-kit-solaire',
+    title: 'Kit solaire balcon : combien ça consomme en veille ?',
+    excerpt: 'Micro-onduleur, Beembox, app WiFi : consommation nocturne chiffrée par kit, impact ROI et verdict sur le débranchement.',
+    type: 'analyse',
+    badge: 'Question fréquente',
+    tags: ['optimisation'],
+    publishedAt: '2026-07-07',
+    readTime: '8 min',
+  },
+  {
     slug: '/blog/combien-panneaux-solaires-balcon',
     title: 'Combien de panneaux solaires sur un balcon ? Règles et limites',
     excerpt: 'Limite 800 Wc, nombre de panneaux selon la puissance, série ou parallèle : ce que la réglementation française impose concrètement.',

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const articles = [
+  { slug: 'consommation-veille-kit-solaire', title: 'Kit solaire balcon\u00a0: combien \u00e7a consomme en veille\u00a0?', excerpt: 'Micro-onduleur, Beembox, app WiFi\u00a0: consommation nocturne chiffr\u00e9e par kit, impact ROI et verdict sur le d\u00e9branchement.', badge: 'Question fr\u00e9quente', date: '7 juillet 2026', readTime: '8 min' },
   { slug: 'combien-panneaux-solaires-balcon', title: 'Combien de panneaux solaires sur un balcon ? R\u00e8gles et limites', excerpt: 'Limite 800 Wc, nombre de panneaux selon la puissance, s\u00e9rie ou parall\u00e8le : ce que la r\u00e9glementation fran\u00e7aise impose concr\u00e8tement.', badge: 'R\u00e9glementation', date: '26 juin 2026', readTime: '9 min' },
   { slug: 'kit-solaire-balcon-avis-2026', title: 'Kit solaire balcon : avis et retours d\u2019exp\u00e9rience 2026', excerpt: 'Trustpilot, forums, Reddit : synth\u00e8se des vrais retours utilisateurs sur Sunology, Beem, Zendure, EcoFlow.', badge: 'Avis utilisateurs', date: '20 juin 2026', readTime: '12 min' },
   { slug: 'micro-onduleur-solaire-fonctionnement', title: 'Micro-onduleur solaire : comment \u00e7a marche et lequel choisir ?', excerpt: 'Fonctionnement, comparatif Hoymiles vs APsystems vs Enphase, quel mod\u00e8le dans chaque kit, crit\u00e8res de choix et prix.', badge: 'Guide technique', date: '6 juin 2026', readTime: '10 min' },
