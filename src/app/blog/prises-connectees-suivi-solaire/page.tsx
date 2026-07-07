@@ -271,6 +271,10 @@ export default function PrisesConnecteesPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h4>
                   <p className="text-xs text-charcoal-light mt-1">Utilisez votre prise pour mesurer votre talon</p>
                 </Link>
+                <Link href="/blog/consommation-veille-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Consommation en veille du kit solaire : mesure et impact ROI</h4>
+                  <p className="text-xs text-charcoal-light mt-1">La prise connect&eacute;e pour mesurer la veille nocturne du micro-onduleur et du hub</p>
+                </Link>
               </div>
             </section>
 

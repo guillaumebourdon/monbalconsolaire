@@ -439,6 +439,10 @@ export default function MicroOnduleurPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Entretien et nettoyage d&apos;un panneau solaire de balcon</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le micro-onduleur ne demande aucun entretien</p>
                 </Link>
+                <Link href="/blog/consommation-veille-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Consommation en veille : combien &ccedil;a co&ucirc;te la nuit ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">0,3&ndash;0,5&nbsp;W pour le micro-onduleur, davantage pour la gateway&nbsp;&mdash;&nbsp;chiffres par kit</p>
+                </Link>
               </div>
             </section>
 

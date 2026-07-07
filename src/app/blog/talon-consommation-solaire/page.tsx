@@ -381,6 +381,10 @@ export default function TalonConsommationPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : pourquoi c&apos;est mieux pour le talon</h4>
                   <p className="text-xs text-charcoal-light mt-1">Production &eacute;tal&eacute;e = autoconsommation naturelle 50-60 %</p>
                 </Link>
+                <Link href="/blog/consommation-veille-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : combien &ccedil;a consomme en veille ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Micro-onduleur, Beembox, WiFi : 0,5&ndash;4&nbsp;W selon le syst&egrave;me &mdash; impact r&eacute;el sur le ROI</p>
+                </Link>
               </div>
             </section>
 
