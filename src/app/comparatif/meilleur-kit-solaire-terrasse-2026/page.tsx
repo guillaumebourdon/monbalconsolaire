@@ -63,13 +63,14 @@ const setups = [
   },
   {
     titre: 'Setup maximum : stockage + multi-panneaux',
-    budget: '1 500-2 100 €',
+    budget: '1 250-1 800 €',
     surface: '~6 m²',
     production: '800-1 100 kWh/an + stockage nuit',
     ideal: 'Grande terrasse, autoconsommation maximale, gros talon de consommation',
     kits: [
-      { name: 'EcoFlow PowerStream + 2\u00d7400 W + DELTA 2', power: '800 Wc + 1 kWh', price: '~1 800 €', roi: '13,6 ans', avantage: 'Backup coupure réseau, batterie portable', slug: '/avis/ecoflow-powerstream' },
+      { name: 'Bluetti Balco 260 + 2\u00d7420 W', power: '840 Wc + 2,56 kWh', price: '~1 250 €', roi: '7,8 ans', avantage: 'Tout-en-un IP65, batterie 2,56 kWh extensible, secours coupure', slug: '/avis/bluetti-balco-260' },
       { name: 'Zendure SolarFlow + 2\u00d7420 W + AB2000', power: '840 Wc + 3,84 kWh', price: '~1 500 €', roi: '9,3 ans', avantage: 'Stockage doublé, couvre la nuit entière', slug: '/avis/zendure-solarflow' },
+      { name: 'EcoFlow PowerStream + 2\u00d7400 W + DELTA 2', power: '800 Wc + 1 kWh', price: '~1 800 €', roi: '13,6 ans', avantage: 'Backup coupure réseau, batterie portable', slug: '/avis/ecoflow-powerstream' },
     ],
   },
 ];
@@ -82,7 +83,7 @@ export default function MeilleurKitTerrasse2026Page() {
         description="Comparatif des meilleurs kits solaires plug-and-play pour terrasse en 2026."
         url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-terrasse-2026"
         datePublished="2026-05-13"
-        dateModified="2026-06-20"
+        dateModified="2026-07-09"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Kit solaire terrasse 2026' }]} />
@@ -98,10 +99,12 @@ export default function MeilleurKitTerrasse2026Page() {
             <p className="text-lg text-charcoal-light leading-relaxed">
               Une terrasse, c&apos;est l&apos;endroit <strong>idéal</strong> pour le solaire plug-and-play : plus d&apos;espace qu&apos;un balcon, possibilité de poser au sol avec l&apos;inclinaison optimale, et souvent moins d&apos;ombres. Voici les meilleurs setups selon votre surface, votre budget et vos objectifs.
             </p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone">
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap">
               <span>13 mai 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
+              <span>&middot;</span>
+              <span className="inline-block bg-green/10 text-green text-xs font-semibold px-2 py-0.5 rounded">Mis &agrave; jour juillet 2026</span>
             </div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
@@ -166,6 +169,7 @@ export default function MeilleurKitTerrasse2026Page() {
                       'Sunethic F500': { src: '/images/produits/sunethic-f500-2.webp', href: '/avis/sunethic-f500' },
                       'Zendure SolarFlow': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
                       'EcoFlow PowerStream': { src: '/images/produits/ecoflow-powerstream-2.webp', href: '/avis/ecoflow-powerstream' },
+                      'Bluetti Balco': { src: '/images/produits/bluetti-balco-260-front.webp', href: '/avis/bluetti-balco-260' },
                     };
                     const kitThumb = Object.entries(kitThumbMap).find(([key]) => kit.name.includes(key))?.[1];
                     return (
@@ -238,7 +242,7 @@ export default function MeilleurKitTerrasse2026Page() {
                   Si le budget est serr&eacute;, le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc &agrave; 429 &euro;</Link> offre le meilleur rapport qualit&eacute;-prix du march&eacute; (0,86 &euro;/Wc, ROI ~4,8 ans). Si la simplicit&eacute; prime, <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">2 Sunology PLAY 2</Link> se posent et se branchent en 2 minutes.
                 </p>
                 <p className="text-charcoal-light leading-relaxed">
-                  Et si vous voulez maximiser l&apos;autonomie avec un backup réseau, le <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline font-semibold">EcoFlow PowerStream + DELTA 2</Link> est le seul système qui fonctionne en cas de coupure de courant.
+                  Pour maximiser l&apos;autonomie avec un backup r&eacute;seau, deux options se distinguent en juillet&nbsp;2026&nbsp;: le <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260 (~1&nbsp;250&nbsp;&euro;)</Link>, un bo&icirc;tier tout-en-un IP65 avec batterie 2,56&nbsp;kWh extensible et sortie secours int&eacute;gr&eacute;e (ROI 7,8 ans) ; et l&apos;<Link href="/avis/ecoflow-powerstream" className="text-green hover:underline font-semibold">EcoFlow PowerStream + DELTA&nbsp;2 (~1&nbsp;800&nbsp;&euro;)</Link>, plus flexible car la batterie est portable.
                 </p>
               </div>
             </section>
