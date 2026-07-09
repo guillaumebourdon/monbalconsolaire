@@ -270,6 +270,10 @@ export default function BluettiBalco260AvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le kit sans batterie le plus rentable &agrave; 429&nbsp;&euro;</p>
                 </Link>
+                <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Comparatif complet : Bluetti Balco 260, Zendure, EcoFlow &mdash; mise &agrave; jour juillet 2026</p>
+                </Link>
               </div>
             </section>
 
