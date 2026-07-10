@@ -515,6 +515,10 @@ export default function GuideBatterieBalcon() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation solaire</h4>
                   <p className="text-xs text-charcoal-light mt-1">8 astuces pour passer de 40&nbsp;% &agrave; 85&nbsp;% d&rsquo;autoconsommation</p>
                 </Link>
+                <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026 : comparatif</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow &mdash; tableau prix/kWh complet</p>
+                </Link>
               </div>
             </section>
 

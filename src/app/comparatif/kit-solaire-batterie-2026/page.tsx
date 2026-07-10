@@ -245,6 +245,10 @@ export default function BatteriePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
+                <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Zendure vs Bluetti Balco vs EcoFlow &mdash; tableau prix/kWh et verdict par profil</p>
+                </Link>
               </div>
             </section>
 

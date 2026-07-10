@@ -274,6 +274,10 @@ export default function BluettiBalco260AvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet : Bluetti Balco 260, Zendure, EcoFlow &mdash; mise &agrave; jour juillet 2026</p>
                 </Link>
+                <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026 : comparatif</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le Balco 260 face &agrave; Zendure SolarFlow, Jackery, EcoFlow PowerStream &mdash; tableau prix/kWh</p>
+                </Link>
               </div>
             </section>
 
