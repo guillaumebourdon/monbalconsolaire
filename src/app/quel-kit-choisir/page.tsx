@@ -21,6 +21,16 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/meilleure-batterie-solaire-balcon-2026',
+    title: 'Meilleure batterie solaire balcon 2026 : Zendure vs Bluetti vs EcoFlow',
+    excerpt: 'Comparatif dédié batteries balcon : prix/kWh, autonomie, verdict par profil. Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow PowerStream.',
+    type: 'comparatif',
+    badge: 'Nouveau',
+    tags: ['stockage', 'comparatif', 'best'],
+    publishedAt: '2026-07-10',
+    readTime: '10 min',
+  },
+  {
     slug: '/comparatif/meilleur-kit-solaire-terrasse-2026',
     title: 'Meilleur kit solaire pour terrasse 2026',
     excerpt: 'Plus d\'espace, pose au sol, multi-panneaux : les meilleurs setups pour terrasse.',

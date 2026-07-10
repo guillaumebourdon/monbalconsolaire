@@ -43,6 +43,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: '300W vs 400W vs 500W : quelle puissance ?', description: 'Comparatif des 3 puissances les plus vendues.', url: '/comparatif/300w-vs-400w-vs-500w-puissance', category: 'Comparatif', badge: 'Puissance' },
   { title: 'Zendure vs Sunology vs Beem : le match 2026', description: 'Stockage vs simplicit\u00e9 vs flexibilit\u00e9 : comparatif complet.', url: '/comparatif/zendure-vs-sunology-vs-beem', category: 'Comparatif', badge: 'Match 2026' },
   { title: 'Meilleur kit solaire terrasse 2026', description: 'Pose au sol, multi-panneaux, 3 setups par budget.', url: '/comparatif/meilleur-kit-solaire-terrasse-2026', category: 'Comparatif', badge: 'Terrasse' },
+  { title: 'Meilleure batterie solaire balcon 2026 : Zendure vs Bluetti vs EcoFlow', description: 'Comparatif batteries dédiées balcon : prix/kWh, autonomie, verdict par profil. Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow PowerStream.', url: '/comparatif/meilleure-batterie-solaire-balcon-2026', category: 'Comparatif', badge: 'Nouveau' },
 
   // ─── Guides ───
   { title: 'Batterie solaire balcon : choisir la bonne capacité', description: 'Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif Bluetti Balco, Zendure, EcoFlow. Guide complet 2026.', url: '/guide/batterie-solaire-balcon-guide', category: 'Guide', badge: 'Nouveau' },
