@@ -20,6 +20,16 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (juillet 2026)
   {
+    slug: '/blog/production-solaire-ete-vs-hiver',
+    title: 'Panneau solaire balcon : production été vs hiver (données réelles)',
+    excerpt: 'Courbes mensuelles PVGIS pour 5 villes françaises. Le paradoxe chaleur estivale : pourquoi mai/juin est souvent plus efficace que juillet.',
+    type: 'analyse',
+    badge: 'Données réelles',
+    tags: ['optimisation', 'debutant'],
+    publishedAt: '2026-07-14',
+    readTime: '9 min',
+  },
+  {
     slug: '/guide/batterie-solaire-balcon-guide',
     title: 'Batterie solaire balcon : comment choisir la bonne capacité',
     excerpt: 'Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif des solutions disponibles. Le guide pour ne pas se tromper.',
