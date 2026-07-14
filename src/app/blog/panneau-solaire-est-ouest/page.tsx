@@ -298,6 +298,10 @@ export default function PanneauSolaireEstOuestPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
+                <Link href="/blog/production-solaire-ete-vs-hiver" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Courbes mensuelles compl&egrave;tes et paradoxe de la chaleur estivale</p>
+                </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;impact r&eacute;el de chaque orientation sur votre production</p>

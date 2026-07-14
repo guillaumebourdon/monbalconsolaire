@@ -154,6 +154,10 @@ export default function HiverProductionPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/production-solaire-ete-vs-hiver" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le paradoxe chaleur estivale et pourquoi mai/juin bat souvent juillet en efficacité</p>
+                </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation choisir</h4>
                   <p className="text-xs text-charcoal-light mt-1">L'impact réel sur la production</p>

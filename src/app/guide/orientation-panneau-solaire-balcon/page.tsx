@@ -171,6 +171,10 @@ export default function OrientationPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h4>
                   <p className="text-xs text-charcoal-light mt-1">Guide d'installation pas à pas</p>
                 </Link>
+                <Link href="/blog/production-solaire-ete-vs-hiver" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Courbes mensuelles et paradoxe chaleur estivale : mai/juin souvent plus efficace que juillet</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production en hiver</h4>
                   <p className="text-xs text-charcoal-light mt-1">Les données réelles</p>
