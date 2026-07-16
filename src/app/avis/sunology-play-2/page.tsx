@@ -24,7 +24,7 @@ const faqData = [
 export default function AvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-05-15" />
+      <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-07-16" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Sunology PLAY 2" brand="Sunology" description="Kit solaire plug-and-play 450 Wc avec micro-onduleur WiFi intégré, chassis ajustable et garantie 25 ans." price={599} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
       <SchemaBreadcrumb items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY2" }]} />
@@ -35,7 +35,7 @@ export default function AvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis et test</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis : test complet et retour d&apos;experience (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Sunology PLAY2 est le kit solaire plug-and-play le plus vendu en France avec plus de 100 000 foyers équipés. Mais vaut-il vraiment ses 599&euro; ? Analyse détaillée.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; Mis &agrave; jour le 15 mai 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; <strong>Mis &agrave; jour le 16 juillet 2026</strong></span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -51,7 +51,7 @@ export default function AvisPage() {
             image="/images/produits/sunology-play-2-1.webp"
             imageAlt="Sunology PLAY 2 - station solaire plug-and-play avec support intégré"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 16/07/2026 &middot; Peut varier selon les promos</p>
 
           <div className="space-y-10">
             <section>
@@ -98,7 +98,7 @@ export default function AvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Encombrement pour les petits balcons', d: 'Le panneau mesure 1,76 x 1,13 m. Sur un petit balcon d\'appartement, ca prend de la place. Pour les espaces tres restreints, le Sunology CITY (concu pour les garde-corps) ou le Beem Kit (4 petits panneaux) sont plus adaptés.' },
+                  { t: 'Encombrement pour les petits balcons', d: 'Le panneau mesure 1,76 x 1,13 m. Sur un petit balcon d\'appartement, ca prend de la place. Pour les espaces tres restreints, le Sunology CITY (concu pour les garde-corps) ou le Beem On 500 Wc (429€, format similaire) sont des alternatives à étudier — voir la comparaison plus bas.' },
                   { t: 'Pas de batterie incluse', d: 'A 599\u20ac, vous n\'avez que le panneau. Pour stocker l\'électricité pour le soir, il faut passer au PLAY MAX (1 179\u20ac avec batterie 700 Wh) ou ajouter la batterie STOREY (1 390\u20ac). C\'est un investissement consequent.' },
                   { t: 'Le gain bifacial est souvent surestimér', d: 'Sunology annonce "jusqu\'a 30%" de gain bifacial. En realite, ce gain depend enormement de la surface derriere le panneau. Sur un sol sombre ou contre un mur fonce, le gain est negligeable (2-5%).' },
                 ].map((p, i) => (
@@ -159,24 +159,27 @@ export default function AvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Sunology PLAY2 vs la concurrence</h2>
+              <p className="text-charcoal-light text-sm mb-3"><strong>Mise &agrave; jour juillet 2026 :</strong> Beem a lanc&eacute; le Beem On <strong>500 Wc &agrave; 429&euro;</strong> (vs 599&euro; pour l&apos;ancien 460W), ce qui en fait l&apos;offre la moins ch&egrave;re du march&eacute; premium. &Agrave; noter : Beem Energy est en proc&eacute;dure de sauvegarde depuis novembre 2025.</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">Critère</th><th className="text-center p-3">Sunology PLAY2</th><th className="text-center p-3">Beem On 460W</th><th className="text-center p-3 rounded-tr-xl">Sunethic F500</th>
+                    <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3 bg-green-dark">Sunology PLAY2 &#9733;</th><th className="text-center p-3">Beem On 500 Wc</th><th className="text-center p-3 rounded-tr-xl">Sunethic F500</th>
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Prix', '599 \u20ac', '599 \u20ac', '690 \u20ac'],
-                      ['Puissance', '450 Wc', '460 Wc', '500 Wc'],
+                      ['Prix', '599 \u20ac', '429 \u20ac', '690 \u20ac'],
+                      ['Puissance', '450 Wc', '500 Wc', '500 Wc'],
+                      ['Rapport \u20ac/Wc', '1,33 \u20ac/Wc', '0,86 \u20ac/Wc', '1,38 \u20ac/Wc'],
                       ['Installation', '1 min', '5 min', '~10 min'],
-                      ['Trustpilot', '4,6/5 (3000+)', '4,7/5 (1200+)', '4,8/5 (1000+)'],
+                      ['Trustpilot', '4,6/5 (3000+)', '4,7/5 (50 000+)', '4,8/5 (1000+)'],
                       ['App suivi', 'STREAM (WiFi)', 'Beem (Beembox)', 'Non précise'],
                       ['Garantie', '25 ans + 30 perf.', '25 ans', '25 ans'],
                       ['Made in France', 'Assemble FR', 'Non', 'Oui'],
+                      ['Solidité financière', 'Bonne', '\u26a0\ufe0f Proc. sauvegarde', 'Bonne'],
                     ].map(([c, s, b, su], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{c}</td>
-                        <td className="text-center p-3">{s}</td>
+                        <td className="text-center p-3 bg-green-pale/30 font-medium">{s}</td>
                         <td className="text-center p-3">{b}</td>
                         <td className="text-center p-3">{su}</td>
                       </tr>
@@ -184,6 +187,7 @@ export default function AvisPage() {
                   </tbody>
                 </table>
               </div>
+              <p className="text-xs text-stone mt-2 mb-3">&#9733; Notre recommandation principale. Le Beem On 500 Wc est 170&euro; moins cher mais Beem Energy est en proc&eacute;dure de sauvegarde depuis novembre 2025 &mdash; SAV maintenu, risque long terme &agrave; peser.</p>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold text-sm hover:underline">&rarr; Voir notre comparatif complet des kits 2026</Link>
             </section>
 
