@@ -384,6 +384,10 @@ export default function CombienPanneauxBalconPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Micro-onduleur solaire&nbsp;: fonctionnement et choix</h4>
                   <p className="text-xs text-charcoal-light mt-1">Hoymiles, APsystems, Enphase&nbsp;: lequel pour votre installation</p>
                 </Link>
+                <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 vs Beem On 500 Wc (juillet 2026)</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Comparatif prix, puissance et ROI pour choisir votre kit 450-500&nbsp;Wc</p>
+                </Link>
               </div>
             </section>
 

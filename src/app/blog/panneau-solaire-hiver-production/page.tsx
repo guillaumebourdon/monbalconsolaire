@@ -178,6 +178,10 @@ export default function HiverProductionPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire : que faire quand il pleut ou gr&ecirc;le ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Production sous la pluie, r&eacute;sistance, assurance</p>
                 </Link>
+                <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 (mis &agrave; jour juillet 2026)</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Comparatif vs Beem On 500 Wc, ROI r&eacute;el et verdict</p>
+                </Link>
               </div>
             </section>
 

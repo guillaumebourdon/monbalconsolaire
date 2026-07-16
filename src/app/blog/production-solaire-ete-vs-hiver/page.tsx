@@ -445,6 +445,10 @@ export default function ProductionSolaireEteHiverPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Calcul détaillé des économies réelles pour 7 villes françaises</p>
                 </Link>
+                <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 &mdash; mis &agrave; jour juillet 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Nouveau comparatif vs Beem On 500 Wc (429&euro;) : qui gagne en &eacute;t&eacute; ?</p>
+                </Link>
               </div>
             </section>
 
