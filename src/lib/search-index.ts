@@ -34,6 +34,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Bluetti Balco 260 : tout-en-un onduleur + batterie', description: 'Onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. 849€ sans panneaux. IP65, extensible à 15 kWh.', url: '/avis/bluetti-balco-260', category: 'Avis', badge: '7/10' },
   { title: 'Jackery SolarVault 3 Pro : stockage 2,5 kWh LFP', description: 'Batterie LFP 2,52 kWh + 4 MPPT pour 4 000 W. 839€ en promo Prime Day. Garantie 10 ans. Kit complet à 1 139€.', url: '/avis/jackery-solarvault-3-pro', category: 'Avis', badge: '8/10' },
   { title: 'Zendure SolarFlow Mix : le tout-en-un résidentiel', description: '3 modèles, 8-50 kWh LFP, 4 kW bidirectionnel, IA Zenki. À partir de 1 999€. Le stockage résidentiel complet.', url: '/avis/zendure-solarflow-mix', category: 'Avis', badge: '8/10' },
+  { title: 'Anker SOLIX RS40P : kit balcon 910 Wc IBC N-type', description: '2×455 Wc IBC N-type, onduleur WiFi 800 W, app SOLIX. 799€. Anker entre sur le marché FR balcon.', url: '/avis/anker-solix-rs40p', category: 'Avis', badge: '7.5/10' },
 
   // ─── Comparatifs ───
   { title: 'Meilleur kit solaire 2026 : comparatif complet', description: 'Sunology, Beem, Sunethic compar\u00e9s. Tableau, points forts/faibles, verdict.', url: '/comparatif/meilleur-kit-solaire-2026', category: 'Comparatif', badge: 'Article phare' },

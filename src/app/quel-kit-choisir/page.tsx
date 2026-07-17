@@ -222,6 +222,17 @@ const ARTICLES: Article[] = [
     price: '839 \u20ac',
   },
   {
+    slug: '/avis/anker-solix-rs40p',
+    title: 'Anker SOLIX RS40P',
+    excerpt: '2×455 Wc IBC N-type, onduleur WiFi 800 W. 799 €. La technologie premium d\'une marque mondiale.',
+    type: 'avis',
+    badge: 'Grande marque',
+    tags: ['marque', 'puissance'],
+    publishedAt: '2026-07-17',
+    score: '7.5/10',
+    price: '799 €',
+  },
+  {
     slug: '/avis/zendure-solarflow-mix',
     title: 'Zendure SolarFlow Mix',
     excerpt: '3 mod\u00e8les, 8-50 kWh LFP, 4 kW bidirectionnel, IA Zenki. Le stockage r\u00e9sidentiel complet \u00e0 partir de 1 999 \u20ac.',
