@@ -253,6 +253,10 @@ export default function BeemKit300WAvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires petit budget</h4>
                   <p className="text-xs text-charcoal-light mt-1">Les meilleurs choix sous 400 €</p>
                 </Link>
+                <Link href="/avis/anker-solix-rs40p" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Anker SOLIX RS40P</h4>
+                  <p className="text-xs text-charcoal-light mt-1">La version haut de gamme 910 Wc &agrave; 799&nbsp;&euro; &mdash; pour comparer</p>
+                </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
