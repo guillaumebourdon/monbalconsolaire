@@ -333,6 +333,10 @@ export default function EntretienNettoyagePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
+                <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Surchauffe, mauvais angle, salissures : le guide complet pour l&apos;&eacute;t&eacute;</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points &mdash; la salissure est la cause n&deg;3</p>

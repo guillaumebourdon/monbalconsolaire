@@ -399,6 +399,10 @@ export default function PanneauSolaireOmbrePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Ombre saisonni&egrave;re, surchauffe onduleur, mauvais angle : le guide complet</p>
+                </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;impact réel de l&apos;orientation sur votre production</p>

@@ -167,6 +167,10 @@ export default function OrientationPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Mauvais angle estival, ombre saisonni&egrave;re, surchauffe : guide pratique juillet-ao&ucirc;t</p>
+                </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h4>
                   <p className="text-xs text-charcoal-light mt-1">Guide d'installation pas à pas</p>
