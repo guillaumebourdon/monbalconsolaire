@@ -20,6 +20,16 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (juillet 2026)
   {
+    slug: '/guide/erreurs-production-solaire-ete',
+    title: 'Kit solaire balcon en été : 5 erreurs qui tuent votre production',
+    excerpt: 'Ventilation panneau, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : les 5 erreurs qui coûtent jusqu\'à 35 % de production en juillet-août.',
+    type: 'guide',
+    badge: 'Été 2026',
+    tags: ['optimisation', 'entretien'],
+    publishedAt: '2026-07-21',
+    readTime: '10 min',
+  },
+  {
     slug: '/blog/production-solaire-ete-vs-hiver',
     title: 'Panneau solaire balcon : production été vs hiver (données réelles)',
     excerpt: 'Courbes mensuelles PVGIS pour 5 villes françaises. Le paradoxe chaleur estivale : pourquoi mai/juin est souvent plus efficace que juillet.',

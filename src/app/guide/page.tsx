@@ -11,10 +11,18 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'erreurs-production-solaire-ete',
+    title: 'Kit solaire balcon en été : 5 erreurs qui tuent votre production',
+    excerpt: 'Ventilation panneau, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : les 5 erreurs qui coûtent jusqu’à 35 % de production en juillet-août.',
+    badge: 'Nouveau',
+    date: '21 juillet 2026',
+    readTime: '10 min',
+  },
+  {
     slug: 'batterie-solaire-balcon-guide',
     title: 'Batterie solaire balcon : comment choisir la bonne capacité',
     excerpt: 'Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif des solutions disponibles. Le guide pour ne pas se tromper.',
-    badge: 'Nouveau',
+    badge: 'Été 2026',
     date: '3 juillet 2026',
     readTime: '12 min',
   },
