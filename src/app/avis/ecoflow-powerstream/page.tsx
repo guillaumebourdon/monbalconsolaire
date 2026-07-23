@@ -39,6 +39,10 @@ const faqData = [
     question: 'L\'application EcoFlow est-elle vraiment utile au quotidien ?',
     answer: 'Oui, c\'est l\'un des gros points forts. L\'app EcoFlow permet de : suivre la production en temps réel (W produit, W consommé, niveau batterie), définir des seuils intelligents (ex : "ne pas charger la batterie au-delà de 80% pour préserver sa durée de vie"), programmer des plages horaires (ex : "alimenter le frigo depuis la batterie de 18h à 22h, heures pleines"), et recevoir des notifications. C\'est l\'app la plus aboutie du marché solaire grand public.',
   },
+  {
+    question: 'PowerStream ou Bluetti Balco 260 : lequel choisir ?',
+    answer: 'Ce sont deux approches très différentes. Le Bluetti Balco 260 (1 399 €, soit 889 € en promo de lancement jusqu\'au 30/09/2026) est un système tout-en-un avec batterie LiFePO4 de 2,56 kWh intégrée : installation simple, pas de composants à acheter séparément. Le PowerStream (599 €) est un micro-onduleur nu que vous combinez à vos propres panneaux et batterie EcoFlow — plus cher au total (~1 800 €) mais infiniment plus modulaire. Le Balco 260 gagne sur la simplicité et le stockage immédiat (2,56 kWh vs 1 kWh pour le DELTA 2). Le PowerStream gagne sur la flexibilité évolutive, l\'app mobile, et la batterie portable réutilisable hors solaire (camping, coupures de courant). Verdict : simplicité + stockage dès le départ → Bluetti Balco 260 ; évolutivité sur 10 ans + écosystème → PowerStream.',
+  },
 ];
 
 const points_forts = [
@@ -142,7 +146,7 @@ export default function EcoflowPowerstreamPage() {
         description="Avis complet sur le PowerStream EcoFlow en 2026."
         url="https://monbalconsolaire.fr/avis/ecoflow-powerstream"
         datePublished="2026-04-28"
-        dateModified="2026-06-20"
+        dateModified="2026-07-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
@@ -160,7 +164,7 @@ export default function EcoflowPowerstreamPage() {
               Le PowerStream n&apos;est pas un kit solaire classique, c&apos;est un <strong>écosystème modulaire</strong> qui articule panneaux, batterie et réseau domestique avec une intelligence rare sur le marché grand public. Test complet : ce qu&apos;il fait vraiment, son prix réel, et pour qui c&apos;est le bon choix.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>28 avril 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
+              <span>28 avril 2026 &middot; Mis &agrave; jour juillet 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -179,7 +183,7 @@ export default function EcoflowPowerstreamPage() {
             image="/images/produits/ecoflow-powerstream-2.webp"
             imageAlt="EcoFlow PowerStream - système modulaire panneaux + batterie + onduleur"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 23/07/2026 &middot; Peut varier selon les promos</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
@@ -371,6 +375,78 @@ export default function EcoflowPowerstreamPage() {
                   </div>
                 ))}
               </div>
+            </section>
+
+            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/powerstream-microinverter" label="Voir sur EcoFlow" variant="secondary" position="after-cons" />
+
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">PowerStream vs concurrence : tableau comparatif (juillet 2026)</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">
+                Deux nouveaux syst&egrave;mes avec stockage arrivent sur le march&eacute; : le <strong>Bluetti Balco 260</strong> (tout-en-un lanc&eacute; le 13 juillet 2026) et le <strong>Zendure SolarFlow Mix 3000 AC+</strong> (batterie r&eacute;sidentielle, disponible depuis avril 2026). Voici la comparaison honn&ecirc;te.
+              </p>
+              <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
+                <table className="w-full text-sm border-collapse min-w-[560px]">
+                  <thead>
+                    <tr className="bg-charcoal text-cream">
+                      <th className="p-3 text-left font-semibold">Crit&egrave;re</th>
+                      <th className="p-3 text-center font-semibold">EcoFlow PowerStream<br /><span className="font-normal text-xs opacity-80">(setup &eacute;quilibr&eacute;)</span></th>
+                      <th className="p-3 text-center font-semibold">Bluetti Balco 260</th>
+                      <th className="p-3 text-center font-semibold">Zendure SolarFlow Mix 3000</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-border-light">
+                      <td className="p-3 font-semibold bg-white">Prix</td>
+                      <td className="p-3 text-center bg-green-pale/30 font-mono font-bold text-green">~1 800 &euro;<br /><span className="text-xs font-normal text-stone">(PowerStream + pan. + DELTA 2)</span></td>
+                      <td className="p-3 text-center bg-cream/50 font-mono">1 399 &euro;<br /><span className="text-xs text-green font-semibold">889 &euro; (promo lancement)</span></td>
+                      <td className="p-3 text-center bg-white font-mono">2 039 &euro;</td>
+                    </tr>
+                    <tr className="border-b border-border-light">
+                      <td className="p-3 font-semibold bg-cream/50">Type</td>
+                      <td className="p-3 text-center bg-green-pale/30 text-xs">Micro-onduleur + batterie s&eacute;par&eacute;e</td>
+                      <td className="p-3 text-center bg-white text-xs">Tout-en-un balcon</td>
+                      <td className="p-3 text-center bg-cream/50 text-xs">Batterie r&eacute;sidentielle</td>
+                    </tr>
+                    <tr className="border-b border-border-light">
+                      <td className="p-3 font-semibold bg-white">Stockage</td>
+                      <td className="p-3 text-center bg-green-pale/30 font-mono">1 kWh (DELTA 2)</td>
+                      <td className="p-3 text-center bg-cream/50 font-mono"><strong>2,56 kWh</strong> LiFePO4</td>
+                      <td className="p-3 text-center bg-white font-mono">~3 kWh extensibles</td>
+                    </tr>
+                    <tr className="border-b border-border-light">
+                      <td className="p-3 font-semibold bg-cream/50">Puissance solaire max</td>
+                      <td className="p-3 text-center bg-green-pale/30 font-mono">800 W (2 MPPT)</td>
+                      <td className="p-3 text-center bg-white font-mono">2 400 W</td>
+                      <td className="p-3 text-center bg-cream/50 font-mono">4+ kW</td>
+                    </tr>
+                    <tr className="border-b border-border-light">
+                      <td className="p-3 font-semibold bg-white">Modularit&eacute;</td>
+                      <td className="p-3 text-center bg-green-pale/30"><span className="text-green font-bold">Tr&egrave;s haute</span></td>
+                      <td className="p-3 text-center bg-cream/50 text-xs">Extensible (jusqu&apos;&agrave; 15 kWh)</td>
+                      <td className="p-3 text-center bg-white text-xs">Extensible (jusqu&apos;&agrave; 50 kWh)</td>
+                    </tr>
+                    <tr className="border-b border-border-light">
+                      <td className="p-3 font-semibold bg-cream/50">App mobile</td>
+                      <td className="p-3 text-center bg-green-pale/30 text-xs"><strong>EcoFlow</strong> (tr&egrave;s avanc&eacute;e)</td>
+                      <td className="p-3 text-center bg-white text-xs">BLUETTI</td>
+                      <td className="p-3 text-center bg-cream/50 text-xs">ZENKI 2.0 AI</td>
+                    </tr>
+                    <tr className="border-b border-border-light">
+                      <td className="p-3 font-semibold bg-white">Batterie portable</td>
+                      <td className="p-3 text-center bg-green-pale/30"><span className="text-green font-bold">Oui</span> (camping, backup)</td>
+                      <td className="p-3 text-center bg-cream/50 text-amber-dark font-semibold">Non</td>
+                      <td className="p-3 text-center bg-white text-amber-dark font-semibold">Non</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold bg-cream/50">Cible id&eacute;ale</td>
+                      <td className="p-3 text-center bg-green-pale/30 text-xs">Geek / &eacute;volutif / backup</td>
+                      <td className="p-3 text-center bg-white text-xs">Simplicit&eacute; + gros stockage</td>
+                      <td className="p-3 text-center bg-cream/50 text-xs">Grand foyer / toiture</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s juillet 2026. Bluetti Balco 260&nbsp;: prix de lancement 889&nbsp;&euro; (code BALGNT, valable jusqu&apos;au 30/09/2026&nbsp;&mdash; prix normal 1&nbsp;399&nbsp;&euro;). Zendure SolarFlow Mix disponible depuis avril 2026.</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
