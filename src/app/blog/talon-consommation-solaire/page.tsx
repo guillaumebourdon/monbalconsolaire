@@ -365,6 +365,10 @@ export default function TalonConsommationPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment ça marche</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le principe technique du talon, du surplus et de l&apos;injection réseau</p>
                 </Link>
+                <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Lire les index EAST / EAIT sur votre Linky et comprendre le surplus</p>
+                </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h4>
                   <p className="text-xs text-charcoal-light mt-1">La batterie plug-and-play pour effacer le talon de nuit</p>

@@ -170,6 +170,10 @@ export default function AutoconsommationPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Ce que voit exactement le Linky, index injection vs soutirage, CACSI</p>
+                </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé de rentabilité</p>

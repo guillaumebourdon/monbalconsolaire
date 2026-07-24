@@ -311,6 +311,10 @@ export default function PanneauProduitMoinsPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : que voit vraiment le compteur ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Index injection vs soutirage, mythe du compteur à l'envers, CACSI</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : comment optimiser la production</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le guide complet pour identifier et contourner les ombres</p>
