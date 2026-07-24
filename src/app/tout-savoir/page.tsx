@@ -20,6 +20,16 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (juillet 2026)
   {
+    slug: '/blog/linky-panneau-solaire-injection',
+    title: 'Linky et panneau solaire : injection, index, surplus (2026)',
+    excerpt: 'Que voit vraiment le Linky ? Index injection vs soutirage, mythe du compteur à l\'envers, surplus gratuit EDF, CACSI obligatoire : tout expliqué simplement.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['debutant', 'reglementation'],
+    publishedAt: '2026-07-24',
+    readTime: '9 min',
+  },
+  {
     slug: '/guide/erreurs-production-solaire-ete',
     title: 'Kit solaire balcon en été : 5 erreurs qui tuent votre production',
     excerpt: 'Ventilation panneau, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : les 5 erreurs qui coûtent jusqu\'à 35 % de production en juillet-août.',
