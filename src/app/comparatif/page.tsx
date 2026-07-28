@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const articles = [
+  { slug: 'sunology-play2-vs-beem-on-500w', title: 'Sunology PLAY 2 vs Beem On 500 Wc : le nouveau match 2026', excerpt: 'PLAY 2 (599€, 450 Wc) contre Beem On 500 Wc (429€, 500 Wc) : comparatif sur 12 critères. Prix, ROI, installation, garantie. Quel kit choisir ?', badge: 'Nouveau', date: '28 juillet 2026', readTime: '10 min' },
   { slug: 'meilleur-kit-solaire-2026', title: 'Meilleur kit solaire plug and play 2026 : comparatif complet', excerpt: 'Sunology PLAY2, Beem On, Beem Kit, Sunethic F500 : tableau comparatif détaillé, points forts/faibles, verdict par profil.', badge: 'Article phare', date: '30 mars 2026', readTime: '12 min' },
   { slug: 'sunology-vs-beem', title: 'Sunology vs Beem : quel kit solaire choisir en 2026 ?', excerpt: 'Les deux leaders français du solaire plug-and-play s\'affrontent. Comparaison point par point : prix, puissance, installation, app.', badge: 'Match direct', date: '30 mars 2026', readTime: '10 min' },
   { slug: 'kit-solaire-petit-budget', title: 'Meilleur kit solaire petit budget : moins de 400€', excerpt: 'Beem Kit 300W, kits Amazon : quelles sont les meilleures options pour débuter dans le solaire sans se ruiner ?', badge: 'Petit budget', date: '30 mars 2026', readTime: '8 min' },

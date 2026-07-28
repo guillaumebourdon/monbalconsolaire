@@ -21,11 +21,21 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/sunology-play2-vs-beem-on-500w',
+    title: 'Sunology PLAY 2 vs Beem On 500 Wc : le nouveau match 2026',
+    excerpt: 'PLAY 2 (599€, 450 Wc) vs Beem On 500 Wc (429€, 500 Wc) : 12 critères, ROI comparé, verdict par profil.',
+    type: 'comparatif',
+    badge: 'Nouveau',
+    tags: ['best', 'comparatif', 'marque'],
+    publishedAt: '2026-07-28',
+    readTime: '10 min',
+  },
+  {
     slug: '/comparatif/meilleure-batterie-solaire-balcon-2026',
     title: 'Meilleure batterie solaire balcon 2026 : Zendure vs Bluetti vs EcoFlow',
     excerpt: 'Comparatif dédié batteries balcon : prix/kWh, autonomie, verdict par profil. Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow PowerStream.',
     type: 'comparatif',
-    badge: 'Nouveau',
+    badge: 'Batteries',
     tags: ['stockage', 'comparatif', 'best'],
     publishedAt: '2026-07-10',
     readTime: '10 min',
