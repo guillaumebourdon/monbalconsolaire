@@ -43,6 +43,15 @@ export default function SunologyVsBeemPage() {
           </div>
           </div>
 
+          <div className="card bg-green-pale/30 border-green/10 mb-6 py-3 px-5 flex items-start gap-3">
+            <span className="text-green text-sm mt-0.5">&#x1F4C5;</span>
+            <p className="text-xs text-charcoal-light leading-relaxed">
+              <strong>Mise &agrave; jour juillet 2026 :</strong> avec le nouveau Beem On 500&nbsp;Wc &agrave; 429&nbsp;&euro;, le match a &eacute;volu&eacute;. Retrouvez notre{' '}
+              <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="text-green font-semibold hover:underline">comparatif PLAY&nbsp;2 vs Beem On 500&nbsp;Wc (12 crit&egrave;res, juillet 2026)</Link>{' '}
+              pour le verdict le plus r&eacute;cent.
+            </p>
+          </div>
+
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Le verdict rapide</h2>
             <p className="text-charcoal-light text-sm leading-relaxed"><strong>Sunology PLAY2</strong> (599&euro;) pour ceux qui veulent l&apos;installation la plus simple (1 min, z&eacute;ro outil) et un suivi WiFi natif. <strong>Beem On 500 Wc</strong> (429&euro;) pour le meilleur rapport qualit&eacute;-prix du march&eacute; : 170&euro; de moins pour 50 Wc de plus. Le nouveau Beem On change la donne.</p>
@@ -188,6 +197,10 @@ export default function SunologyVsBeemPage() {
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix &agrave; 429&nbsp;&euro;</p>
+                </Link>
+                <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">PLAY&nbsp;2 vs Beem On 500&nbsp;Wc : le match juillet 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">12 crit&egrave;res, ROI compar&eacute; &mdash; la mise &agrave; jour 2026</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>

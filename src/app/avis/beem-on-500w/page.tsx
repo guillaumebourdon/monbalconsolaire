@@ -255,6 +255,10 @@ export default function BeemOn500WcAvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent direct &agrave; 518&nbsp;&euro;</p>
                 </Link>
+                <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">PLAY 2 vs Beem On 500 Wc : le match juillet 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">12 crit&egrave;res, ROI compar&eacute; &mdash; le comparatif le plus r&eacute;cent</p>
+                </Link>
                 <Link href="/comparatif/sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le match des deux leaders sur 12 crit&egrave;res</p>

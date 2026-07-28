@@ -219,6 +219,10 @@ export default function AvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 460W</h4>
                   <p className="text-xs text-charcoal-light mt-1">Excellent rapport qualité/prix</p>
                 </Link>
+                <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">PLAY 2 vs Beem On 500 Wc : le match juillet 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">12 crit&egrave;res, ROI compar&eacute;, verdict mis &agrave; jour &mdash; juillet 2026</p>
+                </Link>
                 <Link href="/comparatif/sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le match des deux leaders</p>
