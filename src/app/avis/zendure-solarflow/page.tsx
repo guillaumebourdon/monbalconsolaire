@@ -67,7 +67,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Pas de sortie hors réseau (EPS)',
-    detail: 'C\'est LE défaut majeur. En cas de coupure de courant, le SolarFlow s\'arrête. Votre batterie chargée ne sert à rien. Si le backup en cas de panne est important pour vous, tournez-vous vers l\'EcoFlow PowerStream + DELTA 2 qui offre cette fonction. Pour la majorité des utilisateurs en France métropolitaine (coupures rares), ce n\'est pas un problème.',
+    detail: 'C\'est LE défaut majeur. En cas de coupure de courant, le SolarFlow s\'arrête. Votre batterie chargée ne sert à rien. Si le backup est important pour vous, deux alternatives : l\'EcoFlow PowerStream + DELTA 2 (~1 800 €) ou le Bluetti Balco 260 (~889 € avec promo BALNEO, disponible depuis juillet 2026) qui offre tous les deux un mode hors réseau. Pour la majorité des utilisateurs en France métropolitaine (coupures rares), ce n\'est pas un problème.',
   },
   {
     titre: '800 W max en sortie : pas de gros consommateurs',
@@ -120,6 +120,15 @@ const comparaison = [
     poids: '~12 kg',
     note: '8.5/10',
   },
+  {
+    produit: 'Bluetti Balco 260 (juil. 2026)',
+    prix: '~889 €*',
+    stockage: '2,56 kWh',
+    sortieAC: '800 W réseau + 2 300 W EPS',
+    backup: 'Oui (EPS)',
+    poids: '~18 kg',
+    note: '7.5/10',
+  },
 ];
 
 export default function ZendureSolarflowPage() {
@@ -130,7 +139,7 @@ export default function ZendureSolarflowPage() {
         description="Avis complet sur le Zendure SolarFlow 800 Plus en 2026."
         url="https://monbalconsolaire.fr/avis/zendure-solarflow"
         datePublished="2026-05-07"
-        dateModified="2026-06-20"
+        dateModified="2026-07-30"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={488} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
@@ -148,7 +157,7 @@ export default function ZendureSolarflowPage() {
               Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour moins de 500 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Test complet, calcul de rentabilité et verdict honnête.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>7 mai 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
+              <span>7 mai 2026 &middot; Mis &agrave; jour le 30 juillet 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -167,7 +176,7 @@ export default function ZendureSolarflowPage() {
             image="/images/produits/zendure-solarflow-front.webp"
             imageAlt="Zendure SolarFlow - hub et batterie AB2000"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 30/07/2026 &middot; Peut varier selon les promos</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en 30 secondes</h2>
@@ -406,8 +415,9 @@ export default function ZendureSolarflowPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;EcoFlow PowerStream reste supérieur si vous voulez le backup réseau et la polyvalence de la batterie portable. Le Sunology PLAY 2 reste le choix le plus simple si vous ne voulez pas de batterie du tout.
+                Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;EcoFlow PowerStream reste supérieur si vous voulez le backup réseau et la polyvalence de la batterie portable. Le <strong>Bluetti Balco 260</strong> est le nouveau challenger direct : plus de stockage (2,56 kWh) et backup EPS 2 300 W, mais au double du prix. Le Sunology PLAY 2 reste le choix le plus simple si vous ne voulez pas de batterie du tout.
               </p>
+              <p className="text-xs text-stone mt-3">* Bluetti Balco 260 : prix avec code promo BALNEO (-510 &euro;), valable jusqu&apos;au 30/09/2026. Prix catalogue : 1 399 &euro;. Derni&egrave;re v&eacute;rification : 30/07/2026.</p>
             </section>
 
             <section>
@@ -467,6 +477,14 @@ export default function ZendureSolarflowPage() {
                   <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow seul coûte ~488 €, mais il faut ajouter les panneaux (~400 € pour 2 × 420 W). Budget total réaliste : 850-950 €. Si votre enveloppe est serrée, un Beem Kit 300W à 299 € ou un Sunology PLAY 2 à 599 € sont plus adaptés.</p>
                 </div>
               </div>
+            </section>
+
+            <section className="card-lg border-l-4 border-l-green bg-green-pale/10 my-6">
+              <h3 className="font-bold text-base mb-2 text-green">Et le successeur : Zendure SolarFlow Mix (avril 2026)</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed">
+                Zendure a lanc&eacute; en avril 2026 la gamme <strong>SolarFlow Mix</strong>, con&ccedil;ue pour les maisons et les grandes consommations r&eacute;sidentielles — un cran au-dessus du 800 Plus. Trois mod&egrave;les disponibles&nbsp;: <strong>SolarFlow 3000 Mix AC+</strong> (2 039 &euro;), <strong>4000 Mix AC+</strong> (2 399 &euro;) et <strong>4000 Mix Pro</strong> (2 879 &euro;). Ces syst&egrave;mes incluent le backup hors r&eacute;seau et s&apos;adressent &agrave; qui veut couvrir 80-100&nbsp;% des besoins d&apos;une maison.{' '}
+                <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline">Notre avis sur le SolarFlow Mix &rarr;</Link>
+              </p>
             </section>
 
             <section>
@@ -546,7 +564,7 @@ export default function ZendureSolarflowPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire (mai 2026). Article rédigé sans rémunération de Zendure.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire. Mis &agrave; jour juillet 2026 : ajout Bluetti Balco 260 et mention SolarFlow Mix. Article rédigé sans rémunération de Zendure.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>
