@@ -137,7 +137,7 @@ export default function ReglementationPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Revente du surplus : possible en plug-and-play ?</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Non. Avec un kit plug-and-play en autoconsommation (CACSI), le surplus est inject&eacute; gratuitement sur le r&eacute;seau. Vous ne pouvez pas le revendre &agrave; EDF OA. Pour la revente, il faudrait une installation professionnelle par un artisan RGE, ce qui n&apos;est pas le cas des kits plug-and-play.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Non. Avec un kit plug-and-play en autoconsommation (CACSI), le surplus est inject&eacute; gratuitement sur le r&eacute;seau. Vous ne pouvez pas le revendre &agrave; EDF OA. Pour la revente, il faudrait une installation professionnelle par un artisan RGE, ce qui n&apos;est pas le cas des kits plug-and-play. <Link href="/blog/revendre-surplus-solaire-balcon" className="text-green hover:underline font-semibold">D&eacute;tail complet&nbsp;: pourquoi on ne peut pas revendre, et pourquoi ce n&apos;est de toute fa&ccedil;on pas rentable &rarr;</Link></p>
               <p className="text-charcoal-light leading-relaxed">En pratique, ce n&apos;est pas un probl&egrave;me : le talon de consommation absorbe une grande partie de la production. Pour maximiser, <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="text-green hover:underline">programmez vos appareils en journ&eacute;e</Link> ou <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">ajoutez une batterie</Link>.</p>
             </section>
 

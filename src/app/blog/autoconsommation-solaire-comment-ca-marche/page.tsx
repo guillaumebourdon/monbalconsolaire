@@ -170,6 +170,10 @@ export default function AutoconsommationPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/revendre-surplus-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">CACSI vs EDF OA, tarif de rachat 2026, calcul r&eacute;el : pourquoi la r&eacute;ponse est non</p>
+                </Link>
                 <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h4>
                   <p className="text-xs text-charcoal-light mt-1">Ce que voit exactement le Linky, index injection vs soutirage, CACSI</p>
