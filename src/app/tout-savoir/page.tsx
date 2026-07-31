@@ -20,11 +20,21 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (juillet 2026)
   {
+    slug: '/blog/revendre-surplus-solaire-balcon',
+    title: 'Panneau solaire balcon : peut-on revendre son surplus à EDF ?',
+    excerpt: 'La réponse est non — les kits balcon fonctionnent en CACSI, pas en EDF OA. Et même une installation classique ne s\'y retrouve pas à 1,1 c€/kWh. Calculs et alternatives.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['debutant', 'reglementation'],
+    publishedAt: '2026-07-31',
+    readTime: '9 min',
+  },
+  {
     slug: '/blog/linky-panneau-solaire-injection',
     title: 'Linky et panneau solaire : injection, index, surplus (2026)',
     excerpt: 'Que voit vraiment le Linky ? Index injection vs soutirage, mythe du compteur à l\'envers, surplus gratuit EDF, CACSI obligatoire : tout expliqué simplement.',
     type: 'analyse',
-    badge: 'Nouveau',
+    badge: 'Réglementation',
     tags: ['debutant', 'reglementation'],
     publishedAt: '2026-07-24',
     readTime: '9 min',
