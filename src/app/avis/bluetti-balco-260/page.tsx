@@ -278,6 +278,10 @@ export default function BluettiBalco260AvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026 : comparatif</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le Balco 260 face &agrave; Zendure SolarFlow, Jackery, EcoFlow PowerStream &mdash; tableau prix/kWh</p>
                 </Link>
+                <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables vs fixe balcon : comparatif ao&ucirc;t 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le Balco 260 dans notre comparatif &mdash; EcoFlow DELTA 2, Bluetti AC180, Jackery &agrave; prix mis &agrave; jour</p>
+                </Link>
               </div>
             </section>
 

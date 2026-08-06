@@ -519,6 +519,10 @@ export default function GuideBatterieBalcon() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026 : comparatif</h4>
                   <p className="text-xs text-charcoal-light mt-1">Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow &mdash; tableau prix/kWh complet</p>
                 </Link>
+                <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables vs fixe balcon &mdash; mis &agrave; jour ao&ucirc;t 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Bluetti Balco 260 ajout&eacute;, prix EcoFlow / Jackery / Bluetti revus &agrave; la baisse</p>
+                </Link>
               </div>
             </section>
 

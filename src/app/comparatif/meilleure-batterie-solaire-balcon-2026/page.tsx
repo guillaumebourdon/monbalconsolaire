@@ -580,6 +580,10 @@ export default function MeilleureBatterieBalconPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le bundle kit + batterie VAULT 700&nbsp;Wh le moins cher du march&eacute;</p>
                 </Link>
+                <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables et balcon fixe : comparatif ao&ucirc;t 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Distinction fix&eacute; vs portable, Balco 260 vs EcoFlow DELTA 2 &mdash; prix tous mis &agrave; jour</p>
+                </Link>
               </div>
             </section>
 
