@@ -17,7 +17,7 @@ const faqData = [
   { question: 'Quel est le meilleur kit solaire plug-and-play en 2026 ?', answer: 'Le Beem On 500 Wc (429\u20ac, 0,86\u20ac/Wc) offre le meilleur rapport qualit\u00e9-prix du march\u00e9 en 2026 avec un ROI de 4,8 ans. Le Sunology PLAY2 (599\u20ac) reste le choix n\u00b01 pour la facilit\u00e9 d\'installation (1 minute). Pour les petits budgets, le Beem Kit 300W \u00e0 299\u20ac est imbattable.' },
   { question: 'Combien coute un kit solaire pour balcon ?', answer: 'Les prix vont de 299\u20ac (Beem Kit 300W) \u00e0 690\u20ac (Sunethic F500). Le meilleur rapport qualit\u00e9-prix est le Beem On 500 Wc \u00e0 429\u20ac. Le Sunology PLAY2 est \u00e0 599\u20ac.' },
   { question: 'Un kit solaire de balcon est-il rentable ?', answer: 'Oui. Avec le tarif EDF à 0,1940 euros/kWh en 2026, un kit de 450W produit 400-650 kWh/an selon la region, soit 78-126 euros d\'économies annuelles. Le retour sur investissement est de 5 à 8 ans pour une garantie de 25 ans.' },
-  { question: 'Peut-on installér un panneau solaire sur un balcon en tant que locataire ?', answer: 'Oui. Les kits plug-and-play installés au sol ou en appui sur une rambarde (sans perçage) ne nécessitent ni autorisation de travaux ni accord du propriétaire, tant que l\'installation est amovible et ne modifié pas le batiment.' },
+  { question: 'Peut-on installer un panneau solaire sur un balcon en tant que locataire ?', answer: 'Oui. Les kits plug-and-play installés au sol ou en appui sur une rambarde (sans perçage) ne nécessitent ni autorisation de travaux ni accord du propriétaire, tant que l\'installation est amovible et ne modifie pas le bâtiment.' },
   { question: 'Quelle est la différence entre Sunology et Beem ?', answer: 'Sunology propose un panneau unique de 450W avec chassis intégré (installation en 1 min). Beem propose soit un panneau unique (Beem On 460W) soit un kit de 4 petits panneaux (Beem Kit 420W). Beem est légèrement moins cher et plus modulaire, Sunology à une finition plus premium.' },
 ];
 
@@ -91,7 +91,7 @@ export default function ComparatifPage() {
               <h2 className="text-2xl font-extrabold mb-4">Pourquoi un kit solaire de balcon en 2026&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le prix de l&apos;électricité en France à augmente de 55% entre 2012 et 2026. En mai 2026, le tarif réglementé EDF s&apos;etablit à <span className="data-highlight">0,1940 &euro;/kWh TTC</span> en option base. Ce tarif à augmente par rapport à début 2026, et la tendance sur 10 ans reste à la hausse de 4 à 5% par an en moyenne.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Parallelement, le prix des kits solaires plug-and-play à baisse de 15 à 20% en 2025-2026. Un kit de qualité demarre aujourd&apos;hui à <span className="data-highlight">299 &euro;</span> et les modeles de reference coutent autour de <span className="data-highlight">599 &euro;</span>. Le retour sur investissement se situe entre 4 et 6 ans, pour une garantie de 25 ans.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">La bonne nouvelle pour les locataires et propriétaires d&apos;appartement : ces kits se branchént sur une simple prise électrique, ne nécessitent aucun travaux, et peuvent etre installés en quelques minutes. Seule une déclaration informative aupres d&apos;Enedis (convention CACSI) est requise.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">La bonne nouvelle pour les locataires et propriétaires d&apos;appartement : ces kits se branchént sur une simple prise électrique, ne nécessitent aucun travaux, et peuvent etre installés en quelques minutes. Seule une déclaration informative auprès d&apos;Enedis (convention CACSI) est requise.</p>
               <div className="card bg-green-pale/30 border-green/10 my-6">
                 <p className="text-sm text-green-dark"><strong>Point réglementation 2026 :</strong> La norme NF C 15-100 mise à jour en septembre 2025 limite la puissance à 900W par circuit de prise. Une période transitoire court jusqu&apos;au 31 mai 2026. Au-dela de 900W, un circuit dédié peut etre nécessaire.</p>
               </div>
@@ -179,7 +179,7 @@ export default function ComparatifPage() {
               </ul>
 
               <h4 className="font-bold mb-2 mt-6">Production réelle : ce que disent les utilisateurs</h4>
-              <p className="text-charcoal-light leading-relaxed mb-3">D&apos;apres les retours d&apos;utilisateurs vérifiés, la production annuelle du PLAY2 varie selon la region et l&apos;exposition. A Marseille avec une bonne exposition sud, certains utilisateurs rapportent plus de 650 kWh/an. En region parisienne avec une exposition est, la production tourne plutot autour de 450 kWh/an. Sunology annonce officiellement 565 kWh/an comme estimation moyenne.</p>
+              <p className="text-charcoal-light leading-relaxed mb-3">D&apos;après les retours d&apos;utilisateurs vérifiés, la production annuelle du PLAY2 varie selon la region et l&apos;exposition. A Marseille avec une bonne exposition sud, certains utilisateurs rapportent plus de 650 kWh/an. En region parisienne avec une exposition est, la production tourne plutot autour de 450 kWh/an. Sunology annonce officiellement 565 kWh/an comme estimation moyenne.</p>
               <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Sunology PLAY2 &rarr;</a>
             </section>
 
@@ -226,7 +226,7 @@ export default function ComparatifPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est l&apos;entrée de gamme ideale pour decouvrir le solaire de balcon sans se ruiner. A <span className="data-highlight">299 &euro;</span>, c&apos;est le meilleur ratio &euro;/Wc du marché (<span className="data-highlight">1,00 &euro;/Wc</span>). Meme avec une production plus modeste (~350 kWh/an en region lyonnaise), le retour sur investissement est atteint en seulement 4 à 5 ans.</p>
 
               <h4 className="font-bold mb-2 mt-6">Pour qui ?</h4>
-              <p className="text-charcoal-light leading-relaxed">C&apos;est le kit ideal pour tester l&apos;autoconsommation à moindre cout avant d&apos;investir dans un kit plus puissant. Ses 4 petits panneaux s&apos;adaptént aux espaces restreints et aux configurations inhabituelles (mur étroit, garde-corps, angle de balcon).</p>
+              <p className="text-charcoal-light leading-relaxed">C&apos;est le kit ideal pour tester l&apos;autoconsommation à moindre coût avant d&apos;investir dans un kit plus puissant. Ses 4 petits panneaux s&apos;adaptént aux espaces restreints et aux configurations inhabituelles (mur étroit, garde-corps, angle de balcon).</p>
 
               <h4 className="font-bold mb-2 mt-6">Points faibles</h4>
               <ul className="space-y-2 text-sm text-charcoal-light">

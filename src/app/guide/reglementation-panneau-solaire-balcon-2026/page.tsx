@@ -6,8 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
-  title: 'Panneau solaire balcon : reglementation 2026 complete',
-  description: 'Norme NF C 15-100, declaration Enedis CACSI, copropriete, limite 900W : tout ce que dit la loi sur les kits solaires plug-and-play en 2026.',
+  title: 'Panneau solaire balcon : réglementation 2026 complete',
+  description: 'Norme NF C 15-100, declaration Enedis CACSI, copropriété, limite 900W : tout ce que dit la loi sur les kits solaires plug-and-play en 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026',
   },
@@ -18,13 +18,13 @@ const faqData = [
   { question: 'Quelle est la puissance maximale autorisee en plug-and-play ?', answer: 'La norme NF C 15-100 mise a jour en septembre 2025 limite a 900W par circuit de prise murale. Au-dela, il faut une ligne dediee depuis le tableau electrique. La puissance totale des panneaux doit rester sous 3 kWc.' },
   { question: 'Faut-il declarer son kit solaire a Enedis ?', answer: 'Oui. Meme en autoconsommation totale sans injection, vous devez signer une Convention d\'Autoconsommation Sans Injection (CACSI) sur le portail Enedis Connect. C\'est gratuit et se fait en ligne en 10 minutes.' },
   { question: 'Mon syndic peut-il refuser l\'installation ?', answer: 'Le syndic peut demander que le projet soit presente en assemblee generale si l\'installation modifie l\'aspect de la facade. Cependant, un kit pose au sol sur un balcon prive, non visible depuis l\'exterieur, ne devrait pas poser de probleme.' },
-  { question: 'Les kits plug-and-play sont-ils toujours autorises en 2026 ?', answer: 'Oui. L\'AFNOR devait clarifier la norme NF C 15-100 apres aout 2025 mais les kits plug-and-play restent autorises. La limite de 900W par circuit est la principale contrainte technique.' },
+  { question: 'Les kits plug-and-play sont-ils toujours autorises en 2026 ?', answer: 'Oui. L\'AFNOR devait clarifier la norme NF C 15-100 après aout 2025 mais les kits plug-and-play restent autorises. La limite de 900W par circuit est la principale contrainte technique.' },
 ];
 
 export default function ReglementationPage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon : reglementation 2026 complete" description="Tout ce que dit la loi sur les kits solaires plug-and-play en 2026." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" />
+      <SchemaArticle title="Panneau solaire balcon : réglementation 2026 complete" description="Tout ce que dit la loi sur les kits solaires plug-and-play en 2026." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />
       <article className="section-padding">

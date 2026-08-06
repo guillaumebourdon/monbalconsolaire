@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 const faqData = [
   { question: 'Combien rapporte un panneau solaire de balcon par an ?', answer: 'Avec un kit de 450W et le tarif EDF à 0,1940 euros/kWh, comptez 70 à 126 euros d\'économies par an selon votre region et votre exposition. Cela correspond à une production de 360 à 650 kWh par an.' },
   { question: 'Est-ce que ca vaut le coup à Paris ?', answer: 'Oui. Un kit de 450W à Paris produit environ 400-480 kWh/an (exposition sud). Soit 78-93 euros d\'économies annuelles. Le ROI est atteint en 6-8 ans pour une garantie de 25 ans. C\'est moins rentable que Marseille mais ca reste un bon investissement.' },
-  { question: 'Le prix de l\'électricité va-t-il encore augmenter ?', answer: 'Tres probablement. La tendance sur 10 ans est de +4 à 5% par an. La fin de l\'ARENH en janvier 2026 pourrait accelerer la hausse. Chaque augmentation du tarif EDF améliore automatiquement la rentabilité de votre panneau.' },
-  { question: 'Faut-il une batterie pour etre rentable ?', answer: 'Non. Sans batterie, vous consommez l\'électricité en temps réel (talon de consommation). C\'est deja rentable. Une batterie augmente l\'autoconsommation mais coute 500-1400 euros supplémentaires, ce qui allonge le temps de retour sur investissement.' },
+  { question: 'Le prix de l\'électricité va-t-il encore augmenter ?', answer: 'Très probablement. La tendance sur 10 ans est de +4 à 5% par an. La fin de l\'ARENH en janvier 2026 pourrait accelerer la hausse. Chaque augmentation du tarif EDF améliore automatiquement la rentabilité de votre panneau.' },
+  { question: 'Faut-il une batterie pour etre rentable ?', answer: 'Non. Sans batterie, vous consommez l\'électricité en temps réel (talon de consommation). C\'est déjà rentable. Une batterie augmente l\'autoconsommation mais coute 500-1400 euros supplémentaires, ce qui allonge le temps de retour sur investissement.' },
 ];
 
 const cityData = [

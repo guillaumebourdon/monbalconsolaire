@@ -6,25 +6,25 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
-  title: 'Panneau solaire en copropriete : regles, votes et astuces (2026)',
-  description: 'Installer un kit solaire sur votre balcon en copropriete : reglement, assemblee generale, syndic, droits du coproprietaire et du locataire.',
+  title: 'Panneau solaire en copropriété : règles, votes et astuces (2026)',
+  description: 'Installer un kit solaire sur votre balcon en copropriété : reglement, assemblee generale, syndic, droits du coproprietaire et du locataire.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-copropriete',
   },
 };
 
 const faqData = [
-  { question: 'Faut-il l\'accord de la copropriete pour un kit solaire de balcon ?', answer: 'Ca depend de la visibilite. Si le panneau est pose au sol sur votre balcon prive et non visible depuis l\'exterieur, aucune autorisation n\'est requise. S\'il modifie l\'aspect de la facade (fixation en hauteur, visible depuis la rue), le syndic peut demander un vote en AG.' },
+  { question: 'Faut-il l\'accord de la copropriété pour un kit solaire de balcon ?', answer: 'Ca depend de la visibilite. Si le panneau est pose au sol sur votre balcon prive et non visible depuis l\'exterieur, aucune autorisation n\'est requise. S\'il modifie l\'aspect de la facade (fixation en hauteur, visible depuis la rue), le syndic peut demander un vote en AG.' },
   { question: 'Le syndic peut-il interdire les panneaux solaires ?', answer: 'Le syndic ne peut pas interdire unilateralement. Seule l\'assemblee generale peut voter une interdiction, et uniquement si l\'installation modifie les parties communes ou l\'aspect exterieur de l\'immeuble. Un kit pose au sol sur un balcon prive ne modifie rien.' },
   { question: 'Comment presenter le projet en assemblee generale ?', answer: 'Demandez au syndic d\'inscrire le sujet a l\'ordre du jour de la prochaine AG. Preparez un dossier court : photo du kit, dimensions, poids, mode de fixation (sans percage), benefices (ecologique, economique), et le fait que c\'est amovible.' },
-  { question: 'Un locataire peut-il installer un kit solaire en copropriete ?', answer: 'Oui. Le locataire a le droit d\'utiliser son balcon prive. Un kit plug-and-play ne necessite aucune modification du logement (pas de percage, pas de cablage). Il se branche sur une prise et se debranche en 1 minute.' },
-  { question: 'Et si le reglement de copropriete interdit les installations sur les balcons ?', answer: 'Certains reglements interdisent les antennes paraboliques ou les climatiseurs sur les balcons. Les kits solaires ne sont generalement pas mentionnes. Si le reglement est ambigu, proposez une modification en AG — la transition energetique est un argument fort.' },
+  { question: 'Un locataire peut-il installer un kit solaire en copropriété ?', answer: 'Oui. Le locataire a le droit d\'utiliser son balcon prive. Un kit plug-and-play ne necessite aucune modification du logement (pas de percage, pas de cablage). Il se branche sur une prise et se debranche en 1 minute.' },
+  { question: 'Et si le reglement de copropriété interdit les installations sur les balcons ?', answer: 'Certains reglements interdisent les antennes paraboliques ou les climatiseurs sur les balcons. Les kits solaires ne sont generalement pas mentionnes. Si le reglement est ambigu, proposez une modification en AG — la transition energetique est un argument fort.' },
 ];
 
 export default function CoproprietePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire en copropriete : regles, votes et astuces" description="Installer un kit solaire sur votre balcon en copropriete." url="https://monbalconsolaire.fr/guide/panneau-solaire-copropriete" datePublished="2026-04-17" />
+      <SchemaArticle title="Panneau solaire en copropriété : règles, votes et astuces" description="Installer un kit solaire sur votre balcon en copropriété." url="https://monbalconsolaire.fr/guide/panneau-solaire-copropriete" datePublished="2026-04-17" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Copropri\u00e9t\u00e9' }]} />
       <article className="section-padding">

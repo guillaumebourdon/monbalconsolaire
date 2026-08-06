@@ -8,15 +8,15 @@ import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon : le guide complet pour débutants (2026)',
-  description: 'Tout savoir sur le panneau solaire de balcon en 2026 : installation, réglementation, cout, rentabilité, droits des locataires. Guide complet et indépendant.',
+  description: 'Tout savoir sur le panneau solaire de balcon en 2026 : installation, réglementation, coût, rentabilité, droits des locataires. Guide complet et indépendant.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant',
   },
 };
 
 const faqData = [
-  { question: 'Peut-on installér un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchént sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
-  { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installé à moins de 1,80m de hauteur, aucune déclaration préalable de travaux n\'est nécessaire. Seule la déclaration CACSI aupres d\'Enedis est obligatoire (informative, gratuite, 2 minutes en ligne).' },
+  { question: 'Peut-on installer un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchént sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
+  { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installé à moins de 1,80m de hauteur, aucune déclaration préalable de travaux n\'est nécessaire. Seule la déclaration CACSI auprès d\'Enedis est obligatoire (informative, gratuite, 2 minutes en ligne).' },
   { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 450W produit en moyenne 400 à 650 kWh par an selon la region et l\'orientation. Cela correspond à 78-126 euros d\'économies annuelles au tarif EDF actuel.' },
   { question: 'Un panneau solaire fonctionne-t-il par temps nuageux ?', answer: 'Oui, mais avec un rendement réduit (10-25% de la puissance maximale). Les panneaux solaires fonctionnent avec la lumiere, pas uniquement le soleil direct. La production annuelle tient compte des jours nuageux.' },
   { question: 'Que devient le surplus d\'électricité ?', answer: 'Pour les kits plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien, mais vous n\'etes pas remunere non plus pour ce surplus.' },
@@ -35,7 +35,7 @@ export default function GuidePage() {
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide complet</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : le guide complet pour débutants</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installér un kit solaire sur votre balcon en 2026 : fonctionnement, prix, rentabilité, réglementation, et les erreurs à éviter.</p>
+            <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installer un kit solaire sur votre balcon en 2026 : fonctionnement, prix, rentabilité, réglementation, et les erreurs à éviter.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>18 mars 2026</span><span>&middot;</span><span>15 min de lecture</span></div>
           </div>
 
@@ -63,7 +63,7 @@ export default function GuidePage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Combien ca coute ? Et combien ca rapporte ?</h2>
-              <h3 className="font-bold text-lg mb-3">Le cout d&apos;un kit solaire de balcon</h3>
+              <h3 className="font-bold text-lg mb-3">Le coût d&apos;un kit solaire de balcon</h3>
               <div className="flex items-center gap-3 mb-4">
                 <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />
                 <ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" />
@@ -115,9 +115,9 @@ export default function GuidePage() {
               <h3 className="font-bold text-lg mb-3 mt-6">Démarchés obligatoires</h3>
               <div className="space-y-3 my-4">
                 {[
-                  { title: 'Déclaration CACSI aupres d\'Enedis', desc: 'Obligatoire. Informative (pas d\'accord à obtenir). Se fait en ligne en 2 minutes sur le site Enedis. Gratuit.', status: 'Obligatoire' },
+                  { title: 'Déclaration CACSI auprès d\'Enedis', desc: 'Obligatoire. Informative (pas d\'accord à obtenir). Se fait en ligne en 2 minutes sur le site Enedis. Gratuit.', status: 'Obligatoire' },
                   { title: 'Déclaration préalable de travaux en mairie', desc: 'Uniquement si le panneau est installé à plus de 1,80m de hauteur ou en zone classée (monuments historiques, etc.).', status: 'Selon cas' },
-                  { title: 'Accord de la copropriété', desc: 'Uniquement si l\'installation modifié l\'aspect exterieur du batiment (fixation permanente en facade). Pas nécessaire pour un kit amovible.', status: 'Selon cas' },
+                  { title: 'Accord de la copropriété', desc: 'Uniquement si l\'installation modifie l\'aspect exterieur du bâtiment (fixation permanente en facade). Pas nécessaire pour un kit amovible.', status: 'Selon cas' },
                   { title: 'Attestation Consuel', desc: 'Non requise pour les kits plug-and-play pre-assembles en usine comme le Sunology PLAY2 (certification CE sur l\'ensemble du kit).', status: 'Non requis' },
                 ].map((d, i) => (
                   <div key={i} className="card">
@@ -154,7 +154,7 @@ export default function GuidePage() {
                   { title: 'Ignorer l\'orientation', desc: 'Un balcon plein nord produit 55% de moins qu\'un balcon plein sud. Verifiez votre orientation avant d\'investir.' },
                   { title: 'Oublier la déclaration Enedis', desc: 'Meme si c\'est une formalite, la déclaration CACSI est obligatoire. Faites-la dans le mois suivant l\'installation.' },
                   { title: 'Utiliser une multiprise', desc: 'Ne branchéz jamais votre kit sur une multiprise ou une rallonge non adaptée. Utilisez une prise murale dédiée avec terre, protegee par un différentiel 30mA.' },
-                  { title: 'Surestimér ses économies', desc: 'Un kit de 450W ne couvre pas toute votre consommation. Il efface le talon de consommation (frigo, box, veilles) mais pas le chauffage ou le chauffe-eau électrique.' },
+                  { title: 'Surestimer ses économies', desc: 'Un kit de 450W ne couvre pas toute votre consommation. Il efface le talon de consommation (frigo, box, veilles) mais pas le chauffage ou le chauffe-eau électrique.' },
                 ].map((e, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">Erreur n&deg;{i+1} : {e.title}</h4>

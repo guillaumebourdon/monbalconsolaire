@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'L\'autoconsommation solaire, c\'est quoi ?', answer: 'C\'est le fait de consommer directement l\'electricite que vous produisez avec votre panneau solaire. Au lieu d\'acheter 100% de votre electricite a EDF, vous en produisez une partie vous-meme. Votre facture baisse d\'autant.' },
-  { question: 'Que se passe-t-il la nuit ou par temps couvert ?', answer: 'Votre panneau ne produit pas (ou tres peu). Votre logement bascule automatiquement sur le reseau EDF. Vous ne remarquez aucune difference — tout est transparent.' },
-  { question: 'Que devient le surplus d\'electricite ?', answer: 'Avec un kit plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien mais vous n\'etes pas remunere non plus. Pour valoriser le surplus, il faut une batterie.' },
-  { question: 'Faut-il un compteur Linky ?', answer: 'Pour un kit plug-and-play en autoconsommation sans injection (CACSI), le compteur Linky n\'est pas obligatoire mais il est utile pour suivre votre consommation. La plupart des foyers en sont deja equipes.' },
-  { question: 'C\'est quoi le talon de consommation ?', answer: 'C\'est la quantite minimale d\'electricite que votre logement consomme en permanence : frigo, box internet, veilles, chargeurs, VMC. En general entre 100 et 300W. C\'est ce que votre panneau solaire efface en premier.' },
+  { question: 'L\'autoconsommation solaire, c\'est quoi ?', answer: 'C\'est le fait de consommer directement l\'électricité que vous produisez avec votre panneau solaire. Au lieu d\'acheter 100% de votre électricité a EDF, vous en produisez une partie vous-meme. Votre facture baisse d\'autant.' },
+  { question: 'Que se passe-t-il la nuit ou par temps couvert ?', answer: 'Votre panneau ne produit pas (ou très peu). Votre logement bascule automatiquement sur le reseau EDF. Vous ne remarquez aucune difference — tout est transparent.' },
+  { question: 'Que devient le surplus d\'électricité ?', answer: 'Avec un kit plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien mais vous n\'etes pas remunere non plus. Pour valoriser le surplus, il faut une batterie.' },
+  { question: 'Faut-il un compteur Linky ?', answer: 'Pour un kit plug-and-play en autoconsommation sans injection (CACSI), le compteur Linky n\'est pas obligatoire mais il est utile pour suivre votre consommation. La plupart des foyers en sont déjà equipes.' },
+  { question: 'C\'est quoi le talon de consommation ?', answer: 'C\'est la quantite minimale d\'électricité que votre logement consomme en permanence : frigo, box internet, veilles, chargeurs, VMC. En general entre 100 et 300W. C\'est ce que votre panneau solaire efface en premier.' },
 ];
 
 export default function AutoconsommationPage() {

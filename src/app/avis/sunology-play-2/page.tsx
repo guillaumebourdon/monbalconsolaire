@@ -57,7 +57,7 @@ export default function AvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Presentation du Sunology PLAY2</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Sunology PLAY2 est la 4eme génération de la station solaire phare de la marque nantaise Sunology, fondee en 2019. C&apos;est un panneau solaire bifacial de 450 Wc équipé d&apos;un micro-onduleur TSUN 450W avec WiFi intégré, d&apos;un chassis ajustable pre-assemble, et de deux ballasts de 10 litres pour le lestage.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le principe est simple : vous sortez le panneau du carton, vous depliez le support (deja fixe), vous remplissez les ballasts d&apos;eau ou de sable, et vous branchéz la prise. L&apos;installation prend litteralement 1 minute selon Sunology — et les retours utilisateurs confirment que c&apos;est rapide.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le principe est simple : vous sortez le panneau du carton, vous depliez le support (déjà fixe), vous remplissez les ballasts d&apos;eau ou de sable, et vous branchéz la prise. L&apos;installation prend litteralement 1 minute selon Sunology — et les retours utilisateurs confirment que c&apos;est rapide.</p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
@@ -78,7 +78,7 @@ export default function AvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Installation en 1 minute', d: 'Le chassis est pre-assemble en usine. Aucun outil, aucune vis, aucune connaissance technique. C\'est le kit le plus rapide à installér du marché.' },
+                  { t: 'Installation en 1 minute', d: 'Le chassis est pre-assemble en usine. Aucun outil, aucune vis, aucune connaissance technique. C\'est le kit le plus rapide à installer du marché.' },
                   { t: 'Technologie bifaciale performante', d: 'Les cellules N-Type TOPCon bi-verre captent la lumiere sur les deux faces. Gain de 5 à 15% en pratique si la surface derriere est réfléchissante (mur clair, sol clair).' },
                   { t: 'Suivi WiFi intégré', d: 'Le micro-onduleur est connecte en WiFi. Pas besoin de boitier supplémentaire. L\'app STREAM est claire et gratuite : production instantanee, historique, économies estimées.' },
                   { t: 'Certification CE complete', d: 'Sunology est le seul fabricant à avoir la certification CE sur l\'ensemble du kit (panneau + onduleur + chassis), pas seulement sur le panneau.' },
@@ -98,9 +98,9 @@ export default function AvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Encombrement pour les petits balcons', d: 'Le panneau mesure 1,76 x 1,13 m. Sur un petit balcon d\'appartement, ca prend de la place. Pour les espaces tres restreints, le Sunology CITY (concu pour les garde-corps) ou le Beem On 500 Wc (429€, format similaire) sont des alternatives à étudier — voir la comparaison plus bas.' },
+                  { t: 'Encombrement pour les petits balcons', d: 'Le panneau mesure 1,76 x 1,13 m. Sur un petit balcon d\'appartement, ca prend de la place. Pour les espaces très restreints, le Sunology CITY (concu pour les garde-corps) ou le Beem On 500 Wc (429€, format similaire) sont des alternatives à étudier — voir la comparaison plus bas.' },
                   { t: 'Pas de batterie incluse', d: 'A 599\u20ac, vous n\'avez que le panneau. Pour stocker l\'électricité pour le soir, il faut passer au PLAY MAX (1 179\u20ac avec batterie 700 Wh) ou ajouter la batterie STOREY (1 390\u20ac). C\'est un investissement consequent.' },
-                  { t: 'Le gain bifacial est souvent surestimér', d: 'Sunology annonce "jusqu\'a 30%" de gain bifacial. En realite, ce gain depend enormement de la surface derriere le panneau. Sur un sol sombre ou contre un mur fonce, le gain est negligeable (2-5%).' },
+                  { t: 'Le gain bifacial est souvent surestimer', d: 'Sunology annonce "jusqu\'a 30%" de gain bifacial. En realite, ce gain depend enormement de la surface derriere le panneau. Sur un sol sombre ou contre un mur fonce, le gain est negligeable (2-5%).' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">{p.t}</h4>
@@ -140,7 +140,7 @@ export default function AvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Sunology annonce une production annuelle de <span className="data-highlight">565 kWh</span>. Avec notre méthodologie (PR 0,85, autoconsommation 85%, inflation 3,3%/an CRE), le ROI réaliste est de <span className="data-highlight">7,1 ans</span> avec <span className="data-highlight">76 &euro;/an</span> d&apos;économies et <span className="data-highlight">2 871 &euro;</span> sur 25 ans. Voici ce que rapportent les utilisateurs réels :</p>
               <div className="space-y-3 my-6">
                 {[
-                  { loc: 'Marseille, exposition sud', prod: '650+ kWh/an', comment: 'Au-dessus des promesses. 2,8-3,2 kWh/jour en ete, ~1 kWh/jour en hiver.' },
+                  { loc: 'Marseille, exposition sud', prod: '650+ kWh/an', comment: 'Au-dessus des promesses. 2,8-3,2 kWh/jour en été, ~1 kWh/jour en hiver.' },
                   { loc: 'Lyon, exposition sud-ouest', prod: '~520 kWh/an', comment: 'Proche de l\'estimation Sunology. Satisfaction générale.' },
                   { loc: 'Region parisienne, exposition est', prod: '~450 kWh/an', comment: 'En dessous des promesses, mais l\'exposition est n\'est pas ideale. Normal.' },
                   { loc: 'Lot-et-Garonne, plein sud', prod: '~580 kWh/an', comment: 'Inclinaison ajustee par saison. Suivi via app STREAM.' },

@@ -7,7 +7,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
-  title: 'Panneau solaire balcon locataire : droits, regles et astuces (2026)',
+  title: 'Panneau solaire balcon locataire : droits, règles et astuces (2026)',
   description: 'Vous etes locataire et vous voulez un panneau solaire sur votre balcon ? Droits, réglementation copropriété, démarchés, et kits adaptés. Guide complet 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-locataire',
@@ -15,17 +15,17 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Ai-je le droit d\'installér un panneau solaire sur mon balcon en tant que locataire ?', answer: 'Oui, à condition que l\'installation soit amovible (pas de perçage, pas de modification du batiment). Un kit pose au sol ou en appui sur la rambarde sans fixation permanente ne nécessite pas l\'accord du propriétaire.' },
+  { question: 'Ai-je le droit d\'installer un panneau solaire sur mon balcon en tant que locataire ?', answer: 'Oui, à condition que l\'installation soit amovible (pas de perçage, pas de modification du bâtiment). Un kit pose au sol ou en appui sur la rambarde sans fixation permanente ne nécessite pas l\'accord du propriétaire.' },
   { question: 'Faut-il prévenir mon propriétaire ?', answer: 'Legalement non, si l\'installation est amovible. Par courtoisie et pour éviter tout malentendu, un simple message informatif est recommandé. Certains propriétaires apprecient meme l\'initiative (ca valorise le logement).' },
-  { question: 'Et la copropriété ?', answer: 'Si votre kit est pose au sol sur votre balcon sans modifiér l\'aspect du batiment, la copropriété n\'a pas son mot à dire. Si vous fixez le panneau en facade ou sur la rambarde de maniere visible et permanente, il faut obtenir l\'accord de l\'assemblee générale des copropriétaires.' },
-  { question: 'Que se passe-t-il si le syndic refuse ?', answer: 'Le syndic ne peut refuser une installation amovible qui ne modifié pas les parties communes. Si le refus concerne une fixation en facade, vous pouvez proposer un kit au sol (Sunology PLAY2 avec ballasts) qui ne nécessite aucune autorisation.' },
-  { question: 'Puis-je emporter mon panneau en demenageant ?', answer: 'Oui, c\'est l\'un des grands avantages des kits plug-and-play. Il suffit de debranchér, vider les ballasts, et emmener le kit dans votre nouveau logement. Pensez à refaire la déclaration CACSI aupres d\'Enedis pour la nouvelle adresse.' },
+  { question: 'Et la copropriété ?', answer: 'Si votre kit est pose au sol sur votre balcon sans modifier l\'aspect du bâtiment, la copropriété n\'a pas son mot à dire. Si vous fixez le panneau en facade ou sur la rambarde de maniere visible et permanente, il faut obtenir l\'accord de l\'assemblee générale des copropriétaires.' },
+  { question: 'Que se passe-t-il si le syndic refuse ?', answer: 'Le syndic ne peut refuser une installation amovible qui ne modifie pas les parties communes. Si le refus concerne une fixation en facade, vous pouvez proposer un kit au sol (Sunology PLAY2 avec ballasts) qui ne nécessite aucune autorisation.' },
+  { question: 'Puis-je emporter mon panneau en déménageant ?', answer: 'Oui, c\'est l\'un des grands avantages des kits plug-and-play. Il suffit de débrancher, vider les ballasts, et emmener le kit dans votre nouveau logement. Pensez à refaire la déclaration CACSI auprès d\'Enedis pour la nouvelle adresse.' },
 ];
 
 export default function LocatairePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon locataire : droits, regles et astuces" description="Guide complet pour les locataires souhaitant installér un panneau solaire sur leur balcon." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-locataire" datePublished="2026-03-20" />
+      <SchemaArticle title="Panneau solaire balcon locataire : droits, règles et astuces" description="Guide complet pour les locataires souhaitant installer un panneau solaire sur leur balcon." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-locataire" datePublished="2026-03-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: "Guides", href: "/guide" }, { label: "Locataires" }]} />
       <article className="section-padding">
@@ -33,7 +33,7 @@ export default function LocatairePage() {
           <Breadcrumbs items={[{ label: "Guides", href: "/guide" }, { label: "Locataires" }]} />
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide locataire</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon locataire : droits, regles et astuces</h1>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon locataire : droits, règles et astuces</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous etes locataire et vous voulez reduire votre facture d&apos;électricité avec un panneau solaire ? Bonne nouvelle : c&apos;est possible, legal et simple. Voici tout ce qu&apos;il faut savoir.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
@@ -77,12 +77,12 @@ export default function LocatairePage() {
                   <ul className="text-xs text-charcoal-light space-y-1">
                     <li>&rarr; Fixation permanente en facade</li>
                     <li>&rarr; Percage du mur ou de la rambarde</li>
-                    <li>&rarr; Installation visible depuis la rue qui modifié l&apos;aspect</li>
+                    <li>&rarr; Installation visible depuis la rue qui modifie l&apos;aspect</li>
                     <li>&rarr; Installation en zone classée (monuments historiques)</li>
                   </ul>
                 </div>
               </div>
-              <p className="text-charcoal-light leading-relaxed">En cas de doute, la regle est simple : si vous pouvez tout retirer en 5 minutes sans laisser de traces, vous n&apos;avez pas besoin d&apos;autorisation.</p>
+              <p className="text-charcoal-light leading-relaxed">En cas de doute, la règle est simple : si vous pouvez tout retirer en 5 minutes sans laisser de traces, vous n&apos;avez pas besoin d&apos;autorisation.</p>
             </section>
 
             <section>
@@ -115,7 +115,7 @@ export default function LocatairePage() {
               <div className="space-y-3">
                 {[
                   { t: 'Optimisez l\'orientation', d: 'Meme sur un balcon, vous avez souvent une marge de manoeuvre. Tournez le panneau au maximum vers le sud. Chaque degre compte.' },
-                  { t: 'Ajustez l\'inclinaison par saison', d: 'Le Sunology PLAY2 permet 3 inclinaisons (27, 35, 42 degres). Inclinez plus en hiver (42) et moins en ete (27) pour suivre la course du soleil.' },
+                  { t: 'Ajustez l\'inclinaison par saison', d: 'Le Sunology PLAY2 permet 3 inclinaisons (27, 35, 42 degres). Inclinez plus en hiver (42) et moins en été (27) pour suivre la course du soleil.' },
                   { t: 'Surface réfléchissante derriere', d: 'Si votre panneau est bifacial, posez-le devant un mur clair ou un sol clair. Le gain peut atteindre 5-15% de production supplémentaire.' },
                   { t: 'Consommez pendant la journee', d: 'Sans batterie, vous consommez en temps réel. Programmez votre machine à laver, lave-vaisselle et chauffe-eau aux heures de soleil (10h-16h).' },
                   { t: 'Nettoyez régulièrement', d: 'Un panneau poussiereux perd 5-10% de rendement. Un coup de chiffon humide tous les 2-3 mois suffit.' },
