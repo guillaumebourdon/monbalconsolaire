@@ -88,7 +88,7 @@ export function AffiliateCTA({
       </a>
       {variant === 'primary' && (
         <p className="text-[10px] text-stone mt-2 text-center">
-          &check; Livraison incluse &middot; &check; Garantie 25 ans &middot; &check; Stock France
+          ✓ Livraison incluse &middot; ✓ Garantie 25 ans &middot; ✓ Stock France
         </p>
       )}
     </div>

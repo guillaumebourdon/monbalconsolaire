@@ -6,8 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
-  title: 'Combien de panneaux solaires sur un balcon ? R&egrave;gles et limites (2026)',
-  description: 'Limite 800 Wc, nombre de panneaux selon la puissance, s&eacute;rie ou parall&egrave;le : tout ce que la r&eacute;glementation fran&ccedil;aise impose pour un kit solaire balcon.',
+  title: 'Combien de panneaux solaires sur un balcon ? Règles et limites (2026)',
+  description: 'Limite 800 Wc, nombre de panneaux selon la puissance, série ou parallèle : tout ce que la réglementation française impose pour un kit solaire balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/combien-panneaux-solaires-balcon',
   },

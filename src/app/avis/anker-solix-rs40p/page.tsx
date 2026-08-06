@@ -7,7 +7,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Anker SOLIX RS40P avis 2026 : kit balcon 910 Wc, vaut-il 799 €&nbsp;?',
+  title: 'Anker SOLIX RS40P avis 2026 : kit balcon 910 Wc, vaut-il 799 € ?',
   description: 'Avis complet Anker SOLIX RS40P : 2x455 W IBC N-type, onduleur 600 W WiFi (800 W), 799 €. Specs, ROI, comparatif Beem On 500W. Anker débarque sur le marché français.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/anker-solix-rs40p',

@@ -41,11 +41,11 @@ export default function LocatairePage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">L&apos;essentiel à retenir</h2>
             <ul className="space-y-2 text-sm text-charcoal-light">
-              <li className="flex gap-2"><span className="text-green font-bold">&check;</span> Oui, un locataire peut installér un kit solaire plug-and-play sur son balcon</li>
-              <li className="flex gap-2"><span className="text-green font-bold">&check;</span> Aucune autorisation du propriétaire si l&apos;installation est amovible</li>
-              <li className="flex gap-2"><span className="text-green font-bold">&check;</span> Aucune autorisation de la copropriété si ca ne modifié pas l&apos;aspect du batiment</li>
-              <li className="flex gap-2"><span className="text-green font-bold">&check;</span> Seule obligation : déclaration CACSI aupres d&apos;Enedis (2 min en ligne)</li>
-              <li className="flex gap-2"><span className="text-green font-bold">&check;</span> Le kit est transportable : vous l&apos;emmenez en demenageant</li>
+              <li className="flex gap-2"><span className="text-green font-bold">✓</span> Oui, un locataire peut installer un kit solaire plug-and-play sur son balcon</li>
+              <li className="flex gap-2"><span className="text-green font-bold">✓</span> Aucune autorisation du propriétaire si l&apos;installation est amovible</li>
+              <li className="flex gap-2"><span className="text-green font-bold">✓</span> Aucune autorisation de la copropriété si ça ne modifie pas l&apos;aspect du bâtiment</li>
+              <li className="flex gap-2"><span className="text-green font-bold">✓</span> Seule obligation : déclaration CACSI auprès d&apos;Enedis (2 min en ligne)</li>
+              <li className="flex gap-2"><span className="text-green font-bold">✓</span> Le kit est transportable : vous l&apos;emmenez en déménageant</li>
             </ul>
           </div>
 

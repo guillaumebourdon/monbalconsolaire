@@ -5,9 +5,10 @@ import { DEPARTMENTS } from '@/data/departments';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { calculateROIYears, KWH_PRICE_EUR, PERFORMANCE_RATIO } from '@/lib/pricing';
 
-const TARIF_KWH = 0.1940;
-const COEFF_PERTES = 0.85;
+const TARIF_KWH = KWH_PRICE_EUR;
+const COEFF_PERTES = PERFORMANCE_RATIO;
 
 const KITS = [
   { name: 'Sunology PLAY 2', power: 0.45, price: 599, slug: '/avis/sunology-play-2', badge: 'Meilleur choix' },
@@ -35,7 +36,13 @@ function calcKit(kit: typeof KITS[0], irradiation: number) {
   const autocons = (kit as { autocons?: number }).autocons || 0.45;
   const kwhValorises = Math.round(production * autocons);
   const economies = Math.round(kwhValorises * TARIF_KWH);
-  const roi = parseFloat((kit.price / economies).toFixed(1));
+  // ROI actualisé (inflation 3,3 %/an) — source unique : lib/pricing.ts
+  const roi = calculateROIYears({
+    kitPriceEur: kit.price,
+    kitPowerWc: kit.power * 1000,
+    productibleKwhPerKwc: irradiation,
+    autoconsoOverride: autocons,
+  });
   return { ...kit, production, kwhValorises, economies, roi, autocons };
 }
 
@@ -180,7 +187,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Calcul : puissance × {dept.irradiation} kWh/kWc × 0,85 (pertes) × autoconsommation × 0,1940 €/kWh. Orientation sud. Autoconsommation 45 % sans batterie, 80 % avec batterie (Zendure).
+                Calcul : puissance × {dept.irradiation} kWh/kWc × 0,85 (pertes) × autoconsommation × 0,1940 €/kWh. Orientation sud. Autoconsommation 45 % sans batterie, 80 % avec batterie (Zendure). ROI actualisé avec une inflation du tarif de 3,3 %/an (CRE).
               </p>
             </section>
 
@@ -316,7 +323,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> irradiation PVGIS (Commission européenne), orientation sud, inclinaison 30°, coefficient de pertes 0,85. Tarif EDF base mai 2026 : 0,1940 €/kWh. Autoconsommation 45 % sans batterie, 80 % avec batterie.{' '}
+                <strong>Méthodologie :</strong> irradiation PVGIS (Commission européenne), orientation sud, inclinaison 30°, coefficient de pertes 0,85. Tarif EDF base mai 2026 : 0,1940 €/kWh. Autoconsommation 45 % sans batterie, 80 % avec batterie. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (moyenne CRE 2012-2026).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
             </div>

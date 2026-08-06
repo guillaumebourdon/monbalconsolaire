@@ -511,7 +511,7 @@ export default function HomePage() {
               Votre balcon est-il rentable pour le solaire ?
             </h2>
             <p className="text-charcoal-light max-w-md mx-auto mb-8 text-lg">
-              Répondez à 4 questions simples et découvrez combien vous pouvez économiser chaque année.
+              Répondez à 5 questions simples et découvrez combien vous pouvez économiser chaque année.
             </p>
             <Link href="/calculateur" className="btn-primary text-base py-4 px-10 shadow-green">
               ☀ Calculer mes économies gratuitement →
