@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page introuvable | MonBalconSolaire',
+  title: 'Page introuvable',
   description: 'Cette page n\'existe pas ou a été déplacée. Retrouvez nos guides, avis et comparatifs de kits solaires de balcon.',
   robots: { index: false, follow: true },
 };
