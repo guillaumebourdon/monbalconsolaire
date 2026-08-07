@@ -18,6 +18,17 @@ interface Article {
 }
 
 const ARTICLES: Article[] = [
+  // Articles récents (août 2026)
+  {
+    slug: '/guide/checklist-avant-achat-kit-solaire',
+    title: 'Premier kit solaire : la checklist complète avant d\'acheter',
+    excerpt: '15 points à vérifier avant de commander : orientation, prise électrique, Linky, bail, copropriété, budget ROI, CACSI Enedis, assurance, certification CE.',
+    type: 'guide',
+    badge: 'Nouveau',
+    tags: ['debutant', 'reglementation', 'achat'],
+    publishedAt: '2026-08-07',
+    readTime: '12 min',
+  },
   // Articles récents (juillet 2026)
   {
     slug: '/blog/revendre-surplus-solaire-balcon',

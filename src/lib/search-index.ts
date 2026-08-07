@@ -48,6 +48,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Meilleure batterie solaire balcon 2026 : Zendure vs Bluetti vs EcoFlow', description: 'Comparatif batteries dédiées balcon : prix/kWh, autonomie, verdict par profil. Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow PowerStream.', url: '/comparatif/meilleure-batterie-solaire-balcon-2026', category: 'Comparatif', badge: 'Nouveau' },
 
   // ─── Guides ───
+  { title: 'Checklist kit solaire balcon : 15 points avant d\'acheter', description: '15 points à vérifier : orientation, Linky, prise, bail, copropriété, budget ROI, CACSI Enedis, assurance, certification CE.', url: '/guide/checklist-avant-achat-kit-solaire', category: 'Guide', badge: 'Checklist' },
   { title: 'Kit solaire balcon en été : 5 erreurs qui tuent votre production', description: 'Ventilation, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : 5 erreurs qui coûtent jusqu\'à 35 % de production en juillet-août.', url: '/guide/erreurs-production-solaire-ete', category: 'Guide', badge: 'Été 2026' },
   { title: 'Batterie solaire balcon : choisir la bonne capacité', description: 'Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif Bluetti Balco, Zendure, EcoFlow. Guide complet 2026.', url: '/guide/batterie-solaire-balcon-guide', category: 'Guide', badge: 'Été 2026' },
   { title: 'Guide complet solaire balcon pour d\u00e9butants', description: 'Tout savoir avant de se lancer : principes, co\u00fbts, production.', url: '/guide/panneau-solaire-balcon-debutant', category: 'Guide', badge: 'D\u00e9butant' },

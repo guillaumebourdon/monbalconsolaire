@@ -11,10 +11,18 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'checklist-avant-achat-kit-solaire',
+    title: 'Premier kit solaire : la checklist complète avant d\'acheter',
+    excerpt: '15 points à vérifier avant de commander : orientation, prise électrique, Linky, bail, copropriété, budget ROI, CACSI Enedis, assurance, certification CE.',
+    badge: 'Nouveau',
+    date: '7 août 2026',
+    readTime: '12 min',
+  },
+  {
     slug: 'erreurs-production-solaire-ete',
     title: 'Kit solaire balcon en été : 5 erreurs qui tuent votre production',
-    excerpt: 'Ventilation panneau, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : les 5 erreurs qui coûtent jusqu’à 35 % de production en juillet-août.',
-    badge: 'Nouveau',
+    excerpt: "Ventilation panneau, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : les 5 erreurs qui coûtent jusqu'à 35 % de production en juillet-août.",
+    badge: 'Été 2026',
     date: '21 juillet 2026',
     readTime: '10 min',
   },
