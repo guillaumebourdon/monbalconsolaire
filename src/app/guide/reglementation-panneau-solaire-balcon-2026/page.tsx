@@ -169,6 +169,10 @@ export default function ReglementationPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
+                  <p className="text-xs text-charcoal-light mt-1">R&eacute;glementation, CACSI, copropri&eacute;t&eacute;, assurance — la liste compl&egrave;te avant de commander</p>
+                </Link>
                 <Link href="/blog/combien-panneaux-solaires-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien de panneaux sur un balcon&nbsp;? R&egrave;gles et limites</h4>
                   <p className="text-xs text-charcoal-light mt-1">Tableau par puissance, s&eacute;rie vs parall&egrave;le, configurations l&eacute;gales</p>

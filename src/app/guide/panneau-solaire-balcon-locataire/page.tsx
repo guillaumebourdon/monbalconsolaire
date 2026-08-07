@@ -164,6 +164,10 @@ export default function LocatairePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Bail, copro, Linky, prise, CACSI, assurance — tout ce qu&apos;il faut v&eacute;rifier avant de commander</p>
+                </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, 900W</p>

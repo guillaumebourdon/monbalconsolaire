@@ -211,6 +211,10 @@ export default function GuidePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire terrasse 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Vous avez une terrasse ? Les kits adapt&eacute;s aux grandes surfaces</p>
                 </Link>
+                <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Orientation, prise, Linky, bail, copro, CACSI, assurance — la liste compl&egrave;te avant de commander</p>
+                </Link>
               </div>
             </section>
 
