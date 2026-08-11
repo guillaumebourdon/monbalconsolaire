@@ -169,6 +169,10 @@ export default function ReglementationPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/aides-subventions-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Aides et subventions panneau solaire balcon 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">MaPrimeR&eacute;nov&apos;, TVA, prime autoconsommation supprim&eacute;e&nbsp;: la r&eacute;ponse honn&ecirc;te</p>
+                </Link>
                 <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
                   <p className="text-xs text-charcoal-light mt-1">R&eacute;glementation, CACSI, copropri&eacute;t&eacute;, assurance — la liste compl&egrave;te avant de commander</p>

@@ -156,6 +156,10 @@ export default function PrixElectricitePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
+                <Link href="/blog/aides-subventions-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Aides et subventions panneau solaire balcon 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">MaPrimeR&eacute;nov&apos;, TVA, prime autoconsommation&nbsp;: ce qui s&apos;applique vraiment aux kits balcon</p>
+                </Link>
               </div>
             </section>
 
