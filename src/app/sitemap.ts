@@ -79,6 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/anker-solix-rs40p`, lastModified: '2026-07-17', changeFrequency: 'monthly', priority: 0.7 },
 
     // Blog
+    { url: `${BASE_URL}/blog/aides-subventions-panneau-solaire-balcon-2026`, lastModified: '2026-08-11', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/revendre-surplus-solaire-balcon`, lastModified: '2026-07-31', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/linky-panneau-solaire-injection`, lastModified: '2026-07-24', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/combien-rapporte-panneau-solaire-balcon`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.7 },

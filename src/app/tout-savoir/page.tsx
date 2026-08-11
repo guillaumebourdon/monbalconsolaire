@@ -20,6 +20,16 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (août 2026)
   {
+    slug: '/blog/aides-subventions-panneau-solaire-balcon-2026',
+    title: 'Aides et subventions panneau solaire balcon 2026 : la vérité',
+    excerpt: 'MaPrimeRénov\', TVA réduite, prime autoconsommation supprimée en juin 2026 : ce qui s\'applique vraiment aux kits plug-and-play balcon. Réponse honnête.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['debutant', 'reglementation', 'achat'],
+    publishedAt: '2026-08-11',
+    readTime: '8 min',
+  },
+  {
     slug: '/guide/checklist-avant-achat-kit-solaire',
     title: 'Premier kit solaire : la checklist complète avant d\'acheter',
     excerpt: '15 points à vérifier avant de commander : orientation, prise électrique, Linky, bail, copropriété, budget ROI, CACSI Enedis, assurance, certification CE.',

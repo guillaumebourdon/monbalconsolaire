@@ -62,6 +62,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'D\u00e9claration CACSI Enedis : guide pas \u00e0 pas', description: 'Proc\u00e9dure compl\u00e8te avec mod\u00e8les de lettres pr\u00eats \u00e0 copier.', url: '/guide/declaration-cacsi-enedis-panneau-solaire', category: 'Guide', badge: 'CACSI' },
 
   // ─── Blog ───
+  { title: 'Aides et subventions panneau solaire balcon 2026', description: 'MaPrimeRénov, TVA réduite, prime autoconsommation supprimée juin 2026 : ce qui s\'applique vraiment aux kits plug-and-play balcon.', url: '/blog/aides-subventions-panneau-solaire-balcon-2026', category: 'Blog', badge: 'Subventions' },
   { title: 'Revendre son surplus solaire à EDF depuis un balcon ?', description: 'Non, les kits balcon (CACSI) ne peuvent pas revendre. Et même une installation classique ne s\'y retrouve pas à 1,1 c€/kWh.', url: '/blog/revendre-surplus-solaire-balcon', category: 'Blog', badge: 'Réglementation' },
   { title: 'Linky et panneau solaire : injection, index, surplus', description: 'Que voit le Linky avec un kit solaire ? Index soutirage vs injection, mythe du compteur à l\'envers, surplus gratuit EDF, CACSI obligatoire.', url: '/blog/linky-panneau-solaire-injection', category: 'Blog', badge: 'Comprendre' },
   { title: 'Combien rapporte un panneau solaire de balcon ?', description: 'Chiffres r\u00e9els de production et \u00e9conomies pour 7 villes.', url: '/blog/combien-rapporte-panneau-solaire-balcon', category: 'Blog', badge: 'Rentabilit\u00e9' },
