@@ -364,6 +364,10 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h4>
                   <p className="text-xs text-charcoal-light mt-1">CACSI vs EDF OA, tarif de rachat 2026, calcul r&eacute;el</p>
                 </Link>
+                <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet d&eacute;butants 2026 (mis &agrave; jour ao&ucirc;t)</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Fonctionnement, prix (d&egrave;s 429&nbsp;&euro;), r&egrave;glementation, droits des locataires &mdash; tout avant d&apos;acheter</p>
+                </Link>
               </div>
             </section>
 

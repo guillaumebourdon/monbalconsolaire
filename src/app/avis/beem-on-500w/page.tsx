@@ -271,6 +271,10 @@ export default function BeemOn500WcAvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir pour votre balcon</p>
                 </Link>
+                <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet d&eacute;butants (mis &agrave; jour ao&ucirc;t 2026)</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Fonctionnement, prix, r&egrave;glementation, choix du kit &mdash; tout ce qu&apos;il faut savoir avant d&apos;acheter</p>
+                </Link>
               </div>
             </section>
 
