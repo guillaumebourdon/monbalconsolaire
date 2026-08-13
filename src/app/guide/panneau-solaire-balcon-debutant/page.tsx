@@ -7,26 +7,27 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
-  title: 'Panneau solaire balcon : le guide complet pour débutants (2026)',
-  description: 'Tout savoir sur le panneau solaire de balcon en 2026 : installation, réglementation, coût, rentabilité, droits des locataires. Guide complet et indépendant.',
+  title: 'Panneau solaire balcon débutants 2026 : guide complet (mis à jour août)',
+  description: 'Panneau solaire balcon en 2026 : installation, réglementation, coût (dès 429€), rentabilité, droits des locataires. Guide complet mis à jour août 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant',
   },
 };
 
 const faqData = [
-  { question: 'Peut-on installer un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchént sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
+  { question: 'Peut-on installer un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchent sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
   { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installé à moins de 1,80m de hauteur, aucune déclaration préalable de travaux n\'est nécessaire. Seule la déclaration CACSI auprès d\'Enedis est obligatoire (informative, gratuite, 2 minutes en ligne).' },
-  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 450W produit en moyenne 400 à 650 kWh par an selon la region et l\'orientation. Cela correspond à 78-126 euros d\'économies annuelles au tarif EDF actuel.' },
-  { question: 'Un panneau solaire fonctionne-t-il par temps nuageux ?', answer: 'Oui, mais avec un rendement réduit (10-25% de la puissance maximale). Les panneaux solaires fonctionnent avec la lumiere, pas uniquement le soleil direct. La production annuelle tient compte des jours nuageux.' },
-  { question: 'Que devient le surplus d\'électricité ?', answer: 'Pour les kits plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien, mais vous n\'etes pas remunere non plus pour ce surplus.' },
-  { question: 'Faut-il une batterie avec un panneau solaire de balcon ?', answer: 'Non, une batterie n\'est pas indispensable. Sans batterie, vous consommez l\'électricité produite en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coute cher (500-1400 euros supplémentaires).' },
+  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 500W produit en moyenne 430 à 700 kWh par an selon la région et l\'orientation. Cela correspond à 83-136 euros d\'économies annuelles au tarif EDF actuel (0,1940 €/kWh).' },
+  { question: 'Quel est le meilleur rapport qualité-prix en 2026 ?', answer: 'En août 2026, le Beem On 500 Wc (429€) offre le meilleur ratio €/Wc du marché premium à 0,86€/Wc. Le Sunology PLAY 2 est à 518€ (480 Wc) et reste le choix n°1 pour l\'écosystème (batterie VAULT, WiFi natif). Le Beem Kit 300W (299€) est idéal pour les petits balcons ou les budgets serrés.' },
+  { question: 'Un panneau solaire fonctionne-t-il par temps nuageux ?', answer: 'Oui, mais avec un rendement réduit (10-25% de la puissance maximale). Les panneaux solaires fonctionnent avec la lumière, pas uniquement le soleil direct. La production annuelle tient compte des jours nuageux.' },
+  { question: 'Que devient le surplus d\'électricité ?', answer: 'Pour les kits plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecté sur le réseau. Vous ne payez rien, mais vous n\'êtes pas rémunéré non plus pour ce surplus.' },
+  { question: 'Faut-il une batterie avec un panneau solaire de balcon ?', answer: 'Non, une batterie n\'est pas indispensable. Sans batterie, vous consommez l\'électricité produite en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coûte cher (500-1 400 euros supplémentaires). Le ROI passe de 5-7 ans à 8-12 ans avec une batterie.' },
 ];
 
 export default function GuidePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-débutant" datePublished="2026-03-18" />
+      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant" datePublished="2026-03-18" dateModified="2026-08-13" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: "Guides", href: "/guide" }, { label: "Guide débutants" }]} />
       <article className="section-padding">
@@ -35,8 +36,8 @@ export default function GuidePage() {
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide complet</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : le guide complet pour débutants</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installer un kit solaire sur votre balcon en 2026 : fonctionnement, prix, rentabilité, réglementation, et les erreurs à éviter.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>18 mars 2026</span><span>&middot;</span><span>15 min de lecture</span></div>
+            <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installer un kit solaire sur votre balcon en 2026 : fonctionnement, prix (d&egrave;s 299&nbsp;&euro;, meilleur rapport qualit&eacute;-prix &agrave; 429&nbsp;&euro;), rentabilit&eacute;, r&eacute;glementation, et les erreurs &agrave; &eacute;viter. Mis &agrave; jour ao&ucirc;t 2026.</p>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>18 mars 2026</span><span>&middot;</span><span>Mis &agrave; jour ao&ucirc;t 2026</span><span>&middot;</span><span>15 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
@@ -66,10 +67,11 @@ export default function GuidePage() {
               <h3 className="font-bold text-lg mb-3">Le coût d&apos;un kit solaire de balcon</h3>
               <div className="flex items-center gap-3 mb-4">
                 <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />
+                <ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" />
                 <ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" />
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">En 2026, les kits solaires plug-and-play pour balcon co&ucirc;tent entre <span className="data-highlight">299 &euro;</span> (Beem Kit 300W) et <span className="data-highlight">900 &euro;</span> (Zendure SolarFlow + 2 panneaux avec batterie). Le milieu de gamme se situe autour de <span className="data-highlight">599 &euro;</span> avec le Sunology PLAY2 ou le Beem On.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Nouveaut&eacute; 2026 :</strong> le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> (488 &euro;) int&egrave;gre une batterie 1,92 kWh + onduleur. Ajoutez 2 panneaux (~400 &euro;) et vous avez un syst&egrave;me complet avec stockage pour ~900 &euro;. C&apos;est la premi&egrave;re fois que le stockage solaire est accessible en plug-and-play &agrave; ce prix.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">En ao&ucirc;t 2026, les kits solaires plug-and-play pour balcon co&ucirc;tent entre <span className="data-highlight">299 &euro;</span> (Beem Kit 300W) et <span className="data-highlight">900 &euro;</span> (Zendure SolarFlow + 2 panneaux avec batterie). Le meilleur rapport qualit&eacute;-prix en 2026 : le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> &agrave; <span className="data-highlight">429 &euro;</span> (0,86&nbsp;&euro;/Wc), devant le Sunology PLAY 2 &agrave; <span className="data-highlight">518 &euro;</span>.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Nouveaut&eacute; 2026 :</strong> le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> remplace le mod&egrave;le 460 Wc et baisse de 170&nbsp;&euro; (-28 %). C&apos;est d&eacute;sormais le kit le plus rentable du march&eacute; fran&ccedil;ais avec un ROI de 4,8 ans. Pour les budgets plus cons&eacute;quents souhaitant un stockage, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> + 2 panneaux offre un syst&egrave;me complet avec batterie pour ~900&nbsp;&euro;.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Pas de co&ucirc;ts cach&eacute;s : l&apos;h&eacute;bergement est gratuit (votre balcon), l&apos;installation est gratuite (vous le faites vous-m&ecirc;me en quelques minutes), et la maintenance est quasi-inexistante (un coup de chiffon sur le panneau de temps en temps).</p>
 
               <h3 className="font-bold text-lg mb-3 mt-6">La rentabilité réelle</h3>
@@ -97,7 +99,7 @@ export default function GuidePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : données PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, tarif EDF 0,1940 &euro;/kWh. Les panneaux sont garantis 25 ans.</p>
+              <p className="text-xs text-stone">Source : donn&eacute;es PVGIS (Commission europ&eacute;enne), orientation sud, inclinaison 30&deg;, tarif EDF 0,1940&nbsp;&euro;/kWh (ao&ucirc;t 2026). Les panneaux sont garantis 25 ans.</p>
 
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
                 <p className="font-semibold mb-2">Quelle rentabilité pour VOTRE balcon ?</p>
@@ -139,9 +141,9 @@ export default function GuidePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le choix depend de 4 critères principaux :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card"><h4 className="font-bold text-sm mb-2 text-green">1. Votre espace disponible</h4><p className="text-xs text-charcoal-light">Un seul grand panneau (Sunology PLAY2 : 1,76 x 1,13m) ou 4 petits panneaux (Beem Kit : ~80cm chacun) ? Mesurez votre balcon avant de choisir.</p></div>
-                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">2. Votre budget</h4><p className="text-xs text-charcoal-light">De 299&euro; (Beem Kit 300W) à 690&euro; (Sunethic F500). Tous sont rentables en 4-7 ans, mais le budget initial varie du simple au double.</p></div>
+                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">2. Votre budget</h4><p className="text-xs text-charcoal-light">De 299&euro; (Beem Kit 300W) &agrave; 690&euro; (Sunethic F500). Meilleur rapport &euro;/Wc : le Beem On 500 Wc &agrave; 429&euro; (0,86&euro;/Wc). Tous sont rentables en 4-8 ans.</p></div>
                 <div className="card"><h4 className="font-bold text-sm mb-2 text-green">3. Votre orientation</h4><p className="text-xs text-charcoal-light">Sud = 100% du potentiel. Est/Ouest = 80%. Nord = 45%. Si votre balcon est plein nord, un kit solaire n&apos;est probablement pas rentable.</p></div>
-                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">4. Locataire ou propriétaire</h4><p className="text-xs text-charcoal-light">Locataire ? Privilegiez un kit 100% amovible (Sunology PLAY2 avec ballasts, ou Beem On). Propriétaire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
+                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">4. Locataire ou propri&eacute;taire</h4><p className="text-xs text-charcoal-light">Locataire ? Privil&eacute;giez un kit 100% amovible (Sunology PLAY 2 avec ballasts, ou <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link>). Propri&eacute;taire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
               </div>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold text-sm hover:underline">&rarr; Voir notre comparatif complet des kits solaires 2026</Link>
             </section>
@@ -181,14 +183,22 @@ export default function GuidePage() {
               <p className="text-sm text-charcoal-light mb-4">Decouvrez en 30 secondes combien vous pouvez économiser avec un kit solaire sur votre balcon.</p>
               <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes économies &rarr;</Link>
             </div>
-            <div className="my-8">
+            <div className="my-8 space-y-4">
+              <AffiliateCTA
+                productName="Beem On 500 Wc"
+                merchantName="Beem Energy"
+                affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge"
+                label="Voir le Beem On 500 Wc — 429 €"
+                variant="box"
+                position="article_bottom"
+              />
               <AffiliateCTA
                 productName="Sunology PLAY 2"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
-                label="Voir le kit le plus populaire"
-                variant="box"
-                position="article_bottom"
+                label="Voir le Sunology PLAY 2 — 518 €"
+                variant="inline"
+                position="article_bottom_2"
               />
             </div>
 
@@ -220,7 +230,7 @@ export default function GuidePage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europeenne), EDF tarifs réglementés (mai 2026), Enedis, ADEME, sites fabricants (Sunology, Beem, Sunethic). Ce guide est indépendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre méthode</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europ&eacute;enne), EDF tarifs r&eacute;glement&eacute;s (ao&ucirc;t 2026), Enedis, ADEME, sites fabricants (Sunology, Beem Energy, Sunethic, Zendure). Mis &agrave; jour le 13 ao&ucirc;t 2026. Ce guide est ind&eacute;pendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>.</p>
             </div>
           </div>
         </div>
