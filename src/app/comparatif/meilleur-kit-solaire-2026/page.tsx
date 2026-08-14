@@ -305,6 +305,10 @@ export default function ComparatifPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/comparatif/kit-solaire-balcon-vs-toiture" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle rentabilit&eacute; en 2026&nbsp;?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Vous &ecirc;tes propri&eacute;taire d&apos;une maison&nbsp;? Comparez les ROI des deux solutions avant de choisir.</p>
+                </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>

@@ -209,6 +209,10 @@ export default function GuidePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
+                <Link href="/comparatif/kit-solaire-balcon-vs-toiture" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle diff&eacute;rence de rentabilit&eacute;&nbsp;?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Propri&eacute;taire d&apos;une maison&nbsp;? Comparez les deux solutions avec les chiffres honnêtes.</p>
+                </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h4>
                   <p className="text-xs text-charcoal-light mt-1">Guide d'installation pas à pas</p>
