@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog`, lastModified: '2026-05-06', changeFrequency: 'daily', priority: 0.7 },
 
     // Comparatifs
+    { url: `${BASE_URL}/comparatif/kit-solaire-balcon-vs-toiture`, lastModified: '2026-08-14', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-2026`, lastModified: '2026-06-20', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comparatif/sunology-vs-beem`, lastModified: '2026-06-20', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/kit-solaire-petit-budget`, lastModified: '2026-03-25', changeFrequency: 'monthly', priority: 0.8 },

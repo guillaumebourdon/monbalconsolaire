@@ -21,11 +21,21 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/kit-solaire-balcon-vs-toiture',
+    title: 'Kit solaire balcon vs toiture : quelle différence de rentabilité ?',
+    excerpt: 'Plug-and-play (ROI 4–7 ans, 300–750€) vs toiture (ROI 7–12 ans, 6 750–14 000€). Tableau complet, quand choisir quoi.',
+    type: 'comparatif',
+    badge: 'Nouveau',
+    tags: ['comparatif', 'best'],
+    publishedAt: '2026-08-14',
+    readTime: '10 min',
+  },
+  {
     slug: '/comparatif/sunology-play2-vs-beem-on-500w',
     title: 'Sunology PLAY 2 vs Beem On 500 Wc : le nouveau match 2026',
     excerpt: 'PLAY 2 (599€, 450 Wc) vs Beem On 500 Wc (429€, 500 Wc) : 12 critères, ROI comparé, verdict par profil.',
     type: 'comparatif',
-    badge: 'Nouveau',
+    badge: 'Match 2026',
     tags: ['best', 'comparatif', 'marque'],
     publishedAt: '2026-07-28',
     readTime: '10 min',
