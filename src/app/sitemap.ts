@@ -78,6 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/jackery-solarvault-3-pro`, lastModified: '2026-06-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/zendure-solarflow-mix`, lastModified: '2026-06-30', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/anker-solix-rs40p`, lastModified: '2026-07-17', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/avis/hoymiles-hms-800w`, lastModified: '2026-08-18', changeFrequency: 'monthly', priority: 0.7 },
 
     // Blog
     { url: `${BASE_URL}/blog/aides-subventions-panneau-solaire-balcon-2026`, lastModified: '2026-08-11', changeFrequency: 'monthly', priority: 0.7 },

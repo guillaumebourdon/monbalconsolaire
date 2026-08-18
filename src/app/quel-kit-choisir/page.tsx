@@ -242,6 +242,17 @@ const ARTICLES: Article[] = [
     price: '839 \u20ac',
   },
   {
+    slug: '/avis/hoymiles-hms-800w',
+    title: 'Hoymiles HMS-800W-2T',
+    excerpt: '2 MPPT indépendants, WiFi intégré sans DTU, 96,7 % rendement. ~119 €. Le micro-onduleur de référence pour les montages DIY balcon.',
+    type: 'avis',
+    badge: 'DIY',
+    tags: ['diy', 'technique'],
+    publishedAt: '2026-08-18',
+    score: '8.5/10',
+    price: '~119 €',
+  },
+  {
     slug: '/avis/anker-solix-rs40p',
     title: 'Anker SOLIX RS40P',
     excerpt: '2×455 Wc IBC N-type, onduleur WiFi 800 W. 799 €. La technologie premium d\'une marque mondiale.',

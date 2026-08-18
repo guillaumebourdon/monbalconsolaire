@@ -35,6 +35,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Jackery SolarVault 3 Pro : stockage 2,5 kWh LFP', description: 'Batterie LFP 2,52 kWh + 4 MPPT pour 4 000 W. 839€ en promo Prime Day. Garantie 10 ans. Kit complet à 1 139€.', url: '/avis/jackery-solarvault-3-pro', category: 'Avis', badge: '8/10' },
   { title: 'Zendure SolarFlow Mix : le tout-en-un résidentiel', description: '3 modèles, 8-50 kWh LFP, 4 kW bidirectionnel, IA Zenki. À partir de 1 999€. Le stockage résidentiel complet.', url: '/avis/zendure-solarflow-mix', category: 'Avis', badge: '8/10' },
   { title: 'Anker SOLIX RS40P : kit balcon 910 Wc IBC N-type', description: '2×455 Wc IBC N-type, onduleur WiFi 800 W, app SOLIX. 799€. Anker entre sur le marché FR balcon.', url: '/avis/anker-solix-rs40p', category: 'Avis', badge: '7.5/10' },
+  { title: 'Hoymiles HMS-800W-2T : micro-onduleur DIY de référence', description: '2 MPPT indépendants, WiFi intégré sans DTU, rendement 96,7 %. ~119€. Le choix des montages DIY balcon en France.', url: '/avis/hoymiles-hms-800w', category: 'Avis', badge: '8.5/10' },
 
   // ─── Comparatifs ───
   { title: 'Kit solaire balcon vs toiture : rentabilit\u00e9 compar\u00e9e', description: 'Plug-and-play balcon (ROI 4\u20137 ans, 300\u2013750\u20ac) vs installation toiture (ROI 7\u201312 ans, 6 750\u201314 000\u20ac). Tableau complet, chiffres honn\u00eates.', url: '/comparatif/kit-solaire-balcon-vs-toiture', category: 'Comparatif', badge: 'Nouveau' },
