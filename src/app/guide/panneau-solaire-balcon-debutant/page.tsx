@@ -229,6 +229,10 @@ export default function GuidePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
                   <p className="text-xs text-charcoal-light mt-1">Orientation, prise, Linky, bail, copro, CACSI, assurance — la liste compl&egrave;te avant de commander</p>
                 </Link>
+                <Link href="/avis/hoymiles-hms-800w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Hoymiles HMS-800W-2T : assemblez votre kit DIY moins cher</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Vous avez d&eacute;j&agrave; des panneaux ou voulez ma&icirc;triser chaque composant&nbsp;? Le micro-onduleur de r&eacute;f&eacute;rence &agrave; ~119&nbsp;&euro;.</p>
+                </Link>
               </div>
             </section>
 

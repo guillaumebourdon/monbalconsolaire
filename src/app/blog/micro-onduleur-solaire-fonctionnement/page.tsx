@@ -443,6 +443,10 @@ export default function MicroOnduleurPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Consommation en veille : combien &ccedil;a co&ucirc;te la nuit ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">0,3&ndash;0,5&nbsp;W pour le micro-onduleur, davantage pour la gateway&nbsp;&mdash;&nbsp;chiffres par kit</p>
                 </Link>
+                <Link href="/avis/hoymiles-hms-800w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Hoymiles HMS-800W-2T : avis complet du micro-onduleur DIY</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Test ind&eacute;pendant, specs, ROI d&rsquo;un kit DIY avec le HMS-800W-2T. ~119&nbsp;&euro;.</p>
+                </Link>
               </div>
             </section>
 

@@ -161,6 +161,10 @@ export default function InstallerKitPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
                 </Link>
+                <Link href="/avis/hoymiles-hms-800w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Hoymiles HMS-800W-2T : le micro-onduleur pour kit DIY</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Assembler son kit soi-m&ecirc;me&nbsp;? Le HMS-800W-2T &agrave; ~119&nbsp;&euro; est la pi&egrave;ce centrale.</p>
+                </Link>
               </div>
             </section>
 
