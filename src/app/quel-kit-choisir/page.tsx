@@ -136,9 +136,10 @@ const ARTICLES: Article[] = [
     title: 'Beem On 500 Wc',
     excerpt: '429 \u20ac, 500 Wc, 0,86 \u20ac/Wc : le meilleur rapport qualit\u00e9-prix du march\u00e9. ROI ~4,8 ans.',
     type: 'avis',
-    badge: 'Meilleur prix',
-    tags: ['marque', 'best', 'puissance'],
+    badge: 'Meilleur rapport qualit\u00e9-prix',
+    tags: ['marque', 'best', 'puissance', 'budget'],
     publishedAt: '2026-06-17',
+    updatedAt: '2026-08-20',
     score: '8.5/10',
     price: '429 \u20ac',
   },
@@ -343,7 +344,12 @@ export default function QuelKitChoisirPage() {
           <div className="badge-green mb-4 inline-block">Comparatifs &amp; avis</div>
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Quel kit solaire choisir ?</h1>
           <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
-            Comparatifs indépendants et avis détaillés pour trouver le kit adapté à votre balcon.
+            Comparatifs ind&eacute;pendants et avis d&eacute;taill&eacute;s pour trouver le kit adapt&eacute; &agrave; votre balcon.
+          </p>
+          <p className="text-xs text-stone mt-3">
+            <span className="inline-flex items-center gap-1.5 bg-amber-pale text-amber-dark font-semibold px-3 py-1 rounded-full">
+              &#10003; Prix et disponibilit&eacute;s v&eacute;rifi&eacute;s — mis &agrave; jour ao&ucirc;t 2026
+            </span>
           </p>
         </div>
 
@@ -370,6 +376,28 @@ export default function QuelKitChoisirPage() {
             </button>
           ))}
         </div>
+
+        {filter === 'all' && (
+          <div className="card bg-green-pale/40 border-green/20 mb-6 flex items-start gap-4 flex-wrap">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-green text-white">Recommandation ao&ucirc;t 2026</span>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-pale text-amber-dark">Meilleur rapport qualit&eacute;-prix</span>
+              </div>
+              <p className="font-bold text-base text-charcoal mb-1">
+                <Link href="/avis/beem-on-500w" className="hover:text-green transition-colors">
+                  Beem On 500 Wc &mdash; 429 &euro; &bull; 0,86 &euro;/Wc &bull; ROI ~4,8 ans
+                </Link>
+              </p>
+              <p className="text-sm text-charcoal-light leading-relaxed">
+                500 Wc bifacial TOPCon, micro-onduleur int&eacute;gr&eacute;, app Beem, garantie 25 ans syst&egrave;me. La r&eacute;f&eacute;rence &laquo;&thinsp;meilleur prix&thinsp;&raquo; en ao&ucirc;t 2026 pour un balcon standard.
+              </p>
+            </div>
+            <Link href="/avis/beem-on-500w" className="btn-primary text-sm flex-shrink-0">
+              Voir l&rsquo;avis &rarr;
+            </Link>
+          </div>
+        )}
 
         <p className="text-xs text-stone text-center mb-6">
           {filteredArticles.length} {filteredArticles.length === 1 ? 'article' : 'articles'}
