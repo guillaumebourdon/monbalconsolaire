@@ -403,9 +403,15 @@ export default function GuideErreursProdSolEte() {
               <div className="space-y-4">
                 {[
                   {
+                    href: '/blog/panneau-solaire-canicule-production',
+                    badge: 'Blog',
+                    title: 'Panneau solaire et canicule : impact réel sur la production',
+                    desc: 'Coefficient de température chiffré, PERC vs N-type TOPCon/HJT, pertes par journée de canicule et astuces concrètes.',
+                  },
+                  {
                     href: '/blog/entretien-nettoyage-panneau-solaire-balcon',
                     badge: 'Blog',
-                    title: 'Entretien et nettoyage d’un panneau solaire de balcon',
+                    title: "Entretien et nettoyage d'un panneau solaire de balcon",
                     desc: 'Fréquence, produits, erreurs à éviter, impact sur la production. Checklist saisonnière.',
                   },
                   {

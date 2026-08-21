@@ -429,6 +429,10 @@ export default function ProductionSolaireEteHiverPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/panneau-solaire-canicule-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et canicule&nbsp;: impact r&eacute;el sur la production</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Coefficient de temp&eacute;rature, pertes chiffr&eacute;es, PERC vs TOPCon/HJT et 5 astuces pour limiter la casse en &eacute;t&eacute;</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien ça produit vraiment ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Données mois par mois pour Marseille, Lyon et Lille, et 3 astuces pour maximiser la production hivernale</p>
