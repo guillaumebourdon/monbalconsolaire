@@ -20,11 +20,21 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (août 2026)
   {
+    slug: '/blog/panneau-solaire-canicule-production',
+    title: 'Panneau solaire et canicule : impact réel sur la production',
+    excerpt: 'Coefficient de température, pertes chiffrées, PERC vs TOPCon/HJT : ce que la chaleur fait vraiment à votre kit de balcon — et comment limiter la casse.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['performance', 'ete', 'optimisation'],
+    publishedAt: '2026-08-21',
+    readTime: '9 min',
+  },
+  {
     slug: '/blog/aides-subventions-panneau-solaire-balcon-2026',
     title: 'Aides et subventions panneau solaire balcon 2026 : la vérité',
     excerpt: 'MaPrimeRénov\', TVA réduite, prime autoconsommation supprimée en juin 2026 : ce qui s\'applique vraiment aux kits plug-and-play balcon. Réponse honnête.',
     type: 'analyse',
-    badge: 'Nouveau',
+    badge: 'Réglementation',
     tags: ['debutant', 'reglementation', 'achat'],
     publishedAt: '2026-08-11',
     readTime: '8 min',
