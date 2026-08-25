@@ -198,6 +198,10 @@ export default function AutoconsommationPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h4>
                   <p className="text-xs text-charcoal-light mt-1">8 astuces pour passer de 40 % &agrave; 85 %</p>
                 </Link>
+                <Link href="/blog/facture-edf-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment lire sa facture EDF avec un kit solaire balcon</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Ce qui change sur la facture, comment mesurer ses &eacute;conomies et le r&ocirc;le du Linky.</p>
+                </Link>
               </div>
             </section>
 

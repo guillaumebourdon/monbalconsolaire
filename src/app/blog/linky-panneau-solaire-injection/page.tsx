@@ -329,6 +329,10 @@ export default function LinkyPanneauSolaireInjectionPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, limite 800&nbsp;W, CACSI&nbsp;: ce que dit la loi</p>
                 </Link>
+                <Link href="/blog/facture-edf-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment lire sa facture EDF avec un kit solaire balcon</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Ce qui change (et ne change pas) sur votre facture, &eacute;conomies r&eacute;elles et m&eacute;thode de mesure.</p>
+                </Link>
               </div>
             </section>
 
