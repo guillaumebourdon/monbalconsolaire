@@ -20,11 +20,21 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (août 2026)
   {
+    slug: '/blog/facture-edf-kit-solaire',
+    title: 'Comment lire sa facture EDF avec un kit solaire balcon',
+    excerpt: 'EDF ne mentionne pas votre kit sur la facture — voici ce qui change vraiment, comment mesurer vos économies réelles et ce que lit (ou non) votre Linky.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['debutant', 'comprendre', 'edf'],
+    publishedAt: '2026-08-25',
+    readTime: '8 min',
+  },
+  {
     slug: '/blog/panneau-solaire-canicule-production',
     title: 'Panneau solaire et canicule : impact réel sur la production',
     excerpt: 'Coefficient de température, pertes chiffrées, PERC vs TOPCon/HJT : ce que la chaleur fait vraiment à votre kit de balcon — et comment limiter la casse.',
     type: 'analyse',
-    badge: 'Nouveau',
+    badge: 'Été 2026',
     tags: ['performance', 'ete', 'optimisation'],
     publishedAt: '2026-08-21',
     readTime: '9 min',
