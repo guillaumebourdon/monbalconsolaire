@@ -116,7 +116,7 @@ export default function TalonConsommationPage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                Autrement dit : <strong>un tiers à la moitié de votre facture EDF</strong> sert à alimenter des appareils que vous n&apos;utilisez même pas activement. C&apos;est de l&apos;argent qui part en silence, et c&apos;est exactement la cible idéale du solaire.
+                Autrement dit : <strong>un tiers &agrave; la moiti&eacute; de <Link href="/blog/facture-edf-kit-solaire" className="text-green hover:underline font-semibold">votre facture EDF</Link></strong> sert &agrave; alimenter des appareils que vous n&apos;utilisez m&ecirc;me pas activement. C&apos;est de l&apos;argent qui part en silence, et c&apos;est exactement la cible id&eacute;ale du solaire.
               </p>
             </section>
 

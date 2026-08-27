@@ -83,7 +83,7 @@ export default function HiverProductionPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Hiver vs été : le ratio réel</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">En moyenne, la production hivernale (novembre à février) représente environ <span className="data-highlight">20 à 30%</span> de la production estivale (mai à août). Voici ce que ça donne par ville :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">En moyenne, la production hivernale (novembre &agrave; f&eacute;vrier) repr&eacute;sente environ <span className="data-highlight">20 &agrave; 30&nbsp;%</span> de la <Link href="/blog/panneau-solaire-canicule-production" className="text-green font-semibold hover:underline">production estivale</Link> (mai &agrave; ao&ucirc;t) &mdash; laquelle est parfois inf&eacute;rieure au potentiel th&eacute;orique lors des canicules. Voici ce que &ccedil;a donne par ville&nbsp;:</p>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 {[
                   { city: 'Marseille', summer: '315 kWh', winter: '125 kWh', ratio: '40%' },
