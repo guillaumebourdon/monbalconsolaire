@@ -81,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/hoymiles-hms-800w`, lastModified: '2026-08-18', changeFrequency: 'monthly', priority: 0.7 },
 
     // Blog
+    { url: `${BASE_URL}/blog/proteger-panneau-solaire-oiseaux-intemperies`, lastModified: '2026-08-28', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/facture-edf-kit-solaire`, lastModified: '2026-08-25', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/panneau-solaire-canicule-production`, lastModified: '2026-08-21', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/aides-subventions-panneau-solaire-balcon-2026`, lastModified: '2026-08-11', changeFrequency: 'monthly', priority: 0.7 },

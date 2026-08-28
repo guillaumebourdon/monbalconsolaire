@@ -20,11 +20,21 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (août 2026)
   {
+    slug: '/blog/proteger-panneau-solaire-oiseaux-intemperies',
+    title: 'Protéger son panneau solaire balcon des oiseaux et intempéries',
+    excerpt: 'Fientes acides, grêle, vent : solutions anti-oiseaux DIY, résistance certifiée et couverture assurance pour votre kit solaire de balcon.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['entretien', 'protection', 'pratique'],
+    publishedAt: '2026-08-28',
+    readTime: '9 min',
+  },
+  {
     slug: '/blog/facture-edf-kit-solaire',
     title: 'Comment lire sa facture EDF avec un kit solaire balcon',
     excerpt: 'EDF ne mentionne pas votre kit sur la facture — voici ce qui change vraiment, comment mesurer vos économies réelles et ce que lit (ou non) votre Linky.',
     type: 'analyse',
-    badge: 'Nouveau',
+    badge: 'Comprendre',
     tags: ['debutant', 'comprendre', 'edf'],
     publishedAt: '2026-08-25',
     readTime: '8 min',
