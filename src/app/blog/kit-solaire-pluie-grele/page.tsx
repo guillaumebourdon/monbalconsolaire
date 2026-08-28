@@ -248,6 +248,10 @@ export default function KitSolairePluieGrelePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
+                <Link href="/blog/proteger-panneau-solaire-oiseaux-intemperies" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Grillage anti-pigeons, r&eacute;sistance IEC&nbsp;61215, assurance habitation : tout le guide</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien &ccedil;a produit ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Donn&eacute;es de production mois par mois pour 3 villes</p>

@@ -333,6 +333,10 @@ export default function EntretienNettoyagePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
+                <Link href="/blog/proteger-panneau-solaire-oiseaux-intemperies" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Grillage anti-pigeons, r&eacute;sistance gr&ecirc;le IEC&nbsp;61215 et assurance habitation</p>
+                </Link>
                 <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h4>
                   <p className="text-xs text-charcoal-light mt-1">Surchauffe, mauvais angle, salissures : le guide complet pour l&apos;&eacute;t&eacute;</p>

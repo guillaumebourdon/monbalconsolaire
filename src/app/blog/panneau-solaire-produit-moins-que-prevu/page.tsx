@@ -311,6 +311,10 @@ export default function PanneauProduitMoinsPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/proteger-panneau-solaire-oiseaux-intemperies" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Fientes = hot spots = chute de production : solutions anti-oiseaux et entretien pr&eacute;ventif</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-canicule-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et canicule&nbsp;: impact r&eacute;el sur la production</h4>
                   <p className="text-xs text-charcoal-light mt-1">Si votre production chute en juillet-ao&ucirc;t, la chaleur est souvent en cause &mdash; pertes chiffr&eacute;es et technologies qui r&eacute;sistent mieux</p>
