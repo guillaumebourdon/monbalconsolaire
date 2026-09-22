@@ -361,6 +361,10 @@ export default function TalonConsommationPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/panneau-solaire-location-meublee-airbnb" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le talon de base (frigo, veille, box) — calcul de rentabilit&eacute; en location</p>
+                </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment ça marche</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le principe technique du talon, du surplus et de l&apos;injection réseau</p>

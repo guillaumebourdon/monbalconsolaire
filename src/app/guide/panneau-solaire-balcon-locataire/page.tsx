@@ -164,6 +164,10 @@ export default function LocatairePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/panneau-solaire-location-meublee-airbnb" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Autorisations r&eacute;elles, CACSI, ROI et avantage fiscal LMNP</p>
+                </Link>
                 <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
                   <p className="text-xs text-charcoal-light mt-1">Bail, copro, Linky, prise, CACSI, assurance — tout ce qu&apos;il faut v&eacute;rifier avant de commander</p>
