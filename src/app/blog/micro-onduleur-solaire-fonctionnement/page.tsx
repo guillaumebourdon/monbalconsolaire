@@ -423,6 +423,10 @@ export default function MicroOnduleurPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
+                <Link href="/blog/multi-panneaux-serie-parallele" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Multi-panneaux&nbsp;: s&eacute;rie ou parall&egrave;le&nbsp;? C&acirc;blage et disjoncteur</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Double-MPPT, c&acirc;bles MC4, limite 800 Wc&nbsp;: le guide technique</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Cause n&deg;5 : micro-onduleur brid&eacute; ou en panne</p>
