@@ -20,6 +20,16 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (septembre 2026)
   {
+    slug: '/blog/multi-panneaux-serie-parallele',
+    title: 'Multi-panneaux solaires balcon : série ou parallèle ? Câblage et disjoncteur',
+    excerpt: 'Série interdit, parallèle DC ou AC, micro-onduleur double-MPPT, câbles MC4, disjoncteur 16A : le guide pratique du câblage multi-panneaux pour balcon.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['technique', 'cablage', 'micro-onduleur', 'installation'],
+    publishedAt: '2026-09-25',
+    readTime: '10 min',
+  },
+  {
     slug: '/blog/panneau-solaire-location-meublee-airbnb',
     title: 'Kit solaire balcon en location meublée et Airbnb : ce que la loi autorise',
     excerpt: 'Locataire, propriétaire-hôte Airbnb : autorisations réelles, CACSI obligatoire, ROI chiffré et avantage fiscal LMNP selon votre situation.',
