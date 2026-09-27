@@ -310,7 +310,7 @@ export default function CoproprietePage() {
               <p className="text-charcoal-light leading-relaxed">Comparatif complet : <Link href="/quel-kit-choisir" className="text-green hover:underline">quel kit solaire choisir &rarr;</Link></p>
               <div className="my-6">
                 <AffiliateCTA
-                  productName="Sunology PLAY 2"
+                  productName="Sunology PLAY"
                   merchantName="Sunology"
                   affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
                   label="Voir le Sunology PLAY"

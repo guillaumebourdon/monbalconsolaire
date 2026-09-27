@@ -162,7 +162,7 @@ export default function BluettiBalco260AvisPage() {
                       ['Bluetti Balco 260', '2,56 kWh', '849 €', 'Non inclus', '7/10', true],
                       ['Zendure SolarFlow', '1,92 kWh', '488 €', '840 Wc inclus', '8.5/10', false],
                       ['EcoFlow PowerStream (arr\u00eat\u00e9)', '1-2 kWh', '599 €+', 'Option', '8/10', false],
-                      ['Sunology PLAY MAX', '0,7 kWh', '1 179 €', '480 Wc inclus', '7/10', false],
+                      ['Sunology PLAY MAX', '0,7 kWh', '699 €', '450 Wc inclus', '8/10', false],
                     ].map(([name, battery, price, panels, score, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>
                         <td className="py-2 px-3">{name as string}</td>

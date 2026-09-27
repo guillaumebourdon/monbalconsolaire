@@ -21,7 +21,7 @@ const faqData = [
   },
   {
     question: 'Quelle est la différence avec un Sunology PLAY MAX ?',
-    answer: 'Le PLAY MAX est un kit fermé : 1 panneau Sunology + 1 batterie VAULT propriétaire, livrés ensemble pour 1 179 €. Le PowerStream est un système ouvert : vous achetez le PowerStream seul (599 €), puis ajoutez vos panneaux et batterie séparément. Plus cher au total mais infiniment plus flexible : vous pouvez démarrer avec 1 panneau, ajouter une batterie 2 ans plus tard, augmenter la puissance ensuite.',
+    answer: 'Le PLAY MAX est un kit fermé : 1 station Sunology 450 Wc + 1 batterie VAULT propriétaire, livrées ensemble pour 699 €. Le PowerStream est un système ouvert : vous achetez le PowerStream seul (599 €), puis ajoutez vos panneaux et batterie séparément. Plus cher au total mais infiniment plus flexible : vous pouvez démarrer avec 1 panneau, ajouter une batterie 2 ans plus tard, augmenter la puissance ensuite.',
   },
   {
     question: 'Le PowerStream est-il compatible avec n\'importe quel panneau solaire ?',
@@ -33,7 +33,7 @@ const faqData = [
   },
   {
     question: 'Combien ça coûte au total un système complet ?',
-    answer: 'Un setup complet EcoFlow PowerStream + 2 panneaux 400W + batterie DELTA 2 (1 kWh) revient à environ 1 800-2 100 € en prix conseillés (599 € PowerStream + 400-500 € pour 2 panneaux 400W + 800-900 € batterie DELTA 2). C\'est plus cher qu\'un Sunology PLAY 2 sans batterie (599 €) mais comparable à un PLAY MAX (1 179 € pour 1 panneau + batterie). L\'avantage : la batterie sert aussi de groupe électrogène portable.',
+    answer: 'Un setup complet EcoFlow PowerStream + 2 panneaux 400W + batterie DELTA 2 (1 kWh) revient à environ 1 800-2 100 € en prix conseillés (599 € PowerStream + 400-500 € pour 2 panneaux 400W + 800-900 € batterie DELTA 2). C\'est bien plus cher qu\'un Sunology PLAY sans batterie (599 €) ou qu\'un PLAY MAX (699 € pour 1 panneau + batterie 700 Wh), mais avec plus de capacité. L\'avantage : la batterie sert aussi de groupe électrogène portable.',
   },
   {
     question: 'L\'application EcoFlow est-elle vraiment utile au quotidien ?',

@@ -165,7 +165,7 @@ export default function GuideBatterieBalcon() {
 
               <h3 className="font-bold text-lg mb-3">700&nbsp;Wh &mdash; le stockage d&rsquo;entr&eacute;e</h3>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                C&rsquo;est la capacit&eacute; de la batterie VAULT embarqu&eacute;e dans le <Link href="/avis/sunology-play-max" className="text-green hover:underline font-semibold">Sunology PLAY MAX</Link> (1&nbsp;179&nbsp;&euro; kit complet). 700&nbsp;Wh couvrent 3&nbsp;&agrave;&nbsp;4 heures de talon de consommation. C&rsquo;est suffisant pour passer une soir&eacute;e courte, insuffisant pour une nuit compl&egrave;te.
+                C&rsquo;est la capacit&eacute; de la batterie VAULT embarqu&eacute;e dans le <Link href="/avis/sunology-play-max" className="text-green hover:underline font-semibold">Sunology PLAY MAX</Link> (699&nbsp;&euro; station 450&nbsp;Wc + batterie). 700&nbsp;Wh couvrent 3&nbsp;&agrave;&nbsp;4 heures de talon de consommation. C&rsquo;est suffisant pour passer une soir&eacute;e courte, insuffisant pour une nuit compl&egrave;te.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 <strong>Pour qui&nbsp;:</strong> profil B avec une consommation de soir&eacute;e mod&eacute;r&eacute;e. Budget serr&eacute;. Premi&egrave;re exp&eacute;rience avec le stockage solaire.
@@ -281,10 +281,10 @@ export default function GuideBatterieBalcon() {
                       {
                         name: 'Sunology PLAY MAX',
                         href: '/avis/sunology-play-max',
-                        capacity: '700 Wh LFP',
-                        price: '1 179 €',
+                        capacity: '700 Wh Li-ion',
+                        price: '699 €',
                         panels: 'Oui (450 Wc)',
-                        extensible: 'Non',
+                        extensible: 'Oui (VAULT supp.)',
                         highlight: false,
                       },
                       {

@@ -400,7 +400,7 @@ export default function ProductionSolaireEteHiverPage() {
             {/* === AFFILIATECTA === */}
             <div className="my-8">
               <AffiliateCTA
-                productName="Sunology PLAY 2"
+                productName="Sunology PLAY"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
                 label="Voir le kit le plus vendu (450 Wc, 599 €)"

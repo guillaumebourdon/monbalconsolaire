@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Faut-il une batterie avec un kit solaire de balcon ?', answer: 'Non, ce n\'est pas indispensable. Sans batterie, vous consommez l\'électricité en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coûte 500 à 1 400€ supplémentaires, ce qui allonge significativement le ROI.' },
-  { question: 'Quelle est la batterie la moins chère pour un kit solaire ?', answer: 'La Sunology VAULT (700 Wh) est la plus accessible à ~580€ seule, ou 1 179€ en bundle avec le kit PLAY MAX. C\'est la solution de stockage la plus abordable du marché plug-and-play.' },
+  { question: 'Faut-il une batterie avec un kit solaire de balcon ?', answer: 'Non, ce n\'est pas indispensable. Sans batterie, vous consommez l\'électricité en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coûte 100 à 1 400€ supplémentaires (100€ seulement entre le PLAY et le PLAY MAX), ce qui allonge le ROI si vous êtes présent en journée.' },
+  { question: 'Quelle est la batterie la moins chère pour un kit solaire ?', answer: 'La Sunology VAULT (700 Wh) coûte 499€ seule, mais le plus accessible est le PLAY MAX : station 450 Wc + VAULT pour 699€, soit 100€ de plus que le kit PLAY sans batterie. C\'est la solution de stockage complète (panneau inclus) la plus abordable du marché plug-and-play.' },
   { question: 'Combien d\'heures d\'autonomie offre une batterie solaire ?', answer: 'La VAULT de Sunology (700 Wh) offre environ 5 heures d\'autonomie pour le talon de consommation (frigo + box + veilles). La STOREY (2,2 kWh) peut couvrir une soirée complète.' },
-  { question: 'Une batterie solaire est-elle rentable ?', answer: 'C\'est moins évident qu\'un kit seul. L\'investissement supplémentaire (500-1400€) ne se rentabilise que si vous augmentez significativement votre taux d\'autoconsommation. En pratique, le gain supplémentaire est de 30-60€/an, soit un ROI de 8 à 20+ ans sur la batterie seule.' },
+  { question: 'Une batterie solaire est-elle rentable ?', answer: 'C\'est moins évident qu\'un kit seul. L\'investissement supplémentaire (100-1 400€) ne se rentabilise que si vous augmentez significativement votre taux d\'autoconsommation. En pratique, le gain supplémentaire est de 30-60€/an, soit un ROI de 8 à 20+ ans sur la batterie seule.' },
 ];
 
 export default function BatteriePage() {
@@ -58,25 +58,25 @@ export default function BatteriePage() {
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h4 className="font-bold text-green mb-2">Sans batterie (kit seul)</h4>
                   <div className="space-y-2 text-sm text-charcoal-light">
-                    <p>Investissement : <span className="font-mono font-medium">599€</span></p>
+                    <p>Investissement : <span className="font-mono font-medium">599€</span> (PLAY 500 Wc)</p>
                     <p>Autoconsommation : <span className="font-mono font-medium">~40%</span></p>
-                    <p>Économies/an : <span className="font-mono font-medium text-green">~97€</span></p>
-                    <p>ROI : <span className="font-mono font-medium">4,3 ans</span></p>
-                    <p>Éco. sur 25 ans : <span className="font-mono font-medium text-green">~2 400€</span></p>
+                    <p>Économies/an : <span className="font-mono font-medium text-green">~40€</span></p>
+                    <p>ROI : <span className="font-mono font-medium">12,5 ans</span></p>
+                    <p>Éco. sur 25 ans : <span className="font-mono font-medium text-green">~1 500€</span></p>
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
                   <h4 className="font-bold text-amber-dark mb-2">Avec batterie (kit + VAULT)</h4>
                   <div className="space-y-2 text-sm text-charcoal-light">
-                    <p>Investissement : <span className="font-mono font-medium">1 179€</span></p>
+                    <p>Investissement : <span className="font-mono font-medium">699€</span> (PLAY MAX 450 Wc)</p>
                     <p>Autoconsommation : <span className="font-mono font-medium">~70%</span></p>
-                    <p>Économies/an : <span className="font-mono font-medium text-amber-dark">~135€</span></p>
-                    <p>ROI : <span className="font-mono font-medium">6,1 ans</span></p>
-                    <p>Éco. sur 25 ans : <span className="font-mono font-medium text-amber-dark">~3 375€</span></p>
+                    <p>Économies/an : <span className="font-mono font-medium text-amber-dark">~62€</span></p>
+                    <p>ROI : <span className="font-mono font-medium">9,7 ans</span></p>
+                    <p>Éco. sur 25 ans : <span className="font-mono font-medium text-amber-dark">~2 360€</span></p>
                   </div>
                 </div>
               </div>
-              <p className="text-charcoal-light leading-relaxed">La batterie ajoute ~38€/an d&apos;économies supplémentaires, pour un surcoût de 580€. Le ROI de la batterie seule est donc de <span className="data-highlight">~15 ans</span>. C&apos;est rentable sur la durée de vie, mais beaucoup moins intéressant que le kit seul.</p>
+              <p className="text-charcoal-light leading-relaxed">Dans ce scénario (foyer peu présent en journée, 1 200 kWh/kWc, PR 0,85, 0,1940 €/kWh, +3,3 %/an), la batterie ajoute ~22€/an d&apos;économies pour un surcoût de seulement 100€ depuis que le PLAY MAX est passé à 699€ : le ROI tombe de <span className="data-highlight">12,5 à 9,7 ans</span>. Si vous êtes présent en journée (85 % d&apos;autoconsommation sans batterie), l&apos;écart s&apos;inverse légèrement : 6,5 ans pour le PLAY seul contre 7,4 ans pour le PLAY MAX.</p>
             </section>
 
             <section>
@@ -93,7 +93,7 @@ export default function BatteriePage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Sunology VAULT', '700 Wh', '~580€', '829€/kWh', '~5h', 'Nomade + plug-and-play', true],
+                      ['Sunology VAULT', '700 Wh', '499€', '713€/kWh', '~5h', 'Nomade + plug-and-play', true],
                       ['Sunology STOREY', '2,2 kWh', '1 390€', '632€/kWh', '~15h', 'Fixe plug-and-play', false],
                       ['Beem Battery', '2,2 kWh', '~5 500€**', '2 500€/kWh', '~15h', 'Fixe plug-and-play', false],
                       ['EcoFlow PowerStream (arr\u00eat\u00e9)', '2 kWh', '~1 800\u20ac***', '900\u20ac/kWh', '~13h', 'Modulaire', false],
@@ -125,20 +125,20 @@ export default function BatteriePage() {
               <div className="space-y-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/sunology-play-max-1.webp" alt="Sunology PLAY MAX" href="/avis/sunology-play-max" size="lg" /><div><div className="badge-green mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Kit 450W + batterie VAULT 700 Wh · Plug-and-play</p></div></div>
-                    <div className="text-right"><div className="font-mono text-2xl font-bold text-green">1 179 €</div></div>
+                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/sunology-play-max-1.webp" alt="Sunology PLAY MAX" href="/avis/sunology-play-max" size="lg" /><div><div className="badge-green mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Station 450 Wc + batterie VAULT 700 Wh · Plug-and-play</p></div></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-green">699 €</div></div>
                   </div>
-                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PLAY MAX est le bundle le plus accessible du marché : le kit PLAY2 (450W) + la batterie nomade VAULT (700 Wh) pour 1 179€. La VAULT est compacte, portable (utilisable en camping/pique-nique), et offre ~5 heures d&apos;autonomie sur le talon de consommation.</p>
+                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PLAY MAX est le kit + batterie le plus accessible du marché : une station Sunology de 450 Wc avec la batterie VAULT (700 Wh) intégrée pour 699€ (contre 1 179€ auparavant), soit 100€ de plus que le PLAY sans batterie. La VAULT est amovible (3,7 kg, IP65, utilisable en camping/pique-nique) et offre ~5 heures d&apos;autonomie sur le talon de consommation.</p>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points forts</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> Le bundle le moins cher du marché</li>
-                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Batterie nomade : utilisable en extérieur (4 ports USB/AC)</li>
-                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Installation identique au PLAY2 (1 min + branchement batterie)</li>
+                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Batterie amovible : utilisable en extérieur (4 ports de connexion)</li>
+                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Installation identique au PLAY (batterie intégrée à la station)</li>
                   </ul>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points faibles</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">
                     <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> 700 Wh = seulement ~5h d&apos;autonomie (ne couvre pas une nuit complète)</li>
-                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> La batterie ne communique pas avec le panneau (pas de gestion intelligente)</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Onduleur plafonné à 450 W et cellules Li-ion (pas LFP)</li>
                   </ul>
                 </div>
 
@@ -188,7 +188,7 @@ export default function BatteriePage() {
                   <p className="text-sm text-charcoal-light">Le meilleur ROI, de loin. Commencez par un <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">kit Sunology PLAY (599€) ou Beem On 500 Wc (429€)</Link>. Vous pouvez toujours ajouter une batterie plus tard si le besoin se fait sentir.</p>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-1">Pour les absents la journée → PLAY MAX (1 179€)</h4>
+                  <h4 className="font-bold text-amber-dark mb-1">Pour les absents la journée → PLAY MAX (699€)</h4>
                   <p className="text-sm text-charcoal-light">Si vous travaillez en journée et consommez principalement le soir, le bundle PLAY MAX avec la VAULT offre un bon compromis prix/capacité.</p>
                 </div>
                 <div className="card-lg">

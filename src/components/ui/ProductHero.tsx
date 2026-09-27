@@ -7,6 +7,8 @@ import Image from 'next/image';
 interface ProductHeroProps {
   brand: string;
   name: string;
+  /** Nom de produit envoyé à GA4 (data-product), si différent du nom affiché. Préfixé par la marque. */
+  trackingName?: string;
   power: string;
   price: string;
   score: string;
@@ -27,6 +29,7 @@ declare global {
 export function ProductHero({
   brand,
   name,
+  trackingName,
   power,
   price,
   score,
@@ -109,7 +112,7 @@ export function ProductHero({
             href={affiliateUrl}
             target="_blank"
             rel="noopener noreferrer nofollow sponsored"
-            data-product={`${brand} ${name}`}
+            data-product={`${brand} ${trackingName ?? name}`}
             data-merchant={brand}
             data-position="product-hero"
             className="btn-primary w-full justify-center text-sm"

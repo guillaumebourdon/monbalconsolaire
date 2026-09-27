@@ -197,6 +197,9 @@ export default function TalonConsommationPage() {
                   <li>&bull; C&apos;est <strong>374 € par an qui partent en silence</strong>, sans que vous utilisiez activement quoi que ce soit.</li>
                 </ul>
               </div>
+              <p className="text-sm text-charcoal-light leading-relaxed mt-4">
+                Le Linky donne le total du foyer, pas le d&eacute;tail. Pour savoir quel appareil p&egrave;se le plus dans ce talon (vieux cong&eacute;lateur, box, d&eacute;codeur), branchez-les un par un sur un <Link href="/blog/wattmetre-prise-mesurer-consommation" className="text-green hover:underline">wattm&egrave;tre prise pour mesurer la consommation</Link> pendant 24&nbsp;h.
+              </p>
             </section>
 
             <section>

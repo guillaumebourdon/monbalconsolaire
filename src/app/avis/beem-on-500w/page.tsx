@@ -128,7 +128,7 @@ export default function BeemOn500WcAvisPage() {
                 {[
                   { t: 'Beembox obligatoire pour le suivi', d: 'Contrairement au Sunology PLAY2 dont le micro-onduleur embarque le WiFi, le Beem On nécessite un boîtier Beembox branché sur votre box internet. C\'est inclus dans le kit, mais c\'est un appareil supplémentaire à brancher et à maintenir.' },
                   { t: 'Panneau imposant : 1,95 m de haut', d: 'Avec ses 1 950 x 1 134 mm, c\'est le plus grand panneau mono du marché (le Sunology PLAY 500 Wc fait 1 800 x 1 134 mm). Sur un petit balcon, ça peut poser problème.' },
-                  { t: 'Pas de solution batterie abordable', d: 'Beem propose la Beem Battery mais à partir de 6 190€ le kit complet. C\'est 14x le prix du panneau seul. Sunology a le VAULT à 1 379€ (kit + batterie), bien plus accessible. Si le stockage vous intéresse, regardez plutôt Sunology ou Zendure.' },
+                  { t: 'Pas de solution batterie abordable', d: 'Beem propose la Beem Battery mais à partir de 6 190€ le kit complet. C\'est 14x le prix du panneau seul. Sunology a le PLAY MAX à 699€ (station + batterie VAULT 700 Wh), bien plus accessible. Si le stockage vous intéresse, regardez plutôt Sunology ou Zendure.' },
                   { t: 'SAV à surveiller', d: 'Beem Energy est en procédure de sauvegarde depuis fin 2025. Des retours clients signalent des délais SAV rallongés. La garantie 25 ans est contractuelle, mais la solidité financière de l\'entreprise est un point de vigilance.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">

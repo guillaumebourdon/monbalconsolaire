@@ -60,6 +60,7 @@ const steps = [
     duration: '5 à 20 min',
     text: 'Dépliez ou montez le châssis selon la notice. Pour une pose au sol, réglez l\'inclinaison (souvent 3 crans entre 25 et 45°). Pour une fixation garde-corps, montez d\'abord les brides ou crochets sur le cadre du panneau, au sol, avant de le soulever.',
     tip: 'Si vous ne changez pas l\'angle selon les saisons, un réglage autour de 35° est un bon compromis à l\'année en France métropolitaine.',
+    link: { href: '/blog/support-fixation-panneau-solaire-balcon', before: 'Kit livré sans châssis, ou garde-corps particulier ? Comparez les options dans notre guide ', label: 'support et fixation de panneau solaire pour balcon', after: ' (sol, garde-corps, mur).' },
   },
   {
     name: 'Poser et sécuriser le panneau',
@@ -219,6 +220,11 @@ export default function InstallerKitPage() {
                       </div>
                     </div>
                     <p className="text-sm text-charcoal-light leading-relaxed">{s.text}</p>
+                    {s.link && (
+                      <p className="text-sm text-charcoal-light leading-relaxed mt-2">
+                        {s.link.before}<Link href={s.link.href} className="text-green hover:underline">{s.link.label}</Link>{s.link.after}
+                      </p>
+                    )}
                     {s.tip && (
                       <div className="mt-3 p-3 bg-amber-pale/30 rounded-brand text-xs text-amber-dark">
                         <strong>Astuce :</strong> {s.tip}

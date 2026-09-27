@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faqData = [
   {
     question: 'Le micro-onduleur consomme-t-il de l’électricité la nuit ?',
-    answer: 'Oui, mais très peu. Un micro-onduleur en veille absorbe entre 0,3 et 0,5 W côté secteur. Sur une année entière, cela représente 2,6–4,4 kWh, soit 0,50–0,85 € à 0,1940 €/kWh. C’est négligeable comparé à la production annuelle d’un kit 400–500 Wc (350–450 kWh).',
+    answer: 'Oui, mais très peu. Un micro-onduleur avec WiFi absorbe en général entre 0,3 et 0,5 W côté secteur. Sur une année entière, cela représente 2,6–4,4 kWh, soit 0,50–0,85 € à 0,1940 €/kWh. Certains font beaucoup mieux : la fiche technique du MX500 du Sunology PLAY annonce moins de 50 mW la nuit, soit moins de 0,5 kWh et 0,09 € par an. C’est négligeable comparé à la production annuelle d’un kit 400–500 Wc (350–450 kWh).',
   },
   {
     question: 'Faut-il débrancher son kit solaire la nuit ?',
@@ -44,10 +44,10 @@ const veilleData = [
     kit: 'Sunology PLAY (ex-PLAY 2)',
     onduleur: 'MX500 (500 W, génération 2026)',
     wifi: 'WiFi intégré',
-    veilleW: '~0,5 W',
-    kwhAn: '4,4 kWh',
-    coutAn: '0,85 €',
-    note: 'WiFi toujours actif pour monitoring Sunology STREAM',
+    veilleW: '< 0,05 W',
+    kwhAn: '< 0,5 kWh',
+    coutAn: '< 0,09 €',
+    note: 'Fiche technique MX500 (août 2026) : consommation nocturne < 50 mW',
   },
   {
     kit: 'Beem On 500',
@@ -130,7 +130,7 @@ export default function ConsommationVeillePage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">L&apos;essentiel en 30 secondes</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
-              <li>&bull; <strong>Micro-onduleur seul&nbsp;:</strong> 0,3&ndash;0,5&nbsp;W en veille &mdash; soit 0,50&ndash;0,85&nbsp;&euro;/an</li>
+              <li>&bull; <strong>Micro-onduleur seul&nbsp;:</strong> 0,3&ndash;0,5&nbsp;W en veille &mdash; soit 0,50&ndash;0,85&nbsp;&euro;/an (moins de 0,05&nbsp;W et 0,09&nbsp;&euro;/an pour le MX500 du Sunology PLAY)</li>
               <li>&bull; <strong>WiFi int&eacute;gr&eacute; (APsystems, TSUN)&nbsp;:</strong> +0,3&ndash;0,5&nbsp;W &mdash; le module WiFi consomme plus que l&apos;onduleur</li>
               <li>&bull; <strong>Gateway externe (Hoymiles DTU)&nbsp;:</strong> +1&nbsp;W suppl&eacute;mentaire 24h/24</li>
               <li>&bull; <strong>Hub syst&egrave;me avec batterie (EcoFlow, Zendure)&nbsp;:</strong> 2&ndash;4&nbsp;W continus</li>
@@ -232,7 +232,7 @@ export default function ConsommationVeillePage() {
                 <div className="card-lg border-l-4 border-l-green">
                   <h3 className="font-bold text-base mb-2 text-green">Kit simple sans batterie (Sunology, Sunethic)</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    <strong>Non, inutile.</strong> La consommation nocturne est inf&eacute;rieure &agrave; 1&nbsp;W. Sur une nuit de 10&nbsp;heures, cela fait 10&nbsp;Wh, soit 0,002&nbsp;&euro;. Multiplier par 365&nbsp;: moins d&apos;1&nbsp;&euro;/an. Le fait de d&eacute;brancher et rebrancher r&eacute;guli&egrave;rement fatigue la fiche et la prise beaucoup plus vite que ce gain ne le justifie.
+                    <strong>Non, inutile.</strong> La consommation nocturne est inf&eacute;rieure &agrave; 1&nbsp;W (moins de 50&nbsp;mW pour le micro-onduleur MX500 du Sunology PLAY, selon sa fiche technique). Sur une nuit de 10&nbsp;heures, cela fait 10&nbsp;Wh, soit 0,002&nbsp;&euro;. Multiplier par 365&nbsp;: moins d&apos;1&nbsp;&euro;/an. Le fait de d&eacute;brancher et rebrancher r&eacute;guli&egrave;rement fatigue la fiche et la prise beaucoup plus vite que ce gain ne le justifie.
                   </p>
                 </div>
                 <div className="card-lg border-l-4 border-l-amber">

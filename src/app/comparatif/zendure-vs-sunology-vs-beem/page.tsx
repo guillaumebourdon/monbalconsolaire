@@ -7,7 +7,7 @@ import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Zendure vs Sunology vs Beem 2026 : le match complet',
-  description: 'Comparatif Zendure SolarFlow 800 Plus vs Sunology PLAY vs Beem On 500 Wc : prix, prix/Wc, stockage, puissance, app, rentabilité. Quel système choisir en 2026 ?',
+  description: 'Zendure vs Sunology vs Beem : SolarFlow 800 Plus, PLAY et Beem On 500 Wc comparés (prix/Wc, stockage, app, rentabilité). Lequel choisir en 2026 ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/zendure-vs-sunology-vs-beem',
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const faqData = [
   {
     question: 'Zendure, Sunology ou Beem : lequel est le moins cher ?',
-    answer: 'Pour un kit complet sans batterie, le Beem On 500 Wc à 429 € (0,86 €/Wc) est le moins cher du marché en juin 2026. Mais si on compare des systèmes avec stockage, le Zendure SolarFlow 800 Plus (~479 € pour 1,92 kWh + onduleur 800 W) est imbattable : le Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 1 179 €, soit 2,5x plus cher pour 2,7x moins de stockage.',
+    answer: 'Pour un kit complet sans batterie, le Beem On 500 Wc à 429 € (0,86 €/Wc) est le moins cher du marché en juin 2026. Mais si on compare des systèmes avec stockage, le Zendure SolarFlow 800 Plus (~479 € pour 1,92 kWh + onduleur 800 W) est imbattable : le Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 699 €, panneau inclus, mais avec 2,7x moins de stockage.',
   },
   {
     question: 'Lequel a le meilleur retour sur investissement ?',
@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: 'Peut-on combiner un Sunology ou Beem avec un Zendure SolarFlow ?',
-    answer: 'Non directement. Le Sunology PLAY 2 et le Beem On ont un micro-onduleur intégré : l\'énergie sort déjà en AC. Le SolarFlow 800 Plus accepte des panneaux bruts en DC via connecteurs MC4. Ce sont deux approches incompatibles. Si vous voulez du stockage avec un kit Sunology, il faut le PLAY MAX avec la batterie VAULT propriétaire.',
+    answer: 'Non directement. Le Sunology PLAY et le Beem On ont un micro-onduleur intégré : l\'énergie sort déjà en AC. Le SolarFlow 800 Plus accepte des panneaux bruts en DC via connecteurs MC4. Ce sont deux approches incompatibles. Si vous voulez du stockage avec un kit Sunology, il faut le PLAY MAX avec la batterie VAULT propriétaire.',
   },
   {
     question: 'Lequel est le plus simple à installer ?',
@@ -45,7 +45,7 @@ const tableauComparatif = [
   ['Prix/Wc', '— (panneaux non inclus)', '1,20 €/Wc', '0,86 €/Wc'],
   ['Ce qui est inclus', 'Onduleur 800 W + batterie 1,92 kWh', 'Panneau 500 Wc + onduleur + châssis', 'Panneau 500 Wc + onduleur + support'],
   ['Panneaux inclus', 'Non (à acheter séparément)', 'Oui (1 panneau 500 Wc)', 'Oui (1 panneau 500 Wc)'],
-  ['Stockage batterie', '1,92 kWh (LiFePO4)', 'Non (VAULT 700 Wh en option à 580 €)', 'Non (Beem Battery en option)'],
+  ['Stockage batterie', '1,92 kWh (LiFePO4)', 'Non (PLAY MAX avec VAULT 700 Wh à 699 €)', 'Non (Beem Battery en option)'],
   ['Puissance sortie AC', '800 W', '500 W', '500 W'],
   ['Entrée solaire max', '1 500 W (2 × 750 W MPPT)', '500 W (1 panneau)', '500 W (1 panneau)'],
   ['Rendement onduleur', '95-98 % (GaN)', '96,7 % (CEC, MX500)', '96,5 %'],
@@ -209,13 +209,13 @@ export default function ZendureVsSunologyVsBeemPage() {
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-2.5">Sunology PLAY MAX</td>
-                      <td className="text-center p-2.5 font-mono">1 179 €</td>
+                      <td className="text-center p-2.5 font-mono">699 €</td>
                       <td className="text-center p-2.5 font-mono">0,7 kWh</td>
                       <td className="text-center p-2.5 font-mono">459 kWh</td>
                       <td className="text-center p-2.5 font-mono">95 %</td>
                       <td className="text-center p-2.5 font-mono">85 €</td>
-                      <td className="text-center p-2.5 font-mono">11,7 ans</td>
-                      <td className="text-center p-2.5 font-mono text-stone">15,8 ans (65 %)</td>
+                      <td className="text-center p-2.5 font-mono">7,4 ans</td>
+                      <td className="text-center p-2.5 font-mono text-stone">10,3 ans (65 %)</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Beem On 500 Wc</td>
@@ -256,7 +256,7 @@ export default function ZendureVsSunologyVsBeemPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Le stockage n&apos;est plus un luxe</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Avant le SolarFlow, ajouter du stockage co&ucirc;tait 580-900 &euro; de plus (VAULT Sunology, DELTA EcoFlow). &Agrave; 479 &euro; pour 1,92 kWh + onduleur, Zendure rend le stockage plus accessible que la plupart des kits sans batterie. C&apos;est un changement de paradigme.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Avant le SolarFlow, ajouter du stockage co&ucirc;tait 500-900 &euro; de plus (VAULT Sunology, DELTA EcoFlow). &Agrave; 479 &euro; pour 1,92 kWh + onduleur, Zendure rend le stockage plus accessible que la plupart des kits sans batterie. C&apos;est un changement de paradigme.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Si vous &ecirc;tes absent en journ&eacute;e, la batterie fait la diff&eacute;rence</h4>
@@ -351,9 +351,9 @@ export default function ZendureVsSunologyVsBeemPage() {
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Sunology PLAY MAX (VAULT)</td>
-                      <td className="text-center p-2.5 font-mono">1 179 €</td>
+                      <td className="text-center p-2.5 font-mono">699 €</td>
                       <td className="text-center p-2.5 font-mono">0,7 kWh</td>
-                      <td className="text-center p-2.5 font-mono">1 684 €/kWh</td>
+                      <td className="text-center p-2.5 font-mono">999 €/kWh (panneau inclus)</td>
                     </tr>
                     <tr className="bg-cream/50">
                       <td className="p-2.5">EcoFlow PowerStream + DELTA 2 (arr&ecirc;t&eacute;)</td>

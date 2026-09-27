@@ -184,7 +184,7 @@ export default function CombienRapportePage() {
             </section>
             <div className="my-8">
               <AffiliateCTA
-                productName="Sunology PLAY 2"
+                productName="Sunology PLAY"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
                 label="Voir le Sunology PLAY"

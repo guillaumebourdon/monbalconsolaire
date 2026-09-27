@@ -90,7 +90,7 @@ const checklist = [
     num: 6,
     category: 'Électricité',
     title: 'Estimer votre talon de consommation',
-    desc: 'Le kit solaire alimente en priorité les appareils qui tournent en journée : réfrigérateur (30-80W), box internet (10-15W), appareils en veille (20-40W), soit 50 à 150W en continu. Un kit 450W produit 50-100W en moyenne journalière — il couvre 100 % de ce talon. Si vous êtes absent toute la journée, le surplus part sur le réseau (gratuit, non rémunéré).',
+    desc: 'Le kit solaire alimente en priorité les appareils qui tournent en journée : réfrigérateur (30-80W), box internet (10-15W), appareils en veille (20-40W), soit 50 à 150W en continu. Un kit 450W produit 50-100W en moyenne journalière — il couvre 100 % de ce talon. Si vous êtes absent toute la journée, le surplus part sur le réseau (gratuit, non rémunéré). Pour le mesurer appareil par appareil, un <a href="/blog/wattmetre-prise-mesurer-consommation" class="text-green hover:underline">wattmètre prise</a> suffit.',
     verdict: 'Talon &lt; 100W = kit 300W suffisant. Talon &gt; 150W = kit 450W recommandé.',
     icon: '&#9889;',
     color: 'green',
@@ -456,7 +456,7 @@ export default function ChecklistPage() {
             {/* AffiliateCTA */}
             <div className="my-8">
               <AffiliateCTA
-                productName="Sunology PLAY 2"
+                productName="Sunology PLAY"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
                 label="Voir le kit le plus v&eacute;rifi&eacute; du march&eacute;"

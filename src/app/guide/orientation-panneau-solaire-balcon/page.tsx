@@ -85,7 +85,7 @@ export default function OrientationPage() {
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h3 className="font-bold text-lg text-green mb-2">Sud — L&apos;orientation idéale (100%)</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">C&apos;est le jackpot. Votre panneau reçoit le soleil de 9h à 17h en été, avec un pic à midi. La production est maximale et le ROI le plus rapide. Si votre balcon est plein sud, n&apos;hésitez pas une seconde.</p>
-                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Astuce :</strong> en exposition sud, une inclinaison de 30-35° est optimale toute l&apos;année. Vous pouvez laisser le panneau fixe sans ajuster par saison.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Astuce :</strong> en exposition sud, une inclinaison de 30-35° est optimale toute l&apos;année. Vous pouvez laisser le panneau fixe sans ajuster par saison. Si votre kit est livr&eacute; sans ch&acirc;ssis r&eacute;glable, un <Link href="/blog/support-fixation-panneau-solaire-balcon" className="text-green hover:underline">support inclinable pour panneau solaire de balcon</Link> permet de tenir cet angle.</p>
                 </div>
 
                 <div className="card-lg">

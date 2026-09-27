@@ -97,7 +97,7 @@ export default function BeemOnAvisPage() {
                 {[
                   { t: 'Panneau plus grand que le Sunology', d: 'Le Beem On mesure 189 x 113 cm contre 176 x 113 cm pour le PLAY2 (180 x 113 cm pour le PLAY 500 Wc actuel). C\'est 13 cm de plus en longueur, ce qui peut être un problème sur les petits balcons.' },
                   { t: 'Nécessite la Beembox pour le suivi', d: 'Contrairement au Sunology PLAY2 dont le micro-onduleur est WiFi natif, le Beem On nécessite un boîtier Beembox branché sur votre box internet. C\'est inclus, mais c\'est un appareil de plus à gérer.' },
-                  { t: 'Batterie Beem très chère', d: 'L\'option stockage existe (Beem Battery) mais à partir de 6 190€ pour le kit complet. C\'est 5x le prix du kit seul. L\'option VAULT de Sunology (1 179€ kit + batterie) est bien plus accessible.' },
+                  { t: 'Batterie Beem très chère', d: 'L\'option stockage existe (Beem Battery) mais à partir de 6 190€ pour le kit complet. C\'est 5x le prix du kit seul. Le PLAY MAX de Sunology (699€ station + batterie VAULT) est bien plus accessible.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">{p.t}</h4>

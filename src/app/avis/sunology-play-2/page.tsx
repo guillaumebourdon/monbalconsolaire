@@ -45,6 +45,7 @@ export default function AvisPage() {
           <ProductHero
             brand="Sunology"
             name="PLAY (ex-PLAY 2)"
+            trackingName="PLAY"
             power="500 Wc"
             price="599 €"
             score="8.5/10"

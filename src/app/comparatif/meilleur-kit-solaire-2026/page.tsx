@@ -173,7 +173,7 @@ export default function ComparatifPage() {
 
               <h4 className="font-bold mb-2 mt-6">Points faibles</h4>
               <ul className="space-y-2 text-sm text-charcoal-light">
-                {['Pas de batterie incluse (option PLAY MAX à 1 179\u20ac avec batterie 700 Wh)', 'Panneau unique = encombrant pour les petits balcons (1,80 x 1,13 m)', 'Le gain bifacial de 30% est théorique — en pratique 5-15% selon la surface'].map((s, i) => (
+                {['Pas de batterie incluse (le PLAY MAX à 699\u20ac ajoute une batterie 700 Wh)', 'Panneau unique = encombrant pour les petits balcons (1,80 x 1,13 m)', 'Le gain bifacial de 30% est théorique — en pratique 5-15% selon la surface'].map((s, i) => (
                   <li key={i} className="flex gap-2"><span className="text-red-500 font-bold">-</span> {s}</li>
                 ))}
               </ul>

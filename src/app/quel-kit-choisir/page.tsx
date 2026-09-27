@@ -173,8 +173,8 @@ const ARTICLES: Article[] = [
     badge: 'Kit + batterie',
     tags: ['stockage', 'marque'],
     publishedAt: '2026-04-02',
-    score: '7/10',
-    price: '1 179 €',
+    score: '8/10',
+    price: '699 €',
   },
   {
     slug: '/avis/sunology-city',

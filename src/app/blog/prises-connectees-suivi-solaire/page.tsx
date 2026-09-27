@@ -254,6 +254,10 @@ export default function PrisesConnecteesPage() {
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous &ecirc;tes fan de domotique</h4>
                   <p className="text-xs text-charcoal-light">Prenez la <strong>Shelly Plug PM Gen3</strong> en version fran&ccedil;aise (~33 &euro;). Compatible Home Assistant, MQTT, API ouverte. Le choix des geeks. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
+                <div className="card border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm mb-1 text-green">Vous n&apos;avez pas de WiFi sur le balcon</h4>
+                  <p className="text-xs text-charcoal-light">Un simple wattm&egrave;tre &agrave; &eacute;cran fait le travail sans application : lecture directe des watts et des kWh cumul&eacute;s. Voir notre guide du <Link href="/blog/wattmetre-prise-mesurer-consommation" className="text-green hover:underline">wattm&egrave;tre prise pour mesurer sa consommation</Link>.</p>
+                </div>
               </div>
             </section>
 

@@ -271,7 +271,7 @@ export default function AssuranceBalconPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 \u20ac" />
+              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 \u20ac" />
             </div>
 
             <section className="mb-10">

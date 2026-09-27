@@ -130,7 +130,7 @@ export default function KitSolaireBalconAvisPage() {
                 <ul className="text-sm text-charcoal-light mt-2 space-y-1">
                   <li>&bull; Prix au-dessus du march&eacute; (1,33 &euro;/Wc pour le PLAY 2, 1,20 &euro;/Wc pour le nouveau PLAY 500&nbsp;Wc, vs 0,86 pour Beem On 500)</li>
                   <li>&bull; WiFi du micro-onduleur instable si la box est loin</li>
-                  <li>&bull; Pas de batterie int&eacute;gr&eacute;e (il faut ajouter le PLAY MAX &agrave; 1 179 &euro;)</li>
+                  <li>&bull; Pas de batterie int&eacute;gr&eacute;e (il faut passer au PLAY MAX &agrave; 699 &euro;, batterie 700&nbsp;Wh incluse)</li>
                 </ul>
               </div>
             </div>
@@ -333,7 +333,7 @@ export default function KitSolaireBalconAvisPage() {
             </div>
 
             <div className="my-6">
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 &euro;" />
+              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 &euro;" />
             </div>
           </section>
 

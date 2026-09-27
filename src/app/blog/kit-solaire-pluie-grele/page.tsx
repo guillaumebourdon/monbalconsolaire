@@ -184,7 +184,7 @@ export default function KitSolairePluieGrelePage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Vent et temp&ecirc;te : les pr&eacute;cautions</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Les kits plug-and-play sont con&ccedil;us pour r&eacute;sister au vent. Le Sunology PLAY 2 est certifi&eacute; pour des vents jusqu&apos;&agrave; <strong>150 km/h</strong> avec ballasts remplis. Mais quelques r&egrave;gles s&apos;imposent :
+                Les kits plug-and-play sont con&ccedil;us pour r&eacute;sister au vent, mais aucun n&apos;est &laquo;&nbsp;certifi&eacute;&nbsp;&raquo; pour une vitesse de vent donn&eacute;e. La norme IEC 61215 teste le panneau seul (charge m&eacute;canique de 2&nbsp;400&nbsp;Pa, soit la pression dynamique d&apos;un vent d&apos;environ 225&nbsp;km/h), pas la stabilit&eacute; du support lest&eacute;. Sunology annonce pour le PLAY un ch&acirc;ssis qui supporte <strong>100&nbsp;kg/m&sup2; &agrave; l&apos;arrachement</strong> (~1&nbsp;000&nbsp;Pa, l&apos;&eacute;quivalent d&apos;un vent d&apos;environ 145&nbsp;km/h en pression dynamique, hors rafales et effets de forme) et des ballasts de 40&nbsp;kg. Le chiffre de &laquo;&nbsp;150&nbsp;km/h&nbsp;&raquo; qui circule chez certains revendeurs n&apos;est pas une certification. Le vrai risque, c&apos;est le basculement d&apos;un support mal lest&eacute; : quelques r&egrave;gles s&apos;imposent :
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">

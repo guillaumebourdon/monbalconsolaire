@@ -122,6 +122,7 @@ export default function HiverProductionPage() {
               <h2 className="text-2xl font-extrabold mb-4">Faut-il s&apos;inquiéter de la production hivernale ?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4"><strong>Non.</strong> La rentabilité d&apos;un panneau solaire se calcule sur l&apos;année complète, pas sur un mois. La production estivale compense largement la baisse hivernale. C&apos;est d&apos;ailleurs comme ça que les données PVGIS et les fabricants calculent le ROI : sur la production annuelle totale.</p>
               <p className="text-charcoal-light leading-relaxed">Et paradoxalement, c&apos;est en hiver que chaque kWh produit a le plus de valeur : c&apos;est la saison où votre consommation est la plus élevée (chauffage d&apos;appoint, éclairage plus long) et où le prix de l&apos;électricité pèse le plus sur votre facture. Pour maximiser la valeur de chaque kWh hivernal, une <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green font-semibold hover:underline">batterie de stockage</Link> peut être un complément intéressant.</p>
+              <p className="text-charcoal-light leading-relaxed mt-4">La même baisse d&apos;ensoleillement touche les petits équipements solaires autonomes : une <Link href="/blog/guirlande-solaire-balcon" className="text-green font-semibold hover:underline">guirlande solaire de balcon</Link> qui tient 8&nbsp;heures en juin peut s&apos;éteindre après 2 ou 3&nbsp;heures en décembre. Nous avons sélectionné les modèles qui s&apos;en sortent le mieux.</p>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
@@ -142,7 +143,7 @@ export default function HiverProductionPage() {
             </section>
             <div className="my-8">
               <AffiliateCTA
-                productName="Sunology PLAY 2"
+                productName="Sunology PLAY"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
                 label="Voir le kit le plus vendu"

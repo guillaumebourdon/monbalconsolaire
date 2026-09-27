@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: 'Faut-il une batterie pour bien autoconsommer ?',
-    answer: 'Non, c\u2019est le dernier recours. D\u00e9caler le lave-linge et le lave-vaisselle en journ\u00e9e est gratuit et fait passer de 40 % \u00e0 70 %. La batterie (Zendure SolarFlow 488 \u20ac, Sunology VAULT 580 \u20ac) fait passer de 70 % \u00e0 90 %+ mais co\u00fbte cher. Rentabilisez d\u2019abord les gestes gratuits.',
+    answer: 'Non, c\u2019est le dernier recours. D\u00e9caler le lave-linge et le lave-vaisselle en journ\u00e9e est gratuit et fait passer de 40 % \u00e0 70 %. La batterie (Zendure SolarFlow 488 \u20ac, Sunology PLAY MAX avec batterie 700 Wh \u00e0 699 \u20ac) fait passer de 70 % \u00e0 90 %+ mais co\u00fbte cher. Rentabilisez d\u2019abord les gestes gratuits.',
   },
   {
     question: 'Comment savoir ce que j\u2019autoconsomme ?',
@@ -266,7 +266,7 @@ export default function OptimiserAutoconsommationPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 \u20ac" />
+              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 \u20ac" />
             </div>
 
             <section className="mb-10">

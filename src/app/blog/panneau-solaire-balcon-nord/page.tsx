@@ -304,7 +304,7 @@ export default function BalconNordPage() {
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Nord France + kit premium</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Acheter un Sunology PLAY MAX à 1 200€ (kit + batterie) pour un balcon nord à Lille ou Strasbourg : ROI de 20+ ans. Le coût du stockage s&apos;amortit sur des kWh qui ne seront jamais produits en masse. Mieux vaut un kit 300 W basique à 299 €.
+                    Acheter un Sunology PLAY MAX à 699€ (kit + batterie) pour un balcon nord à Lille ou Strasbourg : ROI de 13+ ans, là où un kit sans batterie fait mieux pour moins cher. Le coût du stockage s&apos;amortit sur des kWh qui ne seront jamais produits en masse. Mieux vaut un kit 300 W basique à 299 €.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">

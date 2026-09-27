@@ -251,7 +251,7 @@ export default function PanneauSolaireEstOuestPage() {
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">&Agrave; &eacute;viter : kits avec batterie</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    En est/ouest, la batterie est moins utile (production d&eacute;j&agrave; &eacute;tal&eacute;e) et son co&ucirc;t allonge un ROI d&eacute;j&agrave; plus long. Le Zendure SolarFlow (900 &euro;) ou le PLAY MAX (1 179 &euro;) ne sont pas recommand&eacute;s pour cette orientation.
+                    En est/ouest, la batterie est moins utile (production d&eacute;j&agrave; &eacute;tal&eacute;e) et son co&ucirc;t allonge un ROI d&eacute;j&agrave; plus long. Le Zendure SolarFlow (900 &euro;) ou le PLAY MAX (699 &euro;) ne sont pas recommand&eacute;s pour cette orientation.
                   </p>
                 </div>
               </div>

@@ -230,7 +230,7 @@ export default function LampesSolairesPage() {
               Lampes solaires extérieures pour balcon : 10 modèles sélectionnés (2026)
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Guirlande, applique, projecteur, lanterne : le choix des lampes solaires est vaste mais la qualité très inégale. Voici 10 modèles qui tiennent vraiment leurs promesses en 2026, du budget serré au premium design.
+              Guirlande, applique, projecteur, lanterne : le choix des lampes solaires est vaste mais la qualité très inégale. Voici 10 modèles qui tiennent vraiment leurs promesses en 2026, du budget serré au premium design. Vous cherchez uniquement une guirlande ? Voir notre sélection dédiée de <Link href="/blog/guirlande-solaire-balcon" className="text-green hover:underline">guirlande solaire pour balcon</Link>, avec leur autonomie réelle en hiver.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>22 avril 2026</span>
@@ -452,6 +452,10 @@ export default function LampesSolairesPage() {
                 <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables solaires : comparatif 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">EcoFlow, Bluetti, Jackery : 6 modèles pour backup et nomade</p>
+                </Link>
+                <Link href="/blog/guirlande-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guirlande solaire de balcon : 8 modèles pour l&apos;hiver</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Guinguette, Noël, recharge USB : ce que devient l&apos;autonomie en décembre</p>
                 </Link>
               </div>
             </section>

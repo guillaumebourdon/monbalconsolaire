@@ -109,7 +109,7 @@ const cas_pas_acheter = [
   },
   {
     profil: 'Vous voulez stocker l\'excédent',
-    explication: 'Si la batterie vous intéresse, le PLAY MAX (1 179 €) est mieux pensé : kit + VAULT 700 Wh intégrée. Plus économique que CITY + VAULT séparée.',
+    explication: 'Si la batterie vous intéresse, le PLAY MAX (699 €) est mieux pensé : station + VAULT 700 Wh intégrée. Bien plus économique que CITY + VAULT séparée (499 €).',
   },
 ];
 

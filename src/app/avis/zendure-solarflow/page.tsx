@@ -44,7 +44,7 @@ const faqData = [
 const points_forts = [
   {
     titre: 'Prix imbattable : batterie + onduleur pour ~488 €',
-    detail: 'C\'est le point qui change tout. Pour moins de 500 €, vous avez un onduleur 800 W ET une batterie 1,92 kWh intégrée. À titre de comparaison, un Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 1 179 €. Le rapport €/kWh de stockage est sans équivalent sur le marché français.',
+    detail: 'C\'est le point qui change tout. Pour moins de 500 €, vous avez un onduleur 800 W ET une batterie 1,92 kWh intégrée. À titre de comparaison, un Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 699 €, pour 2,7x moins de stockage. Le rapport €/kWh de stockage est sans équivalent sur le marché français.',
   },
   {
     titre: 'Vrai plug-and-play : batterie intégrée dans le boîtier',
@@ -104,9 +104,9 @@ const comparaison = [
   },
   {
     produit: 'Sunology PLAY MAX',
-    prix: '1 179 €',
+    prix: '699 €',
     stockage: '0,7 kWh (VAULT)',
-    sortieAC: '400 W',
+    sortieAC: '450 W',
     backup: 'Non',
     poids: '~25 kg (kit)',
     note: '7/10',
@@ -210,9 +210,9 @@ export default function ZendureSolarflowPage() {
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-3">Sunology PLAY MAX (VAULT)</td>
-                      <td className="p-3 font-mono">1 179 €</td>
+                      <td className="p-3 font-mono">699 €</td>
                       <td className="p-3 font-mono">0,7 kWh</td>
-                      <td className="p-3 font-mono">1 684 €/kWh</td>
+                      <td className="p-3 font-mono">999 €/kWh (panneau inclus)</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-3">EcoFlow PowerStream + DELTA 2 (arr&ecirc;t&eacute;)</td>
@@ -436,7 +436,7 @@ export default function ZendureSolarflowPage() {
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>5,3 ans de ROI pour un système avec batterie</strong>, c&apos;est du jamais vu. &Agrave; titre de comparaison, l&apos;EcoFlow PowerStream + DELTA 2 tourne autour de 10,2 ans de ROI, et le Sunology PLAY MAX autour de 11,7 ans.
+                <strong>5,3 ans de ROI pour un système avec batterie</strong>, c&apos;est du jamais vu. &Agrave; titre de comparaison, l&apos;EcoFlow PowerStream + DELTA 2 tourne autour de 10,2 ans de ROI, et le Sunology PLAY MAX autour de 7,4 ans depuis sa baisse de prix à 699 &euro;.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 Avec l&apos;inflation tarifaire de 3,3%/an (CRE), les économies augmentent chaque année. Et la batterie LFP est garantie 6 000 cycles : vous avez <strong>10+ ans de bénéfice net</strong> après remboursement du système. Sur 25 ans : <strong>5 991 &euro;</strong> d&apos;économies cumulées.

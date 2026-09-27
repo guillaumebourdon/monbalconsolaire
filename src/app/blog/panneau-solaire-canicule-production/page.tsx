@@ -297,7 +297,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
             </section>
 
             <AffiliateCTA
-              productName="Sunology PLAY 2"
+              productName="Sunology PLAY"
               merchantName="Sunology"
               affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
               label="Voir le Sunology PLAY (back-contact, &ndash;0,26&nbsp;%/&deg;C)"
