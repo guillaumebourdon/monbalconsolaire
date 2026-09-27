@@ -17,6 +17,36 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/blog/guirlande-solaire-balcon',
+    title: 'Guirlande solaire balcon : 8 mod\u00e8les qui tiennent l\u2019hiver',
+    excerpt: 'Guinguette, fil de cuivre, No\u00ebl : autonomie r\u00e9elle en d\u00e9cembre, recharge USB de secours et placement du panneau.',
+    badge: 'Nouveau',
+    tags: ['eclairage', 'amazon'],
+    publishedAt: '2026-09-27',
+    readTime: '11 min',
+    priceRange: '13-50 \u20ac',
+  },
+  {
+    slug: '/blog/support-fixation-panneau-solaire-balcon',
+    title: 'Support et fixation panneau solaire balcon',
+    excerpt: 'Quel support pour quel garde-corps (barreaux, verre, b\u00e9ton, fer forg\u00e9), vertical ou inclin\u00e9, s\u00e9curit\u00e9 au vent.',
+    badge: 'Nouveau',
+    tags: ['essentiels', 'amazon'],
+    publishedAt: '2026-09-27',
+    readTime: '12 min',
+    priceRange: '15-105 \u20ac',
+  },
+  {
+    slug: '/blog/wattmetre-prise-mesurer-consommation',
+    title: 'Wattm\u00e8tre prise : mesurer son talon avant d\u2019acheter',
+    excerpt: 'Brennenstuhl PM 231 E (FR), Chacon EcoWatt, Tapo P110 : lequel mesure vraiment les veilles, et comment dimensionner son kit.',
+    badge: 'Nouveau',
+    tags: ['essentiels', 'amazon'],
+    publishedAt: '2026-09-27',
+    readTime: '9 min',
+    priceRange: '13-30 \u20ac',
+  },
+  {
     slug: '/blog/prises-connectees-suivi-solaire',
     title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
     excerpt: 'Tapo P110, Shelly Plug S, Tapo P410M : comparatif des prises pour mesurer votre production en temps r\u00e9el.',
