@@ -213,7 +213,7 @@ export default function SunologyPlay2VsBeemOn500WPage() {
               </div>
               <div className="mt-4">
                 <a
-                  href="https://sunology.eu/products/play2-kit-solaire"
+                  href="https://sunology.eu/products/play-kit-solaire-plug-play"
                   target="_blank"
                   rel="sponsored noopener"
                   className="btn-affiliate inline-flex text-sm"
@@ -313,7 +313,7 @@ export default function SunologyPlay2VsBeemOn500WPage() {
             <AffiliateCTA
               productName="Sunology PLAY 2"
               merchantName="Sunology"
-              affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
+              affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
               label="Voir le PLAY 2 sur Sunology"
               variant="secondary"
               position="mid"
@@ -341,7 +341,7 @@ export default function SunologyPlay2VsBeemOn500WPage() {
                     <li>&rarr; La p&eacute;rennité du SAV sur 25 ans est un crit&egrave;re</li>
                   </ul>
                   <a
-                    href="https://sunology.eu/products/play2-kit-solaire"
+                    href="https://sunology.eu/products/play-kit-solaire-plug-play"
                     target="_blank"
                     rel="sponsored noopener"
                     className="btn-affiliate inline-flex text-xs"
@@ -439,7 +439,7 @@ export default function SunologyPlay2VsBeemOn500WPage() {
                   className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green"
                 >
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY&nbsp;2</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Test complet, production réelle, verdict &mdash; 8.5/10</p>
+                  <p className="text-xs text-charcoal-light mt-1">Analyse compl&egrave;te, production estim&eacute;e, verdict &mdash; 8.5/10</p>
                 </Link>
                 <Link
                   href="/avis/beem-on-500w"

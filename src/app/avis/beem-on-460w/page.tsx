@@ -7,7 +7,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Beem On 460W avis : test du rival Sunology PLAY2 (599\u20ac)',
+  title: 'Beem On 460W avis : analyse du rival Sunology PLAY2 (599\u20ac)',
   description: 'Avis Beem On 460W : 599\u20ac, 460 Wc bifacial TOPCon. Installation, app Beem, comparaison Sunology PLAY2. Note 8/10. Remplac\u00e9 par le Beem On 500 Wc \u00e0 429\u20ac.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-on-460w',
@@ -23,7 +23,7 @@ const faqData = [
 export default function BeemOnAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem On 460W avis : test complet et retour d'expérience" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" dateModified="2026-06-20" />
+      <SchemaArticle title="Beem On 460W avis : analyse complète et verdict" description="Avis détaillé sur le Beem On 460W en 2026." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" dateModified="2026-06-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Beem On 460W" brand="Beem Energy" description="Kit solaire plug-and-play 460 Wc bifacial TOPCon avec micro-onduleur APSystems et suivi via app Beem." price={599} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />
@@ -31,8 +31,8 @@ export default function BeemOnAvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 460W avis : test complet et retour d&apos;expérience (2026)</h1>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 460W avis : analyse compl&egrave;te et verdict (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Beem On est le concurrent direct du Sunology PLAY2. Même prix, 10 Wc de plus, mais est-il vraiment meilleur ? Notre analyse complète.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026 &middot; Mis &agrave; jour le 15 mai 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
@@ -44,7 +44,7 @@ export default function BeemOnAvisPage() {
             price="599 €"
             score="8/10"
             tagline="Excellent rapport qualité/prix. Le meilleur concurrent du Sunology PLAY2."
-            affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play"
+            affiliateUrl="https://beemenergy.fr/products/kit-beem"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
             image="/images/produits/beem-on-460-2.webp"
@@ -89,7 +89,7 @@ export default function BeemOnAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play" label="Vérifier le stock" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Vérifier le stock" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -107,7 +107,7 @@ export default function BeemOnAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play" label="Vérifier le délai livraison" variant="secondary" position="after-stats" />
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Vérifier le délai livraison" variant="secondary" position="after-stats" />
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
               <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
@@ -138,10 +138,10 @@ export default function BeemOnAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le Beem On 460W est un excellent kit solaire plug-and-play. À 599€, il offre le meilleur ratio €/Wc en mono-panneau et le paiement en 10x est un vrai avantage. L&apos;option Beem ZEN simplifie les démarches pour les moins à l&apos;aise avec l&apos;administratif.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Il perd face au <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> sur l&apos;installation (5 min vs 1 min), l&apos;encombrement (13 cm plus long), et le WiFi natif. Mais ces différences sont mineures — les deux kits sont d&apos;excellents choix.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">8/10</span></strong></p>
-              <a href="https://beemenergy.fr/products/beem-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem On &rarr;</a>
+              <a href="https://beemenergy.fr/products/kit-beem" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem On &rarr;</a>
             </section>
 
-            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play" label="Voir l'offre actuelle sur Beem" variant="box" position="footer-box" price="599 €" />
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir l'offre actuelle sur Beem" variant="box" position="footer-box" price="599 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

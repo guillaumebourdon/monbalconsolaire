@@ -173,7 +173,7 @@ export default function ArnaqueInvestissementPage() {
               <AffiliateCTA
                 productName="Sunology PLAY 2"
                 merchantName="Sunology"
-                affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
+                affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
                 label="Voir un kit certifié"
                 variant="box"
                 position="article_bottom"

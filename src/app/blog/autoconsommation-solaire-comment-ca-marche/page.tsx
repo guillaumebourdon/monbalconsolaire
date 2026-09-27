@@ -160,7 +160,7 @@ export default function AutoconsommationPage() {
               <AffiliateCTA
                 productName="Beem On 460W"
                 merchantName="Beem Energy"
-                affiliateUrl="https://beemenergy.fr/products/beem-kit-solaire-plug-play"
+                affiliateUrl="https://beemenergy.fr/products/kit-beem"
                 label="Voir le Beem On 460W"
                 variant="box"
                 position="article_bottom"

@@ -177,7 +177,7 @@ export default function CombienPanneauxBalconPage() {
               <AffiliateCTA
                 productName="Beem On 500 Wc"
                 merchantName="Beem Energy"
-                affiliateUrl="https://www.beem.energy/collections/kits-solaires"
+                affiliateUrl="https://beemenergy.fr/"
                 label="Voir le Beem On 500 Wc — 429&nbsp;&euro;"
                 variant="inline"
                 position="mid-article"
@@ -341,7 +341,7 @@ export default function CombienPanneauxBalconPage() {
               <AffiliateCTA
                 productName="Beem On 500 Wc"
                 merchantName="Beem Energy"
-                affiliateUrl="https://www.beem.energy/collections/kits-solaires"
+                affiliateUrl="https://beemenergy.fr/"
                 label="Voir les kits Beem disponibles"
                 variant="box"
                 position="footer-box"

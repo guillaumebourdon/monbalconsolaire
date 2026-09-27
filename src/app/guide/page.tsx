@@ -60,8 +60,8 @@ const articles = [
   },
   {
     slug: 'panneau-solaire-copropriete',
-    title: 'Panneau solaire en copropri\u00e9t\u00e9 : r\u00e8gles, votes et astuces',
-    excerpt: 'Quand faut-il l\'accord du syndic ? Mod\u00e8le de courrier, vote en AG, cas pratiques.',
+    title: 'Panneau solaire en copropri\u00e9t\u00e9 : balcon, vote AG et mod\u00e8le',
+    excerpt: 'Sol, garde-corps ou toiture : quand l\'AG doit voter (art. 24 k, 25 b), mod\u00e8le de r\u00e9solution, recours en cas de refus.',
     badge: 'Copropri\u00e9t\u00e9',
     date: '17 avril 2026',
     readTime: '8 min',
@@ -84,8 +84,8 @@ const articles = [
   },
   {
     slug: 'installer-kit-solaire-balcon',
-    title: 'Comment installer un kit solaire sur un balcon : pas \u00e0 pas',
-    excerpt: 'Le guide d\'installation d\u00e9taill\u00e9, \u00e9tape par \u00e9tape, avec les outils n\u00e9cessaires.',
+    title: 'Installer un kit solaire balcon : \u00e9tapes, fixation, prise',
+    excerpt: 'Check-list, 8 \u00e9tapes, fixation selon le garde-corps, branchement s\u00e9curis\u00e9, d\u00e9claration Enedis et erreurs \u00e0 \u00e9viter.',
     badge: 'Installation',
     date: '28 mars 2026',
     readTime: '8 min',

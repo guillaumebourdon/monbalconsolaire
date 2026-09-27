@@ -566,7 +566,7 @@ export default function MeilleureBatterieBalconPage() {
                 </Link>
                 <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Test complet du tout-en-un onduleur + batterie LFP 2,56&nbsp;kWh IP65</p>
+                  <p className="text-xs text-charcoal-light mt-1">Analyse compl&egrave;te du tout-en-un onduleur + batterie LFP 2,56&nbsp;kWh IP65</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h4>

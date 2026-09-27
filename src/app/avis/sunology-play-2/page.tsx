@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Sunology PLAY 2 avis 2026 : test complet et retour d\'experience',
-  description: 'Avis complet sur le Sunology PLAY2 en 2026 : prix, installation, production réelle, points forts et faibles. Le kit solaire vaut-il ses 599 euros ?',
+  title: 'Sunology PLAY 2 avis 2026 : 599 €, 8.5/10, points faibles',
+  description: 'Sunology PLAY 2 : avis, prix (599 €) et codes promo. Kit 450 Wc bifacial noté 8.5/10, ROI 7,1 ans. Analyse complète, points faibles, verdict 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-play-2',
   },
@@ -24,7 +24,7 @@ const faqData = [
 export default function AvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology PLAY 2 avis : test complet et retour d'experience" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-07-16" />
+      <SchemaArticle title="Sunology PLAY 2 avis : analyse complète, prix et verdict" description="Avis complet sur le Sunology PLAY2 en 2026." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-07-16" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Sunology PLAY 2" brand="Sunology" description="Kit solaire plug-and-play 450 Wc avec micro-onduleur WiFi intégré, chassis ajustable et garantie 25 ans." price={599} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
       <SchemaBreadcrumb items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY2" }]} />
@@ -32,8 +32,8 @@ export default function AvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY2" }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis : test complet et retour d&apos;experience (2026)</h1>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis : analyse compl&egrave;te, prix et verdict (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Sunology PLAY2 est le kit solaire plug-and-play le plus vendu en France avec plus de 100 000 foyers équipés. Mais vaut-il vraiment ses 599&euro; ? Analyse détaillée.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; <strong>Mis &agrave; jour le 16 juillet 2026</strong></span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
@@ -45,7 +45,7 @@ export default function AvisPage() {
             price="599 €"
             score="8.5/10"
             tagline="Le meilleur kit solaire plug-and-play pour la majorité des utilisateurs en France."
-            affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
+            affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
             affiliateLabel="Voir le PLAY 2 sur Sunology"
             accentColor="green"
             image="/images/produits/sunology-play-2-1.webp"
@@ -92,7 +92,7 @@ export default function AvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play2-kit-solaire" label="Vérifier la disponibilité" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Vérifier la disponibilité" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -154,7 +154,7 @@ export default function AvisPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed">En résumé : la production réelle est globalement conforme aux estimations de Sunology, à condition d&apos;avoir une exposition correcte (sud, sud-est ou sud-ouest). En exposition est ou ouest, attendez-vous à 15-20% de moins.</p>
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play2-kit-solaire" label="Voir si livraison rapide" variant="secondary" position="after-stats" />
+              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir si livraison rapide" variant="secondary" position="after-stats" />
             </section>
 
             <section>
@@ -194,12 +194,13 @@ export default function AvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Sunology PLAY2 merite sa place de leader. L&apos;installation en 1 minute, la certification CE complete, le suivi WiFi natif et la garantie 25 ans en font le kit le plus abouti du marché. A 599&euro;, la rentabilité est réelle (ROI 7,1 ans, 76 &euro;/an d&apos;économies, 2 871 &euro; sur 25 ans) et la qualité de fabrication est au rendez-vous.</p>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-4">Pour payer moins cher : voir nos <Link href="/codes-promo" className="text-green font-semibold hover:underline">codes promo et parrainage Sunology</Link> (offres v&eacute;rifi&eacute;es et dat&eacute;es).</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Il n&apos;est pas parfait : l&apos;encombrement peut poser probleme sur les petits balcons, et le gain bifacial est souvent surévalué dans le marketing. Mais pour la majorite des utilisateurs, c&apos;est le choix le plus sur et le plus simple.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-green text-xl font-extrabold">8.5/10</span></strong></p>
-              <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY2 &rarr;</a>
+              <a href="https://sunology.eu/products/play-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY2 &rarr;</a>
             </section>
 
-            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play2-kit-solaire" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="599 €" />
+            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="599 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions frequentes</h2>

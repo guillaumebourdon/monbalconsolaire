@@ -123,7 +123,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/avis/sunology-play-2',
     title: 'Sunology PLAY 2',
-    excerpt: 'Le leader du marché français. Notre test complet après 3 mois d\'usage.',
+    excerpt: 'Le leader du marché français. Notre analyse complète : prix, production estimée, points faibles.',
     type: 'avis',
     badge: 'Choix n°1',
     tags: ['best', 'marque'],

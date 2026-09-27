@@ -34,7 +34,7 @@ export default function ZendureSolarFlowMixAvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow Mix' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Zendure SolarFlow Mix avis : le tout-en-un r&eacute;sidentiel qui change la donne (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">3&nbsp;mod&egrave;les, 8&nbsp;&agrave;&nbsp;50&nbsp;kWh de stockage LFP, 4&nbsp;kW bidirectionnel, IA embarqu&eacute;e. Zendure quitte le balcon pour viser la maison enti&egrave;re. &Agrave; partir de 1&nbsp;999&nbsp;&euro;.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 juin 2026</span><span>&middot;</span><span>11 min de lecture</span></div>

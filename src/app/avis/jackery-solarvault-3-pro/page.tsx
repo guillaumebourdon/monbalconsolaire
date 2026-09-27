@@ -34,7 +34,7 @@ export default function JackerySolarVault3ProAvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Jackery SolarVault 3 Pro' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Jackery SolarVault 3 Pro avis : le stockage domestique &agrave; prix cass&eacute; (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Jackery attaque le march&eacute; du stockage solaire de balcon avec le SolarVault 3 Pro : batterie LFP 2,52&nbsp;kWh, 4&nbsp;MPPT, gestion IA et syst&egrave;me anti-incendie. &Agrave; partir de 839&nbsp;&euro; en promo, sans panneaux.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>23 juin 2026</span><span>&middot;</span><span>8 min de lecture</span></div>

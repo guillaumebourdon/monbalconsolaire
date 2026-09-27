@@ -29,7 +29,7 @@ const faqData = [
   },
   {
     question: 'Combien produit l’Anker SOLIX RS40P par an ?',
-    answer: 'En région lyonnaise, exposition sud : environ 870 kWh par an en conditions réelles (800 W onduleur, PR 0,85, autoconsommation 85 %). Les économies représentent ~135 €/an au tarif de 0,1940 €/kWh. Le ROI est atteint en 5,9 ans.',
+    answer: 'En région lyonnaise, exposition sud : environ 870 kWh par an selon notre calcul (800 W onduleur, PR 0,85, autoconsommation 85 %). Les économies représentent ~135 €/an au tarif de 0,1940 €/kWh. Le ROI est atteint en 5,9 ans.',
   },
   {
     question: 'Quelle garantie pour l’Anker SOLIX RS40P ?',
@@ -46,7 +46,7 @@ export default function AnkerSolixRS40PAvisPage() {
     <>
       <SchemaArticle
         title="Anker SOLIX RS40P avis : kit balcon 910 Wc, vaut-il 799 € ?"
-        description="Avis complet sur l&apos;Anker SOLIX RS40P : panneaux IBC N-type 2x455 W, onduleur WiFi 600/800 W, garantie 15 ans. Test indépendant MonBalconSolaire."
+        description="Avis complet sur l&apos;Anker SOLIX RS40P : panneaux IBC N-type 2x455 W, onduleur WiFi 600/800 W, garantie 15 ans. Analyse indépendante MonBalconSolaire."
         url="https://monbalconsolaire.fr/avis/anker-solix-rs40p"
         datePublished="2026-07-17"
       />
@@ -67,7 +67,7 @@ export default function AnkerSolixRS40PAvisPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Anker SOLIX RS40P' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Anker SOLIX RS40P avis 2026 : le kit balcon 910&nbsp;Wc d&rsquo;une marque mondiale
             </h1>
@@ -88,7 +88,7 @@ export default function AnkerSolixRS40PAvisPage() {
             price="799 €"
             score="7.5/10"
             tagline="La puissance IBC N-type d&rsquo;une grande marque. Cher, mais rassuring."
-            affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD"
+            affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
             affiliateLabel="Voir sur Amazon.fr"
             accentColor="green"
           />
@@ -189,7 +189,7 @@ export default function AnkerSolixRS40PAvisPage() {
             <AffiliateCTA
               productName="Anker SOLIX RS40P"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD"
+              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
               label="Voir l&rsquo;offre Anker SOLIX RS40P sur Amazon"
               variant="secondary"
               position="after-pros"
@@ -232,7 +232,7 @@ export default function AnkerSolixRS40PAvisPage() {
             <AffiliateCTA
               productName="Anker SOLIX RS40P"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD"
+              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
               label="Comparer les prix sur Amazon"
               variant="secondary"
               position="after-cons"
@@ -286,7 +286,7 @@ export default function AnkerSolixRS40PAvisPage() {
             </div>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Production r&eacute;elle et rentabilit&eacute;</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Production estim&eacute;e et rentabilit&eacute;</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Calculs bas&eacute;s sur 800 W effectifs (onduleur apr&egrave;s MAJ), PR 0,85, autoconsommation 85 %, tarif 0,1940 &euro;/kWh&nbsp;:
               </p>
@@ -355,7 +355,7 @@ export default function AnkerSolixRS40PAvisPage() {
                 <strong>Note finale&nbsp;: <span className="text-amber-dark text-xl font-extrabold">7.5/10</span></strong> &mdash; Technologie premium, marque fiable. Cher mais justifi&eacute; pour qui veut Anker.
               </p>
               <a
-                href="https://www.amazon.fr/dp/B0CB86F4LD"
+                href="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
                 target="_blank"
                 rel="sponsored noopener"
                 className="btn-affiliate inline-flex mt-4"
@@ -372,7 +372,7 @@ export default function AnkerSolixRS40PAvisPage() {
             <AffiliateCTA
               productName="Anker SOLIX RS40P"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD"
+              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
               label="Voir l&rsquo;offre actuelle sur Amazon"
               variant="box"
               position="footer-box"

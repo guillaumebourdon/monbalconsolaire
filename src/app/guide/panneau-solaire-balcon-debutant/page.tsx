@@ -195,7 +195,7 @@ export default function GuidePage() {
               <AffiliateCTA
                 productName="Sunology PLAY 2"
                 merchantName="Sunology"
-                affiliateUrl="https://sunology.eu/products/play2-kit-solaire"
+                affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
                 label="Voir le Sunology PLAY 2 — 518 €"
                 variant="inline"
                 position="article_bottom_2"

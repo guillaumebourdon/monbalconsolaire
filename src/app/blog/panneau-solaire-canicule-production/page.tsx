@@ -299,7 +299,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
             <AffiliateCTA
               productName="Sunology PLAY 2"
               merchantName="Sunology"
-              affiliateUrl="https://sunology.eu/collections/kits-solaires-balcon/products/sunology-play-2"
+              affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
               label="Voir le PLAY 2 (TOPCon, &ndash;0,28&nbsp;%/&deg;C)"
               variant="secondary"
               position="mid-article"

@@ -8,7 +8,7 @@ import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Bluetti Balco 260 avis 2026 : le tout-en-un onduleur + batterie',
-  description: 'Avis détaillé sur le Bluetti Balco 260 : batterie LFP 2,56 kWh + onduleur intégré, 849€ sans panneaux. Test complet, specs, comparatif et verdict honnête.',
+  description: 'Avis détaillé sur le Bluetti Balco 260 : batterie LFP 2,56 kWh + onduleur intégré, 849€ sans panneaux. Analyse complète, specs, comparatif et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/bluetti-balco-260',
   },
@@ -33,7 +33,7 @@ export default function BluettiBalco260AvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Bluetti Balco 260' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Bluetti Balco 260 avis : le tout-en-un onduleur + batterie (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Bluetti d&eacute;barque sur le march&eacute; du solaire de balcon avec un concept diff&eacute;rent : un bo&icirc;tier unique qui int&egrave;gre onduleur, batterie 2,56&nbsp;kWh et 4&nbsp;MPPT. Panneaux non inclus, &agrave; partir de 849&nbsp;&euro;.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 juin 2026</span><span>&middot;</span><span>8 min de lecture</span></div>

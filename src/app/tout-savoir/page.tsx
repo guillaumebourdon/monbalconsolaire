@@ -172,13 +172,13 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/blog/micro-onduleur-solaire-fonctionnement',
-    title: 'Micro-onduleur solaire : comment ça marche et lequel choisir ?',
-    excerpt: 'Fonctionnement, comparatif Hoymiles vs APsystems vs Enphase, quel modèle dans chaque kit, critères de choix et prix.',
+    title: 'Micro-onduleur solaire : fonctionnement et comparatif 2026',
+    excerpt: 'Définition, comparatif de 7 modèles (Hoymiles, APsystems, Enphase, Deye, EcoFlow), dimensionnement, hors réseau, normes et pannes.',
     type: 'analyse',
     badge: 'Guide technique',
     tags: ['optimisation', 'debutant'],
     publishedAt: '2026-06-06',
-    readTime: '10 min',
+    readTime: '14 min',
   },
   {
     slug: '/blog/entretien-nettoyage-panneau-solaire-balcon',
@@ -213,8 +213,8 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/guide/installer-kit-solaire-balcon',
-    title: 'Comment installer un kit solaire sur un balcon : pas à pas',
-    excerpt: 'Le guide d\'installation détaillé, étape par étape, avec les outils nécessaires.',
+    title: 'Installer un kit solaire balcon : étapes, fixation, prise',
+    excerpt: 'Check-list, 8 étapes, fixation selon le garde-corps, branchement sécurisé, déclaration Enedis et erreurs à éviter.',
     type: 'guide',
     badge: 'Installation',
     tags: ['installation', 'guide'],
@@ -243,8 +243,8 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/guide/panneau-solaire-copropriete',
-    title: 'Panneau solaire en copropriété : règles, votes et astuces',
-    excerpt: 'Quand faut-il l\'accord du syndic ? Modèle de courrier, vote en AG, cas pratiques.',
+    title: 'Panneau solaire en copropriété : balcon, vote AG et modèle',
+    excerpt: 'Sol, garde-corps ou toiture : quand l\'AG doit voter (art. 24 k, 25 b), modèle de résolution, recours en cas de refus.',
     type: 'guide',
     badge: 'Copropriété',
     tags: ['reglementation', 'guide'],

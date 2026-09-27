@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Beem Kit 300W avis 2026 : test du kit solaire petit budget',
-  description: 'Avis complet sur le Beem Kit 300W à 299€ : le kit solaire de balcon le moins cher du marché. 4 panneaux, installation, production réelle, rentabilité.',
+  title: 'Beem Kit 300W avis 2026 : 299 €, points faibles et verdict',
+  description: 'Kit Beem 300W : avis honnête sur le kit à 299 € (7.5/10). Points faibles, SAV Beem Energy, production estimée, ROI 5,5 ans. À qui il convient (ou pas).',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-kit-300w',
   },
@@ -24,7 +24,7 @@ const faqData = [
 export default function BeemKit300WAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem Kit 300W avis : test du kit solaire petit budget" description="Avis complet sur le Beem Kit 300W à 299€." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" />
+      <SchemaArticle title="Beem Kit 300W avis : analyse du kit solaire petit budget" description="Avis complet sur le Beem Kit 300W à 299€." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Beem Kit 300W" brand="Beem Energy" description="Kit solaire modulaire 4 panneaux de 75W, le meilleur ratio prix/puissance du marché avec garantie 25 ans." price={299} ratingValue={7.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/beem-kit-300w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />
@@ -32,9 +32,9 @@ export default function BeemKit300WAvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem Kit 300W avis : test du kit solaire petit budget (2026)</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Le kit solaire de balcon le moins cher du marché français : 299€ pour 300W. Mais que vaut-il vraiment ? Production réelle, installation, points forts et limites.</p>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem Kit 300W avis : analyse du kit solaire petit budget (2026)</h1>
+            <p className="text-lg text-charcoal-light leading-relaxed">Le kit solaire de balcon le moins cher du marché français : 299€ pour 300W. Mais que vaut-il vraiment ? Production estimée, installation, points forts et points faibles.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 15 mai 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
@@ -101,6 +101,7 @@ export default function BeemKit300WAvisPage() {
                   { t: 'Puissance limitée à 300W', d: 'C\'est suffisant pour le talon de consommation (frigo + box + veilles) mais pas plus. Un Sunology PLAY2 (450W) produit 50% de plus pour le double du prix.' },
                   { t: 'Esthétique moins élégante', d: '4 petits panneaux de ~80cm accrochés çà et là, c\'est moins clean qu\'un grand panneau unique. En copropriété, ça peut poser question visuellement.' },
                   { t: 'Rendement global légèrement inférieur', d: 'Les micro-panneaux ont un rendement légèrement inférieur aux grands panneaux bifaciaux (pas de gain bifacial). La technologie est plus basique.' },
+                  { t: 'SAV Beem Energy à surveiller', d: 'Beem Energy est en procédure de sauvegarde depuis fin 2025. Des retours clients signalent des délais SAV rallongés. La garantie 25 ans est contractuelle, mais la solidité financière de l\'entreprise est un point de vigilance.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">{p.t}</h4>
@@ -135,7 +136,7 @@ export default function BeemKit300WAvisPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Production réelle et rentabilité</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Production estimée et rentabilité</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Avec 300 Wc et un coefficient de pertes de 0,85, voici les estimations par région :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[500px]">

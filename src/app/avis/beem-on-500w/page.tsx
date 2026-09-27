@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Beem On 500 Wc avis 2026 : 429\u20ac, meilleur ratio \u20ac/Wc',
-  description: 'Avis détaillé sur le Beem On 500 Wc en 2026 : 429€ pour 500 Wc bifacial TOPCon, 0,86€/Wc. Test complet, production réelle, comparatif et verdict honnête.',
+  title: 'Beem On 500W avis 2026 : 429 €, aussi chez Leroy Merlin',
+  description: 'Beem On 500W (500 Wc) : 429 € sur le site Beem et chez Leroy Merlin. Avis et analyse : ROI 4,8 ans, note 8.5/10, points faibles (SAV, Beembox).',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-on-500w',
   },
@@ -33,7 +33,7 @@ export default function BeemOn500WcAvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 500 Wc' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 500 Wc avis : le nouveau rapport qualit&eacute;-prix du march&eacute; (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">429&nbsp;&euro; pour 500&nbsp;Wc bifacial TOPCon, soit 0,86&nbsp;&euro;/Wc. Le Beem On nouvelle g&eacute;n&eacute;ration casse les prix et devient le kit le plus rentable du march&eacute; fran&ccedil;ais.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>15 juin 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
@@ -140,6 +140,23 @@ export default function BeemOn500WcAvisPage() {
             </section>
 
             <AffiliateCTA productName="Beem On 500 Wc" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge" label="Vérifier le délai livraison" variant="secondary" position="after-cons" />
+
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">O&ugrave; acheter le Beem On 500 Wc&nbsp;: Leroy Merlin ou site Beem&nbsp;?</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem On 500&nbsp;Wc est r&eacute;f&eacute;renc&eacute; chez <strong>Leroy Merlin</strong> sous le nom &laquo;&nbsp;Kit panneau solaire plug&amp;play maison 500Wc BEEM&nbsp;&raquo; (r&eacute;f. 96375487), vendu par Leroy Merlin, au m&ecirc;me prix que sur le site du fabricant&nbsp;: <strong>429&nbsp;&euro;</strong> (relev&eacute; septembre 2026).</p>
+              <div className="space-y-3">
+                {[
+                  { t: 'Leroy Merlin', d: 'Pratique pour le retrait en magasin (selon stock local) et pour le retour : l\'interlocuteur SAV de premier niveau est l\'enseigne, ce qui est rassurant vu la procédure de sauvegarde de Beem Energy.' },
+                  { t: 'Site Beem Energy', d: 'Accès au paiement en 10x sans frais, à l\'option Beem ZEN (démarches CACSI pour 49 €) et aux déclinaisons (Extension, Beem On Max, avec ou sans rallonge).' },
+                ].map((p, i) => (
+                  <div key={i} className="card border-l-4 border-l-green">
+                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <p className="text-xs text-charcoal-light">{p.d}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-stone mt-2 italic">V&eacute;rifiez que la fiche mentionne bien 500&nbsp;Wc&nbsp;: l&apos;ancien Beem On 460&nbsp;W est encore list&eacute; chez certains revendeurs.</p>
+            </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Beem On 500 Wc vs la concurrence</h2>

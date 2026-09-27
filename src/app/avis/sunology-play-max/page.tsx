@@ -32,7 +32,7 @@ export default function PlayMaxAvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology PLAY MAX' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY MAX avis : kit solaire + batterie, ça vaut le coup ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le PLAY MAX, c&apos;est le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> avec une batterie VAULT de 700 Wh pour 1 179€. La promesse : stocker le solaire pour le soir. Analyse honnête.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>2 avril 2026 &middot; Mis &agrave; jour le 15 mai 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
@@ -45,7 +45,7 @@ export default function PlayMaxAvisPage() {
             price="1 179 €"
             score="7/10"
             tagline="Kit solaire avec batterie intégrée. Pour ceux qui consomment le soir."
-            affiliateUrl="https://sunology.eu/products/play-max"
+            affiliateUrl="https://sunology.eu/products/playmax-station-solaire-batterie"
             affiliateLabel="Voir sur le site du fabricant"
             accentColor="amber"
             image="/images/produits/sunology-play-max-1.webp"
@@ -130,7 +130,7 @@ export default function PlayMaxAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology PLAY MAX" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-max" label="Voir le PLAY MAX en stock" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Sunology PLAY MAX" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/playmax-station-solaire-batterie" label="Voir le PLAY MAX en stock" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -203,7 +203,7 @@ export default function PlayMaxAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le PLAY MAX est un produit bien pensé pour ceux qui veulent maximiser leur autoconsommation et/ou qui ont besoin d&apos;une batterie nomade. Le bundle à 1 179€ est le plus accessible du marché pour un kit + batterie.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Mais soyons honnêtes : pour la majorité des utilisateurs, le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY2 seul à 599€</Link> reste le meilleur investissement. Le ROI est nettement plus rapide (7,1 ans vs 11,7 ans) et le talon de consommation absorbe déjà une bonne partie de la production en journée. La batterie est un &quot;nice to have&quot;, pas un &quot;must have&quot;.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong> — Bon produit, mais le PLAY2 seul est un meilleur investissement pour la plupart.</p>
-              <a href="https://sunology.eu/products/play-max" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY MAX &rarr;</a>
+              <a href="https://sunology.eu/products/playmax-station-solaire-batterie" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY MAX &rarr;</a>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
@@ -211,7 +211,7 @@ export default function PlayMaxAvisPage() {
               <Link href="/calculateur" className="btn-primary inline-flex mt-2">Calculer mes économies →</Link>
             </div>
 
-            <AffiliateCTA productName="Sunology PLAY MAX" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-max" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="1 179 €" />
+            <AffiliateCTA productName="Sunology PLAY MAX" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/playmax-station-solaire-batterie" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="1 179 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

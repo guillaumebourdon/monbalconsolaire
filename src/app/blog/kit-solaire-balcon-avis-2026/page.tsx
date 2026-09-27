@@ -173,7 +173,7 @@ export default function KitSolaireBalconAvisPage() {
             </div>
 
             <div className="my-6">
-              <AffiliateCTA productName="Beem On 500 Wc" merchantName="Beem Energy" affiliateUrl="https://www.beemenergy.fr/products/beem-on" label="Voir le Beem On 500 Wc" position="after-beem" price="429 &euro;" />
+              <AffiliateCTA productName="Beem On 500 Wc" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge" label="Voir le Beem On 500 Wc" position="after-beem" price="429 &euro;" />
             </div>
           </section>
 
@@ -333,7 +333,7 @@ export default function KitSolaireBalconAvisPage() {
             </div>
 
             <div className="my-6">
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play2-kit-solaire" label="Voir le Sunology PLAY 2" variant="box" position="article_bottom" price="599 &euro;" />
+              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY 2" variant="box" position="article_bottom" price="599 &euro;" />
             </div>
           </section>
 

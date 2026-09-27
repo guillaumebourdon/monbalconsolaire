@@ -6,8 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
-  title: 'Meilleur kit solaire plug and play 2026 : comparatif complet',
-  description: 'Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026 : Sunology PLAY2, Beem On, Sunethic F500. Prix, puissance, rentabilité, avis.',
+  title: 'Meilleur kit solaire plug and play 2026 : 5 kits dès 299 €',
+  description: 'Meilleur kit solaire plug and play 2026 : Beem On 500 Wc (429 €), Sunology PLAY2, Sunethic F500, Beem Kit 300W. Prix, ROI, points faibles, verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026',
   },
@@ -104,7 +104,7 @@ export default function ComparatifPage() {
                 {[
                   { t: 'Puissance (Wc)', d: 'La puissance crête determine la production maximale. Plus elle est élevée, plus vous produisez.' },
                   { t: 'Prix et \u20ac/Wc', d: 'Le rapport prix/puissance permet de comparer objectivement. Un bon ratio est inferieur à 1,40\u20ac/Wc.' },
-                  { t: 'Production réelle (kWh/an)', d: 'La production estimée en conditions réelles, basee sur les données PVGIS et les retours utilisateurs.' },
+                  { t: 'Production estimée (kWh/an)', d: 'La production estimée en conditions réelles, basee sur les données PVGIS et les retours utilisateurs.' },
                   { t: 'Facilite d\'installation', d: 'Temps de montage, outils nécessaires, options de pose (sol, mur, balcon).' },
                   { t: 'Garantie et SAV', d: 'Duree de garantie produit et performance, qualité du service apres-vente, avis clients.' },
                   { t: 'Suivi et app mobile', d: 'Possibilite de suivre sa production en temps réel via une application.' },
@@ -180,7 +180,7 @@ export default function ComparatifPage() {
 
               <h4 className="font-bold mb-2 mt-6">Production réelle : ce que disent les utilisateurs</h4>
               <p className="text-charcoal-light leading-relaxed mb-3">D&apos;après les retours d&apos;utilisateurs vérifiés, la production annuelle du PLAY2 varie selon la region et l&apos;exposition. A Marseille avec une bonne exposition sud, certains utilisateurs rapportent plus de 650 kWh/an. En region parisienne avec une exposition est, la production tourne plutot autour de 450 kWh/an. Sunology annonce officiellement 565 kWh/an comme estimation moyenne.</p>
-              <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Sunology PLAY2 &rarr;</a>
+              <a href="https://sunology.eu/products/play-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Sunology PLAY2 &rarr;</a>
             </section>
 
             <section id="section-5">

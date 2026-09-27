@@ -8,7 +8,7 @@ import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'DualSun PREASY avis : panneau pliable Made in France (870\u20ac)',
-  description: 'Avis complet sur le DualSun PREASY : panneau solaire pliable 420 Wc, Made in France, design aspect bois. Test, prix réel, comparaison et verdict honnête.',
+  description: 'Avis complet sur le DualSun PREASY : panneau solaire pliable 420 Wc, Made in France, design aspect bois. Analyse, prix réel, comparaison et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/dualsun-preasy',
   },
@@ -122,7 +122,7 @@ export default function DualsunPreasyPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'DualSun PREASY' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               DualSun PREASY avis : le nouveau challenger du marché
             </h1>

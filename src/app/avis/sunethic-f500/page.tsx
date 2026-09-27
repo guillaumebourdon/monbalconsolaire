@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Sunethic F500 avis : kit solaire Made in France 500 Wc (690\u20ac)',
-  description: 'Test complet du Sunethic F500 : 500 Wc, fabrication fran\u00e7aise, 690\u20ac, note Trustpilot 4.8/5, garantie 25 ans. Production r\u00e9elle et verdict honn\u00eate.',
+  title: 'Sunethic F500 avis 2026 : 690 €, Made in France, 7.5/10',
+  description: 'Sunethic avis : le F500 (500 Wc, 690 €) fabriqué en France, noté 7.5/10. Points forts, points faibles, ROI 7,4 ans et comparatif Sunology/Beem.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunethic-f500',
   },
@@ -23,7 +23,7 @@ const faqData = [
 export default function SunethicAvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunethic F500 avis : test du kit solaire Made in France" description="Avis complet sur le Sunethic F500." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" />
+      <SchemaArticle title="Sunethic F500 avis : analyse du kit solaire Made in France" description="Avis complet sur le Sunethic F500." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Sunethic F500" brand="Sunethic" description="Kit solaire plug-and-play 500 Wc fabriqué en France avec garantie 25 ans et meilleure note Trustpilot du marché." price={690} ratingValue={7.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunethic-f500" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunethic F500' }]} />
@@ -31,8 +31,8 @@ export default function SunethicAvisPage() {
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunethic F500' }]} />
           <div className="mb-10">
-            <div className="badge-green mb-4 inline-block">Avis et test</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunethic F500 avis : test du kit solaire Made in France (2026)</h1>
+            <div className="badge-green mb-4 inline-block">Avis et analyse</div>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunethic F500 avis : analyse du kit solaire Made in France (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Sunethic F500 est le kit le plus puissant et le seul 100% Made in France de ce comparatif. Mais son prix de 690€ est-il justifié ? Notre analyse.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>27 mars 2026 &middot; Mis &agrave; jour le 15 mai 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>

@@ -257,7 +257,7 @@ export default function GuideBatterieBalcon() {
             <AffiliateCTA
               productName="Zendure SolarFlow"
               merchantName="Zendure"
-              affiliateUrl="https://www.zendure.com/fr/products/solarflow"
+              affiliateUrl="https://zendure.fr/products/solarflow"
               label="Voir le Zendure SolarFlow"
               variant="inline"
               position="mid_article"
@@ -475,7 +475,7 @@ export default function GuideBatterieBalcon() {
             <AffiliateCTA
               productName="Bluetti Balco 260"
               merchantName="Bluetti"
-              affiliateUrl="https://www.bluettipower.fr/products/balco-260"
+              affiliateUrl="https://fr.bluettipower.eu/pages/bluetti-balco-260"
               label="Voir le Bluetti Balco 260"
               variant="box"
               position="footer-box"

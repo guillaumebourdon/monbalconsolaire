@@ -171,7 +171,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
             <AffiliateCTA
               productName="Beem On 500 Wc"
               merchantName="Beem"
-              affiliateUrl="https://www.beemenergy.fr/products/kit-solaire-beem-on-500w"
+              affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge"
               label="Voir le Beem On 500 Wc"
               variant="inline"
               position="mid-article"

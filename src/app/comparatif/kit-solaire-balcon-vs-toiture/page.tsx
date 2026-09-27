@@ -203,7 +203,7 @@ export default function ComparatifBalconVsToiturePage() {
           <AffiliateCTA
             productName="Beem On 500 Wc"
             merchantName="Beem Energy"
-            affiliateUrl="https://www.beemenergy.fr/products/beem-on-500-wc"
+            affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge"
             label="Voir le Beem On 500 Wc"
             variant="inline"
             position="mid-article"

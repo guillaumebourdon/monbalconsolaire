@@ -218,7 +218,7 @@ export default function RevendreSuplusSolaireBalconPage() {
             <AffiliateCTA
               productName="Zendure SolarFlow Mix"
               merchantName="Zendure"
-              affiliateUrl="https://www.zendure.com/fr/products/solarflow-mix"
+              affiliateUrl="https://zendure.fr/products/solarflow-mix-series"
               label="Voir le SolarFlow Mix — stockez votre surplus"
               variant="inline"
               position="mid-article"

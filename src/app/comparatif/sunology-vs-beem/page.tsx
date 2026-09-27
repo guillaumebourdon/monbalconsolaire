@@ -142,7 +142,7 @@ export default function SunologyVsBeemPage() {
                     <li>→ Vous avez un petit balcon (panneau plus compact)</li>
                     <li>→ La certification CE complète vous rassure</li>
                   </ul>
-                  <a href="https://sunology.eu/products/play2-kit-solaire" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4 text-xs">Voir le Sunology PLAY2 &rarr;</a>
+                  <a href="https://sunology.eu/products/play-kit-solaire-plug-play" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4 text-xs">Voir le Sunology PLAY2 &rarr;</a>
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start gap-4 mb-3">

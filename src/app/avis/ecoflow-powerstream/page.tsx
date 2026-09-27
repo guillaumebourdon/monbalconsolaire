@@ -8,7 +8,7 @@ import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'EcoFlow PowerStream avis : syst\u00e8me solaire modulaire + batterie',
-  description: 'Avis complet sur EcoFlow PowerStream : système modulaire panneaux + batterie + réseau. Test, prix, configuration, points forts et limites en 2026.',
+  description: 'Avis complet sur EcoFlow PowerStream : système modulaire panneaux + batterie + réseau. Analyse, prix, configuration, points forts et limites en 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/ecoflow-powerstream',
   },
@@ -156,12 +156,12 @@ export default function EcoflowPowerstreamPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow PowerStream' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               EcoFlow PowerStream avis : le système modulaire intelligent (2026)
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Le PowerStream n&apos;est pas un kit solaire classique, c&apos;est un <strong>écosystème modulaire</strong> qui articule panneaux, batterie et réseau domestique avec une intelligence rare sur le marché grand public. Test complet : ce qu&apos;il fait vraiment, son prix réel, et pour qui c&apos;est le bon choix.
+              Le PowerStream n&apos;est pas un kit solaire classique, c&apos;est un <strong>écosystème modulaire</strong> qui articule panneaux, batterie et réseau domestique avec une intelligence rare sur le marché grand public. Analyse compl&egrave;te : ce qu&apos;il fait vraiment, son prix réel, et pour qui c&apos;est le bon choix.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>28 avril 2026 &middot; Mis &agrave; jour juillet 2026</span>
@@ -177,7 +177,7 @@ export default function EcoflowPowerstreamPage() {
             price="599 €"
             score="8/10"
             tagline="Le micro-onduleur intelligent qui transforme votre installation en système modulaire évolutif."
-            affiliateUrl="https://fr.ecoflow.com/products/powerstream-microinverter"
+            affiliateUrl="https://fr.ecoflow.com/"
             affiliateLabel="Voir le PowerStream sur EcoFlow"
             accentColor="amber"
             image="/images/produits/ecoflow-powerstream-2.webp"
@@ -363,7 +363,7 @@ export default function EcoflowPowerstreamPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/powerstream-microinverter" label="Voir sur EcoFlow" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/" label="Voir sur EcoFlow" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 4 points faibles à connaître</h2>
@@ -377,7 +377,7 @@ export default function EcoflowPowerstreamPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/powerstream-microinverter" label="Voir sur EcoFlow" variant="secondary" position="after-cons" />
+            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/" label="Voir sur EcoFlow" variant="secondary" position="after-cons" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">PowerStream vs concurrence : tableau comparatif (juillet 2026)</h2>
@@ -547,7 +547,7 @@ export default function EcoflowPowerstreamPage() {
 
             <NewsletterBanner />
 
-            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/powerstream-microinverter" label="Voir l'offre actuelle sur EcoFlow" variant="box" position="footer-box" price="599 €" />
+            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/" label="Voir l'offre actuelle sur EcoFlow" variant="box" position="footer-box" price="599 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

@@ -8,7 +8,7 @@ import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Zendure SolarFlow avis 2026 : 840 W pour 488 €, trop beau ?',
-  description: 'Avis complet sur le Zendure SolarFlow 800 Plus : batterie 1,92 kWh intégrée, 800 W AC, plug-and-play pour 488 €. Test, specs, rentabilité et verdict honnête.',
+  description: 'Avis complet sur le Zendure SolarFlow 800 Plus : batterie 1,92 kWh intégrée, 800 W AC, plug-and-play pour 488 €. Analyse, specs, rentabilité et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/zendure-solarflow',
   },
@@ -149,12 +149,12 @@ export default function ZendureSolarflowPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Zendure SolarFlow avis : 840 W pour 488 €, trop beau ?
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour moins de 500 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Test complet, calcul de rentabilité et verdict honnête.
+              Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour moins de 500 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Analyse compl&egrave;te, calcul de rentabilité et verdict honnête.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>7 mai 2026 &middot; Mis &agrave; jour le 30 juillet 2026</span>

@@ -67,7 +67,7 @@ export default function HoymilesHMS800WAvisPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Hoymiles HMS-800W-2T' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Hoymiles HMS-800W-2T&nbsp;: avis du micro-onduleur de r&eacute;f&eacute;rence pour les kits DIY
             </h1>
@@ -88,7 +88,7 @@ export default function HoymilesHMS800WAvisPage() {
             price="~119 &euro;"
             score="8.5/10"
             tagline="Le micro-onduleur le plus prim&eacute; du march&eacute; DIY europ&eacute;en. WiFi int&eacute;gr&eacute;, 2 MPPT, IP67."
-            affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS"
+            affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsolai-21"
             affiliateLabel="Voir sur Amazon.fr"
             accentColor="green"
           />
@@ -198,7 +198,7 @@ export default function HoymilesHMS800WAvisPage() {
             <AffiliateCTA
               productName="Hoymiles HMS-800W-2T"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS"
+              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsolai-21"
               label="Voir le Hoymiles HMS-800W-2T sur Amazon.fr"
               variant="inline"
               position="after-pros"
@@ -241,7 +241,7 @@ export default function HoymilesHMS800WAvisPage() {
             <AffiliateCTA
               productName="Hoymiles HMS-800W-2T"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS"
+              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsolai-21"
               label="Commander le Hoymiles HMS-800W-2T"
               variant="inline"
               position="after-cons"
@@ -356,7 +356,7 @@ export default function HoymilesHMS800WAvisPage() {
                 Les quelques b&eacute;mols &mdash; app S-Miles moins aboutie qu&rsquo;EcoFlow, garantie 10 ans seulement, c&acirc;ble AC non fourni &mdash; ne remettent pas en question le choix sur ce segment. Si vous savez connecter deux fiches MC4 et configurer un WiFi, le HMS-800W-2T est votre micro-onduleur.
               </p>
               <a
-                href="https://www.amazon.fr/dp/B0CJGL65DS"
+                href="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsolai-21"
                 target="_blank"
                 rel="sponsored noopener"
                 className="btn-affiliate"
@@ -368,7 +368,7 @@ export default function HoymilesHMS800WAvisPage() {
             <AffiliateCTA
               productName="Hoymiles HMS-800W-2T"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS"
+              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsolai-21"
               label="Commander le Hoymiles HMS-800W-2T"
               variant="box"
               position="footer-box"

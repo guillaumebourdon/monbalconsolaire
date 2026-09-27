@@ -8,7 +8,7 @@ import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Sunology CITY avis 2026 : le kit pensé pour les balcons étroits',
-  description: 'Avis complet sur le Sunology CITY : test, prix, production réelle, fixation garde-corps. Le kit solaire spécialisé balcon est-il vraiment adapté à votre situation ?',
+  description: 'Avis complet sur le Sunology CITY : analyse, prix, production estimée, fixation garde-corps. Le kit solaire spécialisé balcon est-il vraiment adapté à votre situation ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-city',
   },
@@ -130,12 +130,12 @@ export default function SunologyCityPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology CITY' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Sunology CITY avis : le kit pensé pour les balcons étroits (2026)
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Le CITY est le seul kit solaire plug-and-play du marché conçu spécifiquement pour s&apos;accrocher au garde-corps d&apos;un balcon urbain. Test complet : prix, production réelle, installation, et les vrais cas où il vaut le coup.
+              Le CITY est le seul kit solaire plug-and-play du marché conçu spécifiquement pour s&apos;accrocher au garde-corps d&apos;un balcon urbain. Analyse compl&egrave;te : prix, production estim&eacute;e, installation, et les vrais cas où il vaut le coup.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>27 avril 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
@@ -151,7 +151,7 @@ export default function SunologyCityPage() {
             price="549 €"
             score="7,5/10"
             tagline="Le kit pensé pour s'accrocher au garde-corps des balcons urbains."
-            affiliateUrl="https://sunology.eu/products/city-kit-solaire-balcon"
+            affiliateUrl="https://sunology.eu/"
             affiliateLabel="Voir le CITY sur Sunology"
             accentColor="amber"
             image="/images/produits/sunology-city-front.webp"
@@ -231,7 +231,7 @@ export default function SunologyCityPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Production réelle par exposition</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Production estimée par exposition</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 La production d&apos;un panneau vertical varie fortement selon l&apos;exposition et la latitude. Voici les chiffres réalistes basés sur les données PVGIS et les retours utilisateurs :
               </p>
@@ -290,7 +290,7 @@ export default function SunologyCityPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/city-kit-solaire-balcon" label="Voir le CITY en stock" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/" label="Voir le CITY en stock" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 4 points faibles à connaître</h2>
@@ -304,7 +304,7 @@ export default function SunologyCityPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/city-kit-solaire-balcon" label="Voir conditions Sunology" variant="secondary" position="after-stats" />
+            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/" label="Voir conditions Sunology" variant="secondary" position="after-stats" />
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
               <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
@@ -404,7 +404,7 @@ export default function SunologyCityPage() {
 
             <NewsletterBanner />
 
-            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/city-kit-solaire-balcon" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="549 €" />
+            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="549 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
