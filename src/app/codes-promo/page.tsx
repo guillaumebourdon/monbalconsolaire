@@ -1,111 +1,332 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { EmailCapture } from '@/components/ui/EmailCapture';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
-  title: 'Codes promo kits solaires 2026 : Sunology, Beem, Zendure',
-  description: 'Tous les codes promo et bons plans actifs pour acheter votre kit solaire balcon. Mis \u00e0 jour chaque semaine. Inscrivez-vous pour les codes exclusifs.',
+  title: 'Code promo Sunology, Beem, Sunethic : offres septembre 2026',
+  description: 'Code promo Sunology : -12% sur tout jusqu’au 30/09 et parrainage -7%. Offres Beem, Sunethic, EcoFlow, Zendure vérifiées sur les sites officiels.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/codes-promo',
   },
 };
 
-const promos = [
-  { brand: 'Sunology', kit: 'PLAY 2', deal: 'Livraison offerte', reduction: '-20 \u20ac', code: 'Automatique', valable: 'Permanent', url: 'https://sunology.eu/products/play2-kit-solaire', merchantName: 'Sunology' },
-  { brand: 'Beem', kit: 'Kit 300W', deal: 'Prix le plus bas du march\u00e9', reduction: '299 \u20ac', code: '\u2014', valable: 'Permanent', url: 'https://beemenergy.fr/products/kit-beem', merchantName: 'Beem Energy' },
-  { brand: 'Beem', kit: 'On 460W', deal: 'Paiement en 10x sans frais', reduction: '~60 \u20ac/mois', code: 'Automatique', valable: 'Permanent', url: 'https://beemenergy.fr/products/beem-kit-solaire-plug-play', merchantName: 'Beem Energy' },
-  { brand: 'Sunethic', kit: 'F500', deal: 'Made in France, livraison incluse', reduction: '\u2014', code: '\u2014', valable: 'Permanent', url: 'https://sunethic.fr/produits', merchantName: 'Sunethic' },
+const VERIFIED = '27/09/2026';
+const SUNOLOGY_PLAY_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
+
+const faqData = [
+  {
+    question: 'Existe-t-il un code réduction Sunology ?',
+    answer:
+      'Sunology ne publie pas de code promo public permanent. Deux leviers officiels existent : les opérations saisonnières affichées directement sur le site (par exemple -12% sur tout jusqu’au 30 septembre 2026, appliqué automatiquement) et le parrainage S-Club, qui donne 7% de remise sur la première commande. Les codes du type SUN_PRENOM que l’on voit sur les sites de coupons sont des codes de parrainage de particuliers.',
+  },
+  {
+    question: 'Comment fonctionne le parrainage Sunology ?',
+    answer:
+      'Le programme S-Club de Sunology offre 7% de remise sur la première commande du filleul. Le parrain reçoit 3% du montant acheté par son filleul en Sunopoints, convertibles en carte cadeau ou en remise Sunology. Il suffit de choisir un parrain membre de la communauté Sunology au moment de la commande.',
+  },
+  {
+    question: 'Le code SUN_RJHOMESOLAR (ou un autre code SUN_) est-il valable ?',
+    answer:
+      'Les codes au format SUN_XXX sont des codes de parrainage personnels de clients Sunology. Ils donnent en principe la remise filleul officielle (7%) et rémunèrent la personne qui les diffuse. Les sites annonçant -10% ou -15% ne sont pas confirmés par Sunology : vérifiez toujours le montant réel au panier avant de payer.',
+  },
+  {
+    question: 'Y a-t-il un code promo Sunology pour le Black Friday ?',
+    answer:
+      'Sunology fait chaque année une opération Black Friday, sans code : les remises s’affichent directement sur le site. En 2025, la marque annonçait jusqu’à 640 € de réduction, jusqu’au 3 décembre (source : Selectra). La remise parrainage n’est généralement pas cumulable avec ces opérations.',
+  },
+  {
+    question: 'Existe-t-il un code promo Beem Energy pour les kits plug-and-play ?',
+    answer:
+      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 27/09/2026. Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
+  },
+  {
+    question: 'Existe-t-il un code promo Sunethic ?',
+    answer:
+      'Sunethic ne publie pas de code public officiel. En septembre 2026, la marque affichait sur son site des remises de 50 à 150 € sur les kits à panneaux SunPower (jusqu’au 21/09, terminée), la livraison offerte et le dossier mairie offert sur les kits 6 panneaux.',
+  },
+];
+
+type Offer = {
+  label: string;
+  detail: string;
+  status: 'active' | 'expired' | 'none';
+  source: string;
+  sourceUrl: string;
+};
+
+function OfferCard({ o }: { o: Offer }) {
+  const statusLabel = o.status === 'active' ? 'Active' : o.status === 'expired' ? 'Terminée' : 'Pas de code';
+  const statusClass =
+    o.status === 'active'
+      ? 'bg-green-pale text-green'
+      : o.status === 'expired'
+      ? 'bg-cream text-stone'
+      : 'bg-amber-pale text-amber-dark';
+  return (
+    <div className={`card ${o.status === 'active' ? 'border-l-4 border-l-green' : 'border-l-4 border-l-amber'}`}>
+      <div className="flex items-center gap-2 mb-1 flex-wrap">
+        <span className="font-bold text-sm">{o.label}</span>
+        <span className={`text-xs font-semibold px-2 py-0.5 rounded ${statusClass}`}>{statusLabel}</span>
+      </div>
+      <p className="text-sm text-charcoal-light leading-relaxed">{o.detail}</p>
+      <p className="text-xs text-stone mt-2">
+        V&eacute;rifi&eacute; le {VERIFIED} &middot; Source :{' '}
+        <a href={o.sourceUrl} target="_blank" rel="noopener" className="text-green hover:underline">
+          {o.source}
+        </a>
+      </p>
+    </div>
+  );
+}
+
+const sunologyOffers: Offer[] = [
+  {
+    label: 'La rentrée Sunology : -12% sur tout',
+    detail:
+      'Remise appliquée automatiquement, sans code, jusqu’au 30 septembre 2026. Le PLAY passe de 599 € à 527 €. Expédition premium gratuite, paiement en 12x sans frais.',
+    status: 'active',
+    source: 'sunology.eu (fiche PLAY)',
+    sourceUrl: SUNOLOGY_PLAY_URL,
+  },
+  {
+    label: 'Parrainage S-Club : -7% sur la 1re commande',
+    detail:
+      'Le filleul obtient 7% de remise sur sa première commande en choisissant un parrain membre de la communauté Sunology. Le parrain touche 3% du montant en Sunopoints. Utile hors période de promo : vérifiez au panier si la remise se cumule avec l’opération en cours.',
+    status: 'active',
+    source: 'sunology.eu (page parrainage)',
+    sourceUrl: 'https://sunology.eu/pages/parrainage',
+  },
+];
+
+const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; cta?: { url: string; product: string; merchant: string } }[] = [
+  {
+    id: 'sunethic',
+    brand: 'Sunethic',
+    intro:
+      'Pas de code promo public officiel chez Sunethic. Les remises passent par des opérations affichées sur la page d’accueil. Les codes type « WELCOME » ou codes d’influenceurs relayés par les sites de coupons ne sont pas confirmés par la marque.',
+    offers: [
+      {
+        label: 'Remises 50 à 150 € sur les kits SunPower',
+        detail: 'Opération affichée sur le site jusqu’au 21/09/2026 : terminée à la date de vérification.',
+        status: 'expired',
+        source: 'sunethic.fr',
+        sourceUrl: 'https://sunethic.fr/',
+      },
+      {
+        label: 'Livraison offerte + dossier mairie offert',
+        detail:
+          'Livraison offerte en 15 jours sur les stations et kits. Dossier mairie offert (valeur annoncée 190 €) à partir des kits 6 panneaux, donc pas sur un kit balcon 1 panneau.',
+        status: 'active',
+        source: 'sunethic.fr',
+        sourceUrl: 'https://sunethic.fr/',
+      },
+    ],
+    cta: { url: 'https://sunethic.fr/produits', product: 'Sunethic F500', merchant: 'Sunethic' },
+  },
+  {
+    id: 'beem',
+    brand: 'Beem Energy',
+    intro:
+      'Aucun code officiel pour les kits plug-and-play au 27/09/2026. Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
+    offers: [
+      {
+        label: 'Jusqu’à -25% sur les projets avec Beem Battery',
+        detail: 'Ne concerne pas les kits balcon seuls. Le Beem Kit reste affiché à partir de 299 € et le Beem On 460W à partir de 429 €.',
+        status: 'active',
+        source: 'beemenergy.fr',
+        sourceUrl: 'https://beemenergy.fr/',
+      },
+      {
+        label: 'Parrainage Beem : 250 € filleul / 250 € parrain',
+        detail: 'Réservé aux projets Beem Roof et Beem Battery (le filleul cite le nom du parrain au premier appel). Non applicable aux kits plug-and-play.',
+        status: 'none',
+        source: 'beemenergy.fr (page parrainage)',
+        sourceUrl: 'https://beemenergy.fr/pages/ne-perdez-pas-de-temps-pour-parrainer-vos-proches',
+      },
+    ],
+    cta: { url: 'https://beemenergy.fr/products/kit-beem', product: 'Beem Kit 300W', merchant: 'Beem Energy' },
+  },
+  {
+    id: 'ecoflow',
+    brand: 'EcoFlow',
+    intro: 'Pas de code public officiel. EcoFlow fonctionne par grosses opérations saisonnières affichées sur le site, avec des points EcoCredits pour les membres.',
+    offers: [
+      {
+        label: 'Autumn Sale gamme STREAM : jusqu’à -57%',
+        detail: 'Du 14 septembre au 7 octobre 2026. Aucune remise spécifique au PowerStream n’était mise en avant à la date de vérification.',
+        status: 'active',
+        source: 'fr.ecoflow.com',
+        sourceUrl: 'https://fr.ecoflow.com/',
+      },
+    ],
+    cta: { url: 'https://fr.ecoflow.com/', product: 'EcoFlow PowerStream', merchant: 'EcoFlow' },
+  },
+  {
+    id: 'zendure',
+    brand: 'Zendure',
+    intro: 'Pas de code public officiel. Les baisses de prix sont directement affichées, avec une garantie de prix de 30 jours.',
+    offers: [
+      {
+        label: 'Autumn Deals : jusqu’à -43%',
+        detail: 'Exemples affichés : SolarFlow 2400 AC+ à 839 € (au lieu de 1 279 €), SolarFlow 1600 AC+ à 959 € (au lieu de 1 678 €). Date de fin non indiquée.',
+        status: 'active',
+        source: 'zendure.fr',
+        sourceUrl: 'https://zendure.fr/',
+      },
+    ],
+    cta: { url: 'https://zendure.fr/products/solarflow-mix-series', product: 'Zendure SolarFlow', merchant: 'Zendure' },
+  },
 ];
 
 export default function CodesPromoPage() {
   return (
     <section className="section-padding">
+      <SchemaFAQ questions={faqData} />
       <div className="container-brand max-w-3xl">
         <Breadcrumbs items={[{ label: 'Codes promo' }]} />
 
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
-          Codes promo et bons plans solaire balcon &middot; Mai 2026
+          Code promo Sunology, Beem, Sunethic, EcoFlow, Zendure &middot; Septembre 2026
         </h1>
-        <p className="text-charcoal-light text-lg mb-8">
-          Tous les codes promo actifs des marques de kits solaires, v&eacute;rifi&eacute;s chaque semaine.
+        <p className="text-charcoal-light text-lg mb-4">
+          Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
         </p>
-
-        {/* Email capture — top of page */}
-        <div className="card-lg bg-gradient-to-br from-amber-pale/40 via-white to-green-pale/20 border-amber/10 mb-10 reveal">
-          <div className="flex items-start gap-3 mb-4">
-            <span className="text-2xl">&#127873;</span>
-            <div>
-              <h2 className="font-bold text-base mb-1">Codes exclusifs MonBalconSolaire</h2>
-              <p className="text-sm text-charcoal-light leading-relaxed">
-                Nous n&eacute;gocions des codes promo exclusifs avec les marques. Inscrivez-vous pour &ecirc;tre pr&eacute;venu&middot;e d&egrave;s qu&apos;on en a un, et recevez la liste mise &agrave; jour des bons plans.
-              </p>
-            </div>
-          </div>
-          <EmailCapture
-            endpoint="/api/email/subscribe-promo"
-            source="codes_promo"
-            buttonLabel="Je m'inscris"
-            successMessage="Inscription confirm&eacute;e ! V&eacute;rifiez votre bo&icirc;te email."
-          />
+        <div className="card bg-cream/50 text-sm text-charcoal-light leading-relaxed mb-8">
+          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> Sunology fait -12% sur tout jusqu&apos;au 30/09 (sans code) et propose -7% via son parrainage S-Club. Beem, Sunethic, EcoFlow et Zendure n&apos;ont pas de code public officiel : leurs remises sont affich&eacute;es directement sur leur site.
         </div>
 
-        {/* Current deals table */}
-        <div className="space-y-8">
-          <section>
-            <h2 className="text-2xl font-extrabold mb-4 reveal">Bons plans actuels</h2>
-            <div className="space-y-3 reveal">
-              {promos.map((p, i) => (
-                <div key={i} className="card flex flex-col md:flex-row md:items-center gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-bold text-sm">{p.brand}</span>
-                      <span className="text-xs text-stone">{p.kit}</span>
-                    </div>
-                    <p className="text-sm text-charcoal-light">{p.deal}</p>
-                    <div className="flex items-center gap-3 mt-2 text-xs text-stone">
-                      {p.code !== '\u2014' && <span className="font-mono bg-amber-pale text-amber-dark px-2 py-0.5 rounded">{p.code}</span>}
-                      <span>Valable : {p.valable}</span>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <AffiliateCTA productName={`${p.brand} ${p.kit}`} merchantName={p.merchantName} affiliateUrl={p.url} label="Voir l'offre" variant="inline" position="codes_promo" />
-                  </div>
-                </div>
+        <nav className="flex flex-wrap gap-2 text-sm mb-10" aria-label="Sommaire">
+          <a href="#sunology" className="badge-green">Sunology</a>
+          <a href="#sunethic" className="badge-amber">Sunethic</a>
+          <a href="#beem" className="badge-amber">Beem</a>
+          <a href="#ecoflow" className="badge-amber">EcoFlow</a>
+          <a href="#zendure" className="badge-amber">Zendure</a>
+          <a href="#faq" className="badge-amber">FAQ</a>
+        </nav>
+
+        <div className="space-y-12">
+          {/* SUNOLOGY */}
+          <section id="sunology" className="scroll-mt-24">
+            <h2 className="text-2xl font-extrabold mb-4">Code promo Sunology</h2>
+            <p className="text-charcoal-light leading-relaxed mb-4">
+              Sunology ne diffuse pas de code promo public permanent. Les r&eacute;ductions officielles passent par deux canaux : les op&eacute;rations saisonni&egrave;res (appliqu&eacute;es automatiquement sur le site) et le parrainage S-Club. Voici ce qui est actif au {VERIFIED}.
+            </p>
+            <div className="space-y-3 mb-6">
+              {sunologyOffers.map((o) => (
+                <OfferCard key={o.label} o={o} />
+              ))}
+            </div>
+
+            <div className="card-lg bg-amber-pale/30 border-amber/10 text-sm text-charcoal-light leading-relaxed mb-6">
+              <h3 className="font-bold text-charcoal mb-2">Et les codes &laquo; SUN_RJHOMESOLAR &raquo;, &laquo; SUN26 &raquo;&hellip; ?</h3>
+              <p>
+                Les codes au format <span className="font-mono">SUN_PRENOM</span> (dont SUN_RJHOMESOLAR) sont des codes de <strong>parrainage personnels</strong> de clients Sunology : ils donnent la remise filleul officielle (7%) et r&eacute;mun&egrave;rent la personne qui les publie. Les sites de coupons qui annoncent -10% ou -15% (SUN26, etc.) ne sont confirm&eacute;s nulle part par Sunology. Nous ne les listons pas. R&egrave;gle simple : si la remise n&apos;appara&icirc;t pas au panier, elle n&apos;existe pas.
+              </p>
+            </div>
+
+            <h3 className="text-xl font-bold mb-3">Code promo Sunology PLAY 2</h3>
+            <p className="text-charcoal-light leading-relaxed mb-4">
+              Le PLAY (450 Wc, anciennement commercialis&eacute; comme PLAY 2) est affich&eacute; &agrave; <strong>527 &euro; au lieu de 599 &euro;</strong> jusqu&apos;au 30 septembre 2026 gr&acirc;ce &agrave; l&apos;op&eacute;ration -12%. Il n&apos;existe pas de code sp&eacute;cifique au PLAY 2. Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;. Notre analyse compl&egrave;te :{' '}
+              <Link href="/avis/sunology-play-2" className="text-green font-semibold hover:underline">avis Sunology PLAY 2</Link>.
+            </p>
+            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label="Voir le PLAY 2 à -12% sur Sunology" variant="secondary" position="codes_promo_sunology" price="527 €" />
+
+            <h3 className="text-xl font-bold mt-8 mb-3">Sunology et le Black Friday</h3>
+            <p className="text-charcoal-light leading-relaxed">
+              Sunology ne donne pas de code Black Friday : les remises s&apos;affichent directement. En 2025, la marque annon&ccedil;ait jusqu&apos;&agrave; 640 &euro; de r&eacute;duction jusqu&apos;au 3 d&eacute;cembre (
+              <a href="https://selectra.info/energie/actualites/renovation-energetique/energie-moins-chere-sunology-propose-reduction-de-640-euros-pour-black-friday" target="_blank" rel="noopener" className="text-green hover:underline">source Selectra</a>
+              ). Si vous n&apos;&ecirc;tes pas press&eacute;, fin novembre reste la p&eacute;riode la plus probable pour la meilleure remise de l&apos;ann&eacute;e. Nous mettrons cette page &agrave; jour d&egrave;s l&apos;annonce 2026.
+            </p>
+          </section>
+
+          {/* OTHER BRANDS */}
+          {otherBrands.map((b) => (
+            <section key={b.id} id={b.id} className="scroll-mt-24">
+              <h2 className="text-2xl font-extrabold mb-4">Code promo {b.brand}</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">{b.intro}</p>
+              <div className="space-y-3 mb-4">
+                {b.offers.map((o) => (
+                  <OfferCard key={o.label} o={o} />
+                ))}
+              </div>
+              {b.cta && (
+                <AffiliateCTA productName={b.cta.product} merchantName={b.cta.merchant} affiliateUrl={b.cta.url} label={`Voir les prix ${b.brand}`} variant="inline" position={`codes_promo_${b.id}`} />
+              )}
+            </section>
+          ))}
+
+          {/* Legit tips */}
+          <section className="reveal">
+            <h2 className="text-2xl font-extrabold mb-4">Payer moins cher sans code promo</h2>
+            <ul className="space-y-3 text-sm text-charcoal-light leading-relaxed">
+              <li className="card border-l-4 border-l-green"><strong className="text-charcoal">Viser les temps forts :</strong> soldes d&apos;hiver et d&apos;&eacute;t&eacute;, French Days, rentr&eacute;e et surtout Black Friday. Les marques de kits balcon y concentrent leurs plus grosses remises.</li>
+              <li className="card border-l-4 border-l-green"><strong className="text-charcoal">Utiliser le parrainage :</strong> si un proche a d&eacute;j&agrave; un kit Sunology, passez par lui (-7% pour vous, 3% pour lui) plut&ocirc;t que par un code trouv&eacute; sur un site de coupons.</li>
+              <li className="card border-l-4 border-l-green"><strong className="text-charcoal">Comparer avec les grandes surfaces de bricolage :</strong> certains kits sont aussi vendus en GSB (Leroy Merlin, Castorama) ou sur Amazon, parfois &agrave; un prix diff&eacute;rent du site de la marque.</li>
+              <li className="card border-l-4 border-l-green"><strong className="text-charcoal">Choisir la bonne taille :</strong> un kit surdimensionn&eacute; co&ucirc;te plus cher qu&apos;il ne rapporte. Faites d&apos;abord le calcul avec notre <Link href="/calculateur" className="text-green font-semibold hover:underline">calculateur</Link> et consultez les <Link href="/blog/aides-subventions-panneau-solaire-balcon-2026" className="text-green font-semibold hover:underline">aides disponibles en 2026</Link>.</li>
+            </ul>
+          </section>
+
+          {/* Email capture */}
+          <div className="card-lg bg-gradient-to-br from-amber-pale/40 via-white to-green-pale/20 border-amber/10 reveal">
+            <div className="flex items-start gap-3 mb-4">
+              <span className="text-2xl">&#127873;</span>
+              <div>
+                <h2 className="font-bold text-base mb-1">Alerte bons plans (Black Friday inclus)</h2>
+                <p className="text-sm text-charcoal-light leading-relaxed">
+                  Recevez un email quand une nouvelle offre v&eacute;rifi&eacute;e appara&icirc;t chez Sunology, Beem, Sunethic, EcoFlow ou Zendure. Nous n&apos;avons pas encore de code exclusif n&eacute;goci&eacute; : vous serez pr&eacute;venu&middot;e d&egrave;s qu&apos;il y en a un.
+                </p>
+              </div>
+            </div>
+            <EmailCapture
+              endpoint="/api/email/subscribe-promo"
+              source="codes_promo"
+              buttonLabel="Je m'inscris"
+              successMessage="Inscription confirm&eacute;e ! V&eacute;rifiez votre bo&icirc;te email."
+            />
+          </div>
+
+          {/* FAQ */}
+          <section id="faq" className="scroll-mt-24">
+            <h2 className="text-2xl font-extrabold mb-4">Questions fr&eacute;quentes</h2>
+            <div className="space-y-3">
+              {faqData.map((f, i) => (
+                <details key={i} className="card group" open={i === 0}>
+                  <summary className="font-bold text-sm cursor-pointer list-none">{f.question}</summary>
+                  <p className="text-sm text-charcoal-light leading-relaxed mt-3">{f.answer}</p>
+                </details>
               ))}
             </div>
           </section>
 
-          <section className="reveal">
-            <h2 className="text-2xl font-extrabold mb-4">Comment &ccedil;a marche ?</h2>
-            <div className="card-lg bg-cream/50 space-y-4 text-sm text-charcoal-light leading-relaxed">
-              <div>
-                <h4 className="font-bold text-charcoal mb-1">Pourquoi cette page existe ?</h4>
-                <p>Parce qu&apos;on cherche tous &agrave; payer le bon prix. On surveille chaque semaine les offres des marques et on met &agrave; jour cette page dans les 48h.</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-charcoal mb-1">Comment on gagne de l&apos;argent ?</h4>
-                <p>Quand vous achetez via nos liens, on touche une commission de 3 &agrave; 8%. Votre prix reste identique. Cette page n&apos;est PAS un classement payant &mdash; on liste tout ce qu&apos;on trouve.</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-charcoal mb-1">Sur les codes exclusifs</h4>
-                <p>&Agrave; ce jour, nous n&apos;avons pas encore n&eacute;goci&eacute; de code exclusif. Nous d&eacute;marrons les discussions au S2 2026. Inscrivez-vous pour &ecirc;tre pr&eacute;venu&middot;e d&egrave;s qu&apos;on a notre premier code MBS-XXX.</p>
-              </div>
+          {/* Related */}
+          <section>
+            <h2 className="text-2xl font-extrabold mb-4">&Agrave; lire avant d&apos;acheter</h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <Link href="/avis/sunology-play-2" className="card border-l-4 border-l-green hover:shadow-md transition-shadow text-sm font-semibold">Avis Sunology PLAY 2</Link>
+              <Link href="/avis/sunethic-f500" className="card border-l-4 border-l-green hover:shadow-md transition-shadow text-sm font-semibold">Avis Sunethic F500</Link>
+              <Link href="/comparatif/sunology-vs-beem" className="card border-l-4 border-l-green hover:shadow-md transition-shadow text-sm font-semibold">Comparatif Sunology vs Beem</Link>
+              <Link href="/quel-kit-choisir" className="card border-l-4 border-l-green hover:shadow-md transition-shadow text-sm font-semibold">Quel kit solaire choisir ?</Link>
             </div>
           </section>
 
-          <div className="text-center reveal">
-            <p className="text-sm text-charcoal-light mb-4">Pas encore d&eacute;cid&eacute; ? Calculez d&apos;abord votre rentabilit&eacute;.</p>
-            <Link href="/calculateur" className="btn-primary inline-flex">
-              Calculer mes &eacute;conomies &rarr;
-            </Link>
-          </div>
+          <section className="card-lg bg-cream/50 space-y-4 text-sm text-charcoal-light leading-relaxed">
+            <div>
+              <h3 className="font-bold text-charcoal mb-1">Notre m&eacute;thode</h3>
+              <p>Chaque offre est relev&eacute;e sur le site officiel de la marque (ou une source de presse dat&eacute;e) et affich&eacute;e avec sa date de v&eacute;rification. On ne recopie pas les codes des agr&eacute;gateurs de coupons, souvent expir&eacute;s ou invent&eacute;s.</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-charcoal mb-1">Transparence affiliation</h3>
+              <p>Certains liens sont affili&eacute;s : si vous achetez via ces liens, nous pouvons toucher une commission, sans surco&ucirc;t pour vous. Cette page n&apos;est pas un classement payant.</p>
+            </div>
+          </section>
         </div>
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone">
-            Mis &agrave; jour le 18 mai 2026 &middot; Prochaine mise &agrave; jour : 25 mai 2026 &middot; <Link href="/a-propos" className="text-green hover:underline">&Agrave; propos</Link> &middot; <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>
+            Offres v&eacute;rifi&eacute;es le 27 septembre 2026 &middot; <Link href="/a-propos" className="text-green hover:underline">&Agrave; propos</Link> &middot; <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>
           </p>
         </div>
       </div>
