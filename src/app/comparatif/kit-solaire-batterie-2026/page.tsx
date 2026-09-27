@@ -148,7 +148,7 @@ export default function BatteriePage() {
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">1 390 €</div><div className="text-xs text-stone">(batterie seule)</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">La STOREY est la solution fixe de Sunology : 2,2 kWh de capacité, branchée sur une prise, elle stocke le surplus solaire pour une utilisation le soir et la nuit. C&apos;est 3x la capacité de la VAULT, avec une gestion plus intelligente de la charge/décharge.</p>
-                  <p className="text-sm text-charcoal-light mt-2"><strong>Le calcul :</strong> kit PLAY2 (599€) + STOREY (1 390€) = 1 989€ au total. Avec ~160€/an d&apos;économies (autoconsommation ~75%), le ROI est de ~12 ans. C&apos;est rentable sur 25 ans mais loin d&apos;un kit seul.</p>
+                  <p className="text-sm text-charcoal-light mt-2"><strong>Le calcul :</strong> kit PLAY 500&nbsp;W (ex-PLAY&nbsp;2, 599€) + STOREY (1 390€) = 1 989€ au total. Avec notre m&eacute;thodologie (510&nbsp;kWh/an, 95&nbsp;% d&apos;autoconsommation, Lyon sud), ~94€/an d&apos;économies la premi&egrave;re ann&eacute;e&nbsp;: ROI d&apos;environ 16 ans. C&apos;est rentable sur 25 ans (~3 565€ cumul&eacute;s) mais loin d&apos;un kit seul.</p>
                 </div>
 
                 <div className="card-lg">
@@ -185,7 +185,7 @@ export default function BatteriePage() {
               <div className="space-y-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h4 className="font-bold text-green mb-1">Pour 80% des gens → Kit seul (sans batterie)</h4>
-                  <p className="text-sm text-charcoal-light">Le meilleur ROI, de loin. Commencez par un <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">kit Sunology PLAY2 ou Beem On à 599€</Link>. Vous pouvez toujours ajouter une batterie plus tard si le besoin se fait sentir.</p>
+                  <p className="text-sm text-charcoal-light">Le meilleur ROI, de loin. Commencez par un <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">kit Sunology PLAY (599€) ou Beem On 500 Wc (429€)</Link>. Vous pouvez toujours ajouter une batterie plus tard si le besoin se fait sentir.</p>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
                   <h4 className="font-bold text-amber-dark mb-1">Pour les absents la journée → PLAY MAX (1 179€)</h4>

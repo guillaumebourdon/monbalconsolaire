@@ -116,7 +116,7 @@ export default function KitSolairePluieGrelePage() {
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Valeurs pour un panneau 450 Wc (Sunology PLAY 2, Beem On). La puissance cr&ecirc;te (Wc) correspond aux conditions de test standard (1000 W/m&sup2;, 25&deg;C). En conditions r&eacute;elles, 70-85 % est d&eacute;j&agrave; excellent.
+                Valeurs pour un panneau 450 Wc (ancien Sunology PLAY 2, Beem On 460W)&nbsp;; ajoutez environ 10&nbsp;% pour un 500&nbsp;Wc comme l&apos;actuel Sunology PLAY. La puissance cr&ecirc;te (Wc) correspond aux conditions de test standard (1000 W/m&sup2;, 25&deg;C). En conditions r&eacute;elles, 70-85 % est d&eacute;j&agrave; excellent.
               </p>
             </section>
 
@@ -153,7 +153,7 @@ export default function KitSolairePluieGrelePage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                En pratique, les panneaux modernes utilisent du <strong>verre tremp&eacute; de 3,2 mm</strong> (Sunology PLAY 2, Beem On, Sunethic F500) qui r&eacute;siste aux gr&ecirc;lons standard. Les panneaux bi-verre (DualSun PREASY) sont encore plus r&eacute;sistants.
+                En pratique, les panneaux modernes utilisent du <strong>verre tremp&eacute; de 3,2 mm</strong> (Beem On, Sunethic F500) qui r&eacute;siste aux gr&ecirc;lons standard. Les panneaux bi-verre (DualSun PREASY) sont encore plus r&eacute;sistants. L&apos;actuel Sunology PLAY 500&nbsp;Wc est lui aussi un bi-verre (2 &times; 2,0&nbsp;mm de verre tremp&eacute;, charge de neige 5&nbsp;400&nbsp;Pa selon sa fiche technique).
               </p>
               <div className="card-lg bg-amber-pale/20 border-amber/10">
                 <h4 className="font-bold text-sm mb-2 text-amber-dark">Quand faut-il s&apos;inqui&eacute;ter ?</h4>

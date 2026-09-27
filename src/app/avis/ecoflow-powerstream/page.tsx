@@ -71,7 +71,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Prix d\'entrée élevé',
-    detail: 'Le PowerStream seul coûte 599 €, sans panneaux ni batterie. Un setup minimal complet (PowerStream + 2 panneaux + batterie 1 kWh) tourne autour de 1 800 €. C\'est plus cher qu\'un Sunology PLAY 2 (599 € tout compris pour 450 W).',
+    detail: 'Le PowerStream seul coûte 599 €, sans panneaux ni batterie. Un setup minimal complet (PowerStream + 2 panneaux + batterie 1 kWh) tourne autour de 1 800 €. C\'est plus cher qu\'un Sunology PLAY (599 € tout compris pour 500 Wc).',
   },
   {
     titre: 'Configuration plus complexe',
@@ -214,7 +214,7 @@ export default function EcoflowPowerstreamPage() {
               <div>
                 <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial : ROI long</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  Avec un ROI de 10,2 ans, le PowerStream est pertinent si vous &ecirc;tes d&eacute;j&agrave; dans l&apos;&eacute;cosyst&egrave;me EcoFlow ou si le backup r&eacute;seau est important pour vous. Pour un premier achat orient&eacute; rentabilit&eacute;, le Zendure SolarFlow (5,3 ans) ou le Sunology PLAY 2 (7,1 ans) sont plus adapt&eacute;s.
+                  Avec un ROI de 10,2 ans, le PowerStream est pertinent si vous &ecirc;tes d&eacute;j&agrave; dans l&apos;&eacute;cosyst&egrave;me EcoFlow ou si le backup r&eacute;seau est important pour vous. Pour un premier achat orient&eacute; rentabilit&eacute;, le Zendure SolarFlow (5,3 ans) ou le Sunology PLAY 500&nbsp;Wc (6,5 ans) sont plus adapt&eacute;s.
                 </p>
               </div>
             </div>

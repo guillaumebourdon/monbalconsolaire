@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+
+const AMAZON_TAPO_P110 = 'https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsolai-21';
+const AMAZON_TAPO_P410M = 'https://www.amazon.fr/dp/B0FZCP6BK7?tag=monbalconsolai-21';
 
 export const metadata: Metadata = {
   title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
@@ -38,7 +42,8 @@ const faqData = [
 const prises = [
   {
     nom: 'TP-Link Tapo P110',
-    prix: '~15 \u20ac',
+    lien: AMAZON_TAPO_P110,
+    prix: '12-15 \u20ac',
     puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi 2,4 GHz',
     app: 'Tapo (iOS/Android)',
@@ -46,47 +51,51 @@ const prises = [
     compatible: 'Alexa, Google Home, Siri',
     verdict: 'Meilleur rapport qualit\u00e9-prix',
     note: '9/10',
-    detail: 'La r\u00e9f\u00e9rence. 15 \u20ac, suivi kWh en temps r\u00e9el, historique jour/semaine/mois/ann\u00e9e, export des donn\u00e9es. L\'app Tapo est excellente. C\'est la prise la plus utilis\u00e9e par la communaut\u00e9 solaire de balcon.',
+    detail: 'La r\u00e9f\u00e9rence. Version fran\u00e7aise P110(FR) en prise type E. 12 \u00e0 15 \u20ac selon les promos, suivi kWh en temps r\u00e9el, historique jour/semaine/mois/ann\u00e9e, export des donn\u00e9es. L\'app Tapo est excellente. C\'est la prise la plus utilis\u00e9e par la communaut\u00e9 solaire de balcon.',
   },
   {
-    nom: 'Shelly Plus Plug S',
-    prix: '~18 \u20ac',
-    puissanceMax: '2 500 W (10A)',
+    nom: 'Shelly Plug PM Gen3 (FR)',
+    lien: 'https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsolai-21',
+    prix: '~33 \u20ac',
+    puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi + Bluetooth',
     app: 'Shelly (iOS/Android)',
     ip: 'Int\u00e9rieur',
     compatible: 'Alexa, Google Home, Home Assistant',
     verdict: 'La plus geek / domotique',
     note: '8.5/10',
-    detail: 'Compatible Home Assistant et MQTT, parfaite pour les amateurs de domotique. Mesure pr\u00e9cise \u00e0 0,1 W pr\u00e8s. Limit\u00e9e \u00e0 10A (2 500 W) mais largement suffisant pour un kit solaire de balcon (800 W le plus souvent). API ouverte.',
+    detail: 'Mise \u00e0 jour septembre 2026 : la Shelly Plus Plug S que nous recommandions a \u00e9t\u00e9 remplac\u00e9e par la g\u00e9n\u00e9ration Gen3, et la Plug S Gen3 n\u2019existe qu\u2019en prise allemande type F (12A). Nous retenons donc la Shelly Plug PM Gen3 en version fran\u00e7aise type E, 16A. Compatible Home Assistant et MQTT, API locale ouverte : parfaite pour les amateurs de domotique. Plus ch\u00e8re que la Tapo P110.',
   },
   {
     nom: 'Tapo P410M (ext\u00e9rieur)',
+    lien: AMAZON_TAPO_P410M,
     prix: '~25 \u20ac',
     puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi + Matter',
     app: 'Tapo',
-    ip: 'IP44 (ext\u00e9rieur)',
+    ip: 'IP54 (ext\u00e9rieur)',
     compatible: 'Alexa, Google Home, Apple Home (Matter)',
     verdict: 'La meilleure pour terrasse/balcon expos\u00e9',
     note: '9/10',
-    detail: 'Version ext\u00e9rieure de la Tapo P110. IP44 (r\u00e9siste aux \u00e9claboussures), d\u00e9tecte le sens du courant (production vs consommation). Protocole Matter pour compatibilit\u00e9 universelle. Id\u00e9ale si votre prise de balcon est expos\u00e9e.',
+    detail: 'Version ext\u00e9rieure de la Tapo P110. IP54 (poussi\u00e8re et projections d\u2019eau), d\u00e9tecte le sens du courant (production vs consommation). Protocole Matter pour compatibilit\u00e9 universelle. Id\u00e9ale si votre prise de balcon est expos\u00e9e.',
   },
   {
-    nom: 'Meross MSS310',
+    nom: 'Meross Matter (type E)',
+    lien: 'https://www.amazon.fr/s?k=meross+prise+connect%C3%A9e+type+E+mesure+consommation&tag=monbalconsolai-21',
     prix: '~16 \u20ac',
     puissanceMax: '3 680 W (16A)',
-    connectivite: 'WiFi 2,4 GHz',
+    connectivite: 'WiFi 2,4 GHz + Matter',
     app: 'Meross (iOS/Android)',
     ip: 'Int\u00e9rieur',
     compatible: 'Alexa, Google Home, Apple Home',
     verdict: 'Alternative solide',
     note: '8/10',
-    detail: 'App claire avec graphiques de production/consommation intuitifs. Compatible Apple HomeKit nativement. L\u00e9g\u00e8rement moins pr\u00e9cise que la Tapo P110 sur les tr\u00e8s faibles puissances (< 5 W).',
+    detail: 'Mise \u00e0 jour septembre 2026 : l\u2019ancienne Meross MSS310 est indisponible sur Amazon.fr ; elle est remplac\u00e9e par la prise Meross Matter en version fran\u00e7aise type E, avec mesure d\u2019\u00e9nergie (stock irr\u00e9gulier, prix indicatif de mai 2026). App claire avec graphiques de production/consommation intuitifs. Compatible Apple HomeKit nativement. L\u00e9g\u00e8rement moins pr\u00e9cise que la Tapo P110 sur les tr\u00e8s faibles puissances (< 5 W).',
   },
   {
     nom: 'GreenSun Smart Plug',
-    prix: '~20 \u20ac',
+    lien: 'https://www.amazon.fr/dp/B0CY2BNMGC?tag=monbalconsolai-21',
+    prix: '~25 \u20ac',
     puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi 2,4 GHz',
     app: 'Smart Life / Tuya',
@@ -106,6 +115,7 @@ export default function PrisesConnecteesPage() {
         description="Comparatif des prises connect\u00e9es pour mesurer la production solaire de balcon."
         url="https://monbalconsolaire.fr/blog/prises-connectees-suivi-solaire"
         datePublished="2026-05-20"
+        dateModified="2026-09-27"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Prises connect\u00e9es suivi solaire' }]} />
@@ -131,11 +141,21 @@ export default function PrisesConnecteesPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre top 3 en bref</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
-              <li><strong className="text-green">{'\u2713'} Tapo P110 (15 &euro;)</strong> &mdash; Le meilleur rapport qualit&eacute;-prix. Suivi kWh complet, app excellente. Le choix par d&eacute;faut.</li>
-              <li><strong className="text-green">{'\u2713'} Tapo P410M (25 &euro;)</strong> &mdash; Version ext&eacute;rieure IP44 + Matter. Pour les balcons/terrasses expos&eacute;s.</li>
-              <li><strong className="text-green">{'\u2713'} Shelly Plus Plug S (18 &euro;)</strong> &mdash; Pour les fans de domotique. Compatible Home Assistant, API ouverte.</li>
+              <li><strong className="text-green">{'\u2713'} Tapo P110 (12-15 &euro;)</strong> &mdash; Le meilleur rapport qualit&eacute;-prix. Suivi kWh complet, app excellente. Le choix par d&eacute;faut. <a href={AMAZON_TAPO_P110} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
+              <li><strong className="text-green">{'\u2713'} Tapo P410M (~25 &euro;)</strong> &mdash; Version ext&eacute;rieure IP54 + Matter. Pour les balcons/terrasses expos&eacute;s. <a href={AMAZON_TAPO_P410M} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
+              <li><strong className="text-green">{'\u2713'} Shelly Plug PM Gen3 FR (~33 &euro;)</strong> &mdash; Pour les fans de domotique. Compatible Home Assistant, API ouverte. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
             </ul>
+            <p className="text-[11px] text-stone mt-3">Prix constat&eacute;s sur Amazon.fr en septembre 2026, susceptibles de varier.</p>
           </div>
+
+          <AffiliateCTA
+            productName="TP-Link Tapo P110"
+            merchantName="Amazon"
+            affiliateUrl={AMAZON_TAPO_P110}
+            label="Voir la Tapo P110 sur Amazon"
+            variant="secondary"
+            position="after-top-pick"
+          />
 
           <div className="space-y-10">
             <section>
@@ -176,7 +196,11 @@ export default function PrisesConnecteesPage() {
                   <tbody>
                     {prises.map((p, i) => (
                       <tr key={i} className={`border-b border-border-light ${i === 0 ? 'bg-green-pale/20 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
-                        <td className="p-2.5 font-semibold">{p.nom}</td>
+                        <td className="p-2.5 font-semibold">
+                          {p.nom}
+                          <br />
+                          <a href={p.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline text-[11px]">Voir sur Amazon</a>
+                        </td>
                         <td className="text-center p-2.5 font-mono">{p.prix}</td>
                         <td className="text-center p-2.5 font-mono">{p.puissanceMax}</td>
                         <td className="text-center p-2.5">{p.ip}</td>
@@ -208,6 +232,9 @@ export default function PrisesConnecteesPage() {
                     <div className="bg-cream rounded-brand p-2"><span className="text-stone">Protection</span><br /><strong>{p.ip}</strong></div>
                     <div className="bg-cream rounded-brand p-2 col-span-2"><span className="text-stone">Compatible</span><br /><strong>{p.compatible}</strong></div>
                   </div>
+                  <div className="mt-4 text-sm">
+                    <a href={p.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir la {p.nom} sur Amazon &rarr;</a>
+                  </div>
                 </div>
               </section>
             ))}
@@ -217,15 +244,15 @@ export default function PrisesConnecteesPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Vous voulez juste mesurer votre production</h4>
-                  <p className="text-xs text-charcoal-light">Prenez la <strong>Tapo P110</strong> &agrave; 15 &euro;. C&apos;est la plus populaire de la communaut&eacute; solaire, l&apos;app est excellente, et c&apos;est le meilleur rapport qualit&eacute;-prix du march&eacute;.</p>
+                  <p className="text-xs text-charcoal-light">Prenez la <strong>Tapo P110</strong> &agrave; 12-15 &euro;. C&apos;est la plus populaire de la communaut&eacute; solaire, l&apos;app est excellente, et c&apos;est le meilleur rapport qualit&eacute;-prix du march&eacute;. <a href={AMAZON_TAPO_P110} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Votre prise de balcon est expos&eacute;e</h4>
-                  <p className="text-xs text-charcoal-light">Prenez la <strong>Tapo P410M</strong> &agrave; 25 &euro;. IP44, r&eacute;siste aux &eacute;claboussures et au gel. Compatible Matter pour l&apos;&eacute;cosyst&egrave;me Apple Home.</p>
+                  <p className="text-xs text-charcoal-light">Prenez la <strong>Tapo P410M</strong> &agrave; ~25 &euro;. IP54, pr&eacute;vue pour l&apos;ext&eacute;rieur (projections d&apos;eau, poussi&egrave;re). Compatible Matter pour l&apos;&eacute;cosyst&egrave;me Apple Home. <a href={AMAZON_TAPO_P410M} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous &ecirc;tes fan de domotique</h4>
-                  <p className="text-xs text-charcoal-light">Prenez la <strong>Shelly Plus Plug S</strong> &agrave; 18 &euro;. Compatible Home Assistant, MQTT, API ouverte. Pr&eacute;cision &agrave; 0,1 W. Le choix des geeks.</p>
+                  <p className="text-xs text-charcoal-light">Prenez la <strong>Shelly Plug PM Gen3</strong> en version fran&ccedil;aise (~33 &euro;). Compatible Home Assistant, MQTT, API ouverte. Le choix des geeks. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
               </div>
             </section>
@@ -255,6 +282,15 @@ export default function PrisesConnecteesPage() {
                 Calculer ma production th&eacute;orique &rarr;
               </Link>
             </div>
+
+            <AffiliateCTA
+              productName="Tapo P410M"
+              merchantName="Amazon"
+              affiliateUrl={AMAZON_TAPO_P410M}
+              label="Voir la Tapo P410M sur Amazon"
+              variant="box"
+              position="footer-box"
+            />
 
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
@@ -297,8 +333,11 @@ export default function PrisesConnecteesPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie :</strong> prix constat&eacute;s Amazon/fabricants (mai 2026), retours utilisateurs forum-photovoltaique.fr, Clubic, Les Alexiens. Article ind&eacute;pendant.{' '}
+                <strong>M&eacute;thodologie :</strong> prises s&eacute;lectionn&eacute;es et analys&eacute;es sur fiches techniques et retours utilisateurs (forum-photovoltaique.fr, Clubic, Les Alexiens). Prix constat&eacute;s sur Amazon.fr en septembre 2026 (Tapo P110, Tapo P410M, Shelly Plug PM Gen3, GreenSun) ; prix Meross indicatif de mai 2026. Article ind&eacute;pendant.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
+              </p>
+              <p className="text-xs text-stone leading-relaxed mt-2">
+                <strong>Transparence :</strong> liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous.
               </p>
             </div>
           </div>

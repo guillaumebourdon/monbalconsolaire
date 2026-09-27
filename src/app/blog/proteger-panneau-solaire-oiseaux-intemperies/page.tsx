@@ -6,8 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
-  title: 'Prot&eacute;ger son panneau solaire balcon des oiseaux et intemp&eacute;ries',
-  description: 'Fientes, gr&ecirc;le, vent : comment prot&eacute;ger efficacement votre kit solaire de balcon. Solutions anti-oiseaux DIY, r&eacute;sistance certifi&eacute;e, assurance — tout ce qu’il faut savoir.',
+  title: 'Protéger son panneau solaire balcon des oiseaux et intempéries',
+  description: 'Fientes, grêle, vent : comment protéger efficacement votre kit solaire de balcon. Solutions anti-oiseaux DIY, résistance certifiée, assurance — tout ce qu’il faut savoir.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/proteger-panneau-solaire-oiseaux-intemperies',
   },
@@ -48,6 +48,7 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
         description="Fientes, grêle, vent : solutions anti-oiseaux DIY, résistance certifiée et couverture assurance pour votre kit solaire de balcon."
         url="https://monbalconsolaire.fr/blog/proteger-panneau-solaire-oiseaux-intemperies"
         datePublished="2026-08-28"
+        dateModified="2026-09-27"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Protéger panneau solaire oiseaux intempéries' }]} />
@@ -126,22 +127,26 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
                       <th className="text-left p-3 rounded-tl-xl">Solution</th>
                       <th className="text-left p-3">Efficacit&eacute;</th>
                       <th className="text-left p-3">Co&ucirc;t DIY</th>
-                      <th className="text-left p-3 rounded-tr-xl">Difficult&eacute;</th>
+                      <th className="text-left p-3">Difficult&eacute;</th>
+                      <th className="text-left p-3 rounded-tr-xl">O&ugrave; acheter</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      ['Grillage de bord alu/PVC', '★★★★★', '15–35 €', 'Facile'],
-                      ['Pics anti-oiseaux inox', '★★★★☆', '10–25 €', 'Facile'],
-                      ['Gel r&eacute;pulsif transparent', '★★★☆☆', '8–15 €', 'Facile'],
-                      ['Filet en polypropyl&egrave;ne', '★★★★☆', '20–50 €', 'Moyen'],
-                      ['Kit BirdBlocker (syst&egrave;me clips)', '★★★★★', '40–80 €', 'Facile'],
-                    ].map(([sol, eff, cout, diff], i) => (
+                      ['Grillage de bord alu/PVC', '★★★★★', '15–35 €', 'Facile', 'https://www.amazon.fr/s?k=grillage+anti+pigeon+panneau+solaire&tag=monbalconsolai-21'],
+                      ['Pics anti-oiseaux inox', '★★★★☆', '10–25 €', 'Facile', 'https://www.amazon.fr/s?k=pics+anti+pigeons+inox&tag=monbalconsolai-21'],
+                      ['Gel r&eacute;pulsif transparent', '★★★☆☆', '8–15 €', 'Facile', 'https://www.amazon.fr/s?k=gel+r%C3%A9pulsif+oiseaux&tag=monbalconsolai-21'],
+                      ['Filet en polypropyl&egrave;ne', '★★★★☆', '20–50 €', 'Moyen', 'https://www.amazon.fr/s?k=filet+anti+oiseaux+polypropyl%C3%A8ne&tag=monbalconsolai-21'],
+                      ['Kit BirdBlocker (syst&egrave;me clips)', '★★★★★', '40–80 €', 'Facile', 'https://www.amazon.fr/s?k=kit+anti+pigeon+panneau+solaire+clips&tag=monbalconsolai-21'],
+                    ].map(([sol, eff, cout, diff, lien], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold text-xs" dangerouslySetInnerHTML={{ __html: sol }} />
                         <td className="p-3 text-xs" dangerouslySetInnerHTML={{ __html: eff }} />
                         <td className="p-3 text-xs font-bold text-green" dangerouslySetInnerHTML={{ __html: cout }} />
                         <td className="p-3 text-xs text-charcoal-light" dangerouslySetInnerHTML={{ __html: diff }} />
+                        <td className="p-3 text-xs">
+                          <a href={lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -151,9 +156,18 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
               <div className="card-lg bg-green-pale/30 border-green/10 mb-6">
                 <p className="text-sm font-semibold text-green mb-2">&#10003; La solution recommand&eacute;e pour un kit balcon</p>
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Grillage de bord en PVC ou inox</strong> fix&eacute; sur le cadre alu du panneau avec des colliers de serrage. Choisissez une maille de 5&ndash;8&nbsp;cm et une hauteur de 10&ndash;12&nbsp;cm. Le grillage doit d&eacute;passer de 2&ndash;3&nbsp;cm au-dessus du panneau pour &eacute;viter que les oiseaux ne se posent dessus. Co&ucirc;t&nbsp;: <strong>15&ndash;35&nbsp;&euro; tout compris</strong> en grande surface de bricolage. Pos&eacute; en 30 minutes.
+                  <strong>Grillage de bord en PVC ou inox</strong> fix&eacute; sur le cadre alu du panneau avec des colliers de serrage. Choisissez une maille de 5&ndash;8&nbsp;cm et une hauteur de 10&ndash;12&nbsp;cm. Le grillage doit d&eacute;passer de 2&ndash;3&nbsp;cm au-dessus du panneau pour &eacute;viter que les oiseaux ne se posent dessus. Co&ucirc;t&nbsp;: <strong>15&ndash;35&nbsp;&euro; tout compris</strong> en grande surface de bricolage ou <a href="https://www.amazon.fr/s?k=grillage+anti+pigeon+panneau+solaire&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">sur Amazon</a> (rouleaux vendus avec clips de fixation). Pos&eacute; en 30 minutes.
                 </p>
               </div>
+
+              <AffiliateCTA
+                productName="Grillage anti-pigeons panneau solaire"
+                merchantName="Amazon"
+                affiliateUrl="https://www.amazon.fr/s?k=grillage+anti+pigeon+panneau+solaire&tag=monbalconsolai-21"
+                label="Voir les grillages anti-pigeons sur Amazon"
+                variant="secondary"
+                position="after-top-pick"
+              />
 
               <p className="text-charcoal-light leading-relaxed">
                 Pour l&apos;entretien apr&egrave;s passage d&apos;oiseaux&nbsp;: consultez notre guide complet sur l&apos;<Link href="/blog/entretien-nettoyage-panneau-solaire-balcon" className="text-green hover:underline font-semibold">entretien et nettoyage des panneaux solaires de balcon</Link>.
@@ -235,13 +249,13 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-2">Housse de protection (gr&ecirc;le)</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
-                    Des housses en mousse EVA ou en tissu technique (type bâche piscine) existent pour les panneaux solaires. Prix&nbsp;: 20&ndash;60&nbsp;&euro; selon la taille. Utile uniquement si vous habitez dans une zone &agrave; fort risque gr&ecirc;le (Pyr&eacute;n&eacute;es, Sud-Ouest, Rh&ocirc;ne-Alpes). Pour la majorit&eacute; des utilisateurs, c&apos;est inutile.
+                    Des housses en mousse EVA ou en tissu technique (type bâche piscine) existent pour les panneaux solaires. Prix&nbsp;: 20&ndash;60&nbsp;&euro; selon la taille. Utile uniquement si vous habitez dans une zone &agrave; fort risque gr&ecirc;le (Pyr&eacute;n&eacute;es, Sud-Ouest, Rh&ocirc;ne-Alpes). Pour la majorit&eacute; des utilisateurs, c&apos;est inutile. <a href="https://www.amazon.fr/s?k=housse+protection+panneau+solaire&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a>
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-2">Traitement hydrophobe du verre</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
-                    Certains produits (type Rain-X ou traitements nano-c&eacute;ramiques) peuvent &ecirc;tre appliqu&eacute;s sur le verre pour am&eacute;liorer l&apos;autonettoiement. Effet&nbsp;: +2&ndash;4&nbsp;% de production en zone urbaine pollu&eacute;e, dur&eacute;e 6&ndash;12 mois. Co&ucirc;t&nbsp;: 15&ndash;30&nbsp;&euro;. &Agrave; consid&eacute;rer si votre balcon est proche d&apos;une route ou d&apos;une source de poussi&egrave;re.
+                    Certains produits (type Rain-X ou traitements nano-c&eacute;ramiques) peuvent &ecirc;tre appliqu&eacute;s sur le verre pour am&eacute;liorer l&apos;autonettoiement. Effet&nbsp;: +2&ndash;4&nbsp;% de production en zone urbaine pollu&eacute;e, dur&eacute;e 6&ndash;12 mois. Co&ucirc;t&nbsp;: 15&ndash;30&nbsp;&euro;. &Agrave; consid&eacute;rer si votre balcon est proche d&apos;une route ou d&apos;une source de poussi&egrave;re. <a href="https://www.amazon.fr/s?k=traitement+hydrophobe+vitres+Rain-X&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a>
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-stone">
@@ -351,13 +365,22 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
             </div>
 
             <AffiliateCTA
-              productName="Sunology PLAY 2"
+              productName="Sunology PLAY"
               merchantName="Sunology"
-              affiliateUrl="https://www.sunology.fr/products/sunology-play-2?ref=monbalconsolaire"
-              label="Voir le Sunology PLAY 2"
+              affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
+              label="Voir le Sunology PLAY (ex-PLAY 2)"
               variant="inline"
               position="mid-article"
-              price="749 €"
+              price="599 €"
+            />
+
+            <AffiliateCTA
+              productName="Pics anti-oiseaux inox"
+              merchantName="Amazon"
+              affiliateUrl="https://www.amazon.fr/s?k=pics+anti+pigeons+inox&tag=monbalconsolai-21"
+              label="Compléter avec des pics anti-oiseaux inox"
+              variant="box"
+              position="footer-box"
             />
 
             {/* À éviter si... */}
@@ -425,7 +448,7 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
                 <strong>M&eacute;thodologie</strong>&nbsp;: les chiffres de production et de perte mentionn&eacute;s dans cet article sont bas&eacute;s sur les donn&eacute;es PVGIS (Lyon, exposition sud, PR&nbsp;0,85) et les fiches techniques fabricants. Tarif &eacute;lectrique r&eacute;f&eacute;rence&nbsp;: 0,1940&nbsp;&euro;/kWh (EDF TRV&nbsp;2026, option Base).
               </p>
               <p>
-                <strong>Transparence affiliés</strong>&nbsp;: certains liens de cet article sont des liens d&apos;affiliation. MonBalconSolaire per&ccedil;oit une commission si vous achetez via ces liens, sans co&ucirc;t suppl&eacute;mentaire pour vous. Notre analyse reste ind&eacute;pendante.
+                <strong>Transparence affiliés</strong>&nbsp;: certains liens de cet article sont des liens d&apos;affiliation. MonBalconSolaire per&ccedil;oit une commission si vous achetez via ces liens, sans co&ucirc;t suppl&eacute;mentaire pour vous. Liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous. Solutions s&eacute;lectionn&eacute;es et analys&eacute;es, non test&eacute;es physiquement ; prix indicatifs. Notre analyse reste ind&eacute;pendante.
               </p>
             </footer>
 

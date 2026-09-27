@@ -8,7 +8,7 @@ import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
   title: 'Sunology CITY avis (arrêté) : quelles alternatives en 2026 ?',
-  description: 'Sunology CITY : le kit garde-corps n\'est plus vendu par Sunology (sept. 2026). Notre analyse, où le trouver encore et les alternatives (GO, PLAY 2, Beem).',
+  description: 'Sunology CITY : le kit garde-corps n\'est plus vendu par Sunology (sept. 2026). Notre analyse, où le trouver encore et les alternatives (GO, PLAY, Beem).',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-city',
   },
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 
 const faqData = [
   {
-    question: 'Le Sunology CITY est-il vraiment différent du PLAY 2 ?',
-    answer: 'Oui, sur deux points clés. Le CITY est conçu pour s\'accrocher au garde-corps (panneau vertical), alors que le PLAY 2 se pose au sol avec ballasts. Le CITY est aussi plus compact (1 m² environ contre 2,2 m² pour le PLAY 2). En contrepartie, sa puissance est plus faible : 400 W vs 450 W.',
+    question: 'Le Sunology CITY est-il vraiment différent du PLAY (ex-PLAY 2) ?',
+    answer: 'Oui, sur deux points clés. Le CITY est conçu pour s\'accrocher au garde-corps (panneau vertical), alors que le PLAY se pose au sol avec ballasts. Le CITY est aussi plus compact (1 m² environ contre 2 m² pour le PLAY actuel, 1 800 x 1 134 mm). En contrepartie, sa puissance est plus faible : 400 W vs 500 W.',
   },
   {
     question: 'Combien produit le Sunology CITY en conditions réelles ?',
-    answer: 'Comptez 380-450 kWh/an en exposition sud, 280-340 kWh/an en exposition est ou ouest. C\'est 15-20% de moins qu\'un PLAY 2, à cause de la position verticale qui n\'est pas optimale pour la captation solaire (mais qui est adaptée à la configuration garde-corps).',
+    answer: 'Comptez 380-450 kWh/an en exposition sud, 280-340 kWh/an en exposition est ou ouest. C\'est 15-20% de moins qu\'un panneau de même puissance posé au sol (type PLAY), à cause de la position verticale qui n\'est pas optimale pour la captation solaire (mais qui est adaptée à la configuration garde-corps).',
   },
   {
     question: 'Le CITY peut-il s\'installer sur tous les types de garde-corps ?',
@@ -66,12 +66,12 @@ const points_forts = [
 
 const points_faibles = [
   {
-    titre: 'Production inférieure au PLAY 2',
+    titre: 'Production inférieure au PLAY',
     detail: 'La position verticale capte moins bien le soleil que la position inclinée à 30-40°. La perte est de 15-20% à puissance équivalente. C\'est le compromis assumé.',
   },
   {
     titre: 'Prix au kWc plus élevé',
-    detail: 'Le CITY coûte 549 € pour 400 W, soit 1,37 €/Wc. Un PLAY 2 est à 1,33 €/Wc, un Beem Kit à 1,00 €/Wc. Vous payez la spécialisation balcon étroit.',
+    detail: 'Le CITY coûte 549 € pour 400 W, soit 1,37 €/Wc. Un Sunology PLAY (500 Wc, 599 €) est à 1,20 €/Wc, un Beem Kit à 1,00 €/Wc. Vous payez la spécialisation balcon étroit.',
   },
   {
     titre: 'Pas de batterie compatible directement',
@@ -101,7 +101,7 @@ const cas_acheter = [
 const cas_pas_acheter = [
   {
     profil: 'Vous avez un balcon spacieux (> 3 m²)',
-    explication: 'Avec de la place au sol, le PLAY 2 est plus rentable : 450 W à 599 € vs 400 W à 549 €, plus de production grâce à l\'inclinaison optimale. Différence de 150 €/an d\'économies sur 25 ans.',
+    explication: 'Avec de la place au sol, le Sunology PLAY est plus rentable : 500 W à 599 € vs 400 W à 549 €, plus de production grâce à l\'inclinaison optimale (ROI 6,5 ans pour le PLAY, méthodologie Lyon sud).',
   },
   {
     profil: 'Vous êtes orienté est, ouest ou nord',
@@ -177,7 +177,7 @@ export default function SunologyCityPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Le Sunology CITY (549 €, 400 W) était <strong>le seul vrai choix</strong> pour un balcon étroit où la pose au sol est impossible. Son système de fixation breveté sans perçage et son design soigné en faisaient un produit unique. <strong>Mais</strong> à puissance et exposition équivalentes, un Sunology PLAY 2 ou un Beem Kit posé au sol est plus rentable de 15-20%. <strong>Depuis son retrait du catalogue Sunology</strong>, nous ne le conseillons plus qu&apos;en déstockage sous ~450 € (soit ~1,10 €/Wc, le niveau des kits actuels), en vérifiant que la garantie est bien assurée. Au prix catalogue (549-599 €), un kit encore vendu par son fabricant est un meilleur achat.
+              Le Sunology CITY (549 €, 400 W) était <strong>le seul vrai choix</strong> pour un balcon étroit où la pose au sol est impossible. Son système de fixation breveté sans perçage et son design soigné en faisaient un produit unique. <strong>Mais</strong> à puissance et exposition équivalentes, un Sunology PLAY ou un Beem Kit posé au sol est plus rentable de 15-20%. <strong>Depuis son retrait du catalogue Sunology</strong>, nous ne le conseillons plus qu&apos;en déstockage sous ~450 € (soit ~1,10 €/Wc, le niveau des kits actuels), en vérifiant que la garantie est bien assurée. Au prix catalogue (549-599 €), un kit encore vendu par son fabricant est un meilleur achat.
             </p>
           </div>
 
@@ -289,7 +289,7 @@ export default function SunologyCityPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                À titre de comparaison, un Sunology PLAY 2 (450 W posé au sol incliné à 35°) produit environ <strong>15-20% de plus</strong> dans les mêmes conditions. C&apos;est le coût caché de la spécialisation balcon étroit.
+                À titre de comparaison, un panneau de même puissance posé au sol incliné à 35° (type Sunology PLAY) produit environ <strong>15-20% de plus</strong> dans les mêmes conditions. C&apos;est le coût caché de la spécialisation balcon étroit.
               </p>
             </section>
 
@@ -357,7 +357,7 @@ export default function SunologyCityPage() {
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Avec l&apos;inflation tarifaire de 3,3%/an (CRE), le ROI est atteint en <strong>7,3 ans</strong>. Le CITY est garanti 25 ans. Une fois le ROI atteint, chaque année produit des économies pures. Sur la durée totale, le gain net est de <strong>2 583 &euro;</strong>. C&apos;est moins rentable qu&apos;un PLAY 2, mais ça reste très positif.
+                Avec l&apos;inflation tarifaire de 3,3%/an (CRE), le ROI est atteint en <strong>7,3 ans</strong>. Le CITY est garanti 25 ans. Une fois le ROI atteint, chaque année produit des économies pures. Sur la durée totale, le gain net est de <strong>2 583 &euro;</strong>. C&apos;est moins rentable qu&apos;un Sunology PLAY (ROI 6,5 ans), mais ça reste très positif.
               </p>
             </section>
 

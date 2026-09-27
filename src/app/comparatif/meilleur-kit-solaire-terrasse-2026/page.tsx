@@ -28,7 +28,7 @@ const faqData = [
   },
   {
     question: 'Quel est le meilleur kit solaire pour une terrasse en 2026 ?',
-    answer: 'Pour une terrasse, le setup Zendure SolarFlow + 2 panneaux 420 W (~900 €) offre le meilleur rapport qualité-prix : 840 W de puissance, batterie 1,92 kWh intégrée, et un ROI de ~7 ans. Si vous voulez la simplicité absolue, 2 Sunology PLAY 2 (1 198 €) sont aussi un excellent choix : 900 Wc, installation en 2 minutes, zéro configuration.',
+    answer: 'Pour une terrasse, le setup Zendure SolarFlow + 2 panneaux 420 W (~900 €) offre le meilleur rapport qualité-prix : 840 W de puissance, batterie 1,92 kWh intégrée, et un ROI de ~7 ans. Si vous voulez la simplicité absolue, 2 Sunology PLAY 500 W (ex-PLAY 2, 1 198 €) sont aussi un excellent choix : 1 000 Wc, installation en 2 minutes, zéro configuration.',
   },
   {
     question: 'La pose au sol est-elle aussi efficace que la fixation murale ?',
@@ -45,7 +45,7 @@ const setups = [
     ideal: 'Petite terrasse, premier achat, budget limité',
     kits: [
       { name: 'Beem On 500 Wc', power: '500 Wc', price: '429 €', roi: '4,8 ans', avantage: 'Meilleur prix (0,86 €/Wc), paiement 10x', slug: '/avis/beem-on-500w' },
-      { name: 'Sunology PLAY 2', power: '450 Wc', price: '599 €', roi: '7,1 ans', avantage: 'Installation 1 min, WiFi natif', slug: '/avis/sunology-play-2' },
+      { name: 'Sunology PLAY (ex-PLAY 2)', power: '500 Wc', price: '599 €', roi: '6,5 ans', avantage: 'Installation 1 min, WiFi natif', slug: '/avis/sunology-play-2' },
       { name: 'Sunethic F500', power: '500 Wc', price: '690 €', roi: '7,4 ans', avantage: 'Made in France, bifacial', slug: '/avis/sunethic-f500' },
     ],
   },
@@ -57,7 +57,7 @@ const setups = [
     ideal: 'Terrasse standard, meilleur rapport production/investissement',
     kits: [
       { name: 'Zendure SolarFlow + 2\u00d7420 W', power: '840 Wc + batterie', price: '~900 €', roi: '6,6 ans', avantage: 'Batterie 1,92 kWh, autoconsommation 80 %', slug: '/avis/zendure-solarflow' },
-      { name: '2\u00d7 Sunology PLAY 2', power: '900 Wc', price: '1 198 €', roi: '7,1 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
+      { name: '2\u00d7 Sunology PLAY (ex-PLAY 2)', power: '1 000 Wc', price: '1 198 €', roi: '6,5 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
       { name: '2\u00d7 Beem On 500 Wc', power: '1 000 Wc', price: '858 €', roi: '4,8 ans', avantage: 'Meilleur ratio \u20ac/Wc du march\u00e9 (0,86 \u20ac/Wc)', slug: '/avis/beem-on-500w' },
     ],
   },
@@ -165,7 +165,7 @@ export default function MeilleurKitTerrasse2026Page() {
                   {setup.kits.map((kit, ki) => {
                     const kitThumbMap: Record<string, { src: string; href: string }> = {
                       'Beem On 500 Wc': { src: '/images/produits/beem-on-500-1.webp', href: '/avis/beem-on-500w' },
-                      'Sunology PLAY 2': { src: '/images/produits/sunology-play-2-1.webp', href: '/avis/sunology-play-2' },
+                      'Sunology PLAY': { src: '/images/produits/sunology-play-2-1.webp', href: '/avis/sunology-play-2' },
                       'Sunethic F500': { src: '/images/produits/sunethic-f500-2.webp', href: '/avis/sunethic-f500' },
                       'Zendure SolarFlow': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
                       'EcoFlow PowerStream': { src: '/images/produits/ecoflow-powerstream-2.webp', href: '/avis/ecoflow-powerstream' },

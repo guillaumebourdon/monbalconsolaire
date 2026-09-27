@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SchemaOrganization, SchemaWebSite } from '@/components/SchemaMarkup';
 import { CookieConsent } from '@/components/ui/CookieConsent';
+import { AffiliateTracker } from '@/components/AffiliateTracker';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollReveal />
         <SpeedInsights />
         <CookieConsent />
+        <AffiliateTracker />
       </body>
     </html>
   );

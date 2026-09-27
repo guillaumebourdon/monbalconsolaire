@@ -291,11 +291,11 @@ export default function MultiPanneauxSeriePage() {
             <AffiliateCTA
               productName="Sunology PLAY 2"
               merchantName="Sunology"
-              affiliateUrl="https://www.sunology.fr/products/sunology-play-2"
-              label="Voir le kit Sunology PLAY 2 (2 panneaux)"
+              affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
+              label="Voir le Sunology PLAY (stations cumulables)"
               variant="inline"
               position="after-pros"
-              price="à partir de 649 €"
+              price="599 € la station"
             />
 
             {/* Section 7 — Erreurs à éviter */}

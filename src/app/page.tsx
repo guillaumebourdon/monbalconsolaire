@@ -174,11 +174,11 @@ export default function HomePage() {
             {[
               {
                 badge: 'Meilleur choix',
-                name: 'Sunology PLAY2',
+                name: 'Sunology PLAY (ex-PLAY 2)',
                 brand: 'Sunology',
-                power: '450 Wc',
+                power: '500 Wc',
                 price: '599\u20ac',
-                roi: '7,1 ans',
+                roi: '6,5 ans',
                 slug: '/avis/sunology-play-2',
               },
               {
@@ -248,10 +248,10 @@ export default function HomePage() {
             <div className="card-lg reveal">
               <div className="text-[10px] font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Lyon, balcon sud</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-                Appartement T3, actif en journ&eacute;e. Sunology PLAY 2 (450 Wc, 599 &euro;). Production estim&eacute;e : <strong>459 kWh/an</strong>. &Eacute;conomies : <strong>76 &euro;/an</strong>.
+                Appartement T3, actif en journ&eacute;e. Sunology PLAY (ex-PLAY 2, 500 Wc, 599 &euro;). Production estim&eacute;e : <strong>510 kWh/an</strong>. &Eacute;conomies : <strong>84 &euro;/an</strong>.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-green">ROI 7,1 ans</span>
+                <span className="text-xs font-mono font-bold text-green">ROI 6,5 ans</span>
                 <span className="badge-green text-[9px]">&#10003; Rentable</span>
               </div>
             </div>

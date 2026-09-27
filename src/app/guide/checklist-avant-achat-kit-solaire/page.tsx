@@ -28,7 +28,7 @@ const faqData = [
   },
   {
     question: 'Quelle surface de balcon faut-il pour un kit solaire ?',
-    answer: 'Le Sunology PLAY 2 mesure 1,76 m × 1,13 m. Il faut donc au minimum un espace libre de 2 m² avec une exposition correcte. Les kits 300W à petits panneaux (Beem Kit) sont plus compacts mais moins puissants. Mesurez votre espace libre en tenant compte des meubles et des zones d\'ombre.',
+    answer: 'Le Sunology PLAY (500 Wc, ex-PLAY 2) mesure 1,80 m × 1,13 m. Il faut donc au minimum un espace libre de 2 m² avec une exposition correcte. Les kits 300W à petits panneaux (Beem Kit) sont plus compacts mais moins puissants. Mesurez votre espace libre en tenant compte des meubles et des zones d\'ombre.',
   },
   {
     question: 'La déclaration CACSI Enedis est-elle vraiment obligatoire ?',
@@ -54,7 +54,7 @@ const checklist = [
     num: 2,
     category: 'Emplacement',
     title: 'Mesurer la surface disponible',
-    desc: 'Un panneau 450W (Sunology PLAY 2) fait 1,76 m × 1,13 m — il faut donc ~2 m² libres. Les kits multi-panneaux (Beem Kit 300W : 4 × 80 cm) s\'adaptent à des espaces plus étroits mais moins ensoleillés. Tenez compte des meubles de balcon et de la distance jusqu\'à la prise.',
+    desc: 'Un panneau 500 Wc (Sunology PLAY, ex-PLAY 2) fait 1,80 m × 1,13 m — il faut donc ~2 m² libres. Les kits multi-panneaux (Beem Kit 300W : 4 × 80 cm) s\'adaptent à des espaces plus étroits mais moins ensoleillés. Tenez compte des meubles de balcon et de la distance jusqu\'à la prise.',
     verdict: 'Mesurez avant de commander. Retours difficiles sur les gros kits.',
     icon: '&#9633;',
     color: 'green',
@@ -126,7 +126,7 @@ const checklist = [
     num: 10,
     category: 'Budget',
     title: 'Choisir la bonne puissance',
-    desc: '300W (Beem Kit) : idéal pour un petit balcon ou un premier essai. Prix d\'entrée : ~299 €. 450W (Sunology PLAY 2, Beem On) : le rapport puissance/encombrement optimal. Prix : 499-599 €. 800W (2 panneaux) : le plus puissant qu\'on trouve couramment en kit prêt à brancher (aucun plafond légal en France). Nécessite de vérifier le circuit (900W par prise : repère recommandé, pas une limite de la norme). Prix : 700-900 €.',
+    desc: '300W (Beem Kit) : idéal pour un petit balcon ou un premier essai. Prix d\'entrée : ~299 €. 450-500 Wc (Sunology PLAY, Beem On) : le rapport puissance/encombrement optimal. Prix : 429-599 €. 800W (2 panneaux) : le plus puissant qu\'on trouve couramment en kit prêt à brancher (aucun plafond légal en France). Nécessite de vérifier le circuit (900W par prise : repère recommandé, pas une limite de la norme). Prix : 700-900 €.',
     verdict: 'Premier achat ? Commencez par un 450W. C\'est le meilleur compromis prix/production.',
     icon: '&#9889;',
     color: 'green',

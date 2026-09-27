@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Lampes solaires balcon : 10 modèles sélectionnés (2026)',
@@ -42,7 +43,8 @@ const faqData = [
 const lampes = [
   {
     num: 1,
-    nom: 'Lanterne solaire Fatboy Transloetje',
+    lien: 'https://www.amazon.fr/s?k=Fatboy+Transloetje&tag=monbalconsolai-21',
+    nom: 'Lanterne Fatboy Transloetje (rechargeable USB, non solaire)',
     marque: 'Fatboy',
     categorie: 'Lanterne design',
     prix: '59-79 €',
@@ -50,10 +52,11 @@ const lampes = [
     luminosite: '100 lumens',
     ip: 'IP44',
     note: '8,5/10',
-    verdict: 'Le choix déco haut de gamme. Portable, rechargeable USB ou solaire, design hollandais.',
+    verdict: 'Alternative design sans panneau : elle se recharge par USB, pas au soleil. Portable, design hollandais. À choisir si votre balcon est à l’ombre.',
   },
   {
     num: 2,
+    lien: 'https://www.amazon.fr/s?k=guirlande+solaire+LED+20m+blanc+chaud&tag=monbalconsolai-21',
     nom: 'Guirlande LED solaire 20 m',
     marque: 'Lunartec / Philips',
     categorie: 'Guirlande décorative',
@@ -66,6 +69,7 @@ const lampes = [
   },
   {
     num: 3,
+    lien: 'https://www.amazon.fr/s?k=projecteur+solaire+LED+d%C3%A9tecteur+de+mouvement&tag=monbalconsolai-21',
     nom: 'Projecteur solaire 60 LED avec détecteur',
     marque: 'Litom / Mpow',
     categorie: 'Projecteur sécurité',
@@ -78,6 +82,7 @@ const lampes = [
   },
   {
     num: 4,
+    lien: 'https://www.amazon.fr/s?k=applique+murale+solaire+LED+IP44&tag=monbalconsolai-21',
     nom: 'Applique solaire LED Ring',
     marque: 'Philips MyGarden',
     categorie: 'Applique murale',
@@ -90,6 +95,7 @@ const lampes = [
   },
   {
     num: 5,
+    lien: 'https://www.amazon.fr/s?k=lampe+solaire+%C3%A0+piquer+lot+de+4&tag=monbalconsolai-21',
     nom: 'Lampe solaire Cobra à piquer',
     marque: 'Générique qualité',
     categorie: 'Lampe à poser',
@@ -102,7 +108,8 @@ const lampes = [
   },
   {
     num: 6,
-    nom: 'Lampe solaire Lexon Mina',
+    lien: 'https://www.amazon.fr/s?k=Lexon+Mina+lampe&tag=monbalconsolai-21',
+    nom: 'Lampe Lexon Mina (rechargeable USB, non solaire)',
     marque: 'Lexon',
     categorie: 'Lampe portable design',
     prix: '70-90 €',
@@ -110,10 +117,11 @@ const lampes = [
     luminosite: '70 lumens',
     ip: 'IP44',
     note: '8/10',
-    verdict: 'Lampe design française, rechargeable USB aussi. Magnétique, se fixe sur surfaces métalliques. Premium.',
+    verdict: 'Alternative design sans panneau : recharge par USB uniquement. Magnétique, se fixe sur surfaces métalliques. Premium.',
   },
   {
     num: 7,
+    lien: 'https://www.amazon.fr/s?k=guirlande+guinguette+solaire+ampoules&tag=monbalconsolai-21',
     nom: 'Guirlande Edison solaire 10 ampoules',
     marque: 'Brightown',
     categorie: 'Guirlande vintage',
@@ -126,6 +134,7 @@ const lampes = [
   },
   {
     num: 8,
+    lien: 'https://www.amazon.fr/s?k=projecteur+solaire+batterie+amovible+USB&tag=monbalconsolai-21',
     nom: 'Projecteur solaire 2-en-1 avec batterie USB',
     marque: 'Hybride BougeRV',
     categorie: 'Projecteur polyvalent',
@@ -138,6 +147,7 @@ const lampes = [
   },
   {
     num: 9,
+    lien: 'https://www.amazon.fr/s?k=lanterne+solaire+rechargeable+IP67&tag=monbalconsolai-21',
     nom: 'Lanterne solaire Lumena Pro',
     marque: 'Lumena',
     categorie: 'Lanterne outdoor pro',
@@ -150,7 +160,8 @@ const lampes = [
   },
   {
     num: 10,
-    nom: 'Lampe solaire Fermob Balad',
+    lien: 'https://www.amazon.fr/s?k=Fermob+Balad&tag=monbalconsolai-21',
+    nom: 'Lampe Fermob Balad (rechargeable USB, non solaire)',
     marque: 'Fermob',
     categorie: 'Lampe nomade haute gamme',
     prix: '130-180 €',
@@ -158,7 +169,7 @@ const lampes = [
     luminosite: '80 lumens',
     ip: 'IP44',
     note: '8,5/10',
-    verdict: 'La référence absolue du design extérieur français. Coûteuse mais intemporelle. Garantie 5 ans.',
+    verdict: 'Référence du design extérieur français, mais sans panneau solaire : recharge USB-C. Coûteuse. Pour un balcon à l’ombre ou nord.',
   },
 ];
 
@@ -206,6 +217,7 @@ export default function LampesSolairesPage() {
         description="Comparatif des meilleures lampes solaires pour balcon en 2026."
         url="https://monbalconsolaire.fr/blog/lampes-solaires-balcon-2026"
         datePublished="2026-04-22"
+        dateModified="2026-09-27"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Lampes solaires extérieures' }]} />
@@ -233,6 +245,15 @@ export default function LampesSolairesPage() {
               Pour une <strong>ambiance décorative</strong>, une guirlande LED solaire 20 m (25-40 €) est imbattable. Pour un <strong>éclairage fonctionnel</strong> (coin repas, lecture), une applique Philips MyGarden ou un projecteur Litom suffit (30-65 €). Pour le <strong>premium design</strong>, la Fermob Balad reste la référence mais coûte 130-180 €. Évitez les lampes sans indice IP et les modèles sous 15 € : qualité généralement mauvaise, durée de vie &lt; 1 an.
             </p>
           </div>
+
+          <AffiliateCTA
+            productName="Guirlande LED solaire 20 m"
+            merchantName="Amazon"
+            affiliateUrl="https://www.amazon.fr/s?k=guirlande+solaire+LED+20m+blanc+chaud&tag=monbalconsolai-21"
+            label="Voir les guirlandes solaires 20 m sur Amazon"
+            variant="secondary"
+            position="after-top-pick"
+          />
 
           <div className="space-y-10">
             <section>
@@ -272,7 +293,11 @@ export default function LampesSolairesPage() {
                   <tbody>
                     {lampes.map((l, i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold text-xs">{l.nom}</td>
+                        <td className="p-3 font-semibold text-xs">
+                          {l.nom}
+                          <br />
+                          <a href={l.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a>
+                        </td>
                         <td className="text-center p-3 text-xs">{l.categorie}</td>
                         <td className="text-center p-3 font-mono text-xs">{l.luminosite}</td>
                         <td className="text-center p-3 font-mono text-xs">{l.autonomie}</td>
@@ -329,6 +354,9 @@ export default function LampesSolairesPage() {
                     <div className="bg-green-pale/30 rounded-lg p-3">
                       <p className="text-xs font-semibold text-green mb-1">💡 Notre verdict</p>
                       <p className="text-xs text-charcoal-light leading-relaxed">{l.verdict}</p>
+                    </div>
+                    <div className="mt-3 text-sm">
+                      <a href={l.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir les offres sur Amazon &rarr;</a>
                     </div>
                   </div>
                 ))}
@@ -401,6 +429,15 @@ export default function LampesSolairesPage() {
               </Link>
             </div>
 
+            <AffiliateCTA
+              productName="Projecteur solaire LED avec détecteur"
+              merchantName="Amazon"
+              affiliateUrl="https://www.amazon.fr/s?k=projecteur+solaire+LED+d%C3%A9tecteur+de+mouvement&tag=monbalconsolai-21"
+              label="Voir les projecteurs solaires sur Amazon"
+              variant="box"
+              position="footer-box"
+            />
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
@@ -438,7 +475,7 @@ export default function LampesSolairesPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Note :</strong> prix constatés en avril 2026 (Amazon, sites fabricants, magasins spécialisés). Peuvent varier selon les promotions. Les liens affiliés seront ajoutés une fois nos inscriptions partenaires validées.{' '}
+                <strong>Note :</strong> prix constatés en avril 2026 (Amazon, sites fabricants, magasins spécialisés). Peuvent varier selon les promotions. Modèles sélectionnés et analysés sur fiches techniques et avis clients, non testés physiquement. Les liens renvoient vers une recherche Amazon, les références changeant souvent sur ce segment : vérifiez l&apos;indice IP et la capacité de batterie avant d&apos;acheter. Liens Amazon affiliés : nous touchons une commission sans surcoût pour vous.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

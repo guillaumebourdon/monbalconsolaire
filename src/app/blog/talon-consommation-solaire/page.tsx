@@ -265,7 +265,7 @@ export default function TalonConsommationPage() {
                     </div>
                   </div>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
-                    Un kit mono-panneau suffit : <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link> (450 Wc, 599 €) ou <Link href="/avis/beem-on-460w" className="text-green hover:underline font-semibold">Beem On 460W</Link> (599 €). Production moyenne de 150-200 W en journée, pile sur votre talon.
+                    Un kit mono-panneau suffit : <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY</Link> (ex-PLAY 2, 500 Wc, 599 €) ou <Link href="/avis/beem-on-460w" className="text-green hover:underline font-semibold">Beem On 460W</Link> (599 €). Production moyenne de 150-200 W en journée, pile sur votre talon.
                   </p>
                   <p className="text-xs text-stone">ROI estimé : 6-8 ans · Économies : 80-100 €/an</p>
                 </div>
@@ -337,8 +337,8 @@ export default function TalonConsommationPage() {
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Talon annuel</strong> : 200 W × 24h × 365j / 1 000 = <strong className="font-mono">1 752 kWh/an</strong></li>
                   <li>&bull; <strong>Coût sans solaire</strong> : 1 752 × 0,1940 = <strong className="font-mono text-amber-dark">340 €/an</strong></li>
-                  <li>&bull; <strong>Kit Sunology PLAY 2</strong> (450 Wc, 599 €) → produit 465 kWh/an</li>
-                  <li>&bull; <strong>Autoconsommation à 45 %</strong> = 209 kWh valorisés → <strong className="font-mono text-green">41 €/an</strong> d&apos;économies</li>
+                  <li>&bull; <strong>Kit Sunology PLAY</strong> (ex-PLAY 2, 500 Wc, 599 €) → produit 510 kWh/an</li>
+                  <li>&bull; <strong>Autoconsommation à 45 %</strong> = 230 kWh valorisés → <strong className="font-mono text-green">45 €/an</strong> d&apos;économies</li>
                   <li>&bull; <strong>Zendure SolarFlow + 2 × 420 W</strong> (900 €) → 870 kWh/an, 80 % autoconsommé</li>
                   <li>&bull; <strong>696 kWh valorisés</strong> → <strong className="font-mono text-green">135 €/an</strong> d&apos;économies</li>
                 </ul>

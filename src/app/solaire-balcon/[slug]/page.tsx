@@ -5,13 +5,25 @@ import { DEPARTMENTS } from '@/data/departments';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
-import { calculateROIYears, KWH_PRICE_EUR, PERFORMANCE_RATIO, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY } from '@/lib/pricing';
+import { calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_EUR, PERFORMANCE_RATIO, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY, PVGIS_REFERENCE_LYON } from '@/lib/pricing';
 
 const TARIF_KWH = KWH_PRICE_EUR;
 const COEFF_PERTES = PERFORMANCE_RATIO;
 
+// Les valeurs de data/departments.ts sont des productibles PVGIS (sud, 30°) déjà nets
+// des pertes système (PVGIS applique 14 % de pertes : Lyon 30° ≈ 1 281 kWh/kWc).
+// Le site applique ensuite PR 0,85 sur une référence Lyon de 1 200 kWh/kWc
+// (PVGIS_REFERENCE_LYON), hypothèse volontairement prudente pour un balcon
+// (≈ 1 020 kWh/kWc net, entre la pose à 30° et la pose verticale).
+// Pour rester cohérent avec cette référence, on utilise les valeurs PVGIS comme
+// indice relatif, recalé pour que le Rhône (69) corresponde exactement à Lyon.
+const PVGIS_RHONE = 1300;
+function productibleSite(pvgisDept: number): number {
+  return Math.round((pvgisDept * PVGIS_REFERENCE_LYON) / PVGIS_RHONE);
+}
+
 const KITS = [
-  { name: 'Sunology PLAY 2', power: 0.45, price: 599, slug: '/avis/sunology-play-2', badge: 'Meilleur choix' },
+  { name: 'Sunology PLAY', power: 0.50, price: 599, slug: '/avis/sunology-play-2', badge: 'Meilleur choix' },
   { name: 'Beem Kit 300W', power: 0.30, price: 299, slug: '/avis/beem-kit-300w', badge: 'Petit budget' },
   { name: 'Beem On 460W', power: 0.46, price: 599, slug: '/avis/beem-on-460w', badge: 'Modulaire' },
   { name: 'Zendure SolarFlow', power: 0.84, price: 900, slug: '/avis/zendure-solarflow', badge: 'Avec batterie', autocons: AUTOCONSO_BATTERY },
@@ -55,7 +67,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!dept) return {};
   return {
     title: `Kit solaire balcon ${dept.name} (${dept.code}) : production et rentabilité 2026`,
-    description: `Combien produit un kit solaire sur un balcon dans le ${dept.name} (${dept.code}) ? Irradiation ${dept.irradiation} kWh/kWc, calcul de rentabilité et meilleur kit recommandé.`,
+    description: `Combien produit un kit solaire sur un balcon dans le ${dept.name} (${dept.code}) ? Productible ${productibleSite(dept.irradiation)} kWh/kWc, calcul de rentabilité et meilleur kit recommandé.`,
     alternates: {
       canonical: `https://monbalconsolaire.fr/solaire-balcon/${params.slug}`,
     },
@@ -69,7 +81,8 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
   const dept = getDeptBySlug(params.slug);
   if (!dept) notFound();
 
-  const allResults = KITS.map(k => calcKit(k, dept.irradiation));
+  const productible = productibleSite(dept.irradiation);
+  const allResults = KITS.map(k => calcKit(k, productible));
   const results = [...allResults].sort((a, b) => a.roi - b.roi);
   const best = results[0];
   const bestBudget = allResults.find(r => r.name === 'Beem Kit 300W')!;
@@ -86,11 +99,11 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
   const faqData = [
     {
       question: `Un kit solaire de balcon est-il rentable dans le ${dept.name} ?`,
-      answer: `Oui. Avec une irradiation de ${dept.irradiation} kWh/kWc/an (${irradiationLevel}), un kit Sunology PLAY 2 (450 Wc, 599 €) produit environ ${results.find(r => r.name === 'Sunology PLAY 2')?.production || 0} kWh/an et permet d'économiser ${results.find(r => r.name === 'Sunology PLAY 2')?.economies || 0} €/an. ROI en ${results.find(r => r.name === 'Sunology PLAY 2')?.roi || 0} ans pour une garantie de 25 ans.`,
+      answer: `Oui. Avec un productible de ${productible} kWh/kWc/an (${irradiationLevel}), un kit Sunology PLAY (ex-PLAY 2, 500 Wc, 599 €) produit environ ${results.find(r => r.name === 'Sunology PLAY')?.production || 0} kWh/an et permet d'économiser ${results.find(r => r.name === 'Sunology PLAY')?.economies || 0} €/an. ROI en ${results.find(r => r.name === 'Sunology PLAY')?.roi || 0} ans (inflation 3,3 %/an incluse).`,
     },
     {
       question: `Quelle est l'irradiation solaire dans le ${dept.name} ?`,
-      answer: `Le ${dept.name} (${dept.code}) reçoit en moyenne ${dept.irradiation} kWh/kWc/an en orientation sud. C'est un potentiel ${irradiationLevel}. Pour comparaison, la moyenne nationale est d'environ 1 200 kWh/kWc/an, les Bouches-du-Rhône sont à 1 500 et le Nord à 1 020.`,
+      answer: `Selon PVGIS (Commission européenne), un panneau orienté sud et incliné à 30° produit en moyenne ${dept.irradiation} kWh par kWc et par an dans le ${dept.name} (${dept.code}), pertes système incluses. C'est un potentiel ${irradiationLevel}. Pour nos calculs, nous retenons un productible prudent de ${productible} kWh/kWc (recalé sur notre référence Lyon de ${PVGIS_REFERENCE_LYON} kWh/kWc), auquel s'applique un coefficient de performance de 0,85. Pour comparaison, sur la même base : Bouches-du-Rhône ${productibleSite(1500)}, Nord ${productibleSite(1020)} kWh/kWc.`,
     },
     {
       question: `Quel est le meilleur kit solaire pour un balcon dans le ${dept.name} ?`,
@@ -121,13 +134,13 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
               Kit solaire balcon {dept.name} ({dept.code}) : production et rentabilité 2026
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Combien produit un kit solaire sur un balcon dans le <strong>{dept.name}</strong> ? Avec une irradiation de <strong>{dept.irradiation} kWh/kWc/an</strong>, voici les chiffres exacts de production, d&apos;économies et de retour sur investissement pour chaque kit du marché.
+              Combien produit un kit solaire sur un balcon dans le <strong>{dept.name}</strong> ? Avec un productible de <strong>{productible} kWh/kWc/an</strong>, voici les chiffres exacts de production, d&apos;économies et de retour sur investissement pour chaque kit du marché.
             </p>
           </div>
 
           <div className="grid grid-cols-3 gap-4 mb-10">
             {[
-              { label: 'Irradiation', value: `${dept.irradiation}`, suffix: ' kWh', sub: `Potentiel ${irradiationLevel}`, color: 'amber' as const },
+              { label: 'Productible', value: `${productible}`, suffix: ' kWh', sub: `Potentiel ${irradiationLevel}`, color: 'amber' as const },
               { label: '\u00c9conomies/an', value: `${best.economies}`, suffix: ' \u20ac', sub: `avec le ${best.name}`, color: 'green' as const },
               { label: 'Retour sur invest.', value: `${best.roi}`, suffix: ' ans', sub: 'garanti 25 ans', color: 'green' as const },
             ].map((kpi, i) => (
@@ -149,10 +162,10 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
             <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-green to-green-light rounded-l-brand-xl" />
             <h2 className="font-bold text-lg mb-3 pl-4">Le potentiel solaire du {dept.name}</h2>
             <p className="text-sm text-charcoal-light leading-relaxed pl-4">
-              Le département du {dept.name} ({dept.code}) en {dept.region} bénéficie d&apos;une irradiation solaire de <strong>{dept.irradiation} kWh/kWc/an</strong>, un potentiel <strong>{irradiationLevel}</strong>.
+              Le département du {dept.name} ({dept.code}) en {dept.region} bénéficie d&apos;un productible PVGIS de <strong>{dept.irradiation} kWh/kWc/an</strong> (sud, 30°), un potentiel <strong>{irradiationLevel}</strong>. Nos calculs retiennent {productible} kWh/kWc, cal&eacute;s sur notre r&eacute;f&eacute;rence prudente de Lyon.
               {dept.irradiation >= 1300 && ' C\'est l\'un des départements les plus favorables au solaire en France.'}
               {dept.irradiation < 1100 && ' Même avec un ensoleillement plus faible que le sud, un kit solaire reste rentable grâce au prix élevé de l\'électricité (0,1940 €/kWh).'}
-              {dept.irradiation >= 1100 && dept.irradiation < 1300 && ' Un kit solaire de balcon y est pleinement rentable avec un retour sur investissement de 4 à 7 ans.'}
+              {dept.irradiation >= 1100 && dept.irradiation < 1300 && ` Un kit solaire de balcon y est rentable : ROI de ${best.roi} ans pour le kit le mieux placé.`}
             </p>
           </div>
 
@@ -160,7 +173,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Production et rentabilité par kit dans le {dept.name}</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Voici les chiffres pour chaque kit disponible, calculés avec l&apos;irradiation réelle du {dept.name} en orientation sud :
+                Voici les chiffres pour chaque kit disponible, calculés avec le productible du {dept.name} en orientation sud :
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse">
@@ -190,7 +203,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Calcul : puissance × {dept.irradiation} kWh/kWc × 0,85 (pertes) × autoconsommation × 0,1940 €/kWh. Orientation sud. Autoconsommation 85 % sans batterie, 95 % avec batterie (m&eacute;thodologie standard du site). ROI actualisé avec une inflation du tarif de 3,3 %/an (CRE).
+                Calcul : puissance × {productible} kWh/kWc × 0,85 (performance ratio) × autoconsommation × 0,1940 €/kWh. Orientation sud. Autoconsommation 85 % sans batterie, 95 % avec batterie (m&eacute;thodologie standard du site). ROI actualisé avec une inflation du tarif de 3,3 %/an (CRE).
               </p>
             </section>
 
@@ -210,7 +223,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 </div>
                 <p className="text-sm text-charcoal-light leading-relaxed mb-3">
                   Dans le {dept.name}, le {best.name} offre le <strong>retour sur investissement le plus rapide</strong> : {best.economies} €/an d&apos;économies pour {best.price} € investis.
-                  {' '}Sur 25 ans, c&apos;est <strong>{Math.round(best.economies * 25).toLocaleString('fr-FR')} € d&apos;économies cumulées</strong>.
+                  {' '}Sur 25 ans, c&apos;est <strong>{calculateTotalSavings25Years({ kitPriceEur: best.price, kitPowerWc: best.power * 1000, productibleKwhPerKwc: productible, autoconsoOverride: best.autocons }).toLocaleString('fr-FR')} € d&apos;économies cumulées</strong> (inflation 3,3 %/an incluse).
                 </p>
                 <Link href={best.slug} className="btn-primary text-sm py-2.5 inline-flex">
                   Voir l&apos;avis complet &rarr;
@@ -271,7 +284,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 <div className="grid grid-cols-2 gap-3">
                   {nearbyDepts.map(d => {
                     const dSlug = slugify(d.name);
-                    const prod = Math.round(0.45 * d.irradiation * COEFF_PERTES);
+                    const prod = Math.round(0.5 * productibleSite(d.irradiation) * COEFF_PERTES);
                     const eco = Math.round(prod * AUTOCONSO_STANDARD * TARIF_KWH);
                     return (
                       <Link key={d.code} href={`/solaire-balcon/${dSlug}`} className="card hover:shadow-brand-lg transition-all group">
@@ -326,7 +339,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> irradiation PVGIS (Commission européenne), orientation sud, inclinaison 30°, coefficient de pertes 0,85. Tarif EDF base mai 2026 : 0,1940 €/kWh. Autoconsommation 45 % sans batterie, 80 % avec batterie. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (moyenne CRE 2012-2026).{' '}
+                <strong>Méthodologie :</strong> productible PVGIS (Commission européenne) par département, orientation sud, inclinaison 30°, pertes système incluses, utilisé comme indice relatif et recalé sur notre référence Lyon (Rhône = 1 200 kWh/kWc), puis performance ratio 0,85 appliqué une seule fois. Tarif EDF base mai 2026 : 0,1940 €/kWh. Autoconsommation 85 % sans batterie, 95 % avec batterie. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (moyenne CRE 2012-2026).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
             </div>

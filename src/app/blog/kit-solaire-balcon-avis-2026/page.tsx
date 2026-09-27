@@ -113,7 +113,7 @@ export default function KitSolaireBalconAvisPage() {
               <p className="text-sm text-charcoal-light">Note stable depuis 12 mois. 82 % de 5 &eacute;toiles.</p>
             </div>
             <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-              Le <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link> (450 Wc, 599 &euro;) est le kit le plus vendu et le plus comment&eacute; en France. Les retours convergent sur plusieurs points :
+              Le <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link> (450 Wc, 599 &euro;) est le kit le plus vendu et le plus comment&eacute; en France. Sunology le vend d&eacute;sormais sous le nom <strong>PLAY</strong>, avec un panneau back-contact de 500&nbsp;Wc (lanc&eacute; en ao&ucirc;t 2026) au m&ecirc;me prix&nbsp;: les avis ci-dessous portent surtout sur le PLAY 2. Les retours convergent sur plusieurs points :
             </p>
             <div className="space-y-2 mb-4">
               <div className="card border-l-4 border-l-green">
@@ -128,7 +128,7 @@ export default function KitSolaireBalconAvisPage() {
               <div className="card border-l-4 border-l-amber">
                 <h4 className="font-bold text-sm text-amber-dark">Ce qui revient en n&eacute;gatif</h4>
                 <ul className="text-sm text-charcoal-light mt-2 space-y-1">
-                  <li>&bull; Prix l&eacute;g&egrave;rement au-dessus du march&eacute; (1,33 &euro;/Wc vs 0,86 pour Beem On 500)</li>
+                  <li>&bull; Prix au-dessus du march&eacute; (1,33 &euro;/Wc pour le PLAY 2, 1,20 &euro;/Wc pour le nouveau PLAY 500&nbsp;Wc, vs 0,86 pour Beem On 500)</li>
                   <li>&bull; WiFi du micro-onduleur instable si la box est loin</li>
                   <li>&bull; Pas de batterie int&eacute;gr&eacute;e (il faut ajouter le PLAY MAX &agrave; 1 179 &euro;)</li>
                 </ul>
@@ -305,7 +305,7 @@ export default function KitSolaireBalconAvisPage() {
                   </tr>
                   <tr className="border-b border-border-light">
                     <td className="py-3 font-semibold">La simplicit&eacute; avant tout</td>
-                    <td className="py-3"><Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link></td>
+                    <td className="py-3"><Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY (ex-PLAY 2)</Link></td>
                     <td className="py-3 text-center font-mono">599 &euro;</td>
                     <td className="py-3 text-center font-mono font-bold text-green">8,5/10</td>
                   </tr>
@@ -333,7 +333,7 @@ export default function KitSolaireBalconAvisPage() {
             </div>
 
             <div className="my-6">
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY 2" variant="box" position="article_bottom" price="599 &euro;" />
+              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 &euro;" />
             </div>
           </section>
 

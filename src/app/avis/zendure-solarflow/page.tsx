@@ -112,12 +112,12 @@ const comparaison = [
     note: '7/10',
   },
   {
-    produit: 'Sunology PLAY 2 (sans batterie)',
+    produit: 'Sunology PLAY 500 Wc (sans batterie)',
     prix: '599 €',
     stockage: 'Aucun',
-    sortieAC: '450 W',
+    sortieAC: '500 W',
     backup: 'Non',
-    poids: '~12 kg',
+    poids: '~30 kg (station)',
     note: '8.5/10',
   },
   {
@@ -415,7 +415,7 @@ export default function ZendureSolarflowPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;EcoFlow PowerStream reste supérieur si vous voulez le backup réseau et la polyvalence de la batterie portable. Le <strong>Bluetti Balco 260</strong> est le nouveau challenger direct : plus de stockage (2,56 kWh) et backup EPS 2 300 W, mais au double du prix. Le Sunology PLAY 2 reste le choix le plus simple si vous ne voulez pas de batterie du tout.
+                Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;EcoFlow PowerStream reste supérieur si vous voulez le backup réseau et la polyvalence de la batterie portable. Le <strong>Bluetti Balco 260</strong> est le nouveau challenger direct : plus de stockage (2,56 kWh) et backup EPS 2 300 W, mais au double du prix. Le Sunology PLAY (ex-PLAY 2, 500 Wc) reste le choix le plus simple si vous ne voulez pas de batterie du tout.
               </p>
               <p className="text-xs text-stone mt-3">* Bluetti Balco 260 : prix avec code promo BALNEO (-510 &euro;), valable jusqu&apos;au 30/09/2026. Prix catalogue : 1 399 &euro;. Derni&egrave;re v&eacute;rification : 30/07/2026.</p>
             </section>

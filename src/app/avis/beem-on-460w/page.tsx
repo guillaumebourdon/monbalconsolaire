@@ -75,7 +75,7 @@ export default function BeemOnAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Meilleur ratio €/Wc en mono-panneau', d: 'À 1,30€/Wc (599€ pour 460W), le Beem On offre le meilleur rapport puissance/prix du segment mono-panneau. Sunology est à 1,33€/Wc.' },
+                  { t: 'Meilleur ratio €/Wc en mono-panneau', d: 'À 1,30€/Wc (599€ pour 460W), le Beem On offre le meilleur rapport puissance/prix du segment mono-panneau. Le Sunology PLAY2 450 Wc était à 1,33€/Wc (le PLAY actuel, 500 Wc à 599€, est à 1,20€/Wc).' },
                   { t: 'Paiement en 10x sans frais', d: 'Beem propose le paiement fractionné jusqu\'à 10x sans frais. Ça fait ~60€/mois pendant 10 mois. Gros avantage pour ceux qui ne veulent pas sortir 599€ d\'un coup.' },
                   { t: 'Option Beem ZEN', d: 'Pour 49€ de plus, Beem s\'occupe de toutes les démarches administratives : déclaration CACSI Enedis, convention d\'autoconsommation. Pratique pour les non-initiés.' },
                   { t: 'App Beem bien conçue', d: 'L\'application Beem (via Beembox) offre un suivi en temps réel, l\'historique de production, les économies estimées, et des conseils pour optimiser votre consommation.' },
@@ -95,7 +95,7 @@ export default function BeemOnAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Panneau plus grand que le Sunology', d: 'Le Beem On mesure 189 x 113 cm contre 176 x 113 cm pour le PLAY2. C\'est 13 cm de plus en longueur, ce qui peut être un problème sur les petits balcons.' },
+                  { t: 'Panneau plus grand que le Sunology', d: 'Le Beem On mesure 189 x 113 cm contre 176 x 113 cm pour le PLAY2 (180 x 113 cm pour le PLAY 500 Wc actuel). C\'est 13 cm de plus en longueur, ce qui peut être un problème sur les petits balcons.' },
                   { t: 'Nécessite la Beembox pour le suivi', d: 'Contrairement au Sunology PLAY2 dont le micro-onduleur est WiFi natif, le Beem On nécessite un boîtier Beembox branché sur votre box internet. C\'est inclus, mais c\'est un appareil de plus à gérer.' },
                   { t: 'Batterie Beem très chère', d: 'L\'option stockage existe (Beem Battery) mais à partir de 6 190€ pour le kit complet. C\'est 5x le prix du kit seul. L\'option VAULT de Sunology (1 179€ kit + batterie) est bien plus accessible.' },
                 ].map((p, i) => (

@@ -23,8 +23,8 @@ const faqData = [
     answer: 'Ça d\u00e9pend de vos habitudes. Est = production le matin (6h-13h), id\u00e9al si vous \u00eates chez vous le matin ou si votre talon est fort au petit-d\u00e9jeuner. Ouest = production l\'apr\u00e8s-midi (13h-20h), id\u00e9al pour les actifs qui rentrent en fin de journ\u00e9e. En termes de kWh annuels, les deux sont \u00e9quivalents (\u00e0 2-3 % pr\u00e8s).',
   },
   {
-    question: 'Combien produit un kit 450 Wc orient\u00e9 est ou ouest ?',
-    answer: 'En orientation est ou ouest \u00e0 Lyon (1 200 kWh/kWc), un kit 450 Wc produit environ 367 kWh/an (vs 459 kWh plein sud). C\'est 20 % de moins. \u00c0 Marseille (1 500 kWh/kWc), vous \u00eates \u00e0 459 kWh — soit autant qu\'un kit sud \u00e0 Lyon.',
+    question: 'Combien produit un kit 500 Wc orient\u00e9 est ou ouest ?',
+    answer: 'En orientation est ou ouest \u00e0 Lyon (1 200 kWh/kWc), un kit 500 Wc (type Sunology PLAY) produit environ 408 kWh/an (vs 510 kWh plein sud). C\'est 20 % de moins. \u00c0 Marseille (1 500 kWh/kWc), vous \u00eates \u00e0 510 kWh — soit autant qu\'un kit sud \u00e0 Lyon.',
   },
   {
     question: 'Faut-il une batterie si mon balcon est est/ouest ?',
@@ -32,7 +32,7 @@ const faqData = [
   },
   {
     question: 'Peut-on mettre deux panneaux, un est et un ouest ?',
-    answer: 'Oui, si vous avez un balcon traversant ou une terrasse avec deux expositions. C\'est m\u00eame la configuration id\u00e9ale en autoconsommation : production le matin ET le soir, avec un creux \u00e0 midi. Chaque panneau doit avoir son propre micro-onduleur (les kits Sunology PLAY 2 et Beem On ont un onduleur par panneau, donc c\'est compatible).',
+    answer: 'Oui, si vous avez un balcon traversant ou une terrasse avec deux expositions. C\'est m\u00eame la configuration id\u00e9ale en autoconsommation : production le matin ET le soir, avec un creux \u00e0 midi. Chaque panneau doit avoir son propre micro-onduleur (les kits Sunology PLAY (ex-PLAY 2) et Beem On ont un onduleur par panneau, donc c\'est compatible).',
   },
   {
     question: 'Mon balcon est nord-est ou nord-ouest, c\'est pareil ?',
@@ -85,7 +85,7 @@ export default function PanneauSolaireEstOuestPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Production : est/ouest vs sud, les vrais chiffres</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Voici la production annuelle d&apos;un kit <strong>450 Wc</strong> (type Sunology PLAY 2) selon l&apos;orientation, pour 4 villes :
+                Voici la production annuelle d&apos;un kit <strong>500 Wc</strong> (type Sunology PLAY, ex-PLAY 2) selon l&apos;orientation, pour 4 villes :
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse">
@@ -99,10 +99,10 @@ export default function PanneauSolaireEstOuestPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Marseille', '574', '459', '-115 kWh'],
-                      ['Lyon', '459', '367', '-92 kWh'],
-                      ['Paris', '402', '321', '-81 kWh'],
-                      ['Lille', '390', '312', '-78 kWh'],
+                      ['Marseille', '638', '510', '-128 kWh'],
+                      ['Lyon', '510', '408', '-102 kWh'],
+                      ['Paris', '446', '357', '-89 kWh'],
+                      ['Lille', '434', '347', '-87 kWh'],
                     ].map(([ville, sud, eo, perte], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{ville}</td>
@@ -115,12 +115,12 @@ export default function PanneauSolaireEstOuestPage() {
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Kit 450 Wc, inclinaison 30&deg;, Performance Ratio 0,85. Source : PVGIS. Coefficient est/ouest = 0,80.
+                Kit 500 Wc, inclinaison 30&deg;, Performance Ratio 0,85. Source : PVGIS. Coefficient est/ouest = 0,80.
               </p>
               <div className="card border-l-4 border-l-green mt-4">
                 <h4 className="font-bold text-sm mb-1 text-green">Le point positif qu&apos;on oublie</h4>
                 <p className="text-xs text-charcoal-light leading-relaxed">
-                  Un panneau est/ouest &agrave; Marseille (459 kWh) produit <strong>autant qu&apos;un panneau sud &agrave; Lyon</strong> (459 kWh). Si vous habitez dans le sud de la France avec un balcon est/ouest, vous &ecirc;tes mieux loti qu&apos;un Lyonnais plein sud.
+                  Un panneau est/ouest &agrave; Marseille (510 kWh) produit <strong>autant qu&apos;un panneau sud &agrave; Lyon</strong> (510 kWh). Si vous habitez dans le sud de la France avec un balcon est/ouest, vous &ecirc;tes mieux loti qu&apos;un Lyonnais plein sud.
                 </p>
               </div>
             </section>
@@ -128,19 +128,19 @@ export default function PanneauSolaireEstOuestPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Rentabilit&eacute; : quel ROI en est/ouest ?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Calculons pour un <strong>Sunology PLAY 2 (450 Wc, 599 &euro;)</strong> &agrave; Lyon, orientation est/ouest :
+                Calculons pour un <strong>Sunology PLAY (ex-PLAY 2, 500 Wc, 599 &euro;)</strong> &agrave; Lyon, orientation est/ouest :
               </p>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production</strong> : 450 Wc &times; 1 200 &times; 0,85 &times; 0,80 = <strong className="font-mono">367 kWh/an</strong></li>
-                  <li>&bull; <strong>Autoconsommation</strong> : 85 % (foyer attentif) = <strong className="font-mono">312 kWh valoris&eacute;s</strong></li>
-                  <li>&bull; <strong>&Eacute;conomies ann&eacute;e 1</strong> : 312 &times; 0,1940 = <strong className="font-mono">61 &euro;/an</strong></li>
-                  <li>&bull; <strong>ROI (avec inflation 3,3 %/an)</strong> : <strong className="font-mono text-amber-dark">8,7 ans</strong></li>
-                  <li>&bull; <strong>Sur 25 ans</strong> : <strong className="font-mono text-green">~2 295 &euro; d&apos;&eacute;conomies cumul&eacute;es</strong></li>
+                  <li>&bull; <strong>Production</strong> : 500 Wc &times; 1 200 &times; 0,85 &times; 0,80 = <strong className="font-mono">408 kWh/an</strong></li>
+                  <li>&bull; <strong>Autoconsommation</strong> : 85 % (foyer attentif) = <strong className="font-mono">347 kWh valoris&eacute;s</strong></li>
+                  <li>&bull; <strong>&Eacute;conomies ann&eacute;e 1</strong> : 347 &times; 0,1940 = <strong className="font-mono">67 &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI (avec inflation 3,3 %/an)</strong> : <strong className="font-mono text-amber-dark">7,9 ans</strong></li>
+                  <li>&bull; <strong>Sur 25 ans</strong> : <strong className="font-mono text-green">~2 550 &euro; d&apos;&eacute;conomies cumul&eacute;es</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Compar&eacute; au m&ecirc;me kit plein sud (ROI 7,1 ans, 2 870 &euro; sur 25 ans), vous perdez ~1,7 an de ROI et ~570 &euro; sur 25 ans. C&apos;est moins optimal, mais c&apos;est <strong>toujours 1 700 &euro; de b&eacute;n&eacute;fice net</strong> apr&egrave;s remboursement du kit.
+                Compar&eacute; au m&ecirc;me kit plein sud (ROI 6,5 ans, 3 190 &euro; sur 25 ans), vous perdez ~1,4 an de ROI et ~640 &euro; sur 25 ans. C&apos;est moins optimal, mais c&apos;est <strong>toujours pr&egrave;s de 1 950 &euro; de b&eacute;n&eacute;fice net</strong> apr&egrave;s remboursement du kit.
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse">
@@ -156,7 +156,7 @@ export default function PanneauSolaireEstOuestPage() {
                   <tbody>
                     {[
                       ['Beem Kit 300W', '299 \u20ac', '40 \u20ac', '6,7 ans', '1 532 \u20ac'],
-                      ['Sunology PLAY 2', '599 \u20ac', '61 \u20ac', '8,7 ans', '2 295 \u20ac'],
+                      ['Sunology PLAY (500 Wc)', '599 \u20ac', '67 \u20ac', '7,9 ans', '2 552 \u20ac'],
                       ['Beem On 460W', '599 \u20ac', '62 \u20ac', '8,5 ans', '2 345 \u20ac'],
                       ['Sunethic F500', '690 \u20ac', '67 \u20ac', '9,0 ans', '2 552 \u20ac'],
                     ].map(([kit, prix, eco, roi, total], i) => (

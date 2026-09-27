@@ -332,14 +332,14 @@ export default function DeclarationCacsiEnedisPage() {
                     <tr className="bg-green text-white">
                       <th className="text-left p-3 rounded-tl-xl">Champ formulaire</th>
                       <th className="text-left p-3">Valeur à saisir</th>
-                      <th className="text-left p-3 rounded-tr-xl">Exemple kit Sunology PLAY 2</th>
+                      <th className="text-left p-3 rounded-tr-xl">Exemple kit Sunology PLAY (500 W)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-border-light bg-white">
                       <td className="p-3 font-semibold">Puissance crête (kWc)</td>
                       <td className="p-3 text-xs">Diviser la puissance en watts par 1000</td>
-                      <td className="p-3 font-mono text-xs">0,45 kWc (450 W)</td>
+                      <td className="p-3 font-mono text-xs">0,5 kWc (500 W)</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-3 font-semibold">Type d&apos;installation</td>
@@ -349,12 +349,12 @@ export default function DeclarationCacsiEnedisPage() {
                     <tr className="border-b border-border-light bg-white">
                       <td className="p-3 font-semibold">Marque du panneau</td>
                       <td className="p-3 text-xs">Voir étiquette ou fiche produit</td>
-                      <td className="p-3 font-mono text-xs">Trina Solar / DMEGC</td>
+                      <td className="p-3 font-mono text-xs">Sunology (voir étiquette du panneau)</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-3 font-semibold">Marque micro-onduleur</td>
                       <td className="p-3 text-xs">Voir étiquette CE du boîtier</td>
-                      <td className="p-3 font-mono text-xs">Enphase IQ7 / Hoymiles HM-400</td>
+                      <td className="p-3 font-mono text-xs">MX500 (fourni par Sunology)</td>
                     </tr>
                     <tr className="border-b border-border-light bg-white">
                       <td className="p-3 font-semibold">Tension de raccordement</td>
@@ -363,7 +363,7 @@ export default function DeclarationCacsiEnedisPage() {
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-3 font-semibold">Norme de conformité</td>
-                      <td className="p-3 text-xs">VDE-AR-N 4105 + NF C 15-100</td>
+                      <td className="p-3 text-xs">NF EN 50549-1 (exig&eacute;e par Enedis depuis le 1<sup>er</sup> janvier 2025) + NF C 15-100</td>
                       <td className="p-3 font-mono text-xs">Normes européennes 2026</td>
                     </tr>
                     <tr className="border-b border-border-light bg-white">
@@ -413,10 +413,10 @@ Je suis titulaire du contrat d'assurance habitation référence [VOTRE NUMÉRO D
 Je vous informe que j'ai installé un kit solaire photovoltaïque plug-and-play sur le balcon de mon logement le [DATE D'INSTALLATION]. Cette installation a été déclarée à Enedis dans le cadre d'une Convention d'Autoconsommation Sans Injection (CACSI), validée le [DATE DE VALIDATION ENEDIS].
 
 Caractéristiques de l'installation :
-- Marque et modèle du kit : [EX : SUNOLOGY PLAY 2]
-- Puissance : [EX : 450 W, soit 0,45 kWc]
+- Marque et modèle du kit : [EX : SUNOLOGY PLAY]
+- Puissance : [EX : 500 W, soit 0,5 kWc]
 - Mode de raccordement : prise domestique standard (plug-and-play)
-- Micro-onduleur : [EX : ENPHASE IQ7+] - certifié CE et conforme aux normes VDE-AR-N 4105 et NF C 15-100
+- Micro-onduleur : [EX : ENPHASE IQ7+] - certifié CE et conforme aux normes NF EN 50549-1 et NF C 15-100
 
 Vous trouverez en pièces jointes :
 - La Convention CACSI signée par Enedis
@@ -454,8 +454,8 @@ Mes informations :
 - PDL/PRM : [VOTRE NUMÉRO À 14 CHIFFRES]
 - Adresse : [VOTRE ADRESSE COMPLÈTE]
 - Type d'installation : Kit solaire photovoltaïque plug-and-play
-- Puissance déclarée : [EX : 0,45 kWc]
-- Marque : [EX : SUNOLOGY PLAY 2]
+- Puissance déclarée : [EX : 0,5 kWc]
+- Marque : [EX : SUNOLOGY PLAY]
 
 Mon installation est opérationnelle depuis le [DATE], et je souhaite régulariser ma situation administrative dans les meilleurs délais, notamment pour pouvoir transmettre la convention signée à mon assureur habitation.
 
@@ -482,8 +482,8 @@ Je suis locataire du logement situé au [VOTRE ADRESSE COMPLÈTE], dans le cadre
 Par la présente, je souhaite vous informer de mon intention d'installer (ou : avoir installé le [DATE]) un kit solaire photovoltaïque plug-and-play sur le balcon du logement. Cette installation, sans aucun impact structurel sur le logement, présente les caractéristiques suivantes :
 
 - Type : kit solaire plug-and-play (branchement sur prise standard)
-- Puissance : [EX : 450 W, soit 0,45 kWc]
-- Modèle : [EX : SUNOLOGY PLAY 2]
+- Puissance : [EX : 500 W, soit 0,5 kWc]
+- Modèle : [EX : SUNOLOGY PLAY]
 - Mode d'installation : pose au sol avec ballasts de lestage, sans aucune fixation murale ni perçage
 
 L'installation respecte la réglementation française (norme NF C 15-100, déclaration CACSI Enedis) et est entièrement réversible : aucun dommage ne sera causé au balcon, et l'ensemble peut être démonté en moins d'une heure lors de mon départ du logement.

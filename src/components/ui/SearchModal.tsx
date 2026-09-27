@@ -106,7 +106,7 @@ export function SearchModal() {
               <div className="px-5 py-6">
                 <p className="text-[10px] uppercase tracking-widest text-stone font-semibold mb-3">Recherches populaires</p>
                 <div className="flex flex-wrap gap-2">
-                  {['Sunology PLAY 2', 'Beem Kit 300W', 'Rentabilit\u00e9', 'Installation', 'Batterie', 'Locataire', 'CACSI Enedis', 'Talon consommation'].map(tag => (
+                  {['Sunology PLAY', 'Beem Kit 300W', 'Rentabilit\u00e9', 'Installation', 'Batterie', 'Locataire', 'CACSI Enedis', 'Talon consommation'].map(tag => (
                     <button key={tag} onClick={() => setQuery(tag)} className="text-xs px-3 py-1.5 bg-cream rounded-full border border-border-light hover:border-green/30 hover:bg-green-pale/20 transition-all text-charcoal-light">{tag}</button>
                   ))}
                 </div>

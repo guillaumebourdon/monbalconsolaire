@@ -94,7 +94,7 @@ export default function PetitBudgetPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict petit budget</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le <strong>Beem Kit 300W à 299€</strong> est notre recommandation claire pour les petits budgets. Le prix est imbattable pour un kit de marque française avec garantie 25 ans et SAV. Les kits Amazon peuvent sembler moins chers, mais le risque de mauvaise qualité et l&apos;absence de SAV ne valent pas les 50-100€ d&apos;économie.</p>
-              <p className="text-charcoal-light leading-relaxed">Si vous pouvez étendre votre budget à 599€, le <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">Sunology PLAY2 ou le Beem On</Link> offrent une puissance 50% supérieure et une installation beaucoup plus simple.</p>
+              <p className="text-charcoal-light leading-relaxed">Si vous pouvez étendre votre budget à 429-599€, le <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">Beem On 500 Wc (429€) ou le Sunology PLAY 500 W (599€)</Link> offrent une puissance 67% supérieure à un kit 300 W et une installation beaucoup plus simple.</p>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">

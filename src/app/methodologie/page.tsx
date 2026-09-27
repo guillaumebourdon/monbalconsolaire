@@ -96,13 +96,13 @@ export default function MethodologiePage() {
               <p>ROI (ann&eacute;es) = Premi&egrave;re ann&eacute;e o&ugrave; le cumul des &eacute;conomies d&eacute;passe le prix du kit</p>
             </div>
             <div className="card-lg mt-4">
-              <h4 className="font-bold text-sm mb-3">Exemple : Sunology PLAY 2 (450 Wc, 599 &euro;) &agrave; Lyon, sud</h4>
+              <h4 className="font-bold text-sm mb-3">Exemple : Sunology PLAY (ex-PLAY 2, 500 Wc, 599 &euro;) &agrave; Lyon, sud</h4>
               <ul className="text-sm text-charcoal-light space-y-1.5">
-                <li>&bull; Production = 0,45 &times; 1 200 &times; 0,85 &times; 1,0 = <strong>459 kWh/an</strong></li>
-                <li>&bull; &Eacute;conomie ann&eacute;e 1 = 459 &times; 0,85 &times; 0,1940 = <strong>76 &euro;</strong></li>
-                <li>&bull; &Eacute;conomie ann&eacute;e 5 (avec inflation 3,3%) = 76 &times; 1,138 = <strong>87 &euro;</strong></li>
-                <li>&bull; Cumul ann&eacute;e 7 = 610 &euro; &rarr; <strong>ROI atteint &agrave; 7,1 ans</strong></li>
-                <li>&bull; Total &eacute;conomis&eacute; sur 25 ans = <strong>~2 870 &euro;</strong></li>
+                <li>&bull; Production = 0,50 &times; 1 200 &times; 0,85 &times; 1,0 = <strong>510 kWh/an</strong></li>
+                <li>&bull; &Eacute;conomie ann&eacute;e 1 = 510 &times; 0,85 &times; 0,1940 = <strong>84 &euro;</strong></li>
+                <li>&bull; &Eacute;conomie ann&eacute;e 5 (avec inflation 3,3%) = 84 &times; 1,139 = <strong>96 &euro;</strong></li>
+                <li>&bull; Cumul ann&eacute;e 6 = 548 &euro;, ann&eacute;e 7 = 650 &euro; &rarr; <strong>ROI atteint &agrave; 6,5 ans</strong></li>
+                <li>&bull; Total &eacute;conomis&eacute; sur 25 ans = <strong>~3 190 &euro;</strong></li>
               </ul>
             </div>
           </section>

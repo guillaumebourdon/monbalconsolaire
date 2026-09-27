@@ -160,7 +160,7 @@ export function HeroVisual() {
               <div>
                 <div className="text-[11px] text-green font-semibold">Kit recommandé</div>
                 <div className="text-sm font-bold text-green-dark mt-0.5">
-                  Sunology PLAY2
+                  Sunology PLAY
                 </div>
               </div>
               <div className="text-right">

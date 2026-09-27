@@ -41,17 +41,6 @@ export function ProductHero({
   const bgClass = accentColor === 'green' ? 'from-green-pale/40 to-amber-pale/20' : 'from-amber-pale/40 to-green-pale/20';
   const borderClass = accentColor === 'green' ? 'border-green/15' : 'border-amber/15';
 
-  const handleAffiliateClick = () => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'affiliate_click', {
-        product_name: `${brand} ${name}`,
-        merchant: brand,
-        position: 'product-hero',
-        page_location: window.location.pathname,
-        affiliate_url: affiliateUrl,
-      });
-    }
-  };
 
   return (
     <>
@@ -120,7 +109,9 @@ export function ProductHero({
             href={affiliateUrl}
             target="_blank"
             rel="noopener noreferrer nofollow sponsored"
-            onClick={handleAffiliateClick}
+            data-product={`${brand} ${name}`}
+            data-merchant={brand}
+            data-position="product-hero"
             className="btn-primary w-full justify-center text-sm"
           >
             {affiliateLabel} →

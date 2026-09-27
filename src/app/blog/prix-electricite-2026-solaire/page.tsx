@@ -84,13 +84,13 @@ export default function PrixElectricitePage() {
               <h2 className="text-2xl font-extrabold mb-4">Impact sur la rentabilité du solaire de balcon</h2>
               <div className="flex items-start gap-3 mb-4">
                 <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="md" />
-                <p className="text-charcoal-light leading-relaxed">Chaque centime d&apos;augmentation du kWh améliore automatiquement la rentabilité de votre panneau solaire. Voici l&apos;impact sur un kit Sunology PLAY2 (599€, 520 kWh/an en région lyonnaise) :</p>
+                <p className="text-charcoal-light leading-relaxed">Chaque centime d&apos;augmentation du kWh améliore automatiquement la rentabilité de votre panneau solaire. Voici l&apos;impact sur un kit Sunology PLAY (ex-PLAY 2, 500 Wc, 599€, 510 kWh/an en région lyonnaise sud, 85 % autoconsommés, tarif supposé constant dans chaque scénario) :</p>
               </div>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 {[
-                  { tarif: '0,1940 €', label: 'Tarif actuel (mai 2026)', eco: '101 €/an', roi: '5,9 ans', total25: '~2 525 €' },
-                  { tarif: '0,2900 €', label: 'Projection basse (2030)', eco: '151 €/an', roi: '4,0 ans', total25: '~4 200 €' },
-                  { tarif: '0,3200 €', label: 'Projection haute (2030)', eco: '166 €/an', roi: '3,6 ans', total25: '~5 200 €' },
+                  { tarif: '0,1940 €', label: 'Tarif actuel (mai 2026)', eco: '84 €/an', roi: '7,1 ans', total25: '~2 100 €' },
+                  { tarif: '0,2900 €', label: 'Projection basse (2030)', eco: '126 €/an', roi: '4,8 ans', total25: '~3 140 €' },
+                  { tarif: '0,3200 €', label: 'Projection haute (2030)', eco: '139 €/an', roi: '4,3 ans', total25: '~3 470 €' },
                 ].map((s, i) => (
                   <div key={i} className="card text-center">
                     <div className="text-xs text-stone font-semibold mb-2">{s.label}</div>
@@ -101,7 +101,7 @@ export default function PrixElectricitePage() {
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed"><strong>Le constat :</strong> un kit solaire de balcon acheté aujourd&apos;hui à 599€ pourrait générer entre 2 500€ et 5 200€ d&apos;économies sur sa durée de vie, selon l&apos;évolution des tarifs. C&apos;est un investissement qui se bonifie avec le temps.</p>
+              <p className="text-charcoal-light leading-relaxed"><strong>Le constat :</strong> un kit solaire de balcon acheté aujourd&apos;hui à 599€ pourrait générer entre 2 100€ (tarif figé) et près de 3 500€ d&apos;économies sur 25 ans, selon l&apos;évolution des tarifs (3 190€ avec notre hypothèse standard de +3,3 %/an). C&apos;est un investissement qui se bonifie avec le temps.</p>
               <p className="text-sm text-charcoal-light mt-2">
                 → Lire aussi : <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="text-green font-semibold hover:underline">Combien rapporte un panneau solaire de balcon ? Calcul réel par ville</Link>
               </p>

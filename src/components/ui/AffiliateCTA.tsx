@@ -8,6 +8,8 @@ interface AffiliateCTAProps {
   label: string;
   variant?: 'primary' | 'secondary' | 'inline' | 'box';
   position?: string;
+  /** Mentions de réassurance vérifiées pour CE produit (ex. « Garantie 25 ans · Livraison incluse »). Rien n'est affiché par défaut. */
+  reassurance?: string;
 }
 
 export function AffiliateCTA({
@@ -18,18 +20,10 @@ export function AffiliateCTA({
   label,
   variant = 'secondary',
   position = 'unknown',
+  reassurance,
 }: AffiliateCTAProps) {
-  const handleClick = () => {
-    if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
-      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'affiliate_click', {
-        product_name: productName,
-        merchant: merchantName,
-        position,
-        page_location: window.location.pathname,
-        affiliate_url: affiliateUrl,
-      });
-    }
-  };
+  // Le clic est suivi globalement par AffiliateTracker (event GA4 affiliate_click) via ces attributs
+  const tracking = { 'data-product': productName, 'data-merchant': merchantName, 'data-position': position };
 
   if (!affiliateUrl) return null;
 
@@ -39,7 +33,7 @@ export function AffiliateCTA({
         href={affiliateUrl}
         target="_blank"
         rel="sponsored noopener"
-        onClick={handleClick}
+        {...tracking}
         className="text-green font-semibold text-sm hover:underline inline-flex items-center gap-1"
       >
         {label} &rarr;
@@ -54,19 +48,19 @@ export function AffiliateCTA({
         <p className="font-bold text-xl text-charcoal mb-1">{productName}</p>
         {price && (
           <p className="text-sm text-charcoal-light mb-4">
-            {price} &middot; Garantie 25 ans &middot; Livraison incluse
+            {price}{reassurance ? <> &middot; {reassurance}</> : null}
           </p>
         )}
         <a
           href={affiliateUrl}
           target="_blank"
           rel="sponsored noopener"
-          onClick={handleClick}
+          {...tracking}
           className="btn-primary inline-flex text-sm"
         >
           {label} &rarr;
         </a>
-        <p className="text-[10px] text-stone mt-3">Prix v&eacute;rifi&eacute; en mai 2026 &middot; Lien commercial</p>
+        <p className="text-[10px] text-stone mt-3">Lien commercial &middot; prix constat&eacute;, susceptible de varier</p>
       </div>
     );
   }
@@ -81,15 +75,13 @@ export function AffiliateCTA({
         href={affiliateUrl}
         target="_blank"
         rel="sponsored noopener"
-        onClick={handleClick}
+        {...tracking}
         className={btnClass}
       >
         {label} &rarr;
       </a>
-      {variant === 'primary' && (
-        <p className="text-[10px] text-stone mt-2 text-center">
-          ✓ Livraison incluse &middot; ✓ Garantie 25 ans &middot; ✓ Stock France
-        </p>
+      {variant === 'primary' && reassurance && (
+        <p className="text-[10px] text-stone mt-2 text-center">{reassurance}</p>
       )}
     </div>
   );

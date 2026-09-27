@@ -41,8 +41,8 @@ const faqData = [
 
 const veilleData = [
   {
-    kit: 'Sunology PLAY 2',
-    onduleur: 'TSUN TSOL-MX450',
+    kit: 'Sunology PLAY (ex-PLAY 2)',
+    onduleur: 'MX500 (500 W, génération 2026)',
     wifi: 'WiFi intégré',
     veilleW: '~0,5 W',
     kwhAn: '4,4 kWh',
@@ -200,7 +200,7 @@ export default function ConsommationVeillePage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">L&apos;impact r&eacute;el sur votre ROI</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Mettons les chiffres en perspective. Un kit Sunology PLAY&nbsp;2 ou Beem On produit entre <strong>350 et 480&nbsp;kWh/an</strong> &agrave; Lyon exposition sud. La consommation en veille repr&eacute;sente donc&nbsp;:
+                Mettons les chiffres en perspective. Un kit Sunology PLAY (ex-PLAY&nbsp;2, 500&nbsp;Wc) ou Beem On produit entre <strong>350 et 510&nbsp;kWh/an</strong> &agrave; Lyon exposition sud. La consommation en veille repr&eacute;sente donc&nbsp;:
               </p>
               <div className="grid md:grid-cols-3 gap-4 mb-6">
                 {[

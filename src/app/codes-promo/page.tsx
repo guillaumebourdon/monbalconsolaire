@@ -250,16 +250,16 @@ export default function CodesPromoPage() {
               </p>
             </div>
 
-            <h3 className="text-xl font-bold mb-3">Code promo Sunology PLAY 2</h3>
+            <h3 className="text-xl font-bold mb-3">Code promo Sunology PLAY (ex-PLAY 2)</h3>
             <p className="text-charcoal-light leading-relaxed mb-4">
               {sunologyPromo ? (
-                <>Le PLAY (450 Wc, anciennement commercialis&eacute; comme PLAY 2) est affich&eacute; &agrave; <strong>527 &euro; au lieu de 599 &euro;</strong> jusqu&apos;au 30 septembre 2026 gr&acirc;ce &agrave; l&apos;op&eacute;ration -12%.</>
+                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>527 &euro; au lieu de 599 &euro;</strong> jusqu&apos;au 30 septembre 2026 gr&acirc;ce &agrave; l&apos;op&eacute;ration -12%.</>
               ) : (
-                <>Le PLAY (450 Wc, anciennement commercialis&eacute; comme PLAY 2) est affich&eacute; &agrave; <strong>599 &euro;</strong> ; l&apos;op&eacute;ration -12% s&apos;est termin&eacute;e le 30 septembre 2026.</>
-              )}{' '}Il n&apos;existe pas de code sp&eacute;cifique au PLAY 2. Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;. Notre analyse compl&egrave;te :{' '}
-              <Link href="/avis/sunology-play-2" className="text-green font-semibold hover:underline">avis Sunology PLAY 2</Link>.
+                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>599 &euro;</strong> ; l&apos;op&eacute;ration -12% s&apos;est termin&eacute;e le 30 septembre 2026.</>
+              )}{' '}Il n&apos;existe pas de code sp&eacute;cifique au PLAY. Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;. Notre analyse compl&egrave;te :{' '}
+              <Link href="/avis/sunology-play-2" className="text-green font-semibold hover:underline">avis Sunology PLAY (ex-PLAY 2)</Link>.
             </p>
-            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyPromo ? 'Voir le PLAY 2 à -12% sur Sunology' : 'Voir le prix du PLAY 2 sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyPromo ? '527 €' : '599 €'} />
+            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyPromo ? 'Voir le PLAY 500 W à -12% sur Sunology' : 'Voir le prix du PLAY 500 W sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyPromo ? '527 €' : '599 €'} />
 
             <h3 className="text-xl font-bold mt-8 mb-3">Sunology et le Black Friday</h3>
             <p className="text-charcoal-light leading-relaxed">

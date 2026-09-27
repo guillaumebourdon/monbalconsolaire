@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const faqData = [
   {
     question: 'Un kit solaire balcon est-il plus rentable qu’une installation en toiture ?',
-    answer: 'En termes de ROI, oui : un kit balcon de 500 Wc à 430€ se rentabilise en 4–4,5 ans, contre 8–12 ans pour une installation toiture. En valeur absolue, la toiture génère 5 à 15 fois plus d’économies annuelles (400–1 400€/an vs 50–125€/an). Ce ne sont pas deux concurrents — ce sont deux marchés différents.',
+    answer: 'En termes de ROI, oui : un kit balcon de 500 Wc à 429€ se rentabilise en environ 4,8 ans (Lyon sud), contre 8–12 ans pour une installation toiture. En valeur absolue, la toiture génère 5 à 15 fois plus d’économies annuelles (400–1 400€/an vs 50–125€/an). Ce ne sont pas deux concurrents — ce sont deux marchés différents.',
   },
   {
     question: 'Quelles aides existe-t-il pour une installation toiture en 2026 ?',
@@ -144,23 +144,23 @@ export default function ComparatifBalconVsToiturePage() {
                   <tr className="border border-border-light">
                     <td className="p-3 border border-border-light">Beem Kit 300&nbsp;Wc</td>
                     <td className="p-3 text-right border border-border-light">299&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light">~280 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~46&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-semibold text-green">~5 ans</td>
+                    <td className="p-3 text-right border border-border-light">~306 kWh/an</td>
+                    <td className="p-3 text-right border border-border-light">~50&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-semibold text-green">~5,5 ans</td>
                   </tr>
                   <tr className="bg-green-pale/20 border border-border-light">
                     <td className="p-3 border border-border-light font-semibold">Beem On 500&nbsp;Wc &#x2605; meilleur rapport</td>
                     <td className="p-3 text-right border border-border-light">429&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light">~470 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~77&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-bold text-green">~4,5 ans</td>
+                    <td className="p-3 text-right border border-border-light">~510 kWh/an</td>
+                    <td className="p-3 text-right border border-border-light">~84&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-bold text-green">~4,8 ans</td>
                   </tr>
                   <tr className="border border-border-light">
-                    <td className="p-3 border border-border-light">Sunology PLAY&nbsp;2</td>
+                    <td className="p-3 border border-border-light">Sunology PLAY 500&nbsp;Wc (ex-PLAY&nbsp;2)</td>
                     <td className="p-3 text-right border border-border-light">599&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light">~420 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~69&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-semibold text-green">~7 ans</td>
+                    <td className="p-3 text-right border border-border-light">~510 kWh/an</td>
+                    <td className="p-3 text-right border border-border-light">~84&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-semibold text-green">~6,5 ans</td>
                   </tr>
                   <tr className="border border-border-light">
                     <td className="p-3 border border-border-light">Kit double 800&nbsp;Wc (max courant sur prise)</td>
@@ -396,7 +396,7 @@ export default function ComparatifBalconVsToiturePage() {
               </div>
               <div className="card border-l-4 border-l-green p-4">
                 <p className="font-semibold text-sm mb-2">&#x2714; Vous voulez le meilleur ROI</p>
-                <p className="text-sm text-charcoal-light">ROI 4,5 ans vs 8&ndash;12 ans pour la toiture. Si vous optimisez le retour sur investissement plut&ocirc;t que le volume d&apos;&eacute;conomies absolues, le balcon gagne.</p>
+                <p className="text-sm text-charcoal-light">ROI 4,8 ans (Beem On 500&nbsp;Wc, Lyon sud) vs 8&ndash;12 ans pour la toiture. Si vous optimisez le retour sur investissement plut&ocirc;t que le volume d&apos;&eacute;conomies absolues, le balcon gagne.</p>
               </div>
             </div>
 
@@ -511,7 +511,7 @@ export default function ComparatifBalconVsToiturePage() {
               </Link>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-shadow group border-l-4 border-l-green">
                 <p className="font-semibold text-sm group-hover:text-green transition-colors">Meilleur kit solaire plug and play 2026 : comparatif complet</p>
-                <p className="text-xs text-charcoal-light mt-1">Sunology PLAY&nbsp;2, Beem On, Sunethic F500&nbsp;: tableau comparatif, verdict par profil.</p>
+                <p className="text-xs text-charcoal-light mt-1">Sunology PLAY, Beem On, Sunethic F500&nbsp;: tableau comparatif, verdict par profil.</p>
               </Link>
               <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-shadow group border-l-4 border-l-green">
                 <p className="font-semibold text-sm group-hover:text-green transition-colors">Guide complet solaire balcon pour d&eacute;butants</p>

@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Batteries portables et balcon fixe 2026 : Bluetti Balco 260, EcoFlow, Jackery',
@@ -43,6 +44,7 @@ const faqData = [
 const batteries = [
   {
     num: 1,
+    lien: 'https://www.amazon.fr/dp/B0BBLV8WJH?tag=monbalconsolai-21',
     nom: 'EcoFlow DELTA 2',
     marque: 'EcoFlow',
     prix: '569-699 €',
@@ -66,6 +68,7 @@ const batteries = [
   },
   {
     num: 2,
+    lien: 'https://www.amazon.fr/dp/B0C14D9DBB?tag=monbalconsolai-21',
     nom: 'Bluetti AC180',
     marque: 'Bluetti',
     prix: '549-699 €',
@@ -89,6 +92,7 @@ const batteries = [
   },
   {
     num: 3,
+    lien: 'https://www.amazon.fr/dp/B0C27SX47T?tag=monbalconsolai-21',
     nom: 'Jackery Explorer 1000 Plus',
     marque: 'Jackery',
     prix: '799-999 €',
@@ -112,6 +116,7 @@ const batteries = [
   },
   {
     num: 4,
+    lien: 'https://www.amazon.fr/dp/B0CGQZ7XSB?tag=monbalconsolai-21',
     nom: 'Anker SOLIX C1000',
     marque: 'Anker',
     prix: '649-799 €',
@@ -135,6 +140,7 @@ const batteries = [
   },
   {
     num: 5,
+    lien: 'https://www.amazon.fr/dp/B0DFVZ5D7Z?tag=monbalconsolai-21',
     nom: 'EcoFlow RIVER 3',
     marque: 'EcoFlow',
     prix: '249-349 €',
@@ -158,6 +164,7 @@ const batteries = [
   },
   {
     num: 6,
+    lien: 'https://www.amazon.fr/s?k=BLUETTI+AC70+768Wh&tag=monbalconsolai-21',
     nom: 'Bluetti AC70',
     marque: 'Bluetti',
     prix: '449-549 €',
@@ -211,7 +218,7 @@ export default function BatteriesPortablesPage() {
         description="Comparatif batteries portables et batteries balcon fixe 2026, prix mis &agrave; jour ao&ucirc;t 2026."
         url="https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif"
         datePublished="2026-04-21"
-        dateModified="2026-08-06"
+        dateModified="2026-09-27"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Batteries portables' }]} />
@@ -385,6 +392,14 @@ export default function BatteriesPortablesPage() {
             {/* Tableau comparatif */}
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Tableau comparatif rapide — batteries portables</h2>
+              <AffiliateCTA
+                productName="EcoFlow DELTA 2"
+                merchantName="Amazon"
+                affiliateUrl="https://www.amazon.fr/dp/B0BBLV8WJH?tag=monbalconsolai-21"
+                label="Notre choix n°1 : voir l'EcoFlow DELTA 2 sur Amazon"
+                variant="secondary"
+                position="after-top-pick"
+              />
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[600px]">
                   <thead>
@@ -400,7 +415,11 @@ export default function BatteriesPortablesPage() {
                   <tbody>
                     {batteries.map((b, i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold">{b.nom}</td>
+                        <td className="p-3 font-semibold">
+                          {b.nom}
+                          <br />
+                          <a href={b.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline text-xs">Voir sur Amazon</a>
+                        </td>
                         <td className="text-center p-3 font-mono text-xs">{b.capacite}</td>
                         <td className="text-center p-3 font-mono text-xs">{b.puissance}</td>
                         <td className="text-center p-3 text-xs">{b.poids}</td>
@@ -477,6 +496,9 @@ export default function BatteriesPortablesPage() {
                       <p className="text-xs font-semibold text-charcoal mb-1">💡 Notre verdict</p>
                       <p className="text-xs text-charcoal-light leading-relaxed">{b.verdict}</p>
                     </div>
+                    <div className="mt-3 text-sm">
+                      <a href={b.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir {b.nom} sur Amazon &rarr;</a>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -546,6 +568,15 @@ export default function BatteriesPortablesPage() {
               </Link>
             </div>
 
+            <AffiliateCTA
+              productName="Bluetti AC180"
+              merchantName="Amazon"
+              affiliateUrl="https://www.amazon.fr/dp/B0C14D9DBB?tag=monbalconsolai-21"
+              label="Meilleur rapport capacité/prix : voir la Bluetti AC180 sur Amazon"
+              variant="box"
+              position="footer-box"
+            />
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
@@ -598,7 +629,7 @@ export default function BatteriesPortablesPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Note :</strong> prix indicatifs constat&eacute;s en ao&ucirc;t 2026 (sites fabricants, Amazon, Cdiscount). Ils varient selon les promotions. Prix batteries portables : -15 &agrave; -25 % par rapport &agrave; avril 2026. Prix Bluetti Balco 260 : 889 &euro; (prix de lancement jusqu&apos;au 30 sept. 2026, PPC 1 399 &euro;).{' '}
+                <strong>Note :</strong> prix indicatifs constat&eacute;s en ao&ucirc;t 2026 (sites fabricants, Amazon, Cdiscount). Ils varient selon les promotions. Prix batteries portables : -15 &agrave; -25 % par rapport &agrave; avril 2026. Prix Bluetti Balco 260 : 889 &euro; (prix de lancement jusqu&apos;au 30 sept. 2026, PPC 1 399 &euro;). Mod&egrave;les s&eacute;lectionn&eacute;s et analys&eacute;s sur fiches techniques, non test&eacute;s physiquement. Liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.
               </p>
             </div>

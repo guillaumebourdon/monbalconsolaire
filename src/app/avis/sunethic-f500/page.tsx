@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 const faqData = [
   { question: 'Le Sunethic F500 est-il vraiment fabriqué en France ?', answer: 'Oui. Les panneaux Sunethic sont fabriqués et assemblés en France, ce qui réduit l\'empreinte carbone du transport et soutient l\'industrie locale. C\'est le principal argument de la marque.' },
-  { question: 'Le Sunethic F500 est-il plus cher que la concurrence ?', answer: 'Oui. À 690€ pour 500 Wc (1,38€/Wc), il est plus cher que le Sunology PLAY2 (1,33€/Wc) et le Beem On (1,30€/Wc). Le surcoût est lié à la fabrication française.' },
-  { question: 'Sunethic F500 vs Sunology PLAY2 : lequel choisir ?', answer: 'Le Sunethic produit plus (500W vs 450W) mais coûte plus cher (690€ vs 599€). Le ROI est légèrement plus long (7,4 ans vs 7,1 ans, avec inflation 3,3%/an CRE). Choisissez Sunethic si le Made in France est important pour vous, Sunology sinon.' },
+  { question: 'Le Sunethic F500 est-il plus cher que la concurrence ?', answer: 'Oui. À 690€ pour 500 Wc (1,38€/Wc), il est plus cher que le Sunology PLAY (1,20€/Wc, 500 Wc à 599€) et le Beem On 500 Wc (0,86€/Wc). Le surcoût est lié à la fabrication française.' },
+  { question: 'Sunethic F500 vs Sunology PLAY (ex-PLAY 2) : lequel choisir ?', answer: 'Même puissance (500 Wc chacun, donc même production estimée : 510 kWh/an à Lyon) mais le Sunethic coûte plus cher (690€ vs 599€). Le ROI est donc plus long (7,4 ans vs 6,5 ans, avec inflation 3,3%/an CRE). Choisissez Sunethic si le Made in France est important pour vous, Sunology sinon.' },
 ];
 
 export default function SunethicAvisPage() {
@@ -76,7 +76,7 @@ export default function SunethicAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Une puissance dans le haut du marché', d: 'Avec 500 Wc, le F500 produit environ 510 kWh/an en région lyonnaise (orientation sud). C\'est ~50 kWh de plus que le Sunology PLAY2 (459 kWh) et ~40 kWh de plus que le Beem On 460W, autant que le Beem On 500 Wc.' },
+                  { t: 'Une puissance dans le haut du marché', d: 'Avec 500 Wc, le F500 produit environ 510 kWh/an en région lyonnaise (orientation sud). C\'est autant que le Sunology PLAY 500 Wc et le Beem On 500 Wc, et ~40 kWh de plus que le Beem On 460W (l\'ancien PLAY2 450 Wc produisait 459 kWh).' },
                   { t: 'Vraiment Made in France', d: 'Ce n\'est pas du marketing : les panneaux sont fabriqués et assemblés en France. L\'empreinte carbone du produit est significativement réduite par rapport aux kits dont les panneaux viennent de Chine.' },
                   { t: 'Meilleure note client du marché', d: '4,8/5 sur Trustpilot avec 1 000+ avis. Les utilisateurs saluent la qualité de fabrication, le SAV réactif, et les performances conformes aux promesses.' },
                   { t: 'Engagement éthique', d: 'Sunethic communique de manière transparente sur sa chaîne de production. C\'est un choix qui va au-delà de la simple rentabilité : c\'est un choix de valeurs.' },
@@ -95,7 +95,7 @@ export default function SunethicAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Le prix le plus élevé du comparatif', d: 'À 690€, le F500 coûte 91€ de plus que le Sunology PLAY2 ou le Beem On. Le ratio €/Wc (1,38€) est correct mais pas le meilleur. Ce surcoût allonge le temps de retour sur investissement (7,4 ans vs 7,0-7,1 ans).' },
+                  { t: 'Le prix le plus élevé du comparatif', d: 'À 690€, le F500 coûte 91€ de plus que le Sunology PLAY (500 Wc) et 261€ de plus que le Beem On 500 Wc. Le ratio €/Wc (1,38€) est correct mais pas le meilleur. Ce surcoût allonge le temps de retour sur investissement (7,4 ans vs 6,5 ans pour le Sunology PLAY).' },
                   { t: 'Pas de batterie dans la gamme', d: 'Contrairement à Sunology (VAULT, STOREY) et Beem (Beem Battery), Sunethic ne propose pas de solution de stockage. Si vous voulez stocker l\'énergie pour le soir, ce n\'est pas ici.' },
                   { t: 'Moins de notoriété', d: 'Sunethic est moins connu que Sunology (100 000+ foyers) ou Beem. Moins de contenu, moins de retours d\'expérience en ligne. Mais la note Trustpilot parle d\'elle-même.' },
                 ].map((p, i) => (
@@ -136,7 +136,7 @@ export default function SunethicAvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Sunethic F500 est un excellent kit solaire, avec la meilleure puissance et la meilleure satisfaction client du marché. Son positionnement Made in France est authentique et séduisant pour ceux qui veulent consommer responsable.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Mais le surcoût de 91€ par rapport au <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> ou au <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On</Link> est difficile à justifier sur le seul plan financier. ROI de 7,4 ans avec 84 &euro;/an d&apos;économies et 3 190 &euro; sur 25 ans (+3,3%/an d&apos;inflation CRE).</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Mais le surcoût de 91€ par rapport au <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY</Link> (500 Wc, 599&nbsp;&euro;, ROI 6,5 ans) ou au <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On</Link> est difficile à justifier sur le seul plan financier. ROI de 7,4 ans avec 84 &euro;/an d&apos;économies et 3 190 &euro; sur 25 ans (+3,3%/an d&apos;inflation CRE).</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-green text-xl font-extrabold">7.5/10</span></strong> — Un kit premium pour ceux qui privilégient le Made in France et la puissance maximale.</p>
             </section>
 

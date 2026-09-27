@@ -20,8 +20,8 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Solaire par d\u00e9partement', description: 'Production et rentabilit\u00e9 pour chacun des 96 d\u00e9partements fran\u00e7ais', url: '/solaire-balcon', category: 'Outil', badge: 'D\u00e9partements' },
 
   // ─── Avis produits ───
-  { title: 'Sunology PLAY 2 : avis et analyse compl\u00e8te', description: 'Le kit le plus vendu en France. 450 Wc, 599 \u20ac, installation en 1 minute.', url: '/avis/sunology-play-2', category: 'Avis', badge: '8.5/10' },
-  { title: 'Beem On 460W : avis et analyse compl\u00e8te', description: 'Le concurrent direct du PLAY 2. 460 Wc, 599 \u20ac, paiement en 10x.', url: '/avis/beem-on-460w', category: 'Avis', badge: '8/10' },
+  { title: 'Sunology PLAY (ex-PLAY 2) : avis et analyse compl\u00e8te', description: 'Nouvelle version 500 Wc back-contact, 599 \u20ac, ROI 6,5 ans. Diff\u00e9rences avec le PLAY2 450/460 W.', url: '/avis/sunology-play-2', category: 'Avis', badge: '8.5/10' },
+  { title: 'Beem On 460W : avis et analyse compl\u00e8te', description: 'Ancien concurrent du PLAY2 (remplac\u00e9 par le Beem On 500 Wc). 460 Wc, 599 \u20ac.', url: '/avis/beem-on-460w', category: 'Avis', badge: '8/10' },
   { title: 'Beem Kit 300W : avis petit budget', description: 'Le kit le moins cher du march\u00e9. 299 \u20ac, 4 panneaux modulaires.', url: '/avis/beem-kit-300w', category: 'Avis', badge: '7.5/10' },
   { title: 'Sunethic F500 : avis Made in France', description: 'Le kit le plus puissant (500 Wc), fabriqu\u00e9 en France. 690 \u20ac.', url: '/avis/sunethic-f500', category: 'Avis', badge: '7.5/10' },
   { title: 'Sunology CITY (arr\u00eat\u00e9) : avis balcons \u00e9troits', description: 'Kit garde-corps plus vendu par Sunology depuis 2026. Analyse et alternatives.', url: '/avis/sunology-city', category: 'Avis', badge: 'Arr\u00eat\u00e9' },
@@ -39,7 +39,7 @@ export const SEARCH_INDEX: SearchResult[] = [
 
   // ─── Comparatifs ───
   { title: 'Kit solaire balcon vs toiture : rentabilit\u00e9 compar\u00e9e', description: 'Plug-and-play balcon (ROI 4\u20137 ans, 300\u2013750\u20ac) vs installation toiture (ROI 7\u201312 ans, 6 750\u201314 000\u20ac). Tableau complet, chiffres honn\u00eates.', url: '/comparatif/kit-solaire-balcon-vs-toiture', category: 'Comparatif', badge: 'Nouveau' },
-  { title: 'Sunology PLAY 2 vs Beem On 500 Wc : le match 2026', description: 'Comparatif 12 crit\u00e8res : prix, ROI, installation, garantie. PLAY 2 (599\u20ac) vs Beem On 500 Wc (429\u20ac). Quel kit choisir ?', url: '/comparatif/sunology-play2-vs-beem-on-500w', category: 'Comparatif', badge: 'Match 2026' },
+  { title: 'Sunology PLAY (ex-PLAY 2) vs Beem On 500 Wc : match 2026', description: 'PLAY 500 Wc (599 \u20ac) vs Beem On 500 Wc (429 \u20ac) : m\u00eame puissance, 170 \u20ac d\u2019\u00e9cart. Quel kit choisir ?', url: '/comparatif/sunology-play2-vs-beem-on-500w', category: 'Comparatif', badge: 'Match 2026' },
   { title: 'Meilleur kit solaire 2026 : comparatif complet', description: 'Sunology, Beem, Sunethic compar\u00e9s. Tableau, points forts/faibles, verdict.', url: '/comparatif/meilleur-kit-solaire-2026', category: 'Comparatif', badge: 'Article phare' },
   { title: 'Sunology vs Beem : quel kit choisir ?', description: 'Les deux leaders fran\u00e7ais compar\u00e9s point par point.', url: '/comparatif/sunology-vs-beem', category: 'Comparatif', badge: 'Match' },
   { title: 'Kit solaire petit budget : moins de 400 \u20ac', description: 'Les meilleures options pour d\u00e9buter sans se ruiner.', url: '/comparatif/kit-solaire-petit-budget', category: 'Comparatif', badge: 'Budget' },
@@ -64,6 +64,9 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'D\u00e9claration CACSI Enedis : guide pas \u00e0 pas', description: 'Proc\u00e9dure compl\u00e8te avec mod\u00e8les de lettres pr\u00eats \u00e0 copier.', url: '/guide/declaration-cacsi-enedis-panneau-solaire', category: 'Guide', badge: 'CACSI' },
 
   // ─── Blog ───
+  { title: 'Guirlande solaire balcon : 8 modèles pour l\'hiver', description: 'Guirlandes solaires guinguette et Noël pour balcon : autonomie en hiver, recharge USB, IP65, placement du panneau.', url: '/blog/guirlande-solaire-balcon', category: 'Blog', badge: 'Sélection 2026' },
+  { title: 'Support et fixation panneau solaire balcon', description: 'Crochets garde-corps, support inclinable, pose sans perçage : 7 supports analysés, vent, copropriété, vertical vs 35°.', url: '/blog/support-fixation-panneau-solaire-balcon', category: 'Blog', badge: 'Sélection 2026' },
+  { title: 'Wattmètre prise : mesurer son talon de consommation', description: 'Mesurer la consommation de ses appareils et son talon avant d\'acheter un kit solaire : méthode, précision, sélection wattmètres, Linky', url: '/blog/wattmetre-prise-mesurer-consommation', category: 'Blog', badge: 'Avant d\'acheter' },
   { title: 'Multi-panneaux solaires balcon : série ou parallèle ? Câblage et disjoncteur', description: 'Série interdit, parallèle DC ou AC, micro-onduleur double-MPPT, câbles MC4, disjoncteur 16A : guide du câblage pour 2 panneaux sur balcon.', url: '/blog/multi-panneaux-serie-parallele', category: 'Blog', badge: 'Câblage' },
   { title: 'Kit solaire balcon en location meublée et Airbnb', description: 'Locataire, propriétaire-hôte Airbnb : autorisations réelles, CACSI, ROI chiffré et avantage fiscal LMNP selon votre situation.', url: '/blog/panneau-solaire-location-meublee-airbnb', category: 'Blog', badge: 'Location & Airbnb' },
   { title: 'Protéger son panneau solaire des oiseaux et intempéries', description: 'Fientes acides, grêle, vent : solutions anti-oiseaux DIY, résistance certifiée IEC 61215 et couverture assurance pour votre kit balcon.', url: '/blog/proteger-panneau-solaire-oiseaux-intemperies', category: 'Blog', badge: 'Guide pratique' },

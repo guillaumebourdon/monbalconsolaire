@@ -32,8 +32,8 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/comparatif/sunology-play2-vs-beem-on-500w',
-    title: 'Sunology PLAY 2 vs Beem On 500 Wc : le nouveau match 2026',
-    excerpt: 'PLAY 2 (599€, 450 Wc) vs Beem On 500 Wc (429€, 500 Wc) : 12 critères, ROI comparé, verdict par profil.',
+    title: 'Sunology PLAY (ex-PLAY 2) vs Beem On 500 Wc : le match 2026',
+    excerpt: 'PLAY 500 Wc (ex-PLAY 2, 599€) vs Beem On 500 Wc (429€) : même puissance, 12 critères, ROI comparé, verdict par profil.',
     type: 'comparatif',
     badge: 'Match 2026',
     tags: ['best', 'comparatif', 'marque'],
@@ -73,7 +73,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/comparatif/meilleur-kit-solaire-2026',
     title: 'Meilleur kit solaire plug and play 2026 : comparatif complet',
-    excerpt: 'Sunology PLAY2, Beem On, Beem Kit, Sunethic F500 : tableau comparatif, points forts/faibles, verdict par profil.',
+    excerpt: 'Sunology PLAY, Beem On, Beem Kit, Sunethic F500 : tableau comparatif, points forts/faibles, verdict par profil.',
     type: 'comparatif',
     badge: 'Article phare',
     tags: ['best', 'comparatif'],
@@ -122,7 +122,7 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/avis/sunology-play-2',
-    title: 'Sunology PLAY 2',
+    title: 'Sunology PLAY (ex-PLAY 2)',
     excerpt: 'Le leader du marché français. Notre analyse complète : prix, production estimée, points faibles.',
     type: 'avis',
     badge: 'Choix n°1',

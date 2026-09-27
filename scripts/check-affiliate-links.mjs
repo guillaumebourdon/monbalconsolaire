@@ -15,7 +15,7 @@ import { join, relative } from 'path';
 const ROOT = join(import.meta.dirname, '..');
 const SRC = join(ROOT, 'src');
 const AMAZON_TAG = 'monbalconsolai-21';
-const MERCHANTS = /https?:\/\/(?:www\.|fr\.)?(?:amazon\.fr|sunology\.eu|beemenergy\.fr|beem\.energy|sunethic\.fr|ecoflow\.com|fr\.ecoflow\.com|zendure\.fr|zendure\.com|bluettipower\.eu|fr\.bluettipower\.eu|jackery\.com|fr\.jackery\.com|anker\.com|dualsun\.com|hoymiles\.com)[^\s'"`<>)]*/g;
+const MERCHANTS = /https?:\/\/(?:www\.|fr\.)?(?:amazon\.fr|sunology\.eu|sunology\.fr|leroymerlin\.fr|castorama\.fr|beemenergy\.fr|beem\.energy|sunethic\.fr|ecoflow\.com|fr\.ecoflow\.com|zendure\.fr|zendure\.com|bluettipower\.eu|fr\.bluettipower\.eu|jackery\.com|fr\.jackery\.com|anker\.com|dualsun\.com|hoymiles\.com)[^\s'"`<>)]*/g;
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36';
 
 function walk(dir) {
@@ -26,12 +26,22 @@ function walk(dir) {
 }
 
 const occurrences = new Map(); // url -> [files]
+const add = (url, file) => {
+  if (!occurrences.has(url)) occurrences.set(url, new Set());
+  occurrences.get(url).add(relative(ROOT, file));
+};
 for (const file of walk(SRC)) {
   const text = readFileSync(file, 'utf-8');
+  // Liens construits par gabarit : amazonUrl(asin) avec const AMAZON_TAG = '…' et des champs asin: 'XXXXXXXXXX'
+  if (text.includes('${AMAZON_TAG}')) {
+    const tagDef = text.match(/const AMAZON_TAG = '([^']+)'/);
+    const tag = tagDef ? tagDef[1] : 'MANQUANT';
+    for (const m of text.matchAll(/asin:\s*'([A-Z0-9]{10})'/g)) add(`https://www.amazon.fr/dp/${m[1]}?tag=${tag}`, file);
+  }
   for (const m of text.matchAll(MERCHANTS)) {
     const url = m[0].replace(/[.,;]+$/, '');
-    if (!occurrences.has(url)) occurrences.set(url, new Set());
-    occurrences.get(url).add(relative(ROOT, file));
+    if (url.includes('${')) continue; // gabarit, traité ci-dessus
+    add(url, file);
   }
 }
 

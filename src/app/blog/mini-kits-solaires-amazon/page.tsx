@@ -23,11 +23,11 @@ const faqData = [
 ];
 
 const kits_selection = [
-  { num: 1, nom: 'Kit 300W monocristallin avec micro-onduleur', marque: 'Jackery / EcoFlow', prix: '249-299 €', puissance: '300W', note: '4/5', avantages: 'Marques identifiées, SAV français, micro-onduleur CE, garantie 10 ans panneau', inconvenients: 'Parfois en rupture de stock, livraison lente', verdict: 'Meilleur choix global sous 300 €. Préférez Jackery si dispo, EcoFlow en second.' },
-  { num: 2, nom: 'Mini kit 200W flexible', marque: 'Renogy', prix: '180-220 €', puissance: '200W', note: '3,5/5', avantages: 'Panneau flexible (se pose sur surface courbe), léger, facile à déplacer', inconvenients: 'Production 30% inférieure à un panneau rigide, durée de vie plus courte', verdict: 'Idéal pour tester le solaire en location ou sur un balcon étroit. Ne pas attendre plus de 150 kWh/an.' },
-  { num: 3, nom: 'Kit 400W 2 panneaux 200W', marque: 'Anker / BougeRV', prix: '280-320 €', puissance: '400W', note: '3,5/5', avantages: 'Puissance supérieure au mono-panneau, modulaire, 2 micro-onduleurs inclus', inconvenients: 'Installation plus longue (2 panneaux à fixer), câblage plus complexe', verdict: 'Bon rapport qualité/puissance si vous avez 2 m² d\'espace. Attention à la conformité du micro-onduleur.' },
-  { num: 4, nom: 'Panneau 300W + onduleur vendu séparément', marque: 'Amerisolar + Enphase', prix: '180 € + 120 € = 300 €', puissance: '300W', note: '4,5/5', avantages: 'Matériel de qualité pro, micro-onduleur Enphase légendaire, garantie fabricant', inconvenients: 'Assemblage à faire soi-même, câblage MC4, pas livré en kit', verdict: 'Meilleur choix technique si vous aimez bricoler. Performance et fiabilité au-dessus des kits fermés.' },
-  { num: 5, nom: 'Kit camping/nomade 200W avec batterie', marque: 'Jackery Explorer + SolarSaga', prix: '280-300 €', puissance: '200W + batterie 500Wh', note: '3/5', avantages: 'Solution 2-en-1 panneau + stockage, transportable, utile en camping', inconvenients: 'Rendement inférieur pour un usage balcon classique, batterie limitée', verdict: 'Non recommandé pour un usage balcon permanent. Mais excellent pour usage mixte balcon/camping.' },
+  { num: 1, lien: 'https://www.amazon.fr/s?k=kit+solaire+balcon+300W+micro-onduleur&tag=monbalconsolai-21', lienLabel: 'Voir les kits 300W sur Amazon', nom: 'Kit 300W monocristallin avec micro-onduleur', marque: 'Jackery / EcoFlow', prix: '249-299 €', puissance: '300W', note: '4/5', avantages: 'Marques identifiées, SAV français, micro-onduleur CE, garantie 10 ans panneau', inconvenients: 'Parfois en rupture de stock, livraison lente', verdict: 'Meilleur choix global sous 300 €. Préférez Jackery si dispo, EcoFlow en second.' },
+  { num: 2, lien: 'https://www.amazon.fr/s?k=Renogy+panneau+solaire+flexible&tag=monbalconsolai-21', lienLabel: 'Voir les panneaux flexibles Renogy sur Amazon', nom: 'Mini kit 200W flexible', marque: 'Renogy', prix: '180-220 €', puissance: '200W', note: '3,5/5', avantages: 'Panneau flexible (se pose sur surface courbe), léger, facile à déplacer', inconvenients: 'Production 30% inférieure à un panneau rigide, durée de vie plus courte', verdict: 'Idéal pour tester le solaire en location ou sur un balcon étroit. Ne pas attendre plus de 150 kWh/an.' },
+  { num: 3, lien: 'https://www.amazon.fr/s?k=kit+solaire+balcon+400W+2+panneaux&tag=monbalconsolai-21', lienLabel: 'Voir les kits 400W sur Amazon', nom: 'Kit 400W 2 panneaux 200W', marque: 'Anker / BougeRV', prix: '280-320 €', puissance: '400W', note: '3,5/5', avantages: 'Puissance supérieure au mono-panneau, modulaire, 2 micro-onduleurs inclus', inconvenients: 'Installation plus longue (2 panneaux à fixer), câblage plus complexe', verdict: 'Bon rapport qualité/puissance si vous avez 2 m² d\'espace. Attention à la conformité du micro-onduleur.' },
+  { num: 4, lien: 'https://www.amazon.fr/s?k=micro-onduleur+Enphase&tag=monbalconsolai-21', lienLabel: 'Voir les micro-onduleurs Enphase sur Amazon', nom: 'Panneau 300W + onduleur vendu séparément', marque: 'Amerisolar + Enphase', prix: '180 € + 120 € = 300 €', puissance: '300W', note: '4,5/5', avantages: 'Matériel de qualité pro, micro-onduleur Enphase légendaire, garantie fabricant', inconvenients: 'Assemblage à faire soi-même, câblage MC4, pas livré en kit', verdict: 'Meilleur choix technique si vous aimez bricoler. Performance et fiabilité au-dessus des kits fermés.' },
+  { num: 5, lien: 'https://www.amazon.fr/dp/B0FL2LJ9D8?tag=monbalconsolai-21', lienLabel: 'Voir le pack Jackery E500 v2 + 100W sur Amazon', nom: 'Kit camping/nomade avec batterie', marque: 'Jackery Explorer 500 v2 + SolarSaga 100W', prix: '449 € (sept. 2026)', puissance: '100W + batterie LFP 512Wh', note: '3/5', avantages: 'Solution 2-en-1 panneau + stockage, transportable, utile en camping. Batterie LiFePO4 (la v2 remplace l\'Explorer 500 d\'origine en lithium NMC)', inconvenients: 'Rendement inférieur pour un usage balcon classique, batterie limitée. Mise à jour septembre 2026 : le pack est affiché 449 € sur Amazon, au-dessus de notre budget de 300 €', verdict: 'Non recommandé pour un usage balcon permanent. Intéressant pour un usage mixte balcon/camping, idéalement en promotion.' },
 ];
 
 const pieges_amazon = [
@@ -41,7 +41,7 @@ const pieges_amazon = [
 export default function MiniKitsAmazonPage() {
   return (
     <>
-      <SchemaArticle title="Mini kits solaires Amazon < 300 € : lesquels valent vraiment le coup ?" description="Analyse honnête des mini kits solaires Amazon à moins de 300 € en 2026." url="https://monbalconsolaire.fr/blog/mini-kits-solaires-amazon" datePublished="2026-04-20" />
+      <SchemaArticle title="Mini kits solaires Amazon < 300 € : lesquels valent vraiment le coup ?" description="Analyse honnête des mini kits solaires Amazon à moins de 300 € en 2026." url="https://monbalconsolaire.fr/blog/mini-kits-solaires-amazon" datePublished="2026-04-20" dateModified="2026-09-27" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Mini kits Amazon < 300 €' }]} />
       <article className="section-padding">
@@ -119,17 +119,29 @@ export default function MiniKitsAmazonPage() {
                       <p className="text-xs font-semibold text-charcoal mb-1">&#x1F4A1; Notre verdict</p>
                       <p className="text-xs text-charcoal-light leading-relaxed">{k.verdict}</p>
                     </div>
+                    <div className="mt-3 text-sm">
+                      <a href={k.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">{k.lienLabel} &rarr;</a>
+                    </div>
                   </div>
                 ))}
               </div>
+              <p className="text-xs text-stone mt-4">Les kits 1 &agrave; 4 renvoient vers une recherche Amazon : les r&eacute;f&eacute;rences changent tr&egrave;s vite sur ce segment, v&eacute;rifiez la marque, la certification du micro-onduleur et le vendeur avant d&apos;acheter (voir les pi&egrave;ges ci-dessus).</p>
+              <AffiliateCTA
+                productName="Kit solaire balcon 300W"
+                merchantName="Amazon"
+                affiliateUrl="https://www.amazon.fr/s?k=kit+solaire+balcon+300W+micro-onduleur&tag=monbalconsolai-21"
+                label="Comparer les kits 300W sur Amazon"
+                variant="secondary"
+                position="after-top-pick"
+              />
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Mini kit Amazon ou kit français : le vrai comparatif</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Pour trancher, voici un tableau comparatif honnête entre un mini kit Amazon à 280 € (Jackery 300W par exemple) et un <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> à 299 € :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Pour trancher, voici un tableau comparatif honnête entre un mini kit Amazon à 280 € (kit générique de marque peu connue) et un <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> à 299 € :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
-                  <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Critère</th><th className="text-center p-3">Mini kit Amazon (Jackery 300W)</th><th className="text-center p-3 rounded-tr-xl">Beem Kit 300W</th></tr></thead>
+                  <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Critère</th><th className="text-center p-3">Mini kit Amazon générique 300 W</th><th className="text-center p-3 rounded-tr-xl">Beem Kit 300W</th></tr></thead>
                   <tbody>
                     <tr className="bg-white border-b border-border-light"><td className="p-3 font-semibold">Prix</td><td className="text-center p-3">280 €</td><td className="text-center p-3">299 €</td></tr>
                     <tr className="bg-cream/50 border-b border-border-light"><td className="p-3 font-semibold">Production estimée</td><td className="text-center p-3">~280 kWh/an</td><td className="text-center p-3">~320 kWh/an</td></tr>
@@ -148,7 +160,7 @@ export default function MiniKitsAmazonPage() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation finale</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">&#x2705; Budget &lt; 250 € : Jackery 300W ou Renogy 200W flexible</h4>
+                  <h4 className="font-bold text-sm mb-1">&#x2705; Budget &lt; 250 € : kit générique 300 W avec micro-onduleur de marque, ou Renogy 200W flexible</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">Les deux seuls vrais bons choix sous 250 €. Jackery pour une pose fixe, Renogy pour surface courbe ou usage nomade.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
@@ -212,7 +224,7 @@ export default function MiniKitsAmazonPage() {
             </section>
 
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Note :</strong> cet article sera mis à jour régulièrement selon les nouveautés Amazon et l&apos;évolution des prix. Les liens affiliés seront ajoutés une fois notre inscription Amazon Partenaires validée. <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Note :</strong> cet article sera mis à jour régulièrement selon les nouveautés Amazon et l&apos;évolution des prix. Kits sélectionnés et analysés sur fiches techniques et avis clients, non testés physiquement. Prix indicatifs d&apos;avril 2026, sauf pack Jackery (prix constaté septembre 2026). Liens Amazon affiliés : nous touchons une commission sans surcoût pour vous. Le lien Beem est également un lien commercial. <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.</p>
             </div>
           </div>
         </div>

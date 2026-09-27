@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Le Beem On 500 Wc est-il le meilleur rapport qualité-prix en 2026 ?', answer: 'Oui. À 0,86€/Wc (429€ pour 500 Wc), c\'est le meilleur ratio €/Wc du marché premium en France. Le Sunology PLAY2 est à 1,33€/Wc (599€ pour 450 Wc). Le ROI est d\'environ 4,8 ans contre 7 à 7,4 ans pour la concurrence (Sunology PLAY2, Beem On 460W, Sunethic F500).' },
+  { question: 'Le Beem On 500 Wc est-il le meilleur rapport qualité-prix en 2026 ?', answer: 'Oui. À 0,86€/Wc (429€ pour 500 Wc), c\'est le meilleur ratio €/Wc du marché premium en France. Le Sunology PLAY (ex-PLAY 2) est à 1,20€/Wc (599€ pour 500 Wc). Le ROI est d\'environ 4,8 ans contre 6,5 à 7,4 ans pour la concurrence (Sunology PLAY 6,5 ans, Beem On 460W 7,0 ans, Sunethic F500 7,4 ans).' },
   { question: 'Quelle différence entre le Beem On 500 Wc et l\'ancien 460 Wc ?', answer: 'Le nouveau modèle gagne 40 Wc de puissance (500 vs 460 Wc) tout en baissant de 170€ (429€ vs 599€). Le ratio €/Wc passe de 1,30€ à 0,86€. Les dimensions sont quasi identiques (1 950 x 1 134 mm vs 1 890 x 1 130 mm). Le micro-onduleur passe à 550 W de sortie.' },
   { question: 'Combien produit le Beem On 500 Wc par an ?', answer: 'Entre ~430 et ~640 kWh/an en exposition sud selon la région (de Lille à Marseille). En région lyonnaise, exposition sud, comptez ~510 kWh/an soit environ 84€ d\'économies annuelles. ROI de 4,8 ans et ~3 190€ d\'économies sur 25 ans (+3,3%/an d\'inflation CRE).' },
-  { question: 'Beem On 500 Wc vs Sunology PLAY2 : lequel choisir ?', answer: 'Le Beem On 500 Wc écrase le PLAY2 sur le prix (429€ vs 518€) et la puissance (500 vs 480 Wc). Sunology garde l\'avantage sur la technologie Back Contact (23,5% vs 22% de rendement), le WiFi natif sans boîtier, et l\'écosystème batterie VAULT. Si le budget est votre priorité : Beem. Si vous voulez l\'écosystème le plus complet : Sunology.' },
+  { question: 'Beem On 500 Wc vs Sunology PLAY (ex-PLAY 2) : lequel choisir ?', answer: 'À puissance égale (500 Wc), le Beem On 500 Wc est 170€ moins cher que le Sunology PLAY (429€ vs 599€). Sunology garde l\'avantage sur la technologie Back Contact (24,5% de rendement annoncé, panneau 15 cm plus court), le WiFi natif sans boîtier, et l\'écosystème batterie VAULT. Si le budget est votre priorité : Beem. Si vous voulez l\'écosystème le plus complet : Sunology.' },
   { question: 'Peut-on connecter plusieurs Beem On 500 Wc ensemble ?', answer: 'Oui. Vous pouvez connecter jusqu\'à 4 stations sur la même prise (2 000 Wc), ou jusqu\'à 6 avec le Beem On Max (3 000 Wc). Chaque station supplémentaire est vendue en "Extension" sans Beembox.' },
 ];
 
@@ -105,7 +105,7 @@ export default function BeemOn500WcAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Le prix le plus bas du segment premium : 0,86€/Wc', d: 'À 429€ pour 500 Wc, le Beem On pulvérise la concurrence. Le Sunology PLAY2 est à 1,08€/Wc (518€ pour 480 Wc), le Sunethic F500 à 1,38€/Wc (690€). C\'est 20 à 40% moins cher par watt.' },
+                  { t: 'Le prix le plus bas du segment premium : 0,86€/Wc', d: 'À 429€ pour 500 Wc, le Beem On pulvérise la concurrence. Le Sunology PLAY est à 1,20€/Wc (599€ pour 500 Wc), le Sunethic F500 à 1,38€/Wc (690€). C\'est 28 à 38% moins cher par watt.' },
                   { t: 'ROI record de 4,8 ans', d: 'Grâce au prix agressif, le retour sur investissement tombe sous les 5 ans (Lyon, sud). C\'est le kit le plus vite rentabilisé du marché premium. Sur 25 ans : ~3 190€ d\'économies.' },
                   { t: 'Paiement en 10x sans frais', d: 'Soit ~43€/mois pendant 10 mois. C\'est plus accessible que jamais. Dès le premier mois, le kit produit plus que la mensualité.' },
                   { t: 'Option Beem ZEN', d: 'Pour 49€ de plus, Beem gère toutes les démarches administratives : déclaration CACSI Enedis, convention d\'autoconsommation. Idéal si l\'administratif vous freine.' },
@@ -127,7 +127,7 @@ export default function BeemOn500WcAvisPage() {
               <div className="space-y-3">
                 {[
                   { t: 'Beembox obligatoire pour le suivi', d: 'Contrairement au Sunology PLAY2 dont le micro-onduleur embarque le WiFi, le Beem On nécessite un boîtier Beembox branché sur votre box internet. C\'est inclus dans le kit, mais c\'est un appareil supplémentaire à brancher et à maintenir.' },
-                  { t: 'Panneau imposant : 1,95 m de haut', d: 'Avec ses 1 950 x 1 134 mm, c\'est le plus grand panneau mono du marché (le PLAY2 fait 1 760 x 1 134 mm). Sur un petit balcon, ça peut poser problème.' },
+                  { t: 'Panneau imposant : 1,95 m de haut', d: 'Avec ses 1 950 x 1 134 mm, c\'est le plus grand panneau mono du marché (le Sunology PLAY 500 Wc fait 1 800 x 1 134 mm). Sur un petit balcon, ça peut poser problème.' },
                   { t: 'Pas de solution batterie abordable', d: 'Beem propose la Beem Battery mais à partir de 6 190€ le kit complet. C\'est 14x le prix du panneau seul. Sunology a le VAULT à 1 379€ (kit + batterie), bien plus accessible. Si le stockage vous intéresse, regardez plutôt Sunology ou Zendure.' },
                   { t: 'SAV à surveiller', d: 'Beem Energy est en procédure de sauvegarde depuis fin 2025. Des retours clients signalent des délais SAV rallongés. La garantie 25 ans est contractuelle, mais la solidité financière de l\'entreprise est un point de vigilance.' },
                 ].map((p, i) => (
@@ -174,7 +174,7 @@ export default function BeemOn500WcAvisPage() {
                   <tbody>
                     {[
                       ['Beem On 500 Wc', '500 Wc', '429 €', '0,86 €', '8.5/10', true],
-                      ['Sunology PLAY2', '480 Wc', '518 €', '1,08 €', '8.5/10', false],
+                      ['Sunology PLAY (ex-PLAY 2)', '500 Wc', '599 €', '1,20 €', '8.5/10', false],
                       ['Sunethic F500', '500 Wc', '690 €', '1,38 €', '7.5/10', false],
                       ['EcoFlow PowerStream (arr\u00eat\u00e9)', '400 Wc', '599 €', '1,50 €', '8/10', false],
                       ['Beem Kit 300W', '300 Wc', '299 €', '1,00 €', '7.5/10', false],
@@ -270,7 +270,7 @@ export default function BeemOn500WcAvisPage() {
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Le concurrent direct &agrave; 518&nbsp;&euro;</p>
+                  <p className="text-xs text-charcoal-light mt-1">Le concurrent direct &agrave; 599&nbsp;&euro; (500 Wc)</p>
                 </Link>
                 <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">PLAY 2 vs Beem On 500 Wc : le match juillet 2026</h4>

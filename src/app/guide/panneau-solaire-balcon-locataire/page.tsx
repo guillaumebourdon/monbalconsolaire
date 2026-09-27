@@ -91,7 +91,7 @@ export default function LocatairePage() {
               <div className="space-y-4 my-6">
                 <div className="card-lg border-green/15 bg-green-pale/10">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><div><div className="badge-green mb-1 text-[10px]">Recommandé locataires</div><h4 className="font-bold">Sunology PLAY2</h4><p className="text-xs text-stone">Ballasts inclus, aucun perçage, 100% amovible, 1 min d&apos;installation</p></div></div>
+                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><div><div className="badge-green mb-1 text-[10px]">Recommandé locataires</div><h4 className="font-bold">Sunology PLAY (ex-PLAY 2)</h4><p className="text-xs text-stone">500 Wc, pose au sol sans perçage (ballasts 10 L en option), 100% amovible, 1 min d&apos;installation</p></div></div>
                     <span className="font-mono font-bold text-green text-lg">599&euro;</span>
                   </div>
                 </div>

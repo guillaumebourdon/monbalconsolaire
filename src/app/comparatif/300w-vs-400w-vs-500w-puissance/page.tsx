@@ -74,7 +74,7 @@ export default function PuissanceComparatif() {
                       ['ROI (Lyon, sud)', '5-6 ans', '7-8 ans', '4,8-7,4 ans'],
                       ['Dimensions panneau', '~82 x 69 cm (x4)', '~175 x 100 cm', '~180 x 110 cm'],
                       ['Poids', '~15 kg total', '~20 kg', '~22 kg'],
-                      ['Exemple de kit', 'Beem Kit 300W', 'Sunology PLAY 2 (450W)', 'Beem On 500 Wc (429 \u20ac)'],
+                      ['Exemple de kit', 'Beem Kit 300W', 'Sunology PLAY 2 (450-460W, fin de s\u00e9rie)', 'Beem On 500 Wc (429 \u20ac), Sunology PLAY (599 \u20ac)'],
                     ].map(([label, p300, p400, p500], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{label}</td>
@@ -117,7 +117,7 @@ export default function PuissanceComparatif() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le 400-450W : le sweet spot</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est la puissance la plus vendue en France en 2026. Le Sunology PLAY 2 (450W) domine ce segment. Beem a fait &eacute;voluer son mod&egrave;le vers le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429 &euro;</Link>, d&eacute;sormais dans la cat&eacute;gorie 500W. C&apos;est le <strong>meilleur compromis rentabilit&eacute;/encombrement</strong> pour un balcon standard.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est longtemps &eacute;t&eacute; la puissance la plus vendue en France, domin&eacute;e par le Sunology PLAY 2 (450W). Depuis ao&ucirc;t 2026, Sunology vend le PLAY en <strong>500&nbsp;W au m&ecirc;me prix (599&nbsp;&euro;)</strong>&nbsp;: les PLAY 2 de 450-460&nbsp;W encore en rayon sont des fins de s&eacute;rie, &agrave; comparer au prix du Wc. Beem a lui aussi fait &eacute;voluer son mod&egrave;le vers le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429 &euro;</Link>, d&eacute;sormais dans la cat&eacute;gorie 500W. C&apos;est le <strong>meilleur compromis rentabilit&eacute;/encombrement</strong> pour un balcon standard.</p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
                   <h4 className="font-bold text-green mb-2">&#9989; Points forts</h4>
@@ -187,7 +187,7 @@ export default function PuissanceComparatif() {
               <div className="space-y-3">
                 {[
                   { profil: 'Petit budget (< 400€)', reco: '300W modulaire', detail: 'Le Beem Kit 300W est le meilleur choix. ROI d\'environ 5,5 ans (Lyon, sud).' },
-                  { profil: 'Balcon standard 10 m²', reco: '400-450W', detail: 'Sunology PLAY 2 ou Beem On : 1 panneau, installation en 2 min.' },
+                  { profil: 'Balcon standard 10 m²', reco: '450-500W', detail: 'Sunology PLAY 500 W (ex-PLAY 2) ou Beem On 500 Wc : 1 panneau, installation en 2 min.' },
                   { profil: 'Grand balcon ou terrasse', reco: '500W (Beem On 429\u20ac)', detail: 'Beem On 500 Wc : meilleur prix du march\u00e9 \u00e0 0,86 \u20ac/Wc, ROI ~4,8 ans.' },
                   { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (450W + 700Wh), Zendure SolarFlow ou Bluetti Balco 260.' },
                   { profil: 'Locataire', reco: '400-450W', detail: 'Un seul panneau se d\u00e9monte en 1 minute pour le d\u00e9m\u00e9nagement.' },

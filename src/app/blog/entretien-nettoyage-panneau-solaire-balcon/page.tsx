@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Entretien et nettoyage d\'un panneau solaire de balcon : le guide complet',
@@ -121,6 +122,7 @@ export default function EntretienNettoyagePage() {
         description="Comment nettoyer et entretenir un panneau solaire de balcon : fréquence, méthode, erreurs à éviter."
         url="https://monbalconsolaire.fr/blog/entretien-nettoyage-panneau-solaire-balcon"
         datePublished="2026-06-04"
+        dateModified="2026-09-27"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Entretien et nettoyage' }]} />
@@ -309,8 +311,8 @@ export default function EntretienNettoyagePage() {
               <div className="card-lg bg-cream/40">
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Eau :</strong> ~5 litres par nettoyage, soit quelques centimes</li>
-                  <li>&bull; <strong>Chiffon microfibre :</strong> 3-5 &euro; (r&eacute;utilisable des ann&eacute;es)</li>
-                  <li>&bull; <strong>Eau d&eacute;min&eacute;ralis&eacute;e (optionnel) :</strong> 2 &euro; les 5 litres</li>
+                  <li>&bull; <strong>Chiffon microfibre :</strong> 3-5 &euro; (r&eacute;utilisable des ann&eacute;es) &mdash; <a href="https://www.amazon.fr/s?k=chiffon+microfibre+lot&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
+                  <li>&bull; <strong>Eau d&eacute;min&eacute;ralis&eacute;e (optionnel) :</strong> 2 &euro; les 5 litres (en supermarch&eacute;, moins cher qu&apos;en ligne)</li>
                   <li>&bull; <strong>Temps :</strong> 5-10 minutes par nettoyage</li>
                   <li>&bull; <strong>Total annuel :</strong> <strong className="text-green">moins de 5 &euro;</strong> et ~30 minutes</li>
                 </ul>
@@ -318,6 +320,35 @@ export default function EntretienNettoyagePage() {
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
                 En comparaison, le gain de production r&eacute;cup&eacute;r&eacute; par le nettoyage repr&eacute;sente <strong>5 &agrave; 15 &euro;/an</strong> d&apos;&eacute;conomies suppl&eacute;mentaires. Le retour sur investissement du nettoyage est &hellip; imm&eacute;diat.
               </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Le mat&eacute;riel utile (et rien de plus)</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">
+                Inutile d&apos;acheter un &laquo; kit pro &raquo; &agrave; 80 &euro;. Trois accessoires suffisent, s&eacute;lectionn&eacute;s pour leur rapport utilit&eacute;/prix :
+              </p>
+              <div className="space-y-3">
+                <div className="card border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm mb-1 text-green">Brosse douce &agrave; manche t&eacute;lescopique</h4>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Utile si le panneau est hors de port&eacute;e de bras (garde-corps ext&eacute;rieur, pergola). Poils souples uniquement, raccord tuyau d&apos;arrosage en option. <a href="https://www.amazon.fr/s?k=brosse+nettoyage+panneau+solaire+t%C3%A9lescopique&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
+                </div>
+                <div className="card border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm mb-1 text-green">Chiffons microfibre</h4>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Un lot de chiffons microfibre suffit pour des ann&eacute;es. &Agrave; laver sans adoucissant (il laisse un film gras sur la vitre). <a href="https://www.amazon.fr/s?k=chiffon+microfibre+lot&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
+                </div>
+                <div className="card border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm mb-1 text-green">Prise connect&eacute;e pour mesurer le gain</h4>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Pour savoir si le nettoyage a vraiment servi (&eacute;tape 5), une prise &agrave; mesure de consommation comme la Tapo P110 (~12 &euro;, prix constat&eacute; septembre 2026) affiche la production avant/apr&egrave;s. <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">Notre comparatif des prises</Link>.</p>
+                </div>
+              </div>
+              <AffiliateCTA
+                productName="Brosse nettoyage panneau solaire"
+                merchantName="Amazon"
+                affiliateUrl="https://www.amazon.fr/s?k=brosse+nettoyage+panneau+solaire+t%C3%A9lescopique&tag=monbalconsolai-21"
+                label="Voir les brosses télescopiques sur Amazon"
+                variant="secondary"
+                position="after-top-pick"
+              />
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-10">
@@ -329,6 +360,15 @@ export default function EntretienNettoyagePage() {
                 Calculer ma production &rarr;
               </Link>
             </div>
+
+            <AffiliateCTA
+              productName="TP-Link Tapo P110"
+              merchantName="Amazon"
+              affiliateUrl="https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsolai-21"
+              label="Mesurer ma production avec la Tapo P110"
+              variant="box"
+              position="footer-box"
+            />
 
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
@@ -381,6 +421,9 @@ export default function EntretienNettoyagePage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Sources :</strong> NREL (National Renewable Energy Laboratory), retours terrain forum-photovoltaique.fr et Reddit r/solaire, fiches constructeurs Sunology/Beem/EcoFlow. Tarif EDF base juin 2026 : 0,1940 &euro;/kWh.{' '}
                 <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
+              </p>
+              <p className="text-xs text-stone leading-relaxed mt-2">
+                <strong>Transparence :</strong> liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous.
               </p>
             </div>
           </div>

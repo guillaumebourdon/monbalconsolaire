@@ -20,7 +20,7 @@ const faqData = [
   },
   {
     question: 'Quelle est la différence entre panneau PERC et N-type en canicule ?',
-    answer: 'Un panneau PERC standard a un coefficient de température de -0,35 à -0,45 %/°C. Les panneaux N-type (TOPCon ou HJT comme ceux de Sunology PLAY 2 ou EcoFlow) affichent -0,26 à -0,30 %/°C. À 70°C de cellule (canicule typique), la différence atteint 2 à 5 points de rendement, soit 16 à 40 Wh par heure en moins pour un panneau 400W PERC vs TOPCon.',
+    answer: 'Un panneau PERC standard a un coefficient de température de -0,35 à -0,45 %/°C. Les panneaux N-type (TOPCon, HJT ou back-contact comme celui du Sunology PLAY 500 Wc, ou EcoFlow) affichent -0,26 à -0,30 %/°C. À 70°C de cellule (canicule typique), la différence atteint 2 à 5 points de rendement, soit 16 à 40 Wh par heure en moins pour un panneau 400W PERC vs TOPCon.',
   },
   {
     question: 'Peut-on arroser ses panneaux solaires pour les refroidir ?',
@@ -36,7 +36,7 @@ const faqData = [
   },
   {
     question: 'Quel kit solaire de balcon résiste le mieux à la canicule ?',
-    answer: 'Les kits avec panneaux N-type TOPCon ou HJT résistent mieux à la chaleur. En 2026, les meilleurs coefficients sont : Sunology PLAY 2 (-0,28 %/°C), EcoFlow PowerStream (-0,29 %/°C), Beem On 500 Wc (-0,30 %/°C). Les kits avec panneaux PERC génériques (certains kits Amazon) affichent -0,40 à -0,45 %/°C et souffrent davantage lors des canicules.',
+    answer: 'Les kits avec panneaux N-type TOPCon ou HJT résistent mieux à la chaleur. En 2026, les meilleurs coefficients sont : Sunology PLAY 500 Wc, ex-PLAY 2 (-0,26 %/°C, panneau back-contact ; -0,28 %/°C pour l\'ancien PLAY 2), EcoFlow PowerStream (-0,29 %/°C), Beem On 500 Wc (-0,30 %/°C). Les kits avec panneaux PERC génériques (certains kits Amazon) affichent -0,40 à -0,45 %/°C et souffrent davantage lors des canicules.',
   },
 ];
 
@@ -185,7 +185,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Coefficient&nbsp;: <strong>&ndash;0,26 &agrave; &ndash;0,30&nbsp;%/&deg;C</strong>. Ces technologies utilisent des couches passivantes qui r&eacute;duisent la sensibilit&eacute; thermique. En canicule, elles perdent 12&nbsp;% au lieu de 18&nbsp;% pour le PERC. Sur un ann&eacute;e compl&egrave;te, l&apos;avantage se chiffre en quelques kWh suppl&eacute;mentaires.
                   </p>
-                  <p className="text-xs text-stone"><strong>Kits concern&eacute;s&nbsp;:</strong> Sunology PLAY 2 (&ndash;0,28&nbsp;%/&deg;C), <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">EcoFlow PowerStream</Link> (&ndash;0,29&nbsp;%/&deg;C), <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (&ndash;0,30&nbsp;%/&deg;C)</p>
+                  <p className="text-xs text-stone"><strong>Kits concern&eacute;s&nbsp;:</strong> Sunology PLAY 500&nbsp;Wc (&ndash;0,26&nbsp;%/&deg;C, ex-PLAY 2 &agrave; &ndash;0,28&nbsp;%/&deg;C), <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">EcoFlow PowerStream</Link> (&ndash;0,29&nbsp;%/&deg;C), <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (&ndash;0,30&nbsp;%/&deg;C)</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h4 className="font-bold text-sm mb-2">PERC mono-cristallin &mdash; le plus courant</h4>
@@ -255,7 +255,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
                   {
                     num: '1',
                     title: 'Laissez de l’air circuler derrière le panneau',
-                    text: 'Le principal facteur de surchauffe est l’absence de ventilation arrière. Un panneau collé contre un mur plein atteindra 10-15°C de plus qu’un panneau monté sur garde-corps avec de l’air circulant. Les supports inclinés des kits comme le Sunology PLAY 2 ou le Beem On 500 Wc sont conçus pour laisser de l’espace.',
+                    text: 'Le principal facteur de surchauffe est l’absence de ventilation arrière. Un panneau collé contre un mur plein atteindra 10-15°C de plus qu’un panneau monté sur garde-corps avec de l’air circulant. Les supports inclinés des kits comme le Sunology PLAY ou le Beem On 500 Wc sont conçus pour laisser de l’espace.',
                     good: true,
                   },
                   {
@@ -300,7 +300,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
               productName="Sunology PLAY 2"
               merchantName="Sunology"
               affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
-              label="Voir le PLAY 2 (TOPCon, &ndash;0,28&nbsp;%/&deg;C)"
+              label="Voir le Sunology PLAY (back-contact, &ndash;0,26&nbsp;%/&deg;C)"
               variant="secondary"
               position="mid-article"
             />

@@ -158,12 +158,12 @@ export default function OptimiserAutoconsommationPage() {
                 Votre kit solaire ne vous fait &eacute;conomiser de l&apos;argent que sur les kWh que <strong>vous consommez vous-m&ecirc;me</strong>. Chaque kWh inject&eacute; gratuitement sur le r&eacute;seau (pas de contrat d&apos;injection r&eacute;mun&eacute;r&eacute; en plug-and-play) est une perte s&egrave;che.
               </p>
               <div className="card-lg bg-cream/40">
-                <h4 className="font-bold text-sm mb-3">Exemple concret (Sunology PLAY 2, Lyon sud)</h4>
+                <h4 className="font-bold text-sm mb-3">Exemple concret (Sunology PLAY 500 Wc, ex-PLAY 2, Lyon sud)</h4>
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; Production : <strong>459 kWh/an</strong></li>
-                  <li>&bull; &Agrave; 40 % d&apos;autoconsommation : 184 kWh valoris&eacute;s = <strong>36 &euro;/an</strong></li>
-                  <li>&bull; &Agrave; 70 % : 321 kWh = <strong>62 &euro;/an</strong> (+72 %)</li>
-                  <li>&bull; &Agrave; 85 % : 390 kWh = <strong>76 &euro;/an</strong> (+111 %)</li>
+                  <li>&bull; Production : <strong>510 kWh/an</strong></li>
+                  <li>&bull; &Agrave; 40 % d&apos;autoconsommation : 204 kWh valoris&eacute;s = <strong>40 &euro;/an</strong></li>
+                  <li>&bull; &Agrave; 70 % : 357 kWh = <strong>69 &euro;/an</strong> (+73 %)</li>
+                  <li>&bull; &Agrave; 85 % : 434 kWh = <strong>84 &euro;/an</strong> (+110 %)</li>
                 </ul>
                 <p className="text-xs text-stone mt-3">Le m&ecirc;me kit, la m&ecirc;me production, mais <strong>2x plus d&apos;&eacute;conomies</strong> juste en changeant vos habitudes.</p>
               </div>
@@ -266,7 +266,7 @@ export default function OptimiserAutoconsommationPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY 2" variant="box" position="article_bottom" price="599 \u20ac" />
+              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 \u20ac" />
             </div>
 
             <section className="mb-10">

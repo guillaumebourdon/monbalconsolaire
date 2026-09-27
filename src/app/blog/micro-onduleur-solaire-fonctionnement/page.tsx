@@ -48,7 +48,7 @@ const faqData = [
   {
     question: 'Quelle norme doit respecter un micro-onduleur en France ?',
     answer:
-      'Il doit disposer d\'une protection de découplage certifiée. Enedis s\'appuyait sur la DIN VDE 0126-1-1 (réglage VFR2019) jusqu\'au 31 décembre 2024 ; depuis le 1er janvier 2025, la référence est la NF EN 50549-1, dont le certificat est exigé pour les installations de plus de 800 W. Demandez la déclaration de conformité et le certificat au vendeur, et déclarez l\'installation à Enedis (CACSI).',
+      'Il doit disposer d\'une protection de découplage certifiée. Jusqu\'au 31 décembre 2024, Enedis s\'appuyait sur la DIN VDE 0126-1-1 (réglage VFR2019). Pour les demandes de raccordement déposées depuis le 1er janvier 2025, Enedis demande une attestation de conformité à la NF EN 50549-1, la norme qui décline en basse tension le code de réseau européen RfG (règlement UE 2016/631). Ce règlement vise les unités de production à partir de 0,8 kW (type A) ; photovoltaique.info indique que le certificat est exigé pour les installations de plus de 800 W. Sous ce seuil, la protection de découplage reste nécessaire : dans tous les cas, demandez le certificat NF EN 50549-1 au vendeur et déclarez l\'installation à Enedis (CACSI).',
   },
 ];
 
@@ -131,7 +131,7 @@ const models: Model[] = [
     com: 'Wi-Fi intégré',
     garantie: '25 ans (via Sunology)',
     prix: 'Inclus kit',
-    pourQui: 'Livré dans le Sunology PLAY 2',
+    pourQui: 'Livré dans le Sunology PLAY2 (450/460 W) ; le PLAY 500 W actuel embarque un micro-onduleur MX500 de 500 W',
     href: '/avis/sunology-play-2',
   },
   {
@@ -149,7 +149,7 @@ const models: Model[] = [
 ];
 
 const kitsParOnduleur = [
-  { kit: 'Sunology PLAY 2', href: '/avis/sunology-play-2', onduleur: 'TSUN TSOL-MX450', puissanceMO: '450 W', app: 'Sunology STREAM' },
+  { kit: 'Sunology PLAY (ex-PLAY 2)', href: '/avis/sunology-play-2', onduleur: 'MX500 (PLAY2 : TSUN TSOL-MX450)', puissanceMO: '500 W (PLAY2 : 450 W)', app: 'Sunology STREAM' },
   { kit: 'Beem On 500', href: '/avis/beem-on-500w', onduleur: 'APsystems EZ1', puissanceMO: '480 W', app: 'Beem App' },
   { kit: 'Sunethic F500', href: '/avis/sunethic-f500', onduleur: 'APsystems EZ1-H', puissanceMO: '960 VA', app: 'EMA / AP EasyPower' },
   { kit: 'DualSun PREASY', href: '/avis/dualsun-preasy', onduleur: 'Hoymiles HMS-400', puissanceMO: '400 W', app: 'S-Miles Cloud' },
@@ -493,7 +493,7 @@ export default function MicroOnduleurPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">Certificat de d&eacute;couplage</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">Jusqu&apos;au 31 d&eacute;cembre 2024, Enedis s&apos;appuyait sur la DIN VDE 0126-1-1 avec le r&eacute;glage fran&ccedil;ais VFR2019. Depuis le 1<sup>er</sup> janvier 2025, la r&eacute;f&eacute;rence est la <strong>NF EN 50549-1</strong>&nbsp;: un certificat de conformit&eacute; est exig&eacute; pour les installations de plus de 800&nbsp;W. Les fiches Hoymiles citent par exemple EN 50549-1:2019 et la norme allemande VDE-AR-N 4105:2018. Demandez le certificat au vendeur avant l&apos;achat.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed">Jusqu&apos;au 31 d&eacute;cembre 2024, Enedis s&apos;appuyait sur la DIN VDE 0126-1-1 avec le r&eacute;glage fran&ccedil;ais VFR2019. Pour les demandes de raccordement d&eacute;pos&eacute;es depuis le 1<sup>er</sup> janvier 2025, la r&eacute;f&eacute;rence est la <strong>NF EN 50549-1</strong>, d&eacute;clinaison basse tension du code de r&eacute;seau europ&eacute;en RfG (r&egrave;glement UE 2016/631), qui s&apos;applique aux unit&eacute;s de production &agrave; partir de 0,8&nbsp;kW (type&nbsp;A). Selon photovoltaique.info, le certificat de conformit&eacute; est exig&eacute; pour les installations de plus de 800&nbsp;W&nbsp;; un kit &agrave; 800&nbsp;VA est donc &agrave; la limite, et un kit plus petit doit tout de m&ecirc;me disposer d&apos;une protection de d&eacute;couplage. Les fiches Hoymiles citent par exemple EN 50549-1:2019 et la norme allemande VDE-AR-N 4105:2018. Demandez le certificat au vendeur avant l&apos;achat.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">D&apos;o&ugrave; vient la limite de 800&nbsp;W&nbsp;?</h3>

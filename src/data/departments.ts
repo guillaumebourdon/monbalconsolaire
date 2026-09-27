@@ -9,6 +9,10 @@ export interface DepartmentData {
  * Données d'irradiation par département français (96 départements métropole + Corse)
  * Source : PVGIS (Photovoltaic Geographical Information System, European Commission)
  * Valeurs moyennes pour une installation orientée sud, inclinée 30°
+ * Ce sont des productibles PVGIS (E_y), déjà nets des pertes système (14 %) :
+ * vérifié le 27/09/2026 sur l'API PVGIS 5.3 — Lyon 30° = 1 281, Paris 1 139, Lille 1 062,
+ * Marseille 1 611 kWh/kWc. Ne pas leur appliquer directement le PR 0,85 : la page
+ * solaire-balcon/[slug] les recale d'abord sur PVGIS_REFERENCE_LYON (Rhône = 1 200).
  */
 export const DEPARTMENTS: DepartmentData[] = [
   // Auvergne-Rhône-Alpes

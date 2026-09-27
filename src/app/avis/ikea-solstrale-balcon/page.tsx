@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: 'Le kit IKEA STREAM vaut-il le coup par rapport \u00e0 Sunology ou Beem ?',
-    answer: 'Sur le papier, le STREAM S (449 \u20ac pour 2 panneaux 450 W + micro-onduleur 800 W) est comp\u00e9titif. Mais sans disponibilit\u00e9 France, pas de SAV local, pas de garantie applicable facilement, et pas de d\u00e9claration CACSI simplifi\u00e9e. Si vous pouvez acheter aujourd\'hui, un Sunology PLAY 2 (599 \u20ac) ou un Beem On (599 \u20ac) reste le meilleur choix.',
+    answer: 'Sur le papier, le STREAM S (449 \u20ac pour 2 panneaux 450 W + micro-onduleur 800 W) est comp\u00e9titif. Mais sans disponibilit\u00e9 France, pas de SAV local, pas de garantie applicable facilement, et pas de d\u00e9claration CACSI simplifi\u00e9e. Si vous pouvez acheter aujourd\'hui, un Sunology PLAY 500 Wc (599 \u20ac) ou un Beem On 500 Wc (429 \u20ac) reste le meilleur choix.',
   },
   {
     question: 'Quel micro-onduleur utilise le kit IKEA ?',
@@ -156,7 +156,7 @@ export default function IkeaSolstralePage() {
                     {[
                       ['IKEA STREAM S', '449 \u20ac', '900 Wc', '0,50 \u20ac', 'Non', 'Non'],
                       ['IKEA STREAM M', '1 229 \u20ac', '900 Wc', '1,37 \u20ac', '1,92 kWh', 'Non'],
-                      ['Sunology PLAY 2', '599 \u20ac', '450 Wc', '1,33 \u20ac', 'Non', 'Oui'],
+                      ['Sunology PLAY (ex-PLAY 2)', '599 \u20ac', '500 Wc', '1,20 \u20ac', 'Non', 'Oui'],
                       ['Beem On 460W', '599 \u20ac', '460 Wc', '1,30 \u20ac', 'Non', 'Oui'],
                       ['Beem Kit 300W', '299 \u20ac', '300 Wc', '1,00 \u20ac', 'Non', 'Oui'],
                       ['Zendure SolarFlow', '900 \u20ac', '840 W + panneaux', '1,07 \u20ac', '1,92 kWh', 'Oui'],
@@ -233,10 +233,10 @@ export default function IkeaSolstralePage() {
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology PLAY 2</h4>
-                      <p className="text-xs text-charcoal-light mt-1">Le plus simple. 450 Wc, 599 &euro;, installation 1 min. Disponible maintenant.</p>
+                      <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology PLAY (ex-PLAY 2)</h4>
+                      <p className="text-xs text-charcoal-light mt-1">Le plus simple. 500 Wc, 599 &euro;, installation 1 min. Disponible maintenant.</p>
                     </div>
-                    <span className="font-mono font-bold text-green">7,1 ans</span>
+                    <span className="font-mono font-bold text-green">6,5 ans</span>
                   </div>
                 </Link>
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
@@ -261,7 +261,7 @@ export default function IkeaSolstralePage() {
             </section>
 
             <div className="my-8">
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY 2 (disponible)" variant="box" position="article_bottom" price="599 \u20ac" />
+              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY (disponible)" variant="box" position="article_bottom" price="599 \u20ac" />
             </div>
 
             <NewsletterBanner />

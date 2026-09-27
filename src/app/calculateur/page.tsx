@@ -25,7 +25,7 @@ export default function CalculateurWrapper() {
 // ─── Kit catalog ──────────────────────────────────────────
 const KITS = [
   { id: 'beem-kit-300w', name: 'Beem Kit 300W', brand: 'Beem Energy', power: 300, price: 299, hasBattery: false, slug: '/avis/beem-kit-300w', affiliateUrl: 'https://beemenergy.fr/products/kit-beem', minWidth: 'narrow', maxBudget: 400 },
-  { id: 'sunology-play-2', name: 'Sunology PLAY 2', brand: 'Sunology', power: 450, price: 599, hasBattery: false, slug: '/avis/sunology-play-2', affiliateUrl: 'https://sunology.eu/products/play-kit-solaire-plug-play', minWidth: 'medium', maxBudget: 800 },
+  { id: 'sunology-play-2', name: 'Sunology PLAY (ex-PLAY 2)', brand: 'Sunology', power: 500, price: 599, hasBattery: false, slug: '/avis/sunology-play-2', affiliateUrl: 'https://sunology.eu/products/play-kit-solaire-plug-play', minWidth: 'medium', maxBudget: 800 },
   { id: 'beem-on-500w', name: 'Beem On 500 Wc', brand: 'Beem Energy', power: 500, price: 429, hasBattery: false, slug: '/avis/beem-on-500w', affiliateUrl: 'https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge', minWidth: 'medium', maxBudget: 800 },
   { id: 'sunethic-f500', name: 'Sunethic F500', brand: 'Sunethic', power: 500, price: 690, hasBattery: false, slug: '/avis/sunethic-f500', affiliateUrl: 'https://sunethic.fr/produits', minWidth: 'medium', maxBudget: 800 },
   { id: 'zendure-solarflow', name: 'Zendure SolarFlow', brand: 'Zendure', power: 840, price: 900, hasBattery: true, slug: '/avis/zendure-solarflow', affiliateUrl: '', minWidth: 'wide', maxBudget: 1500 },

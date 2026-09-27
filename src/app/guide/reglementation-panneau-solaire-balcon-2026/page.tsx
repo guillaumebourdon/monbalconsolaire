@@ -54,7 +54,7 @@ export default function ReglementationPage() {
                 <table className="w-full text-sm border-collapse min-w-[400px]">
                   <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Configuration</th><th className="text-center p-3">Puissance</th><th className="text-center p-3 rounded-tr-xl">Rep&egrave;re 900 W</th></tr></thead>
                   <tbody>
-                    {[['1 kit Sunology PLAY2', '450W', '\u2705 En dessous'], ['1 kit Beem On 460W', '460W', '\u2705 En dessous'], ['2 kits Beem Kit 300W', '600W', '\u2705 En dessous'], ['1 PLAY2 + 1 Beem Kit', '750W', '\u2705 En dessous'], ['2 kits Beem On 460W', '920W', '\u26a0\ufe0f Circuit d\u00e9di\u00e9 recommand\u00e9']].map(([c, p, ok], i) => (
+                    {[['1 kit Sunology PLAY (ex-PLAY 2)', '500W', '\u2705 En dessous'], ['1 kit Beem On 460W', '460W', '\u2705 En dessous'], ['2 kits Beem Kit 300W', '600W', '\u2705 En dessous'], ['1 PLAY + 1 Beem Kit', '800W', '\u2705 En dessous'], ['2 kits Beem On 460W', '920W', '\u26a0\ufe0f Circuit d\u00e9di\u00e9 recommand\u00e9']].map(([c, p, ok], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{c}</td><td className="text-center p-3 font-mono">{p}</td><td className="text-center p-3">{ok}</td></tr>
                     ))}
                   </tbody>

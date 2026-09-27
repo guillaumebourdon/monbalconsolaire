@@ -15,20 +15,20 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Combien rapporte un panneau solaire de balcon par an ?', answer: 'Avec un kit de 450W et le tarif EDF à 0,1940 euros/kWh, comptez environ 60 à 95 euros d\'économies par an en exposition sud selon votre region (85 % d\'autoconsommation). Cela correspond à une production de 380 à 575 kWh par an.' },
-  { question: 'Est-ce que ca vaut le coup à Paris ?', answer: 'Oui. Un kit de 450W à Paris produit environ 420 kWh/an (exposition sud). Soit ~69 euros d\'économies annuelles. Le ROI est atteint en ~7,7 ans (+3,3%/an d\'inflation CRE) pour une garantie de 25 ans. C\'est moins rentable que Marseille mais ca reste un bon investissement.' },
+  { question: 'Combien rapporte un panneau solaire de balcon par an ?', answer: 'Avec un kit de 500 Wc comme le Sunology PLAY (ex-PLAY 2) et le tarif EDF à 0,1940 euros/kWh, comptez environ 70 à 105 euros d\'économies par an en exposition sud selon votre region (85 % d\'autoconsommation). Cela correspond à une production de 425 à 640 kWh par an.' },
+  { question: 'Est-ce que ca vaut le coup à Paris ?', answer: 'Oui. Un kit de 500 Wc à Paris produit environ 470 kWh/an (exposition sud). Soit ~77 euros d\'économies annuelles. Le ROI est atteint en ~7 ans (+3,3%/an d\'inflation CRE) pour une garantie de 25 ans. C\'est moins rentable que Marseille mais ca reste un bon investissement.' },
   { question: 'Le prix de l\'électricité va-t-il encore augmenter ?', answer: 'Très probablement. La tendance sur 10 ans est de +4 à 5% par an. La fin de l\'ARENH en janvier 2026 pourrait accelerer la hausse. Chaque augmentation du tarif EDF améliore automatiquement la rentabilité de votre panneau.' },
   { question: 'Faut-il une batterie pour etre rentable ?', answer: 'Non. Sans batterie, vous consommez l\'électricité en temps réel (talon de consommation). C\'est déjà rentable. Une batterie augmente l\'autoconsommation mais coute 500-1400 euros supplémentaires, ce qui allonge le temps de retour sur investissement.' },
 ];
 
 const cityData = [
-  { city: 'Marseille', region: 'PACA', irr: '1 500 kWh/kWc', prod450: '574 kWh', prod300: '383 kWh', eco450: '95 \u20ac', eco300: '63 \u20ac', roi450: '5,8 ans', roi300: '4,5 ans' },
-  { city: 'Toulouse', region: 'Occitanie', irr: '1 350 kWh/kWc', prod450: '516 kWh', prod300: '344 kWh', eco450: '85 \u20ac', eco300: '57 \u20ac', roi450: '6,4 ans', roi300: '4,9 ans' },
-  { city: 'Lyon', region: 'Auvergne-RA', irr: '1 200 kWh/kWc', prod450: '459 kWh', prod300: '306 kWh', eco450: '76 \u20ac', eco300: '50 \u20ac', roi450: '7,1 ans', roi300: '5,5 ans' },
-  { city: 'Nantes', region: 'Pays de la Loire', irr: '1 200 kWh/kWc', prod450: '459 kWh', prod300: '306 kWh', eco450: '76 \u20ac', eco300: '50 \u20ac', roi450: '7,1 ans', roi300: '5,5 ans' },
-  { city: 'Paris', region: 'Ile-de-France', irr: '1 100 kWh/kWc', prod450: '421 kWh', prod300: '281 kWh', eco450: '69 \u20ac', eco300: '46 \u20ac', roi450: '7,7 ans', roi300: '5,9 ans' },
-  { city: 'Strasbourg', region: 'Grand Est', irr: '1 100 kWh/kWc', prod450: '421 kWh', prod300: '281 kWh', eco450: '69 \u20ac', eco300: '46 \u20ac', roi450: '7,7 ans', roi300: '5,9 ans' },
-  { city: 'Lille', region: 'Hauts-de-France', irr: '1 000 kWh/kWc', prod450: '383 kWh', prod300: '255 kWh', eco450: '63 \u20ac', eco300: '42 \u20ac', roi450: '8,4 ans', roi300: '6,5 ans' },
+  { city: 'Marseille', region: 'PACA', irr: '1 500 kWh/kWc', prod450: '638 kWh', prod300: '383 kWh', eco450: '105 \u20ac', eco300: '63 \u20ac', roi450: '5,3 ans', roi300: '4,5 ans' },
+  { city: 'Toulouse', region: 'Occitanie', irr: '1 350 kWh/kWc', prod450: '574 kWh', prod300: '344 kWh', eco450: '95 \u20ac', eco300: '57 \u20ac', roi450: '5,8 ans', roi300: '4,9 ans' },
+  { city: 'Lyon', region: 'Auvergne-RA', irr: '1 200 kWh/kWc', prod450: '510 kWh', prod300: '306 kWh', eco450: '84 \u20ac', eco300: '50 \u20ac', roi450: '6,5 ans', roi300: '5,5 ans' },
+  { city: 'Nantes', region: 'Pays de la Loire', irr: '1 200 kWh/kWc', prod450: '510 kWh', prod300: '306 kWh', eco450: '84 \u20ac', eco300: '50 \u20ac', roi450: '6,5 ans', roi300: '5,5 ans' },
+  { city: 'Paris', region: 'Ile-de-France', irr: '1 100 kWh/kWc', prod450: '468 kWh', prod300: '281 kWh', eco450: '77 \u20ac', eco300: '46 \u20ac', roi450: '7,0 ans', roi300: '5,9 ans' },
+  { city: 'Strasbourg', region: 'Grand Est', irr: '1 100 kWh/kWc', prod450: '468 kWh', prod300: '281 kWh', eco450: '77 \u20ac', eco300: '46 \u20ac', roi450: '7,0 ans', roi300: '5,9 ans' },
+  { city: 'Lille', region: 'Hauts-de-France', irr: '1 000 kWh/kWc', prod450: '425 kWh', prod300: '255 kWh', eco450: '70 \u20ac', eco300: '42 \u20ac', roi450: '7,6 ans', roi300: '6,5 ans' },
 ];
 
 export default function CombienRapportePage() {
@@ -61,16 +61,16 @@ export default function CombienRapportePage() {
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Production et économies par ville</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Voici les estimations pour les 7 principales zones climatiques de France, avec deux kits de reference : le Sunology PLAY2 (450 Wc, 599&euro;) et le Beem Kit 300W (300 Wc, 299&euro;). Toutes les estimations supposent une orientation plein sud et une inclinaison optimale de 30-35 degres. Pour comprendre pourquoi l&apos;orientation change tout, consultez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green font-semibold hover:underline">guide complet sur l&apos;orientation</Link>.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Voici les estimations pour les 7 principales zones climatiques de France, avec deux kits de reference : le Sunology PLAY (ex-PLAY 2, 500 Wc, 599&euro;) et le Beem Kit 300W (300 Wc, 299&euro;). Toutes les estimations supposent une orientation plein sud et une inclinaison optimale de 30-35 degres. Pour comprendre pourquoi l&apos;orientation change tout, consultez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green font-semibold hover:underline">guide complet sur l&apos;orientation</Link>.</p>
 
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[700px]">
                   <thead><tr className="bg-green text-white">
                     <th className="text-left p-3 rounded-tl-xl">Ville</th>
                     <th className="text-center p-3">Irradiation</th>
-                    <th className="text-center p-3">Prod. 450W</th>
-                    <th className="text-center p-3">Eco. 450W</th>
-                    <th className="text-center p-3">ROI 450W</th>
+                    <th className="text-center p-3">Prod. 500W</th>
+                    <th className="text-center p-3">Eco. 500W</th>
+                    <th className="text-center p-3">ROI 500W</th>
                     <th className="text-center p-3">Prod. 300W</th>
                     <th className="text-center p-3">Eco. 300W</th>
                     <th className="text-center p-3 rounded-tr-xl">ROI 300W</th>
@@ -91,7 +91,7 @@ export default function CombienRapportePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : données PVGIS (Commission européenne). Tarif EDF 0,1940 &euro;/kWh (mai 2026). Coefficient de pertes : 0,85. Autoconsommation 85 %, inflation 3,3 %/an. Kit 450W = Sunology PLAY2 à 599&euro;. Kit 300W = Beem Kit à 299&euro;.</p>
+              <p className="text-xs text-stone">Source : données PVGIS (Commission européenne). Tarif EDF 0,1940 &euro;/kWh (mai 2026). Coefficient de pertes : 0,85. Autoconsommation 85 %, inflation 3,3 %/an. Kit 500W = Sunology PLAY (ex-PLAY 2) à 599&euro; ; l&apos;ancien PLAY 2 de 450 Wc, encore vendu en fin de stock, produit 10 % de moins. Kit 300W = Beem Kit à 299&euro;.</p>
               <p className="text-sm text-charcoal-light mt-2">
                 → Retrouvez ces kits dans notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">comparatif des meilleurs kits solaires 2026</Link>.
               </p>
@@ -104,8 +104,8 @@ export default function CombienRapportePage() {
                   <div className="flex items-start gap-3">
                   <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />
                   <div>
-                  <h4 className="font-bold text-sm mb-1">A Marseille avec un Sunology PLAY2</h4>
-                  <p className="text-xs text-charcoal-light">Vous produisez 574 kWh/an, soit l&apos;equivalent de la consommation d&apos;un refrigerateur + une box internet + tous vos appareils en veille pendant un an. Économies : ~95&euro;/an. Le kit est rembourse en 5,8 ans (+3,3 %/an d&apos;inflation). Sur 25 ans de garantie, vous économiséz environ 3 590&euro;.</p>
+                  <h4 className="font-bold text-sm mb-1">A Marseille avec un Sunology PLAY (500 Wc)</h4>
+                  <p className="text-xs text-charcoal-light">Vous produisez 638 kWh/an, soit l&apos;equivalent de la consommation d&apos;un refrigerateur + une box internet + tous vos appareils en veille pendant un an. Économies : ~105&euro;/an. Le kit est rembourse en 5,3 ans (+3,3 %/an d&apos;inflation). Sur 25 ans de garantie, vous économiséz environ 3 990&euro;.</p>
                 </div>
                   </div>
                 </div>
@@ -119,8 +119,8 @@ export default function CombienRapportePage() {
                   </div>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">A Lille avec un Sunology PLAY2</h4>
-                  <p className="text-xs text-charcoal-light">Meme dans la region la moins ensoleillee de France, les chiffres restent positifs : 383 kWh/an, ~63&euro; d&apos;économies, ROI en 8,4 ans. Sur 25 ans : environ 2 400&euro; d&apos;économies. Le solaire est rentable partout en France.</p>
+                  <h4 className="font-bold text-sm mb-1">A Lille avec un Sunology PLAY (500 Wc)</h4>
+                  <p className="text-xs text-charcoal-light">Meme dans la region la moins ensoleillee de France, les chiffres restent positifs : 425 kWh/an, ~70&euro; d&apos;économies, ROI en 7,6 ans. Sur 25 ans : environ 2 660&euro; d&apos;économies. Le solaire est rentable partout en France.</p>
                 </div>
               </div>
             </section>
@@ -130,14 +130,14 @@ export default function CombienRapportePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Les chiffres ci-dessus sont calcules avec le tarif actuel de 0,1940&euro;/kWh. Mais le prix de l&apos;électricité à augmente de 55% entre 2012 et 2026, soit une moyenne de +4 à 5% par an. Si cette tendance se poursuit :</p>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 {[
-                  { scenario: 'Tarif stable', tarif: '0,1940 \u20ac', eco25: '~1 890 \u20ac', desc: 'Hypothese basse (peu probable)' },
-                  { scenario: '+3,3%/an', tarif: '~0,27 \u20ac en 2036', eco25: '~2 870 \u20ac', desc: 'Notre hypothese standard (CRE)' },
-                  { scenario: '+5%/an', tarif: '~0,32 \u20ac en 2036', eco25: '~3 610 \u20ac', desc: 'Tendance historique' },
+                  { scenario: 'Tarif stable', tarif: '0,1940 \u20ac', eco25: '~2 100 \u20ac', desc: 'Hypothese basse (peu probable)' },
+                  { scenario: '+3,3%/an', tarif: '~0,27 \u20ac en 2036', eco25: '~3 190 \u20ac', desc: 'Notre hypothese standard (CRE)' },
+                  { scenario: '+5%/an', tarif: '~0,32 \u20ac en 2036', eco25: '~4 010 \u20ac', desc: 'Tendance historique' },
                 ].map((s, i) => (
                   <div key={i} className="card text-center">
                     <div className="text-xs text-stone font-semibold mb-2">{s.scenario}</div>
                     <div className="font-mono text-xl font-medium text-green mb-1">{s.eco25}</div>
-                    <div className="text-[11px] text-stone">économies sur 25 ans (450W, Lyon)</div>
+                    <div className="text-[11px] text-stone">économies sur 25 ans (500W, Lyon)</div>
                     <div className="text-[10px] text-stone-light mt-2">{s.desc}</div>
                   </div>
                 ))}
@@ -187,7 +187,7 @@ export default function CombienRapportePage() {
                 productName="Sunology PLAY 2"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
-                label="Voir le Sunology PLAY 2"
+                label="Voir le Sunology PLAY"
                 variant="box"
                 position="article_bottom"
               />

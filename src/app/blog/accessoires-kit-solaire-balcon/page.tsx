@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: '8 accessoires indispensables pour votre kit solaire de balcon (2026)',
@@ -22,20 +23,20 @@ const faqData = [
 ];
 
 const accessoires = [
-  { num: 1, nom: 'Prise connectee Tapo P110', type: 'Suivi consommation', prix: '15-20 EUR', priorite: 'essentiel', description: 'La prise connectee la plus vendue en 2026. Elle mesure en temps reel la consommation ou production branchee dessus. Application mobile gratuite, historique sur 12 mois, automatisations.', usage: 'Branchez-la entre votre kit solaire et la prise murale. L\'application Tapo affiche la production en temps reel. Vous pouvez programmer vos appareils (lave-linge) pour tourner aux heures de pic solaire.', critere: 'Version P110 (pas P100) : celle qui mesure la conso. Compatible Wi-Fi 2,4 GHz uniquement.' },
-  { num: 2, nom: 'Rallonge etanche IP44 5m', type: 'Cablage exterieur', prix: '15-25 EUR', priorite: 'essentiel', description: 'Rallonge electrique certifiee etanche, pour les installations ou la prise murale est a l\'interieur et le panneau a l\'exterieur (cas le plus frequent en balcon).', usage: 'Reliez votre kit solaire a la prise interieure en traversant la fenetre ou la porte-fenetre. La certification IP44 protege contre les projections d\'eau.', critere: 'Longueur 3 a 10m selon configuration. Jamais IP23 ou IP20 (pas etanches). Evitez les rallonges a plusieurs prises.' },
-  { num: 3, nom: 'Parafoudre type Hager', type: 'Protection electrique', prix: '25-45 EUR', priorite: 'recommande', description: 'Protection contre les surtensions causees par la foudre ou les coupures EDF. Essentiel dans les regions orageuses pour proteger votre micro-onduleur qui coute 150-300EUR.', usage: 'Installe sur le tableau electrique ou via une prise parafoudre. Une surtension grille votre micro-onduleur en une fraction de seconde.', critere: 'Type 2 pour residentiel classique. Indication du niveau de protection (kA). Verifiez les normes NF EN 61643.' },
-  { num: 4, nom: 'Support inclinable aluminium', type: 'Fixation au sol', prix: '30-60 EUR', priorite: 'recommande', description: 'Structure legere en aluminium qui maintient le panneau incline a l\'angle optimal (25-40 degres selon latitude). Indispensable si votre kit n\'inclut pas de support.', usage: 'Assemblage en 10 minutes avec cle Allen. Le panneau se fixe dessus avec les brides fournies. Inclinaison reglable selon saison.', critere: 'Aluminium anodise (pas acier, rouille). Compatible avec les dimensions de votre panneau. Ballasts de lestage recommandes contre le vent.' },
-  { num: 5, nom: 'Wattmetre filaire simple', type: 'Mesure sans Wi-Fi', prix: '10-15 EUR', priorite: 'optionnel', description: 'Alternative simple a la prise connectee, sans Wi-Fi ni application. Se branche entre la prise et le kit, affiche la puissance en watts sur un ecran LCD.', usage: 'Pour ceux qui ne veulent pas installer d\'application mobile ou qui n\'ont pas de Wi-Fi sur leur balcon. Affichage instantane : watts, kWh cumules.', critere: 'Capacite minimum 2000W. Precision +/- 3% suffisante. Marques Perel, Brennenstuhl sont fiables.' },
-  { num: 6, nom: 'Kit de nettoyage panneau', type: 'Entretien', prix: '15-25 EUR', priorite: 'optionnel', description: 'Brosse douce, raclette en microfibre et produit nettoyant neutre. Pour entretenir la surface du panneau tous les 3-6 mois en zones poussiereuses.', usage: 'Nettoyage a l\'eau tiede avec chiffon microfibre. Jamais d\'eau calcaire ou de produits abrasifs. La pluie suffit en general.', critere: 'Manche telescopique utile pour panneau installe en hauteur. Eviter les produits vitres agressifs.' },
-  { num: 7, nom: 'Coffret de protection electrique', type: 'Sécurité pro', prix: '40-80 EUR', priorite: 'optionnel', description: 'Boitier etanche contenant disjoncteur et sectionneur dedies au circuit solaire. Permet de couper facilement l\'alimentation pour maintenance ou intervention.', usage: 'Installation intermediaire entre le micro-onduleur et la prise. Securise les interventions et isole votre kit en cas de panne.', critere: 'Calibre disjoncteur 16A. Etancheite IP65. Pour installations ou le kit est difficile a debrancher.' },
-  { num: 8, nom: 'Traceur GPS pour panneau', type: 'Anti-vol', prix: '30-50 EUR', priorite: 'optionnel', description: 'Tracker GPS cache dans le chassis du panneau. Dissuasif et localisable via application si vol. Utile en zones urbaines ou rez-de-chaussee.', usage: 'Collage avec adhesif double face a l\'interieur du chassis. Alerte par SMS ou notification en cas de deplacement non programme.', critere: 'Autonomie minimale 6 mois. Abonnement SIM (quelques EUR/mois) ou version eSIM incluse.' },
+  { num: 1, lien: 'https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsolai-21', lienLabel: 'Voir la Tapo P110 (FR) sur Amazon', nom: 'Prise connectee Tapo P110', type: 'Suivi consommation', prix: '12-15 EUR', priorite: 'essentiel', description: 'La prise connectee la plus vendue en 2026. Elle mesure en temps reel la consommation ou production branchee dessus. Application mobile gratuite, historique sur 12 mois, automatisations.', usage: 'Branchez-la entre votre kit solaire et la prise murale. L\'application Tapo affiche la production en temps reel. Vous pouvez programmer vos appareils (lave-linge) pour tourner aux heures de pic solaire.', critere: 'Version P110 (pas P100) : celle qui mesure la conso. Prenez la P110(FR) en prise type E. Compatible Wi-Fi 2,4 GHz uniquement. Prix constat\u00e9 septembre 2026 : ~12 EUR.' },
+  { num: 2, lien: 'https://www.amazon.fr/s?k=rallonge+ext%C3%A9rieure+IP44+5m&tag=monbalconsolai-21', lienLabel: 'Voir les rallonges IP44 sur Amazon', nom: 'Rallonge etanche IP44 5m', type: 'Cablage exterieur', prix: '15-25 EUR', priorite: 'essentiel', description: 'Rallonge electrique certifiee etanche, pour les installations ou la prise murale est a l\'interieur et le panneau a l\'exterieur (cas le plus frequent en balcon).', usage: 'Reliez votre kit solaire a la prise interieure en traversant la fenetre ou la porte-fenetre. La certification IP44 protege contre les projections d\'eau.', critere: 'Longueur 3 a 10m selon configuration. Jamais IP23 ou IP20 (pas etanches). Evitez les rallonges a plusieurs prises.' },
+  { num: 3, lien: 'https://www.amazon.fr/s?k=parafoudre+type+2+modulaire&tag=monbalconsolai-21', lienLabel: 'Voir les parafoudres type 2 sur Amazon', nom: 'Parafoudre type Hager', type: 'Protection electrique', prix: '25-45 EUR', priorite: 'recommande', description: 'Protection contre les surtensions causees par la foudre ou les coupures EDF. Essentiel dans les regions orageuses pour proteger votre micro-onduleur qui coute 150-300EUR.', usage: 'Installe sur le tableau electrique ou via une prise parafoudre. Une surtension grille votre micro-onduleur en une fraction de seconde.', critere: 'Type 2 pour residentiel classique. Indication du niveau de protection (kA). Verifiez les normes NF EN 61643.' },
+  { num: 4, lien: 'https://www.amazon.fr/s?k=support+inclinable+panneau+solaire+aluminium&tag=monbalconsolai-21', lienLabel: 'Voir les supports inclinables sur Amazon', nom: 'Support inclinable aluminium', type: 'Fixation au sol', prix: '30-60 EUR', priorite: 'recommande', description: 'Structure legere en aluminium qui maintient le panneau incline a l\'angle optimal (25-40 degres selon latitude). Indispensable si votre kit n\'inclut pas de support.', usage: 'Assemblage en 10 minutes avec cle Allen. Le panneau se fixe dessus avec les brides fournies. Inclinaison reglable selon saison.', critere: 'Aluminium anodise (pas acier, rouille). Compatible avec les dimensions de votre panneau. Ballasts de lestage recommandes contre le vent.' },
+  { num: 5, lien: 'https://www.amazon.fr/dp/B004W7RDES?tag=monbalconsolai-21', lienLabel: 'Voir le wattm\u00e8tre Perel (type E) sur Amazon', nom: 'Wattmetre filaire simple', type: 'Mesure sans Wi-Fi', prix: '10-15 EUR', priorite: 'optionnel', description: 'Alternative simple a la prise connectee, sans Wi-Fi ni application. Se branche entre la prise et le kit, affiche la puissance en watts sur un ecran LCD.', usage: 'Pour ceux qui ne veulent pas installer d\'application mobile ou qui n\'ont pas de Wi-Fi sur leur balcon. Affichage instantane : watts, kWh cumules.', critere: 'Capacite minimum 2000W. Precision +/- 3% suffisante. Le Perel E305EM5 existe en prise francaise type E (~24 EUR, prix constat\u00e9 septembre 2026). Attention au Brennenstuhl PM 231 E : sa broche de terre est au format allemand, incompatible avec les prises francaises selon les retours clients.' },
+  { num: 6, lien: 'https://www.amazon.fr/s?k=kit+nettoyage+panneau+solaire+brosse+t%C3%A9lescopique&tag=monbalconsolai-21', lienLabel: 'Voir les kits de nettoyage sur Amazon', nom: 'Kit de nettoyage panneau', type: 'Entretien', prix: '15-25 EUR', priorite: 'optionnel', description: 'Brosse douce, raclette en microfibre et produit nettoyant neutre. Pour entretenir la surface du panneau tous les 3-6 mois en zones poussiereuses.', usage: 'Nettoyage a l\'eau tiede avec chiffon microfibre. Jamais d\'eau calcaire ou de produits abrasifs. La pluie suffit en general.', critere: 'Manche telescopique utile pour panneau installe en hauteur. Eviter les produits vitres agressifs.' },
+  { num: 7, lien: 'https://www.amazon.fr/s?k=coffret+%C3%A9tanche+IP65+disjoncteur+16A&tag=monbalconsolai-21', lienLabel: 'Voir les coffrets IP65 sur Amazon', nom: 'Coffret de protection electrique', type: 'Sécurité pro', prix: '40-80 EUR', priorite: 'optionnel', description: 'Boitier etanche contenant disjoncteur et sectionneur dedies au circuit solaire. Permet de couper facilement l\'alimentation pour maintenance ou intervention.', usage: 'Installation intermediaire entre le micro-onduleur et la prise. Securise les interventions et isole votre kit en cas de panne.', critere: 'Calibre disjoncteur 16A. Etancheite IP65. Pour installations ou le kit est difficile a debrancher.' },
+  { num: 8, lien: 'https://www.amazon.fr/s?k=traceur+gps+antivol&tag=monbalconsolai-21', lienLabel: 'Voir les traceurs GPS sur Amazon', nom: 'Traceur GPS pour panneau', type: 'Anti-vol', prix: '30-50 EUR', priorite: 'optionnel', description: 'Tracker GPS cache dans le chassis du panneau. Dissuasif et localisable via application si vol. Utile en zones urbaines ou rez-de-chaussee.', usage: 'Collage avec adhesif double face a l\'interieur du chassis. Alerte par SMS ou notification en cas de deplacement non programme.', critere: 'Autonomie minimale 6 mois. Abonnement SIM (quelques EUR/mois) ou version eSIM incluse.' },
 ];
 
 export default function AccessoiresPage() {
   return (
     <>
-      <SchemaArticle title="8 accessoires indispensables pour votre kit solaire de balcon" description="Les accessoires Amazon pour optimiser votre kit solaire de balcon : suivi, sécurité, nettoyage." url="https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon" datePublished="2026-04-04" />
+      <SchemaArticle title="8 accessoires indispensables pour votre kit solaire de balcon" description="Les accessoires Amazon pour optimiser votre kit solaire de balcon : suivi, sécurité, nettoyage." url="https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon" datePublished="2026-04-04" dateModified="2026-09-27" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: '8 accessoires indispensables' }]} />
       <article className="section-padding">
@@ -45,13 +46,22 @@ export default function AccessoiresPage() {
             <div className="badge-amber mb-4 inline-block">&Eacute;quipement</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">8 accessoires indispensables pour votre kit solaire de balcon</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Votre kit solaire fonctionne tout seul. Mais ces 8 accessoires &agrave; petit prix am&eacute;liorent le suivi, la s&eacute;curit&eacute; et la production. Budget total : 150 &agrave; 250 &euro; selon le niveau choisi.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>Mis &agrave; jour le 19 avril 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>Mis &agrave; jour le 27 septembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed"><strong>3 essentiels</strong> : prise connect&eacute;e Tapo P110 (15&euro;), rallonge &eacute;tanche IP44 (20&euro;), parafoudre (30&euro;). <strong>3 recommand&eacute;s</strong> : support inclinable, wattm&egrave;tre filaire, kit nettoyage. <strong>2 optionnels</strong> : coffret de protection, traceur GPS. Aucun n&apos;est obligatoire mais chacun am&eacute;liore un aspect de votre installation.</p>
+            <p className="text-charcoal-light text-sm leading-relaxed"><strong>3 essentiels</strong> : prise connect&eacute;e Tapo P110 (12-15&euro;), rallonge &eacute;tanche IP44 (20&euro;), parafoudre (30&euro;). <strong>3 recommand&eacute;s</strong> : support inclinable, wattm&egrave;tre filaire, kit nettoyage. <strong>2 optionnels</strong> : coffret de protection, traceur GPS. Aucun n&apos;est obligatoire mais chacun am&eacute;liore un aspect de votre installation.</p>
           </div>
+
+          <AffiliateCTA
+            productName="TP-Link Tapo P110"
+            merchantName="Amazon"
+            affiliateUrl="https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsolai-21"
+            label="Voir la Tapo P110 sur Amazon"
+            variant="secondary"
+            position="after-top-pick"
+          />
 
           <div className="space-y-10">
             <section>
@@ -63,7 +73,11 @@ export default function AccessoiresPage() {
                   <tbody>
                     {accessoires.map((a, i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold">{a.nom}</td>
+                        <td className="p-3 font-semibold">
+                          {a.nom}
+                          <br />
+                          <a href={a.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline text-xs">Voir sur Amazon</a>
+                        </td>
                         <td className="text-center p-3 text-xs">{a.type}</td>
                         <td className="text-center p-3 font-mono">{a.prix}</td>
                         <td className="text-center p-3">
@@ -98,12 +112,15 @@ export default function AccessoiresPage() {
                     </div>
                     <p className="text-sm text-charcoal-light leading-relaxed mb-3">{a.description}</p>
                     <div className="bg-cream/60 rounded-lg p-3 mb-3">
-                      <p className="text-xs font-semibold text-charcoal mb-1">\ud83d\udca1 Comment l&apos;utiliser</p>
+                      <p className="text-xs font-semibold text-charcoal mb-1">{'\ud83d\udca1'} Comment l&apos;utiliser</p>
                       <p className="text-xs text-charcoal-light leading-relaxed">{a.usage}</p>
                     </div>
                     <div className="bg-green-pale/30 rounded-lg p-3">
-                      <p className="text-xs font-semibold text-green mb-1">\u2713 Crit&egrave;re de choix</p>
+                      <p className="text-xs font-semibold text-green mb-1">{'\u2713'} Crit&egrave;re de choix</p>
                       <p className="text-xs text-charcoal-light leading-relaxed">{a.critere}</p>
+                    </div>
+                    <div className="mt-3 text-sm">
+                      <a href={a.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">{a.lienLabel} &rarr;</a>
                     </div>
                   </div>
                 ))}
@@ -137,7 +154,7 @@ export default function AccessoiresPage() {
                   { erreur: 'Empiler les prises connect\u00e9es sur une multiprise', detail: 'Les prises connect\u00e9es g\u00e8rent 15A max chacune. Si vous connectez plusieurs kits solaires + appareils, pr\u00e9voyez des prises d\u00e9di\u00e9es ou un coffret.' },
                 ].map((e, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">\u274c {e.erreur}</h4>
+                    <h4 className="font-bold text-sm mb-1 text-amber-dark">{'\u274c'} {e.erreur}</h4>
                     <p className="text-xs text-charcoal-light leading-relaxed">{e.detail}</p>
                   </div>
                 ))}
@@ -168,12 +185,21 @@ export default function AccessoiresPage() {
               <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes &eacute;conomies &rarr;</Link>
             </div>
 
+            <AffiliateCTA
+              productName="TP-Link Tapo P110"
+              merchantName="Amazon"
+              affiliateUrl="https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsolai-21"
+              label="Commencer par la prise Tapo P110"
+              variant="box"
+              position="footer-box"
+            />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>
               <div className="space-y-4">
                 {faqData.map((faq, i) => (
                   <details key={i} className="card group" open={i === 0}>
-                    <summary className="font-semibold text-sm cursor-pointer list-none flex items-center justify-between">{faq.question}<span className="text-stone group-open:rotate-180 transition-transform">\u25bc</span></summary>
+                    <summary className="font-semibold text-sm cursor-pointer list-none flex items-center justify-between">{faq.question}<span className="text-stone group-open:rotate-180 transition-transform">{'\u25bc'}</span></summary>
                     <p className="text-sm text-charcoal-light mt-3 leading-relaxed">{faq.answer}</p>
                   </details>
                 ))}
@@ -203,7 +229,7 @@ export default function AccessoiresPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Note :</strong> les prix sont indicatifs (moyennes Amazon, avril 2026) et peuvent varier. Cet article sera mis &agrave; jour r&eacute;guli&egrave;rement. <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Note :</strong> accessoires s&eacute;lectionn&eacute;s et analys&eacute;s sur fiches techniques et avis clients (nous ne les avons pas test&eacute;s physiquement). Prix indicatifs (moyennes Amazon, avril 2026), sauf Tapo P110 et wattm&egrave;tre Perel : prix constat&eacute;s septembre 2026. Ils peuvent varier. Liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous. <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.</p>
             </div>
           </div>
         </div>

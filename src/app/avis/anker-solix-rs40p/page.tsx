@@ -247,18 +247,18 @@ export default function AnkerSolixRS40PAvisPage() {
                       <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th>
                       <th className="text-center p-3 bg-green-dark">Anker RS40P</th>
                       <th className="text-center p-3">Beem On 500&nbsp;Wc</th>
-                      <th className="text-center p-3 rounded-tr-xl">Sunology PLAY 2</th>
+                      <th className="text-center p-3 rounded-tr-xl">Sunology PLAY (ex-PLAY 2)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
                       ['Prix', '799 €', '429 €', '599 €'],
-                      ['Puissance panneaux', '910 Wc', '500 Wc', '450 Wc'],
-                      ['Onduleur max', '800 W (MAJ)', '600 W', '600 W'],
-                      ['€/Wc effectif', '0,88 €', '0,86 €', '1,33 €'],
-                      ['Technologie', 'IBC N-type', 'TOPCon bifacial', 'TOPCon'],
-                      ['Garantie panneaux', '15 ans', '25 ans', '25 ans'],
-                      ['ROI (Lyon)', '5,9 ans', '4,8 ans', '7,1 ans'],
+                      ['Puissance panneaux', '910 Wc', '500 Wc', '500 Wc'],
+                      ['Onduleur max', '800 W (MAJ)', '600 W', '500 W'],
+                      ['€/Wc effectif', '0,88 €', '0,86 €', '1,20 €'],
+                      ['Technologie', 'IBC N-type', 'TOPCon bifacial', 'Back Contact bifacial'],
+                      ['Garantie panneaux', '15 ans', '25 ans', '30 ans'],
+                      ['ROI (Lyon)', '5,9 ans', '4,8 ans', '6,5 ans'],
                       ['Batterie compatible', 'Solarbank 2', 'Beem Box', 'VAULT 700 Wh'],
                       ['SAV France', 'Non (international)', 'Oui (Nantes)', 'Oui (Paris)'],
                     ].map(([c, anker, beem, sun], i) => (

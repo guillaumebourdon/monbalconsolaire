@@ -7,7 +7,7 @@ import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Zendure vs Sunology vs Beem 2026 : le match complet',
-  description: 'Comparatif Zendure SolarFlow 800 Plus vs Sunology PLAY 2 vs Beem On 500 Wc : prix, prix/Wc, stockage, puissance, app, rentabilité. Quel système choisir en 2026 ?',
+  description: 'Comparatif Zendure SolarFlow 800 Plus vs Sunology PLAY vs Beem On 500 Wc : prix, prix/Wc, stockage, puissance, app, rentabilité. Quel système choisir en 2026 ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/zendure-vs-sunology-vs-beem',
   },
@@ -20,7 +20,7 @@ const faqData = [
   },
   {
     question: 'Lequel a le meilleur retour sur investissement ?',
-    answer: 'Selon notre méthodologie standard (Lyon sud, 0,1940 €/kWh, inflation 3,3 %/an, autoconsommation 85 % sans batterie et 95 % avec), le Beem On 500 Wc (429 €) a le meilleur ROI : ~4,8 ans (84 €/an la première année). Suivent le Zendure SolarFlow 800 Plus + 2 panneaux 420 W (~900 €) à ~5,3 ans et le Sunology PLAY 2 (599 €) à ~7,1 ans. Si vous êtes absent toute la journée, l\'ordre s\'inverse : à 45 % d\'autoconsommation sans batterie, le Beem On passe à ~8,5 ans et le PLAY 2 à ~12,3 ans, alors que le Zendure (80 % d\'autoconsommation grâce à sa batterie de 1,92 kWh) reste à ~6,2 ans.',
+    answer: 'Selon notre méthodologie standard (Lyon sud, 0,1940 €/kWh, inflation 3,3 %/an, autoconsommation 85 % sans batterie et 95 % avec), le Beem On 500 Wc (429 €) a le meilleur ROI : ~4,8 ans (84 €/an la première année). Suivent le Zendure SolarFlow 800 Plus + 2 panneaux 420 W (~900 €) à ~5,3 ans et le Sunology PLAY 500 W (ex-PLAY 2, 599 €) à ~6,5 ans. Si vous êtes absent toute la journée, l\'ordre s\'inverse : à 45 % d\'autoconsommation sans batterie, le Beem On passe à ~8,5 ans et le PLAY à ~11,3 ans, alors que le Zendure (80 % d\'autoconsommation grâce à sa batterie de 1,92 kWh) reste à ~6,2 ans.',
   },
   {
     question: 'Peut-on combiner un Sunology ou Beem avec un Zendure SolarFlow ?',
@@ -42,13 +42,13 @@ const faqData = [
 
 const tableauComparatif = [
   ['Prix du système', '~479 €', '599 €', '429 €'],
-  ['Prix/Wc', '— (panneaux non inclus)', '1,33 €/Wc', '0,86 €/Wc'],
-  ['Ce qui est inclus', 'Onduleur 800 W + batterie 1,92 kWh', 'Panneau 450 Wc + onduleur + châssis', 'Panneau 500 Wc + onduleur + support'],
-  ['Panneaux inclus', 'Non (à acheter séparément)', 'Oui (1 panneau 450 Wc)', 'Oui (1 panneau 500 Wc)'],
+  ['Prix/Wc', '— (panneaux non inclus)', '1,20 €/Wc', '0,86 €/Wc'],
+  ['Ce qui est inclus', 'Onduleur 800 W + batterie 1,92 kWh', 'Panneau 500 Wc + onduleur + châssis', 'Panneau 500 Wc + onduleur + support'],
+  ['Panneaux inclus', 'Non (à acheter séparément)', 'Oui (1 panneau 500 Wc)', 'Oui (1 panneau 500 Wc)'],
   ['Stockage batterie', '1,92 kWh (LiFePO4)', 'Non (VAULT 700 Wh en option à 580 €)', 'Non (Beem Battery en option)'],
-  ['Puissance sortie AC', '800 W', '450 W', '500 W'],
-  ['Entrée solaire max', '1 500 W (2 × 750 W MPPT)', '450 W (1 panneau)', '500 W (1 panneau)'],
-  ['Rendement onduleur', '95-98 % (GaN)', '96,5 %', '96,5 %'],
+  ['Puissance sortie AC', '800 W', '500 W', '500 W'],
+  ['Entrée solaire max', '1 500 W (2 × 750 W MPPT)', '500 W (1 panneau)', '500 W (1 panneau)'],
+  ['Rendement onduleur', '95-98 % (GaN)', '96,7 % (CEC, MX500)', '96,5 %'],
   ['Installation', '30-60 min (panneaux séparés)', '1 minute', '5 minutes'],
   ['App de suivi', 'Zendure (HP/HC, IA Zenky)', 'STREAM (WiFi natif)', 'Beem App (via Beembox)'],
   ['Gestion HP/HC', 'Oui (automatique)', 'Non', 'Non'],
@@ -149,7 +149,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                     <tr className="bg-green text-white">
                       <th className="text-left p-2.5 rounded-tl-xl font-semibold">Critère</th>
                       <th className="text-center p-2.5 font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" />Zendure SolarFlow</div></th>
-                      <th className="text-center p-2.5 font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />Sunology PLAY 2</div></th>
+                      <th className="text-center p-2.5 font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY (ex-PLAY 2)" href="/avis/sunology-play-2" size="sm" />Sunology PLAY (ex-PLAY 2)</div></th>
                       <th className="text-center p-2.5 rounded-tr-xl font-semibold"><div className="flex flex-col items-center gap-2"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" />Beem On 500 Wc</div></th>
                     </tr>
                   </thead>
@@ -198,14 +198,14 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono text-stone">6,2 ans (80 %)</td>
                     </tr>
                     <tr className="border-b border-border-light">
-                      <td className="p-2.5">Sunology PLAY 2</td>
+                      <td className="p-2.5">Sunology PLAY (ex-PLAY 2, 500 Wc)</td>
                       <td className="text-center p-2.5 font-mono">599 €</td>
                       <td className="text-center p-2.5 font-mono">—</td>
-                      <td className="text-center p-2.5 font-mono">459 kWh</td>
+                      <td className="text-center p-2.5 font-mono">510 kWh</td>
                       <td className="text-center p-2.5 font-mono">85 %</td>
-                      <td className="text-center p-2.5 font-mono">76 €</td>
-                      <td className="text-center p-2.5 font-mono">7,1 ans</td>
-                      <td className="text-center p-2.5 font-mono text-stone">12,3 ans (45 %)</td>
+                      <td className="text-center p-2.5 font-mono">84 €</td>
+                      <td className="text-center p-2.5 font-mono">6,5 ans</td>
+                      <td className="text-center p-2.5 font-mono text-stone">11,3 ans (45 %)</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-2.5">Sunology PLAY MAX</td>

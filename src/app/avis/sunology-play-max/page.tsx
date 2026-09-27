@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Le Sunology PLAY MAX vaut-il 1 179€ ?', answer: 'Ça dépend de votre profil. Si vous êtes souvent absent la journée et consommez principalement le soir, la batterie VAULT augmente votre autoconsommation de 85% à 95%. Sinon, le PLAY2 seul à 599€ est un meilleur investissement avec un ROI de 7,1 ans vs 11,7 ans pour le MAX (+3,3%/an d\'inflation CRE). Sur 25 ans : 3 209€ d\'économies.' },
+  { question: 'Le Sunology PLAY MAX vaut-il 1 179€ ?', answer: 'Ça dépend de votre profil. Si vous êtes souvent absent la journée et consommez principalement le soir, la batterie VAULT augmente votre autoconsommation de 85% à 95%. Sinon, le Sunology PLAY seul (ex-PLAY 2, 500 Wc, 599€) est un meilleur investissement avec un ROI de 6,5 ans vs 11,7 ans pour le MAX (+3,3%/an d\'inflation CRE). Sur 25 ans : 3 190€ d\'économies pour le PLAY seul, 3 209€ pour le MAX.' },
   { question: 'Quelle est la capacité de la batterie VAULT ?', answer: 'La VAULT a une capacité de 700 Wh (0,7 kWh). Ça représente environ 5 heures d\'autonomie pour un talon de consommation de 140W (frigo + box + veilles). Ce n\'est pas assez pour une nuit complète mais ça couvre la soirée.' },
   { question: 'Peut-on ajouter la batterie VAULT après avoir acheté le PLAY2 ?', answer: 'Oui. La VAULT se vend séparément (~580€) et est compatible avec le PLAY2. Mais le bundle PLAY MAX (1 179€) est plus avantageux que l\'achat séparé (599€ + 580€ = 1 179€ — même prix mais livraison unique).' },
   { question: 'PLAY MAX vs PLAY2 + STOREY : quelle différence ?', answer: 'Le PLAY MAX inclut la batterie nomade VAULT (700 Wh, portable). Le PLAY2 + STOREY (1 390€ la batterie seule) offre une batterie fixe de 2,2 kWh, soit 3x plus de capacité. Le STOREY est pour ceux qui veulent une vraie autonomie le soir et la nuit.' },
@@ -79,7 +79,7 @@ export default function PlayMaxAvisPage() {
                 <div>
                   <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial : ROI long</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    Avec un ROI de 11,7 ans, le PLAY MAX ne se justifie pas pour la rentabilit&eacute; pure. La batterie 700 Wh co&ucirc;te 580 &euro; de plus que le PLAY 2, pour seulement ~9 &euro;/an de gains suppl&eacute;mentaires. Il a du sens si vous valorisez l&apos;autonomie nocturne. Pour le pur ROI, pr&eacute;f&eacute;rez le Sunology PLAY 2 (7,1 ans) ou le Zendure SolarFlow (5,3 ans).
+                    Avec un ROI de 11,7 ans, le PLAY MAX ne se justifie pas pour la rentabilit&eacute; pure. La batterie 700 Wh co&ucirc;te 580 &euro; de plus que le PLAY 2, pour seulement ~9 &euro;/an de gains suppl&eacute;mentaires. Il a du sens si vous valorisez l&apos;autonomie nocturne. Pour le pur ROI, pr&eacute;f&eacute;rez le Sunology PLAY (ex-PLAY 2, 500&nbsp;Wc&nbsp;: 6,5 ans) ou le Zendure SolarFlow (5,3 ans).
                   </p>
                 </div>
               </div>
@@ -87,15 +87,15 @@ export default function PlayMaxAvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le calcul honnête : avec vs sans batterie</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est la question centrale. On compare le PLAY2 seul (599€) au PLAY MAX (1 179€) en conditions réelles, région lyonnaise :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est la question centrale. On compare le PLAY seul (ex-PLAY 2, 500 Wc, 599€) au PLAY MAX (1 179€, panneau 450 Wc) avec notre méthodologie, région lyonnaise :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2">PLAY2 seul (599&euro;)</h4>
+                  <h4 className="font-bold text-green mb-2">PLAY seul (500 Wc, 599&euro;)</h4>
                   <div className="space-y-2 text-sm text-charcoal-light">
                     <p>Autoconsommation : <span className="font-mono font-medium">85%</span></p>
-                    <p>Économies/an : <span className="font-mono font-medium text-green">76 &euro;</span></p>
-                    <p>ROI : <span className="font-mono font-medium">7,1 ans</span></p>
-                    <p>Économies sur 25 ans : <span className="font-mono font-medium text-green">2 871 &euro;</span></p>
+                    <p>Économies/an : <span className="font-mono font-medium text-green">84 &euro;</span></p>
+                    <p>ROI : <span className="font-mono font-medium">6,5 ans</span></p>
+                    <p>Économies sur 25 ans : <span className="font-mono font-medium text-green">3 190 &euro;</span></p>
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
@@ -109,7 +109,7 @@ export default function PlayMaxAvisPage() {
                 </div>
               </div>
               <div className="card bg-amber-pale/30 border-amber/10">
-                <p className="text-sm text-amber-dark"><strong>Le point clé :</strong> la batterie VAULT (580&euro;) génère un gain supplémentaire de ~9 &euro;/an. Le ROI du PLAY MAX est de <span className="font-mono font-bold">11,7 ans</span> (+3,3%/an d&apos;inflation CRE). C&apos;est rentable sur la durée de vie (25 ans, 3 209 &euro;), mais le PLAY2 seul a un bien meilleur ROI (7,1 ans).</p>
+                <p className="text-sm text-amber-dark"><strong>Le point clé :</strong> la batterie VAULT (580&euro;) génère un gain supplémentaire de ~9 &euro;/an. Le ROI du PLAY MAX est de <span className="font-mono font-bold">11,7 ans</span> (+3,3%/an d&apos;inflation CRE). C&apos;est rentable sur la durée de vie (25 ans, 3 209 &euro;), mais le PLAY seul (500 Wc) fait presque aussi bien (84 &euro;/an, 3 190 &euro; sur 25 ans) pour 580 &euro; de moins, avec un ROI de 6,5 ans.</p>
               </div>
             </section>
 
@@ -138,7 +138,7 @@ export default function PlayMaxAvisPage() {
                 {[
                   { t: 'Capacité limitée (700 Wh)', d: 'La VAULT offre ~5 heures d\'autonomie pour un talon de consommation de 140W. Ce n\'est pas suffisant pour couvrir une nuit complète (10-12h). Si vous voulez une vraie autonomie le soir et la nuit, il faut la STOREY (2,2 kWh, 1 390€).' },
                   { t: 'Pas de gestion intelligente', d: 'La VAULT ne communique pas avec le panneau. Elle se charge quand elle est branchée et se décharge quand vous l\'utilisez. Pas de pilotage automatique charge/décharge comme l\'EcoFlow PowerStream.' },
-                  { t: 'Le ROI de la batterie est long', d: 'Avec notre méthodologie (autoconsommation 85 % → 95 %), la batterie seule (580€) ne rapporte que ~9€/an de plus : elle ne se rentabilise pas sur sa durée de vie. Le PLAY2 sans batterie se rentabilise en 7,1 ans.' },
+                  { t: 'Le ROI de la batterie est long', d: 'Avec notre méthodologie (autoconsommation 85 % → 95 %), la batterie seule (580€) ne rapporte que ~9€/an de plus : elle ne se rentabilise pas sur sa durée de vie. Le Sunology PLAY (500 Wc) sans batterie se rentabilise en 6,5 ans.' },
                   { t: 'Durée de vie de la batterie', d: 'Sunology annonce 3 000+ cycles pour la VAULT (LFP). À 1 cycle par jour, ça fait ~8 ans. Le panneau est garanti 25 ans mais la batterie pourrait nécessiter un remplacement avant.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
@@ -187,7 +187,7 @@ export default function PlayMaxAvisPage() {
                   </ul>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2">Le PLAY2 seul suffit si :</h4>
+                  <h4 className="font-bold text-amber-dark mb-2">Le PLAY seul suffit si :</h4>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>→ Vous êtes chez vous la journée (télétravail)</li>
                     <li>→ Vous voulez le ROI le plus rapide possible</li>
@@ -202,7 +202,7 @@ export default function PlayMaxAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le PLAY MAX est un produit bien pensé pour ceux qui veulent maximiser leur autoconsommation et/ou qui ont besoin d&apos;une batterie nomade. Le bundle à 1 179€ est le plus accessible du marché pour un kit + batterie.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Mais soyons honnêtes : pour la majorité des utilisateurs, le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY2 seul à 599€</Link> reste le meilleur investissement. Le ROI est nettement plus rapide (7,1 ans vs 11,7 ans) et le talon de consommation absorbe déjà une bonne partie de la production en journée. La batterie est un &quot;nice to have&quot;, pas un &quot;must have&quot;.</p>
-              <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong> — Bon produit, mais le PLAY2 seul est un meilleur investissement pour la plupart.</p>
+              <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong> — Bon produit, mais le PLAY seul (ex-PLAY 2, 500 Wc) est un meilleur investissement pour la plupart.</p>
               <a href="https://sunology.eu/products/playmax-station-solaire-batterie" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY MAX &rarr;</a>
             </section>
 

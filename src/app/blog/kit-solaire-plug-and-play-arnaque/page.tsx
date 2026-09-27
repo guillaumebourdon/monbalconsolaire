@@ -18,7 +18,7 @@ const faqData = [
   { question: 'Un kit solaire plug-and-play est-il vraiment rentable ?', answer: 'Oui, mais pas partout. Au sud d\'une ligne Lyon-Bordeaux, un kit 450W exposé plein sud atteint la rentabilité en 5-7 ans. Au nord et à l\'ouest, il faut plutôt compter 7-10 ans. Sur une garantie de 25 ans, le bénéfice net reste largement positif dans 95% des cas.' },
   { question: 'Pourquoi certaines personnes disent que c\'est une arnaque ?', answer: 'Trois raisons principales. D\'abord, quelques fabricants (pas les leaders) surestiment la production avec des chiffres théoriques impossibles. Ensuite, des acheteurs mal conseillés installent leur kit à l\'ombre ou mal orienté et ne produisent rien. Enfin, certains attendent "l\'indépendance énergétique" alors qu\'un kit 450W ne couvre que 5-10% de la conso moyenne.' },
   { question: 'Y a-t-il des vraies arnaques sur le marché ?', answer: 'Oui, sur AliExpress et sur certaines annonces Leboncoin. Panneaux d\'occasion vendus neufs, puissances exagérées, micro-onduleurs non conformes CE. Les kits vendus par Sunology, Beem, Sunethic, DualSun et EcoFlow respectent les normes françaises. En cas de doute, exigez les certifications NF/CE.' },
-  { question: 'Combien de temps met-on pour rentabiliser son kit ?', answer: 'Entre 4 et 10 ans selon : la puissance du kit, votre exposition, votre ville, le prix payé. Un Beem Kit 300W à 299€ installé plein sud à Marseille se rentabilise en 4,5 ans. Un Sunology PLAY 2 à 599€ à Lille exposé est se rentabilise en 8-10 ans.' },
+  { question: 'Combien de temps met-on pour rentabiliser son kit ?', answer: 'Entre 4 et 10 ans selon : la puissance du kit, votre exposition, votre ville, le prix payé. Un Beem Kit 300W à 299€ installé plein sud à Marseille se rentabilise en 4,5 ans. Un Sunology PLAY (ex-PLAY 2, 500 Wc) à 599€ à Lille exposé est se rentabilise en 9 à 11 ans.' },
   { question: 'Que se passe-t-il si je déménage avant la fin du retour sur investissement ?', answer: 'Vous pouvez emporter votre kit : c\'est un gros avantage du plug-and-play vs une installation classique. Démontage en 15 minutes. Vous pouvez aussi le revendre d\'occasion : le marché secondaire est actif (-40% à -50% du prix neuf selon l\'âge et l\'état).' },
   { question: 'Ai-je vraiment besoin d\'un professionnel pour installer ?', answer: 'Non. C\'est tout l\'intérêt du plug-and-play : installation en 15-60 minutes, pas d\'électricien, pas de déclaration fiscale, juste un CACSI gratuit à envoyer à Enedis. Certains fabricants tentent de vous vendre une "installation pro" à 200€ — inutile.' },
 ];
@@ -128,14 +128,14 @@ export default function ArnaqueInvestissementPage() {
               <h2 className="text-2xl font-extrabold mb-4">Le vrai calcul de rentabilité (sans blabla)</h2>
               <div className="flex items-start gap-3 mb-4">
                 <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="md" />
-                <p className="text-charcoal-light leading-relaxed">Prenons un exemple concret pour couper court aux débats. Un ménage moyen en région lyonnaise qui achète un kit Sunology PLAY 2 (599€, 450W) :</p>
+                <p className="text-charcoal-light leading-relaxed">Prenons un exemple concret pour couper court aux débats. Un ménage moyen en région lyonnaise qui achète un kit Sunology PLAY (ex-PLAY 2, 599€, 500 Wc) :</p>
               </div>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production annuelle</strong> : environ 500 kWh (orientation sud, Lyon)</li>
-                  <li>&bull; <strong>Autoconsommation réelle</strong> : 60% soit 300 kWh directement économisés</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 300 kWh &times; 0,1940 &euro;/kWh = <strong>58 &euro;/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 599 &euro; / 58 &euro; = <strong>10,3 ans</strong></li>
+                  <li>&bull; <strong>Production annuelle</strong> : environ 510 kWh (orientation sud, Lyon)</li>
+                  <li>&bull; <strong>Autoconsommation réelle</strong> : 60% soit 306 kWh directement économisés</li>
+                  <li>&bull; <strong>Économies annuelles</strong> : 306 kWh &times; 0,1940 &euro;/kWh = <strong>59 &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : 599 &euro; / 59 &euro; = <strong>10,1 ans</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">&laquo; Alors c&apos;est une arnaque, le ROI est long ! &raquo; pense peut-être un lecteur. Mais ce calcul ignore deux réalités.</p>
