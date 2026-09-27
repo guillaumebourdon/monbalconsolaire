@@ -308,7 +308,7 @@ export default function FactureEdfKitSolairePage() {
             <AffiliateCTA
               productName="Tapo P110"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B08LPC3FG2?tag=monbalconsolai-21"
+              affiliateUrl="https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsolai-21"
               label="Prise Tapo P110 pour mesurer sa production"
               variant="secondary"
               position="mid-article"

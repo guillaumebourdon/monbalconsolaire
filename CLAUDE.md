@@ -92,6 +92,7 @@ Tunnel de conversion principal :
 - Canonicals sur toutes les pages
 
 ### Méthodologie ROI standard
+- **Source unique : `src/lib/pricing.ts`** (calculateProductionKwh, calculateROIYears…). Ne jamais écrire un ROI calculé à la main : exécuter un script `npx tsx` qui importe pricing.ts
 - Tarif : 0,1940 €/kWh
 - Inflation : 3,3%/an (CRE)
 - Autoconsommation : 85% (sans batterie), 95% (avec batterie)
@@ -100,6 +101,8 @@ Tunnel de conversion principal :
 - Durée : 25 ans
 
 ### Affiliation
+- **Amazon** : tag `monbalconsolai-21` obligatoire. Format `https://www.amazon.fr/dp/ASIN?tag=monbalconsolai-21`. Trouver l'ASIN via recherche web (amazon.fr), puis le valider : `curl -s -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36' -H 'Accept-Language: fr-FR' https://www.amazon.fr/dp/ASIN | grep -o '<title>[^<]*'` (« Page introuvable » = invalide). À défaut : lien de recherche tagué `https://www.amazon.fr/s?k=REQUETE&tag=monbalconsolai-21`
+- Les URLs marchandes changent sans prévenir : `node scripts/check-affiliate-links.mjs` avant chaque push (0 cassé exigé)
 - Liens : `target="_blank" rel="sponsored noopener"`
 - Boutons : classe `btn-affiliate`
 - Transparence mentionnée en footer de chaque article
@@ -107,6 +110,12 @@ Tunnel de conversion principal :
 - Tracking GA4 `affiliate_click` (product_name, merchant, position, page)
 
 ---
+
+## Calendrier éditorial
+
+- Fichier courant : `MonBalconSolaire_Calendrier_Editorial_v5.md` (lu par la routine « Publication auto MonBalconSolaire », mar/jeu/ven 7h UTC)
+- Si aucune entrée datée pour le jour : prendre le premier élément non coché du pipeline, le publier, le cocher
+- Priorité Q4 2026 : articles accessoires monétisés Amazon
 
 ## Publication d'article — Processus automatique
 
@@ -237,6 +246,7 @@ Fichier : `src/lib/search-index.ts`
 
 - Pour les articles **blog** et **guide** : ajouter dans `src/app/tout-savoir/page.tsx` (tableau ARTICLES)
 - Pour les articles **avis** et **comparatif** : ajouter dans `src/app/quel-kit-choisir/page.tsx` si pertinent
+- Pour les articles **accessoires** (sélections produits Amazon) : ajouter aussi dans `src/app/accessoires/page.tsx` (tableau ARTICLES)
 
 ### Étape 7 — Build + Commit + Push
 
@@ -251,6 +261,7 @@ git push origin main   # Déploiement auto Vercel
 
 ```bash
 node scripts/validate-articles.mjs
+node scripts/check-affiliate-links.mjs
 ```
 
 Vérifie que chaque article est bien référencé dans son index, le sitemap et le search-index.

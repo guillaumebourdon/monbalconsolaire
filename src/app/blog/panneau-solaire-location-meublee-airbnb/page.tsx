@@ -305,7 +305,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
             <AffiliateCTA
               productName="Sunology PLAY 2"
               merchantName="Sunology"
-              affiliateUrl="https://www.sunology.eu/products/kit-solaire-balcon-play2"
+              affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
               label="Voir le Sunology PLAY 2"
               variant="inline"
               position="after-content"
