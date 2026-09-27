@@ -33,7 +33,7 @@ const faqData = [
   },
   {
     question: 'Peut-on ajouter une batterie à un kit existant ?',
-    answer: 'Oui, si votre onduleur est compatible. Les systèmes Zendure SolarFlow, EcoFlow PowerStream et Bluetti Balco 260 permettent d\'ajouter une batterie. En revanche, les kits simples (Sunology PLAY 2, Beem On) ne sont pas directement compatibles avec une batterie tierce sans changer l\'onduleur.',
+    answer: 'Oui, si votre onduleur est compatible. Les systèmes Zendure SolarFlow, Bluetti Balco 260 et EcoFlow PowerStream (ce dernier n\'est plus vendu par EcoFlow France depuis 2026) permettent d\'ajouter une batterie. En revanche, les kits simples (Sunology PLAY 2, Beem On) ne sont pas directement compatibles avec une batterie tierce sans changer l\'onduleur.',
   },
   {
     question: 'Le Bluetti Balco 260 est-il extensible ?',
@@ -182,7 +182,7 @@ export default function GuideBatterieBalcon() {
               <ul className="space-y-2 text-sm text-charcoal-light mb-4">
                 <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> &mdash; 1,92&nbsp;kWh + onduleur 800&nbsp;W int&eacute;gr&eacute;. 488&nbsp;&euro; (bo&icirc;tier seul, sans panneaux)</li>
                 <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> &mdash; 2,56&nbsp;kWh + 4&nbsp;MPPT + onduleur SiC. 849&nbsp;&euro; (bo&icirc;tier seul)</li>
-                <li className="flex gap-2"><span className="text-green">&#8250;</span> EcoFlow PowerStream + batterie &eacute;tanche &mdash; 2&nbsp;kWh. Kit complet ~2&nbsp;047&nbsp;&euro;</li>
+                <li className="flex gap-2"><span className="text-green">&#8250;</span> EcoFlow PowerStream + batterie &eacute;tanche &mdash; 2&nbsp;kWh. Kit complet ~2&nbsp;047&nbsp;&euro; <span className="text-amber-dark">(plus vendu par EcoFlow France depuis septembre 2026)</span></li>
               </ul>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 <strong>Pour qui&nbsp;:</strong> profil B classique avec soir&eacute;e active. Meilleur rapport capacit&eacute;/co&ucirc;t du march&eacute;.
@@ -315,7 +315,7 @@ export default function GuideBatterieBalcon() {
                         highlight: false,
                       },
                       {
-                        name: 'EcoFlow PowerStream + bat.',
+                        name: 'EcoFlow PowerStream + bat. (arrêté)',
                         href: '/avis/ecoflow-powerstream',
                         capacity: '2 kWh LFP',
                         price: '~2 047 € (kit)',
@@ -391,7 +391,7 @@ export default function GuideBatterieBalcon() {
                   <div className="flex items-start gap-3">
                     <span className="text-green font-bold text-lg mt-0.5">&#10003;</span>
                     <div>
-                      <h4 className="font-bold text-sm">Zendure SolarFlow, EcoFlow PowerStream, Bluetti Balco 260</h4>
+                      <h4 className="font-bold text-sm">Zendure SolarFlow, Bluetti Balco 260, EcoFlow PowerStream (arr&ecirc;t&eacute;)</h4>
                       <p className="text-xs text-charcoal-light mt-1">Ces syst&egrave;mes sont con&ccedil;us pour accueillir des batteries suppl&eacute;mentaires ou sont disponibles en version &laquo;&nbsp;expansion&nbsp;&raquo;. Vous pouvez commencer sans batterie et en ajouter une plus tard.</p>
                     </div>
                   </div>

@@ -178,7 +178,7 @@ export default function HomePage() {
                 brand: 'Sunology',
                 power: '450 Wc',
                 price: '599\u20ac',
-                roi: '4,6 ans',
+                roi: '7,1 ans',
                 slug: '/avis/sunology-play-2',
               },
               {
@@ -196,7 +196,7 @@ export default function HomePage() {
                 brand: 'Beem Energy',
                 power: '300 Wc',
                 price: '299\u20ac',
-                roi: '3,4 ans',
+                roi: '5,5 ans',
                 slug: '/avis/beem-kit-300w',
               },
               {
@@ -205,7 +205,7 @@ export default function HomePage() {
                 brand: 'Beem Energy',
                 power: '460 Wc',
                 price: '599\u20ac',
-                roi: '4,5 ans',
+                roi: '7,0 ans',
                 slug: '/avis/beem-on-460w',
               },
             ].map((kit, i) => (
@@ -248,10 +248,10 @@ export default function HomePage() {
             <div className="card-lg reveal">
               <div className="text-[10px] font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Lyon, balcon sud</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-                Appartement T3, actif en journ&eacute;e. Sunology PLAY 2 (450 Wc, 599 &euro;). Production estim&eacute;e : <strong>497 kWh/an</strong>. &Eacute;conomies : <strong>97 &euro;/an</strong>.
+                Appartement T3, actif en journ&eacute;e. Sunology PLAY 2 (450 Wc, 599 &euro;). Production estim&eacute;e : <strong>459 kWh/an</strong>. &Eacute;conomies : <strong>76 &euro;/an</strong>.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-green">ROI 6,2 ans</span>
+                <span className="text-xs font-mono font-bold text-green">ROI 7,1 ans</span>
                 <span className="badge-green text-[9px]">&#10003; Rentable</span>
               </div>
             </div>
@@ -270,17 +270,17 @@ export default function HomePage() {
             <div className="card-lg reveal">
               <div className="text-[10px] font-bold uppercase tracking-wider text-amber-dark mb-3">Profil type &mdash; Lille, balcon nord-est</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-                Appartement T2, balcon nord-est. Beem Kit 300W (299 &euro;). Production estim&eacute;e : <strong>208 kWh/an</strong>. &Eacute;conomies : <strong>40 &euro;/an</strong>.
+                Appartement T2, balcon nord-est. Beem Kit 300W (299 &euro;). Production estim&eacute;e : <strong>169 kWh/an</strong>. &Eacute;conomies : <strong>28 &euro;/an</strong>.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-amber-dark">ROI 7,5 ans</span>
+                <span className="text-xs font-mono font-bold text-amber-dark">ROI 9,3 ans</span>
                 <span className="badge-amber text-[9px]">&#9888; Marginal</span>
               </div>
             </div>
           </div>
 
           <p className="text-xs text-stone text-center mb-8">
-            Simulations bas&eacute;es sur les donn&eacute;es PVGIS et le tarif r&eacute;glement&eacute; EDF en vigueur (0,1940 &euro;/kWh). R&eacute;sultats indicatifs, variant selon votre situation r&eacute;elle.
+            Simulations bas&eacute;es sur les donn&eacute;es PVGIS et le tarif r&eacute;glement&eacute; EDF en vigueur (0,1940 &euro;/kWh), autoconsommation 85 % sans batterie, inflation 3,3 %/an, coefficient nord-est 0,65. R&eacute;sultats indicatifs, variant selon votre situation r&eacute;elle.
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-stone pt-8 border-t border-border-light">

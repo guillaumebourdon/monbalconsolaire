@@ -5,22 +5,40 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { EmailCapture } from '@/components/ui/EmailCapture';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
-export const metadata: Metadata = {
-  title: 'Code promo Sunology, Beem, Sunethic : offres septembre 2026',
-  description: 'Code promo Sunology : -12% sur tout jusqu’au 30/09 et parrainage -7%. Offres Beem, Sunethic, EcoFlow, Zendure vérifiées sur les sites officiels.',
-  alternates: {
-    canonical: 'https://monbalconsolaire.fr/codes-promo',
-  },
-};
+// Regénérée toutes les 6 h : les offres datées basculent seules en « Terminée ».
+export const revalidate = 21600;
 
 const VERIFIED = '27/09/2026';
 const SUNOLOGY_PLAY_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
+const SUNOLOGY_PROMO_END = '2026-09-30';
 
-const faqData = [
+// Date du jour à Paris au format YYYY-MM-DD (comparable lexicographiquement)
+function todayParis(): string {
+  return new Intl.DateTimeFormat('fr-CA', { timeZone: 'Europe/Paris' }).format(new Date());
+}
+
+function isOver(endsAt?: string): boolean {
+  return !!endsAt && todayParis() > endsAt;
+}
+
+export function generateMetadata(): Metadata {
+  const promo = !isOver(SUNOLOGY_PROMO_END);
+  return {
+    title: 'Code promo Sunology, Beem, Sunethic : offres vérifiées 2026',
+    description: promo
+      ? 'Code promo Sunology : -12% sur tout jusqu’au 30/09 et parrainage -7%. Offres Beem, Sunethic, EcoFlow, Zendure vérifiées sur les sites officiels.'
+      : 'Code promo Sunology : parrainage S-Club -7% et opérations saisonnières. Offres Beem, Sunethic, EcoFlow, Zendure vérifiées sur les sites officiels.',
+    alternates: {
+      canonical: 'https://monbalconsolaire.fr/codes-promo',
+    },
+  };
+}
+
+const faqData = (sunologyPromo: boolean) => [
   {
     question: 'Existe-t-il un code réduction Sunology ?',
     answer:
-      'Sunology ne publie pas de code promo public permanent. Deux leviers officiels existent : les opérations saisonnières affichées directement sur le site (par exemple -12% sur tout jusqu’au 30 septembre 2026, appliqué automatiquement) et le parrainage S-Club, qui donne 7% de remise sur la première commande. Les codes du type SUN_PRENOM que l’on voit sur les sites de coupons sont des codes de parrainage de particuliers.',
+      `Sunology ne publie pas de code promo public permanent. Deux leviers officiels existent : les opérations saisonnières affichées directement sur le site (${sunologyPromo ? 'par exemple -12% sur tout jusqu’au 30 septembre 2026, appliqué automatiquement' : 'comme le -12% sur tout de septembre 2026, appliqué automatiquement'}) et le parrainage S-Club, qui donne 7% de remise sur la première commande. Les codes du type SUN_PRENOM que l’on voit sur les sites de coupons sont des codes de parrainage de particuliers.`,
   },
   {
     question: 'Comment fonctionne le parrainage Sunology ?',
@@ -53,11 +71,13 @@ type Offer = {
   label: string;
   detail: string;
   status: 'active' | 'expired' | 'none';
+  endsAt?: string; // YYYY-MM-DD : au-delà, l'offre s'affiche « Terminée »
   source: string;
   sourceUrl: string;
 };
 
-function OfferCard({ o }: { o: Offer }) {
+function OfferCard({ o: raw }: { o: Offer }) {
+  const o: Offer = raw.status === 'active' && isOver(raw.endsAt) ? { ...raw, status: 'expired' } : raw;
   const statusLabel = o.status === 'active' ? 'Active' : o.status === 'expired' ? 'Terminée' : 'Pas de code';
   const statusClass =
     o.status === 'active'
@@ -88,6 +108,7 @@ const sunologyOffers: Offer[] = [
     detail:
       'Remise appliquée automatiquement, sans code, jusqu’au 30 septembre 2026. Le PLAY passe de 599 € à 527 €. Expédition premium gratuite, paiement en 12x sans frais.',
     status: 'active',
+    endsAt: SUNOLOGY_PROMO_END,
     source: 'sunology.eu (fiche PLAY)',
     sourceUrl: SUNOLOGY_PLAY_URL,
   },
@@ -156,13 +177,14 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     offers: [
       {
         label: 'Autumn Sale gamme STREAM : jusqu’à -57%',
-        detail: 'Du 14 septembre au 7 octobre 2026. Aucune remise spécifique au PowerStream n’était mise en avant à la date de vérification.',
+        detail: 'Du 14 septembre au 7 octobre 2026. Le PowerStream n’est plus vendu sur la boutique officielle : EcoFlow y propose désormais la gamme STREAM.',
         status: 'active',
+        endsAt: '2026-10-07',
         source: 'fr.ecoflow.com',
         sourceUrl: 'https://fr.ecoflow.com/',
       },
     ],
-    cta: { url: 'https://fr.ecoflow.com/', product: 'EcoFlow PowerStream', merchant: 'EcoFlow' },
+    cta: { url: 'https://fr.ecoflow.com/products/stream-ultra-pro', product: 'EcoFlow STREAM Ultra', merchant: 'EcoFlow' },
   },
   {
     id: 'zendure',
@@ -182,20 +204,21 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
 ];
 
 export default function CodesPromoPage() {
+  const sunologyPromo = !isOver(SUNOLOGY_PROMO_END);
   return (
     <section className="section-padding">
-      <SchemaFAQ questions={faqData} />
+      <SchemaFAQ questions={faqData(sunologyPromo)} />
       <div className="container-brand max-w-3xl">
         <Breadcrumbs items={[{ label: 'Codes promo' }]} />
 
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
-          Code promo Sunology, Beem, Sunethic, EcoFlow, Zendure &middot; Septembre 2026
+          Code promo Sunology, Beem, Sunethic, EcoFlow, Zendure &middot; Offres v&eacute;rifi&eacute;es le {VERIFIED}
         </h1>
         <p className="text-charcoal-light text-lg mb-4">
           Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
         </p>
         <div className="card bg-cream/50 text-sm text-charcoal-light leading-relaxed mb-8">
-          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> Sunology fait -12% sur tout jusqu&apos;au 30/09 (sans code) et propose -7% via son parrainage S-Club. Beem, Sunethic, EcoFlow et Zendure n&apos;ont pas de code public officiel : leurs remises sont affich&eacute;es directement sur leur site.
+          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyPromo ? <>Sunology fait -12% sur tout jusqu&apos;au 30/09 (sans code) et propose -7% via son parrainage S-Club.</> : <>L&apos;op&eacute;ration Sunology -12% est termin&eacute;e (30/09) ; reste le parrainage S-Club &agrave; -7%.</>} Beem, Sunethic, EcoFlow et Zendure n&apos;ont pas de code public officiel : leurs remises sont affich&eacute;es directement sur leur site.
         </div>
 
         <nav className="flex flex-wrap gap-2 text-sm mb-10" aria-label="Sommaire">
@@ -229,10 +252,14 @@ export default function CodesPromoPage() {
 
             <h3 className="text-xl font-bold mb-3">Code promo Sunology PLAY 2</h3>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              Le PLAY (450 Wc, anciennement commercialis&eacute; comme PLAY 2) est affich&eacute; &agrave; <strong>527 &euro; au lieu de 599 &euro;</strong> jusqu&apos;au 30 septembre 2026 gr&acirc;ce &agrave; l&apos;op&eacute;ration -12%. Il n&apos;existe pas de code sp&eacute;cifique au PLAY 2. Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;. Notre analyse compl&egrave;te :{' '}
+              {sunologyPromo ? (
+                <>Le PLAY (450 Wc, anciennement commercialis&eacute; comme PLAY 2) est affich&eacute; &agrave; <strong>527 &euro; au lieu de 599 &euro;</strong> jusqu&apos;au 30 septembre 2026 gr&acirc;ce &agrave; l&apos;op&eacute;ration -12%.</>
+              ) : (
+                <>Le PLAY (450 Wc, anciennement commercialis&eacute; comme PLAY 2) est affich&eacute; &agrave; <strong>599 &euro;</strong> ; l&apos;op&eacute;ration -12% s&apos;est termin&eacute;e le 30 septembre 2026.</>
+              )}{' '}Il n&apos;existe pas de code sp&eacute;cifique au PLAY 2. Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;. Notre analyse compl&egrave;te :{' '}
               <Link href="/avis/sunology-play-2" className="text-green font-semibold hover:underline">avis Sunology PLAY 2</Link>.
             </p>
-            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label="Voir le PLAY 2 à -12% sur Sunology" variant="secondary" position="codes_promo_sunology" price="527 €" />
+            <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyPromo ? 'Voir le PLAY 2 à -12% sur Sunology' : 'Voir le prix du PLAY 2 sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyPromo ? '527 €' : '599 €'} />
 
             <h3 className="text-xl font-bold mt-8 mb-3">Sunology et le Black Friday</h3>
             <p className="text-charcoal-light leading-relaxed">
@@ -292,7 +319,7 @@ export default function CodesPromoPage() {
           <section id="faq" className="scroll-mt-24">
             <h2 className="text-2xl font-extrabold mb-4">Questions fr&eacute;quentes</h2>
             <div className="space-y-3">
-              {faqData.map((f, i) => (
+              {faqData(sunologyPromo).map((f, i) => (
                 <details key={i} className="card group" open={i === 0}>
                   <summary className="font-bold text-sm cursor-pointer list-none">{f.question}</summary>
                   <p className="text-sm text-charcoal-light leading-relaxed mt-3">{f.answer}</p>

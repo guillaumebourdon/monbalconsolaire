@@ -132,7 +132,7 @@ export default function GuidePage() {
               </div>
 
               <div className="card bg-amber-pale/30 border-amber/10 my-6">
-                <p className="text-sm text-amber-dark"><strong>Attention — Norme NF C 15-100 (sept. 2025) :</strong> La mise à jour de la norme limite la puissance à 900W par circuit de prise. Avec un seul kit de 450W, vous etes largement dans les clous. Si vous envisagez 2 kits ou plus, renseignez-vous sur les évolutions reglementaires en cours (période transitoire jusqu&apos;au 31 mai 2026).</p>
+                <p className="text-sm text-amber-dark"><strong>Attention — Norme NF C 15-100 (sept. 2025) :</strong> Son point 551.7.2 interdit de raccorder un générateur à un circuit terminal par une prise. Les kits, mobiles, sont dans une zone grise et restent vendus ; aucun plafond en watts n&apos;est fixé par la norme. Le repère de 900W par prise est une recommandation (UFC-Que Choisir, fabricants). Avec un seul kit de 450W, vous êtes largement en dessous. Au-delà (2 kits ou plus), prévoyez un circuit dédié posé par un électricien.</p>
               </div>
             </section>
 

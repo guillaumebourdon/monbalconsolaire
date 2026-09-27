@@ -234,7 +234,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/guide/reglementation-panneau-solaire-balcon-2026',
     title: 'Panneau solaire balcon : réglementation 2026 complète',
-    excerpt: 'Norme NF C 15-100, CACSI Enedis, copropriété, limite 900W : tout ce que dit la loi.',
+    excerpt: 'Norme NF C 15-100, CACSI Enedis, copropriété, repère 900 W : tout ce que dit la loi.',
     type: 'guide',
     badge: 'Réglementation',
     tags: ['reglementation', 'guide'],
@@ -275,13 +275,13 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/blog/bilan-6-mois-kit-solaire',
-    title: 'Bilan apr\u00e8s 6 mois avec un kit solaire de balcon',
-    excerpt: 'Production r\u00e9elle, \u00e9conomies, probl\u00e8mes. Retour d\u2019exp\u00e9rience honn\u00eate.',
+    title: 'Bilan sur 6 mois : ce que produit vraiment un kit solaire balcon',
+    excerpt: 'Production simulée mois par mois, économies selon la saison et retours d’utilisateurs publiés.',
     type: 'analyse',
-    badge: 'V\u00e9cu',
+    badge: 'Simulation',
     tags: ['rentabilite'],
     publishedAt: '2026-05-27',
-    readTime: '10 min',
+    readTime: '9 min',
   },
   {
     slug: '/guide/optimiser-autoconsommation-solaire',

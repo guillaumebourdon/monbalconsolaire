@@ -325,11 +325,11 @@ export default function BatteriesPortablesPage() {
                       <td className="text-center p-3 text-xs">2 ans</td>
                     </tr>
                     <tr className="bg-cream/50 border-b border-border-light">
-                      <td className="p-3 font-semibold">EcoFlow PowerStream</td>
+                      <td className="p-3 font-semibold">EcoFlow PowerStream <span className="text-amber-dark text-xs">(arr&ecirc;t&eacute;)</span></td>
                       <td className="text-center p-3 font-mono text-xs">jusqu&apos;&agrave; 2 000 Wh</td>
                       <td className="text-center p-3 font-mono text-xs">600 W</td>
-                      <td className="text-center p-3 font-mono text-xs">&agrave; partir de 799 &euro;</td>
-                      <td className="text-center p-3 text-xs">2 ans</td>
+                      <td className="text-center p-3 font-mono text-xs">plus vendu par EcoFlow</td>
+                      <td className="text-center p-3 text-xs">10 ans (micro-onduleur)</td>
                     </tr>
                   </tbody>
                 </table>

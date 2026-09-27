@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Sunology CITY avis 2026 : le kit pensé pour les balcons étroits',
-  description: 'Avis complet sur le Sunology CITY : analyse, prix, production estimée, fixation garde-corps. Le kit solaire spécialisé balcon est-il vraiment adapté à votre situation ?',
+  title: 'Sunology CITY avis (arrêté) : quelles alternatives en 2026 ?',
+  description: 'Sunology CITY : le kit garde-corps n\'est plus vendu par Sunology (sept. 2026). Notre analyse, où le trouver encore et les alternatives (GO, PLAY 2, Beem).',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-city',
   },
@@ -123,7 +123,7 @@ export default function SunologyCityPage() {
         datePublished="2026-04-27"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunology-city" />
+      <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} ratingCount={1} availability="Discontinued" url="https://monbalconsolaire.fr/avis/sunology-city" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology CITY' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -144,6 +144,21 @@ export default function SunologyCityPage() {
             </div>
           </div>
 
+          <div className="card-lg border-2 border-amber bg-amber-pale/40 mb-8" role="note">
+            <p className="badge-amber inline-block mb-3">Produit arr&ecirc;t&eacute;</p>
+            <h2 className="font-extrabold text-lg mb-2">Produit plus commercialis&eacute; par le fabricant (constat&eacute; le 27/09/2026)</h2>
+            <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+              Le CITY n&apos;appara&icirc;t plus dans le catalogue de la boutique officielle Sunology&nbsp;: son ancienne fiche produit redirige d&eacute;sormais vers la page d&apos;accueil. Quelques revendeurs tiers l&apos;affichent encore (autour de 570&ndash;600&nbsp;&euro;), parfois en rupture de stock. Si vous en trouvez un, v&eacute;rifiez le stock r&eacute;el et qui assure la garantie avant de commander.
+            </p>
+            <p className="text-sm font-semibold mb-2">Alternatives actuelles&nbsp;:</p>
+            <ul className="text-sm text-charcoal-light space-y-1.5 mb-4">
+              <li>&bull; <strong>Sunology GO version garde-corps</strong> (349&nbsp;&euro; sur la boutique officielle au 27/09/2026)&nbsp;: le kit compact de Sunology qui s&apos;accroche lui aussi &agrave; la rambarde, pour une puissance plus faible (~270&nbsp;W annonc&eacute;s).</li>
+              <li>&bull; <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link>&nbsp;: plus rentable si vous avez la place de le poser au sol.</li>
+              <li>&bull; <Link href="/avis/beem-kit-300w" className="text-green hover:underline font-semibold">Beem Kit 300W</Link>&nbsp;: panneaux modulaires, le plus petit budget du march&eacute;.</li>
+            </ul>
+            <AffiliateCTA productName="Sunology GO (garde-corps)" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/kit-solaire-1-station-go-balcon-garde-corps" label="Voir le Sunology GO garde-corps" variant="secondary" position="discontinued-notice" />
+          </div>
+
           <ProductHero
             brand="Sunology"
             name="CITY"
@@ -151,18 +166,18 @@ export default function SunologyCityPage() {
             price="549 €"
             score="7,5/10"
             tagline="Le kit pensé pour s'accrocher au garde-corps des balcons urbains."
-            affiliateUrl="https://sunology.eu/"
-            affiliateLabel="Voir le CITY sur Sunology"
+            affiliateUrl="https://sunology.eu/products/kit-solaire-1-station-go-balcon-garde-corps"
+            affiliateLabel="Voir l'alternative GO sur Sunology"
             accentColor="amber"
             image="/images/produits/sunology-city-front.webp"
             imageAlt="Sunology CITY - kit solaire pour balcons étroits vue arrière"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix officiel constat&eacute; le 15/05/2026 &middot; Produit retir&eacute; de la boutique Sunology depuis (constat du 27/09/2026)</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Le Sunology CITY (549 €, 400 W) est <strong>le seul vrai choix</strong> pour un balcon étroit où la pose au sol est impossible. Son système de fixation breveté sans perçage et son design soigné en font un produit unique. <strong>Mais</strong> à puissance et exposition équivalentes, un Sunology PLAY 2 ou un Beem Kit posé au sol sera plus rentable de 15-20%. Le CITY est <strong>spécialisé</strong> : si votre balcon le permet, allez ailleurs.
+              Le Sunology CITY (549 €, 400 W) était <strong>le seul vrai choix</strong> pour un balcon étroit où la pose au sol est impossible. Son système de fixation breveté sans perçage et son design soigné en faisaient un produit unique. <strong>Mais</strong> à puissance et exposition équivalentes, un Sunology PLAY 2 ou un Beem Kit posé au sol est plus rentable de 15-20%. <strong>Depuis son retrait du catalogue Sunology</strong>, nous ne le conseillons plus qu&apos;en déstockage sous ~450 € (soit ~1,10 €/Wc, le niveau des kits actuels), en vérifiant que la garantie est bien assurée. Au prix catalogue (549-599 €), un kit encore vendu par son fabricant est un meilleur achat.
             </p>
           </div>
 
@@ -290,8 +305,6 @@ export default function SunologyCityPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/" label="Voir le CITY en stock" variant="secondary" position="after-pros" />
-
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 4 points faibles à connaître</h2>
               <div className="space-y-3">
@@ -304,13 +317,11 @@ export default function SunologyCityPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/" label="Voir conditions Sunology" variant="secondary" position="after-stats" />
-
             <div className="card-lg bg-cream/50 border-border text-center my-8">
               <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
               <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
               <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
-                Calculer mon ROI avec le Sunology CITY →
+                Calculer mon ROI avec un kit actuel →
               </Link>
             </div>
 
@@ -403,8 +414,6 @@ export default function SunologyCityPage() {
             </section>
 
             <NewsletterBanner />
-
-            <AffiliateCTA productName="Sunology CITY" merchantName="Sunology" affiliateUrl="https://sunology.eu/" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="549 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

@@ -43,7 +43,7 @@ const faqData = [
   {
     question: 'Hoymiles ou EcoFlow : lequel choisir ?',
     answer:
-      'Ce ne sont pas les mêmes produits. Le Hoymiles HMS-800W-2T est un micro-onduleur réseau simple (~100-130 €) : il injecte ce que produisent les panneaux, point. L\'EcoFlow PowerStream (~369 € seul) est un micro-onduleur hybride qui peut piloter une station EcoFlow et restituer l\'énergie le soir. Sans batterie, le Hoymiles est plus rentable ; avec une station EcoFlow déjà possédée, le PowerStream a du sens.',
+      'Ce ne sont pas les mêmes produits. Le Hoymiles HMS-800W-2T est un micro-onduleur réseau simple (~100-130 €) : il injecte ce que produisent les panneaux, point. L\'EcoFlow PowerStream est un micro-onduleur hybride qui peut piloter une station EcoFlow et restituer l\'énergie le soir, mais il n\'est plus vendu par EcoFlow France (septembre 2026), remplacé au catalogue par la gamme STREAM. Sans batterie, le Hoymiles est plus rentable ; avec une station EcoFlow déjà possédée, un PowerStream d\'occasion peut encore avoir du sens.',
   },
   {
     question: 'Quelle norme doit respecter un micro-onduleur en France ?',
@@ -141,8 +141,8 @@ const models: Model[] = [
     mppt: '2 (2 × 400 W)',
     rendement: 'Non communiqué',
     com: 'Wi-Fi intégré',
-    garantie: 'À vérifier*',
-    prix: '~369 €',
+    garantie: '10 ans (EcoFlow)',
+    prix: 'Arrêté (sept. 2026)',
     pourQui: 'Propriétaires d’une station EcoFlow',
     href: '/avis/ecoflow-powerstream',
   },
@@ -202,7 +202,7 @@ export default function MicroOnduleurPage() {
             <h2 className="font-bold text-lg mb-3">L&apos;essentiel en 30 secondes</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
               <li>&bull; <strong>Pour 2 panneaux&nbsp;:</strong> un 800&nbsp;VA &agrave; 2 MPPT avec Wi-Fi int&eacute;gr&eacute; (Hoymiles HMS-800W-2T, APsystems EZ1-M, Deye SUN-M80G4)</li>
-              <li>&bull; <strong>Prix seul&nbsp;:</strong> d&apos;environ 100&nbsp;&euro; (Hoymiles) &agrave; ~370&nbsp;&euro; (EcoFlow PowerStream hybride)</li>
+              <li>&bull; <strong>Prix seul&nbsp;:</strong> d&apos;environ 100&nbsp;&euro; (Hoymiles) &agrave; ~370&nbsp;&euro; (EcoFlow PowerStream hybride, d&eacute;sormais arr&ecirc;t&eacute;)</li>
               <li>&bull; <strong>Rendement&nbsp;:</strong> 96 &agrave; 97,5&nbsp;% chez tous les grands &mdash; l&apos;&eacute;cart vaut moins de 1&nbsp;&euro;/an, ce n&apos;est pas un crit&egrave;re</li>
               <li>&bull; <strong>Vrais crit&egrave;res&nbsp;:</strong> nombre d&apos;entr&eacute;es MPPT, compatibilit&eacute; tension/courant du panneau, monitoring, garantie, certificat de d&eacute;couplage</li>
               <li>&bull; <strong>Hors r&eacute;seau&nbsp;:</strong> impossible &mdash; un micro-onduleur r&eacute;seau s&apos;arr&ecirc;te pendant une coupure</li>
@@ -351,7 +351,7 @@ export default function MicroOnduleurPage() {
                 </table>
               </div>
               <p className="text-xs text-stone leading-relaxed">
-                * Garanties divergentes selon les sources&nbsp;: Hoymiles annonce 12 ans de s&eacute;rie (extensible &agrave; 25 ans) sur sa gamme, mais certains revendeurs affichent 10 ans pour le HMS-800W-2T&nbsp;; Deye est annonc&eacute; entre 10 et 15 ans selon les revendeurs&nbsp;; pour l&apos;EcoFlow PowerStream, des revendeurs indiquent 2 ans &mdash; v&eacute;rifiez sur la fiche du vendeur au moment de l&apos;achat. ** Garantie Enphase 25 ans conditionn&eacute;e &agrave; une passerelle IQ Gateway connect&eacute;e &agrave; Internet (vendue en plus). Prix constat&eacute;s chez des revendeurs fran&ccedil;ais, tr&egrave;s variables selon les promotions&nbsp;: le HMS-800W-2T a par exemple &eacute;t&eacute; vu &agrave; 99&nbsp;&euro; en promotion. Prix du Deye non v&eacute;rifi&eacute; &agrave; la date de mise &agrave; jour.
+                * Garanties divergentes selon les sources&nbsp;: Hoymiles annonce 12 ans de s&eacute;rie (extensible &agrave; 25 ans) sur sa gamme, mais certains revendeurs affichent 10 ans pour le HMS-800W-2T&nbsp;; Deye est annonc&eacute; entre 10 et 15 ans selon les revendeurs&nbsp;; l&apos;EcoFlow PowerStream est garanti 10 ans par EcoFlow (page produit officielle), les 2 ans affich&eacute;s par certains revendeurs correspondant &agrave; la garantie l&eacute;gale&nbsp;; il n&apos;est toutefois plus vendu par EcoFlow France depuis 2026 (remplac&eacute; au catalogue par la gamme STREAM). ** Garantie Enphase 25 ans conditionn&eacute;e &agrave; une passerelle IQ Gateway connect&eacute;e &agrave; Internet (vendue en plus). Prix constat&eacute;s chez des revendeurs fran&ccedil;ais, tr&egrave;s variables selon les promotions&nbsp;: le HMS-800W-2T a par exemple &eacute;t&eacute; vu &agrave; 99&nbsp;&euro; en promotion. Prix du Deye non v&eacute;rifi&eacute; &agrave; la date de mise &agrave; jour.
               </p>
 
               <div className="grid md:grid-cols-2 gap-4 mt-6">
@@ -412,7 +412,7 @@ export default function MicroOnduleurPage() {
                   { cas: 'Vous avez 1 panneau de 300 à 500 Wc', reco: 'Un mono-entrée 400-480 VA : Hoymiles HMS-400W-1T pour le prix, Enphase IQ8P si la garantie 25 ans compte plus que le coût.' },
                   { cas: 'Vous avez 2 panneaux (cas le plus courant)', reco: 'Un 800 VA à 2 MPPT avec Wi-Fi intégré. Hoymiles HMS-800W-2T si le prix prime, APsystems EZ1-M si vous voulez le Bluetooth local et 12 ans de garantie.' },
                   { cas: 'Vos panneaux font plus de 500 Wc chacun', reco: 'APsystems EZ1-H (960 VA, bridable) ou un 800 VA avec écrêtage assumé. Vérifiez la tension Voc et le courant d’entrée.' },
-                  { cas: 'Vous voulez stocker le surplus', reco: 'Un système hybride (EcoFlow PowerStream + station, Zendure SolarFlow). Plus cher : utile surtout si votre consommation de journée est faible.' },
+                  { cas: 'Vous voulez stocker le surplus', reco: 'Un système avec batterie (Zendure SolarFlow, EcoFlow STREAM ; le PowerStream n’est plus vendu). Plus cher : utile surtout si votre consommation de journée est faible.' },
                   { cas: 'Vous voulez le moins cher possible', reco: 'Hoymiles HMS-800W-2T. Évitez les onduleurs sans marque des places de marché : certificat de découplage invérifiable, parfois pas de relais.' },
                   { cas: 'Vous voulez du courant pendant une coupure', reco: 'Aucun micro-onduleur réseau ne le permet. Il faut une station avec sortie AC autonome (voir plus bas).' },
                 ].map((item) => (
@@ -454,7 +454,7 @@ export default function MicroOnduleurPage() {
                     <ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="sm" />
                     <h3 className="font-bold text-base">EcoFlow PowerStream</h3>
                   </div>
-                  <p className="text-sm text-charcoal-light leading-relaxed mb-2">Deux entr&eacute;es PV de 400&nbsp;W, sortie 600 ou 800&nbsp;W selon la version, port pour station EcoFlow. Pertinent surtout si vous poss&eacute;dez d&eacute;j&agrave; une station.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed mb-2">Deux entr&eacute;es PV de 400&nbsp;W, sortie 600 ou 800&nbsp;W selon la version, port pour station EcoFlow. Pertinent surtout si vous poss&eacute;dez d&eacute;j&agrave; une station. <strong>Plus vendu par EcoFlow France (constat du 27/09/2026)</strong>&nbsp;: la marque propose d&eacute;sormais le micro-onduleur STREAM.</p>
                   <p className="text-xs text-stone"><Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
                 </div>
                 <div className="card-lg">

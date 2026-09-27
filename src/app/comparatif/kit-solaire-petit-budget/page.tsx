@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const faqData = [
   { question: 'Quel est le kit solaire le moins cher en 2026 ?', answer: 'Le Beem Kit 300W à 299€ est le kit de marque le moins cher avec une garantie de 25 ans. On trouve des kits sans marque sur Amazon entre 150 et 250€, mais la qualité et le SAV sont incertains.' },
-  { question: 'Un kit à 299€ est-il vraiment rentable ?', answer: 'Oui. À 299€ avec une production de 350 kWh/an (région lyonnaise), le ROI est atteint en 2,5 à 3 ans. Sur 25 ans de garantie, les économies totales dépassent 1 500€.' },
+  { question: 'Un kit à 299€ est-il vraiment rentable ?', answer: 'Oui. À 299€ avec une production de ~306 kWh/an (région lyonnaise, sud), le ROI est atteint en 5,5 ans (+3,3%/an d\'inflation CRE). Sur 25 ans de garantie, les économies totales atteignent ~1 900€.' },
   { question: 'Faut-il éviter les kits solaires pas chers sur Amazon ?', answer: 'Pas forcément, mais soyez vigilant : vérifiez la garantie, la certification CE, et la présence d\'un micro-onduleur de qualité. Les kits sans marque ont souvent un SAV inexistant et des performances en dessous des specs annoncées.' },
 ];
 
@@ -59,14 +59,14 @@ export default function PetitBudgetPage() {
                   </div>
                   <div className="mt-4 space-y-2 text-sm text-charcoal-light">
                     <p>Le Beem Kit 300W est le meilleur kit de marque sous 400€. Ses 4 petits panneaux monocristallins (75W chacun) s&apos;adaptent aux espaces restreints et aux configurations inhabituelles. Le ratio de 1,00 €/Wc est le meilleur du marché toutes catégories.</p>
-                    <p>La production annuelle est d&apos;environ 350 kWh en région lyonnaise (orientation sud), soit ~68€ d&apos;économies/an. Le retour sur investissement est atteint en seulement 2,5 à 3 ans.</p>
+                    <p>La production annuelle est d&apos;environ 306 kWh en région lyonnaise (orientation sud), soit ~50€ d&apos;économies/an. Le retour sur investissement est atteint en 5,5 ans.</p>
                   </div>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points forts</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> Meilleur ratio €/Wc du marché (1,00€)</li>
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> 4 panneaux = flexibilité d&apos;installation (mur, sol, angle)</li>
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> Marque française avec SAV, garantie 25 ans</li>
-                    <li className="flex gap-2"><span className="text-green font-bold">+</span> ROI le plus rapide : 2,5-3 ans</li>
+                    <li className="flex gap-2"><span className="text-green font-bold">+</span> ROI court : 5,5 ans (Lyon, sud)</li>
                   </ul>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points faibles</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">

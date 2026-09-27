@@ -138,7 +138,7 @@ export default function PlayMaxAvisPage() {
                 {[
                   { t: 'Capacité limitée (700 Wh)', d: 'La VAULT offre ~5 heures d\'autonomie pour un talon de consommation de 140W. Ce n\'est pas suffisant pour couvrir une nuit complète (10-12h). Si vous voulez une vraie autonomie le soir et la nuit, il faut la STOREY (2,2 kWh, 1 390€).' },
                   { t: 'Pas de gestion intelligente', d: 'La VAULT ne communique pas avec le panneau. Elle se charge quand elle est branchée et se décharge quand vous l\'utilisez. Pas de pilotage automatique charge/décharge comme l\'EcoFlow PowerStream.' },
-                  { t: 'Le ROI de la batterie est long', d: '~15 ans pour rentabiliser les 580€ de la batterie seule. Le PLAY2 sans batterie se rentabilise en 4,3 ans. Le gain financier de la batterie est modeste (38€/an).' },
+                  { t: 'Le ROI de la batterie est long', d: 'Avec notre méthodologie (autoconsommation 85 % → 95 %), la batterie seule (580€) ne rapporte que ~9€/an de plus : elle ne se rentabilise pas sur sa durée de vie. Le PLAY2 sans batterie se rentabilise en 7,1 ans.' },
                   { t: 'Durée de vie de la batterie', d: 'Sunology annonce 3 000+ cycles pour la VAULT (LFP). À 1 cycle par jour, ça fait ~8 ans. Le panneau est garanti 25 ans mais la batterie pourrait nécessiter un remplacement avant.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">

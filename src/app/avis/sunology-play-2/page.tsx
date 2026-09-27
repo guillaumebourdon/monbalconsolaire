@@ -52,6 +52,7 @@ export default function AvisPage() {
             imageAlt="Sunology PLAY 2 - station solaire plug-and-play avec support intégré"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 16/07/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-1"><strong>Mise &agrave; jour 27/09/2026 :</strong> vendu d&eacute;sormais sous le nom <strong>PLAY</strong> sur sunology.eu (toujours 599&nbsp;&euro;), avec un panneau de 480 &agrave; 500&nbsp;W selon la s&eacute;rie. Les derniers lots PLAY2 sont annonc&eacute;s &agrave; 460&nbsp;W bifacial chez les distributeurs (Castorama, Gamm Vert) ; nos calculs portent sur la version 450&nbsp;Wc de la fiche technique Sunology.</p>
 
           <div className="space-y-10">
             <section>
@@ -98,7 +99,7 @@ export default function AvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Encombrement pour les petits balcons', d: 'Le panneau mesure 1,76 x 1,13 m. Sur un petit balcon d\'appartement, ca prend de la place. Pour les espaces très restreints, le Sunology CITY (concu pour les garde-corps) ou le Beem On 500 Wc (429€, format similaire) sont des alternatives à étudier — voir la comparaison plus bas.' },
+                  { t: 'Encombrement pour les petits balcons', d: 'Le panneau mesure 1,76 x 1,13 m. Sur un petit balcon d\'appartement, ca prend de la place. Pour les espaces très restreints, le Sunology GO en version garde-corps (le CITY n\'est plus vendu par Sunology) ou le Beem On 500 Wc (429€, format similaire) sont des alternatives à étudier — voir la comparaison plus bas.' },
                   { t: 'Pas de batterie incluse', d: 'A 599\u20ac, vous n\'avez que le panneau. Pour stocker l\'électricité pour le soir, il faut passer au PLAY MAX (1 179\u20ac avec batterie 700 Wh) ou ajouter la batterie STOREY (1 390\u20ac). C\'est un investissement consequent.' },
                   { t: 'Le gain bifacial est souvent surestimer', d: 'Sunology annonce "jusqu\'a 30%" de gain bifacial. En realite, ce gain depend enormement de la surface derriere le panneau. Sur un sol sombre ou contre un mur fonce, le gain est negligeable (2-5%).' },
                 ].map((p, i) => (

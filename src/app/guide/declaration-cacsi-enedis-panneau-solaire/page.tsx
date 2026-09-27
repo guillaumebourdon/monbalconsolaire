@@ -523,7 +523,7 @@ Date : [JOUR/MOIS/ANNÉE]`}
               <div className="space-y-3">
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026 complète</h4>
-                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, limite 900 W : tout ce que dit la loi française</p>
+                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, rep&egrave;re 900 W : tout ce que dit la loi française</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-locataire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide locataire</h4>

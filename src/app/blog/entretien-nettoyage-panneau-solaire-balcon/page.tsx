@@ -354,8 +354,8 @@ export default function EntretienNettoyagePage() {
                   <p className="text-xs text-charcoal-light mt-1">Rallonge &eacute;tanche, prise connect&eacute;e, protection surtension</p>
                 </Link>
                 <Link href="/blog/bilan-6-mois-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan apr&egrave;s 6 mois avec un kit solaire de balcon</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Retour d&apos;exp&eacute;rience : 0 entretien technique en 6 mois</p>
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan sur 6 mois : ce que produit un kit solaire balcon</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Production simul&eacute;e mois par mois et retours d&apos;utilisateurs</p>
                 </Link>
               </div>
             </section>

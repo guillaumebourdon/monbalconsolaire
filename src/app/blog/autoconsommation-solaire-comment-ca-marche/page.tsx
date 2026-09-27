@@ -120,11 +120,11 @@ export default function AutoconsommationPage() {
               <h2 className="text-2xl font-extrabold mb-4">Combien &ccedil;a fait &eacute;conomiser concr&egrave;tement ?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Avec un kit de 450W en r&eacute;gion lyonnaise, orientation sud :</p>
               <div className="grid grid-cols-3 gap-4 my-6">
-                {[{ v: '498 kWh', l: 'produits par an' }, { v: '~200 kWh', l: 'autoconsomm\u00e9s (40%)' }, { v: '~97 \u20ac', l: '\u00e9conomis\u00e9s par an' }].map((s, i) => (
+                {[{ v: '459 kWh', l: 'produits par an' }, { v: '~184 kWh', l: 'autoconsomm\u00e9s (40%)' }, { v: '~36 \u20ac', l: '\u00e9conomis\u00e9s par an' }].map((s, i) => (
                   <div key={i} className="card text-center"><div className="font-mono font-medium text-xl text-green">{s.v}</div><div className="text-[11px] text-stone mt-1">{s.l}</div></div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed">Pour un kit &agrave; 599&euro;, le retour sur investissement est atteint en 4-5 ans. Le panneau est garanti 25 ans. Sur sa dur&eacute;e de vie, vous &eacute;conomisez plus de 2 400&euro;.</p>
+              <p className="text-charcoal-light leading-relaxed">Pour un kit &agrave; 599&euro; de 450 Wc (Lyon, sud), le retour sur investissement d&eacute;pend surtout de ce taux : 13,6 ans &agrave; 40 % d&apos;autoconsommation, 7,1 ans &agrave; 85 % (notre hypoth&egrave;se standard, talon bien dimensionn&eacute;). Le panneau est garanti 25 ans. Sur sa dur&eacute;e de vie, vous &eacute;conomisez de 1 350&euro; &agrave; 2 870&euro; selon le cas.</p>
             </section>
 
             <section>

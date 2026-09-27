@@ -126,7 +126,7 @@ const checklist = [
     num: 10,
     category: 'Budget',
     title: 'Choisir la bonne puissance',
-    desc: '300W (Beem Kit) : idéal pour un petit balcon ou un premier essai. Prix d\'entrée : ~299 €. 450W (Sunology PLAY 2, Beem On) : le rapport puissance/encombrement optimal. Prix : 499-599 €. 800W (2 panneaux) : maximum plug-and-play. Nécessite de vérifier le circuit (norme 900W max). Prix : 700-900 €.',
+    desc: '300W (Beem Kit) : idéal pour un petit balcon ou un premier essai. Prix d\'entrée : ~299 €. 450W (Sunology PLAY 2, Beem On) : le rapport puissance/encombrement optimal. Prix : 499-599 €. 800W (2 panneaux) : maximum plug-and-play. Nécessite de vérifier le circuit (900W par prise : repère recommandé, pas une limite de la norme). Prix : 700-900 €.',
     verdict: 'Premier achat ? Commencez par un 450W. C\'est le meilleur compromis prix/production.',
     icon: '&#9889;',
     color: 'green',
@@ -499,7 +499,7 @@ export default function ChecklistPage() {
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
-                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, limite 900W, loi APER : tout ce que dit la loi en d&eacute;tail</p>
+                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, rep&egrave;re 900 W, loi APER : tout ce que dit la loi en d&eacute;tail</p>
                 </Link>
               </div>
             </section>

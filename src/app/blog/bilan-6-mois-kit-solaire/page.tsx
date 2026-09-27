@@ -4,122 +4,189 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
-import { ProductThumb } from '@/components/ui/ProductThumb';
+import {
+  KWH_PRICE_EUR,
+  KWH_PRICE_LABEL,
+  KWH_INFLATION_LABEL,
+  AUTOCONSO_STANDARD,
+  PERFORMANCE_RATIO,
+  PVGIS_REFERENCE_LYON,
+  calculateProductionKwh,
+  calculateFirstYearSavings,
+  calculateROIYears,
+  calculateTotalSavings25Years,
+} from '@/lib/pricing';
 
 export const metadata: Metadata = {
-  title: 'Bilan apr\u00e8s 6 mois avec un kit solaire de balcon : retour d\u2019exp\u00e9rience',
-  description: 'Production r\u00e9elle mois par mois, \u00e9conomies constat\u00e9es, probl\u00e8mes rencontr\u00e9s, ce qu\u2019on referait diff\u00e9remment. Bilan honn\u00eate apr\u00e8s 6 mois.',
+  title: 'Kit solaire balcon : ce qu’il produit vraiment en 6 mois',
+  description: 'Kit solaire balcon sur 6 mois : production mois par mois (simulation PVGIS, Lyon sud), économies en euros et retours d’utilisateurs publiés.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/bilan-6-mois-kit-solaire',
   },
 };
 
+// ─── Hypothèses de simulation ─────────────────────────────
+// Kit de référence : 450 Wc, 599 € (prix public du Sunology PLAY 2, pris comme exemple).
+const KIT = { kitPriceEur: 599, kitPowerWc: 450 };
+
+// Irradiation mensuelle dans le plan du panneau, H(i)_m en kWh/m²,
+// PVGIS 5.3 (base SARAH3, moyenne 2005-2023), Lyon (45,76 N ; 4,84 E), sud, inclinaison 35°.
+// Sert uniquement à répartir la production annuelle de référence du site mois par mois.
+const PVGIS_LYON_SUD_35 = [
+  { mois: 'Janvier', h: 68.44 },
+  { mois: 'Février', h: 95.63 },
+  { mois: 'Mars', h: 144.14 },
+  { mois: 'Avril', h: 165.39 },
+  { mois: 'Mai', h: 172.5 },
+  { mois: 'Juin', h: 185.0 },
+  { mois: 'Juillet', h: 198.15 },
+  { mois: 'Août', h: 186.53 },
+  { mois: 'Septembre', h: 161.25 },
+  { mois: 'Octobre', h: 118.27 },
+  { mois: 'Novembre', h: 75.04 },
+  { mois: 'Décembre', h: 61.77 },
+];
+
+const H_TOTAL = PVGIS_LYON_SUD_35.reduce((s, m) => s + m.h, 0);
+const PROD_ANNUELLE = calculateProductionKwh(KIT);
+const EUR_PAR_KWH = AUTOCONSO_STANDARD * KWH_PRICE_EUR;
+
+const productionMensuelle = PVGIS_LYON_SUD_35.map((m) => {
+  const kwh = (PROD_ANNUELLE * m.h) / H_TOTAL;
+  return { mois: m.mois, kwh, eur: kwh * EUR_PAR_KWH, part: m.h / H_TOTAL };
+});
+
+// Somme de 6 mois consécutifs à partir d'un mois de départ (0 = janvier)
+function fenetre6Mois(debut: number) {
+  let kwh = 0;
+  for (let i = 0; i < 6; i++) kwh += productionMensuelle[(debut + i) % 12].kwh;
+  return { kwh: Math.round(kwh), eur: Math.round(kwh * EUR_PAR_KWH) };
+}
+
+const fenetres = [
+  { label: 'Octobre → mars', note: 'Le pire scénario : on démarre avec l’hiver', ...fenetre6Mois(9) },
+  { label: 'Décembre → mai', note: 'Hiver puis printemps', ...fenetre6Mois(11) },
+  { label: 'Juin → novembre', note: 'Été puis automne', ...fenetre6Mois(5) },
+  { label: 'Avril → septembre', note: 'Le meilleur scénario : la belle saison', ...fenetre6Mois(3) },
+];
+
+const hiver = fenetre6Mois(9);
+const ete = fenetre6Mois(3);
+const decMai = fenetre6Mois(11);
+const ECO_AN1 = Math.round(calculateFirstYearSavings(KIT));
+const ROI = calculateROIYears(KIT);
+const TOTAL_25 = calculateTotalSavings25Years(KIT);
+const DEC = Math.round(productionMensuelle[11].kwh);
+const JUIL = Math.round(productionMensuelle[6].kwh);
+const fr = (n: number) => n.toLocaleString('fr-FR');
+
 const faqData = [
   {
     question: 'Combien produit un kit solaire de balcon en 6 mois ?',
-    answer: 'Avec un kit 450 Wc orient\u00e9 sud \u00e0 Lyon, nous avons mesur\u00e9 environ 280 kWh sur 6 mois (d\u00e9cembre \u00e0 mai). C\u2019est coh\u00e9rent avec les pr\u00e9visions PVGIS (459 kWh/an). L\u2019hiver tire la moyenne vers le bas (15-25 kWh/mois en d\u00e9c-jan), mais le printemps compense largement (55-65 kWh/mois en avril-mai).',
+    answer: `Selon notre simulation (kit 450 Wc, Lyon, plein sud, hypothèses du site), entre ${hiver.kwh} kWh et ${ete.kwh} kWh selon la période : ${hiver.kwh} kWh d’octobre à mars, ${ete.kwh} kWh d’avril à septembre. Sur l’année, la référence est de ${PROD_ANNUELLE} kWh. Les retours publiés par des utilisateurs dans le Sud ou avec une meilleure inclinaison sont souvent au-dessus.`,
   },
   {
-    question: 'Combien \u00e9conomise-t-on r\u00e9ellement en 6 mois ?',
-    answer: 'Environ 46 \u20ac sur 6 mois avec un taux d\u2019autoconsommation de 85 % (d\u00e9calage des usages en journ\u00e9e). Sans effort d\u2019optimisation, on serait plut\u00f4t \u00e0 25-30 \u20ac. L\u2019adaptation des habitudes fait vraiment la diff\u00e9rence.',
+    question: 'Combien économise-t-on en 6 mois ?',
+    answer: `Avec ${Math.round(AUTOCONSO_STANDARD * 100)} % d’autoconsommation et un tarif de ${KWH_PRICE_LABEL}, environ ${hiver.eur} € sur un semestre d’hiver et ${ete.eur} € sur un semestre d’été, soit ~${ECO_AN1} € par an. Si personne n’est à la maison en journée et que rien n’est décalé, l’autoconsommation peut tomber nettement plus bas et les économies avec.`,
   },
   {
-    question: 'Est-ce que le kit s\u2019ab\u00eeme avec le temps ?',
-    answer: 'Apr\u00e8s 6 mois en ext\u00e9rieur (pluie, gel, gr\u00eale l\u00e9g\u00e8re, vent), aucune d\u00e9gradation visible. Le panneau est aussi propre qu\u2019au premier jour apr\u00e8s un nettoyage \u00e0 l\u2019eau claire. Le micro-onduleur fonctionne sans accroc. La production est conforme aux pr\u00e9visions.',
+    question: 'Pourquoi mon kit produit-il si peu en décembre ?',
+    answer: `C’est attendu. À Lyon, l’irradiation de décembre (PVGIS, sud, 35°) est environ 3 fois plus faible qu’en juillet. Pour un 450 Wc, cela donne ~${DEC} kWh en décembre contre ~${JUIL} kWh en juillet dans notre simulation. Un panneau posé à la verticale sur le garde-corps produit moins sur l’année mais de façon plus régulière.`,
   },
   {
-    question: 'Quels probl\u00e8mes rencontre-t-on ?',
-    answer: 'Deux probl\u00e8mes mineurs : (1) Le WiFi du micro-onduleur d\u00e9crochait quand la box \u00e9tait trop loin \u2014 r\u00e9solu avec un r\u00e9p\u00e9teur WiFi \u00e0 15 \u20ac. (2) En hiver, la production est d\u00e9cevante si on compare au mois de juin, mais c\u2019est normal et int\u00e9gr\u00e9 dans les calculs annuels.',
+    question: 'Le kit est-il rentabilisé au bout de 6 mois ?',
+    answer: `Non. Sur un kit à ${KIT.kitPriceEur} €, 6 mois représentent au mieux ${ete.eur} € d’économies. Avec nos hypothèses (inflation du kWh ${KWH_INFLATION_LABEL}), le retour sur investissement est d’environ ${fr(ROI)} ans à Lyon, plein sud, sans ombre.`,
   },
   {
-    question: 'Le kit est-il rentabilis\u00e9 au bout de 6 mois ?',
-    answer: 'Non, et c\u2019est normal. Avec 46 \u20ac d\u2019\u00e9conomies en 6 mois sur un kit \u00e0 599 \u20ac, le ROI est en bonne voie pour 7 ans (avec inflation kWh). Les 6 premiers mois incluent l\u2019hiver, qui est la p\u00e9riode la moins productive. L\u2019\u00e9t\u00e9 acc\u00e9l\u00e8re significativement.',
+    question: 'Les retours d’utilisateurs confirment-ils ces chiffres ?',
+    answer: 'Dans les grandes lignes, oui. Révolution Énergétique a publié 526 kWh sur un an pour un kit EcoFlow 400 Wc dans les Alpes-de-Haute-Provence (35°, ouest-sud-ouest), avec un pic de 68 kWh en juillet. Sur le forum Que Choisir, un utilisateur équipé de 430 Wc indique 85 % d’autoconsommation sur l’année. Un site mieux ensoleillé que Lyon produit logiquement plus que notre référence.',
+  },
+  {
+    question: 'Avez-vous testé un kit pendant 6 mois ?',
+    answer: 'Non. MonBalconSolaire n’installe pas les kits qu’il analyse. Cet article s’appuie sur une simulation transparente (PVGIS + méthodologie du site) et sur des retours d’utilisateurs publiés, cités avec leurs sources. Pour vos propres chiffres, utilisez le calculateur avec votre département et votre orientation.',
   },
 ];
 
-const productionMensuelle = [
-  { mois: 'D\u00e9cembre', kwh: 17, commentaire: 'Jours courts, m\u00e9t\u00e9o couverte. Production minimale.' },
-  { mois: 'Janvier', kwh: 21, commentaire: 'L\u00e9g\u00e8re am\u00e9lioration, quelques journ\u00e9es ensoleill\u00e9es.' },
-  { mois: 'F\u00e9vrier', kwh: 32, commentaire: 'Jours qui rallongent. Premi\u00e8re remont\u00e9e sensible.' },
-  { mois: 'Mars', kwh: 48, commentaire: 'Le printemps d\u00e9marre. Production quasi doubl\u00e9e vs janvier.' },
-  { mois: 'Avril', kwh: 58, commentaire: 'Belles journ\u00e9es fr\u00e9quentes. On sent la diff\u00e9rence sur la facture.' },
-  { mois: 'Mai', kwh: 62, commentaire: 'Pic de production. Surplus r\u00e9gulier en milieu de journ\u00e9e.' },
-];
+const extLink = 'text-green hover:underline';
 
 export default function Bilan6MoisPage() {
-  const totalKwh = productionMensuelle.reduce((s, m) => s + m.kwh, 0);
-  const totalEuros = Math.round(totalKwh * 0.85 * 0.1940);
-
   return (
     <>
       <SchemaArticle
-        title="Bilan apr\u00e8s 6 mois avec un kit solaire de balcon"
-        description="Retour d\u2019exp\u00e9rience apr\u00e8s 6 mois de production solaire sur balcon."
+        title="Bilan sur 6 mois : ce que produit vraiment un kit solaire balcon"
+        description="Production mois par mois d&apos;un kit solaire balcon 450 Wc (simulation PVGIS, Lyon sud), &eacute;conomies et retours d&apos;utilisateurs publi&eacute;s."
         url="https://monbalconsolaire.fr/blog/bilan-6-mois-kit-solaire"
         datePublished="2026-05-27"
+        dateModified="2026-09-27"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Bilan 6 mois' }]} />
+      <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Bilan sur 6 mois' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
-          <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: 'Bilan 6 mois' }]} />
+          <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: 'Bilan sur 6 mois' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Retour d&apos;exp&eacute;rience</div>
+            <div className="badge-amber mb-4 inline-block">Simulation + retours utilisateurs</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
-              Bilan apr&egrave;s 6 mois avec un kit solaire de balcon : retour d&apos;exp&eacute;rience
+              Bilan sur 6 mois : ce que produit vraiment un kit solaire balcon
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Pas de th&eacute;orie, <strong>du v&eacute;cu</strong>. On a install&eacute; un Sunology PLAY 2 (450 Wc, 599 &euro;) sur un balcon sud-ouest &agrave; Lyon en d&eacute;cembre 2025. Six mois plus tard, voici les <strong>vrais chiffres</strong> : production mois par mois, &eacute;conomies r&eacute;elles, probl&egrave;mes rencontr&eacute;s, et ce qu&apos;on referait diff&eacute;remment.
+              Combien de kWh et d&apos;euros un kit de balcon rapporte-t-il sur ses 6 premiers mois ? La r&eacute;ponse d&eacute;pend surtout <strong>du mois o&ugrave; vous d&eacute;marrez</strong>. On a simul&eacute; mois par mois un kit 450 Wc &agrave; Lyon, plein sud, avec les donn&eacute;es PVGIS, puis confront&eacute; ces chiffres aux <strong>retours d&apos;utilisateurs publi&eacute;s</strong>.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>27 mai 2026</span>
+              <span>Publi&eacute; le 27 mai 2026</span>
               <span>&middot;</span>
-              <span>10 min de lecture</span>
+              <span>Mis &agrave; jour le 27 septembre 2026</span>
+              <span>&middot;</span>
+              <span>9 min de lecture</span>
             </div>
+          </div>
+
+          <div className="card border-l-4 border-l-amber bg-amber-pale/10 mb-8">
+            <p className="text-sm text-charcoal-light leading-relaxed">
+              <strong>Transparence :</strong> nous n&apos;avons pas install&eacute; de kit pour cet article. Les chiffres de production sont <strong>simul&eacute;s</strong> (PVGIS + <Link href="/methodologie" className={extLink}>notre m&eacute;thodologie</Link>) et les retours terrain proviennent de <strong>sources publiques cit&eacute;es</strong> en fin d&apos;article.
+            </p>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Le bilan en bref</h2>
             <div className="grid grid-cols-3 gap-4 text-center mb-4">
               <div>
-                <div className="font-mono font-bold text-green text-2xl">{totalKwh}</div>
-                <div className="text-xs text-stone mt-1">kWh produits</div>
+                <div className="font-mono font-bold text-green text-2xl">{hiver.kwh}</div>
+                <div className="text-xs text-stone mt-1">kWh oct. &rarr; mars</div>
               </div>
               <div>
-                <div className="font-mono font-bold text-green text-2xl">{totalEuros} &euro;</div>
-                <div className="text-xs text-stone mt-1">&eacute;conomis&eacute;s</div>
+                <div className="font-mono font-bold text-green text-2xl">{ete.kwh}</div>
+                <div className="text-xs text-stone mt-1">kWh avr. &rarr; sept.</div>
               </div>
               <div>
-                <div className="font-mono font-bold text-green text-2xl">0</div>
-                <div className="text-xs text-stone mt-1">panne</div>
+                <div className="font-mono font-bold text-green text-2xl">~{ECO_AN1} &euro;</div>
+                <div className="text-xs text-stone mt-1">&eacute;conomis&eacute;s par an</div>
               </div>
             </div>
-            <p className="text-sm text-charcoal-light text-center">Kit Sunology PLAY 2 &middot; 450 Wc &middot; Balcon sud-ouest &middot; Lyon &middot; D&eacute;c. 2025 &ndash; Mai 2026</p>
+            <p className="text-sm text-charcoal-light text-center">Simulation &middot; kit 450 Wc &middot; Lyon &middot; plein sud &middot; autoconsommation {Math.round(AUTOCONSO_STANDARD * 100)} %</p>
           </div>
 
           <div className="space-y-10">
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Le setup</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Les hypoth&egrave;ses de la simulation</h2>
               <div className="card-lg bg-cream/40">
-                <div className="flex items-start gap-3 mb-3">
-                  <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="md" />
-                  <span className="text-sm text-charcoal-light font-semibold">Le kit testé pendant 6 mois</span>
-                </div>
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Kit :</strong> Sunology PLAY 2 (450 Wc, 599 &euro;)</li>
-                  <li>&bull; <strong>Installation :</strong> 5 d&eacute;cembre 2025, 10 minutes chrono</li>
-                  <li>&bull; <strong>Emplacement :</strong> balcon sud-ouest, 3e &eacute;tage, Lyon 3e</li>
-                  <li>&bull; <strong>Inclinaison :</strong> ~30&deg; (ch&acirc;ssis Sunology par d&eacute;faut)</li>
-                  <li>&bull; <strong>Ombres :</strong> l&eacute;g&egrave;re ombre du garde-corps le matin (1h max)</li>
-                  <li>&bull; <strong>Suivi :</strong> app Sunology STREAM + prise Tapo P110</li>
-                  <li>&bull; <strong>D&eacute;claration CACSI :</strong> faite le jour m&ecirc;me (25 min en ligne)</li>
+                  <li>&bull; <strong>Kit :</strong> 450 Wc, {KIT.kitPriceEur} &euro; (puissance et prix public du <Link href="/avis/sunology-play-2" className={extLink}>Sunology PLAY 2</Link>, pris comme exemple)</li>
+                  <li>&bull; <strong>Lieu :</strong> Lyon, exposition plein sud, sans ombre</li>
+                  <li>&bull; <strong>Production annuelle :</strong> 0,45 kWc &times; {fr(PVGIS_REFERENCE_LYON)} kWh/kWc &times; PR {fr(PERFORMANCE_RATIO)} = <strong>{PROD_ANNUELLE} kWh/an</strong> (r&eacute;f&eacute;rence prudente du site)</li>
+                  <li>&bull; <strong>R&eacute;partition mensuelle :</strong> irradiation PVGIS 5.3 (SARAH3, moyenne 2005-2023), Lyon, sud, 35&deg;</li>
+                  <li>&bull; <strong>Autoconsommation :</strong> {Math.round(AUTOCONSO_STANDARD * 100)} % (sans batterie, avec d&eacute;calage des usages en journ&eacute;e)</li>
+                  <li>&bull; <strong>Tarif :</strong> {KWH_PRICE_LABEL}, soit ~{fr(Math.round(EUR_PAR_KWH * 1000) / 1000)} &euro; &eacute;conomis&eacute; par kWh produit</li>
                 </ul>
               </div>
+              <p className="text-xs text-stone mt-3">
+                C&apos;est une moyenne pluriannuelle : une ann&eacute;e donn&eacute;e peut s&apos;&eacute;carter de &plusmn;10 % selon la m&eacute;t&eacute;o. Pour votre cas pr&eacute;cis, passez par le <Link href="/calculateur" className={extLink}>calculateur</Link>.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Production r&eacute;elle mois par mois</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Production simul&eacute;e mois par mois</h2>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse">
                   <thead>
@@ -127,148 +194,158 @@ export default function Bilan6MoisPage() {
                       <th className="p-3 text-left font-bold">Mois</th>
                       <th className="p-3 text-right font-bold">Production</th>
                       <th className="p-3 text-right font-bold">&Eacute;conomies</th>
-                      <th className="p-3 text-left font-bold">Commentaire</th>
+                      <th className="p-3 text-right font-bold">Part de l&apos;ann&eacute;e</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {productionMensuelle.map((m, i) => {
-                      const eco = Math.round(m.kwh * 0.85 * 0.1940);
-                      return (
-                        <tr key={i} className={`border-b border-border-light ${i >= 4 ? 'bg-green-pale/10' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                          <td className="p-3 font-semibold">{m.mois}</td>
-                          <td className="p-3 text-right font-mono text-green">{m.kwh} kWh</td>
-                          <td className="p-3 text-right font-mono">{eco} &euro;</td>
-                          <td className="p-3 text-xs text-charcoal-light">{m.commentaire}</td>
-                        </tr>
-                      );
-                    })}
+                    {productionMensuelle.map((m, i) => (
+                      <tr key={m.mois} className={`border-b border-border-light ${i >= 3 && i <= 8 ? 'bg-green-pale/10' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
+                        <td className="p-3 font-semibold">{m.mois}</td>
+                        <td className="p-3 text-right font-mono text-green">{Math.round(m.kwh)} kWh</td>
+                        <td className="p-3 text-right font-mono">{fr(Math.round(m.eur * 10) / 10)} &euro;</td>
+                        <td className="p-3 text-right font-mono text-xs text-charcoal-light">{Math.round(m.part * 100)} %</td>
+                      </tr>
+                    ))}
                     <tr className="bg-green-pale/20 font-bold">
-                      <td className="p-3">Total 6 mois</td>
-                      <td className="p-3 text-right font-mono text-green">{totalKwh} kWh</td>
-                      <td className="p-3 text-right font-mono text-green">{totalEuros} &euro;</td>
-                      <td className="p-3 text-xs">Autoconsommation 85 %</td>
+                      <td className="p-3">Total annuel</td>
+                      <td className="p-3 text-right font-mono text-green">{PROD_ANNUELLE} kWh</td>
+                      <td className="p-3 text-right font-mono text-green">{ECO_AN1} &euro;</td>
+                      <td className="p-3 text-right font-mono text-xs">100 %</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">
-                Mesures via prise Tapo P110 + app Sunology STREAM. Tarif EDF 0,1940 &euro;/kWh. Autoconsommation 85 % (d&eacute;calage lave-linge/lave-vaisselle en journ&eacute;e).
+              <p className="text-charcoal-light leading-relaxed text-sm">
+                &Agrave; retenir : <strong>d&eacute;cembre produit environ 3 fois moins que juillet</strong> (~{DEC} kWh contre ~{JUIL} kWh). Les six mois d&apos;avril &agrave; septembre p&egrave;sent &agrave; eux seuls {Math.round((ete.kwh / PROD_ANNUELLE) * 100)} % de la production annuelle. <Link href="/blog/production-solaire-ete-vs-hiver" className={extLink}>&Eacute;t&eacute; vs hiver : l&apos;&eacute;cart expliqu&eacute;</Link>.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Comparaison avec les pr&eacute;visions PVGIS</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Vos 6 premiers mois d&eacute;pendent du mois d&apos;installation</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                PVGIS pr&eacute;voit <strong>459 kWh/an</strong> pour un 450 Wc &agrave; Lyon en orientation sud (coeff 1,0). Notre balcon est sud-ouest (coeff ~0,95), donc la pr&eacute;vision ajust&eacute;e est <strong>~436 kWh/an</strong>, soit <strong>~218 kWh sur 6 mois</strong> (d&eacute;cembre-mai, p&eacute;riode moins productive).
+                M&ecirc;me kit, m&ecirc;me balcon : selon la date de mise en service, le &laquo; bilan &agrave; 6 mois &raquo; varie presque du simple au double.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="card text-center">
-                  <div className="font-mono font-bold text-amber-dark text-2xl">218 kWh</div>
-                  <div className="text-xs text-stone mt-1">Pr&eacute;vision PVGIS (6 mois)</div>
-                </div>
-                <div className="card text-center">
-                  <div className="font-mono font-bold text-green text-2xl">{totalKwh} kWh</div>
-                  <div className="text-xs text-stone mt-1">Production r&eacute;elle</div>
-                </div>
+                {fenetres.map((f) => (
+                  <div key={f.label} className="card">
+                    <div className="font-bold text-sm mb-1">{f.label}</div>
+                    <div className="font-mono font-bold text-green text-xl">{f.kwh} kWh &middot; {f.eur} &euro;</div>
+                    <div className="text-xs text-stone mt-1">{f.note}</div>
+                  </div>
+                ))}
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
-                <strong>+{totalKwh - 218} kWh au-dessus des pr&eacute;visions</strong> ({Math.round((totalKwh / 218 - 1) * 100)} % de plus). C&apos;est encourageant &mdash; le printemps 2026 a &eacute;t&eacute; particuli&egrave;rement ensoleill&eacute; &agrave; Lyon. On ne peut pas compter sur ce bonus chaque ann&eacute;e, mais les pr&eacute;visions PVGIS sont conservatrices.
+                Si vous installez en novembre, un premier bilan &agrave; ~{decMai.kwh} kWh fin mai n&apos;a rien d&apos;anormal. Ne jugez pas un kit sur ses premiers mois d&apos;hiver : comparez-le mois par mois aux pr&eacute;visions.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Ce qui a bien march&eacute;</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Panneau inclin&eacute; ou vertical : un profil tr&egrave;s diff&eacute;rent</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">
+                Beaucoup de kits de balcon sont fix&eacute;s &agrave; la verticale sur le garde-corps. Toujours selon PVGIS pour Lyon plein sud, l&apos;irradiation annuelle re&ccedil;ue &agrave; 90&deg; est d&apos;environ <strong>1 130 kWh/m&sup2;</strong>, contre <strong>1 630 kWh/m&sup2;</strong> &agrave; 35&deg;. Mais elle est bien mieux r&eacute;partie : en vertical, d&eacute;cembre re&ccedil;oit environ 70 % de l&apos;irradiation de juillet, contre ~30 % &agrave; 35&deg;.
+              </p>
+              <p className="text-charcoal-light leading-relaxed text-sm">
+                Cons&eacute;quence : un panneau vertical produit moins sur l&apos;ann&eacute;e, mais son bilan d&apos;hiver est moins d&eacute;cevant. Un panneau inclin&eacute; produit davantage, surtout d&apos;avril &agrave; septembre. <Link href="/blog/panneau-solaire-hiver-production" className={extLink}>Production hivernale expliqu&eacute;e</Link>.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Ce que disent les retours d&apos;utilisateurs publi&eacute;s</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">
+                Les mesures publi&eacute;es sont rares et rarement comparables (lieu, orientation, puissance diff&eacute;rents). Voici celles qui donnent des chiffres v&eacute;rifiables :
+              </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Installation vraiment en 10 minutes</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">On ne croyait pas aux promesses marketing. Mais le ch&acirc;ssis Sunology est effectivement pr&eacute;-assembl&eacute;. D&eacute;plier, lester, brancher. Fait en solo, sans outils, un samedi matin.</p>
+                  <h3 className="font-bold text-sm mb-1 text-green">EcoFlow 400 Wc, un an de mesures (R&eacute;volution &Eacute;nerg&eacute;tique)</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">
+                    Kit PowerStream 400 Wc pos&eacute; &agrave; 35&deg;, orient&eacute; ouest-sud-ouest, dans les Alpes-de-Haute-Provence : <strong>526 kWh sur un an</strong>, meilleur mois juillet avec <strong>68 kWh</strong>, autoconsommation de 91,6 %, ~120 &euro; d&apos;&eacute;conomies annuelles. Le journal signale aussi quatre nettoyages n&eacute;cessaires, surtout apr&egrave;s des pluies de sable. Ramen&eacute; au kWc, c&apos;est plus que notre r&eacute;f&eacute;rence lyonnaise : logique pour un site parmi les plus ensoleill&eacute;s de France.
+                  </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">L&apos;app Sunology STREAM fonctionne bien</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Production en temps r&eacute;el, historique jour/semaine/mois, notifications. Le WiFi int&eacute;gr&eacute; au micro-onduleur &eacute;vite un bo&icirc;tier suppl&eacute;mentaire. Interface propre.</p>
+                  <h3 className="font-bold text-sm mb-1 text-green">430 Wc en autoconsommation (forum Que Choisir)</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">
+                    Un utilisateur du forum &eacute;quip&eacute; de 430 Wc rapporte <strong>85 % d&apos;autoconsommation</strong> sur l&apos;ann&eacute;e (~15 % r&eacute;inject&eacute;), avec 0 % d&apos;injection en d&eacute;cembre et 24 % en mars. Il met aussi en garde : esp&eacute;rer r&eacute;duire sa facture de 30 % avec ce type d&apos;installation est illusoire. C&apos;est coh&eacute;rent avec le taux de {Math.round(AUTOCONSO_STANDARD * 100)} % que nous utilisons.
+                  </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Le d&eacute;calage des usages change tout</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Lancer le lave-linge &agrave; 12h au lieu de 20h, c&apos;est gratuit et &ccedil;a fait passer l&apos;autoconsommation de ~45 % &agrave; ~85 %. C&apos;est le geste le plus rentable du kit. <Link href="/guide/optimiser-autoconsommation-solaire" className="text-green hover:underline">Guide optimisation</Link>.</p>
+                  <h3 className="font-bold text-sm mb-1 text-green">Un mois d&apos;avril dans le Sud-Ouest (avis client Sunology)</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">
+                    Un client Sunology (avis Trustpilot relay&eacute; par Hellowatt) indique une production de <strong>53,9 kWh en avril</strong>, r&eacute;gion sud-ouest, avec un PLAY Max. Notre simulation donne ~{Math.round(productionMensuelle[3].kwh)} kWh en avril pour un 450 Wc &agrave; Lyon : m&ecirc;me ordre de grandeur, avec un meilleur ensoleillement c&ocirc;t&eacute; Sud-Ouest.
+                  </p>
                 </div>
-                <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">La prise Tapo P110 : indispensable</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">15 &euro; pour mesurer exactement combien le kit produit. L&apos;app garde l&apos;historique. On compare chaque mois avec les pr&eacute;visions. C&apos;est ce qui rend l&apos;exp&eacute;rience concr&egrave;te. <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">Notre comparatif prises</Link>.</p>
+              </div>
+              <p className="text-xs text-stone mt-3">
+                Voir aussi notre <Link href="/blog/kit-solaire-balcon-avis-2026" className={extLink}>synth&egrave;se des avis utilisateurs 2026</Link>.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Les points de vigilance pendant les premiers mois</h2>
+              <div className="space-y-3">
+                <div className="card border-l-4 border-l-amber bg-amber-pale/10">
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">L&apos;hiver d&eacute;courage</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">~{DEC} kWh en d&eacute;cembre, c&apos;est environ {Math.round(productionMensuelle[11].eur)} &euro; d&apos;&eacute;conomies sur le mois. Ce n&apos;est pas une panne : c&apos;est int&eacute;gr&eacute; au calcul annuel. <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className={extLink}>Que faire si votre kit produit moins que pr&eacute;vu</Link>.</p>
+                </div>
+                <div className="card border-l-4 border-l-amber bg-amber-pale/10">
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">L&apos;autoconsommation n&apos;est pas automatique</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Le taux de {Math.round(AUTOCONSO_STANDARD * 100)} % suppose de faire tourner lave-linge, lave-vaisselle ou chauffe-eau en journ&eacute;e. Si le logement est vide de 8h &agrave; 18h, le surplus part sur le r&eacute;seau sans &ecirc;tre pay&eacute;. <Link href="/guide/optimiser-autoconsommation-solaire" className={extLink}>Guide optimisation</Link>.</p>
+                </div>
+                <div className="card border-l-4 border-l-amber bg-amber-pale/10">
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Ombres et WiFi</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Une ombre de garde-corps ou de balcon voisin, m&ecirc;me partielle, p&egrave;se sur la production (<Link href="/blog/panneau-solaire-ombre-optimiser-production" className={extLink}>guide ombre</Link>). Et les micro-onduleurs connect&eacute;s utilisent en g&eacute;n&eacute;ral le WiFi 2,4 GHz : si la box est loin du balcon, le suivi peut d&eacute;crocher (la production, elle, continue).</p>
+                </div>
+                <div className="card border-l-4 border-l-amber bg-amber-pale/10">
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">L&apos;encrassement selon l&apos;environnement</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Le test d&apos;un an de R&eacute;volution &Eacute;nerg&eacute;tique a n&eacute;cessit&eacute; quatre nettoyages. En ville, pollen et pollution jouent le m&ecirc;me r&ocirc;le. <Link href="/blog/entretien-nettoyage-panneau-solaire-balcon" className={extLink}>Entretien et nettoyage</Link>.</p>
                 </div>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Les probl&egrave;mes rencontr&eacute;s</h2>
-              <div className="space-y-3">
-                <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">WiFi instable du micro-onduleur</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Le micro-onduleur est sur le balcon, &agrave; 8 m de la box. Le signal WiFi 2,4 GHz d&eacute;crochait 2-3 fois par semaine. Solution : un r&eacute;p&eacute;teur WiFi &agrave; 15 &euro; pos&eacute; pr&egrave;s de la fen&ecirc;tre. Plus de d&eacute;connexion depuis.</p>
-                </div>
-                <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Production hivernale d&eacute;cevante (psychologiquement)</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">17 kWh en d&eacute;cembre, c&apos;est ~3 &euro; d&apos;&eacute;conomies. On a failli se d&eacute;courager. Mais c&apos;est normal et int&eacute;gr&eacute; dans le calcul annuel. D&egrave;s mars, la courbe remonte fort. <Link href="/blog/panneau-solaire-hiver-production" className="text-green hover:underline">Production hivernale expliqu&eacute;e</Link>.</p>
-                </div>
-                <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Ombre du garde-corps le matin</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Le garde-corps projette une ombre sur le bas du panneau de 8h &agrave; 9h30 en hiver. Impact : ~5-8 % de perte sur la production matinale. Pas &eacute;norme mais agr&eacute;ant. Impossible &agrave; corriger sans d&eacute;placer le panneau. <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green hover:underline">Guide ombre</Link>.</p>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on referait diff&eacute;remment</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Si vous vous lancez : nos recommandations</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">{'\u2713'} Installer la prise Tapo P110 d&egrave;s le jour 1</h4>
-                  <p className="text-xs text-charcoal-light">On l&apos;a ajout&eacute;e au mois 2. Les donn&eacute;es du premier mois sont estim&eacute;es, pas mesur&eacute;es. 15 &euro; d&apos;investissement qui valent le coup imm&eacute;diatement.</p>
+                  <h3 className="font-bold text-sm mb-1">{'✓'} Mesurer d&egrave;s le premier jour</h3>
+                  <p className="text-xs text-charcoal-light">Une prise connect&eacute;e (~15 &euro;) ou l&apos;app du fabricant permet de comparer chaque mois &agrave; la pr&eacute;vision. Sans mesure, impossible de rep&eacute;rer un probl&egrave;me. <Link href="/blog/prises-connectees-suivi-solaire" className={extLink}>Comparatif des prises</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">{'\u2713'} Faire la CACSI avant l&apos;installation</h4>
-                  <p className="text-xs text-charcoal-light">On l&apos;a faite le m&ecirc;me jour, mais commencer 1-2 semaines avant permet d&apos;avoir la convention sign&eacute;e quand le kit arrive.</p>
+                  <h3 className="font-bold text-sm mb-1">{'✓'} Faire la d&eacute;claration CACSI avant de brancher</h3>
+                  <p className="text-xs text-charcoal-light">La d&eacute;marche aupr&egrave;s d&apos;Enedis se fait en ligne. La lancer avant la r&eacute;ception du kit &eacute;vite de produire sans convention.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">{'\u2713'} Installer en septembre, pas en d&eacute;cembre</h4>
-                  <p className="text-xs text-charcoal-light">On a commenc&eacute; par les 3 pires mois de production. Psychologiquement dur. En installant en septembre, on voit le soleil d&apos;automne + on a les donn&eacute;es avant l&apos;hiver pour relativiser.</p>
+                  <h3 className="font-bold text-sm mb-1">{'✓'} Relativiser un d&eacute;marrage en hiver</h3>
+                  <p className="text-xs text-charcoal-light">Installer entre mars et mai donne un premier semestre proche de {ete.kwh} kWh ; installer en octobre, plut&ocirc;t {hiver.kwh} kWh. Le kit n&apos;est pas en cause.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">{'\u2713'} Envisager le Zendure SolarFlow d&egrave;s le d&eacute;part</h4>
-                  <p className="text-xs text-charcoal-light">Avec le recul, la batterie Zendure (488 &euro;) aurait permis de stocker le surplus de midi pour le soir. Notre autoconsommation passerait de 85 % &agrave; 90-95 %. <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Voir l&apos;avis Zendure</Link>.</p>
+                  <h3 className="font-bold text-sm mb-1">{'✓'} &Eacute;valuer la batterie seulement si le surplus est important</h3>
+                  <p className="text-xs text-charcoal-light">Une batterie fait passer l&apos;autoconsommation vers 95 %, mais son co&ucirc;t allonge le retour sur investissement. <Link href="/avis/zendure-solarflow" className={extLink}>Voir l&apos;avis Zendure SolarFlow</Link>.</p>
                 </div>
               </div>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Projection sur 12 mois et ROI</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">
-                Les 6 prochains mois (juin-novembre) incluent l&apos;&eacute;t&eacute;, la meilleure p&eacute;riode. En extrapolant avec les coefficients PVGIS mensuels :
-              </p>
               <div className="card-lg bg-cream/40">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production 6 derniers mois (d&eacute;c-mai) :</strong> {totalKwh} kWh</li>
-                  <li>&bull; <strong>Production 6 prochains mois (juin-nov, estim&eacute;e) :</strong> ~250 kWh</li>
-                  <li>&bull; <strong>Production ann&eacute;e 1 (estim&eacute;e) :</strong> ~{totalKwh + 250} kWh</li>
-                  <li>&bull; <strong>&Eacute;conomies ann&eacute;e 1 :</strong> ~{Math.round((totalKwh + 250) * 0.85 * 0.1940)} &euro;</li>
-                  <li>&bull; <strong>ROI projet&eacute; (avec inflation 3,3 %/an) :</strong> <strong className="text-green">~7 ans</strong></li>
-                  <li>&bull; <strong>&Eacute;conomies cumul&eacute;es sur 25 ans :</strong> ~2 800 &euro;</li>
+                  <li>&bull; <strong>Production ann&eacute;e 1 :</strong> {PROD_ANNUELLE} kWh</li>
+                  <li>&bull; <strong>&Eacute;conomies ann&eacute;e 1 :</strong> ~{ECO_AN1} &euro;</li>
+                  <li>&bull; <strong>ROI (inflation du kWh {KWH_INFLATION_LABEL}) :</strong> <strong className="text-green">~{fr(ROI)} ans</strong></li>
+                  <li>&bull; <strong>&Eacute;conomies cumul&eacute;es sur 25 ans :</strong> ~{fr(Math.round(TOTAL_25 / 100) * 100)} &euro;</li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
-                On est <strong>dans les clous</strong> des pr&eacute;visions. Pas de mauvaise surprise. Le kit fait exactement ce qu&apos;il promet &mdash; ni plus, ni moins.
+                Ces chiffres valent pour Lyon, plein sud, sans ombre. Plus au sud ou avec une meilleure inclinaison, le ROI raccourcit ; au nord, &agrave; l&apos;est/ouest ou avec des ombres, il s&apos;allonge. <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className={extLink}>Combien rapporte un panneau solaire de balcon</Link>.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Le verdict &agrave; 6 mois</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10">
                 <p className="text-charcoal-light leading-relaxed mb-4">
-                  <strong>Oui, c&apos;est rentable.</strong> Pas spectaculaire, pas instantan&eacute;, mais <strong>mesurable et r&eacute;gulier</strong>. Le kit produit ce que PVGIS pr&eacute;voit (voire un peu plus). Les &eacute;conomies sont r&eacute;elles, m&ecirc;me si 46 &euro; en 6 mois ne changent pas la vie.
-                </p>
-                <p className="text-charcoal-light leading-relaxed mb-4">
-                  Ce qui change vraiment, c&apos;est la <strong>prise de conscience</strong>. Voir la production en temps r&eacute;el sur l&apos;app, comprendre son talon de consommation, adapter ses habitudes &mdash; c&apos;est &eacute;ducatif et motivant.
+                  <strong>Sur 6 mois, un kit de balcon rapporte entre {hiver.eur} &euro; et {ete.eur} &euro;</strong> selon la saison (450 Wc, Lyon, sud). Ce n&apos;est pas spectaculaire, et ce n&apos;est pas cens&eacute; l&apos;&ecirc;tre : la rentabilit&eacute; se joue sur plusieurs ann&eacute;es.
                 </p>
                 <p className="text-charcoal-light leading-relaxed">
-                  Si c&apos;&eacute;tait &agrave; refaire ? <strong>On le referait sans h&eacute;siter.</strong> Juste un peu plus t&ocirc;t dans l&apos;ann&eacute;e.
+                  Les retours publi&eacute;s par des utilisateurs sont coh&eacute;rents avec ces ordres de grandeur, et souvent un peu au-dessus dans les r&eacute;gions ensoleill&eacute;es. Le principal levier reste la <strong>part de production consomm&eacute;e sur place</strong>.
                 </p>
               </div>
             </section>
@@ -284,7 +361,7 @@ export default function Bilan6MoisPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY 2" variant="box" position="article_bottom" price="599 \u20ac" />
+              <AffiliateCTA productName="Sunology PLAY 2" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY 2" variant="box" position="article_bottom" price="599 €" />
             </div>
 
             <section className="mb-10">
@@ -292,27 +369,23 @@ export default function Bilan6MoisPage() {
               <div className="space-y-3">
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Les chiffres th&eacute;oriques &mdash; comparez avec notre v&eacute;cu</p>
+                  <p className="text-xs text-charcoal-light mt-1">Les &eacute;conomies annuelles selon la puissance et la r&eacute;gion</p>
                 </Link>
                 <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Les 8 astuces qu&apos;on a appliqu&eacute;es pour passer &agrave; 85 %</p>
+                  <p className="text-xs text-charcoal-light mt-1">Les astuces pour viser 85 % d&apos;autoconsommation</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : production r&eacute;elle</h4>
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : quelle production ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi d&eacute;cembre-janvier est d&eacute;cevant (et c&apos;est normal)</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Diagnostic si vos chiffres diff&egrave;rent des n&ocirc;tres</p>
-                </Link>
-                <Link href="/guide/panneau-solaire-assurance-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Gr&ecirc;le, vol, chute : v&eacute;rifiez votre couverture</p>
+                  <p className="text-xs text-charcoal-light mt-1">Diagnostic si vos chiffres s&apos;&eacute;cartent des pr&eacute;visions</p>
                 </Link>
                 <Link href="/blog/kit-solaire-balcon-avis-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : tous les avis 2026</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Synth&egrave;se Trustpilot, forums et retours r&eacute;els</p>
+                  <p className="text-xs text-charcoal-light mt-1">Synth&egrave;se Trustpilot, forums et retours d&apos;utilisateurs</p>
                 </Link>
               </div>
             </section>
@@ -326,7 +399,7 @@ export default function Bilan6MoisPage() {
                   <details key={i} className="card group" open={i === 0}>
                     <summary className="font-semibold text-sm cursor-pointer list-none flex items-center justify-between">
                       {faq.question}
-                      <span className="text-stone group-open:rotate-180 transition-transform">{'\u25BC'}</span>
+                      <span className="text-stone group-open:rotate-180 transition-transform">{'▼'}</span>
                     </summary>
                     <p className="text-sm text-charcoal-light mt-3 leading-relaxed">{faq.answer}</p>
                   </details>
@@ -334,9 +407,19 @@ export default function Bilan6MoisPage() {
               </div>
             </section>
 
-            <div className="mt-10 pt-8 border-t border-border-light">
+            <div className="mt-10 pt-8 border-t border-border-light space-y-3">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie :</strong> donn&eacute;es mesur&eacute;es via prise Tapo P110 + app Sunology STREAM (d&eacute;c. 2025 &ndash; mai 2026). Tarif EDF 0,1940 &euro;/kWh. Autoconsommation mesur&eacute;e &agrave; 85 %. Pr&eacute;visions PVGIS pour Lyon, sud-ouest, 30&deg;. <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
+                <strong>M&eacute;thodologie :</strong> simulation, pas de mesure sur site. Production annuelle = puissance (kWc) &times; {fr(PVGIS_REFERENCE_LYON)} kWh/kWc &times; PR {fr(PERFORMANCE_RATIO)}, r&eacute;partie mois par mois selon l&apos;irradiation PVGIS 5.3 (SARAH3, 2005-2023) pour Lyon, sud, 35&deg;. Tarif {KWH_PRICE_LABEL}, autoconsommation {Math.round(AUTOCONSO_STANDARD * 100)} %, inflation {KWH_INFLATION_LABEL}. <Link href="/methodologie" className={extLink}>Notre m&eacute;thodologie</Link>.
+              </p>
+              <p className="text-xs text-stone leading-relaxed">
+                <strong>Sources :</strong>{' '}
+                <a href="https://re.jrc.ec.europa.eu/pvg_tools/fr/" target="_blank" rel="noopener noreferrer" className={extLink}>PVGIS (Commission europ&eacute;enne, JRC)</a> &middot;{' '}
+                <a href="https://www.revolution-energetique.com/tests/on-a-teste-un-kit-solaire-de-balcon-ecoflow-pendant-un-an-voici-le-resultat/" target="_blank" rel="noopener noreferrer" className={extLink}>R&eacute;volution &Eacute;nerg&eacute;tique, test EcoFlow sur un an (2024, mis &agrave; jour 2025)</a> &middot;{' '}
+                <a href="https://forum.quechoisir.org/kit-solaires-rentable-en-combien-de-temps-voir-criteres-t357354.html" target="_blank" rel="noopener noreferrer" className={extLink}>Forum Que Choisir, &laquo; Kit solaires : rentable en combien de temps &raquo;</a> &middot;{' '}
+                <a href="https://www.hellowatt.fr/panneaux-solaires-photovoltaiques/sunology" target="_blank" rel="noopener noreferrer" className={extLink}>Hellowatt, avis Sunology</a>.
+              </p>
+              <p className="text-xs text-stone leading-relaxed">
+                <strong>Transparence :</strong> cet article contient un lien affili&eacute;. Si vous achetez via ce lien, nous pouvons percevoir une commission, sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
           </div>

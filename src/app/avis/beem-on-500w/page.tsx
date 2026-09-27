@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Le Beem On 500 Wc est-il le meilleur rapport qualité-prix en 2026 ?', answer: 'Oui. À 0,86€/Wc (429€ pour 500 Wc), c\'est le meilleur ratio €/Wc du marché premium en France. Le Sunology PLAY2 est à 1,08€/Wc (518€ pour 480 Wc). Le ROI est d\'environ 4,8 ans contre 6-7 ans pour la concurrence.' },
+  { question: 'Le Beem On 500 Wc est-il le meilleur rapport qualité-prix en 2026 ?', answer: 'Oui. À 0,86€/Wc (429€ pour 500 Wc), c\'est le meilleur ratio €/Wc du marché premium en France. Le Sunology PLAY2 est à 1,33€/Wc (599€ pour 450 Wc). Le ROI est d\'environ 4,8 ans contre 7 à 7,4 ans pour la concurrence (Sunology PLAY2, Beem On 460W, Sunethic F500).' },
   { question: 'Quelle différence entre le Beem On 500 Wc et l\'ancien 460 Wc ?', answer: 'Le nouveau modèle gagne 40 Wc de puissance (500 vs 460 Wc) tout en baissant de 170€ (429€ vs 599€). Le ratio €/Wc passe de 1,30€ à 0,86€. Les dimensions sont quasi identiques (1 950 x 1 134 mm vs 1 890 x 1 130 mm). Le micro-onduleur passe à 550 W de sortie.' },
-  { question: 'Combien produit le Beem On 500 Wc par an ?', answer: 'Entre 500 et 790 kWh/an selon la région et l\'orientation. En région lyonnaise, exposition sud, comptez ~510 kWh/an soit environ 84€ d\'économies annuelles. ROI de 4,8 ans et ~3 160€ d\'économies sur 25 ans (+3,3%/an d\'inflation CRE).' },
+  { question: 'Combien produit le Beem On 500 Wc par an ?', answer: 'Entre ~430 et ~640 kWh/an en exposition sud selon la région (de Lille à Marseille). En région lyonnaise, exposition sud, comptez ~510 kWh/an soit environ 84€ d\'économies annuelles. ROI de 4,8 ans et ~3 190€ d\'économies sur 25 ans (+3,3%/an d\'inflation CRE).' },
   { question: 'Beem On 500 Wc vs Sunology PLAY2 : lequel choisir ?', answer: 'Le Beem On 500 Wc écrase le PLAY2 sur le prix (429€ vs 518€) et la puissance (500 vs 480 Wc). Sunology garde l\'avantage sur la technologie Back Contact (23,5% vs 22% de rendement), le WiFi natif sans boîtier, et l\'écosystème batterie VAULT. Si le budget est votre priorité : Beem. Si vous voulez l\'écosystème le plus complet : Sunology.' },
   { question: 'Peut-on connecter plusieurs Beem On 500 Wc ensemble ?', answer: 'Oui. Vous pouvez connecter jusqu\'à 4 stations sur la même prise (2 000 Wc), ou jusqu\'à 6 avec le Beem On Max (3 000 Wc). Chaque station supplémentaire est vendue en "Extension" sans Beembox.' },
 ];
@@ -106,7 +106,7 @@ export default function BeemOn500WcAvisPage() {
               <div className="space-y-3">
                 {[
                   { t: 'Le prix le plus bas du segment premium : 0,86€/Wc', d: 'À 429€ pour 500 Wc, le Beem On pulvérise la concurrence. Le Sunology PLAY2 est à 1,08€/Wc (518€ pour 480 Wc), le Sunethic F500 à 1,38€/Wc (690€). C\'est 20 à 40% moins cher par watt.' },
-                  { t: 'ROI record de 4,8 ans', d: 'Grâce au prix agressif, le retour sur investissement tombe sous les 5 ans (Lyon, sud). C\'est le kit le plus vite rentabilisé du marché premium. Sur 25 ans : ~3 160€ d\'économies.' },
+                  { t: 'ROI record de 4,8 ans', d: 'Grâce au prix agressif, le retour sur investissement tombe sous les 5 ans (Lyon, sud). C\'est le kit le plus vite rentabilisé du marché premium. Sur 25 ans : ~3 190€ d\'économies.' },
                   { t: 'Paiement en 10x sans frais', d: 'Soit ~43€/mois pendant 10 mois. C\'est plus accessible que jamais. Dès le premier mois, le kit produit plus que la mensualité.' },
                   { t: 'Option Beem ZEN', d: 'Pour 49€ de plus, Beem gère toutes les démarches administratives : déclaration CACSI Enedis, convention d\'autoconsommation. Idéal si l\'administratif vous freine.' },
                   { t: 'App Beem et suivi temps réel', d: 'La Beembox (incluse) connecte le kit à l\'app Beem : production en direct, historique, économies cumulées, conseils personnalisés. L\'interface est claire et bien conçue.' },
@@ -176,7 +176,7 @@ export default function BeemOn500WcAvisPage() {
                       ['Beem On 500 Wc', '500 Wc', '429 €', '0,86 €', '8.5/10', true],
                       ['Sunology PLAY2', '480 Wc', '518 €', '1,08 €', '8.5/10', false],
                       ['Sunethic F500', '500 Wc', '690 €', '1,38 €', '7.5/10', false],
-                      ['EcoFlow PowerStream', '400 Wc', '599 €', '1,50 €', '8/10', false],
+                      ['EcoFlow PowerStream (arr\u00eat\u00e9)', '400 Wc', '599 €', '1,50 €', '8/10', false],
                       ['Beem Kit 300W', '300 Wc', '299 €', '1,00 €', '7.5/10', false],
                     ].map(([name, power, price, ratio, score, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>
@@ -209,7 +209,7 @@ export default function BeemOn500WcAvisPage() {
                   { v: '510 kWh', l: 'Production/an' },
                   { v: '84 €', l: 'Économies/an' },
                   { v: '4,8 ans', l: 'ROI' },
-                  { v: '3 160 €', l: 'Gains sur 25 ans' },
+                  { v: '3 190 €', l: 'Gains sur 25 ans' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-green-pale/30 rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-green">{s.v}</div>
@@ -217,7 +217,7 @@ export default function BeemOn500WcAvisPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">En r&eacute;gion m&eacute;diterran&eacute;enne (Marseille, Montpellier), la production grimpe &agrave; 650-790&nbsp;kWh/an, soit 110-130&nbsp;&euro;/an d&apos;&eacute;conomies et un ROI sous les 4&nbsp;ans.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">En r&eacute;gion m&eacute;diterran&eacute;enne (Marseille, Montpellier), la production grimpe &agrave; 615-640&nbsp;kWh/an, soit environ 100-105&nbsp;&euro;/an d&apos;&eacute;conomies et un ROI d&apos;environ 3,9&nbsp;ans.</p>
               <p className="text-charcoal-light leading-relaxed">En comparaison, l&apos;ancien <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On 460W &agrave; 599&nbsp;&euro;</Link> avait un ROI de 7,0 ans. Le gain est spectaculaire : +40&nbsp;Wc de puissance ET &minus;170&nbsp;&euro; sur le prix.</p>
             </section>
 
@@ -298,7 +298,7 @@ export default function BeemOn500WcAvisPage() {
             <NewsletterBanner />
 
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie ROI :</strong> ROI calcul&eacute; avec tarif 0,1940&nbsp;&euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85%, Performance Ratio 0,85, Lyon sud. &Eacute;conomies : 84&nbsp;&euro;/an, ROI 4,8&nbsp;ans, ~3&nbsp;160&nbsp;&euro; sur 25&nbsp;ans.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie ROI :</strong> ROI calcul&eacute; avec tarif 0,1940&nbsp;&euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85%, Performance Ratio 0,85, Lyon sud. &Eacute;conomies : 84&nbsp;&euro;/an, ROI 4,8&nbsp;ans, ~3&nbsp;190&nbsp;&euro; sur 25&nbsp;ans.</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> avis ind&eacute;pendant. Les liens vers Beem Energy sont des liens affili&eacute;s. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>

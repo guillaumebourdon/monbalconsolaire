@@ -45,8 +45,8 @@ const setups = [
     ideal: 'Petite terrasse, premier achat, budget limité',
     kits: [
       { name: 'Beem On 500 Wc', power: '500 Wc', price: '429 €', roi: '4,8 ans', avantage: 'Meilleur prix (0,86 €/Wc), paiement 10x', slug: '/avis/beem-on-500w' },
-      { name: 'Sunology PLAY 2', power: '450 Wc', price: '599 €', roi: '6,0 ans', avantage: 'Installation 1 min, WiFi natif', slug: '/avis/sunology-play-2' },
-      { name: 'Sunethic F500', power: '500 Wc', price: '690 €', roi: '6,2 ans', avantage: 'Made in France, bifacial', slug: '/avis/sunethic-f500' },
+      { name: 'Sunology PLAY 2', power: '450 Wc', price: '599 €', roi: '7,1 ans', avantage: 'Installation 1 min, WiFi natif', slug: '/avis/sunology-play-2' },
+      { name: 'Sunethic F500', power: '500 Wc', price: '690 €', roi: '7,4 ans', avantage: 'Made in France, bifacial', slug: '/avis/sunethic-f500' },
     ],
   },
   {
@@ -57,8 +57,8 @@ const setups = [
     ideal: 'Terrasse standard, meilleur rapport production/investissement',
     kits: [
       { name: 'Zendure SolarFlow + 2\u00d7420 W', power: '840 Wc + batterie', price: '~900 €', roi: '6,6 ans', avantage: 'Batterie 1,92 kWh, autoconsommation 80 %', slug: '/avis/zendure-solarflow' },
-      { name: '2\u00d7 Sunology PLAY 2', power: '900 Wc', price: '1 198 €', roi: '7,4 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
-      { name: '2\u00d7 Beem On 500 Wc', power: '1 000 Wc', price: '858 €', roi: '5,1 ans', avantage: 'Meilleur ratio \u20ac/Wc du march\u00e9 (0,86 \u20ac/Wc)', slug: '/avis/beem-on-500w' },
+      { name: '2\u00d7 Sunology PLAY 2', power: '900 Wc', price: '1 198 €', roi: '7,1 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
+      { name: '2\u00d7 Beem On 500 Wc', power: '1 000 Wc', price: '858 €', roi: '4,8 ans', avantage: 'Meilleur ratio \u20ac/Wc du march\u00e9 (0,86 \u20ac/Wc)', slug: '/avis/beem-on-500w' },
     ],
   },
   {
@@ -70,7 +70,7 @@ const setups = [
     kits: [
       { name: 'Bluetti Balco 260 + 2\u00d7420 W', power: '840 Wc + 2,56 kWh', price: '~1 250 €', roi: '7,8 ans', avantage: 'Tout-en-un IP65, batterie 2,56 kWh extensible, secours coupure', slug: '/avis/bluetti-balco-260' },
       { name: 'Zendure SolarFlow + 2\u00d7420 W + AB2000', power: '840 Wc + 3,84 kWh', price: '~1 500 €', roi: '9,3 ans', avantage: 'Stockage doublé, couvre la nuit entière', slug: '/avis/zendure-solarflow' },
-      { name: 'EcoFlow PowerStream + 2\u00d7400 W + DELTA 2', power: '800 Wc + 1 kWh', price: '~1 800 €', roi: '13,6 ans', avantage: 'Backup coupure réseau, batterie portable', slug: '/avis/ecoflow-powerstream' },
+      { name: 'EcoFlow PowerStream + 2\u00d7400 W + DELTA 2 (arr\u00eat\u00e9)', power: '800 Wc + 1 kWh', price: '~1 800 €', roi: '13,6 ans', avantage: 'Plus vendu par EcoFlow France (sept. 2026) : occasion uniquement', slug: '/avis/ecoflow-powerstream' },
     ],
   },
 ];
@@ -242,7 +242,7 @@ export default function MeilleurKitTerrasse2026Page() {
                   Si le budget est serr&eacute;, le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc &agrave; 429 &euro;</Link> offre le meilleur rapport qualit&eacute;-prix du march&eacute; (0,86 &euro;/Wc, ROI ~4,8 ans). Si la simplicit&eacute; prime, <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">2 Sunology PLAY 2</Link> se posent et se branchent en 2 minutes.
                 </p>
                 <p className="text-charcoal-light leading-relaxed">
-                  Pour maximiser l&apos;autonomie avec un backup r&eacute;seau, deux options se distinguent en juillet&nbsp;2026&nbsp;: le <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260 (~1&nbsp;250&nbsp;&euro;)</Link>, un bo&icirc;tier tout-en-un IP65 avec batterie 2,56&nbsp;kWh extensible et sortie secours int&eacute;gr&eacute;e (ROI 7,8 ans) ; et l&apos;<Link href="/avis/ecoflow-powerstream" className="text-green hover:underline font-semibold">EcoFlow PowerStream + DELTA&nbsp;2 (~1&nbsp;800&nbsp;&euro;)</Link>, plus flexible car la batterie est portable.
+                  Pour maximiser l&apos;autonomie avec un backup r&eacute;seau, deux options se distinguent en juillet&nbsp;2026&nbsp;: le <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260 (~1&nbsp;250&nbsp;&euro;)</Link>, un bo&icirc;tier tout-en-un IP65 avec batterie 2,56&nbsp;kWh extensible et sortie secours int&eacute;gr&eacute;e (ROI 7,8 ans) ; et l&apos;<Link href="/avis/ecoflow-powerstream" className="text-green hover:underline font-semibold">EcoFlow PowerStream + DELTA&nbsp;2 (~1&nbsp;800&nbsp;&euro;)</Link>, plus flexible car la batterie est portable, mais retir&eacute; du catalogue EcoFlow France depuis (constat du 27/09/2026).
                 </p>
               </div>
             </section>

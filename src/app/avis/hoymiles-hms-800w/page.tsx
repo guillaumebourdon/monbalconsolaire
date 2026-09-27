@@ -407,8 +407,8 @@ export default function HoymilesHMS800WAvisPage() {
                   {
                     href: '/avis/ecoflow-powerstream',
                     label: 'Avis',
-                    title: 'EcoFlow PowerStream&nbsp;: l&rsquo;alternative syst&egrave;me avec batterie',
-                    desc: 'Le micro-onduleur intelligent EcoFlow avec gestion de batterie int&eacute;gr&eacute;e.',
+                    title: 'EcoFlow PowerStream (arr&ecirc;t&eacute;)&nbsp;: l&rsquo;alternative syst&egrave;me avec batterie',
+                    desc: 'Le micro-onduleur intelligent EcoFlow avec gestion de batterie, plus vendu par EcoFlow France depuis 2026.',
                   },
                   {
                     href: '/comparatif/meilleur-kit-solaire-2026',

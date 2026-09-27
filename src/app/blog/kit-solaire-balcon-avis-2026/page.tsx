@@ -95,7 +95,7 @@ export default function KitSolaireBalconAvisPage() {
               <li className="flex gap-2"><span className="text-green font-bold">1.</span> <strong>Trustpilot</strong> &mdash; notes globales et tendances sur 6 mois (Sunology : 4,6/5 sur 2 300+ avis, Beem : 4,4/5 sur 1 800+ avis)</li>
               <li className="flex gap-2"><span className="text-green font-bold">2.</span> <strong>Forums sp&eacute;cialis&eacute;s</strong> &mdash; r/france, Forum Photovolta&iuml;que (GPPV), groupes Facebook &laquo; Solaire balcon France &raquo;</li>
               <li className="flex gap-2"><span className="text-green font-bold">3.</span> <strong>Retours sur sites marchands</strong> &mdash; Amazon, Leroy Merlin, Castorama</li>
-              <li className="flex gap-2"><span className="text-green font-bold">4.</span> <strong>Notre propre exp&eacute;rience</strong> &mdash; <Link href="/blog/bilan-6-mois-kit-solaire" className="text-green hover:underline">bilan apr&egrave;s 6 mois</Link> avec un Sunology PLAY 2</li>
+              <li className="flex gap-2"><span className="text-green font-bold">4.</span> <strong>Nos simulations</strong> &mdash; <Link href="/blog/bilan-6-mois-kit-solaire" className="text-green hover:underline">production sur 6 mois</Link> d&apos;un kit 450 Wc (PVGIS, Lyon sud), pour confronter les avis aux ordres de grandeur attendus</li>
             </ul>
             <p className="text-sm text-charcoal-light leading-relaxed mt-4">
               On a lu plus de <strong>500 avis</strong> au total. Voici la synth&egrave;se, kit par kit.
@@ -209,7 +209,7 @@ export default function KitSolaireBalconAvisPage() {
           <section id="ecoflow" className="mb-10">
             <h2 className="text-2xl font-extrabold mb-4">EcoFlow PowerStream : des retours mitig&eacute;s</h2>
             <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-              Le <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline font-semibold">EcoFlow PowerStream</Link> divise les utilisateurs. L&apos;app est pl&eacute;biscit&eacute;e (la plus compl&egrave;te du march&eacute; selon les forums), mais les <strong>prix &eacute;lev&eacute;s</strong> et la <strong>complexit&eacute; de l&apos;&eacute;cosyst&egrave;me</strong> refroidissent.
+              Le <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline font-semibold">EcoFlow PowerStream</Link> (plus vendu par EcoFlow France depuis septembre 2026, remplac&eacute; par la gamme STREAM) divise les utilisateurs. L&apos;app est pl&eacute;biscit&eacute;e (la plus compl&egrave;te du march&eacute; selon les forums), mais les <strong>prix &eacute;lev&eacute;s</strong> et la <strong>complexit&eacute; de l&apos;&eacute;cosyst&egrave;me</strong> refroidissent.
             </p>
             <ul className="space-y-1 text-sm text-charcoal-light mb-4">
               <li>&bull; <strong>Point fort :</strong> micro-onduleur intelligent qui s&apos;adapte &agrave; la consommation en temps r&eacute;el</li>
@@ -238,7 +238,7 @@ export default function KitSolaireBalconAvisPage() {
                     <td className="py-3 text-center font-mono">7,5/10</td>
                   </tr>
                   <tr className="border-b border-border-light">
-                    <td className="py-3"><Link href="/avis/sunology-city" className="text-green hover:underline font-semibold">Sunology CITY</Link></td>
+                    <td className="py-3"><Link href="/avis/sunology-city" className="text-green hover:underline font-semibold">Sunology CITY</Link> <span className="text-amber-dark text-xs">(arr&ecirc;t&eacute;)</span></td>
                     <td className="py-3">Id&eacute;al balcons &eacute;troits, fixation sans per&ccedil;age. Production modeste (370 Wc)</td>
                     <td className="py-3 text-center font-mono">7,5/10</td>
                   </tr>
@@ -342,8 +342,8 @@ export default function KitSolaireBalconAvisPage() {
             <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
             <div className="space-y-3">
               <Link href="/blog/bilan-6-mois-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan apr&egrave;s 6 mois avec un kit solaire de balcon</h4>
-                <p className="text-xs text-charcoal-light mt-1">Production r&eacute;elle mois par mois, &eacute;conomies, probl&egrave;mes</p>
+                <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan sur 6 mois : ce que produit un kit solaire balcon</h4>
+                <p className="text-xs text-charcoal-light mt-1">Production simul&eacute;e mois par mois, &eacute;conomies, retours d&apos;utilisateurs</p>
               </Link>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                 <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire 2026 : comparatif complet</h4>

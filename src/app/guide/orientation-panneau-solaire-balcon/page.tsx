@@ -58,12 +58,12 @@ export default function OrientationPage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Sud', '100%', '498 kWh', '97 €', '6,2 ans', true],
-                      ['Sud-Est', '93%', '463 kWh', '90 €', '6,7 ans', false],
-                      ['Sud-Ouest', '93%', '463 kWh', '90 €', '6,7 ans', false],
-                      ['Est', '80%', '398 kWh', '77 €', '7,8 ans', false],
-                      ['Ouest', '80%', '398 kWh', '77 €', '7,8 ans', false],
-                      ['Nord', '45%', '224 kWh', '43 €', '13,9 ans', false],
+                      ['Sud', '100%', '459 kWh', '76 €', '7,1 ans', true],
+                      ['Sud-Est', '93%', '427 kWh', '70 €', '7,6 ans', false],
+                      ['Sud-Ouest', '93%', '427 kWh', '70 €', '7,6 ans', false],
+                      ['Est', '80%', '367 kWh', '61 €', '8,7 ans', false],
+                      ['Ouest', '80%', '367 kWh', '61 €', '8,7 ans', false],
+                      ['Nord', '45%', '207 kWh', '34 €', '14,1 ans', false],
                     ].map(([o, c, p, e, r, best], i) => (
                       <tr key={i} className={`border-b border-border-light ${best ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{o} {best && <span className="badge-green ml-2 text-[10px]">Optimal</span>}</td>
@@ -76,7 +76,7 @@ export default function OrientationPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Données PVGIS, inclinaison 35°, tarif EDF 0,1940€/kWh, coefficient de pertes 0,85.</p>
+              <p className="text-xs text-stone">Données PVGIS, inclinaison 35°, productible 1 200 kWh/kWc (Lyon), tarif EDF 0,1940€/kWh, coefficient de pertes 0,85, autoconsommation 85 %, inflation 3,3 %/an.</p>
             </section>
 
             <section>
@@ -97,8 +97,8 @@ export default function OrientationPage() {
 
                 <div className="card-lg">
                   <h3 className="font-bold text-lg mb-2">Est / Ouest — Correct (80%)</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">20% de moins que le sud, mais toujours rentable. Le ROI passe de ~6,2 ans à ~7,8 ans pour un kit à 599€. Sur 25 ans de garantie, vous économisez quand même plus de 1 900€.</p>
-                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Conseil :</strong> en exposition est ou ouest, le <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">Beem Kit 300W à 299€</Link> est un choix malin : le ROI est atteint en ~5,8 ans (au lieu de 7,8 pour un kit à 599€), ce qui réduit le risque.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed">20% de moins que le sud, mais toujours rentable. Le ROI passe de ~7,1 ans à ~8,7 ans pour un kit à 599€. Sur 25 ans de garantie, vous économisez quand même près de 2 300€.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Conseil :</strong> en exposition est ou ouest, le <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">Beem Kit 300W à 299€</Link> est un choix malin : le ROI est atteint en ~6,7 ans (au lieu de 8,7 pour un kit à 599€), ce qui réduit le risque.</p>
                 </div>
 
                 <div className="card-lg border-l-4 border-l-amber">

@@ -69,7 +69,7 @@ const articles = [
   {
     slug: 'reglementation-panneau-solaire-balcon-2026',
     title: 'Panneau solaire balcon : r\u00e9glementation 2026 compl\u00e8te',
-    excerpt: 'Norme NF C 15-100, CACSI Enedis, copropri\u00e9t\u00e9, limite 900W : tout ce que dit la loi.',
+    excerpt: 'Norme NF C 15-100, CACSI Enedis, copropri\u00e9t\u00e9, rep\u00e8re 900 W : tout ce que dit la loi.',
     badge: 'R\u00e9glementation',
     date: '14 avril 2026',
     readTime: '9 min',

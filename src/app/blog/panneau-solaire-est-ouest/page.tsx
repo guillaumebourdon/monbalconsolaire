@@ -135,8 +135,8 @@ export default function PanneauSolaireEstOuestPage() {
                   <li>&bull; <strong>Production</strong> : 450 Wc &times; 1 200 &times; 0,85 &times; 0,80 = <strong className="font-mono">367 kWh/an</strong></li>
                   <li>&bull; <strong>Autoconsommation</strong> : 85 % (foyer attentif) = <strong className="font-mono">312 kWh valoris&eacute;s</strong></li>
                   <li>&bull; <strong>&Eacute;conomies ann&eacute;e 1</strong> : 312 &times; 0,1940 = <strong className="font-mono">61 &euro;/an</strong></li>
-                  <li>&bull; <strong>ROI (avec inflation 3,3 %/an)</strong> : <strong className="font-mono text-amber-dark">8,8 ans</strong></li>
-                  <li>&bull; <strong>Sur 25 ans</strong> : <strong className="font-mono text-green">~2 300 &euro; d&apos;&eacute;conomies cumul&eacute;es</strong></li>
+                  <li>&bull; <strong>ROI (avec inflation 3,3 %/an)</strong> : <strong className="font-mono text-amber-dark">8,7 ans</strong></li>
+                  <li>&bull; <strong>Sur 25 ans</strong> : <strong className="font-mono text-green">~2 295 &euro; d&apos;&eacute;conomies cumul&eacute;es</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
@@ -155,10 +155,10 @@ export default function PanneauSolaireEstOuestPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Beem Kit 300W', '299 \u20ac', '40 \u20ac', '6,8 ans', '1 530 \u20ac'],
-                      ['Sunology PLAY 2', '599 \u20ac', '61 \u20ac', '8,8 ans', '2 300 \u20ac'],
-                      ['Beem On 460W', '599 \u20ac', '62 \u20ac', '8,7 ans', '2 350 \u20ac'],
-                      ['Sunethic F500', '690 \u20ac', '67 \u20ac', '9,2 ans', '2 550 \u20ac'],
+                      ['Beem Kit 300W', '299 \u20ac', '40 \u20ac', '6,7 ans', '1 532 \u20ac'],
+                      ['Sunology PLAY 2', '599 \u20ac', '61 \u20ac', '8,7 ans', '2 295 \u20ac'],
+                      ['Beem On 460W', '599 \u20ac', '62 \u20ac', '8,5 ans', '2 345 \u20ac'],
+                      ['Sunethic F500', '690 \u20ac', '67 \u20ac', '9,0 ans', '2 552 \u20ac'],
                     ].map(([kit, prix, eco, roi, total], i) => (
                       <tr key={i} className={`border-b border-border-light ${i === 0 ? 'bg-green-pale/20 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
                         <td className="p-3">{kit}</td>
@@ -239,7 +239,7 @@ export default function PanneauSolaireEstOuestPage() {
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Meilleur choix : Beem Kit 300W (299 &euro;)</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    En est/ouest, le ROI est plus long. Le Beem Kit 300W offre le <strong>meilleur ROI</strong> (6,8 ans) car son prix bas compense la perte de production. C&apos;est le choix le plus rationnel. <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Voir l&apos;avis</Link>.
+                    En est/ouest, le ROI est plus long. Le Beem Kit 300W offre le <strong>meilleur ROI</strong> (6,7 ans) car son prix bas compense la perte de production. C&apos;est le choix le plus rationnel. <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Voir l&apos;avis</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">

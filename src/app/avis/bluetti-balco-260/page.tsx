@@ -129,7 +129,7 @@ export default function BluettiBalco260AvisPage() {
               <div className="space-y-3">
                 {[
                   { t: 'Panneaux non inclus : le coût total grimpe vite', d: 'À 849€ sans panneaux, ajoutez 200-300€ pour 2 panneaux de 500 Wc. Le coût total dépasse 1 100€, soit 2 à 3 fois le prix d\'un kit Beem On 500 Wc (429€ tout compris). La comparaison n\'est pas directe (ici vous avez une batterie), mais le ticket d\'entrée est élevé.' },
-                  { t: 'Injection réseau limitée à 800 W', d: 'En France, la limite légale est 900 W. Le Balco 260 s\'arrête à 800 W d\'injection. C\'est suffisant pour la plupart des usages, mais vous n\'exploitez pas le maximum autorisé.' },
+                  { t: 'Injection réseau limitée à 800 W', d: 'En France, aucun texte ne fixe de plafond en watts ; 900 W par prise est une recommandation courante (UFC-Que Choisir, fabricants). Le Balco 260 s\'arrête à 800 W d\'injection. C\'est suffisant pour la plupart des usages, mais un peu en dessous de ce repère.' },
                   { t: 'App Bluetti historiquement faible', d: 'L\'application mobile Bluetti a longtemps été un point noir : interface datée, bugs fréquents. Bluetti annonce une refonte complète pour 2026, mais il faudra juger sur pièces. C\'est un point de vigilance.' },
                   { t: 'Arrivée tardive sur un marché mature', d: 'Zendure, EcoFlow et Anker sont sur le segment batterie + solaire depuis 2-3 ans. Bluetti arrive avec un produit solide mais sans écosystème installé en France (réseau de revendeurs, communauté, retours terrain).' },
                   { t: 'Poids de 28,5 kg', d: 'C\'est lourd pour un boîtier de balcon. L\'installation nécessite d\'être deux, surtout en étage. Et contrairement à un panneau plat, la forme compacte rend le transport plus encombrant.' },
@@ -161,7 +161,7 @@ export default function BluettiBalco260AvisPage() {
                     {[
                       ['Bluetti Balco 260', '2,56 kWh', '849 €', 'Non inclus', '7/10', true],
                       ['Zendure SolarFlow', '1,92 kWh', '488 €', '840 Wc inclus', '8.5/10', false],
-                      ['EcoFlow PowerStream', '1-2 kWh', '599 €+', 'Option', '8/10', false],
+                      ['EcoFlow PowerStream (arr\u00eat\u00e9)', '1-2 kWh', '599 €+', 'Option', '8/10', false],
                       ['Sunology PLAY MAX', '0,7 kWh', '1 179 €', '480 Wc inclus', '7/10', false],
                     ].map(([name, battery, price, panels, score, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>

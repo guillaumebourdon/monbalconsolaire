@@ -113,6 +113,7 @@ export function SchemaProduct({
   ratingCount,
   reviewAuthor = 'MonBalconSolaire',
   url,
+  availability = 'InStock',
 }: {
   name: string;
   brand: string;
@@ -123,6 +124,7 @@ export function SchemaProduct({
   ratingMax?: number;
   ratingCount?: number;
   reviewAuthor?: string;
+  availability?: 'InStock' | 'OutOfStock' | 'Discontinued';
   url: string;
 }) {
   const schema = {
@@ -139,7 +141,7 @@ export function SchemaProduct({
       '@type': 'Offer',
       price,
       priceCurrency: currency,
-      availability: 'https://schema.org/InStock',
+      availability: `https://schema.org/${availability}`,
       url,
     },
     review: {

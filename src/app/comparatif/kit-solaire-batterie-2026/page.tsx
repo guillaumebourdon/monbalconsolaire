@@ -96,11 +96,11 @@ export default function BatteriePage() {
                       ['Sunology VAULT', '700 Wh', '~580€', '829€/kWh', '~5h', 'Nomade + plug-and-play', true],
                       ['Sunology STOREY', '2,2 kWh', '1 390€', '632€/kWh', '~15h', 'Fixe plug-and-play', false],
                       ['Beem Battery', '2,2 kWh', '~5 500€**', '2 500€/kWh', '~15h', 'Fixe plug-and-play', false],
-                      ['EcoFlow PowerStream', '2 kWh', '~1 800\u20ac***', '900\u20ac/kWh', '~13h', 'Modulaire', false],
+                      ['EcoFlow PowerStream (arr\u00eat\u00e9)', '2 kWh', '~1 800\u20ac***', '900\u20ac/kWh', '~13h', 'Modulaire', false],
                       ['Bluetti Balco 260', '2,56 kWh', '849\u20ac****', '332\u20ac/kWh', '~17h', 'Tout-en-un (sans panneaux)', false],
                     ].map(([n, c, p, r, a, t, best], i) => {
                       const thumbMap: Record<string, { src: string; href: string }> = {
-                        'EcoFlow PowerStream': { src: '/images/produits/ecoflow-powerstream-2.webp', href: '/avis/ecoflow-powerstream' },
+                        'EcoFlow PowerStream (arr\u00eat\u00e9)': { src: '/images/produits/ecoflow-powerstream-2.webp', href: '/avis/ecoflow-powerstream' },
                         'Bluetti Balco 260': { src: '/images/produits/bluetti-balco-260-front.webp', href: '/avis/bluetti-balco-260' },
                       };
                       const thumb = thumbMap[n as string];
@@ -153,10 +153,10 @@ export default function BatteriePage() {
 
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="lg" /><div><div className="badge-amber mb-2">Modulaire</div><h3 className="font-bold text-xl">EcoFlow PowerStream</h3><p className="text-sm text-stone">Syst&egrave;me modulaire batterie + micro-onduleur</p></div></div>
+                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="lg" /><div><div className="badge-amber mb-2">Arr&ecirc;t&eacute;</div><h3 className="font-bold text-xl">EcoFlow PowerStream</h3><p className="text-sm text-stone">Syst&egrave;me modulaire batterie + micro-onduleur</p></div></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">~1 800 &euro;</div><div className="text-xs text-stone">(sans panneau)</div></div>
                   </div>
-                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PowerStream d&apos;EcoFlow est une approche diff&eacute;rente : un micro-onduleur intelligent qui g&egrave;re la charge/d&eacute;charge automatiquement selon votre consommation en temps r&eacute;el. Compatible avec les batteries portables EcoFlow (DELTA, RIVER). Le syst&egrave;me est modulaire mais le co&ucirc;t total est &eacute;lev&eacute;.</p>
+                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PowerStream d&apos;EcoFlow est une approche diff&eacute;rente : un micro-onduleur intelligent qui g&egrave;re la charge/d&eacute;charge automatiquement selon votre consommation en temps r&eacute;el. Compatible avec les batteries portables EcoFlow (DELTA, RIVER). Le syst&egrave;me est modulaire mais le co&ucirc;t total est &eacute;lev&eacute;. <strong>Mise &agrave; jour 27/09/2026&nbsp;:</strong> le PowerStream n&apos;est plus vendu par EcoFlow France, qui propose d&eacute;sormais la gamme STREAM (voir notre <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">avis PowerStream</Link> pour les alternatives).</p>
                 </div>
 
                 <div className="card-lg">

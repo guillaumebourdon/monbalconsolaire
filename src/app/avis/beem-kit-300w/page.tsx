@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Le Beem Kit 300W vaut-il ses 299€ ?', answer: 'Oui. C\'est le meilleur ratio €/Wc du marché (1,00€/Wc). Avec une production de ~306 kWh/an en région lyonnaise, le retour sur investissement est atteint en 5,5 ans. Sur 25 ans de garantie, les économies atteignent 1 914€ (+3,3%/an d\'inflation CRE).' },
+  { question: 'Le Beem Kit 300W vaut-il ses 299€ ?', answer: 'Oui. C\'est le ticket d\'entrée le plus bas du marché (1,00€/Wc ; seul le Beem On 500 Wc fait mieux, à 0,86€/Wc). Avec une production de ~306 kWh/an en région lyonnaise, le retour sur investissement est atteint en 5,5 ans. Sur 25 ans de garantie, les économies atteignent 1 914€ (+3,3%/an d\'inflation CRE).' },
   { question: 'Quelle est la différence entre le Beem Kit 300W et le Beem On 460W ?', answer: 'Le Beem Kit 300W utilise 4 petits panneaux modulaires (75W chacun) pour 299€. Le Beem On 460W est un panneau unique de 460W pour 599€. Le Kit est plus flexible pour les espaces étroits mais moins puissant et plus long à installer.' },
   { question: 'Le Beem Kit 300W suffit-il pour alimenter un appartement ?', answer: 'Il ne couvrira pas toute votre consommation. 300W couvrent environ le talon de consommation : frigo + box internet + appareils en veille. Pour aller plus loin, il faudra passer à un kit 450-500W ou ajouter un second Beem Kit.' },
   { question: 'Les 4 panneaux du Beem Kit sont-ils difficiles à installer ?', answer: 'L\'installation prend environ 45 minutes à 1 heure, contre 1-5 minutes pour les kits mono-panneau. Chaque panneau se fixe individuellement. C\'est plus long mais pas compliqué — aucun outil spécial n\'est nécessaire.' },
@@ -56,7 +56,7 @@ export default function BeemKit300WAvisPage() {
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Pourquoi le Beem Kit 300W nous intéresse</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">À <span className="data-highlight">299 €</span>, le Beem Kit 300W est le kit solaire de marque le moins cher du marché français. Son ratio de <span className="data-highlight">1,00 €/Wc</span> est imbattable — même les kits génériques sur Amazon ont du mal à faire mieux avec une garantie de 25 ans et un SAV français derrière.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">À <span className="data-highlight">299 €</span>, le Beem Kit 300W est le kit solaire de marque le moins cher du marché français. Son ratio de <span className="data-highlight">1,00 €/Wc</span> n&apos;est battu que par le Beem On 500 Wc (0,86 €/Wc) — même les kits génériques sur Amazon ont du mal à faire mieux avec une garantie de 25 ans et un SAV français derrière.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Le concept est différent des mono-panneaux comme le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> ou le <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On</Link> : ici, vous avez 4 petits panneaux monocristallins de 75W chacun, reliés entre eux. Cette modularité est à la fois le principal atout et la principale limite du kit.</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
@@ -77,7 +77,7 @@ export default function BeemKit300WAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Le prix imbattable', d: 'À 1,00€/Wc, c\'est le meilleur ratio du marché toutes catégories. Le ROI est atteint en 5,5 ans — le plus rapide de tous les kits.' },
+                  { t: 'Le prix imbattable', d: 'À 1,00€/Wc et 299€, c\'est le kit de marque le moins cher. Le ROI est atteint en 5,5 ans, le deuxième plus rapide du marché derrière le Beem On 500 Wc (4,8 ans).' },
                   { t: 'La modularité', d: 'Les 4 panneaux se placent indépendamment : contre un mur, sur un garde-corps, dans un angle de balcon. Idéal pour les espaces atypiques où un grand panneau ne passerait pas.' },
                   { t: 'Le risque financier minimal', d: 'À 299€, c\'est un investissement faible pour tester l\'autoconsommation. Si ça vous plaît, vous pouvez ensuite upgrader vers un Beem On ou un Sunology PLAY2.' },
                   { t: 'La marque et le SAV', d: 'Beem Energy est une marque française (Nantes) avec un SAV réactif. Garantie 25 ans. C\'est incomparable avec les kits sans marque d\'Amazon.' },
@@ -145,11 +145,11 @@ export default function BeemKit300WAvisPage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Marseille / PACA', '383 kWh', '74 €', '4,0 ans'],
+                      ['Marseille / PACA', '383 kWh', '63 €', '4,5 ans'],
                       ['Lyon / Rhône-Alpes', '306 kWh', '50 €', '5,5 ans'],
-                      ['Nantes / Ouest', '306 kWh', '59 €', '5,1 ans'],
-                      ['Paris / Île-de-France', '281 kWh', '55 €', '5,4 ans'],
-                      ['Lille / Nord', '255 kWh', '49 €', '6,1 ans'],
+                      ['Nantes / Ouest', '306 kWh', '50 €', '5,5 ans'],
+                      ['Paris / Île-de-France', '281 kWh', '46 €', '5,9 ans'],
+                      ['Lille / Nord', '255 kWh', '42 €', '6,5 ans'],
                     ].map(([r, p, e, roi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{r}</td>
@@ -161,7 +161,7 @@ export default function BeemKit300WAvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">ROI calcul&eacute; avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud.</p>
+              <p className="text-xs text-stone">ROI calcul&eacute; avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85%, Performance Ratio 0,85, exposition sud. Productible PVGIS arrondi : Marseille 1 500, Lyon et Nantes 1 200, Paris 1 100, Lille 1 000 kWh/kWc.</p>
               <p className="text-xs text-stone mt-1">Sur 25 ans : <strong>1 914 &euro;</strong> d&apos;&eacute;conomies cumul&eacute;es (+3,3%/an d&apos;inflation).</p>
               <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Calculer le délai de livraison" variant="secondary" position="after-stats" />
             </section>
@@ -206,7 +206,7 @@ export default function BeemKit300WAvisPage() {
                     <li>→ Tester le solaire à moindre coût (299€)</li>
                     <li>→ Les petits balcons / espaces atypiques</li>
                     <li>→ Les locataires qui veulent limiter le risque</li>
-                    <li>→ Ceux qui veulent le ROI le plus rapide</li>
+                    <li>→ Ceux qui veulent un ROI rapide avec un budget minimal</li>
                   </ul>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
@@ -223,7 +223,7 @@ export default function BeemKit300WAvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est un excellent kit d&apos;entrée de gamme. À 299€, le risque est minimal et le ROI est le plus rapide du marché (5,5 ans). C&apos;est le kit parfait pour découvrir l&apos;autoconsommation solaire sans se ruiner.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est un excellent kit d&apos;entrée de gamme. À 299€, le risque est minimal et le ROI est court (5,5 ans, seul le Beem On 500 Wc fait mieux avec 4,8 ans). C&apos;est le kit parfait pour découvrir l&apos;autoconsommation solaire sans se ruiner.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Ses limites sont claires : puissance modeste (300W), installation plus longue (1h), et esthétique discutable avec 4 panneaux séparés. Si ces points vous gênent et que vous pouvez mettre 599€, le <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On 460W</Link> ou le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> sont de meilleurs choix.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7.5/10</span></strong> — Le meilleur rapport qualité/prix pour débuter.</p>
               <a href="https://beemenergy.fr/products/kit-beem" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem Kit 300W &rarr;</a>

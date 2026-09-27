@@ -7,7 +7,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
   title: 'Panneau solaire balcon : réglementation 2026 complete',
-  description: 'Norme NF C 15-100, declaration Enedis CACSI, copropriété, limite 900W : tout ce que dit la loi sur les kits solaires plug-and-play en 2026.',
+  description: 'Norme NF C 15-100 (point 551.7.2), declaration Enedis CACSI, copropriété, repère des 900 W : ce que dit la loi sur les kits solaires plug-and-play en 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026',
   },
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 
 const faqData = [
   { question: 'Faut-il une autorisation pour installer un kit solaire sur son balcon ?', answer: 'Non, pas d\'autorisation de travaux si le panneau est pose au sol ou fixe au mur a moins d\'1m80 de haut. En revanche, si vous le fixez en toiture (toit plat par exemple), une declaration prealable en mairie est necessaire.' },
-  { question: 'Quelle est la puissance maximale autorisee en plug-and-play ?', answer: 'La norme NF C 15-100 mise a jour en septembre 2025 limite a 900W par circuit de prise murale. Au-dela, il faut une ligne dediee depuis le tableau electrique. La puissance totale des panneaux doit rester sous 3 kWc.' },
+  { question: 'Quelle est la puissance maximale autorisee en plug-and-play ?', answer: 'Aucun texte ne fixe de plafond chiffré pour un kit branché sur prise. La NF C 15-100 applicable depuis le 1er septembre 2025 ne donne pas de limite en watts : son point 551.7.2 indique qu\'un générateur ne doit pas être raccordé à un circuit terminal par une prise ou une fiche. Les 900 W souvent cités sont une recommandation (UFC-Que Choisir, fabricants) pour une prise 16 A protégée par un différentiel 30 mA, pas une limite de la norme. Au-delà, un circuit dédié posé par un électricien est recommandé.' },
   { question: 'Faut-il declarer son kit solaire a Enedis ?', answer: 'Oui. Meme en autoconsommation totale sans injection, vous devez signer une Convention d\'Autoconsommation Sans Injection (CACSI) sur le portail Enedis Connect. C\'est gratuit et se fait en ligne en 10 minutes.' },
   { question: 'Mon syndic peut-il refuser l\'installation ?', answer: 'Le syndic peut demander que le projet soit presente en assemblee generale si l\'installation modifie l\'aspect de la facade. Cependant, un kit pose au sol sur un balcon prive, non visible depuis l\'exterieur, ne devrait pas poser de probleme.' },
-  { question: 'Les kits plug-and-play sont-ils toujours autorises en 2026 ?', answer: 'Oui. L\'AFNOR devait clarifier la norme NF C 15-100 après aout 2025 mais les kits plug-and-play restent autorises. La limite de 900W par circuit est la principale contrainte technique.' },
+  { question: 'Les kits plug-and-play sont-ils toujours autorises en 2026 ?', answer: 'Ils restent vendus et aucun texte ne les interdit explicitement, mais leur situation est floue. La NF C 15-100 (point 551.7.2, en vigueur depuis le 1er septembre 2025) interdit de raccorder un générateur à un circuit terminal par une prise. Elle vise les installations fixes ; les kits, équipements mobiles, sont selon Enerplan « théoriquement non concernés ». La filière (Enerplan, SER) demande une clarification, et la réponse du gouvernement à la question écrite n° 6574 (JO du 26 mai 2026) rappelle les risques sans trancher.' },
 ];
 
 export default function ReglementationPage() {
@@ -33,28 +33,28 @@ export default function ReglementationPage() {
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide juridique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : r&eacute;glementation 2026 compl&egrave;te</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Norme NF C 15-100, d&eacute;claration Enedis CACSI, copropri&eacute;t&eacute;, limite 900W : tout ce que dit la loi sur les kits solaires plug-and-play en France.</p>
+            <p className="text-lg text-charcoal-light leading-relaxed">Norme NF C 15-100, d&eacute;claration Enedis CACSI, copropri&eacute;t&eacute;, rep&egrave;re des 900 W : tout ce que dit la loi sur les kits solaires plug-and-play en France.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed">Les kits solaires plug-and-play sont l&eacute;gaux en France en 2026. Pas d&apos;autorisation de travaux requise (sauf toiture). Limite de 900W par circuit. D&eacute;claration CACSI obligatoire sur Enedis Connect (gratuite, 10 min). En copropri&eacute;t&eacute;, informer le syndic est recommand&eacute;.</p>
+            <p className="text-charcoal-light text-sm leading-relaxed">Les kits solaires plug-and-play restent vendus et utilis&eacute;s en France en 2026, sans interdiction explicite, mais dans une zone grise normative (NF C 15-100, point 551.7.2). Pas d&apos;autorisation de travaux requise (sauf toiture). La NF C 15-100 ne fixe pas de plafond en watts ; 900 W par prise est une recommandation courante, pas une limite l&eacute;gale. D&eacute;claration CACSI obligatoire sur Enedis Connect (gratuite, 10 min). En copropri&eacute;t&eacute;, informer le syndic est recommand&eacute;.</p>
           </div>
 
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">La norme NF C 15-100 : ce qui change en 2025-2026</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">La norme NF C 15-100 encadre la s&eacute;curit&eacute; des installations &eacute;lectriques en France. Sa mise &agrave; jour de septembre 2025 a introduit une limite claire pour les kits plug-and-play :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">La norme NF C 15-100 encadre la s&eacute;curit&eacute; des installations &eacute;lectriques en France. La version applicable depuis le 1<sup>er</sup> septembre 2025 contient une r&egrave;gle qui concerne directement le branchement sur prise :</p>
               <div className="card-lg border-l-4 border-l-amber mb-4">
-                <p className="text-sm text-charcoal-light"><strong>Limite de 900W</strong> par circuit de prise murale pour une connexion s&eacute;curis&eacute;e sur une prise standard 16A. Au-del&agrave;, il faut pr&eacute;voir une ligne d&eacute;di&eacute;e depuis le tableau &eacute;lectrique.</p>
+                <p className="text-sm text-charcoal-light"><strong>Point 551.7.2 :</strong> &laquo; un g&eacute;n&eacute;rateur d&apos;&eacute;nergie &eacute;lectrique ne doit pas &ecirc;tre connect&eacute; &agrave; un circuit terminal par le moyen d&apos;un socle de prise ou d&apos;une fiche &raquo;. La norme vise les installations fixes ; les kits plug-and-play, &eacute;quipements mobiles, sont dans une zone grise (&laquo; th&eacute;oriquement non concern&eacute;s &raquo; selon Enerplan). La fili&egrave;re (Enerplan, SER) demande une clarification depuis fin 2024 ; la r&eacute;ponse minist&eacute;rielle du 26 mai 2026 rappelle les risques d&apos;&eacute;lectrisation et d&apos;&eacute;chauffement sans cr&eacute;er d&apos;exception.</p>
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">En pratique, cela signifie que vous pouvez brancher un ou deux kits solaires (total &lt; 900W) sur un m&ecirc;me circuit de prises sans aucune modification &eacute;lectrique. Les kits les plus populaires (Sunology PLAY2 &agrave; 450W, Beem On &agrave; 460W) sont largement en dessous de cette limite.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">La norme ne fixe <strong>aucun plafond en watts</strong>. Le chiffre de 900&nbsp;W souvent cit&eacute; est une <strong>recommandation</strong> (UFC-Que Choisir, notices des fabricants) pour une prise 16&nbsp;A prot&eacute;g&eacute;e par un diff&eacute;rentiel 30&nbsp;mA, pas une limite l&eacute;gale. Au-del&agrave;, un circuit d&eacute;di&eacute; pos&eacute; par un &eacute;lectricien est recommand&eacute;. Les kits les plus populaires (Sunology PLAY2 &agrave; 450&nbsp;W, Beem On &agrave; 460&nbsp;W) sont en dessous de ce rep&egrave;re.</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[400px]">
-                  <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Configuration</th><th className="text-center p-3">Puissance</th><th className="text-center p-3 rounded-tr-xl">Conforme ?</th></tr></thead>
+                  <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Configuration</th><th className="text-center p-3">Puissance</th><th className="text-center p-3 rounded-tr-xl">Rep&egrave;re 900 W</th></tr></thead>
                   <tbody>
-                    {[['1 kit Sunology PLAY2', '450W', '\u2705 Oui'], ['1 kit Beem On 460W', '460W', '\u2705 Oui'], ['2 kits Beem Kit 300W', '600W', '\u2705 Oui'], ['1 PLAY2 + 1 Beem Kit', '750W', '\u2705 Oui'], ['2 kits Beem On 460W', '920W', '\u26a0\ufe0f Ligne d\u00e9di\u00e9e requise']].map(([c, p, ok], i) => (
+                    {[['1 kit Sunology PLAY2', '450W', '\u2705 En dessous'], ['1 kit Beem On 460W', '460W', '\u2705 En dessous'], ['2 kits Beem Kit 300W', '600W', '\u2705 En dessous'], ['1 PLAY2 + 1 Beem Kit', '750W', '\u2705 En dessous'], ['2 kits Beem On 460W', '920W', '\u26a0\ufe0f Circuit d\u00e9di\u00e9 recommand\u00e9']].map(([c, p, ok], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{c}</td><td className="text-center p-3 font-mono">{p}</td><td className="text-center p-3">{ok}</td></tr>
                     ))}
                   </tbody>
@@ -201,7 +201,7 @@ export default function ReglementationPage() {
             </section>
 
             <NewsletterBanner />
-            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Norme NF C 15-100 (AFNOR), Code de l&apos;&eacute;nergie art. D315-10, Enedis Connect. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
+            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Norme NF C 15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2) ; r&eacute;ponse minist&eacute;rielle &agrave; la question &eacute;crite n&deg; 6574 (A. nationale, JO du 26 mai 2026) ; UFC-Que Choisir, &laquo; Kits solaires : les kits plug &amp; play sont-ils concern&eacute;s par l&apos;actualisation de la norme &eacute;lectrique ? &raquo; (mai 2025) ; ADEME, guide kit photovolta&iuml;que plug &amp; play (avril 2023) ; Code de l&apos;&eacute;nergie art. D315-10, Enedis Connect. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
           </div>
         </div>
       </article>

@@ -67,7 +67,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Pas de sortie hors réseau (EPS)',
-    detail: 'C\'est LE défaut majeur. En cas de coupure de courant, le SolarFlow s\'arrête. Votre batterie chargée ne sert à rien. Si le backup est important pour vous, deux alternatives : l\'EcoFlow PowerStream + DELTA 2 (~1 800 €) ou le Bluetti Balco 260 (~889 € avec promo BALNEO, disponible depuis juillet 2026) qui offre tous les deux un mode hors réseau. Pour la majorité des utilisateurs en France métropolitaine (coupures rares), ce n\'est pas un problème.',
+    detail: 'C\'est LE défaut majeur. En cas de coupure de courant, le SolarFlow s\'arrête. Votre batterie chargée ne sert à rien. Si le backup est important pour vous, deux alternatives : l\'EcoFlow PowerStream + DELTA 2 (~1 800 €, plus vendu par EcoFlow France depuis 2026 : occasion uniquement) ou le Bluetti Balco 260 (~889 € avec promo BALNEO, disponible depuis juillet 2026) qui offre tous les deux un mode hors réseau. Pour la majorité des utilisateurs en France métropolitaine (coupures rares), ce n\'est pas un problème.',
   },
   {
     titre: '800 W max en sortie : pas de gros consommateurs',
@@ -94,7 +94,7 @@ const comparaison = [
     note: '8.5/10',
   },
   {
-    produit: 'EcoFlow PowerStream + DELTA 2',
+    produit: 'EcoFlow PowerStream + DELTA 2 (arrêté)',
     prix: '~1 800 €',
     stockage: '1 kWh',
     sortieAC: '800 W',
@@ -215,7 +215,7 @@ export default function ZendureSolarflowPage() {
                       <td className="p-3 font-mono">1 684 €/kWh</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
-                      <td className="p-3">EcoFlow PowerStream + DELTA 2</td>
+                      <td className="p-3">EcoFlow PowerStream + DELTA 2 (arr&ecirc;t&eacute;)</td>
                       <td className="p-3 font-mono">1 800 €</td>
                       <td className="p-3 font-mono">1 kWh</td>
                       <td className="p-3 font-mono">1 800 €/kWh</td>
@@ -466,7 +466,7 @@ export default function ZendureSolarflowPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous avez besoin d&apos;un backup en cas de coupure</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow ne fonctionne pas hors réseau. Si la sécurité énergétique est votre priorité, prenez un EcoFlow PowerStream + batterie DELTA : plus cher, mais fonctionnel en cas de panne.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow ne fonctionne pas hors réseau. Si la sécurité énergétique est votre priorité, prenez un Bluetti Balco 260, qui dispose d&apos;une sortie de secours (l&apos;EcoFlow PowerStream, autre option avec backup, n&apos;est plus vendu par EcoFlow France depuis 2026).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez la simplicité absolue d&apos;un kit tout-en-un</h4>

@@ -103,8 +103,8 @@ export default function LocatairePage() {
                 </div>
                 <div className="card-lg">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div><div className="badge-green mb-1 text-[10px]">Balcon étroit</div><h4 className="font-bold">Sunology CITY</h4><p className="text-xs text-stone">Specifiquement concu pour les garde-corps de balcon, design discret</p></div>
-                    <span className="font-mono font-bold text-green text-lg">~499&euro;</span>
+                    <div><div className="badge-amber mb-1 text-[10px]">Arr&ecirc;t&eacute;</div><h4 className="font-bold"><Link href="/avis/sunology-city" className="hover:text-green">Sunology CITY</Link></h4><p className="text-xs text-stone">Con&ccedil;u pour les garde-corps, mais plus vendu par Sunology depuis 2026. Alternative actuelle&nbsp;: le Sunology GO en version garde-corps (349&nbsp;&euro; au 27/09/2026).</p></div>
+                    <span className="font-mono font-bold text-stone text-lg">Arr&ecirc;t&eacute;</span>
                   </div>
                 </div>
               </div>

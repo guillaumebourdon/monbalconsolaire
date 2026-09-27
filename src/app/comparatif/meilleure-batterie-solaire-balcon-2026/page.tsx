@@ -36,7 +36,7 @@ const faqData = [
   },
   {
     question: 'EcoFlow PowerStream est-il adapté au solaire de balcon ?',
-    answer: 'Oui, mais le coût total est élevé. Le hub PowerStream seul coûte ~900 €, et une batterie DELTA 2 (1 kWh) ajoute ~750 €. Le bundle complet dépasse 1 600 € sans panneaux. Son avantage : si vous avez déjà une station EcoFlow ou si vous souhaitez une solution polyvalente camping/maison. Sinon, le Zendure SolarFlow ou le Bluetti Balco offrent plus de kWh pour moins cher.',
+    answer: 'Il n\'est plus vendu par EcoFlow France depuis 2026 (remplacé au catalogue par la gamme STREAM) : on ne le trouve plus qu\'en occasion ou en fin de stock. Techniquement oui, mais le coût total est élevé. Le hub PowerStream seul coûte ~900 €, et une batterie DELTA 2 (1 kWh) ajoute ~750 €. Le bundle complet dépasse 1 600 € sans panneaux. Son avantage : si vous avez déjà une station EcoFlow ou si vous souhaitez une solution polyvalente camping/maison. Sinon, le Zendure SolarFlow ou le Bluetti Balco offrent plus de kWh pour moins cher.',
   },
 ];
 
@@ -118,7 +118,7 @@ export default function MeilleureBatterieBalconPage() {
                     <li>&bull; Zendure SolarFlow (kit onduleur + batterie)</li>
                     <li>&bull; Bluetti Balco 260 (tout-en-un)</li>
                     <li>&bull; Jackery SolarVault 3 Pro</li>
-                    <li>&bull; EcoFlow PowerStream + DELTA 2</li>
+                    <li>&bull; EcoFlow PowerStream + DELTA 2 (arr&ecirc;t&eacute;)</li>
                     <li>&bull; Sunology STOREY (fixe)</li>
                     <li>&bull; Zendure SolarFlow Mix (r&eacute;sidentiel)</li>
                   </ul>
@@ -197,14 +197,14 @@ export default function MeilleureBatterieBalconPage() {
                         badge: '',
                       },
                       {
-                        name: 'EcoFlow PowerStream + DELTA 2',
+                        name: 'EcoFlow PowerStream + DELTA 2 (arrêté)',
                         href: '/avis/ecoflow-powerstream',
                         img: '/images/produits/ecoflow-powerstream-2.webp',
                         capacity: '1 kWh',
                         price: '~1 800 €',
                         pricePerKwh: '~1 800 €/kWh',
                         autonomy: '~7h',
-                        warranty: '5 ans',
+                        warranty: '10 ans (onduleur), 5 ans (DELTA 2)',
                         panels: 'Non inclus',
                         best: false,
                         badge: '',
@@ -397,7 +397,7 @@ export default function MeilleureBatterieBalconPage() {
                     <div className="flex items-start gap-4">
                       <ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="lg" />
                       <div>
-                        <div className="badge-amber mb-2">Modulaire</div>
+                        <div className="badge-amber mb-2">Arr&ecirc;t&eacute;</div>
                         <h3 className="font-bold text-xl">EcoFlow PowerStream + DELTA 2</h3>
                         <p className="text-sm text-stone">Micro-onduleur intelligent + batterie DELTA 2 (1&nbsp;kWh)</p>
                       </div>
@@ -412,6 +412,7 @@ export default function MeilleureBatterieBalconPage() {
                     station EcoFlow (DELTA, RIVER) au kWh pr&egrave;s. En 2026, la mise &agrave; jour logicielle permet d&apos;ajuster la puissance inject&eacute;e par paliers d&apos;1&nbsp;W.
                     Pertinent si vous avez d&eacute;j&agrave; une station EcoFlow ou si vous cherchez une solution polyvalente (camping + maison).
                     Sinon, le co&ucirc;t total (&gt;1&nbsp;800&nbsp;&euro; pour seulement 1&nbsp;kWh) est difficile &agrave; justifier face &agrave; Zendure ou Bluetti.
+                    <strong> Mise &agrave; jour 27/09/2026&nbsp;:</strong> le PowerStream n&apos;est plus vendu par EcoFlow France (gamme STREAM d&eacute;sormais).
                     <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline ml-1">Lire notre avis complet &rarr;</Link>
                   </p>
                 </div>
@@ -519,8 +520,8 @@ export default function MeilleureBatterieBalconPage() {
                   <p className="text-sm text-charcoal-light">10 ans de garantie, 2,52&nbsp;kWh LFP, ~839&nbsp;&euro; en promo. Pour ceux qui veulent installer et ne plus y penser pendant une d&eacute;cennie.</p>
                 </div>
                 <div className="card-lg">
-                  <h4 className="font-bold mb-1">D&eacute;j&agrave; &eacute;quip&eacute; EcoFlow &rarr; PowerStream</h4>
-                  <p className="text-sm text-charcoal-light">Si vous avez une station DELTA ou RIVER, ajoutez simplement le hub PowerStream (~900&nbsp;&euro;) pour transformer votre station en batterie r&eacute;sidentielle.</p>
+                  <h4 className="font-bold mb-1">D&eacute;j&agrave; &eacute;quip&eacute; EcoFlow &rarr; PowerStream d&apos;occasion</h4>
+                  <p className="text-sm text-charcoal-light">Si vous avez une station DELTA ou RIVER, le hub PowerStream la transforme en batterie r&eacute;sidentielle. Il n&apos;est plus vendu par EcoFlow France depuis 2026&nbsp;: ne l&apos;achetez que d&apos;occasion ou en d&eacute;stockage, &agrave; prix r&eacute;duit.</p>
                 </div>
                 <div className="card-lg border-stone/20 bg-cream/50">
                   <h4 className="font-bold text-stone mb-1">Maison / grande terrasse &rarr; Zendure SolarFlow Mix</h4>

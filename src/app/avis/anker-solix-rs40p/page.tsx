@@ -202,7 +202,7 @@ export default function AnkerSolixRS40PAvisPage() {
                 {[
                   {
                     t: 'Le prix : 799 € pour 800 W effectifs',
-                    d: 'À 0,88 €/Wc (sur la puissance effective), l’Anker RS40P est 2,3× plus cher que le Beem On 500 Wc (à 429 €, 0,86 €/Wc). Le ROI à Lyon s’allonge à 5,9 ans contre 5,1 ans pour le Beem On 500 Wc. La marque se paie.',
+                    d: 'À 0,88 €/Wc (sur la puissance effective), l’Anker RS40P est 2,3× plus cher que le Beem On 500 Wc (à 429 €, 0,86 €/Wc). Le ROI à Lyon s’allonge à 5,9 ans contre 4,8 ans pour le Beem On 500 Wc. La marque se paie.',
                   },
                   {
                     t: 'Clipping de l’onduleur (perte 5-8 %)',
@@ -258,7 +258,7 @@ export default function AnkerSolixRS40PAvisPage() {
                       ['€/Wc effectif', '0,88 €', '0,86 €', '1,33 €'],
                       ['Technologie', 'IBC N-type', 'TOPCon bifacial', 'TOPCon'],
                       ['Garantie panneaux', '15 ans', '25 ans', '25 ans'],
-                      ['ROI (Lyon)', '5,9 ans', '5,1 ans', '7,1 ans'],
+                      ['ROI (Lyon)', '5,9 ans', '4,8 ans', '7,1 ans'],
                       ['Batterie compatible', 'Solarbank 2', 'Beem Box', 'VAULT 700 Wh'],
                       ['SAV France', 'Non (international)', 'Oui (Nantes)', 'Oui (Paris)'],
                     ].map(([c, anker, beem, sun], i) => (

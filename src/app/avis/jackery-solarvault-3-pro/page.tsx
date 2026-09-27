@@ -164,7 +164,7 @@ export default function JackerySolarVault3ProAvisPage() {
                       ['Jackery SolarVault 3 Pro', '2,52 kWh', '839 \u20ac', 'Non inclus', '8/10', true],
                       ['Bluetti Balco 260', '2,56 kWh', '849 \u20ac', 'Non inclus', '7/10', false],
                       ['Zendure SolarFlow', '1,92 kWh', '488 \u20ac', '840 Wc inclus', '8.5/10', false],
-                      ['EcoFlow PowerStream', '1-2 kWh', '599 \u20ac+', 'Option', '8/10', false],
+                      ['EcoFlow PowerStream (arr\u00eat\u00e9)', '1-2 kWh', '599 \u20ac+', 'Option', '8/10', false],
                       ['Sunology PLAY MAX', '0,7 kWh', '1 179 \u20ac', '480 Wc inclus', '7/10', false],
                     ].map(([name, battery, price, panels, score, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>

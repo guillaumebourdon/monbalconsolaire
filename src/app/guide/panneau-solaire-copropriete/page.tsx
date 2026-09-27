@@ -300,7 +300,7 @@ export default function CoproprietePage() {
                   <tbody>
                     {[
                       ['Sunology PLAY2', 'Au sol, lesté', 'Pas de vote en principe'],
-                      ['Sunology CITY', 'Garde-corps', 'Vote en AG'],
+                      ['Sunology CITY (arr\u00eat\u00e9) / GO', 'Garde-corps', 'Vote en AG'],
                     ].map(([k, p, c], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{k}</td><td className="text-center p-3">{p}</td><td className="text-center p-3 text-xs">{c}</td></tr>
                     ))}

@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'EcoFlow PowerStream avis : syst\u00e8me solaire modulaire + batterie',
-  description: 'Avis complet sur EcoFlow PowerStream : système modulaire panneaux + batterie + réseau. Analyse, prix, configuration, points forts et limites en 2026.',
+  title: 'EcoFlow PowerStream avis (arrêté) : que choisir en 2026 ?',
+  description: 'EcoFlow PowerStream : le micro-onduleur n\'est plus vendu par EcoFlow France (sept. 2026). Notre analyse, garantie, occasion et alternatives STREAM.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/ecoflow-powerstream',
   },
@@ -149,7 +149,7 @@ export default function EcoflowPowerstreamPage() {
         dateModified="2026-07-23"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
+      <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} ratingCount={1} availability="Discontinued" url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow PowerStream' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -170,6 +170,22 @@ export default function EcoflowPowerstreamPage() {
             </div>
           </div>
 
+          <div className="card-lg border-2 border-amber bg-amber-pale/40 mb-8" role="note">
+            <p className="badge-amber inline-block mb-3">Produit arr&ecirc;t&eacute;</p>
+            <h2 className="font-extrabold text-lg mb-2">Produit plus commercialis&eacute; par le fabricant (constat&eacute; le 27/09/2026)</h2>
+            <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+              Le PowerStream a disparu de la boutique officielle fr.ecoflow.com&nbsp;: son ancienne fiche renvoie une erreur 404 et EcoFlow vend d&eacute;sormais la gamme <strong>STREAM</strong> (micro-onduleur STREAM &agrave; 139&nbsp;&euro;, kits avec batterie STREAM Ultra &agrave; partir de 699&nbsp;&euro; au 27/09/2026). Quelques revendeurs tiers gardent une fiche PowerStream, mais souvent en rupture de stock (199&nbsp;&euro; affich&eacute;s en rupture chez AgriEuro, par exemple). Reste le march&eacute; de l&apos;occasion.
+            </p>
+            <p className="text-sm font-semibold mb-2">Alternatives actuelles avec stockage&nbsp;:</p>
+            <ul className="text-sm text-charcoal-light space-y-1.5 mb-4">
+              <li>&bull; <strong>EcoFlow STREAM Ultra</strong>&nbsp;: batterie de ~1,9&nbsp;kWh avec onduleur int&eacute;gr&eacute;, pilotage par la m&ecirc;me app EcoFlow.</li>
+              <li>&bull; <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link>&nbsp;: le meilleur ROI des syst&egrave;mes avec batterie que nous avons analys&eacute;s.</li>
+              <li>&bull; <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link>&nbsp;: tout-en-un onduleur + batterie 2,56&nbsp;kWh.</li>
+              <li>&bull; <Link href="/avis/ikea-solstrale-balcon" className="text-green hover:underline font-semibold">IKEA Solstr&aring;le</Link>&nbsp;: kit balcon b&acirc;ti sur le micro-onduleur EcoFlow STREAM.</li>
+            </ul>
+            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/stream-ultra-pro" label="Voir le STREAM Ultra sur EcoFlow" variant="secondary" position="discontinued-notice" />
+          </div>
+
           <ProductHero
             brand="EcoFlow"
             name="PowerStream"
@@ -177,18 +193,18 @@ export default function EcoflowPowerstreamPage() {
             price="599 €"
             score="8/10"
             tagline="Le micro-onduleur intelligent qui transforme votre installation en système modulaire évolutif."
-            affiliateUrl="https://fr.ecoflow.com/"
-            affiliateLabel="Voir le PowerStream sur EcoFlow"
+            affiliateUrl="https://fr.ecoflow.com/products/stream-ultra-pro"
+            affiliateLabel="Voir l'alternative STREAM sur EcoFlow"
             accentColor="amber"
             image="/images/produits/ecoflow-powerstream-2.webp"
             imageAlt="EcoFlow PowerStream - système modulaire panneaux + batterie + onduleur"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 23/07/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix officiel constat&eacute; le 23/07/2026 &middot; Produit retir&eacute; de la boutique EcoFlow France depuis (constat du 27/09/2026)</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Le PowerStream EcoFlow (599 €) est <strong>l&apos;option la plus intelligente du marché</strong> pour ceux qui veulent un système solaire modulaire et évolutif. Son application mobile et son optimisation d&apos;autoconsommation sont sans équivalent. <strong>Mais</strong> il ne convient pas à tout le monde : il faut accepter de payer plus cher au départ (1 800 € minimum pour un setup complet) et de configurer un peu. Pour la simplicité pure, restez sur un Sunology PLAY 2.
+              Le PowerStream EcoFlow (599 € au lancement) était <strong>l&apos;option la plus intelligente du marché</strong> pour ceux qui voulaient un système solaire modulaire et évolutif. Son application mobile et son optimisation d&apos;autoconsommation restent de très bon niveau. <strong>Mais</strong> il n&apos;est plus vendu par EcoFlow France : nous ne le conseillons plus qu&apos;<strong>d&apos;occasion ou en déstockage sous ~150 €</strong>, et seulement si vous possédez déjà une batterie EcoFlow DELTA ou RIVER compatible. Au-delà, le micro-onduleur STREAM neuf (139 €) ou un système avec batterie intégrée (STREAM Ultra, Zendure SolarFlow) est un meilleur achat.
             </p>
           </div>
 
@@ -284,7 +300,7 @@ export default function EcoflowPowerstreamPage() {
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-3 font-semibold">Garantie</td>
-                      <td className="p-3 text-xs">10 ans (sur le PowerStream)</td>
+                      <td className="p-3 text-xs">10 ans (garantie constructeur EcoFlow sur le micro-onduleur PowerStream ; 2 ans de garantie l&eacute;gale chez les revendeurs)</td>
                     </tr>
                     <tr className="bg-white">
                       <td className="p-3 font-semibold">Prix de vente</td>
@@ -363,8 +379,6 @@ export default function EcoflowPowerstreamPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/" label="Voir sur EcoFlow" variant="secondary" position="after-pros" />
-
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 4 points faibles à connaître</h2>
               <div className="space-y-3">
@@ -376,8 +390,6 @@ export default function EcoflowPowerstreamPage() {
                 ))}
               </div>
             </section>
-
-            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/" label="Voir sur EcoFlow" variant="secondary" position="after-cons" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">PowerStream vs concurrence : tableau comparatif (juillet 2026)</h2>
@@ -453,7 +465,7 @@ export default function EcoflowPowerstreamPage() {
               <p className="text-sm font-semibold mb-1">Pas sûr que ce kit soit fait pour vous ?</p>
               <p className="text-xs text-charcoal-light mb-3">Calculez votre ROI personnalisé selon votre département et exposition.</p>
               <Link href="/calculateur" className="btn-secondary text-sm inline-flex">
-                Calculer mon ROI avec le EcoFlow PowerStream →
+                Calculer mon ROI avec un kit actuel →
               </Link>
             </div>
 
@@ -546,8 +558,6 @@ export default function EcoflowPowerstreamPage() {
             </section>
 
             <NewsletterBanner />
-
-            <AffiliateCTA productName="EcoFlow PowerStream" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/" label="Voir l'offre actuelle sur EcoFlow" variant="box" position="footer-box" price="599 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

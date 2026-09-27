@@ -76,7 +76,7 @@ export default function SunethicAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'La puissance la plus élevée du marché', d: 'Avec 500 Wc, le F500 produit environ 570 kWh/an en région lyonnaise (orientation sud). C\'est 50 kWh de plus que le Sunology PLAY2 et 40 kWh de plus que le Beem On.' },
+                  { t: 'Une puissance dans le haut du marché', d: 'Avec 500 Wc, le F500 produit environ 510 kWh/an en région lyonnaise (orientation sud). C\'est ~50 kWh de plus que le Sunology PLAY2 (459 kWh) et ~40 kWh de plus que le Beem On 460W, autant que le Beem On 500 Wc.' },
                   { t: 'Vraiment Made in France', d: 'Ce n\'est pas du marketing : les panneaux sont fabriqués et assemblés en France. L\'empreinte carbone du produit est significativement réduite par rapport aux kits dont les panneaux viennent de Chine.' },
                   { t: 'Meilleure note client du marché', d: '4,8/5 sur Trustpilot avec 1 000+ avis. Les utilisateurs saluent la qualité de fabrication, le SAV réactif, et les performances conformes aux promesses.' },
                   { t: 'Engagement éthique', d: 'Sunethic communique de manière transparente sur sa chaîne de production. C\'est un choix qui va au-delà de la simple rentabilité : c\'est un choix de valeurs.' },

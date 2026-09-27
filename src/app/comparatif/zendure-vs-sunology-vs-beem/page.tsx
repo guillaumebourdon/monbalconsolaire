@@ -347,7 +347,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">1 684 €/kWh</td>
                     </tr>
                     <tr className="bg-cream/50">
-                      <td className="p-2.5">EcoFlow PowerStream + DELTA 2</td>
+                      <td className="p-2.5">EcoFlow PowerStream + DELTA 2 (arr&ecirc;t&eacute;)</td>
                       <td className="text-center p-2.5 font-mono">1 800 €</td>
                       <td className="text-center p-2.5 font-mono">1 kWh</td>
                       <td className="text-center p-2.5 font-mono">1 800 €/kWh</td>

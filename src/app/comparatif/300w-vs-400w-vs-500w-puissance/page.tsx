@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Quelle puissance choisir pour un balcon ?', answer: 'Pour un balcon standard (8-15 m2), un kit de 400 a 500W offre le meilleur compromis rentabilite/espace. Les 300W conviennent aux très petits balcons ou aux budgets serres. Au-dela de 500W, il faut un espace plus grand et verifier la norme NF C 15-100 (900W max par circuit).' },
-  { question: '500W suffisent-ils pour un balcon ?', answer: 'Oui, pour la plupart des usages. Un kit 500 Wc produit ~600 kWh/an a Paris (sud) et jusqu\'a 800 kWh/an a Marseille. Cela couvre environ 12-13% de la consommation annuelle moyenne d\'un foyer francais (4 800 kWh/an), soit 95 a 155 €/an d\'economies. Un 500W couvre bien le frigo, l\'ordinateur, l\'eclairage LED et la TV durant la journee. Pour la lessive ou la cuisine, la production simultanee ne suffit pas seule. Si vous avez un grand balcon et une bonne orientation, le 500W (Beem On a 429€) est le meilleur choix.' },
-  { question: 'Un kit 500W produit-il plus qu\'un kit 300W ?', answer: 'Oui, proportionnellement. Un 500W produit environ 1,67 fois plus qu\'un 300W (a orientation egale). En Ile-de-France : ~600 kWh/an pour un 500W contre ~360 kWh/an pour un 300W. Mais le prix au watt est souvent meilleur sur les 300W d\'entree de gamme.' },
-  { question: 'Peut-on cumuler plusieurs kits ?', answer: 'Oui, jusqu\'a 900W total par circuit de prise (norme NF C 15-100). Au-dela, il faut une ligne dediee depuis le tableau. Concretement : 2 kits 400W = 800W (ok), 2 kits 500W = 1000W (ligne dediee requise).' },
+  { question: 'Quelle puissance choisir pour un balcon ?', answer: 'Pour un balcon standard (8-15 m2), un kit de 400 a 500W offre le meilleur compromis rentabilite/espace. Les 300W conviennent aux très petits balcons ou aux budgets serres. Au-dela de 500W, il faut un espace plus grand et respecter le repere de 900W par prise recommande par l\'UFC-Que Choisir et les fabricants (la NF C 15-100 ne fixe pas de plafond en watts).' },
+  { question: '500W suffisent-ils pour un balcon ?', answer: 'Oui, pour la plupart des usages. Un kit 500 Wc produit ~470 kWh/an a Paris (sud) et jusqu\'a ~640 kWh/an a Marseille. Cela couvre environ 10-13% de la consommation annuelle moyenne d\'un foyer francais (4 800 kWh/an), soit 77 a 105 €/an d\'economies (85 % d\'autoconsommation, 0,1940 €/kWh). Un 500W couvre bien le frigo, l\'ordinateur, l\'eclairage LED et la TV durant la journee. Pour la lessive ou la cuisine, la production simultanee ne suffit pas seule. Si vous avez un grand balcon et une bonne orientation, le 500W (Beem On a 429€) est le meilleur choix.' },
+  { question: 'Un kit 500W produit-il plus qu\'un kit 300W ?', answer: 'Oui, proportionnellement. Un 500W produit environ 1,67 fois plus qu\'un 300W (a orientation egale). En Ile-de-France : ~468 kWh/an pour un 500W contre ~281 kWh/an pour un 300W. Mais le prix au watt est souvent meilleur sur les 300W d\'entree de gamme.' },
+  { question: 'Peut-on cumuler plusieurs kits ?', answer: 'Oui, en restant idealement sous 900W par circuit de prise : c\'est une recommandation (UFC-Que Choisir, fabricants), pas une limite de la norme NF C 15-100. Au-dela, une ligne dediee depuis le tableau est recommandee. Concretement : 2 kits 400W = 800W (ok), 2 kits 500W = 1000W (ligne dediee recommandee).' },
   { question: 'Le rendement est-il identique entre un 300W et un 500W ?', answer: 'Non. Les panneaux recents (2024-2026) affichent un rendement de 20-23% quel que soit la puissance totale. Le 500W n\'est pas plus "rentable au watt" par principe. La difference vient surtout de la taille du panneau (plus de surface = plus de watts).' },
   { question: 'Faut-il privilegier un gros kit ou plusieurs petits ?', answer: 'Un gros kit (500W) est plus simple a installer mais plus encombrant. Plusieurs petits (2 x 300W) offrent plus de flexibilite d\'orientation et d\'installation modulaire. A budget egal, le gros kit est souvent plus rentable au watt.' },
 ];
@@ -47,7 +47,7 @@ export default function PuissanceComparatif() {
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed"><strong>300W</strong> : budget serr&eacute;, petit balcon (moins de 8m&sup2;). <strong>400-500W</strong> : le sweet spot pour la majorit&eacute; des balcons fran&ccedil;ais. <strong>Au-del&agrave; de 500W</strong> : v&eacute;rifier l&apos;espace et la norme NF C 15-100 (900W max par circuit). Le ROI est g&eacute;n&eacute;ralement meilleur en 400-500W.</p>
+            <p className="text-charcoal-light text-sm leading-relaxed"><strong>300W</strong> : budget serr&eacute;, petit balcon (moins de 8m&sup2;). <strong>400-500W</strong> : le sweet spot pour la majorit&eacute; des balcons fran&ccedil;ais. <strong>Au-del&agrave; de 500W</strong> : v&eacute;rifier l&apos;espace et le rep&egrave;re de 900W par circuit (recommandation, pas une limite de la NF C 15-100). Le ROI est g&eacute;n&eacute;ralement meilleur en 400-500W.</p>
           </div>
 
           <div className="space-y-10">
@@ -68,10 +68,10 @@ export default function PuissanceComparatif() {
                     {[
                       ['Prix moyen', '280-350 \u20ac', '500-600 \u20ac', '429-690 \u20ac'],
                       ['Prix au watt', '~1,00 \u20ac/W', '~1,30 \u20ac/W', '~0,86-1,38 \u20ac/W'],
-                      ['Production Paris (sud)', '~360 kWh/an', '~480 kWh/an', '~600 kWh/an'],
-                      ['Production Marseille (sud)', '~480 kWh/an', '~640 kWh/an', '~800 kWh/an'],
-                      ['\u00c9conomies annuelles', '~70-95 \u20ac', '~95-125 \u20ac', '~115-155 \u20ac'],
-                      ['ROI moyen', '3-4 ans', '4-5 ans', '4-5 ans'],
+                      ['Production Paris (sud)', '~281 kWh/an', '~374 kWh/an', '~468 kWh/an'],
+                      ['Production Marseille (sud)', '~383 kWh/an', '~510 kWh/an', '~638 kWh/an'],
+                      ['\u00c9conomies annuelles', '~46-63 \u20ac', '~62-84 \u20ac', '~77-105 \u20ac'],
+                      ['ROI (Lyon, sud)', '5-6 ans', '7-8 ans', '4,8-7,4 ans'],
                       ['Dimensions panneau', '~82 x 69 cm (x4)', '~175 x 100 cm', '~180 x 110 cm'],
                       ['Poids', '~15 kg total', '~20 kg', '~22 kg'],
                       ['Exemple de kit', 'Beem Kit 300W', 'Sunology PLAY 2 (450W)', 'Beem On 500 Wc (429 \u20ac)'],
@@ -97,7 +97,7 @@ export default function PuissanceComparatif() {
                   <h4 className="font-bold text-green mb-2">&#9989; Points forts</h4>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Prix d&apos;entr&eacute;e tr&egrave;s bas (&lt; 350&euro;)</li>
-                    <li>ROI le plus rapide (3 &agrave; 4 ans)</li>
+                    <li>ROI court (~5,5 ans pour le Beem Kit 300W &agrave; Lyon)</li>
                     <li>Modulaire : facile &agrave; r&eacute;partir sur un balcon</li>
                     <li>L&eacute;ger (15 kg), id&eacute;al pour balcons fragiles</li>
                   </ul>
@@ -105,7 +105,7 @@ export default function PuissanceComparatif() {
                 <div className="card-lg border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h4>
                   <ul className="text-sm text-charcoal-light space-y-2">
-                    <li>Production limit&eacute;e (~360 kWh/an &agrave; Paris)</li>
+                    <li>Production limit&eacute;e (~281 kWh/an &agrave; Paris)</li>
                     <li>&Eacute;conomies annuelles moindres</li>
                     <li>Plus de c&acirc;blage (plusieurs panneaux)</li>
                     <li>Micro-onduleurs moins puissants</li>
@@ -172,11 +172,11 @@ export default function PuissanceComparatif() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1">Cumuler 2 kits</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Jusqu&apos;&agrave; 900W par circuit (NF C 15-100). Deux kits 400W (800W) = OK. Au-del&agrave; : ligne d&eacute;di&eacute;e requise.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Rep&egrave;re recommand&eacute; : 900W par circuit (UFC-Que Choisir, fabricants ; la NF C 15-100 ne fixe pas de plafond). Deux kits 400W (800W) = OK. Au-del&agrave; : ligne d&eacute;di&eacute;e recommand&eacute;e.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1">Passer &agrave; un kit avec batterie</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Type Sunology PLAY MAX ou EcoFlow PowerStream. Utile si vous consommez peu en journ&eacute;e. Voir notre <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">comparatif batteries solaires</Link>.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Type Sunology PLAY MAX, Zendure SolarFlow ou Bluetti Balco 260. Utile si vous consommez peu en journ&eacute;e. Voir notre <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">comparatif batteries solaires</Link>.</p>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4">Pour la r&eacute;glementation 900W : <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green hover:underline">voir notre guide r&eacute;glementation 2026</Link>.</p>
@@ -186,10 +186,10 @@ export default function PuissanceComparatif() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation par profil</h2>
               <div className="space-y-3">
                 {[
-                  { profil: 'Petit budget (< 400€)', reco: '300W modulaire', detail: 'Le Beem Kit 300W est le meilleur choix. ROI en 3-4 ans.' },
+                  { profil: 'Petit budget (< 400€)', reco: '300W modulaire', detail: 'Le Beem Kit 300W est le meilleur choix. ROI d\'environ 5,5 ans (Lyon, sud).' },
                   { profil: 'Balcon standard 10 m²', reco: '400-450W', detail: 'Sunology PLAY 2 ou Beem On : 1 panneau, installation en 2 min.' },
                   { profil: 'Grand balcon ou terrasse', reco: '500W (Beem On 429\u20ac)', detail: 'Beem On 500 Wc : meilleur prix du march\u00e9 \u00e0 0,86 \u20ac/Wc, ROI ~4,8 ans.' },
-                  { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (450W + 700Wh) ou EcoFlow PowerStream.' },
+                  { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (450W + 700Wh), Zendure SolarFlow ou Bluetti Balco 260.' },
                   { profil: 'Locataire', reco: '400-450W', detail: 'Un seul panneau se d\u00e9monte en 1 minute pour le d\u00e9m\u00e9nagement.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
