@@ -43,10 +43,11 @@ export function ProductHero({
 
   const handleAffiliateClick = () => {
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'click_affiliate', {
-        affiliate_brand: brand,
-        affiliate_product: name,
-        affiliate_price: price,
+      window.gtag('event', 'affiliate_click', {
+        product_name: `${brand} ${name}`,
+        merchant: brand,
+        position: 'product-hero',
+        page_location: window.location.pathname,
         affiliate_url: affiliateUrl,
       });
     }

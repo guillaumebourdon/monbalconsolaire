@@ -7,6 +7,16 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'monbalconsolaire.vercel.app' }],
+        destination: 'https://monbalconsolaire.fr/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

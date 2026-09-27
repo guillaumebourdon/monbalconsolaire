@@ -201,6 +201,7 @@ export function SchemaBreadcrumb({ items }: { items: { label: string; href?: str
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    name: `Fil d'Ariane : ${allItems.map((item) => item.label).join(' > ')}`,
     itemListElement: allItems.map((item, i) => ({
       '@type': 'ListItem',
       position: i + 1,

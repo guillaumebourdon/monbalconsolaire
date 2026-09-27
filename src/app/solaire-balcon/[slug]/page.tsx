@@ -59,6 +59,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     alternates: {
       canonical: `https://monbalconsolaire.fr/solaire-balcon/${params.slug}`,
     },
+    // Pages programmatiques jugées trop minces par Google (crawlées, non indexées) :
+    // retirées de l'index en attendant un enrichissement local page par page.
+    robots: { index: false, follow: true },
   };
 }
 
