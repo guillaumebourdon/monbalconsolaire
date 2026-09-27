@@ -118,7 +118,7 @@ export default function ComparatifBalconVsToiturePage() {
           <section id="balcon" className="mb-12">
             <h2 className="text-2xl font-bold mb-4">1. Le kit solaire balcon (plug-and-play)</h2>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              Depuis 2022, plus de 220&nbsp;000 foyers fran&ccedil;ais se sont &eacute;quip&eacute;s d&apos;un kit solaire balcon. Le principe&nbsp;: un panneau de 300 &agrave; 800&nbsp;Wc (le plafond l&eacute;gal confirm&eacute; par la DGEC en 2026), un micro-onduleur, une prise 230&nbsp;V. Installation en 1 heure, z&eacute;ro installateur, z&eacute;ro travaux.
+              Depuis 2022, plus de 220&nbsp;000 foyers fran&ccedil;ais se sont &eacute;quip&eacute;s d&apos;un kit solaire balcon. Le principe&nbsp;: un &agrave; deux panneaux de 300 &agrave; 800&nbsp;Wc au total (aucun plafond l&eacute;gal chiffr&eacute; en France, mais ~900&nbsp;W par circuit est le rep&egrave;re de s&eacute;curit&eacute; recommand&eacute;&nbsp;; <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green hover:underline">voir la r&eacute;glementation</Link>), un micro-onduleur, une prise 230&nbsp;V. Installation en 1 heure, z&eacute;ro installateur, z&eacute;ro travaux.
             </p>
             <p className="text-charcoal-light leading-relaxed mb-4">
               La d&eacute;claration CACSI aupr&egrave;s d&apos;Enedis est gratuite et se fait en ligne en 10 minutes. Le compteur Linky enregistre l&apos;injection du surplus &mdash; qui n&apos;est pas rachet&eacute; mais qui &eacute;vite tout probl&egrave;me r&eacute;glementaire.
@@ -163,7 +163,7 @@ export default function ComparatifBalconVsToiturePage() {
                     <td className="p-3 text-right border border-border-light font-semibold text-green">~7 ans</td>
                   </tr>
                   <tr className="border border-border-light">
-                    <td className="p-3 border border-border-light">Kit double 800&nbsp;Wc (max l&eacute;gal)</td>
+                    <td className="p-3 border border-border-light">Kit double 800&nbsp;Wc (max courant sur prise)</td>
                     <td className="p-3 text-right border border-border-light">~750&nbsp;&euro;</td>
                     <td className="p-3 text-right border border-border-light">~750 kWh/an</td>
                     <td className="p-3 text-right border border-border-light">~124&nbsp;&euro;</td>
@@ -187,7 +187,7 @@ export default function ComparatifBalconVsToiturePage() {
             <div className="card bg-amber-pale/30 border-l-4 border-l-amber mb-6 p-4">
               <p className="text-sm font-semibold mb-1">&#9888; Limites du kit balcon</p>
               <ul className="text-sm text-charcoal-light space-y-1">
-                <li>&bull; Plafond l&eacute;gal 800&nbsp;Wc &mdash; impossible de produire davantage</li>
+                <li>&bull; Puissance limit&eacute;e en pratique &agrave; ~800-900&nbsp;W par circuit (rep&egrave;re de s&eacute;curit&eacute;) et par la place disponible</li>
                 <li>&bull; &Eacute;conomies maximales ~124&nbsp;&euro;/an : ne couvre pas toute la facture</li>
                 <li>&bull; N&eacute;cessite une orientation correcte (pas plein nord)</li>
                 <li>&bull; Pas de revente du surplus (uniquement autoconsommation)</li>
@@ -320,7 +320,7 @@ export default function ComparatifBalconVsToiturePage() {
                   </tr>
                   <tr className="bg-cream/40">
                     <td className="p-3 font-medium">Puissance max</td>
-                    <td className="p-3 text-center">800&nbsp;Wc (l&eacute;gal)</td>
+                    <td className="p-3 text-center">~800-900&nbsp;W par circuit (rep&egrave;re, pas une limite l&eacute;gale)</td>
                     <td className="p-3 text-center text-green font-bold">3 &agrave; 9&nbsp;kWc (illimit&eacute; jusqu&apos;&agrave; 100 kWc)</td>
                   </tr>
                   <tr>

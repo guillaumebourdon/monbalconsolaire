@@ -58,7 +58,7 @@ const prises = [
     compatible: 'Alexa, Google Home, Home Assistant',
     verdict: 'La plus geek / domotique',
     note: '8.5/10',
-    detail: 'Compatible Home Assistant et MQTT, parfaite pour les amateurs de domotique. Mesure pr\u00e9cise \u00e0 0,1 W pr\u00e8s. Limit\u00e9e \u00e0 10A (2 500 W) mais largement suffisant pour un kit solaire (800 W max). API ouverte.',
+    detail: 'Compatible Home Assistant et MQTT, parfaite pour les amateurs de domotique. Mesure pr\u00e9cise \u00e0 0,1 W pr\u00e8s. Limit\u00e9e \u00e0 10A (2 500 W) mais largement suffisant pour un kit solaire de balcon (800 W le plus souvent). API ouverte.',
   },
   {
     nom: 'Tapo P410M (ext\u00e9rieur)',

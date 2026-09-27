@@ -26,8 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/comparatif/kit-solaire-petit-budget`, lastModified: '2026-03-25', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/kit-solaire-batterie-2026`, lastModified: '2026-06-20', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/300w-vs-400w-vs-500w-puissance`, lastModified: '2026-07-02', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/comparatif/zendure-vs-sunology-vs-beem`, lastModified: '2026-05-09', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-terrasse-2026`, lastModified: '2026-07-09', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/zendure-vs-sunology-vs-beem`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-terrasse-2026`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/sunology-play2-vs-beem-on-500w`, lastModified: '2026-07-28', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleure-batterie-solaire-balcon-2026`, lastModified: '2026-07-10', changeFrequency: 'monthly', priority: 0.8 },
 
@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/guide/panneau-solaire-balcon-locataire`, lastModified: '2026-05-06', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/installer-kit-solaire-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/orientation-panneau-solaire-balcon`, lastModified: '2026-03-29', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/guide/reglementation-panneau-solaire-balcon-2026`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/guide/reglementation-panneau-solaire-balcon-2026`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/panneau-solaire-copropriete`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/panneau-solaire-assurance-balcon`, lastModified: '2026-06-03', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/optimiser-autoconsommation-solaire`, lastModified: '2026-05-25', changeFrequency: 'monthly', priority: 0.8 },
@@ -53,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/sunology-play-max`, lastModified: '2026-04-02', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/sunology-city`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/ecoflow-powerstream`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/avis/zendure-solarflow`, lastModified: '2026-05-07', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/avis/zendure-solarflow`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/ikea-solstrale-balcon`, lastModified: '2026-05-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/dualsun-preasy`, lastModified: '2026-05-09', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/beem-on-500w`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
@@ -93,7 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/micro-onduleur-solaire-fonctionnement`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/production-solaire-ete-vs-hiver`, lastModified: '2026-07-14', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/consommation-veille-kit-solaire`, lastModified: '2026-07-07', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/combien-panneaux-solaires-balcon`, lastModified: '2026-06-26', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/blog/combien-panneaux-solaires-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/kit-solaire-balcon-avis-2026`, lastModified: '2026-06-20', changeFrequency: 'monthly', priority: 0.7 },
 
     // Pages secondaires

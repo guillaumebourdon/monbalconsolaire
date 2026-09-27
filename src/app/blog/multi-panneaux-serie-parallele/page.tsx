@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: 'Peut-on brancher 2 micro-onduleurs sur la m&ecirc;me prise ?',
-    answer: 'Non, pas sur la m&ecirc;me prise. Chaque micro-onduleur se branche sur sa propre prise 16A. Si vous utilisez une multiprise, elle doit &ecirc;tre &eacute;tanche (IP44 minimum), c&acirc;bl&eacute;e en dur sur un circuit d&eacute;di&eacute;, et la somme des puissances AC ne doit pas d&eacute;passer 800W (limite plug-and-play).',
+    answer: 'Non, pas sur la m&ecirc;me prise. Chaque micro-onduleur se branche sur sa propre prise 16A. Si vous utilisez une multiprise, elle doit &ecirc;tre &eacute;tanche (IP44 minimum), c&acirc;bl&eacute;e en dur sur un circuit d&eacute;di&eacute;, et la somme des puissances AC devrait rester sous ~900 W sur un circuit 16A (rep&egrave;re de s&eacute;curit&eacute; recommand&eacute;, pas une limite l&eacute;gale).',
   },
   {
     question: 'Quel disjonteur faut-il pour 2 panneaux solaires ?',
@@ -173,9 +173,9 @@ export default function MultiPanneauxSeriePage() {
               </p>
 
               <div className="card bg-amber-pale/40 border-l-4 border-l-amber">
-                <p className="text-sm font-semibold mb-1">&#9888;&#65039; Limite des 800 Wc totaux</p>
+                <p className="text-sm font-semibold mb-1">&#9888;&#65039; Rep&egrave;re des 900 W par circuit</p>
                 <p className="text-sm text-charcoal-light">
-                  Deux micro-onduleurs inject&eacute;s sur le m&ecirc;me circuit ne doivent pas d&eacute;passer 800W AC cumul&eacute;s dans le cadre plug-and-play. Deux kits de 400W = 800W total&nbsp;: c&apos;est la limite. Deux kits de 500W = 1&nbsp;000W&nbsp;: hors cadre, circuit d&eacute;di&eacute; obligatoire. Notre article <Link href="/blog/combien-panneaux-solaires-balcon" className="text-green font-semibold hover:underline">combien de panneaux sur un balcon</Link> d&eacute;taille la r&egrave;glementation.
+                  Aucun texte fran&ccedil;ais ne fixe de plafond en watts, mais la recommandation courante (UFC-Que Choisir, fabricants) est de ne pas injecter plus de ~900 W AC cumul&eacute;s sur un circuit 16A prot&eacute;g&eacute; par un diff&eacute;rentiel 30 mA. Deux kits de 400W = 800W&nbsp;: sous le rep&egrave;re. Deux kits de 500W = 1&nbsp;000W&nbsp;: au-dessus, un circuit d&eacute;di&eacute; pos&eacute; par un &eacute;lectricien est recommand&eacute;. Notre article <Link href="/blog/combien-panneaux-solaires-balcon" className="text-green font-semibold hover:underline">combien de panneaux sur un balcon</Link> d&eacute;taille la r&egrave;glementation.
                 </p>
               </div>
             </section>

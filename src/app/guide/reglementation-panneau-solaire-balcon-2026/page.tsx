@@ -108,7 +108,7 @@ export default function ReglementationPage() {
                   { situation: 'Panneau fix\u00e9 au mur < 1m80', auth: 'Aucune', detail: 'Pas de d\u00e9claration pr\u00e9alable.' },
                   { situation: 'Panneau fix\u00e9 au mur > 1m80 ou en fa\u00e7ade', auth: 'D\u00e9claration pr\u00e9alable en mairie', detail: 'Modifie l\'aspect ext\u00e9rieur.' },
                   { situation: 'Panneau en toiture (toit plat)', auth: 'D\u00e9claration pr\u00e9alable en mairie', detail: 'M\u00eame si c\'est un kit plug-and-play.' },
-                  { situation: 'Puissance > 3 kWc', auth: 'Permis de construire', detail: 'Rare pour du plug-and-play (les kits font 300-500W).' },
+                  { situation: 'Installation au sol > 3 kWc (ou > 1,80 m de haut)', auth: 'Déclaration préalable', detail: 'Art. R421-2 et R421-9 du code de l’urbanisme. Rare pour du plug-and-play (les kits font 300-900 W).' },
                 ].map((s, i) => (
                   <div key={i} className="card">
                     <div className="flex items-start justify-between gap-4 flex-wrap">

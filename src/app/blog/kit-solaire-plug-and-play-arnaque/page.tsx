@@ -36,7 +36,7 @@ const cas_arnaque = [
   { type: 'Panneaux d\'occasion Leboncoin "neufs"', desc: 'Panneaux ayant 3-5 ans vendus comme neufs. Performance dégradée, garantie expirée, traçabilité impossible.', risque: 'Élevé' },
   { type: 'Démarchage téléphonique "subvention État"', desc: 'Aucune aide État pour le plug-and-play sous 3kWc en 2026. Toute offre "subventionnée" par téléphone est suspecte.', risque: 'Très élevé' },
   { type: 'Installeurs "plug-and-play à 1500€"', desc: 'Surfacturation de kits à 400-600€ au prix d\'une installation pro. Aucune valeur ajoutée technique.', risque: 'Élevé' },
-  { type: 'Kits "800W plug-and-play"', desc: 'Au delà de 800W en injection, la conformité Enedis devient compliquée. Beaucoup de vendeurs ignorent le cadre légal.', risque: 'Moyen' },
+  { type: 'Kits "800W plug-and-play"', desc: 'Aucun plafond légal chiffré en France, mais au-delà de ~900W injectés sur un circuit 16A, un circuit dédié est recommandé. Beaucoup de vendeurs présentent la règle allemande des 800W comme une limite française, ou passent sous silence la déclaration CACSI.', risque: 'Moyen' },
 ];
 
 const criteres_fiable = [

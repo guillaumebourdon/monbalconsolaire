@@ -175,7 +175,7 @@ export default function AnkerSolixRS40PAvisPage() {
                   },
                   {
                     t: 'Mise à jour 800 W automatique',
-                    d: 'L’onduleur est livré en mode 600 W (légal partout) mais se met automatiquement à jour à 800 W via WiFi une fois connecté à Internet. Compatible avec la nouvelle réglementation française (décret 2024). Aucune manipulation nécessaire.',
+                    d: 'L’onduleur est livré en mode 600 W (ancien plafond allemand) mais se met automatiquement à jour à 800 W via WiFi une fois connecté à Internet (plafond allemand depuis 2024). En France, aucun texte ne fixe de plafond en watts : 800 W reste sous le repère de sécurité de 900 W par circuit. Aucune manipulation nécessaire.',
                   },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">

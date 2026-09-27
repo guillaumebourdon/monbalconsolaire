@@ -421,7 +421,7 @@ export default function ZendureSolarflowPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité : ROI en 6-7 ans</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité : ROI en 5,3 ans</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Prenons le setup recommandé : <strong>SolarFlow 800 Plus + 2 panneaux 420 W</strong>, à environ 900 €, installé à Lyon en exposition sud.
               </p>

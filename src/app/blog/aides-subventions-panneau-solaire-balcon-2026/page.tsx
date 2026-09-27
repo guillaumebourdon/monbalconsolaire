@@ -307,8 +307,8 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                   <p className="text-xs text-charcoal-light leading-relaxed">La RED III (Directive &Eacute;nergies Renouvelables) pousse les &Eacute;tats membres &agrave; faciliter l&apos;autoconsommation, y compris pour les petits kits. Des dispositifs d&apos;aide sp&eacute;cifiques aux kits &laquo;&nbsp;plug-in&nbsp;&raquo; ont &eacute;t&eacute; introduits en Allemagne et en Espagne. La France pourrait s&apos;en inspirer.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Rel&egrave;vement de la limite de puissance</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">La limite actuelle de 800 Wc (bient&ocirc;t 1 200 Wc en discussion) pourrait ouvrir la porte &agrave; une reconnaissance officielle des kits balcon dans les dispositifs d&apos;aide existants. Plus la puissance install&eacute;e est grande, plus l&apos;impact sur le r&eacute;seau est mesurable &mdash; et plus l&apos;int&eacute;r&ecirc;t de subventionner est justifiable.</p>
+                  <h4 className="font-bold text-sm mb-1">Clarification du cadre r&eacute;glementaire</h4>
+                  <p className="text-xs text-charcoal-light leading-relaxed">La France ne fixe aucun plafond chiffr&eacute; pour les kits sur prise (le 800 W souvent cit&eacute; est la r&egrave;gle allemande), mais leur statut au regard de la NF C 15-100 (point 551.7.2) reste flou. Une clarification, demand&eacute;e par la fili&egrave;re (Enerplan, SER), pourrait ouvrir la porte &agrave; une reconnaissance officielle des kits balcon dans les dispositifs d&apos;aide existants. Plus la puissance install&eacute;e est grande, plus l&apos;impact sur le r&eacute;seau est mesurable &mdash; et plus l&apos;int&eacute;r&ecirc;t de subventionner est justifiable.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h4 className="font-bold text-sm mb-1">Risque&nbsp;: de nouvelles contraintes plut&ocirc;t que des aides</h4>
@@ -350,7 +350,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               <div className="space-y-3">
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
-                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, limite 800&nbsp;Wc, d&eacute;claration CACSI Enedis&nbsp;: ce que dit la loi</p>
+                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, rep&egrave;re des 900&nbsp;W, d&eacute;claration CACSI Enedis&nbsp;: ce que dit la loi</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon&nbsp;?</h4>

@@ -187,7 +187,7 @@ export default function HomePage() {
                 brand: 'Zendure',
                 power: '840 W + batterie',
                 price: '900\u20ac',
-                roi: '5,1 ans',
+                roi: '5,3 ans',
                 slug: '/avis/zendure-solarflow',
               },
               {
@@ -259,10 +259,10 @@ export default function HomePage() {
             <div className="card-lg reveal">
               <div className="text-[10px] font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Marseille, terrasse sud</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-                Maison, t&eacute;l&eacute;travail. Zendure SolarFlow + 2 &times; 420 W (900 &euro;). Production : <strong>1 083 kWh/an</strong>. Avec batterie (80 % autocons.) : <strong>168 &euro;/an</strong>.
+                Maison, t&eacute;l&eacute;travail. Zendure SolarFlow + 2 &times; 420 W (900 &euro;). Production : <strong>1 083 kWh/an</strong>. Avec batterie (95 % autocons.) : <strong>200 &euro;/an</strong>.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-green">ROI 5,4 ans</span>
+                <span className="text-xs font-mono font-bold text-green">ROI 4,3 ans</span>
                 <span className="badge-green text-[9px]">&#10003; Rentable</span>
               </div>
             </div>

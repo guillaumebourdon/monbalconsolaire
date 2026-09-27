@@ -126,7 +126,7 @@ const checklist = [
     num: 10,
     category: 'Budget',
     title: 'Choisir la bonne puissance',
-    desc: '300W (Beem Kit) : idéal pour un petit balcon ou un premier essai. Prix d\'entrée : ~299 €. 450W (Sunology PLAY 2, Beem On) : le rapport puissance/encombrement optimal. Prix : 499-599 €. 800W (2 panneaux) : maximum plug-and-play. Nécessite de vérifier le circuit (900W par prise : repère recommandé, pas une limite de la norme). Prix : 700-900 €.',
+    desc: '300W (Beem Kit) : idéal pour un petit balcon ou un premier essai. Prix d\'entrée : ~299 €. 450W (Sunology PLAY 2, Beem On) : le rapport puissance/encombrement optimal. Prix : 499-599 €. 800W (2 panneaux) : le plus puissant qu\'on trouve couramment en kit prêt à brancher (aucun plafond légal en France). Nécessite de vérifier le circuit (900W par prise : repère recommandé, pas une limite de la norme). Prix : 700-900 €.',
     verdict: 'Premier achat ? Commencez par un 450W. C\'est le meilleur compromis prix/production.',
     icon: '&#9889;',
     color: 'green',

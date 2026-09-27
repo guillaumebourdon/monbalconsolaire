@@ -5,7 +5,7 @@ import { DEPARTMENTS } from '@/data/departments';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
-import { calculateROIYears, KWH_PRICE_EUR, PERFORMANCE_RATIO } from '@/lib/pricing';
+import { calculateROIYears, KWH_PRICE_EUR, PERFORMANCE_RATIO, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY } from '@/lib/pricing';
 
 const TARIF_KWH = KWH_PRICE_EUR;
 const COEFF_PERTES = PERFORMANCE_RATIO;
@@ -14,7 +14,7 @@ const KITS = [
   { name: 'Sunology PLAY 2', power: 0.45, price: 599, slug: '/avis/sunology-play-2', badge: 'Meilleur choix' },
   { name: 'Beem Kit 300W', power: 0.30, price: 299, slug: '/avis/beem-kit-300w', badge: 'Petit budget' },
   { name: 'Beem On 460W', power: 0.46, price: 599, slug: '/avis/beem-on-460w', badge: 'Modulaire' },
-  { name: 'Zendure SolarFlow', power: 0.84, price: 900, slug: '/avis/zendure-solarflow', badge: 'Avec batterie', autocons: 0.80 },
+  { name: 'Zendure SolarFlow', power: 0.84, price: 900, slug: '/avis/zendure-solarflow', badge: 'Avec batterie', autocons: AUTOCONSO_BATTERY },
   { name: 'DualSun PREASY', power: 0.42, price: 870, slug: '/avis/dualsun-preasy', badge: 'Made in France' },
 ];
 
@@ -33,7 +33,7 @@ function getDeptBySlug(slug: string) {
 
 function calcKit(kit: typeof KITS[0], irradiation: number) {
   const production = Math.round(kit.power * irradiation * COEFF_PERTES);
-  const autocons = (kit as { autocons?: number }).autocons || 0.45;
+  const autocons = (kit as { autocons?: number }).autocons || AUTOCONSO_STANDARD;
   const kwhValorises = Math.round(production * autocons);
   const economies = Math.round(kwhValorises * TARIF_KWH);
   // ROI actualisé (inflation 3,3 %/an) — source unique : lib/pricing.ts
@@ -190,7 +190,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Calcul : puissance × {dept.irradiation} kWh/kWc × 0,85 (pertes) × autoconsommation × 0,1940 €/kWh. Orientation sud. Autoconsommation 45 % sans batterie, 80 % avec batterie (Zendure). ROI actualisé avec une inflation du tarif de 3,3 %/an (CRE).
+                Calcul : puissance × {dept.irradiation} kWh/kWc × 0,85 (pertes) × autoconsommation × 0,1940 €/kWh. Orientation sud. Autoconsommation 85 % sans batterie, 95 % avec batterie (m&eacute;thodologie standard du site). ROI actualisé avec une inflation du tarif de 3,3 %/an (CRE).
               </p>
             </section>
 
@@ -272,7 +272,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                   {nearbyDepts.map(d => {
                     const dSlug = slugify(d.name);
                     const prod = Math.round(0.45 * d.irradiation * COEFF_PERTES);
-                    const eco = Math.round(prod * 0.45 * TARIF_KWH);
+                    const eco = Math.round(prod * AUTOCONSO_STANDARD * TARIF_KWH);
                     return (
                       <Link key={d.code} href={`/solaire-balcon/${dSlug}`} className="card hover:shadow-brand-lg transition-all group">
                         <div className="flex items-center justify-between">

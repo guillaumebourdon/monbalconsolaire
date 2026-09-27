@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const faqData = [
   {
     question: 'Peut-on revendre son surplus solaire à EDF avec un kit de balcon ?',
-    answer: 'Non. Les kits plug-and-play ≤ 800 Wc fonctionnent en régime CACSI (autoconsommation sans injection). L\'énergie excédentaire est injectée gratuitement sur le réseau Enedis, sans aucune compensation. Pour revendre, il faut une installation ≥ 3 kWc avec raccordement producteur officiel.',
+    answer: 'Non. Les kits plug-and-play fonctionnent en régime CACSI (autoconsommation sans injection). L\'énergie excédentaire est injectée gratuitement sur le réseau Enedis, sans aucune compensation. Pour revendre, il faut une installation fixe avec raccordement producteur officiel (contrat d\'accès Enedis et contrat d\'achat).',
   },
   {
     question: 'Qu\'est-ce que l\'EDF OA et pourquoi les kits balcon n\'y sont pas éligibles ?',
@@ -197,7 +197,7 @@ export default function RevendreSuplusSolaireBalconPage() {
               </p>
               <div className="space-y-3 mb-4">
                 {[
-                  { label: 'Puissance max', detail: '800 Wc (confirmedée par la DGEC début 2026). Pas de dérogation.' },
+                  { label: 'Puissance max', detail: 'Aucun plafond chiffré en France. 900 W par circuit 16 A (différentiel 30 mA) est un repère de sécurité recommandé, pas une limite légale.' },
                   { label: 'Déclaration', detail: 'CACSI Enedis obligatoire, gratuite, 10 minutes en ligne. Pas de déclaration en mairie dans la plupart des cas.' },
                   { label: 'Raccordement', detail: 'Par prise standard 230 V. Aucun raccordement producteur, donc aucune éligibilité EDF OA.' },
                   { label: 'Consuel', detail: 'Non requis pour les kits préassemblés < 3 kVA. Dès que vous passez par un installateur et demandez un raccordement producteur, c’est obligatoire.' },
@@ -339,7 +339,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Limite 800&nbsp;Wc, NF C 15-100, CACSI&nbsp;: ce que dit la loi</p>
+                  <p className="text-xs text-charcoal-light mt-1">Rep&egrave;re des 900&nbsp;W, NF C 15-100, CACSI&nbsp;: ce que dit la loi</p>
                 </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: guide pas &agrave; pas</h4>

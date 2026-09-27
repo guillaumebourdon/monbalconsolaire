@@ -20,7 +20,7 @@ const faqData = [
   },
   {
     question: 'Lequel a le meilleur retour sur investissement ?',
-    answer: 'Le Zendure SolarFlow 800 Plus + 2 panneaux 420 W (~900 € total) offre un ROI de ~7 ans grâce au stockage qui augmente l\'autoconsommation à 80 %. Le Sunology PLAY 2 seul (599 €) a un ROI de ~14,6 ans sans stockage (41 €/an d\'économies à 45 % d\'autoconsommation). Le Beem On 500 Wc (429 €) offre le meilleur ROI sans batterie : ~9,5 ans (45 €/an d\'économies à 45 % d\'autoconsommation). Avec le Zendure, le stockage transforme radicalement l\'équation.',
+    answer: 'Selon notre méthodologie standard (Lyon sud, 0,1940 €/kWh, inflation 3,3 %/an, autoconsommation 85 % sans batterie et 95 % avec), le Beem On 500 Wc (429 €) a le meilleur ROI : ~4,8 ans (84 €/an la première année). Suivent le Zendure SolarFlow 800 Plus + 2 panneaux 420 W (~900 €) à ~5,3 ans et le Sunology PLAY 2 (599 €) à ~7,1 ans. Si vous êtes absent toute la journée, l\'ordre s\'inverse : à 45 % d\'autoconsommation sans batterie, le Beem On passe à ~8,5 ans et le PLAY 2 à ~12,3 ans, alors que le Zendure (80 % d\'autoconsommation grâce à sa batterie de 1,92 kWh) reste à ~6,2 ans.',
   },
   {
     question: 'Peut-on combiner un Sunology ou Beem avec un Zendure SolarFlow ?',
@@ -104,9 +104,9 @@ export default function ZendureVsSunologyVsBeemPage() {
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Le verdict en 10 secondes</h2>
             <div className="space-y-2 text-sm text-charcoal-light leading-relaxed">
-              <p><strong>Zendure SolarFlow 800 Plus</strong> — Le meilleur rapport qualit&eacute;-prix SI vous voulez du stockage. Batterie 1,92 kWh + onduleur pour ~479 &euro;. Mais panneaux non inclus, installation plus longue.</p>
+              <p><strong>Zendure SolarFlow 800 Plus</strong> — Le meilleur rapport qualit&eacute;-prix SI vous voulez du stockage. Batterie 1,92 kWh + onduleur pour ~479 &euro;. Le plus rentable si vous &ecirc;tes absent en journ&eacute;e (ROI ~6,2 ans contre ~8,5 ans pour le Beem On). Mais panneaux non inclus, installation plus longue.</p>
               <p><strong>Sunology PLAY 2</strong> — Le plus simple. Branchez et oubliez en 1 minute. Id&eacute;al si vous ne voulez pas de batterie et voulez juste &eacute;conomiser sur votre facture.</p>
-              <p><strong>Beem On 500 Wc</strong> — Le meilleur rapport qualit&eacute;-prix sans batterie. 429 &euro; pour 500 Wc (0,86 &euro;/Wc), le plus bas du march&eacute;. ROI ~9,5 ans. Paiement en 10x, option d&eacute;marches Enedis. Le choix pragmatique.</p>
+              <p><strong>Beem On 500 Wc</strong> — Le meilleur rapport qualit&eacute;-prix sans batterie. 429 &euro; pour 500 Wc (0,86 &euro;/Wc), le plus bas du march&eacute;. ROI ~4,8 ans (m&eacute;thodologie standard). Paiement en 10x, option d&eacute;marches Enedis. Le choix pragmatique.</p>
             </div>
           </div>
 
@@ -173,16 +173,17 @@ export default function ZendureVsSunologyVsBeemPage() {
                 Le pi&egrave;ge, c&apos;est de comparer les prix affich&eacute;s. Le Zendure &agrave; 479 &euro; semble moins cher que le Sunology &agrave; 599 &euro;. Mais le Zendure ne contient pas de panneaux. Comparons des <strong>setups complets</strong> :
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
-                <table className="w-full text-xs border-collapse min-w-[600px]">
+                <table className="w-full text-xs border-collapse min-w-[680px]">
                   <thead>
                     <tr className="bg-charcoal text-cream">
                       <th className="text-left p-2.5 rounded-tl-xl">Setup complet</th>
-                      <th className="text-center p-2.5">Coût total</th>
+                      <th className="text-center p-2.5">Co&ucirc;t total</th>
                       <th className="text-center p-2.5">Stockage</th>
                       <th className="text-center p-2.5">Production/an</th>
                       <th className="text-center p-2.5">Autocons.</th>
-                      <th className="text-center p-2.5">Éco./an</th>
-                      <th className="text-center p-2.5 rounded-tr-xl">ROI</th>
+                      <th className="text-center p-2.5">&Eacute;co. an 1</th>
+                      <th className="text-center p-2.5">ROI standard</th>
+                      <th className="text-center p-2.5 rounded-tr-xl">ROI si absent en journ&eacute;e*</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -190,52 +191,60 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="p-2.5">Zendure + 2 × 420 W</td>
                       <td className="text-center p-2.5 font-mono">~900 €</td>
                       <td className="text-center p-2.5 font-mono">1,92 kWh</td>
-                      <td className="text-center p-2.5 font-mono">870 kWh</td>
-                      <td className="text-center p-2.5 font-mono">80 %</td>
-                      <td className="text-center p-2.5 font-mono text-green">135 €</td>
-                      <td className="text-center p-2.5 font-mono text-green">6,7 ans</td>
+                      <td className="text-center p-2.5 font-mono">857 kWh</td>
+                      <td className="text-center p-2.5 font-mono">95 %</td>
+                      <td className="text-center p-2.5 font-mono text-green">158 €</td>
+                      <td className="text-center p-2.5 font-mono text-green">5,3 ans</td>
+                      <td className="text-center p-2.5 font-mono text-stone">6,2 ans (80 %)</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Sunology PLAY 2</td>
                       <td className="text-center p-2.5 font-mono">599 €</td>
                       <td className="text-center p-2.5 font-mono">—</td>
-                      <td className="text-center p-2.5 font-mono">465 kWh</td>
-                      <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">41 €</td>
-                      <td className="text-center p-2.5 font-mono">14,6 ans</td>
+                      <td className="text-center p-2.5 font-mono">459 kWh</td>
+                      <td className="text-center p-2.5 font-mono">85 %</td>
+                      <td className="text-center p-2.5 font-mono">76 €</td>
+                      <td className="text-center p-2.5 font-mono">7,1 ans</td>
+                      <td className="text-center p-2.5 font-mono text-stone">12,3 ans (45 %)</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-2.5">Sunology PLAY MAX</td>
                       <td className="text-center p-2.5 font-mono">1 179 €</td>
                       <td className="text-center p-2.5 font-mono">0,7 kWh</td>
-                      <td className="text-center p-2.5 font-mono">465 kWh</td>
-                      <td className="text-center p-2.5 font-mono">65 %</td>
-                      <td className="text-center p-2.5 font-mono">59 €</td>
-                      <td className="text-center p-2.5 font-mono">20,0 ans</td>
+                      <td className="text-center p-2.5 font-mono">459 kWh</td>
+                      <td className="text-center p-2.5 font-mono">95 %</td>
+                      <td className="text-center p-2.5 font-mono">85 €</td>
+                      <td className="text-center p-2.5 font-mono">11,7 ans</td>
+                      <td className="text-center p-2.5 font-mono text-stone">15,8 ans (65 %)</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Beem On 500 Wc</td>
                       <td className="text-center p-2.5 font-mono">429 €</td>
                       <td className="text-center p-2.5 font-mono">—</td>
-                      <td className="text-center p-2.5 font-mono">515 kWh</td>
-                      <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">45 €</td>
-                      <td className="text-center p-2.5 font-mono text-green">9,5 ans</td>
+                      <td className="text-center p-2.5 font-mono">510 kWh</td>
+                      <td className="text-center p-2.5 font-mono">85 %</td>
+                      <td className="text-center p-2.5 font-mono text-green">84 €</td>
+                      <td className="text-center p-2.5 font-mono text-green">4,8 ans</td>
+                      <td className="text-center p-2.5 font-mono text-stone">8,5 ans (45 %)</td>
                     </tr>
                     <tr className="bg-cream/50">
                       <td className="p-2.5">Beem Kit 300W</td>
                       <td className="text-center p-2.5 font-mono">299 €</td>
                       <td className="text-center p-2.5 font-mono">—</td>
-                      <td className="text-center p-2.5 font-mono">310 kWh</td>
-                      <td className="text-center p-2.5 font-mono">45 %</td>
-                      <td className="text-center p-2.5 font-mono">27 €</td>
-                      <td className="text-center p-2.5 font-mono">11,1 ans</td>
+                      <td className="text-center p-2.5 font-mono">306 kWh</td>
+                      <td className="text-center p-2.5 font-mono">85 %</td>
+                      <td className="text-center p-2.5 font-mono">50 €</td>
+                      <td className="text-center p-2.5 font-mono">5,5 ans</td>
+                      <td className="text-center p-2.5 font-mono text-stone">9,7 ans (45 %)</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="text-xs text-stone italic">
-                Calculs bas&eacute;s sur : exposition sud, Lyon, tarif EDF base 0,1940 &euro;/kWh (juin 2026). Production = puissance &times; irradiation &times; coeff orientation &times; 0,85.
+                <strong>ROI standard</strong> (m&eacute;thodologie du site)&nbsp;: Lyon, exposition sud, 1&nbsp;200&nbsp;kWh/kWc, performance ratio 0,85, tarif EDF base 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an, autoconsommation 85&nbsp;% sans batterie et 95&nbsp;% avec batterie.
+              </p>
+              <p className="text-xs text-stone italic mt-2">
+                <strong>*Sc&eacute;nario &laquo;&nbsp;absent en journ&eacute;e&nbsp;&raquo;</strong> (foyer vide de 8h &agrave; 18h, peu de consommation de fond)&nbsp;: autoconsommation 45&nbsp;% sans batterie, 65&nbsp;% avec la batterie 700&nbsp;Wh du PLAY MAX, 80&nbsp;% avec les 1,92&nbsp;kWh du Zendure. Hypoth&egrave;ses indicatives, m&ecirc;mes param&egrave;tres par ailleurs.
               </p>
             </section>
 
@@ -250,8 +259,8 @@ export default function ZendureVsSunologyVsBeemPage() {
                   <p className="text-xs text-charcoal-light leading-relaxed">Avant le SolarFlow, ajouter du stockage co&ucirc;tait 580-900 &euro; de plus (VAULT Sunology, DELTA EcoFlow). &Agrave; 479 &euro; pour 1,92 kWh + onduleur, Zendure rend le stockage plus accessible que la plupart des kits sans batterie. C&apos;est un changement de paradigme.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">L&apos;autoconsommation passe de 45 % à 80 %</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Sans batterie (Sunology, Beem), vous autoconsommez ~45 % de votre production. Le reste est injecté gratuitement sur le réseau. Avec le SolarFlow, la batterie stocke le surplus du midi et le restitue le soir. Résultat : 80 % d&apos;autoconsommation, soit 75 % d&apos;économies en plus par an.</p>
+                  <h4 className="font-bold text-sm mb-1 text-green">Si vous &ecirc;tes absent en journ&eacute;e, la batterie fait la diff&eacute;rence</h4>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Pour un foyer pr&eacute;sent ou avec une consommation de fond suffisante, un kit de 450-500 Wc sans batterie est autoconsomm&eacute; &agrave; ~85 % (notre hypoth&egrave;se standard)&nbsp;: la batterie n&apos;apporte alors que 10 points et le Beem On reste plus rentable (4,8 ans contre 5,3 ans). Si le logement est vide de 8h &agrave; 18h, l&apos;autoconsommation sans batterie peut tomber vers 45 %&nbsp;: le surplus part gratuitement sur le r&eacute;seau. Le SolarFlow stocke ce surplus et le restitue le soir (~80 % d&apos;autoconsommation)&nbsp;: ROI ~6,2 ans, contre ~8,5 ans pour le Beem On et ~12,3 ans pour le PLAY 2 dans ce sc&eacute;nario.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Mais la simplicité a un coût</h4>
@@ -270,7 +279,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                   </div>
                   <ul className="text-sm text-charcoal-light space-y-1.5">
                     <li>→ Vous consommez surtout le soir (actifs la journée)</li>
-                    <li>→ Vous voulez le meilleur ROI avec stockage (~7 ans)</li>
+                    <li>→ Vous voulez le meilleur ROI avec stockage (~5,3 ans, ~6,2 ans si absent en journée)</li>
                     <li>→ Vous êtes à l&apos;aise avec un minimum de configuration</li>
                     <li>→ Vous êtes en tarif heures pleines/creuses (optimisation auto)</li>
                     <li>→ Vous prévoyez d&apos;agrandir le système plus tard</li>
@@ -308,7 +317,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                     <li>&rarr; Vous voulez le meilleur prix sans batterie (429 &euro;, 0,86 &euro;/Wc)</li>
                     <li>&rarr; Vous voulez payer en 10x sans frais (~43 &euro;/mois)</li>
                     <li>&rarr; Les d&eacute;marches administratives vous stressent (option ZEN)</li>
-                    <li>&rarr; Vous cherchez le meilleur prix/Wc du march&eacute; (0,86 &euro;/Wc) — ROI ~9,5 ans</li>
+                    <li>&rarr; Vous cherchez le meilleur prix/Wc du march&eacute; (0,86 &euro;/Wc) — ROI ~4,8 ans</li>
                   </ul>
                   <div className="mt-4 pt-3 border-t border-green/10">
                     <p className="text-xs text-stone">Budget : 299-429 &euro; tout compris</p>
@@ -415,7 +424,7 @@ export default function ZendureVsSunologyVsBeemPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données constructeurs, fiches techniques officielles (Zendure, Sunology, Beem), retours utilisateurs forum-photovoltaique.fr et Reddit (juin 2026). Tarif EDF base juin 2026 : 0,1940 €/kWh. Production calculée pour Lyon, exposition sud, coefficient 0,85.{' '}
+                <strong>Méthodologie :</strong> données constructeurs, fiches techniques officielles (Zendure, Sunology, Beem), retours utilisateurs forum-photovoltaique.fr et Reddit (juin 2026). Tarif EDF base juin 2026 : 0,1940 €/kWh. Production calculée pour Lyon, exposition sud, performance ratio 0,85 ; inflation 3,3 %/an ; autoconsommation 85 % sans batterie, 95 % avec (scénario « absent en journée » : 45 % / 65-80 %).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

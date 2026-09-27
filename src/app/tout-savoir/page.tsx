@@ -153,7 +153,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/blog/combien-panneaux-solaires-balcon',
     title: 'Combien de panneaux solaires sur un balcon ? Règles et limites',
-    excerpt: 'Limite 800 Wc, nombre de panneaux selon la puissance, série ou parallèle : ce que la réglementation française impose concrètement.',
+    excerpt: 'Pas de plafond légal en France : place, poids, circuit (repère 900 W), talon de consommation et démarches fixent le vrai nombre de panneaux.',
     type: 'analyse',
     badge: 'Réglementation',
     tags: ['reglementation', 'debutant'],

@@ -20,7 +20,7 @@ const faqData = [
   },
   {
     question: 'Combien de panneaux solaires peut-on installer sur une terrasse ?',
-    answer: 'L\'ADEME et l\'AFNOR recommandent un maximum de 3 kWc en plug-and-play sans autorisation, soit environ 6 à 7 panneaux de 450 W. En pratique, 2 panneaux (800-900 Wc) sont le sweet spot pour une terrasse standard : production suffisante, budget maîtrisé, et pas de démarches supplémentaires au-delà de la CACSI.',
+    answer: 'Aucun texte ne fixe un nombre maximal de panneaux. Le seuil de 3 kWc qui revient souvent n\'est pas une recommandation ADEME ou AFNOR : c\'est un seuil administratif. Sous 3 kWc et 1,80 m de hauteur, une installation au sol est dispensée de formalité d\'urbanisme (art. R421-2 du code de l\'urbanisme ; au-delà, déclaration préalable en mairie). Côté Enedis, jusqu\'à 3 kVA la déclaration CACSI suit une procédure simplifiée et l\'attestation Consuel n\'est pas exigée pour un kit sans stockage. Côté électrique, un kit branché sur prise reste de l\'ordre de 900 W par circuit 16 A dédié avec différentiel 30 mA (recommandation courante, pas une limite légale) ; au-delà, un circuit dédié posé par un électricien. En pratique, 2 panneaux (800-900 Wc) sont le bon compromis pour une terrasse standard : production suffisante, budget maîtrisé, et seule la CACSI à faire.',
   },
   {
     question: 'Faut-il un permis pour installer des panneaux sur une terrasse ?',
@@ -220,15 +220,15 @@ export default function MeilleurKitTerrasse2026Page() {
               <div className="card-lg bg-cream/40">
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Setup</strong> : Zendure SolarFlow + 2 panneaux 420 W = <strong>~900 €</strong></li>
-                  <li>&bull; <strong>Production</strong> : 840 W × 1 300 kWh/kWc × 0,85 = <strong>929 kWh/an</strong></li>
-                  <li>&bull; <strong>Autoconsommation (avec batterie)</strong> : 80 % = <strong>743 kWh valorisés</strong></li>
-                  <li>&bull; <strong>Économies</strong> : 743 × 0,1940 € = <strong>144 €/an</strong></li>
-                  <li>&bull; <strong>ROI</strong> : 900 / 144 = <strong className="text-green">6,3 ans</strong></li>
-                  <li>&bull; <strong>Sur 25 ans</strong> : <strong className="text-green">3 600 € d&apos;économies cumulées</strong> (sans hausse EDF)</li>
+                  <li>&bull; <strong>Production</strong> : 840 W × 1 200 kWh/kWc (Lyon, sud) × 0,85 = <strong>857 kWh/an</strong></li>
+                  <li>&bull; <strong>Autoconsommation (avec batterie)</strong> : 95 % = <strong>814 kWh valorisés</strong></li>
+                  <li>&bull; <strong>Économies</strong> : 814 × 0,1940 € = <strong>158 €/an</strong> (1re année)</li>
+                  <li>&bull; <strong>ROI</strong> : <strong className="text-green">5,3 ans</strong> (avec hausse du tarif de 3,3 %/an)</li>
+                  <li>&bull; <strong>Sur 25 ans</strong> : <strong className="text-green">5 991 € d&apos;économies cumulées</strong> (avec +3,3 %/an)</li>
                 </ul>
               </div>
               <p className="text-xs text-stone mt-3">
-                Avec la hausse du tarif EDF (+4-5 %/an en tendance), les économies r&eacute;elles passent à 170+ €/an d&egrave;s la 3&egrave;me année. <Link href="/calculateur" className="text-green hover:underline">Calculez pour votre département</Link>.
+                Méthodologie standard du site : tarif 0,1940 €/kWh, hausse de 3,3 %/an (moyenne CRE 2012-2026), PR 0,85. <Link href="/calculateur" className="text-green hover:underline">Calculez pour votre département</Link>.
               </p>
             </section>
 
@@ -275,6 +275,10 @@ export default function MeilleurKitTerrasse2026Page() {
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points si votre production est d&eacute;cevante</p>
+                </Link>
+                <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation 2026 : ce que dit vraiment la loi</h4>
+                  <p className="text-xs text-charcoal-light mt-1">NF C 15-100, rep&egrave;re des 900 W, d&eacute;claration CACSI, urbanisme</p>
                 </Link>
               </div>
             </section>
