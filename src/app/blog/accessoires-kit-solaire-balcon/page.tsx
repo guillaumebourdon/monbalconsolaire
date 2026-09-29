@@ -213,6 +213,10 @@ export default function AccessoiresPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/prise-exterieure-etanche-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prise ext&eacute;rieure &eacute;tanche et rallonge</h4>
+                  <p className="text-xs text-charcoal-light mt-1">IP44, IP66, diff&eacute;rentiel 30&nbsp;mA : la s&eacute;lection compl&egrave;te</p>
+                </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h4>
                   <p className="text-xs text-charcoal-light mt-1">Guide d'installation pas à pas</p>

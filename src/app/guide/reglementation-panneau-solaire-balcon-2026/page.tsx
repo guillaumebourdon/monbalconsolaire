@@ -169,6 +169,10 @@ export default function ReglementationPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/blog/prise-exterieure-etanche-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prise ext&eacute;rieure &eacute;tanche et rallonge pour kit solaire</h4>
+                  <p className="text-xs text-charcoal-light mt-1">IP44, IP66, diff&eacute;rentiel 30&nbsp;mA&nbsp;: les r&egrave;gles de branchement en s&eacute;curit&eacute;</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-location-meublee-airbnb" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h4>
                   <p className="text-xs text-charcoal-light mt-1">Autorisations r&eacute;elles selon votre situation, CACSI et ROI chiffr&eacute;</p>

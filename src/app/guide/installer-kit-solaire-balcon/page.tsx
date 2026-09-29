@@ -269,6 +269,9 @@ export default function InstallerKitPage() {
                   </div>
                 ))}
               </div>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-6">
+                D&eacute;tail des indices IP, de la section de c&acirc;ble et de la s&eacute;lection de prises &eacute;tanches&nbsp;: <Link href="/blog/prise-exterieure-etanche-kit-solaire" className="text-green hover:underline">prise ext&eacute;rieure &eacute;tanche et rallonge pour kit solaire</Link>.
+              </p>
               <div className="card-lg bg-cream/80 border-border">
                 <h3 className="font-bold text-base mb-2">Prise standard ou prise sp&eacute;ciale : o&ugrave; en est la norme ?</h3>
                 <div className="space-y-3 text-sm text-charcoal-light leading-relaxed">
