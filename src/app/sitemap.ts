@@ -64,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/hoymiles-hms-800w`, lastModified: '2026-08-18', changeFrequency: 'monthly', priority: 0.7 },
 
     // Blog
+    { url: `${BASE_URL}/blog/prise-exterieure-etanche-kit-solaire`, lastModified: '2026-09-29', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/guirlande-solaire-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/support-fixation-panneau-solaire-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/wattmetre-prise-mesurer-consommation`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },

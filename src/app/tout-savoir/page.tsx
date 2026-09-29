@@ -20,11 +20,21 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (septembre 2026)
   {
+    slug: '/blog/prise-exterieure-etanche-kit-solaire',
+    title: 'Prise extérieure étanche et rallonge pour kit solaire balcon',
+    excerpt: 'IP44, IP66, disjoncteur différentiel 30 mA, câble H07RN-F : règles de sécurité et 5 produits Amazon pour brancher son kit dehors.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['installation', 'pratique'],
+    publishedAt: '2026-09-29',
+    readTime: '10 min',
+  },
+  {
     slug: '/blog/guirlande-solaire-balcon',
     title: 'Guirlande solaire balcon : 8 modèles qui tiennent l\'hiver',
     excerpt: 'Guinguette, fil de cuivre, Noël : autonomie réelle en décembre, recharge USB de secours et placement du panneau.',
     type: 'analyse',
-    badge: 'Nouveau',
+    badge: 'Sélection 2026',
     tags: ['pratique'],
     publishedAt: '2026-09-27',
     readTime: '11 min',

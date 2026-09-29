@@ -20,7 +20,7 @@
 
 ## Semaine 40 — 29 sept. - 2 oct.
 
-### Mardi 29/09 — NOUVEL ARTICLE — BLOG (accessoire)
+### Mardi 29/09 — NOUVEL ARTICLE — BLOG (accessoire) — [x] publié
 **Prise extérieure étanche et rallonge pour kit solaire balcon (IP44, IP66)** — slug `prise-exterieure-etanche-kit-solaire`
 Mots-clés : prise extérieure étanche, rallonge extérieure, prise IP44 balcon. Sécurité (30 mA, section câble, pas de multiprise), sélection Amazon (prises en saillie, blocs étanches, rallonges H07RN-F). Lien vers guide installer-kit-solaire-balcon et réglementation.
 

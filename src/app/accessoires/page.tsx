@@ -17,10 +17,20 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/blog/prise-exterieure-etanche-kit-solaire',
+    title: 'Prise ext\u00e9rieure \u00e9tanche et rallonge pour kit solaire balcon',
+    excerpt: 'IP44, IP66, diff\u00e9rentiel 30 mA, c\u00e2ble H07RN-F : les r\u00e8gles de s\u00e9curit\u00e9 et 5 produits pour brancher son kit dehors.',
+    badge: 'Nouveau',
+    tags: ['essentiels', 'amazon'],
+    publishedAt: '2026-09-29',
+    readTime: '10 min',
+    priceRange: '15-70 \u20ac',
+  },
+  {
     slug: '/blog/guirlande-solaire-balcon',
     title: 'Guirlande solaire balcon : 8 mod\u00e8les qui tiennent l\u2019hiver',
     excerpt: 'Guinguette, fil de cuivre, No\u00ebl : autonomie r\u00e9elle en d\u00e9cembre, recharge USB de secours et placement du panneau.',
-    badge: 'Nouveau',
+    badge: 'S\u00e9lection 2026',
     tags: ['eclairage', 'amazon'],
     publishedAt: '2026-09-27',
     readTime: '11 min',
