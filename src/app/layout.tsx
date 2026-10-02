@@ -9,6 +9,7 @@ import { AffiliateTracker } from '@/components/AffiliateTracker';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -90,6 +91,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollProgress />
         <ScrollReveal />
         <SpeedInsights />
+        {/* Mesure d'audience Vercel : sans cookies, compte tous les visiteurs (récap quotidien) */}
+        <Analytics />
         <CookieConsent />
         <AffiliateTracker />
       </body>

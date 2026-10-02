@@ -1,5 +1,6 @@
 'use client';
 
+import { track } from '@vercel/analytics';
 import { useState } from 'react';
 
 interface CopyableTemplateProps {
@@ -27,6 +28,7 @@ export function CopyableTemplate({
       setCopied(type);
       setTimeout(() => setCopied(null), 2000);
 
+      track('copy_template', { template: trackingLabel || title });
       // Tracking GA4
       if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'copy_template', {

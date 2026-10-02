@@ -1,10 +1,12 @@
 'use client';
 
+import { track } from '@vercel/analytics';
 import Link from 'next/link';
 import { EmailCapture } from '@/components/ui/EmailCapture';
 
 export default function GuideGratuitPage() {
   const handleDownloadTracking = () => {
+    track('download_lead_magnet');
     if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
       (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'download_lead_magnet', {
         file_name: 'guide-7-erreurs-kit-solaire.pdf',

@@ -1,5 +1,6 @@
 'use client';
 
+import { track } from '@vercel/analytics';
 import { useState } from 'react';
 
 interface EmailCaptureProps {
@@ -45,6 +46,7 @@ export function EmailCapture({
 
       setStatus('success');
 
+      track('email_captured', { source });
       // GA4 tracking
       if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag) {
         (window as unknown as { gtag: (...a: unknown[]) => void }).gtag('event', 'email_captured', { source });

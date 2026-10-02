@@ -1,5 +1,6 @@
 'use client';
 
+import { track } from '@vercel/analytics';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -20,6 +21,7 @@ export function ProductThumb({ src, alt, href, size = 'md' }: ProductThumbProps)
   const sizeClass = size === 'sm' ? 'w-10 h-10' : size === 'lg' ? 'w-20 h-20' : 'w-14 h-14';
 
   const handleClick = () => {
+    if (href) track('click_product_image', { product: alt });
     if (href && typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'click_product_image', {
         product_image: alt,

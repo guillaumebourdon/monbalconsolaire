@@ -1,5 +1,6 @@
 'use client';
 
+import { track } from '@vercel/analytics';
 import { useState, useMemo, useEffect, useCallback, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
@@ -72,7 +73,10 @@ const SURFACE_COMPAT: Record<string, string[]> = {
 };
 
 // ─── GA4 helper ───────────────────────────────────────────
+// Début et fin du calculateur aussi envoyés à Vercel Web Analytics (sans cookies)
+const VERCEL_EVENTS = new Set(['calculator_started', 'calculator_completed']);
 function gtag(event: string, params: Record<string, string | number>) {
+  if (VERCEL_EVENTS.has(event)) track(event);
   if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag) {
     (window as unknown as { gtag: (...a: unknown[]) => void }).gtag('event', event, params);
   }
