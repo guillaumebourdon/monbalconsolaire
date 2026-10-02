@@ -27,9 +27,10 @@ Mots-clés : prise extérieure étanche, rallonge extérieure, prise IP44 balcon
 ### Jeudi 01/10 — MISE À JOUR
 **Rafraîchir : codes-promo** — vérifier toutes les offres (sites officiels), mettre à jour `VERIFIED`, dates `endsAt`, textes « En bref », FAQ. Ajouter les opérations d'octobre.
 
-### Vendredi 02/10 — NOUVEL ARTICLE — BLOG
+### Vendredi 02/10 — NOUVEL ARTICLE — BLOG — [x] remplacé (sujet déjà couvert)
 **Kit solaire balcon en hiver : combien il produit vraiment (et faut-il acheter en octobre ?)** — slug `kit-solaire-balcon-hiver`
 Production mensuelle oct-mars via PVGIS/pricing.ts, vertical vs incliné, neige/ombre basse, prix hors saison. Liens : bilan-6-mois, production-solaire-ete-vs-hiver.
+**02/10 — étape 5 (vérification doublon) :** sujet déjà largement couvert par `blog/panneau-solaire-hiver-production` et `blog/production-solaire-ete-vs-hiver` (même angle production hivernale). Remplacé par le premier élément Pipeline sans dépendance Amazon (voir ci-dessous) — validation réseau des ASIN impossible dans cet environnement (egress proxy bloqué, cf. commit). Le sujet hiver/achat-octobre reste disponible pour un prochain créneau s'il est retravaillé sous un angle réellement distinct (ex. vertical vs incliné, prix hors-saison).
 
 ## Semaine 41 — 6-9 oct.
 
@@ -205,7 +206,7 @@ Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 
 - [ ] Beem Battery (si prix baisse)
 
 ### Blog / guides
-- [ ] Kit solaire balcon et véhicule électrique : peut-on recharger ?
+- [x] Kit solaire balcon et véhicule électrique : peut-on recharger ? — publié 02/10 (`blog/panneau-solaire-balcon-voiture-electrique`)
 - [ ] Panneau solaire balcon et assurance habitation : les clauses à vérifier
 - [ ] Déménager avec son kit solaire : démarches (CACSI, résiliation)
 

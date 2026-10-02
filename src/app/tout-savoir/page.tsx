@@ -18,13 +18,24 @@ interface Article {
 }
 
 const ARTICLES: Article[] = [
+  // Articles récents (octobre 2026)
+  {
+    slug: '/blog/panneau-solaire-balcon-voiture-electrique',
+    title: 'Kit solaire balcon et voiture électrique : peut-on recharger ?',
+    excerpt: 'Un kit de 300 à 1 600 W ne peut pas alimenter une wallbox (7,4 kW minimum). Ce qu\'il change vraiment sur la facture, chiffré via pricing.ts.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['rentabilite', 'comprendre'],
+    publishedAt: '2026-10-02',
+    readTime: '8 min',
+  },
   // Articles récents (septembre 2026)
   {
     slug: '/blog/prise-exterieure-etanche-kit-solaire',
     title: 'Prise extérieure étanche et rallonge pour kit solaire balcon',
     excerpt: 'IP44, IP66, disjoncteur différentiel 30 mA, câble H07RN-F : règles de sécurité et 5 produits Amazon pour brancher son kit dehors.',
     type: 'analyse',
-    badge: 'Nouveau',
+    badge: 'Sécurité électrique',
     tags: ['installation', 'pratique'],
     publishedAt: '2026-09-29',
     readTime: '10 min',
