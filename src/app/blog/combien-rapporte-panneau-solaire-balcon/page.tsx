@@ -220,6 +220,10 @@ export default function CombienRapportePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h4>
                   <p className="text-xs text-charcoal-light mt-1">Checklist de diagnostic et solutions par ordre de co&ucirc;t</p>
                 </Link>
+                <Link href="/blog/panneau-solaire-balcon-voiture-electrique" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture &eacute;lectrique&nbsp;: peut-on recharger&nbsp;?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">L&apos;&eacute;quivalent kilom&eacute;trique r&eacute;el d&apos;un kit, chiffr&eacute; via pricing.ts</p>
+                </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W : quelle puissance choisir ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Impact de la puissance sur le ROI et les &eacute;conomies annuelles</p>

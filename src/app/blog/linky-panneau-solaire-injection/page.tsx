@@ -321,6 +321,10 @@ export default function LinkyPanneauSolaireInjectionPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: comment le calculer et l&apos;effacer</h4>
                   <p className="text-xs text-charcoal-light mt-1">Lire le SINSTI sur le Linky et dimensionner le kit dessus</p>
                 </Link>
+                <Link href="/blog/panneau-solaire-balcon-voiture-electrique" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture &eacute;lectrique&nbsp;: peut-on recharger&nbsp;?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Ce que le Linky voit (ou pas) quand une recharge co&iuml;ncide avec la production</p>
+                </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: guide pas &agrave; pas</h4>
                   <p className="text-xs text-charcoal-light mt-1">Proc&eacute;dure compl&egrave;te pour d&eacute;clarer votre kit en 10 minutes</p>

@@ -376,6 +376,10 @@ export default function TalonConsommationPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h4>
                   <p className="text-xs text-charcoal-light mt-1">Lire les index EAST / EAIT sur votre Linky et comprendre le surplus</p>
                 </Link>
+                <Link href="/blog/panneau-solaire-balcon-voiture-electrique" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture électrique : peut-on recharger ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Pourquoi un kit ne remplace jamais une wallbox, et ce qu&apos;il change sur la facture</p>
+                </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h4>
                   <p className="text-xs text-charcoal-light mt-1">La batterie plug-and-play pour effacer le talon de nuit</p>
