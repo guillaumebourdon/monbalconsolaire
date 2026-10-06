@@ -20,6 +20,16 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (octobre 2026)
   {
+    slug: '/guide/demenager-kit-solaire-balcon',
+    title: 'Déménager avec son kit solaire balcon : CACSI, résiliation',
+    excerpt: 'Démontage, transport, résiliation du contrat d\'électricité et nouvelle déclaration CACSI à chaque changement d\'adresse.',
+    type: 'guide',
+    badge: 'Nouveau',
+    tags: ['reglementation', 'pratique'],
+    publishedAt: '2026-10-06',
+    readTime: '9 min',
+  },
+  {
     slug: '/blog/panneau-solaire-balcon-voiture-electrique',
     title: 'Kit solaire balcon et voiture électrique : peut-on recharger ?',
     excerpt: 'Un kit de 300 à 1 600 W ne peut pas alimenter une wallbox (7,4 kW minimum). Ce qu\'il change vraiment sur la facture, chiffré via pricing.ts.',

@@ -11,10 +11,18 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'demenager-kit-solaire-balcon',
+    title: 'Déménager avec son kit solaire balcon : CACSI, résiliation',
+    excerpt: 'Démontage, transport, résiliation du contrat d’électricité et nouvelle déclaration CACSI à chaque changement d’adresse.',
+    badge: 'Nouveau',
+    date: '6 octobre 2026',
+    readTime: '9 min',
+  },
+  {
     slug: 'checklist-avant-achat-kit-solaire',
     title: 'Premier kit solaire : la checklist complète avant d\'acheter',
     excerpt: '15 points à vérifier avant de commander : orientation, prise électrique, Linky, bail, copropriété, budget ROI, CACSI Enedis, assurance, certification CE.',
-    badge: 'Nouveau',
+    badge: 'Checklist',
     date: '7 août 2026',
     readTime: '12 min',
   },

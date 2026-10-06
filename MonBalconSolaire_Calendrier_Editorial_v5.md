@@ -34,9 +34,10 @@ Production mensuelle oct-mars via PVGIS/pricing.ts, vertical vs incliné, neige/
 
 ## Semaine 41 — 6-9 oct.
 
-### Mardi 06/10 — NOUVEL ARTICLE — BLOG (accessoire)
+### Mardi 06/10 — NOUVEL ARTICLE — BLOG (accessoire) — [x] remplacé (validation Amazon impossible)
 **Shelly Pro 3EM, Shelly EM, compteur d'énergie : piloter sa batterie et viser zéro injection** — slug `compteur-energie-shelly-kit-solaire`
 Compatibilités Zendure / EcoFlow / Anker / Sunology, installation au tableau (électricien), sélection Amazon.
+**06/10 — étape 5/validation :** sujet non dupliqué (vérifié), mais egress réseau vers amazon.fr toujours bloqué dans cet environnement (gateway proxy 403 sur CONNECT, même blocage que le 02/10) — impossible de valider les ASIN avec le curl exigé par la méthodologie. Remplacé par le premier élément non-Amazon du Pipeline (voir ci-dessous) pour ne pas publier de liens affiliés non vérifiés. Le sujet Shelly reste disponible pour un prochain créneau accessoire si la validation réseau redevient possible, ou à publier manuellement par Guillaume après vérification des ASIN (candidats identifiés : Shelly Pro 3EM-3CT63 B0DJF6VQHK, Shelly 3EM B07ZHLP7R8, Shelly EM Gen3 + Clamp 50A B0DKFY2ZNV — non validés par curl).
 
 ### Jeudi 08/10 — MISE À JOUR
 **Rafraîchir : avis Beem (kit-300w, on-500w, on-460w)** — prix actuels, disponibilité, situation de l'entreprise (procédure de sauvegarde), liens marchands (script check-affiliate-links).
@@ -207,8 +208,8 @@ Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 
 
 ### Blog / guides
 - [x] Kit solaire balcon et véhicule électrique : peut-on recharger ? — publié 02/10 (`blog/panneau-solaire-balcon-voiture-electrique`)
-- [ ] Panneau solaire balcon et assurance habitation : les clauses à vérifier
-- [ ] Déménager avec son kit solaire : démarches (CACSI, résiliation)
+- [ ] Panneau solaire balcon et assurance habitation : les clauses à vérifier (déjà couvert par `guide/panneau-solaire-assurance-balcon` — à retravailler sous un angle distinct ou retirer)
+- [x] Déménager avec son kit solaire : démarches (CACSI, résiliation) — publié 06/10 (`guide/demenager-kit-solaire-balcon`)
 
 ### Déjà publiés (v4)
 - [x] Hoymiles HMS-800W (avis)
