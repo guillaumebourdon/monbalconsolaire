@@ -533,6 +533,10 @@ Date : [JOUR/MOIS/ANNÉE]`}
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Solaire en copropriété</h4>
                   <p className="text-xs text-charcoal-light mt-1">Règles, votes, modèle de courrier au syndic</p>
                 </Link>
+                <Link href="/guide/demenager-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Déménager avec son kit solaire : CACSI, résiliation</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Pourquoi une nouvelle déclaration est nécessaire à chaque adresse</p>
+                </Link>
               </div>
             </section>
 

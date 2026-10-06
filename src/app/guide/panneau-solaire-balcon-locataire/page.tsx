@@ -188,6 +188,10 @@ export default function LocatairePage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Gr&ecirc;le, vol, RC : ce qui est garanti pour les locataires</p>
                 </Link>
+                <Link href="/guide/demenager-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;m&eacute;nager avec son kit solaire : CACSI, r&eacute;siliation</h4>
+                  <p className="text-xs text-charcoal-light mt-1">D&eacute;montage, &eacute;tat des lieux, nouvelle d&eacute;claration Enedis</p>
+                </Link>
               </div>
             </section>
 

@@ -293,6 +293,10 @@ export default function AssuranceBalconPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en copropri&eacute;t&eacute;</h4>
                   <p className="text-xs text-charcoal-light mt-1">R&egrave;gles, votes AG, mod&egrave;le de courrier syndic</p>
                 </Link>
+                <Link href="/guide/demenager-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;m&eacute;nager avec son kit solaire</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Pourquoi red&eacute;clarer le panneau au nouvel assureur</p>
+                </Link>
               </div>
             </section>
 
