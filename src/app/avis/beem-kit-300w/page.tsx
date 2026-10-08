@@ -24,7 +24,7 @@ const faqData = [
 export default function BeemKit300WAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem Kit 300W avis : analyse du kit solaire petit budget" description="Avis complet sur le Beem Kit 300W à 299€." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" />
+      <SchemaArticle title="Beem Kit 300W avis : analyse du kit solaire petit budget" description="Avis complet sur le Beem Kit 300W à 299€." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" dateModified="2026-10-08" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Beem Kit 300W" brand="Beem Energy" description="Kit solaire modulaire 4 panneaux de 75W, le meilleur ratio prix/puissance du marché avec garantie 25 ans." price={299} ratingValue={7.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/beem-kit-300w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />
@@ -35,7 +35,7 @@ export default function BeemKit300WAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem Kit 300W avis : analyse du kit solaire petit budget (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le kit solaire de balcon le moins cher du marché français : 299€ pour 300W. Mais que vaut-il vraiment ? Production estimée, installation, points forts et points faibles.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 15 mai 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 8 octobre 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -51,7 +51,7 @@ export default function BeemKit300WAvisPage() {
             image="/images/produits/beem-kit-300-1.webp"
             imageAlt="Beem Kit 300W - 4 panneaux solaires modulaires"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 08/10/2026 &middot; Peut varier selon les promos</p>
 
           <div className="space-y-10">
             <section>
@@ -101,7 +101,7 @@ export default function BeemKit300WAvisPage() {
                   { t: 'Puissance limitée à 300W', d: 'C\'est suffisant pour le talon de consommation (frigo + box + veilles) mais pas plus. Un Sunology PLAY (500 Wc) produit 67% de plus pour le double du prix.' },
                   { t: 'Esthétique moins élégante', d: '4 petits panneaux de ~80cm accrochés çà et là, c\'est moins clean qu\'un grand panneau unique. En copropriété, ça peut poser question visuellement.' },
                   { t: 'Rendement global légèrement inférieur', d: 'Les micro-panneaux ont un rendement légèrement inférieur aux grands panneaux bifaciaux (pas de gain bifacial). La technologie est plus basique.' },
-                  { t: 'SAV Beem Energy à surveiller', d: 'Beem Energy est en procédure de sauvegarde depuis fin 2025. Des retours clients signalent des délais SAV rallongés. La garantie 25 ans est contractuelle, mais la solidité financière de l\'entreprise est un point de vigilance.' },
+                  { t: 'SAV Beem Energy à surveiller', d: 'Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde le 26 novembre 2025, après une chute de 42% du marché résidentiel du solaire (étude Enedis). L\'entreprise dispose d\'un an pour redresser la barre, soit une échéance autour de novembre 2026. Aucune liquidation ni redressement judiciaire n\'est annoncé à ce jour (vérifié le 8 octobre 2026), mais la garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">{p.t}</h4>
@@ -171,17 +171,17 @@ export default function BeemKit300WAvisPage() {
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">Critère</th><th className="text-center p-3">Beem Kit 300W</th><th className="text-center p-3">Beem On 460W</th><th className="text-center p-3 rounded-tr-xl">Sunology PLAY</th>
+                    <th className="text-left p-3 rounded-tl-xl">Critère</th><th className="text-center p-3">Beem Kit 300W</th><th className="text-center p-3">Beem On 500 Wc</th><th className="text-center p-3 rounded-tr-xl">Sunology PLAY</th>
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Prix', '299 €', '599 €', '599 €'],
-                      ['Puissance', '300 Wc', '460 Wc', '500 Wc'],
-                      ['€/Wc', '1,00 €', '1,30 €', '1,20 €'],
+                      ['Prix', '299 €', '429 €', '599 €'],
+                      ['Puissance', '300 Wc', '500 Wc', '500 Wc'],
+                      ['€/Wc', '1,00 €', '0,86 €', '1,20 €'],
                       ['Format', '4 panneaux', '1 panneau', '1 panneau'],
                       ['Installation', '~1 heure', '5 minutes', '1 minute'],
                       ['Bifacial', 'Non', 'Oui', 'Oui'],
-                      ['ROI (Lyon)', '5,5 ans', '7,0 ans', '6,5 ans'],
+                      ['ROI (Lyon)', '5,5 ans', '4,8 ans', '6,5 ans'],
                       ['Garantie', '25 ans', '25 ans', '25 ans'],
                     ].map(([c, bk, bo, sp], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
@@ -224,7 +224,7 @@ export default function BeemKit300WAvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Beem Kit 300W est un excellent kit d&apos;entrée de gamme. À 299€, le risque est minimal et le ROI est court (5,5 ans, seul le Beem On 500 Wc fait mieux avec 4,8 ans). C&apos;est le kit parfait pour découvrir l&apos;autoconsommation solaire sans se ruiner.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Ses limites sont claires : puissance modeste (300W), installation plus longue (1h), et esthétique discutable avec 4 panneaux séparés. Si ces points vous gênent et que vous pouvez mettre 599€, le <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On 460W</Link> ou le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> sont de meilleurs choix.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Ses limites sont claires : puissance modeste (300W), installation plus longue (1h), et esthétique discutable avec 4 panneaux séparés. Si ces points vous gênent et que vous pouvez mettre 429€, le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> ou le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> sont de meilleurs choix.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7.5/10</span></strong> — Le meilleur rapport qualité/prix pour débuter.</p>
               <a href="https://beemenergy.fr/products/kit-beem" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Beem Kit 300W &rarr;</a>
             </section>
@@ -262,9 +262,9 @@ export default function BeemKit300WAvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
                 </Link>
-                <Link href="/avis/beem-on-460w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 460W</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Excellent rapport qualité/prix</p>
+                <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualité/prix du marché premium</p>
                 </Link>
               </div>
             </section>

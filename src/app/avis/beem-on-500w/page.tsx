@@ -25,7 +25,7 @@ const faqData = [
 export default function BeemOn500WcAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem On 500 Wc avis : le nouveau rapport qualité-prix du marché" description="Avis détaillé sur le Beem On 500 Wc en 2026." url="https://monbalconsolaire.fr/avis/beem-on-500w" datePublished="2026-06-15" />
+      <SchemaArticle title="Beem On 500 Wc avis : le nouveau rapport qualité-prix du marché" description="Avis détaillé sur le Beem On 500 Wc en 2026." url="https://monbalconsolaire.fr/avis/beem-on-500w" datePublished="2026-06-15" dateModified="2026-10-08" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Beem On 500 Wc" brand="Beem Energy" description="Kit solaire plug-and-play 500 Wc bifacial TOPCon avec micro-onduleur 550W et suivi via app Beem." price={429} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/beem-on-500w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 500 Wc' }]} />
@@ -36,7 +36,7 @@ export default function BeemOn500WcAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 500 Wc avis : le nouveau rapport qualit&eacute;-prix du march&eacute; (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">429&nbsp;&euro; pour 500&nbsp;Wc bifacial TOPCon, soit 0,86&nbsp;&euro;/Wc. Le Beem On nouvelle g&eacute;n&eacute;ration casse les prix et devient le kit le plus rentable du march&eacute; fran&ccedil;ais.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>15 juin 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>15 juin 2026 &middot; Mis &agrave; jour le 8 octobre 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -52,7 +52,7 @@ export default function BeemOn500WcAvisPage() {
             image="/images/produits/beem-on-500-1.webp"
             imageAlt="Beem On 500 Wc - panneau solaire bifacial TOPCon avec micro-onduleur"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/06/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 08/10/2026 &middot; Peut varier selon les promos. D&eacute;lai de livraison annonc&eacute; : exp&eacute;dition &agrave; partir de d&eacute;cembre 2026 (pr&eacute;commande au moment de la v&eacute;rification).</p>
 
           <div className="space-y-10">
             <section>
@@ -129,7 +129,7 @@ export default function BeemOn500WcAvisPage() {
                   { t: 'Beembox obligatoire pour le suivi', d: 'Contrairement au Sunology PLAY2 dont le micro-onduleur embarque le WiFi, le Beem On nécessite un boîtier Beembox branché sur votre box internet. C\'est inclus dans le kit, mais c\'est un appareil supplémentaire à brancher et à maintenir.' },
                   { t: 'Panneau imposant : 1,95 m de haut', d: 'Avec ses 1 950 x 1 134 mm, c\'est le plus grand panneau mono du marché (le Sunology PLAY 500 Wc fait 1 800 x 1 134 mm). Sur un petit balcon, ça peut poser problème.' },
                   { t: 'Pas de solution batterie abordable', d: 'Beem propose la Beem Battery mais à partir de 6 190€ le kit complet. C\'est 14x le prix du panneau seul. Sunology a le PLAY MAX à 699€ (station + batterie VAULT 700 Wh), bien plus accessible. Si le stockage vous intéresse, regardez plutôt Sunology ou Zendure.' },
-                  { t: 'SAV à surveiller', d: 'Beem Energy est en procédure de sauvegarde depuis fin 2025. Des retours clients signalent des délais SAV rallongés. La garantie 25 ans est contractuelle, mais la solidité financière de l\'entreprise est un point de vigilance.' },
+                  { t: 'SAV et délai de livraison à surveiller', d: 'Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde le 26 novembre 2025, après une chute de 42% du marché résidentiel du solaire (étude Enedis), avec un an pour redresser la barre (échéance autour de novembre 2026). Aucune liquidation n\'est annoncée à ce jour (vérifié le 8 octobre 2026), mais le site affichait un délai d\'expédition à partir de décembre 2026 au moment de la vérification — possiblement lié aux tensions de trésorerie. La garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">{p.t}</h4>
@@ -178,6 +178,7 @@ export default function BeemOn500WcAvisPage() {
                       ['Sunethic F500', '500 Wc', '690 €', '1,38 €', '7.5/10', false],
                       ['EcoFlow PowerStream (arr\u00eat\u00e9)', '400 Wc', '599 €', '1,50 €', '8/10', false],
                       ['Beem Kit 300W', '300 Wc', '299 €', '1,00 €', '7.5/10', false],
+                      ['Beem On 460W (extension seule)', '460 Wc', '369 €', '0,80 €', '8/10', false],
                     ].map(([name, power, price, ratio, score, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>
                         <td className="py-2 px-3">{name as string}</td>
@@ -218,7 +219,7 @@ export default function BeemOn500WcAvisPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">En r&eacute;gion m&eacute;diterran&eacute;enne (Marseille, Montpellier), la production grimpe &agrave; 615-640&nbsp;kWh/an, soit environ 100-105&nbsp;&euro;/an d&apos;&eacute;conomies et un ROI d&apos;environ 3,9&nbsp;ans.</p>
-              <p className="text-charcoal-light leading-relaxed">En comparaison, l&apos;ancien <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On 460W &agrave; 599&nbsp;&euro;</Link> avait un ROI de 7,0 ans. Le gain est spectaculaire : +40&nbsp;Wc de puissance ET &minus;170&nbsp;&euro; sur le prix.</p>
+              <p className="text-charcoal-light leading-relaxed">En comparaison, l&apos;ancien <Link href="/avis/beem-on-460w" className="text-green hover:underline">Beem On 460W</Link>, vendu &agrave; l&apos;&eacute;poque 599&nbsp;&euro; en station autonome, avait un ROI de 7,0 ans. Le gain est spectaculaire : +40&nbsp;Wc de puissance ET &minus;170&nbsp;&euro; sur le prix. Le 460W n&apos;est d&apos;ailleurs plus vendu comme station de d&eacute;part : Beem ne le propose plus qu&apos;en extension (369&nbsp;&euro;, sans Beembox) pour agrandir une installation existante.</p>
             </section>
 
             <section>

@@ -21,7 +21,7 @@ export const SEARCH_INDEX: SearchResult[] = [
 
   // ─── Avis produits ───
   { title: 'Sunology PLAY (ex-PLAY 2) : avis et analyse compl\u00e8te', description: 'Nouvelle version 500 Wc back-contact, 599 \u20ac, ROI 6,5 ans. Diff\u00e9rences avec le PLAY2 450/460 W.', url: '/avis/sunology-play-2', category: 'Avis', badge: '8.5/10' },
-  { title: 'Beem On 460W : avis et analyse compl\u00e8te', description: 'Ancien concurrent du PLAY2 (remplac\u00e9 par le Beem On 500 Wc). 460 Wc, 599 \u20ac.', url: '/avis/beem-on-460w', category: 'Avis', badge: '8/10' },
+  { title: 'Beem On 460W : avis et analyse compl\u00e8te', description: 'D\u00e9sormais vendu en extension uniquement (369\u20ac, sans Beembox), pour agrandir une installation Beem existante.', url: '/avis/beem-on-460w', category: 'Avis', badge: '8/10' },
   { title: 'Beem Kit 300W : avis petit budget', description: 'Le kit le moins cher du march\u00e9. 299 \u20ac, 4 panneaux modulaires.', url: '/avis/beem-kit-300w', category: 'Avis', badge: '7.5/10' },
   { title: 'Sunethic F500 : avis Made in France', description: 'Le kit le plus puissant (500 Wc), fabriqu\u00e9 en France. 690 \u20ac.', url: '/avis/sunethic-f500', category: 'Avis', badge: '7.5/10' },
   { title: 'Sunology CITY (arr\u00eat\u00e9) : avis balcons \u00e9troits', description: 'Kit garde-corps plus vendu par Sunology depuis 2026. Analyse et alternatives.', url: '/avis/sunology-city', category: 'Avis', badge: 'Arr\u00eat\u00e9' },
