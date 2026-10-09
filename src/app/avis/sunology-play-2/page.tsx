@@ -317,6 +317,10 @@ export default function AvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W&nbsp;: quelle puissance choisir&nbsp;?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Production, ROI et recommandation par profil</p>
                 </Link>
+                <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le petit frère compact du PLAY, 270&nbsp;W &agrave; 349&nbsp;&euro;</p>
+                </Link>
               </div>
             </section>
 

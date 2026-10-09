@@ -266,6 +266,10 @@ export default function BeemKit300WAvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualité/prix du marché premium</p>
                 </Link>
+                <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h4>
+                  <p className="text-xs text-charcoal-light mt-1">349 €, 270 W : l&apos;alternative compacte chez Sunology, moins rentable que le Beem Kit</p>
+                </Link>
               </div>
             </section>
 

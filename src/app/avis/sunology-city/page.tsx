@@ -152,7 +152,7 @@ export default function SunologyCityPage() {
             </p>
             <p className="text-sm font-semibold mb-2">Alternatives actuelles&nbsp;:</p>
             <ul className="text-sm text-charcoal-light space-y-1.5 mb-4">
-              <li>&bull; <strong>Sunology GO version garde-corps</strong> (349&nbsp;&euro; sur la boutique officielle au 27/09/2026)&nbsp;: le kit compact de Sunology qui s&apos;accroche lui aussi &agrave; la rambarde, pour une puissance plus faible (~270&nbsp;W annonc&eacute;s).</li>
+              <li>&bull; <Link href="/avis/sunology-go" className="text-green hover:underline font-semibold">Sunology GO</Link> (349&nbsp;&euro;, 270&nbsp;W)&nbsp;: le kit compact de Sunology qui s&apos;accroche lui aussi &agrave; la rambarde (ou se pose au sol), pour une puissance plus faible.</li>
               <li>&bull; <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link>&nbsp;: plus rentable si vous avez la place de le poser au sol.</li>
               <li>&bull; <Link href="/avis/beem-kit-300w" className="text-green hover:underline font-semibold">Beem Kit 300W</Link>&nbsp;: panneaux modulaires, le plus petit budget du march&eacute;.</li>
             </ul>
