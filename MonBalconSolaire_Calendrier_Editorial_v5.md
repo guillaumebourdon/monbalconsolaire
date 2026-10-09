@@ -42,7 +42,7 @@ Compatibilités Zendure / EcoFlow / Anker / Sunology, installation au tableau (�
 ### Jeudi 08/10 — MISE À JOUR
 **Rafraîchir : avis Beem (kit-300w, on-500w, on-460w)** — prix actuels, disponibilité, situation de l'entreprise (procédure de sauvegarde), liens marchands (script check-affiliate-links).
 
-### Vendredi 09/10 — NOUVEL ARTICLE — AVIS
+### Vendredi 09/10 — NOUVEL ARTICLE — AVIS — [x] publié
 **Sunology GO : avis** — slug `sunology-go` (successeur du CITY). ProductHero, SchemaProduct, fiche technique vérifiée sur sunology.eu, ROI via pricing.ts, comparatif vs PLAY / Beem Kit.
 
 ## Semaine 42 — 13-16 oct.
