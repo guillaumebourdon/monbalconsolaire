@@ -188,6 +188,17 @@ const ARTICLES: Article[] = [
     price: 'Arrêté',
   },
   {
+    slug: '/avis/sunology-go',
+    title: 'Sunology GO',
+    excerpt: 'Le kit le plus compact de Sunology : 270 W, 349 €, au sol ou sur garde-corps sans percer.',
+    type: 'avis',
+    badge: 'Compact',
+    tags: ['marque', 'compact', 'budget'],
+    publishedAt: '2026-10-09',
+    score: '7/10',
+    price: '349 €',
+  },
+  {
     slug: '/avis/ecoflow-powerstream',
     title: 'EcoFlow PowerStream',
     excerpt: 'Plus vendu par EcoFlow France depuis 2026 (remplacé par la gamme STREAM). Analyse et alternatives.',

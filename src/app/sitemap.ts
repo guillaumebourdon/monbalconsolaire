@@ -63,6 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/zendure-solarflow-mix`, lastModified: '2026-06-30', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/anker-solix-rs40p`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/hoymiles-hms-800w`, lastModified: '2026-08-18', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/avis/sunology-go`, lastModified: '2026-10-09', changeFrequency: 'monthly', priority: 0.7 },
 
     // Blog
     { url: `${BASE_URL}/blog/panneau-solaire-balcon-voiture-electrique`, lastModified: '2026-10-02', changeFrequency: 'monthly', priority: 0.7 },

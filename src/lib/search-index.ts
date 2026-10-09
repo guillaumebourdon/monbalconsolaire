@@ -20,6 +20,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Solaire par d\u00e9partement', description: 'Production et rentabilit\u00e9 pour chacun des 96 d\u00e9partements fran\u00e7ais', url: '/solaire-balcon', category: 'Outil', badge: 'D\u00e9partements' },
 
   // ─── Avis produits ───
+  { title: 'Sunology GO : avis du kit compact \u00e0 349 \u20ac', description: '270 W, sol ou garde-corps sans per\u00e7age. ROI 7 ans. Remplace le CITY chez Sunology.', url: '/avis/sunology-go', category: 'Avis', badge: '7/10' },
   { title: 'Sunology PLAY (ex-PLAY 2) : avis et analyse compl\u00e8te', description: 'Nouvelle version 500 Wc back-contact, 599 \u20ac, ROI 6,5 ans. Diff\u00e9rences avec le PLAY2 450/460 W.', url: '/avis/sunology-play-2', category: 'Avis', badge: '8.5/10' },
   { title: 'Beem On 460W : avis et analyse compl\u00e8te', description: 'D\u00e9sormais vendu en extension uniquement (369\u20ac, sans Beembox), pour agrandir une installation Beem existante.', url: '/avis/beem-on-460w', category: 'Avis', badge: '8/10' },
   { title: 'Beem Kit 300W : avis petit budget', description: 'Le kit le moins cher du march\u00e9. 299 \u20ac, 4 panneaux modulaires.', url: '/avis/beem-kit-300w', category: 'Avis', badge: '7.5/10' },
