@@ -88,7 +88,7 @@ export default function AnkerSolixRS40PAvisPage() {
             price="799 €"
             score="7.5/10"
             tagline="La puissance IBC N-type d&rsquo;une grande marque. Cher, mais rassuring."
-            affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
+            affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
             affiliateLabel="Voir sur Amazon.fr"
             accentColor="green"
           />
@@ -189,7 +189,7 @@ export default function AnkerSolixRS40PAvisPage() {
             <AffiliateCTA
               productName="Anker SOLIX RS40P"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
+              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
               label="Voir l&rsquo;offre Anker SOLIX RS40P sur Amazon"
               variant="secondary"
               position="after-pros"
@@ -232,7 +232,7 @@ export default function AnkerSolixRS40PAvisPage() {
             <AffiliateCTA
               productName="Anker SOLIX RS40P"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
+              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
               label="Comparer les prix sur Amazon"
               variant="secondary"
               position="after-cons"
@@ -355,7 +355,7 @@ export default function AnkerSolixRS40PAvisPage() {
                 <strong>Note finale&nbsp;: <span className="text-amber-dark text-xl font-extrabold">7.5/10</span></strong> &mdash; Technologie premium, marque fiable. Cher mais justifi&eacute; pour qui veut Anker.
               </p>
               <a
-                href="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
+                href="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
                 target="_blank"
                 rel="sponsored noopener"
                 className="btn-affiliate inline-flex mt-4"
@@ -372,7 +372,7 @@ export default function AnkerSolixRS40PAvisPage() {
             <AffiliateCTA
               productName="Anker SOLIX RS40P"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsolai-21"
+              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
               label="Voir l&rsquo;offre actuelle sur Amazon"
               variant="box"
               position="footer-box"

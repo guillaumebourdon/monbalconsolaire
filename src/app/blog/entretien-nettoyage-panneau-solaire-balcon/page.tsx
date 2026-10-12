@@ -311,7 +311,7 @@ export default function EntretienNettoyagePage() {
               <div className="card-lg bg-cream/40">
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Eau :</strong> ~5 litres par nettoyage, soit quelques centimes</li>
-                  <li>&bull; <strong>Chiffon microfibre :</strong> 3-5 &euro; (r&eacute;utilisable des ann&eacute;es) &mdash; <a href="https://www.amazon.fr/s?k=chiffon+microfibre+lot&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
+                  <li>&bull; <strong>Chiffon microfibre :</strong> 3-5 &euro; (r&eacute;utilisable des ann&eacute;es) &mdash; <a href="https://www.amazon.fr/s?k=chiffon+microfibre+lot&tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
                   <li>&bull; <strong>Eau d&eacute;min&eacute;ralis&eacute;e (optionnel) :</strong> 2 &euro; les 5 litres (en supermarch&eacute;, moins cher qu&apos;en ligne)</li>
                   <li>&bull; <strong>Temps :</strong> 5-10 minutes par nettoyage</li>
                   <li>&bull; <strong>Total annuel :</strong> <strong className="text-green">moins de 5 &euro;</strong> et ~30 minutes</li>
@@ -330,11 +330,11 @@ export default function EntretienNettoyagePage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Brosse douce &agrave; manche t&eacute;lescopique</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Utile si le panneau est hors de port&eacute;e de bras (garde-corps ext&eacute;rieur, pergola). Poils souples uniquement, raccord tuyau d&apos;arrosage en option. <a href="https://www.amazon.fr/s?k=brosse+nettoyage+panneau+solaire+t%C3%A9lescopique&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Utile si le panneau est hors de port&eacute;e de bras (garde-corps ext&eacute;rieur, pergola). Poils souples uniquement, raccord tuyau d&apos;arrosage en option. <a href="https://www.amazon.fr/s?k=brosse+nettoyage+panneau+solaire+t%C3%A9lescopique&tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Chiffons microfibre</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Un lot de chiffons microfibre suffit pour des ann&eacute;es. &Agrave; laver sans adoucissant (il laisse un film gras sur la vitre). <a href="https://www.amazon.fr/s?k=chiffon+microfibre+lot&tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Un lot de chiffons microfibre suffit pour des ann&eacute;es. &Agrave; laver sans adoucissant (il laisse un film gras sur la vitre). <a href="https://www.amazon.fr/s?k=chiffon+microfibre+lot&tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Prise connect&eacute;e pour mesurer le gain</h4>
@@ -344,7 +344,7 @@ export default function EntretienNettoyagePage() {
               <AffiliateCTA
                 productName="Brosse nettoyage panneau solaire"
                 merchantName="Amazon"
-                affiliateUrl="https://www.amazon.fr/s?k=brosse+nettoyage+panneau+solaire+t%C3%A9lescopique&tag=monbalconsolai-21"
+                affiliateUrl="https://www.amazon.fr/s?k=brosse+nettoyage+panneau+solaire+t%C3%A9lescopique&tag=monbalconsola-21"
                 label="Voir les brosses télescopiques sur Amazon"
                 variant="secondary"
                 position="after-top-pick"
@@ -364,7 +364,7 @@ export default function EntretienNettoyagePage() {
             <AffiliateCTA
               productName="TP-Link Tapo P110"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsolai-21"
+              affiliateUrl="https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsola-21"
               label="Mesurer ma production avec la Tapo P110"
               variant="box"
               position="footer-box"

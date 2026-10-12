@@ -5,8 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
-const AMAZON_TAPO_P110 = 'https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsolai-21';
-const AMAZON_TAPO_P410M = 'https://www.amazon.fr/dp/B0FZCP6BK7?tag=monbalconsolai-21';
+const AMAZON_TAPO_P110 = 'https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsola-21';
+const AMAZON_TAPO_P410M = 'https://www.amazon.fr/dp/B0FZCP6BK7?tag=monbalconsola-21';
 
 export const metadata: Metadata = {
   title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
@@ -55,7 +55,7 @@ const prises = [
   },
   {
     nom: 'Shelly Plug PM Gen3 (FR)',
-    lien: 'https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21',
     prix: '~33 \u20ac',
     puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi + Bluetooth',
@@ -81,7 +81,7 @@ const prises = [
   },
   {
     nom: 'Meross Matter (type E)',
-    lien: 'https://www.amazon.fr/s?k=meross+prise+connect%C3%A9e+type+E+mesure+consommation&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=meross+prise+connect%C3%A9e+type+E+mesure+consommation&tag=monbalconsola-21',
     prix: '~16 \u20ac',
     puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi 2,4 GHz + Matter',
@@ -94,7 +94,7 @@ const prises = [
   },
   {
     nom: 'GreenSun Smart Plug',
-    lien: 'https://www.amazon.fr/dp/B0CY2BNMGC?tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/dp/B0CY2BNMGC?tag=monbalconsola-21',
     prix: '~25 \u20ac',
     puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi 2,4 GHz',
@@ -143,7 +143,7 @@ export default function PrisesConnecteesPage() {
             <ul className="text-sm text-charcoal-light space-y-2">
               <li><strong className="text-green">{'\u2713'} Tapo P110 (12-15 &euro;)</strong> &mdash; Le meilleur rapport qualit&eacute;-prix. Suivi kWh complet, app excellente. Le choix par d&eacute;faut. <a href={AMAZON_TAPO_P110} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
               <li><strong className="text-green">{'\u2713'} Tapo P410M (~25 &euro;)</strong> &mdash; Version ext&eacute;rieure IP54 + Matter. Pour les balcons/terrasses expos&eacute;s. <a href={AMAZON_TAPO_P410M} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
-              <li><strong className="text-green">{'\u2713'} Shelly Plug PM Gen3 FR (~33 &euro;)</strong> &mdash; Pour les fans de domotique. Compatible Home Assistant, API ouverte. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
+              <li><strong className="text-green">{'\u2713'} Shelly Plug PM Gen3 FR (~33 &euro;)</strong> &mdash; Pour les fans de domotique. Compatible Home Assistant, API ouverte. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
             </ul>
             <p className="text-[11px] text-stone mt-3">Prix constat&eacute;s sur Amazon.fr en septembre 2026, susceptibles de varier.</p>
           </div>
@@ -252,7 +252,7 @@ export default function PrisesConnecteesPage() {
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous &ecirc;tes fan de domotique</h4>
-                  <p className="text-xs text-charcoal-light">Prenez la <strong>Shelly Plug PM Gen3</strong> en version fran&ccedil;aise (~33 &euro;). Compatible Home Assistant, MQTT, API ouverte. Le choix des geeks. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsolai-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
+                  <p className="text-xs text-charcoal-light">Prenez la <strong>Shelly Plug PM Gen3</strong> en version fran&ccedil;aise (~33 &euro;). Compatible Home Assistant, MQTT, API ouverte. Le choix des geeks. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1 text-green">Vous n&apos;avez pas de WiFi sur le balcon</h4>

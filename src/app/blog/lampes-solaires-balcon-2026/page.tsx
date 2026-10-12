@@ -43,7 +43,7 @@ const faqData = [
 const lampes = [
   {
     num: 1,
-    lien: 'https://www.amazon.fr/s?k=Fatboy+Transloetje&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=Fatboy+Transloetje&tag=monbalconsola-21',
     nom: 'Lanterne Fatboy Transloetje (rechargeable USB, non solaire)',
     marque: 'Fatboy',
     categorie: 'Lanterne design',
@@ -56,7 +56,7 @@ const lampes = [
   },
   {
     num: 2,
-    lien: 'https://www.amazon.fr/s?k=guirlande+solaire+LED+20m+blanc+chaud&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=guirlande+solaire+LED+20m+blanc+chaud&tag=monbalconsola-21',
     nom: 'Guirlande LED solaire 20 m',
     marque: 'Lunartec / Philips',
     categorie: 'Guirlande décorative',
@@ -69,7 +69,7 @@ const lampes = [
   },
   {
     num: 3,
-    lien: 'https://www.amazon.fr/s?k=projecteur+solaire+LED+d%C3%A9tecteur+de+mouvement&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=projecteur+solaire+LED+d%C3%A9tecteur+de+mouvement&tag=monbalconsola-21',
     nom: 'Projecteur solaire 60 LED avec détecteur',
     marque: 'Litom / Mpow',
     categorie: 'Projecteur sécurité',
@@ -82,7 +82,7 @@ const lampes = [
   },
   {
     num: 4,
-    lien: 'https://www.amazon.fr/s?k=applique+murale+solaire+LED+IP44&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=applique+murale+solaire+LED+IP44&tag=monbalconsola-21',
     nom: 'Applique solaire LED Ring',
     marque: 'Philips MyGarden',
     categorie: 'Applique murale',
@@ -95,7 +95,7 @@ const lampes = [
   },
   {
     num: 5,
-    lien: 'https://www.amazon.fr/s?k=lampe+solaire+%C3%A0+piquer+lot+de+4&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=lampe+solaire+%C3%A0+piquer+lot+de+4&tag=monbalconsola-21',
     nom: 'Lampe solaire Cobra à piquer',
     marque: 'Générique qualité',
     categorie: 'Lampe à poser',
@@ -108,7 +108,7 @@ const lampes = [
   },
   {
     num: 6,
-    lien: 'https://www.amazon.fr/s?k=Lexon+Mina+lampe&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=Lexon+Mina+lampe&tag=monbalconsola-21',
     nom: 'Lampe Lexon Mina (rechargeable USB, non solaire)',
     marque: 'Lexon',
     categorie: 'Lampe portable design',
@@ -121,7 +121,7 @@ const lampes = [
   },
   {
     num: 7,
-    lien: 'https://www.amazon.fr/s?k=guirlande+guinguette+solaire+ampoules&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=guirlande+guinguette+solaire+ampoules&tag=monbalconsola-21',
     nom: 'Guirlande Edison solaire 10 ampoules',
     marque: 'Brightown',
     categorie: 'Guirlande vintage',
@@ -134,7 +134,7 @@ const lampes = [
   },
   {
     num: 8,
-    lien: 'https://www.amazon.fr/s?k=projecteur+solaire+batterie+amovible+USB&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=projecteur+solaire+batterie+amovible+USB&tag=monbalconsola-21',
     nom: 'Projecteur solaire 2-en-1 avec batterie USB',
     marque: 'Hybride BougeRV',
     categorie: 'Projecteur polyvalent',
@@ -147,7 +147,7 @@ const lampes = [
   },
   {
     num: 9,
-    lien: 'https://www.amazon.fr/s?k=lanterne+solaire+rechargeable+IP67&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=lanterne+solaire+rechargeable+IP67&tag=monbalconsola-21',
     nom: 'Lanterne solaire Lumena Pro',
     marque: 'Lumena',
     categorie: 'Lanterne outdoor pro',
@@ -160,7 +160,7 @@ const lampes = [
   },
   {
     num: 10,
-    lien: 'https://www.amazon.fr/s?k=Fermob+Balad&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=Fermob+Balad&tag=monbalconsola-21',
     nom: 'Lampe Fermob Balad (rechargeable USB, non solaire)',
     marque: 'Fermob',
     categorie: 'Lampe nomade haute gamme',
@@ -249,7 +249,7 @@ export default function LampesSolairesPage() {
           <AffiliateCTA
             productName="Guirlande LED solaire 20 m"
             merchantName="Amazon"
-            affiliateUrl="https://www.amazon.fr/s?k=guirlande+solaire+LED+20m+blanc+chaud&tag=monbalconsolai-21"
+            affiliateUrl="https://www.amazon.fr/s?k=guirlande+solaire+LED+20m+blanc+chaud&tag=monbalconsola-21"
             label="Voir les guirlandes solaires 20 m sur Amazon"
             variant="secondary"
             position="after-top-pick"
@@ -432,7 +432,7 @@ export default function LampesSolairesPage() {
             <AffiliateCTA
               productName="Projecteur solaire LED avec détecteur"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/s?k=projecteur+solaire+LED+d%C3%A9tecteur+de+mouvement&tag=monbalconsolai-21"
+              affiliateUrl="https://www.amazon.fr/s?k=projecteur+solaire+LED+d%C3%A9tecteur+de+mouvement&tag=monbalconsola-21"
               label="Voir les projecteurs solaires sur Amazon"
               variant="box"
               position="footer-box"

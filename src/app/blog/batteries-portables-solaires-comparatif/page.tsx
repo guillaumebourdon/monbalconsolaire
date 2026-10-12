@@ -44,7 +44,7 @@ const faqData = [
 const batteries = [
   {
     num: 1,
-    lien: 'https://www.amazon.fr/dp/B0BBLV8WJH?tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/dp/B0BBLV8WJH?tag=monbalconsola-21',
     nom: 'EcoFlow DELTA 2',
     marque: 'EcoFlow',
     prix: '569-699 €',
@@ -68,7 +68,7 @@ const batteries = [
   },
   {
     num: 2,
-    lien: 'https://www.amazon.fr/dp/B0C14D9DBB?tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/dp/B0C14D9DBB?tag=monbalconsola-21',
     nom: 'Bluetti AC180',
     marque: 'Bluetti',
     prix: '549-699 €',
@@ -92,7 +92,7 @@ const batteries = [
   },
   {
     num: 3,
-    lien: 'https://www.amazon.fr/dp/B0C27SX47T?tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/dp/B0C27SX47T?tag=monbalconsola-21',
     nom: 'Jackery Explorer 1000 Plus',
     marque: 'Jackery',
     prix: '799-999 €',
@@ -116,7 +116,7 @@ const batteries = [
   },
   {
     num: 4,
-    lien: 'https://www.amazon.fr/dp/B0CGQZ7XSB?tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/dp/B0CGQZ7XSB?tag=monbalconsola-21',
     nom: 'Anker SOLIX C1000',
     marque: 'Anker',
     prix: '649-799 €',
@@ -140,7 +140,7 @@ const batteries = [
   },
   {
     num: 5,
-    lien: 'https://www.amazon.fr/dp/B0DFVZ5D7Z?tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/dp/B0DFVZ5D7Z?tag=monbalconsola-21',
     nom: 'EcoFlow RIVER 3',
     marque: 'EcoFlow',
     prix: '249-349 €',
@@ -164,7 +164,7 @@ const batteries = [
   },
   {
     num: 6,
-    lien: 'https://www.amazon.fr/s?k=BLUETTI+AC70+768Wh&tag=monbalconsolai-21',
+    lien: 'https://www.amazon.fr/s?k=BLUETTI+AC70+768Wh&tag=monbalconsola-21',
     nom: 'Bluetti AC70',
     marque: 'Bluetti',
     prix: '449-549 €',
@@ -395,7 +395,7 @@ export default function BatteriesPortablesPage() {
               <AffiliateCTA
                 productName="EcoFlow DELTA 2"
                 merchantName="Amazon"
-                affiliateUrl="https://www.amazon.fr/dp/B0BBLV8WJH?tag=monbalconsolai-21"
+                affiliateUrl="https://www.amazon.fr/dp/B0BBLV8WJH?tag=monbalconsola-21"
                 label="Notre choix n°1 : voir l'EcoFlow DELTA 2 sur Amazon"
                 variant="secondary"
                 position="after-top-pick"
@@ -571,7 +571,7 @@ export default function BatteriesPortablesPage() {
             <AffiliateCTA
               productName="Bluetti AC180"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0C14D9DBB?tag=monbalconsolai-21"
+              affiliateUrl="https://www.amazon.fr/dp/B0C14D9DBB?tag=monbalconsola-21"
               label="Meilleur rapport capacité/prix : voir la Bluetti AC180 sur Amazon"
               variant="box"
               position="footer-box"

@@ -101,7 +101,7 @@ Tunnel de conversion principal :
 - Durée : 25 ans
 
 ### Affiliation
-- **Amazon** : tag `monbalconsolai-21` obligatoire. Format `https://www.amazon.fr/dp/ASIN?tag=monbalconsolai-21`. Trouver l'ASIN via recherche web (amazon.fr), puis le valider : `curl -s -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36' -H 'Accept-Language: fr-FR' https://www.amazon.fr/dp/ASIN | grep -o '<title>[^<]*'` (« Page introuvable » = invalide). À défaut : lien de recherche tagué `https://www.amazon.fr/s?k=REQUETE&tag=monbalconsolai-21`
+- **Amazon** : tag `monbalconsola-21` obligatoire. Format `https://www.amazon.fr/dp/ASIN?tag=monbalconsola-21`. Trouver l'ASIN via recherche web (amazon.fr), puis le valider : `curl -s -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36' -H 'Accept-Language: fr-FR' https://www.amazon.fr/dp/ASIN | grep -o '<title>[^<]*'` (« Page introuvable » = invalide). À défaut : lien de recherche tagué `https://www.amazon.fr/s?k=REQUETE&tag=monbalconsola-21`
 - Les URLs marchandes changent sans prévenir : `node scripts/check-affiliate-links.mjs` avant chaque push (0 cassé exigé)
 - Liens : `target="_blank" rel="sponsored noopener"`
 - Boutons : classe `btn-affiliate`

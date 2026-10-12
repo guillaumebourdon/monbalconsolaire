@@ -426,7 +426,7 @@ export default function MicroOnduleurPage() {
                 <AffiliateCTA
                   productName="Hoymiles HMS-800W-2T"
                   merchantName="Amazon"
-                  affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsolai-21"
+                  affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
                   label="Voir le Hoymiles HMS-800W-2T sur Amazon"
                   variant="secondary"
                   position="after-decision-guide"

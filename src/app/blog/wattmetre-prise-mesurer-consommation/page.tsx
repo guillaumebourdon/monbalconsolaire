@@ -34,7 +34,7 @@ const ROI_TALON_150 = calculateROIYears({ ...KIT, autoconsoOverride: AUTOCONSO_T
 const INJECTED_KWH_TALON_150 = Math.round(PROD_KWH * (1 - AUTOCONSO_TALON_150));
 const fmt = (n: number) => n.toLocaleString('fr-FR');
 
-const AMAZON_TAG = 'monbalconsolai-21';
+const AMAZON_TAG = 'monbalconsola-21';
 const amz = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_TAG}`;
 
 const faqData = [

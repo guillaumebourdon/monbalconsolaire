@@ -12,7 +12,7 @@ import {
 } from '@/lib/pricing';
 
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/support-fixation-panneau-solaire-balcon';
-const AMAZON_TAG = 'monbalconsolai-21';
+const AMAZON_TAG = 'monbalconsola-21';
 const amazon = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_TAG}`;
 
 export const metadata: Metadata = {

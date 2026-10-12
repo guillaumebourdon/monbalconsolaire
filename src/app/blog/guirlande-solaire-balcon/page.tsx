@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-const AMAZON_TAG = 'monbalconsolai-21';
+const AMAZON_TAG = 'monbalconsola-21';
 const amazonUrl = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_TAG}`;
 
 const faqData = [

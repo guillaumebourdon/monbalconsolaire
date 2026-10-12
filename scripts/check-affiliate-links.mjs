@@ -3,7 +3,7 @@
 /**
  * Vérifie tous les liens marchands / affiliés présents dans src/.
  *   - URLs marchandes (Sunology, Beem, EcoFlow, Zendure, Amazon…) : HTTP 200 attendu
- *   - Liens Amazon : tag monbalconsolai-21 obligatoire, fiche produit existante
+ *   - Liens Amazon : tag monbalconsola-21 obligatoire, fiche produit existante
  *
  * Usage : node scripts/check-affiliate-links.mjs
  * Code de sortie 1 si au moins un lien est cassé ou non tagué.
@@ -14,7 +14,7 @@ import { join, relative } from 'path';
 
 const ROOT = join(import.meta.dirname, '..');
 const SRC = join(ROOT, 'src');
-const AMAZON_TAG = 'monbalconsolai-21';
+const AMAZON_TAG = 'monbalconsola-21';
 const MERCHANTS = /https?:\/\/(?:www\.|fr\.)?(?:amazon\.fr|sunology\.eu|sunology\.fr|leroymerlin\.fr|castorama\.fr|beemenergy\.fr|beem\.energy|sunethic\.fr|ecoflow\.com|fr\.ecoflow\.com|zendure\.fr|zendure\.com|bluettipower\.eu|fr\.bluettipower\.eu|jackery\.com|fr\.jackery\.com|anker\.com|dualsun\.com|hoymiles\.com)[^\s'"`<>)]*/g;
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36';
 

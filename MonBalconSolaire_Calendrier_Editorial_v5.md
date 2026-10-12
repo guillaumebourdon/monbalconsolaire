@@ -4,7 +4,7 @@
 > Rythme (réorienté le 12/10/2026) : **mardi = mise à jour SEO d'une page qui perd des positions** · jeudi = mise à jour · vendredi = nouvel article
 > Priorité de la période : **regagner des positions sur les pages qui rapportent (avis, comparatifs, guides)** + saisonnalité Q4 (Black Friday, Noël).
 > Pourquoi : bilan du 12/10 — position moyenne Google passée de ~9 (juillet) à ~16 ; les avis Beem 300W / Sunology PLAY / Beem 460W ont perdu 60-80 % de leurs impressions ; les articles accessoires publiés depuis août ne reçoivent presque aucune impression.
-> **Articles accessoires Amazon : EN PAUSE.** Le tag `monbalconsolai-21` n'est rattaché à aucun compte Club Partenaires Amazon vérifié → aucune commission. Ne plus créer d'article accessoire tant que ce bandeau n'a pas été retiré par Guillaume. Les liens Amazon existants restent en place.
+> **Articles accessoires Amazon : RÉACTIVÉS le 12/10/2026** (compte Club Partenaires créé, tracking ID vérifié `monbalconsola-21`). Ils restent secondaires : au maximum 1 vendredi sur 2, en piochant dans la section Accessoires du Pipeline. Les mardis restent des MISE À JOUR SEO.
 > Déjà publiés le 27/09 : support-fixation-panneau-solaire-balcon, wattmetre-prise-mesurer-consommation, guirlande-solaire-balcon
 
 ## Règles propres aux articles ACCESSOIRES (Amazon)
@@ -12,7 +12,7 @@
 1. Chaque produit recommandé = un lien Amazon **vérifié** :
    - trouver l'ASIN via WebSearch (domaine amazon.fr),
    - valider : `curl -s -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36' -H 'Accept-Language: fr-FR' https://www.amazon.fr/dp/ASIN | grep -o '<title>[^<]*'` (le titre doit correspondre, « Page introuvable » = invalide),
-   - format : `https://www.amazon.fr/dp/ASIN?tag=monbalconsolai-21`, sinon lien de recherche tagué `https://www.amazon.fr/s?k=REQUETE&tag=monbalconsolai-21`.
+   - format : `https://www.amazon.fr/dp/ASIN?tag=monbalconsola-21`, sinon lien de recherche tagué `https://www.amazon.fr/s?k=REQUETE&tag=monbalconsola-21`.
 2. 5 à 8 produits par sélection, cartes avec points forts / limites + lien « Voir sur Amazon » (`target="_blank" rel="sponsored noopener"`), 2-3 AffiliateCTA max.
 3. Prix : fourchettes sourcées « prix constaté {mois} 2026 », jamais inventés. Produits « sélectionnés / analysés », jamais « testés ».
 4. Ajouter l'article au hub `src/app/accessoires/page.tsx` (tableau ARTICLES) en plus des index habituels.
@@ -195,9 +195,9 @@ Objectif : faire remonter une page existante, pas la réécrire de zéro.
 ## Pipeline (si un créneau est libre ou si le calendrier est épuisé)
 
 La routine prend le **premier élément non coché**, le publie, puis le coche `[x]` dans ce fichier (même commit).
-Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 semaines suivantes en piochant ici (en privilégiant avis / comparatifs / guides à forte demande ; pas d'accessoire tant que la pause Amazon est active).
+Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 semaines suivantes en piochant ici (en privilégiant avis / comparatifs / guides à forte demande ; accessoire Amazon au maximum 1 vendredi sur 2).
 
-### Accessoires (Amazon) — EN PAUSE (voir en-tête), ne pas piocher ici
+### Accessoires (Amazon) — 1 vendredi sur 2 maximum
 - [ ] Câbles et connecteurs MC4 : rallonger, raccorder, sertir (`cable-mc4-rallonge-panneau-solaire`)
 - [ ] Brosse et kit de nettoyage panneau solaire (`brosse-nettoyage-panneau-solaire`)
 - [ ] Station électrique portable pour les coupures d'hiver (`station-electrique-coupure-courant`)

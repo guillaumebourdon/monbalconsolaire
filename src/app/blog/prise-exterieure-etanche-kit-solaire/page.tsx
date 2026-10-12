@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/prise-exterieure-etanche-kit-solaire';
-const AMAZON_TAG = 'monbalconsolai-21';
+const AMAZON_TAG = 'monbalconsola-21';
 const amazon = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_TAG}`;
 
 export const metadata: Metadata = {
