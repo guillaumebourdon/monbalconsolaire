@@ -5,22 +5,14 @@ import { DEPARTMENTS } from '@/data/departments';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { productibleSite, RENTABILITE_DEPARTEMENTS } from '@/lib/rentabilite-departements';
 import { calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_EUR, PERFORMANCE_RATIO, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY, PVGIS_REFERENCE_LYON } from '@/lib/pricing';
 
 const TARIF_KWH = KWH_PRICE_EUR;
 const COEFF_PERTES = PERFORMANCE_RATIO;
 
-// Les valeurs de data/departments.ts sont des productibles PVGIS (sud, 30°) déjà nets
-// des pertes système (PVGIS applique 14 % de pertes : Lyon 30° ≈ 1 281 kWh/kWc).
-// Le site applique ensuite PR 0,85 sur une référence Lyon de 1 200 kWh/kWc
-// (PVGIS_REFERENCE_LYON), hypothèse volontairement prudente pour un balcon
-// (≈ 1 020 kWh/kWc net, entre la pose à 30° et la pose verticale).
-// Pour rester cohérent avec cette référence, on utilise les valeurs PVGIS comme
-// indice relatif, recalé pour que le Rhône (69) corresponde exactement à Lyon.
-const PVGIS_RHONE = 1300;
-function productibleSite(pvgisDept: number): number {
-  return Math.round((pvgisDept * PVGIS_REFERENCE_LYON) / PVGIS_RHONE);
-}
+// Productible recalé sur la référence Lyon : voir lib/rentabilite-departements.ts
+// (source commune avec la carte /etude/rentabilite-kit-solaire-balcon-departement).
 
 const KITS = [
   { name: 'Sunology PLAY', power: 0.50, price: 599, slug: '/avis/sunology-play-2', badge: 'Meilleur choix' },
@@ -284,8 +276,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 <div className="grid grid-cols-2 gap-3">
                   {nearbyDepts.map(d => {
                     const dSlug = slugify(d.name);
-                    const prod = Math.round(0.5 * productibleSite(d.irradiation) * COEFF_PERTES);
-                    const eco = Math.round(prod * AUTOCONSO_STANDARD * TARIF_KWH);
+                    const eco = RENTABILITE_DEPARTEMENTS.find(r => r.code === d.code)?.savingsYear1;
                     return (
                       <Link key={d.code} href={`/solaire-balcon/${dSlug}`} className="card hover:shadow-brand-lg transition-all group">
                         <div className="flex items-center justify-between">

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { DEPARTMENTS } from '@/data/departments';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { RENTABILITE_DEPARTEMENTS, REFERENCE_KIT } from '@/lib/rentabilite-departements';
 
 export const metadata: Metadata = {
   title: 'Solaire de balcon par département — Production et rentabilité 2026',
@@ -11,8 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-const TARIF_KWH = 0.1940;
-const COEFF = 0.85;
+const RENTABILITE_BY_CODE = new Map(RENTABILITE_DEPARTEMENTS.map(r => [r.code, r]));
 
 function slugify(name: string): string {
   return name
@@ -34,7 +34,7 @@ export default function SolaireBalconIndexPage() {
           <div className="badge-green mb-4 inline-block">96 départements</div>
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Kit solaire balcon : production par département</h1>
           <p className="text-charcoal-light text-lg max-w-2xl mx-auto">
-            Trouvez la production exacte et la rentabilité d&apos;un kit solaire de balcon dans votre département. Données PVGIS, calculs actualisés mai 2026.
+            Économies annuelles et retour sur investissement d&apos;un kit solaire de balcon de {REFERENCE_KIT.powerWc} Wc ({REFERENCE_KIT.priceEur} &euro;) dans chaque département. Données PVGIS, mêmes calculs que notre carte de France.
           </p>
         </div>
 
@@ -55,8 +55,7 @@ export default function SolaireBalconIndexPage() {
                 <h2 className="font-bold text-lg mb-3 text-charcoal">{region}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {depts.map(d => {
-                    const prod = Math.round(0.45 * d.irradiation * COEFF);
-                    const eco = Math.round(prod * 0.45 * TARIF_KWH);
+                    const r = RENTABILITE_BY_CODE.get(d.code)!;
                     const slug = slugify(d.name);
                     return (
                       <Link
@@ -69,8 +68,8 @@ export default function SolaireBalconIndexPage() {
                           <span className="font-semibold text-sm group-hover:text-green transition-colors">{d.name}</span>
                         </div>
                         <div className="flex items-center gap-4 text-xs text-stone">
-                          <span className="font-mono">{d.irradiation} kWh</span>
-                          <span className="font-mono text-green font-semibold">{eco} &euro;/an</span>
+                          <span className="font-mono">{r.savingsYear1} &euro;/an</span>
+                          <span className="font-mono text-green font-semibold">{r.roiYears.toLocaleString('fr-FR')} ans</span>
                           <span className="text-green">&rarr;</span>
                         </div>
                       </Link>
@@ -94,7 +93,7 @@ export default function SolaireBalconIndexPage() {
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone leading-relaxed">
-            <strong>Méthodologie :</strong> irradiation PVGIS (Commission européenne), kit 450 Wc, orientation sud, inclinaison 30°, coefficient 0,85, autoconsommation 45 %, tarif EDF 0,1940 €/kWh (mai 2026).{' '}
+            <strong>Méthodologie :</strong> kit de référence {REFERENCE_KIT.name} ({REFERENCE_KIT.powerWc} Wc, {REFERENCE_KIT.priceEur} &euro;), orientation sud. Productible PVGIS (Commission européenne) par département, recalé sur notre référence prudente de Lyon (1 200 kWh/kWc), performance ratio 0,85, autoconsommation 85 %, tarif EDF 0,1940 €/kWh. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (CRE). Montants affichés : économies la 1re année et années de retour sur investissement.{' '}
             <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
           </p>
         </div>
