@@ -7,26 +7,26 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 
 export const metadata: Metadata = {
-  title: 'Beem On 460W avis : désormais vendu en extension (369€)',
-  description: 'Beem On 460W : panneau bifacial TOPCon 460 Wc, 4,7/5 Trustpilot. Depuis octobre 2026, il n\'est plus vendu comme station de départ mais en extension à 369€. Notre avis mis à jour.',
+  title: 'Beem On 460W avis : désormais vendu en extension (429€)',
+  description: 'Beem On 460W : panneau bifacial TOPCon 460 Wc, 4,7/5 Trustpilot. Depuis octobre 2026, il n\'est plus vendu comme station de départ mais en extension à 429€. Notre avis mis à jour.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-on-460w',
   },
 };
 
 const faqData = [
-  { question: 'Peut-on encore acheter le Beem On 460W comme premier kit ?', answer: 'Non. Depuis notre vérification du 8 octobre 2026, Beem Energy ne vend plus le 460W comme station de départ (avec Beembox) : il n\'apparaît sur beemenergy.fr qu\'en « extension » à 369€, sans Beembox, pensée pour agrandir une installation Beem existante. Pour un premier achat, voir notre avis du Beem On 500 Wc (429€).' },
+  { question: 'Peut-on encore acheter le Beem On 460W comme premier kit ?', answer: 'Non. Depuis notre vérification du 8 octobre 2026, Beem Energy ne vend plus le 460W comme station de départ (avec Beembox) : il n\'apparaît sur beemenergy.fr qu\'en « extension » à 429€, sans Beembox, pensée pour agrandir une installation Beem existante. Pour un premier achat, voir notre avis du Beem On 500 Wc (429€).' },
   { question: 'Le Beem On 460W reste-t-il un bon kit solaire ?', answer: 'Sur le plan technique, oui : panneau bifacial TOPCon de 460 Wc, 4,7/5 sur Trustpilot, garantie 25 ans. Mais son usage a changé : ce n\'est plus une station autonome, seulement un module d\'extension pour qui possède déjà une Beembox.' },
   { question: 'Beem On 460W vs Sunology PLAY2 : lequel choisir ?', answer: 'Cette comparaison n\'est plus pertinente pour un premier achat : le 460W n\'est plus vendu en station autonome. Pour comparer un premier kit au même tarif, voir Beem On 500 Wc (429€) vs Sunology PLAY2 (599€).' },
-  { question: 'Combien produit le Beem On 460W ?', answer: 'Entre 420 et 630 kWh/an selon la région et l\'orientation. En région lyonnaise, exposition sud, comptez ~469 kWh/an soit environ 77€ d\'économies annuelles. Au tarif actuel de l\'extension (369€), le ROI tombe à 4,5 ans ; les économies cumulées sur 25 ans restent de 2 933€ (+3,3%/an d\'inflation CRE) — ce montant ne dépend que de la production, pas du prix d\'achat.' },
+  { question: 'Combien produit le Beem On 460W ?', answer: 'Entre 420 et 630 kWh/an selon la région et l\'orientation. En région lyonnaise, exposition sud, comptez ~469 kWh/an soit environ 77€ d\'économies annuelles. Au tarif actuel de l\'extension (429€), le ROI est de 5,2 ans ; les économies cumulées sur 25 ans restent de 2 933€ (+3,3%/an d\'inflation CRE) — ce montant ne dépend que de la production, pas du prix d\'achat.' },
 ];
 
 export default function BeemOnAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem On 460W avis : analyse complète et verdict" description="Avis détaillé sur le Beem On 460W, aujourd'hui vendu en extension." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" dateModified="2026-10-08" />
+      <SchemaArticle title="Beem On 460W avis : analyse complète et verdict" description="Avis détaillé sur le Beem On 460W, aujourd'hui vendu en extension." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" dateModified="2026-10-12" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Beem On 460W (extension)" brand="Beem Energy" description="Panneau solaire bifacial TOPCon 460 Wc avec micro-onduleur APSystems, vendu en extension (sans Beembox) pour agrandir une installation Beem existante." price={369} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
+      <SchemaProduct name="Beem On 460W (extension)" brand="Beem Energy" description="Panneau solaire bifacial TOPCon 460 Wc avec micro-onduleur APSystems, vendu en extension (sans Beembox) pour agrandir une installation Beem existante." price={429} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -34,23 +34,23 @@ export default function BeemOnAvisPage() {
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 460W avis : analyse compl&egrave;te et verdict (2026)</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Le Beem On 460W a été le concurrent direct du Sunology PLAY2. Depuis, Beem l&apos;a retiré de la vente comme station autonome : il n&apos;est plus proposé qu&apos;en extension à 369€. Notre analyse, mise à jour.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026 &middot; Mis &agrave; jour le 8 octobre 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
+            <p className="text-lg text-charcoal-light leading-relaxed">Le Beem On 460W a été le concurrent direct du Sunology PLAY2. Depuis, Beem l&apos;a retiré de la vente comme station autonome : il n&apos;est plus proposé qu&apos;en extension à 429€. Notre analyse, mise à jour.</p>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026 &middot; Mis &agrave; jour le 12 octobre 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg border-amber/30 bg-amber-pale/20 mb-6">
             <h3 className="font-bold text-amber-dark mb-2">&Agrave; savoir avant de lire cet avis</h3>
-            <p className="text-sm text-charcoal-light leading-relaxed">Au 8 octobre 2026, le Beem On 460W n&apos;est plus en vente comme station de d&eacute;part (avec Beembox) sur beemenergy.fr. Il n&apos;appara&icirc;t plus que sous forme d&apos;<strong>extension &agrave; 369&euro;</strong> (sans Beembox), destin&eacute;e &agrave; agrandir une installation Beem existante. Pour un premier achat, voir notre avis du <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc (429€)</Link>, qui l&apos;a remplac&eacute; dans le catalogue.</p>
+            <p className="text-sm text-charcoal-light leading-relaxed">Au 12 octobre 2026, le Beem On 460W n&apos;est plus en vente comme station de d&eacute;part (avec Beembox) sur beemenergy.fr. Il n&apos;appara&icirc;t plus que sous forme d&apos;<strong>extension &agrave; 429&euro;</strong> (sans Beembox), destin&eacute;e &agrave; agrandir une installation Beem existante. Pour un premier achat, voir notre avis du <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc (429€)</Link>, qui l&apos;a remplac&eacute; dans le catalogue.</p>
           </div>
 
           <ProductHero
             brand="Beem Energy"
             name="Beem On 460W (extension)"
             power="460 Wc"
-            price="369 €"
+            price="429 €"
             score="8/10"
             tagline="Toujours un bon panneau — mais plus vendu qu'en extension, pour agrandir une installation Beem existante."
-            affiliateUrl="https://beemenergy.fr/products/beem-on-460w-extension"
+            affiliateUrl="https://beemenergy.fr/products/beem-on-station-solaire-pret-a-brancher?variant=54387872170369"
             affiliateLabel="Voir l'extension sur le site du fabricant"
             accentColor="amber"
             image="/images/produits/beem-on-460-2.webp"
@@ -65,7 +65,7 @@ export default function BeemOnAvisPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
                   { v: '460 Wc', l: 'Puissance' },
-                  { v: '369 €', l: 'Prix (extension)' },
+                  { v: '429 €', l: 'Prix (extension)' },
                   { v: '25 ans', l: 'Garantie' },
                   { v: '4,7/5', l: 'Trustpilot' },
                 ].map((s, i) => (
@@ -81,7 +81,7 @@ export default function BeemOnAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Un bon rapport €/Wc en extension', d: 'À 369€ pour 460 Wc (0,80€/Wc), le tarif extension reste compétitif pour agrandir une installation Beem déjà en place.' },
+                  { t: 'Une extension simple à ajouter', d: 'À 429€ pour 460 Wc (0,93€/Wc), l\'extension reste un moyen simple d\'agrandir une installation Beem déjà en place. Attention : l\'extension 500 Wc est vendue au même prix.' },
                   { t: 'Paiement en 10x sans frais', d: 'Beem propose le paiement fractionné jusqu\'à 10x sans frais sur ses produits, extension comprise.' },
                   { t: 'Option Beem ZEN', d: 'Pour 49€ de plus, Beem s\'occupe de toutes les démarches administratives : déclaration CACSI Enedis, convention d\'autoconsommation. Pratique pour les non-initiés.' },
                   { t: 'Compatible avec l\'écosystème Beem', d: 'L\'extension se connecte à une Beembox déjà installée : suivi en temps réel, historique de production et économies cumulées sur une seule app pour toutes vos stations.' },
@@ -95,7 +95,7 @@ export default function BeemOnAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-on-460w-extension" label="Vérifier le stock de l'extension" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-on-station-solaire-pret-a-brancher?variant=54387872170369" label="Vérifier le stock de l'extension" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -114,7 +114,7 @@ export default function BeemOnAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-on-460w-extension" label="Vérifier le délai de livraison" variant="secondary" position="after-cons" />
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-on-station-solaire-pret-a-brancher?variant=54387872170369" label="Vérifier le délai de livraison" variant="secondary" position="after-cons" />
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
               <p className="text-sm font-semibold mb-1">Vous n&apos;avez pas encore de kit Beem ?</p>
@@ -143,13 +143,13 @@ export default function BeemOnAvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem On 460W reste techniquement un bon panneau solaire : bifacial TOPCon, garantie 25 ans, 4,7/5 sur Trustpilot. Mais son rôle a changé : Beem Energy ne le vend plus comme station de départ, seulement comme extension à 369€ pour les clients qui possèdent déjà une Beembox.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le Beem On 460W reste techniquement un bon panneau solaire : bifacial TOPCon, garantie 25 ans, 4,7/5 sur Trustpilot. Mais son rôle a changé : Beem Energy ne le vend plus comme station de départ, seulement comme extension à 429€ pour les clients qui possèdent déjà une Beembox.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Pour un premier achat, ce n&apos;est donc plus l&apos;option à considérer : regardez plutôt le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (429€, qui l&apos;a remplacé) ou le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY2</Link> (599€).</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">8/10</span></strong> — pour le produit ; à réserver aux propriétaires d&apos;une installation Beem existante.</p>
-              <a href="https://beemenergy.fr/products/beem-on-460w-extension" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir l&apos;extension Beem On 460W &rarr;</a>
+              <a href="https://beemenergy.fr/products/beem-on-station-solaire-pret-a-brancher?variant=54387872170369" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir l&apos;extension Beem On 460W &rarr;</a>
             </section>
 
-            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-on-460w-extension" label="Voir l'offre actuelle sur Beem" variant="box" position="footer-box" price="369 €" />
+            <AffiliateCTA productName="Beem On 460W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/beem-on-station-solaire-pret-a-brancher?variant=54387872170369" label="Voir l'offre actuelle sur Beem" variant="box" position="footer-box" price="429 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
@@ -186,7 +186,7 @@ export default function BeemOnAvisPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Méthodologie ROI :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. &Eacute;conomies : 77 &euro;/an, ROI 4,5 ans au tarif extension (369&euro;), 2 933 &euro; sur 25 ans.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Méthodologie ROI :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. &Eacute;conomies : 77 &euro;/an, ROI 5,2 ans au tarif extension (429&euro;), 2 933 &euro; sur 25 ans.</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> avis indépendant. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>
