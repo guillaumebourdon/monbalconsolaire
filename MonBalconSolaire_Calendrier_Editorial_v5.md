@@ -1,8 +1,10 @@
 # Calendrier éditorial v5 — MonBalconSolaire (octobre → décembre 2026)
 
 > Créé le 27 septembre 2026 (le v4 s'arrêtait au 28/08 : la routine n'avait plus rien à publier)
-> Rythme : mardi = nouvel article · jeudi = mise à jour · vendredi = nouvel article
-> Priorité de la période : **articles accessoires monétisés Amazon** (tag `monbalconsolai-21`) + saisonnalité Q4 (hiver, Black Friday, Noël)
+> Rythme (réorienté le 12/10/2026) : **mardi = mise à jour SEO d'une page qui perd des positions** · jeudi = mise à jour · vendredi = nouvel article
+> Priorité de la période : **regagner des positions sur les pages qui rapportent (avis, comparatifs, guides)** + saisonnalité Q4 (Black Friday, Noël).
+> Pourquoi : bilan du 12/10 — position moyenne Google passée de ~9 (juillet) à ~16 ; les avis Beem 300W / Sunology PLAY / Beem 460W ont perdu 60-80 % de leurs impressions ; les articles accessoires publiés depuis août ne reçoivent presque aucune impression.
+> **Articles accessoires Amazon : EN PAUSE.** Le tag `monbalconsolai-21` n'est rattaché à aucun compte Club Partenaires Amazon vérifié → aucune commission. Ne plus créer d'article accessoire tant que ce bandeau n'a pas été retiré par Guillaume. Les liens Amazon existants restent en place.
 > Déjà publiés le 27/09 : support-fixation-panneau-solaire-balcon, wattmetre-prise-mesurer-consommation, guirlande-solaire-balcon
 
 ## Règles propres aux articles ACCESSOIRES (Amazon)
@@ -47,9 +49,8 @@ Compatibilités Zendure / EcoFlow / Anker / Sunology, installation au tableau (�
 
 ## Semaine 42 — 13-16 oct.
 
-### Mardi 13/10 — NOUVEL ARTICLE — BLOG (accessoire)
-**Câbles et connecteurs MC4 : rallonger, raccorder, sertir sans risque** — slug `cable-mc4-rallonge-panneau-solaire`
-Section 4/6 mm², pertes par longueur, pince à sertir, connecteurs compatibles (mélange de marques = interdit), sélection Amazon.
+### Mardi 13/10 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : guide/reglementation-panneau-solaire-balcon-2026** — 230 impressions/mois en position ~7 mais taux de clic 1,7 % → réécrire title + description (plus concrets : « faut-il déclarer », « 2026 »), vérifier l'actualité Enedis/Consuel/NF C 15-100, ajouter les questions réelles en FAQ, date « mis à jour ».
 
 ### Jeudi 15/10 — MISE À JOUR
 **Rafraîchir : comparatif meilleur-kit-solaire-2026** — prix, nouveaux produits (Sunology GO, PLAY 500 W), cohérence ROI avec pricing.ts, signal fraîcheur « mis à jour octobre 2026 ».
@@ -60,12 +61,11 @@ S'appuyer sur blog/micro-onduleur-solaire-fonctionnement (ne pas dupliquer : ang
 
 ## Semaine 43 — 20-23 oct.
 
-### Mardi 20/10 — NOUVEL ARTICLE — BLOG (accessoire)
-**Brosse et kit de nettoyage panneau solaire : lequel choisir pour un balcon** — slug `brosse-nettoyage-panneau-solaire`
-Sélection Amazon (perches télescopiques, brosses douces, eau déminéralisée), ce qu'il ne faut pas utiliser. Lien vers entretien-nettoyage-panneau-solaire-balcon.
+### Mardi 20/10 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : blog/micro-onduleur-solaire-fonctionnement** — ~200 impressions mais position ~52 : la page ne répond pas à l'intention. Recentrer sur les questions concrètes (rôle, choix, puissance, compatibilité), lier le comparatif meilleur-micro-onduleur-2026 publié le 16/10.
 
 ### Jeudi 22/10 — MISE À JOUR
-**Rafraîchir : hub accessoires + blog/accessoires-kit-solaire-balcon** — intégrer les nouveaux articles accessoires, vérifier tous les liens Amazon.
+**Cohérence prix Beem** — le Beem On 460W n'est plus vendu en station (599 €) mais en extension à 429 € (vérifié le 12/10) : corriger les mentions obsolètes dans blog/talon-consommation-solaire, blog/panneau-solaire-est-ouest, blog/kit-solaire-balcon-avis-2026, comparatif/meilleur-kit-solaire-2026 (si pas fait le 15/10), données de `src/app/solaire-balcon/[slug]/page.tsx`. Grep `599` + `460`.
 
 ### Vendredi 23/10 — NOUVEL ARTICLE — BLOG
 **Dégradation d'un panneau solaire : que reste-t-il après 10, 20, 25 ans ?** — slug `degradation-panneau-solaire-25-ans`
@@ -73,9 +73,8 @@ Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur 
 
 ## Semaine 44 — 27-30 oct.
 
-### Mardi 27/10 — NOUVEL ARTICLE — BLOG (accessoire)
-**Station électrique portable pour les coupures de courant d'hiver** — slug `station-electrique-coupure-courant`
-Angle sécurité/hiver (tempêtes), recharge par kit balcon, sélection Amazon (EcoFlow, Bluetti, Jackery, Anker). Lien batteries-portables-solaires-comparatif (ne pas dupliquer).
+### Mardi 27/10 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : guide/panneau-solaire-copropriete** — position passée de ~8,6 (juillet) à ~33 : rafraîchir (règles AG, loi Climat, modèle de demande au syndic), FAQ, sources datées.
 
 ### Jeudi 29/10 — MISE À JOUR
 **Rafraîchir : avis Sunology (PLAY, PLAYMax, CITY arrêté)** — prix, versions, liens.
@@ -85,9 +84,8 @@ Angle sécurité/hiver (tempêtes), recharge par kit balcon, sélection Amazon (
 
 ## Semaine 45 — 3-6 nov.
 
-### Mardi 03/11 — NOUVEL ARTICLE — BLOG (accessoire)
-**Projecteur solaire à détecteur pour balcon et terrasse : 7 modèles qui éclairent vraiment en hiver** — slug `projecteur-solaire-detecteur`
-Sélection Amazon, lumens réels, autonomie hivernale honnête. Lien lampes-solaires-balcon-2026, guirlande-solaire-balcon.
+### Mardi 03/11 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : avis/zendure-solarflow + comparatif/zendure-vs-sunology-vs-beem** — le comparatif est notre page n°1 (19 clics/mois) : le garder irréprochable (prix, gammes 2026, Sunology GO, Beem On 500W/Duo). L'avis Zendure SolarFlow est en position ~24 : prix, versions (800 Pro), title.
 
 ### Jeudi 05/11 — MISE À JOUR
 **Rafraîchir : codes-promo** (offres de novembre, annonces Black Friday).
@@ -97,12 +95,11 @@ Sélection Amazon, lumens réels, autonomie hivernale honnête. Lien lampes-sola
 
 ## Semaine 46 — 10-13 nov.
 
-### Mardi 10/11 — NOUVEL ARTICLE — BLOG (accessoire)
-**Chargeur et power bank solaire : ce qu'on peut vraiment recharger depuis son balcon** — slug `chargeur-solaire-telephone`
-Chiffres réalistes (Wh, rendement, hiver), sélection Amazon.
+### Mardi 10/11 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : guide/installer-kit-solaire-balcon + guide/declaration-cacsi-enedis-panneau-solaire** — l'installer faisait 6 clics/mois en juin (CTR 13 %) et a disparu ; le CACSI est la 2e page la plus visitée (Vercel). Rafraîchir étapes, captures/process Enedis actuel, title.
 
 ### Jeudi 12/11 — MISE À JOUR
-**Rafraîchir : guide réglementation + guide installer** — vérifier l'actualité NF C 15-100 / Enedis / Consuel, sources.
+**Rafraîchir : avis Beem (kit-300w, on-500w)** — prix, stock, Leroy Merlin, avis clients (refaits le 12/10, vérifier que rien n'a bougé).
 
 ### Vendredi 13/11 — NOUVEL ARTICLE — BLOG
 **Panneau solaire pliable ou rigide : quel format pour un balcon ?** — slug `panneau-solaire-pliable-vs-rigide`
@@ -110,9 +107,8 @@ Liens Amazon vérifiés pour les pliables.
 
 ## Semaine 47 — 17-20 nov.
 
-### Mardi 17/11 — NOUVEL ARTICLE — BLOG (accessoire)
-**Parafoudre et protection contre les surtensions pour kit solaire : utile ou pas ?** — slug `parafoudre-kit-solaire-balcon`
-Honnête (souvent inutile en plug-and-play), cas où c'est pertinent, sélection Amazon.
+### Mardi 17/11 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : avis/sunology-play-max** — position ~29 : prix réel (vérifier l'écart 699 € / 1 179 € signalé le 27/09), versions, title orienté « avis Sunology PLAYMax ».
 
 ### Jeudi 19/11 — MISE À JOUR
 **Préparer le Black Friday : codes-promo + comparatif meilleur-kit** — ajouter une section « Black Friday 2026 » avec `endsAt`.
@@ -123,9 +119,8 @@ Prix de référence des 3 derniers mois (sources), liens marchands + Amazon vér
 
 ## Semaine 48 — 24-27 nov.
 
-### Mardi 24/11 — NOUVEL ARTICLE — BLOG (accessoire)
-**Batterie LiFePO4 12 V et régulateur MPPT : monter un petit système autonome sur son balcon** — slug `systeme-solaire-autonome-12v-balcon`
-DIY hors réseau (éclairage, USB), sécurité, sélection Amazon.
+### Mardi 24/11 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : avis/jackery-solarvault-3-pro + avis/dualsun-preasy** — positions 11-15 : prix, disponibilité, title/description pour gagner le clic.
 
 ### Jeudi 26/11 — MISE À JOUR
 **Rafraîchir : black-friday-kit-solaire-2026** (offres réelles du jour).
@@ -136,8 +131,8 @@ Sélection Amazon + kits, par budget.
 
 ## Semaine 49 — 1-4 déc.
 
-### Mardi 01/12 — NOUVEL ARTICLE — BLOG (accessoire)
-**Caméra de surveillance solaire pour balcon et extérieur : autonomie réelle en hiver** — slug `camera-solaire-exterieur`
+### Mardi 01/12 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : avis/ecoflow-powerstream + avis/sunology-city (produits arrêtés)** — rediriger clairement vers les successeurs (STREAM Ultra, PLAY), garder la page utile pour les recherches « avis » résiduelles.
 
 ### Jeudi 03/12 — MISE À JOUR
 **Rafraîchir : codes-promo** (fin Black Friday, offres de décembre).
@@ -147,8 +142,8 @@ Sélection Amazon + kits, par budget.
 
 ## Semaine 50 — 8-11 déc.
 
-### Mardi 08/12 — NOUVEL ARTICLE — BLOG (accessoire)
-**Mini panneau solaire USB et 12 V : usages utiles sur un balcon** — slug `mini-panneau-solaire-usb-12v`
+### Mardi 08/12 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : ROTATION SEO** — prendre la page avis/comparatif/guide dont `dateModified` est la plus ancienne et appliquer la méthode ci-dessous.
 
 ### Jeudi 10/12 — MISE À JOUR
 **Rafraîchir : tous les avis — prix et disponibilité** (script check-affiliate-links + sites officiels).
@@ -158,9 +153,8 @@ Sélection Amazon + kits, par budget.
 
 ## Semaine 51 — 15-18 déc.
 
-### Mardi 15/12 — NOUVEL ARTICLE — BLOG (accessoire)
-**Support inclinable pour panneau solaire au sol : gagner en production l'hiver** — slug `support-inclinable-panneau-solaire`
-Angle hiver (60°), calcul via PVGIS/pricing.ts, sélection Amazon. Lien support-fixation-panneau-solaire-balcon.
+### Mardi 15/12 — MISE À JOUR SEO (remplace l'article accessoire)
+**Rafraîchir : ROTATION SEO** — idem : page suivante la plus ancienne.
 
 ### Jeudi 17/12 — MISE À JOUR
 **Rafraîchir : aides et subventions 2027** (blog/aides-subventions-panneau-solaire-balcon-2026) — préparer la version 2027.
@@ -186,12 +180,34 @@ Angle hiver (60°), calcul via PVGIS/pricing.ts, sélection Amazon. Lien support
 
 ---
 
+
+## Méthode « MISE À JOUR SEO » (mardis)
+
+Objectif : faire remonter une page existante, pas la réécrire de zéro.
+1. Lire la page entière. Vérifier prix, disponibilité, URLs marchandes (curl → 200), specs (2-3 recherches web).
+2. **Title** (≤ 60 car., mot-clé principal en premier, concret et incitatif) et **description** (≤ 155 car.) : les réécrire si la page a un taux de clic faible.
+3. Couvrir les intentions réelles : questions « avis », « prix », « où acheter », « avis négatifs », « vs » → section ou FAQ dédiée.
+4. Recalculer tout chiffre ROI via `src/lib/pricing.ts` (`npx tsx`).
+5. Date visible « Mis à jour le JJ mois AAAA », `dateModified` du SchemaArticle, `lastModified` du sitemap.
+6. 3-5 liens internes pertinents (vers les avis/comparatifs qui convertissent).
+7. Build + scripts de validation, commit `fix: màj SEO {JJ/MM} - {page}`, push.
+
 ## Pipeline (si un créneau est libre ou si le calendrier est épuisé)
 
 La routine prend le **premier élément non coché**, le publie, puis le coche `[x]` dans ce fichier (même commit).
-Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 semaines suivantes en piochant ici (en alternant accessoire / autre).
+Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 semaines suivantes en piochant ici (en privilégiant avis / comparatifs / guides à forte demande ; pas d'accessoire tant que la pause Amazon est active).
 
-### Accessoires (Amazon)
+### Accessoires (Amazon) — EN PAUSE (voir en-tête), ne pas piocher ici
+- [ ] Câbles et connecteurs MC4 : rallonger, raccorder, sertir (`cable-mc4-rallonge-panneau-solaire`)
+- [ ] Brosse et kit de nettoyage panneau solaire (`brosse-nettoyage-panneau-solaire`)
+- [ ] Station électrique portable pour les coupures d'hiver (`station-electrique-coupure-courant`)
+- [ ] Projecteur solaire à détecteur (`projecteur-solaire-detecteur`)
+- [ ] Chargeur et power bank solaire (`chargeur-solaire-telephone`)
+- [ ] Parafoudre pour kit solaire (`parafoudre-kit-solaire-balcon`)
+- [ ] Système autonome 12 V LiFePO4 + MPPT (`systeme-solaire-autonome-12v-balcon`)
+- [ ] Caméra de surveillance solaire (`camera-solaire-exterieur`)
+- [ ] Mini panneau solaire USB et 12 V (`mini-panneau-solaire-usb-12v`)
+- [ ] Support inclinable pour panneau au sol (`support-inclinable-panneau-solaire`)
 - [ ] Arrosage automatique solaire pour balcon (printemps)
 - [ ] Ventilateur solaire / brumisateur balcon (été)
 - [ ] Filet et pics anti-pigeons : sélection (compléter proteger-panneau-solaire-oiseaux-intemperies)
