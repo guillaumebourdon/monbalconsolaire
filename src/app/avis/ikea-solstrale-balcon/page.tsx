@@ -157,7 +157,7 @@ export default function IkeaSolstralePage() {
                       ['IKEA STREAM S', '449 \u20ac', '900 Wc', '0,50 \u20ac', 'Non', 'Non'],
                       ['IKEA STREAM M', '1 229 \u20ac', '900 Wc', '1,37 \u20ac', '1,92 kWh', 'Non'],
                       ['Sunology PLAY (ex-PLAY 2)', '599 \u20ac', '500 Wc', '1,20 \u20ac', 'Non', 'Oui'],
-                      ['Beem On 460W', '599 \u20ac', '460 Wc', '1,30 \u20ac', 'Non', 'Oui'],
+                      ['Beem On 500 Wc', '429 \u20ac', '500 Wc', '0,86 \u20ac', 'Non', 'Oui'],
                       ['Beem Kit 300W', '299 \u20ac', '300 Wc', '1,00 \u20ac', 'Non', 'Oui'],
                       ['Zendure SolarFlow', '900 \u20ac', '840 W + panneaux', '1,07 \u20ac', '1,92 kWh', 'Oui'],
                     ].map(([kit, prix, puiss, ratio, bat, dispo], i) => (

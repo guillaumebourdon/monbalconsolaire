@@ -200,13 +200,13 @@ export default function HomePage() {
                 slug: '/avis/beem-kit-300w',
               },
               {
-                badge: 'Modulaire',
-                name: 'Beem On 460W',
+                badge: 'Meilleur prix',
+                name: 'Beem On 500 Wc',
                 brand: 'Beem Energy',
-                power: '460 Wc',
-                price: '599\u20ac',
-                roi: '7,0 ans',
-                slug: '/avis/beem-on-460w',
+                power: '500 Wc',
+                price: '429\u20ac',
+                roi: '4,8 ans',
+                slug: '/avis/beem-on-500w',
               },
             ].map((kit, i) => (
               <Link key={i} href={kit.slug} className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">

@@ -157,7 +157,7 @@ export default function PanneauSolaireEstOuestPage() {
                     {[
                       ['Beem Kit 300W', '299 \u20ac', '40 \u20ac', '6,7 ans', '1 532 \u20ac'],
                       ['Sunology PLAY (500 Wc)', '599 \u20ac', '67 \u20ac', '7,9 ans', '2 552 \u20ac'],
-                      ['Beem On 460W', '599 \u20ac', '62 \u20ac', '8,5 ans', '2 345 \u20ac'],
+                      ['Beem On 500 Wc', '429 \u20ac', '67 \u20ac', '5,9 ans', '2 552 \u20ac'],
                       ['Sunethic F500', '690 \u20ac', '67 \u20ac', '9,0 ans', '2 552 \u20ac'],
                     ].map(([kit, prix, eco, roi, total], i) => (
                       <tr key={i} className={`border-b border-border-light ${i === 0 ? 'bg-green-pale/20 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
@@ -243,9 +243,9 @@ export default function PanneauSolaireEstOuestPage() {
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Alternative : Beem On 460W (599 &euro;)</h4>
+                  <h4 className="font-bold text-sm mb-1 text-green">Alternative : Beem On 500 Wc (429 &euro;)</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Si vous voulez plus de production et acceptez un ROI de 8,7 ans. Le ratio &euro;/Wc (1,30 &euro;) est le meilleur du march&eacute; dans cette gamme. <Link href="/avis/beem-on-460w" className="text-green hover:underline">Voir l&apos;avis</Link>.
+                    Si vous voulez plus de production : 500 Wc pour 429 &euro; (0,86 &euro;/Wc), ROI de 5,9 ans en est/ouest. Attention, il est en pr&eacute;commande chez Beem (exp&eacute;dition annonc&eacute;e en d&eacute;cembre 2026). <Link href="/avis/beem-on-500w" className="text-green hover:underline">Voir l&apos;avis</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">

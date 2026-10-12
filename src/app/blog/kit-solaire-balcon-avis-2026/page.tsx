@@ -150,7 +150,7 @@ export default function KitSolaireBalconAvisPage() {
               <p className="text-sm text-charcoal-light">Tendance en hausse depuis le lancement du On 500 Wc.</p>
             </div>
             <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-              Beem propose deux kits phares : le <Link href="/avis/beem-on-460w" className="text-green hover:underline font-semibold">On 460W</Link> (599 &euro;) et le r&eacute;cent <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">On 500 Wc</Link> (429 &euro;, soit 0,86 &euro;/Wc). Le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Kit 300W</Link> (299 &euro;) reste une option d&apos;entr&eacute;e de gamme.
+              Le kit phare de Beem est d&eacute;sormais le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">On 500 Wc</Link> (429 &euro;, soit 0,86 &euro;/Wc). L&apos;ancien <Link href="/avis/beem-on-460w" className="text-green hover:underline font-semibold">On 460W</Link> n&apos;est plus vendu qu&apos;en extension (429 &euro;) pour agrandir une installation existante. Le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Kit 300W</Link> (199 &euro;) reste l&apos;entr&eacute;e de gamme, mais il est en rupture chez Beem au 12 octobre 2026.
             </p>
             <div className="space-y-2 mb-4">
               <div className="card border-l-4 border-l-green">

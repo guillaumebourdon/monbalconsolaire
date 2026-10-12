@@ -300,7 +300,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/avis/beem-on-460w',
     title: 'Beem On 460W',
-    excerpt: '460 Wc bifacial TOPCon, 599 \u20ac. Le rival du Sunology PLAY2, remplacé par le Beem On 500 Wc.',
+    excerpt: '460 Wc bifacial TOPCon, désormais vendu uniquement en extension (429 \u20ac). Pour un premier achat : Beem On 500 Wc.',
     type: 'avis',
     badge: 'Ancien modèle',
     tags: ['marque'],

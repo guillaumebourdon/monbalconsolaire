@@ -26,7 +26,6 @@ const kits = [
   { name: 'Sunology PLAY (ex-PLAY 2)', power: '500 Wc', price: '599\u20ac', ratio: '1,20\u20ac', prod: '510 kWh', roi: '6,5 ans', guarantee: '25 ans', highlight: false, image: '/images/produits/sunology-play-2-1.webp', slug: '/avis/sunology-play-2' },
   { name: 'Beem Kit 300W', power: '300 Wc', price: '299\u20ac', ratio: '1,00\u20ac', prod: '306 kWh', roi: '5,5 ans', guarantee: '25 ans', highlight: false, image: '/images/produits/beem-kit-300-1.webp', slug: '/avis/beem-kit-300w' },
   { name: 'Sunethic F500', power: '500 Wc', price: '690\u20ac', ratio: '1,38\u20ac', prod: '510 kWh', roi: '7,4 ans', guarantee: '25 ans', highlight: false, image: '/images/produits/sunethic-f500-2.webp', slug: '/avis/sunethic-f500' },
-  { name: 'Beem On 460W', power: '460 Wc', price: '599\u20ac', ratio: '1,30\u20ac', prod: '469 kWh', roi: '7,0 ans', guarantee: '25 ans', highlight: false, image: '/images/produits/beem-on-460-2.webp', slug: '/avis/beem-on-460w' },
 ];
 
 const sunologySpecs = [

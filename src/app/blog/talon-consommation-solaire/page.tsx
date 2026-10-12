@@ -268,7 +268,7 @@ export default function TalonConsommationPage() {
                     </div>
                   </div>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
-                    Un kit mono-panneau suffit : <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY</Link> (ex-PLAY 2, 500 Wc, 599 €) ou <Link href="/avis/beem-on-460w" className="text-green hover:underline font-semibold">Beem On 460W</Link> (599 €). Production moyenne de 150-200 W en journée, pile sur votre talon.
+                    Un kit mono-panneau suffit : <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY</Link> (ex-PLAY 2, 500 Wc, 599 €) ou <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> (429 €). Production moyenne de 150-200 W en journée, pile sur votre talon.
                   </p>
                   <p className="text-xs text-stone">ROI estimé : 6-8 ans · Économies : 80-100 €/an</p>
                 </div>

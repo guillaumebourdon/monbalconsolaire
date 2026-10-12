@@ -25,7 +25,7 @@ function productibleSite(pvgisDept: number): number {
 const KITS = [
   { name: 'Sunology PLAY', power: 0.50, price: 599, slug: '/avis/sunology-play-2', badge: 'Meilleur choix' },
   { name: 'Beem Kit 300W', power: 0.30, price: 299, slug: '/avis/beem-kit-300w', badge: 'Petit budget' },
-  { name: 'Beem On 460W', power: 0.46, price: 599, slug: '/avis/beem-on-460w', badge: 'Modulaire' },
+  { name: 'Beem On 500 Wc', power: 0.50, price: 429, slug: '/avis/beem-on-500w', badge: 'Meilleur prix' },
   { name: 'Zendure SolarFlow', power: 0.84, price: 900, slug: '/avis/zendure-solarflow', badge: 'Avec batterie', autocons: AUTOCONSO_BATTERY },
   { name: 'DualSun PREASY', power: 0.42, price: 870, slug: '/avis/dualsun-preasy', badge: 'Made in France' },
 ];
