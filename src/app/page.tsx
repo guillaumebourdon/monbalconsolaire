@@ -297,6 +297,7 @@ export default function HomePage() {
             <div className="text-center number-pop" style={{ animationDelay: '0.3s' }}>
               <div className="font-mono text-2xl font-bold text-green">{siteStats.departementsCouverts}</div>
               <div className="text-xs mt-1">d&eacute;partements couverts</div>
+              <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="text-xs text-green hover:underline font-semibold">Voir la carte de rentabilit&eacute;</Link>
             </div>
           </div>
         </div>

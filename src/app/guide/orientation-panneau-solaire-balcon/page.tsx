@@ -167,6 +167,10 @@ export default function OrientationPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Carte de la rentabilit&eacute; par d&eacute;partement (exposition sud)</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le potentiel de votre d&eacute;partement avant correction d&apos;orientation&nbsp;: 96 d&eacute;partements class&eacute;s</p>
+                </Link>
                 <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h4>
                   <p className="text-xs text-charcoal-light mt-1">Mauvais angle estival, ombre saisonni&egrave;re, surchauffe : guide pratique juillet-ao&ucirc;t</p>

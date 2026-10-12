@@ -38,6 +38,15 @@ export default function SolaireBalconIndexPage() {
           </p>
         </div>
 
+        <Link
+          href="/etude/rentabilite-kit-solaire-balcon-departement"
+          className="card-lg block mb-10 border-l-4 border-l-green bg-gradient-to-br from-green-pale/40 via-white to-amber-pale/20 hover:shadow-brand-lg transition-all group"
+        >
+          <div className="text-[10px] font-bold uppercase tracking-widest text-amber-dark mb-1">&Eacute;tude &middot; Carte interactive</div>
+          <div className="font-bold text-lg group-hover:text-green transition-colors">Carte de France de la rentabilit&eacute; d&apos;un kit solaire de balcon</div>
+          <p className="text-sm text-charcoal-light mt-1">Les 96 d&eacute;partements class&eacute;s par ann&eacute;es de retour sur investissement, avec tableau complet et donn&eacute;es t&eacute;l&eacute;chargeables &rarr;</p>
+        </Link>
+
         <div className="space-y-8">
           {regions.map(region => {
             const depts = DEPARTMENTS.filter(d => d.region === region).sort((a, b) => a.code.localeCompare(b.code));

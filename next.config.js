@@ -9,6 +9,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Pas d'index /etude pour l'instant : on renvoie vers le hub éditorial
+      { source: '/etude', destination: '/tout-savoir', permanent: false },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'monbalconsolaire.vercel.app' }],

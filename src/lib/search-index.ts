@@ -17,6 +17,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Calculateur de rentabilit\u00e9 solaire', description: 'Calculez vos \u00e9conomies en 30 secondes selon votre d\u00e9partement et orientation', url: '/calculateur', category: 'Outil', badge: 'Calculateur' },
   { title: 'Codes promo solaire balcon 2026', description: 'Tous les bons plans et codes promo actifs pour les kits solaires', url: '/codes-promo', category: 'Bons plans', badge: 'Promos' },
   { title: 'M\u00e9thodologie de calcul ROI', description: 'Nos sources, hypoth\u00e8ses et formules de calcul. Tout est public.', url: '/methodologie', category: 'Transparence', badge: 'M\u00e9thodo' },
+  { title: 'Carte de la rentabilit\u00e9 d\u2019un kit solaire de balcon par d\u00e9partement', description: 'Carte de France interactive : production, \u00e9conomies et ann\u00e9es de ROI d\u2019un kit 500 Wc dans les 96 d\u00e9partements. Donn\u00e9es CC BY.', url: '/etude/rentabilite-kit-solaire-balcon-departement', category: 'Outil', badge: '\u00c9tude' },
   { title: 'Solaire par d\u00e9partement', description: 'Production et rentabilit\u00e9 pour chacun des 96 d\u00e9partements fran\u00e7ais', url: '/solaire-balcon', category: 'Outil', badge: 'D\u00e9partements' },
 
   // ─── Avis produits ───

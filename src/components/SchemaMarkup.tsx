@@ -213,3 +213,50 @@ export function SchemaBreadcrumb({ items }: { items: { label: string; href?: str
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 }
+
+export function SchemaDataset({
+  name,
+  description,
+  url,
+  license,
+  dateModified,
+  temporalCoverage,
+  spatialCoverage,
+  variableMeasured,
+  keywords,
+  distribution,
+  isBasedOn,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  license: string;
+  dateModified: string;
+  temporalCoverage: string;
+  spatialCoverage: string;
+  variableMeasured: { name: string; unitText?: string; description?: string }[];
+  keywords?: string[];
+  distribution?: { contentUrl: string; encodingFormat: string };
+  isBasedOn?: string[];
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name,
+    description,
+    url,
+    license,
+    dateModified,
+    temporalCoverage,
+    inLanguage: 'fr-FR',
+    isAccessibleForFree: true,
+    spatialCoverage: { '@type': 'Place', name: spatialCoverage },
+    variableMeasured: variableMeasured.map((v) => ({ '@type': 'PropertyValue', ...v })),
+    ...(keywords ? { keywords } : {}),
+    ...(isBasedOn ? { isBasedOn } : {}),
+    ...(distribution ? { distribution: { '@type': 'DataDownload', ...distribution } } : {}),
+    creator: { '@type': 'Organization', name: 'MonBalconSolaire', url: 'https://monbalconsolaire.fr' },
+    publisher: { '@type': 'Organization', name: 'MonBalconSolaire', url: 'https://monbalconsolaire.fr' },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
+}

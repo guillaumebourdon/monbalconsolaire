@@ -196,6 +196,10 @@ export default function CombienRapportePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Carte&nbsp;: la rentabilit&eacute; d&apos;un kit solaire par d&eacute;partement</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Production, &eacute;conomies et ann&eacute;es de ROI d&apos;un kit 500&nbsp;Wc dans les 96 d&eacute;partements</p>
+                </Link>
                 <Link href="/comparatif/kit-solaire-balcon-vs-toiture" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle diff&eacute;rence de rentabilit&eacute;&nbsp;?</h4>
                   <p className="text-xs text-charcoal-light mt-1">ROI 4–7 ans pour le balcon, 7–12 ans pour la toiture&nbsp;: le comparatif complet avec les chiffres r&eacute;els</p>

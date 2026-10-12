@@ -551,7 +551,7 @@ function CalculateurPage() {
             </div>
 
             <p className="text-[10px] text-stone text-center mt-4">
-              Calcul bas&eacute; sur les donn&eacute;es PVGIS, tarif EDF 0,1940 &euro;/kWh, inflation 3,3%/an (CRE). <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie compl&egrave;te</Link>.
+              Calcul bas&eacute; sur les donn&eacute;es PVGIS, tarif EDF 0,1940 &euro;/kWh, inflation 3,3%/an (CRE). <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie compl&egrave;te</Link> &middot; <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="text-green hover:underline">Carte de la rentabilit&eacute; par d&eacute;partement</Link>.
             </p>
           </div>
         )}

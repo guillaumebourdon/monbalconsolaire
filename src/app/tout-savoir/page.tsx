@@ -20,6 +20,16 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (octobre 2026)
   {
+    slug: '/etude/rentabilite-kit-solaire-balcon-departement',
+    title: 'Carte : rentabilité d\'un kit solaire de balcon par département',
+    excerpt: 'Production, économies et années de retour sur investissement d\'un kit 500 Wc dans les 96 départements. Carte interactive, classement et données CC BY.',
+    type: 'analyse',
+    badge: 'Étude',
+    tags: ['rentabilite', 'comprendre'],
+    publishedAt: '2026-10-12',
+    readTime: '7 min',
+  },
+  {
     slug: '/guide/demenager-kit-solaire-balcon',
     title: 'Déménager avec son kit solaire balcon : CACSI, résiliation',
     excerpt: 'Démontage, transport, résiliation du contrat d\'électricité et nouvelle déclaration CACSI à chaque changement d\'adresse.',
