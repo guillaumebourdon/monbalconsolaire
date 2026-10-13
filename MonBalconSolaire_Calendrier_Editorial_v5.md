@@ -91,7 +91,7 @@ Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur 
 **Rafraîchir : codes-promo** (offres de novembre, annonces Black Friday).
 
 ### Vendredi 06/11 — NOUVEL ARTICLE — AVIS
-**EcoFlow STREAM Ultra : avis** — slug `ecoflow-stream-ultra` (successeur du PowerStream). Fiche vérifiée fr.ecoflow.com, ROI via pricing.ts.
+**EcoFlow STREAM Ultra : avis** — slug `ecoflow-stream-ultra` (successeur du PowerStream). Fiche vérifiée fr.ecoflow.com, ROI via pricing.ts. Couvrir aussi le STREAM Ultra Pro (déjà lié depuis le site). Candidature à l'affiliation EcoFlow en cours (13/10) : si un lien affilié a été fourni d'ici là, l'utiliser ; sinon lien direct fr.ecoflow.com. Ajouter dans avis/ecoflow-powerstream un encadré « plus vendu en France → voir le STREAM Ultra » et un lien depuis comparatif/meilleure-batterie-solaire-balcon-2026.
 
 ## Semaine 46 — 10-13 nov.
 
