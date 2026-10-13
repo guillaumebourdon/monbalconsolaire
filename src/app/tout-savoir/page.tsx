@@ -304,7 +304,7 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/guide/reglementation-panneau-solaire-balcon-2026',
-    title: 'Panneau solaire balcon : réglementation 2026 complète',
+    title: 'Panneau solaire balcon 2026 : faut-il le déclarer ?',
     excerpt: 'Norme NF C 15-100, CACSI Enedis, copropriété, repère 900 W : tout ce que dit la loi.',
     type: 'guide',
     badge: 'Réglementation',

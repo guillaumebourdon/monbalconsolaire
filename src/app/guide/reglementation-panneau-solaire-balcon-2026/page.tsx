@@ -6,8 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
-  title: 'Panneau solaire balcon : réglementation 2026 complete',
-  description: 'Norme NF C 15-100 (point 551.7.2), declaration Enedis CACSI, copropriété, repère des 900 W : ce que dit la loi sur les kits solaires plug-and-play en 2026.',
+  title: 'Panneau solaire balcon 2026 : faut-il le déclarer ?',
+  description: 'Faut-il déclarer son kit solaire de balcon en 2026 ? CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété : la réponse claire et à jour.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026',
   },
@@ -18,13 +18,14 @@ const faqData = [
   { question: 'Quelle est la puissance maximale autorisee en plug-and-play ?', answer: 'Aucun texte ne fixe de plafond chiffré pour un kit branché sur prise. La NF C 15-100 applicable depuis le 1er septembre 2025 ne donne pas de limite en watts : son point 551.7.2 indique qu\'un générateur ne doit pas être raccordé à un circuit terminal par une prise ou une fiche. Les 900 W souvent cités sont une recommandation (UFC-Que Choisir, fabricants) pour une prise 16 A protégée par un différentiel 30 mA, pas une limite de la norme. Au-delà, un circuit dédié posé par un électricien est recommandé.' },
   { question: 'Faut-il declarer son kit solaire a Enedis ?', answer: 'Oui. Meme en autoconsommation totale sans injection, vous devez signer une Convention d\'Autoconsommation Sans Injection (CACSI) sur le portail Enedis Connect. C\'est gratuit et se fait en ligne en 10 minutes.' },
   { question: 'Mon syndic peut-il refuser l\'installation ?', answer: 'Le syndic peut demander que le projet soit presente en assemblee generale si l\'installation modifie l\'aspect de la facade. Cependant, un kit pose au sol sur un balcon prive, non visible depuis l\'exterieur, ne devrait pas poser de probleme.' },
-  { question: 'Les kits plug-and-play sont-ils toujours autorises en 2026 ?', answer: 'Ils restent vendus et aucun texte ne les interdit explicitement, mais leur situation est floue. La NF C 15-100 (point 551.7.2, en vigueur depuis le 1er septembre 2025) interdit de raccorder un générateur à un circuit terminal par une prise. Elle vise les installations fixes ; les kits, équipements mobiles, sont selon Enerplan « théoriquement non concernés ». La filière (Enerplan, SER) demande une clarification, et la réponse du gouvernement à la question écrite n° 6574 (JO du 26 mai 2026) rappelle les risques sans trancher.' },
+  { question: 'Les kits plug-and-play sont-ils toujours autorises en 2026 ?', answer: 'Ils restent vendus et aucun texte ne les interdit explicitement, mais leur situation est floue. La NF C 15-100 (point 551.7.2, en vigueur depuis le 1er septembre 2025) interdit de raccorder un générateur à un circuit terminal par une prise. Elle vise les installations fixes ; les kits, équipements mobiles, sont selon Enerplan « théoriquement non concernés ». La filière (Enerplan, SER) demande une clarification, voire une dérogation réglementaire. Les réponses du gouvernement aux questions écrites n° 6574 et n° 10336 (JO du 26 mai 2026) rappellent les risques d\'électrisation et d\'échauffement sans trancher ni accorder cette dérogation.' },
+  { question: 'Que risque-t-on si on n\'a pas fait la déclaration CACSI ?', answer: 'Enedis ne vient pas contrôler les balcons. Le risque réel se matérialise surtout en cas de sinistre électrique : un assureur peut invoquer l\'absence de convention pour réduire ou refuser une indemnisation. Faire la CACSI (gratuite, 10 minutes sur Enedis Connect) élimine ce risque et ne nécessite aucune intervention sur site.' },
 ];
 
 export default function ReglementationPage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon : réglementation 2026 complete" description="Tout ce que dit la loi sur les kits solaires plug-and-play en 2026." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" />
+      <SchemaArticle title="Panneau solaire balcon 2026 : faut-il le déclarer ?" description="Faut-il déclarer son kit solaire de balcon en 2026 ? CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété : la réponse claire et à jour." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-10-13" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />
       <article className="section-padding">
@@ -32,14 +33,14 @@ export default function ReglementationPage() {
           <Breadcrumbs items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide juridique</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : r&eacute;glementation 2026 compl&egrave;te</h1>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon 2026 : faut-il le d&eacute;clarer&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Norme NF C 15-100, d&eacute;claration Enedis CACSI, copropri&eacute;t&eacute;, rep&egrave;re des 900 W : tout ce que dit la loi sur les kits solaires plug-and-play en France.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span><strong>Mis &agrave; jour le 13 octobre 2026</strong></span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
-            <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed">Les kits solaires plug-and-play restent vendus et utilis&eacute;s en France en 2026, sans interdiction explicite, mais dans une zone grise normative (NF C 15-100, point 551.7.2). Pas d&apos;autorisation de travaux requise (sauf toiture). La NF C 15-100 ne fixe pas de plafond en watts ; 900 W par prise est une recommandation courante, pas une limite l&eacute;gale. D&eacute;claration CACSI obligatoire sur Enedis Connect (gratuite, 10 min). En copropri&eacute;t&eacute;, informer le syndic est recommand&eacute;.</p>
+            <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;&nbsp;: oui, il faut d&eacute;clarer</h2>
+            <p className="text-charcoal-light text-sm leading-relaxed"><strong>Oui, la d&eacute;claration CACSI auprès d&apos;Enedis est obligatoire</strong>, m&ecirc;me sans injection sur le r&eacute;seau (gratuite, 10 min sur Enedis Connect). Les kits solaires plug-and-play restent vendus et utilis&eacute;s en France en 2026, sans interdiction explicite, mais dans une zone grise normative (NF C 15-100, point 551.7.2). Pas d&apos;autorisation de travaux requise (sauf toiture). La norme ne fixe pas de plafond en watts&nbsp;; 900 W par prise est une recommandation courante, pas une limite l&eacute;gale. En copropri&eacute;t&eacute;, informer le syndic est recommand&eacute; si le panneau est visible.</p>
           </div>
 
           <div className="space-y-10">
@@ -47,7 +48,7 @@ export default function ReglementationPage() {
               <h2 className="text-2xl font-extrabold mb-4">La norme NF C 15-100 : ce qui change en 2025-2026</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">La norme NF C 15-100 encadre la s&eacute;curit&eacute; des installations &eacute;lectriques en France. La version applicable depuis le 1<sup>er</sup> septembre 2025 contient une r&egrave;gle qui concerne directement le branchement sur prise :</p>
               <div className="card-lg border-l-4 border-l-amber mb-4">
-                <p className="text-sm text-charcoal-light"><strong>Point 551.7.2 :</strong> &laquo; un g&eacute;n&eacute;rateur d&apos;&eacute;nergie &eacute;lectrique ne doit pas &ecirc;tre connect&eacute; &agrave; un circuit terminal par le moyen d&apos;un socle de prise ou d&apos;une fiche &raquo;. La norme vise les installations fixes ; les kits plug-and-play, &eacute;quipements mobiles, sont dans une zone grise (&laquo; th&eacute;oriquement non concern&eacute;s &raquo; selon Enerplan). La fili&egrave;re (Enerplan, SER) demande une clarification depuis fin 2024 ; la r&eacute;ponse minist&eacute;rielle du 26 mai 2026 rappelle les risques d&apos;&eacute;lectrisation et d&apos;&eacute;chauffement sans cr&eacute;er d&apos;exception.</p>
+                <p className="text-sm text-charcoal-light"><strong>Point 551.7.2 :</strong> &laquo; un g&eacute;n&eacute;rateur d&apos;&eacute;nergie &eacute;lectrique ne doit pas &ecirc;tre connect&eacute; &agrave; un circuit terminal par le moyen d&apos;un socle de prise ou d&apos;une fiche &raquo;. La norme vise les installations fixes ; les kits plug-and-play, &eacute;quipements mobiles, sont dans une zone grise (&laquo; th&eacute;oriquement non concern&eacute;s &raquo; selon Enerplan). La fili&egrave;re (Enerplan, SER) demande depuis fin 2024 une clarification, voire une d&eacute;rogation r&eacute;glementaire. &Agrave; date (octobre 2026), deux questions &eacute;crites &agrave; l&apos;Assembl&eacute;e nationale (n&deg; 6574 et n&deg; 10336) ont re&ccedil;u une r&eacute;ponse minist&eacute;rielle le 26 mai 2026 rappelant les risques d&apos;&eacute;lectrisation et d&apos;&eacute;chauffement, sans trancher ni accorder cette d&eacute;rogation : le flou normatif persiste.</p>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">La norme ne fixe <strong>aucun plafond en watts</strong>. Le chiffre de 900&nbsp;W souvent cit&eacute; est une <strong>recommandation</strong> (UFC-Que Choisir, notices des fabricants) pour une prise 16&nbsp;A prot&eacute;g&eacute;e par un diff&eacute;rentiel 30&nbsp;mA, pas une limite l&eacute;gale. Au-del&agrave;, un circuit d&eacute;di&eacute; pos&eacute; par un &eacute;lectricien est recommand&eacute;. Les kits les plus populaires (Sunology PLAY2 &agrave; 450&nbsp;W, Beem On &agrave; 460&nbsp;W) sont en dessous de ce rep&egrave;re.</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
@@ -205,7 +206,7 @@ export default function ReglementationPage() {
             </section>
 
             <NewsletterBanner />
-            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Norme NF C 15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2) ; r&eacute;ponse minist&eacute;rielle &agrave; la question &eacute;crite n&deg; 6574 (A. nationale, JO du 26 mai 2026) ; UFC-Que Choisir, &laquo; Kits solaires : les kits plug &amp; play sont-ils concern&eacute;s par l&apos;actualisation de la norme &eacute;lectrique ? &raquo; (mai 2025) ; ADEME, guide kit photovolta&iuml;que plug &amp; play (avril 2023) ; Code de l&apos;&eacute;nergie art. D315-10, Enedis Connect. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
+            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Norme NF C 15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2) ; r&eacute;ponses minist&eacute;rielles aux questions &eacute;crites n&deg; 6574 et n&deg; 10336 (A. nationale, JO du 26 mai 2026) ; UFC-Que Choisir, &laquo; Kits solaires : les kits plug &amp; play sont-ils concern&eacute;s par l&apos;actualisation de la norme &eacute;lectrique ? &raquo; (mai 2025) ; ADEME, guide kit photovolta&iuml;que plug &amp; play (avril 2023) ; Code de l&apos;&eacute;nergie art. D315-10, Enedis Connect. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
           </div>
         </div>
       </article>
