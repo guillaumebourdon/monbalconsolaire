@@ -7,7 +7,7 @@ import { ProductThumb } from '@/components/ui/ProductThumb';
 
 export const metadata: Metadata = {
   title: 'Meilleur kit solaire plug and play 2026 : 5 kits dès 299 €',
-  description: 'Meilleur kit solaire plug and play 2026 : Beem On 500 Wc (429 €), Sunology PLAY 500 W, Sunethic F500, Beem Kit 300W. Prix, ROI, points faibles, verdict.',
+  description: 'Beem On 500 Wc (429 €), Sunology PLAY, Beem Kit 300W, Sunethic F500, Sunology GO : comparatif prix, ROI et verdict mis à jour en octobre 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026',
   },
@@ -19,6 +19,7 @@ const faqData = [
   { question: 'Un kit solaire de balcon est-il rentable ?', answer: 'Oui. Avec le tarif EDF à 0,1940 euros/kWh en 2026, un kit de 450W produit 400-650 kWh/an selon la region, soit 66-107 euros d\'économies annuelles (85 % d\'autoconsommation). Le retour sur investissement est de 5 à 8 ans pour une garantie de 25 ans.' },
   { question: 'Peut-on installer un panneau solaire sur un balcon en tant que locataire ?', answer: 'Oui. Les kits plug-and-play installés au sol ou en appui sur une rambarde (sans perçage) ne nécessitent ni autorisation de travaux ni accord du propriétaire, tant que l\'installation est amovible et ne modifie pas le bâtiment.' },
   { question: 'Quelle est la différence entre Sunology et Beem ?', answer: 'Sunology propose un panneau unique de 500 W (PLAY, ex-PLAY 2 de 450 W) avec châssis intégré (installation en 1 min). Beem propose soit un panneau unique (Beem On 500 Wc à 429 €), soit un kit de petits panneaux (Beem Kit 300W). Beem est nettement moins cher au Wc, Sunology a une finition plus premium.' },
+  { question: 'Le Sunology GO est-il un bon choix face au PLAY ou au Beem Kit 300W ?', answer: 'Le Sunology GO (349 €, 270 Wc) comble le segment des tout petits balcons grâce à sa double pose (sol ou garde-corps sans perçage), mais son ROI de 7 ans est plus long que celui du Beem Kit 300W (5,5 ans) ou du Sunology PLAY (6,5 ans). Ne le choisissez que si l\'espace disponible exclut un kit plus grand.' },
 ];
 
 const kits = [
@@ -44,7 +45,7 @@ const sunologySpecs = [
 export default function ComparatifPage() {
   return (
     <>
-      <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-17" dateModified="2026-06-20" />
+      <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-17" dateModified="2026-10-15" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: "Comparatifs", href: "/comparatif" }, { label: "Meilleur kit solaire 2026" }]} />
       <article className="section-padding">
@@ -56,7 +57,7 @@ export default function ComparatifPage() {
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Meilleur kit solaire plug and play 2026 : comparatif complet</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sunology PLAY, Beem On, Sunethic F500 : quel kit choisir pour votre balcon ? Nous avons analyse les prix, les performances réelles et la rentabilité de chaque kit. Verdict indépendant.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>Mis &agrave; jour le 20 juin 2026</span>
+              <span>Mis &agrave; jour le 15 octobre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -71,14 +72,14 @@ export default function ComparatifPage() {
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En résumé</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed mb-3">En 2026, le march&eacute; a boug&eacute;. Le <strong>Beem On 500 Wc</strong> (429&euro;, 0,86&euro;/Wc) s&apos;impose comme le meilleur rapport qualit&eacute;-prix avec un ROI de 4,8 ans. Le <strong>Sunology PLAY</strong> (ex-PLAY&nbsp;2, 500&nbsp;Wc, 599&euro;) reste le choix n&deg;1 pour la facilit&eacute; d&apos;installation. Le <strong>Beem Kit 300W</strong> (299&euro;) est le choix budget. Tous se rentabilisent en 5 &agrave; 7,5 ans (m&eacute;thodologie Lyon sud).</p>
+            <p className="text-charcoal-light text-sm leading-relaxed mb-3">En 2026, le march&eacute; a boug&eacute;. Le <strong>Beem On 500 Wc</strong> (429&euro;, 0,86&euro;/Wc) s&apos;impose comme le meilleur rapport qualit&eacute;-prix avec un ROI de 4,8 ans. Le <strong>Sunology PLAY</strong> (ex-PLAY&nbsp;2, 500&nbsp;Wc, 599&euro;) reste le choix n&deg;1 pour la facilit&eacute; d&apos;installation. Le <strong>Beem Kit 300W</strong> (299&euro;) est le choix budget. Depuis octobre 2026, le <strong>Sunology GO</strong> (349&euro;, 270&nbsp;Wc) compl&egrave;te la gamme pour les tout petits balcons, au prix d&apos;un ROI plus long (7 ans). Tous se rentabilisent en 5 &agrave; 7,5 ans (m&eacute;thodologie Lyon sud).</p>
             <Link href="/calculateur" className="text-green font-semibold text-sm hover:underline">&rarr; Calculez vos économies personnalisees avec notre simulateur gratuit</Link>
           </div>
 
           <div className="card mb-10">
             <h3 className="font-bold text-sm mb-3 text-stone">Sommaire</h3>
             <nav className="space-y-2 text-sm">
-              {['Pourquoi un kit solaire de balcon en 2026\u00a0?', 'Nos crit\u00e8res de s\u00e9lection', 'Tableau comparatif', 'Sunology PLAY (ex-PLAY 2) : notre choix n\u00b01', 'Beem On 500 Wc : meilleur rapport qualit\u00e9-prix', 'Beem Kit 300W : le choix petit budget', 'Sunethic F500 : le Made in France', 'Verdict : quel kit choisir\u00a0?', 'Questions fr\u00e9quentes'].map((item, i) => (
+              {['Pourquoi un kit solaire de balcon en 2026\u00a0?', 'Nos crit\u00e8res de s\u00e9lection', 'Tableau comparatif', 'Sunology PLAY (ex-PLAY 2) : notre choix n\u00b01', 'Beem On 500 Wc : meilleur rapport qualit\u00e9-prix', 'Beem Kit 300W : le choix petit budget', 'Sunethic F500 : le Made in France', 'Sunology GO : le choix niche petit balcon', 'Verdict : quel kit choisir\u00a0?', 'Questions fr\u00e9quentes'].map((item, i) => (
                 <a key={i} href={`#section-${i+1}`} className="block text-green hover:underline">{item}</a>
               ))}
             </nav>
@@ -264,6 +265,46 @@ export default function ComparatifPage() {
             </section>
 
             <section id="section-8">
+              <h2 className="text-2xl font-extrabold mb-4">Sunology GO : le choix niche pour les tout petits balcons</h2>
+              <div className="card-lg mb-6">
+                <div className="flex items-start justify-between flex-wrap gap-4">
+                  <div><div className="badge-amber mb-2">Niche &mdash; petit balcon</div><h3 className="font-bold text-xl">Sunology GO</h3><p className="text-sm text-stone">par Sunology &middot; lanc&eacute; en octobre 2026, remplace le CITY</p></div>
+                  <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">349 &euro;</div><div className="text-xs text-stone">270 Wc</div></div>
+                </div>
+              </div>
+              <p className="text-charcoal-light leading-relaxed mb-4">Lanc&eacute; en octobre 2026, le Sunology GO n&apos;entre pas dans le m&ecirc;me match que les quatre kits ci-dessus&nbsp;: avec 270&nbsp;Wc pour 349&nbsp;&euro;, il vise les balcons trop exigus pour un panneau de 500&nbsp;Wc. Son atout unique est la double pose, au sol (ballasts) <strong>ou</strong> sur garde-corps sans per&ccedil;age (cadre 30&nbsp;mm, fixation jusqu&apos;&agrave; 60&nbsp;mm de diam&egrave;tre) &mdash; aucun autre kit de ce comparatif ne propose les deux.</p>
+              <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
+                <table className="w-full text-sm border-collapse min-w-[520px]">
+                  <thead>
+                    <tr className="bg-green text-white">
+                      <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th>
+                      <th className="text-center p-3">Sunology GO</th>
+                      <th className="text-center p-3">Sunology PLAY</th>
+                      <th className="text-center p-3 rounded-tr-xl">Beem Kit 300W</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ['Prix', '349 €', '599 €', '299 €'],
+                      ['Puissance', '270 Wc', '500 Wc', '300 Wc'],
+                      ['€/Wc', '1,29 €', '1,20 €', '1,00 €'],
+                      ['Pose', 'Sol ou garde-corps', 'Sol ou mur', 'Modulaire (4 panneaux)'],
+                      ['ROI (Lyon sud)', '7 ans', '6,5 ans', '5,5 ans'],
+                    ].map(([c, go, play, beem], i) => (
+                      <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-amber-pale/20' : 'bg-cream/50'}`}>
+                        <td className="p-3 font-semibold">{c}</td>
+                        <td className="text-center p-3 font-semibold">{go}</td>
+                        <td className="text-center p-3">{play}</td>
+                        <td className="text-center p-3">{beem}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-charcoal-light leading-relaxed">Son prix au watt-cr&ecirc;te (1,29&nbsp;&euro;/Wc) et son ROI de 7&nbsp;ans restent moins bons que le PLAY ou le Beem Kit 300W d&egrave;s que l&apos;espace le permet. R&eacute;servez-le aux balcons vraiment exigus. <Link href="/avis/sunology-go" className="text-green hover:underline">Lire l&apos;avis complet sur le Sunology GO &rarr;</Link></p>
+            </section>
+
+            <section id="section-9">
               <h2 className="text-2xl font-extrabold mb-4">Verdict : quel kit choisir&nbsp;?</h2>
               <div className="space-y-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
@@ -282,6 +323,10 @@ export default function ComparatifPage() {
                   <h4 className="font-bold mb-1">Pour le Made in France &rarr; Sunethic F500 (690&euro;)</h4>
                   <p className="text-sm text-charcoal-light">Si vous privil&eacute;giez la fabrication fran&ccedil;aise et que le budget n&apos;est pas la priorit&eacute;, le Sunethic F500 est le choix &eacute;thique.</p>
                 </div>
+                <div className="card-lg border-amber/20 bg-amber-pale/10">
+                  <h4 className="font-bold text-amber-dark mb-1">Pour un balcon vraiment exigu &rarr; Sunology GO (349&euro;)</h4>
+                  <p className="text-sm text-charcoal-light">Seul kit du march&eacute; pos&eacute; au sol ou sur garde-corps sans per&ccedil;age. ROI plus long (7 ans), r&eacute;serv&eacute; aux balcons o&ugrave; aucun autre kit ne rentre.</p>
+                </div>
               </div>
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
                 <p className="font-semibold mb-2">Pas sur de votre choix ?</p>
@@ -290,7 +335,7 @@ export default function ComparatifPage() {
               </div>
             </section>
 
-            <section id="section-9">
+            <section id="section-10">
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>
               <div className="space-y-4">
                 {faqData.map((faq, i) => (
@@ -320,6 +365,10 @@ export default function ComparatifPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix &agrave; 429&nbsp;&euro;</p>
                 </Link>
+                <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le kit compact pour les tout petits balcons &agrave; 349&nbsp;&euro;</p>
+                </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
@@ -333,7 +382,7 @@ export default function ComparatifPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> ce comparatif est indépendant. MonBalconSolaire ne vend aucun produit. Certains liens sont des liens d&apos;affiliation : si vous achetez via ces liens, nous recevons une commission sans surcout pour vous. Notre classément est base sur des critères objectifs et n&apos;est pas influence par ces partenariats. Donn&eacute;es v&eacute;rifi&eacute;es en juin 2026.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> ce comparatif est indépendant. MonBalconSolaire ne vend aucun produit. Certains liens sont des liens d&apos;affiliation : si vous achetez via ces liens, nous recevons une commission sans surcout pour vous. Notre classément est base sur des critères objectifs et n&apos;est pas influence par ces partenariats. Donn&eacute;es v&eacute;rifi&eacute;es en octobre 2026.</p>
             </div>
           </div>
         </div>
