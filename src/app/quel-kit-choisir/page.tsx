@@ -21,11 +21,21 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/meilleur-micro-onduleur-2026',
+    title: 'Meilleur micro-onduleur solaire 2026 : Hoymiles, APsystems, Enphase, Deye',
+    excerpt: 'Pour un kit DIY : comparatif des 5 micro-onduleurs les plus vendus. Prix, MPPT, monitoring, garantie, verdict par budget.',
+    type: 'comparatif',
+    badge: 'Nouveau',
+    tags: ['comparatif', 'diy', 'best'],
+    publishedAt: '2026-10-16',
+    readTime: '11 min',
+  },
+  {
     slug: '/comparatif/kit-solaire-balcon-vs-toiture',
     title: 'Kit solaire balcon vs toiture : quelle différence de rentabilité ?',
     excerpt: 'Plug-and-play (ROI 4–7 ans, 300–750€) vs toiture (ROI 7–12 ans, 6 750–14 000€). Tableau complet, quand choisir quoi.',
     type: 'comparatif',
-    badge: 'Nouveau',
+    badge: 'DIY vs toiture',
     tags: ['comparatif', 'best'],
     publishedAt: '2026-08-14',
     readTime: '10 min',

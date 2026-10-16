@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog`, lastModified: '2026-09-27', changeFrequency: 'daily', priority: 0.7 },
 
     // Comparatifs
+    { url: `${BASE_URL}/comparatif/meilleur-micro-onduleur-2026`, lastModified: '2026-10-16', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/comparatif/kit-solaire-balcon-vs-toiture`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-2026`, lastModified: '2026-10-15', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comparatif/sunology-vs-beem`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
