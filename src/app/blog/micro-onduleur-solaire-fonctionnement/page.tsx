@@ -597,6 +597,10 @@ export default function MicroOnduleurPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
+                <Link href="/comparatif/meilleur-micro-onduleur-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur micro-onduleur 2026&nbsp;: comparatif prix et choix</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Hoymiles, APsystems, Enphase, Deye&nbsp;: lequel acheter pour un kit DIY</p>
+                </Link>
                 <Link href="/avis/hoymiles-hms-800w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Hoymiles HMS-800W-2T&nbsp;: avis complet du micro-onduleur DIY</h3>
                   <p className="text-xs text-charcoal-light mt-1">Analyse ind&eacute;pendante, specs et ROI d&apos;un kit DIY avec le HMS-800W-2T</p>

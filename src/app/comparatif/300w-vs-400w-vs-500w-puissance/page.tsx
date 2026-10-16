@@ -241,6 +241,10 @@ export default function PuissanceComparatif() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunethic F500</h4>
                   <p className="text-xs text-charcoal-light mt-1">Made in France, 500W bifacial</p>
                 </Link>
+                <Link href="/comparatif/meilleur-micro-onduleur-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur micro-onduleur 2026</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Hoymiles, APsystems, Enphase, Deye : lequel choisir pour un kit DIY</p>
+                </Link>
               </div>
             </section>
 

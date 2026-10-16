@@ -405,10 +405,10 @@ export default function HoymilesHMS800WAvisPage() {
                     desc: 'Guide pas-&agrave;-pas pour les montages DIY et kits plug-and-play.',
                   },
                   {
-                    href: '/avis/ecoflow-powerstream',
-                    label: 'Avis',
-                    title: 'EcoFlow PowerStream (arr&ecirc;t&eacute;)&nbsp;: l&rsquo;alternative syst&egrave;me avec batterie',
-                    desc: 'Le micro-onduleur intelligent EcoFlow avec gestion de batterie, plus vendu par EcoFlow France depuis 2026.',
+                    href: '/comparatif/meilleur-micro-onduleur-2026',
+                    label: 'Comparatif',
+                    title: 'Meilleur micro-onduleur 2026&nbsp;: Hoymiles, APsystems, Enphase, Deye',
+                    desc: 'Prix, MPPT, garantie&nbsp;: le comparatif complet pour choisir son onduleur DIY.',
                   },
                   {
                     href: '/comparatif/meilleur-kit-solaire-2026',
