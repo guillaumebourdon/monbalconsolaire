@@ -55,9 +55,10 @@ Compatibilités Zendure / EcoFlow / Anker / Sunology, installation au tableau (�
 ### Jeudi 15/10 — MISE À JOUR
 **Rafraîchir : comparatif meilleur-kit-solaire-2026** — prix, nouveaux produits (Sunology GO, PLAY 500 W), cohérence ROI avec pricing.ts, signal fraîcheur « mis à jour octobre 2026 ».
 
-### Vendredi 16/10 — NOUVEL ARTICLE — COMPARATIF
+### Vendredi 16/10 — NOUVEL ARTICLE — COMPARATIF — [x] publié
 **Meilleur micro-onduleur 2026 : Hoymiles vs APsystems vs Enphase vs Deye** — slug `meilleur-micro-onduleur-2026`
 S'appuyer sur blog/micro-onduleur-solaire-fonctionnement (ne pas dupliquer : angle achat), liens Amazon vérifiés.
+**16/10 — note affiliation :** egress réseau vers amazon.fr et les revendeurs (Wattuneed, 123Elec…) bloqué dans cet environnement (même blocage que le 02/10 et le 06/10) — impossible de valider un nouvel ASIN par curl. L'article réutilise donc uniquement le lien Amazon Hoymiles HMS-800W-2T (`B0CJGL65DS`) déjà vérifié et publié dans avis/hoymiles-hms-800w ; aucun nouvel ASIN non vérifié n'a été ajouté. APsystems/Enphase/Deye sont couverts sans lien affilié (prix sourcés par recherche web, non Amazon).
 
 ## Semaine 43 — 20-23 oct.
 
