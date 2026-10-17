@@ -8,9 +8,9 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 // Regénérée toutes les 6 h : les offres datées basculent seules en « Terminée ».
 export const revalidate = 21600;
 
-const VERIFIED = '27/09/2026';
+const VERIFIED = '17/10/2026';
 const SUNOLOGY_PLAY_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
-const SUNOLOGY_PROMO_END = '2026-09-30';
+const SUNOLOGY_PROMO_END = '2026-10-31';
 
 // Date du jour à Paris au format YYYY-MM-DD (comparable lexicographiquement)
 function todayParis(): string {
@@ -24,9 +24,11 @@ function isOver(endsAt?: string): boolean {
 export function generateMetadata(): Metadata {
   const promo = !isOver(SUNOLOGY_PROMO_END);
   return {
-    title: 'Code promo Sunology, Beem, Sunethic : offres vérifiées 2026',
+    title: promo
+      ? 'Code promo Sunology : -11 à -13 % jusqu’au 31/10 (sans code)'
+      : 'Code promo Sunology, Beem, Sunethic : offres vérifiées 2026',
     description: promo
-      ? 'Code promo Sunology : -12% sur tout jusqu’au 30/09 et parrainage -7%. Offres Beem, Sunethic, EcoFlow, Zendure vérifiées sur les sites officiels.'
+      ? 'Sunology : bonus -11 % dès le 1er euro, jusqu’à -13 %, jusqu’au 31/10. Parrainage -7 %, codes SUN_ décryptés. Beem, EcoFlow, Zendure vérifiés le 17/10.'
       : 'Code promo Sunology : parrainage S-Club -7% et opérations saisonnières. Offres Beem, Sunethic, EcoFlow, Zendure vérifiées sur les sites officiels.',
     alternates: {
       canonical: 'https://monbalconsolaire.fr/codes-promo',
@@ -38,7 +40,7 @@ const faqData = (sunologyPromo: boolean) => [
   {
     question: 'Existe-t-il un code réduction Sunology ?',
     answer:
-      `Sunology ne publie pas de code promo public permanent. Deux leviers officiels existent : les opérations saisonnières affichées directement sur le site (${sunologyPromo ? 'par exemple -12% sur tout jusqu’au 30 septembre 2026, appliqué automatiquement' : 'comme le -12% sur tout de septembre 2026, appliqué automatiquement'}) et le parrainage S-Club, qui donne 7% de remise sur la première commande. Les codes du type SUN_PRENOM que l’on voit sur les sites de coupons sont des codes de parrainage de particuliers.`,
+      `Sunology ne publie pas de code promo public permanent. Deux leviers officiels existent : les opérations saisonnières affichées directement sur le site (${sunologyPromo ? 'par exemple le bonus Anti-Augmentation d’octobre 2026, -11 % dès le premier euro et jusqu’à -13 %, sans code' : 'comme le bonus Anti-Augmentation d’octobre 2026, -11 % à -13 % sans code'}) et le parrainage S-Club, qui donne 7% de remise sur la première commande. Les codes du type SUN_PRENOM que l’on voit sur les sites de coupons sont des codes de parrainage de particuliers.`,
   },
   {
     question: 'Comment fonctionne le parrainage Sunology ?',
@@ -58,12 +60,12 @@ const faqData = (sunologyPromo: boolean) => [
   {
     question: 'Existe-t-il un code promo Beem Energy pour les kits plug-and-play ?',
     answer:
-      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 27/09/2026. Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
+      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 17/10/2026. Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
   },
   {
     question: 'Existe-t-il un code promo Sunethic ?',
     answer:
-      'Sunethic ne publie pas de code public officiel. En septembre 2026, la marque affichait sur son site des remises de 50 à 150 € sur les kits à panneaux SunPower (jusqu’au 21/09, terminée), la livraison offerte et le dossier mairie offert sur les kits 6 panneaux.',
+      'Sunethic ne publie pas de code public officiel. En octobre 2026, la marque met en avant des prix bas sur ses kits à panneaux français Voltec Solar et des promotions sur les batteries plug-and-play Anker et Zendure, sans montant de remise chiffré. La livraison est offerte, et le dossier mairie à partir des kits 6 panneaux.',
   },
 ];
 
@@ -104,12 +106,12 @@ function OfferCard({ o: raw }: { o: Offer }) {
 
 const sunologyOffers: Offer[] = [
   {
-    label: 'La rentrée Sunology : -12% sur tout',
+    label: 'Bonus Anti-Augmentation : -11 % à -13 %',
     detail:
-      'Remise appliquée automatiquement, sans code, jusqu’au 30 septembre 2026. Le PLAY passe de 599 € à 527 €. Expédition premium gratuite, paiement en 12x sans frais.',
+      'Sans code, jusqu’au 31 octobre 2026 : -11 % dès le premier euro, et jusqu’à -13 % quand le panier augmente (« plus vous vous équipez, moins c’est cher »), sans plafond. Le bonus s’active depuis le bandeau du site. Un PLAY seul à 599 € revient à environ 533 €.',
     status: 'active',
     endsAt: SUNOLOGY_PROMO_END,
-    source: 'sunology.eu (fiche PLAY)',
+    source: 'sunology.eu (bandeau du site)',
     sourceUrl: SUNOLOGY_PLAY_URL,
   },
   {
@@ -130,9 +132,9 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
       'Pas de code promo public officiel chez Sunethic. Les remises passent par des opérations affichées sur la page d’accueil. Les codes type « WELCOME » ou codes d’influenceurs relayés par les sites de coupons ne sont pas confirmés par la marque.',
     offers: [
       {
-        label: 'Remises 50 à 150 € sur les kits SunPower',
-        detail: 'Opération affichée sur le site jusqu’au 21/09/2026 : terminée à la date de vérification.',
-        status: 'expired',
+        label: 'Prix bas sur les kits Voltec Solar et les batteries Anker / Zendure',
+        detail: 'Mis en avant sur la page d’accueil au 17/10/2026, sans montant de remise chiffré ni code. L’opération SunPower de septembre (50 à 150 €) est terminée.',
+        status: 'active',
         source: 'sunethic.fr',
         sourceUrl: 'https://sunethic.fr/',
       },
@@ -151,11 +153,11 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     id: 'beem',
     brand: 'Beem Energy',
     intro:
-      'Aucun code officiel pour les kits plug-and-play au 27/09/2026. Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
+      'Aucun code officiel pour les kits plug-and-play au 17/10/2026. Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
     offers: [
       {
-        label: 'Jusqu’à -25% sur les projets avec Beem Battery',
-        detail: 'Ne concerne pas les kits balcon seuls. Le Beem Kit reste affiché à partir de 299 € et le Beem On 460W à partir de 429 €.',
+        label: 'Prime Beem : jusqu’à 1 000 € de remise',
+        detail: 'Affichée sur le site pour les projets toiture (Beem Roof) et batterie, avec la borne de recharge offerte pour un projet toiture + batterie. Ne concerne pas les kits balcon seuls. Le panier accepte un code promo, mais Beem n’en publie aucun pour les kits.',
         status: 'active',
         source: 'beemenergy.fr',
         sourceUrl: 'https://beemenergy.fr/',
@@ -176,10 +178,17 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     intro: 'Pas de code public officiel. EcoFlow fonctionne par grosses opérations saisonnières affichées sur le site, avec des points EcoCredits pour les membres.',
     offers: [
       {
-        label: 'Autumn Sale gamme STREAM : jusqu’à -57%',
-        detail: 'Du 14 septembre au 7 octobre 2026. Le PowerStream n’est plus vendu sur la boutique officielle : EcoFlow y propose désormais la gamme STREAM.',
+        label: 'Opération d’automne : jusqu’à -40 %',
+        detail: 'Du 10 au 18 octobre 2026, avec des offres flash jusqu’à -57 % sur la gamme STREAM. Le PowerStream n’est plus vendu sur la boutique officielle : EcoFlow y propose désormais la gamme STREAM.',
         status: 'active',
-        endsAt: '2026-10-07',
+        endsAt: '2026-10-18',
+        source: 'fr.ecoflow.com',
+        sourceUrl: 'https://fr.ecoflow.com/',
+      },
+      {
+        label: 'Parrainage EcoFlow : -10 % pour le filleul',
+        detail: 'Un membre de la communauté EcoFlow peut inviter un ami, qui reçoit 10 % de réduction (le parrain touche 5 % de commission).',
+        status: 'active',
         source: 'fr.ecoflow.com',
         sourceUrl: 'https://fr.ecoflow.com/',
       },
@@ -192,8 +201,8 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     intro: 'Pas de code public officiel. Les baisses de prix sont directement affichées, avec une garantie de prix de 30 jours.',
     offers: [
       {
-        label: 'Autumn Deals : jusqu’à -43%',
-        detail: 'Exemples affichés : SolarFlow 2400 AC+ à 839 € (au lieu de 1 279 €), SolarFlow 1600 AC+ à 959 € (au lieu de 1 678 €). Date de fin non indiquée.',
+        label: 'Baisses de prix affichées',
+        detail: 'Remises affichées directement sur les fiches produits, par exemple -560 € sur le SolarFlow 2400 Pro au 17/10/2026. Livraison offerte. Date de fin non indiquée.',
         status: 'active',
         source: 'zendure.fr',
         sourceUrl: 'https://zendure.fr/',
@@ -218,7 +227,7 @@ export default function CodesPromoPage() {
           Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
         </p>
         <div className="card bg-cream/50 text-sm text-charcoal-light leading-relaxed mb-8">
-          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyPromo ? <>Sunology fait -12% sur tout jusqu&apos;au 30/09 (sans code) et propose -7% via son parrainage S-Club.</> : <>L&apos;op&eacute;ration Sunology -12% est termin&eacute;e (30/09) ; reste le parrainage S-Club &agrave; -7%.</>} Beem, Sunethic, EcoFlow et Zendure n&apos;ont pas de code public officiel : leurs remises sont affich&eacute;es directement sur leur site.
+          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyPromo ? <>Sunology fait -11 % d&egrave;s le premier euro, jusqu&apos;&agrave; -13 %, jusqu&apos;au 31/10 (bonus Anti-Augmentation, sans code), et propose -7 % via son parrainage S-Club.</> : <>Le bonus Sunology d&apos;octobre (-11 % &agrave; -13 %) est termin&eacute; (31/10) ; reste le parrainage S-Club &agrave; -7 %.</>} Beem, Sunethic, EcoFlow et Zendure n&apos;ont pas de code public officiel : leurs remises sont affich&eacute;es directement sur leur site.
         </div>
 
         <nav className="flex flex-wrap gap-2 text-sm mb-10" aria-label="Sommaire">
@@ -253,13 +262,13 @@ export default function CodesPromoPage() {
             <h3 className="text-xl font-bold mb-3">Code promo Sunology PLAY (ex-PLAY 2)</h3>
             <p className="text-charcoal-light leading-relaxed mb-4">
               {sunologyPromo ? (
-                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>527 &euro; au lieu de 599 &euro;</strong> jusqu&apos;au 30 septembre 2026 gr&acirc;ce &agrave; l&apos;op&eacute;ration -12%.</>
+                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) co&ucirc;te 599 &euro;, soit <strong>environ 533 &euro;</strong> avec le bonus Anti-Augmentation (-11 % d&egrave;s le premier euro) jusqu&apos;au 31 octobre 2026.</>
               ) : (
-                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>599 &euro;</strong> ; l&apos;op&eacute;ration -12% s&apos;est termin&eacute;e le 30 septembre 2026.</>
+                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>599 &euro;</strong> ; le bonus Anti-Augmentation s&apos;est termin&eacute; le 31 octobre 2026.</>
               )}{' '}Il n&apos;existe pas de code sp&eacute;cifique au PLAY. Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;. Notre analyse compl&egrave;te :{' '}
               <Link href="/avis/sunology-play-2" className="text-green font-semibold hover:underline">avis Sunology PLAY (ex-PLAY 2)</Link>.
             </p>
-            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyPromo ? 'Voir le PLAY 500 W à -12% sur Sunology' : 'Voir le prix du PLAY 500 W sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyPromo ? '527 €' : '599 €'} />
+            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyPromo ? 'Voir le PLAY 500 W avec le bonus -11 % sur Sunology' : 'Voir le prix du PLAY 500 W sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyPromo ? '≈ 533 €' : '599 €'} />
 
             <h3 className="text-xl font-bold mt-8 mb-3">Sunology et le Black Friday</h3>
             <p className="text-charcoal-light leading-relaxed">
@@ -353,7 +362,7 @@ export default function CodesPromoPage() {
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone">
-            Offres v&eacute;rifi&eacute;es le 27 septembre 2026 &middot; <Link href="/a-propos" className="text-green hover:underline">&Agrave; propos</Link> &middot; <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>
+            Offres v&eacute;rifi&eacute;es le 17 octobre 2026 &middot; <Link href="/a-propos" className="text-green hover:underline">&Agrave; propos</Link> &middot; <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>
           </p>
         </div>
       </div>

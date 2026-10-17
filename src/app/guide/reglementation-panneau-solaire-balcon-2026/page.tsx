@@ -6,8 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 
 export const metadata: Metadata = {
-  title: 'Panneau solaire balcon 2026 : faut-il le déclarer ?',
-  description: 'Faut-il déclarer son kit solaire de balcon en 2026 ? CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété : la réponse claire et à jour.',
+  title: 'Réglementation panneau solaire balcon : faut-il déclarer ?',
+  description: 'Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026',
   },
@@ -25,7 +25,7 @@ const faqData = [
 export default function ReglementationPage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon 2026 : faut-il le déclarer ?" description="Faut-il déclarer son kit solaire de balcon en 2026 ? CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété : la réponse claire et à jour." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-10-13" />
+      <SchemaArticle title="Réglementation panneau solaire balcon : faut-il déclarer ?" description="Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-10-13" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />
       <article className="section-padding">

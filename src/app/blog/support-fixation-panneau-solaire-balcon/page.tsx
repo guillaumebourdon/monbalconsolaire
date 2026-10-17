@@ -14,6 +14,8 @@ import {
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/support-fixation-panneau-solaire-balcon';
 const AMAZON_TAG = 'monbalconsola-21';
 const amazon = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_TAG}`;
+// Fiche VEVOR 114 cm retirée d'Amazon (404 au 17/10/2026) : lien de recherche tagué
+const VEVOR_SEARCH = `https://www.amazon.fr/s?k=VEVOR+support+panneau+solaire+114+cm+inclinable&tag=${AMAZON_TAG}`;
 
 export const metadata: Metadata = {
   title: 'Support panneau solaire balcon : fixation, sélection 2026',
@@ -85,6 +87,7 @@ const faqData = [
 type Produit = {
   nom: string;
   asin: string;
+  url?: string;
   type: string;
   prix: string;
   angle: string;
@@ -193,7 +196,8 @@ const produits: Produit[] = [
   },
   {
     nom: 'VEVOR support inclinable 114 cm (0-90°)',
-    asin: 'B0DK97Z37B',
+    asin: 'vevor-114-recherche',
+    url: VEVOR_SEARCH,
     type: 'Support sol / mur inclinable',
     prix: '80-90 €',
     angle: 'Réglable 0 à 90°',
@@ -372,7 +376,7 @@ export default function SupportFixationPanneauPage() {
                       </div>
                     </div>
                     <a
-                      href={amazon(p.asin)}
+                      href={p.url ?? amazon(p.asin)}
                       target="_blank"
                       rel="sponsored noopener"
                       className="btn-affiliate inline-flex text-sm"
@@ -505,7 +509,7 @@ export default function SupportFixationPanneauPage() {
             <AffiliateCTA
               productName="VEVOR support inclinable 114 cm"
               merchantName="Amazon"
-              affiliateUrl={amazon('B0DK97Z37B')}
+              affiliateUrl={VEVOR_SEARCH}
               label="Voir le support au sol VEVOR 0-90° sur Amazon"
               variant="inline"
               position="after-installation"
