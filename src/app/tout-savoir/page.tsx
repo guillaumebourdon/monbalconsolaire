@@ -243,8 +243,8 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/blog/micro-onduleur-solaire-fonctionnement',
-    title: 'Micro-onduleur solaire : fonctionnement et comparatif 2026',
-    excerpt: 'Définition, comparatif de 7 modèles (Hoymiles, APsystems, Enphase, Deye, EcoFlow), dimensionnement, hors réseau, normes et pannes.',
+    title: 'Micro-onduleur solaire : rôle, choix, puissance (2026)',
+    excerpt: 'Rôle, puissance et compatibilité avec vos panneaux, hors réseau, normes et pannes. 7 modèles (Hoymiles, APsystems, Enphase, Deye, EcoFlow).',
     type: 'analyse',
     badge: 'Guide technique',
     tags: ['optimisation', 'debutant'],

@@ -101,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/prises-connectees-suivi-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/kit-solaire-pluie-grele`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/entretien-nettoyage-panneau-solaire-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/micro-onduleur-solaire-fonctionnement`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/blog/micro-onduleur-solaire-fonctionnement`, lastModified: '2026-10-20', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/production-solaire-ete-vs-hiver`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/consommation-veille-kit-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/combien-panneaux-solaires-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },

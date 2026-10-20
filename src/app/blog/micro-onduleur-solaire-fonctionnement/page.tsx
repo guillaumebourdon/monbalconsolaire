@@ -6,9 +6,9 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 
-const PAGE_TITLE = 'Micro-onduleur solaire : fonctionnement et comparatif 2026';
+const PAGE_TITLE = 'Micro-onduleur solaire : rôle, choix, puissance (2026)';
 const PAGE_DESCRIPTION =
-  'Micro-onduleur solaire : définition, fonctionnement, comparatif Hoymiles, APsystems, Enphase, Deye, EcoFlow, dimensionnement, normes et pannes.';
+  'Micro-onduleur solaire : rôle, choix, puissance et compatibilité avec vos panneaux. Guide complet 2026, avec le comparatif des prix.';
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/micro-onduleur-solaire-fonctionnement';
 
 export const metadata: Metadata = {
@@ -34,6 +34,11 @@ const faqData = [
     question: 'Quel micro-onduleur pour un panneau de 400 W ?',
     answer:
       'Un micro-onduleur mono-entrée de 350 à 450 VA suffit : un ratio panneau/onduleur de 1,0 à 1,25 est normal, car un panneau atteint rarement sa puissance crête, encore moins posé verticalement sur un garde-corps. Vérifiez surtout la compatibilité électrique : tension de circuit ouvert (Voc) du panneau inférieure à la tension DC max de l\'onduleur (souvent 60 V) et courant du panneau dans la plage d\'entrée.',
+  },
+  {
+    question: 'Comment savoir si un micro-onduleur est compatible avec mes panneaux ?',
+    answer:
+      'Trois points à vérifier avant d\'acheter : la tension de circuit ouvert (Voc) du panneau doit rester sous la tension DC max de l\'onduleur, même par grand froid (où le Voc augmente) ; le courant de court-circuit (Isc) du panneau doit tenir dans la plage d\'entrée par MPPT (13 à 16 A selon les modèles) ; et le connecteur doit être du MC4 standard, utilisé par la quasi-totalité des panneaux et micro-onduleurs vendus en France. Un ratio puissance panneau / puissance onduleur de 1,0 à 1,3 est la norme : voir la section dimensionnement plus bas.',
   },
   {
     question: 'Un micro-onduleur peut-il fonctionner hors réseau ?',
@@ -86,7 +91,7 @@ const models: Model[] = [
     rendement: '97,3 % (max)',
     com: 'Wi-Fi + Bluetooth',
     garantie: '12 ans',
-    prix: '~200-300 €',
+    prix: '~189 € (fin de série)',
     pourQui: 'Monitoring local sans cloud (Bluetooth)',
   },
   {
@@ -165,7 +170,7 @@ export default function MicroOnduleurPage() {
         description={PAGE_DESCRIPTION}
         url={PAGE_URL}
         datePublished="2026-06-06"
-        dateModified="2026-09-27"
+        dateModified="2026-10-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Micro-onduleur solaire' }]} />
@@ -176,18 +181,24 @@ export default function MicroOnduleurPage() {
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Guide technique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
-              Micro-onduleur solaire&nbsp;: fonctionnement, choix et comparatif 2026
+              Micro-onduleur solaire&nbsp;: r&ocirc;le, choix, puissance et compatibilit&eacute;
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Tous les kits solaires de balcon reposent sur un micro-onduleur. C&apos;est lui qui rend le branchement sur prise possible, qui d&eacute;cide de ce que vous r&eacute;cup&eacute;rez r&eacute;ellement de vos panneaux et qui coupe l&apos;injection en cas de panne r&eacute;seau. Voici comment il fonctionne, comment le dimensionner, et quel mod&egrave;le choisir parmi les 7 r&eacute;f&eacute;rences les plus courantes en France.
+              Tous les kits solaires de balcon reposent sur un micro-onduleur. C&apos;est lui qui rend le branchement sur prise possible, qui d&eacute;cide de ce que vous r&eacute;cup&eacute;rez r&eacute;ellement de vos panneaux et qui coupe l&apos;injection en cas de panne r&eacute;seau. Voici son r&ocirc;le exact, comment choisir la bonne puissance, v&eacute;rifier la compatibilit&eacute; avec vos panneaux, et quel mod&egrave;le prendre parmi les 7 r&eacute;f&eacute;rences les plus courantes en France.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap">
               <span>Publi&eacute; le 6 juin 2026</span>
               <span>&middot;</span>
-              <span>Mis &agrave; jour le 27 septembre 2026</span>
+              <span>Mis &agrave; jour le 20 octobre 2026</span>
               <span>&middot;</span>
               <span>14 min de lecture</span>
             </div>
+          </div>
+
+          <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
+            <p className="text-sm text-charcoal-light leading-relaxed">
+              <strong>Vous savez d&eacute;j&agrave; ce qu&apos;est un micro-onduleur et voulez juste savoir lequel acheter et &agrave; quel prix&nbsp;?</strong> Allez directement &agrave; notre <Link href="/comparatif/meilleur-micro-onduleur-2026" className="text-green hover:underline font-semibold">comparatif prix 2026 Hoymiles vs APsystems vs Enphase vs Deye</Link>. Cette page-ci explique le r&ocirc;le du micro-onduleur, comment choisir sa puissance et v&eacute;rifier la compatibilit&eacute; avec vos panneaux.
+            </p>
           </div>
 
           {/* Définition — format extrait optimisé */}
@@ -212,7 +223,7 @@ export default function MicroOnduleurPage() {
           <div className="space-y-12">
             {/* Fonctionnement */}
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Comment fonctionne un micro-onduleur&nbsp;?</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Quel est le r&ocirc;le d&apos;un micro-onduleur et comment fonctionne-t-il&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Un panneau solaire produit du <strong>courant continu (DC)</strong> dont la tension varie avec la lumi&egrave;re et la temp&eacute;rature (typiquement 30-45&nbsp;V en fonctionnement pour un panneau de 400-500&nbsp;Wc). Votre logement fonctionne en <strong>courant alternatif (AC) 230&nbsp;V</strong>. Le micro-onduleur fait le pont, en quatre &eacute;tapes&nbsp;:
               </p>
@@ -280,7 +291,7 @@ export default function MicroOnduleurPage() {
 
             {/* Dimensionnement */}
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Dimensionner son micro-onduleur par rapport au panneau</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Quelle puissance de micro-onduleur choisir selon vos panneaux&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Erreur fr&eacute;quente&nbsp;: croire qu&apos;un panneau de 500&nbsp;Wc exige un onduleur de 500&nbsp;W. Un panneau n&apos;atteint sa puissance cr&ecirc;te que dans les conditions de laboratoire (1&nbsp;000&nbsp;W/m&sup2;, cellules &agrave; 25&nbsp;&deg;C). Sur un balcon, avec un panneau vertical ou peu inclin&eacute; et des cellules chaudes, il n&apos;y arrive quasiment jamais.
               </p>
@@ -351,7 +362,7 @@ export default function MicroOnduleurPage() {
                 </table>
               </div>
               <p className="text-xs text-stone leading-relaxed">
-                * Garanties divergentes selon les sources&nbsp;: Hoymiles annonce 12 ans de s&eacute;rie (extensible &agrave; 25 ans) sur sa gamme, mais certains revendeurs affichent 10 ans pour le HMS-800W-2T&nbsp;; Deye est annonc&eacute; entre 10 et 15 ans selon les revendeurs&nbsp;; l&apos;EcoFlow PowerStream est garanti 10 ans par EcoFlow (page produit officielle), les 2 ans affich&eacute;s par certains revendeurs correspondant &agrave; la garantie l&eacute;gale&nbsp;; il n&apos;est toutefois plus vendu par EcoFlow France depuis 2026 (remplac&eacute; au catalogue par la gamme STREAM). ** Garantie Enphase 25 ans conditionn&eacute;e &agrave; une passerelle IQ Gateway connect&eacute;e &agrave; Internet (vendue en plus). Prix constat&eacute;s chez des revendeurs fran&ccedil;ais, tr&egrave;s variables selon les promotions&nbsp;: le HMS-800W-2T a par exemple &eacute;t&eacute; vu &agrave; 99&nbsp;&euro; en promotion. Prix du Deye non v&eacute;rifi&eacute; &agrave; la date de mise &agrave; jour.
+                * Garanties divergentes selon les sources&nbsp;: Hoymiles annonce 12 ans de s&eacute;rie (extensible &agrave; 25 ans) sur sa gamme, mais certains revendeurs affichent 10 ans pour le HMS-800W-2T&nbsp;; Deye est annonc&eacute; entre 10 et 15 ans selon les revendeurs&nbsp;; l&apos;EcoFlow PowerStream est garanti 10 ans par EcoFlow (page produit officielle), les 2 ans affich&eacute;s par certains revendeurs correspondant &agrave; la garantie l&eacute;gale&nbsp;; il n&apos;est toutefois plus vendu par EcoFlow France depuis 2026 (remplac&eacute; au catalogue par la gamme STREAM). ** Garantie Enphase 25 ans conditionn&eacute;e &agrave; une passerelle IQ Gateway connect&eacute;e &agrave; Internet (vendue en plus). Prix constat&eacute;s chez des revendeurs fran&ccedil;ais, tr&egrave;s variables selon les promotions&nbsp;: le HMS-800W-2T a par exemple &eacute;t&eacute; vu &agrave; 99&nbsp;&euro; en promotion&nbsp;; l&apos;APsystems EZ1-M &eacute;tait signal&eacute; en fin de commercialisation chez un revendeur fran&ccedil;ais en octobre 2026 (v&eacute;rifiez le stock, ou pr&eacute;f&eacute;rez l&apos;EZ1-H). Prix du Deye non v&eacute;rifi&eacute; &agrave; la date de mise &agrave; jour. D&eacute;tail des prix et disponibilit&eacute; actualis&eacute;&nbsp;: <Link href="/comparatif/meilleur-micro-onduleur-2026" className="text-green hover:underline">notre comparatif 2026</Link>.
               </p>
 
               <div className="grid md:grid-cols-2 gap-4 mt-6">
