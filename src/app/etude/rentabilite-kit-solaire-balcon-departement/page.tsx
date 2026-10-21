@@ -130,6 +130,8 @@ const villes = GRANDES_VILLES.map((v) => ({ ...v, d: byCode.get(v.code)! })).sor
 
 const CITATION_COURTE = `Source : MonBalconSolaire.fr, carte de la rentabilité d’un kit solaire de balcon par département (2026) — ${URL}`;
 const CITATION_HTML = `<a href="${URL}">Carte de la rentabilité d’un kit solaire de balcon par département</a> (MonBalconSolaire.fr, 2026, CC BY 4.0)`;
+const EMBED_HTML = `<iframe src="https://monbalconsolaire.fr/embed/carte-rentabilite" title="Rentabilité d’un kit solaire de balcon par département" width="100%" height="720" style="border:0;max-width:760px" loading="lazy"></iframe>
+<p>Source : ${CITATION_HTML}</p>`;
 
 const CHIFFRES_PRESSE = [
   `Un kit solaire de balcon de ${REFERENCE_KIT.powerWc} Wc vendu ${REFERENCE_KIT.priceEur} € est rentabilisé en ${yrs(stats.medianRoi)} ans dans le département médian de France métropolitaine (orientation sud, sans ombrage).`,
@@ -628,6 +630,17 @@ export default function CarteRentabilitePage() {
 
               <CopyText label="Citation" text={CITATION_COURTE} trackingLabel="citation-courte" />
               <CopyText label="Lien HTML" text={CITATION_HTML} trackingLabel="citation-html" />
+
+              <h3 className="font-bold text-lg mt-6 mb-2">Int&eacute;grer la carte sur votre site</h3>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+                Coop&eacute;ratives, collectivit&eacute;s, blogs : collez ce code dans une page de votre site pour afficher la carte interactive (s&eacute;lection du
+                d&eacute;partement, chiffres au survol), avec la mention de la source.{' '}
+                <a href="/embed/carte-rentabilite" className="text-green hover:underline font-semibold" target="_blank" rel="noopener">
+                  Voir l&apos;aper&ccedil;u
+                </a>
+                .
+              </p>
+              <CopyText label="Code d&apos;int&eacute;gration" text={EMBED_HTML} trackingLabel="embed-carte" />
 
               <h3 className="font-bold text-lg mt-6 mb-3">Chiffres cl&eacute;s pour la presse</h3>
               <ul className="space-y-2 mb-5">
