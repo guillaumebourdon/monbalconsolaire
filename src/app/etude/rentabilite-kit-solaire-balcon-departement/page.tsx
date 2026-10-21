@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb, SchemaDataset } from '@/components/SchemaMarkup';
-import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { FranceRentabiliteMap } from '@/components/etude/FranceRentabiliteMap';
@@ -36,7 +35,6 @@ const PUBLISHED = '2026-10-12';
 const UPDATED = '2026-10-12';
 const UPDATED_LABEL = '12 octobre 2026';
 const PAGE_TITLE = 'Carte de la rentabilité d’un kit solaire de balcon par département (2026)';
-const SUNOLOGY_PLAY_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
 
 export const metadata: Metadata = {
   title: 'Carte rentabilité kit solaire balcon par département 2026',
@@ -252,7 +250,7 @@ export default function CarteRentabilitePage() {
                 La carte : en combien d&apos;ann&eacute;es un kit {REFERENCE_KIT.powerWc}&nbsp;Wc est-il rentabilis&eacute; ?
               </h2>
               <p className="text-charcoal-light leading-relaxed mb-6">
-                Kit de r&eacute;f&eacute;rence : {REFERENCE_KIT.name}, {REFERENCE_KIT.powerWc}&nbsp;Wc, {REFERENCE_KIT.priceEur}&nbsp;&euro;, orient&eacute; plein sud, sans
+                Kit de r&eacute;f&eacute;rence : un kit plug-and-play de {REFERENCE_KIT.powerWc}&nbsp;Wc vendu {REFERENCE_KIT.priceEur}&nbsp;&euro;, orient&eacute; plein sud, sans
                 ombrage, {pct(AUTOCONSO_STANDARD)} de la production autoconsomm&eacute;e. Plus la couleur est fonc&eacute;e, plus le kit est rentabilis&eacute; vite.
               </p>
 
@@ -472,7 +470,7 @@ export default function CarteRentabilitePage() {
               </h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Cliquez sur un en-t&ecirc;te pour trier. La colonne &laquo;&nbsp;ROI {ALTERNATIVE_KIT.priceEur}&nbsp;&euro;&nbsp;&raquo; donne le r&eacute;sultat pour un kit de m&ecirc;me puissance
-                vendu {ALTERNATIVE_KIT.priceEur}&nbsp;&euro; (<Link href={ALTERNATIVE_KIT.href} className="text-green hover:underline">{ALTERNATIVE_KIT.name}</Link>) : le
+                vendu {ALTERNATIVE_KIT.priceEur}&nbsp;&euro; : le
                 prix d&apos;achat p&egrave;se autant que le climat. Gain net = &eacute;conomies cumul&eacute;es sur {ANALYSIS_DURATION_YEARS}&nbsp;ans moins le prix du kit ({REFERENCE_KIT.priceEur}&nbsp;&euro;).
               </p>
               <RentabiliteTable
@@ -559,8 +557,8 @@ export default function CarteRentabilitePage() {
                       {[
                         ['Ensoleillement', 'Productible moyen par département, sud, 30°', 'PVGIS 5.3 (Centre commun de recherche, Commission européenne)'],
                         ['Recalage', `Rhône (${PVGIS_RHONE} kWh/kWc PVGIS) = ${PVGIS_REFERENCE_LYON} kWh/kWc`, 'Référence prudente du site, Lyon'],
-                        ['Kit de référence', `${REFERENCE_KIT.name}, ${REFERENCE_KIT.powerWc} Wc, ${REFERENCE_KIT.priceEur} €`, 'Prix public constaté octobre 2026'],
-                        ['Kit alternatif', `${ALTERNATIVE_KIT.name}, ${ALTERNATIVE_KIT.powerWc} Wc, ${ALTERNATIVE_KIT.priceEur} €`, 'Prix public constaté octobre 2026'],
+                        ['Kit de référence', `Kit plug-and-play ${REFERENCE_KIT.powerWc} Wc, ${REFERENCE_KIT.priceEur} €`, 'Prix public courant d’un kit 500 Wc grand public, octobre 2026'],
+                        ['Kit alternatif', `Kit plug-and-play ${ALTERNATIVE_KIT.powerWc} Wc, ${ALTERNATIVE_KIT.priceEur} €`, 'Prix bas constaté pour la même puissance, octobre 2026'],
                         ['Performance ratio', String(PERFORMANCE_RATIO).replace('.', ','), 'Onduleur, câblage, température, salissure'],
                         ['Autoconsommation', pct(AUTOCONSO_STANDARD), 'Sans batterie, foyer présent en journée'],
                         ['Prix du kWh', KWH_PRICE_LABEL, KWH_PRICE_SOURCE],
@@ -671,26 +669,6 @@ export default function CarteRentabilitePage() {
               </p>
             </section>
 
-            {/* ─── Affilié (unique) ─── */}
-            <div className="card">
-              <p className="text-sm text-charcoal-light leading-relaxed">
-                Le kit de r&eacute;f&eacute;rence de cette &eacute;tude est le{' '}
-                <Link href={REFERENCE_KIT.href} className="text-green hover:underline font-semibold">
-                  {REFERENCE_KIT.name}
-                </Link>{' '}
-                ({REFERENCE_KIT.powerWc}&nbsp;Wc, {REFERENCE_KIT.priceEur}&nbsp;&euro;), retenu comme r&eacute;f&eacute;rence car c&apos;est un kit 500&nbsp;Wc grand public vendu au m&ecirc;me prix
-                partout en France, pas parce qu&apos;il serait le plus rentable.
-              </p>
-              <AffiliateCTA
-                productName={REFERENCE_KIT.name}
-                merchantName={REFERENCE_KIT.brand}
-                affiliateUrl={SUNOLOGY_PLAY_URL}
-                label="Voir le prix actuel du Sunology PLAY"
-                variant="secondary"
-                position="etude-reference"
-              />
-            </div>
-
             {/* ─── FAQ ─── */}
             <section aria-labelledby="faq">
               <h2 id="faq" className="text-2xl font-extrabold mb-6">
@@ -719,7 +697,7 @@ export default function CarteRentabilitePage() {
                   { href: '/blog/combien-rapporte-panneau-solaire-balcon', title: 'Combien rapporte vraiment un panneau solaire de balcon', sub: 'Les économies réelles, kit par kit' },
                   { href: '/guide/orientation-panneau-solaire-balcon', title: 'Orientation d’un panneau de balcon : sud, est, ouest', sub: 'Ce que vous perdez hors plein sud' },
                   { href: '/blog/panneau-solaire-balcon-nord', title: 'Panneau solaire de balcon au nord : est-ce rentable ?', sub: 'Le cas des balcons mal exposés' },
-                  { href: '/comparatif/sunology-play2-vs-beem-on-500w', title: 'Sunology PLAY vs Beem On 500 Wc', sub: `${REFERENCE_KIT.priceEur} € contre ${ALTERNATIVE_KIT.priceEur} € pour la même puissance` },
+                  { href: '/guide/declaration-cacsi-enedis-panneau-solaire', title: 'Déclarer son kit à Enedis (CACSI)', sub: 'La démarche gratuite et obligatoire, pas à pas' },
                 ].map((a) => (
                   <Link key={a.href} href={a.href} className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                     <h3 className="font-bold text-sm group-hover:text-green transition-colors">{a.title}</h3>
@@ -751,9 +729,9 @@ export default function CarteRentabilitePage() {
                 (version simplifi&eacute;e), Licence Ouverte / Open Licence Etalab ; projection conique conforme de Lambert et simplification par nos soins.
               </p>
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Transparence :</strong> MonBalconSolaire est un site ind&eacute;pendant. Certains liens sont affili&eacute;s : nous pouvons percevoir une
-                commission si vous achetez via ces liens, sans surco&ucirc;t pour vous. Cela n&apos;influence ni le classement ni les chiffres de cette &eacute;tude, qui
-                ne d&eacute;pendent que de l&apos;ensoleillement et des hypoth&egrave;ses publiques ci-dessus.
+                <strong>Transparence :</strong> cette &eacute;tude ne cite aucune marque et ne contient aucun lien commercial. MonBalconSolaire est un site
+                ind&eacute;pendant financ&eacute; par l&apos;affiliation sur ses pages d&apos;avis et de comparatifs. Les chiffres ci-dessus ne d&eacute;pendent que de
+                l&apos;ensoleillement, de la puissance et du prix du kit, et des hypoth&egrave;ses publiques ci-dessus.
               </p>
             </div>
           </div>
