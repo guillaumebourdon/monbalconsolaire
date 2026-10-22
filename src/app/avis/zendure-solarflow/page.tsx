@@ -474,7 +474,7 @@ export default function ZendureSolarflowPage() {
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est sous 500 € tout compris</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow seul coûte ~488 €, mais il faut ajouter les panneaux (~400 € pour 2 × 420 W). Budget total réaliste : 850-950 €. Si votre enveloppe est serrée, un Beem Kit 300W à 299 € ou un Sunology PLAY 2 à 599 € sont plus adaptés.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow seul coûte ~488 €, mais il faut ajouter les panneaux (~400 € pour 2 × 420 W). Budget total réaliste : 850-950 €. Si votre enveloppe est serrée, un Beem Kit 300W à 199 € (actuellement en rupture chez Beem) ou un Sunology PLAY 2 à 599 € sont plus adaptés.</p>
                 </div>
               </div>
             </section>

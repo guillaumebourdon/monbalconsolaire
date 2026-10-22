@@ -364,7 +364,7 @@ export default function PanneauSolaireOmbrePage() {
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h4 className="font-bold text-sm mb-1">2-4h de soleil direct/jour → Étudiez bien</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">La rentabilité est possible mais plus longue (7-10 ans). Privilégiez un kit petit budget (Beem Kit 300W à 299 €) pour limiter le risque.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">La rentabilité est possible mais plus longue (7-10 ans). Privilégiez un kit petit budget (Beem Kit 300W à 199 €, actuellement en rupture chez Beem) pour limiter le risque.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber-dark">
                   <h4 className="font-bold text-sm mb-1">Moins de 2h de soleil direct/jour → Déconseillé</h4>

@@ -310,7 +310,7 @@ export default function TalonConsommationPage() {
                   <ul className="text-xs text-charcoal-light space-y-1.5">
                     <li>&bull; Vous couvrez le talon <strong>de jour uniquement</strong> (~10-14h)</li>
                     <li>&bull; Taux d&apos;autoconsommation : 40-50 %</li>
-                    <li>&bull; Budget : 299-599 € (1 kit)</li>
+                    <li>&bull; Budget : 199-599 € (1 kit)</li>
                     <li>&bull; ROI : 6-8 ans</li>
                     <li>&bull; <strong>Suffisant pour la plupart des foyers</strong></li>
                   </ul>

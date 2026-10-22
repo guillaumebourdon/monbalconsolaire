@@ -226,7 +226,7 @@ export default function BeemOn500WcAvisPage() {
                       ['Sunology PLAY (ex-PLAY 2)', '500 Wc', '599 €', '1,20 €', '8.5/10', false],
                       ['Sunethic F500', '500 Wc', '690 €', '1,38 €', '7.5/10', false],
                       ['EcoFlow PowerStream (arr\u00eat\u00e9)', '400 Wc', '599 €', '1,50 €', '8/10', false],
-                      ['Beem Kit 300W', '300 Wc', '299 €', '1,00 €', '7.5/10', false],
+                      ['Beem Kit 300W (rupture)', '300 Wc', '199 €', '0,66 €', '7.5/10', false],
                       ['Beem On 460W (extension seule)', '460 Wc', '429 €', '0,93 €', '8/10', false],
                     ].map(([name, power, price, ratio, score, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>

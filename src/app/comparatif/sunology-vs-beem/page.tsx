@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Sunology ou Beem : lequel est le moins cher ?', answer: 'Beem a pris l\'avantage en 2026 : le Beem On 500 Wc est \u00e0 429\u20ac contre 599\u20ac pour le Sunology PLAY (500 Wc, ex-PLAY 2). C\'est 170\u20ac de moins \u00e0 puissance \u00e9gale. Beem propose aussi le Kit 300W \u00e0 299\u20ac.' },
+  { question: 'Sunology ou Beem : lequel est le moins cher ?', answer: 'Beem a pris l\'avantage en 2026 : le Beem On 500 Wc est \u00e0 429\u20ac contre 599\u20ac pour le Sunology PLAY (500 Wc, ex-PLAY 2). C\'est 170\u20ac de moins \u00e0 puissance \u00e9gale. Beem propose aussi le Kit 300W \u00e0 199\u20ac, actuellement en rupture de stock.' },
   { question: 'Quel kit produit le plus d\'\u00e9lectricit\u00e9 ?', answer: 'Depuis ao\u00fbt 2026, les deux affichent 500 Wc : le Sunology PLAY actuel et le Beem On 500 Wc produisent environ 510 kWh/an chacun (Lyon, sud). L\'ancien PLAY 2 de 450 Wc, encore vendu en fin de stock, produit environ 459 kWh/an. \u00c0 production \u00e9gale, seul le prix diff\u00e8re (429\u20ac vs 599\u20ac).' },
   { question: 'Lequel s\'installe le plus rapidement ?', answer: 'Le Sunology PLAY s\'installe en 1 minute (châssis pré-assemblé en usine). Le Beem On nécessite environ 5 minutes d\'assemblage. Les deux sont très simples.' },
   { question: 'Quelle est la meilleure app de suivi ?', answer: 'Sunology STREAM et Beem App offrent des fonctionnalités similaires (production en temps réel, historique, économies). La différence : Sunology utilise le WiFi intégré au micro-onduleur, Beem nécessite un boîtier Beembox séparé (inclus).' },
@@ -118,7 +118,7 @@ export default function SunologyVsBeemPage() {
                   { t: 'Prix imbattable : 429\u20ac vs 599\u20ac', d: 'Le Beem On 500 Wc co\u00fbte 170\u20ac de moins que le Sunology PLAY \u00e0 puissance \u00e9gale (500 Wc). Le ratio \u20ac/Wc est de 0,86\u20ac contre 1,20\u20ac. C\'est le changement majeur de 2026.' },
                   { t: 'Paiement en 10x sans frais', d: 'Beem propose le paiement fractionn\u00e9 en 10x sans frais. Pour 429\u20ac, \u00e7a fait ~43\u20ac/mois. Sunology propose aussi le paiement en 4x et 10x sur sa fiche PLAY : l\'avantage est mince.' },
                   { t: 'Option Beem ZEN', d: 'Pour 49\u20ac de plus, Beem prend en charge toutes vos d\u00e9marches administratives : d\u00e9claration CACSI Enedis, convention d\'autoconsommation. Sunology vous laisse faire vous-m\u00eame.' },
-                  { t: 'Gamme plus large', d: 'Beem propose le Kit 300W \u00e0 299\u20ac (entr\u00e9e de gamme), le Beem On 500 Wc \u00e0 429\u20ac (best-seller), et le Beem On Max pour les grandes surfaces. Sunology a le PLAY (599\u20ac), le GO et le PLAY MAX avec batterie.' },
+                  { t: 'Gamme plus large', d: 'Beem propose le Kit 300W \u00e0 199\u20ac (entr\u00e9e de gamme, actuellement en rupture), le Beem On 500 Wc \u00e0 429\u20ac (best-seller), et le Beem On Max pour les grandes surfaces. Sunology a le PLAY (599\u20ac), le GO et le PLAY MAX avec batterie.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h4 className="font-bold text-sm mb-1">{p.t}</h4>

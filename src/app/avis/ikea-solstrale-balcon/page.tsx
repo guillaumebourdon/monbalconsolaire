@@ -44,6 +44,7 @@ export default function IkeaSolstralePage() {
         description="Analyse du kit solaire IKEA plug-and-play pour balcon."
         url="https://monbalconsolaire.fr/avis/ikea-solstrale-balcon"
         datePublished="2026-05-23"
+        dateModified="2026-10-22"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'IKEA Solstråle balcon' }]} />
@@ -60,7 +61,7 @@ export default function IkeaSolstralePage() {
               IKEA se lance dans le solaire de balcon avec un kit plug-and-play &agrave; <strong>449 &euro;</strong> en partenariat avec EcoFlow. Deux panneaux 450 W, micro-onduleur 800 W, et m&ecirc;me une version avec batterie. Sur le papier, c&apos;est s&eacute;duisant. Mais est-ce que &ccedil;a arrive en France ? Et est-ce que &ccedil;a vaut le coup face &agrave; Sunology et Beem ?
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>23 mai 2026</span>
+              <span>23 mai 2026 &middot; Mis &agrave; jour le 22 octobre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -158,7 +159,7 @@ export default function IkeaSolstralePage() {
                       ['IKEA STREAM M', '1 229 \u20ac', '900 Wc', '1,37 \u20ac', '1,92 kWh', 'Non'],
                       ['Sunology PLAY (ex-PLAY 2)', '599 \u20ac', '500 Wc', '1,20 \u20ac', 'Non', 'Oui'],
                       ['Beem On 500 Wc', '429 \u20ac', '500 Wc', '0,86 \u20ac', 'Non', 'Oui'],
-                      ['Beem Kit 300W', '299 \u20ac', '300 Wc', '1,00 \u20ac', 'Non', 'Oui'],
+                      ['Beem Kit 300W (rupture)', '199 \u20ac', '300 Wc', '0,66 \u20ac', 'Non', 'Oui'],
                       ['Zendure SolarFlow', '900 \u20ac', '840 W + panneaux', '1,07 \u20ac', '1,92 kWh', 'Oui'],
                     ].map(([kit, prix, puiss, ratio, bat, dispo], i) => (
                       <tr key={i} className={`border-b border-border-light ${i < 2 ? 'bg-amber-pale/10' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
@@ -243,9 +244,9 @@ export default function IkeaSolstralePage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="font-bold text-sm group-hover:text-green transition-colors">Beem Kit 300W</h4>
-                      <p className="text-xs text-charcoal-light mt-1">Le moins cher. 299 &euro;, ROI le plus rapide. Id&eacute;al pour tester.</p>
+                      <p className="text-xs text-charcoal-light mt-1">Le moins cher. 199 &euro;, ROI le plus rapide, mais actuellement en rupture chez Beem.</p>
                     </div>
-                    <span className="font-mono font-bold text-green">5,5 ans</span>
+                    <span className="font-mono font-bold text-green">3,8 ans</span>
                   </div>
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">

@@ -71,7 +71,7 @@ const points_faibles = [
   },
   {
     titre: 'Prix au kWc plus élevé',
-    detail: 'Le CITY coûte 549 € pour 400 W, soit 1,37 €/Wc. Un Sunology PLAY (500 Wc, 599 €) est à 1,20 €/Wc, un Beem Kit à 1,00 €/Wc. Vous payez la spécialisation balcon étroit.',
+    detail: 'Le CITY coûte 549 € pour 400 W, soit 1,37 €/Wc. Un Sunology PLAY (500 Wc, 599 €) est à 1,20 €/Wc, un Beem Kit à 0,66 €/Wc (actuellement en rupture). Vous payez la spécialisation balcon étroit.',
   },
   {
     titre: 'Pas de batterie compatible directement',

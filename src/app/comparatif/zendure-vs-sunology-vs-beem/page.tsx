@@ -71,7 +71,7 @@ export default function ZendureVsSunologyVsBeemPage() {
         description="Comparatif complet des 3 systèmes solaires plug-and-play les plus populaires en 2026."
         url="https://monbalconsolaire.fr/comparatif/zendure-vs-sunology-vs-beem"
         datePublished="2026-05-09"
-        dateModified="2026-06-25"
+        dateModified="2026-10-22"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Zendure vs Sunology vs Beem' }]} />
@@ -88,7 +88,7 @@ export default function ZendureVsSunologyVsBeemPage() {
               Trois approches radicalement différentes du solaire de balcon. Le <strong>Zendure SolarFlow 800 Plus</strong> mise sur le stockage à prix cassé. Le <strong>Sunology PLAY 2</strong> sur la simplicité absolue. Le <strong>Beem On 500 Wc</strong> sur le meilleur prix/Wc du march&eacute; (0,86 &euro;/Wc). On compare tout.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 mai 2026 &middot; mis &agrave; jour 25 juin 2026</span>
+              <span>9 mai 2026 &middot; mis &agrave; jour 22 octobre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -228,14 +228,14 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono text-stone">8,5 ans (45 %)</td>
                     </tr>
                     <tr className="bg-cream/50">
-                      <td className="p-2.5">Beem Kit 300W</td>
-                      <td className="text-center p-2.5 font-mono">299 €</td>
+                      <td className="p-2.5">Beem Kit 300W (rupture)</td>
+                      <td className="text-center p-2.5 font-mono">199 €</td>
                       <td className="text-center p-2.5 font-mono">—</td>
                       <td className="text-center p-2.5 font-mono">306 kWh</td>
                       <td className="text-center p-2.5 font-mono">85 %</td>
                       <td className="text-center p-2.5 font-mono">50 €</td>
-                      <td className="text-center p-2.5 font-mono">5,5 ans</td>
-                      <td className="text-center p-2.5 font-mono text-stone">9,7 ans (45 %)</td>
+                      <td className="text-center p-2.5 font-mono">3,8 ans</td>
+                      <td className="text-center p-2.5 font-mono text-stone">6,8 ans (45 %)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -320,7 +320,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                     <li>&rarr; Vous cherchez le meilleur prix/Wc du march&eacute; (0,86 &euro;/Wc) — ROI ~4,8 ans</li>
                   </ul>
                   <div className="mt-4 pt-3 border-t border-green/10">
-                    <p className="text-xs text-stone">Budget : 299-429 &euro; tout compris</p>
+                    <p className="text-xs text-stone">Budget : 199-429 &euro; tout compris</p>
                     <Link href="/avis/beem-on-500w" className="text-green font-semibold text-sm mt-2 inline-block">Lire notre avis complet &rarr;</Link>
                   </div>
                 </div>

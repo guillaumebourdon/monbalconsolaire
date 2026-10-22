@@ -138,12 +138,12 @@ export default function MiniKitsAmazonPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Mini kit Amazon ou kit français : le vrai comparatif</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Pour trancher, voici un tableau comparatif honnête entre un mini kit Amazon à 280 € (kit générique de marque peu connue) et un <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> à 299 € :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Pour trancher, voici un tableau comparatif honnête entre un mini kit Amazon à 280 € (kit générique de marque peu connue) et un <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> à 199 € (actuellement en rupture de stock chez Beem, vérifié le 12 octobre 2026) :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Critère</th><th className="text-center p-3">Mini kit Amazon générique 300 W</th><th className="text-center p-3 rounded-tr-xl">Beem Kit 300W</th></tr></thead>
                   <tbody>
-                    <tr className="bg-white border-b border-border-light"><td className="p-3 font-semibold">Prix</td><td className="text-center p-3">280 €</td><td className="text-center p-3">299 €</td></tr>
+                    <tr className="bg-white border-b border-border-light"><td className="p-3 font-semibold">Prix</td><td className="text-center p-3">280 €</td><td className="text-center p-3">199 € (rupture)</td></tr>
                     <tr className="bg-cream/50 border-b border-border-light"><td className="p-3 font-semibold">Production estimée</td><td className="text-center p-3">~280 kWh/an</td><td className="text-center p-3">~320 kWh/an</td></tr>
                     <tr className="bg-white border-b border-border-light"><td className="p-3 font-semibold">Micro-onduleur</td><td className="text-center p-3">Chinois non certifié</td><td className="text-center p-3">Deye certifié CE</td></tr>
                     <tr className="bg-cream/50 border-b border-border-light"><td className="p-3 font-semibold">Garantie panneau</td><td className="text-center p-3">10 ans</td><td className="text-center p-3">25 ans</td></tr>
@@ -153,7 +153,7 @@ export default function MiniKitsAmazonPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-charcoal-light leading-relaxed">Sur 25 ans, la différence de 40 kWh/an (soit ~8 €/an) représente 200 € de production en plus côté Beem. Avec la meilleure garantie et le SAV direct, le Beem Kit 300W reste le meilleur choix pour un usage permanent. Mais si vous voulez <em>tester</em> le solaire ou usage mixte (balcon/camping), un Jackery reste une option valable.</p>
+              <p className="text-charcoal-light leading-relaxed">Sur 25 ans, la différence de 40 kWh/an (soit ~8 €/an) représente 200 € de production en plus côté Beem, qui est aussi moins cher à l&apos;achat (199 € contre 280 €) quand il est en stock. Avec la meilleure garantie et le SAV direct, le Beem Kit 300W reste le meilleur choix pour un usage permanent — mais il est actuellement indisponible. Si vous voulez <em>tester</em> le solaire tout de suite ou pour un usage mixte (balcon/camping), un Jackery reste une option valable.</p>
             </section>
 
             <section>
@@ -164,8 +164,8 @@ export default function MiniKitsAmazonPage() {
                   <p className="text-xs text-charcoal-light leading-relaxed">Les deux seuls vrais bons choix sous 250 €. Jackery pour une pose fixe, Renogy pour surface courbe ou usage nomade.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">&#x26A0;&#xFE0F; Budget 250-299 € : hésitation légitime</h4>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Pour 50 € de plus, le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> offre une vraie qualité pro. Si c&apos;est pour un usage permanent, ajoutez ces 50 €.</p>
+                  <h4 className="font-bold text-sm mb-1">&#x26A0;&#xFE0F; Budget 250-299 € : vérifiez d&apos;abord le Beem Kit 300W</h4>
+                  <p className="text-xs text-charcoal-light leading-relaxed">À 199 €, le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> offre une vraie qualité pro pour moins cher qu&apos;un mini kit Amazon à 280 €. Il est toutefois actuellement en rupture de stock chez Beem : si c&apos;est le cas, un mini kit Amazon avec micro-onduleur de marque reste la meilleure option immédiate.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/20">
                   <h4 className="font-bold text-sm mb-1">&#x274C; À éviter absolument</h4>

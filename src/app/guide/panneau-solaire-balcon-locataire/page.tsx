@@ -97,8 +97,8 @@ export default function LocatairePage() {
                 </div>
                 <div className="card-lg">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" /><div><div className="badge-amber mb-1 text-[10px]">Petit budget</div><h4 className="font-bold">Beem Kit 300W</h4><p className="text-xs text-stone">4 petits panneaux, s&apos;adaptént aux espaces étroits, amovibles</p></div></div>
-                    <span className="font-mono font-bold text-amber-dark text-lg">299&euro;</span>
+                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" /><div><div className="badge-amber mb-1 text-[10px]">Petit budget</div><h4 className="font-bold">Beem Kit 300W</h4><p className="text-xs text-stone">4 petits panneaux, s&apos;adaptént aux espaces étroits, amovibles &mdash; actuellement en rupture chez Beem</p></div></div>
+                    <span className="font-mono font-bold text-amber-dark text-lg">199&euro;</span>
                   </div>
                 </div>
                 <div className="card-lg">

@@ -164,7 +164,7 @@ export default function DualsunPreasyPage() {
               <div>
                 <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial : ROI long</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  Avec un ROI de 10,5 ans, le PREASY s&apos;adresse &agrave; un public attach&eacute; &agrave; la production fran&ccedil;aise et au design premium. Si la rentabilit&eacute; est votre crit&egrave;re principal, le Beem Kit 300W (5,5 ans) ou le Sunology PLAY 500&nbsp;Wc (6,5 ans) sont de meilleurs choix.
+                  Avec un ROI de 10,5 ans, le PREASY s&apos;adresse &agrave; un public attach&eacute; &agrave; la production fran&ccedil;aise et au design premium. Si la rentabilit&eacute; est votre crit&egrave;re principal, le Beem Kit 300W (3,8 ans, actuellement en rupture) ou le Sunology PLAY 500&nbsp;Wc (6,5 ans) sont de meilleurs choix.
                 </p>
               </div>
             </div>

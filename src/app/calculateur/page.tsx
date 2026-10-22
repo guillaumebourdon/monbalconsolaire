@@ -25,7 +25,7 @@ export default function CalculateurWrapper() {
 
 // ─── Kit catalog ──────────────────────────────────────────
 const KITS = [
-  { id: 'beem-kit-300w', name: 'Beem Kit 300W', brand: 'Beem Energy', power: 300, price: 299, hasBattery: false, slug: '/avis/beem-kit-300w', affiliateUrl: 'https://beemenergy.fr/products/kit-beem', minWidth: 'narrow', maxBudget: 400 },
+  { id: 'beem-kit-300w', name: 'Beem Kit 300W', brand: 'Beem Energy', power: 300, price: 199, hasBattery: false, slug: '/avis/beem-kit-300w', affiliateUrl: 'https://beemenergy.fr/products/kit-beem', minWidth: 'narrow', maxBudget: 400, editorial: 'Actuellement en rupture de stock chez Beem (vérifié le 12/10/2026).' },
   { id: 'sunology-play-2', name: 'Sunology PLAY (ex-PLAY 2)', trackingName: 'Sunology PLAY', brand: 'Sunology', power: 500, price: 599, hasBattery: false, slug: '/avis/sunology-play-2', affiliateUrl: 'https://sunology.eu/products/play-kit-solaire-plug-play', minWidth: 'medium', maxBudget: 800 },
   { id: 'beem-on-500w', name: 'Beem On 500 Wc', brand: 'Beem Energy', power: 500, price: 429, hasBattery: false, slug: '/avis/beem-on-500w', affiliateUrl: 'https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge', minWidth: 'medium', maxBudget: 800 },
   { id: 'sunethic-f500', name: 'Sunethic F500', brand: 'Sunethic', power: 500, price: 690, hasBattery: false, slug: '/avis/sunethic-f500', affiliateUrl: 'https://sunethic.fr/produits', minWidth: 'medium', maxBudget: 800 },
@@ -414,7 +414,7 @@ function CalculateurPage() {
                   <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> <Link href="/blog/panneau-solaire-balcon-nord" className="text-green hover:underline">Lire notre guide sur les balcons nord et peu expos&eacute;s</Link></li>
                 </ul>
                 <p className="text-sm text-charcoal-light mb-4">
-                  Si vous voulez quand m&ecirc;me tester pour des raisons &eacute;cologiques, le Beem Kit 300W reste accessible &agrave; 299 &euro;.
+                  Si vous voulez quand m&ecirc;me tester pour des raisons &eacute;cologiques, le Beem Kit 300W reste le plus accessible &agrave; 199 &euro; (actuellement en rupture chez Beem).
                 </p>
                 <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="secondary" position="calculator_fallback" />
               </div>
@@ -424,7 +424,7 @@ function CalculateurPage() {
             {recommendations.picks.length === 0 && !recommendations.honestNo && (
               <div className="card-lg text-center">
                 <p className="text-lg font-bold mb-2">Aucun kit ne correspond exactement</p>
-                <p className="text-sm text-charcoal-light mb-4">Votre combinaison surface/budget est tr&egrave;s contrainte. Le Beem Kit 300W (299 &euro;) est le point d&apos;entr&eacute;e le plus accessible.</p>
+                <p className="text-sm text-charcoal-light mb-4">Votre combinaison surface/budget est tr&egrave;s contrainte. Le Beem Kit 300W (199 &euro;, actuellement en rupture chez Beem) est le point d&apos;entr&eacute;e le plus accessible.</p>
                 <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="primary" position="calculator_fallback" />
               </div>
             )}

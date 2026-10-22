@@ -93,7 +93,7 @@ export default function ComparatifBalconVsToiturePage() {
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;</h2>
             <ul className="space-y-2 text-sm text-charcoal-light">
-              <li>&#x2714; <strong>Balcon (plug-and-play) :</strong> 299–6&nbsp;900&euro;, ROI 4&ndash;6 ans, &eacute;conomies 50–150&euro;/an. Id&eacute;al locataire, propri&eacute;taire en appartement.</li>
+              <li>&#x2714; <strong>Balcon (plug-and-play) :</strong> 199–6&nbsp;900&euro;, ROI 4&ndash;6 ans, &eacute;conomies 50–150&euro;/an. Id&eacute;al locataire, propri&eacute;taire en appartement.</li>
               <li>&#x2714; <strong>Toiture (installation pro) :</strong> 6&nbsp;750–14&nbsp;000&euro;, ROI 8&ndash;12 ans, &eacute;conomies 460–1&nbsp;400&euro;/an. R&eacute;serv&eacute; aux propri&eacute;taires de maison.</li>
               <li>&#x26A0; <strong>Prime autoconsommation supprim&eacute;e</strong> depuis le 5 juin 2026. MaPrimeR&eacute;nov&apos; ne s&apos;applique pas au photovolta&iuml;que standard.</li>
               <li>&#x2192; Le balcon n&apos;est pas une alternative inf&eacute;rieure &mdash; c&apos;est la <em>seule</em> option pour un appartement, avec un ROI souvent <strong>deux fois plus court</strong>.</li>
@@ -142,11 +142,11 @@ export default function ComparatifBalconVsToiturePage() {
                 </thead>
                 <tbody>
                   <tr className="border border-border-light">
-                    <td className="p-3 border border-border-light">Beem Kit 300&nbsp;Wc</td>
-                    <td className="p-3 text-right border border-border-light">299&nbsp;&euro;</td>
+                    <td className="p-3 border border-border-light">Beem Kit 300&nbsp;Wc (rupture)</td>
+                    <td className="p-3 text-right border border-border-light">199&nbsp;&euro;</td>
                     <td className="p-3 text-right border border-border-light">~306 kWh/an</td>
                     <td className="p-3 text-right border border-border-light">~50&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-semibold text-green">~5,5 ans</td>
+                    <td className="p-3 text-right border border-border-light font-semibold text-green">~3,8 ans</td>
                   </tr>
                   <tr className="bg-green-pale/20 border border-border-light">
                     <td className="p-3 border border-border-light font-semibold">Beem On 500&nbsp;Wc &#x2605; meilleur rapport</td>
@@ -315,7 +315,7 @@ export default function ComparatifBalconVsToiturePage() {
                 <tbody className="divide-y divide-border-light">
                   <tr>
                     <td className="p-3 font-medium">Prix d&apos;entr&eacute;e</td>
-                    <td className="p-3 text-center text-green font-bold">299&nbsp;&euro;</td>
+                    <td className="p-3 text-center text-green font-bold">199&nbsp;&euro;</td>
                     <td className="p-3 text-center text-charcoal-light">~6&nbsp;750&nbsp;&euro;</td>
                   </tr>
                   <tr className="bg-cream/40">
@@ -392,7 +392,7 @@ export default function ComparatifBalconVsToiturePage() {
               </div>
               <div className="card border-l-4 border-l-green p-4">
                 <p className="font-semibold text-sm mb-2">&#x2714; Budget limit&eacute; (&lt; 1&nbsp;000&nbsp;&euro;)</p>
-                <p className="text-sm text-charcoal-light">L&apos;entr&eacute;e de gamme &agrave; 299&nbsp;&euro; se rentabilise en 5 ans. Impossible de trouver une installation toiture rentable sous 6&nbsp;000&nbsp;&euro;.</p>
+                <p className="text-sm text-charcoal-light">L&apos;entr&eacute;e de gamme &agrave; 199&nbsp;&euro; (Beem Kit 300W, actuellement en rupture) se rentabilise en 3,8 ans. Impossible de trouver une installation toiture rentable sous 6&nbsp;000&nbsp;&euro;.</p>
               </div>
               <div className="card border-l-4 border-l-green p-4">
                 <p className="font-semibold text-sm mb-2">&#x2714; Vous voulez le meilleur ROI</p>

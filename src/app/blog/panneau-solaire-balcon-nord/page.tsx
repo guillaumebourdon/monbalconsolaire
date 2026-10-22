@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: 'Y a-t-il des cas où un balcon nord devient intéressant ?',
-    answer: 'Trois cas précis. Premièrement, si le prix au kWc est très bas (Beem Kit 300W à 299€ par exemple) : même avec 40% de production en moins, l\'investissement reste rentable sur 25 ans. Deuxièmement, si vous avez une consommation en journée importante (télétravail, climatisation été, piscine). Troisièmement, si votre balcon nord est en hauteur sans obstruction : la lumière diffuse est plus forte qu\'on ne croit.',
+    answer: 'Trois cas précis. Premièrement, si le prix au kWc est très bas (Beem Kit 300W à 199€, actuellement en rupture, par exemple) : même avec 40% de production en moins, l\'investissement reste rentable sur 25 ans. Deuxièmement, si vous avez une consommation en journée importante (télétravail, climatisation été, piscine). Troisièmement, si votre balcon nord est en hauteur sans obstruction : la lumière diffuse est plus forte qu\'on ne croit.',
   },
   {
     question: 'L\'inclinaison peut-elle compenser l\'orientation nord ?',
@@ -98,11 +98,11 @@ const cas_reels = [
 const alternatives = [
   {
     titre: 'Kit 300W petit budget type Beem',
-    prix: '299 €',
+    prix: '199 € (rupture)',
     production_nord_paris: '140 kWh/an',
     economie: '27 €/an',
-    roi: '11 ans',
-    verdict: 'Le seul choix qui reste intéressant en plein nord. Risque minimal (moins de 300€), retour acceptable sur 25 ans.',
+    roi: '7,7 ans',
+    verdict: 'Le seul choix qui reste intéressant en plein nord, à condition d\'être en stock : il est actuellement épuisé chez Beem. Risque minimal (moins de 300€), retour acceptable sur 25 ans.',
   },
   {
     titre: 'Mini kit Amazon Renogy 200W flexible',
@@ -273,7 +273,7 @@ export default function BalconNordPage() {
                 <div className="card border-l-4 border-l-green">
                   <h4 className="font-bold text-sm mb-1">✅ Cas 1 : Kit petit budget dans le Sud</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Dans le Sud (PACA, Occitanie, Corse), même orienté nord, un kit 300 W à 299 € (Beem Kit par exemple) produit ~200 kWh/an, soit 40 €/an d&apos;économies. ROI de 7-8 ans. Acceptable, surtout si le kit est évolutif (ajout batterie plus tard). Voir notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green font-semibold hover:underline">sélection de kits petit budget</Link>.
+                    Dans le Sud (PACA, Occitanie, Corse), même orienté nord, un kit 300 W à 199 € (Beem Kit, actuellement en rupture) produit ~200 kWh/an, soit 40 €/an d&apos;économies. ROI de 5-6 ans. Acceptable, surtout si le kit est évolutif (ajout batterie plus tard). Voir notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green font-semibold hover:underline">sélection de kits petit budget</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
@@ -304,7 +304,7 @@ export default function BalconNordPage() {
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Nord France + kit premium</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Acheter un Sunology PLAY MAX à 699€ (kit + batterie) pour un balcon nord à Lille ou Strasbourg : ROI de 13+ ans, là où un kit sans batterie fait mieux pour moins cher. Le coût du stockage s&apos;amortit sur des kWh qui ne seront jamais produits en masse. Mieux vaut un kit 300 W basique à 299 €.
+                    Acheter un Sunology PLAY MAX à 699€ (kit + batterie) pour un balcon nord à Lille ou Strasbourg : ROI de 13+ ans, là où un kit sans batterie fait mieux pour moins cher. Le coût du stockage s&apos;amortit sur des kWh qui ne seront jamais produits en masse. Mieux vaut un kit 300 W basique à 199 € (sous réserve de disponibilité) ou le Sunology GO (349 €) en attendant.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">

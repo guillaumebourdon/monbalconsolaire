@@ -36,7 +36,7 @@ const faqData = [
   },
   {
     question: 'Mon balcon est nord-est ou nord-ouest, c\'est pareil ?',
-    answer: 'Non. Nord-est et nord-ouest perdent 35 % de production par rapport au sud (coef 0,65). C\'est la zone grise : un kit 300 Wc \u00e0 299 \u20ac peut encore \u00eatre rentable (\u00e0 v\u00e9rifier avec le calculateur), mais un kit \u00e0 600 \u20ac+ aura un ROI trop long. V\u00e9rifiez avec notre calculateur.',
+    answer: 'Non. Nord-est et nord-ouest perdent 35 % de production par rapport au sud (coef 0,65). C\'est la zone grise : un kit 300 Wc \u00e0 199 \u20ac (Beem Kit 300W, actuellement en rupture) peut encore \u00eatre rentable (\u00e0 v\u00e9rifier avec le calculateur), mais un kit \u00e0 600 \u20ac+ aura un ROI trop long. V\u00e9rifiez avec notre calculateur.',
   },
 ];
 
@@ -48,6 +48,7 @@ export default function PanneauSolaireEstOuestPage() {
         description="Guide complet pour les balcons orient\u00e9s est ou ouest."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-est-ouest"
         datePublished="2026-05-22"
+        dateModified="2026-10-22"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Panneau solaire est/ouest' }]} />
@@ -64,7 +65,7 @@ export default function PanneauSolaireEstOuestPage() {
               Votre balcon n&apos;est pas orient&eacute; sud ? <strong>Pas de panique.</strong> Un balcon est ou ouest perd 15-20 % de production par rapport au sud, mais reste rentable. Mieux : la production est mieux r&eacute;partie sur la journ&eacute;e, ce qui am&eacute;liore l&apos;autoconsommation. Voici les chiffres r&eacute;els.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>22 mai 2026</span>
+              <span>22 mai 2026 &middot; Mis &agrave; jour le 22 octobre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -155,7 +156,7 @@ export default function PanneauSolaireEstOuestPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Beem Kit 300W', '299 \u20ac', '40 \u20ac', '6,7 ans', '1 532 \u20ac'],
+                      ['Beem Kit 300W (rupture)', '199 \u20ac', '40 \u20ac', '4,6 ans', '1 532 \u20ac'],
                       ['Sunology PLAY (500 Wc)', '599 \u20ac', '67 \u20ac', '7,9 ans', '2 552 \u20ac'],
                       ['Beem On 500 Wc', '429 \u20ac', '67 \u20ac', '5,9 ans', '2 552 \u20ac'],
                       ['Sunethic F500', '690 \u20ac', '67 \u20ac', '9,0 ans', '2 552 \u20ac'],
@@ -237,9 +238,9 @@ export default function PanneauSolaireEstOuestPage() {
               <h2 className="text-2xl font-extrabold mb-4">Quel kit choisir pour un balcon est/ouest ?</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Meilleur choix : Beem Kit 300W (299 &euro;)</h4>
+                  <h4 className="font-bold text-sm mb-1 text-green">Meilleur choix sur le papier : Beem Kit 300W (199 &euro;, actuellement en rupture)</h4>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    En est/ouest, le ROI est plus long. Le Beem Kit 300W offre le <strong>meilleur ROI</strong> (6,7 ans) car son prix bas compense la perte de production. C&apos;est le choix le plus rationnel. <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Voir l&apos;avis</Link>.
+                    En est/ouest, le ROI est plus long. Le Beem Kit 300W offre le <strong>meilleur ROI</strong> (4,6 ans) car son prix bas compense la perte de production, mais il est actuellement indisponible chez Beem (v&eacute;rifi&eacute; le 12 octobre 2026). <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Voir l&apos;avis</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
@@ -292,7 +293,7 @@ export default function PanneauSolaireEstOuestPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="box" position="article_bottom" price="299 \u20ac" />
+              <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="box" position="article_bottom" price="199 \u20ac" />
             </div>
 
             <section className="mb-10">

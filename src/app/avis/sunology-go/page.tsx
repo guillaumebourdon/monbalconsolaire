@@ -19,7 +19,7 @@ const AFFILIATE_URL = 'https://sunology.eu/products/kit-solaire-1-station-go-bal
 const faqData = [
   {
     question: 'Le Sunology GO est-il rentable ?',
-    answer: 'Oui, mais modestement. Avec notre méthodologie (Lyon, plein sud, PR 0,85, autoconsommation 85 %, 0,1940 €/kWh), le GO produit environ 275 kWh/an pour environ 45 €/an d\'économies. Le retour sur investissement est de 7 ans avec l\'inflation tarifaire de 3,3 %/an (CRE), soit 7,7 ans sans inflation. Sur 25 ans, les économies cumulées atteignent 1 720 €. C\'est plus long que le Sunology PLAY (6,5 ans) et le Beem Kit 300W (5,5 ans), car le GO coûte plus cher au watt-crête.',
+    answer: 'Oui, mais modestement. Avec notre méthodologie (Lyon, plein sud, PR 0,85, autoconsommation 85 %, 0,1940 €/kWh), le GO produit environ 275 kWh/an pour environ 45 €/an d\'économies. Le retour sur investissement est de 7 ans avec l\'inflation tarifaire de 3,3 %/an (CRE), soit 7,7 ans sans inflation. Sur 25 ans, les économies cumulées atteignent 1 720 €. C\'est plus long que le Sunology PLAY (6,5 ans) et le Beem Kit 300W (3,8 ans, actuellement en rupture), car le GO coûte plus cher au watt-crête.',
   },
   {
     question: 'Quelle différence entre le Sunology GO et le Sunology CITY (arrêté) ?',
@@ -73,7 +73,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Prix au watt-crête élevé',
-    detail: 'À 1,29 €/Wc, le GO coûte plus cher au watt que le PLAY (1,20 €/Wc) et nettement plus que le Beem Kit 300W (1,00 €/Wc). Vous payez la compacité et la polyvalence de pose.',
+    detail: 'À 1,29 €/Wc, le GO coûte plus cher au watt que le PLAY (1,20 €/Wc) et nettement plus que le Beem Kit 300W (0,66 €/Wc, actuellement en rupture). Vous payez la compacité et la polyvalence de pose.',
   },
   {
     titre: 'Puissance modeste',
@@ -115,7 +115,7 @@ const cas_pas_acheter = [
   },
   {
     profil: 'Votre budget est serré',
-    explication: 'Le Beem Kit 300W (299 €, 300 W) coûte moins cher à l\'achat, produit plus (300 W vs 270 W) et affiche un meilleur ROI (5,5 ans).',
+    explication: 'Le Beem Kit 300W (199 €, 300 W) coûte moins cher à l\'achat, produit plus (300 W vs 270 W) et affiche un meilleur ROI (3,8 ans) — mais il est actuellement en rupture de stock chez Beem.',
   },
   {
     profil: 'Vous voulez du stockage dès le départ',
@@ -299,12 +299,12 @@ export default function SunologyGoPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Prix', '349 €', '599 €', '299 €'],
+                      ['Prix', '349 €', '599 €', '199 € (rupture)'],
                       ['Puissance', '270 Wc', '500 Wc', '300 Wc'],
-                      ['€/Wc', '1,29 €', '1,20 €', '1,00 €'],
+                      ['€/Wc', '1,29 €', '1,20 €', '0,66 €'],
                       ['Pose', 'Sol ou garde-corps', 'Sol ou mur', 'Modulaire (4 panneaux)'],
                       ['Installation', '~16 min', '~1 min', '~1 heure'],
-                      ['ROI (Lyon sud)', '7 ans', '6,5 ans', '5,5 ans'],
+                      ['ROI (Lyon sud)', '7 ans', '6,5 ans', '3,8 ans'],
                       ['Batterie', 'Non (VAULT en option)', 'Non (PLAY MAX avec batterie)', 'Non'],
                       ['Garantie', '25 ans', '25-30 ans', '25 ans'],
                     ].map(([c, go, play, beem], i) => (
@@ -398,7 +398,7 @@ export default function SunologyGoPage() {
                 Le Sunology GO remplit bien son rôle de kit d&apos;entrée compact&nbsp;: 349 &euro;, 270 W, et la flexibilité de se poser au sol ou sur un garde-corps sans perçage. C&apos;est le choix logique pour un balcon vraiment exigu où ni un PLAY ni un kit modulaire ne trouveraient leur place.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Mais dès que vous avez un peu plus d&apos;espace, le calcul change&nbsp;: à 1,29 &euro;/Wc, le GO coûte plus cher au watt que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY</Link> (1,20 &euro;/Wc) et bien plus que le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> (1,00 &euro;/Wc), avec un ROI plus long (7 ans contre 6,5 et 5,5 ans).
+                Mais dès que vous avez un peu plus d&apos;espace, le calcul change&nbsp;: à 1,29 &euro;/Wc, le GO coûte plus cher au watt que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY</Link> (1,20 &euro;/Wc) et bien plus que le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> (0,66 &euro;/Wc, actuellement en rupture), avec un ROI plus long (7 ans contre 6,5 et 3,8 ans).
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 <strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong> — Un bon kit de niche pour les tout petits balcons, pas le meilleur rapport qualité-prix du marché.

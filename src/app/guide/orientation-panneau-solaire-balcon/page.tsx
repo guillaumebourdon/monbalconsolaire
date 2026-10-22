@@ -98,7 +98,7 @@ export default function OrientationPage() {
                 <div className="card-lg">
                   <h3 className="font-bold text-lg mb-2">Est / Ouest — Correct (80%)</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">20% de moins que le sud, mais toujours rentable. Le ROI passe de ~7,1 ans à ~8,7 ans pour un kit à 599€. Sur 25 ans de garantie, vous économisez quand même près de 2 300€.</p>
-                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Conseil :</strong> en exposition est ou ouest, le <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">Beem Kit 300W à 299€</Link> est un choix malin : le ROI est atteint en ~6,7 ans (au lieu de 8,7 pour un kit à 599€), ce qui réduit le risque.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Conseil :</strong> en exposition est ou ouest, le <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">Beem Kit 300W à 199€</Link> est un choix malin : le ROI serait atteint en ~4,6 ans (au lieu de 8,7 pour un kit à 599€), ce qui réduit le risque — mais il est actuellement en rupture de stock chez Beem.</p>
                 </div>
 
                 <div className="card-lg border-l-4 border-l-amber">

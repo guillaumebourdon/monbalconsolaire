@@ -56,7 +56,7 @@ export default function CommentCaMarchePage() {
             {[
               { who: 'Locataires', why: 'Le kit est amovible. Vous l\u2019emportez en cas de d\u00e9m\u00e9nagement. Aucune modification du logement.' },
               { who: 'Propri\u00e9taires d\u2019appartement', why: 'Pas besoin de toit. Un balcon, une terrasse ou un rebord de fen\u00eatre suffit.' },
-              { who: 'Petits budgets', why: 'Des kits d\u00e8s 299\u20ac. Rentabilis\u00e9s en 2,5 \u00e0 5 ans. Z\u00e9ro maintenance.' },
+              { who: 'Petits budgets', why: 'Des kits d\u00e8s 199\u20ac. Rentabilis\u00e9s en 3 \u00e0 5 ans. Z\u00e9ro maintenance.' },
             ].map((p, i) => (
               <div key={i} className="card">
                 <h3 className="font-bold text-sm text-green mb-2">{p.who}</h3>

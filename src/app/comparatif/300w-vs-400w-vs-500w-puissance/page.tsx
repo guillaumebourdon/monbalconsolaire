@@ -97,7 +97,7 @@ export default function PuissanceComparatif() {
                   <h4 className="font-bold text-green mb-2">&#9989; Points forts</h4>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Prix d&apos;entr&eacute;e tr&egrave;s bas (&lt; 350&euro;)</li>
-                    <li>ROI court (~5,5 ans pour le Beem Kit 300W &agrave; Lyon)</li>
+                    <li>ROI court (~3,8 ans pour le Beem Kit 300W &agrave; Lyon, actuellement en rupture)</li>
                     <li>Modulaire : facile &agrave; r&eacute;partir sur un balcon</li>
                     <li>L&eacute;ger (15 kg), id&eacute;al pour balcons fragiles</li>
                   </ul>
@@ -186,7 +186,7 @@ export default function PuissanceComparatif() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation par profil</h2>
               <div className="space-y-3">
                 {[
-                  { profil: 'Petit budget (< 400€)', reco: '300W modulaire', detail: 'Le Beem Kit 300W est le meilleur choix. ROI d\'environ 5,5 ans (Lyon, sud).' },
+                  { profil: 'Petit budget (< 400€)', reco: '300W modulaire', detail: 'Le Beem Kit 300W (199€) est le meilleur choix sur le papier. ROI d\'environ 3,8 ans (Lyon, sud), mais il est actuellement en rupture de stock chez Beem.' },
                   { profil: 'Balcon standard 10 m²', reco: '450-500W', detail: 'Sunology PLAY 500 W (ex-PLAY 2) ou Beem On 500 Wc : 1 panneau, installation en 2 min.' },
                   { profil: 'Grand balcon ou terrasse', reco: '500W (Beem On 429\u20ac)', detail: 'Beem On 500 Wc : meilleur prix du march\u00e9 \u00e0 0,86 \u20ac/Wc, ROI ~4,8 ans.' },
                   { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (450W + 700Wh), Zendure SolarFlow ou Bluetti Balco 260.' },

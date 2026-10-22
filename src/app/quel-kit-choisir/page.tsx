@@ -167,13 +167,13 @@ const ARTICLES: Article[] = [
   {
     slug: '/avis/beem-kit-300w',
     title: 'Beem Kit 300W',
-    excerpt: 'Le meilleur choix pour découvrir le solaire sans se ruiner.',
+    excerpt: 'Le moins cher du marché, mais actuellement en rupture de stock.',
     type: 'avis',
     badge: 'Petit budget',
     tags: ['budget'],
     publishedAt: '2026-04-01',
     score: '7.5/10',
-    price: '299 €',
+    price: '199 €',
   },
   {
     slug: '/avis/sunology-play-max',

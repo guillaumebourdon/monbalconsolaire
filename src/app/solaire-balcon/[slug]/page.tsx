@@ -16,7 +16,7 @@ const COEFF_PERTES = PERFORMANCE_RATIO;
 
 const KITS = [
   { name: 'Sunology PLAY', power: 0.50, price: 599, slug: '/avis/sunology-play-2', badge: 'Meilleur choix' },
-  { name: 'Beem Kit 300W', power: 0.30, price: 299, slug: '/avis/beem-kit-300w', badge: 'Petit budget' },
+  { name: 'Beem Kit 300W', power: 0.30, price: 199, slug: '/avis/beem-kit-300w', badge: 'Petit budget' },
   { name: 'Beem On 500 Wc', power: 0.50, price: 429, slug: '/avis/beem-on-500w', badge: 'Meilleur prix' },
   { name: 'Zendure SolarFlow', power: 0.84, price: 900, slug: '/avis/zendure-solarflow', badge: 'Avec batterie', autocons: AUTOCONSO_BATTERY },
   { name: 'DualSun PREASY', power: 0.42, price: 870, slug: '/avis/dualsun-preasy', badge: 'Made in France' },
@@ -99,7 +99,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     },
     {
       question: `Quel est le meilleur kit solaire pour un balcon dans le ${dept.name} ?`,
-      answer: `Le ${best.name} offre le meilleur retour sur investissement dans le ${dept.name} : ROI de ${best.roi} ans pour ${best.economies} €/an d'économies. Pour un petit budget, le Beem Kit 300W à 299 € a un ROI de ${bestBudget.roi} ans. Et pour du stockage, le Zendure SolarFlow (${bestBatterie.economies} €/an) permet de consommer le soir l'énergie produite le jour.`,
+      answer: `Le ${best.name} offre le meilleur retour sur investissement dans le ${dept.name} : ROI de ${best.roi} ans pour ${best.economies} €/an d'économies. Pour un petit budget, le Beem Kit 300W à ${bestBudget.price} € a un ROI de ${bestBudget.roi} ans (kit actuellement en rupture chez Beem). Et pour du stockage, le Zendure SolarFlow (${bestBatterie.economies} €/an) permet de consommer le soir l'énergie produite le jour.`,
     },
     {
       question: 'Faut-il une autorisation pour installer un kit solaire sur un balcon ?',
@@ -232,7 +232,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                       <span className="font-mono font-bold text-green">{bestBudget.price} €</span>
                       <span className="text-xs text-stone">ROI {bestBudget.roi} ans</span>
                     </div>
-                    <p className="text-xs text-charcoal-light mt-2">{bestBudget.economies} €/an d&apos;économies. Id&eacute;al pour d&eacute;couvrir le solaire.</p>
+                    <p className="text-xs text-charcoal-light mt-2">{bestBudget.economies} €/an d&apos;économies. Id&eacute;al pour d&eacute;couvrir le solaire.{bestBudget.name === 'Beem Kit 300W' && ' Actuellement en rupture chez Beem.'}</p>
                   </Link>
                 )}
                 {best.name !== bestBatterie.name && (

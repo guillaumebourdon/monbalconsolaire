@@ -130,7 +130,7 @@ const cas_pas_acheter = [
   },
   {
     profil: 'Votre budget est serré (< 700 €)',
-    explication: 'Pour ce budget, un Beem Kit 300W (299 €) ou un Sunology PLAY 2 (599 €) sont plus rentables. Le PowerStream prend tout son sens à partir de 1 500 € de budget total.',
+    explication: 'Pour ce budget, un Beem Kit 300W (199 €, actuellement en rupture chez Beem) ou un Sunology PLAY 2 (599 €) sont plus rentables. Le PowerStream prend tout son sens à partir de 1 500 € de budget total.',
   },
   {
     profil: 'Vous avez un balcon trop petit pour 2 panneaux',

@@ -133,7 +133,7 @@ export default function AutoconsommationPage() {
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3">Kit plug-and-play</th><th className="text-center p-3 rounded-tr-xl">Installation toiture</th></tr></thead>
                   <tbody>
-                    {[['Prix', '299-690 \u20ac', '8 000-15 000 \u20ac'], ['Installation', 'Vous-m\u00eame, 1-60 min', 'Installateur RGE, 1-2 jours'], ['Puissance', '300-500 Wc', '3 000-9 000 Wc'], ['Couverture conso', '10-25%', '50-80%'], ['Revente surplus', 'Non (gratuit sur r\u00e9seau)', 'Oui (EDF OA, 0,13\u20ac/kWh)'], ['Aides de l\'\u00c9tat', 'Non', 'Oui (prime autoconso)'], ['Locataire ?', 'Oui', 'Non'], ['Amovible ?', 'Oui', 'Non']].map(([c, pp, t], i) => (
+                    {[['Prix', '199-690 \u20ac', '8 000-15 000 \u20ac'], ['Installation', 'Vous-m\u00eame, 1-60 min', 'Installateur RGE, 1-2 jours'], ['Puissance', '300-500 Wc', '3 000-9 000 Wc'], ['Couverture conso', '10-25%', '50-80%'], ['Revente surplus', 'Non (gratuit sur r\u00e9seau)', 'Oui (EDF OA, 0,13\u20ac/kWh)'], ['Aides de l\'\u00c9tat', 'Non', 'Oui (prime autoconso)'], ['Locataire ?', 'Oui', 'Non'], ['Amovible ?', 'Oui', 'Non']].map(([c, pp, t], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{c}</td><td className="text-center p-3">{pp}</td><td className="text-center p-3">{t}</td></tr>
                     ))}
                   </tbody>

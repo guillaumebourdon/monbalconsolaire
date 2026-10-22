@@ -403,7 +403,7 @@ export default function AnkerSolixRS40PAvisPage() {
                 </Link>
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h4>
-                  <p className="text-xs text-charcoal-light mt-1">Le kit le moins cher du march&eacute; &mdash; 299 &euro;, ROI en 5,5 ans</p>
+                  <p className="text-xs text-charcoal-light mt-1">Le kit le moins cher du march&eacute; &mdash; 199 &euro;, ROI en 3,8 ans, actuellement en rupture</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-petit-budget" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires petit budget</h4>

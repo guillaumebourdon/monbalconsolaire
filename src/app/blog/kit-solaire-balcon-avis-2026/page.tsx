@@ -318,11 +318,12 @@ export default function KitSolaireBalconAvisPage() {
                   <tr className="border-b border-border-light">
                     <td className="py-3 font-semibold">Petit budget</td>
                     <td className="py-3"><Link href="/avis/beem-kit-300w" className="text-green hover:underline font-semibold">Beem Kit 300W</Link></td>
-                    <td className="py-3 text-center font-mono">299 &euro;</td>
+                    <td className="py-3 text-center font-mono">199 &euro;*</td>
                     <td className="py-3 text-center font-mono font-bold text-green">7,5/10</td>
                   </tr>
                 </tbody>
               </table>
+              <p className="text-xs text-stone mt-2">* Actuellement en rupture de stock chez Beem (v&eacute;rifi&eacute; le 12 octobre 2026).</p>
             </div>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/40 border-green/10 text-center py-8 mb-6">

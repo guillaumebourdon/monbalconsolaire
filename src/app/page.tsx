@@ -95,7 +95,7 @@ export default function HomePage() {
             {[
               { value: '80-130\u20ac/an', label: 'd\'\u00e9conomies selon votre r\u00e9gion' },
               { value: '25 ans', label: 'Garantie des panneaux' },
-              { value: '299-900\u20ac', label: 'Prix d\'un kit solaire balcon' },
+              { value: '199-900\u20ac', label: 'Prix d\'un kit solaire balcon' },
               { value: '5-8 ans', label: 'Selon le kit et votre exposition' },
             ].map((item, i) => (
               <div key={i} className="text-center p-6 rounded-brand-lg bg-cream reveal">
@@ -195,8 +195,8 @@ export default function HomePage() {
                 name: 'Beem Kit 300W',
                 brand: 'Beem Energy',
                 power: '300 Wc',
-                price: '299\u20ac',
-                roi: '5,5 ans',
+                price: '199\u20ac',
+                roi: '3,8 ans',
                 slug: '/avis/beem-kit-300w',
               },
               {
@@ -270,10 +270,10 @@ export default function HomePage() {
             <div className="card-lg reveal">
               <div className="text-[10px] font-bold uppercase tracking-wider text-amber-dark mb-3">Profil type &mdash; Lille, balcon nord-est</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-                Appartement T2, balcon nord-est. Beem Kit 300W (299 &euro;). Production estim&eacute;e : <strong>169 kWh/an</strong>. &Eacute;conomies : <strong>28 &euro;/an</strong>.
+                Appartement T2, balcon nord-est. Beem Kit 300W (199 &euro;, actuellement en rupture). Production estim&eacute;e : <strong>169 kWh/an</strong>. &Eacute;conomies : <strong>28 &euro;/an</strong>.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-amber-dark">ROI 9,3 ans</span>
+                <span className="text-xs font-mono font-bold text-amber-dark">ROI 6,5 ans</span>
                 <span className="badge-amber text-[9px]">&#9888; Marginal</span>
               </div>
             </div>

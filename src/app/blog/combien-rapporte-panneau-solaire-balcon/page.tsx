@@ -22,13 +22,13 @@ const faqData = [
 ];
 
 const cityData = [
-  { city: 'Marseille', region: 'PACA', irr: '1 500 kWh/kWc', prod450: '638 kWh', prod300: '383 kWh', eco450: '105 \u20ac', eco300: '63 \u20ac', roi450: '5,3 ans', roi300: '4,5 ans' },
-  { city: 'Toulouse', region: 'Occitanie', irr: '1 350 kWh/kWc', prod450: '574 kWh', prod300: '344 kWh', eco450: '95 \u20ac', eco300: '57 \u20ac', roi450: '5,8 ans', roi300: '4,9 ans' },
-  { city: 'Lyon', region: 'Auvergne-RA', irr: '1 200 kWh/kWc', prod450: '510 kWh', prod300: '306 kWh', eco450: '84 \u20ac', eco300: '50 \u20ac', roi450: '6,5 ans', roi300: '5,5 ans' },
-  { city: 'Nantes', region: 'Pays de la Loire', irr: '1 200 kWh/kWc', prod450: '510 kWh', prod300: '306 kWh', eco450: '84 \u20ac', eco300: '50 \u20ac', roi450: '6,5 ans', roi300: '5,5 ans' },
-  { city: 'Paris', region: 'Ile-de-France', irr: '1 100 kWh/kWc', prod450: '468 kWh', prod300: '281 kWh', eco450: '77 \u20ac', eco300: '46 \u20ac', roi450: '7,0 ans', roi300: '5,9 ans' },
-  { city: 'Strasbourg', region: 'Grand Est', irr: '1 100 kWh/kWc', prod450: '468 kWh', prod300: '281 kWh', eco450: '77 \u20ac', eco300: '46 \u20ac', roi450: '7,0 ans', roi300: '5,9 ans' },
-  { city: 'Lille', region: 'Hauts-de-France', irr: '1 000 kWh/kWc', prod450: '425 kWh', prod300: '255 kWh', eco450: '70 \u20ac', eco300: '42 \u20ac', roi450: '7,6 ans', roi300: '6,5 ans' },
+  { city: 'Marseille', region: 'PACA', irr: '1 500 kWh/kWc', prod450: '638 kWh', prod300: '383 kWh', eco450: '105 \u20ac', eco300: '63 \u20ac', roi450: '5,3 ans', roi300: '3,0 ans' },
+  { city: 'Toulouse', region: 'Occitanie', irr: '1 350 kWh/kWc', prod450: '574 kWh', prod300: '344 kWh', eco450: '95 \u20ac', eco300: '57 \u20ac', roi450: '5,8 ans', roi300: '3,4 ans' },
+  { city: 'Lyon', region: 'Auvergne-RA', irr: '1 200 kWh/kWc', prod450: '510 kWh', prod300: '306 kWh', eco450: '84 \u20ac', eco300: '50 \u20ac', roi450: '6,5 ans', roi300: '3,8 ans' },
+  { city: 'Nantes', region: 'Pays de la Loire', irr: '1 200 kWh/kWc', prod450: '510 kWh', prod300: '306 kWh', eco450: '84 \u20ac', eco300: '50 \u20ac', roi450: '6,5 ans', roi300: '3,8 ans' },
+  { city: 'Paris', region: 'Ile-de-France', irr: '1 100 kWh/kWc', prod450: '468 kWh', prod300: '281 kWh', eco450: '77 \u20ac', eco300: '46 \u20ac', roi450: '7,0 ans', roi300: '4,1 ans' },
+  { city: 'Strasbourg', region: 'Grand Est', irr: '1 100 kWh/kWc', prod450: '468 kWh', prod300: '281 kWh', eco450: '77 \u20ac', eco300: '46 \u20ac', roi450: '7,0 ans', roi300: '4,1 ans' },
+  { city: 'Lille', region: 'Hauts-de-France', irr: '1 000 kWh/kWc', prod450: '425 kWh', prod300: '255 kWh', eco450: '70 \u20ac', eco300: '42 \u20ac', roi450: '7,6 ans', roi300: '4,5 ans' },
 ];
 
 export default function CombienRapportePage() {
@@ -61,7 +61,7 @@ export default function CombienRapportePage() {
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Production et économies par ville</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Voici les estimations pour les 7 principales zones climatiques de France, avec deux kits de reference : le Sunology PLAY (ex-PLAY 2, 500 Wc, 599&euro;) et le Beem Kit 300W (300 Wc, 299&euro;). Toutes les estimations supposent une orientation plein sud et une inclinaison optimale de 30-35 degres. Pour comprendre pourquoi l&apos;orientation change tout, consultez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green font-semibold hover:underline">guide complet sur l&apos;orientation</Link>.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Voici les estimations pour les 7 principales zones climatiques de France, avec deux kits de reference : le Sunology PLAY (ex-PLAY 2, 500 Wc, 599&euro;) et le Beem Kit 300W (300 Wc, 199&euro;, actuellement en rupture chez Beem). Toutes les estimations supposent une orientation plein sud et une inclinaison optimale de 30-35 degres. Pour comprendre pourquoi l&apos;orientation change tout, consultez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green font-semibold hover:underline">guide complet sur l&apos;orientation</Link>.</p>
 
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[700px]">
@@ -91,7 +91,7 @@ export default function CombienRapportePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : données PVGIS (Commission européenne). Tarif EDF 0,1940 &euro;/kWh (mai 2026). Coefficient de pertes : 0,85. Autoconsommation 85 %, inflation 3,3 %/an. Kit 500W = Sunology PLAY (ex-PLAY 2) à 599&euro; ; l&apos;ancien PLAY 2 de 450 Wc, encore vendu en fin de stock, produit 10 % de moins. Kit 300W = Beem Kit à 299&euro;.</p>
+              <p className="text-xs text-stone">Source : données PVGIS (Commission européenne). Tarif EDF 0,1940 &euro;/kWh (mai 2026). Coefficient de pertes : 0,85. Autoconsommation 85 %, inflation 3,3 %/an. Kit 500W = Sunology PLAY (ex-PLAY 2) à 599&euro; ; l&apos;ancien PLAY 2 de 450 Wc, encore vendu en fin de stock, produit 10 % de moins. Kit 300W = Beem Kit à 199&euro; (actuellement en rupture chez Beem).</p>
               <p className="text-sm text-charcoal-light mt-2">
                 → Retrouvez ces kits dans notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">comparatif des meilleurs kits solaires 2026</Link>.
               </p>
@@ -114,7 +114,7 @@ export default function CombienRapportePage() {
                   <ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" />
                   <div>
                   <h4 className="font-bold text-sm mb-1">A Paris avec un Beem Kit 300W</h4>
-                  <p className="text-xs text-charcoal-light">Vous produisez 281 kWh/an. C&apos;est moins, mais à 299&euro; le kit, le retour sur investissement est atteint en 5,9 ans. Sur 25 ans, vous économiséz environ 1 760&euro; — soit 5,9x votre investissement initial.</p>
+                  <p className="text-xs text-charcoal-light">Vous produisez 281 kWh/an. C&apos;est moins, mais à 199&euro; le kit (actuellement en rupture chez Beem), le retour sur investissement serait atteint en 4,1 ans. Sur 25 ans, vous économiséz environ 1 760&euro;.</p>
                 </div>
                   </div>
                 </div>
