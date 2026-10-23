@@ -20,6 +20,16 @@ interface Article {
 const ARTICLES: Article[] = [
   // Articles récents (octobre 2026)
   {
+    slug: '/blog/degradation-panneau-solaire-25-ans',
+    title: 'Dégradation d\'un panneau solaire : que reste-t-il après 25 ans ?',
+    excerpt: 'Taux de dégradation réels par technologie (PERC, TOPCon, back-contact), garanties constructeur et impact chiffré sur la rentabilité via pricing.ts.',
+    type: 'analyse',
+    badge: 'Nouveau',
+    tags: ['comprendre', 'rentabilite'],
+    publishedAt: '2026-10-23',
+    readTime: '9 min',
+  },
+  {
     slug: '/etude/rentabilite-kit-solaire-balcon-departement',
     title: 'Carte : rentabilité d\'un kit solaire de balcon par département',
     excerpt: 'Production, économies et années de retour sur investissement d\'un kit 500 Wc dans les 96 départements. Carte interactive, classement et données CC BY.',

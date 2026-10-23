@@ -70,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/sunology-go`, lastModified: '2026-10-09', changeFrequency: 'monthly', priority: 0.7 },
 
     // Blog
+    { url: `${BASE_URL}/blog/degradation-panneau-solaire-25-ans`, lastModified: '2026-10-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/panneau-solaire-balcon-voiture-electrique`, lastModified: '2026-10-02', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/prise-exterieure-etanche-kit-solaire`, lastModified: '2026-09-29', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/guirlande-solaire-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
