@@ -399,6 +399,10 @@ export default function PanneauSolaireCaniuleProductionPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau solaire produit moins que pr&eacute;vu&nbsp;: que faire&nbsp;?</h4>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points&nbsp;: ombre, orientation, salissure, chaleur. Solutions concr&egrave;tes.</p>
                 </Link>
+                <Link href="/blog/degradation-panneau-solaire-25-ans" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;gradation d&apos;un panneau solaire&nbsp;: que reste-t-il apr&egrave;s 25 ans&nbsp;?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">&Agrave; ne pas confondre avec la perte de rendement par chaleur&nbsp;: taux r&eacute;els par technologie et garanties constructeur.</p>
+                </Link>
               </div>
             </section>
 

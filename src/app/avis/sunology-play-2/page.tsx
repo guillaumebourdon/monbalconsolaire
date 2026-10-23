@@ -161,6 +161,9 @@ export default function AvisPage() {
                   </div>
                 ))}
               </div>
+              <p className="text-charcoal-light leading-relaxed text-sm mt-4">
+                Pourquoi une garantie de puissance de 30 ans sur un panneau back-contact ? Notre analyse <Link href="/blog/degradation-panneau-solaire-25-ans" className="text-green font-semibold hover:underline">dégradation d&apos;un panneau solaire après 10, 20, 25 ans</Link> détaille les taux réels par technologie de cellule.
+              </p>
             </section>
 
             <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Vérifier le prix du PLAY 500 W" variant="secondary" position="after-pros" />

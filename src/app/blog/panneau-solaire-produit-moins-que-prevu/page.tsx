@@ -339,6 +339,10 @@ export default function PanneauProduitMoinsPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : comment le calculer</h4>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi 0 W d&apos;injection au Linky est souvent une bonne nouvelle</p>
                 </Link>
+                <Link href="/blog/degradation-panneau-solaire-25-ans" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Dégradation d&apos;un panneau solaire : que reste-t-il après 25 ans ?</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Baisse brutale ou vieillissement normal ? Taux réels par technologie et signaux d&apos;alerte</p>
+                </Link>
               </div>
             </section>
 
