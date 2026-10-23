@@ -68,9 +68,10 @@ S'appuyer sur blog/micro-onduleur-solaire-fonctionnement (ne pas dupliquer : ang
 ### Jeudi 22/10 — MISE À JOUR
 **Cohérence prix Beem Kit 300W** — (les mentions du 460W ont été corrigées le 12/10.) Le Beem Kit 300W est passé à 199 € et est en rupture chez Beem (vérifié le 12/10) : corriger les « 299 € » / ROI 5,5 ans encore présents (page d'accueil, comparatif/meilleur-kit-solaire-2026 si pas fait le 15/10, blog/panneau-solaire-est-ouest, avis/ikea-solstrale-balcon, src/app/solaire-balcon/[slug]/page.tsx, comparatifs petit budget…) et signaler la rupture. Grep `299` + `300W`. ROI via pricing.ts.
 
-### Vendredi 23/10 — NOUVEL ARTICLE — BLOG
+### Vendredi 23/10 — NOUVEL ARTICLE — BLOG — [x] publié
 **Dégradation d'un panneau solaire : que reste-t-il après 10, 20, 25 ans ?** — slug `degradation-panneau-solaire-25-ans`
 Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur ROI (pricing.ts).
+**23/10 :** taux sourcés (revue NREL Jordan &amp; Kurtz + fiches constructeurs 2026), garanties réelles des kits déjà analysés sur le site (Sunology PLAY, DualSun PREASY, Beem Kit 300W), impact ROI calculé via pricing.ts (−4 à −7 % sur 25 ans selon la technologie). 3 backlinks ajoutés (sunology-play-2, canicule, produit-moins-que-prevu).
 
 ## Semaine 44 — 27-30 oct.
 
