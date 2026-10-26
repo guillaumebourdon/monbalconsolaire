@@ -93,7 +93,7 @@ export default function AchatGroupePage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les &eacute;tapes d&apos;un achat group&eacute;, avec l&apos;exemple de {kerwatt.nom}</h2>
-              <p className="text-charcoal-light leading-relaxed mb-6">&Agrave; {kerwatt.zone}, dans les C&ocirc;tes-d&apos;Armor, {kerwatt.nom} organise des achats group&eacute;s de kits plug-and-play et en a d&eacute;j&agrave; vendu {kerwatt.kitsVendus}. Leurs op&eacute;rations suivent toujours le m&ecirc;me d&eacute;roul&eacute; :</p>
+              <p className="text-charcoal-light leading-relaxed mb-6">Bas&eacute; &agrave; {kerwatt.ville}, {kerwatt.nom} organise des achats group&eacute;s de kits plug-and-play dans {kerwatt.zone}, et en a d&eacute;j&agrave; vendu {kerwatt.kitsVendus}. Leurs op&eacute;rations suivent toujours le m&ecirc;me d&eacute;roul&eacute; :</p>
               <ol className="space-y-3">
                 {kerwatt.deroule.map((etape, i) => (
                   <li key={i} className="card border-l-4 border-l-green flex gap-4 items-start">
@@ -163,8 +163,8 @@ export default function AchatGroupePage() {
               <div className="card-lg bg-green-pale/20 border-green/10">
                 <p className="text-sm text-charcoal-light leading-relaxed mb-3">Une dizaine de personnes se sont d&eacute;j&agrave; manifest&eacute;es pour le prochain achat group&eacute;. Il sera lanc&eacute; quand 30 candidatures seront r&eacute;unies.</p>
                 <p className="text-sm font-semibold">
-                  {kerwatt.inscription.href
-                    ? <a href={kerwatt.inscription.href} target="_blank" rel="noopener" className="text-green hover:underline">{kerwatt.inscription.label} &rarr;</a>
+                  Pour vous faire conna&icirc;tre&nbsp;: {kerwatt.inscription.href
+                    ? <a href={kerwatt.inscription.href} className="text-green hover:underline">{kerwatt.inscription.label}</a>
                     : kerwatt.inscription.label}
                 </p>
               </div>

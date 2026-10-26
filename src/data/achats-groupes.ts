@@ -7,6 +7,7 @@ export type AchatGroupe = {
   slug: string;
   nom: string;
   codeDepartement: string;
+  ville: string;
   zone: string;
   kitsVendus: string;
   deroule: string[];
@@ -22,8 +23,9 @@ export const ACHATS_GROUPES: AchatGroupe[] = [
     slug: 'kerwatt',
     nom: 'Kerwatt',
     codeDepartement: '22',
-    // TODO Kerwatt : zone exacte couverte (Lannion seulement, Trégor, plus large ?)
-    zone: 'Lannion et ses environs',
+    ville: 'Lannion',
+    // Zone confirmée par Kerwatt le 26/10/2026
+    zone: 'les Côtes-d’Armor et l’est du Finistère (secteur de Morlaix)',
     kitsVendus: 'près de 300',
     deroule: [
       'Kerwatt s’associe à une collectivité locale, qui accueille l’opération.',
@@ -35,8 +37,8 @@ export const ACHATS_GROUPES: AchatGroupe[] = [
     contenuKit: 'un panneau, un micro-onduleur, la connectique, 10 m de câble 1,5 mm² et une prise connectée',
     prixConstates: { min: 400, max: 490 },
     puissanceDernierKitWc: 500,
-    // TODO Kerwatt : lien ou adresse pour se faire connaître
-    inscription: { label: '[À compléter : lien ou contact Kerwatt]', href: null },
+    // Contact confirmé par Kerwatt le 26/10/2026
+    inscription: { label: 'kerwattkitlannion@proton.me', href: 'mailto:kerwattkitlannion@proton.me' },
     valide: false,
   },
 ];
