@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { DEPARTMENTS, deptArticles } from '@/data/departments';
+import { achatsGroupesDuDepartement } from '@/data/achats-groupes';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -67,7 +68,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     },
     // Pages programmatiques jugées trop minces par Google (crawlées, non indexées) :
     // retirées de l'index en attendant un enrichissement local page par page.
-    robots: { index: false, follow: true },
+    // Une page qui présente un achat groupé local validé repasse en index.
+    robots: { index: achatsGroupesDuDepartement(dept.code).length > 0, follow: true },
   });
 }
 
@@ -87,6 +89,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
   const irradiationLevel = dept.irradiation >= 1400 ? 'excellent' : dept.irradiation >= 1200 ? 'bon' : dept.irradiation >= 1050 ? 'correct' : 'modéré';
   const irradiationEmoji = dept.irradiation >= 1400 ? '\u2600\ufe0f' : dept.irradiation >= 1200 ? '\ud83c\udf24\ufe0f' : '\u26c5';
 
+  const achatsGroupes = achatsGroupesDuDepartement(dept.code);
   const nearbyDepts = DEPARTMENTS
     .filter(d => d.region === dept.region && d.code !== dept.code)
     .slice(0, 4);
@@ -267,6 +270,23 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 )}
               </div>
             </section>
+
+            {achatsGroupes.map(ag => (
+              <section key={ag.slug}>
+                <h2 className="text-2xl font-extrabold mb-4">Acheter son kit en achat group&eacute; dans le {dept.name} : {ag.nom}</h2>
+                <p className="text-charcoal-light leading-relaxed mb-4">Plut&ocirc;t que d&apos;acheter un kit seul en ligne, vous pouvez passer par un achat group&eacute;. &Agrave; {ag.zone}, {ag.nom} en organise et a d&eacute;j&agrave; vendu {ag.kitsVendus} kits. Le d&eacute;roul&eacute; :</p>
+                <ol className="list-decimal pl-6 space-y-1 text-sm text-charcoal-light leading-relaxed mb-4">
+                  {ag.deroule.map((etape, i) => <li key={i}>{etape}</li>)}
+                </ol>
+                <p className="text-charcoal-light leading-relaxed mb-4">Le kit comprend {ag.contenuKit}. Le mat&eacute;riel &eacute;volue d&apos;une op&eacute;ration &agrave; l&apos;autre (derniers kits : {ag.puissanceDernierKitWc} Wc) ; les prix constat&eacute;s sont all&eacute;s de {ag.prixConstates.min} &agrave; {ag.prixConstates.max} &euro;. Dans le {dept.name}, un kit de {ag.puissanceDernierKitWc} Wc &agrave; {ag.prixConstates.max} &euro; se rembourse en {calculateROIYears({ kitPriceEur: ag.prixConstates.max, kitPowerWc: ag.puissanceDernierKitWc, productibleKwhPerKwc: productible }).toLocaleString('fr-FR')} ans.</p>
+                <p className="text-sm font-semibold mb-2">
+                  {ag.inscription.href
+                    ? <a href={ag.inscription.href} target="_blank" rel="noopener" className="text-green hover:underline">{ag.inscription.label} &rarr;</a>
+                    : ag.inscription.label}
+                </p>
+                <p className="text-sm text-charcoal-light">Comment fonctionne un achat group&eacute; : <Link href="/guide/achat-groupe-kit-solaire" className="text-green hover:underline">notre guide complet &rarr;</Link></p>
+              </section>
+            ))}
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
               <p className="font-semibold text-lg mb-2">Affinez votre calcul</p>

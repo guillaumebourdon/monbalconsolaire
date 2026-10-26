@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/etude/rentabilite-kit-solaire-balcon-departement`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.8 },
 
     // Guides
+    { url: `${BASE_URL}/guide/achat-groupe-kit-solaire`, lastModified: '2026-10-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/guide/demenager-kit-solaire-balcon`, lastModified: '2026-10-06', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/guide/checklist-avant-achat-kit-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/erreurs-production-solaire-ete`, lastModified: '2026-07-21', changeFrequency: 'monthly', priority: 0.7 },

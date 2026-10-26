@@ -333,6 +333,16 @@ const ARTICLES: Article[] = [
     readTime: '8 min',
   },
   {
+    slug: '/guide/achat-groupe-kit-solaire',
+    title: 'Achat groupé de kits solaires : comment ça marche',
+    excerpt: 'Qui organise, les étapes, ce qui est inclus, les prix constatés et la rentabilité, avec l’exemple de Kerwatt dans les Côtes-d’Armor.',
+    type: 'guide',
+    badge: 'Achat groupé',
+    tags: ['guide'],
+    publishedAt: '2026-10-27',
+    readTime: '7 min',
+  },
+  {
     slug: '/guide/declaration-cacsi-enedis-panneau-solaire',
     title: 'Déclaration CACSI Enedis : le guide pas à pas',
     excerpt: 'La procédure complète pour déclarer votre kit à Enedis. Avec modèles de lettres prêts à copier (assurance, propriétaire, relance Enedis).',

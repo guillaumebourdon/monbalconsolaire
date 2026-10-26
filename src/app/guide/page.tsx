@@ -12,10 +12,18 @@ export const metadata: Metadata = withCanonicalOg({
 
 const articles = [
   {
+    slug: 'achat-groupe-kit-solaire',
+    title: 'Achat groupé de kits solaires : comment ça marche',
+    excerpt: 'Qui organise, les étapes, ce qui est inclus, les prix constatés et la rentabilité, avec l’exemple de Kerwatt dans les Côtes-d’Armor.',
+    badge: 'Nouveau',
+    date: '27 octobre 2026',
+    readTime: '7 min',
+  },
+  {
     slug: 'demenager-kit-solaire-balcon',
     title: 'Déménager avec son kit solaire balcon : CACSI, résiliation',
     excerpt: 'Démontage, transport, résiliation du contrat d’électricité et nouvelle déclaration CACSI à chaque changement d’adresse.',
-    badge: 'Nouveau',
+    badge: 'Déménagement',
     date: '6 octobre 2026',
     readTime: '9 min',
   },
