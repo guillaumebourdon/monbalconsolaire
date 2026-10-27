@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { DEPARTMENTS } from '@/data/departments';
+import { DEPARTMENTS, deptArticles } from '@/data/departments';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -57,9 +57,10 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const dept = getDeptBySlug(params.slug);
   if (!dept) return {};
+  const art = deptArticles(dept.name);
   return {
     title: `Kit solaire balcon ${dept.name} (${dept.code}) : production et rentabilité 2026`,
-    description: `Combien produit un kit solaire sur un balcon dans le ${dept.name} (${dept.code}) ? Productible ${productibleSite(dept.irradiation)} kWh/kWc, calcul de rentabilité et meilleur kit recommandé.`,
+    description: `Combien produit un kit solaire sur un balcon ${art.dans} (${dept.code}) ? Productible ${productibleSite(dept.irradiation)} kWh/kWc, calcul de rentabilité et meilleur kit recommandé.`,
     alternates: {
       canonical: `https://monbalconsolaire.fr/solaire-balcon/${params.slug}`,
     },
@@ -72,6 +73,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 export default function DepartmentPage({ params }: { params: { slug: string } }) {
   const dept = getDeptBySlug(params.slug);
   if (!dept) notFound();
+  const art = deptArticles(dept.name);
 
   const productible = productibleSite(dept.irradiation);
   const allResults = KITS.map(k => calcKit(k, productible));
@@ -88,18 +90,23 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     .filter(d => d.region === dept.region && d.code !== dept.code)
     .slice(0, 4);
 
+  // FAQ sans marque : fourchette des kits 500 Wc analysés
+  const kits500 = [...allResults.filter(r => r.power === 0.5)].sort((a, b) => a.price - b.price);
+  const kits500Prix = `de ${kits500[0].price} à ${kits500[kits500.length - 1].price} € pour les kits 500 Wc analysés`;
+  const kits500Roi = `${kits500[0].roi.toLocaleString('fr-FR')} à ${kits500[kits500.length - 1].roi.toLocaleString('fr-FR')}`;
+
   const faqData = [
     {
-      question: `Un kit solaire de balcon est-il rentable dans le ${dept.name} ?`,
-      answer: `Oui. Avec un productible de ${productible} kWh/kWc/an (${irradiationLevel}), un kit Sunology PLAY (ex-PLAY 2, 500 Wc, 599 €) produit environ ${results.find(r => r.name === 'Sunology PLAY')?.production || 0} kWh/an et permet d'économiser ${results.find(r => r.name === 'Sunology PLAY')?.economies || 0} €/an. ROI en ${results.find(r => r.name === 'Sunology PLAY')?.roi || 0} ans (inflation 3,3 %/an incluse).`,
+      question: `Un kit solaire de balcon est-il rentable ${art.dans} ?`,
+      answer: `Oui. Avec un productible de ${productible} kWh/kWc/an (${irradiationLevel}), un kit de 500 Wc orienté sud produit environ ${kits500[0].production} kWh/an et fait économiser environ ${kits500[0].economies} €/an. Selon son prix (${kits500Prix}), le retour sur investissement va de ${kits500Roi} ans (inflation 3,3 %/an incluse).`,
     },
     {
-      question: `Quelle est l'irradiation solaire dans le ${dept.name} ?`,
-      answer: `Selon PVGIS (Commission européenne), un panneau orienté sud et incliné à 30° produit en moyenne ${dept.irradiation} kWh par kWc et par an dans le ${dept.name} (${dept.code}), pertes système incluses. C'est un potentiel ${irradiationLevel}. Pour nos calculs, nous retenons un productible prudent de ${productible} kWh/kWc (recalé sur notre référence Lyon de ${PVGIS_REFERENCE_LYON} kWh/kWc), auquel s'applique un coefficient de performance de 0,85. Pour comparaison, sur la même base : Bouches-du-Rhône ${productibleSite(1500)}, Nord ${productibleSite(1020)} kWh/kWc.`,
+      question: `Quelle est l'irradiation solaire ${art.dans} ?`,
+      answer: `Selon PVGIS (Commission européenne), un panneau orienté sud et incliné à 30° produit en moyenne ${dept.irradiation} kWh par kWc et par an ${art.dans} (${dept.code}), pertes système incluses. C'est un potentiel ${irradiationLevel}. Pour nos calculs, nous retenons un productible prudent de ${productible} kWh/kWc (recalé sur notre référence Lyon de ${PVGIS_REFERENCE_LYON} kWh/kWc), auquel s'applique un coefficient de performance de 0,85. Pour comparaison, sur la même base : Bouches-du-Rhône ${productibleSite(1500)}, Nord ${productibleSite(1020)} kWh/kWc.`,
     },
     {
-      question: `Quel est le meilleur kit solaire pour un balcon dans le ${dept.name} ?`,
-      answer: `Le ${best.name} offre le meilleur retour sur investissement dans le ${dept.name} : ROI de ${best.roi} ans pour ${best.economies} €/an d'économies. Pour un petit budget, le Beem Kit 300W à ${bestBudget.price} € a un ROI de ${bestBudget.roi} ans (kit actuellement en rupture chez Beem). Et pour du stockage, le Zendure SolarFlow (${bestBatterie.economies} €/an) permet de consommer le soir l'énergie produite le jour.`,
+      question: `Quel est le meilleur kit solaire pour un balcon ${art.dans} ?`,
+      answer: `Le ${best.name} offre le meilleur retour sur investissement ${art.dans} : ROI de ${best.roi} ans pour ${best.economies} €/an d'économies. Pour un petit budget, le Beem Kit 300W à ${bestBudget.price} € a un ROI de ${bestBudget.roi} ans (kit actuellement en rupture chez Beem). Et pour du stockage, le Zendure SolarFlow (${bestBatterie.economies} €/an) permet de consommer le soir l'énergie produite le jour.`,
     },
     {
       question: 'Faut-il une autorisation pour installer un kit solaire sur un balcon ?',
@@ -111,7 +118,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     <>
       <SchemaArticle
         title={`Kit solaire balcon ${dept.name} : production et rentabilité`}
-        description={`Guide solaire de balcon pour le ${dept.name} (${dept.code}).`}
+        description={`Guide solaire de balcon pour ${art.le} (${dept.code}).`}
         url={`https://monbalconsolaire.fr/solaire-balcon/${params.slug}`}
         datePublished="2026-05-10"
       />
@@ -126,7 +133,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
               Kit solaire balcon {dept.name} ({dept.code}) : production et rentabilité 2026
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Combien produit un kit solaire sur un balcon dans le <strong>{dept.name}</strong> ? Avec un productible de <strong>{productible} kWh/kWc/an</strong>, voici les chiffres exacts de production, d&apos;économies et de retour sur investissement pour chaque kit du marché.
+              Combien produit un kit solaire sur un balcon {art.dans.replace(dept.name, '')}<strong>{dept.name}</strong> ? Avec un productible de <strong>{productible} kWh/kWc/an</strong>, voici les chiffres exacts de production, d&apos;économies et de retour sur investissement pour chaque kit du marché.
             </p>
           </div>
 
@@ -152,9 +159,9 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
           <div className="relative overflow-hidden rounded-brand-xl border border-green/10 bg-gradient-to-br from-green-pale/40 via-white to-cream p-8 shadow-brand mb-10">
             <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-green to-green-light rounded-l-brand-xl" />
-            <h2 className="font-bold text-lg mb-3 pl-4">Le potentiel solaire du {dept.name}</h2>
+            <h2 className="font-bold text-lg mb-3 pl-4">Le potentiel solaire {art.du}</h2>
             <p className="text-sm text-charcoal-light leading-relaxed pl-4">
-              Le département du {dept.name} ({dept.code}) en {dept.region} bénéficie d&apos;un productible PVGIS de <strong>{dept.irradiation} kWh/kWc/an</strong> (sud, 30°), un potentiel <strong>{irradiationLevel}</strong>. Nos calculs retiennent {productible} kWh/kWc, cal&eacute;s sur notre r&eacute;f&eacute;rence prudente de Lyon.
+              Le département {art.du} ({dept.code}) en {dept.region} bénéficie d&apos;un productible PVGIS de <strong>{dept.irradiation} kWh/kWc/an</strong> (sud, 30°), un potentiel <strong>{irradiationLevel}</strong>. Nos calculs retiennent {productible} kWh/kWc, cal&eacute;s sur notre r&eacute;f&eacute;rence prudente de Lyon.
               {dept.irradiation >= 1300 && ' C\'est l\'un des départements les plus favorables au solaire en France.'}
               {dept.irradiation < 1100 && ' Même avec un ensoleillement plus faible que le sud, un kit solaire reste rentable grâce au prix élevé de l\'électricité (0,1940 €/kWh).'}
               {dept.irradiation >= 1100 && dept.irradiation < 1300 && ` Un kit solaire de balcon y est rentable : ROI de ${best.roi} ans pour le kit le mieux placé.`}
@@ -163,9 +170,9 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
           <div className="space-y-10">
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Production et rentabilité par kit dans le {dept.name}</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Production et rentabilité par kit {art.dans}</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Voici les chiffres pour chaque kit disponible, calculés avec le productible du {dept.name} en orientation sud :
+                Voici les chiffres pour chaque kit disponible, calculés avec le productible {art.du} en orientation sud :
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse">
@@ -200,7 +207,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Notre recommandation pour le {dept.name}</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Notre recommandation pour {art.le}</h2>
               <div className="card-lg border-l-4 border-l-green mb-6">
                 <div className="badge-green mb-3 text-[10px]">Meilleur ROI</div>
                 <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
@@ -214,7 +221,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                   </div>
                 </div>
                 <p className="text-sm text-charcoal-light leading-relaxed mb-3">
-                  Dans le {dept.name}, le {best.name} offre le <strong>retour sur investissement le plus rapide</strong> : {best.economies} €/an d&apos;économies pour {best.price} € investis.
+                  {art.dans.charAt(0).toUpperCase() + art.dans.slice(1)}, le {best.name} offre le <strong>retour sur investissement le plus rapide</strong> : {best.economies} €/an d&apos;économies pour {best.price} € investis.
                   {' '}Sur 25 ans, c&apos;est <strong>{calculateTotalSavings25Years({ kitPriceEur: best.price, kitPowerWc: best.power * 1000, productibleKwhPerKwc: productible, autoconsoOverride: best.autocons }).toLocaleString('fr-FR')} € d&apos;économies cumulées</strong> (inflation 3,3 %/an incluse).
                 </p>
                 <Link href={best.slug} className="btn-primary text-sm py-2.5 inline-flex">

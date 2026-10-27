@@ -14,6 +14,7 @@ import {
   calculateTotalSavings25Years,
   type CalcInput,
 } from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
 
 export default function CalculateurWrapper() {
   return (
@@ -189,7 +190,8 @@ function CalculateurPage() {
         const input: CalcInput = {
           kitPriceEur: k.price,
           kitPowerWc: k.power,
-          productibleKwhPerKwc: dept.irradiation,
+          // Même productible prudent (recalé sur Lyon) que les pages départementales et l'étude
+          productibleKwhPerKwc: productibleSite(dept.irradiation),
           orientationCoef: orientData.coeff,
           hasBattery: k.hasBattery,
           includeInflation: !noInflation,
@@ -209,7 +211,7 @@ function CalculateurPage() {
     const honestNo = bestRoi > 12;
 
     if (scored.length === 0 || honestNo) {
-      return { picks: [], others: [], all: scored, honestNo: true, orientation: orientData.label, presence: presenceData.label };
+      return { picks: [], others: [], all: scored, honestNo: true, marginal: false, bestPickRoi: 99, orientation: orientData.label, presence: presenceData.label };
     }
 
     const picks: Array<typeof scored[0] & { label: string; reasons: string[] }> = [];
@@ -255,7 +257,11 @@ function CalculateurPage() {
       if (idx > 0) { const [item] = picks.splice(idx, 1); picks.unshift(item); }
     }
 
-    return { picks, others, all: scored };
+    // Rentabilité limite : ROI > 10 ans ou balcon nord, on prévient avant de recommander
+    const bestPickRoi = picks.length > 0 ? Math.min(...picks.map(p => p.roi)) : 99;
+    const marginal = bestPickRoi > 10 || orientData.coeff <= 0.65;
+
+    return { picks, others, all: scored, marginal, bestPickRoi };
   }, [step, dept, orientation, presence, budget, surface, noInflation, forceAutoconso60, prefilledKit]);
 
   const totalSteps = prefilledKit ? 3 : 5;
@@ -426,6 +432,23 @@ function CalculateurPage() {
                 <p className="text-lg font-bold mb-2">Aucun kit ne correspond exactement</p>
                 <p className="text-sm text-charcoal-light mb-4">Votre combinaison surface/budget est tr&egrave;s contrainte. Le Beem Kit 300W (199 &euro;, actuellement en rupture chez Beem) est le point d&apos;entr&eacute;e le plus accessible.</p>
                 <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="primary" position="calculator_fallback" />
+              </div>
+            )}
+
+            {/* Rentabilité limite */}
+            {recommendations.picks.length > 0 && recommendations.marginal && (
+              <div className="card-lg border-l-4 border-l-amber">
+                <h2 className="font-bold text-lg mb-3">Attention : rentabilit&eacute; limite dans votre cas</h2>
+                <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+                  Avec votre configuration (orientation {orientLabel.toLowerCase()}, {presenceLabel.toLowerCase()}), le meilleur kit met <strong>{String(recommendations.bestPickRoi).replace('.', ',')} ans</strong> &agrave; se rembourser. C&apos;est proche de notre seuil de 12 ans, au-del&agrave; duquel nous d&eacute;conseillons l&apos;achat.
+                </p>
+                <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+                  Ce chiffre suppose un panneau inclin&eacute; et sans ombre. Un panneau pos&eacute; &agrave; la verticale contre la rambarde, ou une ombre en milieu de journ&eacute;e, peut suffire &agrave; d&eacute;passer 12 ans.
+                  {presence === 'away' && ' Absent en journée, vous ne profitez directement que d\'une petite partie de la production : sans batterie, le surplus part sur le réseau sans être payé.'}
+                </p>
+                <p className="text-sm text-charcoal-light leading-relaxed">
+                  Si vous h&eacute;sitez, mieux vaut ne pas acheter, ou commencer par un petit kit. <Link href="/blog/panneau-solaire-balcon-nord" className="text-green hover:underline">Lire notre guide sur les balcons nord et peu expos&eacute;s &rarr;</Link>
+                </p>
               </div>
             )}
 

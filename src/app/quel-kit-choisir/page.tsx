@@ -4,6 +4,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 type ArticleType = 'comparatif' | 'avis';
+type PowerRange = 'moins-400' | '400-500' | 'plus-500';
+
+const POWER_RANGES: { id: PowerRange; label: string }[] = [
+  { id: 'moins-400', label: 'Moins de 400 Wc' },
+  { id: '400-500', label: '400 à 500 Wc' },
+  { id: 'plus-500', label: 'Plus de 500 Wc' },
+];
 
 interface Article {
   slug: string;
@@ -12,6 +19,10 @@ interface Article {
   type: ArticleType;
   badge: string;
   tags: string[];
+  /** Marques analysées dans l'article */
+  brands?: string[];
+  /** Puissance crête des kits traités (panneaux), si l'article porte sur des kits */
+  powers?: PowerRange[];
   score?: string;
   price?: string;
   readTime?: string;
@@ -27,6 +38,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Nouveau',
     tags: ['comparatif', 'diy', 'best'],
+    brands: ['Hoymiles'],
     publishedAt: '2026-10-16',
     readTime: '11 min',
   },
@@ -47,6 +59,8 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Match 2026',
     tags: ['best', 'comparatif', 'marque'],
+    brands: ['Sunology', 'Beem'],
+    powers: ['400-500'],
     publishedAt: '2026-07-28',
     readTime: '10 min',
   },
@@ -57,6 +71,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Batteries',
     tags: ['stockage', 'comparatif', 'best'],
+    brands: ['Zendure', 'Bluetti', 'EcoFlow', 'Jackery'],
     publishedAt: '2026-07-10',
     readTime: '10 min',
   },
@@ -77,6 +92,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Match 2026',
     tags: ['best', 'comparatif', 'stockage', 'marque'],
+    brands: ['Zendure', 'Sunology', 'Beem'],
     publishedAt: '2026-05-09',
     readTime: '12 min',
   },
@@ -87,6 +103,8 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Article phare',
     tags: ['best', 'comparatif'],
+    brands: ['Sunology', 'Beem', 'Sunethic'],
+    powers: ['moins-400', '400-500'],
     publishedAt: '2026-03-17',
     readTime: '12 min',
   },
@@ -97,6 +115,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Match direct',
     tags: ['marque', 'comparatif'],
+    brands: ['Sunology', 'Beem'],
     publishedAt: '2026-03-24',
     readTime: '10 min',
   },
@@ -107,6 +126,8 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Petit budget',
     tags: ['budget', 'comparatif'],
+    brands: ['Beem'],
+    powers: ['moins-400'],
     publishedAt: '2026-03-25',
     readTime: '8 min',
   },
@@ -117,6 +138,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Stockage',
     tags: ['stockage', 'comparatif'],
+    brands: ['Sunology', 'EcoFlow'],
     publishedAt: '2026-03-31',
     readTime: '10 min',
   },
@@ -127,6 +149,7 @@ const ARTICLES: Article[] = [
     type: 'comparatif',
     badge: 'Puissance',
     tags: ['puissance', 'comparatif'],
+    powers: ['moins-400', '400-500'],
     publishedAt: '2026-04-18',
     readTime: '8 min',
   },
@@ -137,6 +160,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Choix n°1',
     tags: ['best', 'marque'],
+    brands: ['Sunology'],
+    powers: ['400-500'],
     publishedAt: '2026-03-19',
     score: '8.5/10',
     price: '599 €',
@@ -148,6 +173,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Meilleur rapport qualit\u00e9-prix',
     tags: ['marque', 'best', 'puissance', 'budget'],
+    brands: ['Beem'],
+    powers: ['400-500'],
     publishedAt: '2026-06-17',
     updatedAt: '2026-08-20',
     score: '8.5/10',
@@ -160,6 +187,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Made in France',
     tags: ['puissance', 'marque'],
+    brands: ['Sunethic'],
+    powers: ['400-500'],
     publishedAt: '2026-03-27',
     score: '7.5/10',
     price: '690 €',
@@ -171,6 +200,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Petit budget',
     tags: ['budget'],
+    brands: ['Beem'],
+    powers: ['moins-400'],
     publishedAt: '2026-04-01',
     score: '7.5/10',
     price: '199 €',
@@ -182,6 +213,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Kit + batterie',
     tags: ['stockage', 'marque'],
+    brands: ['Sunology'],
+    powers: ['400-500'],
     publishedAt: '2026-04-02',
     score: '8/10',
     price: '699 €',
@@ -193,6 +226,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Arrêté',
     tags: ['marque', 'compact'],
+    brands: ['Sunology'],
+    powers: ['400-500'],
     publishedAt: '2026-04-27',
     score: '7,5/10',
     price: 'Arrêté',
@@ -204,6 +239,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Compact',
     tags: ['marque', 'compact', 'budget'],
+    brands: ['Sunology'],
+    powers: ['moins-400'],
     publishedAt: '2026-10-09',
     score: '7/10',
     price: '349 €',
@@ -215,6 +252,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Arrêté',
     tags: ['stockage', 'marque'],
+    brands: ['EcoFlow'],
     publishedAt: '2026-04-28',
     score: '8/10',
     price: 'Arrêté',
@@ -226,6 +264,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'IKEA',
     tags: ['marque'],
+    brands: ['IKEA', 'EcoFlow'],
+    powers: ['plus-500'],
     publishedAt: '2026-05-23',
     score: '\u2014',
     price: '449 \u20ac (DE)',
@@ -237,6 +277,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Made in France',
     tags: ['marque'],
+    brands: ['DualSun'],
+    powers: ['400-500'],
     publishedAt: '2026-05-09',
     score: '6.5/10',
     price: '870 €',
@@ -248,6 +290,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Rapport qualité/prix',
     tags: ['stockage', 'budget', 'marque'],
+    brands: ['Zendure'],
+    powers: ['plus-500'],
     publishedAt: '2026-05-07',
     score: '8.5/10',
     price: '488 €',
@@ -259,6 +303,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Stockage LFP',
     tags: ['stockage', 'marque'],
+    brands: ['Jackery'],
     publishedAt: '2026-06-23',
     score: '7/10',
     price: '839 \u20ac',
@@ -270,6 +315,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'DIY',
     tags: ['diy', 'technique'],
+    brands: ['Hoymiles'],
     publishedAt: '2026-08-18',
     score: '8.5/10',
     price: '~119 €',
@@ -281,6 +327,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Grande marque',
     tags: ['marque', 'puissance'],
+    brands: ['Anker'],
+    powers: ['plus-500'],
     publishedAt: '2026-07-17',
     score: '7.5/10',
     price: '799 €',
@@ -292,6 +340,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Tout-en-un r\u00e9sidentiel',
     tags: ['stockage', 'marque', 'best'],
+    brands: ['Zendure'],
     publishedAt: '2026-06-30',
     score: '8/10',
     price: '1 999 \u20ac',
@@ -303,6 +352,7 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Tout-en-un',
     tags: ['stockage', 'marque'],
+    brands: ['Bluetti'],
     publishedAt: '2026-06-20',
     score: '7/10',
     price: '849 \u20ac',
@@ -314,6 +364,8 @@ const ARTICLES: Article[] = [
     type: 'avis',
     badge: 'Ancien modèle',
     tags: ['marque'],
+    brands: ['Beem'],
+    powers: ['400-500'],
     publishedAt: '2026-03-26',
     updatedAt: '2026-06-20',
     score: '8/10',
@@ -332,6 +384,26 @@ const FILTERS = [
 
 export default function QuelKitChoisirPage() {
   const [filter, setFilter] = useState<string>('all');
+  const [power, setPower] = useState<PowerRange | null>(null);
+  const [brand, setBrand] = useState<string | null>(null);
+
+  // Marques classées par nombre d'articles
+  const brandCounts = new Map<string, number>();
+  ARTICLES.forEach(a => a.brands?.forEach(b => brandCounts.set(b, (brandCounts.get(b) || 0) + 1)));
+  const BRANDS = [...brandCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([b]) => b);
+
+  const selectFilter = (id: string) => {
+    setFilter(id);
+    setPower(null);
+    setBrand(null);
+  };
+
+  const matches = (a: Article) => {
+    if (filter === 'all') return true;
+    if (filter === 'puissance') return power ? !!a.powers?.includes(power) : !!a.powers?.length;
+    if (filter === 'marque') return brand ? !!a.brands?.includes(brand) : !!a.brands?.length;
+    return a.tags.includes(filter);
+  };
 
   const NOW = Date.now();
   const NEW_THRESHOLD_DAYS = 14;
@@ -347,10 +419,7 @@ export default function QuelKitChoisirPage() {
     return diff <= UPDATED_THRESHOLD_DAYS;
   };
 
-  const filteredArticles = (filter === 'all'
-    ? ARTICLES
-    : ARTICLES.filter(a => a.tags.includes(filter))
-  )
+  const filteredArticles = ARTICLES.filter(matches)
     .slice()
     .sort((a, b) => {
       const aDate = Math.max(new Date(a.publishedAt).getTime(), a.updatedAt ? new Date(a.updatedAt).getTime() : 0);
@@ -385,7 +454,7 @@ export default function QuelKitChoisirPage() {
           {FILTERS.map((f) => (
             <button
               key={f.id}
-              onClick={() => setFilter(f.id)}
+              onClick={() => selectFilter(f.id)}
               className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ${
                 filter === f.id
                   ? 'bg-green text-white shadow-brand'
@@ -397,6 +466,31 @@ export default function QuelKitChoisirPage() {
             </button>
           ))}
         </div>
+
+        {(filter === 'puissance' || filter === 'marque') && (
+          <div className="flex flex-wrap justify-center gap-2 -mt-4 mb-8">
+            {(filter === 'puissance'
+              ? [{ id: null, label: 'Toutes les puissances' }, ...POWER_RANGES]
+              : [{ id: null, label: 'Toutes les marques' }, ...BRANDS.map(b => ({ id: b, label: b }))]
+            ).map((o) => {
+              const active = (filter === 'puissance' ? power : brand) === o.id;
+              return (
+                <button
+                  key={o.label}
+                  onClick={() => (filter === 'puissance' ? setPower(o.id as PowerRange | null) : setBrand(o.id))}
+                  aria-pressed={active}
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all duration-200 ${
+                    active
+                      ? 'bg-green-pale text-green border-green/40'
+                      : 'bg-white text-charcoal-light border-border-light hover:border-green/30'
+                  }`}
+                >
+                  {o.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {filter === 'all' && (
           <div className="card bg-green-pale/40 border-green/20 mb-6 flex items-start gap-4 flex-wrap">
@@ -422,7 +516,7 @@ export default function QuelKitChoisirPage() {
 
         <p className="text-xs text-stone text-center mb-6">
           {filteredArticles.length} {filteredArticles.length === 1 ? 'article' : 'articles'}
-          {filter !== 'all' && ` dans « ${FILTERS.find(f => f.id === filter)?.label} »`}
+          {filter !== 'all' && ` dans « ${power ? POWER_RANGES.find(r => r.id === power)?.label : brand || FILTERS.find(f => f.id === filter)?.label} »`}
         </p>
 
         <div className="space-y-4 mb-12">
@@ -485,7 +579,7 @@ export default function QuelKitChoisirPage() {
           <div className="card-lg text-center mb-12">
             <p className="text-charcoal-light">Aucun article ne correspond à ce filtre pour le moment.</p>
             <button
-              onClick={() => setFilter('all')}
+              onClick={() => selectFilter('all')}
               className="text-green font-semibold text-sm mt-3 hover:underline"
             >
               Voir tous les articles →

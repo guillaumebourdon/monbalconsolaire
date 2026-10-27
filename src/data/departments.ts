@@ -151,3 +151,36 @@ export function getDepartmentData(code: string): DepartmentData | undefined {
 export function getAllDepartments(): DepartmentData[] {
   return [...DEPARTMENTS].sort((a, b) => a.code.localeCompare(b.code));
 }
+
+// Article grammatical de chaque département (« dans la Loire », « dans l'Ain », « dans les Landes », « à Paris »).
+const FEMININ = new Set([
+  'Drôme', 'Loire', 'Haute-Loire', 'Savoie', 'Haute-Savoie', "Côte-d'Or", 'Nièvre', 'Haute-Saône',
+  'Saône-et-Loire', 'Corse-du-Sud', 'Haute-Corse', 'Marne', 'Haute-Marne', 'Meurthe-et-Moselle', 'Meuse',
+  'Moselle', 'Somme', 'Seine-et-Marne', 'Seine-Saint-Denis', 'Manche', 'Seine-Maritime', 'Charente',
+  'Charente-Maritime', 'Corrèze', 'Creuse', 'Dordogne', 'Gironde', 'Vienne', 'Haute-Vienne',
+  'Haute-Garonne', 'Lozère', 'Loire-Atlantique', 'Mayenne', 'Sarthe', 'Vendée',
+]);
+const PLURIEL = new Set([
+  "Côtes-d'Armor", 'Ardennes', 'Vosges', 'Yvelines', 'Hauts-de-Seine', 'Landes', 'Pyrénées-Atlantiques',
+  'Deux-Sèvres', 'Hautes-Pyrénées', 'Pyrénées-Orientales', 'Alpes-de-Haute-Provence', 'Hautes-Alpes',
+  'Alpes-Maritimes', 'Bouches-du-Rhône',
+]);
+
+export interface DepartmentArticles {
+  /** « le Rhône », « la Loire », « l'Ain », « les Landes », « Paris » */
+  le: string;
+  /** « dans le Rhône », « dans l'Ain », « à Paris » */
+  dans: string;
+  /** « du Rhône », « de la Loire », « de l'Ain », « des Landes », « de Paris » */
+  du: string;
+}
+
+export function deptArticles(name: string): DepartmentArticles {
+  if (name === 'Paris') return { le: 'Paris', dans: 'à Paris', du: 'de Paris' };
+  if (PLURIEL.has(name)) return { le: `les ${name}`, dans: `dans les ${name}`, du: `des ${name}` };
+  if (/^[AEIOUYÉÈH]/i.test(name) && !name.startsWith('Haut')) {
+    return { le: `l'${name}`, dans: `dans l'${name}`, du: `de l'${name}` };
+  }
+  if (FEMININ.has(name)) return { le: `la ${name}`, dans: `dans la ${name}`, du: `de la ${name}` };
+  return { le: `le ${name}`, dans: `dans le ${name}`, du: `du ${name}` };
+}
