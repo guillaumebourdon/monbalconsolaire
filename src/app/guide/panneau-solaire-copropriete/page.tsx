@@ -7,8 +7,8 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { CopyableTemplate } from '@/components/ui/CopyableTemplate';
 
 export const metadata: Metadata = {
-  title: 'Panneau solaire copropriété : balcon, vote AG, modèle 2026',
-  description: 'Panneau solaire en copropriété : quand l\'AG doit voter (art. 24 k et 25 b, loi 1965), balcon, garde-corps, toiture, modèle de résolution et recours.',
+  title: 'Panneau solaire balcon copropriété : autorisation AG 2026',
+  description: 'Faut-il l\'accord de l\'AG pour un kit solaire sur son balcon en copropriété ? Règles 2026 (loi APER), majorité de vote, modèle de lettre au syndic à copier.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-copropriete',
   },
@@ -29,7 +29,7 @@ const faqData = [
   },
   {
     question: 'Existe-t-il des aides pour les panneaux solaires en copropriété ?',
-    answer: 'Pour un kit de balcon individuel, il n\'existe pas d\'aide nationale dédiée (pas de prime à l\'autoconsommation, qui suppose un raccordement avec contrat de vente du surplus). Pour une installation collective en toiture, les dispositifs relèvent du contrat d\'obligation d\'achat ou de l\'autoconsommation collective (article L315-2 du Code de l\'énergie). La prime à l\'autoconsommation a été supprimée pour les demandes de raccordement déposées à partir de juin 2026 selon plusieurs sources spécialisées : vérifiez les conditions en vigueur au moment du projet. Certaines collectivités proposent des aides locales.',
+    answer: 'Pour un kit de balcon individuel, il n\'existe pas d\'aide nationale dédiée (pas de prime à l\'autoconsommation, qui suppose un raccordement avec contrat de vente du surplus). Pour une installation collective en toiture, les dispositifs relèvent du contrat d\'obligation d\'achat ou de l\'autoconsommation collective (article L315-2 du Code de l\'énergie). La prime à l\'autoconsommation a été supprimée par arrêté pour les demandes complètes de raccordement validées par Enedis à partir du 5 juin 2026 (remplacée par un tarif de rachat du surplus à 1,1 c€/kWh HT, indexé 2 %/an) selon plusieurs sources spécialisées : vérifiez les conditions en vigueur au moment du projet. Certaines collectivités proposent des aides locales.',
   },
   {
     question: 'Comment inscrire l\'installation de panneaux solaires à l\'ordre du jour de l\'AG ?',
@@ -107,7 +107,7 @@ export default function CoproprietePage() {
         description="Règles pour installer un panneau solaire en copropriété : balcon, garde-corps, toiture, majorités de vote (art. 24 k et 25 b), modèle de résolution et recours."
         url="https://monbalconsolaire.fr/guide/panneau-solaire-copropriete"
         datePublished="2026-04-17"
-        dateModified="2026-09-27"
+        dateModified="2026-10-27"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Copropriété' }]} />
@@ -118,7 +118,7 @@ export default function CoproprietePage() {
             <div className="badge-green mb-4 inline-block">Guide pratique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire en copropri&eacute;t&eacute; : balcon, vote en AG et mod&egrave;le de r&eacute;solution</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Kit pos&eacute; sur le balcon, panneau accroch&eacute; au garde-corps ou centrale sur le toit de l&apos;immeuble : les r&egrave;gles ne sont pas les m&ecirc;mes. Ce que dit la loi du 10 juillet 1965 depuis la r&eacute;forme de 2023, ce que le syndic peut exiger, et comment faire voter votre projet.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap"><span>Mis &agrave; jour le 27 septembre 2026</span><span>&middot;</span><span>12 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap"><span>Mis &agrave; jour le 27 octobre 2026</span><span>&middot;</span><span>12 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -288,7 +288,7 @@ export default function CoproprietePage() {
                 <li className="card"><strong className="text-charcoal">Autoconsommation des parties communes</strong> : &eacute;clairage, ascenseur, VMC. Le plus simple &agrave; monter.</li>
                 <li className="card"><strong className="text-charcoal">Autoconsommation collective</strong> (article L315-2 du Code de l&apos;&eacute;nergie) : l&apos;&eacute;lectricit&eacute; est r&eacute;partie entre les copropri&eacute;taires participants via une personne morale organisatrice et des cl&eacute;s de r&eacute;partition. Chaque participant garde son fournisseur.</li>
               </ul>
-              <p className="text-sm text-charcoal-light leading-relaxed">C&ocirc;t&eacute; aides, pas de dispositif national sp&eacute;cifique aux copropri&eacute;t&eacute;s pour le photovolta&iuml;que. La prime &agrave; l&apos;autoconsommation a &eacute;t&eacute; supprim&eacute;e pour les demandes de raccordement d&eacute;pos&eacute;es depuis juin 2026 d&apos;apr&egrave;s plusieurs sources sp&eacute;cialis&eacute;es ; v&eacute;rifiez les conditions du moment et les aides locales (r&eacute;gion, m&eacute;tropole). Pour les ressources officielles, le site photovoltaique.info (Hespul) a une section d&eacute;di&eacute;e aux copropri&eacute;t&eacute;s. Notre point sur les <Link href="/blog/aides-subventions-panneau-solaire-balcon-2026" className="text-green hover:underline">aides pour kit solaire balcon en 2026</Link>.</p>
+              <p className="text-sm text-charcoal-light leading-relaxed">C&ocirc;t&eacute; aides, pas de dispositif national sp&eacute;cifique aux copropri&eacute;t&eacute;s pour le photovolta&iuml;que. La prime &agrave; l&apos;autoconsommation a &eacute;t&eacute; supprim&eacute;e par arr&ecirc;t&eacute; pour les demandes compl&egrave;tes de raccordement valid&eacute;es par Enedis depuis le 5 juin 2026, remplac&eacute;e par un tarif de rachat du surplus &agrave; 1,1 c&euro;/kWh HT index&eacute; 2 %/an, d&apos;apr&egrave;s plusieurs sources sp&eacute;cialis&eacute;es ; v&eacute;rifiez les conditions du moment et les aides locales (r&eacute;gion, m&eacute;tropole). Pour les ressources officielles, le site photovoltaique.info (Hespul) a une section d&eacute;di&eacute;e aux copropri&eacute;t&eacute;s. Notre point sur les <Link href="/blog/aides-subventions-panneau-solaire-balcon-2026" className="text-green hover:underline">aides pour kit solaire balcon en 2026</Link>.</p>
             </section>
 
             <section>
@@ -300,14 +300,14 @@ export default function CoproprietePage() {
                   <tbody>
                     {[
                       ['Sunology PLAY2', 'Au sol, lesté', 'Pas de vote en principe'],
-                      ['Sunology CITY (arr\u00eat\u00e9) / GO', 'Garde-corps', 'Vote en AG'],
+                      ['Sunology GO', 'Garde-corps', 'Vote en AG'],
                     ].map(([k, p, c], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{k}</td><td className="text-center p-3">{p}</td><td className="text-center p-3 text-xs">{c}</td></tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-charcoal-light leading-relaxed">Comparatif complet : <Link href="/quel-kit-choisir" className="text-green hover:underline">quel kit solaire choisir &rarr;</Link></p>
+              <p className="text-charcoal-light leading-relaxed">Avis d&eacute;taill&eacute; : <Link href="/avis/sunology-go" className="text-green hover:underline">Sunology GO</Link> &middot; comparatif complet : <Link href="/quel-kit-choisir" className="text-green hover:underline">quel kit solaire choisir &rarr;</Link></p>
               <div className="my-6">
                 <AffiliateCTA
                   productName="Sunology PLAY"

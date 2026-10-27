@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/guide/installer-kit-solaire-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/orientation-panneau-solaire-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/reglementation-panneau-solaire-balcon-2026`, lastModified: '2026-10-13', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/guide/panneau-solaire-copropriete`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/guide/panneau-solaire-copropriete`, lastModified: '2026-10-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/panneau-solaire-assurance-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/optimiser-autoconsommation-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/declaration-cacsi-enedis-panneau-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
