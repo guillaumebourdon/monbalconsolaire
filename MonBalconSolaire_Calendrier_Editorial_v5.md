@@ -75,8 +75,9 @@ Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur 
 
 ## Semaine 44 — 27-30 oct.
 
-### Mardi 27/10 — MISE À JOUR SEO (remplace l'article accessoire)
+### Mardi 27/10 — MISE À JOUR SEO (remplace l'article accessoire) — [x] publié
 **Rafraîchir : guide/panneau-solaire-copropriete** — position passée de ~8,6 (juillet) à ~33 : rafraîchir (règles AG, loi Climat, modèle de demande au syndic), FAQ, sources datées.
+**27/10 :** title/description réécrits (plus incitatifs, mot-clé « balcon » et intention « autorisation AG » en premier) ; vérification web des 3 points juridiques (loi APER 2023-175 art. 44/24 II k toujours en vigueur sans réforme 2025-2026, art. R421-17 C. urb. inchangé) ; précision apportée sur la fin de la prime à l'autoconsommation (arrêté : DCR validées par Enedis à partir du **5 juin 2026**, et non « juin 2026 » comme écrit avant, remplacée par un tarif de rachat du surplus à 1,1 c&euro;/kWh HT indexé 2 %/an) ; tableau « quel kit choisir » mis à jour (Sunology CITY arrêté retiré, lien ajouté vers l'avis Sunology GO publié le 09/10) ; date visible et `dateModified` passés au 27/10/2026, `lastModified` sitemap mis à jour.
 
 ### Jeudi 29/10 — MISE À JOUR
 **Rafraîchir : avis Sunology (PLAY, PLAYMax, CITY arrêté)** — prix, versions, liens.
