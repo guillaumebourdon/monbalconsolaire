@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Bluetti Balco 260 avis 2026 : le tout-en-un onduleur + batterie',
   description: 'Avis détaillé sur le Bluetti Balco 260 : batterie LFP 2,56 kWh + onduleur intégré, 849€ sans panneaux. Analyse complète, specs, comparatif et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/bluetti-balco-260',
   },
-};
+});
 
 const faqData = [
   { question: 'Le Bluetti Balco 260 inclut-il des panneaux solaires ?', answer: 'Non. Le Balco 260 est un boîtier onduleur + batterie. Les panneaux solaires sont à acheter séparément. Il accepte jusqu\'à 2 400 W d\'entrée solaire via 4 MPPT, soit 4 à 6 panneaux classiques de 400-500 Wc.' },

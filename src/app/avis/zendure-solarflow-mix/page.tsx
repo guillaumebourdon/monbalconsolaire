@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Zendure SolarFlow Mix avis 2026 : le tout-en-un r\u00e9sidentiel',
   description: 'Avis complet sur le Zendure SolarFlow Mix 2026 : 3 mod\u00e8les, 8-50 kWh LFP, 4 kW bidirectionnel, IA Zenki. Prix, specs, rentabilit\u00e9 et verdict honn\u00eate.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/zendure-solarflow-mix',
   },
-};
+});
 
 const faqData = [
   { question: 'Quelle diff\u00e9rence entre les 3 mod\u00e8les SolarFlow Mix ?', answer: 'Le 4000 Mix Pro accepte des panneaux en direct (2 x 4 000 W DC) + un onduleur existant (5 000 W AC), soit 13 kW d\'entr\u00e9e totale. Le 4000 Mix AC+ se branche uniquement sur un onduleur existant (5 kW AC). Le 3000 Mix AC+ est le plus compact (3 kW, non extensible). Tous partagent la batterie LFP 8 kWh de base.' },

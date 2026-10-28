@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleure batterie solaire balcon 2026 : comparatif',
   description: 'Comparatif batteries solaires balcon 2026 : Zendure SolarFlow, Bluetti Balco 260, EcoFlow PowerStream. Tableau prix/kWh, autonomie et verdict par profil.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/meilleure-batterie-solaire-balcon-2026',
   },
-};
+});
 
 const faqData = [
   {

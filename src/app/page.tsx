@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { siteStats } from '@/lib/stats';
 import { Parallax } from '@/components/ui/Parallax';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const HeroVisual = dynamic(() => import('@/components/HeroVisual').then(m => m.HeroVisual), {
   ssr: false,
@@ -24,11 +25,11 @@ const HeroVisual = dynamic(() => import('@/components/HeroVisual').then(m => m.H
   ),
 });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon 2026 : comparatif et calculateur gratuit',
   description:
     'Guide ind\u00e9pendant des kits solaires pour balcon. Comparez Sunology, Beem, Zendure, EcoFlow. Calculez vos \u00e9conomies r\u00e9elles en 30 secondes.',
-};
+});
 
 export default function HomePage() {
   return (

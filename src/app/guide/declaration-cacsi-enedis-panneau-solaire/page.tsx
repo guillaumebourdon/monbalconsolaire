@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { CopyableTemplate } from '@/components/ui/CopyableTemplate';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'D\u00e9claration Enedis panneau solaire : guide CACSI pas \u00e0 pas',
   description: 'Comment d\u00e9clarer votre kit solaire \u00e0 Enedis. Formulaire CACSI, pi\u00e8ces obligatoires, d\u00e9lais. Proc\u00e9dure simplifi\u00e9e, guide gratuit et \u00e0 jour 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/declaration-cacsi-enedis-panneau-solaire',
   },
-};
+});
 
 const faqData = [
   {

@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: '300W vs 400W vs 500W : quelle puissance pour son balcon ?',
   description: 'Comparatif des puissances 300W, 400W et 500W pour un panneau solaire de balcon. Production, prix, ROI, profil adapte : le guide complet 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance',
   },
-};
+});
 
 const faqData = [
   { question: 'Quelle puissance choisir pour un balcon ?', answer: 'Pour un balcon standard (8-15 m2), un kit de 400 a 500W offre le meilleur compromis rentabilite/espace. Les 300W conviennent aux très petits balcons ou aux budgets serres. Au-dela de 500W, il faut un espace plus grand et respecter le repere de 900W par prise recommande par l\'UFC-Que Choisir et les fabricants (la NF C 15-100 ne fixe pas de plafond en watts).' },

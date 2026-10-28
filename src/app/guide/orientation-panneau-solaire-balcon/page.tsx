@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Quelle orientation pour un panneau solaire de balcon ? (Guide 2026)',
   description: 'Sud, est, ouest, nord : quel impact sur la production de votre panneau solaire de balcon ? Coefficients réels, astuces d\'optimisation, et cas concrets.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/orientation-panneau-solaire-balcon',
   },
-};
+});
 
 const faqData = [
   { question: 'Quelle est la meilleure orientation pour un panneau solaire ?', answer: 'Plein sud est l\'orientation idéale en France métropolitaine : elle capte le maximum de soleil tout au long de la journée. C\'est 100% du potentiel de production.' },

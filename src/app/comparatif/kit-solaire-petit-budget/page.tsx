@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleur kit solaire petit budget 2026 : moins de 400€',
   description: 'Quel kit solaire de balcon acheter pour moins de 400€ en 2026 ? Comparatif des options les plus abordables : Beem Kit 300W, kits Amazon, alternatives.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/kit-solaire-petit-budget',
   },
-};
+});
 
 const faqData = [
   { question: 'Quel est le kit solaire le moins cher en 2026 ?', answer: 'Le Beem Kit 300W à 199€ est le kit de marque le moins cher avec une garantie de 25 ans, mais il est actuellement en rupture de stock chez Beem (vérifié le 12 octobre 2026). On trouve des kits sans marque sur Amazon entre 150 et 250€, mais la qualité et le SAV sont incertains.' },

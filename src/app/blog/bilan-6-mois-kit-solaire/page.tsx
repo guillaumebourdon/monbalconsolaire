@@ -16,14 +16,15 @@ import {
   calculateROIYears,
   calculateTotalSavings25Years,
 } from '@/lib/pricing';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon : ce qu’il produit vraiment en 6 mois',
   description: 'Kit solaire balcon sur 6 mois : production mois par mois (simulation PVGIS, Lyon sud), économies en euros et retours d’utilisateurs publiés.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/bilan-6-mois-kit-solaire',
   },
-};
+});
 
 // ─── Hypothèses de simulation ─────────────────────────────
 // Kit de référence : 450 Wc, 599 € (prix public du Sunology PLAY 2, pris comme exemple).

@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Linky et panneau solaire : injection, index, surplus (2026)',
   description: 'Que voit vraiment le Linky avec un kit solaire ? Index injection vs soutirage, compteur qui tourne à l’envers (mythe), surplus gratuit pour EDF : tout expliqué.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/linky-panneau-solaire-injection',
   },
-};
+});
 
 const faqData = [
   {

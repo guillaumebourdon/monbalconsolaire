@@ -4,17 +4,18 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const AMAZON_TAPO_P110 = 'https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsola-21';
 const AMAZON_TAPO_P410M = 'https://www.amazon.fr/dp/B0FZCP6BK7?tag=monbalconsola-21';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
   description: 'Comparatif des meilleures prises connect\u00e9es pour mesurer la production de votre kit solaire de balcon : Tapo P110, Shelly Plug S, Meross, GreenSun. Prix, fonctions, verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/prises-connectees-suivi-solaire',
   },
-};
+});
 
 const faqData = [
   {

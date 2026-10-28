@@ -5,14 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Autoconsommation solaire : comment ca marche concretement ? (2026)',
   description: 'L\'autoconsommation solaire expliquee simplement : comment votre panneau alimente vos appareils, le role du compteur Linky, et ce qui se passe la nuit.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche',
   },
-};
+});
 
 const faqData = [
   { question: 'L\'autoconsommation solaire, c\'est quoi ?', answer: 'C\'est le fait de consommer directement l\'électricité que vous produisez avec votre panneau solaire. Au lieu d\'acheter 100% de votre électricité a EDF, vous en produisez une partie vous-meme. Votre facture baisse d\'autant.' },

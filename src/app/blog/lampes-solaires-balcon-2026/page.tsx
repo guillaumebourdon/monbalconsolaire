@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Lampes solaires balcon : 10 modèles sélectionnés (2026)',
   description: 'Comparatif des meilleures lampes solaires extérieures pour balcon en 2026 : guirlandes, appliques, projecteurs, lanternes. Sélection honnête et critères de choix.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/lampes-solaires-balcon-2026',
   },
-};
+});
 
 const faqData = [
   {

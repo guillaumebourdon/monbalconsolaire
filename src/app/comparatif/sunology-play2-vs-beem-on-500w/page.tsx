@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Sunology PLAY (ex-PLAY 2) vs Beem On 500 Wc : match 2026',
   description: 'Sunology PLAY (ex-PLAY 2, 500 Wc, 599 €) vs Beem On 500 Wc (429 €) : 12 critères, même production, ROI 6,5 vs 4,8 ans. Quel kit choisir ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/sunology-play2-vs-beem-on-500w',
   },
-};
+});
 
 const faqData = [
   {

@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Hoymiles HMS-800W-2T avis 2026 : le micro-onduleur de référence pour kits DIY',
   description: 'Avis complet Hoymiles HMS-800W-2T : 2 MPPT indépendants, WiFi intégré, 96,7 % rendement. ~119 €. Le micro-onduleur le plus populaire pour les montages DIY balcon en France.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/hoymiles-hms-800w',
   },
-};
+});
 
 const faqData = [
   {

@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon nord : est-ce rentable en 2026 ?',
   description: 'Balcon plein nord : un panneau solaire peut-il être rentable ? Analyse honnête avec chiffres de production réels, coefficients PVGIS, et alternatives.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-balcon-nord',
   },
-};
+});
 
 const faqData = [
   {

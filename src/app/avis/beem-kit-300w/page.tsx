@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit Beem 300W avis 2026 : 199 €, rupture et avis négatifs',
   description: 'Kit Beem 300W : avis 2026 à 199 €, mais en rupture. Avis négatifs Beem Energy (SAV, production), ROI 3,8 ans et alternatives. Verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-kit-300w',
   },
-};
+});
 
 const faqData = [
   { question: 'Le kit Beem 300W vaut-il le coup à 199 € ?', answer: 'Sur le papier, oui : à 199 € (prix affiché sur beemenergy.fr le 12 octobre 2026, contre 299 € auparavant), il revient à 0,66 €/Wc, le ratio le plus bas des kits de marque que nous suivons. Avec ~306 kWh/an en région lyonnaise, le retour sur investissement est atteint en 3,8 ans et les économies cumulées sur 25 ans atteignent 1 914 € (+3,3 %/an d\'inflation CRE). Problème : le kit est affiché « Indisponible » sur le site Beem au 12 octobre 2026.' },

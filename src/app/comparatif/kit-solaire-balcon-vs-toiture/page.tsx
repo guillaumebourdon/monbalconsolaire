@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon vs toiture : quelle rentabilité en 2026 ?',
   description: 'Balcon plug-and-play ou installation en toiture ? Comparatif complet : prix, production, ROI réel, aides. Chiffres honnêtes pour choisir la bonne solution.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/kit-solaire-balcon-vs-toiture',
   },
-};
+});
 
 const faqData = [
   {

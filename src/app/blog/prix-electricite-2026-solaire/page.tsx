@@ -5,14 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Prix de l\'électricité 2026 : pourquoi le solaire devient incontournable',
   description: 'Analyse de l\'évolution du prix de l\'électricité en France en 2026 et impact sur la rentabilité du solaire de balcon. Données, projections, calculs.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/prix-electricite-2026-solaire',
   },
-};
+});
 
 const faqData = [
   { question: 'Quel est le prix du kWh en 2026 ?', answer: 'Le tarif réglementé EDF est de 0,1940€/kWh TTC en option base 6 kVA depuis le 1er mai 2026. C\'est une hausse de 29,7% par rapport à février 2026, et le tarif est désormais 101% plus élevé qu\'en 2012.' },

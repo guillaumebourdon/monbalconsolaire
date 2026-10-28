@@ -4,16 +4,17 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const PAGE_URL = 'https://monbalconsolaire.fr/guide/installer-kit-solaire-balcon';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Installer un kit solaire balcon : étapes, fixation, prise',
   description: 'Installer un kit solaire balcon pas à pas : fixation au sol ou sur garde-corps, branchement sur prise, sécurité électrique, déclaration Enedis, erreurs.',
   alternates: {
     canonical: PAGE_URL,
   },
-};
+});
 
 const faqData = [
   {

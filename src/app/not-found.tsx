@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Page introuvable',
   description: 'Cette page n\'existe pas ou a été déplacée. Retrouvez nos guides, avis et comparatifs de kits solaires de balcon.',
   robots: { index: false, follow: true },
-};
+});
 
 export default function NotFound() {
   return (

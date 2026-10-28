@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Sunology CITY avis (arrêté) : quelles alternatives en 2026 ?',
   description: 'Sunology CITY : le kit garde-corps n\'est plus vendu par Sunology (sept. 2026). Notre analyse, où le trouver encore et les alternatives (GO, PLAY, Beem).',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-city',
   },
-};
+});
 
 const faqData = [
   {

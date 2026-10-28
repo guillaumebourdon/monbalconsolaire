@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Talon de consommation : comment le calculer et l\'effacer avec le solaire',
   description: 'Qu\'est-ce que le talon de consommation, comment le mesurer avec Linky, et comment un kit solaire de balcon peut le couvrir entièrement. Méthode pas à pas.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/talon-consommation-solaire',
   },
-};
+});
 
 const faqData = [
   {

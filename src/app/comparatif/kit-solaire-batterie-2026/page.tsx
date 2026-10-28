@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire avec batterie 2026 : comparatif stockage',
   description: 'Comparatif des kits solaires plug-and-play avec batterie en 2026 : Sunology PLAY MAX, Beem Battery, EcoFlow PowerStream. Prix, capacité, rentabilité.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026',
   },
-};
+});
 
 const faqData = [
   { question: 'Faut-il une batterie avec un kit solaire de balcon ?', answer: 'Non, ce n\'est pas indispensable. Sans batterie, vous consommez l\'électricité en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coûte 100 à 1 400€ supplémentaires (100€ seulement entre le PLAY et le PLAY MAX), ce qui allonge le ROI si vous êtes présent en journée.' },

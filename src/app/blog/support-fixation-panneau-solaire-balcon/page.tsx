@@ -10,6 +10,7 @@ import {
   calculateTotalSavings25Years,
   KWH_PRICE_LABEL,
 } from '@/lib/pricing';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/support-fixation-panneau-solaire-balcon';
 const AMAZON_TAG = 'monbalconsola-21';
@@ -17,12 +18,12 @@ const amazon = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_
 // Fiche VEVOR 114 cm retirée d'Amazon (404 au 17/10/2026) : lien de recherche tagué
 const VEVOR_SEARCH = `https://www.amazon.fr/s?k=VEVOR+support+panneau+solaire+114+cm+inclinable&tag=${AMAZON_TAG}`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Support panneau solaire balcon : fixation, sélection 2026',
   description:
     'Support panneau solaire balcon : crochets garde-corps, support inclinable, pose sans perçage. 7 modèles Amazon analysés, sécurité au vent et production.',
   alternates: { canonical: PAGE_URL },
-};
+});
 
 // ─── Production selon l'inclinaison (PVGIS, Lyon, plein sud) ─────────────
 // Coefficients = production PVGIS à l'angle donné / production PVGIS à 35°

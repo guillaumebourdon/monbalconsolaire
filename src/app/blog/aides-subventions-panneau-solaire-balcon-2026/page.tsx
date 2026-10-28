@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Aides et subventions panneau solaire balcon 2026 : la vérité',
   description: 'MaPrimeRénov, TVA réduite, prime autoconsommation : ce qui s’applique vraiment aux kits solaires plug-and-play balcon en France en 2026. Réponse honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/aides-subventions-panneau-solaire-balcon-2026',
   },
-};
+});
 
 const faqData = [
   {

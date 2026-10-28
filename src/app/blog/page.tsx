@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Blog solaire de balcon — Analyses, données et conseils pratiques',
   description: 'Rentabilité réelle, production hivernale, prix de l\'électricité, autoconsommation : nos analyses chiffrées et indépendantes sur le solaire de balcon en France.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog',
   },
-};
+});
 
 const articles = [
   { slug: 'degradation-panneau-solaire-25-ans', title: 'D\u00e9gradation d\u2019un panneau solaire\u00a0: que reste-t-il apr\u00e8s 10, 20, 25 ans\u00a0?', excerpt: 'Taux de d\u00e9gradation par technologie (PERC, TOPCon, back-contact), garanties constructeur \u00e0 25-30 ans et impact chiffr\u00e9 sur la rentabilit\u00e9 via pricing.ts.', badge: 'Nouveau', date: '23 octobre 2026', readTime: '9 min' },

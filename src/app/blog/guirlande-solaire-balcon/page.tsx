@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Guirlande solaire balcon : 8 modèles pour l\'hiver (2026)',
   description: 'Guirlande solaire balcon : 8 modèles IP65 sélectionnés (guinguette, Noël, recharge USB) et ce que devient leur autonomie en décembre. Critères et prix.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/guirlande-solaire-balcon',
   },
-};
+});
 
 const AMAZON_TAG = 'monbalconsola-21';
 const amazonUrl = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_TAG}`;

@@ -5,16 +5,17 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const PRODUCT_URL = 'https://www.sunethic.fr/product/station-solaire-sunethic-f500/';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Avis Sunethic 2026 : le F500 Made in France vaut-il 690 € ?',
   description: 'Avis Sunethic : 4,7/5 sur Trustpilot (1 234 avis), SAV, garanties réelles. Le F500 français à 690 € face à Sunology et Beem : ROI 7,4 ans, notre verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunethic-f500',
   },
-};
+});
 
 const faqData = [
   { question: 'Sunethic, c\'est une marque fiable ?', answer: 'Sunethic est une SAS française basée à Avignon (Vaucluse), société à mission fondée par Thomas Cautier, à l\'actionnariat familial. En octobre 2026, elle affiche 4,7/5 sur Trustpilot pour 1 234 avis (86 % de 5 étoiles). Les avis sont sollicités par la marque, comme chez la plupart des vendeurs en ligne. Les critiques récurrentes portent sur des délais de livraison et quelques e-mails restés sans réponse, pas sur la qualité du matériel.' },

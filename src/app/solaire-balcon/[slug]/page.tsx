@@ -7,6 +7,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { productibleSite, RENTABILITE_DEPARTEMENTS } from '@/lib/rentabilite-departements';
 import { calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_EUR, PERFORMANCE_RATIO, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY, PVGIS_REFERENCE_LYON } from '@/lib/pricing';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const TARIF_KWH = KWH_PRICE_EUR;
 const COEFF_PERTES = PERFORMANCE_RATIO;
@@ -58,7 +59,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const dept = getDeptBySlug(params.slug);
   if (!dept) return {};
   const art = deptArticles(dept.name);
-  return {
+  return withCanonicalOg({
     title: `Kit solaire balcon ${dept.name} (${dept.code}) : production et rentabilité 2026`,
     description: `Combien produit un kit solaire sur un balcon ${art.dans} (${dept.code}) ? Productible ${productibleSite(dept.irradiation)} kWh/kWc, calcul de rentabilité et meilleur kit recommandé.`,
     alternates: {
@@ -67,7 +68,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     // Pages programmatiques jugées trop minces par Google (crawlées, non indexées) :
     // retirées de l'index en attendant un enrichissement local page par page.
     robots: { index: false, follow: true },
-  };
+  });
 }
 
 export default function DepartmentPage({ params }: { params: { slug: string } }) {

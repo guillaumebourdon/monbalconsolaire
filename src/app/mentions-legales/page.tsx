@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Mentions légales',
   description: 'Mentions légales du site MonBalconSolaire, édité par Beélevén SASU.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/mentions-legales',
   },
-};
+});
 
 export default function MentionsLegalesPage() {
   return (

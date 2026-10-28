@@ -10,6 +10,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { VercelAnalytics } from '@/components/VercelAnalytics';
+import { SITE_OPEN_GRAPH, withCanonicalOg } from '@/lib/metadata';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -25,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   metadataBase: new URL('https://monbalconsolaire.fr'),
   title: {
     default: 'MonBalconSolaire — Le guide indépendant du solaire de balcon',
@@ -46,15 +47,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://monbalconsolaire.fr',
   },
-  openGraph: {
-    type: 'website',
-    locale: 'fr_FR',
-    url: 'https://monbalconsolaire.fr',
-    siteName: 'MonBalconSolaire',
-    title: 'MonBalconSolaire — Le guide indépendant du solaire de balcon',
-    description:
-      'Comparez les kits solaires, calculez vos économies réelles et passez au solaire sans travaux.',
-  },
+  openGraph: SITE_OPEN_GRAPH,
   twitter: {
     card: 'summary_large_image',
     title: 'MonBalconSolaire — Le guide indépendant du solaire de balcon',
@@ -71,7 +64,7 @@ export const metadata: Metadata = {
       'msvalidate.01': '05DB5632ABECB301EBD515E6E5ED1F84',
     },
   },
-};
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

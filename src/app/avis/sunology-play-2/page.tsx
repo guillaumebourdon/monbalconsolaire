@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Sunology PLAY 2 avis 2026 : devenu PLAY 500 W, prix et promo',
   description: 'Sunology PLAY 2 avis : il est devenu le PLAY 500 W, même prix (599 €). Promo, ROI 6,5 ans, app STREAM, avis clients négatifs et verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-play-2',
   },
-};
+});
 
 const AFFILIATE_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
 

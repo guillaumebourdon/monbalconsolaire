@@ -27,6 +27,7 @@ import {
   PVGIS_REFERENCE_LYON,
   calculateROIYears,
 } from '@/lib/pricing';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const SLUG = 'rentabilite-kit-solaire-balcon-departement';
 const URL = `https://monbalconsolaire.fr/etude/${SLUG}`;
@@ -36,7 +37,7 @@ const UPDATED = '2026-10-12';
 const UPDATED_LABEL = '12 octobre 2026';
 const PAGE_TITLE = 'Carte de la rentabilité d’un kit solaire de balcon par département (2026)';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Carte rentabilité kit solaire balcon par département 2026',
   description:
     'Kit solaire de balcon : en combien d’années est-il rentabilisé dans votre département ? Carte des 96 départements, production, économies, données CC BY.',
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     url: URL,
     type: 'article',
   },
-};
+});
 
 // ─── Données calculées au build (lib/pricing.ts) ──────────────────────────
 const rows = RENTABILITE_DEPARTEMENTS;

@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire en hiver : combien ça produit vraiment ? (2026)',
   description: 'Un panneau solaire de balcon produit-il en hiver ? Données réelles de production hivernale par région, conseils pour optimiser, et impact sur la rentabilité.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-hiver-production',
   },
-};
+});
 
 const faqData = [
   { question: 'Un panneau solaire fonctionne-t-il en hiver ?', answer: 'Oui. Un panneau solaire produit de l\'électricité dès qu\'il reçoit de la lumière, même diffuse (ciel nuageux). En hiver, la production est réduite (20-40% de la production estivale) mais elle n\'est jamais nulle.' },

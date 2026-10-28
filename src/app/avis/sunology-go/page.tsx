@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Sunology GO avis 2026 : 349 €, 270 W, notre analyse',
   description: 'Sunology GO (349 €, 270 W) : kit compact pour balcon, au sol ou sur garde-corps sans percer. Fiche technique, ROI et comparatif PLAY/Beem.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-go',
   },
-};
+});
 
 const AFFILIATE_URL = 'https://sunology.eu/products/kit-solaire-1-station-go-balcon-garde-corps';
 

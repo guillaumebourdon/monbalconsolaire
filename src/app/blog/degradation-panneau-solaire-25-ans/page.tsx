@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'D&eacute;gradation panneau solaire : que reste-t-il apr&egrave;s 25 ans ?',
   description: 'Taux de d&eacute;gradation annuel (PERC, TOPCon, back-contact), garanties de puissance &agrave; 25-30 ans et impact r&eacute;el sur la rentabilit&eacute; d&apos;un kit solaire balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/degradation-panneau-solaire-25-ans',
   },
-};
+});
 
 const faqData = [
   {

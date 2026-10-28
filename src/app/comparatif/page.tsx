@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Comparatifs kits solaires balcon 2026 — Sunology, Beem, Sunethic',
   description: 'Comparatifs indépendants des meilleurs kits solaires plug-and-play pour balcon en 2026. Prix, puissance, rentabilité : trouvez le kit adapté à votre situation.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif',
   },
-};
+});
 
 const articles = [
   { slug: 'meilleur-micro-onduleur-2026', title: 'Meilleur micro-onduleur solaire 2026 : Hoymiles, APsystems, Enphase, Deye', excerpt: 'Comparatif des 5 micro-onduleurs les plus vendus pour un kit DIY : prix, MPPT, monitoring, garantie. Lequel choisir selon votre budget et vos panneaux.', badge: 'Nouveau', date: '16 octobre 2026', readTime: '11 min' },

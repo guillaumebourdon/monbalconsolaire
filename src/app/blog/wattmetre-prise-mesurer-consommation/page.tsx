@@ -11,14 +11,15 @@ import {
   AUTOCONSO_STANDARD,
   KWH_PRICE_LABEL,
 } from '@/lib/pricing';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Wattmètre prise : mesurer son talon avant un kit solaire',
   description: 'Wattmètre prise : mesurer la consommation de vos appareils et votre talon avant d’acheter un kit solaire. Méthode 24 h, sélection, alternative Linky.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/wattmetre-prise-mesurer-consommation',
   },
-};
+});
 
 // ─── Exemple chiffré (formule centralisée lib/pricing.ts) ───
 // Kit hypothétique 450 Wc à 400 €, Lyon, plein sud.

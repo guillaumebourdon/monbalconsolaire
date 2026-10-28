@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Réglementation panneau solaire balcon : faut-il déclarer ?',
   description: 'Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026',
   },
-};
+});
 
 const faqData = [
   { question: 'Faut-il une autorisation pour installer un kit solaire sur son balcon ?', answer: 'Non, pas d\'autorisation de travaux si le panneau est pose au sol ou fixe au mur a moins d\'1m80 de haut. En revanche, si vous le fixez en toiture (toit plat par exemple), une declaration prealable en mairie est necessaire.' },

@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'DualSun PREASY avis : panneau pliable Made in France (870\u20ac)',
   description: 'Avis complet sur le DualSun PREASY : panneau solaire pliable 420 Wc, Made in France, design aspect bois. Analyse, prix réel, comparaison et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/dualsun-preasy',
   },
-};
+});
 
 const faqData = [
   {

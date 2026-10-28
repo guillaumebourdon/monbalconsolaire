@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Revendre surplus solaire à EDF depuis un balcon : possible ? (2026)',
   description: 'Peut-on revendre son surplus à EDF avec un kit balcon ? Non — et à 1,1 c€/kWh, même une installation classique ne s\'y retrouve pas. Calculs et alternatives.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/revendre-surplus-solaire-balcon',
   },
-};
+});
 
 const faqData = [
   {

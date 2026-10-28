@@ -3,15 +3,16 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/panneau-solaire-balcon-voiture-electrique';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon et voiture électrique : peut-on recharger ?',
   description:
     'Un kit solaire de 300 à 1600 W peut-il recharger une voiture électrique ? Puissances, chiffres réels (pricing.ts) et ce que ça change vraiment sur la facture de recharge.',
   alternates: { canonical: PAGE_URL },
-};
+});
 
 const faqData = [
   {

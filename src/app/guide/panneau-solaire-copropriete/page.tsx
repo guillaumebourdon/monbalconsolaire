@@ -5,14 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { CopyableTemplate } from '@/components/ui/CopyableTemplate';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon copropriété : autorisation AG 2026',
   description: 'Faut-il l\'accord de l\'AG pour un kit solaire sur son balcon en copropriété ? Règles 2026 (loi APER), majorité de vote, modèle de lettre au syndic à copier.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-copropriete',
   },
-};
+});
 
 const faqData = [
   {

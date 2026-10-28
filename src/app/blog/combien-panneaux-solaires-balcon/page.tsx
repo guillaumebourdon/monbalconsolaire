@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Combien de panneaux solaires sur un balcon ? Règles et limites (2026)',
   description: 'Combien de panneaux sur un balcon ? Pas de plafond légal en France : place, poids, circuit (repère 900 W), rentabilité et démarches fixent la vraie limite.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/combien-panneaux-solaires-balcon',
   },
-};
+});
 
 const faqData = [
   {

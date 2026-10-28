@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire et ombre : comment optimiser la production (2026)',
   description: 'Ombre partielle, arbre, mur voisin : quel impact sur votre kit solaire de balcon ? Chiffres réels, solutions concrètes et conseils pour maximiser la production.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-ombre-optimiser-production',
   },
-};
+});
 
 const faqData = [
   {

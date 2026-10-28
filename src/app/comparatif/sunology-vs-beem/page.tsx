@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Sunology vs Beem 2026 : quel kit solaire choisir ?',
   description: 'Sunology PLAY 500 W (ex-PLAY 2) vs Beem On 500 Wc : prix, puissance, installation, app, garantie. Quel kit solaire plug-and-play choisir en 2026 ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/sunology-vs-beem',
   },
-};
+});
 
 const faqData = [
   { question: 'Sunology ou Beem : lequel est le moins cher ?', answer: 'Beem a pris l\'avantage en 2026 : le Beem On 500 Wc est \u00e0 429\u20ac contre 599\u20ac pour le Sunology PLAY (500 Wc, ex-PLAY 2). C\'est 170\u20ac de moins \u00e0 puissance \u00e9gale. Beem propose aussi le Kit 300W \u00e0 199\u20ac, actuellement en rupture de stock.' },

@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Mon panneau solaire produit moins que prévu : que faire ?',
   description: 'Votre kit solaire de balcon ne produit pas autant qu\'espéré ? Diagnostic en 7 points : ombre, orientation, salissure, micro-onduleur, Linky. Solutions concrètes.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-produit-moins-que-prevu',
   },
-};
+});
 
 const faqData = [
   {

@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Multi-panneaux solaires balcon : s&eacute;rie ou parall&egrave;le ? C&acirc;blage et disjoncteur',
   description: 'Comment brancher 2 panneaux sur un balcon : s&eacute;rie interdit, parall&egrave;le DC ou AC, micro-onduleur double-MPPT, c&acirc;bles MC4, disjoncteur 16A — guide pratique 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/multi-panneaux-serie-parallele',
   },
-};
+});
 
 const faqData = [
   {

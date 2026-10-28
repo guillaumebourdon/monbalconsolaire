@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon : que faire quand il pleut ou gr\u00eale ?',
   description: 'Votre panneau solaire de balcon risque-t-il quelque chose sous la pluie, la gr\u00eale ou la neige ? Production par temps couvert, r\u00e9sistance, assurance. R\u00e9ponses concr\u00e8tes.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/kit-solaire-pluie-grele',
   },
-};
+});
 
 const faqData = [
   {

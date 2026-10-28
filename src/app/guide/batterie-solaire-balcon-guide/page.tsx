@@ -5,14 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Batterie solaire balcon : choisir la bonne capacité (2026)',
   description: 'Quelle capacité de batterie pour votre kit solaire balcon ? Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif des solutions disponibles en 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/batterie-solaire-balcon-guide',
   },
-};
+});
 
 const faqData = [
   {

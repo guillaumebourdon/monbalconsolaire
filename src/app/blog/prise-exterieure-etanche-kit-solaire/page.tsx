@@ -4,17 +4,18 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/prise-exterieure-etanche-kit-solaire';
 const AMAZON_TAG = 'monbalconsola-21';
 const amazon = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_TAG}`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Prise extérieure étanche et rallonge pour kit solaire balcon',
   description:
     'IP44, IP66, 30 mA, section de câble H07RN-F : quelle prise et quelle rallonge pour brancher un kit solaire de balcon en sécurité. Sélection Amazon 2026.',
   alternates: { canonical: PAGE_URL },
-};
+});
 
 const faqData = [
   {

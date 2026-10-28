@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Mini kits solaires Amazon < 300 € : notre sélection 2026',
   description: 'Mini kits solaires Amazon à moins de 300 € : analyse honnête des modèles disponibles, pièges à éviter, et sélection des 5 kits qui valent vraiment leur prix.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/mini-kits-solaires-amazon',
   },
-};
+});
 
 const faqData = [
   { question: 'Peut-on vraiment trouver un bon kit solaire sous 300 € sur Amazon ?', answer: 'Oui, mais avec prudence. Environ 80% des kits sous 300 € sur Amazon sont des produits bas de gamme (panneaux sous-performants, micro-onduleurs non conformes, faux avis). Les 20% restants sont de vrais bons choix pour débuter : mini kits 200-300W avec fiche technique réelle et marque identifiée.' },

@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Production solaire balcon : été vs hiver, données réelles 5 villes',
   description: 'Courbes mensuelles PVGIS pour Paris, Lyon, Marseille, Bordeaux et Lille. Le paradoxe chaleur estivale : pourquoi mai/juin est souvent plus efficace que juillet.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/production-solaire-ete-vs-hiver',
   },
-};
+});
 
 const faqData = [
   {

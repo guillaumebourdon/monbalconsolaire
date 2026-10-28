@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 import { DEPARTMENTS } from '@/data/departments';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { RENTABILITE_DEPARTEMENTS, REFERENCE_KIT } from '@/lib/rentabilite-departements';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Solaire de balcon par département — Production et rentabilité 2026',
   description: 'Trouvez la production solaire et la rentabilité d\'un kit solaire de balcon dans votre département. 96 départements français couverts avec données PVGIS.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/solaire-balcon',
   },
-};
+});
 
 const RENTABILITE_BY_CODE = new Map(RENTABILITE_DEPARTEMENTS.map(r => [r.code, r]));
 

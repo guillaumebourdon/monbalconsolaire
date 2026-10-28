@@ -5,14 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon locataire : droits, règles et astuces (2026)',
   description: 'Vous etes locataire et vous voulez un panneau solaire sur votre balcon ? Droits, réglementation copropriété, démarchés, et kits adaptés. Guide complet 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-locataire',
   },
-};
+});
 
 const faqData = [
   { question: 'Ai-je le droit d\'installer un panneau solaire sur mon balcon en tant que locataire ?', answer: 'Oui, à condition que l\'installation soit amovible (pas de perçage, pas de modification du bâtiment). Un kit pose au sol ou en appui sur la rambarde sans fixation permanente ne nécessite pas l\'accord du propriétaire.' },

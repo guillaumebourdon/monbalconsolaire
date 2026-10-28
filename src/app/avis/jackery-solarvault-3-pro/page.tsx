@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Jackery SolarVault 3 Pro avis 2026 : stockage 2,5 kWh LFP \u00e0 839 \u20ac',
   description: 'Avis d\u00e9taill\u00e9 Jackery SolarVault 3 Pro : batterie LFP 2,52 kWh, 4 MPPT pour 4 000 W, 839 \u20ac en promo Prime Day. Specs, comparatif Bluetti Balco 260, verdict honn\u00eate.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro',
   },
-};
+});
 
 const faqData = [
   { question: 'Le Jackery SolarVault 3 Pro inclut-il des panneaux solaires ?', answer: 'Non. Le SolarVault 3 Pro est un bo\u00eetier onduleur + batterie. Les panneaux solaires sont \u00e0 acheter s\u00e9par\u00e9ment. Il accepte jusqu\u2019\u00e0 4\u00a0000 W d\u2019entr\u00e9e solaire via 4 MPPT ind\u00e9pendants, soit 4 \u00e0 8 panneaux classiques de 400-500 Wc. Jackery propose aussi un pack avec 2 panneaux bifaciaux 500 W \u00e0 1\u00a0139\u00a0\u20ac.' },

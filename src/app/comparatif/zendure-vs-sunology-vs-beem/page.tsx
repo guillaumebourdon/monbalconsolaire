@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Zendure vs Sunology vs Beem 2026 : le match complet',
   description: 'Zendure vs Sunology vs Beem : SolarFlow 800 Plus, PLAY et Beem On 500 Wc comparés (prix/Wc, stockage, app, rentabilité). Lequel choisir en 2026 ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/zendure-vs-sunology-vs-beem',
   },
-};
+});
 
 const faqData = [
   {

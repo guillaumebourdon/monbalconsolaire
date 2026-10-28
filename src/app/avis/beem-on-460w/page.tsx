@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Beem On 460W avis : désormais vendu en extension (429€)',
   description: 'Beem On 460W : panneau bifacial TOPCon 460 Wc, 4,7/5 Trustpilot. Depuis octobre 2026, il n\'est plus vendu comme station de départ mais en extension à 429€. Notre avis mis à jour.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-on-460w',
   },
-};
+});
 
 const faqData = [
   { question: 'Peut-on encore acheter le Beem On 460W comme premier kit ?', answer: 'Non. Depuis notre vérification du 8 octobre 2026, Beem Energy ne vend plus le 460W comme station de départ (avec Beembox) : il n\'apparaît sur beemenergy.fr qu\'en « extension » à 429€, sans Beembox, pensée pour agrandir une installation Beem existante. Pour un premier achat, voir notre avis du Beem On 500 Wc (429€).' },

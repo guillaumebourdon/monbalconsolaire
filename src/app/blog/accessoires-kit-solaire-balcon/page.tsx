@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: '8 accessoires indispensables pour votre kit solaire de balcon (2026)',
   description: 'Wattmetre, rallonge etanche, prise connectee, support, protege-surtension : les accessoires Amazon pour optimiser votre installation solaire de balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon',
   },
-};
+});
 
 const faqData = [
   { question: 'Faut-il acheter des accessoires avec son kit solaire ?', answer: 'Non, les kits sont complets et fonctionnels des l\'achat. Mais certains accessoires ameliorent le suivi (prise connectee, wattmetre), la sécurité (parafoudre, rallonge etanche) ou la production (support inclinable). Ce sont des plus, pas des obligations.' },

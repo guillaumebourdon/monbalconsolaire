@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'M\u00e9thodologie de calcul ROI solaire balcon : sources et hypoth\u00e8ses',
   description: 'Comment nous calculons le ROI d\'un kit solaire balcon. Sources PVGIS, CRE, inflation kWh 3,3%/an. Toutes nos hypoth\u00e8ses sont publiques et auditables.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/methodologie',
   },
-};
+});
 
 export default function MethodologiePage() {
   return (

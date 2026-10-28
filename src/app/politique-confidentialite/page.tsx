@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Politique de confidentialité',
   description: 'Politique de confidentialité du site MonBalconSolaire. Informations sur la collecte et le traitement des données personnelles.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/politique-confidentialite',
   },
-};
+});
 
 export default function PolitiqueConfidentialitePage() {
   return (

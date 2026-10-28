@@ -4,6 +4,7 @@ import { SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { EmailCapture } from '@/components/ui/EmailCapture';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
 // Regénérée toutes les 6 h : les offres datées basculent seules en « Terminée ».
 export const revalidate = 21600;
@@ -23,7 +24,7 @@ function isOver(endsAt?: string): boolean {
 
 export function generateMetadata(): Metadata {
   const promo = !isOver(SUNOLOGY_PROMO_END);
-  return {
+  return withCanonicalOg({
     title: promo
       ? 'Code promo Sunology : -11 à -13 % jusqu’au 31/10 (sans code)'
       : 'Code promo Sunology, Beem, Sunethic : offres vérifiées 2026',
@@ -33,7 +34,7 @@ export function generateMetadata(): Metadata {
     alternates: {
       canonical: 'https://monbalconsolaire.fr/codes-promo',
     },
-  };
+  });
 }
 
 const faqData = (sunologyPromo: boolean) => [

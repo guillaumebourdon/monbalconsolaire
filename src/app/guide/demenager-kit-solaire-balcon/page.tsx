@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Déménager avec son kit solaire balcon : CACSI, résiliation',
   description: 'Déménagement et kit solaire plug-and-play : démonter, transporter, refaire la déclaration CACSI et résilier le contrat Enedis à l’ancienne adresse.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/demenager-kit-solaire-balcon',
   },
-};
+});
 
 const faqData = [
   {

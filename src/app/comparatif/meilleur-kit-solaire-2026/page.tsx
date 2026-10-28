@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleur kit solaire plug and play 2026 : 5 kits dès 199 €',
   description: 'Beem On 500 Wc (429 €), Sunology PLAY, Beem Kit 300W, Sunethic F500, Sunology GO : comparatif prix, ROI et verdict mis à jour en octobre 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026',
   },
-};
+});
 
 const faqData = [
   { question: 'Quel est le meilleur kit solaire plug-and-play en 2026 ?', answer: 'Le Beem On 500 Wc (429\u20ac, 0,86\u20ac/Wc) offre le meilleur rapport qualit\u00e9-prix du march\u00e9 en 2026 avec un ROI de 4,8 ans. Le Sunology PLAY (ex-PLAY 2, 500 Wc, 599\u20ac) reste le choix n\u00b01 pour la facilit\u00e9 d\'installation (1 minute). Pour les petits budgets, le Beem Kit 300W \u00e0 199\u20ac est imbattable au Wc, mais il est actuellement en rupture de stock chez Beem (v\u00e9rifi\u00e9 le 12 octobre 2026).' },

@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Avis kits solaires balcon 2026 — Analyses indépendantes et notes',
   description: 'Avis détaillés et analyses indépendantes des kits solaires plug-and-play : Sunology PLAY2, Beem On, Sunethic F500, Beem Kit 300W. Notes, specs et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis',
   },
-};
+});
 
 const reviews = [
   { slug: 'sunology-go', title: 'Sunology GO\u00a0: le kit compact \u00e0 349\u00a0\u20ac, au sol ou sur garde-corps', excerpt: '270\u00a0W, 349\u00a0\u20ac, pose au sol ou garde-corps sans per\u00e7age. Le kit d\u2019entr\u00e9e qui remplace le CITY chez Sunology.', badge: 'Nouveau', score: '7/10', price: '349 \u20ac' },

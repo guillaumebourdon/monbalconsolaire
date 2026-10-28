@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Consommation veille kit solaire balcon : combien ça coûte vraiment ?',
   description: 'Micro-onduleur, Beembox, app WiFi : combien consomme votre kit solaire la nuit ? Tableau par kit, impact ROI chiffré et réponse à la question : faut-il débrancher ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/consommation-veille-kit-solaire',
   },
-};
+});
 
 const faqData = [
   {

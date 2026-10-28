@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'EcoFlow PowerStream avis (arrêté) : que choisir en 2026 ?',
   description: 'EcoFlow PowerStream : le micro-onduleur n\'est plus vendu par EcoFlow France (sept. 2026). Notre analyse, garantie, occasion et alternatives STREAM.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/ecoflow-powerstream',
   },
-};
+});
 
 const faqData = [
   {

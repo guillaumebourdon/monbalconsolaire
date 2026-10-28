@@ -4,19 +4,20 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { withCanonicalOg } from '@/lib/metadata';
 
 const PAGE_TITLE = 'Meilleur micro-onduleur 2026 : Hoymiles vs APsystems';
 const PAGE_DESCRIPTION =
   'Micro-onduleur solaire 2026 : Hoymiles HMS-800W-2T (119€), APsystems EZ1-M, Enphase IQ8P, Deye comparés. Prix, MPPT, garantie, lequel choisir.';
 const PAGE_URL = 'https://monbalconsolaire.fr/comparatif/meilleur-micro-onduleur-2026';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: {
     canonical: PAGE_URL,
   },
-};
+});
 
 const faqData = [
   {

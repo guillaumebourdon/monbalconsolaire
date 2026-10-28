@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Protéger son panneau solaire balcon des oiseaux et intempéries',
   description: 'Fientes, grêle, vent : comment protéger efficacement votre kit solaire de balcon. Solutions anti-oiseaux DIY, résistance certifiée, assurance — tout ce qu’il faut savoir.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/proteger-panneau-solaire-oiseaux-intemperies',
   },
-};
+});
 
 const faqData = [
   {

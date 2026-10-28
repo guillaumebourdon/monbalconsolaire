@@ -5,14 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire plug-and-play : arnaque ou bon investissement ?',
   description: 'Les kits solaires plug-and-play sont-ils une arnaque ou un vrai investissement ? Analyse honnête des chiffres, des promesses, des pièges et du ROI réel en 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/kit-solaire-plug-and-play-arnaque',
   },
-};
+});
 
 const faqData = [
   { question: 'Un kit solaire plug-and-play est-il vraiment rentable ?', answer: 'Oui, mais pas partout. Au sud d\'une ligne Lyon-Bordeaux, un kit 450W exposé plein sud atteint la rentabilité en 5-7 ans. Au nord et à l\'ouest, il faut plutôt compter 7-10 ans. Sur une garantie de 25 ans, le bénéfice net reste largement positif dans 95% des cas.' },

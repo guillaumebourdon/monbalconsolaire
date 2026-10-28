@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Facture EDF avec un kit solaire balcon : comment la lire et mesurer ses &eacute;conomies',
   description: 'Kit solaire et facture EDF : ce qui change (et ce qui ne change pas), comment mesurer vos &eacute;conomies r&eacute;elles, Linky et surplus gratuit. Guide factuel 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/facture-edf-kit-solaire',
   },
-};
+});
 
 const faqData = [
   {

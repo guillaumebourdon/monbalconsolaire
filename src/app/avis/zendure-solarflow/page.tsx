@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Zendure SolarFlow avis 2026 : 840 W pour 488 €, trop beau ?',
   description: 'Avis complet sur le Zendure SolarFlow 800 Plus : batterie 1,92 kWh intégrée, 800 W AC, plug-and-play pour 488 €. Analyse, specs, rentabilité et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/zendure-solarflow',
   },
-};
+});
 
 const faqData = [
   {

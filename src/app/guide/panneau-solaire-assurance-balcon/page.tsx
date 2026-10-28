@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon : que couvre votre assurance ?',
   description: 'Votre kit solaire de balcon est-il couvert par votre assurance habitation ? Gr\u00eale, vol, chute, responsabilit\u00e9 civile. Ce qu\u2019il faut d\u00e9clarer et ce qui est garanti.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-assurance-balcon',
   },
-};
+});
 
 const faqData = [
   {

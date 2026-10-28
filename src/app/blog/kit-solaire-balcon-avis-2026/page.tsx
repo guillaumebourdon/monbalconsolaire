@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon : avis et retours d\u2019exp\u00e9rience 2026',
   description: 'Avis et retours d\u2019exp\u00e9rience sur les kits solaires de balcon en 2026. Sunology, Beem, Zendure : ce qu\u2019en pensent les utilisateurs.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/kit-solaire-balcon-avis-2026',
   },
-};
+});
 
 const faqData = [
   {

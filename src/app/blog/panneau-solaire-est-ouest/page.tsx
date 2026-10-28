@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon est/ouest : production et rentabilit\u00e9 2026',
   description: 'Votre balcon est orient\u00e9 est ou ouest ? Combien produit un kit solaire, quel ROI attendre, et quel kit choisir. Chiffres r\u00e9els et comparaison avec le sud.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-est-ouest',
   },
-};
+});
 
 const faqData = [
   {

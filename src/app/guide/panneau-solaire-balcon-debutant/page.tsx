@@ -5,14 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon débutants 2026 : guide complet (mis à jour août)',
   description: 'Panneau solaire balcon en 2026 : installation, réglementation, coût (dès 429€), rentabilité, droits des locataires. Guide complet mis à jour août 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant',
   },
-};
+});
 
 const faqData = [
   { question: 'Peut-on installer un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchent sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },

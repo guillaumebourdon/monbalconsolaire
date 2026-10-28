@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Checklist kit solaire balcon : 15 points &agrave; v&eacute;rifier avant d&apos;acheter (2026)',
   description: 'Avant d&apos;acheter un kit solaire pour balcon, v&eacute;rifiez ces 15 points cl&eacute;s : orientation, surface, Linky, prise, bail, copro, budget, CACSI, assurance. Checklist compl&egrave;te 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/checklist-avant-achat-kit-solaire',
   },
-};
+});
 
 const faqData = [
   {

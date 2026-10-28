@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Guides pratiques solaire de balcon 2026 — Installation et réglementation',
   description: 'Guides pas à pas pour installer un kit solaire sur votre balcon : réglementation 2026, droits des locataires, copropriété, déclaration Enedis, orientation optimale.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide',
   },
-};
+});
 
 const articles = [
   {

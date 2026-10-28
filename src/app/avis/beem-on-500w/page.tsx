@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Beem On 500W avis : prix Leroy Merlin, points négatifs',
   description: 'Beem On 500W : 429 € chez Beem, Leroy Merlin, Boulanger. Précommande Beem (expédition déc. 2026), avis négatifs, SAV, ROI 4,8 ans analysés.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-on-500w',
   },
-};
+});
 
 const faqData = [
   { question: 'Le Beem On 500W est-il moins cher chez Leroy Merlin ?', answer: 'Non. Au 12 octobre 2026, le prix est identique partout : 429 € sur beemenergy.fr, 429 € chez Leroy Merlin (fiche « Kit panneau solaire plug&play maison 500Wc BEEM », réf. 96375487, prix relevé via la fiche indexée) et 429 € chez Boulanger (réf. 1219705, mais indisponible en livraison comme en retrait ce jour-là). L\'intérêt de Leroy Merlin n\'est pas le prix mais le SAV : la garantie légale de conformité (2 ans) est due par le vendeur, donc par l\'enseigne, quel que soit l\'avenir de Beem Energy. Castorama ne référence pas de kit Beem à cette date.' },

@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'IKEA Solstr\u00e5le : le kit solaire IKEA pour balcon (2026)',
   description: 'IKEA lance un kit solaire plug-and-play pour balcon \u00e0 449 \u20ac (EcoFlow Stream). Specs, prix, disponibilit\u00e9 France, comparaison avec Sunology et Beem. Analyse compl\u00e8te.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/ikea-solstrale-balcon',
   },
-};
+});
 
 const faqData = [
   {

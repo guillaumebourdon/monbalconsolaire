@@ -5,14 +5,15 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Sunology PLAY MAX avis 2026 : kit solaire + batterie, ça vaut le coup ?',
   description: 'Avis Sunology PLAY MAX (PLAYMax) : station 450 Wc + batterie VAULT 700 Wh, désormais 699 €. Production, stockage, ROI 7,4 ans. Faut-il la batterie ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-play-max',
   },
-};
+});
 
 const faqData = [
   { question: 'Le Sunology PLAY MAX vaut-il 699 € ?', answer: 'Oui pour la plupart des profils qui consomment le soir. Au 27 septembre 2026, Sunology le vend 699 € (contre 1 179 € auparavant), soit seulement 100 € de plus que le Sunology PLAY seul (500 Wc, 599 €). Avec notre méthodologie, le PLAY MAX se rentabilise en 7,4 ans (85 €/an, 3 209 € sur 25 ans) contre 6,5 ans pour le PLAY seul (84 €/an, 3 190 € sur 25 ans). L\'écart de ROI est devenu faible.' },

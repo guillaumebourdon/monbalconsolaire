@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire et canicule : impact réel sur la production en été',
   description: 'Canicule et kits solaires balcon : le coefficient de température expliqué, les pertes chiffrées, quels panneaux résistent le mieux et 5 astuces pour limiter la casse.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-canicule-production',
   },
-};
+});
 
 const faqData = [
   {

@@ -4,14 +4,15 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleur kit solaire pour terrasse 2026 : comparatif complet',
   description: 'Quel kit solaire plug-and-play choisir pour une terrasse ? Comparatif 2026 : Sunology, Beem, Zendure, EcoFlow. Pose au sol, multi-panneaux, rentabilité.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-terrasse-2026',
   },
-};
+});
 
 const faqData = [
   {

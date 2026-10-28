@@ -5,14 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Combien rapporte un panneau solaire de balcon ? Calcul réel (2026)',
   description: 'Combien rapporte réellement un panneau solaire de balcon en 2026 ? Exemples chiffres par ville (Paris, Lyon, Marseille, Lille, Nantes). Calcul transparent.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/combien-rapporte-panneau-solaire-balcon',
   },
-};
+});
 
 const faqData = [
   { question: 'Combien rapporte un panneau solaire de balcon par an ?', answer: 'Avec un kit de 500 Wc comme le Sunology PLAY (ex-PLAY 2) et le tarif EDF à 0,1940 euros/kWh, comptez environ 70 à 105 euros d\'économies par an en exposition sud selon votre region (85 % d\'autoconsommation). Cela correspond à une production de 425 à 640 kWh par an.' },
