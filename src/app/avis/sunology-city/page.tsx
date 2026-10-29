@@ -38,7 +38,7 @@ const faqData = [
   },
   {
     question: 'Pourquoi choisir un CITY plutôt qu\'un kit Beem ?',
-    answer: 'Le CITY est plus performant en garde-corps grâce à son système de fixation dédié (les Beem sont conçus pour pose au sol). Mais à puissance équivalente, Beem est moins cher (Beem Kit 400W à 399 € vs Sunology CITY à 549 €). Le choix dépend donc de votre balcon : si vous avez la place pour un kit posé au sol, Beem reste plus économique.',
+    answer: 'Le CITY est plus performant en garde-corps grâce à son système de fixation dédié (les Beem sont conçus pour pose au sol). Mais à puissance équivalente, Beem est moins cher (Beem Kit 420W à 359 € vs Sunology CITY à 549 €, vérifié le 29/10/2026). Le choix dépend donc de votre balcon : si vous avez la place pour un kit posé au sol, Beem reste plus économique.',
   },
 ];
 
@@ -122,6 +122,7 @@ export default function SunologyCityPage() {
         description="Avis complet sur le Sunology CITY en 2026."
         url="https://monbalconsolaire.fr/avis/sunology-city"
         datePublished="2026-04-27"
+        dateModified="2026-10-29"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} ratingCount={1} availability="Discontinued" url="https://monbalconsolaire.fr/avis/sunology-city" />
@@ -139,7 +140,7 @@ export default function SunologyCityPage() {
               Le CITY est le seul kit solaire plug-and-play du marché conçu spécifiquement pour s&apos;accrocher au garde-corps d&apos;un balcon urbain. Analyse compl&egrave;te : prix, production estim&eacute;e, installation, et les vrais cas où il vaut le coup.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>27 avril 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
+              <span>27 avril 2026 &middot; <strong>Mis &agrave; jour le 29 octobre 2026</strong></span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -149,7 +150,7 @@ export default function SunologyCityPage() {
             <p className="badge-amber inline-block mb-3">Produit arr&ecirc;t&eacute;</p>
             <h2 className="font-extrabold text-lg mb-2">Produit plus commercialis&eacute; par le fabricant (constat&eacute; le 27/09/2026)</h2>
             <p className="text-sm text-charcoal-light leading-relaxed mb-3">
-              Le CITY n&apos;appara&icirc;t plus dans le catalogue de la boutique officielle Sunology&nbsp;: son ancienne fiche produit redirige d&eacute;sormais vers la page d&apos;accueil. Quelques revendeurs tiers l&apos;affichent encore (autour de 570&ndash;600&nbsp;&euro;), parfois en rupture de stock. Si vous en trouvez un, v&eacute;rifiez le stock r&eacute;el et qui assure la garantie avant de commander.
+              Le CITY n&apos;appara&icirc;t plus dans le catalogue de la boutique officielle Sunology&nbsp;: son ancienne fiche produit redirige d&eacute;sormais vers la page d&apos;accueil (statut inchang&eacute; au 29/10/2026). Quelques revendeurs tiers l&apos;affichent encore (autour de 570&ndash;600&nbsp;&euro;), parfois en rupture de stock. Si vous en trouvez un, v&eacute;rifiez le stock r&eacute;el et qui assure la garantie avant de commander.
             </p>
             <p className="text-sm font-semibold mb-2">Alternatives actuelles&nbsp;:</p>
             <ul className="text-sm text-charcoal-light space-y-1.5 mb-4">
@@ -173,7 +174,7 @@ export default function SunologyCityPage() {
             image="/images/produits/sunology-city-front.webp"
             imageAlt="Sunology CITY - kit solaire pour balcons étroits vue arrière"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix officiel constat&eacute; le 15/05/2026 &middot; Produit retir&eacute; de la boutique Sunology depuis (constat du 27/09/2026)</p>
+          <p className="text-xs text-stone mt-2 italic">Dernier prix officiel constat&eacute; le 15/05/2026 &middot; Produit toujours retir&eacute; de la boutique Sunology (statut v&eacute;rifi&eacute; le 29/10/2026)</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>

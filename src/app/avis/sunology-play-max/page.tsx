@@ -25,7 +25,7 @@ const faqData = [
 export default function PlayMaxAvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology PLAY MAX avis : kit + batterie, ça vaut le coup ?" description="Avis complet sur le Sunology PLAY MAX avec batterie VAULT." url="https://monbalconsolaire.fr/avis/sunology-play-max" datePublished="2026-04-02" dateModified="2026-09-27" />
+      <SchemaArticle title="Sunology PLAY MAX avis : kit + batterie, ça vaut le coup ?" description="Avis complet sur le Sunology PLAY MAX avec batterie VAULT." url="https://monbalconsolaire.fr/avis/sunology-play-max" datePublished="2026-04-02" dateModified="2026-10-29" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Sunology PLAY MAX" brand="Sunology" description="Station solaire 450 Wc avec batterie VAULT 700 Wh intégrée pour stocker le surplus et consommer le soir." price={699} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunology-play-max" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology PLAY MAX' }]} />
@@ -36,7 +36,7 @@ export default function PlayMaxAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY MAX avis : kit solaire + batterie, ça vaut le coup ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le PLAY MAX (vendu sous le nom &laquo;&nbsp;PLAYMax&nbsp;&raquo;), c&apos;est une station solaire Sunology de 450 Wc avec une batterie VAULT de 700 Wh int&eacute;gr&eacute;e. Son prix est pass&eacute; de 1 179&nbsp;&euro; &agrave; 699&nbsp;&euro;, soit 100&nbsp;&euro; de plus que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY</Link> sans batterie. La promesse : stocker le solaire pour le soir. Analyse honnête.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>2 avril 2026 &middot; Mis &agrave; jour le 27 septembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>2 avril 2026 &middot; <strong>Mis &agrave; jour le 29 octobre 2026</strong></span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -53,7 +53,7 @@ export default function PlayMaxAvisPage() {
             image="/images/produits/sunology-play-max-1.webp"
             imageAlt="Sunology PLAY MAX - kit solaire avec batterie VAULT 700 Wh"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 27/09/2026 sur sunology.eu (prix de vente des versions) &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Dernier prix v&eacute;rifi&eacute; le 27/09/2026 sur sunology.eu (prix de vente des versions), toujours coh&eacute;rent avec les autres pages du site au 29/10/2026 &middot; Peut varier selon les promos</p>
 
           <div className="space-y-10">
             <section>
@@ -241,12 +241,20 @@ export default function PlayMaxAvisPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h4>
                   <p className="text-xs text-charcoal-light mt-1">Talon, surplus, injection</p>
                 </Link>
+                <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le compact de Sunology, 270 W à 349 €</p>
+                </Link>
+                <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le comparatif des gammes avec et sans batterie</p>
+                </Link>
               </div>
             </section>
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Méthodologie ROI :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud, station 450 Wc &agrave; 699 &euro;. &Eacute;conomies : 85 &euro;/an, ROI 7,4 ans, 3 209 &euro; sur 25 ans. Prix : sunology.eu, relev&eacute; le 27/09/2026.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Méthodologie ROI :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud, station 450 Wc &agrave; 699 &euro;. &Eacute;conomies : 85 &euro;/an, ROI 7,4 ans, 3 209 &euro; sur 25 ans. Prix : sunology.eu, relev&eacute; le 27/09/2026 (coh&eacute;rence v&eacute;rifi&eacute;e le 29/10/2026).</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> avis indépendant. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>
