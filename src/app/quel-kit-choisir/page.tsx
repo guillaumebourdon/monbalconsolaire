@@ -32,6 +32,17 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/application-suivi-production-solaire',
+    title: 'Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly',
+    excerpt: 'Suivi de production ou pilotage de batterie en HP/HC ? Comparatif des 5 apps les plus utilisées, avec leurs points faibles réels.',
+    type: 'comparatif',
+    badge: 'Nouveau',
+    tags: ['comparatif', 'app', 'suivi'],
+    brands: ['Beem', 'Sunology', 'EcoFlow', 'Zendure'],
+    publishedAt: '2026-10-30',
+    readTime: '9 min',
+  },
+  {
     slug: '/comparatif/meilleur-micro-onduleur-2026',
     title: 'Meilleur micro-onduleur solaire 2026 : Hoymiles, APsystems, Enphase, Deye',
     excerpt: 'Pour un kit DIY : comparatif des 5 micro-onduleurs les plus vendus. Prix, MPPT, monitoring, garantie, verdict par budget.',

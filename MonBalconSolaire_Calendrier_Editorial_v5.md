@@ -82,8 +82,9 @@ Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur 
 ### Jeudi 29/10 — MISE À JOUR
 **Rafraîchir : avis Sunology (PLAY, PLAYMax, CITY arrêté)** — prix, versions, liens.
 
-### Vendredi 30/10 — NOUVEL ARTICLE — COMPARATIF
+### Vendredi 30/10 — NOUVEL ARTICLE — COMPARATIF — [x] publié
 **Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly** — slug `application-suivi-production-solaire`
+**30/10 :** sujet vérifié non dupliqué (distinct de `blog/prises-connectees-suivi-solaire`, qui couvre les prises tierces, pas les apps des fabricants). Fonctionnalités sourcées par recherche web (fiches officielles + forum Zendure + avis clients) et recoupées avec les pages déjà publiées sur le site (avis Zendure SolarFlow, Beem On 500W, Sunology PLAY, EcoFlow PowerStream). Pas de nouveau lien Amazon : 2 AffiliateCTA réutilisant des liens déjà vérifiés et publiés (Sunology, Beem). 3 backlinks ajoutés (avis/zendure-solarflow, avis/ecoflow-powerstream, blog/prises-connectees-suivi-solaire).
 
 ## Semaine 45 — 3-6 nov.
 
