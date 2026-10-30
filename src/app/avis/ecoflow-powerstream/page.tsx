@@ -555,6 +555,10 @@ export default function EcoflowPowerstreamPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires avec batterie 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Tous les systèmes du marché incluant du stockage : EcoFlow, Sunology, Beem</p>
                 </Link>
+                <Link href="/comparatif/application-suivi-production-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h4>
+                  <p className="text-xs text-charcoal-light mt-1">L&apos;app EcoFlow, jugée la plus aboutie du marché, face aux 4 autres</p>
+                </Link>
               </div>
             </section>
 

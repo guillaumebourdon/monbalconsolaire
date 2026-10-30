@@ -541,6 +541,10 @@ export default function ZendureSolarflowPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Zendure SolarFlow en tête du setup 2 panneaux — comparatif complet mis &agrave; jour juillet 2026</p>
                 </Link>
+                <Link href="/comparatif/application-suivi-production-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h4>
+                  <p className="text-xs text-charcoal-light mt-1">L&apos;app Zendure compar&eacute;e aux 4 autres pour le pilotage HP/HC et le suivi au quotidien</p>
+                </Link>
               </div>
             </section>
 

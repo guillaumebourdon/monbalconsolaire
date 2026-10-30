@@ -316,6 +316,10 @@ export default function PrisesConnecteesPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Consommation en veille du kit solaire : mesure et impact ROI</h4>
                   <p className="text-xs text-charcoal-light mt-1">La prise connect&eacute;e pour mesurer la veille nocturne du micro-onduleur et du hub</p>
                 </Link>
+                <Link href="/comparatif/application-suivi-production-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Les apps officielles des fabricants, compar&eacute;es aux prises connect&eacute;es g&eacute;n&eacute;riques</p>
+                </Link>
               </div>
             </section>
 
