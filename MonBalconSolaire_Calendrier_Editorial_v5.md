@@ -1,7 +1,8 @@
 # Calendrier éditorial v5 — MonBalconSolaire (octobre → décembre 2026)
 
 > Créé le 27 septembre 2026 (le v4 s'arrêtait au 28/08 : la routine n'avait plus rien à publier)
-> Rythme (réorienté le 12/10/2026) : **mardi = mise à jour SEO d'une page qui perd des positions** · jeudi = mise à jour · vendredi = nouvel article
+> Rythme (**3 contenus par semaine depuis le 03/11/2026**, validé par Guillaume le 30/10) : **mardi = NOUVEL AVIS produit** · **jeudi = MISE À JOUR** (mise à jour SEO, codes promo, ou article de saison quand c'est indiqué) · **vendredi = NOUVEAU COMPARATIF** (« X vs Y » ou « meilleur … 2026 »). Avant : mardi = mise à jour SEO, jeudi = mise à jour, vendredi = seul nouvel article (7 nouveaux contenus en octobre, dont 1 avis).
+> Pourquoi (point du 30/10) : la page n°1 du site est un comparatif « X vs Y » (Zendure vs Sunology vs Beem, 22 des 58 clics Google d'octobre), suivie des avis produit ; les articles de blog généraux ramènent peu. Détail : ~/Desktop/missions-30-10/5-publications-mbs.md.
 > Priorité de la période : **regagner des positions sur les pages qui rapportent (avis, comparatifs, guides)** + saisonnalité Q4 (Black Friday, Noël).
 > Pourquoi : bilan du 12/10 — position moyenne Google passée de ~9 (juillet) à ~16 ; les avis Beem 300W / Sunology PLAY / Beem 460W ont perdu 60-80 % de leurs impressions ; les articles accessoires publiés depuis août ne reçoivent presque aucune impression.
 > **Articles accessoires Amazon : RÉACTIVÉS le 12/10/2026** (compte Club Partenaires créé, tracking ID vérifié `monbalconsola-21`). Ils restent secondaires : au maximum 1 vendredi sur 2, en piochant dans la section Accessoires du Pipeline. Les mardis restent des MISE À JOUR SEO.
@@ -86,85 +87,87 @@ Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur 
 **Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly** — slug `application-suivi-production-solaire`
 **30/10 :** sujet vérifié non dupliqué (distinct de `blog/prises-connectees-suivi-solaire`, qui couvre les prises tierces, pas les apps des fabricants). Fonctionnalités sourcées par recherche web (fiches officielles + forum Zendure + avis clients) et recoupées avec les pages déjà publiées sur le site (avis Zendure SolarFlow, Beem On 500W, Sunology PLAY, EcoFlow PowerStream). Pas de nouveau lien Amazon : 2 AffiliateCTA réutilisant des liens déjà vérifiés et publiés (Sunology, Beem). 3 backlinks ajoutés (avis/zendure-solarflow, avis/ecoflow-powerstream, blog/prises-connectees-suivi-solaire).
 
-## Semaine 45 — 3-6 nov.
+## Semaine 45 — 3-6 nov. (début du rythme 3 contenus / semaine)
 
-### Mardi 03/11 — MISE À JOUR SEO (remplace l'article accessoire)
-**Rafraîchir : avis/zendure-solarflow + comparatif/zendure-vs-sunology-vs-beem** — le comparatif est notre page n°1 (19 clics/mois) : le garder irréprochable (prix, gammes 2026, Sunology GO, Beem On 500W/Duo). L'avis Zendure SolarFlow est en position ~24 : prix, versions (800 Pro), title.
+### Mardi 03/11 — NOUVEL ARTICLE — AVIS
+**EcoFlow STREAM Ultra : avis** — slug `ecoflow-stream-ultra` (successeur du PowerStream). Fiche vérifiée fr.ecoflow.com, ROI via pricing.ts. Couvrir aussi le STREAM Ultra Pro (déjà lié depuis le site). Affiliation : candidature EcoFlow FR envoyée sur Awin le 30/10 ; tant qu'elle n'est pas acceptée (voir `src/lib/affiliate.ts`), lien direct fr.ecoflow.com. Ajouter dans avis/ecoflow-powerstream un encadré « plus vendu en France → voir le STREAM Ultra » et un lien depuis comparatif/meilleure-batterie-solaire-balcon-2026.
 
 ### Jeudi 05/11 — MISE À JOUR
 **Rafraîchir : codes-promo** (offres de novembre, annonces Black Friday).
 
-### Vendredi 06/11 — NOUVEL ARTICLE — AVIS
-**EcoFlow STREAM Ultra : avis** — slug `ecoflow-stream-ultra` (successeur du PowerStream). Fiche vérifiée fr.ecoflow.com, ROI via pricing.ts. Couvrir aussi le STREAM Ultra Pro (déjà lié depuis le site). Candidature à l'affiliation EcoFlow en cours (13/10) : si un lien affilié a été fourni d'ici là, l'utiliser ; sinon lien direct fr.ecoflow.com. Ajouter dans avis/ecoflow-powerstream un encadré « plus vendu en France → voir le STREAM Ultra » et un lien depuis comparatif/meilleure-batterie-solaire-balcon-2026.
+### Vendredi 06/11 — NOUVEL ARTICLE — COMPARATIF
+**Batterie solaire balcon : Zendure SolarFlow vs Sunology VAULT vs Beem Battery vs EcoFlow STREAM** — slug `batterie-zendure-vs-sunology-vs-beem-vs-ecoflow`
+Même format que comparatif/zendure-vs-sunology-vs-beem (notre page n°1) : tableau capacité / puissance / prix / €/kWh / compatibilité kits, verdict par profil, ROI avec batterie via pricing.ts (95 % d'autoconsommation). Ne pas dupliquer comparatif/meilleure-batterie-solaire-balcon-2026 (angle : les 4 marques des kits plug-and-play, pas les stations Bluetti/Jackery) ; lier les deux. Zendure : `zendureUrl()`.
 
 ## Semaine 46 — 10-13 nov.
 
-### Mardi 10/11 — MISE À JOUR SEO (remplace l'article accessoire)
-**Rafraîchir : guide/installer-kit-solaire-balcon + guide/declaration-cacsi-enedis-panneau-solaire** — l'installer faisait 6 clics/mois en juin (CTR 13 %) et a disparu ; le CACSI est la 2e page la plus visitée (Vercel). Rafraîchir étapes, captures/process Enedis actuel, title.
+### Mardi 10/11 — NOUVEL ARTICLE — AVIS
+**Sunology VAULT : avis** — slug `sunology-vault` (batterie seule, compatibilité PLAY / GO, prix vérifié sur sunology.eu). Citée sur 25 pages du site sans avis dédié : ajouter le lien vers l'avis depuis les pages qui la citent le plus (avis PLAY, PLAYMax, comparatif batteries du 06/11).
 
-### Jeudi 12/11 — MISE À JOUR
-**Rafraîchir : avis Beem (kit-300w, on-500w)** — prix, stock, Leroy Merlin, avis clients (refaits le 12/10, vérifier que rien n'a bougé).
+### Jeudi 12/11 — MISE À JOUR SEO
+**Rafraîchir : comparatif/zendure-vs-sunology-vs-beem + avis/zendure-solarflow** — le comparatif est notre page n°1 : le garder irréprochable (prix, gammes 2026, Sunology GO, Beem On 500W/Duo, liens vers les avis du 03/11 et du 10/11). L'avis Zendure SolarFlow est en position ~24 : prix, versions (800 Pro), title. Liens Zendure : `zendureUrl()`.
 
-### Vendredi 13/11 — NOUVEL ARTICLE — BLOG
-**Panneau solaire pliable ou rigide : quel format pour un balcon ?** — slug `panneau-solaire-pliable-vs-rigide`
-Liens Amazon vérifiés pour les pliables.
+### Vendredi 13/11 — NOUVEL ARTICLE — COMPARATIF
+**Micro-onduleur : APsystems EZ1-M vs Hoymiles HMS-800W** — slug `apsystems-ez1-vs-hoymiles-hms-800w`
+APsystems EZ1-M est cité sur 20 pages sans avis dédié ; s'appuyer sur avis/hoymiles-hms-800w et comparatif/meilleur-micro-onduleur-2026 sans les dupliquer (angle : duel des deux modèles les plus vendus pour les kits balcon, rendement, application, garantie, prix). Lier blog/micro-onduleur-solaire-fonctionnement (en position ~57 : ce lien l'aide).
 
 ## Semaine 47 — 17-20 nov.
 
-### Mardi 17/11 — MISE À JOUR SEO (remplace l'article accessoire)
-**Rafraîchir : avis/sunology-play-max** — position ~29 : prix réel (vérifier l'écart 699 € / 1 179 € signalé le 27/09), versions, title orienté « avis Sunology PLAYMax ».
+### Mardi 17/11 — NOUVEL ARTICLE — AVIS
+**Beem Battery : avis** — slug `beem-battery` (prix et compatibilité vérifiés sur beemenergy.fr ; situation de l'entreprise : procédure de sauvegarde). Affiliation : candidature Beem Energy envoyée sur Awin le 30/10 ; lien direct tant qu'elle n'est pas acceptée.
 
-### Jeudi 19/11 — MISE À JOUR
-**Préparer le Black Friday : codes-promo + comparatif meilleur-kit** — ajouter une section « Black Friday 2026 » avec `endsAt`.
-
-### Vendredi 20/11 — NOUVEL ARTICLE — BLOG
+### Jeudi 19/11 — NOUVEL ARTICLE — BLOG (saison)
 **Black Friday 2026 : kits solaires et accessoires, les vraies bonnes affaires** — slug `black-friday-kit-solaire-2026`
-Prix de référence des 3 derniers mois (sources), liens marchands + Amazon vérifiés, `revalidate` comme codes-promo.
+Prix de référence des 3 derniers mois (sources), liens marchands + Amazon vérifiés, `revalidate` comme codes-promo. Ajouter aussi une section « Black Friday 2026 » avec `endsAt` dans codes-promo.
+
+### Vendredi 20/11 — NOUVEL ARTICLE — COMPARATIF
+**Kit solaire pas cher : Beem Kit 300W vs Sunethic F500 vs Sunology GO** — slug `kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go`
+Les 3 avis existent et ont des impressions (Beem 300W, Sunethic F500) : cette page fait le lien et capte « kit solaire balcon pas cher / le moins cher ». Prix du jour (Black Friday), ROI via pricing.ts, signaler la rupture éventuelle du Beem Kit 300W.
 
 ## Semaine 48 — 24-27 nov.
 
-### Mardi 24/11 — MISE À JOUR SEO (remplace l'article accessoire)
-**Rafraîchir : avis/jackery-solarvault-3-pro + avis/dualsun-preasy** — positions 11-15 : prix, disponibilité, title/description pour gagner le clic.
+### Mardi 24/11 — NOUVEL ARTICLE — AVIS
+**Zendure SolarFlow 800 Pro : avis** — slug `zendure-solarflow-800-pro` (successeur du SolarFlow ; fiche zendure.fr). Liens : `zendureUrl()`. Lien croisé avec avis/zendure-solarflow (bandeau « nouvelle version »).
 
 ### Jeudi 26/11 — MISE À JOUR
-**Rafraîchir : black-friday-kit-solaire-2026** (offres réelles du jour).
+**Rafraîchir : black-friday-kit-solaire-2026 + codes-promo** (offres réelles du jour).
 
-### Vendredi 27/11 — NOUVEL ARTICLE — BLOG
-**Idées cadeaux solaires pour Noël (de 20 à 600 €)** — slug `idees-cadeaux-solaire-noel`
-Sélection Amazon + kits, par budget.
+### Vendredi 27/11 — NOUVEL ARTICLE — COMPARATIF
+**Kit solaire Leroy Merlin, IKEA ou marque spécialisée : lequel choisir ?** — slug `kit-solaire-leroy-merlin-ikea-vs-specialiste`
+Requête « kit solaire Leroy Merlin » forte ; s'appuyer sur avis/ikea-solstrale-balcon ; comparer avec Sunology / Beem (prix, garantie, SAV, application, puissance réelle). Prix relevés sur les sites des enseignes le jour même.
 
 ## Semaine 49 — 1-4 déc.
 
-### Mardi 01/12 — MISE À JOUR SEO (remplace l'article accessoire)
-**Rafraîchir : avis/ecoflow-powerstream + avis/sunology-city (produits arrêtés)** — rediriger clairement vers les successeurs (STREAM Ultra, PLAY), garder la page utile pour les recherches « avis » résiduelles.
+### Mardi 01/12 — NOUVEL ARTICLE — AVIS
+**Beem On Duo 1000 W : avis** — slug `beem-on-duo-1000w` (vérifier disponibilité et prix sur beemenergy.fr).
 
-### Jeudi 03/12 — MISE À JOUR
-**Rafraîchir : codes-promo** (fin Black Friday, offres de décembre).
+### Jeudi 03/12 — NOUVEL ARTICLE — BLOG (saison) + codes-promo
+**Idées cadeaux solaires pour Noël (de 20 à 600 €)** — slug `idees-cadeaux-solaire-noel` — sélection Amazon + kits, par budget. Dans le même passage : codes-promo (fin Black Friday, offres de décembre).
 
 ### Vendredi 04/12 — NOUVEL ARTICLE — COMPARATIF
-**Kit solaire balcon vs kit solaire camping-car / van** — slug `kit-solaire-balcon-vs-camping-car`
+**Solarcoop vs kits de marque** — SEULEMENT si les prix et liens d'affiliation Solarcoop ont été reçus par écrit (tâche Todoist Solarcoop) et relus par Solarcoop ; sinon publier à la place **Panneau solaire pliable ou rigide : quel format pour un balcon ?** (slug `panneau-solaire-pliable-vs-rigide`, liens Amazon vérifiés pour les pliables).
 
 ## Semaine 50 — 8-11 déc.
 
-### Mardi 08/12 — MISE À JOUR SEO (remplace l'article accessoire)
-**Rafraîchir : ROTATION SEO** — prendre la page avis/comparatif/guide dont `dateModified` est la plus ancienne et appliquer la méthode ci-dessous.
+### Mardi 08/12 — NOUVEL ARTICLE — AVIS
+**Anker SOLIX Solarbank 3 : avis** — slug `anker-solix-solarbank-3` — seulement s'il est vendu en France (vérifier anker.com/fr) ; sinon premier avis non coché du Pipeline.
 
-### Jeudi 10/12 — MISE À JOUR
-**Rafraîchir : tous les avis — prix et disponibilité** (script check-affiliate-links + sites officiels).
+### Jeudi 10/12 — MISE À JOUR SEO
+**Rafraîchir : ROTATION SEO** — prendre la page avis/comparatif/guide dont `dateModified` est la plus ancienne et appliquer la méthode ci-dessous. Dans le même passage : prix et disponibilité de tous les avis (`node scripts/check-affiliate-links.mjs`).
 
-### Vendredi 11/12 — NOUVEL ARTICLE — AVIS
-**Beem On Duo 1000 W : avis** — slug `beem-on-duo-1000w` (vérifier disponibilité et prix sur beemenergy.fr).
+### Vendredi 11/12 — NOUVEL ARTICLE — COMPARATIF
+**Panneau solaire pliable ou rigide : quel format pour un balcon ?** — slug `panneau-solaire-pliable-vs-rigide` (si déjà publié le 04/12 : **Kit solaire balcon vs kit solaire camping-car / van**, slug `kit-solaire-balcon-vs-camping-car`).
 
 ## Semaine 51 — 15-18 déc.
 
-### Mardi 15/12 — MISE À JOUR SEO (remplace l'article accessoire)
-**Rafraîchir : ROTATION SEO** — idem : page suivante la plus ancienne.
+### Mardi 15/12 — NOUVEL ARTICLE — AVIS
+**Premier avis non coché du Pipeline.**
 
 ### Jeudi 17/12 — MISE À JOUR
 **Rafraîchir : aides et subventions 2027** (blog/aides-subventions-panneau-solaire-balcon-2026) — préparer la version 2027.
 
-### Vendredi 18/12 — NOUVEL ARTICLE — AVIS
-**Sunology VAULT : avis** — slug `sunology-vault` (batterie seule, compatibilité).
+### Vendredi 18/12 — NOUVEL ARTICLE — COMPARATIF
+**Kit solaire balcon vs kit solaire camping-car / van** — slug `kit-solaire-balcon-vs-camping-car` (si déjà publié : premier comparatif non coché du Pipeline).
 
 ## Semaine 52 — 22-25 déc.
 
@@ -178,14 +181,25 @@ Sélection Amazon + kits, par budget.
 
 ## Semaine 53 — 29-31 déc.
 
-### Mardi 29/12 — NOUVEL ARTICLE — PIPELINE
+### Mardi 29/12 — NOUVEL ARTICLE — AVIS
+**Premier avis non coché du Pipeline.**
+
 ### Jeudi 31/12 — MISE À JOUR
 **Rafraîchir : codes-promo** (soldes d'hiver janvier).
 
 ---
 
+## Règles propres aux AVIS (mardis) et COMPARATIFS (vendredis)
 
-## Méthode « MISE À JOUR SEO » (mardis)
+1. Prix vérifiés sur le site officiel le jour même, specs sourcées (2-3 recherches web), jamais inventés. « Analysé », jamais « testé ». Aucun vécu inventé.
+2. ROI et économies uniquement via `src/lib/pricing.ts` (`npx tsx`).
+3. Vérifier qu'aucune page existante ne couvre déjà le même angle (sinon : mettre à jour la page existante et prendre le sujet suivant).
+4. Liens affiliés : **Zendure = `zendureUrl()`** (`src/lib/affiliate.ts`, Awin, actif). Beem, EcoFlow, Bluetti : candidatures Awin envoyées le 30/10 ; dès qu'un annonceur est ajouté dans `AWIN_MERCHANTS`, utiliser son helper ; sinon lien direct vers le site de la marque. Amazon : règles ci-dessus.
+5. Comparatif : tableau avec le produit gagnant par profil, verdict par profil (budget, stockage, simplicité), liens vers chaque avis existant (maillage), et lien depuis chaque avis cité vers le comparatif.
+6. Index, sitemap, search-index, hub `quel-kit-choisir` ; `node scripts/check-affiliate-links.mjs` à 0 cassé avant push.
+
+
+## Méthode « MISE À JOUR SEO » (jeudis indiqués « MISE À JOUR SEO »)
 
 Objectif : faire remonter une page existante, pas la réécrire de zéro.
 1. Lire la page entière. Vérifier prix, disponibilité, URLs marchandes (curl → 200), specs (2-3 recherches web).
@@ -199,9 +213,9 @@ Objectif : faire remonter une page existante, pas la réécrire de zéro.
 ## Pipeline (si un créneau est libre ou si le calendrier est épuisé)
 
 La routine prend le **premier élément non coché**, le publie, puis le coche `[x]` dans ce fichier (même commit).
-Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 semaines suivantes en piochant ici (en privilégiant avis / comparatifs / guides à forte demande ; accessoire Amazon au maximum 1 vendredi sur 2).
+Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 semaines suivantes en piochant ici, **en gardant le rythme : mardi = avis, jeudi = mise à jour, vendredi = comparatif**. Accessoires Amazon et blog : seulement sur un jeudi, au maximum 1 sur 2.
 
-### Accessoires (Amazon) — 1 vendredi sur 2 maximum
+### Accessoires (Amazon) — un jeudi sur 2 maximum, à la place de la mise à jour
 - [ ] Câbles et connecteurs MC4 : rallonger, raccorder, sertir (`cable-mc4-rallonge-panneau-solaire`)
 - [ ] Brosse et kit de nettoyage panneau solaire (`brosse-nettoyage-panneau-solaire`)
 - [ ] Station électrique portable pour les coupures d'hiver (`station-electrique-coupure-courant`)
@@ -220,11 +234,17 @@ Quand il reste moins de 2 semaines de calendrier daté, la routine ajoute les 2 
 - [ ] Housse et protection grêle pour panneau solaire
 - [ ] Thermomètre / station météo solaire connectée
 
-### Avis / comparatifs
-- [ ] Anker SOLIX Solarbank 3 (si disponible en France)
-- [ ] Zendure SolarFlow 800 Pro
-- [ ] Comparatif batteries plug-and-play 2027
-- [ ] Beem Battery (si prix baisse)
+### Avis (mardis)
+- [ ] Anker SOLIX Solarbank 3 (si disponible en France) — daté 08/12
+- [ ] Zendure SolarFlow 800 Pro — daté 24/11
+- [ ] Beem Battery — daté 17/11
+- [ ] APsystems EZ1-M (cité sur 20 pages)
+- [ ] Sunology PLAY 500 W (si la page sunology-play ne le couvre pas déjà)
+
+### Comparatifs (vendredis)
+- [ ] Comparatif batteries plug-and-play 2027 (mise à jour annuelle du comparatif du 06/11)
+- [ ] Kit avec batterie ou sans batterie : lequel est rentable ? (angle ROI pricing.ts, ne pas dupliquer comparatif/kit-solaire-batterie-2026)
+- [ ] Sunology GO vs Beem On 500W
 
 ### Blog / guides
 - [x] Kit solaire balcon et véhicule électrique : peut-on recharger ? — publié 02/10 (`blog/panneau-solaire-balcon-voiture-electrique`)

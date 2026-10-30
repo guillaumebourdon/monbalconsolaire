@@ -114,8 +114,10 @@ Tunnel de conversion principal :
 ## Calendrier éditorial
 
 - Fichier courant : `MonBalconSolaire_Calendrier_Editorial_v5.md` (lu par la routine « Publication auto MonBalconSolaire », mar/jeu/ven 7h UTC)
-- Si aucune entrée datée pour le jour : prendre le premier élément non coché du pipeline, le publier, le cocher
-- Priorité Q4 2026 : articles accessoires monétisés Amazon
+- **Rythme depuis le 03/11/2026 (validé par Guillaume le 30/10) : 3 contenus par semaine** — mardi = nouvel avis produit, jeudi = mise à jour (ou article de saison si indiqué), vendredi = nouveau comparatif (« X vs Y » / « meilleur … 2026 »)
+- Si aucune entrée datée pour le jour : prendre le premier élément non coché du pipeline correspondant au jour (avis le mardi, comparatif le vendredi), le publier, le cocher
+- Priorité Q4 2026 : avis et comparatifs (ce qui rapporte des clics Google) ; accessoires Amazon et blog seulement un jeudi sur deux au maximum
+- Liens affiliés Awin : `src/lib/affiliate.ts` (Zendure actif ; Beem, EcoFlow, Bluetti candidatés le 30/10)
 
 ## Publication d'article — Processus automatique
 
