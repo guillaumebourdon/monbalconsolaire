@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
+import { zendureUrl } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Zendure SolarFlow Mix avis 2026 : le tout-en-un r\u00e9sidentiel',
@@ -48,7 +49,7 @@ export default function ZendureSolarFlowMixAvisPage() {
             price="2 879 €"
             score="8/10"
             tagline="Le stockage résidentiel complet : 4 kW, 13 kW d'entrée PV, IA Zenki."
-            affiliateUrl="https://zendure.fr/products/solarflow-mix-series"
+            affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow-mix-series')}
             affiliateLabel="Voir sur Zendure.fr"
             accentColor="amber"
           />
@@ -159,7 +160,7 @@ export default function ZendureSolarFlowMixAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Zendure SolarFlow Mix" merchantName="Zendure" affiliateUrl="https://zendure.fr/products/solarflow-mix-series" label="Voir les 3 mod\u00e8les sur Zendure.fr" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Zendure SolarFlow Mix" merchantName="Zendure" affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow-mix-series')} label="Voir les 3 mod\u00e8les sur Zendure.fr" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -179,7 +180,7 @@ export default function ZendureSolarFlowMixAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Zendure SolarFlow Mix" merchantName="Zendure" affiliateUrl="https://zendure.fr/products/solarflow-mix-series" label="V\u00e9rifier la disponibilit\u00e9" variant="secondary" position="after-cons" />
+            <AffiliateCTA productName="Zendure SolarFlow Mix" merchantName="Zendure" affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow-mix-series')} label="V\u00e9rifier la disponibilit\u00e9" variant="secondary" position="after-cons" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">SolarFlow Mix vs la concurrence</h2>
@@ -286,10 +287,10 @@ export default function ZendureSolarFlowMixAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le 4000 Mix Pro est le mod&egrave;le le plus int&eacute;ressant&nbsp;: avec 13&nbsp;kW d&apos;entr&eacute;e PV et le double MPPT, il fait office d&apos;onduleur + batterie + gestionnaire &eacute;nerg&eacute;tique en un seul appareil. &Agrave; 2&nbsp;879&nbsp;&euro;, le &euro;/kWh de 360&nbsp;&euro; est comp&eacute;titif pour du r&eacute;sidentiel.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Les b&eacute;mols&nbsp;: c&apos;est une gamme toute neuve (avril 2026), le recul est nul, et le 3000 Mix AC+ non extensible est un faux pas. Pour les balcons, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">SolarFlow 800 Plus</Link> reste imbattable. Mais pour les propri&eacute;taires avec panneaux en toiture, le Mix est la proposition la plus compl&egrave;te du march&eacute;.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">8/10</span></strong></p>
-              <a href="https://zendure.fr/products/solarflow-mix-series" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le SolarFlow Mix sur Zendure.fr &rarr;</a>
+              <a href={zendureUrl('https://zendure.fr/products/solarflow-mix-series')} target="_blank" rel="sponsored noopener" data-merchant="Zendure" data-product="Zendure SolarFlow Mix" className="btn-affiliate inline-flex mt-4">Voir le SolarFlow Mix sur Zendure.fr &rarr;</a>
             </section>
 
-            <AffiliateCTA productName="Zendure SolarFlow 4000 Mix Pro" merchantName="Zendure" affiliateUrl="https://zendure.fr/products/solarflow-mix-series" label="Voir l'offre actuelle" variant="box" position="footer-box" price="2 879 \u20ac" />
+            <AffiliateCTA productName="Zendure SolarFlow 4000 Mix Pro" merchantName="Zendure" affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow-mix-series')} label="Voir l'offre actuelle" variant="box" position="footer-box" price="2 879 \u20ac" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>

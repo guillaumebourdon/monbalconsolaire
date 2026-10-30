@@ -5,6 +5,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { zendureUrl } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Revendre surplus solaire à EDF depuis un balcon : possible ? (2026)',
@@ -219,7 +220,7 @@ export default function RevendreSuplusSolaireBalconPage() {
             <AffiliateCTA
               productName="Zendure SolarFlow Mix"
               merchantName="Zendure"
-              affiliateUrl="https://zendure.fr/products/solarflow-mix-series"
+              affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow-mix-series')}
               label="Voir le SolarFlow Mix — stockez votre surplus"
               variant="inline"
               position="mid-article"

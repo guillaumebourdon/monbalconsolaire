@@ -6,6 +6,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { zendureUrl } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Batterie solaire balcon : choisir la bonne capacité (2026)',
@@ -258,7 +259,7 @@ export default function GuideBatterieBalcon() {
             <AffiliateCTA
               productName="Zendure SolarFlow"
               merchantName="Zendure"
-              affiliateUrl="https://zendure.fr/products/solarflow"
+              affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow')}
               label="Voir le Zendure SolarFlow"
               variant="inline"
               position="mid_article"
