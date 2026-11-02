@@ -4,7 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ACHATS_GROUPES } from '@/data/achats-groupes';
-import { calculateROIYears, calculateFirstYearSavings, calculateProductionKwh } from '@/lib/pricing';
+import { calculateROIYears, calculateFirstYearSavings, calculateProductionKwh, PERFORMANCE_RATIO } from '@/lib/pricing';
 import { productibleSite } from '@/lib/rentabilite-departements';
 import { DEPARTMENTS } from '@/data/departments';
 
@@ -24,6 +24,13 @@ const production22 = Math.round(calculateProductionKwh(kit22(kerwatt.prixConstat
 const economies22 = Math.round(calculateFirstYearSavings(kit22(kerwatt.prixConstates.max)));
 const roiMin22 = calculateROIYears(kit22(kerwatt.prixConstates.min));
 const roiMax22 = calculateROIYears(kit22(kerwatt.prixConstates.max));
+// Production réelle constatée par Kerwatt (déjà nette des pertes) : on la convertit pour pricing.ts,
+// qui applique le ratio de performance à un productible brut.
+const prodTerrain = kerwatt.productibleTerrain!;
+const kitTerrain = (prix: number) => ({ kitPriceEur: prix, kitPowerWc: kerwatt.puissanceDernierKitWc, productibleKwhPerKwc: prodTerrain.interieur / PERFORMANCE_RATIO });
+const productionTerrain = Math.round(calculateProductionKwh(kitTerrain(kerwatt.prixConstates.max)));
+const roiTerrainMin = calculateROIYears(kitTerrain(kerwatt.prixConstates.min));
+const roiTerrainMax = calculateROIYears(kitTerrain(kerwatt.prixConstates.max));
 const fr = (n: number) => n.toLocaleString('fr-FR');
 
 const faqData = [
@@ -60,7 +67,7 @@ export default function AchatGroupePage() {
         title="Achat groupé de kits solaires : comment ça marche"
         description="Qui organise un achat groupé de kits solaires, les étapes, ce qui est inclus, les prix constatés et la rentabilité, avec l'exemple de Kerwatt dans les Côtes-d'Armor."
         url="https://monbalconsolaire.fr/guide/achat-groupe-kit-solaire"
-        datePublished="2026-10-27"
+        datePublished="2026-11-02"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Achat groupé' }]} />
@@ -71,7 +78,7 @@ export default function AchatGroupePage() {
             <div className="badge-green mb-4 inline-block">Guide pratique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Achat group&eacute; de kits solaires : comment &ccedil;a marche</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Plut&ocirc;t que d&apos;acheter un kit seul en ligne, vous pouvez passer par une commande group&eacute;e organis&eacute;e pr&egrave;s de chez vous. Qui les organise, comment elles se d&eacute;roulent, ce qu&apos;elles co&ucirc;tent et ce qu&apos;elles apportent vraiment, avec l&apos;exemple concret de Kerwatt, dans les C&ocirc;tes-d&apos;Armor.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap"><span>Publi&eacute; le 27 octobre 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap"><span>Publi&eacute; le 2 novembre 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -93,7 +100,7 @@ export default function AchatGroupePage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les &eacute;tapes d&apos;un achat group&eacute;, avec l&apos;exemple de {kerwatt.nom}</h2>
-              <p className="text-charcoal-light leading-relaxed mb-6">Bas&eacute; &agrave; {kerwatt.ville}, {kerwatt.nom} organise des achats group&eacute;s de kits plug-and-play dans {kerwatt.zone}, et en a d&eacute;j&agrave; vendu {kerwatt.kitsVendus}. Leurs op&eacute;rations suivent toujours le m&ecirc;me d&eacute;roul&eacute; :</p>
+              <p className="text-charcoal-light leading-relaxed mb-6">La soci&eacute;t&eacute; r&eacute;gionale {kerwatt.nom}, bas&eacute;e &agrave; {kerwatt.ville}, organise des achats group&eacute;s de kits plug-and-play en Bretagne, et notamment dans {kerwatt.zone}. Elle en a d&eacute;j&agrave; vendu {kerwatt.kitsVendus}. Leurs op&eacute;rations suivent toujours le m&ecirc;me d&eacute;roul&eacute; :</p>
               <ol className="space-y-3">
                 {kerwatt.deroule.map((etape, i) => (
                   <li key={i} className="card border-l-4 border-l-green flex gap-4 items-start">
@@ -107,7 +114,7 @@ export default function AchatGroupePage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qui est inclus et ce que &ccedil;a co&ucirc;te</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Chez {kerwatt.nom}, le kit comprend {kerwatt.contenuKit}. Le mat&eacute;riel change d&apos;une op&eacute;ration &agrave; l&apos;autre, au gr&eacute; des panneaux et micro-onduleurs disponibles : les premiers kits faisaient 400 Wc, les derniers {kerwatt.puissanceDernierKitWc} Wc.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Chez {kerwatt.nom}, le kit comprend {kerwatt.contenuKit}. Du fait d&apos;une &eacute;volution constante des produits dans le photovolta&iuml;que, le mat&eacute;riel change d&apos;une op&eacute;ration &agrave; l&apos;autre : les premiers kits faisaient 400 Wc, les derniers {kerwatt.puissanceDernierKitWc} Wc.</p>
               <div className="grid grid-cols-2 gap-4 my-6">
                 <div className="rounded-brand-xl border border-green/15 bg-gradient-to-br from-green-pale/40 via-white to-white p-5 text-center shadow-brand">
                   <div className="text-[10px] text-stone font-semibold uppercase tracking-widest">Prix constat&eacute;s</div>
@@ -125,7 +132,8 @@ export default function AchatGroupePage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Est-ce rentable ? L&apos;exemple des C&ocirc;tes-d&apos;Armor</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Dans les C&ocirc;tes-d&apos;Armor, un kit de {kerwatt.puissanceDernierKitWc} Wc orient&eacute; plein sud et sans ombre produit environ <strong>{fr(production22)} kWh par an</strong>, soit environ <strong>{economies22} &euro; d&apos;&eacute;conomies la premi&egrave;re ann&eacute;e</strong>. Il se rembourse en <strong>{fr(roiMax22)} ans</strong> &agrave; {kerwatt.prixConstates.max} &euro;, et en <strong>{fr(roiMin22)} ans</strong> &agrave; {kerwatt.prixConstates.min} &euro;.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Dans les C&ocirc;tes-d&apos;Armor, un kit de {kerwatt.puissanceDernierKitWc} Wc orient&eacute; plein sud et sans ombre produit environ <strong>{fr(production22)} kWh par an</strong>, soit environ <strong>{economies22} &euro; d&apos;&eacute;conomies la premi&egrave;re ann&eacute;e</strong>. C&apos;est notre estimation prudente (donn&eacute;es PVGIS) : il se rembourse en <strong>{fr(roiMax22)} ans</strong> &agrave; {kerwatt.prixConstates.max} &euro;, et en <strong>{fr(roiMin22)} ans</strong> &agrave; {kerwatt.prixConstates.min} &euro;.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Les retours de terrain de {kerwatt.nom} sont plus optimistes&nbsp;: sur ses kits comme sur des centrales plus grandes, la production r&eacute;elle tourne autour de {fr(prodTerrain.cote)} kWh par kWc et par an sur la c&ocirc;te, et de {fr(prodTerrain.interieur)} kWh par kWc &agrave; l&apos;int&eacute;rieur des terres, soit environ <strong>{fr(productionTerrain)} kWh par an</strong> pour un panneau de {kerwatt.puissanceDernierKitWc} Wc bien orient&eacute;. Sur cette base, le kit se rembourse en <strong>{fr(roiTerrainMax)} ans</strong> &agrave; {kerwatt.prixConstates.max} &euro;, et en <strong>{fr(roiTerrainMin)} ans</strong> &agrave; {kerwatt.prixConstates.min} &euro;.</p>
               <p className="text-sm text-charcoal-light leading-relaxed">Le prix du kit compte presque autant que l&apos;ensoleillement : voir notre <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="text-green hover:underline">&eacute;tude de rentabilit&eacute; dans les 96 d&eacute;partements</Link>, ou chiffrez votre cas avec le <Link href="/calculateur" className="text-green hover:underline">calculateur</Link>.</p>
             </section>
 
@@ -162,6 +170,7 @@ export default function AchatGroupePage() {
               <h2 className="text-2xl font-extrabold mb-4">Participer au prochain achat group&eacute; de {kerwatt.nom}</h2>
               <div className="card-lg bg-green-pale/20 border-green/10">
                 <p className="text-sm text-charcoal-light leading-relaxed mb-3">Une dizaine de personnes se sont d&eacute;j&agrave; manifest&eacute;es pour le prochain achat group&eacute;. Il sera lanc&eacute; quand 30 candidatures seront r&eacute;unies.</p>
+                {kerwatt.rechercheSalle && <p className="text-sm text-charcoal-light leading-relaxed mb-3">{kerwatt.nom} cherche aussi {kerwatt.rechercheSalle}. Vous repr&eacute;sentez une commune ou une association&nbsp;? &Eacute;crivez &agrave; la m&ecirc;me adresse.</p>}
                 <p className="text-sm font-semibold">
                   Pour vous faire conna&icirc;tre&nbsp;: {kerwatt.inscription.href
                     ? <a href={kerwatt.inscription.href} className="text-green hover:underline">{kerwatt.inscription.label}</a>
@@ -204,7 +213,7 @@ export default function AchatGroupePage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Sources :</strong> informations transmises par {kerwatt.nom} (d&eacute;roul&eacute; des op&eacute;rations, contenu des kits, prix constat&eacute;s, nombre de kits vendus), relues par {kerwatt.nom} avant publication. Production et rentabilit&eacute; : PVGIS (Commission europ&eacute;enne), tarif r&eacute;glement&eacute; EDF Base 0,1940 &euro;/kWh, hausse de 3,3 % par an, 85 % d&apos;autoconsommation, m&eacute;thode d&eacute;taill&eacute;e dans <Link href="/a-propos" className="text-green hover:underline">notre m&eacute;thodologie</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Sources :</strong> informations transmises par {kerwatt.nom} (d&eacute;roul&eacute; des op&eacute;rations, contenu des kits, prix constat&eacute;s, nombre de kits vendus), relues par {kerwatt.nom} avant publication. Production r&eacute;elle constat&eacute;e : retours de terrain de {kerwatt.nom}. Estimation prudente : PVGIS (Commission europ&eacute;enne), tarif r&eacute;glement&eacute; EDF Base 0,1940 &euro;/kWh, hausse de 3,3 % par an, 85 % d&apos;autoconsommation, m&eacute;thode d&eacute;taill&eacute;e dans <Link href="/a-propos" className="text-green hover:underline">notre m&eacute;thodologie</Link>.</p>
               <p className="text-xs text-stone leading-relaxed">Cet article ne contient aucun lien affili&eacute; et aucune contrepartie financi&egrave;re n&apos;a &eacute;t&eacute; &eacute;chang&eacute;e avec {kerwatt.nom}.</p>
             </div>
           </div>

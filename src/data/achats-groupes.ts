@@ -9,6 +9,11 @@ export type AchatGroupe = {
   codeDepartement: string;
   ville: string;
   zone: string;
+  /** Production réelle constatée par l'organisateur (kWh par kWc et par an, nette des pertes). */
+  productibleTerrain?: { cote: number; interieur: number };
+  /** Recherche en cours d'un partenaire (salle, collectivité), si l'organisateur le souhaite. */
+  rechercheSalle?: string;
+  interesses?: string;
   kitsVendus: string;
   deroule: string[];
   contenuKit: string;
@@ -27,6 +32,11 @@ export const ACHATS_GROUPES: AchatGroupe[] = [
     // Zone confirmée par Kerwatt le 26/10/2026
     zone: 'les Côtes-d’Armor et l’est du Finistère (secteur de Morlaix)',
     kitsVendus: 'près de 300',
+    // Retours de terrain transmis par Jean Rouxel (Kerwatt) le 27/10/2026
+    productibleTerrain: { cote: 1100, interieur: 1000 },
+    // Accord de Kerwatt le 27/10/2026 pour ces deux mentions
+    interesses: 'une dizaine',
+    rechercheSalle: 'une collectivité ou une salle pouvant accueillir 35 personnes (les acquéreurs et les bénévoles de Kerwatt) pour l’atelier de livraison',
     deroule: [
       'Kerwatt s’associe à une collectivité locale, qui accueille l’opération.',
       'Un appel à candidatures est diffusé pour réunir les personnes intéressées.',
@@ -39,7 +49,8 @@ export const ACHATS_GROUPES: AchatGroupe[] = [
     puissanceDernierKitWc: 500,
     // Contact confirmé par Kerwatt le 26/10/2026
     inscription: { label: 'kerwattkitlannion@proton.me', href: 'mailto:kerwattkitlannion@proton.me' },
-    valide: false,
+    // Feu vert de Kerwatt (accord du CoGes) le 01/11/2026
+    valide: true,
   },
 ];
 

@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/etude/rentabilite-kit-solaire-balcon-departement`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.8 },
 
     // Guides
-    { url: `${BASE_URL}/guide/achat-groupe-kit-solaire`, lastModified: '2026-10-27', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/guide/achat-groupe-kit-solaire`, lastModified: '2026-11-02', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/guide/demenager-kit-solaire-balcon`, lastModified: '2026-10-06', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/guide/checklist-avant-achat-kit-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/guide/erreurs-production-solaire-ete`, lastModified: '2026-07-21', changeFrequency: 'monthly', priority: 0.7 },
@@ -117,7 +117,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/mentions-legales`, lastModified: '2026-03-17', changeFrequency: 'yearly', priority: 0.1 },
     { url: `${BASE_URL}/politique-confidentialite`, lastModified: '2026-03-17', changeFrequency: 'yearly', priority: 0.1 },
 
-    // Hub départements (pages départementales en noindex, hors sitemap)
+    // Hub départements (pages départementales en noindex, hors sitemap, sauf celles qui présentent un achat groupé validé)
     { url: `${BASE_URL}/solaire-balcon`, lastModified: '2026-05-10', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/solaire-balcon/cotes-d-armor`, lastModified: '2026-11-02', changeFrequency: 'monthly', priority: 0.6 },
   ];
 }
