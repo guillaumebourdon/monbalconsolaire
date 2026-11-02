@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/comparatif/kit-solaire-petit-budget`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/kit-solaire-batterie-2026`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/300w-vs-400w-vs-500w-puissance`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/comparatif/zendure-vs-sunology-vs-beem`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/zendure-vs-sunology-vs-beem`, lastModified: '2026-11-02', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-terrasse-2026`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/sunology-play2-vs-beem-on-500w`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleure-batterie-solaire-balcon-2026`, lastModified: '2026-07-10', changeFrequency: 'monthly', priority: 0.8 },
