@@ -10,8 +10,8 @@ import { withCanonicalOg } from '@/lib/metadata';
 const PRODUCT_URL = 'https://www.sunethic.fr/product/station-solaire-sunethic-f500/';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Avis Sunethic 2026 : le F500 Made in France vaut-il 690 € ?',
-  description: 'Avis Sunethic : 4,7/5 sur Trustpilot (1 234 avis), SAV, garanties réelles. Le F500 français à 690 € face à Sunology et Beem : ROI 7,4 ans, notre verdict.',
+  title: 'Avis Sunethic F500 : kit français à 690 €, vaut-il le coup ?',
+  description: 'Avis Sunethic F500 : kit 500 Wc fabriqué en France, 690 € (prix vérifié en novembre 2026). Garanties, SAV, rentabilité face à Sunology et Beem.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunethic-f500',
   },

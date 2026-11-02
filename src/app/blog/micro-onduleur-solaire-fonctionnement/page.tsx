@@ -7,9 +7,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
 
-const PAGE_TITLE = 'Micro-onduleur solaire : rôle, choix, puissance (2026)';
+const PAGE_TITLE = 'Micro-onduleur kit solaire balcon : rôle et choix (2026)';
 const PAGE_DESCRIPTION =
-  'Micro-onduleur solaire : rôle, choix, puissance et compatibilité avec vos panneaux. Guide complet 2026, avec le comparatif des prix.';
+  'Micro-onduleur de kit solaire balcon : à quoi il sert, quelle puissance choisir (de 400 à 800 W), compatibilité panneaux. Et le comparatif des modèles.';
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/micro-onduleur-solaire-fonctionnement';
 
 export const metadata: Metadata = withCanonicalOg({

@@ -28,10 +28,10 @@ export function generateMetadata(): Metadata {
   return withCanonicalOg({
     title: promo
       ? 'Code promo Sunology : -11 à -13 % jusqu’au 31/10 (sans code)'
-      : 'Code promo Sunology, Beem, Sunethic : offres vérifiées 2026',
+      : 'Code promo Sunology 2026 : parrainage -7 %, offres vérifiées',
     description: promo
       ? 'Sunology : bonus -11 % dès le 1er euro, jusqu’à -13 %, jusqu’au 31/10. Parrainage -7 %, codes SUN_ décryptés. Beem, EcoFlow, Zendure vérifiés le 17/10.'
-      : 'Code promo Sunology : parrainage S-Club -7% et opérations saisonnières. Offres Beem, Sunethic, EcoFlow, Zendure vérifiées sur les sites officiels.',
+      : 'Pas de code Sunology public : parrainage S-Club -7 %, codes SUN_ décryptés, remises sans code. Offres Beem, EcoFlow, Zendure vérifiées sur les sites.',
     alternates: {
       canonical: 'https://monbalconsolaire.fr/codes-promo',
     },
