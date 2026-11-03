@@ -119,7 +119,7 @@ APsystems EZ1-M est cité sur 20 pages sans avis dédié ; s'appuyer sur avis/ho
 
 ### Jeudi 19/11 — NOUVEL ARTICLE — BLOG (saison)
 **Black Friday 2026 : kits solaires et accessoires, les vraies bonnes affaires** — slug `black-friday-kit-solaire-2026`
-Prix de référence des 3 derniers mois (sources), liens marchands + Amazon vérifiés, `revalidate` comme codes-promo. Ajouter aussi une section « Black Friday 2026 » avec `endsAt` dans codes-promo.
+Prix de référence des 3 derniers mois (sources), liens marchands + Amazon vérifiés, `revalidate` comme codes-promo. Ajouter aussi une section « Black Friday 2026 » avec `endsAt` dans codes-promo. **Zendure : code officiel AF5E24 (-8 % en plus des remises du site, 02/11/2026 → 04/01/2027, hors SolarFlow 2400 AC+ et 2400 Pro), déjà sur codes-promo depuis le 03/11 ; lien Awin vers https://zendure.fr/pages/black-friday via zendureUrl().**
 
 ### Vendredi 20/11 — NOUVEL ARTICLE — COMPARATIF
 **Kit solaire pas cher : Beem Kit 300W vs Sunethic F500 vs Sunology GO** — slug `kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go`

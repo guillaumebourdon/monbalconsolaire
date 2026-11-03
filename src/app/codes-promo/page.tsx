@@ -13,6 +13,8 @@ export const revalidate = 21600;
 const VERIFIED = '17/10/2026';
 const SUNOLOGY_PLAY_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
 const SUNOLOGY_PROMO_END = '2026-10-31';
+const ZENDURE_CODE = 'AF5E24';
+const ZENDURE_CODE_END = '2027-01-04';
 
 // Date du jour à Paris au format YYYY-MM-DD (comparable lexicographiquement)
 function todayParis(): string {
@@ -31,7 +33,7 @@ export function generateMetadata(): Metadata {
       : 'Code promo Sunology 2026 : parrainage -7 %, offres vérifiées',
     description: promo
       ? 'Sunology : bonus -11 % dès le 1er euro, jusqu’à -13 %, jusqu’au 31/10. Parrainage -7 %, codes SUN_ décryptés. Beem, EcoFlow, Zendure vérifiés le 17/10.'
-      : 'Pas de code Sunology public : parrainage S-Club -7 %, codes SUN_ décryptés, remises sans code. Offres Beem, EcoFlow, Zendure vérifiées sur les sites.',
+      : 'Pas de code Sunology public : parrainage S-Club -7 %, codes SUN_ décryptés. Zendure : code AF5E24, -8 % en plus jusqu’au 04/01. Beem, EcoFlow vérifiés.',
     alternates: {
       canonical: 'https://monbalconsolaire.fr/codes-promo',
     },
@@ -65,6 +67,11 @@ const faqData = (sunologyPromo: boolean) => [
       'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 17/10/2026. Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
   },
   {
+    question: 'Existe-t-il un code promo Zendure ?',
+    answer:
+      'Oui : du 2 novembre 2026 au 4 janvier 2027, le code AF5E24 donne 8 % de remise en plus des prix déjà baissés sur zendure.fr. Il fonctionne sur les SolarFlow MIX, SolarFlow 2400 AC, SolarFlow 1600 AC+, les batteries AB2000 et AB3000 et les accessoires, mais pas sur les SolarFlow 2400 AC+ et 2400 Pro.',
+  },
+  {
     question: 'Existe-t-il un code promo Sunethic ?',
     answer:
       'Sunethic ne publie pas de code public officiel. En octobre 2026, la marque met en avant des prix bas sur ses kits à panneaux français Voltec Solar et des promotions sur les batteries plug-and-play Anker et Zendure, sans montant de remise chiffré. La livraison est offerte, et le dossier mairie à partir des kits 6 panneaux.',
@@ -75,6 +82,7 @@ type Offer = {
   label: string;
   detail: string;
   status: 'active' | 'expired' | 'none';
+  verified?: string; // date de vérification propre à l'offre (sinon VERIFIED)
   endsAt?: string; // YYYY-MM-DD : au-delà, l'offre s'affiche « Terminée »
   source: string;
   sourceUrl: string;
@@ -97,7 +105,7 @@ function OfferCard({ o: raw }: { o: Offer }) {
       </div>
       <p className="text-sm text-charcoal-light leading-relaxed">{o.detail}</p>
       <p className="text-xs text-stone mt-2">
-        V&eacute;rifi&eacute; le {VERIFIED} &middot; Source :{' '}
+        V&eacute;rifi&eacute; le {o.verified ?? VERIFIED} &middot; Source :{' '}
         <a href={o.sourceUrl} target="_blank" rel="noopener" className="text-green hover:underline">
           {o.source}
         </a>
@@ -200,8 +208,17 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
   {
     id: 'zendure',
     brand: 'Zendure',
-    intro: 'Pas de code public officiel. Les baisses de prix sont directement affichées, avec une garantie de prix de 30 jours.',
+    intro: 'Zendure diffuse un code officiel de -8 % pour le Black Friday et les fêtes, cumulable avec les baisses de prix affichées sur le site. Les autres remises sont affichées directement, avec une garantie de prix de 30 jours.',
     offers: [
+      {
+        label: `Code ${ZENDURE_CODE} : -8 % en plus des remises du site`,
+        detail: `Valable du 2 novembre 2026 au 4 janvier 2027 sur zendure.fr. Produits concernés : SolarFlow MIX 3000 et 4000, SolarFlow 2400 AC, SolarFlow 1600 AC+, batteries AB2000 et AB3000, et tous les accessoires. Exclus : SolarFlow 2400 AC+ et SolarFlow 2400 Pro. Code transmis par Zendure à ses partenaires : vérifiez que la remise apparaît bien au panier avant de payer.`,
+        status: 'active',
+        endsAt: ZENDURE_CODE_END,
+        verified: '03/11/2026',
+        source: 'Zendure (programme partenaires)',
+        sourceUrl: 'https://zendure.fr/pages/black-friday',
+      },
       {
         label: 'Baisses de prix affichées',
         detail: 'Remises affichées directement sur les fiches produits, par exemple -560 € sur le SolarFlow 2400 Pro au 17/10/2026. Livraison offerte. Date de fin non indiquée.',
@@ -210,7 +227,7 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
         sourceUrl: 'https://zendure.fr/',
       },
     ],
-    cta: { url: zendureUrl('https://zendure.fr/products/solarflow-mix-series'), product: 'Zendure SolarFlow', merchant: 'Zendure' },
+    cta: { url: zendureUrl('https://zendure.fr/pages/black-friday'), product: 'Zendure SolarFlow', merchant: 'Zendure' },
   },
 ];
 
@@ -229,7 +246,7 @@ export default function CodesPromoPage() {
           Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
         </p>
         <div className="card bg-cream/50 text-sm text-charcoal-light leading-relaxed mb-8">
-          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyPromo ? <>Sunology fait -11 % d&egrave;s le premier euro, jusqu&apos;&agrave; -13 %, jusqu&apos;au 31/10 (bonus Anti-Augmentation, sans code), et propose -7 % via son parrainage S-Club.</> : <>Le bonus Sunology d&apos;octobre (-11 % &agrave; -13 %) est termin&eacute; (31/10) ; reste le parrainage S-Club &agrave; -7 %.</>} Beem, Sunethic, EcoFlow et Zendure n&apos;ont pas de code public officiel : leurs remises sont affich&eacute;es directement sur leur site.
+          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyPromo ? <>Sunology fait -11 % d&egrave;s le premier euro, jusqu&apos;&agrave; -13 %, jusqu&apos;au 31/10 (bonus Anti-Augmentation, sans code), et propose -7 % via son parrainage S-Club.</> : <>Le bonus Sunology d&apos;octobre (-11 % &agrave; -13 %) est termin&eacute; (31/10) ; reste le parrainage S-Club &agrave; -7 %.</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}Beem, Sunethic et EcoFlow n&apos;ont pas de code public officiel : leurs remises sont affich&eacute;es directement sur leur site.
         </div>
 
         <nav className="flex flex-wrap gap-2 text-sm mb-10" aria-label="Sommaire">
@@ -237,7 +254,7 @@ export default function CodesPromoPage() {
           <a href="#sunethic" className="badge-amber">Sunethic</a>
           <a href="#beem" className="badge-amber">Beem</a>
           <a href="#ecoflow" className="badge-amber">EcoFlow</a>
-          <a href="#zendure" className="badge-amber">Zendure</a>
+          <a href="#zendure" className="badge-green">Zendure</a>
           <a href="#faq" className="badge-amber">FAQ</a>
         </nav>
 
