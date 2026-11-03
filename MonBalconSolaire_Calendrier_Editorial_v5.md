@@ -89,8 +89,9 @@ Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur 
 
 ## Semaine 45 — 3-6 nov. (début du rythme 3 contenus / semaine)
 
-### Mardi 03/11 — NOUVEL ARTICLE — AVIS
+### Mardi 03/11 — NOUVEL ARTICLE — AVIS — [x] publié
 **EcoFlow STREAM Ultra : avis** — slug `ecoflow-stream-ultra` (successeur du PowerStream). Fiche vérifiée fr.ecoflow.com, ROI via pricing.ts. Couvrir aussi le STREAM Ultra Pro (déjà lié depuis le site). Affiliation : candidature EcoFlow FR envoyée sur Awin le 30/10 ; tant qu'elle n'est pas acceptée (voir `src/lib/affiliate.ts`), lien direct fr.ecoflow.com. Ajouter dans avis/ecoflow-powerstream un encadré « plus vendu en France → voir le STREAM Ultra » et un lien depuis comparatif/meilleure-batterie-solaire-balcon-2026.
+**03/11 :** `fr.ecoflow.com` (comme `www.amazon.fr`) inaccessible depuis cet environnement — gateway proxy 403 sur CONNECT, même blocage réseau que les entrées du 02/10, 06/10 et 16/10. Fiche technique et prix sourcés sur les boutiques EcoFlow zone euro (Allemagne, Belgique, Autriche via MediaMarkt) et comparatifs indépendants (Test-Achats, GIGA.de), avec encadré de transparence dans l'article et flag « à reconfirmer sur fr.ecoflow.com ». ROI (816 kWh/an, 8,8 ans, 5 704 € sur 25 ans pour un setup STREAM Ultra + 2 panneaux 400W) calculé via `pricing.ts`. STREAM Ultra X (grand frère, 3,84 kWh) couvert en section courte. Pas de nom de produit officiel « STREAM Ultra Pro » trouvé en recherche (seule une batterie d'extension « AC Pro » existe) : le lien déjà présent sur le site (`fr.ecoflow.com/products/stream-ultra-pro`) a été réutilisé sans modification, et l'article reste prudent sur cette appellation. 3 backlinks ajoutés (avis/ecoflow-powerstream, comparatif/meilleure-batterie-solaire-balcon-2026, comparatif/kit-solaire-batterie-2026).
 
 ### Jeudi 05/11 — MISE À JOUR
 **Rafraîchir : codes-promo** (offres de novembre, annonces Black Friday).

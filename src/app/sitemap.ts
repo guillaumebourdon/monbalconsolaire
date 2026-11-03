@@ -26,12 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-2026`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comparatif/sunology-vs-beem`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/kit-solaire-petit-budget`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/comparatif/kit-solaire-batterie-2026`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/kit-solaire-batterie-2026`, lastModified: '2026-11-03', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/300w-vs-400w-vs-500w-puissance`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/zendure-vs-sunology-vs-beem`, lastModified: '2026-11-02', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-terrasse-2026`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/sunology-play2-vs-beem-on-500w`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/comparatif/meilleure-batterie-solaire-balcon-2026`, lastModified: '2026-07-10', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/meilleure-batterie-solaire-balcon-2026`, lastModified: '2026-11-03', changeFrequency: 'monthly', priority: 0.8 },
 
     // Études (données ouvertes)
     { url: `${BASE_URL}/etude/rentabilite-kit-solaire-balcon-departement`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.8 },
@@ -53,13 +53,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/guide/declaration-cacsi-enedis-panneau-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
 
     // Avis produits
+    { url: `${BASE_URL}/avis/ecoflow-stream-ultra`, lastModified: '2026-11-03', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/sunology-play-2`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/beem-on-460w`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/sunethic-f500`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/beem-kit-300w`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/sunology-play-max`, lastModified: '2026-10-29', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/sunology-city`, lastModified: '2026-10-29', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/avis/ecoflow-powerstream`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/avis/ecoflow-powerstream`, lastModified: '2026-11-03', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/zendure-solarflow`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/ikea-solstrale-balcon`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/dualsun-preasy`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },

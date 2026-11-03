@@ -269,6 +269,18 @@ const ARTICLES: Article[] = [
     price: 'Arrêté',
   },
   {
+    slug: '/avis/ecoflow-stream-ultra',
+    title: 'EcoFlow STREAM Ultra',
+    excerpt: 'Successeur du PowerStream : batterie 1,92 kWh + micro-onduleur 800 W intégrés, extensible à 11,52 kWh.',
+    type: 'avis',
+    badge: 'Nouveau',
+    tags: ['stockage', 'marque'],
+    brands: ['EcoFlow'],
+    publishedAt: '2026-11-03',
+    score: '7,5/10',
+    price: '~1 099 €',
+  },
+  {
     slug: '/avis/ikea-solstrale-balcon',
     title: 'IKEA Solstr\u00e5le balcon',
     excerpt: 'Kit IKEA \u00d7 EcoFlow \u00e0 449 \u20ac (900 Wc). Pas encore disponible en France.',
