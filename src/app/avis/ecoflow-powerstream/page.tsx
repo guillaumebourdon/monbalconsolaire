@@ -179,7 +179,7 @@ export default function EcoflowPowerstreamPage() {
             </p>
             <p className="text-sm font-semibold mb-2">Alternatives actuelles avec stockage&nbsp;:</p>
             <ul className="text-sm text-charcoal-light space-y-1.5 mb-4">
-              <li>&bull; <strong>EcoFlow STREAM Ultra</strong>&nbsp;: batterie de ~1,9&nbsp;kWh avec onduleur int&eacute;gr&eacute;, pilotage par la m&ecirc;me app EcoFlow.</li>
+              <li>&bull; <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">EcoFlow STREAM Ultra</Link>&nbsp;: batterie de 1,92&nbsp;kWh avec onduleur 800&nbsp;W int&eacute;gr&eacute;, extensible &agrave; 11,52&nbsp;kWh, pilot&eacute; par la m&ecirc;me app EcoFlow &mdash; <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">notre avis complet</Link>.</li>
               <li>&bull; <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link>&nbsp;: le meilleur ROI des syst&egrave;mes avec batterie que nous avons analys&eacute;s.</li>
               <li>&bull; <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link>&nbsp;: tout-en-un onduleur + batterie 2,56&nbsp;kWh.</li>
               <li>&bull; <Link href="/avis/ikea-solstrale-balcon" className="text-green hover:underline font-semibold">IKEA Solstr&aring;le</Link>&nbsp;: kit balcon b&acirc;ti sur le micro-onduleur EcoFlow STREAM.</li>

@@ -413,8 +413,8 @@ export default function MeilleureBatterieBalconPage() {
                     station EcoFlow (DELTA, RIVER) au kWh pr&egrave;s. En 2026, la mise &agrave; jour logicielle permet d&apos;ajuster la puissance inject&eacute;e par paliers d&apos;1&nbsp;W.
                     Pertinent si vous avez d&eacute;j&agrave; une station EcoFlow ou si vous cherchez une solution polyvalente (camping + maison).
                     Sinon, le co&ucirc;t total (&gt;1&nbsp;800&nbsp;&euro; pour seulement 1&nbsp;kWh) est difficile &agrave; justifier face &agrave; Zendure ou Bluetti.
-                    <strong> Mise &agrave; jour 27/09/2026&nbsp;:</strong> le PowerStream n&apos;est plus vendu par EcoFlow France (gamme STREAM d&eacute;sormais).
-                    <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline ml-1">Lire notre avis complet &rarr;</Link>
+                    <strong> Mise &agrave; jour 03/11/2026&nbsp;:</strong> le PowerStream n&apos;est plus vendu par EcoFlow France, remplac&eacute; par le <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">STREAM Ultra</Link> (batterie + onduleur int&eacute;gr&eacute;s, extensible &agrave; 11,52&nbsp;kWh).
+                    <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline ml-1">Lire notre avis PowerStream &rarr;</Link>
                   </p>
                 </div>
 
@@ -573,6 +573,10 @@ export default function MeilleureBatterieBalconPage() {
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h4>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur prix/kWh du march&eacute; balcon &agrave; 254&nbsp;&euro;/kWh</p>
+                </Link>
+                <Link href="/avis/ecoflow-stream-ultra" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h4>
+                  <p className="text-xs text-charcoal-light mt-1">Le successeur du PowerStream, extensible &agrave; 11,52&nbsp;kWh avec sortie secours 2&nbsp;300&nbsp;W</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h4>
