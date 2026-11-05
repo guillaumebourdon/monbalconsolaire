@@ -4,6 +4,33 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_LABEL } from '@/lib/pricing';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Tableau calculé au build : Sunology PLAY à Lyon, coefficients d'orientation de la méthodologie du site.
+const PLAY = PRODUCTS['sunology-play'];
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const orient = (coef: number) => {
+  const input = { kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc, orientationCoef: coef };
+  return {
+    production: calculateProductionKwh(input),
+    savings: Math.round(calculateFirstYearSavings(input)),
+    roi: calculateROIYears(input),
+    total25: calculateTotalSavings25Years(input),
+  };
+};
+const SUD = orient(1);
+const SUDEO = orient(0.95);
+const EO = orient(0.8);
+const NORD = orient(0.5);
+const ROWS: [string, number, ReturnType<typeof orient>, boolean][] = [
+  ['Sud', 1, SUD, true],
+  ['Sud-Est', 0.95, SUDEO, false],
+  ['Sud-Ouest', 0.95, SUDEO, false],
+  ['Est', 0.8, EO, false],
+  ['Ouest', 0.8, EO, false],
+  ['Nord', 0.5, NORD, false],
+];
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Quelle orientation pour un panneau solaire de balcon ? (Guide 2026)',
@@ -15,8 +42,8 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   { question: 'Quelle est la meilleure orientation pour un panneau solaire ?', answer: 'Plein sud est l\'orientation idéale en France métropolitaine : elle capte le maximum de soleil tout au long de la journée. C\'est 100% du potentiel de production.' },
-  { question: 'Un panneau solaire orienté est ou ouest est-il rentable ?', answer: 'Oui. Un panneau orienté est ou ouest produit environ 80% d\'un panneau plein sud. C\'est moins optimal mais toujours rentable : le ROI passe de ~6 ans (sud) à ~8 ans (est/ouest) pour un kit à 599€.' },
-  { question: 'Un panneau solaire orienté nord vaut-il le coup ?', answer: 'Difficilement. Un balcon plein nord ne reçoit que 45% de l\'ensoleillement d\'un balcon sud. La production est très réduite et le ROI dépasse 13 ans. Ce n\'est généralement pas recommandé.' },
+  { question: 'Un panneau solaire orienté est ou ouest est-il rentable ?', answer: `Oui. Un panneau orienté est ou ouest produit environ 80 % d'un panneau plein sud. C'est moins optimal mais toujours rentable : pour un Sunology PLAY à ${priceLabel('sunology-play')} à Lyon, le ROI passe d'environ ${fr(SUD.roi)} ans (sud) à ${fr(EO.roi)} ans (est/ouest).` },
+  { question: 'Un panneau solaire orienté nord vaut-il le coup ?', answer: `Difficilement. Un balcon plein nord produit environ la moitié d'un balcon sud. Pour un Sunology PLAY à Lyon, le ROI atteint ${fr(NORD.roi)} ans, au-delà de notre seuil de 12 ans. Ce n'est généralement pas recommandé.` },
   { question: 'Quelle inclinaison choisir pour son panneau ?', answer: 'En France, l\'inclinaison optimale est de 30-35° par rapport à l\'horizontale. En été, un angle plus faible (27°) est meilleur. En hiver, un angle plus élevé (40-42°) compense la hauteur réduite du soleil.' },
   { question: 'Mon balcon est partiellement ombragé, que faire ?', answer: 'L\'ombrage est plus pénalisant que l\'orientation. Même une ombre partielle peut réduire la production de 20-50%. Identifiez les heures sans ombre (souvent 10h-14h) et positionnez le panneau dans la zone la mieux exposée.' },
 ];
@@ -24,7 +51,7 @@ const faqData = [
 export default function OrientationPage() {
   return (
     <>
-      <SchemaArticle title="Quelle orientation pour un panneau solaire de balcon ?" description="Impact de l'orientation sur la production solaire de balcon." url="https://monbalconsolaire.fr/guide/orientation-panneau-solaire-balcon" datePublished="2026-03-29" />
+      <SchemaArticle title="Quelle orientation pour un panneau solaire de balcon ?" description="Impact de l'orientation sur la production solaire de balcon." url="https://monbalconsolaire.fr/guide/orientation-panneau-solaire-balcon" datePublished="2026-03-29" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Orientation' }]} />
       <article className="section-padding">
@@ -34,12 +61,12 @@ export default function OrientationPage() {
             <div className="badge-green mb-4 inline-block">Guide pratique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Quelle orientation pour un panneau solaire de balcon ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sud, sud-est, est, ouest, nord : votre orientation change tout. Voici l&apos;impact réel sur la production, les économies et la rentabilité de votre kit solaire.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>29 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>29 mars 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Le résumé en 10 secondes</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed">Sud = 100% du potentiel. Sud-est/sud-ouest = 93%. Est/ouest = 80%. Nord = 45%. Un kit solaire est rentable dans toutes les orientations sauf nord. L&apos;ombrage est plus pénalisant que l&apos;orientation.</p>
+            <p className="text-charcoal-light text-sm leading-relaxed">Sud = 100 % du potentiel. Sud-est/sud-ouest = 95 %. Est/ouest = 80 %. Nord = 50 %. Un kit solaire est rentable dans toutes les orientations sauf nord. L&apos;ombrage est plus pénalisant que l&apos;orientation.</p>
           </div>
 
           <div className="space-y-10">
@@ -53,31 +80,24 @@ export default function OrientationPage() {
                   <thead><tr className="bg-green text-white">
                     <th className="text-left p-3 rounded-tl-xl">Orientation</th>
                     <th className="text-center p-3">Coefficient</th>
-                    <th className="text-center p-3">Production (450W, Lyon)</th>
-                    <th className="text-center p-3">Économies/an</th>
-                    <th className="text-center p-3 rounded-tr-xl">ROI (kit 599€)</th>
+                    <th className="text-center p-3">Production ({PLAY.powerWc}&nbsp;W, Lyon)</th>
+                    <th className="text-center p-3">&Eacute;conomies (1<sup>re</sup> ann&eacute;e)</th>
+                    <th className="text-center p-3 rounded-tr-xl">ROI (kit {priceLabel('sunology-play')})</th>
                   </tr></thead>
                   <tbody>
-                    {[
-                      ['Sud', '100%', '459 kWh', '76 €', '7,1 ans', true],
-                      ['Sud-Est', '93%', '427 kWh', '70 €', '7,6 ans', false],
-                      ['Sud-Ouest', '93%', '427 kWh', '70 €', '7,6 ans', false],
-                      ['Est', '80%', '367 kWh', '61 €', '8,7 ans', false],
-                      ['Ouest', '80%', '367 kWh', '61 €', '8,7 ans', false],
-                      ['Nord', '45%', '207 kWh', '34 €', '14,1 ans', false],
-                    ].map(([o, c, p, e, r, best], i) => (
+                    {ROWS.map(([o, c, r, best], i) => (
                       <tr key={i} className={`border-b border-border-light ${best ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold">{o} {best && <span className="badge-green ml-2 text-[10px]">Optimal</span>}</td>
-                        <td className="text-center p-3 font-mono text-sm font-medium">{c}</td>
-                        <td className="text-center p-3 font-mono text-sm text-green">{p}</td>
-                        <td className="text-center p-3 font-mono text-sm text-amber-dark">{e}</td>
-                        <td className="text-center p-3 font-mono text-sm">{r}</td>
+                        <td className="p-3 font-semibold">{o} {best && <span className="badge-green ml-2">Optimal</span>}</td>
+                        <td className="text-center p-3 font-mono text-sm font-medium">{Math.round(c * 100)}&nbsp;%</td>
+                        <td className="text-center p-3 font-mono text-sm text-green">{fr(r.production)} kWh</td>
+                        <td className="text-center p-3 font-mono text-sm text-amber-dark">{r.savings} &euro;</td>
+                        <td className="text-center p-3 font-mono text-sm">{fr(r.roi)} ans</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Données PVGIS, inclinaison 35°, productible 1 200 kWh/kWc (Lyon), tarif EDF 0,1940€/kWh, coefficient de pertes 0,85, autoconsommation 85 %, inflation 3,3 %/an.</p>
+              <p className="text-xs text-stone">Données PVGIS, productible 1 200 kWh/kWc (Lyon), tarif EDF {KWH_PRICE_LABEL}, coefficient de pertes 0,85, autoconsommation 85 %, inflation 3,3 %/an, dégradation des panneaux 0,5 %/an. Coefficients d&apos;orientation de notre <Link href="/methodologie" className="text-green hover:underline">méthodologie</Link>. Prix vérifié le 5 novembre 2026.</p>
             </section>
 
             <section>
@@ -90,22 +110,22 @@ export default function OrientationPage() {
                 </div>
 
                 <div className="card-lg">
-                  <h3 className="font-bold text-lg mb-2">Sud-Est / Sud-Ouest — Excellent (93%)</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">Seulement 7% de moins que le plein sud. La différence est quasi-imperceptible sur la facture (~7€/an de moins). C&apos;est une excellente orientation pour le solaire.</p>
+                  <h3 className="font-bold text-lg mb-2">Sud-Est / Sud-Ouest — Excellent (95 %)</h3>
+                  <p className="text-sm text-charcoal-light leading-relaxed">Seulement 5 % de moins que le plein sud. La différence est quasi imperceptible sur la facture (environ {SUD.savings - SUDEO.savings}&nbsp;€/an de moins). C&apos;est une excellente orientation pour le solaire.</p>
                   <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Particularité sud-est :</strong> la production est concentrée le matin (7h-14h). Idéal si vos appareils énergivores tournent le matin.</p>
                   <p className="text-sm text-charcoal-light leading-relaxed mt-1"><strong>Particularité sud-ouest :</strong> la production est concentrée l&apos;après-midi (11h-18h). Idéal si vous êtes chez vous en fin de journée.</p>
                 </div>
 
                 <div className="card-lg">
                   <h3 className="font-bold text-lg mb-2">Est / Ouest — Correct (80%)</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">20% de moins que le sud, mais toujours rentable. Le ROI passe de ~7,1 ans à ~8,7 ans pour un kit à 599€. Sur 25 ans de garantie, vous économisez quand même près de 2 300€.</p>
-                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Conseil :</strong> en exposition est ou ouest, le <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">Beem Kit 300W à 199€</Link> est un choix malin : le ROI serait atteint en ~4,6 ans (au lieu de 8,7 pour un kit à 599€), ce qui réduit le risque — mais il est actuellement en rupture de stock chez Beem.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed">20% de moins que le sud, mais toujours rentable. Le ROI passe d&apos;environ {fr(SUD.roi)} ans à {fr(EO.roi)} ans pour un kit à {priceLabel('sunology-play')}. Sur 25 ans, vous économisez quand même environ {fr(Math.round(EO.total25 / 100) * 100)}&nbsp;€.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Conseil :</strong> en exposition est ou ouest, un kit moins cher réduit le risque. Notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">comparatif des kits à petit budget</Link> liste ceux qui sont disponibles aujourd&apos;hui (le Beem Kit 300W à 199&nbsp;€ est en rupture chez Beem au 5 novembre 2026).</p>
                 </div>
 
                 <div className="card-lg border-l-4 border-l-amber">
-                  <h3 className="font-bold text-lg text-amber-dark mb-2">Nord — Déconseillé (45%)</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">Un balcon plein nord ne reçoit quasiment jamais de soleil direct. La production est réduite de plus de moitié et le ROI dépasse 13 ans. Sauf si vous avez un très grand balcon avec une zone partiellement exposée, le solaire n&apos;est pas recommandé en exposition nord.</p>
-                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Alternative :</strong> si vous avez accès à un mur latéral orienté est ou ouest, un kit avec fixation murale (option disponible sur le Sunology PLAY2) peut transformer une situation nord en situation est/ouest.</p>
+                  <h3 className="font-bold text-lg text-amber-dark mb-2">Nord — Déconseillé (50 %)</h3>
+                  <p className="text-sm text-charcoal-light leading-relaxed">Un balcon plein nord ne reçoit quasiment jamais de soleil direct. La production est réduite de moitié environ et le ROI atteint {fr(NORD.roi)} ans pour un kit à {priceLabel('sunology-play')}. Sauf si vous avez un très grand balcon avec une zone partiellement exposée, le solaire n&apos;est pas recommandé en exposition nord.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed mt-2"><strong>Alternative :</strong> si vous avez accès à un mur latéral orienté est ou ouest, un kit avec fixation murale (option proposée par Sunology pour le PLAY) peut transformer une situation nord en situation est/ouest.</p>
                 </div>
               </div>
             </section>
@@ -118,12 +138,12 @@ export default function OrientationPage() {
                   { t: 'Ombre permanente sur une partie du panneau', impact: '-20 à -50%', desc: 'Un immeuble ou un mur qui projette une ombre fixe sur une partie du panneau. Effet dévastateur car les cellules en série sont toutes affectées.' },
                   { t: 'Ombre temporaire (quelques heures)', impact: '-5 à -15%', desc: 'Un arbre ou un auvent qui crée une ombre pendant 1-2h par jour. Impact modéré si les heures ensoleillées restent suffisantes (10h-14h).' },
                   { t: 'Ombre du garde-corps', impact: '-5 à -10%', desc: 'Le garde-corps du balcon peut projeter une ombre sur le bas du panneau. Inclinez le panneau et éloignez-le du garde-corps si possible.' },
-                  { t: 'Réflexion d\'un mur clair', impact: '+5 à +15%', desc: 'Un mur blanc ou clair derrière un panneau bifacial (Sunology PLAY2, Beem On) peut augmenter la production grâce à la lumière réfléchie.' },
+                  { t: 'Réflexion d\'un mur clair', impact: '+5 à +15%', desc: 'Un mur blanc ou clair derrière un panneau bifacial (Sunology PLAY, Beem On) peut augmenter la production grâce à la lumière réfléchie.' },
                 ].map((f, i) => (
                   <div key={i} className="card">
                     <div className="flex items-center gap-2 mb-2">
                       <h3 className="font-bold text-sm">{f.t}</h3>
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${f.impact.startsWith('+') ? 'bg-green-lighter text-green' : 'bg-amber-pale text-amber-dark'}`}>{f.impact}</span>
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded ${f.impact.startsWith('+') ? 'bg-green-lighter text-green' : 'bg-amber-pale text-amber-dark'}`}>{f.impact}</span>
                     </div>
                     <p className="text-xs text-charcoal-light">{f.desc}</p>
                   </div>
@@ -205,7 +225,7 @@ export default function OrientationPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> données PVGIS (Commission européenne), tarif EDF mai 2026. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> données PVGIS (Commission européenne), tarif réglementé EDF Base 6 kVA en vigueur ({KWH_PRICE_LABEL}). <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>
         </div>

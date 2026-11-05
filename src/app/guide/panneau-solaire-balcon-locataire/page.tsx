@@ -6,6 +6,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { PRODUCTS, priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon locataire : droits, règles et astuces (2026)',
@@ -19,14 +20,14 @@ const faqData = [
   { question: 'Ai-je le droit d\'installer un panneau solaire sur mon balcon en tant que locataire ?', answer: 'Oui, à condition que l\'installation soit amovible (pas de perçage, pas de modification du bâtiment). Un kit pose au sol ou en appui sur la rambarde sans fixation permanente ne nécessite pas l\'accord du propriétaire.' },
   { question: 'Faut-il prévenir mon propriétaire ?', answer: 'Legalement non, si l\'installation est amovible. Par courtoisie et pour éviter tout malentendu, un simple message informatif est recommandé. Certains propriétaires apprecient meme l\'initiative (ca valorise le logement).' },
   { question: 'Et la copropriété ?', answer: 'Si votre kit est pose au sol sur votre balcon sans modifier l\'aspect du bâtiment, la copropriété n\'a pas son mot à dire. Si vous fixez le panneau en facade ou sur la rambarde de maniere visible et permanente, il faut obtenir l\'accord de l\'assemblee générale des copropriétaires.' },
-  { question: 'Que se passe-t-il si le syndic refuse ?', answer: 'Le syndic ne peut refuser une installation amovible qui ne modifie pas les parties communes. Si le refus concerne une fixation en facade, vous pouvez proposer un kit au sol (Sunology PLAY2 avec ballasts) qui ne nécessite aucune autorisation.' },
-  { question: 'Puis-je emporter mon panneau en déménageant ?', answer: 'Oui, c\'est l\'un des grands avantages des kits plug-and-play. Il suffit de débrancher, vider les ballasts, et emmener le kit dans votre nouveau logement. Pensez à refaire la déclaration CACSI auprès d\'Enedis pour la nouvelle adresse.' },
+  { question: 'Que se passe-t-il si le syndic refuse ?', answer: 'Le syndic ne peut refuser une installation amovible qui ne modifie pas les parties communes. Si le refus concerne une fixation en facade, vous pouvez proposer un kit au sol (Sunology PLAY avec ballasts) qui ne nécessite aucune autorisation.' },
+  { question: 'Puis-je emporter mon panneau en déménageant ?', answer: 'Oui, c\'est l\'un des grands avantages des kits plug-and-play. Il suffit de débrancher, vider les ballasts, et emmener le kit dans votre nouveau logement. Pensez à refaire la déclaration auprès d\'Enedis pour la nouvelle adresse (CACSI ou cession du surplus) avant de rebrancher le kit.' },
 ];
 
 export default function LocatairePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon locataire : droits, règles et astuces" description="Guide complet pour les locataires souhaitant installer un panneau solaire sur leur balcon." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-locataire" datePublished="2026-03-20" />
+      <SchemaArticle title="Panneau solaire balcon locataire : droits, règles et astuces" description="Guide complet pour les locataires souhaitant installer un panneau solaire sur leur balcon." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-locataire" datePublished="2026-03-20" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: "Guides", href: "/guide" }, { label: "Locataires" }]} />
       <article className="section-padding">
@@ -36,7 +37,7 @@ export default function LocatairePage() {
             <div className="badge-green mb-4 inline-block">Guide locataire</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon locataire : droits, règles et astuces</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous etes locataire et vous voulez reduire votre facture d&apos;électricité avec un panneau solaire ? Bonne nouvelle : c&apos;est possible, legal et simple. Voici tout ce qu&apos;il faut savoir.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 mars 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 mars 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -45,7 +46,7 @@ export default function LocatairePage() {
               <li className="flex gap-2"><span className="text-green font-bold">✓</span> Oui, un locataire peut installer un kit solaire plug-and-play sur son balcon</li>
               <li className="flex gap-2"><span className="text-green font-bold">✓</span> Aucune autorisation du propriétaire si l&apos;installation est amovible</li>
               <li className="flex gap-2"><span className="text-green font-bold">✓</span> Aucune autorisation de la copropriété si ça ne modifie pas l&apos;aspect du bâtiment</li>
-              <li className="flex gap-2"><span className="text-green font-bold">✓</span> Seule obligation : déclaration CACSI auprès d&apos;Enedis (2 min en ligne)</li>
+              <li className="flex gap-2"><span className="text-green font-bold">✓</span> Seule obligation : d&eacute;claration &agrave; Enedis avant de brancher (CACSI si z&eacute;ro injection, sinon cession gratuite du surplus), en ligne et gratuite</li>
               <li className="flex gap-2"><span className="text-green font-bold">✓</span> Le kit est transportable : vous l&apos;emmenez en déménageant</li>
             </ul>
           </div>
@@ -92,20 +93,20 @@ export default function LocatairePage() {
               <div className="space-y-4 my-6">
                 <div className="card-lg border-green/15 bg-green-pale/10">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><div><div className="badge-green mb-1 text-[10px]">Recommandé locataires</div><h3 className="font-bold">Sunology PLAY (ex-PLAY 2)</h3><p className="text-xs text-stone">500 Wc, pose au sol sans perçage (ballasts 10 L en option), 100% amovible, 1 min d&apos;installation</p></div></div>
-                    <span className="font-mono font-bold text-green text-lg">599&euro;</span>
+                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY" href="/avis/sunology-play-2" size="sm" /><div><div className="badge-green mb-1">Recommandé locataires</div><h3 className="font-bold">Sunology PLAY (ex-PLAY 2)</h3><p className="text-xs text-stone">{PRODUCTS['sunology-play'].powerWc}&nbsp;W, pose au sol sans perçage (ballasts 10 L en option), 100% amovible, 1 min d&apos;installation</p></div></div>
+                    <span className="font-mono font-bold text-green text-lg">{priceLabel('sunology-play')}</span>
                   </div>
                 </div>
                 <div className="card-lg">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" /><div><div className="badge-amber mb-1 text-[10px]">Petit budget</div><h3 className="font-bold">Beem Kit 300W</h3><p className="text-xs text-stone">4 petits panneaux, s&apos;adaptént aux espaces étroits, amovibles &mdash; actuellement en rupture chez Beem</p></div></div>
-                    <span className="font-mono font-bold text-amber-dark text-lg">199&euro;</span>
+                    <div><div className="badge-amber mb-1">Petit balcon</div><h3 className="font-bold"><Link href="/avis/sunology-go" className="hover:text-green">Sunology GO</Link></h3><p className="text-xs text-stone">{PRODUCTS['sunology-go'].powerWc}&nbsp;W, pos&eacute; au sol ou sur garde-corps sans per&ccedil;age. Il remplace le Sunology CITY, arr&ecirc;t&eacute;. Prix v&eacute;rifi&eacute; le 5 novembre 2026.</p></div>
+                    <span className="font-mono font-bold text-amber-dark text-lg">{priceLabel('sunology-go')}</span>
                   </div>
                 </div>
                 <div className="card-lg">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div><div className="badge-amber mb-1 text-[10px]">Arr&ecirc;t&eacute;</div><h3 className="font-bold"><Link href="/avis/sunology-city" className="hover:text-green">Sunology CITY</Link></h3><p className="text-xs text-stone">Con&ccedil;u pour les garde-corps, mais plus vendu par Sunology depuis 2026. Alternative actuelle&nbsp;: le Sunology GO en version garde-corps (349&nbsp;&euro; au 27/09/2026).</p></div>
-                    <span className="font-mono font-bold text-stone text-lg">Arr&ecirc;t&eacute;</span>
+                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" /><div><div className="badge-amber mb-1">En rupture</div><h3 className="font-bold">Beem Kit 300W</h3><p className="text-xs text-stone">4 petits panneaux, adapt&eacute;s aux espaces &eacute;troits, amovibles &mdash; en rupture chez Beem au 5 novembre 2026 (199&nbsp;&euro; quand il est disponible).</p></div></div>
+                    <span className="font-mono font-bold text-stone text-lg">Rupture</span>
                   </div>
                 </div>
               </div>
@@ -116,7 +117,7 @@ export default function LocatairePage() {
               <div className="space-y-3">
                 {[
                   { t: 'Optimisez l\'orientation', d: 'Meme sur un balcon, vous avez souvent une marge de manoeuvre. Tournez le panneau au maximum vers le sud. Chaque degre compte.' },
-                  { t: 'Ajustez l\'inclinaison par saison', d: 'Le Sunology PLAY2 permet 3 inclinaisons (27, 35, 42 degres). Inclinez plus en hiver (42) et moins en été (27) pour suivre la course du soleil.' },
+                  { t: 'Ajustez l\'inclinaison par saison', d: 'Si votre support est réglable (le Sunology PLAY 2 proposait 3 inclinaisons : 27, 35 et 42 degrés), inclinez plus en hiver et moins en été pour suivre la course du soleil.' },
                   { t: 'Surface réfléchissante derriere', d: 'Si votre panneau est bifacial, posez-le devant un mur clair ou un sol clair. Le gain peut atteindre 5-15% de production supplémentaire.' },
                   { t: 'Consommez pendant la journee', d: 'Sans batterie, vous consommez en temps réel. Programmez votre machine à laver, lave-vaisselle et chauffe-eau aux heures de soleil (10h-16h).' },
                   { t: 'Nettoyez régulièrement', d: 'Un panneau poussiereux perd 5-10% de rendement. Un coup de chiffon humide tous les 2-3 mois suffit.' },
@@ -153,10 +154,10 @@ export default function LocatairePage() {
 
             <div className="my-8">
               <AffiliateCTA
-                productName="Beem Kit 300W"
-                merchantName="Beem Energy"
-                affiliateUrl="https://beemenergy.fr/products/kit-beem"
-                label="Le kit idéal pour les locataires"
+                productName="Sunology PLAY"
+                merchantName="Sunology"
+                affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
+                label="Voir le Sunology PLAY sur le site du fabricant"
                 variant="box"
                 position="article_bottom"
               />

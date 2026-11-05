@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon : que couvre votre assurance ?',
@@ -37,7 +38,7 @@ const faqData = [
   },
   {
     question: 'La d\u00e9claration CACSI Enedis est-elle li\u00e9e \u00e0 l\u2019assurance ?',
-    answer: 'Pas directement, mais les deux sont compl\u00e9mentaires. La CACSI d\u00e9clare votre installation \u00e0 Enedis (obligatoire). La d\u00e9claration \u00e0 l\u2019assureur prot\u00e8ge contre les sinistres. Sans CACSI, un assureur pointilleux pourrait contester en arguant que l\u2019installation n\u2019est pas conforme.',
+    answer: 'Pas directement, mais les deux sont compl\u00e9mentaires. La d\u00e9claration \u00e0 Enedis (CACSI si le kit est r\u00e9gl\u00e9 en z\u00e9ro injection, sinon cession gratuite du surplus) est obligatoire avant la mise en service. La d\u00e9claration \u00e0 l\u2019assureur prot\u00e8ge contre les sinistres. Sans d\u00e9claration \u00e0 Enedis, un assureur pointilleux pourrait contester en arguant que l\u2019installation n\u2019est pas conforme.',
   },
 ];
 
@@ -49,6 +50,7 @@ export default function AssuranceBalconPage() {
         description="Guide assurance pour les kits solaires de balcon."
         url="https://monbalconsolaire.fr/guide/panneau-solaire-assurance-balcon"
         datePublished="2026-06-03"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Assurance panneau solaire' }]} />
@@ -66,6 +68,8 @@ export default function AssuranceBalconPage() {
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>3 juin 2026</span>
+              <span>&middot;</span>
+              <span>Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>8 min de lecture</span>
             </div>
@@ -176,7 +180,7 @@ export default function AssuranceBalconPage() {
                   <p>Je vous informe de l&apos;installation d&apos;un kit solaire plug-and-play sur le balcon de mon logement assur&eacute; sous le contrat n&deg; [VOTRE NUM&Eacute;RO].</p>
                   <br />
                   <p>D&eacute;tails de l&apos;installation :</p>
-                  <p>- Kit : [Sunology PLAY 2 / Beem On 460W / autre]</p>
+                  <p>- Kit : [Sunology PLAY / Beem On 500 Wc / autre]</p>
                   <p>- Puissance : [450 Wc]</p>
                   <p>- Prix d&apos;achat : [599 &euro;]</p>
                   <p>- Mode de fixation : pos&eacute; au sol avec ballasts, sans per&ccedil;age</p>
@@ -249,7 +253,7 @@ export default function AssuranceBalconPage() {
                     'V\u00e9rifier le plafond d\u2019indemnisation des biens ext\u00e9rieurs',
                     'Conserver la facture d\u2019achat du kit (preuve de valeur)',
                     'Lester correctement le kit et photographier l\u2019installation',
-                    'Faire la d\u00e9claration CACSI Enedis (conformit\u00e9 r\u00e9seau)',
+                    'D\u00e9clarer le kit \u00e0 Enedis avant de le brancher (CACSI ou cession du surplus)',
                     'En copropri\u00e9t\u00e9 : v\u00e9rifier le r\u00e8glement ou pr\u00e9venir le syndic',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -272,7 +276,7 @@ export default function AssuranceBalconPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 \u20ac" />
+              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price={priceLabel('sunology-play')} />
             </div>
 
             <section className="mb-10">

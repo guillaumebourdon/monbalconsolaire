@@ -300,7 +300,7 @@ export default function CoproprietePage() {
                   <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Kit</th><th className="text-center p-3">Pose</th><th className="text-center p-3 rounded-tr-xl">En copropri&eacute;t&eacute;</th></tr></thead>
                   <tbody>
                     {[
-                      ['Sunology PLAY2', 'Au sol, lesté', 'Pas de vote en principe'],
+                      ['Sunology PLAY', 'Au sol, lesté', 'Pas de vote en principe'],
                       ['Sunology GO', 'Garde-corps', 'Vote en AG'],
                     ].map(([k, p, c], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{k}</td><td className="text-center p-3">{p}</td><td className="text-center p-3 text-xs">{c}</td></tr>

@@ -1,10 +1,29 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { withCanonicalOg } from '@/lib/metadata';
+import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { DEPARTMENTS } from '@/data/departments';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Ordres de grandeur calculés au build (pricing.ts + products.ts) : Sunology PLAY plein sud, de Lille à Marseille.
+const PLAY = PRODUCTS['sunology-play'];
+const GO = PRODUCTS['sunology-go'];
+const prod = (code: string) => productibleSite(DEPARTMENTS.find((d) => d.code === code)!.irradiation);
+const playIn = (code: string) => ({ kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc, productibleKwhPerKwc: prod(code) });
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const PROD_MIN = calculateProductionKwh(playIn('59'));
+const PROD_MAX = calculateProductionKwh(playIn('13'));
+const SAV_MIN = Math.round(calculateFirstYearSavings(playIn('59')));
+const SAV_MAX = Math.round(calculateFirstYearSavings(playIn('13')));
+const ROI_MIN = calculateROIYears(playIn('13'));
+const ROI_MAX = calculateROIYears(playIn('59'));
+const TOTAL_MIN = Math.floor(calculateTotalSavings25Years(playIn('59')) / 100) * 100;
+const GO_ROI = calculateROIYears({ kitPriceEur: GO.priceEur, kitPowerWc: GO.powerWc });
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Comment ca marche : le solaire de balcon explique simplement',
-  description: 'Branchez, produisez, economisez. Le fonctionnement d un kit solaire plug-and-play explique en 3 etapes, sans jargon.',
+  title: 'Comment ça marche : le solaire de balcon expliqué simplement',
+  description: 'Branchez, produisez, économisez : le fonctionnement d\'un kit solaire plug-and-play expliqué en 3 étapes, sans jargon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comment-ca-marche',
   },
@@ -17,14 +36,14 @@ export default function CommentCaMarchePage() {
         <div className="text-center mb-16">
           <div className="badge-green mb-4 inline-block">Le solaire de balcon</div>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">Comment &ccedil;a marche ?</h1>
-          <p className="text-lg text-charcoal-light max-w-2xl mx-auto leading-relaxed">Un kit solaire plug-and-play se branche sur une prise, produit de l&apos;&eacute;lectricit&eacute;, et r&eacute;duit votre facture. Pas de travaux, pas d&apos;&eacute;lectricien, pas de paperasse compliqu&eacute;e.</p>
+          <p className="text-lg text-charcoal-light max-w-2xl mx-auto leading-relaxed">Un kit solaire plug-and-play se branche sur une prise, produit de l&apos;&eacute;lectricit&eacute;, et r&eacute;duit votre facture. Pas de travaux, pas d&apos;&eacute;lectricien, et une seule d&eacute;marche&nbsp;: la d&eacute;claration gratuite &agrave; Enedis avant de le brancher.</p>
         </div>
 
         <div className="space-y-8 mb-16">
           {[
-            { step: '1', title: 'Branchez', desc: 'Le kit arrive pr\u00eat \u00e0 l\u2019emploi. Posez le panneau sur votre balcon (au sol, contre le mur ou sur le garde-corps) et branchez le c\u00e2ble sur une prise standard. Installation : 1 \u00e0 5 minutes.', detail: 'Le micro-onduleur int\u00e9gr\u00e9 transforme le courant continu du panneau en courant alternatif 230V \u2014 le m\u00eame que celui de vos prises.' },
-            { step: '2', title: 'Produisez', desc: 'D\u00e8s que le soleil brille, votre panneau produit de l\u2019\u00e9lectricit\u00e9. Elle circule dans votre r\u00e9seau domestique et alimente vos appareils en priorit\u00e9 : frigo, box internet, appareils en veille.', detail: 'Un kit de 450W produit en moyenne 400 \u00e0 550 kWh par an selon votre r\u00e9gion et votre orientation. C\u2019est automatique et transparent.' },
-            { step: '3', title: '\u00c9conomisez', desc: 'Chaque kWh produit par votre panneau est un kWh que vous n\u2019achetez pas \u00e0 EDF. Votre compteur tourne moins, votre facture baisse. En moyenne : 80 \u00e0 120\u20ac d\u2019\u00e9conomies par an.', detail: 'Le retour sur investissement est atteint en 3 \u00e0 5 ans. Le panneau est garanti 25 ans. Sur sa dur\u00e9e de vie, vous \u00e9conomisez plus de 2 000\u20ac.' },
+            { step: '1', title: 'Branchez', desc: 'Le kit arrive pr\u00eat \u00e0 l\u2019emploi. Posez le panneau sur votre balcon (au sol, contre le mur ou sur le garde-corps) puis, une fois la d\u00e9claration faite aupr\u00e8s d\u2019Enedis (CACSI ou cession gratuite du surplus, en ligne), branchez le c\u00e2ble sur une prise standard. Installation : 1 \u00e0 5 minutes.', detail: 'Le micro-onduleur int\u00e9gr\u00e9 transforme le courant continu du panneau en courant alternatif 230V \u2014 le m\u00eame que celui de vos prises.' },
+            { step: '2', title: 'Produisez', desc: 'D\u00e8s que le soleil brille, votre panneau produit de l\u2019\u00e9lectricit\u00e9. Elle circule dans votre r\u00e9seau domestique et alimente vos appareils en priorit\u00e9 : frigo, box internet, appareils en veille.', detail: `Un Sunology PLAY (${PLAY.powerWc} W) plein sud produit environ ${fr(PROD_MIN)} \u00e0 ${fr(PROD_MAX)} kWh par an selon votre r\u00e9gion (de Lille \u00e0 Marseille). C\u2019est automatique et transparent.` },
+            { step: '3', title: '\u00c9conomisez', desc: `Chaque kWh produit par votre panneau est un kWh que vous n\u2019achetez pas \u00e0 EDF. Votre compteur tourne moins, votre facture baisse. Avec un kit de ce type plein sud : ${SAV_MIN} \u00e0 ${SAV_MAX} \u20ac d\u2019\u00e9conomies la premi\u00e8re ann\u00e9e.`, detail: `Le retour sur investissement est atteint en ${fr(ROI_MIN)} \u00e0 ${fr(ROI_MAX)} ans selon la r\u00e9gion. Le panneau est garanti 25 ans. Sur cette dur\u00e9e, vous \u00e9conomisez plus de ${fr(TOTAL_MIN)} \u20ac (inflation 3,3 %/an et d\u00e9gradation des panneaux 0,5 %/an comprises).` },
           ].map((s) => (
             <div key={s.step} className="card-lg flex gap-6 items-start">
               <div className="w-14 h-14 rounded-2xl bg-green text-white flex items-center justify-center font-extrabold text-2xl flex-shrink-0">{s.step}</div>
@@ -57,7 +76,7 @@ export default function CommentCaMarchePage() {
             {[
               { who: 'Locataires', why: 'Le kit est amovible. Vous l\u2019emportez en cas de d\u00e9m\u00e9nagement. Aucune modification du logement.' },
               { who: 'Propri\u00e9taires d\u2019appartement', why: 'Pas besoin de toit. Un balcon, une terrasse ou un rebord de fen\u00eatre suffit.' },
-              { who: 'Petits budgets', why: 'Des kits d\u00e8s 199\u20ac. Rentabilis\u00e9s en 3 \u00e0 5 ans. Z\u00e9ro maintenance.' },
+              { who: 'Petits budgets', why: `Des kits complets d\u00e8s ${priceLabel('sunology-go')} (Sunology GO, ${GO.powerWc} W), rentabilis\u00e9 en ${fr(GO_ROI)} ans environ \u00e0 Lyon plein sud. Z\u00e9ro maintenance.` },
             ].map((p, i) => (
               <div key={i} className="card">
                 <h3 className="font-bold text-sm text-green mb-2">{p.who}</h3>

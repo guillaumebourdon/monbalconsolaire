@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: 'La nouvelle déclaration CACSI est-elle obligatoire si j’ai déjà déclaré le kit à l’ancienne adresse ?',
-    answer: 'Oui. La CACSI porte sur une installation à une adresse et un point de livraison précis. Un déménagement change le point de livraison : il faut donc soumettre une nouvelle déclaration pour le nouveau logement, même si c’est exactement le même kit. La procédure est identique à la première fois et reste gratuite (voir notre guide dédié).',
+    answer: 'Oui. La déclaration à Enedis (CACSI si le kit est réglé pour ne rien injecter, ou cession gratuite du surplus si le kit renvoie du surplus sur le réseau) porte sur une installation à une adresse et un point de livraison précis. Un déménagement change le point de livraison : il faut donc soumettre une nouvelle déclaration pour le nouveau logement, même si c’est exactement le même kit, et attendre la mise en service avant d’injecter. La procédure est identique à la première fois et reste gratuite (voir notre guide dédié).',
   },
   {
     question: 'Le contrat d’électricité se transfère-t-il automatiquement vers le nouveau logement ?',
@@ -48,6 +48,7 @@ export default function DemenagerKitSolairePage() {
         description="Comment démonter, transporter et reconnecter un kit solaire plug-and-play lors d'un déménagement. CACSI, contrat Enedis, assurance : ce qui change et ce qu'il faut refaire."
         url="https://monbalconsolaire.fr/guide/demenager-kit-solaire-balcon"
         datePublished="2026-10-06"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Déménagement' }]} />
@@ -66,6 +67,8 @@ export default function DemenagerKitSolairePage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>6 octobre 2026</span>
               <span>&middot;</span>
+              <span>Mis &agrave; jour le 5 novembre 2026</span>
+              <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
           </div>
@@ -74,7 +77,7 @@ export default function DemenagerKitSolairePage() {
             <h2 className="font-bold text-lg mb-3">L&apos;essentiel</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
               <li><strong className="text-green">{'✓'} Le kit vous appartient.</strong> Panneau, micro-onduleur, c&acirc;bles, batterie&nbsp;: tout se d&eacute;monte et part avec vous, qu&apos;il soit pos&eacute; au sol ou fix&eacute; sur une rambarde sans per&ccedil;age.</li>
-              <li><strong className="text-green">{'✓'} Deux d&eacute;marches distinctes et obligatoires.</strong> R&eacute;silier le contrat d&apos;&eacute;lectricit&eacute; de l&apos;ancien logement (c&ocirc;t&eacute; fournisseur) ET red&eacute;clarer une CACSI pour le nouveau logement (c&ocirc;t&eacute; Enedis).</li>
+              <li><strong className="text-green">{'✓'} Deux d&eacute;marches distinctes et obligatoires.</strong> R&eacute;silier le contrat d&apos;&eacute;lectricit&eacute; de l&apos;ancien logement (c&ocirc;t&eacute; fournisseur) ET red&eacute;clarer le kit pour le nouveau logement (c&ocirc;t&eacute; Enedis&nbsp;: CACSI ou cession du surplus).</li>
               <li><strong className="text-green">{'✓'} Pas de CACSI &laquo;&nbsp;transf&eacute;rable&nbsp;&raquo;.</strong> Elle est li&eacute;e au point de livraison de l&apos;ancienne adresse, pas à vous. Il faut une nouvelle d&eacute;claration, gratuite, à chaque nouvelle adresse.</li>
               <li><strong className="text-green">{'✓'} Pr&eacute;venez votre assurance</strong> dans le nouveau logement, m&ecirc;me si vous l&apos;aviez fait pour l&apos;ancien.</li>
               <li><strong className="text-green">{'✓'} Locataire sortant :</strong> si vous avez perc&eacute; quoi que ce soit pour fixer le panneau, reboucher avant l&apos;&eacute;tat des lieux.</li>
@@ -129,10 +132,10 @@ export default function DemenagerKitSolairePage() {
                       <td className="p-2.5">Avant de quitter les lieux</td>
                     </tr>
                     <tr className="border-b border-border-light">
-                      <td className="p-2.5 font-semibold">Nouvelle d&eacute;claration CACSI</td>
+                      <td className="p-2.5 font-semibold">Nouvelle d&eacute;claration Enedis (CACSI ou cession du surplus)</td>
                       <td className="p-2.5">Enedis (ou r&eacute;gie locale)</td>
                       <td className="p-2.5">D&eacute;clarer le kit install&eacute; au nouveau logement</td>
-                      <td className="p-2.5">Avant ou juste apr&egrave;s la remise en service</td>
+                      <td className="p-2.5">Avant de rebrancher le kit</td>
                     </tr>
                   </tbody>
                 </table>
@@ -150,7 +153,7 @@ export default function DemenagerKitSolairePage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">Ce qu&apos;il faut faire au nouveau logement</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Red&eacute;poser une demande CACSI en ligne via Enedis, avec la puissance du kit et la nouvelle adresse. D&eacute;marche identique à la premi&egrave;re fois, gratuite, trait&eacute;e en 2 à 4 semaines&nbsp;: vous pouvez utiliser le kit dès son branchement, sans attendre la validation.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Red&eacute;poser une d&eacute;claration en ligne via Enedis, avec la puissance du kit et la nouvelle adresse&nbsp;: CACSI si le kit est r&eacute;gl&eacute; en z&eacute;ro injection (r&eacute;glage de l&apos;onduleur, compteur de type Shelly ou bo&icirc;tier du fabricant, ou batterie), sinon cession gratuite du surplus &agrave; Enedis. D&eacute;marche identique &agrave; la premi&egrave;re fois et gratuite. Injecter sur le r&eacute;seau avant la mise en service par Enedis est interdit&nbsp;: attendez sa confirmation avant de rebrancher un kit qui renvoie du surplus.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Ce qui n&apos;est pas clairement document&eacute; c&ocirc;t&eacute; ancien logement</h3>
@@ -175,7 +178,7 @@ export default function DemenagerKitSolairePage() {
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Dans quel ordre par rapport au kit solaire&nbsp;?</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Aucune contrainte&nbsp;: la CACSI et le contrat d&apos;&eacute;lectricit&eacute; sont ind&eacute;pendants l&apos;un de l&apos;autre. Vous pouvez brancher le kit d&egrave;s votre arriv&eacute;e et d&eacute;poser la CACSI dans les jours qui suivent.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">La d&eacute;claration Enedis et le contrat d&apos;&eacute;lectricit&eacute; sont ind&eacute;pendants l&apos;un de l&apos;autre. En revanche, d&eacute;posez la d&eacute;claration du kit d&egrave;s votre arriv&eacute;e et attendez la mise en service par Enedis avant de le rebrancher&nbsp;: injecter avant est interdit.</p>
                 </div>
               </div>
             </section>
@@ -279,7 +282,7 @@ export default function DemenagerKitSolairePage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie&nbsp;:</strong> d&eacute;marches v&eacute;rifi&eacute;es sur la base des proc&eacute;dures publi&eacute;es par Enedis (d&eacute;claration CACSI, informations d&eacute;m&eacute;nagement) et des conditions g&eacute;n&eacute;rales des fournisseurs d&apos;&eacute;lectricit&eacute; (r&eacute;siliation sans pr&eacute;avis). Aucune proc&eacute;dure officielle de &laquo;&nbsp;retrait&nbsp;&raquo; d&apos;une CACSI n&apos;&eacute;tant publi&eacute;e par Enedis au moment de la r&eacute;daction, nous recommandons de contacter directement Enedis en cas de doute sur votre situation.{' '}
+                <strong>M&eacute;thodologie&nbsp;:</strong> d&eacute;marches v&eacute;rifi&eacute;es sur la base des proc&eacute;dures publi&eacute;es par Enedis (d&eacute;claration CACSI et cession du surplus, informations d&eacute;m&eacute;nagement), Code de l&apos;&eacute;nergie (articles L315-5 et D.315-10) et des conditions g&eacute;n&eacute;rales des fournisseurs d&apos;&eacute;lectricit&eacute; (r&eacute;siliation sans pr&eacute;avis). Aucune proc&eacute;dure officielle de &laquo;&nbsp;retrait&nbsp;&raquo; d&apos;une CACSI n&apos;&eacute;tant publi&eacute;e par Enedis au moment de la r&eacute;daction, nous recommandons de contacter directement Enedis en cas de doute sur votre situation.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
             </div>

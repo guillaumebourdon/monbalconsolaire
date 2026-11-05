@@ -4,7 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ACHATS_GROUPES } from '@/data/achats-groupes';
-import { calculateROIYears, calculateFirstYearSavings, calculateProductionKwh, PERFORMANCE_RATIO } from '@/lib/pricing';
+import { calculateROIYears, calculateFirstYearSavings, calculateProductionKwh, PERFORMANCE_RATIO, KWH_PRICE_LABEL } from '@/lib/pricing';
 import { productibleSite } from '@/lib/rentabilite-departements';
 import { DEPARTMENTS } from '@/data/departments';
 import { withCanonicalOg } from '@/lib/metadata';
@@ -49,7 +49,7 @@ const faqData = [
   },
   {
     question: 'Faut-il quand même déclarer son kit à Enedis après un achat groupé ?',
-    answer: 'Oui. La convention d\'autoconsommation sans injection (CACSI) est obligatoire et gratuite pour tout kit, quelle que soit la façon dont il a été acheté. Les organisateurs d\'achats groupés en parlent souvent pendant la réunion, mais c\'est à chaque participant de faire la démarche pour son logement.',
+    answer: 'Oui. Une déclaration à Enedis est obligatoire et gratuite pour tout kit, quelle que soit la façon dont il a été acheté, et elle se fait avant de brancher le kit : la convention d\'autoconsommation sans injection (CACSI) si le kit est réglé pour ne rien injecter sur le réseau, sinon la cession gratuite du surplus à Enedis. Les organisateurs d\'achats groupés en parlent souvent pendant la réunion, mais c\'est à chaque participant de faire la démarche pour son logement.',
   },
   {
     question: 'Comment trouver un achat groupé près de chez moi ?',
@@ -69,6 +69,7 @@ export default function AchatGroupePage() {
         description="Qui organise un achat groupé de kits solaires, les étapes, ce qui est inclus, les prix constatés et la rentabilité, avec l'exemple de Kerwatt dans les Côtes-d'Armor."
         url="https://monbalconsolaire.fr/guide/achat-groupe-kit-solaire"
         datePublished="2026-11-02"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Achat groupé' }]} />
@@ -79,7 +80,7 @@ export default function AchatGroupePage() {
             <div className="badge-green mb-4 inline-block">Guide pratique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Achat group&eacute; de kits solaires : comment &ccedil;a marche</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Plut&ocirc;t que d&apos;acheter un kit seul en ligne, vous pouvez passer par une commande group&eacute;e organis&eacute;e pr&egrave;s de chez vous. Qui les organise, comment elles se d&eacute;roulent, ce qu&apos;elles co&ucirc;tent et ce qu&apos;elles apportent vraiment, avec l&apos;exemple concret de Kerwatt, dans les C&ocirc;tes-d&apos;Armor.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap"><span>Publi&eacute; le 2 novembre 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap"><span>Publi&eacute; le 2 novembre 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -118,12 +119,12 @@ export default function AchatGroupePage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Chez {kerwatt.nom}, le kit comprend {kerwatt.contenuKit}. Du fait d&apos;une &eacute;volution constante des produits dans le photovolta&iuml;que, le mat&eacute;riel change d&apos;une op&eacute;ration &agrave; l&apos;autre : les premiers kits faisaient 400 Wc, les derniers {kerwatt.puissanceDernierKitWc} Wc.</p>
               <div className="grid grid-cols-2 gap-4 my-6">
                 <div className="rounded-brand-xl border border-green/15 bg-gradient-to-br from-green-pale/40 via-white to-white p-5 text-center shadow-brand">
-                  <div className="text-[10px] text-stone font-semibold uppercase tracking-widest">Prix constat&eacute;s</div>
+                  <div className="text-xs text-stone font-semibold uppercase tracking-widest">Prix constat&eacute;s</div>
                   <div className="font-mono font-extrabold text-2xl text-green my-2">{kerwatt.prixConstates.min}&ndash;{kerwatt.prixConstates.max} &euro;</div>
                   <div className="text-xs text-charcoal-light">selon les op&eacute;rations</div>
                 </div>
                 <div className="rounded-brand-xl border border-amber/15 bg-gradient-to-br from-amber-pale/40 via-white to-white p-5 text-center shadow-brand">
-                  <div className="text-[10px] text-stone font-semibold uppercase tracking-widest">Kits vendus</div>
+                  <div className="text-xs text-stone font-semibold uppercase tracking-widest">Kits vendus</div>
                   <div className="font-mono font-extrabold text-2xl text-amber-dark my-2">~300</div>
                   <div className="text-xs text-charcoal-light">par {kerwatt.nom}</div>
                 </div>
@@ -164,7 +165,7 @@ export default function AchatGroupePage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Apr&egrave;s la livraison : la d&eacute;claration &agrave; Enedis</h2>
-              <p className="text-charcoal-light leading-relaxed">Une fois le kit branch&eacute;, chaque participant doit d&eacute;clarer son installation &agrave; Enedis (convention d&apos;autoconsommation sans injection, ou CACSI). C&apos;est gratuit, obligatoire, et c&apos;est le document que l&apos;assureur peut demander en cas de sinistre. Notre <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline">guide pas &agrave; pas de la d&eacute;claration CACSI</Link> d&eacute;taille la proc&eacute;dure en 7 &eacute;tapes.</p>
+              <p className="text-charcoal-light leading-relaxed">Avant de brancher le kit, chaque participant doit d&eacute;clarer son installation &agrave; Enedis&nbsp;: une convention d&apos;autoconsommation sans injection (CACSI) si le kit est r&eacute;gl&eacute; pour ne rien injecter sur le r&eacute;seau (r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo; ou batterie), sinon la cession gratuite du surplus &agrave; Enedis. Injecter avant la mise en service par Enedis est interdit. C&apos;est gratuit, obligatoire, et c&apos;est le document que l&apos;assureur peut demander en cas de sinistre. Notre <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline">guide pas &agrave; pas de la d&eacute;claration CACSI</Link> d&eacute;taille la proc&eacute;dure en 7 &eacute;tapes.</p>
             </section>
 
             <section>
@@ -214,7 +215,7 @@ export default function AchatGroupePage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Sources :</strong> informations transmises par {kerwatt.nom} (d&eacute;roul&eacute; des op&eacute;rations, contenu des kits, prix constat&eacute;s, nombre de kits vendus), relues par {kerwatt.nom} avant publication. Production r&eacute;elle constat&eacute;e : retours de terrain de {kerwatt.nom}. Estimation prudente : PVGIS (Commission europ&eacute;enne), tarif r&eacute;glement&eacute; EDF Base 0,1940 &euro;/kWh, hausse de 3,3 % par an, 85 % d&apos;autoconsommation, m&eacute;thode d&eacute;taill&eacute;e dans <Link href="/a-propos" className="text-green hover:underline">notre m&eacute;thodologie</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Sources :</strong> informations transmises par {kerwatt.nom} (d&eacute;roul&eacute; des op&eacute;rations, contenu des kits, prix constat&eacute;s, nombre de kits vendus), relues par {kerwatt.nom} avant publication. Production r&eacute;elle constat&eacute;e : retours de terrain de {kerwatt.nom}. Estimation prudente : PVGIS (Commission europ&eacute;enne), tarif r&eacute;glement&eacute; EDF Base {KWH_PRICE_LABEL}, hausse de 3,3 % par an, d&eacute;gradation des panneaux 0,5 % par an, 85 % d&apos;autoconsommation, m&eacute;thode d&eacute;taill&eacute;e dans <Link href="/methodologie" className="text-green hover:underline">notre m&eacute;thodologie</Link>.</p>
               <p className="text-xs text-stone leading-relaxed">Cet article ne contient aucun lien affili&eacute; et aucune contrepartie financi&egrave;re n&apos;a &eacute;t&eacute; &eacute;chang&eacute;e avec {kerwatt.nom}.</p>
             </div>
           </div>

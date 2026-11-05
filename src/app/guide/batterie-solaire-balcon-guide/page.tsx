@@ -7,6 +7,27 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
 import { zendureUrl } from '@/lib/affiliate';
+import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL } from '@/lib/pricing';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Scénario chiffré calculé au build avec pricing.ts (kit 450 W, Lyon, plein sud).
+const KIT_W = 450;
+const sc = (autoconso: number, price = 0) => ({ kitPriceEur: price, kitPowerWc: KIT_W, autoconsoOverride: autoconso });
+const PROD = calculateProductionKwh(sc(0.85));
+const eur = (ac: number) => Math.round(calculateFirstYearSavings(sc(ac)));
+// Gain apporté par la batterie et retour sur investissement de son seul surcoût (300 à 500 €)
+const GAIN_PRESENT = eur(0.95) - eur(0.85);
+const GAIN_ABSENT_MIN = eur(0.75) - eur(0.40);
+const GAIN_ABSENT_MAX = eur(0.80) - eur(0.30);
+const ROI_PRESENT_MIN = calculateROIYears(sc(0.10, 300));
+const ROI_ABSENT_MIN = calculateROIYears(sc(0.50, 300));
+const ROI_ABSENT_MAX = calculateROIYears(sc(0.35, 500));
+// Profil intermédiaire (télétravail partiel) : +15 à +25 points d'autoconsommation
+const GAIN_MID_MIN = eur(0.75) - eur(0.60);
+const GAIN_MID_MAX = eur(0.90) - eur(0.65);
+const ROI_MID_MIN = calculateROIYears(sc(0.25, 300));
+const ROI_MID_MAX = calculateROIYears(sc(0.15, 500));
+const fr = (n: number) => n.toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Batterie solaire balcon : choisir la bonne capacité (2026)',
@@ -31,15 +52,15 @@ const faqData = [
   },
   {
     question: 'Combien d\'économies supplémentaires apporte une batterie ?',
-    answer: 'Cela dépend de votre profil. Si vous êtes à domicile en journée, le gain est de 5 à 15 €/an (taux d\'autoconsommation de 85% → 95%). Si vous êtes absent toute la journée, le gain peut atteindre 35 à 50 €/an (taux qui passe de 30-40% à 70-80%). La batterie ne se justifie économiquement que dans ce second cas.',
+    answer: `Cela dépend de votre profil. Pour un kit de 450 W à Lyon plein sud, si vous êtes à domicile en journée, le gain est d'environ ${GAIN_PRESENT} €/an (autoconsommation de 85 % → 95 %). Si vous êtes absent toute la journée, il atteint ${GAIN_ABSENT_MIN} à ${GAIN_ABSENT_MAX} €/an (taux qui passe de 30-40 % à 75-80 %). La batterie ne se justifie économiquement que dans ce second cas.`,
   },
   {
     question: 'Peut-on ajouter une batterie à un kit existant ?',
-    answer: 'Oui, si votre onduleur est compatible. Les systèmes Zendure SolarFlow, Bluetti Balco 260 et EcoFlow PowerStream (ce dernier n\'est plus vendu par EcoFlow France depuis 2026) permettent d\'ajouter une batterie. En revanche, les kits simples (Sunology PLAY 2, Beem On) ne sont pas directement compatibles avec une batterie tierce sans changer l\'onduleur.',
+    answer: 'Oui, si votre onduleur est compatible. Les systèmes Zendure SolarFlow, Bluetti Balco 260 et EcoFlow PowerStream (ce dernier n\'est plus vendu par EcoFlow France depuis 2026) permettent d\'ajouter une batterie. En revanche, les kits simples (Sunology PLAY, Beem On) ne sont pas directement compatibles avec une batterie tierce sans changer l\'onduleur.',
   },
   {
     question: 'Le Bluetti Balco 260 est-il extensible ?',
-    answer: 'Oui. Le Balco 260 embarque 2,56 kWh de base et peut être étendu jusqu\'à 15 kWh en ajoutant des modules batteries supplémentaires. C\'est une de ses forces principales, même si le coût total grimpe rapidement au-delà du modèle de base à 849 €.',
+    answer: 'Oui. Le Balco 260 embarque 2,56 kWh de base et peut être étendu jusqu\'à 15 kWh en ajoutant des modules batteries supplémentaires. C\'est une de ses forces principales, même si le coût total grimpe rapidement au-delà du modèle de base, vendu 789 € seul (prix promotionnel constaté le 5 novembre 2026).',
   },
 ];
 
@@ -51,6 +72,7 @@ export default function GuideBatterieBalcon() {
         description="Quelle capacité de batterie pour votre kit solaire balcon ? Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif 2026."
         url="https://monbalconsolaire.fr/guide/batterie-solaire-balcon-guide"
         datePublished="2026-07-03"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Batterie solaire balcon' }]} />
@@ -68,7 +90,7 @@ export default function GuideBatterieBalcon() {
               700&nbsp;Wh, 2&nbsp;kWh, 5&nbsp;kWh&nbsp;&mdash; les fabricants jouent sur les chiffres. Ce guide vous dit ce qui compte vraiment&nbsp;: votre profil de consommation, le calcul de rentabilit&eacute; honn&ecirc;te, et les solutions disponibles en 2026.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>3 juillet 2026</span><span>&middot;</span><span>12 min de lecture</span>
+              <span>3 juillet 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>12 min de lecture</span>
             </div>
           </div>
 
@@ -138,7 +160,7 @@ export default function GuideBatterieBalcon() {
                     Votre talon de consommation (200&ndash;350&nbsp;W) est sup&eacute;rieur &agrave; la production solaire la plupart du temps. Vous autoconsommez d&eacute;j&agrave; 80&ndash;90&nbsp;% de ce que votre panneau produit en temps r&eacute;el.
                   </p>
                   <p className="text-xs font-semibold text-amber-dark">
-                    &#10007; Batterie peu utile &mdash; gain suppl&eacute;mentaire&nbsp;: 5&ndash;15&nbsp;&euro;/an seulement
+                    &#10007; Batterie peu utile &mdash; gain suppl&eacute;mentaire&nbsp;: environ {GAIN_PRESENT}&nbsp;&euro;/an seulement
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
@@ -147,13 +169,13 @@ export default function GuideBatterieBalcon() {
                     Votre logement ne consomme que 50&ndash;80&nbsp;W en votre absence (frigo, box, veilles). Votre panneau de 450&nbsp;W produit bien plus. Sans batterie, 60&ndash;70&nbsp;% de la production est inject&eacute;e gratuitement sur le r&eacute;seau.
                   </p>
                   <p className="text-xs font-semibold text-green">
-                    &#10003; Batterie tr&egrave;s utile &mdash; gain suppl&eacute;mentaire&nbsp;: 35&ndash;50&nbsp;&euro;/an
+                    &#10003; Batterie tr&egrave;s utile &mdash; gain suppl&eacute;mentaire&nbsp;: {GAIN_ABSENT_MIN}&ndash;{GAIN_ABSENT_MAX}&nbsp;&euro;/an
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-2 text-amber-dark">Profil C &mdash; Pr&eacute;sence variable (alternance bureau/t&eacute;l&eacute;travail)</h3>
                   <p className="text-xs text-charcoal-light mb-2">
-                    Situation interm&eacute;diaire. Le gain avec batterie est r&eacute;el mais plus mod&eacute;r&eacute; : 15&ndash;30&nbsp;&euro;/an. Le ROI reste long (15&ndash;25&nbsp;ans sur la batterie seule).
+                    Situation interm&eacute;diaire. Le gain avec batterie est r&eacute;el mais plus mod&eacute;r&eacute;&nbsp;: {GAIN_MID_MIN}&ndash;{GAIN_MID_MAX}&nbsp;&euro;/an. Le ROI de la batterie seule reste long ({fr(Math.floor(ROI_MID_MIN))}&ndash;{fr(Math.ceil(ROI_MID_MAX))}&nbsp;ans pour un surco&ucirc;t de 300 &agrave; 500&nbsp;&euro;).
                   </p>
                   <p className="text-xs font-semibold text-stone">
                     &mdash; Batterie optionnelle &mdash; ROI d&eacute;pend de la fr&eacute;quence d&rsquo;absence
@@ -167,7 +189,7 @@ export default function GuideBatterieBalcon() {
 
               <h3 className="font-bold text-lg mb-3">700&nbsp;Wh &mdash; le stockage d&rsquo;entr&eacute;e</h3>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                C&rsquo;est la capacit&eacute; de la batterie VAULT embarqu&eacute;e dans le <Link href="/avis/sunology-play-max" className="text-green hover:underline font-semibold">Sunology PLAY MAX</Link> (699&nbsp;&euro; station 450&nbsp;Wc + batterie). 700&nbsp;Wh couvrent 3&nbsp;&agrave;&nbsp;4 heures de talon de consommation. C&rsquo;est suffisant pour passer une soir&eacute;e courte, insuffisant pour une nuit compl&egrave;te.
+                C&rsquo;est la capacit&eacute; de la batterie VAULT embarqu&eacute;e dans le <Link href="/avis/sunology-play-max" className="text-green hover:underline font-semibold">Sunology PLAY MAX</Link> ({priceLabel('sunology-play-max')}, station {PRODUCTS['sunology-play-max'].powerWc}&nbsp;W + batterie, prix v&eacute;rifi&eacute; le 5 novembre 2026). 700&nbsp;Wh couvrent 3&nbsp;&agrave;&nbsp;4 heures de talon de consommation. C&rsquo;est suffisant pour passer une soir&eacute;e courte, insuffisant pour une nuit compl&egrave;te.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 <strong>Pour qui&nbsp;:</strong> profil B avec une consommation de soir&eacute;e mod&eacute;r&eacute;e. Budget serr&eacute;. Premi&egrave;re exp&eacute;rience avec le stockage solaire.
@@ -182,9 +204,9 @@ export default function GuideBatterieBalcon() {
                 <ProductThumb src="/images/produits/bluetti-balco-260-1.webp" alt="Bluetti Balco 260" href="/avis/bluetti-balco-260" size="sm" />
               </div>
               <ul className="space-y-2 text-sm text-charcoal-light mb-4">
-                <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> &mdash; 1,92&nbsp;kWh + onduleur 800&nbsp;W int&eacute;gr&eacute;. 488&nbsp;&euro; (bo&icirc;tier seul, sans panneaux)</li>
-                <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> &mdash; 2,56&nbsp;kWh + 4&nbsp;MPPT + onduleur SiC. 849&nbsp;&euro; (bo&icirc;tier seul)</li>
-                <li className="flex gap-2"><span className="text-green">&#8250;</span> EcoFlow PowerStream + batterie &eacute;tanche &mdash; 2&nbsp;kWh. Kit complet ~2&nbsp;047&nbsp;&euro; <span className="text-amber-dark">(plus vendu par EcoFlow France depuis septembre 2026)</span></li>
+                <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> &mdash; 1,92&nbsp;kWh + onduleur 800&nbsp;W int&eacute;gr&eacute;. {priceLabel('zendure-solarflow-800-plus')} (bo&icirc;tier seul, sans panneaux&nbsp;; 719&nbsp;&euro; avec 2 panneaux de 500&nbsp;W)</li>
+                <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> &mdash; 2,56&nbsp;kWh + 4&nbsp;MPPT + onduleur SiC. {priceLabel('bluetti-balco-260')} (bo&icirc;tier seul&nbsp;; 1&nbsp;079&nbsp;&euro; avec 2 panneaux de 450&nbsp;W)</li>
+                <li className="flex gap-2"><span className="text-green">&#8250;</span> EcoFlow PowerStream + batterie &eacute;tanche &mdash; 2&nbsp;kWh. <span className="text-amber-dark">Plus vendu par EcoFlow France (successeur&nbsp;: gamme STREAM).</span></li>
               </ul>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 <strong>Pour qui&nbsp;:</strong> profil B classique avec soir&eacute;e active. Meilleur rapport capacit&eacute;/co&ucirc;t du march&eacute;.
@@ -192,7 +214,7 @@ export default function GuideBatterieBalcon() {
 
               <h3 className="font-bold text-lg mb-3 mt-6">5&nbsp;kWh et plus &mdash; le stockage r&eacute;sidentiel</h3>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Au-del&agrave; de 2&nbsp;kWh, on sort du simple &laquo;&nbsp;kit balcon&nbsp;&raquo; pour entrer dans le stockage r&eacute;sidentiel. Le <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline font-semibold">Zendure SolarFlow Mix</Link> (d&egrave;s 2&nbsp;039&nbsp;&euro; pour le mod&egrave;le 3000 AC+) ou le Bluetti Balco 260 &eacute;tendu (&agrave; 15&nbsp;kWh) entrent dans cette cat&eacute;gorie.
+                Au-del&agrave; de 2&nbsp;kWh, on sort du simple &laquo;&nbsp;kit balcon&nbsp;&raquo; pour entrer dans le stockage r&eacute;sidentiel. Le <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline font-semibold">Zendure SolarFlow Mix</Link> (&agrave; partir de {priceLabel('zendure-solarflow-mix')} pour le mod&egrave;le 3000 Mix AC+) ou le Bluetti Balco 260 &eacute;tendu (&agrave; 15&nbsp;kWh) entrent dans cette cat&eacute;gorie.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Ces syst&egrave;mes visent l&rsquo;autonomie nocturne compl&egrave;te. Ils se justifient si vous avez un ch&acirc;rteau d&rsquo;eau &eacute;lectrique (chauffe-eau, pompe &agrave; chaleur) &agrave; alimenter &mdash; pas pour un appartement standard avec un kit de 450&ndash;900&nbsp;W.
@@ -205,7 +227,7 @@ export default function GuideBatterieBalcon() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le calcul ROI honn&ecirc;te&nbsp;: batterie vs sans batterie</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Prenons un kit de 450&nbsp;W, exposition sud &agrave; Lyon (r&eacute;f&eacute;rence nationale). Production annuelle&nbsp;: environ 500&nbsp;kWh. Tarif EDF&nbsp;: 0,1940&nbsp;&euro;/kWh.
+                Prenons un kit de {KIT_W}&nbsp;W, exposition sud &agrave; Lyon (r&eacute;f&eacute;rence nationale). Production annuelle&nbsp;: environ {fr(PROD)}&nbsp;kWh. Tarif EDF&nbsp;: {KWH_PRICE_LABEL}.
               </p>
 
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
@@ -222,36 +244,36 @@ export default function GuideBatterieBalcon() {
                     <tr className="border-b border-border-light bg-white">
                       <td className="p-3 font-semibold">Pr&eacute;sent journ&eacute;e &mdash; sans batterie</td>
                       <td className="text-center p-3 font-mono text-sm text-green">85&nbsp;%</td>
-                      <td className="text-center p-3 font-mono text-sm text-amber-dark">82&nbsp;&euro;/an</td>
+                      <td className="text-center p-3 font-mono text-sm text-amber-dark">{eur(0.85)}&nbsp;&euro;/an</td>
                       <td className="text-center p-3 text-stone text-xs">&mdash;</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-3 font-semibold">Pr&eacute;sent journ&eacute;e &mdash; avec batterie 2&nbsp;kWh</td>
                       <td className="text-center p-3 font-mono text-sm text-green">95&nbsp;%</td>
-                      <td className="text-center p-3 font-mono text-sm text-amber-dark">92&nbsp;&euro;/an</td>
-                      <td className="text-center p-3 font-mono text-sm text-red-600">+10&nbsp;&euro;/an<br /><span className="text-xs">&gt;50&nbsp;ans &#10007;</span></td>
+                      <td className="text-center p-3 font-mono text-sm text-amber-dark">{eur(0.95)}&nbsp;&euro;/an</td>
+                      <td className="text-center p-3 font-mono text-sm text-red-600">+{GAIN_PRESENT}&nbsp;&euro;/an<br /><span className="text-xs">&gt;&nbsp;{Math.floor(ROI_PRESENT_MIN)}&nbsp;ans &#10007;</span></td>
                     </tr>
                     <tr className="border-b border-border-light bg-white">
                       <td className="p-3 font-semibold">Absent journ&eacute;e &mdash; sans batterie</td>
                       <td className="text-center p-3 font-mono text-sm text-green">30&ndash;40&nbsp;%</td>
-                      <td className="text-center p-3 font-mono text-sm text-amber-dark">29&ndash;39&nbsp;&euro;/an</td>
+                      <td className="text-center p-3 font-mono text-sm text-amber-dark">{eur(0.30)}&ndash;{eur(0.40)}&nbsp;&euro;/an</td>
                       <td className="text-center p-3 text-stone text-xs">&mdash;</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-3 font-semibold">Absent journ&eacute;e &mdash; avec batterie 2&nbsp;kWh</td>
                       <td className="text-center p-3 font-mono text-sm text-green">75&ndash;80&nbsp;%</td>
-                      <td className="text-center p-3 font-mono text-sm text-amber-dark">73&ndash;78&nbsp;&euro;/an</td>
-                      <td className="text-center p-3 font-mono text-sm text-green">+40&nbsp;&euro;/an<br /><span className="text-xs">7&ndash;12&nbsp;ans &#10003;</span></td>
+                      <td className="text-center p-3 font-mono text-sm text-amber-dark">{eur(0.75)}&ndash;{eur(0.80)}&nbsp;&euro;/an</td>
+                      <td className="text-center p-3 font-mono text-sm text-green">+{GAIN_ABSENT_MIN}&ndash;{GAIN_ABSENT_MAX}&nbsp;&euro;/an<br /><span className="text-xs">{fr(Math.floor(ROI_ABSENT_MIN))}&ndash;{fr(Math.ceil(ROI_ABSENT_MAX))}&nbsp;ans &#10003;</span></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="text-xs text-stone mb-6">
-                Calcul bas&eacute; sur&nbsp;: 500&nbsp;kWh/an (450&nbsp;W, Lyon sud), 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an (CRE), dur&eacute;e de vie batterie 15&nbsp;ans. Le surco&ucirc;t batterie estim&eacute; : 300&ndash;500&nbsp;&euro; (Zendure SolarFlow vs onduleur simple).
+                Calcul bas&eacute; sur&nbsp;: {fr(PROD)}&nbsp;kWh/an ({KIT_W}&nbsp;W, Lyon sud, ratio de performance 0,85), {KWH_PRICE_LABEL}, inflation 3,3&nbsp;%/an, d&eacute;gradation des panneaux 0,5&nbsp;%/an, dur&eacute;e de vie batterie 15&nbsp;ans. Surco&ucirc;t de la batterie estim&eacute;&nbsp;: 300&ndash;500&nbsp;&euro; (syst&egrave;me avec batterie vs onduleur simple). Le ROI indiqu&eacute; est celui de ce seul surco&ucirc;t.
               </p>
               <div className="card bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-amber-dark">
-                  <strong>La conclusion honnte&nbsp;:</strong> une batterie n&rsquo;est &eacute;conomiquement viable pour un kit balcon <em>que</em> si vous &ecirc;tes absent pendant les heures de production. Pour tous les autres profils, le ROI de la batterie d&eacute;passe 25&ndash;50&nbsp;ans. C&rsquo;est souvent plus que la dur&eacute;e de vie du produit.
+                  <strong>La conclusion honn&ecirc;te&nbsp;:</strong> une batterie n&rsquo;est &eacute;conomiquement viable pour un kit balcon <em>que</em> si vous &ecirc;tes absent pendant les heures de production. Pour les autres profils, le surco&ucirc;t de la batterie met plus de {Math.floor(ROI_PRESENT_MIN)}&nbsp;ans &agrave; se rembourser. C&rsquo;est souvent plus que la dur&eacute;e de vie du produit.
                 </p>
               </div>
             </section>
@@ -283,18 +305,18 @@ export default function GuideBatterieBalcon() {
                       {
                         name: 'Sunology PLAY MAX',
                         href: '/avis/sunology-play-max',
-                        capacity: '700 Wh Li-ion',
-                        price: '699 €',
-                        panels: 'Oui (450 Wc)',
+                        capacity: '700 Wh',
+                        price: priceLabel('sunology-play-max'),
+                        panels: `Oui (${PRODUCTS['sunology-play-max'].powerWc} W)`,
                         extensible: 'Oui (VAULT supp.)',
                         highlight: false,
                       },
                       {
-                        name: 'Zendure SolarFlow',
+                        name: 'Zendure SolarFlow 800 Plus',
                         href: '/avis/zendure-solarflow',
                         capacity: '1,92 kWh LFP',
-                        price: '488 € (boîtier)',
-                        panels: 'Non (+ ~400 €)',
+                        price: `${priceLabel('zendure-solarflow-800-plus')} (seul)`,
+                        panels: 'Pack 2 × 500 W : 719 €',
                         extensible: 'Oui (+2,4 kWh)',
                         highlight: true,
                       },
@@ -302,8 +324,8 @@ export default function GuideBatterieBalcon() {
                         name: 'Bluetti Balco 260',
                         href: '/avis/bluetti-balco-260',
                         capacity: '2,56 kWh LFP',
-                        price: '849 € (boîtier)',
-                        panels: 'Non (+ ~400 €)',
+                        price: `${priceLabel('bluetti-balco-260')} (seul)`,
+                        panels: 'Pack 2 × 450 W : 1 079 €',
                         extensible: 'Oui (→ 15 kWh)',
                         highlight: true,
                       },
@@ -311,8 +333,8 @@ export default function GuideBatterieBalcon() {
                         name: 'Jackery SolarVault 3 Pro',
                         href: '/avis/jackery-solarvault-3-pro',
                         capacity: '2,52 kWh LFP',
-                        price: '839 € (boîtier)',
-                        panels: 'Non (+ ~300 €)',
+                        price: `${priceLabel('jackery-solarvault-3-pro')} (seul)`,
+                        panels: 'Pack 2 × 450 W : 959 €',
                         extensible: 'Non',
                         highlight: false,
                       },
@@ -320,7 +342,7 @@ export default function GuideBatterieBalcon() {
                         name: 'EcoFlow PowerStream + bat. (arrêté)',
                         href: '/avis/ecoflow-powerstream',
                         capacity: '2 kWh LFP',
-                        price: '~2 047 € (kit)',
+                        price: 'Plus vendu en France',
                         panels: 'Oui (2 × 400 W)',
                         extensible: 'Oui',
                         highlight: false,
@@ -329,7 +351,7 @@ export default function GuideBatterieBalcon() {
                         name: 'Zendure SolarFlow Mix',
                         href: '/avis/zendure-solarflow-mix',
                         capacity: '8 kWh LFP',
-                        price: 'À partir de 2 039 €',
+                        price: `À partir de ${priceLabel('zendure-solarflow-mix')}`,
                         panels: 'Non',
                         extensible: 'Oui (→ 50 kWh)',
                         highlight: false,
@@ -353,7 +375,7 @@ export default function GuideBatterieBalcon() {
                 </table>
               </div>
               <p className="text-xs text-stone mt-3">
-                Tous ces mod&egrave;les utilisent la chimie LFP (LiFePO4), la plus s&ucirc;re et la plus durable. Prix constat&eacute;s en juillet 2026 TTC France.
+                Prix TTC v&eacute;rifi&eacute;s le 5 novembre 2026 sur les sites des fabricants&nbsp;; plusieurs sont des prix promotionnels (prix barr&eacute;s plus &eacute;lev&eacute;s) sans date de fin annonc&eacute;e. L&apos;EcoFlow PowerStream n&apos;est plus vendu en France (successeur&nbsp;: gamme STREAM).
               </p>
             </section>
 
@@ -402,7 +424,7 @@ export default function GuideBatterieBalcon() {
                   <div className="flex items-start gap-3">
                     <span className="text-amber-dark font-bold text-lg mt-0.5">&#10007;</span>
                     <div>
-                      <h3 className="font-bold text-sm">Sunology PLAY 2, Beem On 500&nbsp;Wc, Sunethic F500</h3>
+                      <h3 className="font-bold text-sm">Sunology PLAY, Beem On 500&nbsp;Wc, Sunethic F500</h3>
                       <p className="text-xs text-charcoal-light mt-1">Ces kits utilisent un micro-onduleur standard (Hoymiles, APsystems). Ils ne sont pas directement compatibles avec une batterie externe. Il faudrait changer l&rsquo;onduleur &mdash; ce qui efface l&rsquo;&eacute;conomie initiale du kit.</p>
                     </div>
                   </div>
@@ -455,7 +477,7 @@ export default function GuideBatterieBalcon() {
                   'Vous &ecirc;tes retrait&eacute; ou t&eacute;l&eacute;travailleur pr&eacute;sent toute la journ&eacute;e &mdash; le gain ne justifie pas l&rsquo;investissement',
                   'Votre kit fait moins de 300&nbsp;W &mdash; la production est trop faible pour remplir utilemet une batterie de 2&nbsp;kWh',
                   'Vous avez un balcon plein nord &mdash; m&ecirc;me avec stockage, la production annuelle reste insuffisante pour un ROI raisonnable',
-                  'Vous louez votre logement et risquez de d&eacute;m&eacute;nager dans 2&nbsp;ans &mdash; le ROI d&rsquo;une batterie est de 7&ndash;12&nbsp;ans minimum',
+                  `Vous louez votre logement et risquez de d&eacute;m&eacute;nager dans 2&nbsp;ans &mdash; m&ecirc;me dans le cas favorable, le surco&ucirc;t d&rsquo;une batterie met ${fr(Math.floor(ROI_ABSENT_MIN))} &agrave; ${fr(Math.ceil(ROI_ABSENT_MAX))}&nbsp;ans &agrave; se rembourser`,
                   'Vous n&rsquo;avez pas encore install&eacute; votre premier kit &mdash; commen&ccedil;ez sans batterie, mesurez votre taux d&rsquo;autoconsommation r&eacute;el pendant 3 mois, puis d&eacute;cidez',
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -510,7 +532,7 @@ export default function GuideBatterieBalcon() {
                   <p className="text-xs text-charcoal-light mt-1">Notre analyse d&eacute;taill&eacute;e du syst&egrave;me tout-en-un Bluetti</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow &mdash; 1,92&nbsp;kWh pour 488&nbsp;&euro;</h3>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus &mdash; 1,92&nbsp;kWh pour {priceLabel('zendure-solarflow-800-plus')}</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix du stockage balcon</p>
                 </Link>
                 <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
@@ -522,7 +544,7 @@ export default function GuideBatterieBalcon() {
                   <p className="text-xs text-charcoal-light mt-1">Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow &mdash; tableau prix/kWh complet</p>
                 </Link>
                 <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables vs fixe balcon &mdash; mis &agrave; jour ao&ucirc;t 2026</h3>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables et batteries de balcon&nbsp;: comparatif</h3>
                   <p className="text-xs text-charcoal-light mt-1">Bluetti Balco 260 ajout&eacute;, prix EcoFlow / Jackery / Bluetti revus &agrave; la baisse</p>
                 </Link>
               </div>
@@ -532,7 +554,7 @@ export default function GuideBatterieBalcon() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie&nbsp;:</strong> calculs ROI bas&eacute;s sur 0,1940&nbsp;&euro;/kWh (tarif EDF r&eacute;glement&eacute; juillet 2026), inflation 3,3&nbsp;%/an (CRE), Performance Ratio 0,85, Lyon exposition sud (r&eacute;f&eacute;rence PVGIS). Taux d&rsquo;autoconsommation&nbsp;: 85&nbsp;% (pr&eacute;sent journ&eacute;e, sans batterie), 95&nbsp;% (pr&eacute;sent journ&eacute;e, avec batterie), 30&ndash;40&nbsp;% (absent journ&eacute;e, sans batterie), 75&ndash;80&nbsp;% (absent journ&eacute;e, avec batterie). Prix constat&eacute;s juillet 2026. Cet article est ind&eacute;pendant &mdash; <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>.
+                <strong>M&eacute;thodologie&nbsp;:</strong> calculs ROI bas&eacute;s sur {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; EDF Base 6 kVA), inflation 3,3&nbsp;%/an, d&eacute;gradation des panneaux 0,5&nbsp;%/an, Performance Ratio 0,85, Lyon exposition sud (r&eacute;f&eacute;rence PVGIS). Taux d&rsquo;autoconsommation&nbsp;: 85&nbsp;% (pr&eacute;sent journ&eacute;e, sans batterie), 95&nbsp;% (pr&eacute;sent journ&eacute;e, avec batterie), 30&ndash;40&nbsp;% (absent journ&eacute;e, sans batterie), 75&ndash;80&nbsp;% (absent journ&eacute;e, avec batterie). Prix constat&eacute;s juillet 2026. Cet article est ind&eacute;pendant &mdash; <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>.
               </p>
             </div>
 

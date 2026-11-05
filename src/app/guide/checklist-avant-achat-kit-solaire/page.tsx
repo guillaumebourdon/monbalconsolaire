@@ -5,6 +5,15 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { calculateROIYears } from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { DEPARTMENTS } from '@/data/departments';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+const PLAY = PRODUCTS['sunology-play'];
+// ROI du Sunology PLAY plein sud par département, calculé avec pricing.ts
+const roi = (code: string) =>
+  calculateROIYears({ kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc, productibleKwhPerKwc: productibleSite(DEPARTMENTS.find((d) => d.code === code)!.irradiation) }).toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Checklist kit solaire balcon : 15 points avant d\'acheter (2026)',
@@ -29,11 +38,11 @@ const faqData = [
   },
   {
     question: 'Quelle surface de balcon faut-il pour un kit solaire ?',
-    answer: 'Le Sunology PLAY (500 Wc, ex-PLAY 2) mesure 1,80 m × 1,13 m. Il faut donc au minimum un espace libre de 2 m² avec une exposition correcte. Les kits 300W à petits panneaux (Beem Kit) sont plus compacts mais moins puissants. Mesurez votre espace libre en tenant compte des meubles et des zones d\'ombre.',
+    answer: 'Le Sunology PLAY (515 W, ex-PLAY 2) mesure 1,80 m × 1,13 m. Il faut donc au minimum un espace libre de 2 m² avec une exposition correcte. Les kits à petits panneaux sont plus compacts mais moins puissants. Mesurez votre espace libre en tenant compte des meubles et des zones d\'ombre.',
   },
   {
     question: 'La déclaration CACSI Enedis est-elle vraiment obligatoire ?',
-    answer: 'Oui, c\'est la seule démarche administrative obligatoire pour un kit plug-and-play ≤ 3 kWc. Elle est gratuite, informative (Enedis ne peut pas refuser), et se fait en 10 minutes sur le portail Enedis. En cas de sinistre, votre assureur peut refuser la prise en charge si le kit n\'est pas déclaré.',
+    answer: 'Une déclaration à Enedis est obligatoire, gratuite et en ligne, avant de brancher le kit : la CACSI (convention d\'autoconsommation sans injection) si votre kit est réglé pour ne rien injecter sur le réseau (réglage « zéro injection » ou batterie), sinon la cession gratuite du surplus à Enedis (installations de 3 kW maximum). Injecter avant la mise en service par Enedis est interdit. En cas de sinistre, votre assureur peut aussi demander cette déclaration.',
   },
   {
     question: 'Faut-il déclarer son kit solaire à son assureur ?',
@@ -55,7 +64,7 @@ const checklist = [
     num: 2,
     category: 'Emplacement',
     title: 'Mesurer la surface disponible',
-    desc: 'Un panneau 500 Wc (Sunology PLAY, ex-PLAY 2) fait 1,80 m × 1,13 m — il faut donc ~2 m² libres. Les kits multi-panneaux (Beem Kit 300W : 4 × 80 cm) s\'adaptent à des espaces plus étroits mais moins ensoleillés. Tenez compte des meubles de balcon et de la distance jusqu\'à la prise.',
+    desc: 'Un panneau de 515 W (Sunology PLAY, ex-PLAY 2) fait 1,80 m × 1,13 m — il faut donc ~2 m² libres. Les kits à petits panneaux s\'adaptent à des espaces plus étroits mais moins ensoleillés. Tenez compte des meubles de balcon et de la distance jusqu\'à la prise.',
     verdict: 'Mesurez avant de commander. Retours difficiles sur les gros kits.',
     icon: '&#9633;',
     color: 'green',
@@ -118,7 +127,7 @@ const checklist = [
     num: 9,
     category: 'Budget',
     title: 'Calculer le ROI selon votre région',
-    desc: 'Le retour sur investissement dépend de votre ville et de votre exposition. À Lyon-Sud (référence), un kit 450W à 599 € est rentable en 6-7 ans. À Marseille, en 5 ans. À Lille, en 8-9 ans. Utilisez notre calculateur pour un résultat personnalisé avec inflation EDF (3,3 %/an selon la CRE).',
+    desc: `Le retour sur investissement dépend de votre ville et de votre exposition. Selon notre méthode, un Sunology PLAY (${PLAY.powerWc} W, ${priceLabel('sunology-play')}) plein sud se rembourse en ${roi('69')} ans à Lyon (référence), ${roi('13')} ans à Marseille et ${roi('59')} ans à Lille. Utilisez notre calculateur pour un résultat personnalisé (inflation 3,3 %/an, dégradation des panneaux 0,5 %/an).`,
     verdict: 'ROI &lt; 8 ans = bon investissement. ROI &gt; 12 ans = reconsidérez.',
     icon: '&#128200;',
     color: 'green',
@@ -127,7 +136,7 @@ const checklist = [
     num: 10,
     category: 'Budget',
     title: 'Choisir la bonne puissance',
-    desc: '300W (Beem Kit) : idéal pour un petit balcon ou un premier essai. Prix d\'entrée : ~199 € (actuellement en rupture chez Beem). 450-500 Wc (Sunology PLAY, Beem On) : le rapport puissance/encombrement optimal. Prix : 429-599 €. 800W (2 panneaux) : le plus puissant qu\'on trouve couramment en kit prêt à brancher (aucun plafond légal en France). Nécessite de vérifier le circuit (900W par prise : repère recommandé, pas une limite de la norme). Prix : 700-900 €.',
+    desc: `Moins de 300 W (Sunology GO, ${PRODUCTS['sunology-go'].powerWc} W, ${priceLabel('sunology-go')}) : idéal pour un petit balcon ou un premier essai ; le Beem Kit 300 W (199 €) est en rupture chez Beem. 500 W environ (Sunology PLAY, Beem On, Sunethic F500) : le meilleur rapport puissance/encombrement, de ${priceLabel('beem-on-500w')} à ${priceLabel('sunethic-f500')}. 800 W et plus (2 panneaux) : le plus puissant qu'on trouve couramment en kit prêt à brancher (aucun plafond légal en France). Vérifiez le circuit (900 W par circuit : repère recommandé, pas une limite de la norme).`,
     verdict: 'Premier achat ? Commencez par un 450W. C\'est le meilleur compromis prix/production.',
     icon: '&#9889;',
     color: 'green',
@@ -136,7 +145,7 @@ const checklist = [
     num: 11,
     category: 'Budget',
     title: 'Décider si une batterie est nécessaire',
-    desc: 'Une batterie (500-1 400 €) est utile si vous consommez principalement le soir. Sans batterie, l\'autoconsommation est de 40-60 % (le surplus part au réseau). Avec batterie (Zendure SolarFlow 1,92 kWh, Bluetti Balco), l\'autoconsommation monte à 80-95 %. Le surcoût se justifie si vous rentrez tard et que votre facture nocturne est élevée.',
+    desc: 'Une batterie (plusieurs centaines d\'euros de surcoût) est utile si vous consommez principalement le soir. Sans batterie, un foyer absent en journée autoconsomme souvent 40 à 60 % de sa production. Avec batterie (Zendure SolarFlow 800 Plus 1,92 kWh, Bluetti Balco 260), l\'autoconsommation peut monter à 80-95 %. Le surcoût se justifie si vous rentrez tard et consommez surtout le soir.',
     verdict: 'Présent en journée : pas besoin de batterie. Absent en journée : batterie recommandée.',
     icon: '&#128267;',
     color: 'amber',
@@ -144,9 +153,9 @@ const checklist = [
   {
     num: 12,
     category: 'Démarches',
-    title: 'Faire la déclaration CACSI Enedis',
-    desc: 'Obligatoire. Gratuite. À faire dans le mois suivant l\'installation. Rendez-vous sur le portail raccordement.enedis.fr, section "Autoconsommation". Munissez-vous de votre numéro PDL (sur votre facture EDF), de la puissance du kit et de votre adresse. La déclaration est informative : Enedis ne peut pas refuser. Délai de confirmation : 2-4 semaines.',
-    verdict: 'Faites-le dans les 30 jours. Vous risquez une mise en conformité en cas de contrôle.',
+    title: 'Déclarer le kit à Enedis (CACSI ou cession du surplus)',
+    desc: 'Obligatoire et gratuite, à faire avant de brancher le kit (injecter avant la mise en service par Enedis est interdit). Sur le portail de raccordement Enedis, munissez-vous de votre numéro PDL (sur votre facture), de la puissance du kit et de votre adresse. Deux voies : la CACSI si le kit est réglé en zéro injection (réglage de l\'onduleur, compteur de type Shelly ou boîtier du fabricant, ou batterie qui absorbe le surplus) ; sinon « injection du surplus » puis « je cède mon surplus à Enedis » (cession gratuite, 3 kW maximum).',
+    verdict: 'À faire avant la mise en service : choisissez la voie qui correspond à votre kit (zéro injection ou cession du surplus).',
     icon: '&#10003;',
     color: 'green',
   },
@@ -187,6 +196,7 @@ export default function ChecklistPage() {
         description="Avant d'acheter un kit solaire pour balcon, vérifiez ces 15 points clés : orientation, surface, Linky, prise, bail, copropriété, budget, CACSI, assurance."
         url="https://monbalconsolaire.fr/guide/checklist-avant-achat-kit-solaire"
         datePublished="2026-08-07"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Checklist avant achat' }]} />
@@ -204,7 +214,7 @@ export default function ChecklistPage() {
               15 points &agrave; v&eacute;rifier avant de commander un kit solaire plug-and-play pour votre balcon. Orientation, prise &eacute;lectrique, Linky, bail, copropri&eacute;t&eacute;, budget, CACSI, assurance&hellip; Ne ratez aucune &eacute;tape.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>7 ao&ucirc;t 2026</span>
+              <span>7 ao&ucirc;t 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -402,8 +412,8 @@ export default function ChecklistPage() {
               <div className="space-y-3 my-6">
                 {[
                   { step: '1', title: 'Avant l\'achat', items: ['V&eacute;rifier orientation (boussole)', 'Mesurer la surface', 'Lire le bail et/ou le r&egrave;glement de copro', 'Calculer le ROI sur le calculateur'] },
-                  { step: '2', title: 'Le jour J (installation)', items: ['Tester la prise (&eacute;lectricit&eacute;, terre)', 'Appeler l\'assureur pour d&eacute;clarer le kit', 'Installer le kit selon les instructions'] },
-                  { step: '3', title: 'Dans les 30 jours', items: ['D&eacute;claration CACSI sur raccordement.enedis.fr', 'Conserver les justificatifs (facture, notice CE)'] },
+                  { step: '2', title: 'Avant de brancher', items: ['D&eacute;clarer le kit &agrave; Enedis (CACSI si z&eacute;ro injection, sinon cession gratuite du surplus) et attendre la mise en service', 'Conserver les justificatifs (facture, notice CE)'] },
+                  { step: '3', title: 'Le jour J (installation)', items: ['Tester la prise (&eacute;lectricit&eacute;, terre)', 'Appeler l\'assureur pour d&eacute;clarer le kit', 'Installer le kit selon les instructions'] },
                   { step: '4', title: 'Le premier mois', items: ['V&eacute;rifier la production via l\'app (Sunology, Beem, Enedis)', 'Comparer avec votre facture EDF du mois pr&eacute;c&eacute;dent'] },
                 ].map((phase, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
@@ -460,7 +470,7 @@ export default function ChecklistPage() {
                 productName="Sunology PLAY"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
-                label="Voir le kit le plus v&eacute;rifi&eacute; du march&eacute;"
+                label="Voir le Sunology PLAY sur le site du fabricant"
                 variant="inline"
                 position="mid_article"
               />
@@ -509,7 +519,7 @@ export default function ChecklistPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources :</strong> Enedis (portail raccordement.enedis.fr), loi APER mars 2023, arr&ecirc;t&eacute; octobre 2024, norme NF C 15-100 (sept. 2025), PVGIS (Commission europ&eacute;enne), CRE (Commission de R&eacute;gulation de l&apos;&Eacute;nergie), sites fabricants (Sunology, Beem, EcoFlow, Zendure). Ce guide est ind&eacute;pendant&nbsp;— <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>. Certains liens sont des liens affili&eacute;s&nbsp;: ils ne changent pas notre analyse, mais nous permettent de financer le site.
+                <strong>Sources :</strong> Enedis (portail de raccordement, CACSI et cession du surplus), Code de l&apos;&eacute;nergie (articles L315-5 et D.315-10), loi APER mars 2023, arr&ecirc;t&eacute; octobre 2024, norme NF C 15-100 (sept. 2025), PVGIS (Commission europ&eacute;enne), CRE (Commission de R&eacute;gulation de l&apos;&Eacute;nergie), sites fabricants (Sunology, Beem, EcoFlow, Zendure). Ce guide est ind&eacute;pendant&nbsp;— <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>. Certains liens sont des liens affili&eacute;s&nbsp;: ils ne changent pas notre analyse, mais nous permettent de financer le site.
               </p>
             </div>
           </div>

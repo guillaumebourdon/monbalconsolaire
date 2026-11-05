@@ -39,7 +39,7 @@ const faqData = [
   },
   {
     question: 'Faut-il déclarer son kit solaire de balcon après l\'installation ?',
-    answer: 'Oui. Tout kit branché sur le réseau doit être déclaré à Enedis via une convention d\'autoconsommation (CACSI), gratuite et en ligne. Prévenez aussi votre assureur habitation. En copropriété, informez le syndic, et faites voter l\'AG si le panneau est fixé au garde-corps ou en façade.',
+    answer: 'Oui. Tout kit branché sur le réseau doit être déclaré à Enedis, gratuitement et en ligne, avant la mise en service : convention d\'autoconsommation sans injection (CACSI) si le kit est réglé pour ne rien injecter, sinon cession gratuite du surplus à Enedis. Prévenez aussi votre assureur habitation. En copropriété, informez le syndic, et faites voter l\'AG si le panneau est fixé au garde-corps ou en façade.',
   },
 ];
 
@@ -90,7 +90,7 @@ const steps = [
   {
     name: 'Déclarer et assurer',
     duration: '15 min',
-    text: 'Faites la déclaration d\'autoconsommation auprès d\'Enedis (CACSI), prévenez votre assureur multirisque habitation, et en copropriété informez le syndic.',
+    text: 'Déclarez le kit à Enedis avant de le brancher (CACSI si zéro injection, sinon cession gratuite du surplus), prévenez votre assureur multirisque habitation, et en copropriété informez le syndic.',
     tip: null,
   },
 ];
@@ -137,7 +137,7 @@ export default function InstallerKitPage() {
         description="Guide d'installation d'un kit solaire plug-and-play sur balcon : fixation au sol ou garde-corps, branchement sur prise, sécurité, déclaration Enedis."
         url={PAGE_URL}
         datePublished="2026-03-28"
-        dateModified="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
@@ -149,7 +149,7 @@ export default function InstallerKitPage() {
             <div className="badge-green mb-4 inline-block">Guide pratique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Installer un kit solaire sur son balcon : &eacute;tapes, fixation et branchement</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous avez re&ccedil;u votre kit : voici comment le poser (au sol ou sur le garde-corps), le brancher en s&eacute;curit&eacute;, le d&eacute;clarer et &eacute;viter les erreurs qui font perdre de la production ou posent un vrai risque.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap"><span>Mis &agrave; jour le 27 septembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap"><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -158,7 +158,7 @@ export default function InstallerKitPage() {
               <li>&rarr; <strong className="text-charcoal">Dur&eacute;e :</strong> 15 &agrave; 30 min au sol, jusqu&apos;&agrave; 1 h 30 sur garde-corps.</li>
               <li>&rarr; <strong className="text-charcoal">Prise :</strong> murale 16 A avec terre, diff&eacute;rentiel 30 mA, jamais de multiprise.</li>
               <li>&rarr; <strong className="text-charcoal">Fixation :</strong> lestage au sol ou brides sur garde-corps plein ; pas de fixation sur un vitrage.</li>
-              <li>&rarr; <strong className="text-charcoal">Apr&egrave;s :</strong> d&eacute;claration Enedis (CACSI), assureur pr&eacute;venu, syndic inform&eacute; en copropri&eacute;t&eacute;.</li>
+              <li>&rarr; <strong className="text-charcoal">Apr&egrave;s :</strong> d&eacute;claration Enedis (CACSI ou cession du surplus, avant la mise en service), assureur pr&eacute;venu, syndic inform&eacute; en copropri&eacute;t&eacute;.</li>
             </ul>
           </div>
 
@@ -287,8 +287,8 @@ export default function InstallerKitPage() {
               <h2 className="text-2xl font-extrabold mb-4">D&eacute;claration Enedis, assurance et copropri&eacute;t&eacute;</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm mb-1">1. D&eacute;claration Enedis (CACSI)</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">Toute installation de production branch&eacute;e sur le r&eacute;seau doit &ecirc;tre d&eacute;clar&eacute;e, m&ecirc;me un kit de 300 W. C&apos;est gratuit, en ligne, et le surplus inject&eacute; n&apos;est pas r&eacute;mun&eacute;r&eacute;. Proc&eacute;dure d&eacute;taill&eacute;e : <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline">d&eacute;claration CACSI Enedis pas &agrave; pas</Link>.</p>
+                  <h3 className="font-bold text-sm mb-1">1. D&eacute;claration Enedis (CACSI ou cession du surplus)</h3>
+                  <p className="text-sm text-charcoal-light leading-relaxed">Toute installation de production branch&eacute;e sur le r&eacute;seau doit &ecirc;tre d&eacute;clar&eacute;e, m&ecirc;me un kit de 300 W, gratuitement et en ligne, avant de la brancher&nbsp;: injecter avant la mise en service par Enedis est interdit. Deux voies&nbsp;: la CACSI, qui vous engage &agrave; ne rien injecter (r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo; de l&apos;onduleur, compteur de type Shelly ou bo&icirc;tier du fabricant, ou batterie qui absorbe le surplus), ou la cession gratuite du surplus &agrave; Enedis (article L315-5 du Code de l&apos;&eacute;nergie, 3&nbsp;kW maximum en sortie d&apos;onduleur), le cas de la plupart des kits simples. Ce surplus n&apos;est pas r&eacute;mun&eacute;r&eacute;. Proc&eacute;dure d&eacute;taill&eacute;e : <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline">d&eacute;claration CACSI Enedis pas &agrave; pas</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1">2. Assurance habitation</h3>
@@ -350,10 +350,10 @@ export default function InstallerKitPage() {
 
             <div className="my-8">
               <AffiliateCTA
-                productName="Beem On 460W"
-                merchantName="Beem Energy"
-                affiliateUrl="https://beemenergy.fr/products/kit-beem"
-                label="Voir le Beem On 460W"
+                productName="Sunology PLAY"
+                merchantName="Sunology"
+                affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
+                label="Voir le Sunology PLAY sur le site du fabricant"
                 variant="box"
                 position="article_bottom"
               />
@@ -387,7 +387,7 @@ export default function InstallerKitPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Sources :</strong> norme NF C 15-100 (version applicable au 1er septembre 2025, point 551.7.2) ; r&eacute;ponse minist&eacute;rielle &agrave; la question &eacute;crite n&deg; 6574, JO du 26 mai 2026 ; ADEME, guide kit photovolta&iuml;que autoconsommation plug &amp; play (avril 2023) ; Enerplan / SER, note de novembre 2024 ; DIN VDE V 0126-95 et DIN VDE V 0628-1 (Allemagne) ; notices d&apos;installation des fabricants.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Sources :</strong> norme NF C 15-100 (version applicable au 1er septembre 2025, point 551.7.2) ; r&eacute;ponse minist&eacute;rielle &agrave; la question &eacute;crite n&deg; 6574, JO du 26 mai 2026 ; ADEME, guide kit photovolta&iuml;que autoconsommation plug &amp; play (avril 2023) ; Enerplan / SER, note de novembre 2024 ; DIN VDE V 0126-95 et DIN VDE V 0628-1 (Allemagne) ; notices d&apos;installation des fabricants&nbsp;; Enedis (CACSI et cession du surplus)&nbsp;; Code de l&apos;&eacute;nergie, articles L315-5 et D.315-10.</p>
               <p className="text-xs text-stone leading-relaxed">Nous analysons les produits sur la base des fiches techniques et notices, sans les avoir physiquement install&eacute;s. Certains liens sont affili&eacute;s : nous touchons une commission si vous achetez, sans surco&ucirc;t pour vous. <Link href="/a-propos" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.</p>
             </div>
           </div>

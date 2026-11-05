@@ -6,10 +6,44 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL, KWH_PRICE_SINCE } from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { DEPARTMENTS } from '@/data/departments';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Chiffres calculés au build (pricing.ts + products.ts), jamais écrits à la main.
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const PLAY = PRODUCTS['sunology-play'];
+const BEEM = PRODUCTS['beem-on-500w'];
+const prodOf = (code: string) => productibleSite(DEPARTMENTS.find((d) => d.code === code)!.irradiation);
+const REGIONS: [string, string][] = [
+  ['Marseille / PACA', '13'],
+  ['Lyon / Rhône-Alpes', '69'],
+  ['Nantes / Ouest', '44'],
+  ['Paris / Île-de-France', '75'],
+  ['Lille / Nord', '59'],
+];
+const REGION_ROWS = REGIONS.map(([label, code]) => {
+  const input = { kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc, productibleKwhPerKwc: prodOf(code) };
+  return {
+    label,
+    production: calculateProductionKwh(input),
+    savings: Math.round(calculateFirstYearSavings(input)),
+    roi: calculateROIYears(input),
+  };
+});
+const kit500 = (code: string) => ({ kitPriceEur: 0, kitPowerWc: 500, productibleKwhPerKwc: prodOf(code) });
+const PROD500_MIN = calculateProductionKwh(kit500('59'));
+const PROD500_MAX = calculateProductionKwh(kit500('13'));
+const SAV500_MIN = Math.round(calculateFirstYearSavings(kit500('59')));
+const SAV500_MAX = Math.round(calculateFirstYearSavings(kit500('13')));
+const BEEM_EUR_WC = fr(Math.round((BEEM.priceEur / BEEM.powerWc) * 100) / 100);
+const PLAY_EUR_WC = fr(Math.round((PLAY.priceEur / PLAY.powerWc) * 100) / 100);
+const BEEM_ROI = fr(calculateROIYears({ kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM.powerWc }));
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire de balcon pour débutants : guide complet 2026',
-  description: 'Panneau solaire balcon en 2026 : installation, réglementation, coût (dès 429€), rentabilité, droits des locataires. Guide complet mis à jour août 2026.',
+  description: 'Panneau solaire de balcon en 2026 : fonctionnement, réglementation, déclaration Enedis, prix, rentabilité et droits des locataires. Guide complet.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant',
   },
@@ -17,18 +51,18 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   { question: 'Peut-on installer un panneau solaire sur un balcon ?', answer: 'Oui. Les kits solaires plug-and-play se posent au sol ou contre la rambarde de votre balcon et se branchent sur une prise électrique standard. Aucun travaux, aucun outil, installation en quelques minutes.' },
-  { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installé à moins de 1,80m de hauteur, aucune déclaration préalable de travaux n\'est nécessaire. Seule la déclaration CACSI auprès d\'Enedis est obligatoire (informative, gratuite, 2 minutes en ligne).' },
-  { question: 'Combien produit un panneau solaire de balcon ?', answer: 'Un kit de 500W produit en moyenne 430 à 700 kWh par an selon la région et l\'orientation. Cela correspond à 83-136 euros d\'économies annuelles au tarif EDF actuel (0,1940 €/kWh).' },
-  { question: 'Quel est le meilleur rapport qualité-prix en 2026 ?', answer: 'En août 2026, le Beem On 500 Wc (429€) offre le meilleur ratio €/Wc du marché premium à 0,86€/Wc. Le Sunology PLAY (ex-PLAY 2) est à 599€ pour 500 Wc (1,20€/Wc) et reste le choix n°1 pour l\'écosystème (batterie VAULT, WiFi natif). Le Beem Kit 300W (199€) est idéal pour les petits balcons ou les budgets serrés, mais il est actuellement en rupture de stock chez Beem.' },
+  { question: 'Faut-il une autorisation pour un panneau solaire de balcon ?', answer: 'Pour un kit de moins de 3 kWc installé à moins de 1,80 m de hauteur, aucune déclaration préalable de travaux n\'est nécessaire. Une déclaration à Enedis est en revanche obligatoire, gratuite et en ligne, avant de brancher le kit : la CACSI si l\'installation est réglée pour ne rien injecter sur le réseau, sinon la cession gratuite du surplus à Enedis.' },
+  { question: 'Combien produit un panneau solaire de balcon ?', answer: `Selon notre méthode (plein sud, inclinaison optimale, ratio de performance 0,85), un kit de 500 Wc produit environ ${fr(PROD500_MIN)} kWh par an à Lille et ${fr(PROD500_MAX)} kWh à Marseille. Avec 85 % d'autoconsommation et le tarif réglementé de ${KWH_PRICE_LABEL}, cela représente ${SAV500_MIN} à ${SAV500_MAX} € d'économies la première année.` },
+  { question: 'Quel est le meilleur rapport qualité-prix en 2026 ?', answer: `Au 5 novembre 2026, le Beem On 500 Wc (${priceLabel('beem-on-500w')}, ${BEEM_EUR_WC} €/Wc) a le meilleur ratio prix/puissance des kits complets que nous suivons, mais il est en précommande (expédition à partir de décembre 2026). Le Sunology PLAY est à ${priceLabel('sunology-play')} pour ${PLAY.powerWc} W (${PLAY_EUR_WC} €/Wc) et reste le choix le plus simple à installer. Le Beem Kit 300 W (199 €) est en rupture chez Beem.` },
   { question: 'Un panneau solaire fonctionne-t-il par temps nuageux ?', answer: 'Oui, mais avec un rendement réduit (10-25% de la puissance maximale). Les panneaux solaires fonctionnent avec la lumière, pas uniquement le soleil direct. La production annuelle tient compte des jours nuageux.' },
-  { question: 'Que devient le surplus d\'électricité ?', answer: 'Pour les kits plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecté sur le réseau. Vous ne payez rien, mais vous n\'êtes pas rémunéré non plus pour ce surplus.' },
-  { question: 'Faut-il une batterie avec un panneau solaire de balcon ?', answer: 'Non, une batterie n\'est pas indispensable. Sans batterie, vous consommez l\'électricité produite en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coûte cher (500-1 400 euros supplémentaires). Le ROI passe de 5-7 ans à 8-12 ans avec une batterie.' },
+  { question: 'Que devient le surplus d\'électricité ?', answer: 'Deux cas. Si vous déclarez une CACSI, vous vous engagez à ne rien injecter : le kit doit être réglé en « zéro injection » (réglage de l\'onduleur, compteur de type Shelly ou boîtier du fabricant) ou le surplus doit aller dans une batterie. Si votre kit renvoie du surplus sur le réseau, ce qui est le cas de la plupart des kits simples, il faut déclarer la cession gratuite du surplus à Enedis (article L315-5 du Code de l\'énergie, installations de 3 kW maximum) : ce surplus n\'est pas rémunéré.' },
+  { question: 'Faut-il une batterie avec un panneau solaire de balcon ?', answer: 'Non, une batterie n\'est pas indispensable. Sans batterie, vous consommez l\'électricité produite en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais ajoute plusieurs centaines d\'euros au prix du kit, ce qui allonge en général le retour sur investissement. Notre calculateur compare les deux selon votre profil.' },
 ];
 
 export default function GuidePage() {
   return (
     <>
-      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant" datePublished="2026-03-18" dateModified="2026-08-13" />
+      <SchemaArticle title="Panneau solaire balcon : le guide complet pour débutants" description="Tout savoir sur le panneau solaire de balcon en 2026." url="https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant" datePublished="2026-03-18" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: "Guides", href: "/guide" }, { label: "Guide débutants" }]} />
       <article className="section-padding">
@@ -37,8 +71,8 @@ export default function GuidePage() {
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide complet</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon : le guide complet pour débutants</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installer un kit solaire sur votre balcon en 2026 : fonctionnement, prix (d&egrave;s 199&nbsp;&euro;, meilleur rapport qualit&eacute;-prix &agrave; 429&nbsp;&euro;), rentabilit&eacute;, r&eacute;glementation, et les erreurs &agrave; &eacute;viter. Mis &agrave; jour ao&ucirc;t 2026.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>18 mars 2026</span><span>&middot;</span><span>Mis &agrave; jour ao&ucirc;t 2026</span><span>&middot;</span><span>15 min de lecture</span></div>
+            <p className="text-lg text-charcoal-light leading-relaxed">Tout ce que vous devez savoir avant d&apos;installer un kit solaire sur votre balcon en 2026 : fonctionnement, prix (&agrave; partir de {priceLabel('sunology-go')} pour un petit kit disponible), rentabilit&eacute;, r&eacute;glementation, et les erreurs &agrave; &eacute;viter.</p>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>18 mars 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>15 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
@@ -67,40 +101,34 @@ export default function GuidePage() {
               <h2 className="text-2xl font-extrabold mb-4">Combien ca coute ? Et combien ca rapporte ?</h2>
               <h3 className="font-bold text-lg mb-3">Le coût d&apos;un kit solaire de balcon</h3>
               <div className="flex items-center gap-3 mb-4">
-                <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />
+                <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY" href="/avis/sunology-play-2" size="sm" />
                 <ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" />
                 <ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" />
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">En ao&ucirc;t 2026, les kits solaires plug-and-play pour balcon co&ucirc;tent entre <span className="data-highlight">199 &euro;</span> (Beem Kit 300W, actuellement en rupture) et <span className="data-highlight">900 &euro;</span> (Zendure SolarFlow + 2 panneaux avec batterie). Le meilleur rapport qualit&eacute;-prix en 2026 : le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> &agrave; <span className="data-highlight">429 &euro;</span> (0,86&nbsp;&euro;/Wc), devant le Sunology PLAY (ex-PLAY 2, 500&nbsp;Wc) &agrave; <span className="data-highlight">599 &euro;</span> (1,20&nbsp;&euro;/Wc).</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Nouveaut&eacute; 2026 :</strong> le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> remplace le mod&egrave;le 460 Wc et baisse de 170&nbsp;&euro; (-28 %). C&apos;est d&eacute;sormais le kit le plus rentable du march&eacute; fran&ccedil;ais avec un ROI de 4,8 ans. Pour les budgets plus cons&eacute;quents souhaitant un stockage, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> + 2 panneaux offre un syst&egrave;me complet avec batterie pour ~900&nbsp;&euro;.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Au 5 novembre 2026, les kits complets que nous suivons co&ucirc;tent de <span className="data-highlight">{priceLabel('sunology-go')}</span> (Sunology GO, {PRODUCTS['sunology-go'].powerWc}&nbsp;W, pour petit balcon) &agrave; <span className="data-highlight">{priceLabel('sunethic-f500')}</span> (Sunethic F500, 500&nbsp;Wc), et davantage avec une batterie. Le meilleur rapport prix/puissance&nbsp;: le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> &agrave; <span className="data-highlight">{priceLabel('beem-on-500w')}</span> ({BEEM_EUR_WC}&nbsp;&euro;/Wc), en pr&eacute;commande (exp&eacute;dition &agrave; partir de d&eacute;cembre 2026), devant le Sunology PLAY ({PLAY.powerWc}&nbsp;W) &agrave; <span className="data-highlight">{priceLabel('sunology-play')}</span>. Le Beem Kit 300W (199&nbsp;&euro;) est en rupture chez Beem.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> remplace le mod&egrave;le 460 Wc, retir&eacute; du catalogue Beem. Avec notre m&eacute;thode (Lyon, plein sud), son retour sur investissement est d&apos;environ {BEEM_ROI}&nbsp;ans. Pour stocker l&apos;&eacute;nergie, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> est vendu {priceLabel('zendure-solarflow-800-plus')} seul ou 719&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W (prix promotionnel constat&eacute; le 05/11/2026, sans date de fin annonc&eacute;e).</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Pas de co&ucirc;ts cach&eacute;s : l&apos;h&eacute;bergement est gratuit (votre balcon), l&apos;installation est gratuite (vous le faites vous-m&ecirc;me en quelques minutes), et la maintenance est quasi-inexistante (un coup de chiffon sur le panneau de temps en temps).</p>
 
               <h3 className="font-bold text-lg mb-3 mt-6">La rentabilité réelle</h3>
-              <p className="text-charcoal-light leading-relaxed mb-4">Avec le tarif EDF à <span className="data-highlight">0,1940 &euro;/kWh</span> (mai 2026), voici ce que vous pouvez attendre :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Avec le tarif r&eacute;glement&eacute; EDF &agrave; <span className="data-highlight">{KWH_PRICE_LABEL}</span> (en vigueur depuis le {KWH_PRICE_SINCE}), voici ce que donne un {PLAY.name} ({PLAY.powerWc}&nbsp;W, {priceLabel('sunology-play')}) plein sud&nbsp;:</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">Region</th><th className="text-center p-3">Production (450W)</th><th className="text-center p-3">Économies/an</th><th className="text-center p-3 rounded-tr-xl">ROI</th>
+                    <th className="text-left p-3 rounded-tl-xl">R&eacute;gion</th><th className="text-center p-3">Production</th><th className="text-center p-3">&Eacute;conomies (1<sup>re</sup> ann&eacute;e)</th><th className="text-center p-3 rounded-tr-xl">ROI</th>
                   </tr></thead>
                   <tbody>
-                    {[
-                      ['Marseille / PACA', '580-650 kWh', '113-126 \u20ac', '5-5 ans'],
-                      ['Lyon / Rhone-Alpes', '480-550 kWh', '93-107 \u20ac', '6-6 ans'],
-                      ['Nantes / Ouest', '420-500 kWh', '81-97 \u20ac', '6-7 ans'],
-                      ['Paris / Ile-de-France', '400-480 kWh', '78-93 \u20ac', '6-8 ans'],
-                      ['Lille / Nord', '360-430 kWh', '70-83 \u20ac', '7-9 ans'],
-                    ].map(([r, p, e, roi], i) => (
+                    {REGION_ROWS.map((r, i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold">{r}</td>
-                        <td className="text-center p-3 font-mono text-sm text-green">{p}</td>
-                        <td className="text-center p-3 font-mono text-sm text-amber-dark">{e}</td>
-                        <td className="text-center p-3 font-mono text-sm">{roi}</td>
+                        <td className="p-3 font-semibold">{r.label}</td>
+                        <td className="text-center p-3 font-mono text-sm text-green">{fr(r.production)} kWh</td>
+                        <td className="text-center p-3 font-mono text-sm text-amber-dark">{r.savings} &euro;</td>
+                        <td className="text-center p-3 font-mono text-sm">{fr(r.roi)} ans</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : donn&eacute;es PVGIS (Commission europ&eacute;enne), orientation sud, inclinaison 30&deg;, tarif EDF 0,1940&nbsp;&euro;/kWh (ao&ucirc;t 2026). Les panneaux sont garantis 25 ans.</p>
+              <p className="text-xs text-stone">Source&nbsp;: donn&eacute;es PVGIS (Commission europ&eacute;enne) par d&eacute;partement, orientation sud, ratio de performance 0,85, autoconsommation 85&nbsp;%, tarif {KWH_PRICE_LABEL}, inflation 3,3&nbsp;%/an et d&eacute;gradation des panneaux 0,5&nbsp;%/an (<Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link>). Prix v&eacute;rifi&eacute; le 5 novembre 2026.</p>
 
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">
                 <p className="font-semibold mb-2">Quelle rentabilité pour VOTRE balcon ?</p>
@@ -118,10 +146,10 @@ export default function GuidePage() {
               <h3 className="font-bold text-lg mb-3 mt-6">Démarchés obligatoires</h3>
               <div className="space-y-3 my-4">
                 {[
-                  { title: 'Déclaration CACSI auprès d\'Enedis', desc: 'Obligatoire. Informative (pas d\'accord à obtenir). Se fait en ligne en 2 minutes sur le site Enedis. Gratuit.', status: 'Obligatoire' },
+                  { title: 'Déclaration à Enedis (CACSI ou cession du surplus)', desc: 'Obligatoire et gratuite, en ligne, avant de brancher le kit. CACSI si le kit est réglé en zéro injection (ou avec batterie qui absorbe le surplus) ; sinon, cession gratuite du surplus à Enedis (installations de 3 kW maximum). Injecter avant la mise en service par Enedis est interdit.', status: 'Obligatoire' },
                   { title: 'Déclaration préalable de travaux en mairie', desc: 'Uniquement si le panneau est installé à plus de 1,80m de hauteur ou en zone classée (monuments historiques, etc.).', status: 'Selon cas' },
                   { title: 'Accord de la copropriété', desc: 'Uniquement si l\'installation modifie l\'aspect exterieur du bâtiment (fixation permanente en facade). Pas nécessaire pour un kit amovible.', status: 'Selon cas' },
-                  { title: 'Attestation Consuel', desc: 'Non requise pour les kits plug-and-play pre-assembles en usine comme le Sunology PLAY2 (certification CE sur l\'ensemble du kit).', status: 'Non requis' },
+                  { title: 'Attestation Consuel', desc: 'Enedis peut en dispenser un kit déjà assemblé et conforme à la norme NF EN 50549-1-4, sur attestation sur l\'honneur au moment de la déclaration.', status: 'Selon cas' },
                 ].map((d, i) => (
                   <div key={i} className="card">
                     <div className="flex items-start justify-between gap-4">
@@ -141,10 +169,10 @@ export default function GuidePage() {
               <h2 className="text-2xl font-extrabold mb-4">Comment choisir le bon kit</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le choix depend de 4 critères principaux :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
-                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">1. Votre espace disponible</h3><p className="text-xs text-charcoal-light">Un seul grand panneau (Sunology PLAY 500 Wc : 1,80 x 1,13m) ou 4 petits panneaux (Beem Kit : ~80cm chacun) ? Mesurez votre balcon avant de choisir.</p></div>
-                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">2. Votre budget</h3><p className="text-xs text-charcoal-light">De 199&euro; (Beem Kit 300W, rupture) &agrave; 690&euro; (Sunethic F500). Meilleur rapport &euro;/Wc : le Beem On 500 Wc &agrave; 429&euro; (0,86&euro;/Wc). Tous sont rentables en 4-8 ans.</p></div>
-                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">3. Votre orientation</h3><p className="text-xs text-charcoal-light">Sud = 100% du potentiel. Est/Ouest = 80%. Nord = 45%. Si votre balcon est plein nord, un kit solaire n&apos;est probablement pas rentable.</p></div>
-                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">4. Locataire ou propri&eacute;taire</h3><p className="text-xs text-charcoal-light">Locataire ? Privil&eacute;giez un kit 100% amovible (Sunology PLAY 2 avec ballasts, ou <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link>). Propri&eacute;taire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
+                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">1. Votre espace disponible</h3><p className="text-xs text-charcoal-light">Un seul grand panneau (Sunology PLAY, {PLAY.powerWc}&nbsp;W&nbsp;: 1,80 x 1,13m) ou 4 petits panneaux (Beem Kit : ~80cm chacun) ? Mesurez votre balcon avant de choisir.</p></div>
+                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">2. Votre budget</h3><p className="text-xs text-charcoal-light">De {priceLabel('sunology-go')} (Sunology GO) &agrave; {priceLabel('sunethic-f500')} (Sunethic F500) pour un kit sans batterie. Meilleur rapport &euro;/Wc&nbsp;: le Beem On 500 Wc &agrave; {priceLabel('beem-on-500w')} ({BEEM_EUR_WC}&nbsp;&euro;/Wc, en pr&eacute;commande). Plein sud, comptez 5 &agrave; 8 ans de retour sur investissement selon le kit et la r&eacute;gion.</p></div>
+                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">3. Votre orientation</h3><p className="text-xs text-charcoal-light">Sud = 100% du potentiel. Est/Ouest = 80 %. Nord = 50 %. Si votre balcon est plein nord, un kit solaire n&apos;est probablement pas rentable.</p></div>
+                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">4. Locataire ou propri&eacute;taire</h3><p className="text-xs text-charcoal-light">Locataire ? Privil&eacute;giez un kit 100% amovible (Sunology PLAY avec ballasts, ou <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link>). Propri&eacute;taire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
               </div>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold text-sm hover:underline">&rarr; Voir notre comparatif complet des kits solaires 2026</Link>
             </section>
@@ -155,7 +183,7 @@ export default function GuidePage() {
                 {[
                   { title: 'Acheter un kit trop puissant pour son balcon', desc: 'Un panneau en partie à l\'ombre produit beaucoup moins. Mieux vaut un petit kit bien expose qu\'un grand kit partiellement ombre.' },
                   { title: 'Ignorer l\'orientation', desc: 'Un balcon plein nord produit 55% de moins qu\'un balcon plein sud. Verifiez votre orientation avant d\'investir.' },
-                  { title: 'Oublier la déclaration Enedis', desc: 'Meme si c\'est une formalite, la déclaration CACSI est obligatoire. Faites-la dans le mois suivant l\'installation.' },
+                  { title: 'Oublier la déclaration Enedis', desc: 'Même si c\'est une formalité, la déclaration à Enedis (CACSI ou cession du surplus) est obligatoire. Faites-la avant de brancher le kit : injecter avant la mise en service par Enedis est interdit.' },
                   { title: 'Utiliser une multiprise', desc: 'Ne branchéz jamais votre kit sur une multiprise ou une rallonge non adaptée. Utilisez une prise murale dédiée avec terre, protegee par un différentiel 30mA.' },
                   { title: 'Surestimer ses économies', desc: 'Un kit de 450W ne couvre pas toute votre consommation. Il efface le talon de consommation (frigo, box, veilles) mais pas le chauffage ou le chauffe-eau électrique.' },
                 ].map((e, i) => (
@@ -189,7 +217,7 @@ export default function GuidePage() {
                 productName="Beem On 500 Wc"
                 merchantName="Beem Energy"
                 affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge"
-                label="Voir le Beem On 500 Wc — 429 €"
+                label={`Voir le Beem On 500 Wc — ${priceLabel('beem-on-500w')} (précommande)`}
                 variant="box"
                 position="article_bottom"
               />
@@ -197,7 +225,7 @@ export default function GuidePage() {
                 productName="Sunology PLAY"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
-                label="Voir le Sunology PLAY — 599 €"
+                label={`Voir le Sunology PLAY — ${priceLabel('sunology-play')}`}
                 variant="inline"
                 position="article_bottom_2"
               />
@@ -232,14 +260,14 @@ export default function GuidePage() {
                 </Link>
                 <Link href="/avis/hoymiles-hms-800w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Hoymiles HMS-800W-2T : assemblez votre kit DIY moins cher</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Vous avez d&eacute;j&agrave; des panneaux ou voulez ma&icirc;triser chaque composant&nbsp;? Le micro-onduleur de r&eacute;f&eacute;rence &agrave; ~119&nbsp;&euro;.</p>
+                  <p className="text-xs text-charcoal-light mt-1">Vous avez d&eacute;j&agrave; des panneaux ou voulez ma&icirc;triser chaque composant&nbsp;? Le micro-onduleur de r&eacute;f&eacute;rence, environ 170&nbsp;&euro; (Wattuneed, 05/11/2026).</p>
                 </Link>
               </div>
             </section>
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europ&eacute;enne), EDF tarifs r&eacute;glement&eacute;s (ao&ucirc;t 2026), Enedis, ADEME, sites fabricants (Sunology, Beem Energy, Sunethic, Zendure). Mis &agrave; jour le 13 ao&ucirc;t 2026. Ce guide est ind&eacute;pendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europ&eacute;enne), grille Tarif Bleu EDF au {KWH_PRICE_SINCE}, Enedis (CACSI et cession du surplus), Code de l&apos;&eacute;nergie (articles L315-5 et D.315-10), ADEME, sites fabricants (Sunology, Beem Energy, Sunethic, Zendure, prix v&eacute;rifi&eacute;s le 5 novembre 2026). Mis &agrave; jour le 5 novembre 2026. Ce guide est ind&eacute;pendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>.</p>
             </div>
           </div>
         </div>

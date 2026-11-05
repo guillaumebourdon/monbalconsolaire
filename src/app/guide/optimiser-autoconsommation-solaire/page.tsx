@@ -5,6 +5,19 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { calculateProductionKwh, KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Exemple calculé au build : Sunology PLAY à Lyon, plein sud (pricing.ts + products.ts).
+const PLAY = PRODUCTS['sunology-play'];
+const PROD = calculateProductionKwh({ kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc });
+const valo = (ac: number) => ({ kwh: Math.round(PROD * ac), eur: Math.round(PROD * ac * KWH_PRICE_EUR) });
+const AC40 = valo(0.4);
+const AC70 = valo(0.7);
+const AC85 = valo(0.85);
+const pct = (a: number, b: number) => Math.round((a / b - 1) * 100);
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const ZENDURE_PRICE = priceLabel('zendure-solarflow-800-plus');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Comment optimiser son autoconsommation solaire au quotidien',
@@ -21,11 +34,11 @@ const faqData = [
   },
   {
     question: 'Quel est le taux d\u2019autoconsommation moyen sans effort ?',
-    answer: 'Sans aucune adaptation, un foyer actif en journ\u00e9e autoconsomme environ 40-50 % de sa production. Le reste est inject\u00e9 gratuitement sur le r\u00e9seau. Avec des gestes simples (d\u00e9calage d\u2019appareils), on monte \u00e0 70-85 %. Avec une batterie, 85-95 %.',
+    answer: 'Sans aucune adaptation, un foyer actif en journ\u00e9e autoconsomme environ 40-50 % de sa production. Le reste part sur le r\u00e9seau sans r\u00e9mun\u00e9ration (cession gratuite du surplus \u00e0 Enedis) ou n\u2019est pas produit si le kit est r\u00e9gl\u00e9 en z\u00e9ro injection (CACSI). Avec des gestes simples (d\u00e9calage d\u2019appareils), on monte \u00e0 70-85 %. Avec une batterie, 85-95 %.',
   },
   {
     question: 'Faut-il une batterie pour bien autoconsommer ?',
-    answer: 'Non, c\u2019est le dernier recours. D\u00e9caler le lave-linge et le lave-vaisselle en journ\u00e9e est gratuit et fait passer de 40 % \u00e0 70 %. La batterie (Zendure SolarFlow 488 \u20ac, Sunology PLAY MAX avec batterie 700 Wh \u00e0 699 \u20ac) fait passer de 70 % \u00e0 90 %+ mais co\u00fbte cher. Rentabilisez d\u2019abord les gestes gratuits.',
+    answer: `Non, c\u2019est le dernier recours. D\u00e9caler le lave-linge et le lave-vaisselle en journ\u00e9e est gratuit et fait passer de 40 % \u00e0 70 %. La batterie (Zendure SolarFlow 800 Plus \u00e0 ${ZENDURE_PRICE} sans panneaux, Sunology PLAY MAX avec batterie 700 Wh \u00e0 ${priceLabel('sunology-play-max')}) fait passer de 70 % \u00e0 90 %+ mais co\u00fbte cher. Rentabilisez d\u2019abord les gestes gratuits.`,
   },
   {
     question: 'Comment savoir ce que j\u2019autoconsomme ?',
@@ -97,8 +110,8 @@ const astuces = [
     num: '8',
     titre: 'Ajouter une batterie (dernier recours)',
     gain: '+20-30 %',
-    cout: '488-900 \u20ac',
-    detail: 'Si vous avez d\u00e9j\u00e0 optimis\u00e9 les gestes gratuits et que votre taux plafonne \u00e0 70 %, une batterie fait passer \u00e0 85-95 %. Le Zendure SolarFlow (488 \u20ac, 1,92 kWh) est le plus abordable. Mais ne commencez pas par l\u00e0 \u2014 rentabilisez d\u2019abord les gestes gratuits.',
+    cout: `\u00e0 partir de ${ZENDURE_PRICE}`,
+    detail: `Si vous avez d\u00e9j\u00e0 optimis\u00e9 les gestes gratuits et que votre taux plafonne \u00e0 70 %, une batterie fait passer \u00e0 85-95 %. Le Zendure SolarFlow 800 Plus (${ZENDURE_PRICE} sans panneaux, 1,92 kWh, prix v\u00e9rifi\u00e9 le 5 novembre 2026) est le plus abordable de notre s\u00e9lection. Mais ne commencez pas par l\u00e0 \u2014 rentabilisez d\u2019abord les gestes gratuits.`,
     lien: { href: '/avis/zendure-solarflow', label: 'Voir le Zendure SolarFlow' },
   },
 ];
@@ -111,6 +124,7 @@ export default function OptimiserAutoconsommationPage() {
         description="Guide pratique pour maximiser l\u2019autoconsommation de votre kit solaire."
         url="https://monbalconsolaire.fr/guide/optimiser-autoconsommation-solaire"
         datePublished="2026-05-25"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Optimiser autoconsommation' }]} />
@@ -124,10 +138,12 @@ export default function OptimiserAutoconsommationPage() {
               Comment optimiser son autoconsommation solaire au quotidien
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Votre kit solaire produit de l&apos;&eacute;lectricit&eacute;, mais <strong>combien en utilisez-vous vraiment ?</strong> Sans adaptation, un foyer autoconsomme seulement 40-50 % de sa production. Le reste part gratuitement sur le r&eacute;seau. Voici <strong>8 astuces</strong> class&eacute;es par impact pour passer de 40 % &agrave; 85 % &mdash; dont 6 sont enti&egrave;rement gratuites.
+              Votre kit solaire produit de l&apos;&eacute;lectricit&eacute;, mais <strong>combien en utilisez-vous vraiment ?</strong> Sans adaptation, un foyer autoconsomme seulement 40-50 % de sa production. Le reste part sur le r&eacute;seau sans &ecirc;tre pay&eacute;, ou n&apos;est pas produit si le kit est r&eacute;gl&eacute; en z&eacute;ro injection. Voici <strong>8 astuces</strong> class&eacute;es par impact pour passer de 40 % &agrave; 85 % &mdash; dont 6 sont enti&egrave;rement gratuites.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>25 mai 2026</span>
+              <span>&middot;</span>
+              <span>Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -156,15 +172,15 @@ export default function OptimiserAutoconsommationPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Pourquoi l&apos;autoconsommation est la cl&eacute; de la rentabilit&eacute;</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Votre kit solaire ne vous fait &eacute;conomiser de l&apos;argent que sur les kWh que <strong>vous consommez vous-m&ecirc;me</strong>. Chaque kWh inject&eacute; gratuitement sur le r&eacute;seau (pas de contrat d&apos;injection r&eacute;mun&eacute;r&eacute; en plug-and-play) est une perte s&egrave;che.
+                Votre kit solaire ne vous fait &eacute;conomiser de l&apos;argent que sur les kWh que <strong>vous consommez vous-m&ecirc;me</strong>. Chaque kWh qui part sur le r&eacute;seau sans &ecirc;tre pay&eacute; (cession gratuite du surplus &agrave; Enedis, la voie de d&eacute;claration des kits qui injectent) est une perte s&egrave;che. Avec une CACSI, vous vous &ecirc;tes engag&eacute; &agrave; ne rien injecter&nbsp;: le surplus non consomm&eacute; est alors simplement bloqu&eacute; par le r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo;, et n&apos;est pas valoris&eacute; non plus.
               </p>
               <div className="card-lg bg-cream/40">
-                <h3 className="font-bold text-sm mb-3">Exemple concret (Sunology PLAY 500 Wc, ex-PLAY 2, Lyon sud)</h3>
+                <h3 className="font-bold text-sm mb-3">Exemple concret (Sunology PLAY {PLAY.powerWc}&nbsp;W, Lyon sud, tarif {KWH_PRICE_LABEL})</h3>
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; Production : <strong>510 kWh/an</strong></li>
-                  <li>&bull; &Agrave; 40 % d&apos;autoconsommation : 204 kWh valoris&eacute;s = <strong>40 &euro;/an</strong></li>
-                  <li>&bull; &Agrave; 70 % : 357 kWh = <strong>69 &euro;/an</strong> (+73 %)</li>
-                  <li>&bull; &Agrave; 85 % : 434 kWh = <strong>84 &euro;/an</strong> (+110 %)</li>
+                  <li>&bull; Production : <strong>{fr(PROD)} kWh/an</strong></li>
+                  <li>&bull; &Agrave; 40 % d&apos;autoconsommation : {AC40.kwh} kWh valoris&eacute;s = <strong>{AC40.eur} &euro;/an</strong></li>
+                  <li>&bull; &Agrave; 70 % : {AC70.kwh} kWh = <strong>{AC70.eur} &euro;/an</strong> (+{pct(AC70.eur, AC40.eur)} %)</li>
+                  <li>&bull; &Agrave; 85 % : {AC85.kwh} kWh = <strong>{AC85.eur} &euro;/an</strong> (+{pct(AC85.eur, AC40.eur)} %)</li>
                 </ul>
                 <p className="text-xs text-stone mt-3">Le m&ecirc;me kit, la m&ecirc;me production, mais <strong>2x plus d&apos;&eacute;conomies</strong> juste en changeant vos habitudes.</p>
               </div>
@@ -267,7 +283,7 @@ export default function OptimiserAutoconsommationPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 \u20ac" />
+              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price={priceLabel('sunology-play')} />
             </div>
 
             <section className="mb-10">
@@ -315,7 +331,7 @@ export default function OptimiserAutoconsommationPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie :</strong> donn&eacute;es PVGIS, retours utilisateurs forum-photovoltaique.fr, tarif EDF 0,1940 &euro;/kWh (mai 2026). <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
+                <strong>M&eacute;thodologie :</strong> donn&eacute;es PVGIS, retours utilisateurs forum-photovoltaique.fr, tarif EDF {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; Base 6 kVA), prix v&eacute;rifi&eacute;s le 5 novembre 2026. <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
               </p>
             </div>
           </div>

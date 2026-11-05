@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon en été : 5 erreurs qui tuent votre production',
@@ -48,6 +49,7 @@ export default function GuideErreursProdSolEte() {
         description="Ventilation, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : 5 erreurs fréquentes qui coûtent jusqu'à 35 % de production en juillet-août."
         url="https://monbalconsolaire.fr/guide/erreurs-production-solaire-ete"
         datePublished="2026-07-21"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Erreurs production été' }]} />
@@ -65,7 +67,7 @@ export default function GuideErreursProdSolEte() {
               L&rsquo;&eacute;t&eacute; devrait &ecirc;tre la saison d&rsquo;or du solaire. Pourtant, beaucoup d&rsquo;utilisateurs constatent une d&eacute;ception en juillet-ao&ucirc;t&nbsp;: moins de kWh que pr&eacute;vu, parfois moins qu&rsquo;en mai. Ces 5 erreurs fréquentes expliquent pourquoi&nbsp;&mdash; et comment les corriger.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>21 juillet 2026</span><span>&middot;</span><span>10 min de lecture</span>
+              <span>21 juillet 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span>
             </div>
           </div>
 
@@ -314,7 +316,7 @@ export default function GuideErreursProdSolEte() {
 
               <h3 className="font-bold text-lg mb-3">Ce qu&rsquo;il faut faire</h3>
               <ul className="space-y-2 text-charcoal-light text-sm mb-4">
-                <li className="flex gap-2"><span className="text-green font-bold mt-0.5">&#10003;</span> V&eacute;rifiez si votre support est r&eacute;glable (Sunology PLAY 2 et City, Beem On&nbsp;: oui, plusieurs positions pr&eacute;d&eacute;finies)</li>
+                <li className="flex gap-2"><span className="text-green font-bold mt-0.5">&#10003;</span> V&eacute;rifiez si votre support est r&eacute;glable (Sunology PLAY, Beem On&nbsp;: oui, plusieurs positions pr&eacute;d&eacute;finies)</li>
                 <li className="flex gap-2"><span className="text-green font-bold mt-0.5">&#10003;</span> Si oui, passer en <strong>position "basse"</strong> (20&ndash;25&deg;) d&egrave;s juin. Remonter &agrave; 35&deg; en septembre</li>
                 <li className="flex gap-2"><span className="text-green font-bold mt-0.5">&#10003;</span> Si votre support est fixe, n&rsquo;investissez pas dans un remplacement&nbsp;: le gain annuel (8&ndash;12&nbsp;% sur 3 mois &eacute;t&eacute;) repr&eacute;sente 2&ndash;4&nbsp;% sur l&rsquo;ann&eacute;e, soit environ 4&ndash;8&nbsp;&euro; pour un kit 450&nbsp;W</li>
               </ul>
@@ -448,7 +450,7 @@ export default function GuideErreursProdSolEte() {
           <NewsletterBanner />
 
           <footer className="mt-10 pt-8 border-t border-border-light text-xs text-stone space-y-2">
-            <p><strong>M&eacute;thodologie&nbsp;:</strong> productions calcul&eacute;es avec PVGIS (Commission europ&eacute;enne), latitude Lyon 45,7&deg;N, tarif EDF 0,1940&nbsp;&euro;/kWh, coefficient de pertes 0,85, autoconsommation 85&nbsp;%. Coefficient de temp&eacute;rature &minus;0,40&nbsp;%/&deg;C (typ. monocristallin).</p>
+            <p><strong>M&eacute;thodologie&nbsp;:</strong> productions calcul&eacute;es avec PVGIS (Commission europ&eacute;enne), latitude Lyon 45,7&deg;N, tarif EDF {KWH_PRICE_LABEL}, coefficient de pertes 0,85, autoconsommation 85&nbsp;%. Coefficient de temp&eacute;rature &minus;0,40&nbsp;%/&deg;C (typ. monocristallin).</p>
             <p><strong>Transparence&nbsp;:</strong> MonBalconSolaire est un site &eacute;ditorial ind&eacute;pendant. Certains liens vers des produits sont des liens affili&eacute;s. Cela ne modifie ni notre m&eacute;thodologie ni nos recommandations.</p>
           </footer>
         </div>
