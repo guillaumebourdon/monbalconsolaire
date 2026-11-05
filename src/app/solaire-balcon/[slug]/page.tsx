@@ -7,21 +7,35 @@ import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { productibleSite, RENTABILITE_DEPARTEMENTS } from '@/lib/rentabilite-departements';
-import { calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_EUR, PERFORMANCE_RATIO, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY, PVGIS_REFERENCE_LYON } from '@/lib/pricing';
+import { calculateROIYears, calculateProductionKwh, calculateFirstYearSavings, calculateTotalSavings25Years, KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY, PVGIS_REFERENCE_LYON } from '@/lib/pricing';
+import { PRODUCTS, availabilityBadge, type ProductId } from '@/data/products';
 import { withCanonicalOg } from '@/lib/metadata';
 
-const TARIF_KWH = KWH_PRICE_EUR;
-const COEFF_PERTES = PERFORMANCE_RATIO;
 
 // Productible recalé sur la référence Lyon : voir lib/rentabilite-departements.ts
 // (source commune avec la carte /etude/rentabilite-kit-solaire-balcon-departement).
 
+// Prix, puissances et disponibilités : src/data/products.ts (vérifiés le 05/11/2026).
+// Aucun produit en rupture ou arrêté n'est proposé.
+function kitFrom(id: ProductId, badge: string, extra: { name?: string; powerWc?: number; price?: number; autocons?: number } = {}) {
+  const p = PRODUCTS[id];
+  return {
+    id,
+    name: extra.name ?? p.name,
+    power: (extra.powerWc ?? p.powerWc) / 1000,
+    price: extra.price ?? p.priceEur,
+    slug: p.reviewSlug ?? '/avis',
+    badge,
+    autocons: extra.autocons,
+    availability: availabilityBadge(id),
+  };
+}
 const KITS = [
-  { name: 'Sunology PLAY', power: 0.50, price: 599, slug: '/avis/sunology-play-2', badge: 'Meilleur choix' },
-  { name: 'Beem Kit 300W', power: 0.30, price: 199, slug: '/avis/beem-kit-300w', badge: 'Petit budget' },
-  { name: 'Beem On 500 Wc', power: 0.50, price: 429, slug: '/avis/beem-on-500w', badge: 'Meilleur prix' },
-  { name: 'Zendure SolarFlow', power: 0.84, price: 900, slug: '/avis/zendure-solarflow', badge: 'Avec batterie', autocons: AUTOCONSO_BATTERY },
-  { name: 'DualSun PREASY', power: 0.42, price: 870, slug: '/avis/dualsun-preasy', badge: 'Made in France' },
+  kitFrom('sunology-play', 'Meilleur choix'),
+  kitFrom('sunology-go', 'Petit budget'),
+  kitFrom('beem-on-500w', 'Meilleur prix'),
+  kitFrom('zendure-solarflow-800-plus', 'Avec batterie', { name: 'Zendure SolarFlow 800 Plus + 2 × 500 W', powerWc: 1000, price: 719, autocons: AUTOCONSO_BATTERY }),
+  kitFrom('sunethic-f500', 'Made in France'),
 ];
 
 function slugify(name: string): string {
@@ -38,17 +52,18 @@ function getDeptBySlug(slug: string) {
 }
 
 function calcKit(kit: typeof KITS[0], irradiation: number) {
-  const production = Math.round(kit.power * irradiation * COEFF_PERTES);
-  const autocons = (kit as { autocons?: number }).autocons || AUTOCONSO_STANDARD;
-  const kwhValorises = Math.round(production * autocons);
-  const economies = Math.round(kwhValorises * TARIF_KWH);
-  // ROI actualisé (inflation 3,3 %/an) — source unique : lib/pricing.ts
-  const roi = calculateROIYears({
+  const autocons = kit.autocons || AUTOCONSO_STANDARD;
+  const input = {
     kitPriceEur: kit.price,
     kitPowerWc: kit.power * 1000,
     productibleKwhPerKwc: irradiation,
     autoconsoOverride: autocons,
-  });
+  };
+  // Source unique : lib/pricing.ts (tarif, inflation, dégradation)
+  const production = calculateProductionKwh(input);
+  const kwhValorises = Math.round(production * autocons);
+  const economies = Math.round(calculateFirstYearSavings(input));
+  const roi = calculateROIYears(input);
   return { ...kit, production, kwhValorises, economies, roi, autocons };
 }
 
@@ -82,9 +97,9 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
   const allResults = KITS.map(k => calcKit(k, productible));
   const results = [...allResults].sort((a, b) => a.roi - b.roi);
   const best = results[0];
-  const bestBudget = allResults.find(r => r.name === 'Beem Kit 300W')!;
-  const bestBatterie = allResults.find(r => r.name === 'Zendure SolarFlow')!;
-  const bestFrance = allResults.find(r => r.name === 'Sunethic F500') || allResults.find(r => r.name === 'DualSun PREASY')!;
+  const bestBudget = allResults.find(r => r.id === 'sunology-go')!;
+  const bestBatterie = allResults.find(r => r.id === 'zendure-solarflow-800-plus')!;
+  const bestFrance = allResults.find(r => r.id === 'sunethic-f500')!;
 
   const irradiationLevel = dept.irradiation >= 1400 ? 'excellent' : dept.irradiation >= 1200 ? 'bon' : dept.irradiation >= 1050 ? 'correct' : 'modéré';
   const irradiationEmoji = dept.irradiation >= 1400 ? '\u2600\ufe0f' : dept.irradiation >= 1200 ? '\ud83c\udf24\ufe0f' : '\u26c5';
@@ -94,15 +109,15 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     .filter(d => d.region === dept.region && d.code !== dept.code)
     .slice(0, 4);
 
-  // FAQ sans marque : fourchette des kits 500 Wc analysés
-  const kits500 = [...allResults.filter(r => r.power === 0.5)].sort((a, b) => a.price - b.price);
-  const kits500Prix = `de ${kits500[0].price} à ${kits500[kits500.length - 1].price} € pour les kits 500 Wc analysés`;
+  // FAQ sans marque : fourchette des kits de 500 à 515 Wc sans batterie analysés
+  const kits500 = [...allResults.filter(r => r.power >= 0.5 && r.power < 0.6 && !r.autocons)].sort((a, b) => a.price - b.price);
+  const kits500Prix = `de ${kits500[0].price} à ${kits500[kits500.length - 1].price} € pour les kits de 500 Wc environ analysés`;
   const kits500Roi = `${kits500[0].roi.toLocaleString('fr-FR')} à ${kits500[kits500.length - 1].roi.toLocaleString('fr-FR')}`;
 
   const faqData = [
     {
       question: `Un kit solaire de balcon est-il rentable ${art.dans} ?`,
-      answer: `Oui. Avec un productible de ${productible} kWh/kWc/an (${irradiationLevel}), un kit de 500 Wc orienté sud produit environ ${kits500[0].production} kWh/an et fait économiser environ ${kits500[0].economies} €/an. Selon son prix (${kits500Prix}), le retour sur investissement va de ${kits500Roi} ans (inflation 3,3 %/an incluse).`,
+      answer: `Oui. Avec un productible de ${productible} kWh/kWc/an (${irradiationLevel}), un kit d'environ 500 Wc orienté sud produit environ ${kits500[0].production} kWh/an et fait économiser environ ${kits500[0].economies} €/an. Selon son prix (${kits500Prix}), le retour sur investissement va de ${kits500Roi} ans (inflation de ${KWH_INFLATION_LABEL} et dégradation des panneaux de ${PANEL_DEGRADATION_LABEL} incluses).`,
     },
     {
       question: `Quelle est l'irradiation solaire ${art.dans} ?`,
@@ -110,11 +125,11 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     },
     {
       question: `Quel est le meilleur kit solaire pour un balcon ${art.dans} ?`,
-      answer: `Le ${best.name} offre le meilleur retour sur investissement ${art.dans} : ROI de ${best.roi} ans pour ${best.economies} €/an d'économies. Pour un petit budget, le Beem Kit 300W à ${bestBudget.price} € a un ROI de ${bestBudget.roi} ans (kit actuellement en rupture chez Beem). Et pour du stockage, le Zendure SolarFlow (${bestBatterie.economies} €/an) permet de consommer le soir l'énergie produite le jour.`,
+      answer: `Le ${best.name} offre le meilleur retour sur investissement ${art.dans} : ROI de ${best.roi} ans pour ${best.economies} €/an d'économies. Pour un petit budget ou un balcon étroit, le ${bestBudget.name} à ${bestBudget.price} € a un ROI de ${bestBudget.roi} ans. Et pour du stockage, le ${bestBatterie.name} (${bestBatterie.economies} €/an) permet de consommer le soir l'énergie produite le jour.`,
     },
     {
       question: 'Faut-il une autorisation pour installer un kit solaire sur un balcon ?',
-      answer: 'Non, pas d\'autorisation préalable pour un kit plug-and-play de moins de 3 kWc. En revanche, vous devez faire la déclaration CACSI (Convention d\'Autoconsommation Sans Injection) auprès d\'Enedis. C\'est gratuit et prend 25 minutes en ligne. En copropriété, vérifiez le règlement mais la plupart des syndics acceptent les kits amovibles.',
+      answer: 'Non, pas d\'autorisation préalable pour un kit plug-and-play de moins de 3 kWc. En revanche, vous devez déclarer le kit à Enedis, gratuitement, sur Enedis-Connect : la CACSI (Convention d\'autoconsommation sans injection) si le kit est réglé en zéro injection, ou la cession gratuite du surplus à Enedis (Code de l\'énergie, article L315-5) s\'il renvoie son surplus sur le réseau. En copropriété, vérifiez le règlement mais la plupart des syndics acceptent les kits amovibles.',
     },
   ];
 
@@ -167,7 +182,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
             <p className="text-sm text-charcoal-light leading-relaxed pl-4">
               Le département {art.du} ({dept.code}) en {dept.region} bénéficie d&apos;un productible PVGIS de <strong>{dept.irradiation} kWh/kWc/an</strong> (sud, 30°), un potentiel <strong>{irradiationLevel}</strong>. Nos calculs retiennent {productible} kWh/kWc, cal&eacute;s sur notre r&eacute;f&eacute;rence prudente de Lyon.
               {dept.irradiation >= 1300 && ' C\'est l\'un des départements les plus favorables au solaire en France.'}
-              {dept.irradiation < 1100 && ' Même avec un ensoleillement plus faible que le sud, un kit solaire reste rentable grâce au prix élevé de l\'électricité (0,1940 €/kWh).'}
+              {dept.irradiation < 1100 && ' Même avec un ensoleillement plus faible que le sud, un kit solaire reste rentable grâce au prix élevé de l\'électricité (' + KWH_PRICE_LABEL + ').'}
               {dept.irradiation >= 1100 && dept.irradiation < 1300 && ` Un kit solaire de balcon y est rentable : ROI de ${best.roi} ans pour le kit le mieux placé.`}
             </p>
           </div>
@@ -193,7 +208,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                     {results.map((kit, i) => (
                       <tr key={i} className={`border-b border-border-light ${i === 0 ? 'bg-green-pale/20 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
                         <td className="p-3">
-                          <Link href={kit.slug} className="text-green hover:underline font-semibold">{kit.name}</Link>
+                          <Link href={kit.slug} className="text-green hover:underline font-semibold">{kit.name}</Link>{kit.availability && <span className="block text-xs text-amber-dark">{kit.availability}</span>}
                           {i === 0 && <span className="badge-green ml-2 text-[9px]">Recommandé</span>}
                         </td>
                         <td className="p-3 text-right font-mono">{kit.price} &euro;</td>
@@ -206,7 +221,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Calcul : puissance × {productible} kWh/kWc × 0,85 (performance ratio) × autoconsommation × 0,1940 €/kWh. Orientation sud. Autoconsommation 85 % sans batterie, 95 % avec batterie (m&eacute;thodologie standard du site). ROI actualisé avec une inflation du tarif de 3,3 %/an (CRE).
+                Calcul : puissance × {productible} kWh/kWc × 0,85 (performance ratio) × autoconsommation × {KWH_PRICE_LABEL}. Orientation sud. Autoconsommation 85 % sans batterie, 95 % avec batterie (m&eacute;thodologie standard du site). ROI calculé avec une inflation du tarif de {KWH_INFLATION_LABEL} et une dégradation des panneaux de {PANEL_DEGRADATION_LABEL}.
               </p>
             </section>
 
@@ -216,7 +231,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 <div className="badge-green mb-3 text-[10px]">Meilleur ROI</div>
                 <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
                   <div>
-                    <h3 className="font-bold text-lg">{best.name}</h3>
+                    <h3 className="font-bold text-lg">{best.name}</h3>{best.availability && <p className="text-xs text-amber-dark font-semibold">{best.availability}</p>}
                     <p className="text-xs text-stone mt-1">{best.price} € &middot; {best.production} kWh/an &middot; {Math.round(best.autocons * 100)} % autoconsommé</p>
                   </div>
                   <div className="text-right">
@@ -243,7 +258,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                       <span className="font-mono font-bold text-green">{bestBudget.price} €</span>
                       <span className="text-xs text-stone">ROI {bestBudget.roi} ans</span>
                     </div>
-                    <p className="text-xs text-charcoal-light mt-2">{bestBudget.economies} €/an d&apos;économies. Id&eacute;al pour d&eacute;couvrir le solaire.{bestBudget.name === 'Beem Kit 300W' && ' Actuellement en rupture chez Beem.'}</p>
+                    <p className="text-xs text-charcoal-light mt-2">{bestBudget.economies} €/an d&apos;économies. Id&eacute;al pour d&eacute;couvrir le solaire ou un balcon &eacute;troit.</p>
                   </Link>
                 )}
                 {best.name !== bestBatterie.name && (
@@ -359,7 +374,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> productible PVGIS (Commission européenne) par département, orientation sud, inclinaison 30°, pertes système incluses, utilisé comme indice relatif et recalé sur notre référence Lyon (Rhône = 1 200 kWh/kWc), puis performance ratio 0,85 appliqué une seule fois. Tarif EDF base mai 2026 : 0,1940 €/kWh. Autoconsommation 85 % sans batterie, 95 % avec batterie. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (moyenne CRE 2012-2026).{' '}
+                <strong>Méthodologie :</strong> productible PVGIS (Commission européenne) par département, orientation sud, inclinaison 30°, pertes système incluses, utilisé comme indice relatif et recalé sur notre référence Lyon (Rhône = 1 200 kWh/kWc), puis performance ratio 0,85 appliqué une seule fois. Tarif EDF Base en vigueur depuis le {KWH_PRICE_SINCE} : {KWH_PRICE_LABEL}. Autoconsommation 85 % sans batterie, 95 % avec batterie. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (moyenne CRE 2012-2026).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
             </div>

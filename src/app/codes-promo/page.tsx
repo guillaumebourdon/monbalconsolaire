@@ -54,7 +54,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
       'Le programme S-Club de Sunology offre 7% de remise sur la première commande du filleul. Le parrain reçoit 3% du montant acheté par son filleul en Sunopoints, convertibles en carte cadeau ou en remise Sunology. Il suffit de choisir un parrain membre de la communauté Sunology au moment de la commande.',
   },
   {
-    question: 'Le code SUN_RJHOMESOLAR (ou un autre code SUN_) est-il valable ?',
+    question: 'Les codes Sunology au format SUN_ trouvés en ligne sont-ils valables ?',
     answer:
       'Les codes au format SUN_XXX sont des codes de parrainage personnels de clients Sunology. Ils donnent en principe la remise filleul officielle (7%) et rémunèrent la personne qui les diffuse. Les sites annonçant -10% ou -15% ne sont pas confirmés par Sunology : vérifiez toujours le montant réel au panier avant de payer.',
   },
@@ -285,18 +285,18 @@ export default function CodesPromoPage() {
             </div>
 
             <div className="card-lg bg-amber-pale/30 border-amber/10 text-sm text-charcoal-light leading-relaxed mb-6">
-              <h3 className="font-bold text-charcoal mb-2">Et les codes &laquo; SUN_RJHOMESOLAR &raquo;, &laquo; SUN26 &raquo;&hellip; ?</h3>
+              <h3 className="font-bold text-charcoal mb-2">Et les codes &laquo; SUN_&hellip; &raquo; ou &laquo; SUN26 &raquo; trouv&eacute;s en ligne ?</h3>
               <p>
-                Les codes au format <span className="font-mono">SUN_PRENOM</span> (dont SUN_RJHOMESOLAR) sont des codes de <strong>parrainage personnels</strong> de clients Sunology : ils donnent la remise filleul officielle (7%) et r&eacute;mun&egrave;rent la personne qui les publie. Les sites de coupons qui annoncent -10% ou -15% (SUN26, etc.) ne sont confirm&eacute;s nulle part par Sunology. Nous ne les listons pas. R&egrave;gle simple : si la remise n&apos;appara&icirc;t pas au panier, elle n&apos;existe pas.
+                Les codes au format <span className="font-mono">SUN_PRENOM</span> sont des codes de <strong>parrainage personnels</strong> de clients Sunology : ils donnent la remise filleul officielle (7%) et r&eacute;mun&egrave;rent la personne qui les publie. Les sites de coupons qui annoncent -10% ou -15% (SUN26, etc.) ne sont confirm&eacute;s nulle part par Sunology. Nous ne les listons pas. R&egrave;gle simple : si la remise n&apos;appara&icirc;t pas au panier, elle n&apos;existe pas.
               </p>
             </div>
 
             <h3 className="text-xl font-bold mb-3">Code promo Sunology PLAY (ex-PLAY 2)</h3>
             <p className="text-charcoal-light leading-relaxed mb-4">
               {sunologyBlackFriday ? (
-                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) co&ucirc;te 599 &euro;, soit <strong>499 &euro;</strong> avec le code {SUNOLOGY_BLACKFRIDAY_CODE} (Black Sun Weeks) jusqu&apos;au 4 d&eacute;cembre 2026.</>
+                <>Le PLAY (515 W, successeur du PLAY 2 de 450/460 Wc) co&ucirc;te 599 &euro;, soit <strong>499 &euro;</strong> avec le code {SUNOLOGY_BLACKFRIDAY_CODE} (Black Sun Weeks) jusqu&apos;au 4 d&eacute;cembre 2026.</>
               ) : (
-                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>599 &euro;</strong>.</>
+                <>Le PLAY (515 W, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>599 &euro;</strong>.</>
               )}{' '}Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;, mais ne se cumule g&eacute;n&eacute;ralement pas avec le code Black Friday. Notre analyse compl&egrave;te :{' '}
               <Link href="/avis/sunology-play-2" className="text-green font-semibold hover:underline">avis Sunology PLAY (ex-PLAY 2)</Link>.
             </p>

@@ -17,7 +17,11 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'La déclaration CACSI est-elle vraiment obligatoire pour un kit solaire de balcon ?',
-    answer: 'Oui, pour toute installation photovoltaïque connectée au réseau Enedis, même un kit plug-and-play 300 W. C\'est imposé par le Code de l\'énergie (article D.342-1). La CACSI (Convention d\'Autoconsommation Sans Injection) est la procédure simplifiée pour les installations autoconsommation sans revente de surplus, comme c\'est le cas de la quasi-totalité des kits de balcon.',
+    answer: 'Oui : une déclaration à Enedis est obligatoire pour toute installation photovoltaïque raccordée au réseau, même un kit plug-and-play de 300 W. Deux voies existent pour un kit sans vente : la CACSI (Convention d\'autoconsommation sans injection) si votre installation ne renvoie rien sur le réseau (réglage « zéro injection » de l\'onduleur, compteur de pilotage ou batterie), ou la cession gratuite du surplus à Enedis (Code de l\'énergie, article L315-5) si votre kit injecte son surplus, ce qui est le cas de la plupart des kits simples.',
+  },
+  {
+    question: 'CACSI ou cession du surplus : laquelle choisir ?',
+    answer: 'Tout dépend de ce que fait votre kit quand vous consommez moins que ce qu\'il produit. S\'il est réglé en « zéro injection » (réglage de l\'onduleur, compteur de type Shelly ou boîtier du fabricant qui pilote la puissance, ou batterie qui absorbe le surplus), choisissez la CACSI : c\'est un engagement à ne pas injecter. S\'il renvoie son surplus sur le réseau, ce qui est le cas de la plupart des kits simples sans pilotage, choisissez sur Enedis-Connect « injection du surplus », puis « je cède mon surplus à Enedis » : le surplus est cédé gratuitement (article L315-5 du Code de l\'énergie, installations de 3 kW maximum en sortie d\'onduleur selon l\'article D315-10) et Enedis établit un contrat d\'accès en injection. Cette voie implique une part de TURPE « autoproducteur » dont nous n\'avons pas trouvé de montant officiel.',
   },
   {
     question: 'Que risque-t-on à ne pas faire la déclaration ?',
@@ -25,7 +29,7 @@ const faqData = [
   },
   {
     question: 'Combien coûte la déclaration CACSI ?',
-    answer: 'Elle est totalement gratuite. Enedis ne facture ni dossier, ni étude, ni mise en service. C\'est une formalité administrative simple et sans frais, par opposition aux installations photovoltaïques avec revente de surplus qui nécessitent un contrat d\'obligation d\'achat payant.',
+    answer: 'La déclaration CACSI est gratuite : Enedis ne facture ni dossier, ni étude, ni mise en service. Si vous choisissez plutôt la cession gratuite du surplus (kit qui injecte), le contrat d\'accès en injection implique une part de TURPE « autoproducteur », dont nous n\'avons pas trouvé de montant officiel.',
   },
   {
     question: 'Combien de temps faut-il pour obtenir la validation ?',
@@ -61,7 +65,7 @@ const etapes = [
     titre: 'Accédez au formulaire CACSI',
     duree: '2 minutes',
     detail: 'Une fois connecté à votre espace, allez dans "Mes démarches" → "Raccordement" → "Autoconsommation sans injection". Vous arrivez sur un formulaire en plusieurs étapes. Enedis appelle officiellement cette procédure "Déclaration d\'installation photovoltaïque".',
-    pieges: 'Ne choisissez pas "Autoconsommation avec vente du surplus" ni "Vente totale". Ces procédures sont pour les installations classiques (3 à 9 kWc sur toiture) et nécessitent un contrat d\'obligation d\'achat. Pour un kit de balcon plug-and-play, c\'est "sans injection" qui correspond.',
+    pieges: 'Ne choisissez pas « Vente totale » ni une vente du surplus avec contrat d\'obligation d\'achat : ces procédures visent les installations classiques sur toiture. Pour un kit de balcon, deux choix : « sans injection » (CACSI) si votre kit est réglé en zéro injection, ou « injection du surplus » puis « je cède mon surplus à Enedis » si votre kit renvoie son surplus sur le réseau. Attendez la mise en service par Enedis avant de faire fonctionner l\'installation.',
   },
   {
     num: 4,
@@ -172,7 +176,7 @@ export default function DeclarationCacsiEnedisPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              La CACSI est <strong>obligatoire, gratuite et prend 25 minutes</strong>. Elle se fait sur <strong>enedis.fr</strong> dans la section &quot;Autoconsommation sans injection&quot;. Il vous faut votre PDL (sur la facture), l&apos;attestation CE du micro-onduleur, et 2-3 photos de l&apos;installation. Enedis valide en 2 à 4 semaines. Ne pas déclarer expose à l&apos;invalidation de votre assurance habitation en cas de sinistre.
+              Une d&eacute;claration &agrave; Enedis est <strong>obligatoire et gratuite</strong>&nbsp;: la CACSI si votre kit est r&eacute;gl&eacute; en z&eacute;ro injection, ou la cession gratuite du surplus s&apos;il renvoie son surplus sur le r&eacute;seau. Elle se fait sur <strong>Enedis-Connect</strong>. Il vous faut votre PDL (sur la facture), l&apos;attestation CE du micro-onduleur, et 2-3 photos de l&apos;installation. Enedis valide en 2 à 4 semaines. Ne pas déclarer expose à l&apos;invalidation de votre assurance habitation en cas de sinistre.
             </p>
           </div>
 
@@ -187,14 +191,15 @@ export default function DeclarationCacsiEnedisPage() {
                 Cette convention existe depuis 2017, dans le cadre du développement du photovoltaïque résidentiel. Avant, toute installation devait être déclarée via une procédure lourde (Consuel + contrat d&apos;obligation d&apos;achat). Aujourd&apos;hui, pour les petites installations en autoconsommation pure, la CACSI est la voie simplifiée et gratuite.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                <strong>Pour un kit solaire de balcon plug-and-play</strong> (Sunology, Beem, Sunethic, DualSun...), c&apos;est systématiquement la CACSI qui s&apos;applique, car :
+                <strong>Pour un kit solaire de balcon plug-and-play</strong> (Sunology, Beem, Sunethic, Zendure...), il existe <strong>deux voies</strong> sans vente d&apos;&eacute;lectricit&eacute;&nbsp;:
               </p>
               <ul className="text-charcoal-light leading-relaxed space-y-2 mt-3 pl-5">
-                <li>&bull; La puissance est modeste (en g&eacute;n&eacute;ral 300 &agrave; 900 W), sous le rep&egrave;re de 900 W par circuit recommand&eacute; (ce n&apos;est pas un plafond l&eacute;gal)</li>
-                <li>&bull; L&apos;installation se branche sur une prise domestique standard</li>
-                <li>&bull; Vous consommez directement l&apos;énergie produite (pas de vente au réseau)</li>
-                <li>&bull; Vous ne vendez pas votre surplus&nbsp;: sans contrat de vente, la part non consomm&eacute;e part sur le r&eacute;seau sans r&eacute;mun&eacute;ration</li>
+                <li>&bull; <strong>La CACSI</strong>, si votre installation n&apos;injecte rien sur le r&eacute;seau. Selon Enedis, l&apos;engagement se respecte par &laquo;&nbsp;un dispositif anti-injection (s&apos;il est mis en place) ou un r&eacute;glage de l&apos;onduleur en z&eacute;ro injection&nbsp;&raquo;&nbsp;: r&eacute;glage de l&apos;onduleur, compteur de type Shelly ou bo&icirc;tier du fabricant qui pilote la puissance, ou batterie qui absorbe le surplus.</li>
+                <li>&bull; <strong>La cession gratuite du surplus &agrave; Enedis</strong>, si votre kit renvoie sur le r&eacute;seau ce que vous ne consommez pas, ce qui est le cas de la plupart des kits simples sans pilotage. Le surplus est &laquo;&nbsp;c&eacute;d&eacute; &agrave; titre gratuit au gestionnaire du r&eacute;seau&nbsp;&raquo; (Code de l&apos;&eacute;nergie, article L315-5), pour les installations de 3&nbsp;kW maximum en sortie d&apos;onduleur (article D315-10). Sur Enedis-Connect&nbsp;: &laquo;&nbsp;injection du surplus&nbsp;&raquo;, puis &laquo;&nbsp;je c&egrave;de mon surplus &agrave; Enedis&nbsp;&raquo;&nbsp;; Enedis &eacute;tablit alors un contrat d&apos;acc&egrave;s en injection. Cette voie implique une part de TURPE &laquo;&nbsp;autoproducteur&nbsp;&raquo;, dont nous n&apos;avons pas trouv&eacute; de montant officiel.</li>
               </ul>
+              <p className="text-charcoal-light leading-relaxed mt-3">
+                Dans les deux cas, la puissance d&apos;un kit reste modeste (en g&eacute;n&eacute;ral 300 &agrave; 900 W, sous le rep&egrave;re de 900 W par circuit recommand&eacute;, qui n&apos;est pas un plafond l&eacute;gal) et Enedis pr&eacute;voit une dispense de Consuel pour les &eacute;quipements &laquo;&nbsp;plug &amp; play&nbsp;&raquo; d&eacute;j&agrave; assembl&eacute;s et conformes &agrave; la norme NF EN 50549-1-4, sur attestation sur l&apos;honneur. Attendez la mise en service par Enedis avant de faire fonctionner l&apos;installation.
+              </p>
             </section>
 
             {/* Les 7 étapes */}
@@ -383,14 +388,14 @@ export default function DeclarationCacsiEnedisPage() {
               </div>
 
               <div className="card-lg bg-amber-pale/20 border-amber/20 mt-6">
-                <h3 className="font-bold text-base mb-2">⚠️ Attention au certificat anti-injection</h3>
+                <h3 className="font-bold text-base mb-2">⚠️ Anti-injection&nbsp;: un dispositif facultatif</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed mb-3">
-                  La CACSI exige techniquement un dispositif &laquo; anti-injection &raquo; (ou anti-refoulement) qui empêche l&apos;électricité produite de remonter sur le réseau public quand votre consommation est nulle. En pratique :
+                  La CACSI est un engagement &agrave; ne pas injecter. Enedis n&apos;impose pas de bo&icirc;tier particulier&nbsp;: un dispositif anti-injection &laquo;&nbsp;s&apos;il est mis en place&nbsp;&raquo; ou un r&eacute;glage de l&apos;onduleur en z&eacute;ro injection suffit. En pratique&nbsp;:
                 </p>
                 <ul className="text-sm text-charcoal-light space-y-2 pl-5">
-                  <li>&bull; <strong>Sunology, Beem, Sunethic, DualSun</strong> : leurs micro-onduleurs intègrent cette fonction de série. Aucun dispositif additionnel à installer.</li>
-                  <li>&bull; <strong>Kits AliExpress / génériques</strong> : pas toujours certifiés. Vérifiez la fiche technique avant l&apos;achat. Sans cette certification, votre dossier CACSI peut être rejeté.</li>
-                  <li>&bull; <strong>Mention dans le formulaire</strong> : cochez la case &laquo; Installation équipée d&apos;un dispositif anti-injection conforme &raquo; et joignez l&apos;attestation CE du micro-onduleur.</li>
+                  <li>&bull; <strong>Kit avec pilotage</strong> (r&eacute;glage z&eacute;ro injection, compteur de type Shelly, bo&icirc;tier du fabricant) ou <strong>avec batterie</strong>&nbsp;: la CACSI correspond.</li>
+                  <li>&bull; <strong>Kit simple qui renvoie son surplus</strong> (cas le plus courant)&nbsp;: d&eacute;clarez plut&ocirc;t la cession gratuite du surplus &agrave; Enedis.</li>
+                  <li>&bull; <strong>Kits g&eacute;n&eacute;riques</strong>&nbsp;: v&eacute;rifiez la conformit&eacute; &agrave; la norme NF EN 50549-1-4, n&eacute;cessaire pour la dispense de Consuel.</li>
                 </ul>
               </div>
             </section>
@@ -561,7 +566,7 @@ Date : [JOUR/MOIS/ANNÉE]`}
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources :</strong> Enedis Connect, Code de l&apos;énergie (article D.342-1), Norme NF C 15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2 : aucun plafond en watts), rep&egrave;re de 900 W recommand&eacute; par UFC-Que Choisir et les notices des fabricants (voir notre <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green hover:underline">guide de la r&eacute;glementation</Link>), documentation officielle CACSI d&apos;Enedis (avril 2026).{' '}
+                <strong>Sources :</strong> Enedis Connect, Code de l&apos;énergie (article D.342-1, <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034095202" target="_blank" rel="noopener noreferrer" className="text-green underline">article L315-5</a> sur la cession gratuite du surplus, article D315-10 sur le seuil de 3&nbsp;kW), pages Enedis &laquo;&nbsp;<a href="https://www.enedis.fr/autoconsommer-la-totalite-de-lenergie-produite-par-vos-panneaux" target="_blank" rel="noopener noreferrer" className="text-green underline">Autoconsommer la totalit&eacute; de l&apos;&eacute;nergie produite</a>&nbsp;&raquo; et &laquo;&nbsp;<a href="https://www.enedis.fr/mon-contrat-dobligation-dachat-prend-fin" target="_blank" rel="noopener noreferrer" className="text-green underline">Mon contrat d&apos;obligation d&apos;achat prend fin</a>&nbsp;&raquo; (consult&eacute;es le 5 novembre 2026), Norme NF C 15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2 : aucun plafond en watts), rep&egrave;re de 900 W recommand&eacute; par UFC-Que Choisir et les notices des fabricants (voir notre <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green hover:underline">guide de la r&eacute;glementation</Link>), documentation officielle CACSI d&apos;Enedis (avril 2026).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

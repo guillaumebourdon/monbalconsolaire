@@ -17,16 +17,16 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   { question: 'Faut-il une autorisation pour installer un kit solaire sur son balcon ?', answer: 'Non, pas d\'autorisation de travaux si le panneau est pose au sol ou fixe au mur a moins d\'1m80 de haut. En revanche, si vous le fixez en toiture (toit plat par exemple), une declaration prealable en mairie est necessaire.' },
   { question: 'Quelle est la puissance maximale autorisee en plug-and-play ?', answer: 'Aucun texte ne fixe de plafond chiffré pour un kit branché sur prise. La NF C 15-100 applicable depuis le 1er septembre 2025 ne donne pas de limite en watts : son point 551.7.2 indique qu\'un générateur ne doit pas être raccordé à un circuit terminal par une prise ou une fiche. Les 900 W souvent cités sont une recommandation (UFC-Que Choisir, fabricants) pour une prise 16 A protégée par un différentiel 30 mA, pas une limite de la norme. Au-delà, un circuit dédié posé par un électricien est recommandé.' },
-  { question: 'Faut-il declarer son kit solaire a Enedis ?', answer: 'Oui. Meme en autoconsommation totale sans injection, vous devez signer une Convention d\'Autoconsommation Sans Injection (CACSI) sur le portail Enedis Connect. C\'est gratuit et se fait en ligne en 10 minutes.' },
+  { question: 'Faut-il déclarer son kit solaire à Enedis ?', answer: 'Oui, une déclaration sur Enedis-Connect est obligatoire et gratuite. Deux voies : la Convention d\'autoconsommation sans injection (CACSI) si votre kit est réglé en zéro injection (réglage de l\'onduleur, compteur de pilotage ou batterie), ou la cession gratuite du surplus à Enedis (Code de l\'énergie, article L315-5, installations de 3 kW maximum) si votre kit renvoie son surplus sur le réseau, cas de la plupart des kits simples.' },
   { question: 'Mon syndic peut-il refuser l\'installation ?', answer: 'Le syndic peut demander que le projet soit presente en assemblee generale si l\'installation modifie l\'aspect de la facade. Cependant, un kit pose au sol sur un balcon prive, non visible depuis l\'exterieur, ne devrait pas poser de probleme.' },
   { question: 'Les kits plug-and-play sont-ils toujours autorises en 2026 ?', answer: 'Ils restent vendus et aucun texte ne les interdit explicitement, mais leur situation est floue. La NF C 15-100 (point 551.7.2, en vigueur depuis le 1er septembre 2025) interdit de raccorder un générateur à un circuit terminal par une prise. Elle vise les installations fixes ; les kits, équipements mobiles, sont selon Enerplan « théoriquement non concernés ». La filière (Enerplan, SER) demande une clarification, voire une dérogation réglementaire. Les réponses du gouvernement aux questions écrites n° 6574 et n° 10336 (JO du 26 mai 2026) rappellent les risques d\'électrisation et d\'échauffement sans trancher ni accorder cette dérogation.' },
-  { question: 'Que risque-t-on si on n\'a pas fait la déclaration CACSI ?', answer: 'Enedis ne vient pas contrôler les balcons. Le risque réel se matérialise surtout en cas de sinistre électrique : un assureur peut invoquer l\'absence de convention pour réduire ou refuser une indemnisation. Faire la CACSI (gratuite, 10 minutes sur Enedis Connect) élimine ce risque et ne nécessite aucune intervention sur site.' },
+  { question: 'Que risque-t-on si on n\'a pas fait la déclaration CACSI ?', answer: 'Enedis ne vient pas contrôler les balcons. Le risque réel se matérialise surtout en cas de sinistre électrique : un assureur peut invoquer l\'absence de convention pour réduire ou refuser une indemnisation. Faire la déclaration (CACSI ou cession du surplus, gratuite, en ligne sur Enedis-Connect) élimine ce risque et ne nécessite aucune intervention sur site.' },
 ];
 
 export default function ReglementationPage() {
   return (
     <>
-      <SchemaArticle title="Réglementation panneau solaire balcon : faut-il déclarer ?" description="Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-10-13" />
+      <SchemaArticle title="Réglementation panneau solaire balcon : faut-il déclarer ?" description="Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />
       <article className="section-padding">
@@ -36,12 +36,12 @@ export default function ReglementationPage() {
             <div className="badge-green mb-4 inline-block">Guide juridique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon 2026 : faut-il le d&eacute;clarer&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Norme NF C 15-100, d&eacute;claration Enedis CACSI, copropri&eacute;t&eacute;, rep&egrave;re des 900 W : tout ce que dit la loi sur les kits solaires plug-and-play en France.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span><strong>Mis &agrave; jour le 13 octobre 2026</strong></span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span><strong>Mis &agrave; jour le 5 novembre 2026</strong></span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;&nbsp;: oui, il faut d&eacute;clarer</h2>
-            <p className="text-charcoal-light text-sm leading-relaxed"><strong>Oui, la d&eacute;claration CACSI auprès d&apos;Enedis est obligatoire</strong>, m&ecirc;me sans injection sur le r&eacute;seau (gratuite, 10 min sur Enedis Connect). Les kits solaires plug-and-play restent vendus et utilis&eacute;s en France en 2026, sans interdiction explicite, mais dans une zone grise normative (NF C 15-100, point 551.7.2). Pas d&apos;autorisation de travaux requise (sauf toiture). La norme ne fixe pas de plafond en watts&nbsp;; 900 W par prise est une recommandation courante, pas une limite l&eacute;gale. En copropri&eacute;t&eacute;, informer le syndic est recommand&eacute; si le panneau est visible.</p>
+            <p className="text-charcoal-light text-sm leading-relaxed"><strong>Oui, une d&eacute;claration auprès d&apos;Enedis est obligatoire</strong> (gratuite, en ligne sur Enedis-Connect)&nbsp;: la CACSI si votre kit n&apos;injecte rien, la cession gratuite du surplus s&apos;il en renvoie. Les kits solaires plug-and-play restent vendus et utilis&eacute;s en France en 2026, sans interdiction explicite, mais dans une zone grise normative (NF C 15-100, point 551.7.2). Pas d&apos;autorisation de travaux requise (sauf toiture). La norme ne fixe pas de plafond en watts&nbsp;; 900 W par prise est une recommandation courante, pas une limite l&eacute;gale. En copropri&eacute;t&eacute;, informer le syndic est recommand&eacute; si le panneau est visible.</p>
           </div>
 
           <div className="space-y-10">
@@ -66,14 +66,14 @@ export default function ReglementationPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">D&eacute;claration Enedis : la CACSI</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">M&ecirc;me en autoconsommation totale (vous ne revendez rien), vous devez signer une <strong>Convention d&apos;Autoconsommation Sans Injection (CACSI)</strong> avec Enedis. C&apos;est obligatoire, gratuit, et se fait en ligne.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Vous ne revendez rien, mais la d&eacute;claration reste obligatoire et gratuite. Deux voies&nbsp;: la <strong>Convention d&apos;Autoconsommation Sans Injection (CACSI)</strong>, engagement &agrave; ne pas injecter, si votre kit est r&eacute;gl&eacute; en z&eacute;ro injection (r&eacute;glage de l&apos;onduleur, compteur de pilotage ou batterie&nbsp;; le dispositif anti-injection est facultatif selon Enedis)&nbsp;; ou la <strong>cession gratuite du surplus &agrave; Enedis</strong> (Code de l&apos;&eacute;nergie, article L315-5, installations de 3&nbsp;kW maximum selon l&apos;article D315-10) si votre kit renvoie son surplus, cas de la plupart des kits simples. Le d&eacute;tail est dans notre <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline font-semibold">guide de la d&eacute;claration</Link>.</p>
               <div className="space-y-3">
                 {[
                   { step: '1', title: 'Rendez-vous sur Enedis Connect', desc: 'connect-racco.enedis.fr \u2014 Cr\u00e9ez un compte ou connectez-vous.' },
-                  { step: '2', title: 'S\u00e9lectionnez "Autoconsommation sans injection"', desc: 'Choisissez cette option dans le formulaire de demande de raccordement.' },
+                  { step: '2', title: 'Choisissez la bonne voie', desc: 'Sans injection (CACSI) si votre kit est r\u00e9gl\u00e9 en z\u00e9ro injection ; sinon \u00ab injection du surplus \u00bb puis \u00ab je c\u00e8de mon surplus \u00e0 Enedis \u00bb.' },
                   { step: '3', title: 'Remplissez les informations', desc: 'Adresse, puissance du kit (en kWc), type d\'installation (plug-and-play).' },
-                  { step: '4', title: 'Validez la convention', desc: 'Enedis vous envoie la CACSI \u00e0 signer \u00e9lectroniquement. D\u00e9lai : 15 jours max.' },
-                  { step: '5', title: 'Mise en service', desc: 'Vous pouvez brancher votre kit d\u00e8s que la convention est sign\u00e9e (ou apr\u00e8s 15 jours sans r\u00e9ponse).' },
+                  { step: '4', title: 'Validez la convention', desc: 'Enedis vous envoie la convention \u00e0 signer \u00e9lectroniquement.' },
+                  { step: '5', title: 'Mise en service', desc: 'Attendez la mise en service par Enedis avant de faire fonctionner votre kit.' },
                 ].map((s) => (
                   <div key={s.step} className="card border-l-4 border-l-green">
                     <div className="flex items-center gap-3 mb-1"><div className="w-7 h-7 rounded-lg bg-green text-white flex items-center justify-center font-bold text-xs">{s.step}</div><h3 className="font-bold text-sm">{s.title}</h3></div>
@@ -130,7 +130,7 @@ export default function ReglementationPage() {
                   'Informer votre assureur de l\'installation (simple email ou appel)',
                   'V\u00e9rifier que votre contrat couvre les "appareils \u00e9lectriques branch\u00e9s"',
                   'Conserver la facture d\'achat et le certificat de conformit\u00e9 du micro-onduleur',
-                  'Signer la CACSI avec Enedis (preuve de conformit\u00e9)',
+                  'D\u00e9clarer le kit \u00e0 Enedis : CACSI ou cession gratuite du surplus (preuve de conformit\u00e9)',
                 ].map((r, i) => (
                   <div key={i} className="card border-l-4 border-l-green"><p className="text-xs text-charcoal-light">{r}</p></div>
                 ))}
@@ -139,7 +139,7 @@ export default function ReglementationPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Revente du surplus : possible en plug-and-play ?</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Non. Avec un kit plug-and-play en autoconsommation (CACSI), le surplus est inject&eacute; gratuitement sur le r&eacute;seau. Vous ne pouvez pas le revendre &agrave; EDF OA. Pour la revente, il faudrait une installation professionnelle par un artisan RGE, ce qui n&apos;est pas le cas des kits plug-and-play. <Link href="/blog/revendre-surplus-solaire-balcon" className="text-green hover:underline font-semibold">D&eacute;tail complet&nbsp;: pourquoi on ne peut pas revendre, et pourquoi ce n&apos;est de toute fa&ccedil;on pas rentable &rarr;</Link></p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Non. Avec un kit plug-and-play, soit vous n&apos;injectez rien (CACSI, r&eacute;glage z&eacute;ro injection), soit votre surplus est c&eacute;d&eacute; gratuitement &agrave; Enedis (article L315-5 du Code de l&apos;&eacute;nergie). Vous ne pouvez pas le revendre &agrave; EDF OA. Pour la revente, il faudrait une installation professionnelle par un artisan RGE, ce qui n&apos;est pas le cas des kits plug-and-play. <Link href="/blog/revendre-surplus-solaire-balcon" className="text-green hover:underline font-semibold">D&eacute;tail complet&nbsp;: pourquoi on ne peut pas revendre, et pourquoi ce n&apos;est de toute fa&ccedil;on pas rentable &rarr;</Link></p>
               <p className="text-charcoal-light leading-relaxed">En pratique, ce n&apos;est pas un probl&egrave;me : le talon de consommation absorbe une grande partie de la production. Pour maximiser, <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="text-green hover:underline">programmez vos appareils en journ&eacute;e</Link> ou <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">ajoutez une batterie</Link>.</p>
             </section>
 
@@ -207,7 +207,7 @@ export default function ReglementationPage() {
             </section>
 
             <NewsletterBanner />
-            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Norme NF C 15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2) ; r&eacute;ponses minist&eacute;rielles aux questions &eacute;crites n&deg; 6574 et n&deg; 10336 (A. nationale, JO du 26 mai 2026) ; UFC-Que Choisir, &laquo; Kits solaires : les kits plug &amp; play sont-ils concern&eacute;s par l&apos;actualisation de la norme &eacute;lectrique ? &raquo; (mai 2025) ; ADEME, guide kit photovolta&iuml;que plug &amp; play (avril 2023) ; Code de l&apos;&eacute;nergie art. D315-10, Enedis Connect. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
+            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Norme NF C 15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2) ; r&eacute;ponses minist&eacute;rielles aux questions &eacute;crites n&deg; 6574 et n&deg; 10336 (A. nationale, JO du 26 mai 2026) ; UFC-Que Choisir, &laquo; Kits solaires : les kits plug &amp; play sont-ils concern&eacute;s par l&apos;actualisation de la norme &eacute;lectrique ? &raquo; (mai 2025) ; ADEME, guide kit photovolta&iuml;que plug &amp; play (avril 2023) ; Code de l&apos;&eacute;nergie art. L315-5 (cession gratuite du surplus) et D315-10 (seuil de 3 kW)&nbsp;; Enedis, &laquo;&nbsp;Autoconsommer la totalit&eacute; de l&apos;&eacute;nergie produite par vos panneaux&nbsp;&raquo; (dispositif anti-injection ou r&eacute;glage z&eacute;ro injection, dispense de Consuel NF EN 50549-1-4, consult&eacute; le 5 novembre 2026). <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
           </div>
         </div>
       </article>
