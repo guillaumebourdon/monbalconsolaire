@@ -62,7 +62,7 @@ const faqData = [
   {
     question: 'Quelle norme doit respecter un micro-onduleur en France ?',
     answer:
-      'Il doit disposer d\'une protection de découplage certifiée. Jusqu\'au 31 décembre 2024, Enedis s\'appuyait sur la DIN VDE 0126-1-1 (réglage VFR2019). Pour les demandes de raccordement déposées depuis le 1er janvier 2025, Enedis demande une attestation de conformité à la NF EN 50549-1, la norme qui décline en basse tension le code de réseau européen RfG (règlement UE 2016/631). Ce règlement vise les unités de production à partir de 0,8 kW (type A) ; photovoltaique.info indique que le certificat est exigé pour les installations de plus de 800 W. Sous ce seuil, la protection de découplage reste nécessaire : dans tous les cas, demandez le certificat NF EN 50549-1 au vendeur et déclarez l\'installation à Enedis (CACSI).',
+      'Il doit disposer d\'une protection de découplage certifiée. Jusqu\'au 31 décembre 2024, Enedis s\'appuyait sur la DIN VDE 0126-1-1 (réglage VFR2019). Pour les demandes de raccordement déposées depuis le 1er janvier 2025, Enedis demande une attestation de conformité à la NF EN 50549-1, la norme qui décline en basse tension le code de réseau européen RfG (règlement UE 2016/631). Ce règlement vise les unités de production à partir de 0,8 kW (type A) ; photovoltaique.info indique que le certificat est exigé pour les installations de plus de 800 W. Sous ce seuil, la protection de découplage reste nécessaire : dans tous les cas, demandez le certificat NF EN 50549-1 au vendeur et déclarez l\'installation à Enedis (CACSI ou cession gratuite du surplus).',
   },
 ];
 
@@ -521,7 +521,7 @@ export default function MicroOnduleurPage() {
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">D&eacute;claration Enedis</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">M&ecirc;me pour un seul panneau, l&apos;installation se d&eacute;clare via une convention d&apos;autoconsommation sans injection (CACSI), gratuite. <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline">Guide CACSI pas &agrave; pas</Link>.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed">M&ecirc;me pour un seul panneau, l&apos;installation se d&eacute;clare gratuitement &agrave; Enedis&nbsp;: CACSI si elle est r&eacute;gl&eacute;e en z&eacute;ro injection, sinon cession gratuite du surplus. <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline">Guide CACSI pas &agrave; pas</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">Bonnes pratiques d&apos;installation</h3>

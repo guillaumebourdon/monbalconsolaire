@@ -34,8 +34,8 @@ const faqData = [
     answer: 'Avec 2 panneaux de 400 Wc (800 Wc total), en région lyonnaise, exposition sud : environ 816 kWh par an (productible 1 200 kWh/kWc, PR 0,85). Avec 85 % d’autoconsommation, vous valorisez ~694 kWh, soit ~139 € économisés la première année au tarif réglementé en vigueur. L\'investissement total DIY (environ 410 €) est récupéré en ~2,9 ans.',
   },
   {
-    question: 'La déclaration CACSI est-elle obligatoire avec le HMS-800W-2T ?',
-    answer: 'Oui, comme pour tout système connecté au réseau. Le HMS-800W-2T est certifié CE, conforme aux normes VDE-AR-N 4105 et NF C 15-100. La déclaration CACSI à Enedis est gratuite, prend 20 à 30 minutes en ligne, et est valable pour toute la durée de vie de votre installation.',
+    question: 'Faut-il déclarer un kit avec HMS-800W-2T à Enedis ?',
+    answer: 'Oui, comme pour tout système connecté au réseau. Le HMS-800W-2T est certifié CE, conforme aux normes VDE-AR-N 4105 et NF C 15-100. La déclaration à Enedis est gratuite et se fait en ligne avant la mise en service : deux voies, la CACSI (convention d\'autoconsommation sans injection) si l\'installation est réglée en zéro injection, ou la cession gratuite du surplus à Enedis (article L315-5 du Code de l\'énergie) si elle renvoie son surplus sur le réseau.',
   },
   {
     question: 'Quelle est la garantie du Hoymiles HMS-800W-2T ?',

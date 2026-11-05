@@ -110,7 +110,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     .slice(0, 4);
 
   // FAQ sans marque : fourchette des kits de 500 à 515 Wc sans batterie analysés
-  const kits500 = [...allResults.filter(r => r.power >= 0.5 && r.power < 0.6 && !r.autocons)].sort((a, b) => a.price - b.price);
+  const kits500 = [...allResults.filter(r => r.power >= 0.5 && r.power < 0.6 && r.autocons === AUTOCONSO_STANDARD)].sort((a, b) => a.price - b.price);
   const kits500Prix = `de ${kits500[0].price} à ${kits500[kits500.length - 1].price} € pour les kits de 500 Wc environ analysés`;
   const kits500Roi = `${kits500[0].roi.toLocaleString('fr-FR')} à ${kits500[kits500.length - 1].roi.toLocaleString('fr-FR')}`;
 

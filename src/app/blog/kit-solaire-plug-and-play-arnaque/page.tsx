@@ -44,7 +44,7 @@ const faqData = [
   { question: 'Y a-t-il des vraies arnaques sur le marché ?', answer: 'Oui, sur AliExpress et sur certaines annonces Leboncoin. Panneaux d\'occasion vendus neufs, puissances exagérées, micro-onduleurs non conformes CE. Les kits vendus par Sunology, Beem, Sunethic, DualSun et EcoFlow respectent les normes françaises. En cas de doute, exigez les certifications NF/CE.' },
   { question: 'Combien de temps met-on pour rentabiliser son kit ?', answer: `Entre 4 et 10 ans selon : la puissance du kit, votre exposition, votre ville, le prix payé. Un Sunology GO (${GO.powerWc} W, ${priceLabel('sunology-go')}) installé plein sud à Marseille se rentabilise en ${fr(roiGoMarseille)} ans environ. Un Sunology PLAY (${PLAY.powerWc} W, ${priceLabel('sunology-play')}) à Lille exposé est se rentabilise en ${fr(roiPlayLilleEst)} ans environ (autoconsommation 85 %, notre méthode standard).` },
   { question: 'Que se passe-t-il si je déménage avant la fin du retour sur investissement ?', answer: 'Vous pouvez emporter votre kit : c\'est un gros avantage du plug-and-play vs une installation classique. Démontage en 15 minutes. Vous pouvez aussi le revendre d\'occasion : le marché secondaire est actif (-40% à -50% du prix neuf selon l\'âge et l\'état).' },
-  { question: 'Ai-je vraiment besoin d\'un professionnel pour installer ?', answer: 'Non. C\'est tout l\'intérêt du plug-and-play : installation en 15-60 minutes, pas d\'électricien, pas de déclaration fiscale, juste un CACSI gratuit à envoyer à Enedis. Certains fabricants tentent de vous vendre une "installation pro" à 200€ — inutile.' },
+  { question: 'Ai-je vraiment besoin d\'un professionnel pour installer ?', answer: 'Non. C\'est tout l\'intérêt du plug-and-play : installation en 15-60 minutes, pas d\'électricien, pas de déclaration fiscale, juste une déclaration gratuite à Enedis (CACSI ou cession du surplus). Certains fabricants tentent de vous vendre une "installation pro" à 200€ — inutile.' },
 ];
 
 const idees_recues = [
@@ -60,7 +60,7 @@ const cas_arnaque = [
   { type: 'Panneaux d\'occasion Leboncoin "neufs"', desc: 'Panneaux ayant 3-5 ans vendus comme neufs. Performance dégradée, garantie expirée, traçabilité impossible.', risque: 'Élevé' },
   { type: 'Démarchage téléphonique "subvention État"', desc: 'Aucune aide État pour le plug-and-play sous 3kWc en 2026. Toute offre "subventionnée" par téléphone est suspecte.', risque: 'Très élevé' },
   { type: 'Installeurs "plug-and-play à 1500€"', desc: 'Surfacturation de kits à 400-600€ au prix d\'une installation pro. Aucune valeur ajoutée technique.', risque: 'Élevé' },
-  { type: 'Kits "800W plug-and-play"', desc: 'Aucun plafond légal chiffré en France, mais au-delà de ~900W injectés sur un circuit 16A, un circuit dédié est recommandé. Beaucoup de vendeurs présentent la règle allemande des 800W comme une limite française, ou passent sous silence la déclaration CACSI.', risque: 'Moyen' },
+  { type: 'Kits "800W plug-and-play"', desc: 'Aucun plafond légal chiffré en France, mais au-delà de ~900W injectés sur un circuit 16A, un circuit dédié est recommandé. Beaucoup de vendeurs présentent la règle allemande des 800W comme une limite française, ou passent sous silence la déclaration à Enedis.', risque: 'Moyen' },
 ];
 
 const criteres_fiable = [
@@ -69,7 +69,7 @@ const criteres_fiable = [
   { critere: 'Certifications CE + normes NF', detail: 'Certification CE obligatoire pour vendre en France. Normes NF C 15-100 pour la conformité électrique.' },
   { critere: 'Support client francophone', detail: 'Email, téléphone ou chat français. Fuyez les marques qui ne répondent qu\'en anglais ou en chinois.' },
   { critere: 'Avis clients indépendants', detail: 'Trustpilot, Google Reviews, forums photovoltaïques. Méfiez-vous des notes parfaites avec 50 avis récents.' },
-  { critere: 'Conformité CACSI Enedis', detail: 'Le fabricant fournit le formulaire pré-rempli ou au moins un guide clair pour la déclaration gratuite.' },
+  { critere: 'Déclaration Enedis', detail: 'Le fabricant fournit un guide clair pour la déclaration gratuite (CACSI ou cession du surplus) et l\'attestation de conformité NF EN 50549-1-4.' },
 ];
 
 export default function ArnaqueInvestissementPage() {

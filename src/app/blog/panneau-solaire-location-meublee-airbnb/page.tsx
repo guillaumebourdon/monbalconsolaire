@@ -66,11 +66,11 @@ const faqData = [
   },
   {
     question: 'Doit-on déclarer un kit solaire à Enedis même en location ?',
-    answer: 'Oui, obligatoirement. La déclaration CACSI (Convention d\'AutoConsommation Simplifiée Individuelle) auprès d\'Enedis s\'applique à toute installation raccordée au réseau, quelle que soit la situation locative. Elle est gratuite et prend 1 à 3 semaines. Sans cette déclaration, votre installation est techniquement illégale, même si le risque de contrôle est quasi nul en pratique.',
+    answer: 'Oui, obligatoirement. La déclaration auprès d\'Enedis (CACSI si le kit est réglé en zéro injection, sinon cession gratuite du surplus) s\'applique à toute installation raccordée au réseau, quelle que soit la situation locative. Elle est gratuite et prend 1 à 3 semaines. Sans cette déclaration, votre installation est techniquement illégale, même si le risque de contrôle est quasi nul en pratique.',
   },
   {
     question: 'Un kit solaire est-il compatible avec la sous-location Airbnb (locataire qui sous-loue) ?',
-    answer: 'Oui sur le principe, mais la situation se complique : vous devez d\'abord être autorisé à sous-louer par votre propriétaire (bail), puis vérifier le règlement de copropriété. Si ces conditions sont remplies, un kit plug-and-play posé au sol ne nécessite pas d\'autorisation supplémentaire. La déclaration CACSI reste à votre nom en tant que titulaire du contrat d\'électricité.',
+    answer: 'Oui sur le principe, mais la situation se complique : vous devez d\'abord être autorisé à sous-louer par votre propriétaire (bail), puis vérifier le règlement de copropriété. Si ces conditions sont remplies, un kit plug-and-play posé au sol ne nécessite pas d\'autorisation supplémentaire. La déclaration Enedis reste à votre nom en tant que titulaire du contrat d\'électricité.',
   },
   {
     question: 'Les voyageurs Airbnb peuvent-ils endommager le kit solaire ?',
@@ -120,7 +120,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               <li>&bull; <strong>Locataire RP</strong>&nbsp;: kit posé sans fixation permanente = pas d&apos;autorisation requise</li>
               <li>&bull; <strong>Propri&eacute;taire-h&ocirc;te Airbnb</strong>&nbsp;: lib&eacute;r&eacute; de toute restriction locative, mais ROI sp&eacute;cifique</li>
               <li>&bull; <strong>Locataire qui sous-loue</strong>&nbsp;: d&eacute;pend du bail et du r&egrave;glement de copropri&eacute;t&eacute;</li>
-              <li>&bull; <strong>CACSI Enedis</strong>&nbsp;: obligatoire dans tous les cas, m&ecirc;me en location</li>
+              <li>&bull; <strong>D&eacute;claration Enedis</strong> (CACSI ou cession gratuite du surplus)&nbsp;: obligatoire dans tous les cas, m&ecirc;me en location</li>
               <li>&bull; <strong>Copropri&eacute;t&eacute;</strong>&nbsp;: toujours v&eacute;rifier le r&egrave;glement avant toute installation visible</li>
             </ul>
           </div>
@@ -166,9 +166,9 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
 
             {/* CACSI obligatoire */}
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">La d&eacute;claration CACSI&nbsp;: obligatoire m&ecirc;me en location</h2>
+              <h2 className="text-2xl font-extrabold mb-4">La d&eacute;claration &agrave; Enedis&nbsp;: obligatoire m&ecirc;me en location</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Tout kit solaire raccord&eacute; au r&eacute;seau &eacute;lectrique doit faire l&apos;objet d&apos;une <strong>d&eacute;claration CACSI (Convention d&apos;AutoConsommation Simplifi&eacute;e Individuelle)</strong> aupr&egrave;s d&apos;Enedis. C&apos;est gratuit, ça prend 1 &agrave; 3 semaines, et ça n&apos;affecte pas votre contrat EDF.
+                Tout kit solaire raccord&eacute; au r&eacute;seau &eacute;lectrique doit faire l&apos;objet d&apos;une <strong>d&eacute;claration aupr&egrave;s d&apos;Enedis</strong>&nbsp;: CACSI (convention d&apos;autoconsommation sans injection) si le kit est r&eacute;gl&eacute; en z&eacute;ro injection, sinon cession gratuite du surplus &agrave; Enedis. C&apos;est gratuit, ça prend 1 &agrave; 3 semaines, et ça n&apos;affecte pas votre contrat EDF.
               </p>
               <div className="card-lg bg-green-pale/30 border-green/10 mb-4">
                 <p className="text-sm font-semibold text-green mb-2">Qui fait la d&eacute;claration&nbsp;?</p>
@@ -269,7 +269,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
                 <li><strong>Votre bail</strong>&nbsp;: v&eacute;rifiez que la sous-location est autoris&eacute;e. Sans clause explicite, la loi l&apos;interdit sauf accord &eacute;crit du propri&eacute;taire.</li>
                 <li><strong>Le r&egrave;glement de copropri&eacute;t&eacute;</strong>&nbsp;: les r&egrave;glements adopt&eacute;s apr&egrave;s 2022 peuvent interdire la location de courte dur&eacute;e &agrave; la majorit&eacute; des deux tiers.</li>
                 <li><strong>Le kit solaire lui-m&ecirc;me</strong>&nbsp;: les m&ecirc;mes r&egrave;gles qu&apos;au cas 1 s&apos;appliquent. Aucune r&egrave;gle suppl&eacute;mentaire ne s&apos;ajoute du seul fait de la sous-location.</li>
-                <li><strong>La CACSI</strong>&nbsp;: toujours &agrave; votre nom, en tant que titulaire du contrat &eacute;lectrique.</li>
+                <li><strong>La d&eacute;claration Enedis</strong>&nbsp;: toujours &agrave; votre nom, en tant que titulaire du contrat &eacute;lectrique.</li>
               </ol>
               <p className="text-charcoal-light leading-relaxed">
                 En pratique&nbsp;: si votre bail et la copropri&eacute;t&eacute; autorisent la sous-location Airbnb, un kit plug-and-play pos&eacute; au sol ne pose aucun probl&egrave;me suppl&eacute;mentaire.
@@ -325,7 +325,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               <ul className="space-y-2 text-charcoal-light text-sm">
                 {[
                   'Installer sans v&eacute;rifier le r&egrave;glement de copropri&eacute;t&eacute; dans un immeuble haussmannien ou class&eacute;',
-                  'Ignorer la CACSI Enedis en pensant que "personne ne v&eacute;rifie" — c\'est vrai, mais votre responsabilit&eacute; reste engag&eacute;e',
+                  'Ignorer la d&eacute;claration Enedis en pensant que "personne ne v&eacute;rifie" — c\'est vrai, mais votre responsabilit&eacute; reste engag&eacute;e',
                   'Promettre &agrave; vos voyageurs Airbnb que le logement est "alimenté en énergie solaire" — l\'apport est réel mais partiel',
                   'Laisser le câble de connexion à la portée des voyageurs sans fixation propre',
                   'Acheter un kit non certifié CE pour réduire le coût — risque incendie et responsabilité en cas de sinistre',

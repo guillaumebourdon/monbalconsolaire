@@ -182,7 +182,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               </p>
               <div className="space-y-2">
                 {[
-                  { x: '&#10007;', text: 'Pas de raccordement au réseau EDF OA (vous êtes en CACSI, pas en contrat de vente)' },
+                  { x: '&#10007;', text: 'Pas de raccordement au réseau EDF OA (CACSI ou cession gratuite du surplus, pas de contrat de vente)' },
                   { x: '&#10007;', text: 'Pas d’installation par un professionnel RGE' },
                   { x: '&#10007;', text: 'Pas de Consuel ni de mise en service officielle' },
                 ].map((item, i) => (

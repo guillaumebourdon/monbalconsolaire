@@ -31,8 +31,8 @@ const faqData = [
     answer: 'Pas totalement. Il accepte 2 entrées MPPT indépendantes de 400 W max chacune, soit 800 W total en panneaux. Tous les panneaux avec connecteurs MC4 standards fonctionnent (EcoFlow vend les siens, mais les Trina, JA Solar, Longi etc. marchent aussi). En revanche, il ne se branche pas sur des panneaux avec micro-onduleur déjà intégré (type Sunology PLAY 2). C\'est l\'un ou l\'autre.',
   },
   {
-    question: 'Faut-il faire la déclaration CACSI à Enedis ?',
-    answer: 'Oui. Comme tout système photovoltaïque connecté au réseau, le PowerStream nécessite la déclaration CACSI (Convention d\'Autoconsommation Sans Injection). Le PowerStream est conforme aux normes VDE-AR-N 4105 et NF C 15-100, certifié CE. EcoFlow fournit l\'attestation de conformité dans la documentation. La procédure est la même que pour un kit Sunology ou Beem : 25 minutes en ligne, gratuit.',
+    question: 'Faut-il déclarer le PowerStream à Enedis ?',
+    answer: 'Oui. Comme tout système photovoltaïque connecté au réseau, le PowerStream doit être déclaré à Enedis : deux voies : la CACSI (convention d\'autoconsommation sans injection) si l\'installation est réglée en zéro injection, ou la cession gratuite du surplus à Enedis (article L315-5 du Code de l\'énergie) si elle renvoie son surplus sur le réseau. Le PowerStream est conforme aux normes VDE-AR-N 4105 et NF C 15-100, certifié CE. EcoFlow fournit l\'attestation de conformité dans la documentation. La démarche est gratuite et se fait en ligne.',
   },
   {
     question: 'Combien ça coûte au total un système complet ?',

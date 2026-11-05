@@ -27,8 +27,8 @@ const faqData = [
     answer: 'Le STREAM Ultra part avec 1,92 kWh de batterie intégrée. EcoFlow vend des batteries d\'extension STREAM AC Pro (1,92 kWh chacune) qui se raccordent au boîtier principal : jusqu\'à 5 unités supplémentaires, soit 6 × 1,92 kWh = 11,52 kWh au total. Vous pouvez donc démarrer avec le boîtier seul et augmenter le stockage au fil du temps, sans changer le micro-onduleur.',
   },
   {
-    question: 'Faut-il déclarer le STREAM Ultra à Enedis (CACSI) ?',
-    answer: 'Oui, comme tout système solaire connecté au réseau. La sortie onduleur du STREAM Ultra est bridée à 800 W, conforme à la recommandation française (pas une limite légale : aucun texte n\'impose 800 W, mais c\'est le seuil retenu par les fabricants pour une installation sans électricien). La déclaration CACSI (Convention d\'Autoconsommation Sans Injection) se fait en ligne auprès d\'Enedis, en 20-30 minutes, gratuitement.',
+    question: 'Faut-il déclarer le STREAM Ultra à Enedis ?',
+    answer: 'Oui, comme tout système solaire connecté au réseau. La sortie onduleur du STREAM Ultra est bridée à 800 W, conforme à la recommandation française (pas une limite légale : aucun texte n\'impose 800 W, mais c\'est le seuil retenu par les fabricants pour une installation sans électricien). La déclaration se fait en ligne auprès d\'Enedis, gratuitement, avant la mise en service : deux voies : la CACSI (convention d\'autoconsommation sans injection) si l\'installation est réglée en zéro injection, ou la cession gratuite du surplus à Enedis (article L315-5 du Code de l\'énergie) si elle renvoie son surplus sur le réseau.',
   },
   {
     question: 'STREAM Ultra ou Zendure SolarFlow : lequel choisir ?',

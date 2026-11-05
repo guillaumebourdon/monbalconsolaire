@@ -113,7 +113,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/blog/panneau-solaire-location-meublee-airbnb',
     title: 'Kit solaire balcon en location meublée et Airbnb : ce que la loi autorise',
-    excerpt: 'Locataire, propriétaire-hôte Airbnb : autorisations réelles, CACSI obligatoire, ROI chiffré et avantage fiscal LMNP selon votre situation.',
+    excerpt: 'Locataire, propriétaire-hôte Airbnb : autorisations réelles, déclaration Enedis, ROI chiffré et avantage fiscal LMNP selon votre situation.',
     type: 'analyse',
     badge: 'Location',
     tags: ['locataire', 'reglementation', 'pratique', 'location'],
@@ -184,7 +184,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/blog/linky-panneau-solaire-injection',
     title: 'Linky et panneau solaire : injection, index, surplus (2026)',
-    excerpt: 'Que voit vraiment le Linky ? Index injection vs soutirage, mythe du compteur à l\'envers, surplus gratuit EDF, CACSI obligatoire : tout expliqué simplement.',
+    excerpt: 'Que voit vraiment le Linky ? Index injection vs soutirage, mythe du compteur à l\'envers, surplus cédé gratuitement, déclaration Enedis : tout expliqué simplement.',
     type: 'analyse',
     badge: 'Réglementation',
     tags: ['debutant', 'reglementation'],
@@ -457,7 +457,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/blog/prix-electricite-2026-solaire',
     title: 'Prix de l\'électricité 2026 : pourquoi le solaire devient incontournable',
-    excerpt: 'Tarif réglementé : 0,1940 € au 1er février 2026, 0,2001 € depuis le 1er août 2026. Ce qui explique la hausse et ce que ça change pour un kit.',
+    excerpt: 'Tarif réglementé : +3,1 % sur le kWh au 1er août 2026. Ce qui explique la hausse (TURPE, capacité, fin de l\'ARENH) et ce que ça change pour un kit.',
     type: 'analyse',
     badge: 'Marché',
     tags: ['rentabilite'],

@@ -319,7 +319,7 @@ export default function MultiPanneauxSeriePage() {
                   },
                   {
                     titre: 'D&eacute;passer 800 Wc sans circuit d&eacute;di&eacute;',
-                    detail: '2 panneaux de 500 Wc = 1&nbsp;000 Wc. Hors cadre plug-and-play. Obligation d&apos;un circuit d&eacute;di&eacute; et d&apos;une d&eacute;claration Enedis compl&egrave;te (ex-CACSI). Voir notre guide r&eacute;glementation.',
+                    detail: '2 panneaux de 500 Wc = 1&nbsp;000 Wc. Hors cadre plug-and-play. Obligation d&apos;un circuit d&eacute;di&eacute; et d&apos;une d&eacute;claration Enedis adapt&eacute;e. Voir notre guide r&eacute;glementation.',
                   },
                   {
                     titre: 'N&eacute;gliger la protection DC',

@@ -26,7 +26,7 @@ const faqData = [
   },
   {
     question: 'Peut-on installer un kit balcon et une installation toiture en même temps ?',
-    answer: 'Oui, et c’est une stratégie cohérente pour les propriétaires : le kit balcon couvre le talon de consommation immédiatement (ROI court), la toiture optimise la production globale sur le long terme. Les deux fonctionnent en parallèle sans conflit technique, sous réserve de déclaration CACSI séparée pour le kit balcon.',
+    answer: 'Oui, et c’est une stratégie cohérente pour les propriétaires : le kit balcon couvre le talon de consommation immédiatement (ROI court), la toiture optimise la production globale sur le long terme. Les deux fonctionnent en parallèle sans conflit technique, sous réserve de déclarer aussi le kit balcon à Enedis.',
   },
   {
     question: 'Un locataire peut-il installer des panneaux en toiture ?',
@@ -124,7 +124,7 @@ export default function ComparatifBalconVsToiturePage() {
               Depuis 2022, plus de 220&nbsp;000 foyers fran&ccedil;ais se sont &eacute;quip&eacute;s d&apos;un kit solaire balcon. Le principe&nbsp;: un &agrave; deux panneaux de 300 &agrave; 800&nbsp;Wc au total (aucun plafond l&eacute;gal chiffr&eacute; en France, mais ~900&nbsp;W par circuit est le rep&egrave;re de s&eacute;curit&eacute; recommand&eacute;&nbsp;; <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green hover:underline">voir la r&eacute;glementation</Link>), un micro-onduleur, une prise 230&nbsp;V. Installation en 1 heure, z&eacute;ro installateur, z&eacute;ro travaux.
             </p>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              La d&eacute;claration CACSI aupr&egrave;s d&apos;Enedis est gratuite et se fait en ligne en 10 minutes. Le compteur Linky enregistre l&apos;injection du surplus &mdash; qui n&apos;est pas rachet&eacute; mais qui &eacute;vite tout probl&egrave;me r&eacute;glementaire.
+              La d&eacute;claration aupr&egrave;s d&apos;Enedis (CACSI ou cession gratuite du surplus) est gratuite et se fait en ligne. Le compteur Linky enregistre l&apos;injection du surplus &mdash; qui n&apos;est pas rachet&eacute; mais qui &eacute;vite tout probl&egrave;me r&eacute;glementaire.
             </p>
 
             <h3 className="font-bold text-lg mb-3 mt-6">Ce que produit concr&egrave;tement un kit balcon</h3>
@@ -184,7 +184,7 @@ export default function ComparatifBalconVsToiturePage() {
                 <li>&bull; Z&eacute;ro travaux, z&eacute;ro installateur</li>
                 <li>&bull; ROI 4,7 &agrave; 7 ans &mdash; le plus court du march&eacute; solaire r&eacute;sidentiel</li>
                 <li>&bull; D&eacute;m&eacute;nageable (le kit part avec vous)</li>
-                <li>&bull; D&eacute;claration CACSI gratuite et simplifi&eacute;e</li>
+                <li>&bull; D&eacute;claration Enedis gratuite (CACSI ou cession du surplus)</li>
               </ul>
             </div>
             <div className="card bg-amber-pale/30 border-l-4 border-l-amber mb-6 p-4">
@@ -358,7 +358,7 @@ export default function ComparatifBalconVsToiturePage() {
                   </tr>
                   <tr>
                     <td className="p-3 font-medium">Revente surplus</td>
-                    <td className="p-3 text-center text-red-600">&#x2717; Non (CACSI)</td>
+                    <td className="p-3 text-center text-red-600">&#x2717; Non (CACSI ou cession gratuite)</td>
                     <td className="p-3 text-center text-green font-bold">&#x2714; Possible (S17)</td>
                   </tr>
                   <tr className="bg-cream/40">
@@ -476,7 +476,7 @@ export default function ComparatifBalconVsToiturePage() {
               Le kit balcon couvre imm&eacute;diatement le <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline">talon de consommation</Link> (r&eacute;frig&eacute;rateur, box internet, &eacute;lectronique en veille) avec le ROI le plus court du march&eacute;. L&apos;installation toiture optimise la production globale sur le long terme.
             </p>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              Techniquement, il n&apos;y a aucun conflit&nbsp;: le kit balcon fonctionne en CACSI (autoconsommation sans injection factur&eacute;e), l&apos;installation toiture peut &ecirc;tre en autoconsommation avec vente du surplus (contrat S17). Les deux syst&egrave;mes opèrent sur la m&ecirc;me installation &eacute;lectrique sans interf&eacute;rence.
+              Techniquement, il n&apos;y a aucun conflit&nbsp;: le kit balcon fonctionne en CACSI (z&eacute;ro injection) ou c&egrave;de gratuitement son surplus &agrave; Enedis, l&apos;installation toiture peut &ecirc;tre en autoconsommation avec vente du surplus (contrat S17). Les deux syst&egrave;mes opèrent sur la m&ecirc;me installation &eacute;lectrique sans interf&eacute;rence.
             </p>
             <div className="card bg-green-pale/20 border-l-4 border-l-green p-4 mb-4">
               <p className="text-sm font-semibold mb-2">Strat&eacute;gie double production pour propri&eacute;taires</p>

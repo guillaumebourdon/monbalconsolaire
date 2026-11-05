@@ -35,7 +35,7 @@ const faqData = [
   },
   {
     question: 'Quelle est la limite légale de puissance pour un kit solaire de balcon ?',
-    answer: 'Il n\'y en a pas. Contrairement à l\'Allemagne (800 VA en sortie d\'onduleur depuis 2024), la France ne fixe aucun plafond chiffré pour un kit branché sur prise. La NF C 15-100 (point 551.7.2, depuis le 1er septembre 2025) interdit de raccorder un générateur à un circuit terminal par une prise ; son application aux kits mobiles est une zone grise (« théoriquement non concernés » selon Enerplan). Les 900 W souvent cités sont une recommandation de sécurité (UFC-Que Choisir, fabricants), pas une limite légale. La déclaration CACSI auprès d\'Enedis est obligatoire quelle que soit la puissance.',
+    answer: 'Il n\'y en a pas. Contrairement à l\'Allemagne (800 VA en sortie d\'onduleur depuis 2024), la France ne fixe aucun plafond chiffré pour un kit branché sur prise. La NF C 15-100 (point 551.7.2, depuis le 1er septembre 2025) interdit de raccorder un générateur à un circuit terminal par une prise ; son application aux kits mobiles est une zone grise (« théoriquement non concernés » selon Enerplan). Les 900 W souvent cités sont une recommandation de sécurité (UFC-Que Choisir, fabricants), pas une limite légale. Une déclaration à Enedis est obligatoire quelle que soit la puissance (CACSI ou cession gratuite du surplus).',
   },
   {
     question: 'Faut-il brancher ses panneaux en série ou en parallèle sur un balcon ?',
@@ -43,7 +43,7 @@ const faqData = [
   },
   {
     question: 'Faut-il faire une déclaration pour 2 panneaux sur son balcon ?',
-    answer: 'Oui. Toute installation raccordée au réseau intérieur doit être déclarée à Enedis via une Convention d\'Autoconsommation Sans Injection (CACSI), gratuite et en ligne, dès le premier panneau. Jusqu\'à 3 kVA la procédure est simplifiée. Déclarez la puissance réelle de l\'ensemble (les 2 panneaux), pas celle d\'un seul.',
+    answer: 'Oui. Toute installation raccordée au réseau intérieur doit être déclarée à Enedis, gratuitement et en ligne, dès le premier panneau : CACSI si elle est réglée en zéro injection, sinon cession gratuite du surplus (installations de 3 kW maximum). Déclarez la puissance réelle de l\'ensemble (les 2 panneaux), pas celle d\'un seul.',
   },
   {
     question: 'Plus de panneaux, est-ce toujours plus rentable ?',
@@ -104,7 +104,7 @@ export default function CombienPanneauxBalconPage() {
                   <li>&bull; <strong>Aucun plafond chiffr&eacute;</strong> pour un kit branch&eacute; sur prise.</li>
                   <li>&bull; <strong>NF&nbsp;C&nbsp;15-100, point 551.7.2</strong> (depuis le 1<sup>er</sup> septembre 2025)&nbsp;: un g&eacute;n&eacute;rateur ne doit pas &ecirc;tre raccord&eacute; &agrave; un circuit terminal par une prise. Pour les kits mobiles, c&apos;est une zone grise (&laquo;&nbsp;th&eacute;oriquement non concern&eacute;s&nbsp;&raquo; selon Enerplan).</li>
                   <li>&bull; <strong>900&nbsp;W sur un circuit 16&nbsp;A d&eacute;di&eacute; avec diff&eacute;rentiel 30&nbsp;mA</strong>&nbsp;: une recommandation de s&eacute;curit&eacute; courante (UFC-Que Choisir, fabricants), pas une limite l&eacute;gale.</li>
-                  <li>&bull; <strong>D&eacute;claration CACSI</strong> aupr&egrave;s d&apos;Enedis obligatoire d&egrave;s qu&apos;un kit est branch&eacute;, quelle que soit sa puissance.</li>
+                  <li>&bull; <strong>D&eacute;claration &agrave; Enedis</strong> obligatoire avant la mise en service, quelle que soit la puissance&nbsp;: CACSI si le kit est r&eacute;gl&eacute; en z&eacute;ro injection, sinon cession gratuite du surplus.</li>
                 </ul>
                 <p className="text-xs text-stone mt-3">
                   D&eacute;tails et sources&nbsp;: <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green font-semibold hover:underline">r&eacute;glementation des panneaux solaires de balcon en 2026</Link>.
@@ -130,7 +130,7 @@ export default function CombienPanneauxBalconPage() {
                   },
                   {
                     title: '3. &Eacute;conomique : votre talon de consommation',
-                    desc: 'Sans batterie, vous n&apos;&eacute;conomisez que ce que vous consommez au moment o&ugrave; le soleil produit. Au-del&agrave; de votre consommation de fond (frigo, box, veilles), chaque watt suppl&eacute;mentaire part sur le r&eacute;seau sans &ecirc;tre pay&eacute; (la CACSI ne pr&eacute;voit aucune r&eacute;mun&eacute;ration). C&apos;est souvent la limite la plus contraignante.',
+                    desc: 'Sans batterie, vous n&apos;&eacute;conomisez que ce que vous consommez au moment o&ugrave; le soleil produit. Au-del&agrave; de votre consommation de fond (frigo, box, veilles), chaque watt suppl&eacute;mentaire est soit bloqu&eacute; (r&eacute;glage z&eacute;ro injection, CACSI), soit c&eacute;d&eacute; gratuitement &agrave; Enedis&nbsp;: dans les deux cas, il ne vous rapporte rien. C&apos;est souvent la limite la plus contraignante.',
                   },
                   {
                     title: '4. Administrative : CACSI, copro, urbanisme',
@@ -299,12 +299,12 @@ export default function CombienPanneauxBalconPage() {
                   {
                     icon: '📋',
                     title: 'D&eacute;claration fid&egrave;le',
-                    desc: 'La CACSI doit mentionner la puissance r&eacute;elle de l&apos;ensemble. Si vous ajoutez un panneau apr&egrave;s coup, mettez votre d&eacute;claration &agrave; jour sur le portail Enedis.',
+                    desc: 'La d&eacute;claration Enedis doit mentionner la puissance r&eacute;elle de l&apos;ensemble. Si vous ajoutez un panneau apr&egrave;s coup, mettez votre d&eacute;claration &agrave; jour sur le portail Enedis.',
                   },
                   {
                     icon: '🔒',
                     title: 'Assurance',
-                    desc: 'En cas de sinistre, l&apos;assureur peut examiner la conformit&eacute; de l&apos;installation. Un circuit d&eacute;di&eacute; pos&eacute; par un &eacute;lectricien (avec facture) et une CACSI &agrave; jour vous mettent en position solide.',
+                    desc: 'En cas de sinistre, l&apos;assureur peut examiner la conformit&eacute; de l&apos;installation. Un circuit d&eacute;di&eacute; pos&eacute; par un &eacute;lectricien (avec facture) et une d&eacute;claration Enedis &agrave; jour vous mettent en position solide.',
                   },
                 ].map((r, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
@@ -416,7 +416,7 @@ export default function CombienPanneauxBalconPage() {
                 {[
                   { label: 'Plafond l&eacute;gal en watts', value: 'Aucun' },
                   { label: 'Rep&egrave;re s&eacute;curit&eacute; (recommandation)', value: '900 W / circuit 16 A' },
-                  { label: 'D&eacute;claration Enedis (CACSI)', value: 'Obligatoire' },
+                  { label: 'D&eacute;claration Enedis (CACSI ou cession du surplus)', value: 'Obligatoire' },
                   { label: 'Locataire', value: 'Accord si fixation' },
                   { label: 'AG de copropri&eacute;t&eacute;', value: 'Si visible en fa&ccedil;ade' },
                   { label: 'Norme &eacute;lectrique', value: 'NF C 15-100 (551.7.2)' },

@@ -48,7 +48,7 @@ const faqData = [
   },
   {
     question: 'Mon abonnement EDF change-t-il avec un kit solaire ?',
-    answer: 'Non. Aucun changement d\'abonnement n\'est nécessaire ni obligatoire pour une installation plug-and-play ≤ 3 kVA. Vous gardez votre contrat, votre puissance souscrite, votre option tarifaire (Base, HP/HC, Tempo). Il n\'y a pas de démarche auprès d\'EDF. La seule obligation administrative est la déclaration CACSI auprès d\'Enedis, qui prend 5 minutes en ligne et ne coûte rien.',
+    answer: 'Non. Aucun changement d\'abonnement n\'est nécessaire ni obligatoire pour une installation plug-and-play ≤ 3 kVA. Vous gardez votre contrat, votre puissance souscrite, votre option tarifaire (Base, HP/HC, Tempo). Il n\'y a pas de démarche auprès d\'EDF. La seule obligation administrative est la déclaration à Enedis (CACSI ou cession gratuite du surplus), en ligne et gratuite.',
   },
   {
     question: 'Pourquoi mon économie mensuelle varie-t-elle autant ?',

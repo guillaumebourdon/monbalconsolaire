@@ -36,7 +36,7 @@ const faqData = [
   },
   {
     question: 'Faut-il une autorisation pour installer le GO ?',
-    answer: 'Aucun permis n\'est nécessaire : il n\'existe pas de limite légale de puissance en France pour ce type d\'installation plug-and-play. En copropriété, l\'accord du syndic peut être demandé si le panneau est visible depuis l\'extérieur (impact esthétique sur la façade) : mieux vaut vérifier le règlement avant d\'installer. Le Consuel n\'est pas requis car le kit est pré-assemblé et testé en usine, mais une convention d\'autoconsommation sans injection (CACSI) auprès d\'Enedis reste obligatoire, gratuite et réalisable en ligne.',
+    answer: 'Aucun permis n\'est nécessaire : il n\'existe pas de limite légale de puissance en France pour ce type d\'installation plug-and-play. En copropriété, l\'accord du syndic peut être demandé si le panneau est visible depuis l\'extérieur (impact esthétique sur la façade) : mieux vaut vérifier le règlement avant d\'installer. Pour le Consuel, Enedis prévoit une dispense pour les kits déjà assemblés et conformes à la norme NF EN 50549-1-4, sur attestation sur l\'honneur. Une déclaration à Enedis reste obligatoire, gratuite et en ligne : CACSI si le kit est réglé en zéro injection, sinon cession gratuite du surplus.',
   },
   {
     question: 'Peut-on ajouter une batterie au GO ?',
@@ -62,8 +62,8 @@ const points_forts = [
     detail: 'Technologie plus récente que le PERC classique, avec un meilleur rendement par forte température — un vrai plus en plein été sur un balcon exposé sud.',
   },
   {
-    titre: 'Pas de Consuel, juste une déclaration CACSI',
-    detail: 'Comme tous les kits plug-and-play Sunology, le GO est pré-assemblé et testé en usine : aucun contrôle Consuel. Seule une déclaration auprès d\'Enedis reste obligatoire (CACSI si l\'installation est réglée en zéro injection, sinon cession gratuite du surplus), gratuite et en ligne.',
+    titre: 'Pas de Consuel, juste une déclaration Enedis',
+    detail: 'Comme tous les kits plug-and-play Sunology, le GO est pré-assemblé : Enedis prévoit une dispense de Consuel pour les kits conformes à la norme NF EN 50549-1-4, sur attestation. Seule une déclaration auprès d\'Enedis reste obligatoire (CACSI si l\'installation est réglée en zéro injection, sinon cession gratuite du surplus), gratuite et en ligne.',
   },
   {
     titre: 'Garantie 25 ans et SAV français',

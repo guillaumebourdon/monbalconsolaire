@@ -30,7 +30,7 @@ const faqData = [
   },
   {
     question: 'Peut-on injecter 2 400 W sur le réseau avec le BS2500 PRO ?',
-    answer: 'Techniquement, la fiche indique une injection « 800 W par défaut, réglable de 0 à 2 400 W ». Pour une installation branchée sur une prise, restez à 800 W : c\'est le seuil retenu en France pour les kits plug-and-play sans intervention d\'un électricien. Au-delà, il faut un circuit dédié et un avis d\'électricien. Dans tous les cas, la déclaration à Enedis (CACSI) reste obligatoire.',
+    answer: 'Techniquement, la fiche indique une injection « 800 W par défaut, réglable de 0 à 2 400 W ». Pour une installation branchée sur une prise, restez à 800 W : c\'est le seuil retenu en France pour les kits plug-and-play sans intervention d\'un électricien. Au-delà, il faut un circuit dédié et un avis d\'électricien. Dans tous les cas, une déclaration à Enedis reste obligatoire : CACSI si l\'appareil est réglé en zéro injection, sinon cession gratuite du surplus.',
   },
   {
     question: 'Quels panneaux brancher sur le BS2500 PRO ?',

@@ -4,6 +4,7 @@ import { DEPARTMENTS } from '@/data/departments';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { RENTABILITE_DEPARTEMENTS, REFERENCE_KIT } from '@/lib/rentabilite-departements';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Solaire de balcon par département — Production et rentabilité 2026',
@@ -94,7 +95,7 @@ export default function SolaireBalconIndexPage() {
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone leading-relaxed">
-            <strong>Méthodologie :</strong> kit de référence {REFERENCE_KIT.name} ({REFERENCE_KIT.powerWc} Wc, {REFERENCE_KIT.priceEur} &euro;), orientation sud. Productible PVGIS (Commission européenne) par département, recalé sur notre référence prudente de Lyon (1 200 kWh/kWc), performance ratio 0,85, autoconsommation 85 %, tarif EDF 0,1940 €/kWh. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (CRE). Montants affichés : économies la 1re année et années de retour sur investissement.{' '}
+            <strong>Méthodologie :</strong> kit de référence {REFERENCE_KIT.name} ({REFERENCE_KIT.powerWc} Wc, {REFERENCE_KIT.priceEur} &euro;), orientation sud. Productible PVGIS (Commission européenne) par département, recalé sur notre référence prudente de Lyon (1 200 kWh/kWc), performance ratio 0,85, autoconsommation 85 %, tarif EDF {KWH_PRICE_LABEL} (en vigueur depuis le {KWH_PRICE_SINCE}). Retour sur investissement calculé avec une inflation du tarif de {KWH_INFLATION_LABEL} et une dégradation des panneaux de {PANEL_DEGRADATION_LABEL}. Montants affichés : économies la 1re année et années de retour sur investissement.{' '}
             <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
           </p>
         </div>

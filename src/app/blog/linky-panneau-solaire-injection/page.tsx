@@ -152,7 +152,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
               </div>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Bonne nouvelle pour l&apos;autoconsommation&nbsp;:</strong> en milieu de journ&eacute;e ensoleil&eacute;e, votre index soutirage <strong>ne tourne plus</strong> (ou tr&egrave;s peu). Votre facture EDF baisse m&eacute;caniquement. L&apos;index injection, lui, peut tourner si vous produisez plus que vous ne consommez &mdash; mais sans compensation financi&egrave;re en CACSI. C&apos;est pour &ccedil;a que l&apos;objectif est de <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline">dimensionner le kit sur votre talon de consommation</Link>, pas de maximiser l&apos;injection.
+                  <strong>Bonne nouvelle pour l&apos;autoconsommation&nbsp;:</strong> en milieu de journ&eacute;e ensoleil&eacute;e, votre index soutirage <strong>ne tourne plus</strong> (ou tr&egrave;s peu). Votre facture EDF baisse m&eacute;caniquement. L&apos;index injection, lui, peut tourner si vous produisez plus que vous ne consommez &mdash; mais sans compensation financi&egrave;re (le surplus est c&eacute;d&eacute; gratuitement &agrave; Enedis&nbsp;; en CACSI, il ne doit pas y en avoir). C&apos;est pour &ccedil;a que l&apos;objectif est de <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline">dimensionner le kit sur votre talon de consommation</Link>, pas de maximiser l&apos;injection.
                 </p>
               </div>
             </section>
@@ -296,7 +296,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                <strong>Notre position&nbsp;:</strong> la d&eacute;claration CACSI prend 10 minutes, co&ucirc;te z&eacute;ro euro et vous met en conformit&eacute; l&eacute;gale. Pas de raison de ne pas le faire. Voir notre <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green hover:underline">guide r&eacute;glementation 2026</Link> pour le contexte complet.
+                <strong>Notre position&nbsp;:</strong> la d&eacute;claration &agrave; Enedis (CACSI ou cession du surplus) est rapide, co&ucirc;te z&eacute;ro euro et vous met en conformit&eacute; l&eacute;gale. Pas de raison de ne pas le faire. Voir notre <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green hover:underline">guide r&eacute;glementation 2026</Link> pour le contexte complet.
               </p>
             </section>
 

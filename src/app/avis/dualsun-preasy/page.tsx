@@ -40,8 +40,8 @@ const faqData = [
     answer: 'Oui, plutôt. L\'app se connecte en Bluetooth au boîtier PREASYBOX, puis transmet les données en WiFi. Vous suivez la production en temps réel, l\'historique jour/semaine/mois, et les économies estimées. C\'est propre et intuitif, comparable à l\'app Sunology STREAM. En revanche, pas de gestion heures pleines/creuses ni de pilotage avancé comme chez Zendure.',
   },
   {
-    question: 'Faut-il faire la déclaration CACSI à Enedis ?',
-    answer: 'Oui, comme tout système photovoltaïque connecté au réseau. La procédure est la même que pour un Sunology ou Beem : 25 minutes en ligne, gratuit. DualSun fournit l\'attestation de conformité. Votre installateur partenaire peut aussi s\'en charger.',
+    question: 'Faut-il déclarer le PREASY à Enedis ?',
+    answer: 'Oui, une déclaration à Enedis est obligatoire, gratuite et en ligne, avant la mise en service. Deux voies : CACSI si l\'installation est réglée en zéro injection, sinon cession gratuite du surplus à Enedis. DualSun fournit l\'attestation de conformité. Votre installateur partenaire peut aussi s\'en charger.',
   },
 ];
 

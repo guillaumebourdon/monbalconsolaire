@@ -19,7 +19,7 @@ export default function GuideGratuitPage() {
     { num: 'I', titre: 'Acheter sans vérifier l\'orientation du balcon', sous: 'L\'erreur la plus coûteuse' },
     { num: 'II', titre: 'Attendre l\'indépendance énergétique', sous: 'L\'attente la plus irréaliste' },
     { num: 'III', titre: 'Choisir un kit AliExpress bas prix', sous: 'L\'économie qui coûte cher' },
-    { num: 'IV', titre: 'Oublier la déclaration CACSI à Enedis', sous: 'Une obligation légale souvent ignorée' },
+    { num: 'IV', titre: 'Oublier la déclaration à Enedis', sous: 'Une obligation légale souvent ignorée' },
     { num: 'V', titre: 'Négliger le parafoudre en zone orageuse', sous: '30€ qui évitent 300€ de casse' },
     { num: 'VI', titre: 'Installer en location sans prévenir', sous: 'Un réflexe qui peut coûter le bail' },
     { num: 'VII', titre: 'Ne pas comparer le prix au kWc', sous: 'Le vrai indicateur pour ne pas se faire avoir' },

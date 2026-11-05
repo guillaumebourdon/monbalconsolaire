@@ -34,8 +34,8 @@ const faqData = [
     answer: 'Le SolarFlow 800 Plus dispose de 2 entrées MPPT de 750 W chacune, soit 1 500 W max en entrée solaire. En pratique, 2 panneaux de 400-500 W couvrent largement les besoins. Pour un balcon, 2 panneaux de 450 à 500 W (les packs vendus par Zendure) suffisent à remplir la batterie de 1,92 kWh en une demi-journée ensoleillée.',
   },
   {
-    question: 'Faut-il faire la déclaration CACSI à Enedis ?',
-    answer: 'Oui. Comme tout système connecté au réseau domestique, le SolarFlow nécessite la déclaration CACSI (Convention d\'Autoconsommation Sans Injection). La procédure est la même que pour un Sunology ou Beem : 25 minutes en ligne, gratuit. Zendure fournit l\'attestation de conformité dans la documentation.',
+    question: 'Faut-il déclarer le SolarFlow à Enedis ?',
+    answer: 'Oui. Comme tout système connecté au réseau domestique, le SolarFlow doit être déclaré à Enedis, gratuitement et en ligne. Réglé en zéro injection (le SolarFlow peut piloter sa sortie avec un compteur), c\'est la CACSI ; s\'il renvoie du surplus, c\'est la cession gratuite du surplus à Enedis (article L315-5 du Code de l\'énergie). Zendure fournit l\'attestation de conformité dans la documentation.',
   },
   {
     question: 'La batterie LFP de 1,92 kWh, ça dure combien de temps ?',
