@@ -68,7 +68,7 @@ const etapes = [
     titre: 'Remplissez les informations d\'installation',
     duree: '5 minutes',
     detail: 'Renseignez : la puissance cumulée en kWc (pour un kit 450 W, saisissez 0,45 kWc), le type de panneaux (monocristallin, polycristallin), la marque et modèle du micro-onduleur, la date de mise en service prévue. Cochez la case "Installation branchée sur prise domestique" pour un plug-and-play.',
-    pieges: 'La puissance se mesure en kilowatts-crête (kWc), pas en watts. 450 W = 0,45 kWc. 900 W = 0,9 kWc. Ne jamais dépasser 0,9 kWc pour rester dans le régime plug-and-play. Au-delà, il faut un contrôle Consuel et une installation par un électricien qualifié.',
+    pieges: 'La puissance se mesure en kilowatts-crête (kWc), pas en watts : 450 W = 0,45 kWc, 900 W = 0,9 kWc. Déclarez la puissance réelle. Aucun texte ne fixe de plafond chiffré pour un kit branché sur prise : les 900 W souvent cités sont une recommandation (UFC-Que Choisir, notices des fabricants) pour un circuit protégé par un différentiel 30 mA, pas une limite légale. Au-delà, un circuit dédié posé par un électricien est recommandé.',
   },
   {
     num: 5,
@@ -108,7 +108,7 @@ const cas_particuliers = [
   },
   {
     titre: 'Vous avez plusieurs kits en série',
-    detail: 'Vous pouvez cumuler jusqu\'à 800-900 W au total sur votre installation en restant en régime plug-and-play. Au-delà, vous basculez en régime photovoltaïque classique (≥ 3 kWc) avec contrôle Consuel obligatoire. Déclarez l\'ensemble de la puissance cumulée dans le formulaire CACSI, pas chaque kit séparément.',
+    detail: 'Déclarez la puissance cumulée de tous vos kits dans le formulaire CACSI, pas chaque kit séparément. Il n\'existe pas de plafond légal chiffré pour un kit branché sur prise, mais la recommandation courante est de ne pas dépasser 900 W sur un même circuit ; au-delà, faites poser un circuit dédié par un électricien. Le détail est dans notre guide de la réglementation.',
     link: '/guide/reglementation-panneau-solaire-balcon-2026',
     linkLabel: 'Réglementation complète 2026',
   },
@@ -147,6 +147,7 @@ export default function DeclarationCacsiEnedisPage() {
         description="Guide pas à pas pour déclarer votre kit solaire de balcon à Enedis via la CACSI en 2026."
         url="https://monbalconsolaire.fr/guide/declaration-cacsi-enedis-panneau-solaire"
         datePublished="2026-04-23"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Déclaration CACSI Enedis' }]} />
@@ -162,7 +163,7 @@ export default function DeclarationCacsiEnedisPage() {
               La CACSI (Convention d&apos;Autoconsommation Sans Injection) est l&apos;étape obligatoire mais simple pour être en règle avec Enedis. Voici la procédure complète en 7 étapes, 25 minutes au total, 100 % gratuite.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>23 avril 2026</span>
+              <span>23 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -183,16 +184,16 @@ export default function DeclarationCacsiEnedisPage() {
                 CACSI est l&apos;acronyme de <strong>Convention d&apos;Autoconsommation Sans Injection</strong>. C&apos;est le document officiel signé entre Enedis (le gestionnaire du réseau électrique français) et vous, propriétaire d&apos;une installation solaire qui produit de l&apos;électricité pour votre usage, sans renvoyer le surplus sur le réseau.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Cette convention existe depuis 2017, dans le cadre du développement du photovoltaïque résidentiel. Avant, toute installation devait être déclarée via une procédure lourde (ConsuelL + contrat d&apos;obligation d&apos;achat). Aujourd&apos;hui, pour les petites installations en autoconsommation pure, la CACSI est la voie simplifiée et gratuite.
+                Cette convention existe depuis 2017, dans le cadre du développement du photovoltaïque résidentiel. Avant, toute installation devait être déclarée via une procédure lourde (Consuel + contrat d&apos;obligation d&apos;achat). Aujourd&apos;hui, pour les petites installations en autoconsommation pure, la CACSI est la voie simplifiée et gratuite.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 <strong>Pour un kit solaire de balcon plug-and-play</strong> (Sunology, Beem, Sunethic, DualSun...), c&apos;est systématiquement la CACSI qui s&apos;applique, car :
               </p>
               <ul className="text-charcoal-light leading-relaxed space-y-2 mt-3 pl-5">
-                <li>&bull; La puissance cumulée est inférieure à 0,9 kWc (900 W)</li>
+                <li>&bull; La puissance est modeste (en g&eacute;n&eacute;ral 300 &agrave; 900 W), sous le rep&egrave;re de 900 W par circuit recommand&eacute; (ce n&apos;est pas un plafond l&eacute;gal)</li>
                 <li>&bull; L&apos;installation se branche sur une prise domestique standard</li>
                 <li>&bull; Vous consommez directement l&apos;énergie produite (pas de vente au réseau)</li>
-                <li>&bull; Le micro-onduleur intégré empêche toute injection de surplus (&laquo; anti-refoulement &raquo;)</li>
+                <li>&bull; Vous ne vendez pas votre surplus&nbsp;: sans contrat de vente, la part non consomm&eacute;e part sur le r&eacute;seau sans r&eacute;mun&eacute;ration</li>
               </ul>
             </section>
 
@@ -560,7 +561,7 @@ Date : [JOUR/MOIS/ANNÉE]`}
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources :</strong> Enedis Connect, Code de l&apos;énergie (article D.342-1), Norme NF C 15-100 (AFNOR), documentation officielle CACSI d&apos;Enedis (avril 2026).{' '}
+                <strong>Sources :</strong> Enedis Connect, Code de l&apos;énergie (article D.342-1), Norme NF C 15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2 : aucun plafond en watts), rep&egrave;re de 900 W recommand&eacute; par UFC-Que Choisir et les notices des fabricants (voir notre <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green hover:underline">guide de la r&eacute;glementation</Link>), documentation officielle CACSI d&apos;Enedis (avril 2026).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

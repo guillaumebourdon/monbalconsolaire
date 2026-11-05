@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: 'La TVA est-elle réduite sur les kits solaires de balcon ?',
-    answer: 'Non, pas pour les achats directs. La TVA à taux réduit (5,5 % pour les panneaux intégrés au bâti, 10 % pour les autres) s’applique uniquement quand un professionnel facture la fourniture ET la pose ensemble, dans un logement de plus de 2 ans. Quand vous achetez un kit Sunology, Beem ou Zendure en ligne, vous payez 20 % de TVA comme sur n’importe quel produit électronique.',
+    answer: 'En pratique, non. Depuis le 1er octobre 2025, la TVA à 5,5 % vise la livraison et l’installation, dans un logement, d’une installation photovoltaïque de 9 kWc au plus qui respecte les critères de l’arrêté du 8 septembre 2025 (bilan carbone des modules, système de gestion de l’énergie pilotant au moins deux usages) et qui est posée par un professionnel qualifié (article 278-0 bis du Code général des impôts). L’ancien taux de 10 % pour les installations de 3 kWc au plus a pris fin le 31 décembre 2025. Un kit plug-and-play acheté en ligne et installé par vous-même ne remplit pas ces conditions : il est facturé avec 20 % de TVA.',
   },
   {
     question: 'Y a-t-il des aides locales pour les panneaux de balcon ?',
@@ -48,6 +48,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
         description="MaPrimeRénov, TVA réduite, prime autoconsommation : ce qui s’applique vraiment aux kits balcon en 2026. Réponse honnête et chiffrée."
         url="https://monbalconsolaire.fr/blog/aides-subventions-panneau-solaire-balcon-2026"
         datePublished="2026-08-11"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Aides solaire balcon 2026' }]} />
@@ -64,7 +65,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               MaPrimeR&eacute;nov&apos;, TVA r&eacute;duite, prime &agrave; l&apos;autoconsommation, aides locales&hellip; On nous pose ces questions chaque semaine. La r&eacute;ponse courte&nbsp;: <strong>quasi rien ne s&apos;applique aux kits plug-and-play</strong>. Voici le d&eacute;tail complet, honnêtement.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>11 ao&ucirc;t 2026</span>
+              <span>11 ao&ucirc;t 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>8 min de lecture</span>
             </div>
@@ -76,7 +77,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
             <ul className="text-sm text-charcoal-light space-y-2">
               <li>&bull; <strong>MaPrimeR&eacute;nov&apos;</strong>&nbsp;: non &eacute;ligible (installation DIY, pas de professionnel RGE)</li>
               <li>&bull; <strong>Prime &agrave; l&apos;autoconsommation</strong>&nbsp;: supprim&eacute;e le 5 juin 2026 &mdash; plus disponible pour personne</li>
-              <li>&bull; <strong>TVA r&eacute;duite</strong>&nbsp;: non applicable sur les achats directs en ligne (vous payez 20&nbsp;%)</li>
+              <li>&bull; <strong>TVA r&eacute;duite</strong>&nbsp;: r&eacute;serv&eacute;e depuis le 1<sup>er</sup> octobre 2025 &agrave; la fourniture + pose par un professionnel qualifi&eacute;&nbsp;; un kit achet&eacute; seul reste &agrave; 20&nbsp;%</li>
               <li>&bull; <strong>Aides locales</strong>&nbsp;: existent dans <em>certaines</em> communes, de 100 &agrave; 300&nbsp;&euro; &mdash; &agrave; v&eacute;rifier</li>
               <li>&bull; <strong>Rentabilit&eacute;</strong>&nbsp;: le ROI reste positif sans aides, uniquement sur l&apos;autoconsommation</li>
             </ul>
@@ -101,7 +102,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                     {[
                       ['MaPrimeRénov’', 'Jusqu’à 4 000 €', '&#10007; Non', 'Exige pro RGE + installation toiture'],
                       ['Prime autoconsommation', 'Supprimée', '&#10007; Non', 'Supprimée le 5/06/2026, jamais valable balcon'],
-                      ['TVA réduite 5,5 %', 'Sur la facture pro', '&#10007; Non', 'Uniquement sur facture fourniture + pose RGE'],
+                      ['TVA réduite 5,5 %', 'Sur la facture pro', '&#10007; Non', 'Fourniture + pose par un pro qualifié, critères de l’arrêté du 8/09/2025'],
                       ['Céé locales / métropoles', '100–300 €', '✔ Parfois', 'Variable selon commune, à vérifier'],
                       ['Éco-Rénovons Paris+', '25 % des travaux (plaf. 4 000 €)', '&#10007; Non', 'Copropriété seulement, pas balcon individuel'],
                     ].map(([aide, montant, eligible, pourquoi], i) => (
@@ -181,23 +182,26 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
 
             {/* TVA */}
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">TVA r&eacute;duite&nbsp;: pas pour les achats en ligne</h2>
+              <h2 className="text-2xl font-extrabold mb-4">TVA r&eacute;duite&nbsp;: pas pour un kit achet&eacute; seul</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                La TVA r&eacute;duite sur les &eacute;quipements solaires existe bel et bien&nbsp;:
+                Les r&egrave;gles ont chang&eacute; le 1<sup>er</sup> octobre 2025. Voici ce que pr&eacute;voit aujourd&apos;hui le Code g&eacute;n&eacute;ral des imp&ocirc;ts&nbsp;:
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm mb-2">TVA 5,5&nbsp;% (int&eacute;gr&eacute; au bâti)</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Panneaux install&eacute;s en toiture int&eacute;gr&eacute;s au b&acirc;ti, par un professionnel, dans un logement &gt; 2 ans. Typiquement les grandes installations 3–9 kWc.</p>
+                  <h3 className="font-bold text-sm mb-2">TVA 5,5&nbsp;% (depuis le 1<sup>er</sup> octobre 2025)</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Livraison <strong>et</strong> installation, dans un logement, d&apos;une installation photovolta&iuml;que de 9&nbsp;kWc au plus (article 278-0 bis, P, du CGI). Conditions fix&eacute;es par l&apos;arr&ecirc;t&eacute; du 8&nbsp;septembre 2025&nbsp;: modules sous un plafond de bilan carbone (530&nbsp;kgCO<sub>2</sub>eq/kWc) et de teneur en argent, plomb et cadmium, syst&egrave;me de gestion de l&apos;&eacute;nergie qui pilote au moins deux usages, pose par une entreprise disposant d&apos;une qualification ou certification en cours de validit&eacute;. La batterie n&apos;est pas concern&eacute;e (taux normal).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h3 className="font-bold text-sm mb-2">TVA 10&nbsp;% (superpos&eacute;)</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Panneaux pos&eacute;s sur toiture (non int&eacute;gr&eacute;s), par un professionnel, dans un logement &gt; 2 ans. S&apos;applique sur la fourniture ET la pose dans la m&ecirc;me facture.</p>
+                  <h3 className="font-bold text-sm mb-2">TVA 10&nbsp;% (supprim&eacute;e)</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">L&apos;ancien taux de 10&nbsp;% pour les installations de 3&nbsp;kWc au plus, pos&eacute;es dans un logement achev&eacute; depuis plus de 2&nbsp;ans, ne s&apos;applique plus apr&egrave;s le 31&nbsp;d&eacute;cembre 2025 (sauf devis accept&eacute; avec acompte vers&eacute; avant le 1<sup>er</sup> janvier 2026).</p>
                 </div>
               </div>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Pour un kit balcon achet&eacute; en ligne&nbsp;:</strong> vous achetez le mat&eacute;riel seul, sans pose professionnelle. La TVA applicable est <strong>20&nbsp;%</strong> (taux normal des biens de consommation). Un kit à 399&nbsp;&euro; TTC vous coûte déjà en TVA normale. Aucune démarche ne peut récupérer cette TVA.
+                  <strong>Pour un kit balcon achet&eacute; en ligne&nbsp;:</strong> vous achetez le mat&eacute;riel et vous le posez vous-m&ecirc;me. Les conditions du taux r&eacute;duit (pose par un professionnel qualifi&eacute;, gestion de l&apos;&eacute;nergie pilotant deux usages) ne sont pas r&eacute;unies&nbsp;: la TVA est de <strong>20&nbsp;%</strong>, d&eacute;j&agrave; comprise dans le prix affich&eacute;. Aucune d&eacute;marche ne permet de la r&eacute;cup&eacute;rer.
+                </p>
+                <p className="text-xs text-stone leading-relaxed mt-3">
+                  Sources&nbsp;: <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000025064431" target="_blank" rel="noopener noreferrer" className="text-green underline">article 278-0 bis du CGI (L&eacute;gifrance)</a>, <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052212417" target="_blank" rel="noopener noreferrer" className="text-green underline">arr&ecirc;t&eacute; du 8 septembre 2025</a>, <a href="https://www.photovoltaique.info/fr/preparer-un-projet/qui-suis-je/proprietaire-particulier/taux-de-tva-taxe-sur-la-valeur-ajoutee/" target="_blank" rel="noopener noreferrer" className="text-green underline">photovoltaique.info</a>, consult&eacute;s le 5 novembre 2026.
                 </p>
               </div>
             </section>
@@ -250,7 +254,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                 {[
                   { num: '1', title: 'Le système de certification RGE', text: 'Les aides publiques sont conditionnées à la certification pour garantir la qualité des travaux et éviter les fraudes. Un kit vendu sur Amazon ne peut pas être certifié RGE par définition.' },
                   { num: '2', title: 'Le raccordement au réseau', text: 'La prime autoconsommation était conditionnée à un contrat avec EDF OA et une demande Enedis formelle. Les kits balcon fonctionnent en CACSI, sans contrat de vente.' },
-                  { num: '3', title: 'Le montant de la TVA à récupérer', text: 'La TVA réduite est une aide indirecte. L’État renonce à 14,5 ou 8,5 points de TVA sur la facture pro. Sur un kit à 300 €, ce serait 25-43 € — trop petit pour créer un dispositif spécifique.' },
+                  { num: '3', title: 'Le montant de la TVA à récupérer', text: 'La TVA réduite est une aide indirecte : l’État renonce à 14,5 points de TVA (5,5 % au lieu de 20 %) sur une facture de fourniture et pose. Sur un kit à 300 € TTC, l’écart serait d’environ 36 €, trop peu pour justifier un dispositif spécifique.' },
                 ].map((item) => (
                   <div key={item.num} className="card border-l-4 border-l-green">
                     <div className="flex items-start gap-3">
