@@ -2,6 +2,10 @@
  * Lead storage — Upstash Redis with in-memory fallback.
  */
 
+// Durée de conservation (politique de confidentialité) : 3 ans après la dernière demande.
+// Chaque enregistrement porte une expiration Redis remise à zéro à chaque nouvelle demande.
+export const LEAD_TTL_SECONDS = 3 * 365 * 24 * 3600;
+
 type Lead = {
   email: string;
   sources: string[];
@@ -29,9 +33,9 @@ async function getRedisClient() {
 
 function parseLead(raw: unknown): Lead | null {
   if (!raw) return null;
-  if (typeof raw === 'object' && raw !== null && 'email' in raw) return raw as Lead;
+  if (typeof raw === 'object' && raw !== null && ('email' in raw || 'unsubscribed' in raw)) return raw as Lead;
   if (typeof raw === 'string') {
-    try { return JSON.parse(raw) as Lead; } catch { return null; }
+    try { return parseLead(JSON.parse(raw)); } catch { return null; }
   }
   return null;
 }
@@ -46,12 +50,12 @@ async function redisGet(key: string): Promise<Lead | null> {
   } catch { return parseLead(memoryStore.get(key)); }
 }
 
-async function redisSet(key: string, value: Lead): Promise<void> {
+async function redisSet(key: string, value: Lead, ttlSeconds: number | null = LEAD_TTL_SECONDS): Promise<void> {
   memoryStore.set(key, value);
   const client = await getRedisClient();
   if (!client) { console.warn('[leads] Upstash not configured — using memory store'); return; }
   try {
-    await fetch(`${client.url}/set/${key}`, {
+    await fetch(`${client.url}/set/${key}${ttlSeconds ? `?EX=${ttlSeconds}` : ''}`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${client.token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(JSON.stringify(value)),
@@ -65,6 +69,10 @@ export async function captureLead(email: string, source: string, profile?: Recor
     const raw = await redisGet(key);
     const existing = raw && typeof raw === 'object' ? raw : null;
 
+    if (existing && existing.unsubscribed) {
+      // Personne désinscrite : on ne reconstitue pas de fiche (son adresse a été effacée)
+      return;
+    }
     if (existing && existing.email) {
       const sources = Array.isArray(existing.sources) ? existing.sources : [];
       const tags = Array.isArray(existing.tags) ? existing.tags : [];
@@ -76,7 +84,6 @@ export async function captureLead(email: string, source: string, profile?: Recor
         tags,
         profile: profile ? { ...existing.profile, ...profile } : existing.profile,
         captured_at: existing.captured_at || new Date().toISOString(),
-        unsubscribed: existing.unsubscribed,
       };
       await redisSet(key, updated);
     } else {
@@ -94,13 +101,11 @@ export async function captureLead(email: string, source: string, profile?: Recor
   }
 }
 
+// Désinscription : l'adresse et le profil sont effacés. Il ne reste qu'une marque anonyme
+// (clé = empreinte de l'adresse, sans l'adresse) pour ne plus jamais écrire à cette personne.
 export async function unsubscribeLead(email: string): Promise<void> {
   const key = hashEmail(email.toLowerCase().trim());
-  const existing = await redisGet(key);
-  if (existing) {
-    existing.unsubscribed = true;
-    await redisSet(key, existing);
-  }
+  await redisSet(key, { email: '', sources: [], tags: [], captured_at: new Date().toISOString(), unsubscribed: true }, null);
 }
 
 export async function isUnsubscribed(email: string): Promise<boolean> {
