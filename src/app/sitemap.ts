@@ -53,6 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/guide/declaration-cacsi-enedis-panneau-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.8 },
 
     // Avis produits
+    { url: `${BASE_URL}/avis/allpowers-bs2500-pro`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/ecoflow-stream-ultra`, lastModified: '2026-11-03', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/sunology-play-2`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/beem-on-460w`, lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.8 },

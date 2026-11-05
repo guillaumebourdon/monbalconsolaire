@@ -387,6 +387,10 @@ export default function EcoflowStreamUltraPage() {
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h4>
                   <p className="text-xs text-charcoal-light mt-1">Même capacité (1,92 kWh), meilleur ROI (5,3 ans) mais sans sortie de secours</p>
                 </Link>
+                <Link href="/avis/allpowers-bs2500-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis ALLPOWERS BS2500 PRO</h4>
+                  <p className="text-xs text-charcoal-light mt-1">L&apos;autre batterie avec secours (2 400 W) : 2,6 kWh &agrave; 999 &euro;, mais aucun test ind&eacute;pendant</p>
+                </Link>
                 <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026</h4>
                   <p className="text-xs text-charcoal-light mt-1">Toutes les solutions de stockage comparées : Zendure, Bluetti, Jackery, EcoFlow</p>

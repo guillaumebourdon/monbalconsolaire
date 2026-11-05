@@ -269,6 +269,18 @@ const ARTICLES: Article[] = [
     price: 'Arrêté',
   },
   {
+    slug: '/avis/allpowers-bs2500-pro',
+    title: 'ALLPOWERS BS2500 PRO',
+    excerpt: 'Batterie de balcon 2,6 kWh avec sortie de secours 2 400 W, 999 € en promo. Avis prudent : aucun test indépendant.',
+    type: 'avis',
+    badge: 'Nouveau',
+    tags: ['stockage', 'marque'],
+    brands: ['ALLPOWERS'],
+    publishedAt: '2026-11-05',
+    score: '6/10',
+    price: '999 €',
+  },
+  {
     slug: '/avis/ecoflow-stream-ultra',
     title: 'EcoFlow STREAM Ultra',
     excerpt: 'Successeur du PowerStream : batterie 1,92 kWh + micro-onduleur 800 W intégrés, extensible à 11,52 kWh.',

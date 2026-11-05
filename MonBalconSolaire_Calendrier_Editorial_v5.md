@@ -96,6 +96,9 @@ Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur 
 ### Jeudi 05/11 — MISE À JOUR
 **Rafraîchir : codes-promo** (offres de novembre, annonces Black Friday).
 
+### Jeudi 05/11 (ajout) — NOUVEL ARTICLE — AVIS — [x] publié à la main
+**ALLPOWERS BS2500 PRO : avis** — slug `allpowers-bs2500-pro` (demandé par Guillaume le 05/11, avis prudent : aucun test indépendant). Lien Awin `allpowersUrl()` (ALLPOWERS FR, ID 98667). Backlink depuis avis/ecoflow-stream-ultra.
+
 ### Vendredi 06/11 — ANNULÉ (décision de Guillaume le 05/11) — NE RIEN PUBLIER CE JOUR
 Remplacé par un avis ALLPOWERS publié à la main le 05/11. Ne pas prendre d'élément du pipeline à la place. Le comparatif batteries ci-dessous est reporté (date à fixer par Guillaume).
 
