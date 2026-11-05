@@ -30,13 +30,13 @@ export default function ZendureSolarFlowMixAvisPage() {
     <>
       <SchemaArticle title="Zendure SolarFlow Mix avis : le nouveau tout-en-un résidentiel 2026" description="Avis détaillé sur le Zendure SolarFlow Mix en 2026." url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" datePublished="2026-06-30" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Zendure SolarFlow 4000 Mix Pro" brand="Zendure" description="Batterie résidentielle LFP 8-50 kWh, 4 kW bidirectionnel, double MPPT, IA Zenki, IP65." price={2879} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" />
+      <SchemaProduct name="Zendure SolarFlow 4000 Mix Pro" brand="Zendure" description="Batterie résidentielle LFP 8-50 kWh, 4 kW bidirectionnel, double MPPT, IA Zenki, IP65." price={2879} ratingValue={8} url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow Mix' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow Mix' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Zendure SolarFlow Mix avis : le tout-en-un r&eacute;sidentiel qui change la donne (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">3&nbsp;mod&egrave;les, 8&nbsp;&agrave;&nbsp;50&nbsp;kWh de stockage LFP, 4&nbsp;kW bidirectionnel, IA embarqu&eacute;e. Zendure quitte le balcon pour viser la maison enti&egrave;re. &Agrave; partir de 1&nbsp;999&nbsp;&euro;.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 juin 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
@@ -153,7 +153,7 @@ export default function ZendureSolarFlowMixAvisPage() {
                   { t: 'IP65 et silence (25 dB)', d: 'Installation ext\u00e9rieure possible (garage, terrasse, buanderie) gr\u00e2ce au bo\u00eetier m\u00e9tallique IP65 et au fonctionnement quasi silencieux. Op\u00e9rationnel de -20\u00b0C \u00e0 55\u00b0C.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -173,7 +173,7 @@ export default function ZendureSolarFlowMixAvisPage() {
                   { t: 'Marque encore jeune sur le stockage r\u00e9sidentiel', d: 'Zendure est reconnu sur le plug-and-play balcon mais n\'a pas encore fait ses preuves sur le segment r\u00e9sidentiel haut de gamme. Le recul est limit\u00e9 (lancement avril 2026). Comparativement, Enphase et SolarEdge ont des ann\u00e9es d\'exp\u00e9rience.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -250,15 +250,15 @@ export default function ZendureSolarFlowMixAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Quel mod&egrave;le choisir ?</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">4000 Mix Pro &mdash; pour les nouvelles installations</h4>
+                  <h3 className="font-bold text-sm mb-1">4000 Mix Pro &mdash; pour les nouvelles installations</h3>
                   <p className="text-xs text-charcoal-light">Vous installez des panneaux pour la premi&egrave;re fois (toiture ou pergola). Le double MPPT int&eacute;gr&eacute; &eacute;vite d&apos;acheter un onduleur s&eacute;par&eacute;. Budget&nbsp;: 5&nbsp;000-8&nbsp;000&nbsp;&euro; tout compris (batterie + panneaux).</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">4000 Mix AC+ &mdash; pour les installations existantes</h4>
+                  <h3 className="font-bold text-sm mb-1">4000 Mix AC+ &mdash; pour les installations existantes</h3>
                   <p className="text-xs text-charcoal-light">Vous avez d&eacute;j&agrave; des panneaux avec un onduleur. Le Mix AC+ se branche en parall&egrave;le via le port PV-IN AC. Pas besoin de toucher &agrave; l&apos;existant. Le choix le plus simple en retrofit.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">3000 Mix AC+ &mdash; pour les petits foyers</h4>
+                  <h3 className="font-bold text-sm mb-1">3000 Mix AC+ &mdash; pour les petits foyers</h3>
                   <p className="text-xs text-charcoal-light">Couple ou foyer de 2 personnes avec 3-4 kWc en toiture. Les 3&nbsp;kW de sortie suffisent pour les usages courants. Attention&nbsp;: non extensible au-del&agrave; de 8&nbsp;kWh.</p>
                 </div>
               </div>
@@ -308,19 +308,19 @@ export default function ZendureSolarFlowMixAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow 800 Plus : avis complet</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow 800 Plus : avis complet</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le mod&egrave;le plug-and-play balcon &agrave; 488&nbsp;&euro; &mdash; le pr&eacute;d&eacute;cesseur du Mix</p>
                 </Link>
                 <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bluetti Balco 260 : le tout-en-un compact</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Bluetti Balco 260 : le tout-en-un compact</h3>
                   <p className="text-xs text-charcoal-light mt-1">Onduleur + batterie LFP 2,56&nbsp;kWh &agrave; 849&nbsp;&euro; &mdash; le concurrent direct</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire avec batterie 2026 : comparatif</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire avec batterie 2026 : comparatif</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tous les syst&egrave;mes de stockage solaire compar&eacute;s</p>
                 </Link>
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet des 3 marques leaders</p>
                 </Link>
               </div>

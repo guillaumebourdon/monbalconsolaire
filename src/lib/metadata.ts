@@ -12,10 +12,30 @@ export const SITE_OPEN_GRAPH = {
     'Comparez les kits solaires, calculez vos économies réelles et passez au solaire sans travaux.',
 } as const;
 
-/** Titre affiché dans l'onglet, tel que le produit le gabarit du layout racine. */
-function fullTitle(title: Metadata['title']): string | undefined {
+/** Sections dont chaque article a une image Open Graph générée (`[slug]/opengraph-image`). */
+const ARTICLE_SECTIONS = ['avis', 'blog', 'guide', 'comparatif'] as const;
+
+/** Chemin de l'article si l'URL est une page d'article (/avis/x, /blog/x…), sinon null. */
+function articlePath(url: string): string | null {
+  const path = url.replace(SITE_URL, '').replace(/\/$/, '');
+  const m = path.match(/^\/(avis|blog|guide|comparatif)\/[^/]+$/);
+  return m && (ARTICLE_SECTIONS as readonly string[]).includes(m[1]) ? path : null;
+}
+
+/** Image Open Graph d'une page : celle de l'article si elle existe, sinon celle du site. */
+export function ogImageFor(url: string): string {
+  const path = articlePath(url);
+  return path ? `${SITE_URL}${path}/opengraph-image` : `${SITE_URL}/opengraph-image`;
+}
+
+/**
+ * Titre affiché dans l'onglet. Les articles (avis, blog, guide, comparatif) n'ont
+ * pas le suffixe « | MonBalconSolaire » (titres trop longs dans Google) ; l'accueil
+ * et les pages hub le gardent via le gabarit du layout racine.
+ */
+function fullTitle(title: Metadata['title'], isArticle: boolean): string | undefined {
   if (!title) return undefined;
-  if (typeof title === 'string') return `${title} | MonBalconSolaire`;
+  if (typeof title === 'string') return isArticle ? title : `${title} | MonBalconSolaire`;
   if ('absolute' in title && title.absolute) return title.absolute;
   if ('default' in title && title.default) return title.default;
   return undefined;
@@ -40,15 +60,21 @@ export function withCanonicalOg(meta: Metadata): Metadata {
       : canonical instanceof URL
         ? canonical.toString()
         : canonical.url.toString();
-  const title = fullTitle(meta.title);
+  const isArticle = articlePath(url) !== null;
+  const title = fullTitle(meta.title, isArticle);
   const description = meta.description ?? undefined;
   const fromPage = {
     ...(title ? { title } : {}),
     ...(description ? { description } : {}),
   };
+  // Next.js ne fusionne pas les images Open Graph du layout : on les fixe ici.
+  const image = ogImageFor(url);
+  const images = [{ url: image, width: 1200, height: 630, alt: title ?? SITE_OPEN_GRAPH.title }];
   return {
     ...meta,
-    openGraph: { ...SITE_OPEN_GRAPH, ...fromPage, ...meta.openGraph, url } as Metadata['openGraph'],
-    twitter: { card: 'summary_large_image', ...fromPage, ...meta.twitter } as Metadata['twitter'],
+    // Articles : titre sans suffixe de marque (gabarit du layout ignoré).
+    ...(isArticle && typeof meta.title === 'string' ? { title: { absolute: meta.title } } : {}),
+    openGraph: { ...SITE_OPEN_GRAPH, images, ...fromPage, ...meta.openGraph, url } as Metadata['openGraph'],
+    twitter: { card: 'summary_large_image', images: [image], ...fromPage, ...meta.twitter } as Metadata['twitter'],
   };
 }

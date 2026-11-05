@@ -112,28 +112,28 @@ export default function ApplicationSuiviProductionSolairePage() {
               </p>
               <div className="grid md:grid-cols-2 gap-3 my-6">
                 <div className="card border-l-4 border-l-green">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" /><h4 className="font-bold text-sm text-green">Beem</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" /><h3 className="font-bold text-sm text-green">Beem</h3></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Suivi via boîtier dédié</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     La Beembox (incluse) se place après l&apos;onduleur et transmet la production en Wi-Fi à l&apos;app Beem : production en direct, historique, économies estimées. L&apos;un des points les mieux notés par les clients, même négatifs sur le reste.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY" href="/avis/sunology-play-2" size="sm" /><h4 className="font-bold text-sm text-amber-dark">Sunology</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY" href="/avis/sunology-play-2" size="sm" /><h3 className="font-bold text-sm text-amber-dark">Sunology</h3></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Suivi Wi-Fi natif, sans boîtier</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Le micro-onduleur du PLAY communique directement en Wi-Fi avec l&apos;app STREAM, gratuite. Le Pack STREAM (228 €, optionnel) ajoute la mesure de consommation via Linky. Le point faible : le signal Wi-Fi 2,4 GHz doit porter jusqu&apos;au panneau.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="sm" /><h4 className="font-bold text-sm text-green">EcoFlow</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="sm" /><h3 className="font-bold text-sm text-green">EcoFlow</h3></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Pilotage batterie avancé</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     L&apos;app la plus complète du marché grand public selon notre analyse : W produits/consommés en direct, seuils de charge personnalisés, plages horaires, notifications. Pensée pour une batterie portable réutilisable au-delà du solaire.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" /><h4 className="font-bold text-sm text-amber-dark">Zendure</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" /><h3 className="font-bold text-sm text-amber-dark">Zendure</h3></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Automatisation HP/HC</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Programmation automatique des plages heures pleines/creuses, historique détaillé, compatibilité SmartMeter annoncée (Shelly). L&apos;IA Zenky, réservée au modèle Pro, apprend les habitudes de consommation du foyer.
@@ -141,7 +141,7 @@ export default function ApplicationSuiviProductionSolairePage() {
                 </div>
               </div>
               <div className="card border-l-4 border-l-stone">
-                <h4 className="font-bold text-sm mb-1">Shelly : le suivi générique</h4>
+                <h3 className="font-bold text-sm mb-1">Shelly : le suivi générique</h3>
                 <p className="text-xs text-charcoal-light leading-relaxed">
                   Shelly n&apos;est pas un fabricant de kit solaire : c&apos;est une marque de compteurs et prises connectés (Plug S, 1PM Gen3, 3EM pour le triphasé) qui mesure la puissance à l&apos;endroit où vous les installez, via l&apos;app Shelly Smart Control et un cloud gratuit. EcoFlow a annoncé une intégration officielle avec le PowerStream. Avec un kit Zendure, des utilisateurs du forum officiel rapportent des incohérences entre les deux apps.
                 </p>
@@ -185,15 +185,15 @@ export default function ApplicationSuiviProductionSolairePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous voulez juste suivre la production ?</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous voulez juste suivre la production ?</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Les apps Beem et Sunology STREAM suffisent largement : production en temps réel, historique par jour/semaine/mois, estimation des économies. Aucune des deux ne gère de batterie, donc aucune ne propose de pilotage avancé — ce n&apos;est pas un défaut, ce n&apos;est juste pas leur rôle sur ces kits sans stockage.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous avez une batterie et voulez optimiser le réseau ?</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous avez une batterie et voulez optimiser le réseau ?</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">C&apos;est là que Zendure et EcoFlow prennent l&apos;avantage. L&apos;app Zendure programme automatiquement la charge et la décharge selon vos heures pleines/creuses. L&apos;app EcoFlow va plus loin dans la personnalisation (seuils de charge, plages horaires sur mesure, notifications), au prix d&apos;une prise en main un peu plus technique.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez tout centraliser, plusieurs marques comprises ?</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez tout centraliser, plusieurs marques comprises ?</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Un compteur Shelly (Plug S pour le suivi à la prise, 3EM pour le triphasé) remonte dans une seule app, indépendamment de la marque du kit. L&apos;intégration est officielle avec l&apos;EcoFlow PowerStream ; avec Zendure, des utilisateurs signalent des écarts entre les deux apps. Vérifiez la compatibilité annoncée avant d&apos;investir dans le matériel.</p>
                 </div>
               </div>
@@ -218,19 +218,19 @@ export default function ApplicationSuiviProductionSolairePage() {
               </p>
               <div className="grid md:grid-cols-2 gap-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Sunology STREAM : dépendance au Wi-Fi</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Sunology STREAM : dépendance au Wi-Fi</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Si le signal 2,4 GHz ne porte pas jusqu&apos;au panneau, la production disparaît de l&apos;app. Le panneau continue de produire : seul le suivi est perdu, mais ça peut inquiéter à tort.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Beem : Beembox obligatoire et fragile</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Beem : Beembox obligatoire et fragile</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Sans Beembox, pas de suivi dans l&apos;app. Des clients signalent des pannes, des installations qui disparaissent après une mise à jour, et un diagnostic parfois technique (multimètre) en cas de souci.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Zendure : pas de backup réseau</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Zendure : pas de backup réseau</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">L&apos;app peut tout piloter, mais le SolarFlow 800 Plus n&apos;a pas de sortie hors réseau : en cas de coupure, le système s&apos;arrête quoi que l&apos;app affiche.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Shelly : pas pensé pour le solaire</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Shelly : pas pensé pour le solaire</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Aucun calcul d&apos;économies, aucune gestion de batterie : c&apos;est un compteur générique. Et la compatibilité avec le kit de votre choix n&apos;est pas garantie par tous les fabricants.</p>
                 </div>
               </div>
@@ -257,23 +257,23 @@ export default function ApplicationSuiviProductionSolairePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;app la plus avancée pour le pilotage HP/HC d&apos;une batterie de balcon</p>
                 </Link>
                 <Link href="/avis/ecoflow-powerstream" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le système modulaire dont l&apos;app est jugée la plus complète du marché</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY</h3>
                   <p className="text-xs text-charcoal-light mt-1">Suivi Wi-Fi natif via l&apos;app STREAM, sans boîtier additionnel</p>
                 </Link>
                 <Link href="/blog/prises-connectees-suivi-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connectées pour suivi solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connectées pour suivi solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tapo P110, Shelly Plug S, Meross : l&apos;alternative générique et moins chère</p>
                 </Link>
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match complet</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match complet</h3>
                   <p className="text-xs text-charcoal-light mt-1">Prix, stockage, rentabilité et apps des trois systèmes les plus populaires</p>
                 </Link>
               </div>

@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'D&eacute;gradation panneau solaire : que reste-t-il apr&egrave;s 25 ans ?',
-  description: 'Taux de d&eacute;gradation annuel (PERC, TOPCon, back-contact), garanties de puissance &agrave; 25-30 ans et impact r&eacute;el sur la rentabilit&eacute; d&apos;un kit solaire balcon.',
+  title: 'Dégradation panneau solaire : que reste-t-il après 25 ans ?',
+  description: 'Taux de dégradation annuel (PERC, TOPCon, back-contact), garanties de puissance à 25-30 ans et impact réel sur la rentabilité d\'un kit balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/degradation-panneau-solaire-25-ans',
   },
@@ -16,28 +16,28 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   {
-    question: 'Qu&apos;est-ce que la d&eacute;gradation d&apos;un panneau solaire ?',
-    answer: 'C&apos;est la perte progressive et normale de puissance d&apos;un panneau au fil des ann&eacute;es, caus&eacute;e par l&apos;exposition aux UV, aux cycles de chaleur/froid et au vieillissement naturel des cellules en silicium. Ce n&apos;est pas une panne : un panneau qui se d&eacute;grade continue de produire, juste un peu moins chaque ann&eacute;e. Les fabricants en tiennent compte dans leur garantie de puissance (g&eacute;n&eacute;ralement 80&nbsp;% garantis &agrave; 25 ou 30 ans).',
+    question: 'Qu\'est-ce que la dégradation d\'un panneau solaire ?',
+    answer: 'C\'est la perte progressive et normale de puissance d\'un panneau au fil des années, causée par l\'exposition aux UV, aux cycles de chaleur/froid et au vieillissement naturel des cellules en silicium. Ce n\'est pas une panne : un panneau qui se dégrade continue de produire, juste un peu moins chaque année. Les fabricants en tiennent compte dans leur garantie de puissance (généralement 80 % garantis à 25 ou 30 ans).',
   },
   {
-    question: 'Quel est le taux de d&eacute;gradation moyen d&apos;un panneau solaire par an ?',
-    answer: 'La revue de r&eacute;f&eacute;rence du NREL (laboratoire am&eacute;ricain, Jordan &amp; Kurtz, pr&egrave;s de 2&nbsp;000 mesures de terrain) donne une m&eacute;diane de 0,5&nbsp;%/an, tous types de panneaux confondus. Les fiches constructeurs 2026 situent plut&ocirc;t le PERC autour de 0,45-0,55&nbsp;%/an, le TOPCon autour de 0,30-0,40&nbsp;%/an et le back-contact/HJT autour de 0,25-0,35&nbsp;%/an. &Agrave; ces rythmes, un panneau garde 89 &agrave; 93&nbsp;% de sa puissance initiale apr&egrave;s 25 ans.',
+    question: 'Quel est le taux de dégradation moyen d\'un panneau solaire par an ?',
+    answer: 'La revue de référence du NREL (laboratoire américain, Jordan & Kurtz, près de 2 000 mesures de terrain) donne une médiane de 0,5 %/an, tous types de panneaux confondus. Les fiches constructeurs 2026 situent plutôt le PERC autour de 0,45-0,55 %/an, le TOPCon autour de 0,30-0,40 %/an et le back-contact/HJT autour de 0,25-0,35 %/an. À ces rythmes, un panneau garde 89 à 93 % de sa puissance initiale après 25 ans.',
   },
   {
-    question: 'Un panneau TOPCon se d&eacute;grade-t-il moins vite qu&apos;un panneau PERC ?',
-    answer: 'Oui, dans la plupart des fiches constructeurs 2026. Le TOPCon (type N) subit une perte de d&eacute;gradation li&eacute;e &agrave; la lumi&egrave;re (LID) la premi&egrave;re ann&eacute;e environ deux fois plus faible que le PERC (type P), puis un taux annuel plus bas (0,30-0,40&nbsp;% contre 0,45-0,55&nbsp;%). C&apos;est pour cela que les fabricants qui passent au TOPCon (Beem On 500&nbsp;Wc, DualSun PREASY) allongent souvent leur garantie de puissance jusqu&apos;&agrave; 30 ans.',
+    question: 'Un panneau TOPCon se dégrade-t-il moins vite qu\'un panneau PERC ?',
+    answer: 'Oui, dans la plupart des fiches constructeurs 2026. Le TOPCon (type N) subit une perte de dégradation liée à la lumière (LID) la première année environ deux fois plus faible que le PERC (type P), puis un taux annuel plus bas (0,30-0,40 % contre 0,45-0,55 %). C\'est pour cela que les fabricants qui passent au TOPCon (Beem On 500 Wc, DualSun PREASY) allongent souvent leur garantie de puissance jusqu\'à 30 ans.',
   },
   {
-    question: 'La garantie de performance &agrave; 25 ans couvre-t-elle vraiment la d&eacute;gradation ?',
-    answer: 'Elle garantit un plancher (en g&eacute;n&eacute;ral 80&nbsp;% de la puissance initiale &agrave; 25 ou 30 ans), pas la d&eacute;gradation elle-m&ecirc;me. Si votre panneau descend sous ce seuil avant l&apos;&eacute;ch&eacute;ance, le fabricant doit le remplacer ou vous indemniser au prorata &mdash; en th&eacute;orie. En pratique, cette garantie ne vaut que si l&apos;entreprise existe toujours pour l&apos;honorer : voir notre avis sur la proc&eacute;dure de sauvegarde de Beem Energy, qui illustre bien ce risque.',
+    question: 'La garantie de performance à 25 ans couvre-t-elle vraiment la dégradation ?',
+    answer: 'Elle garantit un plancher (en général 80 % de la puissance initiale à 25 ou 30 ans), pas la dégradation elle-même. Si votre panneau descend sous ce seuil avant l\'échéance, le fabricant doit le remplacer ou vous indemniser au prorata — en théorie. En pratique, cette garantie ne vaut que si l\'entreprise existe toujours pour l\'honorer : voir notre avis sur la procédure de sauvegarde de Beem Energy, qui illustre bien ce risque.',
   },
   {
-    question: 'Comment savoir si mon panneau se d&eacute;grade plus vite que la normale ?',
-    answer: 'Comparez votre production du m&ecirc;me mois sur plusieurs ann&eacute;es (juin 2026 vs juin 2027, par exemple), via l&apos;app de suivi de votre kit. Une baisse de 0,3 &agrave; 0,5&nbsp;% par an est normale. Une chute brutale (plus de 5&nbsp;% en un an) ou localis&eacute;e (zone visiblement jaunie, fissure, point chaud au toucher) signale une d&eacute;faillance, pas une d&eacute;gradation normale &mdash; voir notre diagnostic complet si votre panneau produit moins que pr&eacute;vu.',
+    question: 'Comment savoir si mon panneau se dégrade plus vite que la normale ?',
+    answer: 'Comparez votre production du même mois sur plusieurs années (juin 2026 vs juin 2027, par exemple), via l\'app de suivi de votre kit. Une baisse de 0,3 à 0,5 % par an est normale. Une chute brutale (plus de 5 % en un an) ou localisée (zone visiblement jaunie, fissure, point chaud au toucher) signale une défaillance, pas une dégradation normale — voir notre diagnostic complet si votre panneau produit moins que prévu.',
   },
   {
-    question: 'La d&eacute;gradation change-t-elle beaucoup la rentabilit&eacute; d&apos;un kit solaire balcon ?',
-    answer: 'Non, l&apos;impact reste mod&eacute;r&eacute;. Pour un kit de 500&nbsp;Wc &agrave; 429&nbsp;&euro; (r&eacute;f&eacute;rence Lyon sud, calcul via pricing.ts), les &eacute;conomies cumul&eacute;es sur 25 ans passent de 3&nbsp;190&nbsp;&euro; (hypoth&egrave;se th&eacute;orique sans d&eacute;gradation) &agrave; 2&nbsp;981-3&nbsp;062&nbsp;&euro; selon la technologie de cellule, soit 4 &agrave; 7&nbsp;% de moins. Le ROI r&eacute;el est donc quasiment identique &agrave; celui annonc&eacute; par nos comparatifs.',
+    question: 'La dégradation change-t-elle beaucoup la rentabilité d\'un kit solaire balcon ?',
+    answer: 'Non, l\'impact reste modéré. Pour un kit de 500 Wc à 429 € (référence Lyon sud, calcul via pricing.ts), les économies cumulées sur 25 ans passent de 3 190 € (hypothèse théorique sans dégradation) à 2 981-3 062 € selon la technologie de cellule, soit 4 à 7 % de moins. Le ROI réel est donc quasiment identique à celui annoncé par nos comparatifs.',
   },
 ];
 
@@ -45,8 +45,8 @@ export default function DegradationPanneauSolairePage() {
   return (
     <>
       <SchemaArticle
-        title="D&eacute;gradation panneau solaire : que reste-t-il apr&egrave;s 25 ans ?"
-        description="Taux de d&eacute;gradation annuel (PERC, TOPCon, back-contact), garanties de puissance &agrave; 25-30 ans et impact r&eacute;el sur la rentabilit&eacute; d&apos;un kit solaire balcon."
+        title="Dégradation panneau solaire : que reste-t-il après 25 ans ?"
+        description="Taux de dégradation annuel (PERC, TOPCon, back-contact), garanties de puissance à 25-30 ans et impact réel sur la rentabilité d'un kit solaire balcon."
         url="https://monbalconsolaire.fr/blog/degradation-panneau-solaire-25-ans"
         datePublished="2026-10-23"
       />

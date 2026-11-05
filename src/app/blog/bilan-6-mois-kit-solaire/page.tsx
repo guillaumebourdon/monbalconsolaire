@@ -115,7 +115,7 @@ export default function Bilan6MoisPage() {
     <>
       <SchemaArticle
         title="Bilan sur 6 mois : ce que produit vraiment un kit solaire balcon"
-        description="Production mois par mois d&apos;un kit solaire balcon 450 Wc (simulation PVGIS, Lyon sud), &eacute;conomies et retours d&apos;utilisateurs publi&eacute;s."
+        description="Production mois par mois d'un kit solaire balcon 450 Wc (simulation PVGIS, Lyon sud), économies et retours d'utilisateurs publiés."
         url="https://monbalconsolaire.fr/blog/bilan-6-mois-kit-solaire"
         datePublished="2026-05-27"
         dateModified="2026-09-27"
@@ -369,23 +369,23 @@ export default function Bilan6MoisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les &eacute;conomies annuelles selon la puissance et la r&eacute;gion</p>
                 </Link>
                 <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les astuces pour viser 85 % d&apos;autoconsommation</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : quelle production ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : quelle production ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi d&eacute;cembre-janvier est d&eacute;cevant (et c&apos;est normal)</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic si vos chiffres s&apos;&eacute;cartent des pr&eacute;visions</p>
                 </Link>
                 <Link href="/blog/kit-solaire-balcon-avis-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : tous les avis 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : tous les avis 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Synth&egrave;se Trustpilot, forums et retours d&apos;utilisateurs</p>
                 </Link>
               </div>

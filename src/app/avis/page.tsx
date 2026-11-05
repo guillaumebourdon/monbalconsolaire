@@ -4,7 +4,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Avis kits solaires balcon 2026 — Analyses indépendantes et notes',
-  description: 'Avis détaillés et analyses indépendantes des kits solaires plug-and-play : Sunology PLAY2, Beem On, Sunethic F500, Beem Kit 300W. Notes, specs et verdict honnête.',
+  description: 'Avis et analyses indépendantes des kits solaires plug-and-play : Sunology, Beem, Zendure, Sunethic, EcoFlow. Notes, specs et verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis',
   },

@@ -143,14 +143,14 @@ export default function ZendureSolarflowPage() {
         dateModified="2026-07-30"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={488} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
+      <SchemaProduct image="/images/produits/zendure-solarflow-front.webp" name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={488} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Zendure SolarFlow avis : 840 W pour 488 €, trop beau ?
             </h1>
@@ -337,7 +337,7 @@ export default function ZendureSolarflowPage() {
               <div className="space-y-3">
                 {points_forts.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">{p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">{p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -351,7 +351,7 @@ export default function ZendureSolarflowPage() {
               <div className="space-y-3">
                 {points_faibles.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">{p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">{p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -448,15 +448,15 @@ export default function ZendureSolarflowPage() {
               <h2 className="text-2xl font-extrabold mb-4">Pour qui c&apos;est le bon choix</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous voulez du stockage sans vous ruiner</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous voulez du stockage sans vous ruiner</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow 800 Plus est le premier système qui rend le stockage solaire rentable pour un appartement. Avant, stocker l&apos;énergie solaire en plug-and-play coûtait 1 000-2 000 €. Maintenant, c&apos;est 488 €.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous consommez surtout le soir</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous consommez surtout le soir</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Si vous travaillez la journée et rentrez le soir, sans batterie vous perdez 50-60 % de votre production solaire. Avec le SolarFlow, vous stockez le midi et consommez le soir. Le gain est immédiat et mesurable.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous êtes en heures pleines/creuses</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous êtes en heures pleines/creuses</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">L&apos;app Zendure gère automatiquement les plages HP/HC. En heures pleines (0,27+ €/kWh), le système décharge la batterie. En heures creuses, il recharge depuis le réseau si nécessaire. L&apos;optimisation est automatique.</p>
                 </div>
               </div>
@@ -466,15 +466,15 @@ export default function ZendureSolarflowPage() {
               <h2 className="text-2xl font-extrabold mb-4">Pour qui ce n&apos;est pas le bon choix</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous avez besoin d&apos;un backup en cas de coupure</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous avez besoin d&apos;un backup en cas de coupure</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow ne fonctionne pas hors réseau. Si la sécurité énergétique est votre priorité, prenez un Bluetti Balco 260, qui dispose d&apos;une sortie de secours (l&apos;EcoFlow PowerStream, autre option avec backup, n&apos;est plus vendu par EcoFlow France depuis 2026).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez la simplicité absolue d&apos;un kit tout-en-un</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez la simplicité absolue d&apos;un kit tout-en-un</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow est vendu sans panneaux : il faut les acheter séparément, choisir la bonne puissance, vérifier les connecteurs MC4. Si vous voulez juste déballer et brancher, un Sunology PLAY 2 reste plus simple.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est sous 500 € tout compris</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est sous 500 € tout compris</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow seul coûte ~488 €, mais il faut ajouter les panneaux (~400 € pour 2 × 420 W). Budget total réaliste : 850-950 €. Si votre enveloppe est serrée, un Beem Kit 300W à 199 € (actuellement en rupture chez Beem) ou un Sunology PLAY 2 à 599 € sont plus adaptés.</p>
                 </div>
               </div>
@@ -518,31 +518,31 @@ export default function ZendureSolarflowPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow Mix : le tout-en-un r&eacute;sidentiel 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow Mix : le tout-en-un r&eacute;sidentiel 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le successeur pour maison : 8-50&nbsp;kWh, 4&nbsp;kW, IA Zenki. &Agrave; partir de 1&nbsp;999&nbsp;&euro;</p>
                 </Link>
                 <Link href="/avis/ecoflow-powerstream" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent modulaire avec backup réseau et batterie portable polyvalente</p>
                 </Link>
                 <Link href="/avis/sunology-play-max" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le kit + batterie tout-en-un de Sunology : plus cher, mais plus simple</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet de tous les systèmes avec stockage du marché français</p>
                 </Link>
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Prix/Wc, ROI, stockage : les 3 approches compar&eacute;es &mdash; mis &agrave; jour juin 2026</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Zendure SolarFlow en tête du setup 2 panneaux — comparatif complet mis &agrave; jour juillet 2026</p>
                 </Link>
                 <Link href="/comparatif/application-suivi-production-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;app Zendure compar&eacute;e aux 4 autres pour le pilotage HP/HC et le suivi au quotidien</p>
                 </Link>
               </div>

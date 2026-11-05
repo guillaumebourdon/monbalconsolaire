@@ -151,14 +151,14 @@ export default function EcoflowPowerstreamPage() {
         dateModified="2026-07-23"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} ratingCount={1} availability="Discontinued" url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
+      <SchemaProduct image="/images/produits/ecoflow-powerstream-2.webp" name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} availability="Discontinued" url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow PowerStream' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow PowerStream' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               EcoFlow PowerStream avis : le système modulaire intelligent (2026)
             </h1>
@@ -234,21 +234,21 @@ export default function EcoflowPowerstreamPage() {
               <div className="grid md:grid-cols-3 gap-3 my-6">
                 <div className="card border-l-4 border-l-amber">
                   <div className="text-2xl mb-2">☀️</div>
-                  <h4 className="font-bold text-sm mb-1">Panneaux solaires</h4>
+                  <h3 className="font-bold text-sm mb-1">Panneaux solaires</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Jusqu&apos;à 2 panneaux 400W (800 W total). EcoFlow ou autre marque, peu importe : il faut juste des connecteurs MC4 standards.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="text-2xl mb-2">🔋</div>
-                  <h4 className="font-bold text-sm mb-1">Batterie EcoFlow</h4>
+                  <h3 className="font-bold text-sm mb-1">Batterie EcoFlow</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     DELTA 2 (1 kWh, 800 €), DELTA Pro (3,6 kWh, 2 200 €), ou autre. Stocke le surplus du midi pour le restituer le soir.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="text-2xl mb-2">🏠</div>
-                  <h4 className="font-bold text-sm mb-1">Réseau domestique</h4>
+                  <h3 className="font-bold text-sm mb-1">Réseau domestique</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Branchement sur prise standard 230V. Le PowerStream gère l&apos;injection en temps réel selon votre consommation.
                   </p>
@@ -343,25 +343,25 @@ export default function EcoflowPowerstreamPage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">📊 Suivi temps réel</h4>
+                  <h3 className="font-bold text-sm mb-1">📊 Suivi temps réel</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Watts produits par panneau, watts consommés par la maison, niveau de charge de la batterie, flux d&apos;énergie. Tout est visible en direct, avec des graphes par jour/semaine/mois/année.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">⏰ Programmation horaire intelligente</h4>
+                  <h3 className="font-bold text-sm mb-1">⏰ Programmation horaire intelligente</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Vous pouvez définir des plages : &laquo; alimenter la maison depuis la batterie de 18h à 22h (heures pleines) &raquo;, &laquo; charger la batterie depuis le réseau de 22h à 6h (heures creuses) &raquo;. Optimisation automatique de la facture EDF.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">🎯 Capteur de consommation (option)</h4>
+                  <h3 className="font-bold text-sm mb-1">🎯 Capteur de consommation (option)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Avec le Smart Plug EcoFlow (~ 50 €), le PowerStream détecte votre consommation domestique en temps réel et ajuste sa sortie pour ne JAMAIS injecter sur le réseau. Vous valorisez 100% de votre production solaire.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">🔔 Notifications proactives</h4>
+                  <h3 className="font-bold text-sm mb-1">🔔 Notifications proactives</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Alerte en cas de panne, batterie faible, panneau ombré anormalement, etc. Vous savez immédiatement si quelque chose ne va pas, sans avoir à surveiller manuellement.
                   </p>
@@ -374,7 +374,7 @@ export default function EcoflowPowerstreamPage() {
               <div className="space-y-3">
                 {points_forts.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -386,7 +386,7 @@ export default function EcoflowPowerstreamPage() {
               <div className="space-y-3">
                 {points_faibles.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -512,7 +512,7 @@ export default function EcoflowPowerstreamPage() {
               <div className="space-y-3">
                 {cas_acheter.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">✅ {c.profil}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">✅ {c.profil}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.explication}</p>
                   </div>
                 ))}
@@ -524,7 +524,7 @@ export default function EcoflowPowerstreamPage() {
               <div className="space-y-3">
                 {cas_pas_acheter.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ {c.profil}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ {c.profil}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.explication}</p>
                   </div>
                 ))}
@@ -545,19 +545,19 @@ export default function EcoflowPowerstreamPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/sunology-play-max" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent direct : kit fermé avec batterie intégrée, plus simple à installer</p>
                 </Link>
                 <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif batteries portables 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif batteries portables 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">EcoFlow DELTA 2 vs Bluetti AC180 vs Jackery : laquelle choisir avec le PowerStream</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tous les systèmes du marché incluant du stockage : EcoFlow, Sunology, Beem</p>
                 </Link>
                 <Link href="/comparatif/application-suivi-production-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;app EcoFlow, jugée la plus aboutie du marché, face aux 4 autres</p>
                 </Link>
               </div>

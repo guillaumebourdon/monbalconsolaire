@@ -31,13 +31,13 @@ export default function AvisPage() {
     <>
       <SchemaArticle title="Sunology PLAY 2 avis : devenu PLAY 500 W, prix, promo et verdict" description="Avis sur le Sunology PLAY 2, devenu PLAY 500 Wc en 2026 : ce qui a changé, prix, promo, rentabilité, app STREAM, avis clients." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-10-12" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Sunology PLAY" brand="Sunology" description="Station solaire plug-and-play 500 Wc (panneau back-contact bifacial, micro-onduleur MX500 500 W Wi-Fi), successeur du PLAY 2. Garantie intégrale 25 ans, garantie de puissance panneau 30 ans." price={599} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
+      <SchemaProduct image="/images/produits/sunology-play-2-1.webp" name="Sunology PLAY" brand="Sunology" description="Station solaire plug-and-play 500 Wc (panneau back-contact bifacial, micro-onduleur MX500 500 W Wi-Fi), successeur du PLAY 2. Garantie intégrale 25 ans, garantie de puissance panneau 30 ans." price={599} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
       <SchemaBreadcrumb items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY (ex-PLAY 2)" }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY (ex-PLAY 2)" }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis&nbsp;: devenu PLAY 500&nbsp;W, prix, promo et verdict (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous cherchez le <strong>Sunology PLAY 2</strong>&nbsp;? Il n&apos;est plus vendu sous ce nom&nbsp;: Sunology l&apos;a remplac&eacute; par le <strong>PLAY</strong>, au m&ecirc;me prix (599&nbsp;&euro;) mais avec un panneau back-contact de <strong>500&nbsp;Wc</strong> au lieu de 450&nbsp;Wc. Ce qui a chang&eacute;, ce que &ccedil;a rapporte, l&apos;app STREAM, ce que reprochent les clients, et pourquoi se m&eacute;fier des PLAY2 encore en circulation.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; <strong>Mis &agrave; jour le 12 octobre 2026</strong></span><span>&middot;</span><span>13 min de lecture</span></div>
@@ -157,7 +157,7 @@ export default function AvisPage() {
                   { t: 'Documentation accessible', d: 'Notice, fiche technique, certificat du micro-onduleur, certificat CE et tutoriel Enedis sont téléchargeables sur la page produit : utile pour la déclaration CACSI.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -181,7 +181,7 @@ export default function AvisPage() {
                   { t: 'SAV critiqué', d: 'Malgré une bonne note globale, les avis négatifs récents reprochent surtout des délais de livraison dépassés et un SAV difficile à joindre en cas de panne (voir plus bas).' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -287,7 +287,7 @@ export default function AvisPage() {
                   { t: 'Suivi dans l\'app', d: 'Production absente de l\'app STREAM ou incohérente, généralement liée au signal Wi-Fi.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -340,27 +340,27 @@ export default function AvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology PLAY vs Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology PLAY vs Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">Deux kits de 500 Wc, 170&nbsp;&euro; d&apos;&eacute;cart&nbsp;: lequel choisir</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur prix par watt du segment</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W&nbsp;: quelle puissance choisir&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W&nbsp;: quelle puissance choisir&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Production, ROI et recommandation par profil</p>
                 </Link>
                 <Link href="/avis/sunology-play-max" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h3>
                   <p className="text-xs text-charcoal-light mt-1">La version avec batterie&nbsp;: quand le stockage vaut le surco&ucirc;t</p>
                 </Link>
                 <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le petit frère compact du PLAY, 270&nbsp;W &agrave; 349&nbsp;&euro;</p>
                 </Link>
               </div>

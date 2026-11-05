@@ -141,10 +141,10 @@ export default function GuidePage() {
               <h2 className="text-2xl font-extrabold mb-4">Comment choisir le bon kit</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le choix depend de 4 critères principaux :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
-                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">1. Votre espace disponible</h4><p className="text-xs text-charcoal-light">Un seul grand panneau (Sunology PLAY 500 Wc : 1,80 x 1,13m) ou 4 petits panneaux (Beem Kit : ~80cm chacun) ? Mesurez votre balcon avant de choisir.</p></div>
-                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">2. Votre budget</h4><p className="text-xs text-charcoal-light">De 199&euro; (Beem Kit 300W, rupture) &agrave; 690&euro; (Sunethic F500). Meilleur rapport &euro;/Wc : le Beem On 500 Wc &agrave; 429&euro; (0,86&euro;/Wc). Tous sont rentables en 4-8 ans.</p></div>
-                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">3. Votre orientation</h4><p className="text-xs text-charcoal-light">Sud = 100% du potentiel. Est/Ouest = 80%. Nord = 45%. Si votre balcon est plein nord, un kit solaire n&apos;est probablement pas rentable.</p></div>
-                <div className="card"><h4 className="font-bold text-sm mb-2 text-green">4. Locataire ou propri&eacute;taire</h4><p className="text-xs text-charcoal-light">Locataire ? Privil&eacute;giez un kit 100% amovible (Sunology PLAY 2 avec ballasts, ou <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link>). Propri&eacute;taire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
+                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">1. Votre espace disponible</h3><p className="text-xs text-charcoal-light">Un seul grand panneau (Sunology PLAY 500 Wc : 1,80 x 1,13m) ou 4 petits panneaux (Beem Kit : ~80cm chacun) ? Mesurez votre balcon avant de choisir.</p></div>
+                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">2. Votre budget</h3><p className="text-xs text-charcoal-light">De 199&euro; (Beem Kit 300W, rupture) &agrave; 690&euro; (Sunethic F500). Meilleur rapport &euro;/Wc : le Beem On 500 Wc &agrave; 429&euro; (0,86&euro;/Wc). Tous sont rentables en 4-8 ans.</p></div>
+                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">3. Votre orientation</h3><p className="text-xs text-charcoal-light">Sud = 100% du potentiel. Est/Ouest = 80%. Nord = 45%. Si votre balcon est plein nord, un kit solaire n&apos;est probablement pas rentable.</p></div>
+                <div className="card"><h3 className="font-bold text-sm mb-2 text-green">4. Locataire ou propri&eacute;taire</h3><p className="text-xs text-charcoal-light">Locataire ? Privil&eacute;giez un kit 100% amovible (Sunology PLAY 2 avec ballasts, ou <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link>). Propri&eacute;taire ? Vous pouvez fixer au mur pour optimiser l&apos;angle.</p></div>
               </div>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold text-sm hover:underline">&rarr; Voir notre comparatif complet des kits solaires 2026</Link>
             </section>
@@ -160,7 +160,7 @@ export default function GuidePage() {
                   { title: 'Surestimer ses économies', desc: 'Un kit de 450W ne couvre pas toute votre consommation. Il efface le talon de consommation (frigo, box, veilles) mais pas le chauffage ou le chauffe-eau électrique.' },
                 ].map((e, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">Erreur n&deg;{i+1} : {e.title}</h4>
+                    <h3 className="font-bold text-sm mb-1">Erreur n&deg;{i+1} : {e.title}</h3>
                     <p className="text-xs text-charcoal-light">{e.desc}</p>
                   </div>
                 ))}
@@ -207,31 +207,31 @@ export default function GuidePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-balcon-vs-toiture" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle diff&eacute;rence de rentabilit&eacute;&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle diff&eacute;rence de rentabilit&eacute;&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Propri&eacute;taire d&apos;une maison&nbsp;? Comparez les deux solutions avec les chiffres honnêtes.</p>
                 </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h3>
                   <p className="text-xs text-charcoal-light mt-1">Guide d'installation pas à pas</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé de rentabilité</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire terrasse 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire terrasse 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Vous avez une terrasse ? Les kits adapt&eacute;s aux grandes surfaces</p>
                 </Link>
                 <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h3>
                   <p className="text-xs text-charcoal-light mt-1">Orientation, prise, Linky, bail, copro, CACSI, assurance — la liste compl&egrave;te avant de commander</p>
                 </Link>
                 <Link href="/avis/hoymiles-hms-800w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Hoymiles HMS-800W-2T : assemblez votre kit DIY moins cher</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Hoymiles HMS-800W-2T : assemblez votre kit DIY moins cher</h3>
                   <p className="text-xs text-charcoal-light mt-1">Vous avez d&eacute;j&agrave; des panneaux ou voulez ma&icirc;triser chaque composant&nbsp;? Le micro-onduleur de r&eacute;f&eacute;rence &agrave; ~119&nbsp;&euro;.</p>
                 </Link>
               </div>

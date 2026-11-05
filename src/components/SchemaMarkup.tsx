@@ -1,3 +1,5 @@
+import { ogImageFor } from '@/lib/metadata';
+
 export function SchemaOrganization() {
   const schema = {
     '@context': 'https://schema.org',
@@ -13,7 +15,15 @@ export function SchemaOrganization() {
     },
     parentOrganization: {
       '@type': 'Organization',
-      name: 'Beélevén SASU',
+      name: 'Beeleven SASU',
+      legalName: 'Beeleven SASU',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '7 rue Curial',
+        postalCode: '75019',
+        addressLocality: 'Paris',
+        addressCountry: 'FR',
+      },
     },
     sameAs: [],
   };
@@ -33,18 +43,13 @@ export function SchemaWebSite() {
     name: 'MonBalconSolaire',
     url: 'https://monbalconsolaire.fr',
     description: 'Comparez les meilleurs kits solaires pour balcon, calculez vos économies réelles et passez au solaire sans travaux.',
+    inLanguage: 'fr-FR',
     publisher: {
       '@type': 'Organization',
       name: 'MonBalconSolaire',
+      url: 'https://monbalconsolaire.fr',
     },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://monbalconsolaire.fr/blog?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
+    // Pas de SearchAction : aucune page du site ne lit un paramètre de recherche dans l'URL.
   };
 
   return (
@@ -78,15 +83,17 @@ export function SchemaArticle({
     url,
     datePublished,
     dateModified: dateModified || datePublished,
-    image: image || 'https://monbalconsolaire.fr/opengraph-image',
+    // Même image que og:image (route [slug]/opengraph-image pour les articles).
+    image: image || ogImageFor(url),
     author: {
-      '@type': 'Organization',
-      name: 'MonBalconSolaire',
-      url: 'https://monbalconsolaire.fr',
+      '@type': 'Person',
+      name: 'Guillaume Bourdon',
+      url: 'https://monbalconsolaire.fr/a-propos',
     },
     publisher: {
       '@type': 'Organization',
       name: 'MonBalconSolaire',
+      url: 'https://monbalconsolaire.fr',
       logo: {
         '@type': 'ImageObject',
         url: 'https://monbalconsolaire.fr/favicon.png',
@@ -110,10 +117,10 @@ export function SchemaProduct({
   currency = 'EUR',
   ratingValue,
   ratingMax = 10,
-  ratingCount,
   reviewAuthor = 'MonBalconSolaire',
   url,
   availability = 'InStock',
+  image,
 }: {
   name: string;
   brand: string;
@@ -122,16 +129,21 @@ export function SchemaProduct({
   currency?: string;
   ratingValue: number;
   ratingMax?: number;
-  ratingCount?: number;
   reviewAuthor?: string;
-  availability?: 'InStock' | 'OutOfStock' | 'Discontinued';
+  availability?: 'InStock' | 'PreOrder' | 'OutOfStock' | 'Discontinued';
   url: string;
+  /** Chemin (/images/produits/…) ou URL absolue de la photo produit. */
+  image?: string;
 }) {
+  // Pas d'aggregateRating : une seule note éditoriale, ce n'est pas un agrégat d'avis clients.
+  const imageUrl = image
+    ? image.startsWith('http') ? image : `https://monbalconsolaire.fr${image}`
+    : ogImageFor(url);
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name,
-    image: 'https://monbalconsolaire.fr/opengraph-image',
+    image: imageUrl,
     brand: {
       '@type': 'Brand',
       name: brand,
@@ -157,15 +169,6 @@ export function SchemaProduct({
         name: reviewAuthor,
       },
     },
-    ...(ratingCount ? {
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue,
-        bestRating: ratingMax,
-        worstRating: 1,
-        ratingCount,
-      },
-    } : {}),
   };
 
   return (

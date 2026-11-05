@@ -18,9 +18,27 @@ import { productibleSite } from '@/lib/rentabilite-departements';
 
 export default function CalculateurWrapper() {
   return (
-    <Suspense fallback={<div className="section-padding"><div className="container-brand max-w-2xl text-center"><div className="animate-pulse h-8 bg-cream-dark rounded-brand w-48 mx-auto" /></div></div>}>
+    <Suspense fallback={<CalculateurSkeleton />}>
       <CalculateurPage />
     </Suspense>
+  );
+}
+
+// Squelette de même gabarit que l'étape 1 (titre + barre de progression + carte) :
+// réserve la hauteur pour éviter le décalage de mise en page (CLS) à l'hydratation.
+function CalculateurSkeleton() {
+  return (
+    <section className="section-padding" aria-busy="true">
+      <div className="container-brand max-w-2xl">
+        <div className="text-center mb-8">
+          <div className="badge-amber mb-4 inline-block">Calculateur gratuit</div>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Trouvez le kit solaire id&eacute;al pour votre balcon</h1>
+          <p className="text-charcoal-light">R&eacute;pondez &agrave; 5 questions. R&eacute;sultat en 30 secondes.</p>
+        </div>
+        <div className="mb-8 h-[26px]" />
+        <div className="card-lg min-h-[220px] animate-pulse" />
+      </div>
+    </section>
   );
 }
 

@@ -27,13 +27,13 @@ export default function PlayMaxAvisPage() {
     <>
       <SchemaArticle title="Sunology PLAY MAX avis : kit + batterie, ça vaut le coup ?" description="Avis complet sur le Sunology PLAY MAX avec batterie VAULT." url="https://monbalconsolaire.fr/avis/sunology-play-max" datePublished="2026-04-02" dateModified="2026-10-29" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Sunology PLAY MAX" brand="Sunology" description="Station solaire 450 Wc avec batterie VAULT 700 Wh intégrée pour stocker le surplus et consommer le soir." price={699} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunology-play-max" />
+      <SchemaProduct image="/images/produits/sunology-play-max-1.webp" name="Sunology PLAY MAX" brand="Sunology" description="Station solaire 450 Wc avec batterie VAULT 700 Wh intégrée pour stocker le surplus et consommer le soir." price={699} ratingValue={8} url="https://monbalconsolaire.fr/avis/sunology-play-max" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology PLAY MAX' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology PLAY MAX' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY MAX avis : kit solaire + batterie, ça vaut le coup ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le PLAY MAX (vendu sous le nom &laquo;&nbsp;PLAYMax&nbsp;&raquo;), c&apos;est une station solaire Sunology de 450 Wc avec une batterie VAULT de 700 Wh int&eacute;gr&eacute;e. Son prix est pass&eacute; de 1 179&nbsp;&euro; &agrave; 699&nbsp;&euro;, soit 100&nbsp;&euro; de plus que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY</Link> sans batterie. La promesse : stocker le solaire pour le soir. Analyse honnête.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>2 avril 2026 &middot; <strong>Mis &agrave; jour le 29 octobre 2026</strong></span><span>&middot;</span><span>10 min de lecture</span></div>
@@ -92,7 +92,7 @@ export default function PlayMaxAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est la question centrale. On compare le PLAY seul (500 Wc, 599€) au PLAY MAX (699€, station 450 Wc) avec notre méthodologie, région lyonnaise :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2">PLAY seul (500 Wc, 599&euro;)</h4>
+                  <h3 className="font-bold text-green mb-2">PLAY seul (500 Wc, 599&euro;)</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
                     <p>Autoconsommation : <span className="font-mono font-medium">85%</span></p>
                     <p>Économies/an : <span className="font-mono font-medium text-green">84 &euro;</span></p>
@@ -101,7 +101,7 @@ export default function PlayMaxAvisPage() {
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2">PLAY MAX (699&euro;)</h4>
+                  <h3 className="font-bold text-amber-dark mb-2">PLAY MAX (699&euro;)</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
                     <p>Autoconsommation : <span className="font-mono font-medium">95%</span></p>
                     <p>Économies/an : <span className="font-mono font-medium text-amber-dark">85 &euro;</span></p>
@@ -125,7 +125,7 @@ export default function PlayMaxAvisPage() {
                   { t: 'Installation identique au PLAY', d: 'La station s\'installe au sol ou au mur en quelques minutes et se branche sur une simple prise. La batterie est intégrée à la station : pas de câblage supplémentaire.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -144,7 +144,7 @@ export default function PlayMaxAvisPage() {
                   { t: 'Affichage du prix incohérent', d: 'Au 27/09/2026, le bandeau de la page produit Sunology affiche toujours 1 179 € alors que toutes les versions sont vendues 699 €. Tant que Sunology n\'a pas clarifié, vérifiez le montant final avant de payer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -180,7 +180,7 @@ export default function PlayMaxAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Pour qui est le PLAY MAX ?</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2">Le PLAY MAX est pour vous si :</h4>
+                  <h3 className="font-bold text-green mb-2">Le PLAY MAX est pour vous si :</h3>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>→ Vous travaillez la journée (consommation le soir)</li>
                     <li>→ Vous voulez aussi une batterie nomade</li>
@@ -189,7 +189,7 @@ export default function PlayMaxAvisPage() {
                   </ul>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2">Le PLAY seul suffit si :</h4>
+                  <h3 className="font-bold text-amber-dark mb-2">Le PLAY seul suffit si :</h3>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>→ Vous êtes chez vous la journée (télétravail)</li>
                     <li>→ Vous voulez le ROI le plus rapide possible</li>
@@ -230,23 +230,23 @@ export default function PlayMaxAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pour ceux qui consomment le soir</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h3>
                   <p className="text-xs text-charcoal-light mt-1">Talon, surplus, injection</p>
                 </Link>
                 <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le compact de Sunology, 270 W à 349 €</p>
                 </Link>
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif des gammes avec et sans batterie</p>
                 </Link>
               </div>

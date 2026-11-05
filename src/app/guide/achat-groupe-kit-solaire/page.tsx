@@ -7,14 +7,15 @@ import { ACHATS_GROUPES } from '@/data/achats-groupes';
 import { calculateROIYears, calculateFirstYearSavings, calculateProductionKwh, PERFORMANCE_RATIO } from '@/lib/pricing';
 import { productibleSite } from '@/lib/rentabilite-departements';
 import { DEPARTMENTS } from '@/data/departments';
+import { withCanonicalOg } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalOg({
   title: 'Achat groupé de kits solaires : comment ça marche en 2026',
-  description: 'Achat groupé de kits solaires de balcon : qui l\'organise, les étapes, ce qui est inclus, les prix constatés et la rentabilité. Exemple concret dans les Côtes-d\'Armor.',
+  description: 'Achat groupé de kits solaires de balcon : qui l\'organise, les étapes, ce qui est inclus, les prix constatés et la rentabilité.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/achat-groupe-kit-solaire',
   },
-};
+});
 
 const kerwatt = ACHATS_GROUPES.find(a => a.slug === 'kerwatt')!;
 const cotesDArmor = DEPARTMENTS.find(d => d.code === kerwatt.codeDepartement)!;

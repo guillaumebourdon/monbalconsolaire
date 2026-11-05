@@ -125,14 +125,14 @@ export default function SunologyCityPage() {
         dateModified="2026-10-29"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} ratingCount={1} availability="Discontinued" url="https://monbalconsolaire.fr/avis/sunology-city" />
+      <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} availability="Discontinued" url="https://monbalconsolaire.fr/avis/sunology-city" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology CITY' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology CITY' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Sunology CITY avis : le kit pensé pour les balcons étroits (2026)
             </h1>
@@ -171,8 +171,6 @@ export default function SunologyCityPage() {
             affiliateUrl="https://sunology.eu/products/kit-solaire-1-station-go-balcon-garde-corps"
             affiliateLabel="Voir l'alternative GO sur Sunology"
             accentColor="amber"
-            image="/images/produits/sunology-city-front.webp"
-            imageAlt="Sunology CITY - kit solaire pour balcons étroits vue arrière"
           />
           <p className="text-xs text-stone mt-2 italic">Dernier prix officiel constat&eacute; le 15/05/2026 &middot; Produit toujours retir&eacute; de la boutique Sunology (statut v&eacute;rifi&eacute; le 29/10/2026)</p>
 
@@ -300,7 +298,7 @@ export default function SunologyCityPage() {
               <div className="space-y-3">
                 {points_forts.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -312,7 +310,7 @@ export default function SunologyCityPage() {
               <div className="space-y-3">
                 {points_faibles.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -368,7 +366,7 @@ export default function SunologyCityPage() {
               <div className="space-y-3">
                 {cas_acheter.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">✅ {c.profil}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">✅ {c.profil}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.explication}</p>
                   </div>
                 ))}
@@ -380,7 +378,7 @@ export default function SunologyCityPage() {
               <div className="space-y-3">
                 {cas_pas_acheter.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ {c.profil}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ {c.profil}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.explication}</p>
                   </div>
                 ))}
@@ -401,15 +399,15 @@ export default function SunologyCityPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le kit posé au sol de Sunology, plus rentable mais plus encombrant</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleurs kits solaires 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleurs kits solaires 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet des kits du marché : Sunology, Beem, Sunethic, DualSun</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-locataire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide locataire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide locataire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le CITY sans perçage est idéal en location, voici ce qu&apos;il faut savoir</p>
                 </Link>
               </div>

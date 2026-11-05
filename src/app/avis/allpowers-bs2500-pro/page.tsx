@@ -102,14 +102,14 @@ export default function AllpowersBs2500ProPage() {
         dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="ALLPOWERS BS2500 PRO" brand="ALLPOWERS" description="Batterie de balcon LiFePO4 2,6 kWh, onduleur 800 W (réglable jusqu'à 2 400 W), double MPPT 2 × 1 000 W, sortie de secours 2 400 W, IP65." price={999} ratingValue={6} ratingCount={1} availability="InStock" url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro" />
+      <SchemaProduct name="ALLPOWERS BS2500 PRO" brand="ALLPOWERS" description="Batterie de balcon LiFePO4 2,6 kWh, onduleur 800 W (réglable jusqu'à 2 400 W), double MPPT 2 × 1 000 W, sortie de secours 2 400 W, IP65." price={999} ratingValue={6} availability="InStock" url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'ALLPOWERS BS2500 PRO' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'ALLPOWERS BS2500 PRO' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               ALLPOWERS BS2500 PRO avis : une grosse batterie de balcon, mais aucun test indépendant
             </h1>
@@ -230,7 +230,7 @@ export default function AllpowersBs2500ProPage() {
               <div className="space-y-3">
                 {points_forts.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -244,7 +244,7 @@ export default function AllpowersBs2500ProPage() {
               <div className="space-y-3">
                 {points_faibles.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -407,19 +407,19 @@ export default function AllpowersBs2500ProPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h3>
                   <p className="text-xs text-charcoal-light mt-1">La batterie de balcon la plus rentable (5,3 ans), sans sortie de secours</p>
                 </Link>
                 <Link href="/avis/ecoflow-stream-ultra" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;autre batterie avec secours (2 300 W), application plus aboutie</p>
                 </Link>
                 <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Toutes les solutions de stockage compar&eacute;es</p>
                 </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis</h3>
                   <p className="text-xs text-charcoal-light mt-1">La d&eacute;marche obligatoire avant de brancher votre installation</p>
                 </Link>
               </div>

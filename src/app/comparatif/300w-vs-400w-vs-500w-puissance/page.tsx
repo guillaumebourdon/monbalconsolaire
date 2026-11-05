@@ -95,7 +95,7 @@ export default function PuissanceComparatif() {
               <p className="text-charcoal-light leading-relaxed mb-4">Le 300W est la puissance d&apos;entr&eacute;e de gamme. Souvent vendu sous forme de plusieurs mini-panneaux (4 x 75W par exemple), il offre une grande flexibilit&eacute; d&apos;installation.</p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
-                  <h4 className="font-bold text-green mb-2">&#9989; Points forts</h4>
+                  <h3 className="font-bold text-green mb-2">&#9989; Points forts</h3>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Prix d&apos;entr&eacute;e tr&egrave;s bas (&lt; 350&euro;)</li>
                     <li>ROI court (~3,8 ans pour le Beem Kit 300W &agrave; Lyon, actuellement en rupture)</li>
@@ -104,7 +104,7 @@ export default function PuissanceComparatif() {
                   </ul>
                 </div>
                 <div className="card-lg border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h4>
+                  <h3 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h3>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Production limit&eacute;e (~281 kWh/an &agrave; Paris)</li>
                     <li>&Eacute;conomies annuelles moindres</li>
@@ -121,7 +121,7 @@ export default function PuissanceComparatif() {
               <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est longtemps &eacute;t&eacute; la puissance la plus vendue en France, domin&eacute;e par le Sunology PLAY 2 (450W). Depuis ao&ucirc;t 2026, Sunology vend le PLAY en <strong>500&nbsp;W au m&ecirc;me prix (599&nbsp;&euro;)</strong>&nbsp;: les PLAY 2 de 450-460&nbsp;W encore en rayon sont des fins de s&eacute;rie, &agrave; comparer au prix du Wc. Beem a lui aussi fait &eacute;voluer son mod&egrave;le vers le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429 &euro;</Link>, d&eacute;sormais dans la cat&eacute;gorie 500W. C&apos;est le <strong>meilleur compromis rentabilit&eacute;/encombrement</strong> pour un balcon standard.</p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
-                  <h4 className="font-bold text-green mb-2">&#9989; Points forts</h4>
+                  <h3 className="font-bold text-green mb-2">&#9989; Points forts</h3>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Meilleur rapport &eacute;conomies/prix</li>
                     <li>Un seul panneau = installation ultra simple</li>
@@ -130,7 +130,7 @@ export default function PuissanceComparatif() {
                   </ul>
                 </div>
                 <div className="card-lg border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h4>
+                  <h3 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h3>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Prix plus &eacute;lev&eacute; (500-600&euro;)</li>
                     <li>Panneau volumineux (~175 x 100 cm)</li>
@@ -146,7 +146,7 @@ export default function PuissanceComparatif() {
               <p className="text-charcoal-light leading-relaxed mb-4">Les kits 500W repoussent la limite de production d&apos;un seul panneau. Le <strong>Beem On 500 Wc &agrave; 429 &euro;</strong> (0,86 &euro;/Wc, ROI ~4,8 ans) est d&eacute;sormais la meilleure affaire de ce segment. Le Sunethic F500 (690 &euro;) reste une alternative Made in France.</p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
-                  <h4 className="font-bold text-green mb-2">&#9989; Points forts</h4>
+                  <h3 className="font-bold text-green mb-2">&#9989; Points forts</h3>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Production maximale sur 1 panneau</li>
                     <li>&Eacute;conomies annuelles les plus &eacute;lev&eacute;es</li>
@@ -155,7 +155,7 @@ export default function PuissanceComparatif() {
                   </ul>
                 </div>
                 <div className="card-lg border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h4>
+                  <h3 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h3>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Prix variable (429-690&euro; selon marque)</li>
                     <li>Panneau tr&egrave;s grand et lourd (22 kg)</li>
@@ -172,11 +172,11 @@ export default function PuissanceComparatif() {
               <p className="text-charcoal-light leading-relaxed mb-4">Deux options pour aller plus loin :</p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Cumuler 2 kits</h4>
+                  <h3 className="font-bold text-sm mb-1">Cumuler 2 kits</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Rep&egrave;re recommand&eacute; : 900W par circuit (UFC-Que Choisir, fabricants ; la NF C 15-100 ne fixe pas de plafond). Deux kits 400W (800W) = OK. Au-del&agrave; : ligne d&eacute;di&eacute;e recommand&eacute;e.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Passer &agrave; un kit avec batterie</h4>
+                  <h3 className="font-bold text-sm mb-1">Passer &agrave; un kit avec batterie</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Type Sunology PLAY MAX, Zendure SolarFlow ou Bluetti Balco 260. Utile si vous consommez peu en journ&eacute;e. Voir notre <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">comparatif batteries solaires</Link>.</p>
                 </div>
               </div>
@@ -196,7 +196,7 @@ export default function PuissanceComparatif() {
                   <div key={i} className="card border-l-4 border-l-green">
                     <div className="flex items-start justify-between gap-4 flex-wrap">
                       <div>
-                        <h4 className="font-bold text-sm mb-1">{p.profil}</h4>
+                        <h3 className="font-bold text-sm mb-1">{p.profil}</h3>
                         <p className="text-xs text-charcoal-light">{p.detail}</p>
                       </div>
                       <span className="text-xs font-semibold px-3 py-1 rounded-lg whitespace-nowrap bg-green-pale text-green">{p.reco}</span>
@@ -227,23 +227,23 @@ export default function PuissanceComparatif() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/combien-panneaux-solaires-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien de panneaux peut-on mettre sur un balcon&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien de panneaux peut-on mettre sur un balcon&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Place, circuit (rep&egrave;re 900&nbsp;W), rentabilit&eacute; et branchement s&eacute;rie/parall&egrave;le</p>
                 </Link>
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h3>
                   <p className="text-xs text-charcoal-light mt-1">La meilleure option petit budget</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
                 </Link>
                 <Link href="/avis/sunethic-f500" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunethic F500</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunethic F500</h3>
                   <p className="text-xs text-charcoal-light mt-1">Made in France, 500W bifacial</p>
                 </Link>
                 <Link href="/comparatif/meilleur-micro-onduleur-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur micro-onduleur 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur micro-onduleur 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Hoymiles, APsystems, Enphase, Deye : lequel choisir pour un kit DIY</p>
                 </Link>
               </div>

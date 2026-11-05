@@ -44,8 +44,8 @@ export default function DemenagerKitSolairePage() {
   return (
     <>
       <SchemaArticle
-        title="D&eacute;m&eacute;nager avec son kit solaire balcon : CACSI, r&eacute;siliation, d&eacute;marches"
-        description="Comment d&eacute;monter, transporter et reconnecter un kit solaire plug-and-play lors d&apos;un d&eacute;m&eacute;nagement. CACSI, contrat Enedis, assurance : ce qui change et ce qu&apos;il faut refaire."
+        title="Déménager avec son kit solaire balcon : CACSI, résiliation, démarches"
+        description="Comment démonter, transporter et reconnecter un kit solaire plug-and-play lors d'un déménagement. CACSI, contrat Enedis, assurance : ce qui change et ce qu'il faut refaire."
         url="https://monbalconsolaire.fr/guide/demenager-kit-solaire-balcon"
         datePublished="2026-10-06"
       />
@@ -89,15 +89,15 @@ export default function DemenagerKitSolairePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Pose au sol ou sur ballasts</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Pose au sol ou sur ballasts</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le cas le plus simple&nbsp;: on d&eacute;branche, on vide les ballasts (sable ou eau selon le mod&egrave;le), on plie ou on empile les panneaux. Rien à d&eacute;visser sur le b&acirc;timent.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Fixation sur rambarde sans per&ccedil;age (colliers, crochets)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Fixation sur rambarde sans per&ccedil;age (colliers, crochets)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">D&eacute;montage tout aussi simple&nbsp;: desserrer les colliers ou crochets, qui n&apos;ont laiss&eacute; aucune trace sur la rambarde.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Fixation per&ccedil;ante en fa&ccedil;ade ou sur un mur</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Fixation per&ccedil;ante en fa&ccedil;ade ou sur un mur</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Plus rare sur un kit de balcon, mais si vous avez perc&eacute; pour un support rigide, il faudra reboucher les trous avant de rendre le logement si vous &eacute;tiez locataire (voir plus bas).</p>
                 </div>
               </div>
@@ -149,11 +149,11 @@ export default function DemenagerKitSolairePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Ce qu&apos;il faut faire au nouveau logement</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Ce qu&apos;il faut faire au nouveau logement</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Red&eacute;poser une demande CACSI en ligne via Enedis, avec la puissance du kit et la nouvelle adresse. D&eacute;marche identique à la premi&egrave;re fois, gratuite, trait&eacute;e en 2 à 4 semaines&nbsp;: vous pouvez utiliser le kit dès son branchement, sans attendre la validation.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Ce qui n&apos;est pas clairement document&eacute; c&ocirc;t&eacute; ancien logement</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Ce qui n&apos;est pas clairement document&eacute; c&ocirc;t&eacute; ancien logement</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Enedis ne publie pas de formulaire de &laquo;&nbsp;retrait d&apos;installation&nbsp;&raquo; distinct de la fermeture du compteur. En toute rigueur, la r&eacute;siliation de votre contrat d&apos;&eacute;lectricit&eacute; sur cette adresse devrait suffire à clore le suivi c&ocirc;t&eacute; Enedis. Si vous voulez en avoir la confirmation officielle, un message au service client Enedis pr&eacute;cisant que l&apos;installation en autoconsommation a &eacute;t&eacute; retir&eacute;e reste la d&eacute;marche la plus s&eacute;curisante&nbsp;: elle ne co&ucirc;te rien et l&egrave;ve le doute.</p>
                 </div>
               </div>
@@ -166,15 +166,15 @@ export default function DemenagerKitSolairePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">1. R&eacute;siliez l&apos;ancien contrat</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">1. R&eacute;siliez l&apos;ancien contrat</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Contactez votre fournisseur avec la date de d&eacute;part et un relev&eacute; de compteur si possible. Aucun frais, aucun pr&eacute;avis exig&eacute; pour l&apos;&eacute;nergie.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">2. Souscrivez un nouveau contrat à la nouvelle adresse</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">2. Souscrivez un nouveau contrat à la nouvelle adresse</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">M&ecirc;me fournisseur ou non, peu importe&nbsp;: c&apos;est un nouveau contrat, avec son propre point de livraison.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Dans quel ordre par rapport au kit solaire&nbsp;?</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Dans quel ordre par rapport au kit solaire&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Aucune contrainte&nbsp;: la CACSI et le contrat d&apos;&eacute;lectricit&eacute; sont ind&eacute;pendants l&apos;un de l&apos;autre. Vous pouvez brancher le kit d&egrave;s votre arriv&eacute;e et d&eacute;poser la CACSI dans les jours qui suivent.</p>
                 </div>
               </div>
@@ -203,15 +203,15 @@ export default function DemenagerKitSolairePage() {
               <h2 className="text-2xl font-extrabold mb-4">Remonter le kit dans le nouveau logement</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">R&eacute;&eacute;valuez l&apos;orientation</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">R&eacute;&eacute;valuez l&apos;orientation</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Peu de chances que le nouveau balcon ait exactement la m&ecirc;me exposition. Reprenez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green hover:underline">guide d&apos;orientation</Link> pour repositionner le panneau au mieux.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">V&eacute;rifiez la prise et le disjoncteur</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">V&eacute;rifiez la prise et le disjoncteur</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">M&ecirc;mes r&egrave;gles de s&eacute;curit&eacute; qu&apos;à la premi&egrave;re installation&nbsp;: prise d&eacute;di&eacute;e, disjoncteur diff&eacute;rentiel 30 mA, c&acirc;ble ext&eacute;rieur si la prise est expos&eacute;e (voir notre <Link href="/guide/installer-kit-solaire-balcon" className="text-green hover:underline">guide d&apos;installation</Link>).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Recalculez votre rentabilit&eacute;</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Recalculez votre rentabilit&eacute;</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">D&eacute;partement, orientation et talon de consommation changent probablement. Un kit tr&egrave;s rentable dans l&apos;ancien logement peut &ecirc;tre moins int&eacute;ressant dans le nouveau (ou l&apos;inverse). Repassez par le <Link href="/calculateur" className="text-green hover:underline">calculateur</Link> avec votre nouvelle situation.</p>
                 </div>
               </div>
@@ -257,19 +257,19 @@ export default function DemenagerKitSolairePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: le guide pas à pas</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: le guide pas à pas</h3>
                   <p className="text-xs text-charcoal-light mt-1">La proc&eacute;dure compl&egrave;te, avec mod&egrave;les de lettres</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-locataire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon locataire&nbsp;: droits et r&egrave;gles</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon locataire&nbsp;: droits et r&egrave;gles</h3>
                   <p className="text-xs text-charcoal-light mt-1">Amovibilit&eacute;, copropri&eacute;t&eacute;, restitution du logement</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-assurance-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon&nbsp;: que couvre votre assurance&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon&nbsp;: que couvre votre assurance&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Gr&ecirc;le, vol, chute, responsabilit&eacute; civile</p>
                 </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Installer un kit solaire balcon&nbsp;: &eacute;tapes et fixation</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Installer un kit solaire balcon&nbsp;: &eacute;tapes et fixation</h3>
                   <p className="text-xs text-charcoal-light mt-1">S&eacute;curit&eacute;, branchement, d&eacute;claration Enedis</p>
                 </Link>
               </div>

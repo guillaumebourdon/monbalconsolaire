@@ -90,19 +90,19 @@ export default function AutoconsommationPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qui se passe la nuit et par temps couvert</h2>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">La nuit</h4>
+                  <h3 className="font-bold text-sm mb-2">La nuit</h3>
                   <p className="text-xs text-charcoal-light">Votre panneau ne produit pas. Votre logement bascule automatiquement et instantan&eacute;ment sur le r&eacute;seau EDF. Vous ne remarquez rien &mdash; pas de coupure, pas de basculement visible. C&apos;est 100% transparent.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Par temps couvert</h4>
+                  <h3 className="font-bold text-sm mb-2">Par temps couvert</h3>
                   <p className="text-xs text-charcoal-light">Votre panneau produit moins (10-25% de sa capacit&eacute; maximale), mais il produit quand m&ecirc;me. La diff&eacute;rence est compl&eacute;t&eacute;e par le r&eacute;seau EDF. Tout est automatique.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">En plein soleil</h4>
+                  <h3 className="font-bold text-sm mb-2">En plein soleil</h3>
                   <p className="text-xs text-charcoal-light">Votre panneau produit &agrave; pleine puissance. Vos appareils sont aliment&eacute;s par le soleil. Si la production d&eacute;passe votre consommation, le surplus est inject&eacute; gratuitement sur le r&eacute;seau.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">Avec une batterie</h4>
+                  <h3 className="font-bold text-sm mb-2">Avec une batterie</h3>
                   <p className="text-xs text-charcoal-light">Le surplus est stock&eacute; dans la batterie au lieu d&apos;&ecirc;tre inject&eacute;. Vous le consommez le soir. <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">Voir notre comparatif batteries &rarr;</Link></p>
                 </div>
               </div>
@@ -172,35 +172,35 @@ export default function AutoconsommationPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/revendre-surplus-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">CACSI vs EDF OA, tarif de rachat 2026, calcul r&eacute;el : pourquoi la r&eacute;ponse est non</p>
                 </Link>
                 <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce que voit exactement le Linky, index injection vs soutirage, CACSI</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé de rentabilité</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pour ceux qui consomment le soir</p>
                 </Link>
                 <Link href="/blog/prix-electricite-2026-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prix de l'électricité 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prix de l'électricité 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi le solaire devient incontournable</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic : ombre, orientation, Linky, autoconsommation invisible</p>
                 </Link>
                 <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation au quotidien</h3>
                   <p className="text-xs text-charcoal-light mt-1">8 astuces pour passer de 40 % &agrave; 85 %</p>
                 </Link>
                 <Link href="/blog/facture-edf-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment lire sa facture EDF avec un kit solaire balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment lire sa facture EDF avec un kit solaire balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce qui change sur la facture, comment mesurer ses &eacute;conomies et le r&ocirc;le du Linky.</p>
                 </Link>
               </div>

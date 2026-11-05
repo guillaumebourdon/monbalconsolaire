@@ -137,15 +137,15 @@ export default function AccessoiresPage() {
               <h2 className="text-2xl font-extrabold mb-4">Quel budget pr&eacute;voir selon votre profil ?</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Budget minimal (~65&euro;)</h4>
+                  <h3 className="font-bold text-sm mb-1">Budget minimal (~65&euro;)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Prise connect&eacute;e Tapo (15&euro;) + rallonge &eacute;tanche (20&euro;) + parafoudre basique (30&euro;). Le strict n&eacute;cessaire pour suivre et s&eacute;curiser.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Budget confort (~150&euro;)</h4>
+                  <h3 className="font-bold text-sm mb-1">Budget confort (~150&euro;)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Ajoutez un support inclinable (50&euro;) + kit de nettoyage (20&euro;) + wattm&egrave;tre de secours (15&euro;). Le setup optimis&eacute; pour maximiser la production.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Budget complet (~250&euro;)</h4>
+                  <h3 className="font-bold text-sm mb-1">Budget complet (~250&euro;)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Avec coffret de protection &eacute;lectrique (60&euro;) et traceur GPS (40&euro;). Installation premium, s&eacute;curit&eacute; et suivi maximal.</p>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default function AccessoiresPage() {
                   { erreur: 'Empiler les prises connect\u00e9es sur une multiprise', detail: 'Les prises connect\u00e9es g\u00e8rent 15A max chacune. Si vous connectez plusieurs kits solaires + appareils, pr\u00e9voyez des prises d\u00e9di\u00e9es ou un coffret.' },
                 ].map((e, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">{'\u274c'} {e.erreur}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">{'\u274c'} {e.erreur}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{e.detail}</p>
                   </div>
                 ))}
@@ -171,15 +171,15 @@ export default function AccessoiresPage() {
               <h2 className="text-2xl font-extrabold mb-4">Pour aller plus loin</h2>
               <div className="space-y-3">
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire sur un balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire sur un balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le guide d&apos;installation pas &agrave; pas, &eacute;tape par &eacute;tape.</p>
                 </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour votre panneau solaire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour votre panneau solaire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;impact r&eacute;el de l&apos;orientation et de l&apos;inclinaison sur votre production.</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment &ccedil;a marche concr&egrave;tement</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment &ccedil;a marche concr&egrave;tement</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le principe technique expliqu&eacute; simplement : talon, surplus, injection.</p>
                 </Link>
               </div>
@@ -215,27 +215,27 @@ export default function AccessoiresPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/prise-exterieure-etanche-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prise ext&eacute;rieure &eacute;tanche et rallonge</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prise ext&eacute;rieure &eacute;tanche et rallonge</h3>
                   <p className="text-xs text-charcoal-light mt-1">IP44, IP66, diff&eacute;rentiel 30&nbsp;mA : la s&eacute;lection compl&egrave;te</p>
                 </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h3>
                   <p className="text-xs text-charcoal-light mt-1">Guide d'installation pas à pas</p>
                 </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation choisir</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation choisir</h3>
                   <p className="text-xs text-charcoal-light mt-1">L'impact réel sur la production</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h3>
                   <p className="text-xs text-charcoal-light mt-1">Talon, surplus, injection</p>
                 </Link>
                 <Link href="/blog/lampes-solaires-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Lampes solaires de balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Lampes solaires de balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Compl&eacute;tez votre installation avec un &eacute;clairage solaire</p>
                 </Link>
                 <Link href="/blog/guirlande-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guirlande solaire de balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guirlande solaire de balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">8 mod&egrave;les IP65 et leur autonomie r&eacute;elle en d&eacute;cembre</p>
                 </Link>
               </div>

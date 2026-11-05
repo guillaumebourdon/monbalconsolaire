@@ -57,7 +57,7 @@ export default function BatteriePage() {
 
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2">Sans batterie (kit seul)</h4>
+                  <h3 className="font-bold text-green mb-2">Sans batterie (kit seul)</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
                     <p>Investissement : <span className="font-mono font-medium">599€</span> (PLAY 500 Wc)</p>
                     <p>Autoconsommation : <span className="font-mono font-medium">~40%</span></p>
@@ -67,7 +67,7 @@ export default function BatteriePage() {
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2">Avec batterie (kit + VAULT)</h4>
+                  <h3 className="font-bold text-amber-dark mb-2">Avec batterie (kit + VAULT)</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
                     <p>Investissement : <span className="font-mono font-medium">699€</span> (PLAY MAX 450 Wc)</p>
                     <p>Autoconsommation : <span className="font-mono font-medium">~70%</span></p>
@@ -185,15 +185,15 @@ export default function BatteriePage() {
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict : avec ou sans batterie ?</h2>
               <div className="space-y-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-1">Pour 80% des gens → Kit seul (sans batterie)</h4>
+                  <h3 className="font-bold text-green mb-1">Pour 80% des gens → Kit seul (sans batterie)</h3>
                   <p className="text-sm text-charcoal-light">Le meilleur ROI, de loin. Commencez par un <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">kit Sunology PLAY (599€) ou Beem On 500 Wc (429€)</Link>. Vous pouvez toujours ajouter une batterie plus tard si le besoin se fait sentir.</p>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-1">Pour les absents la journée → PLAY MAX (699€)</h4>
+                  <h3 className="font-bold text-amber-dark mb-1">Pour les absents la journée → PLAY MAX (699€)</h3>
                   <p className="text-sm text-charcoal-light">Si vous travaillez en journée et consommez principalement le soir, le bundle PLAY MAX avec la VAULT offre un bon compromis prix/capacité.</p>
                 </div>
                 <div className="card-lg">
-                  <h4 className="font-bold mb-1">Pour les enthousiastes → STOREY (1 989€ avec kit)</h4>
+                  <h3 className="font-bold mb-1">Pour les enthousiastes → STOREY (1 989€ avec kit)</h3>
                   <p className="text-sm text-charcoal-light">Si maximiser l&apos;autoconsommation est votre priorité et que le budget n&apos;est pas un problème, la STOREY offre la meilleure capacité de stockage du marché plug-and-play.</p>
                 </div>
               </div>
@@ -219,35 +219,35 @@ export default function BatteriePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/guide/batterie-solaire-balcon-guide" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide : comment choisir la bonne capacité de batterie</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide : comment choisir la bonne capacité de batterie</h3>
                   <p className="text-xs text-charcoal-light mt-1">Seuils 700 Wh, 2 kWh, 5 kWh — le calcul ROI honnête selon votre profil</p>
                 </Link>
                 <Link href="/avis/sunology-play-max" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h3>
                   <p className="text-xs text-charcoal-light mt-1">Kit + batterie intégrée</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h3>
                   <p className="text-xs text-charcoal-light mt-1">Talon, surplus, injection</p>
                 </Link>
                 <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le tout-en-un onduleur + batterie 2,56&nbsp;kWh</p>
                 </Link>
                 <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h3>
                   <p className="text-xs text-charcoal-light mt-1">Stockage LFP 2,52&nbsp;kWh &agrave; 839&nbsp;&euro; en promo</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le tout-en-un r&eacute;sidentiel 8-50&nbsp;kWh, 4&nbsp;kW, IA Zenki</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
                 <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Zendure vs Bluetti Balco vs EcoFlow &mdash; tableau prix/kWh et verdict par profil</p>
                 </Link>
               </div>

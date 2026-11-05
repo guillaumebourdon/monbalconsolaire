@@ -179,11 +179,11 @@ export default function RevendreSuplusSolaireBalconPage() {
               </p>
               <div className="space-y-4 mb-6">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Mars 2025 &mdash; Fin de la vente totale pour &lt;&nbsp;9&nbsp;kWc</h4>
+                  <h3 className="font-bold text-sm mb-1">Mars 2025 &mdash; Fin de la vente totale pour &lt;&nbsp;9&nbsp;kWc</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Depuis cette date, les installations &le;&nbsp;9&nbsp;kWc ne peuvent plus vendre la totalit&eacute; de leur production. Seule la <strong>revente du surplus</strong> reste possible. La vente totale subsiste uniquement pour les installations &gt;&nbsp;9&nbsp;kWc.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Juin 2026 &mdash; Nouvel arr&ecirc;t&eacute; tarifaire (S21) + suppression de la prime</h4>
+                  <h3 className="font-bold text-sm mb-1">Juin 2026 &mdash; Nouvel arr&ecirc;t&eacute; tarifaire (S21) + suppression de la prime</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">L&apos;arr&ecirc;t&eacute; du 1er juin 2026 fixe le tarif de rachat du surplus &agrave; <strong>1,1&nbsp;c&euro;/kWh HT</strong> (index&eacute; +2&nbsp;%/an). En parall&egrave;le, la <strong>prime d&apos;autoconsommation est supprim&eacute;e</strong> pour les nouvelles installations. Fin des deux leviers qui rendaient le raccordement producteur attractif.</p>
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default function RevendreSuplusSolaireBalconPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-2">Pour une installation 3&nbsp;kWc &agrave; Lyon</h4>
+                  <h3 className="font-bold text-sm mb-2">Pour une installation 3&nbsp;kWc &agrave; Lyon</h3>
                   <div className="text-xs text-charcoal-light space-y-1">
                     <div>Production annuelle&nbsp;: &asymp; 3&nbsp;570&nbsp;kWh</div>
                     <div>Autoconsomm&eacute; (&asymp; 30&nbsp;%&nbsp;typique)&nbsp;: &asymp; 1&nbsp;071&nbsp;kWh</div>
@@ -269,7 +269,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                   </div>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-2">Co&ucirc;t de l&apos;&eacute;ligibilit&eacute; EDF OA</h4>
+                  <h3 className="font-bold text-sm mb-2">Co&ucirc;t de l&apos;&eacute;ligibilit&eacute; EDF OA</h3>
                   <div className="text-xs text-charcoal-light space-y-1">
                     <div>Installateur RGE obligatoire</div>
                     <div>D&eacute;marches raccordement Enedis&nbsp;: 2-3 mois</div>
@@ -293,11 +293,11 @@ export default function RevendreSuplusSolaireBalconPage() {
               </p>
               <div className="space-y-4 mb-4">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Mythe 1 &mdash; &laquo;&nbsp;Le compteur Linky tourne &agrave; l&apos;envers&nbsp;&raquo;</h4>
+                  <h3 className="font-bold text-sm mb-2">Mythe 1 &mdash; &laquo;&nbsp;Le compteur Linky tourne &agrave; l&apos;envers&nbsp;&raquo;</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Faux. Le Linky est num&eacute;rique et bidirectionnel. Il compte s&eacute;par&eacute;ment ce qui entre (soutirage) et ce qui sort (injection). L&apos;index soutirage ne recule jamais. Le mythe du compteur &agrave; l&apos;envers s&apos;appliquait aux anciens compteurs &eacute;lectrom&eacute;caniques &agrave; disque &mdash; ils ont &eacute;t&eacute; remplac&eacute;s. <Link href="/blog/linky-panneau-solaire-injection" className="text-green hover:underline">D&eacute;tail complet ici</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Mythe 2 &mdash; &laquo;&nbsp;EDF est oblig&eacute; de racheter mon &eacute;lectricit&eacute;&nbsp;&raquo;</h4>
+                  <h3 className="font-bold text-sm mb-2">Mythe 2 &mdash; &laquo;&nbsp;EDF est oblig&eacute; de racheter mon &eacute;lectricit&eacute;&nbsp;&raquo;</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Vrai, mais uniquement pour les producteurs &eacute;ligibles &agrave; l&apos;OA (Obligation d&apos;Achat). Un kit balcon n&apos;est pas un producteur au sens de la loi &eacute;lectrique. La CACSI ne cr&eacute;e aucune obligation de rachat pour EDF. L&apos;OA ne s&apos;applique qu&apos;aux installations raccord&eacute;es en producteur avec dossier officiel.</p>
                 </div>
               </div>
@@ -332,27 +332,27 @@ export default function RevendreSuplusSolaireBalconPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le principe complet&nbsp;: talon, surplus, compteur &mdash; sans jargon technique</p>
                 </Link>
                 <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire&nbsp;: injection, index, surplus</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire&nbsp;: injection, index, surplus</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce que voit exactement le Linky, index EAIT, mythe du compteur &agrave; l&apos;envers</p>
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Rep&egrave;re des 900&nbsp;W, NF C 15-100, CACSI&nbsp;: ce que dit la loi</p>
                 </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: guide pas &agrave; pas</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: guide pas &agrave; pas</h3>
                   <p className="text-xs text-charcoal-light mt-1">Proc&eacute;dure compl&egrave;te pour d&eacute;clarer votre kit en 10 minutes</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Stocker le surplus au lieu de l&apos;injecter gratuitement</p>
                 </Link>
                 <Link href="/blog/facture-edf-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment lire sa facture EDF avec un kit solaire balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment lire sa facture EDF avec un kit solaire balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce qui change sur la facture, comment mesurer ses vraies &eacute;conomies et le r&ocirc;le du Linky.</p>
                 </Link>
               </div>

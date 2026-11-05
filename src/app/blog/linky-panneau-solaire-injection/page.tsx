@@ -158,11 +158,11 @@ export default function LinkyPanneauSolaireInjectionPage() {
               </p>
               <div className="space-y-3 mb-4">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Avec un vieux compteur &eacute;lectrom&eacute;canique (avant Linky)</h4>
+                  <h3 className="font-bold text-sm mb-1">Avec un vieux compteur &eacute;lectrom&eacute;canique (avant Linky)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le disque reculait lors de l&apos;injection &rarr; l&apos;index baissait &rarr; la facture &eacute;tait r&eacute;duite &laquo;&nbsp;&agrave; l&apos;envers&nbsp;&raquo;. Ill&eacute;gal selon la r&eacute;glementation Enedis, mais techniquement possible. C&apos;est cette pratique que &laquo;&nbsp;l&apos;envers&nbsp;&raquo; d&eacute;signe.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Avec le Linky (num&eacute;rique)</h4>
+                  <h3 className="font-bold text-sm mb-1">Avec le Linky (num&eacute;rique)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Pas de disque. Pas de mouvement. Deux compteurs num&eacute;riques ind&eacute;pendants. L&apos;index soutirage ne recule jamais lors de l&apos;injection &mdash; Linky enregistre l&apos;injection s&eacute;par&eacute;ment, dans l&apos;index injection. Le mythe ne s&apos;applique pas.</p>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
                     <div className="flex items-start gap-3">
                       <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">{s.step}</div>
                       <div>
-                        <h4 className="font-bold text-sm mb-1">{s.title}</h4>
+                        <h3 className="font-bold text-sm mb-1">{s.title}</h3>
                         <p className="text-xs text-charcoal-light leading-relaxed">{s.desc}</p>
                       </div>
                     </div>
@@ -270,15 +270,15 @@ export default function LinkyPanneauSolaireInjectionPage() {
               </p>
               <div className="space-y-3 mb-4">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Court terme (1-2 ans)</h4>
+                  <h3 className="font-bold text-sm mb-1">Court terme (1-2 ans)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Tr&egrave;s peu de risques concrets. Enedis ne surveille pas activement les kits non d&eacute;clar&eacute;s. Votre installation fonctionne, le Linky tourne normalement.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">En cas de sinistre (incendie, surtension)</h4>
+                  <h3 className="font-bold text-sm mb-1">En cas de sinistre (incendie, surtension)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Votre assurance habitation peut refuser de couvrir le sinistre si l&apos;installation non d&eacute;clar&eacute;e est en cause. Le risque est l&agrave;, m&ecirc;me si le kit est physiquement s&eacute;curis&eacute;.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Lors d&apos;une vente immobili&egrave;re ou d&apos;un contr&ocirc;le</h4>
+                  <h3 className="font-bold text-sm mb-1">Lors d&apos;une vente immobili&egrave;re ou d&apos;un contr&ocirc;le</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Un diagnostic &eacute;lectrique peut r&eacute;v&eacute;ler l&apos;installation. La d&eacute;claration CACSI est alors exig&eacute;e, voire une mise en conformit&eacute;.</p>
                 </div>
               </div>
@@ -311,31 +311,31 @@ export default function LinkyPanneauSolaireInjectionPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/revendre-surplus-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">CACSI vs EDF OA, tarif 1,1&nbsp;c&euro;/kWh, calcul r&eacute;el&nbsp;: la r&eacute;ponse d&eacute;taill&eacute;e</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le principe complet&nbsp;: talon, surplus, compteur &mdash; sans jargon</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: comment le calculer et l&apos;effacer</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: comment le calculer et l&apos;effacer</h3>
                   <p className="text-xs text-charcoal-light mt-1">Lire le SINSTI sur le Linky et dimensionner le kit dessus</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-balcon-voiture-electrique" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture &eacute;lectrique&nbsp;: peut-on recharger&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture &eacute;lectrique&nbsp;: peut-on recharger&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce que le Linky voit (ou pas) quand une recharge co&iuml;ncide avec la production</p>
                 </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: guide pas &agrave; pas</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: guide pas &agrave; pas</h3>
                   <p className="text-xs text-charcoal-light mt-1">Proc&eacute;dure compl&egrave;te pour d&eacute;clarer votre kit en 10 minutes</p>
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, rep&egrave;re des 900&nbsp;W, CACSI&nbsp;: ce que dit la loi</p>
                 </Link>
                 <Link href="/blog/facture-edf-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment lire sa facture EDF avec un kit solaire balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment lire sa facture EDF avec un kit solaire balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce qui change (et ne change pas) sur votre facture, &eacute;conomies r&eacute;elles et m&eacute;thode de mesure.</p>
                 </Link>
               </div>

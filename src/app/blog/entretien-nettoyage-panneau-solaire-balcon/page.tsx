@@ -229,7 +229,7 @@ export default function EntretienNettoyagePage() {
               <div className="space-y-4">
                 {erreurs.map((e, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-2 text-amber-dark">{e.titre}</h4>
+                    <h3 className="font-bold text-sm mb-2 text-amber-dark">{e.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed mb-2"><strong>Risque :</strong> {e.risque}</p>
                     <div className="bg-green-pale/30 rounded-brand p-2">
                       <p className="text-xs text-charcoal-light leading-relaxed"><strong className="text-green">Faire plut&ocirc;t :</strong> {e.alternative}</p>
@@ -268,19 +268,19 @@ export default function EntretienNettoyagePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">C&acirc;ble et connecteur</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">C&acirc;ble et connecteur</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">V&eacute;rifiez que le c&acirc;ble entre le panneau et la prise n&apos;est pas fissur&eacute;, jauni ou mord&ucirc;. En terrasse, les rongeurs peuvent s&apos;y attaquer. Prot&eacute;gez le c&acirc;ble avec une gaine si n&eacute;cessaire.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Fixations et lests</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Fixations et lests</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Resserrez les vis du ch&acirc;ssis 2 fois par an. V&eacute;rifiez que les lests sont toujours en place et suffisants (15-20 kg recommand&eacute;s). Apr&egrave;s une temp&ecirc;te, contr&ocirc;lez imm&eacute;diatement.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Micro-onduleur</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Micro-onduleur</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Aucun entretien n&eacute;cessaire. V&eacute;rifiez simplement que le voyant LED est allum&eacute; (vert = OK). Si le WiFi d&eacute;croche, rapprochez un r&eacute;p&eacute;teur. Le micro-onduleur est garanti 25 ans chez la plupart des fabricants.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Prise &eacute;lectrique ext&eacute;rieure</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Prise &eacute;lectrique ext&eacute;rieure</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Assurez-vous que la prise est bien &eacute;tanche (norme IP44 minimum). Si vous utilisez une rallonge, v&eacute;rifiez qu&apos;elle est pr&eacute;vue pour l&apos;ext&eacute;rieur. <Link href="/blog/accessoires-kit-solaire-balcon" className="text-green hover:underline">Voir nos recommandations d&apos;accessoires</Link>.</p>
                 </div>
               </div>
@@ -330,15 +330,15 @@ export default function EntretienNettoyagePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Brosse douce &agrave; manche t&eacute;lescopique</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Brosse douce &agrave; manche t&eacute;lescopique</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">Utile si le panneau est hors de port&eacute;e de bras (garde-corps ext&eacute;rieur, pergola). Poils souples uniquement, raccord tuyau d&apos;arrosage en option. <a href="https://www.amazon.fr/s?k=brosse+nettoyage+panneau+solaire+t%C3%A9lescopique&tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Chiffons microfibre</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Chiffons microfibre</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">Un lot de chiffons microfibre suffit pour des ann&eacute;es. &Agrave; laver sans adoucissant (il laisse un film gras sur la vitre). <a href="https://www.amazon.fr/s?k=chiffon+microfibre+lot&tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Prise connect&eacute;e pour mesurer le gain</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Prise connect&eacute;e pour mesurer le gain</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">Pour savoir si le nettoyage a vraiment servi (&eacute;tape 5), une prise &agrave; mesure de consommation comme la Tapo P110 (~12 &euro;, prix constat&eacute; septembre 2026) affiche la production avant/apr&egrave;s. <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">Notre comparatif des prises</Link>.</p>
                 </div>
               </div>
@@ -375,27 +375,27 @@ export default function EntretienNettoyagePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/proteger-panneau-solaire-oiseaux-intemperies" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h3>
                   <p className="text-xs text-charcoal-light mt-1">Grillage anti-pigeons, r&eacute;sistance gr&ecirc;le IEC&nbsp;61215 et assurance habitation</p>
                 </Link>
                 <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h3>
                   <p className="text-xs text-charcoal-light mt-1">Surchauffe, mauvais angle, salissures : le guide complet pour l&apos;&eacute;t&eacute;</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points &mdash; la salissure est la cause n&deg;3</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : comment optimiser la production</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : comment optimiser la production</h3>
                   <p className="text-xs text-charcoal-light mt-1">M&ecirc;me effet que la salissure &mdash; une cellule bloqu&eacute;e p&eacute;nalise tout</p>
                 </Link>
                 <Link href="/blog/accessoires-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables pour votre kit solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables pour votre kit solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Rallonge &eacute;tanche, prise connect&eacute;e, protection surtension</p>
                 </Link>
                 <Link href="/blog/bilan-6-mois-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan sur 6 mois : ce que produit un kit solaire balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Bilan sur 6 mois : ce que produit un kit solaire balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Production simul&eacute;e mois par mois et retours d&apos;utilisateurs</p>
                 </Link>
               </div>

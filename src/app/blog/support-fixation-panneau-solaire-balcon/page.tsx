@@ -552,19 +552,19 @@ export default function SupportFixationPanneauPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Installer un kit solaire de balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Installer un kit solaire de balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le pas-&agrave;-pas complet, du d&eacute;ballage &agrave; la d&eacute;claration</p>
                 </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Sud, est, ouest, inclinaison&nbsp;: l&apos;impact r&eacute;el sur la production</p>
                 </Link>
                 <Link href="/avis/sunology-city" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology CITY</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology CITY</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le kit con&ccedil;u pour le garde-corps, avec fixation int&eacute;gr&eacute;e</p>
                 </Link>
                 <Link href="/blog/proteger-panneau-solaire-oiseaux-intemperies" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau solaire des oiseaux et intemp&eacute;ries</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau solaire des oiseaux et intemp&eacute;ries</h3>
                   <p className="text-xs text-charcoal-light mt-1">Vent, gr&ecirc;le, pigeons&nbsp;: les protections utiles</p>
                 </Link>
               </div>

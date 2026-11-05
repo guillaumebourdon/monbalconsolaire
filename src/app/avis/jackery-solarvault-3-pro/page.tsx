@@ -29,13 +29,13 @@ export default function JackerySolarVault3ProAvisPage() {
     <>
       <SchemaArticle title="Jackery SolarVault 3 Pro avis 2026 : stockage 2,5 kWh LFP à 839€" description="Avis détaillé sur le Jackery SolarVault 3 Pro en 2026." url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" datePublished="2026-06-23" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Jackery SolarVault 3 Pro" brand="Jackery" description="Syst&egrave;me de stockage solaire plug-and-play : onduleur + batterie LFP 2,52 kWh + 4 MPPT. IP65, extensible &agrave; 15,12 kWh, gestion IA." price={839} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" />
+      <SchemaProduct image="/images/produits/jackery-solarvault-3-pro-1.webp" name="Jackery SolarVault 3 Pro" brand="Jackery" description="Syst&egrave;me de stockage solaire plug-and-play : onduleur + batterie LFP 2,52 kWh + 4 MPPT. IP65, extensible &agrave; 15,12 kWh, gestion IA." price={839} ratingValue={8} url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Jackery SolarVault 3 Pro' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Jackery SolarVault 3 Pro' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Jackery SolarVault 3 Pro avis : le stockage domestique &agrave; prix cass&eacute; (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Jackery attaque le march&eacute; du stockage solaire de balcon avec le SolarVault 3 Pro : batterie LFP 2,52&nbsp;kWh, 4&nbsp;MPPT, gestion IA et syst&egrave;me anti-incendie. &Agrave; partir de 839&nbsp;&euro; en promo, sans panneaux.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>23 juin 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
@@ -118,7 +118,7 @@ export default function JackerySolarVault3ProAvisPage() {
                   { t: 'Ventilation passive et silence (< 30 dB)', d: 'Pas de ventilateur : le refroidissement est enti\u00e8rement passif. Le bruit est inf\u00e9rieur \u00e0 30 dB, soit moins qu\u2019un chuchotement. Id\u00e9al pour un balcon d\u2019appartement sans nuisance sonore.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -138,7 +138,7 @@ export default function JackerySolarVault3ProAvisPage() {
                   { t: 'Prix MSRP \u00e9lev\u00e9 (1\u00a0139\u00a0\u20ac) hors promo', d: 'Le prix promo de 839\u00a0\u20ac est attractif, mais le MSRP de 1\u00a0139\u00a0\u20ac est nettement plus cher. Si vous ratez la promo, la proposition de valeur se d\u00e9grade sensiblement face \u00e0 la concurrence.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -255,19 +255,19 @@ export default function JackerySolarVault3ProAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent direct : onduleur SiC + batterie 2,56&nbsp;kWh &agrave; 849&nbsp;&euro;</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tous les syst&egrave;mes avec stockage compar&eacute;s</p>
                 </Link>
                 <Link href="/avis/ecoflow-powerstream" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le syst&egrave;me modulaire avec batterie et app avanc&eacute;e</p>
                 </Link>
                 <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables solaires : comparatif 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables solaires : comparatif 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">EcoFlow, Bluetti, Jackery : 6 mod&egrave;les compar&eacute;s</p>
                 </Link>
               </div>

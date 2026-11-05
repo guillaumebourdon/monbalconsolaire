@@ -7,8 +7,8 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Checklist kit solaire balcon : 15 points &agrave; v&eacute;rifier avant d&apos;acheter (2026)',
-  description: 'Avant d&apos;acheter un kit solaire pour balcon, v&eacute;rifiez ces 15 points cl&eacute;s : orientation, surface, Linky, prise, bail, copro, budget, CACSI, assurance. Checklist compl&egrave;te 2026.',
+  title: 'Checklist kit solaire balcon : 15 points avant d\'acheter (2026)',
+  description: 'Kit solaire balcon : 15 points à vérifier avant d\'acheter (orientation, Linky, prise, bail, copropriété, budget, CACSI, assurance).',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/checklist-avant-achat-kit-solaire',
   },
@@ -410,7 +410,7 @@ export default function ChecklistPage() {
                     <div className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green text-white flex items-center justify-center text-sm font-extrabold">{phase.step}</div>
                       <div>
-                        <h4 className="font-bold text-sm mb-2">{phase.title}</h4>
+                        <h3 className="font-bold text-sm mb-2">{phase.title}</h3>
                         <ul className="space-y-1">
                           {phase.items.map((item, j) => (
                             <li key={j} className="text-xs text-charcoal-light flex gap-2">
@@ -487,19 +487,19 @@ export default function ChecklistPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet pour d&eacute;butants</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet pour d&eacute;butants</h3>
                   <p className="text-xs text-charcoal-light mt-1">Fonctionnement, prix, rentabilit&eacute; par ville — la base avant de choisir</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-locataire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon locataire : droits et r&egrave;gles</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon locataire : droits et r&egrave;gles</h3>
                   <p className="text-xs text-charcoal-light mt-1">Vos droits en d&eacute;tail : bail, accord propri&eacute;taire, kits amovibles recommand&eacute;s</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-copropriete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en copropri&eacute;t&eacute; : r&egrave;gles et votes</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en copropri&eacute;t&eacute; : r&egrave;gles et votes</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quand faut-il l&apos;accord du syndic ? Mod&egrave;le de courrier pr&ecirc;t &agrave; l&apos;emploi</p>
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, rep&egrave;re 900 W, loi APER : tout ce que dit la loi en d&eacute;tail</p>
                 </Link>
               </div>

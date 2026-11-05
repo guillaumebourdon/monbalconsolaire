@@ -7,7 +7,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon : que faire quand il pleut ou gr\u00eale ?',
-  description: 'Votre panneau solaire de balcon risque-t-il quelque chose sous la pluie, la gr\u00eale ou la neige ? Production par temps couvert, r\u00e9sistance, assurance. R\u00e9ponses concr\u00e8tes.',
+  description: 'Pluie, grêle, neige : votre panneau solaire de balcon risque-t-il quelque chose ? Production par temps couvert, résistance, assurance.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/kit-solaire-pluie-grele',
   },
@@ -127,7 +127,7 @@ export default function KitSolairePluieGrelePage() {
                 La pluie a un avantage que personne ne mentionne : elle <strong>nettoie le panneau gratuitement</strong>. La poussi&egrave;re, le pollen, les fientes d&apos;oiseaux et la pollution qui s&apos;accumulent sur la vitre r&eacute;duisent la production de 5 &agrave; 15 %. Une bonne averse remet les compteurs &agrave; z&eacute;ro.
               </p>
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm mb-1 text-green">L&apos;effet rebond post-pluie</h4>
+                <h3 className="font-bold text-sm mb-1 text-green">L&apos;effet rebond post-pluie</h3>
                 <p className="text-xs text-charcoal-light leading-relaxed">
                   Apr&egrave;s une journ&eacute;e de pluie, si le lendemain est ensoleill&eacute;, votre panneau produit souvent <strong>mieux que d&apos;habitude</strong> : la vitre est propre, l&apos;air est clair (moins de particules en suspension), et l&apos;humidit&eacute; r&eacute;siduelle peut l&eacute;g&egrave;rement am&eacute;liorer la conductivit&eacute; thermique. C&apos;est mesurable : +3 &agrave; 8 % de production le jour suivant une pluie.
                 </p>
@@ -157,7 +157,7 @@ export default function KitSolairePluieGrelePage() {
                 En pratique, les panneaux modernes utilisent du <strong>verre tremp&eacute; de 3,2 mm</strong> (Beem On, Sunethic F500) qui r&eacute;siste aux gr&ecirc;lons standard. Les panneaux bi-verre (DualSun PREASY) sont encore plus r&eacute;sistants. L&apos;actuel Sunology PLAY 500&nbsp;Wc est lui aussi un bi-verre (2 &times; 2,0&nbsp;mm de verre tremp&eacute;, charge de neige 5&nbsp;400&nbsp;Pa selon sa fiche technique).
               </p>
               <div className="card-lg bg-amber-pale/20 border-amber/10">
-                <h4 className="font-bold text-sm mb-2 text-amber-dark">Quand faut-il s&apos;inqui&eacute;ter ?</h4>
+                <h3 className="font-bold text-sm mb-2 text-amber-dark">Quand faut-il s&apos;inqui&eacute;ter ?</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed">
                   Uniquement en cas de <strong>gr&ecirc;le exceptionnelle</strong> (gr&ecirc;lons &gt; 4 cm, soit la taille d&apos;une balle de golf). Ce type d&apos;&eacute;v&eacute;nement est rare (quelques fois par d&eacute;cennie selon les r&eacute;gions) et endommage aussi les voitures, les velux et les toitures. Dans ce cas, votre <strong>assurance habitation</strong> couvre les d&eacute;g&acirc;ts (voir section assurance ci-dessous).
                 </p>
@@ -168,15 +168,15 @@ export default function KitSolairePluieGrelePage() {
               <h2 className="text-2xl font-extrabold mb-4">Neige : que faire ?</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Panneau inclin&eacute; (30-35&deg;)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Panneau inclin&eacute; (30-35&deg;)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">La neige glisse naturellement sur un panneau inclin&eacute;. La surface lisse et sombre se r&eacute;chauffe au moindre rayon de soleil, acc&eacute;l&eacute;rant la fonte. En g&eacute;n&eacute;ral, le panneau se d&eacute;gage en quelques heures.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Panneau vertical (garde-corps)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Panneau vertical (garde-corps)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Si votre kit est fix&eacute; verticalement sur un garde-corps (Sunology CITY, Beem On), la neige ne s&apos;accumule quasiment pas. C&apos;est un avantage inattendu de la fixation verticale en r&eacute;gion neigeuse.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Ne jamais gratter avec un outil rigide</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Ne jamais gratter avec un outil rigide</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Pas de spatule, pas de raclette, pas de b&acirc;ton. Utilisez un balai &agrave; poils souples ou simplement de l&apos;eau ti&egrave;de. Le verre tremp&eacute; est r&eacute;sistant aux impacts mais peut se micro-fissurer sous une pression ponctuelle.</p>
                 </div>
               </div>
@@ -189,11 +189,11 @@ export default function KitSolairePluieGrelePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Toujours lester correctement</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Toujours lester correctement</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Remplissez les ballasts d&apos;eau ou de sable (15-24 kg par c&ocirc;t&eacute;). Un panneau non lest&eacute; est une voile : m&ecirc;me un vent de 60 km/h peut le renverser. <Link href="/blog/accessoires-kit-solaire-balcon" className="text-green hover:underline">Voir les accessoires de fixation</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Terrasse en hauteur = plus de vent</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Terrasse en hauteur = plus de vent</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Si votre terrasse est au 5e &eacute;tage ou plus, doublez le lestage. Le vent est 30-50 % plus fort en hauteur qu&apos;au sol. Sur un balcon prot&eacute;g&eacute; par un garde-corps plein, le risque est moindre.</p>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default function KitSolairePluieGrelePage() {
                 En r&egrave;gle g&eacute;n&eacute;rale, <strong>oui</strong>. Un kit solaire plug-and-play est un bien mobilier (amovible), couvert par votre assurance habitation au m&ecirc;me titre qu&apos;un meuble de jardin ou un barbecue.
               </p>
               <div className="card-lg bg-cream/40">
-                <h4 className="font-bold text-sm mb-3">Ce que couvre g&eacute;n&eacute;ralement votre assurance habitation :</h4>
+                <h3 className="font-bold text-sm mb-3">Ce que couvre g&eacute;n&eacute;ralement votre assurance habitation :</h3>
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Gr&ecirc;le et temp&ecirc;te :</strong> d&eacute;g&acirc;ts au panneau caus&eacute;s par les intemp&eacute;ries (garantie catastrophes naturelles)</li>
                   <li>&bull; <strong>Vol :</strong> si le kit est vol&eacute; sur votre balcon (selon conditions du contrat)</li>
@@ -213,7 +213,7 @@ export default function KitSolairePluieGrelePage() {
                 </ul>
               </div>
               <div className="card border-l-4 border-l-amber mt-4">
-                <h4 className="font-bold text-sm mb-1 text-amber-dark">Notre conseil</h4>
+                <h3 className="font-bold text-sm mb-1 text-amber-dark">Notre conseil</h3>
                 <p className="text-xs text-charcoal-light leading-relaxed">
                   D&eacute;clarez l&apos;existence du kit &agrave; votre assureur (un simple email suffit). Ce n&apos;est pas obligatoire pour les biens de moins de 1 000 &euro;, mais &ccedil;a &eacute;vite toute contestation en cas de sinistre. Conservez aussi la facture d&apos;achat pour prouver la valeur.
                 </p>
@@ -229,7 +229,7 @@ export default function KitSolairePluieGrelePage() {
                 Autrement dit : les ROI affich&eacute;s sur nos fiches et dans notre <Link href="/calculateur" className="text-green hover:underline font-semibold">calculateur</Link> int&egrave;grent d&eacute;j&agrave; la pluie. Vous n&apos;avez pas &agrave; faire de &laquo; correction m&eacute;t&eacute;o &raquo; suppl&eacute;mentaire.
               </p>
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm mb-1 text-green">Le seul risque r&eacute;el : une ann&eacute;e exceptionnellement mauvaise</h4>
+                <h3 className="font-bold text-sm mb-1 text-green">Le seul risque r&eacute;el : une ann&eacute;e exceptionnellement mauvaise</h3>
                 <p className="text-xs text-charcoal-light leading-relaxed">
                   Les donn&eacute;es PVGIS sont des moyennes sur 20 ans. Une ann&eacute;e particuli&egrave;rement maussade peut r&eacute;duire la production de 10-15 % par rapport &agrave; la moyenne. Mais l&apos;ann&eacute;e suivante sera probablement meilleure. Sur 25 ans de garantie, ces variations se lissent.
                 </p>
@@ -250,27 +250,27 @@ export default function KitSolairePluieGrelePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/proteger-panneau-solaire-oiseaux-intemperies" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h3>
                   <p className="text-xs text-charcoal-light mt-1">Grillage anti-pigeons, r&eacute;sistance IEC&nbsp;61215, assurance habitation : tout le guide</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien &ccedil;a produit ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien &ccedil;a produit ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Donn&eacute;es de production mois par mois pour 3 villes</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points et solutions</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : optimiser la production</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : optimiser la production</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ombre partielle, arbre, mur voisin</p>
                 </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire : pas &agrave; pas</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire : pas &agrave; pas</h3>
                   <p className="text-xs text-charcoal-light mt-1">Lestage, fixation, c&acirc;blage</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-assurance-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Gr&ecirc;le, vol, chute, RC : tout ce qui est garanti</p>
                 </Link>
               </div>

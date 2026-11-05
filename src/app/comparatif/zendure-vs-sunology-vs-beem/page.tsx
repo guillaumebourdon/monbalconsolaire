@@ -120,21 +120,21 @@ export default function ZendureVsSunologyVsBeemPage() {
               </p>
               <div className="grid md:grid-cols-3 gap-3 my-6">
                 <div className="card border-l-4 border-l-green">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" /><h4 className="font-bold text-sm text-green">Zendure</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" /><h3 className="font-bold text-sm text-green">Zendure</h3></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Stockage d&apos;abord</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Marque chinoise spécialisée batteries. Vend l&apos;onduleur + batterie, vous achetez les panneaux ailleurs. Approche modulaire, prix agressif sur le stockage.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><h4 className="font-bold text-sm text-amber-dark">Sunology</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><h3 className="font-bold text-sm text-amber-dark">Sunology</h3></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Simplicité d&apos;abord</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Marque française, pionnière du plug-and-play. Kit tout-en-un prêt en 1 minute. Pas de configuration, pas de choix à faire. Le &laquo; Apple &raquo; du solaire de balcon.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" /><h4 className="font-bold text-sm text-green">Beem</h4></div>
+                  <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" /><h3 className="font-bold text-sm text-green">Beem</h3></div>
                   <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Prix/Wc d&apos;abord</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Marque fran&ccedil;aise, gamme &eacute;tendue (300 Wc &agrave; 500 Wc). Le meilleur &euro;/Wc du march&eacute; (0,86 &euro;/Wc). Paiement fractionn&eacute;, option d&eacute;marches Enedis.
@@ -257,15 +257,15 @@ export default function ZendureVsSunologyVsBeemPage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Le stockage n&apos;est plus un luxe</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Le stockage n&apos;est plus un luxe</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Avant le SolarFlow, ajouter du stockage co&ucirc;tait 500-900 &euro; de plus (VAULT Sunology, DELTA EcoFlow). &Agrave; 539 &euro; pour 1,92 kWh + onduleur, Zendure rend le stockage plus accessible que la plupart des kits sans batterie. C&apos;est un changement de paradigme.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Si vous &ecirc;tes absent en journ&eacute;e, la batterie fait la diff&eacute;rence</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Si vous &ecirc;tes absent en journ&eacute;e, la batterie fait la diff&eacute;rence</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Pour un foyer pr&eacute;sent ou avec une consommation de fond suffisante, un kit de 450-500 Wc sans batterie est autoconsomm&eacute; &agrave; ~85 % (notre hypoth&egrave;se standard)&nbsp;: la batterie n&apos;apporte alors que 10 points&nbsp;: le pack Zendure (4,5 ans) fait &agrave; peine mieux que le Beem On (4,8 ans), pour un budget presque deux fois plus &eacute;lev&eacute;. Si le logement est vide de 8h &agrave; 18h, l&apos;autoconsommation sans batterie peut tomber vers 45 %&nbsp;: le surplus part gratuitement sur le r&eacute;seau. Le SolarFlow stocke ce surplus et le restitue le soir (~80 % d&apos;autoconsommation)&nbsp;: ROI ~5,3 ans, contre ~8,5 ans pour le Beem On et ~12,3 ans pour le PLAY 2 dans ce sc&eacute;nario.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Mais la simplicité a un coût</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Mais la simplicité a un coût</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le Zendure demande plus d&apos;implication : choisir et acheter les panneaux, les brancher, configurer l&apos;app, comprendre les MPPT. C&apos;est 30-60 min d&apos;installation contre 1-5 min pour Sunology/Beem. Pour certains, cette complexité est rédhibitoire.</p>
                 </div>
               </div>
@@ -401,31 +401,31 @@ export default function ZendureVsSunologyVsBeemPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;analyse compl&egrave;te du syst&egrave;me qui casse les prix du stockage</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le nouveau tout-en-un r&eacute;sidentiel : 8-50&nbsp;kWh, 4&nbsp;kW, &agrave; partir de 1&nbsp;999&nbsp;&euro;</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le leader français du plug-and-play, analysé en détail</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">429 &euro;, 0,86 &euro;/Wc : le meilleur rapport qualit&eacute;-prix 2026</p>
                 </Link>
                 <Link href="/comparatif/application-suivi-production-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle appli pour suivre sa production ou piloter sa batterie en heures creuses</p>
                 </Link>
                 <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Rentabilit&eacute; d&apos;un kit dans les 96 d&eacute;partements</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Rentabilit&eacute; d&apos;un kit dans les 96 d&eacute;partements</h3>
                   <p className="text-xs text-charcoal-light mt-1">Notre &eacute;tude ouverte, d&eacute;partement par d&eacute;partement (donn&eacute;es PVGIS)</p>
                 </Link>
                 <Link href="/comparatif/sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem : le duel</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem : le duel</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparaison point par point des deux leaders français</p>
                 </Link>
               </div>

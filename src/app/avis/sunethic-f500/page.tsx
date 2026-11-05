@@ -51,13 +51,13 @@ export default function SunethicAvisPage() {
     <>
       <SchemaArticle title="Avis Sunethic : la marque et le kit F500 Made in France analysés" description="Avis sur la marque Sunethic (Trustpilot, SAV, garanties) et analyse du kit solaire F500 500 Wc à 690 €." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" dateModified="2026-10-12" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Sunethic F500" brand="Sunethic" description="Station solaire plug-and-play 500 Wc avec panneau Voltec Solar assemblé en France, micro-onduleur APsystems EZ1, garantie 25 ans." price={690} ratingValue={7.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/sunethic-f500" />
+      <SchemaProduct image="/images/produits/sunethic-f500-2.webp" name="Sunethic F500" brand="Sunethic" description="Station solaire plug-and-play 500 Wc avec panneau Voltec Solar assemblé en France, micro-onduleur APsystems EZ1, garantie 25 ans." price={690} ratingValue={7.5} url="https://monbalconsolaire.fr/avis/sunethic-f500" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunethic F500' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunethic F500' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Avis Sunethic : la marque et le kit F500 Made in France analys&eacute;s (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sunethic est l&apos;une des rares marques &agrave; vendre un kit plug-and-play avec un panneau fabriqu&eacute; en France. La marque est tr&egrave;s bien not&eacute;e, mais son F500 co&ucirc;te 690&nbsp;&euro;, soit 261&nbsp;&euro; de plus qu&apos;un Beem On de m&ecirc;me puissance. Qui est derri&egrave;re Sunethic, que disent les clients, et le surco&ucirc;t se justifie-t-il&nbsp;? Notre analyse, chiffres &agrave; l&apos;appui.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>27 mars 2026 &middot; Mis &agrave; jour le 12 octobre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
@@ -161,7 +161,7 @@ export default function SunethicAvisPage() {
                   { t: 'Livré monté, prêt à brancher', d: 'Support inclinable préassemblé, câble de 5 m inclus, livraison offerte. Pas de bricolage lourd pour une pose au sol ou en terrasse.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -181,7 +181,7 @@ export default function SunethicAvisPage() {
                   { t: 'Panneau grand format', d: '1,87 × 1,17 m : c\'est un panneau de toiture. Sur un petit balcon ou un garde-corps étroit, il peut ne pas tenir. Le poids n\'est pas indiqué sur la fiche produit.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -288,19 +288,19 @@ export default function SunethicAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (500 Wc)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (500 Wc)</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;alternative fran&ccedil;aise &agrave; 599&nbsp;&euro;</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">M&ecirc;me puissance, 429&nbsp;&euro;</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
                 <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter un kit solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter un kit solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les points &agrave; v&eacute;rifier avant de commander</p>
                 </Link>
               </div>

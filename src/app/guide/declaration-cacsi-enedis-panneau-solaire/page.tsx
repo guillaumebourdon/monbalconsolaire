@@ -234,25 +234,25 @@ export default function DeclarationCacsiEnedisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Les 4 documents à préparer</h2>
               <div className="space-y-3">
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">📄 Votre dernière facture d&apos;électricité (1 page)</h4>
+                  <h3 className="font-bold text-sm mb-1">📄 Votre dernière facture d&apos;électricité (1 page)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Pour récupérer votre PDL ou PRM (14 chiffres). Sur les factures EDF : section &laquo; Informations sur votre contrat &raquo; en haut. Sur TotalEnergies/Engie/autres : section &laquo; Votre compteur &raquo;.
                   </p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">📄 Attestation CE du micro-onduleur (PDF, 1-2 pages)</h4>
+                  <h3 className="font-bold text-sm mb-1">📄 Attestation CE du micro-onduleur (PDF, 1-2 pages)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Fournie avec votre kit par le fabricant. Généralement dans la boîte ou disponible sur le site du fabricant (zone &laquo; Documents techniques &raquo;). Pour les kits Sunology, Beem, Sunethic, elle est fournie automatiquement.
                   </p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">📸 Photos de l&apos;installation (2-3 photos JPG)</h4>
+                  <h3 className="font-bold text-sm mb-1">📸 Photos de l&apos;installation (2-3 photos JPG)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Photo n°1 : vue d&apos;ensemble avec le panneau posé sur le balcon. Photo n°2 : gros plan sur le micro-onduleur avec étiquette CE lisible. Photo n°3 (optionnelle) : la prise de branchement.
                   </p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">📄 Fiche technique du kit (PDF, optionnelle)</h4>
+                  <h3 className="font-bold text-sm mb-1">📄 Fiche technique du kit (PDF, optionnelle)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Utile mais pas toujours exigée. Elle précise la puissance en kWc, le type de panneaux, et les caractéristiques techniques. Disponible sur le site du fabricant en téléchargement.
                   </p>
@@ -266,7 +266,7 @@ export default function DeclarationCacsiEnedisPage() {
               <div className="space-y-3">
                 {cas_particuliers.map((cas, i) => (
                   <div key={i} className="card-lg border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-2">{cas.titre}</h4>
+                    <h3 className="font-bold text-sm mb-2">{cas.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed mb-3">{cas.detail}</p>
                     {cas.link && (
                       <Link href={cas.link} className="text-xs font-semibold text-green hover:underline">
@@ -284,7 +284,7 @@ export default function DeclarationCacsiEnedisPage() {
               <div className="space-y-3">
                 {erreurs_courantes.map((e, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ {e.erreur}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ {e.erreur}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{e.detail}</p>
                   </div>
                 ))}
@@ -300,19 +300,19 @@ export default function DeclarationCacsiEnedisPage() {
 
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">1. Envoi à votre assurance habitation</h4>
+                  <h3 className="font-bold text-sm mb-1">1. Envoi à votre assurance habitation</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Indispensable. Envoyez la convention à votre assureur par email avec la mention &laquo; Ajout d&apos;installation photovoltaïque à mon contrat &raquo;. La plupart des assurances n&apos;augmentent pas la cotisation pour un kit plug-and-play. Mais sans cette notification, aucune garantie en cas de sinistre lié à l&apos;installation.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">2. Conservation pour revente du logement</h4>
+                  <h3 className="font-bold text-sm mb-1">2. Conservation pour revente du logement</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Si vous vendez votre appartement avec le kit solaire en place, l&apos;acquéreur aura besoin de la CACSI pour la transférer à son nom (formalité gratuite chez Enedis). Si vous emportez le kit avec vous, la CACSI devient caduque : signalez-le à Enedis.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">3. Justificatif en cas de contrôle syndic ou mairie</h4>
+                  <h3 className="font-bold text-sm mb-1">3. Justificatif en cas de contrôle syndic ou mairie</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Rare mais possible. Un syndic ou un agent municipal peut vous demander une preuve de conformité réglementaire. La CACSI est la seule preuve officielle que votre installation est connue et validée par le gestionnaire de réseau.
                   </p>
@@ -523,19 +523,19 @@ Date : [JOUR/MOIS/ANNÉE]`}
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026 complète</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026 complète</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, rep&egrave;re 900 W : tout ce que dit la loi française</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-locataire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide locataire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide locataire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Droits, modèle de lettre au propriétaire, cas pratiques</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-copropriete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Solaire en copropriété</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Solaire en copropriété</h3>
                   <p className="text-xs text-charcoal-light mt-1">Règles, votes, modèle de courrier au syndic</p>
                 </Link>
                 <Link href="/guide/demenager-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Déménager avec son kit solaire : CACSI, résiliation</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Déménager avec son kit solaire : CACSI, résiliation</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi une nouvelle déclaration est nécessaire à chaque adresse</p>
                 </Link>
               </div>

@@ -27,13 +27,13 @@ export default function BeemOnAvisPage() {
     <>
       <SchemaArticle title="Beem On 460W avis : analyse complète et verdict" description="Avis détaillé sur le Beem On 460W, aujourd'hui vendu en extension." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" dateModified="2026-10-12" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Beem On 460W (extension)" brand="Beem Energy" description="Panneau solaire bifacial TOPCon 460 Wc avec micro-onduleur APSystems, vendu en extension (sans Beembox) pour agrandir une installation Beem existante." price={429} ratingValue={8} ratingCount={1} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
+      <SchemaProduct name="Beem On 460W (extension)" brand="Beem Energy" description="Panneau solaire bifacial TOPCon 460 Wc avec micro-onduleur APSystems, vendu en extension (sans Beembox) pour agrandir une installation Beem existante." price={429} ratingValue={8} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 460W avis : analyse compl&egrave;te et verdict (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Beem On 460W a été le concurrent direct du Sunology PLAY2. Depuis, Beem l&apos;a retiré de la vente comme station autonome : il n&apos;est plus proposé qu&apos;en extension à 429€. Notre analyse, mise à jour.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026 &middot; Mis &agrave; jour le 12 octobre 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
@@ -54,8 +54,6 @@ export default function BeemOnAvisPage() {
             affiliateUrl="https://beemenergy.fr/products/beem-on-station-solaire-pret-a-brancher?variant=54387872170369"
             affiliateLabel="Voir l'extension sur le site du fabricant"
             accentColor="amber"
-            image="/images/produits/beem-on-460-2.webp"
-            imageAlt="Beem On 460W - panneau solaire bifacial TOPCon"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 08/10/2026 (tarif extension) &middot; Peut varier selon les promos</p>
 
@@ -89,7 +87,7 @@ export default function BeemOnAvisPage() {
                   { t: 'Technique solide', d: 'Panneau bifacial TOPCon, micro-onduleur APSystems, garantie 25 ans et 4,7/5 sur Trustpilot : la qualité du produit n\'a pas changé, seul son positionnement commercial a évolué.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -108,7 +106,7 @@ export default function BeemOnAvisPage() {
                   { t: 'SAV et pérennité de l\'entreprise à surveiller', d: 'Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde le 26 novembre 2025, après une chute de 42% du marché résidentiel du solaire (étude Enedis), avec un an pour redresser la barre (échéance autour de novembre 2026). Aucune liquidation n\'est annoncée à ce jour (vérifié le 8 octobre 2026), mais la garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -167,19 +165,19 @@ export default function BeemOnAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">La station de départ actuelle, qui remplace le 460W</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
                 </Link>
                 <Link href="/comparatif/sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le match des deux leaders</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
                 </Link>
               </div>

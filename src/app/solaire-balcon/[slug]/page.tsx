@@ -326,15 +326,15 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire 2026 : comparatif complet</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire 2026 : comparatif complet</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tous les kits comparés point par point</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : comment le calculer et l&apos;effacer</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : comment le calculer et l&apos;effacer</h3>
                   <p className="text-xs text-charcoal-light mt-1">Combien consomme votre foyer en permanence et comment le couvrir</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutant : tout savoir sur le solaire de balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutant : tout savoir sur le solaire de balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le guide complet pour se lancer</p>
                 </Link>
               </div>

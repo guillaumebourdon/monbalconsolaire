@@ -214,7 +214,7 @@ export default function SunologyPlay2VsBeemOn500WPage() {
                   },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -258,7 +258,7 @@ export default function SunologyPlay2VsBeemOn500WPage() {
                   },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -340,7 +340,7 @@ export default function SunologyPlay2VsBeemOn500WPage() {
                       href="/avis/sunology-play-2"
                       size="lg"
                     />
-                    <h4 className="font-bold text-green mb-1">Choisissez Sunology si&nbsp;:</h4>
+                    <h3 className="font-bold text-green mb-1">Choisissez Sunology si&nbsp;:</h3>
                   </div>
                   <ul className="text-sm text-charcoal-light space-y-1 mb-4">
                     <li>&rarr; Vous voulez l&apos;installation la plus simple (1 min)</li>
@@ -366,7 +366,7 @@ export default function SunologyPlay2VsBeemOn500WPage() {
                       href="/avis/beem-on-500w"
                       size="lg"
                     />
-                    <h4 className="font-bold text-amber-dark mb-1">Choisissez Beem si&nbsp;:</h4>
+                    <h3 className="font-bold text-amber-dark mb-1">Choisissez Beem si&nbsp;:</h3>
                   </div>
                   <ul className="text-sm text-charcoal-light space-y-1 mb-4">
                     <li>&rarr; Le prix est votre priorit&eacute; (170&nbsp;€ de moins)</li>
@@ -447,28 +447,28 @@ export default function SunologyPlay2VsBeemOn500WPage() {
                   href="/avis/sunology-play-2"
                   className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green"
                 >
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (ex-PLAY&nbsp;2)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (ex-PLAY&nbsp;2)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Analyse compl&egrave;te, production estim&eacute;e, verdict &mdash; 8.5/10</p>
                 </Link>
                 <Link
                   href="/avis/beem-on-500w"
                   className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green"
                 >
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500&nbsp;Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500&nbsp;Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualité-prix du marché &agrave; 429&nbsp;€</p>
                 </Link>
                 <Link
                   href="/comparatif/sunology-vs-beem"
                   className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green"
                 >
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem (comparatif général)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem (comparatif général)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Vue d’ensemble des deux &eacute;cosyst&egrave;mes</p>
                 </Link>
                 <Link
                   href="/comparatif/meilleur-kit-solaire-2026"
                   className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green"
                 >
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Sunology, Beem, Sunethic, Anker, Zendure &mdash; le comparatif complet</p>
                 </Link>
               </div>

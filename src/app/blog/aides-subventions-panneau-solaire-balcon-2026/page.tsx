@@ -128,7 +128,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               </p>
               <div className="space-y-3 mb-4">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Ce que MaPrimeR&eacute;nov&apos; exige</h4>
+                  <h3 className="font-bold text-sm mb-1">Ce que MaPrimeR&eacute;nov&apos; exige</h3>
                   <ul className="text-xs text-charcoal-light space-y-1 leading-relaxed">
                     <li>&bull; Artisan certifi&eacute; RGE qui r&eacute;alise ET facture la fourniture + la pose</li>
                     <li>&bull; Devis et facture au nom du propri&eacute;taire (pas un achat Amazon)</li>
@@ -137,7 +137,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Ce qu&apos;est un kit plug-and-play</h4>
+                  <h3 className="font-bold text-sm mb-1">Ce qu&apos;est un kit plug-and-play</h3>
                   <ul className="text-xs text-charcoal-light space-y-1 leading-relaxed">
                     <li>&bull; Achat en ligne (Amazon, site de la marque, distributeur)</li>
                     <li>&bull; Installation DIY par l&apos;utilisateur lui-m&ecirc;me, sans professionnel</li>
@@ -187,11 +187,11 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">TVA 5,5&nbsp;% (int&eacute;gr&eacute; au bâti)</h4>
+                  <h3 className="font-bold text-sm mb-2">TVA 5,5&nbsp;% (int&eacute;gr&eacute; au bâti)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Panneaux install&eacute;s en toiture int&eacute;gr&eacute;s au b&acirc;ti, par un professionnel, dans un logement &gt; 2 ans. Typiquement les grandes installations 3–9 kWc.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">TVA 10&nbsp;% (superpos&eacute;)</h4>
+                  <h3 className="font-bold text-sm mb-2">TVA 10&nbsp;% (superpos&eacute;)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Panneaux pos&eacute;s sur toiture (non int&eacute;gr&eacute;s), par un professionnel, dans un logement &gt; 2 ans. S&apos;applique sur la fourniture ET la pose dans la m&ecirc;me facture.</p>
                 </div>
               </div>
@@ -210,7 +210,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               </p>
               <div className="space-y-3 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Ce que proposent certaines communes</h4>
+                  <h3 className="font-bold text-sm mb-1">Ce que proposent certaines communes</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5 leading-relaxed">
                     <li>&bull; <strong>Ch&egrave;ques &eacute;nergie solaire</strong>&nbsp;: 100 &agrave; 300&nbsp;&euro; pour l&apos;achat d&apos;un kit plug-and-play</li>
                     <li>&bull; <strong>Pr&ecirc;ts &agrave; taux z&eacute;ro locaux</strong>&nbsp;: pour le financement du mat&eacute;riel</li>
@@ -218,7 +218,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Ce qui n&apos;existe plus ou reste limit&eacute;</h4>
+                  <h3 className="font-bold text-sm mb-1">Ce qui n&apos;existe plus ou reste limit&eacute;</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5 leading-relaxed">
                     <li>&bull; <strong>R&eacute;gion Occitanie</strong>&nbsp;: l&apos;&eacute;co-ch&egrave;que logement (1 500&nbsp;&euro;) a disparu fin 2022. Les aides r&eacute;gionales directes n&apos;existent plus.</li>
                     <li>&bull; <strong>&Icirc;le-de-France</strong>&nbsp;: pas d&apos;aide r&eacute;gionale pour les particuliers depuis 2024. <strong>&Eacute;co-R&eacute;novons Paris+</strong> (copropri&eacute;t&eacute;s uniquement, 25&nbsp;% des travaux, 4 000&nbsp;&euro;/logement) est r&eacute;serv&eacute; aux travaux collectifs &mdash; pas aux kits de balcon individuels.</li>
@@ -227,7 +227,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                 </div>
               </div>
               <div className="card-lg bg-green-pale/30 border-green/10">
-                <h4 className="font-bold text-sm mb-2">Comment trouver les aides de votre commune</h4>
+                <h3 className="font-bold text-sm mb-2">Comment trouver les aides de votre commune</h3>
                 <ul className="text-xs text-charcoal-light space-y-2 leading-relaxed">
                   <li><strong>1.</strong> Rendez-vous sur <strong>maprimerenov.gouv.fr</strong> &rarr; section &laquo;&nbsp;Aides locales&nbsp;&raquo; &rarr; entrez votre code postal</li>
                   <li><strong>2.</strong> Consultez le site de votre <strong>mairie</strong> et de votre <strong>communaut&eacute; d&apos;agglom&eacute;ration</strong></li>
@@ -256,7 +256,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                     <div className="flex items-start gap-3">
                       <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">{item.num}</div>
                       <div>
-                        <h4 className="font-bold text-sm mb-1">{item.title}</h4>
+                        <h3 className="font-bold text-sm mb-1">{item.title}</h3>
                         <p className="text-xs text-charcoal-light leading-relaxed">{item.text}</p>
                       </div>
                     </div>
@@ -304,15 +304,15 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Directive europ&eacute;enne sur l&apos;&eacute;nergie citoyenne</h4>
+                  <h3 className="font-bold text-sm mb-1">Directive europ&eacute;enne sur l&apos;&eacute;nergie citoyenne</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">La RED III (Directive &Eacute;nergies Renouvelables) pousse les &Eacute;tats membres &agrave; faciliter l&apos;autoconsommation, y compris pour les petits kits. Des dispositifs d&apos;aide sp&eacute;cifiques aux kits &laquo;&nbsp;plug-in&nbsp;&raquo; ont &eacute;t&eacute; introduits en Allemagne et en Espagne. La France pourrait s&apos;en inspirer.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Clarification du cadre r&eacute;glementaire</h4>
+                  <h3 className="font-bold text-sm mb-1">Clarification du cadre r&eacute;glementaire</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">La France ne fixe aucun plafond chiffr&eacute; pour les kits sur prise (le 800 W souvent cit&eacute; est la r&egrave;gle allemande), mais leur statut au regard de la NF C 15-100 (point 551.7.2) reste flou. Une clarification, demand&eacute;e par la fili&egrave;re (Enerplan, SER), pourrait ouvrir la porte &agrave; une reconnaissance officielle des kits balcon dans les dispositifs d&apos;aide existants. Plus la puissance install&eacute;e est grande, plus l&apos;impact sur le r&eacute;seau est mesurable &mdash; et plus l&apos;int&eacute;r&ecirc;t de subventionner est justifiable.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Risque&nbsp;: de nouvelles contraintes plut&ocirc;t que des aides</h4>
+                  <h3 className="font-bold text-sm mb-1">Risque&nbsp;: de nouvelles contraintes plut&ocirc;t que des aides</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">L&apos;inverse est possible. Un rel&egrave;vement des exigences CACSI ou une obligation de certification du mat&eacute;riel pourrait complexifier l&apos;installation et augmenter les co&ucirc;ts. Pas de sc&eacute;nario garanti.</p>
                 </div>
               </div>
@@ -350,23 +350,23 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, rep&egrave;re des 900&nbsp;W, d&eacute;claration CACSI Enedis&nbsp;: ce que dit la loi</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Chiffres r&eacute;els de production et d&apos;&eacute;conomies pour 7 villes fran&ccedil;aises</p>
                 </Link>
                 <Link href="/blog/prix-electricite-2026-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prix de l&apos;&eacute;lectricit&eacute; 2026&nbsp;: pourquoi le solaire devient incontournable</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prix de l&apos;&eacute;lectricit&eacute; 2026&nbsp;: pourquoi le solaire devient incontournable</h3>
                   <p className="text-xs text-charcoal-light mt-1">&Eacute;volution du tarif EDF, fin de l&apos;ARENH, projections 2030</p>
                 </Link>
                 <Link href="/blog/revendre-surplus-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">CACSI vs EDF OA, tarif de rachat 2026, calcul r&eacute;el</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet d&eacute;butants 2026 (mis &agrave; jour ao&ucirc;t)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet d&eacute;butants 2026 (mis &agrave; jour ao&ucirc;t)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Fonctionnement, prix (d&egrave;s 429&nbsp;&euro;), r&egrave;glementation, droits des locataires &mdash; tout avant d&apos;acheter</p>
                 </Link>
               </div>

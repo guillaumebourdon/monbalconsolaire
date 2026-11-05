@@ -467,7 +467,7 @@
   }
 
   .badge-green {
-    @apply inline-block px-3 py-1 bg-green-lighter text-green text-xs font-bold rounded-lg;
+    @apply inline-block px-3 py-1 bg-green-lighter text-green-dark text-xs font-bold rounded-lg;
   }
 
   .badge-amber {
@@ -478,4 +478,11 @@
   .section-label {
     @apply text-[10px] uppercase tracking-widest font-semibold text-stone;
   }
+}
+
+/* Accessibilité : liens dans le texte courant soulignés (pas seulement colorés), hors boutons */
+#main-content p a:not([class*="btn"]) {
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
 }

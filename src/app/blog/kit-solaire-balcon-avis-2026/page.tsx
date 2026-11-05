@@ -45,7 +45,7 @@ export default function KitSolaireBalconAvisPage() {
   return (
     <>
       <SchemaArticle
-        title="Kit solaire balcon : avis et retours d&apos;exp\u00e9rience 2026"
+        title="Kit solaire balcon : avis et retours d'exp\u00e9rience 2026"
         description="Avis et retours d\u2019exp\u00e9rience sur les kits solaires de balcon en 2026."
         url="https://monbalconsolaire.fr/blog/kit-solaire-balcon-avis-2026"
         datePublished="2026-06-20"
@@ -118,7 +118,7 @@ export default function KitSolaireBalconAvisPage() {
             </p>
             <div className="space-y-2 mb-4">
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm text-green">Ce que les utilisateurs adorent</h4>
+                <h3 className="font-bold text-sm text-green">Ce que les utilisateurs adorent</h3>
                 <ul className="text-sm text-charcoal-light mt-2 space-y-1">
                   <li>&bull; Installation en &laquo; litt&eacute;ralement 2 minutes &raquo; (cit&eacute; dans 60 %+ des avis)</li>
                   <li>&bull; Application STREAM claire, production visible en temps r&eacute;el</li>
@@ -127,7 +127,7 @@ export default function KitSolaireBalconAvisPage() {
                 </ul>
               </div>
               <div className="card border-l-4 border-l-amber">
-                <h4 className="font-bold text-sm text-amber-dark">Ce qui revient en n&eacute;gatif</h4>
+                <h3 className="font-bold text-sm text-amber-dark">Ce qui revient en n&eacute;gatif</h3>
                 <ul className="text-sm text-charcoal-light mt-2 space-y-1">
                   <li>&bull; Prix au-dessus du march&eacute; (1,33 &euro;/Wc pour le PLAY 2, 1,20 &euro;/Wc pour le nouveau PLAY 500&nbsp;Wc, vs 0,86 pour Beem On 500)</li>
                   <li>&bull; WiFi du micro-onduleur instable si la box est loin</li>
@@ -155,7 +155,7 @@ export default function KitSolaireBalconAvisPage() {
             </p>
             <div className="space-y-2 mb-4">
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm text-green">Points forts r&eacute;currents</h4>
+                <h3 className="font-bold text-sm text-green">Points forts r&eacute;currents</h3>
                 <ul className="text-sm text-charcoal-light mt-2 space-y-1">
                   <li>&bull; Prix imbattable du On 500 Wc &mdash; &laquo; meilleur &euro;/Wc du march&eacute; &raquo;</li>
                   <li>&bull; Paiement en 10x sans frais appr&eacute;ci&eacute;</li>
@@ -164,7 +164,7 @@ export default function KitSolaireBalconAvisPage() {
                 </ul>
               </div>
               <div className="card border-l-4 border-l-amber">
-                <h4 className="font-bold text-sm text-amber-dark">Points d&apos;attention</h4>
+                <h3 className="font-bold text-sm text-amber-dark">Points d&apos;attention</h3>
                 <ul className="text-sm text-charcoal-light mt-2 space-y-1">
                   <li>&bull; App Beem parfois lente au d&eacute;marrage</li>
                   <li>&bull; D&eacute;lais de livraison longs en haute saison (4-6 semaines signal&eacute;es en mai-juin)</li>
@@ -193,11 +193,11 @@ export default function KitSolaireBalconAvisPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm text-green mb-2">Les fans</h4>
+                <h3 className="font-bold text-sm text-green mb-2">Les fans</h3>
                 <p className="text-sm text-charcoal-light">&laquo; L&apos;app est incroyable &raquo;, &laquo; je stocke le jour et consomme le soir &raquo;, &laquo; autoconommation pass&eacute;e de 40 % &agrave; 90 % &raquo;</p>
               </div>
               <div className="card border-l-4 border-l-amber">
-                <h4 className="font-bold text-sm text-amber-dark mb-2">Les sceptiques</h4>
+                <h3 className="font-bold text-sm text-amber-dark mb-2">Les sceptiques</h3>
                 <p className="text-sm text-charcoal-light">&laquo; ROI &agrave; 8-10 ans c&apos;est long &raquo;, &laquo; la batterie co&ucirc;te cher pour ce que &ccedil;a rapporte &raquo;, &laquo; le firmware n&eacute;cessite des mises &agrave; jour fr&eacute;quentes &raquo;</p>
               </div>
             </div>
@@ -266,19 +266,19 @@ export default function KitSolaireBalconAvisPage() {
             </p>
             <div className="space-y-3">
               <div className="card border-l-4 border-l-amber">
-                <h4 className="font-bold text-sm">&#10007; Surestimer la production d&apos;un balcon nord ou est</h4>
+                <h3 className="font-bold text-sm">&#10007; Surestimer la production d&apos;un balcon nord ou est</h3>
                 <p className="text-xs text-charcoal-light mt-1">Un balcon nord produit 40-50 % de moins qu&apos;un balcon sud. Beaucoup de d&eacute;ceptions viennent de l&agrave;. Lire notre <Link href="/blog/panneau-solaire-balcon-nord" className="text-green hover:underline">analyse balcon nord</Link>.</p>
               </div>
               <div className="card border-l-4 border-l-amber">
-                <h4 className="font-bold text-sm">&#10007; Ignorer l&apos;ombre sur le balcon</h4>
+                <h3 className="font-bold text-sm">&#10007; Ignorer l&apos;ombre sur le balcon</h3>
                 <p className="text-xs text-charcoal-light mt-1">Un arbre, un mur, un balcon au-dessus : l&apos;ombre r&eacute;duit drastiquement la production. Voir notre guide <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green hover:underline">panneau solaire et ombre</Link>.</p>
               </div>
               <div className="card border-l-4 border-l-amber">
-                <h4 className="font-bold text-sm">&#10007; Acheter un kit Amazon sans marque</h4>
+                <h3 className="font-bold text-sm">&#10007; Acheter un kit Amazon sans marque</h3>
                 <p className="text-xs text-charcoal-light mt-1">Pas de garantie, pas de SAV, micro-onduleur non certifi&eacute;. Privil&eacute;giez les marques &eacute;tablies. Voir notre <Link href="/blog/kit-solaire-plug-and-play-arnaque" className="text-green hover:underline">analyse des arnaques</Link>.</p>
               </div>
               <div className="card border-l-4 border-l-amber">
-                <h4 className="font-bold text-sm">&#10007; N&eacute;gliger l&apos;autoconsommation</h4>
+                <h3 className="font-bold text-sm">&#10007; N&eacute;gliger l&apos;autoconsommation</h3>
                 <p className="text-xs text-charcoal-light mt-1">Sans adapter ses habitudes, on autoconsomme seulement 30-40 % de sa production. Le reste est inject&eacute; gratuitement. Voir <Link href="/guide/optimiser-autoconsommation-solaire" className="text-green hover:underline">comment optimiser</Link>.</p>
               </div>
             </div>
@@ -344,19 +344,19 @@ export default function KitSolaireBalconAvisPage() {
             <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
             <div className="space-y-3">
               <Link href="/blog/bilan-6-mois-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan sur 6 mois : ce que produit un kit solaire balcon</h4>
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Bilan sur 6 mois : ce que produit un kit solaire balcon</h3>
                 <p className="text-xs text-charcoal-light mt-1">Production simul&eacute;e mois par mois, &eacute;conomies, retours d&apos;utilisateurs</p>
               </Link>
               <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire 2026 : comparatif complet</h4>
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire 2026 : comparatif complet</h3>
                 <p className="text-xs text-charcoal-light mt-1">Tableau d&eacute;taill&eacute; de tous les kits du march&eacute;</p>
               </Link>
               <Link href="/blog/kit-solaire-plug-and-play-arnaque" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire plug-and-play : arnaque ou bon investissement ?</h4>
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire plug-and-play : arnaque ou bon investissement ?</h3>
                 <p className="text-xs text-charcoal-light mt-1">Les vrais pi&egrave;ges et les marques fiables</p>
               </Link>
               <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet solaire balcon pour d&eacute;butants</h4>
+                <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet solaire balcon pour d&eacute;butants</h3>
                 <p className="text-xs text-charcoal-light mt-1">Tout savoir avant de se lancer</p>
               </Link>
             </div>

@@ -76,7 +76,7 @@ export default function ReglementationPage() {
                   { step: '5', title: 'Mise en service', desc: 'Vous pouvez brancher votre kit d\u00e8s que la convention est sign\u00e9e (ou apr\u00e8s 15 jours sans r\u00e9ponse).' },
                 ].map((s) => (
                   <div key={s.step} className="card border-l-4 border-l-green">
-                    <div className="flex items-center gap-3 mb-1"><div className="w-7 h-7 rounded-lg bg-green text-white flex items-center justify-center font-bold text-xs">{s.step}</div><h4 className="font-bold text-sm">{s.title}</h4></div>
+                    <div className="flex items-center gap-3 mb-1"><div className="w-7 h-7 rounded-lg bg-green text-white flex items-center justify-center font-bold text-xs">{s.step}</div><h3 className="font-bold text-sm">{s.title}</h3></div>
                     <p className="text-xs text-charcoal-light ml-10">{s.desc}</p>
                   </div>
                 ))}
@@ -91,11 +91,11 @@ export default function ReglementationPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Si vous vivez en copropri&eacute;t&eacute;, les r&egrave;gles d&eacute;pendent de la visibilit&eacute; de votre installation :</p>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2">Panneau non visible de l&apos;ext&eacute;rieur</h4>
+                  <h3 className="font-bold text-green mb-2">Panneau non visible de l&apos;ext&eacute;rieur</h3>
                   <p className="text-sm text-charcoal-light">Pos&eacute; au sol sur votre balcon, derri&egrave;re le garde-corps, pas visible depuis la rue. Aucune autorisation de la copropri&eacute;t&eacute; n&eacute;cessaire. Informer le syndic reste recommand&eacute; par courtoisie.</p>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2">Panneau visible (fa&ccedil;ade, garde-corps ext&eacute;rieur)</h4>
+                  <h3 className="font-bold text-amber-dark mb-2">Panneau visible (fa&ccedil;ade, garde-corps ext&eacute;rieur)</h3>
                   <p className="text-sm text-charcoal-light">Modifie l&apos;aspect ext&eacute;rieur de l&apos;immeuble. Le syndic peut demander un vote en assembl&eacute;e g&eacute;n&eacute;rale. Pr&eacute;sentez votre projet avec les b&eacute;n&eacute;fices (pas de d&eacute;g&acirc;ts, amovible, &eacute;cologique).</p>
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function ReglementationPage() {
                 ].map((s, i) => (
                   <div key={i} className="card">
                     <div className="flex items-start justify-between gap-4 flex-wrap">
-                      <div><h4 className="font-bold text-sm mb-1">{s.situation}</h4><p className="text-xs text-charcoal-light">{s.detail}</p></div>
+                      <div><h3 className="font-bold text-sm mb-1">{s.situation}</h3><p className="text-xs text-charcoal-light">{s.detail}</p></div>
                       <span className={`text-xs font-semibold px-3 py-1 rounded-lg whitespace-nowrap ${s.auth === 'Aucune' ? 'bg-green-pale text-green' : 'bg-amber-pale text-amber-dark'}`}>{s.auth}</span>
                     </div>
                   </div>
@@ -172,35 +172,35 @@ export default function ReglementationPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/prise-exterieure-etanche-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prise ext&eacute;rieure &eacute;tanche et rallonge pour kit solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prise ext&eacute;rieure &eacute;tanche et rallonge pour kit solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">IP44, IP66, diff&eacute;rentiel 30&nbsp;mA&nbsp;: les r&egrave;gles de branchement en s&eacute;curit&eacute;</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-location-meublee-airbnb" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h3>
                   <p className="text-xs text-charcoal-light mt-1">Autorisations r&eacute;elles selon votre situation, CACSI et ROI chiffr&eacute;</p>
                 </Link>
                 <Link href="/blog/aides-subventions-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Aides et subventions panneau solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Aides et subventions panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">MaPrimeR&eacute;nov&apos;, TVA, prime autoconsommation supprim&eacute;e&nbsp;: la r&eacute;ponse honn&ecirc;te</p>
                 </Link>
                 <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h3>
                   <p className="text-xs text-charcoal-light mt-1">R&eacute;glementation, CACSI, copropri&eacute;t&eacute;, assurance — la liste compl&egrave;te avant de commander</p>
                 </Link>
                 <Link href="/blog/combien-panneaux-solaires-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien de panneaux sur un balcon&nbsp;? R&egrave;gles et limites</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien de panneaux sur un balcon&nbsp;? R&egrave;gles et limites</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tableau par puissance, s&eacute;rie vs parall&egrave;le, configurations l&eacute;gales</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-copropriete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Solaire en copropriété</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Solaire en copropriété</h3>
                   <p className="text-xs text-charcoal-light mt-1">Règles, votes, modèle de courrier</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-locataire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide locataires</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide locataires</h3>
                   <p className="text-xs text-charcoal-light mt-1">Vos droits en tant que locataire</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutants</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutants</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le guide complet pour démarrer</p>
                 </Link>
               </div>

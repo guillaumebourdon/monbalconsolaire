@@ -638,19 +638,19 @@ export default function GuirlandeSolaireBalconPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/lampes-solaires-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Lampes solaires pour balcon : 10 mod&egrave;les s&eacute;lectionn&eacute;s</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Lampes solaires pour balcon : 10 mod&egrave;les s&eacute;lectionn&eacute;s</h3>
                   <p className="text-xs text-charcoal-light mt-1">Appliques, projecteurs, lanternes : l&apos;&eacute;clairage fonctionnel en compl&eacute;ment de la guirlande</p>
                 </Link>
                 <Link href="/accessoires" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Tous nos accessoires solaires pour balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Tous nos accessoires solaires pour balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Prises connect&eacute;es, batteries, supports, &eacute;clairage : nos s&eacute;lections</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-balcon-nord" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon nord : est-ce rentable ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon nord : est-ce rentable ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce que produit vraiment une fa&ccedil;ade nord, chiffres &agrave; l&apos;appui</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien &ccedil;a produit vraiment ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien &ccedil;a produit vraiment ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce qu&apos;un kit de balcon produit de novembre &agrave; f&eacute;vrier</p>
                 </Link>
               </div>

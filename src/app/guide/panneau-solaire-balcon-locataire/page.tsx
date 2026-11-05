@@ -65,7 +65,7 @@ export default function LocatairePage() {
               <h2 className="text-2xl font-extrabold mb-4">Copropriété : quand faut-il demander ?</h2>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2 text-green">Pas besoin d&apos;autorisation</h4>
+                  <h3 className="font-bold text-sm mb-2 text-green">Pas besoin d&apos;autorisation</h3>
                   <ul className="text-xs text-charcoal-light space-y-1">
                     <li>&rarr; Kit pose au sol sur le balcon</li>
                     <li>&rarr; Kit en appui contre la rambarde (sans fixation)</li>
@@ -74,7 +74,7 @@ export default function LocatairePage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2 text-amber-dark">Autorisation nécessaire</h4>
+                  <h3 className="font-bold text-sm mb-2 text-amber-dark">Autorisation nécessaire</h3>
                   <ul className="text-xs text-charcoal-light space-y-1">
                     <li>&rarr; Fixation permanente en facade</li>
                     <li>&rarr; Percage du mur ou de la rambarde</li>
@@ -92,19 +92,19 @@ export default function LocatairePage() {
               <div className="space-y-4 my-6">
                 <div className="card-lg border-green/15 bg-green-pale/10">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><div><div className="badge-green mb-1 text-[10px]">Recommandé locataires</div><h4 className="font-bold">Sunology PLAY (ex-PLAY 2)</h4><p className="text-xs text-stone">500 Wc, pose au sol sans perçage (ballasts 10 L en option), 100% amovible, 1 min d&apos;installation</p></div></div>
+                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><div><div className="badge-green mb-1 text-[10px]">Recommandé locataires</div><h3 className="font-bold">Sunology PLAY (ex-PLAY 2)</h3><p className="text-xs text-stone">500 Wc, pose au sol sans perçage (ballasts 10 L en option), 100% amovible, 1 min d&apos;installation</p></div></div>
                     <span className="font-mono font-bold text-green text-lg">599&euro;</span>
                   </div>
                 </div>
                 <div className="card-lg">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" /><div><div className="badge-amber mb-1 text-[10px]">Petit budget</div><h4 className="font-bold">Beem Kit 300W</h4><p className="text-xs text-stone">4 petits panneaux, s&apos;adaptént aux espaces étroits, amovibles &mdash; actuellement en rupture chez Beem</p></div></div>
+                    <div className="flex items-start gap-3"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" /><div><div className="badge-amber mb-1 text-[10px]">Petit budget</div><h3 className="font-bold">Beem Kit 300W</h3><p className="text-xs text-stone">4 petits panneaux, s&apos;adaptént aux espaces étroits, amovibles &mdash; actuellement en rupture chez Beem</p></div></div>
                     <span className="font-mono font-bold text-amber-dark text-lg">199&euro;</span>
                   </div>
                 </div>
                 <div className="card-lg">
                   <div className="flex justify-between items-start flex-wrap gap-3">
-                    <div><div className="badge-amber mb-1 text-[10px]">Arr&ecirc;t&eacute;</div><h4 className="font-bold"><Link href="/avis/sunology-city" className="hover:text-green">Sunology CITY</Link></h4><p className="text-xs text-stone">Con&ccedil;u pour les garde-corps, mais plus vendu par Sunology depuis 2026. Alternative actuelle&nbsp;: le Sunology GO en version garde-corps (349&nbsp;&euro; au 27/09/2026).</p></div>
+                    <div><div className="badge-amber mb-1 text-[10px]">Arr&ecirc;t&eacute;</div><h3 className="font-bold"><Link href="/avis/sunology-city" className="hover:text-green">Sunology CITY</Link></h3><p className="text-xs text-stone">Con&ccedil;u pour les garde-corps, mais plus vendu par Sunology depuis 2026. Alternative actuelle&nbsp;: le Sunology GO en version garde-corps (349&nbsp;&euro; au 27/09/2026).</p></div>
                     <span className="font-mono font-bold text-stone text-lg">Arr&ecirc;t&eacute;</span>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function LocatairePage() {
                   { t: 'Nettoyez régulièrement', d: 'Un panneau poussiereux perd 5-10% de rendement. Un coup de chiffon humide tous les 2-3 mois suffit.' },
                 ].map((a, i) => (
                   <div key={i} className="card">
-                    <h4 className="font-bold text-sm mb-1">{a.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{a.t}</h3>
                     <p className="text-xs text-charcoal-light">{a.d}</p>
                   </div>
                 ))}
@@ -166,31 +166,31 @@ export default function LocatairePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/panneau-solaire-location-meublee-airbnb" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h3>
                   <p className="text-xs text-charcoal-light mt-1">Autorisations r&eacute;elles, CACSI, ROI et avantage fiscal LMNP</p>
                 </Link>
                 <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter : 15 points &agrave; v&eacute;rifier</h3>
                   <p className="text-xs text-charcoal-light mt-1">Bail, copro, Linky, prise, CACSI, assurance — tout ce qu&apos;il faut v&eacute;rifier avant de commander</p>
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, 900W</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-copropriete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Solaire en copropriété</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Solaire en copropriété</h3>
                   <p className="text-xs text-charcoal-light mt-1">Règles, votes, modèle de courrier</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide d&eacute;butants</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide d&eacute;butants</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le guide complet pour d&eacute;marrer</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-assurance-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Que couvre votre assurance ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Gr&ecirc;le, vol, RC : ce qui est garanti pour les locataires</p>
                 </Link>
                 <Link href="/guide/demenager-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;m&eacute;nager avec son kit solaire : CACSI, r&eacute;siliation</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;m&eacute;nager avec son kit solaire : CACSI, r&eacute;siliation</h3>
                   <p className="text-xs text-charcoal-light mt-1">D&eacute;montage, &eacute;tat des lieux, nouvelle d&eacute;claration Enedis</p>
                 </Link>
               </div>

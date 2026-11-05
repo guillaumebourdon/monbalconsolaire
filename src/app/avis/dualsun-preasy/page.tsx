@@ -116,14 +116,14 @@ export default function DualsunPreasyPage() {
         datePublished="2026-05-09"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="DualSun PREASY" brand="DualSun" description="Panneau solaire pliable plug-and-play 420 Wc, TOPCon bifacial, assemblé en France, châssis aspect bois, micro-onduleur Hoymiles 400 W." price={870} ratingValue={6.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/dualsun-preasy" />
+      <SchemaProduct name="DualSun PREASY" brand="DualSun" description="Panneau solaire pliable plug-and-play 420 Wc, TOPCon bifacial, assemblé en France, châssis aspect bois, micro-onduleur Hoymiles 400 W." price={870} ratingValue={6.5} url="https://monbalconsolaire.fr/avis/dualsun-preasy" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'DualSun PREASY' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'DualSun PREASY' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               DualSun PREASY avis : le nouveau challenger du marché
             </h1>
@@ -147,8 +147,6 @@ export default function DualsunPreasyPage() {
             affiliateUrl=""
             affiliateLabel=""
             accentColor="amber"
-            image="/images/produits/dualsun-preasy-1.webp"
-            imageAlt="DualSun PREASY - panneau solaire pliable design bois"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
 
@@ -180,21 +178,21 @@ export default function DualsunPreasyPage() {
               <div className="grid md:grid-cols-3 gap-3 my-6">
                 <div className="card border-l-4 border-l-amber">
                   <div className="text-2xl mb-2">🪵</div>
-                  <h4 className="font-bold text-sm mb-1">Design aspect bois</h4>
+                  <h3 className="font-bold text-sm mb-1">Design aspect bois</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Châssis aluminium avec finition bois. Le seul panneau plug-and-play qui ne dénote pas sur une terrasse soignée.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="text-2xl mb-2">🇫🇷</div>
-                  <h4 className="font-bold text-sm mb-1">Assemblé en France</h4>
+                  <h3 className="font-bold text-sm mb-1">Assemblé en France</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Usine de Jujurieux (Ain). DualSun est un fabricant français depuis 2010, pas un revendeur de produits chinois rebrandés.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="text-2xl mb-2">📐</div>
-                  <h4 className="font-bold text-sm mb-1">Pliable en deux</h4>
+                  <h3 className="font-bold text-sm mb-1">Pliable en deux</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Se plie et tient dans un coffre de voiture. Idéal pour les locataires qui déménagent ou pour ranger en hiver.
                   </p>
@@ -273,7 +271,7 @@ export default function DualsunPreasyPage() {
               <div className="space-y-3">
                 {points_forts.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">{p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">{p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -287,7 +285,7 @@ export default function DualsunPreasyPage() {
               <div className="space-y-3">
                 {points_faibles.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">{p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">{p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -394,15 +392,15 @@ export default function DualsunPreasyPage() {
               <h2 className="text-2xl font-extrabold mb-4">Pour qui c&apos;est le bon choix</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous voulez du Made in France, point final</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous voulez du Made in France, point final</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Si acheter français est votre priorité absolue et que le surcoût ne vous gêne pas, le PREASY est le seul kit plug-and-play assemblé en France par un fabricant historique. Sunethic F500 est aussi français (690 €, 500 Wc), mais DualSun a 15 ans d&apos;expérience dans le solaire.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">L&apos;esthétique est non négociable</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">L&apos;esthétique est non négociable</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le design aspect bois est unique sur le marché. Si votre panneau est visible depuis votre salon ou celui des voisins, et que l&apos;apparence compte autant que la production, le PREASY est le seul choix défendable.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous déménagez souvent</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous déménagez souvent</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le design pliable est un vrai atout pour les locataires nomades. Le PREASY se range dans un placard et se transporte dans un coffre de voiture. Aucun autre kit 420 Wc n&apos;offre cette compacité au rangement.</p>
                 </div>
               </div>
@@ -412,15 +410,15 @@ export default function DualsunPreasyPage() {
               <h2 className="text-2xl font-extrabold mb-4">Pour qui ce n&apos;est pas le bon choix</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous cherchez la rentabilité</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous cherchez la rentabilité</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 10,5 ans, le PREASY est l&apos;un des kits les moins rentables du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 500 Wc (ROI 6,5 ans) ou un Zendure SolarFlow (ROI 5,3 ans avec batterie).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est limité</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est limité</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">870-900 € pour 420 Wc sans batterie, c&apos;est objectivement trop. Pour ce budget, le Zendure SolarFlow + 2 panneaux vous donne 840 W + 1,92 kWh de stockage. Ou deux Beem On pour 1 198 € et 920 Wc de puissance.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez du stockage</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez du stockage</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le PREASY n&apos;a pas d&apos;écosystème batterie. Pas de batterie propriétaire, pas de compatibilité avec le Zendure ou l&apos;EcoFlow. Si le stockage vous intéresse, ce n&apos;est pas le bon point d&apos;entrée.</p>
                 </div>
               </div>
@@ -459,15 +457,15 @@ export default function DualsunPreasyPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/sunethic-f500" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunethic F500</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunethic F500</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;autre kit Made in France : 500 Wc pour 690 €, plus puissant et moins cher</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché : 450 Wc, 599 €, installation en 1 minute</p>
                 </Link>
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet des 3 systèmes les plus populaires</p>
                 </Link>
               </div>

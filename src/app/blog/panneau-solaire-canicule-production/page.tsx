@@ -8,7 +8,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire et canicule : impact réel sur la production en été',
-  description: 'Canicule et kits solaires balcon : le coefficient de température expliqué, les pertes chiffrées, quels panneaux résistent le mieux et 5 astuces pour limiter la casse.',
+  description: 'Canicule et kit solaire de balcon : coefficient de température, pertes chiffrées, panneaux qui résistent le mieux et 5 astuces.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-canicule-production',
   },
@@ -182,21 +182,21 @@ export default function PanneauSolaireCaniuleProductionPage() {
               </p>
               <div className="space-y-3 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">N-type TOPCon ou HJT &mdash; le meilleur par temps chaud</h4>
+                  <h3 className="font-bold text-sm mb-2">N-type TOPCon ou HJT &mdash; le meilleur par temps chaud</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Coefficient&nbsp;: <strong>&ndash;0,26 &agrave; &ndash;0,30&nbsp;%/&deg;C</strong>. Ces technologies utilisent des couches passivantes qui r&eacute;duisent la sensibilit&eacute; thermique. En canicule, elles perdent 12&nbsp;% au lieu de 18&nbsp;% pour le PERC. Sur un ann&eacute;e compl&egrave;te, l&apos;avantage se chiffre en quelques kWh suppl&eacute;mentaires.
                   </p>
                   <p className="text-xs text-stone"><strong>Kits concern&eacute;s&nbsp;:</strong> Sunology PLAY 500&nbsp;Wc (&ndash;0,26&nbsp;%/&deg;C, ex-PLAY 2 &agrave; &ndash;0,28&nbsp;%/&deg;C), <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">EcoFlow PowerStream</Link> (&ndash;0,29&nbsp;%/&deg;C), <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (&ndash;0,30&nbsp;%/&deg;C)</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">PERC mono-cristallin &mdash; le plus courant</h4>
+                  <h3 className="font-bold text-sm mb-2">PERC mono-cristallin &mdash; le plus courant</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Coefficient&nbsp;: <strong>&ndash;0,35 &agrave; &ndash;0,40&nbsp;%/&deg;C</strong>. La majorit&eacute; des kits du march&eacute; utilisent encore du PERC. Tr&egrave;s comp&eacute;titif en termes de prix, bon rendement global, mais plus sensible aux fortes chaleurs. Les panneaux <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology CITY</Link> de premi&egrave;re g&eacute;n&eacute;ration et beaucoup de kits g&eacute;n&eacute;riques entrent dans cette cat&eacute;gorie.
                   </p>
                   <p className="text-xs text-stone"><strong>Kits concern&eacute;s&nbsp;:</strong> nombreux kits Amazon &lt;300&nbsp;&euro;, anciennes g&eacute;n&eacute;rations de kits marque</p>
                 </div>
                 <div className="card border-l-4 border-l-stone">
-                  <h4 className="font-bold text-sm mb-2">Poly-cristallin &mdash; &agrave; &eacute;viter</h4>
+                  <h3 className="font-bold text-sm mb-2">Poly-cristallin &mdash; &agrave; &eacute;viter</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Coefficient&nbsp;: <strong>&ndash;0,45 &agrave; &ndash;0,50&nbsp;%/&deg;C</strong>. Plus rare aujourd&apos;hui dans les kits balcon, mais encore pr&eacute;sent dans certains kits d&apos;entr&eacute;e de gamme. Rendement d&eacute;j&agrave; inf&eacute;rieur &agrave; froid, encore plus p&eacute;nalis&eacute; en &eacute;t&eacute;. &Agrave; &eacute;viter absolument.
                   </p>
@@ -217,7 +217,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">Juin (avantage thermique)</h4>
+                  <h3 className="font-bold text-sm mb-2">Juin (avantage thermique)</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5 leading-relaxed">
                     <li>&bull; Temp. ambiante&nbsp;: 18&ndash;24&deg;C</li>
                     <li>&bull; Temp. cellule&nbsp;: ~45&ndash;50&deg;C</li>
@@ -227,7 +227,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Juillet (avantage ensoleillement)</h4>
+                  <h3 className="font-bold text-sm mb-2">Juillet (avantage ensoleillement)</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5 leading-relaxed">
                     <li>&bull; Temp. ambiante&nbsp;: 28&ndash;38&deg;C</li>
                     <li>&bull; Temp. cellule&nbsp;: 60&ndash;70&deg;C</li>
@@ -288,7 +288,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
                     <div className="flex items-start gap-3">
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 text-white ${item.good ? 'bg-green' : 'bg-amber'}`}>{item.num}</div>
                       <div>
-                        <h4 className="font-bold text-sm mb-1">{item.title}</h4>
+                        <h3 className="font-bold text-sm mb-1">{item.title}</h3>
                         <p className="text-xs text-charcoal-light leading-relaxed">{item.text}</p>
                       </div>
                     </div>
@@ -339,13 +339,13 @@ export default function PanneauSolaireCaniuleProductionPage() {
               </p>
               <div className="space-y-3 mb-4">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Hoymiles HMS et APsystems EZ1</h4>
+                  <h3 className="font-bold text-sm mb-1">Hoymiles HMS et APsystems EZ1</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Temp&eacute;rature de fonctionnement max&nbsp;: <strong>65&deg;C</strong>. En pratique, le bo&icirc;tier fixé au dos du panneau (ou &agrave; proximit&eacute;) monte rarement au-del&agrave; de 55-60&deg;C. La protection thermique (mise en veille temporaire) peut s&apos;activer lors de canicules extr&ecirc;mes, entra&icirc;nant une coupure de quelques minutes. Les <Link href="/avis/hoymiles-hms-800w" className="text-green hover:underline">avis sur le Hoymiles HMS-800W</Link> mentionnent rarement ce probl&egrave;me dans les usages balcon normaux.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Signe d&apos;alerte &agrave; surveiller</h4>
+                  <h3 className="font-bold text-sm mb-1">Signe d&apos;alerte &agrave; surveiller</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Si votre application de suivi (Hoymiles S-Miles, Beem, Sunology) affiche des <strong>plages de production nulle en milieu de journ&eacute;e</strong> lors des canicules, c&apos;est probablement la protection thermique du micro-onduleur qui s&apos;active. Solution&nbsp;: am&eacute;liorer la ventilation autour du bo&icirc;tier, ou le positionner &agrave; l&apos;ombre du panneau.
                   </p>
@@ -385,23 +385,23 @@ export default function PanneauSolaireCaniuleProductionPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/production-solaire-ete-vs-hiver" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production solaire &eacute;t&eacute; vs hiver&nbsp;: donn&eacute;es r&eacute;elles pour 5 villes</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Production solaire &eacute;t&eacute; vs hiver&nbsp;: donn&eacute;es r&eacute;elles pour 5 villes</h3>
                   <p className="text-xs text-charcoal-light mt-1">Courbes mensuelles PVGIS pour Paris, Lyon, Marseille, Bordeaux et Lille. Le paradoxe de la chaleur estivale.</p>
                 </Link>
                 <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon en &eacute;t&eacute;&nbsp;: 5 erreurs qui tuent votre production</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon en &eacute;t&eacute;&nbsp;: 5 erreurs qui tuent votre production</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ventilation, ombre saisonni&egrave;re, surchauffe onduleur, nettoyage, mauvais angle&nbsp;: les erreurs &agrave; corriger</p>
                 </Link>
                 <Link href="/blog/entretien-nettoyage-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Entretien et nettoyage d&apos;un panneau solaire de balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Entretien et nettoyage d&apos;un panneau solaire de balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Fr&eacute;quence, produits, erreurs &agrave; &eacute;viter, impact sur la production. Guide pratique avec checklist.</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau solaire produit moins que pr&eacute;vu&nbsp;: que faire&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau solaire produit moins que pr&eacute;vu&nbsp;: que faire&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points&nbsp;: ombre, orientation, salissure, chaleur. Solutions concr&egrave;tes.</p>
                 </Link>
                 <Link href="/blog/degradation-panneau-solaire-25-ans" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;gradation d&apos;un panneau solaire&nbsp;: que reste-t-il apr&egrave;s 25 ans&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;gradation d&apos;un panneau solaire&nbsp;: que reste-t-il apr&egrave;s 25 ans&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">&Agrave; ne pas confondre avec la perte de rendement par chaleur&nbsp;: taux r&eacute;els par technologie et garanties constructeur.</p>
                 </Link>
               </div>

@@ -364,15 +364,15 @@ export default function GuideBatterieBalcon() {
               </p>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-2 text-green">Dur&eacute;e de vie</h4>
+                  <h3 className="font-bold text-sm mb-2 text-green">Dur&eacute;e de vie</h3>
                   <p className="text-xs text-charcoal-light">3&nbsp;000 &agrave; 6&nbsp;000 cycles (contre 500&ndash;1&nbsp;000 pour les Li-ion NMC). Sur une utilisation quotidienne, c&rsquo;est 8 &agrave; 16 ans de vie utile.</p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-2 text-green">S&eacute;curit&eacute;</h4>
+                  <h3 className="font-bold text-sm mb-2 text-green">S&eacute;curit&eacute;</h3>
                   <p className="text-xs text-charcoal-light">Pas de risque d&rsquo;emballement thermique (&laquo;&nbsp;feu de batterie&nbsp;&raquo;). La chimie LFP est stable m&ecirc;me en cas de surcharge ou de d&eacute;tersion.</p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-2 text-green">Temp&eacute;ratures</h4>
+                  <h3 className="font-bold text-sm mb-2 text-green">Temp&eacute;ratures</h3>
                   <p className="text-xs text-charcoal-light">Fonctionnement de &minus;20&nbsp;&deg;C &agrave; +60&nbsp;&deg;C en d&eacute;charge (v&eacute;rifiez les specs de charge pour les mod&egrave;les ext&eacute;rieurs). Id&eacute;al pour les installations sur balcon expos&eacute;es.</p>
                 </div>
               </div>
@@ -393,7 +393,7 @@ export default function GuideBatterieBalcon() {
                   <div className="flex items-start gap-3">
                     <span className="text-green font-bold text-lg mt-0.5">&#10003;</span>
                     <div>
-                      <h4 className="font-bold text-sm">Zendure SolarFlow, Bluetti Balco 260, EcoFlow PowerStream (arr&ecirc;t&eacute;)</h4>
+                      <h3 className="font-bold text-sm">Zendure SolarFlow, Bluetti Balco 260, EcoFlow PowerStream (arr&ecirc;t&eacute;)</h3>
                       <p className="text-xs text-charcoal-light mt-1">Ces syst&egrave;mes sont con&ccedil;us pour accueillir des batteries suppl&eacute;mentaires ou sont disponibles en version &laquo;&nbsp;expansion&nbsp;&raquo;. Vous pouvez commencer sans batterie et en ajouter une plus tard.</p>
                     </div>
                   </div>
@@ -402,7 +402,7 @@ export default function GuideBatterieBalcon() {
                   <div className="flex items-start gap-3">
                     <span className="text-amber-dark font-bold text-lg mt-0.5">&#10007;</span>
                     <div>
-                      <h4 className="font-bold text-sm">Sunology PLAY 2, Beem On 500&nbsp;Wc, Sunethic F500</h4>
+                      <h3 className="font-bold text-sm">Sunology PLAY 2, Beem On 500&nbsp;Wc, Sunethic F500</h3>
                       <p className="text-xs text-charcoal-light mt-1">Ces kits utilisent un micro-onduleur standard (Hoymiles, APsystems). Ils ne sont pas directement compatibles avec une batterie externe. Il faudrait changer l&rsquo;onduleur &mdash; ce qui efface l&rsquo;&eacute;conomie initiale du kit.</p>
                     </div>
                   </div>
@@ -438,7 +438,7 @@ export default function GuideBatterieBalcon() {
                   },
                 ].map((tip, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{tip.title}</h4>
+                    <h3 className="font-bold text-sm mb-1">{tip.title}</h3>
                     <p className="text-xs text-charcoal-light" dangerouslySetInnerHTML={{ __html: tip.desc }} />
                   </div>
                 ))}
@@ -502,27 +502,27 @@ export default function GuideBatterieBalcon() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Sunology PLAY MAX, Zendure, EcoFlow&nbsp;: le comparatif complet</p>
                 </Link>
                 <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260 &mdash; 2,56&nbsp;kWh LFP</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260 &mdash; 2,56&nbsp;kWh LFP</h3>
                   <p className="text-xs text-charcoal-light mt-1">Notre analyse d&eacute;taill&eacute;e du syst&egrave;me tout-en-un Bluetti</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow &mdash; 1,92&nbsp;kWh pour 488&nbsp;&euro;</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow &mdash; 1,92&nbsp;kWh pour 488&nbsp;&euro;</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix du stockage balcon</p>
                 </Link>
                 <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">8 astuces pour passer de 40&nbsp;% &agrave; 85&nbsp;% d&rsquo;autoconsommation</p>
                 </Link>
                 <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026 : comparatif</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026 : comparatif</h3>
                   <p className="text-xs text-charcoal-light mt-1">Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow &mdash; tableau prix/kWh complet</p>
                 </Link>
                 <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables vs fixe balcon &mdash; mis &agrave; jour ao&ucirc;t 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables vs fixe balcon &mdash; mis &agrave; jour ao&ucirc;t 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Bluetti Balco 260 ajout&eacute;, prix EcoFlow / Jackery / Bluetti revus &agrave; la baisse</p>
                 </Link>
               </div>

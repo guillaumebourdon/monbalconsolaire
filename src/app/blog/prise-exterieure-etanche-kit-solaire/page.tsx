@@ -425,19 +425,19 @@ export default function PriseExterieureEtanchePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Installer un kit solaire de balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Installer un kit solaire de balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le pas-&agrave;-pas complet, du d&eacute;ballage &agrave; la d&eacute;claration</p>
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI Enedis, copropri&eacute;t&eacute;, rep&egrave;re 900 W</p>
                 </Link>
                 <Link href="/blog/support-fixation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Support et fixation panneau solaire balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Support et fixation panneau solaire balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Crochets, support inclinable, s&eacute;curit&eacute; au vent</p>
                 </Link>
                 <Link href="/blog/wattmetre-prise-mesurer-consommation" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Wattm&egrave;tre prise&nbsp;: mesurer son talon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Wattm&egrave;tre prise&nbsp;: mesurer son talon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Dimensionner son kit avant d&apos;acheter</p>
                 </Link>
               </div>

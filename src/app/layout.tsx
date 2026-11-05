@@ -33,7 +33,7 @@ export const metadata: Metadata = withCanonicalOg({
     template: '%s | MonBalconSolaire',
   },
   description:
-    'Comparez les meilleurs kits solaires pour balcon, calculez vos économies réelles et passez au solaire sans travaux. Guide indépendant, comparatifs neutres, calculateur gratuit.',
+    'Comparez les kits solaires pour balcon, calculez vos économies réelles et passez au solaire sans travaux. Guide indépendant, calculateur gratuit.',
   keywords: [
     'panneau solaire balcon',
     'kit solaire balcon',

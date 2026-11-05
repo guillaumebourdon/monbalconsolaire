@@ -165,7 +165,7 @@ export default function TalonConsommationPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">Éteignez tout ce qui n&apos;est pas permanent</h4>
+                      <h3 className="font-bold text-sm mb-1">Éteignez tout ce qui n&apos;est pas permanent</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">Lumières, TV, ordinateur, plaques, four, lave-linge, lave-vaisselle. Laissez tourner uniquement ce qui tourne toujours : frigo, congélateur, box, VMC, chauffe-eau.</p>
                     </div>
                   </div>
@@ -174,7 +174,7 @@ export default function TalonConsommationPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">Appuyez sur le bouton &laquo; + &raquo; du Linky</h4>
+                      <h3 className="font-bold text-sm mb-1">Appuyez sur le bouton &laquo; + &raquo; du Linky</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">Appuyez plusieurs fois jusqu&apos;à voir la <strong>puissance instantanée en VA</strong> (Volt-Ampère). C&apos;est votre talon en temps réel.</p>
                     </div>
                   </div>
@@ -183,14 +183,14 @@ export default function TalonConsommationPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">Calculez le coût annuel</h4>
+                      <h3 className="font-bold text-sm mb-1">Calculez le coût annuel</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">Talon annuel = VA × 24h × 365j / 1 000 = kWh/an. Multipliez par 0,1940 € pour le coût.</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="card-lg bg-cream/40 mt-6">
-                <h4 className="font-bold text-sm mb-3">Exemple concret</h4>
+                <h3 className="font-bold text-sm mb-3">Exemple concret</h3>
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; Linky affiche : <strong className="font-mono">220 VA</strong></li>
                   <li>&bull; Consommation annuelle : 220 × 24 × 365 / 1 000 = <strong className="font-mono">1 927 kWh/an</strong></li>
@@ -220,19 +220,19 @@ export default function TalonConsommationPage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Multiprises à interrupteur</h4>
+                  <h3 className="font-bold text-sm mb-1">Multiprises à interrupteur</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Branchez TV + décodeur + console sur une multiprise et coupez-la le soir. Gain : 20-50 W soit <strong>44-110 €/an</strong>. Investissement : 10 €.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Débranchez les chargeurs à vide</h4>
+                  <h3 className="font-bold text-sm mb-1">Débranchez les chargeurs à vide</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Un chargeur branché sans téléphone consomme 0,5-3 W. Avec 5 chargeurs : 15 W inutiles soit <strong>33 €/an</strong>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Programmez le chauffe-eau</h4>
+                  <h3 className="font-bold text-sm mb-1">Programmez le chauffe-eau</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Un chauffe-eau électrique en marche forcée 24h/24 consomme bien plus qu&apos;en heures creuses (6h/jour suffisent). Gain possible : <strong>100-200 €/an</strong>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Éteignez la box la nuit</h4>
+                  <h3 className="font-bold text-sm mb-1">Éteignez la box la nuit</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Votre box internet consomme 15-30 W en permanence. Une prise programmable qui la coupe de minuit à 6h économise <strong>10-20 €/an</strong>. Pas énorme, mais c&apos;est gratuit en effort.</p>
                 </div>
               </div>
@@ -247,7 +247,7 @@ export default function TalonConsommationPage() {
                 Une fois le talon réduit au minimum incompressible (frigo + congélateur + VMC), un kit solaire de balcon peut <strong>le couvrir entièrement pendant les heures ensoleillées</strong>. Voici pourquoi c&apos;est si efficace :
               </p>
               <div className="card-lg bg-green-pale/30 border-green/10 mb-4">
-                <h4 className="font-bold text-sm mb-3 text-green">Pourquoi le talon + le solaire = match parfait</h4>
+                <h3 className="font-bold text-sm mb-3 text-green">Pourquoi le talon + le solaire = match parfait</h3>
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li><span className="text-green font-bold mr-2">1.</span> Le talon consomme <strong>en continu</strong> → chaque watt produit par le panneau est autoconsommé instantanément</li>
                   <li><span className="text-green font-bold mr-2">2.</span> Pas de surplus perdu → le talon &laquo; absorbe &raquo; toute la production tant que le soleil est là</li>
@@ -307,7 +307,7 @@ export default function TalonConsommationPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2 text-green">Sans batterie</h4>
+                  <h3 className="font-bold text-sm mb-2 text-green">Sans batterie</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5">
                     <li>&bull; Vous couvrez le talon <strong>de jour uniquement</strong> (~10-14h)</li>
                     <li>&bull; Taux d&apos;autoconsommation : 40-50 %</li>
@@ -317,7 +317,7 @@ export default function TalonConsommationPage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2 text-amber-dark">Avec batterie</h4>
+                  <h3 className="font-bold text-sm mb-2 text-amber-dark">Avec batterie</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5">
                     <li>&bull; Vous couvrez le talon <strong>jour ET nuit</strong></li>
                     <li>&bull; Taux d&apos;autoconsommation : 70-85 %</li>
@@ -366,39 +366,39 @@ export default function TalonConsommationPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/panneau-solaire-location-meublee-airbnb" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire en location meubl&eacute;e et Airbnb</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le talon de base (frigo, veille, box) — calcul de rentabilit&eacute; en location</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment ça marche</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment ça marche</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le principe technique du talon, du surplus et de l&apos;injection réseau</p>
                 </Link>
                 <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h3>
                   <p className="text-xs text-charcoal-light mt-1">Lire les index EAST / EAIT sur votre Linky et comprendre le surplus</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-balcon-voiture-electrique" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture électrique : peut-on recharger ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture électrique : peut-on recharger ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi un kit ne remplace jamais une wallbox, et ce qu&apos;il change sur la facture</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h3>
                   <p className="text-xs text-charcoal-light mt-1">La batterie plug-and-play pour effacer le talon de nuit</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Calcul réel de rentabilité par ville et par kit</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi 0 W au Linky est souvent une bonne nouvelle</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : pourquoi c&apos;est mieux pour le talon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : pourquoi c&apos;est mieux pour le talon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Production &eacute;tal&eacute;e = autoconsommation naturelle 50-60 %</p>
                 </Link>
                 <Link href="/blog/consommation-veille-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : combien &ccedil;a consomme en veille ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : combien &ccedil;a consomme en veille ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Micro-onduleur, Beembox, WiFi : 0,5&ndash;4&nbsp;W selon le syst&egrave;me &mdash; impact r&eacute;el sur le ROI</p>
                 </Link>
               </div>

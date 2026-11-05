@@ -28,13 +28,13 @@ export default function BluettiBalco260AvisPage() {
     <>
       <SchemaArticle title="Bluetti Balco 260 avis : le tout-en-un onduleur + batterie" description="Avis détaillé sur le Bluetti Balco 260 en 2026." url="https://monbalconsolaire.fr/avis/bluetti-balco-260" datePublished="2026-06-20" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Bluetti Balco 260" brand="Bluetti" description="Système solaire balcon tout-en-un : onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. IP65, extensible à 15 kWh." price={849} ratingValue={7} ratingCount={1} url="https://monbalconsolaire.fr/avis/bluetti-balco-260" />
+      <SchemaProduct image="/images/produits/bluetti-balco-260-front.webp" name="Bluetti Balco 260" brand="Bluetti" description="Système solaire balcon tout-en-un : onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. IP65, extensible à 15 kWh." price={849} ratingValue={7} url="https://monbalconsolaire.fr/avis/bluetti-balco-260" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Bluetti Balco 260' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Bluetti Balco 260' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Bluetti Balco 260 avis : le tout-en-un onduleur + batterie (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Bluetti d&eacute;barque sur le march&eacute; du solaire de balcon avec un concept diff&eacute;rent : un bo&icirc;tier unique qui int&egrave;gre onduleur, batterie 2,56&nbsp;kWh et 4&nbsp;MPPT. Panneaux non inclus, &agrave; partir de 849&nbsp;&euro;.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 juin 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
@@ -116,7 +116,7 @@ export default function BluettiBalco260AvisPage() {
                   { t: 'Onduleur SiC haut rendement (96,1%)', d: 'Les onduleurs au carbure de silicium ont un meilleur rendement et une durée de vie supérieure aux onduleurs silicium classiques. Moins de pertes de conversion = plus d\'économies.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -136,7 +136,7 @@ export default function BluettiBalco260AvisPage() {
                   { t: 'Poids de 28,5 kg', d: 'C\'est lourd pour un boîtier de balcon. L\'installation nécessite d\'être deux, surtout en étage. Et contrairement à un panneau plat, la forme compacte rend le transport plus encombrant.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -252,35 +252,35 @@ export default function BluettiBalco260AvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent direct &agrave; 488&nbsp;&euro; avec panneaux inclus</p>
                 </Link>
                 <Link href="/avis/ecoflow-powerstream" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le syst&egrave;me modulaire avec batterie et app avanc&eacute;e</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tous les syst&egrave;mes avec stockage compar&eacute;s</p>
                 </Link>
                 <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent &agrave; 839&nbsp;&euro; avec 4&nbsp;000&nbsp;W d&apos;entr&eacute;e solaire</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le kit sans batterie le plus rentable &agrave; 429&nbsp;&euro;</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire pour terrasse 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet : Bluetti Balco 260, Zendure, EcoFlow &mdash; mise &agrave; jour juillet 2026</p>
                 </Link>
                 <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026 : comparatif</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026 : comparatif</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le Balco 260 face &agrave; Zendure SolarFlow, Jackery, EcoFlow PowerStream &mdash; tableau prix/kWh</p>
                 </Link>
                 <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables vs fixe balcon : comparatif ao&ucirc;t 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables vs fixe balcon : comparatif ao&ucirc;t 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le Balco 260 dans notre comparatif &mdash; EcoFlow DELTA 2, Bluetti AC180, Jackery &agrave; prix mis &agrave; jour</p>
                 </Link>
               </div>

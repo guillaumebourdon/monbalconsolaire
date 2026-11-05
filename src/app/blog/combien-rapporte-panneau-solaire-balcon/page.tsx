@@ -105,7 +105,7 @@ export default function CombienRapportePage() {
                   <div className="flex items-start gap-3">
                   <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" />
                   <div>
-                  <h4 className="font-bold text-sm mb-1">A Marseille avec un Sunology PLAY (500 Wc)</h4>
+                  <h3 className="font-bold text-sm mb-1">A Marseille avec un Sunology PLAY (500 Wc)</h3>
                   <p className="text-xs text-charcoal-light">Vous produisez 638 kWh/an, soit l&apos;equivalent de la consommation d&apos;un refrigerateur + une box internet + tous vos appareils en veille pendant un an. Économies : ~105&euro;/an. Le kit est rembourse en 5,3 ans (+3,3 %/an d&apos;inflation). Sur 25 ans de garantie, vous économiséz environ 3 990&euro;.</p>
                 </div>
                   </div>
@@ -114,13 +114,13 @@ export default function CombienRapportePage() {
                   <div className="flex items-start gap-3">
                   <ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" />
                   <div>
-                  <h4 className="font-bold text-sm mb-1">A Paris avec un Beem Kit 300W</h4>
+                  <h3 className="font-bold text-sm mb-1">A Paris avec un Beem Kit 300W</h3>
                   <p className="text-xs text-charcoal-light">Vous produisez 281 kWh/an. C&apos;est moins, mais à 199&euro; le kit (actuellement en rupture chez Beem), le retour sur investissement serait atteint en 4,1 ans. Sur 25 ans, vous économiséz environ 1 760&euro;.</p>
                 </div>
                   </div>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">A Lille avec un Sunology PLAY (500 Wc)</h4>
+                  <h3 className="font-bold text-sm mb-1">A Lille avec un Sunology PLAY (500 Wc)</h3>
                   <p className="text-xs text-charcoal-light">Meme dans la region la moins ensoleillee de France, les chiffres restent positifs : 425 kWh/an, ~70&euro; d&apos;économies, ROI en 7,6 ans. Sur 25 ans : environ 2 660&euro; d&apos;économies. Le solaire est rentable partout en France.</p>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export default function CombienRapportePage() {
                     <div className="text-xs text-stone font-semibold mb-2">{s.scenario}</div>
                     <div className="font-mono text-xl font-medium text-green mb-1">{s.eco25}</div>
                     <div className="text-[11px] text-stone">économies sur 25 ans (500W, Lyon)</div>
-                    <div className="text-[10px] text-stone-light mt-2">{s.desc}</div>
+                    <div className="text-[10px] text-stone mt-2">{s.desc}</div>
                   </div>
                 ))}
               </div>
@@ -159,7 +159,7 @@ export default function CombienRapportePage() {
                   { t: 'Region', impact: 'Moyen', d: 'L\'ecart entre Marseille et Lille est d\'environ 50% de production. Mais le solaire reste rentable partout en France.' },
                 ].map((f, i) => (
                   <div key={i} className="card">
-                    <div className="flex items-center gap-2 mb-2"><h4 className="font-bold text-sm">{f.t}</h4><span className={`text-[10px] font-bold px-2 py-0.5 rounded ${f.impact === 'Fort' ? 'bg-amber-pale text-amber-dark' : 'bg-cream-dark text-stone'}`}>Impact {f.impact}</span></div>
+                    <div className="flex items-center gap-2 mb-2"><h3 className="font-bold text-sm">{f.t}</h3><span className={`text-[10px] font-bold px-2 py-0.5 rounded ${f.impact === 'Fort' ? 'bg-amber-pale text-amber-dark' : 'bg-cream-dark text-stone'}`}>Impact {f.impact}</span></div>
                     <p className="text-xs text-charcoal-light">{f.d}</p>
                   </div>
                 ))}
@@ -198,47 +198,47 @@ export default function CombienRapportePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Carte&nbsp;: la rentabilit&eacute; d&apos;un kit solaire par d&eacute;partement</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Carte&nbsp;: la rentabilit&eacute; d&apos;un kit solaire par d&eacute;partement</h3>
                   <p className="text-xs text-charcoal-light mt-1">Production, &eacute;conomies et ann&eacute;es de ROI d&apos;un kit 500&nbsp;Wc dans les 96 d&eacute;partements</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-balcon-vs-toiture" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle diff&eacute;rence de rentabilit&eacute;&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle diff&eacute;rence de rentabilit&eacute;&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">ROI 4–7 ans pour le balcon, 7–12 ans pour la toiture&nbsp;: le comparatif complet avec les chiffres r&eacute;els</p>
                 </Link>
                 <Link href="/blog/aides-subventions-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Aides et subventions panneau solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Aides et subventions panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">MaPrimeR&eacute;nov&apos;, TVA r&eacute;duite, prime autoconsommation&nbsp;: ce qui s&apos;applique vraiment aux kits balcon</p>
                 </Link>
                 <Link href="/blog/prix-electricite-2026-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prix de l'électricité 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prix de l'électricité 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi le solaire devient incontournable</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutants</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide débutants</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le guide complet pour démarrer</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu</h3>
                   <p className="text-xs text-charcoal-light mt-1">Checklist de diagnostic et solutions par ordre de co&ucirc;t</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-balcon-voiture-electrique" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture &eacute;lectrique&nbsp;: peut-on recharger&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon et voiture &eacute;lectrique&nbsp;: peut-on recharger&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;&eacute;quivalent kilom&eacute;trique r&eacute;el d&apos;un kit, chiffr&eacute; via pricing.ts</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W : quelle puissance choisir ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W : quelle puissance choisir ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Impact de la puissance sur le ROI et les &eacute;conomies annuelles</p>
                 </Link>
                 <Link href="/blog/bilan-6-mois-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Bilan sur 6 mois : ce que produit un kit solaire balcon</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Bilan sur 6 mois : ce que produit un kit solaire balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Production mois par mois simul&eacute;e et retours d&apos;utilisateurs</p>
                 </Link>
                 <Link href="/blog/kit-solaire-balcon-avis-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : avis et retours 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : avis et retours 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Synth&egrave;se des avis Trustpilot, forums et utilisateurs</p>
                 </Link>
               </div>

@@ -216,7 +216,7 @@ export default function BatteriesPortablesPage() {
     <>
       <SchemaArticle
         title="Batteries portables et balcon fixe 2026 : Bluetti Balco 260, EcoFlow, Jackery"
-        description="Comparatif batteries portables et batteries balcon fixe 2026, prix mis &agrave; jour ao&ucirc;t 2026."
+        description="Comparatif batteries portables et batteries balcon fixe 2026, prix mis à jour août 2026."
         url="https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif"
         datePublished="2026-04-21"
         dateModified="2026-09-27"
@@ -514,8 +514,8 @@ export default function BatteriesPortablesPage() {
               <div className="space-y-3">
                 {cas_usage.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{c.titre}</h4>
-                    <p className="text-xs text-amber font-semibold mb-2">→ Notre reco : {c.reco}</p>
+                    <h3 className="font-bold text-sm mb-1">{c.titre}</h3>
+                    <p className="text-xs text-amber-dark font-semibold mb-2">→ Notre reco : {c.reco}</p>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.explication}</p>
                   </div>
                 ))}
@@ -527,31 +527,31 @@ export default function BatteriesPortablesPage() {
               <h2 className="text-2xl font-extrabold mb-4">Les 5 critères à vérifier avant d&apos;acheter</h2>
               <div className="space-y-3">
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">1. Technologie de batterie (LiFePO4 obligatoire)</h4>
+                  <h3 className="font-bold text-sm mb-1">1. Technologie de batterie (LiFePO4 obligatoire)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Les LiFePO4 acceptent 3 000-6 000 cycles, durée de vie 10-15 ans. Les NMC (ancienne génération) : 500-1 000 cycles, 3-5 ans. La différence est énorme sur le long terme.
                   </p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">2. Puissance en sortie (watts)</h4>
+                  <h3 className="font-bold text-sm mb-1">2. Puissance en sortie (watts)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Indique ce que vous pouvez brancher. Moins de 1 000 W = pas de micro-ondes, cafetière, chauffage. 1 800 W+ = la plupart des appareils domestiques fonctionnent.
                   </p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">3. Capacité utile (Wh vs kWh)</h4>
+                  <h3 className="font-bold text-sm mb-1">3. Capacité utile (Wh vs kWh)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     1 kWh = 1 000 Wh = environ 10 heures pour 100 W de consommation continue. Pour estimer : une box internet consomme ~15 W, un frigo moderne ~50 W (en moyenne sur 24h), une LED ~5 W, un ordinateur portable ~60 W.
                   </p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">4. Vitesse de charge secteur</h4>
+                  <h3 className="font-bold text-sm mb-1">4. Vitesse de charge secteur</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Essentielle pour recharger rapidement avant une coupure annoncée ou un départ. Les meilleures batteries se rechargent à 80% en 45-60 minutes. Les anciens modèles prennent 6-8 heures.
                   </p>
                 </div>
                 <div className="card">
-                  <h4 className="font-bold text-sm mb-1">5. Entrée solaire maximale</h4>
+                  <h3 className="font-bold text-sm mb-1">5. Entrée solaire maximale</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Si vous comptez coupler la batterie à un panneau solaire portable, vérifiez l&apos;entrée max (200-800 W). Une entrée 800 W permet de recharger une batterie 1 kWh en 2-3h de plein soleil.
                   </p>
@@ -584,28 +584,28 @@ export default function BatteriesPortablesPage() {
                 <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-xs bg-amber text-white font-bold px-2 py-0.5 rounded-full">Nouveau</span>
-                    <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h4>
+                    <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h3>
                   </div>
                   <p className="text-xs text-charcoal-light">2,56 kWh fix&eacute; au balcon &mdash; 889 &euro; au lancement, meilleur prix/Wh du march&eacute;</p>
                 </Link>
                 <Link href="/guide/batterie-solaire-balcon-guide" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide : quelle capacit&eacute; de batterie pour votre balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide : quelle capacit&eacute; de batterie pour votre balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">700 Wh, 2 kWh, 5 kWh &mdash; le guide complet pour ne pas se tromper</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Sunology VAULT, Beem Battery : les solutions fixes pour optimiser l&apos;autoconsommation</p>
                 </Link>
                 <Link href="/blog/mini-kits-solaires-amazon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mini kits solaires Amazon &lt; 300 €</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mini kits solaires Amazon &lt; 300 €</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les kits portables à petit budget pour tester le solaire</p>
                 </Link>
                 <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h3>
                   <p className="text-xs text-charcoal-light mt-1">Batterie LFP 2,52&nbsp;kWh + onduleur &agrave; 839&nbsp;&euro; en promo</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment ça marche</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment ça marche</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le principe du talon, surplus et stockage expliqué simplement</p>
                 </Link>
               </div>

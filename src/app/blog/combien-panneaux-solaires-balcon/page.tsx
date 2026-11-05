@@ -45,8 +45,8 @@ export default function CombienPanneauxBalconPage() {
   return (
     <>
       <SchemaArticle
-        title="Combien de panneaux solaires sur un balcon ? R&egrave;gles et limites"
-        description="Pas de plafond l&eacute;gal en France&nbsp;: place, poids, circuit &eacute;lectrique (rep&egrave;re 900 W), rentabilit&eacute; et d&eacute;marches fixent la vraie limite."
+        title="Combien de panneaux solaires sur un balcon ? Règles et limites"
+        description="Pas de plafond légal en France : place, poids, circuit électrique (repère 900 W), rentabilité et démarches fixent la vraie limite."
         url="https://monbalconsolaire.fr/blog/combien-panneaux-solaires-balcon"
         datePublished="2026-06-26"
         dateModified="2026-09-27"
@@ -294,7 +294,7 @@ export default function CombienPanneauxBalconPage() {
                   },
                 ].map((r, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{r.icon} <span dangerouslySetInnerHTML={{ __html: r.title }} /></h4>
+                    <h3 className="font-bold text-sm mb-1">{r.icon} <span dangerouslySetInnerHTML={{ __html: r.title }} /></h3>
                     <p className="text-xs text-charcoal-light" dangerouslySetInnerHTML={{ __html: r.desc }} />
                   </div>
                 ))}
@@ -448,27 +448,27 @@ export default function CombienPanneauxBalconPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/multi-panneaux-serie-parallele" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Multi-panneaux&nbsp;: s&eacute;rie ou parall&egrave;le&nbsp;? C&acirc;blage et disjoncteur</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Multi-panneaux&nbsp;: s&eacute;rie ou parall&egrave;le&nbsp;? C&acirc;blage et disjoncteur</h3>
                   <p className="text-xs text-charcoal-light mt-1">Double-MPPT, c&acirc;bles MC4 et disjoncteur 16A&nbsp;: guide pratique</p>
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI Enedis, copropri&eacute;t&eacute;, rep&egrave;re des 900 W</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W&nbsp;: quelle puissance choisir&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W&nbsp;: quelle puissance choisir&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Production, ROI et recommandation selon votre cas</p>
                 </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire balcon pas &agrave; pas</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire balcon pas &agrave; pas</h3>
                   <p className="text-xs text-charcoal-light mt-1">Guide complet avec les outils et les &eacute;tapes de d&eacute;claration</p>
                 </Link>
                 <Link href="/blog/micro-onduleur-solaire-fonctionnement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Micro-onduleur solaire&nbsp;: fonctionnement et choix</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Micro-onduleur solaire&nbsp;: fonctionnement et choix</h3>
                   <p className="text-xs text-charcoal-light mt-1">Hoymiles, APsystems, Enphase&nbsp;: lequel pour votre installation</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 vs Beem On 500 Wc (juillet 2026)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 vs Beem On 500 Wc (juillet 2026)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif prix, puissance et ROI pour choisir votre kit 450-500&nbsp;Wc</p>
                 </Link>
               </div>

@@ -8,7 +8,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon : que couvre votre assurance ?',
-  description: 'Votre kit solaire de balcon est-il couvert par votre assurance habitation ? Gr\u00eale, vol, chute, responsabilit\u00e9 civile. Ce qu\u2019il faut d\u00e9clarer et ce qui est garanti.',
+  description: 'Votre kit solaire de balcon est-il couvert par l\'assurance habitation ? Grêle, vol, chute, responsabilité civile : quoi déclarer.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-assurance-balcon',
   },
@@ -92,7 +92,7 @@ export default function AssuranceBalconPage() {
                 Cons&eacute;quence : votre <strong>assurance multirisque habitation</strong> (MRH) le couvre automatiquement au titre des biens mobiliers. Pas besoin d&apos;une assurance sp&eacute;cifique &laquo; panneau solaire &raquo;.
               </p>
               <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                <h4 className="font-bold text-sm mb-1 text-amber-dark">Attention : installation fix&eacute;e = diff&eacute;rent</h4>
+                <h3 className="font-bold text-sm mb-1 text-amber-dark">Attention : installation fix&eacute;e = diff&eacute;rent</h3>
                 <p className="text-xs text-charcoal-light leading-relaxed">Si vous percez le mur, le garde-corps ou la toiture pour fixer les panneaux, ils deviennent un <strong>bien immobilier</strong>. La couverture change, et une d&eacute;claration formelle &agrave; l&apos;assureur est obligatoire. Les kits plug-and-play pos&eacute;s au sol ou en appui (sans per&ccedil;age) restent mobiliers.</p>
               </div>
             </section>
@@ -141,7 +141,7 @@ export default function AssuranceBalconPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">Envoyez un email &agrave; votre assureur</h4>
+                      <h3 className="font-bold text-sm mb-1">Envoyez un email &agrave; votre assureur</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">Objet : &laquo; D&eacute;claration installation kit solaire plug-and-play sur balcon &raquo;. Joignez une photo du kit install&eacute; et la facture d&apos;achat.</p>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function AssuranceBalconPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">Pr&eacute;cisez les informations cl&eacute;s</h4>
+                      <h3 className="font-bold text-sm mb-1">Pr&eacute;cisez les informations cl&eacute;s</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">Marque et mod&egrave;le du kit, puissance (ex : 450 Wc), prix d&apos;achat, date d&apos;installation, mode de fixation (pos&eacute; au sol / appui garde-corps, sans per&ccedil;age).</p>
                     </div>
                   </div>
@@ -159,7 +159,7 @@ export default function AssuranceBalconPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-green text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">Conservez la confirmation</h4>
+                      <h3 className="font-bold text-sm mb-1">Conservez la confirmation</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">L&apos;assureur r&eacute;pondra g&eacute;n&eacute;ralement en confirmant la prise en compte, sans modification de prime. Gardez cet &eacute;change en cas de sinistre.</p>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ export default function AssuranceBalconPage() {
               </div>
 
               <div className="card-lg bg-cream/40 mt-6">
-                <h4 className="font-bold text-sm mb-3">Mod&egrave;le d&apos;email &agrave; copier</h4>
+                <h3 className="font-bold text-sm mb-3">Mod&egrave;le d&apos;email &agrave; copier</h3>
                 <div className="text-xs text-charcoal-light leading-relaxed bg-white p-4 rounded-brand border border-border-light font-mono">
                   <p>Objet : D&eacute;claration kit solaire plug-and-play sur balcon</p>
                   <br />
@@ -197,7 +197,7 @@ export default function AssuranceBalconPage() {
                 C&apos;est le risque le plus s&eacute;rieux : votre panneau tombe du 5e &eacute;tage et blesse un passant, ou endommage la voiture gar&eacute;e en dessous.
               </p>
               <div className="card-lg bg-amber-pale/20 border-amber/10">
-                <h4 className="font-bold text-sm mb-3 text-amber-dark">Ce qui vous prot&egrave;ge</h4>
+                <h3 className="font-bold text-sm mb-3 text-amber-dark">Ce qui vous prot&egrave;ge</h3>
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Responsabilit&eacute; civile</strong> de votre assurance habitation (incluse dans tout contrat MRH)</li>
                   <li>&bull; <strong>Condition :</strong> le kit doit &ecirc;tre <strong>correctement lest&eacute;</strong> (ballasts remplis d&apos;eau ou de sable, 15-24 kg par c&ocirc;t&eacute;)</li>
@@ -205,7 +205,7 @@ export default function AssuranceBalconPage() {
                 </ul>
               </div>
               <div className="card border-l-4 border-l-green mt-4">
-                <h4 className="font-bold text-sm mb-1 text-green">Notre conseil</h4>
+                <h3 className="font-bold text-sm mb-1 text-green">Notre conseil</h3>
                 <p className="text-xs text-charcoal-light leading-relaxed">
                   Lestez <strong>toujours</strong> votre kit conform&eacute;ment aux instructions du fabricant. Prenez une photo du lestage. En cas de sinistre, cette photo prouve que vous avez respect&eacute; les consignes d&apos;installation.
                 </p>
@@ -279,23 +279,23 @@ export default function AssuranceBalconPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/guide/panneau-solaire-balcon-locataire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon locataire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon locataire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Droits, r&egrave;gles et astuces pour les locataires</p>
                 </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis : guide pas &agrave; pas</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis : guide pas &agrave; pas</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;autre d&eacute;claration obligatoire (gratuite, 25 min)</p>
                 </Link>
                 <Link href="/blog/kit-solaire-pluie-grele" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire : que faire quand il pleut ou gr&ecirc;le ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire : que faire quand il pleut ou gr&ecirc;le ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">R&eacute;sistance, norme IEC 61215, production sous la pluie</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-copropriete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en copropri&eacute;t&eacute;</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en copropri&eacute;t&eacute;</h3>
                   <p className="text-xs text-charcoal-light mt-1">R&egrave;gles, votes AG, mod&egrave;le de courrier syndic</p>
                 </Link>
                 <Link href="/guide/demenager-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;m&eacute;nager avec son kit solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;m&eacute;nager avec son kit solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi red&eacute;clarer le panneau au nouvel assureur</p>
                 </Link>
               </div>

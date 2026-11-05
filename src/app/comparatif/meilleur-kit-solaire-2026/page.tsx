@@ -110,7 +110,7 @@ export default function ComparatifPage() {
                   { t: 'Garantie et SAV', d: 'Duree de garantie produit et performance, qualité du service apres-vente, avis clients.' },
                   { t: 'Suivi et app mobile', d: 'Possibilite de suivre sa production en temps réel via une application.' },
                 ].map((c, i) => (
-                  <div key={i} className="card"><h4 className="font-bold text-sm mb-1">{c.t}</h4><p className="text-xs text-charcoal-light">{c.d}</p></div>
+                  <div key={i} className="card"><h3 className="font-bold text-sm mb-1">{c.t}</h3><p className="text-xs text-charcoal-light">{c.d}</p></div>
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed"><strong>Notre méthode :</strong> nos données proviennent des specs fabricants, des données PVGIS (Commission europeenne) pour l&apos;ensoleillement, des avis clients vérifiés (Trustpilot), et des retours d&apos;experience publies par des utilisateurs réels.</p>
@@ -310,23 +310,23 @@ export default function ComparatifPage() {
               <h2 className="text-2xl font-extrabold mb-4">Verdict : quel kit choisir&nbsp;?</h2>
               <div className="space-y-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-1">Le meilleur rapport qualit&eacute;-prix &rarr; Beem On 500 Wc (429&euro;)</h4>
+                  <h3 className="font-bold text-green mb-1">Le meilleur rapport qualit&eacute;-prix &rarr; Beem On 500 Wc (429&euro;)</h3>
                   <p className="text-sm text-charcoal-light">0,86&nbsp;&euro;/Wc, ROI en 4,8 ans. Le kit le plus rentable du march&eacute; fran&ccedil;ais. Si le budget et la rentabilit&eacute; sont vos priorit&eacute;s, c&apos;est le choix &eacute;vident. Seul b&eacute;mol : la situation financi&egrave;re de Beem Energy.</p>
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/10">
-                  <h4 className="font-bold text-green mb-1">Pour la facilit&eacute; d&apos;installation &rarr; Sunology PLAY 500&nbsp;W (599&euro;)</h4>
+                  <h3 className="font-bold text-green mb-1">Pour la facilit&eacute; d&apos;installation &rarr; Sunology PLAY 500&nbsp;W (599&euro;)</h3>
                   <p className="text-sm text-charcoal-light">Installation en 1 minute, WiFi natif, certification CE compl&egrave;te. Le choix le plus s&ucirc;r pour ceux qui veulent la simplicit&eacute; maximale et un &eacute;cosyst&egrave;me &eacute;prouv&eacute; (100&nbsp;000+ foyers).</p>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-1">Pour les petits budgets &rarr; Beem Kit 300W (199&euro;, actuellement en rupture)</h4>
+                  <h3 className="font-bold text-amber-dark mb-1">Pour les petits budgets &rarr; Beem Kit 300W (199&euro;, actuellement en rupture)</h3>
                   <p className="text-sm text-charcoal-light">Id&eacute;al pour tester l&apos;autoconsommation &agrave; moindre co&ucirc;t, avec un ROI d&apos;environ 3,8 ans. En attendant le r&eacute;assort, le Sunology GO (349&euro;) est l&apos;alternative disponible la plus proche.</p>
                 </div>
                 <div className="card-lg">
-                  <h4 className="font-bold mb-1">Pour le Made in France &rarr; Sunethic F500 (690&euro;)</h4>
+                  <h3 className="font-bold mb-1">Pour le Made in France &rarr; Sunethic F500 (690&euro;)</h3>
                   <p className="text-sm text-charcoal-light">Si vous privil&eacute;giez la fabrication fran&ccedil;aise et que le budget n&apos;est pas la priorit&eacute;, le Sunethic F500 est le choix &eacute;thique.</p>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/10">
-                  <h4 className="font-bold text-amber-dark mb-1">Pour un balcon vraiment exigu &rarr; Sunology GO (349&euro;)</h4>
+                  <h3 className="font-bold text-amber-dark mb-1">Pour un balcon vraiment exigu &rarr; Sunology GO (349&euro;)</h3>
                   <p className="text-sm text-charcoal-light">Seul kit du march&eacute; pos&eacute; au sol ou sur garde-corps sans per&ccedil;age. ROI plus long (7 ans), r&eacute;serv&eacute; aux balcons o&ugrave; aucun autre kit ne rentre.</p>
                 </div>
               </div>
@@ -352,31 +352,31 @@ export default function ComparatifPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Carte&nbsp;: o&ugrave; un kit solaire de balcon est-il le plus rentable&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Carte&nbsp;: o&ugrave; un kit solaire de balcon est-il le plus rentable&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Classement des 96 d&eacute;partements, du sud-est au nord, avec le kit 500&nbsp;Wc de r&eacute;f&eacute;rence</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-balcon-vs-toiture" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle rentabilit&eacute; en 2026&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Balcon vs toiture&nbsp;: quelle rentabilit&eacute; en 2026&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Vous &ecirc;tes propri&eacute;taire d&apos;une maison&nbsp;? Comparez les ROI des deux solutions avant de choisir.</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix &agrave; 429&nbsp;&euro;</p>
                 </Link>
                 <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le kit compact pour les tout petits balcons &agrave; 349&nbsp;&euro;</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-terrasse-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire terrasse 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire terrasse 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les kits adapt&eacute;s aux grandes surfaces</p>
                 </Link>
               </div>

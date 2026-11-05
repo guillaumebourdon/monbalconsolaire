@@ -31,13 +31,13 @@ export default function BeemOn500WcAvisPage() {
     <>
       <SchemaArticle title="Beem On 500 Wc avis : le nouveau rapport qualité-prix du marché" description="Avis détaillé sur le Beem On 500 Wc en 2026." url="https://monbalconsolaire.fr/avis/beem-on-500w" datePublished="2026-06-15" dateModified="2026-10-12" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Beem On 500 Wc" brand="Beem Energy" description="Kit solaire plug-and-play 500 Wc bifacial TOPCon avec micro-onduleur 550W et suivi via app Beem." price={429} ratingValue={8.5} ratingCount={1} url="https://monbalconsolaire.fr/avis/beem-on-500w" />
+      <SchemaProduct image="/images/produits/beem-on-500-1.webp" name="Beem On 500 Wc" brand="Beem Energy" description="Kit solaire plug-and-play 500 Wc bifacial TOPCon avec micro-onduleur 550W et suivi via app Beem." price={429} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/beem-on-500w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 500 Wc' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 500 Wc' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 500W avis : prix chez Leroy Merlin et Beem, points n&eacute;gatifs et verdict</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">429&nbsp;&euro; pour 500&nbsp;Wc bifacial TOPCon, soit 0,86&nbsp;&euro;/Wc&nbsp;: le Beem On reste le kit premium le moins cher au watt en France. M&ecirc;me prix chez Beem, Leroy Merlin et Boulanger, mais deux r&eacute;serves &agrave; conna&icirc;tre avant d&apos;acheter&nbsp;: la pr&eacute;commande (exp&eacute;dition &agrave; partir de d&eacute;cembre 2026 chez Beem) et la proc&eacute;dure de sauvegarde de Beem Energy.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>15 juin 2026 &middot; Mis &agrave; jour le 12 octobre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
@@ -117,7 +117,7 @@ export default function BeemOn500WcAvisPage() {
                   { t: 'Référencé chez Leroy Merlin et Boulanger', d: 'En plus du site Beem, le kit est référencé chez Leroy Merlin et Boulanger, au même prix (429 €). Acheter en enseigne fait de celle-ci votre interlocuteur pour la garantie légale de conformité (2 ans), un vrai plus vu la situation de Beem. Attention : chez Boulanger il était indisponible au 12/10/2026.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -136,7 +136,7 @@ export default function BeemOn500WcAvisPage() {
                   { t: 'SAV et délai de livraison à surveiller', d: 'Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde le 26 novembre 2025, après une chute de 42% du marché résidentiel du solaire (étude Enedis), avec un an pour redresser la barre (échéance autour de novembre 2026). Nous n\'avons trouvé aucune annonce de liquidation ni de plan de sauvegarde arrêté (recherche du 12 octobre 2026), mais la fiche produit affiche « Précommande - Expédition à partir de décembre 2026 », soit environ deux mois d\'attente, alors que le bas de la même page promet toujours une « expédition gratuite en 48h ». La garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -316,35 +316,35 @@ export default function BeemOn500WcAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet des 3 syst&egrave;mes &mdash; avec le tableau prix/Wc mis &agrave; jour juin 2026</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent direct &agrave; 599&nbsp;&euro; (500 Wc)</p>
                 </Link>
                 <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">PLAY 2 vs Beem On 500 Wc : le match juillet 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">PLAY 2 vs Beem On 500 Wc : le match juillet 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">12 crit&egrave;res, ROI compar&eacute; &mdash; le comparatif le plus r&eacute;cent</p>
                 </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis : le guide</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis : le guide</h3>
                   <p className="text-xs text-charcoal-light mt-1">La d&eacute;marche que Beem ZEN facture 49&nbsp;&euro;, &agrave; faire vous-m&ecirc;me gratuitement</p>
                 </Link>
                 <Link href="/comparatif/sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le match des deux leaders sur 12 crit&egrave;res</p>
                 </Link>
                 <Link href="/avis/anker-solix-rs40p" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Anker SOLIX RS40P</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Anker SOLIX RS40P</h3>
                   <p className="text-xs text-charcoal-light mt-1">910 Wc IBC N-type &agrave; 799&nbsp;&euro; &mdash; le challenger haut de gamme</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir pour votre balcon</p>
                 </Link>
                 <Link href="/guide/panneau-solaire-balcon-debutant" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet d&eacute;butants (mis &agrave; jour ao&ucirc;t 2026)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide complet d&eacute;butants (mis &agrave; jour ao&ucirc;t 2026)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Fonctionnement, prix, r&egrave;glementation, choix du kit &mdash; tout ce qu&apos;il faut savoir avant d&apos;acheter</p>
                 </Link>
               </div>

@@ -10,7 +10,7 @@ const PAGE_URL = 'https://monbalconsolaire.fr/blog/panneau-solaire-balcon-voitur
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon et voiture électrique : peut-on recharger ?',
   description:
-    'Un kit solaire de 300 à 1600 W peut-il recharger une voiture électrique ? Puissances, chiffres réels (pricing.ts) et ce que ça change vraiment sur la facture de recharge.',
+    'Un kit solaire de 300 à 1 600 W peut-il recharger une voiture électrique ? Puissances, chiffres calculés et effet réel sur la facture.',
   alternates: { canonical: PAGE_URL },
 });
 
@@ -238,19 +238,19 @@ export default function VoitureElectriquePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire&nbsp;: injection, index, surplus</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire&nbsp;: injection, index, surplus</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce que le compteur voit vraiment</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: la base du dimensionnement</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: la base du dimensionnement</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi dimensionner sur la veille, pas sur les pics</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">&Eacute;conomies r&eacute;elles chiffr&eacute;es</p>
                 </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis</h3>
                   <p className="text-xs text-charcoal-light mt-1">La d&eacute;marche obligatoire en 10 minutes</p>
                 </Link>
               </div>

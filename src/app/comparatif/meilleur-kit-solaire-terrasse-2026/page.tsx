@@ -120,7 +120,7 @@ export default function MeilleurKitTerrasse2026Page() {
             <h2 className="font-bold text-lg mb-3">Terrasse vs balcon : pourquoi c&apos;est mieux</h2>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <h4 className="font-bold text-green text-xs uppercase tracking-wider mb-2">Avantages terrasse</h4>
+                <h3 className="font-bold text-green text-xs uppercase tracking-wider mb-2">Avantages terrasse</h3>
                 <ul className="text-charcoal-light space-y-1.5">
                   <li className="flex items-start gap-2"><span className="text-green font-bold">+</span> Plus de surface (2-4 panneaux)</li>
                   <li className="flex items-start gap-2"><span className="text-green font-bold">+</span> Pose au sol, inclinaison libre (30-35°)</li>
@@ -130,7 +130,7 @@ export default function MeilleurKitTerrasse2026Page() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold text-amber-dark text-xs uppercase tracking-wider mb-2">Points d&apos;attention</h4>
+                <h3 className="font-bold text-amber-dark text-xs uppercase tracking-wider mb-2">Points d&apos;attention</h3>
                 <ul className="text-charcoal-light space-y-1.5">
                   <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">!</span> Lestage obligatoire (vent)</li>
                   <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">!</span> Plus de salissure (sol)</li>
@@ -198,19 +198,19 @@ export default function MeilleurKitTerrasse2026Page() {
               <h2 className="text-2xl font-extrabold mb-4">Conseils d&apos;installation sur terrasse</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Orientation et inclinaison</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Orientation et inclinaison</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">L&apos;avantage de la terrasse : vous pouvez orienter le panneau plein sud et l&apos;incliner à 30-35°, l&apos;angle optimal en France. C&apos;est 10-15 % de production en plus par rapport à un panneau posé à plat. <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green hover:underline font-semibold">Guide orientation</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Lestage et fixation</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Lestage et fixation</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Sur terrasse, le vent est plus expos&eacute; qu&apos;en balcon (pas de garde-corps protecteur). Lestez avec les ballasts fournis (eau ou sable, 15-24 kg par côté). Sur une terrasse en hauteur, doublez le lestage.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Câblage</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Câblage</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">La plupart des kits incluent 5-10 m de câble. Si votre prise est plus loin, utilisez une rallonge ext&eacute;rieure IP44 (étanche). Ne faites pas passer le câble sous une porte ou fen&ecirc;tre qui l&apos;&eacute;craserait. <Link href="/blog/accessoires-kit-solaire-balcon" className="text-green hover:underline font-semibold">Voir les accessoires</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Nettoyage</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Nettoyage</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Au sol, les panneaux se salissent plus vite (poussi&egrave;re, feuilles, pollen). Pr&eacute;voyez un nettoyage tous les 2-3 mois à l&apos;eau claire. <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="text-green hover:underline font-semibold">Diagnostic si production basse</Link>.</p>
                 </div>
               </div>
@@ -262,23 +262,23 @@ export default function MeilleurKitTerrasse2026Page() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire 2026 : comparatif complet</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire 2026 : comparatif complet</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif g&eacute;n&eacute;ral de tous les kits du march&eacute;</p>
                 </Link>
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Stockage vs simplicit&eacute; vs flexibilit&eacute;</p>
                 </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire : pas à pas</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit solaire : pas à pas</h3>
                   <p className="text-xs text-charcoal-light mt-1">Guide d&apos;installation d&eacute;taill&eacute;, applicable aussi sur terrasse</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points si votre production est d&eacute;cevante</p>
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation 2026 : ce que dit vraiment la loi</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation 2026 : ce que dit vraiment la loi</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, rep&egrave;re des 900 W, d&eacute;claration CACSI, urbanisme</p>
                 </Link>
               </div>

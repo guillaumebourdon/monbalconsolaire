@@ -120,7 +120,7 @@ export default function PanneauSolaireEstOuestPage() {
                 Kit 500 Wc, inclinaison 30&deg;, Performance Ratio 0,85. Source : PVGIS. Coefficient est/ouest = 0,80.
               </p>
               <div className="card border-l-4 border-l-green mt-4">
-                <h4 className="font-bold text-sm mb-1 text-green">Le point positif qu&apos;on oublie</h4>
+                <h3 className="font-bold text-sm mb-1 text-green">Le point positif qu&apos;on oublie</h3>
                 <p className="text-xs text-charcoal-light leading-relaxed">
                   Un panneau est/ouest &agrave; Marseille (510 kWh) produit <strong>autant qu&apos;un panneau sud &agrave; Lyon</strong> (510 kWh). Si vous habitez dans le sud de la France avec un balcon est/ouest, vous &ecirc;tes mieux loti qu&apos;un Lyonnais plein sud.
                 </p>
@@ -213,7 +213,7 @@ export default function PanneauSolaireEstOuestPage() {
                 Un panneau plein sud produit un pic &agrave; midi. Si vous n&apos;&ecirc;tes pas l&agrave;, ce pic part gratuitement sur le r&eacute;seau. Un panneau est/ouest produit plus &eacute;tal&eacute; — moins de pic, plus de production quand vous consommez r&eacute;ellement.
               </p>
               <div className="card-lg bg-amber-pale/20 border-amber/10">
-                <h4 className="font-bold text-sm mb-3">Autoconsommation naturelle selon l&apos;orientation</h4>
+                <h3 className="font-bold text-sm mb-3">Autoconsommation naturelle selon l&apos;orientation</h3>
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div>
                     <div className="font-mono font-bold text-lg text-amber-dark">40-50 %</div>
@@ -239,19 +239,19 @@ export default function PanneauSolaireEstOuestPage() {
               <h2 className="text-2xl font-extrabold mb-4">Quel kit choisir pour un balcon est/ouest ?</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Meilleur choix sur le papier : Beem Kit 300W (199 &euro;, actuellement en rupture)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Meilleur choix sur le papier : Beem Kit 300W (199 &euro;, actuellement en rupture)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     En est/ouest, le ROI est plus long. Le Beem Kit 300W offre le <strong>meilleur ROI</strong> (4,6 ans) car son prix bas compense la perte de production, mais il est actuellement indisponible chez Beem (v&eacute;rifi&eacute; le 12 octobre 2026). <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Voir l&apos;avis</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Alternative : Beem On 500 Wc (429 &euro;)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Alternative : Beem On 500 Wc (429 &euro;)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Si vous voulez plus de production : 500 Wc pour 429 &euro; (0,86 &euro;/Wc), ROI de 5,9 ans en est/ouest. Attention, il est en pr&eacute;commande chez Beem (exp&eacute;dition annonc&eacute;e en d&eacute;cembre 2026). <Link href="/avis/beem-on-500w" className="text-green hover:underline">Voir l&apos;avis</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">&Agrave; &eacute;viter : kits avec batterie</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">&Agrave; &eacute;viter : kits avec batterie</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     En est/ouest, la batterie est moins utile (production d&eacute;j&agrave; &eacute;tal&eacute;e) et son co&ucirc;t allonge un ROI d&eacute;j&agrave; plus long. Le Zendure SolarFlow (900 &euro;) ou le PLAY MAX (699 &euro;) ne sont pas recommand&eacute;s pour cette orientation.
                   </p>
@@ -263,19 +263,19 @@ export default function PanneauSolaireEstOuestPage() {
               <h2 className="text-2xl font-extrabold mb-4">3 conseils pour optimiser en est/ouest</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">1. D&eacute;calez vos usages vers les heures de production</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">1. D&eacute;calez vos usages vers les heures de production</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Est : lancez le lave-linge/lave-vaisselle le matin. Ouest : lancez-les en fin d&apos;apr&egrave;s-midi. Programmez le chauffe-eau sur les heures de production. Ça augmente votre autoconsommation de 10-20 %.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">2. Inclinez le panneau &agrave; 20-25&deg; (pas 30-35&deg;)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">2. Inclinez le panneau &agrave; 20-25&deg; (pas 30-35&deg;)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     En est/ouest, le soleil est plus bas sur l&apos;horizon le matin et le soir. Une inclinaison plus faible (20-25&deg;) capte mieux les rayons rasants. Gain : 3-5 % de production en plus par rapport &agrave; 35&deg;. <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green hover:underline">Guide orientation</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">3. V&eacute;rifiez les ombres le matin ET le soir</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">3. V&eacute;rifiez les ombres le matin ET le soir</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     En est, v&eacute;rifiez que rien ne bloque le soleil entre 8h et 12h. En ouest, v&eacute;rifiez entre 14h et 19h. Un immeuble en face peut cr&eacute;er une ombre &agrave; des heures diff&eacute;rentes selon la saison. <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green hover:underline">Guide ombre</Link>.
                   </p>
@@ -301,23 +301,23 @@ export default function PanneauSolaireEstOuestPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/production-solaire-ete-vs-hiver" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h3>
                   <p className="text-xs text-charcoal-light mt-1">Courbes mensuelles compl&egrave;tes et paradoxe de la chaleur estivale</p>
                 </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;impact r&eacute;el de chaque orientation sur votre production</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-balcon-nord" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon nord : est-ce rentable ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon nord : est-ce rentable ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;analyse honn&ecirc;te pour les expositions les moins favorables</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi l&apos;est/ouest colle mieux au talon qu&apos;on ne le pense</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic si votre production est/ouest semble trop basse</p>
                 </Link>
               </div>

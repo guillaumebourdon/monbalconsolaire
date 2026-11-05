@@ -122,19 +122,19 @@ export default function PetitBudgetPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h3>
                   <p className="text-xs text-charcoal-light mt-1">La meilleure option petit budget</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
                 </Link>
                 <Link href="/avis/anker-solix-rs40p" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Anker SOLIX RS40P</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Anker SOLIX RS40P</h3>
                   <p className="text-xs text-charcoal-light mt-1">910 Wc IBC N-type &agrave; 799&nbsp;&euro; &mdash; si le budget n&rsquo;est pas une contrainte</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
               </div>

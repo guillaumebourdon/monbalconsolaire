@@ -112,7 +112,7 @@ export default function HiverProductionPage() {
                   { t: 'Consommez au bon moment', d: 'En hiver, le pic de production est entre 11h et 14h (contre 10h-16h en été). Programmez vos appareils énergivores (machine à laver, lave-vaisselle) sur ce créneau.' },
                 ].map((a, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{a.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{a.t}</h3>
                     <p className="text-xs text-charcoal-light">{a.d}</p>
                   </div>
                 ))}
@@ -157,31 +157,31 @@ export default function HiverProductionPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/production-solaire-ete-vs-hiver" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le paradoxe chaleur estivale et pourquoi mai/juin bat souvent juillet en efficacité</p>
                 </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation choisir</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation choisir</h3>
                   <p className="text-xs text-charcoal-light mt-1">L'impact réel sur la production</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé de rentabilité</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation expliquée</h3>
                   <p className="text-xs text-charcoal-light mt-1">Talon, surplus, injection</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les 7 causes de sous-production et comment les corriger</p>
                 </Link>
                 <Link href="/blog/kit-solaire-pluie-grele" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire : que faire quand il pleut ou gr&ecirc;le ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire : que faire quand il pleut ou gr&ecirc;le ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Production sous la pluie, r&eacute;sistance, assurance</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 (mis &agrave; jour juillet 2026)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 (mis &agrave; jour juillet 2026)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif vs Beem On 500 Wc, ROI r&eacute;el et verdict</p>
                 </Link>
               </div>

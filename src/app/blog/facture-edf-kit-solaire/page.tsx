@@ -7,8 +7,8 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Facture EDF avec un kit solaire balcon : comment la lire et mesurer ses &eacute;conomies',
-  description: 'Kit solaire et facture EDF : ce qui change (et ce qui ne change pas), comment mesurer vos &eacute;conomies r&eacute;elles, Linky et surplus gratuit. Guide factuel 2026.',
+  title: 'Facture EDF avec un kit solaire balcon : lire et mesurer ses économies',
+  description: 'Kit solaire et facture EDF : ce qui change, ce qui ne change pas, comment mesurer vos économies réelles avec Linky. Guide factuel.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/facture-edf-kit-solaire',
   },
@@ -151,14 +151,14 @@ export default function FactureEdfKitSolairePage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">&#8595; Index soutirage (A14)</h4>
+                  <h3 className="font-bold text-sm mb-2">&#8595; Index soutirage (A14)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Ce que vous consommez depuis le r&eacute;seau EDF. C&apos;est cet index qui d&eacute;termine votre facture. <strong>Avec un kit solaire, il monte moins vite</strong> — et c&apos;est tout ce que voit EDF.
                   </p>
                   <p className="text-xs text-stone">Visible sur votre facture EDF (kWh consomm&eacute;s)</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">&#8593; Index injection (A10)</h4>
+                  <h3 className="font-bold text-sm mb-2">&#8593; Index injection (A10)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Ce que vous injectez sur le r&eacute;seau. Survient quand votre kit produit plus que votre consommation instantan&eacute;e. <strong>N&apos;appara&icirc;t pas sur votre facture EDF</strong> — vous ne &ecirc;tes pas pay&eacute;, mais vous ne devez rien non plus.
                   </p>
@@ -184,7 +184,7 @@ export default function FactureEdfKitSolairePage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 text-white bg-green">1</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">Prise connect&eacute;e &mdash; la m&eacute;thode la plus fiable</h4>
+                      <h3 className="font-bold text-sm mb-1">Prise connect&eacute;e &mdash; la m&eacute;thode la plus fiable</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">
                         Une Tapo P110 (~15&nbsp;&euro;) ou une Shelly Plug S (~15&nbsp;&euro;) branch&eacute;e sur la prise de sortie du micro-onduleur mesure exactement les kWh produits. Multipliez par votre taux d&apos;autoconsommation (85&nbsp;% sans batterie) et par 0,1940&nbsp;&euro;/kWh. Exemple&nbsp;: 80 kWh produits &times; 85&nbsp;% &times; 0,1940&nbsp;&euro; = <strong>13,17&nbsp;&euro; d&apos;&eacute;conomies</strong>. Notre article sur les <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">meilleures prises connect&eacute;es pour le suivi solaire</Link> compare les mod&egrave;les disponibles.
                       </p>
@@ -195,7 +195,7 @@ export default function FactureEdfKitSolairePage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 text-white bg-green">2</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">L&apos;app de votre kit &mdash; pratique mais approximatif</h4>
+                      <h3 className="font-bold text-sm mb-1">L&apos;app de votre kit &mdash; pratique mais approximatif</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">
                         Beem, Sunology et EcoFlow proposent des apps qui affichent la production cumul&eacute;e. Ces chiffres sont g&eacute;n&eacute;ralement fiables (&plusmn;5&nbsp;%). Les apps calculent m&ecirc;me parfois une &eacute;conomie estim&eacute;e en &euro;, mais sans conna&icirc;tre votre taux d&apos;autoconsommation r&eacute;el. Prenez ces estimations comme un ordre de grandeur, pas une v&eacute;rit&eacute; absolue.
                       </p>
@@ -206,7 +206,7 @@ export default function FactureEdfKitSolairePage() {
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 text-white bg-amber">3</div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1">Comparer deux factures &mdash; la m&eacute;thode la moins fiable</h4>
+                      <h3 className="font-bold text-sm mb-1">Comparer deux factures &mdash; la m&eacute;thode la moins fiable</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">
                         Comparer la facture de juillet 2026 (avec kit) &agrave; celle de juillet 2025 (sans kit) para&icirc;t logique, mais c&apos;est tr&egrave;glingant. La m&eacute;t&eacute;o varie, les habitudes changent, les tarifs EDF &eacute;voluent. Cette comparaison peut vous donner un ordre de grandeur, mais sous-estimez ou surestimez facilement vos &eacute;conomies de 30&nbsp;%.
                       </p>
@@ -243,7 +243,7 @@ export default function FactureEdfKitSolairePage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Production saisonni&egrave;re</h4>
+                  <h3 className="font-bold text-sm mb-2">Production saisonni&egrave;re</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5 leading-relaxed">
                     <li>&bull; D&eacute;cembre (Lyon)&nbsp;: ~25 kWh &rarr; ~4,9&nbsp;&euro;</li>
                     <li>&bull; Mars&nbsp;: ~60 kWh &rarr; ~11,6&nbsp;&euro;</li>
@@ -253,7 +253,7 @@ export default function FactureEdfKitSolairePage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Autoconsommation selon pr&eacute;sence</h4>
+                  <h3 className="font-bold text-sm mb-2">Autoconsommation selon pr&eacute;sence</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5 leading-relaxed">
                     <li>&bull; T&eacute;l&eacute;travail &agrave; la maison&nbsp;: autoconso 90&ndash;95&nbsp;%</li>
                     <li>&bull; Hors domicile en journ&eacute;e&nbsp;: autoconso 60&ndash;70&nbsp;%</li>
@@ -278,7 +278,7 @@ export default function FactureEdfKitSolairePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Ce que vous gardez</h4>
+                  <h3 className="font-bold text-sm mb-1">Ce que vous gardez</h3>
                   <ul className="text-xs text-charcoal-light space-y-1 leading-relaxed">
                     <li>&#10003; Votre contrat EDF actuel (Base, HP/HC, Tempo)</li>
                     <li>&#10003; Votre puissance souscrite (6, 9 ou 12 kVA)</li>
@@ -287,7 +287,7 @@ export default function FactureEdfKitSolairePage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Ce qui change</h4>
+                  <h3 className="font-bold text-sm mb-1">Ce qui change</h3>
                   <ul className="text-xs text-charcoal-light space-y-1 leading-relaxed">
                     <li>&#10003; Votre consommation nette (index soutirage du Linky monte moins vite)</li>
                     <li>&#10003; Votre facture de consommation (partie variable uniquement)</li>
@@ -295,7 +295,7 @@ export default function FactureEdfKitSolairePage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Ce qui ne change pas du tout</h4>
+                  <h3 className="font-bold text-sm mb-1">Ce qui ne change pas du tout</h3>
                   <ul className="text-xs text-charcoal-light space-y-1 leading-relaxed">
                     <li>&#10007; Pas de remboursement EDF pour le surplus inject&eacute;</li>
                     <li>&#10007; Pas de ligne &laquo;&nbsp;cr&eacute;dit solaire&nbsp;&raquo; sur la facture</li>
@@ -406,19 +406,19 @@ export default function FactureEdfKitSolairePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire&nbsp;: injection, index, surplus (2026)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire&nbsp;: injection, index, surplus (2026)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Que voit vraiment le Linky&nbsp;? Index injection vs soutirage, mythe du compteur &agrave; l&apos;envers, surplus gratuit EDF expliqu&eacute; clairement.</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le principe expliqu&eacute; simplement&nbsp;: talon de consommation, surplus, compteur Linky.</p>
                 </Link>
                 <Link href="/blog/revendre-surplus-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon&nbsp;: peut-on revendre son surplus &agrave; EDF&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon&nbsp;: peut-on revendre son surplus &agrave; EDF&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">La r&eacute;ponse est non — les kits balcon fonctionnent en CACSI, pas en EDF OA.</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: comment le calculer et l&apos;effacer avec le solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: comment le calculer et l&apos;effacer avec le solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le bruit de fond &eacute;lectrique de votre foyer co&ucirc;te 300&ndash;900&nbsp;&euro;/an. Voici comment le couvrir avec un kit solaire.</p>
                 </Link>
               </div>

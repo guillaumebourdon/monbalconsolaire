@@ -23,14 +23,14 @@ module.exports = {
           DEFAULT: '#E8961A',
           light: '#F5B940',
           pale: '#FEF6E4',
-          dark: '#C47D0E',
+          dark: '#9A5B0A', // contraste ≥ 4,5:1 sur crème, ambre pâle et blanc (WCAG AA)
         },
         charcoal: {
           DEFAULT: '#2C2C28',
           light: '#4A4A44',
         },
         stone: {
-          DEFAULT: '#8A8A80',
+          DEFAULT: '#6B6B62', // ≥ 4,5:1 sur crème (petits textes)
           light: '#B5B5AA',
         },
         border: {

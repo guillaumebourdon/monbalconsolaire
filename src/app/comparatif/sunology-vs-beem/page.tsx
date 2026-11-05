@@ -105,7 +105,7 @@ export default function SunologyVsBeemPage() {
                   { t: 'Panneau plus compact', d: 'À puissance égale (500 Wc), le PLAY est 15 cm moins long (180 vs 195 cm), grâce à ses cellules back-contact. Sur un petit balcon, ça peut faire la différence.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -122,7 +122,7 @@ export default function SunologyVsBeemPage() {
                   { t: 'Gamme plus large', d: 'Beem propose le Kit 300W \u00e0 199\u20ac (entr\u00e9e de gamme, actuellement en rupture), le Beem On 500 Wc \u00e0 429\u20ac (best-seller), et le Beem On Max pour les grandes surfaces. Sunology a le PLAY (599\u20ac), le GO et le PLAY MAX avec batterie.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -135,7 +135,7 @@ export default function SunologyVsBeemPage() {
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start gap-4 mb-3">
                     <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="lg" />
-                    <h4 className="font-bold text-green mb-2">Choisissez Sunology si :</h4>
+                    <h3 className="font-bold text-green mb-2">Choisissez Sunology si :</h3>
                   </div>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>→ Vous voulez l&apos;installation la plus rapide</li>
@@ -148,7 +148,7 @@ export default function SunologyVsBeemPage() {
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start gap-4 mb-3">
                     <ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="lg" />
-                    <h4 className="font-bold text-green mb-2">Choisissez Beem si :</h4>
+                    <h3 className="font-bold text-green mb-2">Choisissez Beem si :</h3>
                   </div>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>&rarr; Le prix est votre priorit&eacute; (429&euro; vs 599&euro;)</li>
@@ -192,19 +192,19 @@ export default function SunologyVsBeemPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le leader du marché français</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix &agrave; 429&nbsp;&euro;</p>
                 </Link>
                 <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">PLAY&nbsp;2 vs Beem On 500&nbsp;Wc : le match juillet 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">PLAY&nbsp;2 vs Beem On 500&nbsp;Wc : le match juillet 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">12 crit&egrave;res, ROI compar&eacute; &mdash; la mise &agrave; jour 2026</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>
                 </Link>
               </div>

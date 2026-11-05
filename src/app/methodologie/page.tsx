@@ -38,19 +38,19 @@ export default function MethodologiePage() {
             <h2 className="text-2xl font-extrabold mb-4">Sources de donn&eacute;es</h2>
             <div className="space-y-3">
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm mb-1">PVGIS (Commission Europ&eacute;enne)</h4>
+                <h3 className="font-bold text-sm mb-1">PVGIS (Commission Europ&eacute;enne)</h3>
                 <p className="text-xs text-charcoal-light">Irradiation solaire par d&eacute;partement, base de toutes nos estimations de production.</p>
               </div>
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm mb-1">Commission de R&eacute;gulation de l&apos;&Eacute;nergie (CRE)</h4>
+                <h3 className="font-bold text-sm mb-1">Commission de R&eacute;gulation de l&apos;&Eacute;nergie (CRE)</h3>
                 <p className="text-xs text-charcoal-light">Tarifs r&eacute;glement&eacute;s et historique du prix du kWh depuis 2012.</p>
               </div>
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm mb-1">Fiches techniques constructeurs</h4>
+                <h3 className="font-bold text-sm mb-1">Fiches techniques constructeurs</h3>
                 <p className="text-xs text-charcoal-light">Sunology, Beem, Sunethic, Zendure, EcoFlow, DualSun : puissance, rendement, garantie.</p>
               </div>
               <div className="card border-l-4 border-l-green">
-                <h4 className="font-bold text-sm mb-1">Retours utilisateurs publics</h4>
+                <h3 className="font-bold text-sm mb-1">Retours utilisateurs publics</h3>
                 <p className="text-xs text-charcoal-light">Trustpilot, Amazon, forum-photovoltaique.fr, Reddit pour les donn&eacute;es de production r&eacute;elle.</p>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function MethodologiePage() {
               <p>ROI (ann&eacute;es) = Premi&egrave;re ann&eacute;e o&ugrave; le cumul des &eacute;conomies d&eacute;passe le prix du kit</p>
             </div>
             <div className="card-lg mt-4">
-              <h4 className="font-bold text-sm mb-3">Exemple : Sunology PLAY (ex-PLAY 2, 500 Wc, 599 &euro;) &agrave; Lyon, sud</h4>
+              <h3 className="font-bold text-sm mb-3">Exemple : Sunology PLAY (ex-PLAY 2, 500 Wc, 599 &euro;) &agrave; Lyon, sud</h3>
               <ul className="text-sm text-charcoal-light space-y-1.5">
                 <li>&bull; Production = 0,50 &times; 1 200 &times; 0,85 &times; 1,0 = <strong>510 kWh/an</strong></li>
                 <li>&bull; &Eacute;conomie ann&eacute;e 1 = 510 &times; 0,85 &times; 0,1940 = <strong>84 &euro;</strong></li>

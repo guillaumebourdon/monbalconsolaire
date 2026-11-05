@@ -118,7 +118,7 @@ export default function ArnaqueInvestissementPage() {
               <div className="space-y-3">
                 {criteres_fiable.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">✓ {c.critere}</h4>
+                    <h3 className="font-bold text-sm mb-1">✓ {c.critere}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.detail}</p>
                   </div>
                 ))}
@@ -156,15 +156,15 @@ export default function ArnaqueInvestissementPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">La réponse dépend de votre profil. Voici trois cas de figure :</p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">✅ Oui, clairement</h4>
+                  <h3 className="font-bold text-sm mb-1">✅ Oui, clairement</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Vous êtes propriétaire (ou locataire avec accord), votre balcon est exposé sud, sud-est ou sud-ouest, et vous restez au moins 5 ans au même endroit. Le kit 450W est votre meilleur choix.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">⚠️ Oui, mais avec précaution</h4>
+                  <h3 className="font-bold text-sm mb-1">⚠️ Oui, mais avec précaution</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Votre balcon est est/ouest ou partiellement ombragé, ou vous habitez dans le quart nord de la France. Choisissez un kit plus petit (300W) pour limiter le risque, ou attendez d&apos;être sûr de votre situation.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/20">
-                  <h4 className="font-bold text-sm mb-1">❌ Non, pas encore</h4>
+                  <h3 className="font-bold text-sm mb-1">❌ Non, pas encore</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Votre balcon est plein nord ou totalement à l&apos;ombre, ou vous cherchez l&apos;autonomie énergétique complète. Un kit 450W ne couvrira pas 10% de votre consommation. Investissez ailleurs (isolation, pompe à chaleur).</p>
                 </div>
               </div>
@@ -185,19 +185,19 @@ export default function ArnaqueInvestissementPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleurs kits solaires 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleurs kits solaires 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet des modèles fiables</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé par ville avec chiffres réels</p>
                 </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Réglementation 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, CACSI, 900W — tout ce qui est légal</p>
                 </Link>
                 <Link href="/blog/kit-solaire-balcon-avis-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : avis et retours 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon : avis et retours 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce que pensent vraiment les utilisateurs</p>
                 </Link>
               </div>

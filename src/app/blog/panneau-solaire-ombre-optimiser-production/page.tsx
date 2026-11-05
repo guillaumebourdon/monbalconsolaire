@@ -335,13 +335,13 @@ export default function PanneauSolaireOmbrePage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Panneau classique</h4>
+                  <h3 className="font-bold text-sm mb-1">Panneau classique</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Toutes les cellules en une seule chaîne. Si une cellule est ombragée, <strong>tout le panneau perd 50-70 %</strong> de sa production.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Panneau demi-cellules (half-cut)</h4>
+                  <h3 className="font-bold text-sm mb-1">Panneau demi-cellules (half-cut)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Deux circuits indépendants (haut/bas). Si le bas est ombragé, <strong>le haut continue à produire normalement</strong>. Perte limitée à 30-40 %.
                   </p>
@@ -360,15 +360,15 @@ export default function PanneauSolaireOmbrePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">4h+ de soleil direct/jour → Foncez</h4>
+                  <h3 className="font-bold text-sm mb-1">4h+ de soleil direct/jour → Foncez</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Votre kit sera rentable en 4-6 ans. L&apos;ombre partielle est gérable avec les solutions ci-dessus.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">2-4h de soleil direct/jour → Étudiez bien</h4>
+                  <h3 className="font-bold text-sm mb-1">2-4h de soleil direct/jour → Étudiez bien</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">La rentabilité est possible mais plus longue (7-10 ans). Privilégiez un kit petit budget (Beem Kit 300W à 199 €, actuellement en rupture chez Beem) pour limiter le risque.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber-dark">
-                  <h4 className="font-bold text-sm mb-1">Moins de 2h de soleil direct/jour → Déconseillé</h4>
+                  <h3 className="font-bold text-sm mb-1">Moins de 2h de soleil direct/jour → Déconseillé</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le retour sur investissement dépassera 12-15 ans. Investissez plutôt dans des ampoules LED ou un thermostat intelligent pour réduire votre facture.</p>
                 </div>
               </div>
@@ -401,23 +401,23 @@ export default function PanneauSolaireOmbrePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ombre saisonni&egrave;re, surchauffe onduleur, mauvais angle : le guide complet</p>
                 </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;impact réel de l&apos;orientation sur votre production</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-balcon-nord" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon nord : est-ce rentable ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon nord : est-ce rentable ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Analyse honnête avec chiffres par ville</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Calcul réel de rentabilité pour 7 villes</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que prévu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points et solutions concrètes</p>
                 </Link>
               </div>

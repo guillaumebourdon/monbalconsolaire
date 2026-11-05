@@ -8,7 +8,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Lampes solaires balcon : 10 modèles sélectionnés (2026)',
-  description: 'Comparatif des meilleures lampes solaires extérieures pour balcon en 2026 : guirlandes, appliques, projecteurs, lanternes. Sélection honnête et critères de choix.',
+  description: 'Lampes solaires pour balcon en 2026 : guirlandes, appliques, projecteurs, lanternes. 10 modèles sélectionnés et critères de choix.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/lampes-solaires-balcon-2026',
   },
@@ -373,8 +373,8 @@ export default function LampesSolairesPage() {
               <div className="space-y-3">
                 {profils.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.titre}</h4>
-                    <p className="text-xs text-amber font-semibold mb-1">→ {p.reco}</p>
+                    <h3 className="font-bold text-sm mb-1">{p.titre}</h3>
+                    <p className="text-xs text-amber-dark font-semibold mb-1">→ {p.reco}</p>
                     <p className="text-xs text-stone italic mb-2">{p.total}</p>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.explication}</p>
                   </div>
@@ -388,7 +388,7 @@ export default function LampesSolairesPage() {
               <div className="space-y-3">
                 {criteres.map((c, i) => (
                   <div key={i} className="card">
-                    <h4 className="font-bold text-sm mb-1">{i + 1}. {c.critere}</h4>
+                    <h3 className="font-bold text-sm mb-1">{i + 1}. {c.critere}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.detail}</p>
                   </div>
                 ))}
@@ -400,19 +400,19 @@ export default function LampesSolairesPage() {
               <h2 className="text-2xl font-extrabold mb-4">Les 3 erreurs à éviter</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Acheter des lampes sans indice IP affiché</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ Acheter des lampes sans indice IP affiché</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Une lampe non certifiée IP44 en extérieur grille dès la première pluie oblique. Exigez IP44 minimum, toujours indiqué clairement sur la fiche produit.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Choisir du blanc froid pour l&apos;ambiance</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ Choisir du blanc froid pour l&apos;ambiance</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Le blanc froid (6000K+) donne un aspect &laquo; hôpital &raquo; très désagréable pour un balcon. Privilégiez le blanc chaud (2700-3000K) ou neutre (4000K) pour une ambiance agréable.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Croire que &quot;plus de lumens = mieux&quot;</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ Croire que &quot;plus de lumens = mieux&quot;</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Un projecteur 1000 lumens sur un balcon de 4 m², c&apos;est éblouissant pour vous et dérangeant pour les voisins. Calibrez : 80-200 lumens pour l&apos;ambiance, 300-500 lumens pour l&apos;éclairage fonctionnel.
                   </p>
@@ -443,19 +443,19 @@ export default function LampesSolairesPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/accessoires-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les équipements pour optimiser votre installation solaire</p>
                 </Link>
                 <Link href="/blog/mini-kits-solaires-amazon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mini kits solaires Amazon &lt; 300 €</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mini kits solaires Amazon &lt; 300 €</h3>
                   <p className="text-xs text-charcoal-light mt-1">Nos 5 sélections pour tester le solaire à petit budget</p>
                 </Link>
                 <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables solaires : comparatif 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables solaires : comparatif 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">EcoFlow, Bluetti, Jackery : 6 modèles pour backup et nomade</p>
                 </Link>
                 <Link href="/blog/guirlande-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guirlande solaire de balcon : 8 modèles pour l&apos;hiver</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guirlande solaire de balcon : 8 modèles pour l&apos;hiver</h3>
                   <p className="text-xs text-charcoal-light mt-1">Guinguette, Noël, recharge USB : ce que devient l&apos;autonomie en décembre</p>
                 </Link>
               </div>

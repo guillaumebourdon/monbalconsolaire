@@ -17,7 +17,7 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   {
-    question: 'Quelle est la diff&eacute;rence entre le HMS-800W-2T et l&rsquo;ancien HM-800W ?',
+    question: 'Quelle est la différence entre le HMS-800W-2T et l’ancien HM-800W ?',
     answer: 'L\'ancienne gamme HM (ex : HM-800W) n\'intègre pas de WiFi : elle nécessite un DTU (Data Transfer Unit) séparé (~30 €) pour remonter les données à l\'application S-Miles Cloud. La gamme HMS (ex : HMS-800W-2T) intègre le WiFi directement dans le boîtier : aucun DTU nécessaire, connexion directe à votre box. Résultat : le HMS couvre 30 € de DTU économisés, même si son prix catalogue est légèrement plus élevé.',
   },
   {
@@ -47,7 +47,7 @@ export default function HoymilesHMS800WAvisPage() {
     <>
       <SchemaArticle
         title="Hoymiles HMS-800W-2T avis 2026 : micro-onduleur DIY de référence"
-        description="Avis complet sur le Hoymiles HMS-800W-2T : 2 MPPT ind&eacute;pendants, WiFi int&eacute;gr&eacute; sans DTU, rendement 96,7&nbsp;%. Le micro-onduleur pr&eacute;f&eacute;r&eacute; des montages DIY balcon en France."
+        description="Avis complet sur le Hoymiles HMS-800W-2T : 2 MPPT indépendants, WiFi intégré sans DTU, rendement 96,7 %. Le micro-onduleur préféré des montages DIY balcon en France."
         url="https://monbalconsolaire.fr/avis/hoymiles-hms-800w"
         datePublished="2026-08-18"
       />
@@ -58,7 +58,7 @@ export default function HoymilesHMS800WAvisPage() {
         description="Micro-onduleur monophas&eacute; 800&nbsp;W, 2 entr&eacute;es MPPT ind&eacute;pendantes, WiFi int&eacute;gr&eacute; (sans DTU), IP67. Le choix de r&eacute;f&eacute;rence pour les kits solaires balcon DIY."
         price={119}
         ratingValue={8.5}
-        ratingCount={1}
+       
         url="https://monbalconsolaire.fr/avis/hoymiles-hms-800w"
       />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Hoymiles HMS-800W-2T' }]} />
@@ -68,7 +68,7 @@ export default function HoymilesHMS800WAvisPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Hoymiles HMS-800W-2T' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Hoymiles HMS-800W-2T&nbsp;: avis du micro-onduleur de r&eacute;f&eacute;rence pour les kits DIY
             </h1>

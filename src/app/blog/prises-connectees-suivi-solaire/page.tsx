@@ -11,7 +11,7 @@ const AMAZON_TAPO_P410M = 'https://www.amazon.fr/dp/B0FZCP6BK7?tag=monbalconsola
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
-  description: 'Comparatif des meilleures prises connect\u00e9es pour mesurer la production de votre kit solaire de balcon : Tapo P110, Shelly Plug S, Meross, GreenSun. Prix, fonctions, verdict.',
+  description: 'Prises connectées pour mesurer la production d\'un kit solaire de balcon : Tapo P110, Shelly Plug S, Meross. Prix, fonctions, verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/prises-connectees-suivi-solaire',
   },
@@ -166,15 +166,15 @@ export default function PrisesConnecteesPage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Mesure ind&eacute;pendante et v&eacute;rifiable</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Mesure ind&eacute;pendante et v&eacute;rifiable</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">L&apos;app du fabricant peut surestimer la production (c&apos;est dans leur int&eacute;r&ecirc;t commercial). La prise mesure les watts r&eacute;els qui passent dans le c&acirc;ble. Z&eacute;ro biais.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Diagnostic des probl&egrave;mes</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Diagnostic des probl&egrave;mes</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Si votre production chute, la prise le montre imm&eacute;diatement : 0 W en plein soleil = micro-onduleur en panne. 50 W au lieu de 300 W = ombre ou salissure. <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="text-green hover:underline">Guide diagnostic complet</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Historique long terme</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Historique long terme</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Les apps Tapo et Shelly conservent un historique illimit&eacute;. Apr&egrave;s 1 an, vous avez la production r&eacute;elle mois par mois, comparable aux pr&eacute;visions PVGIS. Preuve concr&egrave;te de rentabilit&eacute;.</p>
                 </div>
               </div>
@@ -244,19 +244,19 @@ export default function PrisesConnecteesPage() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation par profil</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous voulez juste mesurer votre production</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous voulez juste mesurer votre production</h3>
                   <p className="text-xs text-charcoal-light">Prenez la <strong>Tapo P110</strong> &agrave; 12-15 &euro;. C&apos;est la plus populaire de la communaut&eacute; solaire, l&apos;app est excellente, et c&apos;est le meilleur rapport qualit&eacute;-prix du march&eacute;. <a href={AMAZON_TAPO_P110} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Votre prise de balcon est expos&eacute;e</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Votre prise de balcon est expos&eacute;e</h3>
                   <p className="text-xs text-charcoal-light">Prenez la <strong>Tapo P410M</strong> &agrave; ~25 &euro;. IP54, pr&eacute;vue pour l&apos;ext&eacute;rieur (projections d&apos;eau, poussi&egrave;re). Compatible Matter pour l&apos;&eacute;cosyst&egrave;me Apple Home. <a href={AMAZON_TAPO_P410M} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Vous &ecirc;tes fan de domotique</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous &ecirc;tes fan de domotique</h3>
                   <p className="text-xs text-charcoal-light">Prenez la <strong>Shelly Plug PM Gen3</strong> en version fran&ccedil;aise (~33 &euro;). Compatible Home Assistant, MQTT, API ouverte. Le choix des geeks. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Vous n&apos;avez pas de WiFi sur le balcon</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Vous n&apos;avez pas de WiFi sur le balcon</h3>
                   <p className="text-xs text-charcoal-light">Un simple wattm&egrave;tre &agrave; &eacute;cran fait le travail sans application : lecture directe des watts et des kWh cumul&eacute;s. Voir notre guide du <Link href="/blog/wattmetre-prise-mesurer-consommation" className="text-green hover:underline">wattm&egrave;tre prise pour mesurer sa consommation</Link>.</p>
                 </div>
               </div>
@@ -301,23 +301,23 @@ export default function PrisesConnecteesPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/accessoires-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables pour votre kit solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables pour votre kit solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Prise connect&eacute;e, rallonge, parafoudre, support</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points avec une prise connect&eacute;e</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h3>
                   <p className="text-xs text-charcoal-light mt-1">Utilisez votre prise pour mesurer votre talon</p>
                 </Link>
                 <Link href="/blog/consommation-veille-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Consommation en veille du kit solaire : mesure et impact ROI</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Consommation en veille du kit solaire : mesure et impact ROI</h3>
                   <p className="text-xs text-charcoal-light mt-1">La prise connect&eacute;e pour mesurer la veille nocturne du micro-onduleur et du hub</p>
                 </Link>
                 <Link href="/comparatif/application-suivi-production-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les apps officielles des fabricants, compar&eacute;es aux prises connect&eacute;es g&eacute;n&eacute;riques</p>
                 </Link>
               </div>

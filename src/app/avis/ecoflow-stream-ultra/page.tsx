@@ -96,14 +96,14 @@ export default function EcoflowStreamUltraPage() {
         dateModified="2026-11-03"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="EcoFlow STREAM Ultra" brand="EcoFlow" description="Batterie LiFePO4 1,92 kWh avec micro-onduleur 800 W intégré, extensible à 11,52 kWh, 4 MPPT, sortie secours 2 300 W." price={1099} ratingValue={7.5} ratingCount={1} availability="InStock" url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra" />
+      <SchemaProduct name="EcoFlow STREAM Ultra" brand="EcoFlow" description="Batterie LiFePO4 1,92 kWh avec micro-onduleur 800 W intégré, extensible à 11,52 kWh, 4 MPPT, sortie secours 2 300 W." price={1099} ratingValue={7.5} availability="InStock" url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow STREAM Ultra' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow STREAM Ultra' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               EcoFlow STREAM Ultra avis : le successeur tout-en-un du PowerStream
             </h1>
@@ -223,7 +223,7 @@ export default function EcoflowStreamUltraPage() {
               <div className="space-y-3">
                 {points_forts.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -237,7 +237,7 @@ export default function EcoflowStreamUltraPage() {
               <div className="space-y-3">
                 {points_faibles.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -380,23 +380,23 @@ export default function EcoflowStreamUltraPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/ecoflow-powerstream" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream (arrêté)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow PowerStream (arrêté)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le prédécesseur du STREAM Ultra, retiré du catalogue EcoFlow France en 2026</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h3>
                   <p className="text-xs text-charcoal-light mt-1">Même capacité (1,92 kWh), meilleur ROI (5,3 ans) mais sans sortie de secours</p>
                 </Link>
                 <Link href="/avis/allpowers-bs2500-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis ALLPOWERS BS2500 PRO</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis ALLPOWERS BS2500 PRO</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;autre batterie avec secours (2 400 W) : 2,6 kWh &agrave; 999 &euro;, mais aucun test ind&eacute;pendant</p>
                 </Link>
                 <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleure batterie solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Toutes les solutions de stockage comparées : Zendure, Bluetti, Jackery, EcoFlow</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kit avec ou sans batterie : lequel choisir ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit avec ou sans batterie : lequel choisir ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Sunology PLAY MAX, Beem Battery, EcoFlow : la rentabilité du stockage comparée</p>
                 </Link>
               </div>

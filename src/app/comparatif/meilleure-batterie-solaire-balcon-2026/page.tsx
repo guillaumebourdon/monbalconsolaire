@@ -46,7 +46,7 @@ export default function MeilleureBatterieBalconPage() {
     <>
       <SchemaArticle
         title="Meilleure batterie solaire balcon 2026 : Zendure vs Bluetti vs EcoFlow"
-        description="Comparatif complet des batteries solaires d&eacute;di&eacute;es aux kits balcon en 2026."
+        description="Comparatif complet des batteries solaires dédiées aux kits balcon en 2026."
         url="https://monbalconsolaire.fr/comparatif/meilleure-batterie-solaire-balcon-2026"
         datePublished="2026-07-10"
         dateModified="2026-07-10"
@@ -106,7 +106,7 @@ export default function MeilleureBatterieBalconPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card-lg border-stone/20 bg-cream/50">
-                  <h4 className="font-bold text-sm mb-2 text-stone">&#10007; On exclut</h4>
+                  <h3 className="font-bold text-sm mb-2 text-stone">&#10007; On exclut</h3>
                   <ul className="space-y-1 text-sm text-charcoal-light">
                     <li>&bull; Stations portables (RIVER, EB3A, Explorer&hellip;)</li>
                     <li>&bull; Sunology VAULT 700&nbsp;Wh (nomade)</li>
@@ -114,7 +114,7 @@ export default function MeilleureBatterieBalconPage() {
                   </ul>
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-sm mb-2 text-green">&#10003; On compare</h4>
+                  <h3 className="font-bold text-sm mb-2 text-green">&#10003; On compare</h3>
                   <ul className="space-y-1 text-sm text-charcoal-light">
                     <li>&bull; Zendure SolarFlow (kit onduleur + batterie)</li>
                     <li>&bull; Bluetti Balco 260 (tout-en-un)</li>
@@ -472,7 +472,7 @@ export default function MeilleureBatterieBalconPage() {
               </p>
               <div className="grid md:grid-cols-3 gap-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2 text-sm">Sans batterie</h4>
+                  <h3 className="font-bold text-green mb-2 text-sm">Sans batterie</h3>
                   <div className="space-y-1 text-sm text-charcoal-light font-mono">
                     <p>Autoconsommation&nbsp;: 40&nbsp;%</p>
                     <p>&Eacute;conomies/an&nbsp;: <span className="text-green font-bold">~97&nbsp;&euro;</span></p>
@@ -480,7 +480,7 @@ export default function MeilleureBatterieBalconPage() {
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2 text-sm">Kit + Zendure SolarFlow</h4>
+                  <h3 className="font-bold text-amber-dark mb-2 text-sm">Kit + Zendure SolarFlow</h3>
                   <div className="space-y-1 text-sm text-charcoal-light font-mono">
                     <p>Autoconsommation&nbsp;: ~65&nbsp;%</p>
                     <p>&Eacute;conomies/an&nbsp;: <span className="text-amber-dark font-bold">~127&nbsp;&euro;</span></p>
@@ -488,7 +488,7 @@ export default function MeilleureBatterieBalconPage() {
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2 text-sm">Kit + Bluetti Balco</h4>
+                  <h3 className="font-bold text-amber-dark mb-2 text-sm">Kit + Bluetti Balco</h3>
                   <div className="space-y-1 text-sm text-charcoal-light font-mono">
                     <p>Autoconsommation&nbsp;: ~75&nbsp;%</p>
                     <p>&Eacute;conomies/an&nbsp;: <span className="text-amber-dark font-bold">~145&nbsp;&euro;</span></p>
@@ -509,23 +509,23 @@ export default function MeilleureBatterieBalconPage() {
               <h2 className="text-2xl font-extrabold mb-4">Verdict par profil</h2>
               <div className="space-y-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-1">Budget &lt;500&nbsp;&euro; &rarr; Zendure SolarFlow</h4>
+                  <h3 className="font-bold text-green mb-1">Budget &lt;500&nbsp;&euro; &rarr; Zendure SolarFlow</h3>
                   <p className="text-sm text-charcoal-light">Meilleur prix/kWh du march&eacute;. Kit complet avec micro-onduleur inclus. Id&eacute;al pour un premier pas dans le stockage solaire sans surpayer.</p>
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-1">Tout-en-un sans installation complexe &rarr; Bluetti Balco 260</h4>
+                  <h3 className="font-bold text-green mb-1">Tout-en-un sans installation complexe &rarr; Bluetti Balco 260</h3>
                   <p className="text-sm text-charcoal-light">Un seul bo&icirc;tier IP65 qui fait tout. Pose en ext&eacute;rieur, 4 MPPT, secours &eacute;lectrique. Le choix le plus polyvalent si le budget permet 849&nbsp;&euro;.</p>
                 </div>
                 <div className="card-lg">
-                  <h4 className="font-bold mb-1">Garantie maximale &rarr; Jackery SolarVault 3 Pro</h4>
+                  <h3 className="font-bold mb-1">Garantie maximale &rarr; Jackery SolarVault 3 Pro</h3>
                   <p className="text-sm text-charcoal-light">10 ans de garantie, 2,52&nbsp;kWh LFP, ~839&nbsp;&euro; en promo. Pour ceux qui veulent installer et ne plus y penser pendant une d&eacute;cennie.</p>
                 </div>
                 <div className="card-lg">
-                  <h4 className="font-bold mb-1">D&eacute;j&agrave; &eacute;quip&eacute; EcoFlow &rarr; PowerStream d&apos;occasion</h4>
+                  <h3 className="font-bold mb-1">D&eacute;j&agrave; &eacute;quip&eacute; EcoFlow &rarr; PowerStream d&apos;occasion</h3>
                   <p className="text-sm text-charcoal-light">Si vous avez une station DELTA ou RIVER, le hub PowerStream la transforme en batterie r&eacute;sidentielle. Il n&apos;est plus vendu par EcoFlow France depuis 2026&nbsp;: ne l&apos;achetez que d&apos;occasion ou en d&eacute;stockage, &agrave; prix r&eacute;duit.</p>
                 </div>
                 <div className="card-lg border-stone/20 bg-cream/50">
-                  <h4 className="font-bold text-stone mb-1">Maison / grande terrasse &rarr; Zendure SolarFlow Mix</h4>
+                  <h3 className="font-bold text-stone mb-1">Maison / grande terrasse &rarr; Zendure SolarFlow Mix</h3>
                   <p className="text-sm text-charcoal-light">Si votre installation d&eacute;passe 1&nbsp;kWc de panneaux ou si vous consommez &gt;5&nbsp;000&nbsp;kWh/an, le Mix 3000 &agrave; 2&nbsp;039&nbsp;&euro; avec 8&nbsp;kWh est la seule solution &agrave; prix/kWh comp&eacute;titif (&lt;260&nbsp;&euro;/kWh).</p>
                 </div>
               </div>
@@ -559,35 +559,35 @@ export default function MeilleureBatterieBalconPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/guide/batterie-solaire-balcon-guide" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide&nbsp;: choisir la bonne capacit&eacute; de batterie</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide&nbsp;: choisir la bonne capacit&eacute; de batterie</h3>
                   <p className="text-xs text-charcoal-light mt-1">Seuils 700&nbsp;Wh, 2&nbsp;kWh, 5&nbsp;kWh &mdash; le calcul ROI par profil</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires avec batterie 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Bundles complets (kit + batterie) : PLAY MAX, EcoFlow, Beem Battery</p>
                 </Link>
                 <Link href="/avis/bluetti-balco-260" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h3>
                   <p className="text-xs text-charcoal-light mt-1">Analyse compl&egrave;te du tout-en-un onduleur + batterie LFP 2,56&nbsp;kWh IP65</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le meilleur prix/kWh du march&eacute; balcon &agrave; 254&nbsp;&euro;/kWh</p>
                 </Link>
                 <Link href="/avis/ecoflow-stream-ultra" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le successeur du PowerStream, extensible &agrave; 11,52&nbsp;kWh avec sortie secours 2&nbsp;300&nbsp;W</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le stockage r&eacute;sidentiel 8&ndash;50&nbsp;kWh avec IA Zenki</p>
                 </Link>
                 <Link href="/avis/sunology-play-max" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY MAX</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le bundle kit + batterie VAULT 700&nbsp;Wh le moins cher du march&eacute;</p>
                 </Link>
                 <Link href="/blog/batteries-portables-solaires-comparatif" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables et balcon fixe : comparatif ao&ucirc;t 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Batteries portables et balcon fixe : comparatif ao&ucirc;t 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Distinction fix&eacute; vs portable, Balco 260 vs EcoFlow DELTA 2 &mdash; prix tous mis &agrave; jour</p>
                 </Link>
               </div>

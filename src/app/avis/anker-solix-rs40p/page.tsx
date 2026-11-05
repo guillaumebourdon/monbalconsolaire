@@ -47,7 +47,7 @@ export default function AnkerSolixRS40PAvisPage() {
     <>
       <SchemaArticle
         title="Anker SOLIX RS40P avis : kit balcon 910 Wc, vaut-il 799 € ?"
-        description="Avis complet sur l&apos;Anker SOLIX RS40P : panneaux IBC N-type 2x455 W, onduleur WiFi 600/800 W, garantie 15 ans. Analyse indépendante MonBalconSolaire."
+        description="Avis complet sur l'Anker SOLIX RS40P : panneaux IBC N-type 2x455 W, onduleur WiFi 600/800 W, garantie 15 ans. Analyse indépendante MonBalconSolaire."
         url="https://monbalconsolaire.fr/avis/anker-solix-rs40p"
         datePublished="2026-07-17"
       />
@@ -58,7 +58,7 @@ export default function AnkerSolixRS40PAvisPage() {
         description="Kit solaire balcon 2x455 W IBC N-type, micro-onduleur WiFi 600/800 W. Technologie premium, marque mondiale. Compatible Solarbank 2."
         price={799}
         ratingValue={7.5}
-        ratingCount={1}
+       
         url="https://monbalconsolaire.fr/avis/anker-solix-rs40p"
       />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Anker SOLIX RS40P' }]} />
@@ -68,7 +68,7 @@ export default function AnkerSolixRS40PAvisPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Anker SOLIX RS40P' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Anker SOLIX RS40P avis 2026 : le kit balcon 910&nbsp;Wc d&rsquo;une marque mondiale
             </h1>
@@ -180,7 +180,7 @@ export default function AnkerSolixRS40PAvisPage() {
                   },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -223,7 +223,7 @@ export default function AnkerSolixRS40PAvisPage() {
                   },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -399,19 +399,19 @@ export default function AnkerSolixRS40PAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">429 &euro; pour 500 Wc bifacial TOPCon &mdash; le concurrent direct et plus rentable</p>
                 </Link>
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le kit le moins cher du march&eacute; &mdash; 199 &euro;, ROI en 3,8 ans, actuellement en rupture</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-petit-budget" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires petit budget</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires petit budget</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les meilleurs choix sous 500 &euro;</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire balcon 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleur kit solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet tous budgets</p>
                 </Link>
               </div>

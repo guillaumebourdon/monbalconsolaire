@@ -7,7 +7,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Consommation veille kit solaire balcon : combien ça coûte vraiment ?',
-  description: 'Micro-onduleur, Beembox, app WiFi : combien consomme votre kit solaire la nuit ? Tableau par kit, impact ROI chiffré et réponse à la question : faut-il débrancher ?',
+  description: 'Micro-onduleur, Beembox, WiFi : combien consomme un kit solaire de balcon la nuit ? Tableau par kit, impact chiffré et faut-il débrancher ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/consommation-veille-kit-solaire',
   },
@@ -361,19 +361,19 @@ export default function ConsommationVeillePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: comment le calculer et l&apos;effacer avec le solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: comment le calculer et l&apos;effacer avec le solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le bruit de fond &eacute;lectrique de votre foyer co&ucirc;te 300&ndash;900&nbsp;&euro;/an &mdash; la veille de vos appareils incluse</p>
                 </Link>
                 <Link href="/blog/micro-onduleur-solaire-fonctionnement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Micro-onduleur solaire&nbsp;: comment &ccedil;a marche et lequel choisir&nbsp;?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Micro-onduleur solaire&nbsp;: comment &ccedil;a marche et lequel choisir&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif Hoymiles, APsystems, TSUN&nbsp;: leur consommation en veille et leurs sp&eacute;cifications compl&egrave;tes</p>
                 </Link>
                 <Link href="/blog/prises-connectees-suivi-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connect&eacute;es pour suivi solaire 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connect&eacute;es pour suivi solaire 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pour mesurer la consommation en veille et programmer la coupure nocturne</p>
                 </Link>
                 <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">R&eacute;duire le surplus et maximiser ce que vous consommez directement</p>
                 </Link>
               </div>

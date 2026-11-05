@@ -78,7 +78,7 @@ export default function MiniKitsAmazonPage() {
               <div className="space-y-3">
                 {pieges_amazon.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">&#x26A0;&#xFE0F; {p.piege}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">&#x26A0;&#xFE0F; {p.piege}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.explication}</p>
                   </div>
                 ))}
@@ -161,15 +161,15 @@ export default function MiniKitsAmazonPage() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation finale</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">&#x2705; Budget &lt; 250 € : kit générique 300 W avec micro-onduleur de marque, ou Renogy 200W flexible</h4>
+                  <h3 className="font-bold text-sm mb-1">&#x2705; Budget &lt; 250 € : kit générique 300 W avec micro-onduleur de marque, ou Renogy 200W flexible</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Les deux seuls vrais bons choix sous 250 €. Jackery pour une pose fixe, Renogy pour surface courbe ou usage nomade.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">&#x26A0;&#xFE0F; Budget 250-299 € : vérifiez d&apos;abord le Beem Kit 300W</h4>
+                  <h3 className="font-bold text-sm mb-1">&#x26A0;&#xFE0F; Budget 250-299 € : vérifiez d&apos;abord le Beem Kit 300W</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">À 199 €, le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> offre une vraie qualité pro pour moins cher qu&apos;un mini kit Amazon à 280 €. Il est toutefois actuellement en rupture de stock chez Beem : si c&apos;est le cas, un mini kit Amazon avec micro-onduleur de marque reste la meilleure option immédiate.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/20">
-                  <h4 className="font-bold text-sm mb-1">&#x274C; À éviter absolument</h4>
+                  <h3 className="font-bold text-sm mb-1">&#x274C; À éviter absolument</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Tout kit &quot;500-800W plug-and-play sous 300 €&quot;. C&apos;est physiquement impossible à ce prix pour de la qualité. Les composants sont forcément mauvais.</p>
                 </div>
               </div>
@@ -196,15 +196,15 @@ export default function MiniKitsAmazonPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/accessoires-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">8 accessoires indispensables</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les équipements pour optimiser votre installation</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-petit-budget" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires petit budget</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires petit budget</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les meilleurs choix sous 400 €</p>
                 </Link>
                 <Link href="/blog/kit-solaire-plug-and-play-arnaque" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Arnaque ou bon investissement ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Arnaque ou bon investissement ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Analyse honnête du marché 2026</p>
                 </Link>
               </div>

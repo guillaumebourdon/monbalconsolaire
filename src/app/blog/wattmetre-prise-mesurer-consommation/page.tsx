@@ -136,8 +136,8 @@ export default function WattmetrePrisePage() {
   return (
     <>
       <SchemaArticle
-        title="Wattm&egrave;tre prise : mesurer son talon de consommation avant d'acheter un kit solaire"
-        description="Comment utiliser un wattm&egrave;tre prise pour mesurer la consommation de ses appareils et son talon avant d'acheter un kit solaire de balcon."
+        title="Wattmètre prise : mesurer son talon de consommation avant d'acheter un kit solaire"
+        description="Comment utiliser un wattmètre prise pour mesurer la consommation de ses appareils et son talon avant d'acheter un kit solaire de balcon."
         url="https://monbalconsolaire.fr/blog/wattmetre-prise-mesurer-consommation"
         datePublished="2026-09-27"
       />
@@ -234,15 +234,15 @@ export default function WattmetrePrisePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Limite haute : 3 680 W</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Limite haute : 3 680 W</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Une prise domestique est prot&eacute;g&eacute;e en 16 A, soit 3 680 W sous 230 V. Les wattm&egrave;tres sont donn&eacute;s pour 3 500 &agrave; 3 680 W. Plaques, four encastr&eacute;, chauffe-eau et radiateurs raccord&eacute;s au mur ne passent pas par une prise : ils ne se mesurent qu&apos;au Linky.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Limite basse : le vrai pi&egrave;ge pour le talon</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Limite basse : le vrai pi&egrave;ge pour le talon</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le talon est fait de petites puissances : une veille de TV &agrave; 1 W, un chargeur &agrave; vide &agrave; 0,5 W, une box &agrave; 10-15 W. Or beaucoup de wattm&egrave;tres bon march&eacute; ont un seuil de d&eacute;tection de plusieurs watts. L&apos;Otio CC 5000 annonce une plage de <strong>4 &agrave; 3 680 W</strong> : en dessous, il affiche 0. Le Brennenstuhl PM 231 E descend &agrave; <strong>0,2 W</strong> avec une pr&eacute;cision de &plusmn;1&nbsp;% ou &plusmn;0,2 W. Pour les veilles, c&apos;est ce chiffre qu&apos;il faut chercher dans la fiche technique.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Autoconsommation du wattm&egrave;tre</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Autoconsommation du wattm&egrave;tre</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Le wattm&egrave;tre consomme lui-m&ecirc;me un peu (moins de 0,5 W pour le PM 231 E selon Brennenstuhl), mais cette consommation n&apos;est pas compt&eacute;e dans la mesure de l&apos;appareil branch&eacute;.</p>
                 </div>
               </div>
@@ -252,23 +252,23 @@ export default function WattmetrePrisePage() {
               <h2 className="text-2xl font-extrabold mb-4">M&eacute;thode de mesure pas &agrave; pas</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">1. Relevez le talon global au Linky</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">1. Relevez le talon global au Linky</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Un soir, &eacute;teignez lumi&egrave;res, TV, ordinateur et cuisson. Faites d&eacute;filer l&apos;&eacute;cran du Linky avec la touche + jusqu&apos;&agrave; la puissance apparente instantan&eacute;e (en VA). C&apos;est votre talon approximatif, l&eacute;g&egrave;rement sur&eacute;valu&eacute; car en VA et non en W. Pour un chiffre plus fiable, voir la courbe de charge plus bas.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">2. Mesurez les appareils permanents sur 24 h</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">2. Mesurez les appareils permanents sur 24 h</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Frigo et cong&eacute;lateur fonctionnent par cycles (compresseur qui d&eacute;marre et s&apos;arr&ecirc;te) : une lecture instantan&eacute;e ne veut rien dire. Laissez le wattm&egrave;tre branch&eacute; 24 h, relevez les kWh et divisez par 24 pour obtenir la puissance moyenne. Exemple : 0,8 kWh en 24 h = 33 W en moyenne.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">3. Mesurez les veilles une par une</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">3. Mesurez les veilles une par une</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Box internet, d&eacute;codeur TV, multiprise du salon (TV + barre de son + console), micro-ondes, imprimante. Une lecture de quelques minutes suffit, l&apos;appareil &eacute;tant &eacute;teint en veille. Mesurez la multiprise enti&egrave;re plut&ocirc;t que chaque appareil : c&apos;est plus rapide.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">4. Faites la somme et comparez au Linky</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">4. Faites la somme et comparez au Linky</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">La somme de vos mesures doit approcher le talon du Linky. S&apos;il manque 50 W ou plus, cherchez un appareil raccord&eacute; en direct : VMC, chaudi&egrave;re, pompe de circulation, ballon d&apos;eau chaude.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">5. Isolez le talon de journ&eacute;e</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">5. Isolez le talon de journ&eacute;e</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">C&apos;est lui qui compte pour le solaire. Si vous t&eacute;l&eacute;travaillez, ajoutez l&apos;ordinateur et l&apos;&eacute;cran. Si un chauffe-eau est programm&eacute; en heures creuses la nuit, il ne compte pas dans le talon diurne.</p>
                 </div>
               </div>
@@ -312,11 +312,11 @@ export default function WattmetrePrisePage() {
               </div>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Notre choix pour mesurer le talon : Brennenstuhl PM 231 E (FR)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Notre choix pour mesurer le talon : Brennenstuhl PM 231 E (FR)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">C&apos;est le seul de la s&eacute;lection dont le fabricant publie une plage basse (0,2 W) et une pr&eacute;cision chiffr&eacute;e. Il affiche aussi le facteur de puissance. Pi&egrave;ge : la r&eacute;f&eacute;rence 1506600, la plus visible sur Amazon, est en prise allemande Schuko et plusieurs acheteurs signalent qu&apos;elle ne se branche pas sur une prise fran&ccedil;aise avec terre. Prenez la <strong>1506601</strong>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">&Agrave; &eacute;viter pour les veilles : Otio CC 5000</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">&Agrave; &eacute;viter pour les veilles : Otio CC 5000</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Correct pour mesurer un frigo ou un lave-linge, mais sa plage d&eacute;marre &agrave; 4 W : une veille de 2 W s&apos;affiche 0. Pour traquer le talon, c&apos;est pr&eacute;cis&eacute;ment ce qu&apos;on cherche.</p>
                 </div>
               </div>
@@ -376,15 +376,15 @@ export default function WattmetrePrisePage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Courbe de charge sur l&apos;espace client Enedis (gratuit)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Courbe de charge sur l&apos;espace client Enedis (gratuit)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Dans votre espace client Enedis, activez l&apos;enregistrement de la courbe de charge : le Linky enregistre alors votre puissance moyenne toutes les 30 minutes. Les donn&eacute;es arrivent en J+1. Regardez les valeurs entre 2 h et 5 h du matin : c&apos;est votre talon nocturne. En semaine entre 10 h et 16 h, logement vide, c&apos;est votre talon diurne, celui qui compte pour le solaire.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Ecojoko (bo&icirc;tier + cl&eacute; TIC)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Ecojoko (bo&icirc;tier + cl&eacute; TIC)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Une cl&eacute; branch&eacute;e sur la prise TIC du Linky relaie les mesures toutes les 5 &agrave; 10 secondes vers un afficheur et une app, avec estimation du talon et r&eacute;partition par cat&eacute;gories d&apos;appareils. Plus confortable que la courbe Enedis, mais nettement plus cher qu&apos;un wattm&egrave;tre. <a href={amz('B0H6JXJHPL')} target="_blank" rel="sponsored noopener" className="text-green hover:underline">Voir Ecojoko sur Amazon</a>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">Lixee ZLinky (domotique)</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">Lixee ZLinky (domotique)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">Module qui se branche sur la prise TIC du Linky et transmet les donn&eacute;es en Zigbee 3.0 vers Home Assistant, Jeedom ou une box compatible. La version V2 est certifi&eacute;e &laquo;&nbsp;Linky Ready&nbsp;&raquo;. Environ 50-60 &euro;, r&eacute;serv&eacute; &agrave; ceux qui ont d&eacute;j&agrave; une installation domotique Zigbee. <a href={amz('B0DKLDR69T')} target="_blank" rel="sponsored noopener" className="text-green hover:underline">Voir le ZLinky V2 sur Amazon</a>.</p>
                 </div>
               </div>
@@ -434,19 +434,19 @@ export default function WattmetrePrisePage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h3>
                   <p className="text-xs text-charcoal-light mt-1">Composition d&apos;un talon type et puissance de kit adapt&eacute;e</p>
                 </Link>
                 <Link href="/blog/prises-connectees-suivi-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connect&eacute;es pour suivi solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connect&eacute;es pour suivi solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tapo P110, Shelly, Meross : suivre la production de votre kit</p>
                 </Link>
                 <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : comprendre l&apos;injection</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : comprendre l&apos;injection</h3>
                   <p className="text-xs text-charcoal-light mt-1">Index soutirage, index injection et lecture de l&apos;&eacute;cran</p>
                 </Link>
                 <Link href="/guide/checklist-avant-achat-kit-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter un kit solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Checklist avant d&apos;acheter un kit solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les v&eacute;rifications &agrave; faire avant de commander</p>
                 </Link>
               </div>

@@ -7,8 +7,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Multi-panneaux solaires balcon : s&eacute;rie ou parall&egrave;le ? C&acirc;blage et disjoncteur',
-  description: 'Comment brancher 2 panneaux sur un balcon : s&eacute;rie interdit, parall&egrave;le DC ou AC, micro-onduleur double-MPPT, c&acirc;bles MC4, disjoncteur 16A — guide pratique 2026.',
+  title: 'Multi-panneaux solaires balcon : série ou parallèle ?',
+  description: 'Brancher 2 panneaux sur un balcon : série ou parallèle, micro-onduleur double MPPT, câbles MC4, disjoncteur 16 A. Guide pratique.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/multi-panneaux-serie-parallele',
   },
@@ -16,28 +16,28 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   {
-    question: 'Peut-on brancher deux panneaux en s&eacute;rie sur un balcon ?',
-    answer: 'Non. En s&eacute;rie, les tensions s\'additionnent : 2 panneaux de 40V DC = 80V DC. Cette tension ne peut pas &ecirc;tre inject&eacute;e sur une prise 230V avec un simple micro-onduleur plug-and-play. Les kits balcon fonctionnent tous en parall&egrave;le (DC ou AC). La s&eacute;rie DC est r&eacute;serv&eacute;e aux onduleurs string des installations toiture.',
+    question: 'Peut-on brancher deux panneaux en série sur un balcon ?',
+    answer: 'Non. En série, les tensions s\'additionnent : 2 panneaux de 40V DC = 80V DC. Cette tension ne peut pas être injectée sur une prise 230V avec un simple micro-onduleur plug-and-play. Les kits balcon fonctionnent tous en parallèle (DC ou AC). La série DC est réservée aux onduleurs string des installations toiture.',
   },
   {
-    question: 'Quelle est la diff&eacute;rence entre un micro-onduleur mono et double-MPPT ?',
-    answer: 'Un micro-onduleur simple (1 entr&eacute;e) g&egrave;re un seul panneau. Un double-MPPT (APsystems EZ1-H, Hoymiles HMS-800) a 2 entr&eacute;es DC ind&eacute;pendantes : chaque panneau est optimis&eacute; s&eacute;par&eacute;ment, m&ecirc;me si l\'un est &agrave; l\'ombre. C\'est la solution id&eacute;ale pour 2 panneaux sur un seul bo&icirc;tier avec une seule prise.',
+    question: 'Quelle est la différence entre un micro-onduleur mono et double-MPPT ?',
+    answer: 'Un micro-onduleur simple (1 entrée) gère un seul panneau. Un double-MPPT (APsystems EZ1-H, Hoymiles HMS-800) a 2 entrées DC indépendantes : chaque panneau est optimisé séparément, même si l\'un est à l\'ombre. C\'est la solution idéale pour 2 panneaux sur un seul boîtier avec une seule prise.',
   },
   {
-    question: 'Peut-on brancher 2 micro-onduleurs sur la m&ecirc;me prise ?',
-    answer: 'Non, pas sur la m&ecirc;me prise. Chaque micro-onduleur se branche sur sa propre prise 16A. Si vous utilisez une multiprise, elle doit &ecirc;tre &eacute;tanche (IP44 minimum), c&acirc;bl&eacute;e en dur sur un circuit d&eacute;di&eacute;, et la somme des puissances AC devrait rester sous ~900 W sur un circuit 16A (rep&egrave;re de s&eacute;curit&eacute; recommand&eacute;, pas une limite l&eacute;gale).',
+    question: 'Peut-on brancher 2 micro-onduleurs sur la même prise ?',
+    answer: 'Non, pas sur la même prise. Chaque micro-onduleur se branche sur sa propre prise 16A. Si vous utilisez une multiprise, elle doit être étanche (IP44 minimum), câblée en dur sur un circuit dédié, et la somme des puissances AC devrait rester sous ~900 W sur un circuit 16A (repère de sécurité recommandé, pas une limite légale).',
   },
   {
     question: 'Quel disjonteur faut-il pour 2 panneaux solaires ?',
-    answer: 'Un disjoncteur 16A sur circuit d&eacute;di&eacute; suffit pour 600-800W inject&eacute;s. La norme NF C 15-100 impose un circuit ind&eacute;pendant pour les productions locales. En pratique, votre tableau &eacute;lectrique doit disposer d\'un disjoncteur 16A libre, ou vous devez en faire installer un par un &eacute;lectricien.',
+    answer: 'Un disjoncteur 16A sur circuit dédié suffit pour 600-800W injectés. La norme NF C 15-100 impose un circuit indépendant pour les productions locales. En pratique, votre tableau électrique doit disposer d\'un disjoncteur 16A libre, ou vous devez en faire installer un par un électricien.',
   },
   {
-    question: 'Les c&acirc;bles MC4 sont-ils standard entre toutes les marques ?',
-    answer: 'Oui et non. Les connecteurs MC4 sont standardis&eacute;s m&eacute;caniquement (ils s\'embo&icirc;tent) mais les normes &eacute;lectriques peuvent diff&eacute;rer l&eacute;g&egrave;rement entre fabricants. En pratique, les c&acirc;bles fournis avec les kits sont compatibles. Pour une extension, utilisez des c&acirc;bles MC4 certifi&eacute;s TUV/UL, section 4mm&sup2; minimum pour les modules jusqu&apos;&agrave; 500W.',
+    question: 'Les câbles MC4 sont-ils standard entre toutes les marques ?',
+    answer: 'Oui et non. Les connecteurs MC4 sont standardisés mécaniquement (ils s\'emboîtent) mais les normes électriques peuvent différer légèrement entre fabricants. En pratique, les câbles fournis avec les kits sont compatibles. Pour une extension, utilisez des câbles MC4 certifiés TUV/UL, section 4mm² minimum pour les modules jusqu\'à 500W.',
   },
   {
-    question: 'Que se passe-t-il si un panneau est &agrave; l\'ombre quand ils sont en parall&egrave;le DC ?',
-    answer: 'Avec un micro-onduleur &agrave; double-MPPT ind&eacute;pendant (EZ1-H, HMS-800), le panneau ombrag&eacute; est g&eacute;r&eacute; s&eacute;par&eacute;ment : sa production baisse mais n&apos;affecte pas l&apos;autre panneau. Avec un micro-onduleur &agrave; MPPT partag&eacute;, l&apos;ombre tire les deux panneaux vers le bas. Avec 2 micro-onduleurs s&eacute;par&eacute;s, l&apos;ind&eacute;pendance est totale.',
+    question: 'Que se passe-t-il si un panneau est à l\'ombre quand ils sont en parallèle DC ?',
+    answer: 'Avec un micro-onduleur à double-MPPT indépendant (EZ1-H, HMS-800), le panneau ombragé est géré séparément : sa production baisse mais n\'affecte pas l\'autre panneau. Avec un micro-onduleur à MPPT partagé, l\'ombre tire les deux panneaux vers le bas. Avec 2 micro-onduleurs séparés, l\'indépendance est totale.',
   },
 ];
 
@@ -45,8 +45,8 @@ export default function MultiPanneauxSeriePage() {
   return (
     <>
       <SchemaArticle
-        title="Multi-panneaux solaires balcon : s&eacute;rie ou parall&egrave;le ? C&acirc;blage et disjoncteur"
-        description="Comment brancher 2 panneaux sur un balcon : s&eacute;rie, parall&egrave;le DC ou AC, micro-onduleur double-MPPT, c&acirc;bles MC4, disjoncteur 16A."
+        title="Multi-panneaux solaires balcon : série ou parallèle ? Câblage et disjoncteur"
+        description="Comment brancher 2 panneaux sur un balcon : série, parallèle DC ou AC, micro-onduleur double-MPPT, câbles MC4, disjoncteur 16A."
         url="https://monbalconsolaire.fr/blog/multi-panneaux-serie-parallele"
         datePublished="2026-09-25"
       />

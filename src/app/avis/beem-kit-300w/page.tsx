@@ -31,13 +31,13 @@ export default function BeemKit300WAvisPage() {
     <>
       <SchemaArticle title="Kit Beem 300W avis 2026 : prix, disponibilité et avis négatifs" description="Avis complet sur le Beem Kit 300W à 199 € : specs, ROI, disponibilité, avis négatifs Beem Energy et alternatives." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" dateModified="2026-10-12" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Beem Kit 300W" brand="Beem Energy" description="Kit solaire plug-and-play modulaire de 4 panneaux de 75 Wc, conçu et assemblé à Nantes." price={199} ratingValue={7.5} ratingCount={1} availability="OutOfStock" url="https://monbalconsolaire.fr/avis/beem-kit-300w" />
+      <SchemaProduct image="/images/produits/beem-kit-300-1.webp" name="Beem Kit 300W" brand="Beem Energy" description="Kit solaire plug-and-play modulaire de 4 panneaux de 75 Wc, conçu et assemblé à Nantes." price={199} ratingValue={7.5} availability="OutOfStock" url="https://monbalconsolaire.fr/avis/beem-kit-300w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et analyse</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Kit Beem 300W avis 2026 : le panneau solaire &agrave; 199&nbsp;&euro; vaut-il le coup&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le prix du Beem Kit 300W est pass&eacute; de 299&nbsp;&euro; &agrave; 199&nbsp;&euro;, ce qui en fait le kit de marque le moins cher au watt. Mais il est actuellement indisponible, et les avis n&eacute;gatifs sur Beem Energy (SAV, production) se multiplient. Specs, rentabilit&eacute;, points faibles signal&eacute;s par les clients et alternatives.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 12 octobre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
@@ -149,7 +149,7 @@ export default function BeemKit300WAvisPage() {
                   { t: 'L\'application Beem', d: 'Le suivi de production en temps réel, l\'historique et les économies estimées sont bien conçus. C\'est d\'ailleurs l\'un des rares points salués même dans les avis clients négatifs.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -169,7 +169,7 @@ export default function BeemKit300WAvisPage() {
                   { t: 'SAV Beem Energy critiqué et entreprise en sauvegarde', d: 'Beem Energy est en procédure de sauvegarde depuis fin novembre 2025 (tribunal de commerce de Nantes, un an pour se redresser). Aucune liquidation ni redressement judiciaire annoncé au 12 octobre 2026. Mais les avis clients de 2026 pointent un SAV difficile à joindre, et la garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -188,7 +188,7 @@ export default function BeemKit300WAvisPage() {
                   { t: '5. Notice et conseil commercial', d: 'Un client signale une erreur dans le manuel de montage, un autre un conseil commercial inadapté à sa consommation. Lisez la documentation technique avant de commander et vérifiez la compatibilité de votre support (un client Beem On n\'avait pas été prévenu que son toit en tuiles ne convenait pas).' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
-                    <h4 className="font-bold text-sm mb-1">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{p.t}</h3>
                     <p className="text-xs text-charcoal-light">{p.d}</p>
                   </div>
                 ))}
@@ -303,7 +303,7 @@ export default function BeemKit300WAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Pour qui est le Beem Kit 300W&nbsp;?</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h4 className="font-bold text-green mb-2">Id&eacute;al pour :</h4>
+                  <h3 className="font-bold text-green mb-2">Id&eacute;al pour :</h3>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>&rarr; Tester le solaire &agrave; moindre co&ucirc;t (199&nbsp;&euro;)</li>
                     <li>&rarr; Les petits balcons et espaces atypiques</li>
@@ -312,7 +312,7 @@ export default function BeemKit300WAvisPage() {
                   </ul>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h4 className="font-bold text-amber-dark mb-2">Pas id&eacute;al pour :</h4>
+                  <h3 className="font-bold text-amber-dark mb-2">Pas id&eacute;al pour :</h3>
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>&rarr; Maximiser la production (pr&eacute;f&eacute;rez 450 W et plus)</li>
                     <li>&rarr; L&apos;esth&eacute;tique (4 panneaux s&eacute;par&eacute;s)</li>
@@ -353,23 +353,23 @@ export default function BeemKit300WAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/comparatif/sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les deux marques fran&ccedil;aises compar&eacute;es : gamme, prix, garantie, solidit&eacute;</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le panneau unique de Beem &agrave; 429&nbsp;&euro;, exp&eacute;ditions &agrave; partir de d&eacute;cembre 2026</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-petit-budget" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires petit budget</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires petit budget</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les meilleurs choix sous 400&nbsp;&euro;</p>
                 </Link>
                 <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h3>
                   <p className="text-xs text-charcoal-light mt-1">349&nbsp;&euro;, 270 W : l&apos;alternative compacte chez Sunology</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir pour votre balcon</p>
                 </Link>
               </div>

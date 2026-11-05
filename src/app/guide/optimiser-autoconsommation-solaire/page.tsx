@@ -159,7 +159,7 @@ export default function OptimiserAutoconsommationPage() {
                 Votre kit solaire ne vous fait &eacute;conomiser de l&apos;argent que sur les kWh que <strong>vous consommez vous-m&ecirc;me</strong>. Chaque kWh inject&eacute; gratuitement sur le r&eacute;seau (pas de contrat d&apos;injection r&eacute;mun&eacute;r&eacute; en plug-and-play) est une perte s&egrave;che.
               </p>
               <div className="card-lg bg-cream/40">
-                <h4 className="font-bold text-sm mb-3">Exemple concret (Sunology PLAY 500 Wc, ex-PLAY 2, Lyon sud)</h4>
+                <h3 className="font-bold text-sm mb-3">Exemple concret (Sunology PLAY 500 Wc, ex-PLAY 2, Lyon sud)</h3>
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; Production : <strong>510 kWh/an</strong></li>
                   <li>&bull; &Agrave; 40 % d&apos;autoconsommation : 204 kWh valoris&eacute;s = <strong>40 &euro;/an</strong></li>
@@ -236,7 +236,7 @@ export default function OptimiserAutoconsommationPage() {
               <h2 className="text-2xl font-extrabold mb-4">Batterie : quand est-ce que &ccedil;a vaut le coup ?</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2 text-green">Batterie justifi&eacute;e si :</h4>
+                  <h3 className="font-bold text-sm mb-2 text-green">Batterie justifi&eacute;e si :</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5">
                     <li>{'\u2713'} Vous &ecirc;tes absent toute la journ&eacute;e en semaine</li>
                     <li>{'\u2713'} Votre autoconsommation plafonne &agrave; 50-60 % malgr&eacute; les gestes</li>
@@ -245,7 +245,7 @@ export default function OptimiserAutoconsommationPage() {
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-2 text-amber-dark">Batterie pas n&eacute;cessaire si :</h4>
+                  <h3 className="font-bold text-sm mb-2 text-amber-dark">Batterie pas n&eacute;cessaire si :</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5">
                     <li>{'\u2717'} Vous &ecirc;tes chez vous la journ&eacute;e (t&eacute;l&eacute;travail, retraite)</li>
                     <li>{'\u2717'} Vous atteignez d&eacute;j&agrave; 70-80 % avec les gestes gratuits</li>
@@ -274,23 +274,23 @@ export default function OptimiserAutoconsommationPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/guide/batterie-solaire-balcon-guide" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Guide : choisir la bonne capacité de batterie solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide : choisir la bonne capacité de batterie solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Seuils 700 Wh, 2 kWh, 5 kWh — le calcul ROI honnête selon votre profil de présence</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h3>
                   <p className="text-xs text-charcoal-light mt-1">Mesurez votre consommation permanente avec le Linky</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment &ccedil;a marche</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment &ccedil;a marche</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le principe technique du talon, du surplus et de l&apos;injection</p>
                 </Link>
                 <Link href="/blog/prises-connectees-suivi-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connect&eacute;es pour suivi solaire</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connect&eacute;es pour suivi solaire</h3>
                   <p className="text-xs text-charcoal-light mt-1">Tapo P110, Shelly : mesurez votre production en temps r&eacute;el</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic si votre autoconsommation semble anormale</p>
                 </Link>
               </div>

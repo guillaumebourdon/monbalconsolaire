@@ -8,7 +8,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Protéger son panneau solaire balcon des oiseaux et intempéries',
-  description: 'Fientes, grêle, vent : comment protéger efficacement votre kit solaire de balcon. Solutions anti-oiseaux DIY, résistance certifiée, assurance — tout ce qu’il faut savoir.',
+  description: 'Fientes, grêle, vent : comment protéger un kit solaire de balcon. Solutions anti-oiseaux, résistance certifiée, assurance.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/proteger-panneau-solaire-oiseaux-intemperies',
   },
@@ -97,19 +97,19 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
               </p>
               <div className="space-y-3 mb-6">
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Fientes et hot spots</h4>
+                  <h3 className="font-bold text-sm mb-2">Fientes et hot spots</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Une fiente de pigeon s&eacute;ch&eacute;e couvre 3&ndash;8&nbsp;cm&sup2; et cr&eacute;e une ombre localis&eacute;e sur les cellules. Dans un panneau en s&eacute;rie, cette ombre force le reste du panneau &agrave; travailler pour la cellule bloqu&eacute;e, g&eacute;n&eacute;rant de la chaleur &mdash; le fameux <strong>hot spot</strong>. Sur le long terme, ces cycles r&eacute;p&eacute;t&eacute;s acc&eacute;l&egrave;rent le vieillissement des cellules.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Corrosion du revêtement anti-reflet</h4>
+                  <h3 className="font-bold text-sm mb-2">Corrosion du revêtement anti-reflet</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Les fientes contiennent de l&apos;acide urique (pH&nbsp;3&ndash;4), proche du vinaigre blanc. Le verre trempé lui-m&ecirc;me ne craint rien, mais le revêtement anti-reflet (couche SiO₂ ou TiO₂ d&apos;environ 100&nbsp;nm) peut &ecirc;tre att&eacute;nu&eacute; sur des ann&eacute;es d&apos;exposition r&eacute;p&eacute;t&eacute;e sans nettoyage.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">Nids sous le panneau</h4>
+                  <h3 className="font-bold text-sm mb-2">Nids sous le panneau</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Les mati&egrave;res v&eacute;g&eacute;tales d&apos;un nid accumulent l&apos;humidit&eacute; et peuvent bloquer la ventilation arri&egrave;re du panneau &mdash; contribuant &agrave; une augmentation de temp&eacute;rature et donc &agrave; une r&eacute;duction de rendement (voir notre article sur <Link href="/blog/panneau-solaire-canicule-production" className="text-green hover:underline font-semibold">l&apos;impact de la chaleur sur la production</Link>).
                   </p>
@@ -226,15 +226,15 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
               </p>
               <div className="space-y-3 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Pluie &mdash; b&eacute;nigne</h4>
+                  <h3 className="font-bold text-sm mb-1">Pluie &mdash; b&eacute;nigne</h3>
                   <p className="text-xs text-charcoal-light">IP67 &agrave; IP68 sur les bo&icirc;tiers de jonction, joints d&apos;encapsulant EVA &eacute;tanches. La pluie ne p&eacute;n&egrave;tre pas dans le panneau. Un &eacute;pisode pluvieux produit moins, mais n&apos;abime rien.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Neige &mdash; g&eacute;ralement sans cons&eacute;quence</h4>
+                  <h3 className="font-bold text-sm mb-1">Neige &mdash; g&eacute;ralement sans cons&eacute;quence</h3>
                   <p className="text-xs text-charcoal-light">La neige fraiche fondra rapidement sur un panneau qui chauffe avec le soleil (m&ecirc;me faible en hiver). Une accumulation &gt;&nbsp;15&nbsp;cm peut &eacute;craser les cellules sur des panneaux anciens ou de mauvaise qualit&eacute;, mais les kits modernes certifi&eacute;s IEC&nbsp;61215 supportent 5&nbsp;400&nbsp;Pa de charge m&eacute;canique.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Rayonnement UV &mdash; le vrai ennemi du long terme</h4>
+                  <h3 className="font-bold text-sm mb-1">Rayonnement UV &mdash; le vrai ennemi du long terme</h3>
                   <p className="text-xs text-charcoal-light">L&apos;exposition UV constante d&eacute;grade le film EVA d&apos;encapsulage sur 20&ndash;30&nbsp;ans (jaunissement). C&apos;est un ph&eacute;nom&egrave;ne lent et in&eacute;vitable, pris en compte dans les garanties de performance (80&ndash;85&nbsp;% apr&egrave;s 25&nbsp;ans). Aucune action pr&eacute;ventive n&eacute;cessaire.</p>
                 </div>
               </div>
@@ -248,19 +248,19 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
               </p>
               <div className="space-y-4 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">Housse de protection (gr&ecirc;le)</h4>
+                  <h3 className="font-bold text-sm mb-2">Housse de protection (gr&ecirc;le)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Des housses en mousse EVA ou en tissu technique (type bâche piscine) existent pour les panneaux solaires. Prix&nbsp;: 20&ndash;60&nbsp;&euro; selon la taille. Utile uniquement si vous habitez dans une zone &agrave; fort risque gr&ecirc;le (Pyr&eacute;n&eacute;es, Sud-Ouest, Rh&ocirc;ne-Alpes). Pour la majorit&eacute; des utilisateurs, c&apos;est inutile. <a href="https://www.amazon.fr/s?k=housse+protection+panneau+solaire&tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a>
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">Traitement hydrophobe du verre</h4>
+                  <h3 className="font-bold text-sm mb-2">Traitement hydrophobe du verre</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Certains produits (type Rain-X ou traitements nano-c&eacute;ramiques) peuvent &ecirc;tre appliqu&eacute;s sur le verre pour am&eacute;liorer l&apos;autonettoiement. Effet&nbsp;: +2&ndash;4&nbsp;% de production en zone urbaine pollu&eacute;e, dur&eacute;e 6&ndash;12 mois. Co&ucirc;t&nbsp;: 15&ndash;30&nbsp;&euro;. &Agrave; consid&eacute;rer si votre balcon est proche d&apos;une route ou d&apos;une source de poussi&egrave;re. <a href="https://www.amazon.fr/s?k=traitement+hydrophobe+vitres+Rain-X&tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a>
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-stone">
-                  <h4 className="font-bold text-sm mb-2">D&eacute;montage saisonnier</h4>
+                  <h3 className="font-bold text-sm mb-2">D&eacute;montage saisonnier</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Inutile pour la pluie et le vent. Envisageable uniquement si vous partez plusieurs semaines et craignez une accumulation de fientes. La production hivernale vaut g&eacute;n&eacute;ralement le risque de ne rien faire.
                   </p>

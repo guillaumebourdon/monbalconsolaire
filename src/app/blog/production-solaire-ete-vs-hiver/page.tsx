@@ -378,10 +378,10 @@ export default function ProductionSolaireEteHiverPage() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">
+                    <h3 className="font-bold text-sm mb-1">
                       <span className="mr-2" dangerouslySetInnerHTML={{ __html: item.icon }} />
                       {item.t}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-charcoal-light leading-relaxed" dangerouslySetInnerHTML={{ __html: item.d }} />
                   </div>
                 ))}
@@ -431,27 +431,27 @@ export default function ProductionSolaireEteHiverPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/panneau-solaire-canicule-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et canicule&nbsp;: impact r&eacute;el sur la production</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et canicule&nbsp;: impact r&eacute;el sur la production</h3>
                   <p className="text-xs text-charcoal-light mt-1">Coefficient de temp&eacute;rature, pertes chiffr&eacute;es, PERC vs TOPCon/HJT et 5 astuces pour limiter la casse en &eacute;t&eacute;</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien ça produit vraiment ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien ça produit vraiment ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Données mois par mois pour Marseille, Lyon et Lille, et 3 astuces pour maximiser la production hivernale</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon est/ouest : production et rentabilité</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon est/ouest : production et rentabilité</h3>
                   <p className="text-xs text-charcoal-light mt-1">80 % du potentiel sud, avantage autoconsommation, et quand c&apos;est même mieux qu&apos;un panneau sud</p>
                 </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Sud, est, ouest, nord : coefficients réels et impact sur la production et la rentabilité</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien rapporte un panneau solaire de balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Calcul détaillé des économies réelles pour 7 villes françaises</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 &mdash; mis &agrave; jour juillet 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 &mdash; mis &agrave; jour juillet 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Nouveau comparatif vs Beem On 500 Wc (429&euro;) : qui gagne en &eacute;t&eacute; ?</p>
                 </Link>
               </div>

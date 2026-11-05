@@ -140,7 +140,7 @@ export default function SunologyGoPage() {
         description="Kit solaire plug-and-play 270 Wc, compatible pose au sol ou garde-corps sans perçage, cellules N-type TOPCon, micro-onduleur 300 W."
         price={349}
         ratingValue={7}
-        ratingCount={1}
+       
         url="https://monbalconsolaire.fr/avis/sunology-go"
       />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology GO' }]} />
@@ -149,7 +149,7 @@ export default function SunologyGoPage() {
           <Breadcrumbs items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology GO' }]} />
 
           <div className="mb-10">
-            <div className="badge-amber mb-4 inline-block">Avis et test</div>
+            <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Sunology GO avis : le kit compact à 349 &euro;, au sol ou sur garde-corps (2026)
             </h1>
@@ -263,7 +263,7 @@ export default function SunologyGoPage() {
               <div className="space-y-3">
                 {points_forts.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">✓ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -277,7 +277,7 @@ export default function SunologyGoPage() {
               <div className="space-y-3">
                 {points_faibles.map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">⚠️ {p.titre}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.detail}</p>
                   </div>
                 ))}
@@ -374,7 +374,7 @@ export default function SunologyGoPage() {
               <div className="space-y-3">
                 {cas_acheter.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">✅ {c.profil}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">✅ {c.profil}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.explication}</p>
                   </div>
                 ))}
@@ -386,7 +386,7 @@ export default function SunologyGoPage() {
               <div className="space-y-3">
                 {cas_pas_acheter.map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ {c.profil}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ {c.profil}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{c.explication}</p>
                   </div>
                 ))}
@@ -428,19 +428,19 @@ export default function SunologyGoPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (ex-PLAY 2)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (ex-PLAY 2)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le kit posé au sol de Sunology, plus rentable mais plus encombrant</p>
                 </Link>
                 <Link href="/avis/sunology-city" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology CITY (arrêté)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology CITY (arrêté)</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;ancien kit garde-corps que le GO vient remplacer</p>
                 </Link>
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le kit petit budget le plus rentable du marché</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Meilleurs kits solaires 2026</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleurs kits solaires 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet des kits du marché&nbsp;: Sunology, Beem, Sunethic, DualSun</p>
                 </Link>
               </div>

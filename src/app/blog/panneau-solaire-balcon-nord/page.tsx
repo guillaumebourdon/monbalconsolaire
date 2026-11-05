@@ -212,7 +212,7 @@ export default function BalconNordPage() {
                         <td className="p-3 font-semibold">{c.ville}</td>
                         <td className="text-center p-3 font-mono text-xs">{c.prod_sud}</td>
                         <td className="text-center p-3 font-mono text-xs">{c.prod_nord}</td>
-                        <td className="text-center p-3 font-mono text-xs text-amber font-bold">{c.reduction}</td>
+                        <td className="text-center p-3 font-mono text-xs text-amber-dark font-bold">{c.reduction}</td>
                         <td className="text-center p-3 font-mono text-xs">{c.roi_sud}</td>
                         <td className="text-center p-3 font-mono text-xs text-amber-dark font-bold">{c.roi_nord}</td>
                       </tr>
@@ -234,7 +234,7 @@ export default function BalconNordPage() {
                         <p className="text-xs text-stone uppercase tracking-wider font-semibold">Latitude {c.latitude}</p>
                       </div>
                       <div className="text-right">
-                        <div className="font-mono font-bold text-amber text-lg">{c.reduction}</div>
+                        <div className="font-mono font-bold text-amber-dark text-lg">{c.reduction}</div>
                         <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-0.5">
                           Perte Nord vs Sud
                         </div>
@@ -272,19 +272,19 @@ export default function BalconNordPage() {
 
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">✅ Cas 1 : Kit petit budget dans le Sud</h4>
+                  <h3 className="font-bold text-sm mb-1">✅ Cas 1 : Kit petit budget dans le Sud</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Dans le Sud (PACA, Occitanie, Corse), même orienté nord, un kit 300 W à 199 € (Beem Kit, actuellement en rupture) produit ~200 kWh/an, soit 40 €/an d&apos;économies. ROI de 5-6 ans. Acceptable, surtout si le kit est évolutif (ajout batterie plus tard). Voir notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green font-semibold hover:underline">sélection de kits petit budget</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">✅ Cas 2 : Consommation forte en journée</h4>
+                  <h3 className="font-bold text-sm mb-1">✅ Cas 2 : Consommation forte en journée</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Si vous êtes en télétravail, que vous chargez un véhicule électrique, ou que vous avez une climatisation l&apos;été, votre &quot;talon de consommation&quot; est plus élevé. L&apos;autoconsommation directe monte à 70-80 % (vs 40-50 % en usage classique). Les kWh produits sont tous valorisés.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">✅ Cas 3 : Balcon nord en hauteur sans obstruction</h4>
+                  <h3 className="font-bold text-sm mb-1">✅ Cas 3 : Balcon nord en hauteur sans obstruction</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Un balcon nord au 15ème étage sans immeuble en face reçoit beaucoup plus de lumière diffuse qu&apos;un balcon nord au 2ème étage encaissé entre deux immeubles. La différence peut aller jusqu&apos;à +25 % de production. Dans ce cas, un kit 450 W devient plus défendable.
                   </p>
@@ -297,19 +297,19 @@ export default function BalconNordPage() {
               <h2 className="text-2xl font-extrabold mb-4">Les cas où il faut renoncer</h2>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Balcon nord avec obstruction</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ Balcon nord avec obstruction</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Si un immeuble vous fait face, qu&apos;un arbre bloque la lumière, ou que vous êtes en bas d&apos;une cour intérieure : la production chute à 100-150 kWh/an maximum. À ce niveau, le ROI dépasse 20 ans, c&apos;est au-delà de la durée de vie garantie du kit. Pour évaluer l&apos;impact exact de l&apos;ombre sur votre balcon, lisez notre guide <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green font-semibold hover:underline">panneau solaire et ombre : comment optimiser</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Nord France + kit premium</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ Nord France + kit premium</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Acheter un Sunology PLAY MAX à 699€ (kit + batterie) pour un balcon nord à Lille ou Strasbourg : ROI de 13+ ans, là où un kit sans batterie fait mieux pour moins cher. Le coût du stockage s&apos;amortit sur des kWh qui ne seront jamais produits en masse. Mieux vaut un kit 300 W basique à 199 € (sous réserve de disponibilité) ou le Sunology GO (349 €) en attendant.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
-                  <h4 className="font-bold text-sm mb-1 text-amber-dark">❌ Appartement mal isolé</h4>
+                  <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ Appartement mal isolé</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Si votre logement est classé E, F ou G au DPE, 600 € dans du solaire n&apos;ont aucun sens. Ces 600 € en isolation (fenêtres, combles, VMC) vous feront économiser 2-3x plus d&apos;énergie que le kit. Le solaire vient après l&apos;isolation, pas avant.
                   </p>
@@ -327,7 +327,7 @@ export default function BalconNordPage() {
                 {alternatives.map((a, i) => (
                   <div key={i} className="card-lg border-l-4 border-l-green">
                     <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
-                      <h4 className="font-bold text-sm">{a.titre}</h4>
+                      <h3 className="font-bold text-sm">{a.titre}</h3>
                       <span className="font-mono font-bold text-green text-base">{a.prix}</span>
                     </div>
                     <div className="grid grid-cols-3 gap-2 mb-2 text-xs text-charcoal-light">
@@ -409,19 +409,19 @@ export default function BalconNordPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation choisir ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation choisir ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;impact réel de l&apos;orientation et de l&apos;inclinaison sur la production</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-petit-budget" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires petit budget</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires petit budget</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les meilleurs choix sous 400 € pour limiter le risque</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien &ccedil;a rapporte ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien &ccedil;a rapporte ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le calcul d&eacute;taill&eacute; par ville avec chiffres r&eacute;els</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : production et rentabilit&eacute;</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : production et rentabilit&eacute;</h3>
                   <p className="text-xs text-charcoal-light mt-1">Moins de perte qu&apos;on croit + avantage autoconsommation</p>
                 </Link>
               </div>

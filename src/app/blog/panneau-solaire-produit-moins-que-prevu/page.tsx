@@ -7,7 +7,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Mon panneau solaire produit moins que prévu : que faire ?',
-  description: 'Votre kit solaire de balcon ne produit pas autant qu\'espéré ? Diagnostic en 7 points : ombre, orientation, salissure, micro-onduleur, Linky. Solutions concrètes.',
+  description: 'Votre kit solaire de balcon produit moins que prévu ? Diagnostic en 7 points : ombre, orientation, salissure, micro-onduleur, Linky.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-produit-moins-que-prevu',
   },
@@ -235,19 +235,19 @@ export default function PanneauProduitMoinsPage() {
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Le Linky montre 0 W d&apos;injection</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Le Linky montre 0 W d&apos;injection</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     C&apos;est souvent bon signe : votre <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline font-semibold">talon de consommation</Link> absorbe toute la production. Le Linky ne montre que le surplus, pas l&apos;autoconsommation. Vérifiez via l&apos;app du kit.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Production faible en hiver</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Production faible en hiver</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Un kit 450 Wc à Paris produit ~15-22 kWh/mois en décembre contre ~60 kWh en juin. <Link href="/blog/panneau-solaire-hiver-production" className="text-green hover:underline font-semibold">C&apos;est normal</Link>. Attendez le printemps pour un bilan représentatif.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1 text-green">Le panneau ne produit pas 450 W</h4>
+                  <h3 className="font-bold text-sm mb-1 text-green">Le panneau ne produit pas 450 W</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     450 Wc est la puissance crête dans des conditions de test idéales (1000 W/m² d&apos;ensoleillement, 25°C). En pratique, un panneau produit 60-80 % de sa puissance crête au meilleur de la journée. 300-360 W à midi par beau temps est <strong>excellent</strong> pour un 450 Wc.
                   </p>
@@ -263,35 +263,35 @@ export default function PanneauProduitMoinsPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-bold text-sm text-green">Nettoyer le panneau</h4>
+                    <h3 className="font-bold text-sm text-green">Nettoyer le panneau</h3>
                     <span className="text-xs font-mono text-stone">0 €</span>
                   </div>
                   <p className="text-xs text-charcoal-light leading-relaxed">Eau claire + chiffon doux, 2-4 fois par an. Gain possible : +5-15 %.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-bold text-sm text-green">Optimiser l&apos;inclinaison</h4>
+                    <h3 className="font-bold text-sm text-green">Optimiser l&apos;inclinaison</h3>
                     <span className="text-xs font-mono text-stone">0-30 €</span>
                   </div>
                   <p className="text-xs text-charcoal-light leading-relaxed">Ajuster l&apos;angle à 30-35° avec un support ou des cales. Gain possible : +5-15 %. <Link href="/blog/accessoires-kit-solaire-balcon" className="text-green hover:underline">Voir les accessoires</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-bold text-sm text-green">Déplacer le panneau (moins d&apos;ombre)</h4>
+                    <h3 className="font-bold text-sm text-green">Déplacer le panneau (moins d&apos;ombre)</h3>
                     <span className="text-xs font-mono text-stone">0 €</span>
                   </div>
                   <p className="text-xs text-charcoal-light leading-relaxed">Testez différents emplacements sur votre balcon/terrasse. Quelques centimètres peuvent suffire pour éviter une ombre récurrente.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-bold text-sm text-amber-dark">Ajouter une batterie</h4>
+                    <h3 className="font-bold text-sm text-amber-dark">Ajouter une batterie</h3>
                     <span className="text-xs font-mono text-stone">488-900 €</span>
                   </div>
                   <p className="text-xs text-charcoal-light leading-relaxed">Ne produit pas plus, mais valorise mieux la production existante (autoconsommation 45 % → 80 %). Pertinent si votre talon de consommation dépasse la production. <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Voir le Zendure SolarFlow</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-bold text-sm text-amber-dark">Ajouter un 2ème panneau</h4>
+                    <h3 className="font-bold text-sm text-amber-dark">Ajouter un 2ème panneau</h3>
                     <span className="text-xs font-mono text-stone">200-599 €</span>
                   </div>
                   <p className="text-xs text-charcoal-light leading-relaxed">Si votre espace le permet (max 840 Wc recommandés par l&apos;ADEME). Double la production. Rentable si votre consommation le justifie. <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="text-green hover:underline">Comparatif puissances</Link>.</p>
@@ -313,35 +313,35 @@ export default function PanneauProduitMoinsPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/blog/proteger-panneau-solaire-oiseaux-intemperies" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Prot&eacute;ger son panneau des oiseaux et intemp&eacute;ries</h3>
                   <p className="text-xs text-charcoal-light mt-1">Fientes = hot spots = chute de production : solutions anti-oiseaux et entretien pr&eacute;ventif</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-canicule-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et canicule&nbsp;: impact r&eacute;el sur la production</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et canicule&nbsp;: impact r&eacute;el sur la production</h3>
                   <p className="text-xs text-charcoal-light mt-1">Si votre production chute en juillet-ao&ucirc;t, la chaleur est souvent en cause &mdash; pertes chiffr&eacute;es et technologies qui r&eacute;sistent mieux</p>
                 </Link>
                 <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : que voit vraiment le compteur ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : que voit vraiment le compteur ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Index injection vs soutirage, mythe du compteur à l'envers, CACSI</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : comment optimiser la production</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : comment optimiser la production</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le guide complet pour identifier et contourner les ombres</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien ça produit vraiment ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien ça produit vraiment ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Données de production mois par mois pour 3 villes</p>
                 </Link>
                 <Link href="/guide/orientation-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Quelle orientation pour un panneau solaire de balcon ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;impact réel de l&apos;orientation sur votre production</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : comment le calculer</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : comment le calculer</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi 0 W d&apos;injection au Linky est souvent une bonne nouvelle</p>
                 </Link>
                 <Link href="/blog/degradation-panneau-solaire-25-ans" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Dégradation d&apos;un panneau solaire : que reste-t-il après 25 ans ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Dégradation d&apos;un panneau solaire : que reste-t-il après 25 ans ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Baisse brutale ou vieillissement normal ? Taux réels par technologie et signaux d&apos;alerte</p>
                 </Link>
               </div>

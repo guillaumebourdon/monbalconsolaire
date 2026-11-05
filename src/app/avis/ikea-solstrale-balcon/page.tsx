@@ -190,7 +190,7 @@ export default function IkeaSolstralePage() {
                   { t: 'Distribution IKEA = accessibilit\u00e9 grand public', d: 'Acheter un kit solaire chez IKEA rend le produit visible pour des millions de personnes qui n\'auraient jamais visit\u00e9 le site de Sunology.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1 text-green">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-green">{p.t}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.d}</p>
                   </div>
                 ))}
@@ -207,7 +207,7 @@ export default function IkeaSolstralePage() {
                   { t: 'Garantie et conformit\u00e9 FR non confirm\u00e9es', d: 'Les certifications CE, la compatibilit\u00e9 avec la d\u00e9claration CACSI Enedis, et les conditions de garantie en France ne sont pas encore connues.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber bg-amber-pale/10">
-                    <h4 className="font-bold text-sm mb-1 text-amber-dark">{p.t}</h4>
+                    <h3 className="font-bold text-sm mb-1 text-amber-dark">{p.t}</h3>
                     <p className="text-xs text-charcoal-light leading-relaxed">{p.d}</p>
                   </div>
                 ))}
@@ -235,7 +235,7 @@ export default function IkeaSolstralePage() {
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-bold text-sm group-hover:text-green transition-colors">Sunology PLAY (ex-PLAY 2)</h4>
+                      <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology PLAY (ex-PLAY 2)</h3>
                       <p className="text-xs text-charcoal-light mt-1">Le plus simple. 500 Wc, 599 &euro;, installation 1 min. Disponible maintenant.</p>
                     </div>
                     <span className="font-mono font-bold text-green">6,5 ans</span>
@@ -244,7 +244,7 @@ export default function IkeaSolstralePage() {
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-bold text-sm group-hover:text-green transition-colors">Beem Kit 300W</h4>
+                      <h3 className="font-bold text-sm group-hover:text-green transition-colors">Beem Kit 300W</h3>
                       <p className="text-xs text-charcoal-light mt-1">Le moins cher. 199 &euro;, ROI le plus rapide, mais actuellement en rupture chez Beem.</p>
                     </div>
                     <span className="font-mono font-bold text-green">3,8 ans</span>
@@ -253,7 +253,7 @@ export default function IkeaSolstralePage() {
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow</h4>
+                      <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow</h3>
                       <p className="text-xs text-charcoal-light mt-1">Avec batterie 1,92 kWh. 900 &euro; tout compris. Le rival direct du STREAM M.</p>
                     </div>
                     <span className="font-mono font-bold text-green">5,3 ans</span>

@@ -94,19 +94,19 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
 
               <div className="space-y-3 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-2">&#10003;&nbsp; Autoris&eacute; sans demande&nbsp;: installation amovible au sol</h4>
+                  <h3 className="font-bold text-sm mb-2">&#10003;&nbsp; Autoris&eacute; sans demande&nbsp;: installation amovible au sol</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Kit pos&eacute; sur le sol du balcon ou de la terrasse, branch&eacute; sur une prise standard, sans vis ni fixation dans les murs ou le garde-corps. Peut &ecirc;tre d&eacute;mont&eacute; en 5 minutes sans trace. La jurisprudence et les pratiques Enedis confirment ce cadre.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-2">&#9888;&nbsp; Zone grise&nbsp;: fixation sur garde-corps</h4>
+                  <h3 className="font-bold text-sm mb-2">&#9888;&nbsp; Zone grise&nbsp;: fixation sur garde-corps</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     La plupart des kits balcon (Sunology, Beem, EcoFlow) utilisent des fixations sur garde-corps sans perçage (serre-joints, sangles). Techniquement amovible, mais potentiellement visible depuis l&apos;ext&eacute;rieur. <strong>Recommandation&nbsp;: informer le propri&eacute;taire par &eacute;crit</strong> &mdash; la plupart ne s&apos;y opposent pas, et obtenir un accord &eacute;vite tout litige lors du d&eacute;part.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-stone">
-                  <h4 className="font-bold text-sm mb-2">&#10007;&nbsp; N&eacute;cessite autorisation&nbsp;: fixation permanente ou modification visible</h4>
+                  <h3 className="font-bold text-sm mb-2">&#10007;&nbsp; N&eacute;cessite autorisation&nbsp;: fixation permanente ou modification visible</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Perçage du garde-corps ou du mur, modification de l&apos;aspect fa&ccedil;ade, installation d&apos;un c&acirc;ble apparent traversant une paroi. Ces cas entrent clairement dans la d&eacute;finition de transformation et exigent une autorisation &eacute;crite du propri&eacute;taire, voire du syndic en copropri&eacute;t&eacute;.
                   </p>
@@ -242,15 +242,15 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               </p>
               <div className="space-y-3 mb-4">
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">AirCover (Airbnb) &mdash; couvre les dommages mat&eacute;riels</h4>
+                  <h3 className="font-bold text-sm mb-1">AirCover (Airbnb) &mdash; couvre les dommages mat&eacute;riels</h3>
                   <p className="text-xs text-charcoal-light">La protection AirCover h&ocirc;te couvre les dommages caus&eacute;s par les voyageurs jusqu&apos;&agrave; 3 millions &euro;. Un panneau endommag&eacute; par un voyageur entre dans ce cadre. Gardez la facture d&apos;achat.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm mb-1">Assurance habitation (MRH) &mdash; v&eacute;rifiez la clause Airbnb</h4>
+                  <h3 className="font-bold text-sm mb-1">Assurance habitation (MRH) &mdash; v&eacute;rifiez la clause Airbnb</h3>
                   <p className="text-xs text-charcoal-light">La plupart des MRH couvrent les biens dans le logement, mais certaines excluent les dommages survenus pendant une location de courte dur&eacute;e. V&eacute;rifiez votre contrat ou souscrivez une garantie Airbnb sp&eacute;cifique.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h4 className="font-bold text-sm mb-1">Recommandation pratique</h4>
+                  <h3 className="font-bold text-sm mb-1">Recommandation pratique</h3>
                   <p className="text-xs text-charcoal-light">Mentionnez le kit solaire dans la description Airbnb et dans le livret d&apos;accueil. Une photo du balcon avec l&apos;installation &eacute;vite les malentendus. Ne laissez pas le c&acirc;ble de connexion &agrave; la prise accessible si des enfants s&eacute;journent.</p>
                 </div>
               </div>

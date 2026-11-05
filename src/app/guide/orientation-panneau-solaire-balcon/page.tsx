@@ -122,7 +122,7 @@ export default function OrientationPage() {
                 ].map((f, i) => (
                   <div key={i} className="card">
                     <div className="flex items-center gap-2 mb-2">
-                      <h4 className="font-bold text-sm">{f.t}</h4>
+                      <h3 className="font-bold text-sm">{f.t}</h3>
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${f.impact.startsWith('+') ? 'bg-green-lighter text-green' : 'bg-amber-pale text-amber-dark'}`}>{f.impact}</span>
                     </div>
                     <p className="text-xs text-charcoal-light">{f.desc}</p>
@@ -141,7 +141,7 @@ export default function OrientationPage() {
                   { t: 'L\'observation du soleil', d: 'Si votre balcon est ensoleillé entre 11h et 15h, il est orienté sud ou sud-est/sud-ouest. Si le soleil arrive le matin (avant 11h) et disparaît l\'après-midi, c\'est une orientation est. L\'inverse = ouest.' },
                 ].map((m, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
-                    <h4 className="font-bold text-sm mb-1">{i+1}. {m.t}</h4>
+                    <h3 className="font-bold text-sm mb-1">{i+1}. {m.t}</h3>
                     <p className="text-xs text-charcoal-light">{m.d}</p>
                   </div>
                 ))}
@@ -169,35 +169,35 @@ export default function OrientationPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
                 <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Carte de la rentabilit&eacute; par d&eacute;partement (exposition sud)</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Carte de la rentabilit&eacute; par d&eacute;partement (exposition sud)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le potentiel de votre d&eacute;partement avant correction d&apos;orientation&nbsp;: 96 d&eacute;partements class&eacute;s</p>
                 </Link>
                 <Link href="/guide/erreurs-production-solaire-ete" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">5 erreurs qui tuent votre production en &eacute;t&eacute;</h3>
                   <p className="text-xs text-charcoal-light mt-1">Mauvais angle estival, ombre saisonni&egrave;re, surchauffe : guide pratique juillet-ao&ucirc;t</p>
                 </Link>
                 <Link href="/guide/installer-kit-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comment installer un kit</h3>
                   <p className="text-xs text-charcoal-light mt-1">Guide d'installation pas à pas</p>
                 </Link>
                 <Link href="/blog/production-solaire-ete-vs-hiver" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Production été vs hiver : données PVGIS pour 5 villes</h3>
                   <p className="text-xs text-charcoal-light mt-1">Courbes mensuelles et paradoxe chaleur estivale : mai/juin souvent plus efficace que juillet</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-hiver-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production en hiver</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Production en hiver</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les données réelles</p>
                 </Link>
                 <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Combien ça rapporte ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le calcul détaillé de rentabilité</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Production inf&eacute;rieure aux attentes ?</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Production inf&eacute;rieure aux attentes ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points : ombre, orientation, salissure, Linky</p>
                 </Link>
                 <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h4 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : production et rentabilit&eacute;</h4>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : production et rentabilit&eacute;</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les chiffres r&eacute;els et l&apos;avantage cach&eacute; de l&apos;autoconsommation</p>
                 </Link>
               </div>
