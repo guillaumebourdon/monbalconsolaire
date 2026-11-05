@@ -7,6 +7,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
+import { priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Beem On 460W avis : arrêté, quel successeur ?',
@@ -103,7 +104,7 @@ export default function BeemOnAvisPage() {
                 {[
                   { t: 'Plus disponible comme premier achat', d: 'C\'est le changement majeur : impossible d\'acheter un Beem On 460W « complet » (avec Beembox) comme station de départ. Il faut déjà posséder une Beembox Beem pour en profiter.' },
                   { t: 'Panneau plus grand que le Sunology', d: 'Le Beem On mesure 189 x 113 cm contre 180 x 113 cm pour le Sunology PLAY 500 Wc actuel. Sur un petit balcon, ça peut poser problème.' },
-                  { t: 'Batterie Beem très chère', d: 'L\'option stockage existe (Beem Battery) mais à partir de 6 190€ pour le kit complet. Le PLAY MAX de Sunology (699€ station + batterie VAULT) est bien plus accessible.' },
+                  { t: 'Batterie Beem très chère', d: `L'option stockage existe (Beem Battery) mais à partir de 6 190€ pour le kit complet. Le PLAY MAX de Sunology (${priceLabel('sunology-play-max')} station + batterie VAULT) est bien plus accessible.` },
                   { t: 'SAV et pérennité de l\'entreprise à surveiller', d: 'Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde le 26 novembre 2025, après une chute de 42% du marché résidentiel du solaire (étude Enedis), avec un an pour redresser la barre (échéance autour de novembre 2026). Aucune liquidation n\'est annoncée à ce jour (vérifié le 8 octobre 2026), mais la garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">

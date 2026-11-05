@@ -34,11 +34,11 @@ const faqData = [
   },
   {
     question: 'La prime à l’autoconsommation existe-t-elle encore en 2026 ?',
-    answer: 'Non. La prime à l’autoconsommation a été supprimée par l’arrêté du 1er juin 2026, applicable à compter du 5 juin 2026. Toute installation dont la demande de raccordement a été déposée après cette date n’est plus éligible. Et de toute façon, les kits plug-and-play étaient déjà exclus, car cette prime visait les installations raccordées professionnellement au réseau.',
+    answer: 'Non, pour les nouvelles installations. L’arrêté du 1er juin 2026 (publié au Journal officiel du 4 juin 2026) a supprimé la prime à l’autoconsommation pour les installations de 0 à 100 kWc dont la demande complète de raccordement est déposée à partir du 5 juin 2026. Les demandes complètes déposées avant cette date gardent l’ancien régime. Et un kit plug-and-play branché sur une prise n’y a jamais été éligible : sa production est destinée à l’autoconsommation, sans contrat d’achat du surplus.',
   },
   {
     question: 'La TVA est-elle réduite sur les kits solaires de balcon ?',
-    answer: 'En pratique, non. Depuis le 1er octobre 2025, la TVA à 5,5 % vise la livraison et l’installation, dans un logement, d’une installation photovoltaïque de 9 kWc au plus qui respecte les critères de l’arrêté du 8 septembre 2025 (bilan carbone des modules, système de gestion de l’énergie pilotant au moins deux usages) et qui est posée par un professionnel qualifié (article 278-0 bis du Code général des impôts). L’ancien taux de 10 % pour les installations de 3 kWc au plus a pris fin le 31 décembre 2025. Un kit plug-and-play acheté en ligne et installé par vous-même ne remplit pas ces conditions : il est facturé avec 20 % de TVA.',
+    answer: 'Rarement. Depuis le 1er octobre 2025 (article 278-0 bis P du Code général des impôts), la TVA à 5,5 % vise la livraison et l’installation, dans un logement, d’un équipement photovoltaïque de 9 kWc au plus qui respecte les critères de l’arrêté du 8 septembre 2025 (bilan carbone des modules inférieur à 530 kgCO2eq/kWc, limites de teneur en argent, plomb et cadmium), avec un système de gestion de l’énergie pilotant au moins deux usages, posé par un professionnel qualifié. Le taux de 10 % ne s’applique plus depuis le 1er janvier 2026 (sauf devis signé avec acompte versé avant cette date). Pour un kit acheté seul, sans pose, c’est 20 % dans la plupart des cas ; le BOFiP admet 5,5 % si l’équipement remplit toutes les conditions techniques, ce que peu de kits de balcon font. Une batterie est taxée à 20 %, et si elle est vendue dans la même prestation que les panneaux, tout le lot passe à 20 %.',
   },
   {
     question: 'Y a-t-il des aides locales pour les panneaux de balcon ?',
@@ -90,8 +90,8 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
             <h2 className="font-bold text-lg mb-3">&#9888; Ce qu&apos;il faut savoir avant de lire</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
               <li>&bull; <strong>MaPrimeR&eacute;nov&apos;</strong>&nbsp;: non &eacute;ligible (installation DIY, pas de professionnel RGE)</li>
-              <li>&bull; <strong>Prime &agrave; l&apos;autoconsommation</strong>&nbsp;: supprim&eacute;e le 5 juin 2026 &mdash; plus disponible pour personne</li>
-              <li>&bull; <strong>TVA r&eacute;duite</strong>&nbsp;: r&eacute;serv&eacute;e depuis le 1<sup>er</sup> octobre 2025 &agrave; la fourniture + pose par un professionnel qualifi&eacute;&nbsp;; un kit achet&eacute; seul reste &agrave; 20&nbsp;%</li>
+              <li>&bull; <strong>Prime &agrave; l&apos;autoconsommation</strong>&nbsp;: supprim&eacute;e (0-100&nbsp;kWc) pour les demandes compl&egrave;tes de raccordement d&eacute;pos&eacute;es &agrave; partir du 5 juin 2026 (arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026)&nbsp;; un kit branch&eacute; sur une prise n&apos;y a jamais &eacute;t&eacute; &eacute;ligible</li>
+              <li>&bull; <strong>TVA r&eacute;duite</strong>&nbsp;: 5,5&nbsp;% depuis le 1<sup>er</sup> octobre 2025 pour la fourniture + pose par un professionnel qualifi&eacute; d&apos;un &eacute;quipement conforme&nbsp;; un kit achet&eacute; seul reste &agrave; 20&nbsp;% dans la plupart des cas</li>
               <li>&bull; <strong>Aides locales</strong>&nbsp;: existent dans <em>certaines</em> communes, de 100 &agrave; 300&nbsp;&euro; &mdash; &agrave; v&eacute;rifier</li>
               <li>&bull; <strong>Rentabilit&eacute;</strong>&nbsp;: le ROI reste positif sans aides, uniquement sur l&apos;autoconsommation</li>
             </ul>
@@ -115,8 +115,8 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                   <tbody>
                     {[
                       ['MaPrimeRénov’', 'Jusqu’à 4 000 €', '&#10007; Non', 'Exige pro RGE + installation toiture'],
-                      ['Prime autoconsommation', 'Supprimée', '&#10007; Non', 'Supprimée le 5/06/2026, jamais valable balcon'],
-                      ['TVA réduite 5,5 %', 'Sur la facture pro', '&#10007; Non', 'Fourniture + pose par un pro qualifié, critères de l’arrêté du 8/09/2025'],
+                      ['Prime autoconsommation', 'Supprimée (0-100 kWc)', '&#10007; Non', 'Supprimée pour les demandes de raccordement complètes déposées à partir du 5/06/2026 ; jamais valable pour un kit sur prise'],
+                      ['TVA réduite 5,5 %', 'Sur la facture pro', '&#10007; Rarement', 'Fourniture + pose par un pro qualifié, critères de l’arrêté du 8/09/2025 ; kit seul : 20 % dans la plupart des cas'],
                       ['Céé locales / métropoles', '100–300 €', '✔ Parfois', 'Variable selon commune, à vérifier'],
                       ['Éco-Rénovons Paris+', '25 % des travaux (plaf. 4 000 €)', '&#10007; Non', 'Copropriété seulement, pas balcon individuel'],
                     ].map(([aide, montant, eligible, pourquoi], i) => (
@@ -174,11 +174,11 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               </p>
               <div className="card-lg bg-amber-pale/30 border-amber/10 mb-4">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>&#128680; Arr&ecirc;t&eacute; du 1er juin 2026</strong>&nbsp;: la prime &agrave; l&apos;autoconsommation a &eacute;t&eacute; supprim&eacute;e pour toute demande de raccordement d&eacute;pos&eacute;e apr&egrave;s le <strong>5 juin 2026</strong>. Si vous avez d&eacute;pos&eacute; votre dossier avant cette date, la prime reste acquise. Apr&egrave;s cette date, elle n&apos;existe plus.
+                  <strong>&#128680; Arr&ecirc;t&eacute; du 1er juin 2026</strong> (Journal officiel du 4 juin 2026, NOR ECOR2609281A)&nbsp;: la prime &agrave; l&apos;autoconsommation est supprim&eacute;e pour les installations de 0 &agrave; 100&nbsp;kWc dont la demande compl&egrave;te de raccordement est d&eacute;pos&eacute;e <strong>&agrave; partir du 5 juin 2026</strong>. Les demandes compl&egrave;tes d&eacute;pos&eacute;es avant cette date gardent l&apos;ancien r&eacute;gime.{' '}<a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054190669" target="_blank" rel="noopener noreferrer" className="text-green underline">Texte sur L&eacute;gifrance</a>.
                 </p>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Mais attention&nbsp;: m&ecirc;me avant sa suppression, <strong>les kits plug-and-play de balcon n&apos;&eacute;taient pas &eacute;ligibles</strong> &agrave; cette prime. Voici pourquoi&nbsp;:
+                Mais attention&nbsp;: m&ecirc;me avant sa suppression, <strong>un kit plug-and-play branch&eacute; sur une prise n&apos;y a jamais &eacute;t&eacute; &eacute;ligible</strong>&nbsp;: sa production est destin&eacute;e &agrave; l&apos;autoconsommation, sans contrat d&apos;achat (<a href="https://www.photovoltaique.info/fr/realiser-une-installation/choix-du-materiel/batteries-stockage-virtuel-et-autres-accesoires/les-kits-solaires-plug-and-play/" target="_blank" rel="noopener noreferrer" className="text-green underline">photovoltaique.info</a>). Concr&egrave;tement&nbsp;:
               </p>
               <div className="space-y-2">
                 {[
@@ -196,26 +196,26 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
 
             {/* TVA */}
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">TVA r&eacute;duite&nbsp;: pas pour un kit achet&eacute; seul</h2>
+              <h2 className="text-2xl font-extrabold mb-4">TVA r&eacute;duite&nbsp;: rarement pour un kit achet&eacute; seul</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Les r&egrave;gles ont chang&eacute; le 1<sup>er</sup> octobre 2025. Voici ce que pr&eacute;voit aujourd&apos;hui le Code g&eacute;n&eacute;ral des imp&ocirc;ts&nbsp;:
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-2">TVA 5,5&nbsp;% (depuis le 1<sup>er</sup> octobre 2025)</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Livraison <strong>et</strong> installation, dans un logement, d&apos;une installation photovolta&iuml;que de 9&nbsp;kWc au plus (article 278-0 bis, P, du CGI). Conditions fix&eacute;es par l&apos;arr&ecirc;t&eacute; du 8&nbsp;septembre 2025&nbsp;: modules sous un plafond de bilan carbone (530&nbsp;kgCO<sub>2</sub>eq/kWc) et de teneur en argent, plomb et cadmium, syst&egrave;me de gestion de l&apos;&eacute;nergie qui pilote au moins deux usages, pose par une entreprise disposant d&apos;une qualification ou certification en cours de validit&eacute;. La batterie n&apos;est pas concern&eacute;e (taux normal).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Livraison <strong>et</strong> installation, dans un logement, d&apos;un &eacute;quipement photovolta&iuml;que de 9&nbsp;kWc au plus (article 278-0 bis P du CGI). Crit&egrave;res de l&apos;arr&ecirc;t&eacute; du 8&nbsp;septembre 2025&nbsp;: bilan carbone des modules inf&eacute;rieur &agrave; 530&nbsp;kgCO<sub>2</sub>eq/kWc, limites de teneur en argent, plomb et cadmium. Il faut en plus un syst&egrave;me de gestion de l&apos;&eacute;nergie qui pilote au moins deux usages et une pose par un professionnel qualifi&eacute;. Une batterie est tax&eacute;e &agrave; 20&nbsp;%&nbsp;; vendue dans la m&ecirc;me prestation que les panneaux, elle fait passer tout le lot &agrave; 20&nbsp;%.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-2">TVA 10&nbsp;% (supprim&eacute;e)</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">L&apos;ancien taux de 10&nbsp;% pour les installations de 3&nbsp;kWc au plus, pos&eacute;es dans un logement achev&eacute; depuis plus de 2&nbsp;ans, ne s&apos;applique plus apr&egrave;s le 31&nbsp;d&eacute;cembre 2025 (sauf devis accept&eacute; avec acompte vers&eacute; avant le 1<sup>er</sup> janvier 2026).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">L&apos;ancien taux de 10&nbsp;% pour les installations de 3&nbsp;kWc au plus ne s&apos;applique plus depuis le 1<sup>er</sup> janvier 2026 (sauf devis sign&eacute; avec acompte vers&eacute; avant cette date).</p>
                 </div>
               </div>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Pour un kit balcon achet&eacute; en ligne&nbsp;:</strong> vous achetez le mat&eacute;riel et vous le posez vous-m&ecirc;me. Les conditions du taux r&eacute;duit (pose par un professionnel qualifi&eacute;, gestion de l&apos;&eacute;nergie pilotant deux usages) ne sont pas r&eacute;unies&nbsp;: la TVA est de <strong>20&nbsp;%</strong>, d&eacute;j&agrave; comprise dans le prix affich&eacute;. Aucune d&eacute;marche ne permet de la r&eacute;cup&eacute;rer.
+                  <strong>Pour un kit balcon achet&eacute; en ligne&nbsp;:</strong> vous achetez le mat&eacute;riel et vous le posez vous-m&ecirc;me. La TVA est de <strong>20&nbsp;% dans la plupart des cas</strong>, d&eacute;j&agrave; comprise dans le prix affich&eacute;. Le BOFiP admet 5,5&nbsp;% si l&apos;&eacute;quipement remplit toutes les conditions techniques, ce que peu de kits de balcon font. Un kit vendu avec sa batterie dans la m&ecirc;me offre est &agrave; 20&nbsp;%. Aucune d&eacute;marche ne permet de r&eacute;cup&eacute;rer la TVA apr&egrave;s coup.
                 </p>
                 <p className="text-xs text-stone leading-relaxed mt-3">
-                  Sources&nbsp;: <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000025064431" target="_blank" rel="noopener noreferrer" className="text-green underline">article 278-0 bis du CGI (L&eacute;gifrance)</a>, <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052212417" target="_blank" rel="noopener noreferrer" className="text-green underline">arr&ecirc;t&eacute; du 8 septembre 2025</a>, <a href="https://www.photovoltaique.info/fr/preparer-un-projet/qui-suis-je/proprietaire-particulier/taux-de-tva-taxe-sur-la-valeur-ajoutee/" target="_blank" rel="noopener noreferrer" className="text-green underline">photovoltaique.info</a>, consult&eacute;s le 5 novembre 2026.
+                  Sources&nbsp;: <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053562844" target="_blank" rel="noopener noreferrer" className="text-green underline">article 278-0 bis P du CGI (L&eacute;gifrance)</a>, <a href="https://bofip.impots.gouv.fr/bofip/14817-PGP.html/identifiant=BOI-TVA-LIQ-30-20-97-20260610" target="_blank" rel="noopener noreferrer" className="text-green underline">BOFiP BOI-TVA-LIQ-30-20-97-20260610</a>, <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052212417" target="_blank" rel="noopener noreferrer" className="text-green underline">arr&ecirc;t&eacute; du 8 septembre 2025</a>, <a href="https://www.photovoltaique.info/fr/preparer-un-projet/qui-suis-je/proprietaire-particulier/taux-de-tva-taxe-sur-la-valeur-ajoutee/" target="_blank" rel="noopener noreferrer" className="text-green underline">photovoltaique.info</a>, consult&eacute;s le 5 novembre 2026.
                 </p>
               </div>
             </section>
@@ -268,7 +268,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                 {[
                   { num: '1', title: 'Le système de certification RGE', text: 'Les aides publiques sont conditionnées à la certification pour garantir la qualité des travaux et éviter les fraudes. Un kit vendu sur Amazon ne peut pas être certifié RGE par définition.' },
                   { num: '2', title: 'Le raccordement au réseau', text: 'La prime autoconsommation était conditionnée à un contrat avec EDF OA et une demande Enedis formelle. Les kits balcon sont déclarés à Enedis en CACSI (engagement à ne pas injecter) ou en cession gratuite du surplus, sans contrat de vente.' },
-                  { num: '3', title: 'Le montant de la TVA à récupérer', text: 'La TVA réduite est une aide indirecte : l’État renonce à 14,5 points de TVA (5,5 % au lieu de 20 %) sur une facture de fourniture et pose. Sur un kit à 300 € TTC, l’écart serait d’environ 36 €, trop peu pour justifier un dispositif spécifique.' },
+                  { num: '3', title: 'La TVA réduite suppose une pose pro', text: 'La TVA réduite est une aide indirecte : l’État renonce à 14,5 points de TVA (5,5 % au lieu de 20 %), surtout sur une facture de fourniture et pose d’un équipement conforme. Sur un kit à 300 € TTC, l’écart serait d’environ 36 €, et peu de kits de balcon remplissent les conditions techniques.' },
                 ].map((item) => (
                   <div key={item.num} className="card border-l-4 border-l-green">
                     <div className="flex items-start gap-3">
@@ -394,7 +394,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> Anah (MaPrimeR&eacute;nov&apos;, conditions 2026), arr&ecirc;t&eacute; du 1er juin 2026 (suppression prime autoconsommation), Code g&eacute;n&eacute;ral des imp&ocirc;ts (TVA travaux), France R&eacute;nov&apos;, r&egrave;glement Enedis CACSI (d&eacute;cret 2021-1301), sites des m&eacute;tropoles concern&eacute;es. Tarif EDF base&nbsp;: {KWH_PRICE_LABEL} (en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026).{' '}
+                <strong>Sources&nbsp;:</strong> Anah (MaPrimeR&eacute;nov&apos;, conditions 2026), <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054190669" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">arr&ecirc;t&eacute; du 1er juin 2026</a> (JO du 4 juin 2026, suppression de la prime &agrave; l&apos;autoconsommation 0-100&nbsp;kWc), <a href="https://www.photovoltaique.info/fr/realiser-une-installation/choix-du-materiel/batteries-stockage-virtuel-et-autres-accesoires/les-kits-solaires-plug-and-play/" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">photovoltaique.info (kits plug-and-play)</a>, <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053562844" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">article 278-0 bis P du CGI</a> et <a href="https://bofip.impots.gouv.fr/bofip/14817-PGP.html/identifiant=BOI-TVA-LIQ-30-20-97-20260610" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">BOFiP BOI-TVA-LIQ-30-20-97-20260610</a> (TVA), France R&eacute;nov&apos;, r&egrave;glement Enedis CACSI (d&eacute;cret 2021-1301), sites des m&eacute;tropoles concern&eacute;es. Tarif EDF base&nbsp;: {KWH_PRICE_LABEL} (en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.{' '}
                 <span className="italic">Contenu &agrave; vocation informative, pas de conseil financier ou fiscal. V&eacute;rifiez les aides locales aupr&egrave;s de votre mairie.</span>
               </p>

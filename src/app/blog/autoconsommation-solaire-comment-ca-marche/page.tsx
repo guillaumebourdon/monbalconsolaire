@@ -30,6 +30,7 @@ const faqData = [
   { question: 'Que devient le surplus d\'électricité ?', answer: 'Deux cas. Si votre kit est déclaré en CACSI (convention d\'autoconsommation sans injection), vous vous engagez à ne rien injecter : l\'onduleur est réglé en « zéro injection » (réglage, compteur type Shelly, boîtier du fabricant) ou une batterie absorbe le surplus. Sinon, vous déclarez la cession gratuite de votre surplus à Enedis (installations de 3 kW maximum) : le surplus part sur le réseau sans rémunération. Pour valoriser le surplus, il faut le consommer au bon moment ou le stocker dans une batterie.' },
   { question: 'Faut-il un compteur Linky ?', answer: 'Pour un kit plug-and-play en autoconsommation sans injection (CACSI), le compteur Linky n\'est pas obligatoire mais il est utile pour suivre votre consommation. La plupart des foyers en sont déjà equipes.' },
   { question: 'C\'est quoi le talon de consommation ?', answer: 'C\'est la quantite minimale d\'électricité que votre logement consomme en permanence : frigo, box internet, veilles, chargeurs, VMC. En general entre 100 et 300W. C\'est ce que votre panneau solaire efface en premier.' },
+  { question: 'Existe-t-il une aide de l\'État pour un kit solaire de balcon ?', answer: 'Non. Un kit plug-and-play branché sur une prise n\'a jamais été éligible à la prime à l\'autoconsommation : sa production est destinée à l\'autoconsommation, sans contrat d\'achat du surplus. Cette prime a d\'ailleurs été supprimée pour les installations de 0 à 100 kWc dont la demande complète de raccordement est déposée à partir du 5 juin 2026 (arrêté du 1er juin 2026, JO du 4 juin 2026). Côté TVA, un kit acheté seul est à 20 % dans la plupart des cas : le taux de 5,5 % vise surtout la fourniture et la pose par un professionnel qualifié d\'un équipement conforme aux critères de l\'arrêté du 8 septembre 2025.' },
 ];
 
 export default function AutoconsommationPage() {
@@ -143,7 +144,7 @@ export default function AutoconsommationPage() {
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3">Kit plug-and-play</th><th className="text-center p-3 rounded-tr-xl">Installation toiture</th></tr></thead>
                   <tbody>
-                    {[['Prix', '349-699 \u20ac', '8 000-15 000 \u20ac'], ['Installation', 'Vous-m\u00eame, 1-60 min', 'Installateur RGE, 1-2 jours'], ['Puissance', '270-515 Wc', '3 000-9 000 Wc'], ['Couverture conso', '10-25%', '50-80%'], ['Revente surplus', 'Non (CACSI sans injection ou cession gratuite \u00e0 Enedis)', 'Oui (EDF OA, 0,13\u20ac/kWh)'], ['Aides de l\'\u00c9tat', 'Non', 'Oui (prime autoconso)'], ['Locataire ?', 'Oui', 'Non'], ['Amovible ?', 'Oui', 'Non']].map(([c, pp, t], i) => (
+                    {[['Prix', '349-699 \u20ac', '8 000-15 000 \u20ac'], ['Installation', 'Vous-m\u00eame, 1-60 min', 'Installateur RGE, 1-2 jours'], ['Puissance', '270-515 Wc', '3 000-9 000 Wc'], ['Couverture conso', '10-25%', '50-80%'], ['Revente surplus', 'Non (CACSI sans injection ou cession gratuite \u00e0 Enedis)', 'Oui (contrat EDF OA, 1,1 c\u20ac/kWh HT pour les demandes depuis le 5 juin 2026)'], ['Aides de l\'\u00c9tat', 'Non (jamais \u00e9ligible \u00e0 la prime \u00e0 l\'autoconsommation)', 'TVA 5,5 % sous conditions ; prime \u00e0 l\'autoconsommation supprim\u00e9e pour les demandes de raccordement d\u00e9pos\u00e9es \u00e0 partir du 5 juin 2026'], ['Locataire ?', 'Oui', 'Non'], ['Amovible ?', 'Oui', 'Non']].map(([c, pp, t], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{c}</td><td className="text-center p-3">{pp}</td><td className="text-center p-3">{t}</td></tr>
                     ))}
                   </tbody>
@@ -216,7 +217,7 @@ export default function AutoconsommationPage() {
             </section>
 
             <NewsletterBanner />
-            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Enedis, PVGIS, EDF tarifs 2026. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
+            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Enedis, PVGIS, EDF tarifs 2026, <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054190669" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026</a> (prime et tarif d&apos;achat du surplus), <a href="https://www.photovoltaique.info/fr/realiser-une-installation/choix-du-materiel/batteries-stockage-virtuel-et-autres-accesoires/les-kits-solaires-plug-and-play/" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">photovoltaique.info</a>. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
           </div>
         </div>
       </article>

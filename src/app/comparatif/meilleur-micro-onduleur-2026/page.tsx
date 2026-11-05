@@ -24,12 +24,12 @@ const faqData = [
   {
     question: 'Quel est le meilleur micro-onduleur pour un kit solaire balcon en 2026 ?',
     answer:
-      'Pour un montage DIY à 2 panneaux, le Hoymiles HMS-800W-2T reste la référence : 2 MPPT indépendants, Wi-Fi intégré sans boîtier DTU, environ 170 € (169,40 € chez Wattuneed le 5 novembre 2026 ; le prix Amazon n\'a pas pu être revérifié). L\'APsystems EZ1-M (Wi-Fi + Bluetooth, 12 ans de garantie, ~189 €) est l\'alternative si vous voulez un monitoring local sans compte cloud. L\'Enphase IQ8P se distingue par sa garantie de 25 ans, mais à raison d\'un onduleur par panneau, la facture double vite.',
+      'Pour un montage DIY à 2 panneaux, le Hoymiles HMS-800W-2T reste la référence : 2 MPPT indépendants, Wi-Fi intégré sans boîtier DTU, environ 170 € (169,40 € chez Wattuneed le 5 novembre 2026). L\'APsystems EZ1-M (Wi-Fi + Bluetooth, 12 ans de garantie, ~189 €) est l\'alternative si vous voulez un monitoring local sans compte cloud. L\'Enphase IQ8P se distingue par sa garantie de 25 ans, mais à raison d\'un onduleur par panneau, la facture double vite.',
   },
   {
     question: 'Combien coûte un micro-onduleur solaire ?',
     answer:
-      'De 100 à 200 € environ pour un modèle à 2 entrées (800 VA) : le Hoymiles HMS-800W-2T est à 169,40 € chez Wattuneed (5 novembre 2026 ; prix Amazon non revérifié), l\'APsystems EZ1-M autour de 189 €. Les modèles mono-entrée Enphase IQ8P se vendent à l\'unité, environ 150 à 180 € selon le revendeur, soit 300 à 360 € pour 2 panneaux puisqu\'il en faut un par panneau.',
+      'De 100 à 200 € environ pour un modèle à 2 entrées (800 VA) : le Hoymiles HMS-800W-2T est à 169,40 € chez Wattuneed (5 novembre 2026), l\'APsystems EZ1-M autour de 189 €. Les modèles mono-entrée Enphase IQ8P se vendent à l\'unité, environ 150 à 180 € selon le revendeur, soit 300 à 360 € pour 2 panneaux puisqu\'il en faut un par panneau.',
   },
   {
     question: 'Hoymiles ou APsystems : lequel choisir ?',
@@ -201,7 +201,7 @@ export default function MeilleurMicroOnduleurPage() {
                 C&apos;est le micro-onduleur le plus utilis&eacute; dans les montages DIY en Europe, et celui que nous recommandons par d&eacute;faut pour un kit &agrave; 2&nbsp;panneaux. 2&nbsp;MPPT ind&eacute;pendants (une ombre sur un panneau ne p&eacute;nalise pas l&apos;autre), Wi-Fi int&eacute;gr&eacute; sans bo&icirc;tier DTU s&eacute;par&eacute;, plage MPPT 16-60&nbsp;V, 96,7&nbsp;% de rendement (pic CEC). Compatible avec la quasi-totalit&eacute; des panneaux &agrave; connecteurs MC4 standard, de 300 &agrave; 700&nbsp;Wc selon le mod&egrave;le.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Au 5 novembre 2026, il est affich&eacute; <strong>169,40&nbsp;&euro;</strong> chez Wattuneed (en stock). Le prix sur Amazon, longtemps plus bas, n&apos;a pas pu &ecirc;tre rev&eacute;rifi&eacute; &agrave; cette date. Comparez le prix TTC livr&eacute; avant d&apos;acheter.
+                Au 5 novembre 2026, il est affich&eacute; <strong>169,40&nbsp;&euro;</strong> chez Wattuneed (en stock). Comparez le prix TTC livr&eacute; avant d&apos;acheter.
               </p>
               <AffiliateCTA
                 productName="Hoymiles HMS-800W-2T"

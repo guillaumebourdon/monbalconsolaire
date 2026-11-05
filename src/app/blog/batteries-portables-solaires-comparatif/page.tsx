@@ -208,7 +208,7 @@ const cas_usage = [
   {
     titre: 'Stockage solaire balcon fixe',
     reco: 'Bluetti Balco 260 (2 560 Wh) — le nouveau choix 2026',
-    explication: `Pour stocker l'excédent d'un kit solaire de balcon, une batterie fixe est bien plus efficace qu'une portable. Le Balco 260 à ${priceLabel('bluetti-balco-260')} (sans panneaux, prix promotionnel constaté le 05/11/2026) offre 2,56 kWh avec 96,1 % de rendement. Extensible, garantie 5 ans.`,
+    explication: `Pour stocker l'excédent d'un kit solaire de balcon, une batterie fixe est bien plus efficace qu'une portable. Le Balco 260 à ${priceLabel('bluetti-balco-260')} (sans panneaux, prix promotionnel constaté le 05/11/2026) offre 2,56 kWh avec 96,1 % de rendement. Extensible, garantie 10 ans.`,
   },
 ];
 
@@ -253,7 +253,7 @@ export default function BatteriesPortablesPage() {
               <strong>Batteries portables :</strong> l&apos;<strong>EcoFlow DELTA 2</strong> (569-699 &euro;) reste notre choix n&deg;1 en backup domestique. La <strong>Bluetti AC180</strong> (549-699 &euro;) offre le meilleur rapport capacit&eacute;/prix. Pour le nomade, la <strong>Jackery Explorer 1000 Plus</strong> (799-999 &euro;) est la r&eacute;f&eacute;rence compacte.
             </p>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              <strong>Batterie balcon fixe (nouveau) :</strong> le <strong>Bluetti Balco 260</strong> ({priceLabel('bluetti-balco-260')} sans panneaux, 2,56 kWh) est la nouveaut&eacute; qui change la donne depuis juillet 2026 &mdash; meilleur prix/Wh du march&eacute;, extensible, garantie 5 ans. &agrave; pr&eacute;f&eacute;rer au Zendure SolarFlow si vous partez sur du stockage fix&eacute;.
+              <strong>Batterie balcon fixe (nouveau) :</strong> le <strong>Bluetti Balco 260</strong> ({priceLabel('bluetti-balco-260')} sans panneaux, 2,56 kWh) est la nouveaut&eacute; qui change la donne depuis juillet 2026 &mdash; meilleur prix/Wh du march&eacute;, extensible, garantie 10 ans. &Agrave; pr&eacute;f&eacute;rer au Zendure SolarFlow si vous partez sur du stockage fix&eacute;.
             </p>
           </div>
 
@@ -324,7 +324,7 @@ export default function BatteriesPortablesPage() {
                       <td className="text-center p-3 font-mono text-xs">2 560 Wh</td>
                       <td className="text-center p-3 font-mono text-xs">2 400 W</td>
                       <td className="text-center p-3 font-mono text-xs text-green font-bold">{priceLabel('bluetti-balco-260')}</td>
-                      <td className="text-center p-3 text-xs font-semibold">5 ans</td>
+                      <td className="text-center p-3 text-xs font-semibold">10 ans</td>
                     </tr>
                     <tr className="bg-white border-b border-border-light">
                       <td className="p-3 font-semibold">Zendure SolarFlow 800 Plus</td>
@@ -353,7 +353,7 @@ export default function BatteriesPortablesPage() {
                   <div>
                     <span className="badge-amber text-xs mb-2 inline-block">Lanc&eacute; en juillet 2026</span>
                     <h3 className="font-bold text-lg">Bluetti Balco 260 — notre avis</h3>
-                    <p className="text-xs text-stone mt-1">2 560 Wh &middot; LiFePO4 &middot; Garantie 5 ans &middot; Rendement 96,1&nbsp;%</p>
+                    <p className="text-xs text-stone mt-1">2 560 Wh &middot; LiFePO4 &middot; Garantie 10 ans &middot; Rendement 96,1&nbsp;%</p>
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-3 mb-4">
@@ -363,7 +363,7 @@ export default function BatteriesPortablesPage() {
                       <li>&bull; 2,56 kWh pour {priceLabel('bluetti-balco-260')} (sans panneaux) &mdash; parmi les meilleurs prix au Wh du march&eacute;</li>
                       <li>&bull; Extensible jusqu&apos;&agrave; 15,36 kWh (5 batteries BC-260 additionnelles)</li>
                       <li>&bull; Rendement 96,1 % &mdash; quasi pas de pertes</li>
-                      <li>&bull; Garantie 5 ans (contre 2 ans pour la concurrence)</li>
+                      <li>&bull; Garantie 10 ans</li>
                       <li>&bull; Installation sans &eacute;lectricien, prise standard</li>
                     </ul>
                   </div>

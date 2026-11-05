@@ -22,7 +22,7 @@ const faqData = [
   },
   {
     question: 'Quelles aides existe-t-il pour une installation toiture en 2026 ?',
-    answer: 'La prime à l’autoconsommation a été supprimée le 5 juin 2026. MaPrimeRénov’ ne finance pas les panneaux photovoltaïques, sauf dans le cadre d’une rénovation globale avec gain énergétique ≥ 35 %. Depuis le 1er octobre 2025, la TVA à 5,5 % s’applique à la fourniture et à la pose d’une installation de 9 kWc au plus respectant les critères de l’arrêté du 8 septembre 2025, posée par un professionnel qualifié (article 278-0 bis du CGI) ; l’ancien taux de 10 % (3 kWc au plus) a pris fin le 31 décembre 2025. Aucune aide ne s’applique aux kits plug-and-play balcon.',
+    answer: 'La prime à l’autoconsommation est supprimée pour les installations de 0 à 100 kWc dont la demande complète de raccordement est déposée à partir du 5 juin 2026 (arrêté du 1er juin 2026, JO du 4 juin 2026) ; les demandes antérieures gardent l’ancien régime. MaPrimeRénov’ ne finance pas les panneaux photovoltaïques, sauf dans le cadre d’une rénovation globale avec gain énergétique ≥ 35 %. Depuis le 1er octobre 2025, la TVA à 5,5 % s’applique à la fourniture et à la pose d’une installation de 9 kWc au plus respectant les critères de l’arrêté du 8 septembre 2025, (bilan carbone des modules inférieur à 530 kgCO2eq/kWc, limites argent, plomb, cadmium), avec un système de gestion de l’énergie pilotant au moins deux usages, posée par un professionnel qualifié (article 278-0 bis P du CGI) ; le taux de 10 % ne s’applique plus depuis le 1er janvier 2026, sauf devis signé avec acompte avant cette date. Une batterie est à 20 %, et si elle est vendue dans la même prestation que les panneaux, tout le lot passe à 20 %. Pour un kit plug-and-play balcon acheté seul : TVA à 20 % dans la plupart des cas, et aucune prime (un kit branché sur une prise n’y a jamais été éligible).',
   },
   {
     question: 'Peut-on installer un kit balcon et une installation toiture en même temps ?',
@@ -38,7 +38,7 @@ const faqData = [
   },
   {
     question: 'Faut-il un installateur RGE pour les panneaux en toiture ?',
-    answer: 'En pratique, oui. Pour bénéficier de la TVA à 5,5 % (depuis le 1er octobre 2025, installations de 9 kWc au plus), la pose doit être faite par une entreprise disposant d’une qualification ou certification professionnelle en cours de validité (type RGE QualiPV), et le matériel doit respecter les critères de l’arrêté du 8 septembre 2025. L’installation par soi-même ou par un artisan non qualifié fait perdre ce taux réduit.',
+    answer: 'En pratique, oui. Pour bénéficier de la TVA à 5,5 % (depuis le 1er octobre 2025, installations de 9 kWc au plus), la pose doit être faite par une entreprise disposant d’une qualification ou certification professionnelle en cours de validité (type RGE QualiPV), le matériel doit respecter les critères de l’arrêté du 8 septembre 2025 (bilan carbone inférieur à 530 kgCO2eq/kWc, limites argent, plomb, cadmium) et l’installation doit comporter un système de gestion de l’énergie pilotant au moins deux usages. L’installation par soi-même ou par un artisan non qualifié fait perdre ce taux réduit.',
   },
 ];
 
@@ -98,7 +98,7 @@ export default function ComparatifBalconVsToiturePage() {
             <ul className="space-y-2 text-sm text-charcoal-light">
               <li>&#x2714; <strong>Balcon (plug-and-play) :</strong> 349–1&nbsp;000&nbsp;&euro; environ, ROI 4,7&ndash;7 ans, &eacute;conomies 50–140&nbsp;&euro; la premi&egrave;re ann&eacute;e. Id&eacute;al locataire, propri&eacute;taire en appartement.</li>
               <li>&#x2714; <strong>Toiture (installation pro) :</strong> 6&nbsp;750–14&nbsp;000&euro;, ROI 9&ndash;12 ans, &eacute;conomies 480–1&nbsp;430&nbsp;&euro; la premi&egrave;re ann&eacute;e. R&eacute;serv&eacute; aux propri&eacute;taires de maison.</li>
-              <li>&#x26A0; <strong>Prime autoconsommation supprim&eacute;e</strong> depuis le 5 juin 2026. MaPrimeR&eacute;nov&apos; ne s&apos;applique pas au photovolta&iuml;que standard.</li>
+              <li>&#x26A0; <strong>Prime autoconsommation supprim&eacute;e</strong> (0-100&nbsp;kWc) pour les demandes compl&egrave;tes de raccordement d&eacute;pos&eacute;es &agrave; partir du 5 juin 2026 (arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026). MaPrimeR&eacute;nov&apos; ne s&apos;applique pas au photovolta&iuml;que standard.</li>
               <li>&#x2192; Le balcon n&apos;est pas une alternative inf&eacute;rieure &mdash; c&apos;est la <em>seule</em> option pour un appartement, avec un ROI souvent <strong>deux fois plus court</strong>.</li>
             </ul>
           </div>
@@ -220,7 +220,7 @@ export default function ComparatifBalconVsToiturePage() {
               Une installation en toiture, c&apos;est un autre projet. L&apos;installateur certifi&eacute; RGE vient poser des panneaux directement sur la charpente ou en surimposition, raccord&eacute;s au tableau &eacute;lectrique via un onduleur centralis&eacute; ou des micro-onduleurs. Production 5 &agrave; 20 fois sup&eacute;rieure &mdash; et investissement 20 &agrave; 50 fois plus &eacute;lev&eacute;.
             </p>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              <strong>Prix 2026 constat&eacute;s (source&nbsp;: installateurs certifi&eacute;s, TVA 10&nbsp;% appliqu&eacute;e) :</strong>
+              <strong>Prix 2026 constat&eacute;s (source&nbsp;: installateurs certifi&eacute;s, relev&eacute;s avec l&apos;ancienne TVA &agrave; 10&nbsp;%, qui ne s&apos;applique plus depuis le 1<sup>er</sup> janvier 2026) :</strong>
             </p>
             <ul className="list-disc list-inside text-sm text-charcoal-light mb-6 space-y-1">
               <li><strong>3 kWc :</strong> environ 6&nbsp;750&nbsp;&euro; TTC</li>
@@ -228,7 +228,7 @@ export default function ComparatifBalconVsToiturePage() {
               <li><strong>9 kWc :</strong> environ 14&nbsp;000&nbsp;&euro; TTC</li>
             </ul>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              La main-d&apos;&oelig;uvre repr&eacute;sente 20 &agrave; 35&nbsp;% du budget total. L&apos;installateur doit disposer d&apos;une qualification ou certification professionnelle en cours de validit&eacute; (type RGE QualiPV) &mdash; sans quoi la TVA &agrave; 5,5&nbsp;% (fourniture + pose, 9&nbsp;kWc au plus, crit&egrave;res de l&apos;arr&ecirc;t&eacute; du 8 septembre 2025) ne s&apos;applique pas.
+              La main-d&apos;&oelig;uvre repr&eacute;sente 20 &agrave; 35&nbsp;% du budget total. L&apos;installateur doit disposer d&apos;une qualification ou certification professionnelle en cours de validit&eacute; (type RGE QualiPV) &mdash; sans quoi la TVA &agrave; 5,5&nbsp;% (fourniture + pose, 9&nbsp;kWc au plus, crit&egrave;res de l&apos;arr&ecirc;t&eacute; du 8 septembre 2025, syst&egrave;me de gestion de l&apos;&eacute;nergie pilotant au moins deux usages) ne s&apos;applique pas. Une batterie est &agrave; 20&nbsp;%&nbsp;; vendue dans la m&ecirc;me prestation que les panneaux, elle fait passer tout le lot &agrave; 20&nbsp;%.
             </p>
 
             <h3 className="font-bold text-lg mb-3 mt-6">Ce que produit une installation toiture</h3>
@@ -277,9 +277,9 @@ export default function ComparatifBalconVsToiturePage() {
             <div className="bg-amber-pale/30 border border-amber/20 rounded-lg p-4 mb-6">
               <p className="text-sm font-semibold mb-2">&#x26A0; Aides toiture 2026&nbsp;: la r&eacute;alit&eacute;</p>
               <ul className="text-sm text-charcoal-light space-y-1">
-                <li>&bull; <strong>Prime autoconsommation :</strong> supprim&eacute;e le 5 juin 2026</li>
+                <li>&bull; <strong>Prime autoconsommation :</strong> supprim&eacute;e (0-100&nbsp;kWc) pour les demandes compl&egrave;tes de raccordement d&eacute;pos&eacute;es &agrave; partir du 5 juin 2026 (arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026, JO du 4 juin 2026)&nbsp;; les demandes ant&eacute;rieures gardent l&apos;ancien r&eacute;gime</li>
                 <li>&bull; <strong>MaPrimeR&eacute;nov&apos; :</strong> ne finance <em>pas</em> le photovolta&iuml;que (sauf r&eacute;novation globale &ge;&nbsp;35&nbsp;% gain &eacute;nerg&eacute;tique)</li>
-                <li>&bull; <strong>TVA r&eacute;duite 10&nbsp;% :</strong> s&apos;applique sur la main-d&apos;&oelig;uvre et le mat&eacute;riel &mdash; seul avantage fiscal r&eacute;el en 2026</li>
+                <li>&bull; <strong>TVA r&eacute;duite 5,5&nbsp;% :</strong> sur la fourniture et la pose par un professionnel qualifi&eacute; (9&nbsp;kWc au plus, mat&eacute;riel conforme &agrave; l&apos;arr&ecirc;t&eacute; du 8 septembre 2025, gestion de l&apos;&eacute;nergie sur deux usages)&nbsp;; le 10&nbsp;% ne s&apos;applique plus depuis le 1<sup>er</sup> janvier 2026</li>
               </ul>
             </div>
 
@@ -354,7 +354,7 @@ export default function ComparatifBalconVsToiturePage() {
                   <tr className="bg-cream/40">
                     <td className="p-3 font-medium">Aides 2026</td>
                     <td className="p-3 text-center text-charcoal-light">Aucune</td>
-                    <td className="p-3 text-center">TVA 10&nbsp;% uniquement</td>
+                    <td className="p-3 text-center">TVA 5,5&nbsp;% (sous conditions) uniquement</td>
                   </tr>
                   <tr>
                     <td className="p-3 font-medium">Revente surplus</td>
@@ -374,7 +374,7 @@ export default function ComparatifBalconVsToiturePage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-stone">Sources&nbsp;: potentielsolaire.com, adekwatts.fr, laprimeenergie.fr, DGEC, Enedis.</p>
+            <p className="text-xs text-stone">Sources&nbsp;: potentielsolaire.com, adekwatts.fr, laprimeenergie.fr, DGEC, Enedis, <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054190669" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026</a>, <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053562844" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">article 278-0 bis P du CGI</a>, <a href="https://bofip.impots.gouv.fr/bofip/14817-PGP.html/identifiant=BOI-TVA-LIQ-30-20-97-20260610" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">BOFiP BOI-TVA-LIQ-30-20-97-20260610</a>.</p>
           </section>
 
           {/* Section 4 : Quand choisir le balcon */}

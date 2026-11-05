@@ -145,7 +145,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                       ['Consuel', 'Dispense possible pour un kit déjà assemblé conforme à la norme NF EN 50549-1-4 (attestation sur l’honneur)', 'Obligatoire (attestation)'],
                       ['Démarche', 'Déclaration en ligne sur Enedis-Connect, gratuite', 'Dossier complet, 2–3 mois'],
                       ['Surplus', 'Aucun (CACSI, zéro injection) ou cédé gratuitement à Enedis', 'Racheté 1,1 c€/kWh (2026)'],
-                      ['Prime autoconso', 'Non éligible', 'Supprimée en juin 2026'],
+                      ['Prime autoconso', 'Jamais éligible', 'Supprimée (0-100 kWc) pour les demandes de raccordement complètes déposées à partir du 5 juin 2026'],
                       ['Locataire ?', 'Oui (dans la majorité des cas)', 'Non (autorisation copro requise)'],
                     ].map(([c, cacsi, oa], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
@@ -205,8 +205,8 @@ export default function RevendreSuplusSolaireBalconPage() {
                   <p className="text-xs text-charcoal-light leading-relaxed">Depuis cette date, les installations &le;&nbsp;9&nbsp;kWc ne peuvent plus vendre la totalit&eacute; de leur production. Seule la <strong>revente du surplus</strong> reste possible. La vente totale subsiste uniquement pour les installations &gt;&nbsp;9&nbsp;kWc.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h3 className="font-bold text-sm mb-1">Juin 2026 &mdash; Nouvel arr&ecirc;t&eacute; tarifaire (S21) + suppression de la prime</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">L&apos;arr&ecirc;t&eacute; du 1er juin 2026 fixe le tarif de rachat du surplus &agrave; <strong>1,1&nbsp;c&euro;/kWh HT</strong> (index&eacute; +2&nbsp;%/an). En parall&egrave;le, la <strong>prime d&apos;autoconsommation est supprim&eacute;e</strong> pour les nouvelles installations. Fin des deux leviers qui rendaient le raccordement producteur attractif.</p>
+                  <h3 className="font-bold text-sm mb-1">Juin 2026 &mdash; Tarif unique du surplus + suppression de la prime</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">L&apos;<a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054190669" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">arr&ecirc;t&eacute; du 1er juin 2026</a> (JO du 4 juin 2026) fixe un tarif unique de rachat du surplus de <strong>1,1&nbsp;c&euro;/kWh HT</strong> pour les demandes d&eacute;pos&eacute;es depuis le 5 juin 2026, index&eacute; de 2&nbsp;%/an&nbsp;: il n&apos;y a plus de grille r&eacute;vis&eacute;e chaque trimestre. En parall&egrave;le, la <strong>prime &agrave; l&apos;autoconsommation est supprim&eacute;e</strong> pour les installations de 0 &agrave; 100&nbsp;kWc dont la demande compl&egrave;te de raccordement est d&eacute;pos&eacute;e &agrave; partir du 5 juin 2026 (les demandes ant&eacute;rieures gardent l&apos;ancien r&eacute;gime). Fin des deux leviers qui rendaient le raccordement producteur attractif.</p>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">

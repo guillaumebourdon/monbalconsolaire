@@ -1,8 +1,13 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
-import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
-import { PRODUCTS, SCHEMA_AVAILABILITY } from '@/data/products';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, calculateROIYears } from '@/lib/pricing';
+import { PRODUCTS, SCHEMA_AVAILABILITY, priceLabel } from '@/data/products';
+
+// PLAY MAX (comparaison) : prix lu dans products.ts, ROI via pricing.ts (sortie 450 W retenue, batterie).
+const PLAYMAX_PRICE = priceLabel('sunology-play-max');
+const PLAYMAX_ROI = calculateROIYears({ kitPriceEur: PRODUCTS['sunology-play-max'].priceEur, kitPowerWc: 450, hasBattery: true }).toLocaleString('fr-FR');
+const PLAYMAX_EUR_KWH = `${Math.round(PRODUCTS['sunology-play-max'].priceEur / 0.7).toLocaleString('fr-FR')} €/kWh`;
 import { zendureUrl } from '@/lib/affiliate';
 
 const ZENDURE_URL = zendureUrl('https://zendure.fr/products/solarflow-800-plus');
@@ -23,7 +28,7 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Quelle est la différence entre SolarFlow 800, 800 Plus et 800 Pro ?',
-    answer: 'Le SolarFlow 800 est le micro-onduleur seul (sans batterie intégrée), vendu avec des batteries AB2000 séparées. Le SolarFlow 800 Plus intègre la batterie 1,92 kWh dans le boîtier avec l\'onduleur : c\'est le tout-en-un plug-and-play à 539 € seul (prix vérifié sur zendure.fr le 5 novembre 2026). Le 800 Pro ajoute l\'IA Zenky pour l\'optimisation automatique heures pleines/creuses et une meilleure gestion multi-batteries, pour un prix plus élevé (non revérifié ici).',
+    answer: 'Le SolarFlow 800 est le micro-onduleur seul (sans batterie intégrée), vendu avec des batteries AB2000 séparées. Le SolarFlow 800 Plus intègre la batterie 1,92 kWh dans le boîtier avec l\'onduleur : c\'est le tout-en-un plug-and-play à 539 € seul (prix vérifié sur zendure.fr le 5 novembre 2026). Le 800 Pro ajoute l\'IA Zenky pour l\'optimisation automatique heures pleines/creuses et une meilleure gestion multi-batteries, pour un prix plus élevé : sur zendure.fr le 5 novembre 2026, 719 € seul (prix barré 1 199 €), 839 € avec 2 panneaux de 450 W, 748 € avec le compteur 3CT et 1 318 € avec la batterie AB2000X.',
   },
   {
     question: 'Le SolarFlow 800 Plus fonctionne-t-il en cas de coupure de courant ?',
@@ -50,7 +55,7 @@ const faqData = [
 const points_forts = [
   {
     titre: 'Prix très bas : batterie + onduleur pour 539 €',
-    detail: 'C\'est le point qui change tout. Pour 539 € (prix barré 599 € sur zendure.fr au 5 novembre 2026), vous avez un onduleur 800 W ET une batterie 1,92 kWh intégrée. À titre de comparaison, un Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 699 €, pour 2,7x moins de stockage. Le rapport €/kWh de stockage est sans équivalent sur le marché français.',
+    detail: `C'est le point qui change tout. Pour 539 € (prix barré 599 € sur zendure.fr au 5 novembre 2026), vous avez un onduleur 800 W ET une batterie 1,92 kWh intégrée. À titre de comparaison, un Sunology PLAY MAX (panneau + batterie 700 Wh) coûte ${PLAYMAX_PRICE}, pour 2,7x moins de stockage. Le rapport €/kWh de stockage est sans équivalent sur le marché français.`,
   },
   {
     titre: 'Vrai plug-and-play : batterie intégrée dans le boîtier',
@@ -110,7 +115,7 @@ const comparaison = [
   },
   {
     produit: 'Sunology PLAY MAX',
-    prix: '699 €',
+    prix: PLAYMAX_PRICE,
     stockage: '0,7 kWh (VAULT)',
     sortieAC: '450 W',
     backup: 'Non',
@@ -216,9 +221,9 @@ export default function ZendureSolarflowPage() {
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-3">Sunology PLAY MAX (VAULT)</td>
-                      <td className="p-3 font-mono">699 €</td>
+                      <td className="p-3 font-mono">{PLAYMAX_PRICE}</td>
                       <td className="p-3 font-mono">0,7 kWh</td>
-                      <td className="p-3 font-mono">999 €/kWh (panneau inclus)</td>
+                      <td className="p-3 font-mono">{PLAYMAX_EUR_KWH} (panneau inclus)</td>
                     </tr>
                     <tr className="border-b border-border-light bg-cream/50">
                       <td className="p-3">EcoFlow PowerStream + DELTA 2 (arr&ecirc;t&eacute;)</td>
@@ -442,7 +447,7 @@ export default function ZendureSolarflowPage() {
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>Moins de 5 ans de ROI pour un système avec batterie</strong>, m&ecirc;me au prix barr&eacute;. &Agrave; titre de comparaison, le Sunology PLAY MAX est autour de 7,3 ans depuis sa baisse de prix &agrave; 699 &euro;. Ce calcul suppose que vous consommiez 95&nbsp;% de 1 020 kWh&nbsp;: c&apos;est beaucoup pour un petit appartement, utilisez le <Link href="/calculateur" className="text-green hover:underline">calculateur</Link> avec votre profil.
+                <strong>Moins de 5 ans de ROI pour un système avec batterie</strong>, m&ecirc;me au prix barr&eacute;. &Agrave; titre de comparaison, le Sunology PLAY MAX est &agrave; {PLAYMAX_ROI} ans &agrave; {PLAYMAX_PRICE} (prix courant sur sunology.eu, 1&nbsp;079&nbsp;&euro; en promotion jusqu&apos;au 4 d&eacute;cembre 2026). Ce calcul suppose que vous consommiez 95&nbsp;% de 1 020 kWh&nbsp;: c&apos;est beaucoup pour un petit appartement, utilisez le <Link href="/calculateur" className="text-green hover:underline">calculateur</Link> avec votre profil.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 Avec l&apos;inflation tarifaire de 3,3%/an (CRE), les économies augmentent chaque année. Et la batterie LFP est garantie 6 000 cycles : vous avez <strong>10+ ans de bénéfice net</strong> après remboursement du système. Sur 25 ans : <strong>~6 870 &euro;</strong> d&apos;économies cumulées (dégradation des panneaux comprise).

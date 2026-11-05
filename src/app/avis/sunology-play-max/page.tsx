@@ -6,21 +6,46 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
-import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
-import { PRODUCTS, SCHEMA_AVAILABILITY } from '@/data/products';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
+import { PRODUCTS, SCHEMA_AVAILABILITY, priceLabel } from '@/data/products';
+
+// Tous les chiffres viennent de products.ts (prix) et pricing.ts (calcul) : rien en dur.
+const MAX = PRODUCTS['sunology-play-max'];
+const PLAY = PRODUCTS['sunology-play'];
+const MAX_OUTPUT_W = 450; // sortie plafonnée par le micro-onduleur : valeur retenue pour la production
+const PROMO_EUR = 1079; // promotion Black Friday sunology.eu, du 2 novembre au 4 décembre 2026
+const PROMO_LABEL = '1 079 €';
+const PROMO_END = '4 décembre 2026';
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const sim = (price: number, power: number, battery: boolean) => {
+  const input = { kitPriceEur: price, kitPowerWc: power, hasBattery: battery };
+  return {
+    production: calculateProductionKwh(input),
+    savings: Math.round(calculateFirstYearSavings(input)),
+    roi: calculateROIYears(input),
+    total25: calculateTotalSavings25Years(input),
+  };
+};
+const maxCalc = sim(MAX.priceEur, MAX_OUTPUT_W, true);
+const maxPromo = sim(PROMO_EUR, MAX_OUTPUT_W, true);
+const playCalc = sim(PLAY.priceEur, PLAY.powerWc, false);
+const MAX_PRICE = priceLabel('sunology-play-max');
+const PLAY_PRICE = priceLabel('sunology-play');
+const EXTRA = MAX.priceEur - PLAY.priceEur;
+const EXTRA_PROMO = PROMO_EUR - PLAY.priceEur;
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Sunology PLAY MAX avis 2026 : kit + batterie, ça vaut le coup ?',
-  description: 'Avis Sunology PLAY MAX (PLAYMax) : station 460 W (sortie 450 W) + batterie VAULT 700 Wh à 699 €. Production, stockage, ROI 7,3 ans.',
+  description: `Avis Sunology PLAY MAX (PLAYMax) : station 460 W + batterie VAULT 700 Wh à ${MAX_PRICE} (${PROMO_LABEL} en promo). Production, stockage, ROI ${fr(maxCalc.roi)} ans.`,
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-play-max',
   },
 });
 
 const faqData = [
-  { question: 'Le Sunology PLAY MAX vaut-il 699 € ?', answer: 'Oui pour la plupart des profils qui consomment le soir. Au 5 novembre 2026, le panier sunology.eu affiche 699 € (la page produit affiche encore 1 179 €), soit 100 € de plus que le Sunology PLAY seul (515 W, 599 €). Avec notre méthodologie, le PLAY MAX se rentabilise en 7,3 ans (87 € la première année, ~3 090 € sur 25 ans) contre 6,2 ans pour le PLAY seul (89 €, ~3 170 € sur 25 ans). L\'écart de ROI est devenu faible.' },
+  { question: `Le Sunology PLAY MAX vaut-il ${MAX_PRICE} ?`, answer: `Pas pour la rentabilité pure. Au 5 novembre 2026, sunology.eu l'affiche à ${PROMO_LABEL} en promotion jusqu'au ${PROMO_END}, au lieu de ${MAX_PRICE}, soit ${fr(EXTRA)} € de plus que le Sunology PLAY seul (${PLAY.powerWc} W, ${PLAY_PRICE}). Avec notre méthodologie, le PLAY MAX se rentabilise en ${fr(maxCalc.roi)} ans à ${MAX_PRICE} (${fr(maxPromo.roi)} ans au prix promotionnel ; ${maxCalc.savings} € la première année, ~${fr(maxCalc.total25)} € sur 25 ans) contre ${fr(playCalc.roi)} ans pour le PLAY seul (${playCalc.savings} €, ~${fr(playCalc.total25)} € sur 25 ans). Il se justifie surtout si vous êtes absent la journée ou si la batterie nomade vous sert.` },
   { question: 'Quelle est la capacité de la batterie VAULT ?', answer: 'La VAULT a une capacité de 700 Wh (0,7 kWh), en cellules lithium-ion, pour 3,7 kg. Ça représente environ 5 heures d\'autonomie pour un talon de consommation de 140 W (frigo + box + veilles). Ce n\'est pas assez pour une nuit complète mais ça couvre la soirée. Sunology la garantit 10 ans ou 2 500 cycles.' },
-  { question: 'Peut-on ajouter la batterie VAULT après avoir acheté le PLAY ?', answer: 'La VAULT se vend seule 499 € sur sunology.eu. Sunology la présente comme conçue pour être couplée à la station PLAYMax ; la compatibilité avec un PLAY déjà installé n\'est pas clairement documentée, vérifiez auprès du fabricant. En tout état de cause, PLAY + VAULT séparés (599 € + 499 € = 1 098 €) coûtent bien plus cher que le PLAY MAX à 699 €.' },
+  { question: 'Peut-on ajouter la batterie VAULT après avoir acheté le PLAY ?', answer: `La VAULT se vend seule 499 € sur sunology.eu. Sunology la présente comme conçue pour être couplée à la station PLAYMax ; la compatibilité avec un PLAY déjà installé n'est pas clairement documentée, vérifiez auprès du fabricant. PLAY + VAULT séparés (${PLAY_PRICE} + 499 € = ${fr(PLAY.priceEur + 499)} €) coûtent un peu moins cher que le PLAY MAX à ${MAX_PRICE}, mais rien ne garantit que les deux fonctionnent ensemble : demandez confirmation à Sunology avant d'acheter.` },
   { question: 'PLAY MAX vs PLAY + STOREY : quelle différence ?', answer: 'Le PLAY MAX inclut la batterie amovible VAULT (700 Wh). Le PLAY + STOREY (1 390 € la batterie seule) offre une batterie fixe de 2,2 kWh, soit 3x plus de capacité, pour un budget total près de trois fois supérieur. Le STOREY est pour ceux qui veulent une vraie autonomie le soir et la nuit.' },
 ];
 
@@ -29,7 +54,7 @@ export default function PlayMaxAvisPage() {
     <>
       <SchemaArticle title="Sunology PLAY MAX avis : kit + batterie, ça vaut le coup ?" description="Avis complet sur le Sunology PLAY MAX avec batterie VAULT." url="https://monbalconsolaire.fr/avis/sunology-play-max" datePublished="2026-04-02" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct image="/images/produits/sunology-play-max-1.webp" name="Sunology PLAY MAX" brand="Sunology" description="Station solaire 460 W (sortie onduleur 450 W) avec batterie VAULT 700 Wh intégrée pour stocker le surplus et consommer le soir." price={PRODUCTS['sunology-play-max'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['sunology-play-max'].availability]} ratingValue={8} url="https://monbalconsolaire.fr/avis/sunology-play-max" />
+      <SchemaProduct image="/images/produits/sunology-play-max-1.webp" name="Sunology PLAY MAX" brand="Sunology" description="Station solaire 460 W (sortie onduleur 450 W) avec batterie VAULT 700 Wh intégrée pour stocker le surplus et consommer le soir." price={PRODUCTS['sunology-play-max'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['sunology-play-max'].availability]} ratingValue={7} url="https://monbalconsolaire.fr/avis/sunology-play-max" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology PLAY MAX' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -37,7 +62,7 @@ export default function PlayMaxAvisPage() {
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY MAX avis : kit solaire + batterie, ça vaut le coup ?</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Le PLAY MAX (vendu sous le nom &laquo;&nbsp;PLAYMax&nbsp;&raquo;), c&apos;est une station solaire Sunology de 460&nbsp;W (sortie plafonn&eacute;e &agrave; 450&nbsp;W) avec une batterie VAULT de 700 Wh int&eacute;gr&eacute;e. Son prix est pass&eacute; de 1 179&nbsp;&euro; &agrave; 699&nbsp;&euro; (prix du panier v&eacute;rifi&eacute; le 5 novembre 2026), soit 100&nbsp;&euro; de plus que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY</Link> sans batterie. La promesse : stocker le solaire pour le soir. Analyse honnête.</p>
+            <p className="text-lg text-charcoal-light leading-relaxed">Le PLAY MAX (vendu sous le nom &laquo;&nbsp;PLAYMax&nbsp;&raquo;), c&apos;est une station solaire Sunology de 460&nbsp;W (sortie plafonn&eacute;e &agrave; 450&nbsp;W) avec une batterie VAULT de 700 Wh int&eacute;gr&eacute;e. Prix officiel&nbsp;: {MAX_PRICE}, affich&eacute; {PROMO_LABEL} en promotion jusqu&apos;au {PROMO_END} (v&eacute;rifi&eacute; le 5 novembre 2026), soit {fr(EXTRA)}&nbsp;&euro; de plus que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY</Link> sans batterie ({fr(EXTRA_PROMO)}&nbsp;&euro; pendant la promotion). La promesse : stocker le solaire pour le soir. Analyse honnête.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>2 avril 2026 &middot; <strong>Mis &agrave; jour le 5 novembre 2026</strong></span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
@@ -46,8 +71,8 @@ export default function PlayMaxAvisPage() {
             name="PLAY MAX"
             trackingName="PLAYMax"
             power="460 W + 700 Wh"
-            price="699 €"
-            score="8/10"
+            price={MAX_PRICE}
+            score="7/10"
             tagline="Kit solaire avec batterie intégrée. Pour ceux qui consomment le soir."
             affiliateUrl="https://sunology.eu/products/playmax-station-solaire-batterie"
             affiliateLabel="Voir sur le site du fabricant"
@@ -55,18 +80,18 @@ export default function PlayMaxAvisPage() {
             image="/images/produits/sunology-play-max-1.webp"
             imageAlt="Sunology PLAY MAX - kit solaire avec batterie VAULT 700 Wh"
           />
-          <p className="text-xs text-stone mt-2 italic">Dernier prix v&eacute;rifi&eacute; le 27/09/2026 sur sunology.eu (prix de vente des versions), toujours coh&eacute;rent avec les autres pages du site au 29/10/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 5 novembre 2026 sur sunology.eu&nbsp;: {MAX_PRICE}, {PROMO_LABEL} en promotion Black Friday du 2 novembre au {PROMO_END}</p>
 
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le concept PLAY MAX</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le Sunology PLAY MAX est une station solaire (panneau bifacial TOPCon de 108 cellules, micro-onduleur 450 W, ch&acirc;ssis aluminium) dans laquelle vient se loger la batterie VAULT (700 Wh), pour <span className="data-highlight">699 €</span>. Au 5 novembre 2026, la seule variante en vente sur sunology.eu s&apos;intitule &laquo;&nbsp;460W T1&nbsp;&raquo; (la page parle de 450&nbsp;W &agrave; l&apos;avant et jusqu&apos;&agrave; 135&nbsp;W &agrave; l&apos;arri&egrave;re), mais l&apos;onduleur plafonne la sortie &agrave; 450 W : c&apos;est la valeur que nous retenons. L&apos;idée est simple : au lieu de perdre le surplus d&apos;électricité injecté gratuitement sur le réseau en journée, la VAULT le stocke pour que vous le consommiez le soir.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le Sunology PLAY MAX est une station solaire (panneau bifacial TOPCon de 108 cellules, micro-onduleur 450 W, ch&acirc;ssis aluminium) dans laquelle vient se loger la batterie VAULT (700 Wh), pour <span className="data-highlight">{MAX_PRICE}</span> ({PROMO_LABEL} en promotion jusqu&apos;au {PROMO_END}). Au 5 novembre 2026, la seule variante en vente sur sunology.eu s&apos;intitule &laquo;&nbsp;460W T1&nbsp;&raquo; (la page parle de 450&nbsp;W &agrave; l&apos;avant et jusqu&apos;&agrave; 135&nbsp;W &agrave; l&apos;arri&egrave;re), mais l&apos;onduleur plafonne la sortie &agrave; 450 W : c&apos;est la valeur que nous retenons. L&apos;idée est simple : au lieu de perdre le surplus d&apos;électricité injecté gratuitement sur le réseau en journée, la VAULT le stocke pour que vous le consommiez le soir.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">La VAULT est une batterie lithium-ion de 700 Wh pour 3,7 kg, certifi&eacute;e IP65. Int&eacute;gr&eacute;e &agrave; la station, elle est aussi amovible et peut servir de batterie nomade (camping, pique-nique) avec ses 4 ports de connexion. Sunology la garantit 10 ans ou 2 500 cycles.</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
                   { v: '460 W', l: 'Station PLAYMax' },
                   { v: '700 Wh', l: 'Batterie VAULT' },
-                  { v: '699 €', l: 'Prix station + batterie' },
+                  { v: MAX_PRICE, l: 'Prix station + batterie' },
                   { v: '~5h', l: 'Autonomie soir' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-cream rounded-brand-lg">
@@ -81,9 +106,9 @@ export default function PlayMaxAvisPage() {
               <div className="flex items-start gap-3">
                 <span className="text-xl">&#9888;&#65039;</span>
                 <div>
-                  <h3 className="font-bold text-sm text-amber-dark mb-2">Ce qui a chang&eacute; : prix divis&eacute; par 1,7</h3>
+                  <h3 className="font-bold text-sm text-amber-dark mb-2">Correction du 5 novembre 2026&nbsp;: le prix courant est {MAX_PRICE}</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    &Agrave; 1 179 &euro;, le PLAY MAX se rentabiliserait en 11,6 ans et nous le d&eacute;conseillions pour la rentabilit&eacute; pure. &Agrave; 699 &euro;, le ROI tombe &agrave; 7,3 ans : la batterie ne co&ucirc;te plus que 100 &euro; de plus que le PLAY seul. Pour le pur ROI, le Sunology PLAY (515&nbsp;W&nbsp;: 6,2 ans) ou le Zendure SolarFlow 800 Plus en pack 2 &times; 500&nbsp;W (3,6 ans au prix promotionnel de 719&nbsp;&euro; constat&eacute; le 05/11/2026) restent devant. Attention : au 5 novembre 2026, la page produit Sunology affiche encore 1 179 &euro; alors que le panier indique 699 &euro;. V&eacute;rifiez le prix au moment de payer.
+                    Une version pr&eacute;c&eacute;dente de cet avis reprenait un prix de panier plus bas, que la page officielle ne confirme pas. Celle-ci affiche {MAX_PRICE}, ramen&eacute; &agrave; {PROMO_LABEL} pendant la promotion Black Friday (du 2 novembre au {PROMO_END}). &Agrave; ce prix, le PLAY MAX se rentabilise en {fr(maxCalc.roi)} ans ({fr(maxPromo.roi)} ans au prix promotionnel), contre {fr(playCalc.roi)} ans pour le PLAY seul&nbsp;: la batterie co&ucirc;te {fr(EXTRA)}&nbsp;&euro; de plus pour des &eacute;conomies &agrave; peu pr&egrave;s &eacute;quivalentes. Pour le pur ROI, le Sunology PLAY ou le Zendure SolarFlow 800 Plus en pack 2 &times; 500&nbsp;W (3,6 ans au prix promotionnel de 719&nbsp;&euro; constat&eacute; le 05/11/2026) restent devant.
                   </p>
                 </div>
               </div>
@@ -91,29 +116,29 @@ export default function PlayMaxAvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le calcul honnête : avec vs sans batterie</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est la question centrale. On compare le PLAY seul (515 W, 599 €) au PLAY MAX (699 €, sortie 450 W) avec notre méthodologie, région lyonnaise :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est la question centrale. On compare le PLAY seul ({PLAY.powerWc} W, {PLAY_PRICE}) au PLAY MAX ({MAX_PRICE}, sortie {MAX_OUTPUT_W} W) avec notre méthodologie, région lyonnaise :</p>
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h3 className="font-bold text-green mb-2">PLAY seul (515&nbsp;W, 599&euro;)</h3>
+                  <h3 className="font-bold text-green mb-2">PLAY seul ({PLAY.powerWc}&nbsp;W, {PLAY_PRICE})</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
                     <p>Autoconsommation : <span className="font-mono font-medium">85%</span></p>
-                    <p>Économies 1re année : <span className="font-mono font-medium text-green">89 &euro;</span></p>
-                    <p>ROI : <span className="font-mono font-medium">6,2 ans</span></p>
-                    <p>Économies sur 25 ans : <span className="font-mono font-medium text-green">~3 170 &euro;</span></p>
+                    <p>Économies 1re année : <span className="font-mono font-medium text-green">{playCalc.savings} &euro;</span></p>
+                    <p>ROI : <span className="font-mono font-medium">{fr(playCalc.roi)} ans</span></p>
+                    <p>Économies sur 25 ans : <span className="font-mono font-medium text-green">~{fr(playCalc.total25)} &euro;</span></p>
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
-                  <h3 className="font-bold text-amber-dark mb-2">PLAY MAX (699&euro;)</h3>
+                  <h3 className="font-bold text-amber-dark mb-2">PLAY MAX ({MAX_PRICE})</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
                     <p>Autoconsommation : <span className="font-mono font-medium">95%</span></p>
-                    <p>Économies 1re année : <span className="font-mono font-medium text-amber-dark">87 &euro;</span></p>
-                    <p>ROI : <span className="font-mono font-medium">7,3 ans</span></p>
-                    <p>Économies sur 25 ans : <span className="font-mono font-medium text-amber-dark">~3 090 &euro;</span></p>
+                    <p>Économies 1re année : <span className="font-mono font-medium text-amber-dark">{maxCalc.savings} &euro;</span></p>
+                    <p>ROI : <span className="font-mono font-medium">{fr(maxCalc.roi)} ans</span> ({fr(maxPromo.roi)} ans &agrave; {PROMO_LABEL})</p>
+                    <p>Économies sur 25 ans : <span className="font-mono font-medium text-amber-dark">~{fr(maxCalc.total25)} &euro;</span></p>
                   </div>
                 </div>
               </div>
               <div className="card bg-amber-pale/30 border-amber/10">
-                <p className="text-sm text-amber-dark"><strong>Le point clé :</strong> avec une sortie de 450&nbsp;W contre 515&nbsp;W pour le PLAY, le PLAY MAX produit moins (459 contre 525 kWh/an), mais la batterie compense en faisant passer l&apos;autoconsommation de 85&nbsp;% &agrave; 95&nbsp;%. R&eacute;sultat : des &eacute;conomies proches (87 contre 89 &euro; la premi&egrave;re ann&eacute;e). &Agrave; 699 &euro;, le ROI du PLAY MAX est de <span className="font-mono font-bold">7,3 ans</span>, contre 6,2 ans pour le PLAY seul : 100 &euro; de plus pour une batterie de 700 Wh et une autonomie le soir.</p>
+                <p className="text-sm text-amber-dark"><strong>Le point clé :</strong> avec une sortie de 450&nbsp;W contre 515&nbsp;W pour le PLAY, le PLAY MAX produit moins ({maxCalc.production} contre {playCalc.production} kWh/an), mais la batterie compense en faisant passer l&apos;autoconsommation de 85&nbsp;% &agrave; 95&nbsp;%. R&eacute;sultat : des &eacute;conomies proches ({maxCalc.savings} contre {playCalc.savings} &euro; la premi&egrave;re ann&eacute;e). &Agrave; {MAX_PRICE}, le ROI du PLAY MAX est de <span className="font-mono font-bold">{fr(maxCalc.roi)} ans</span>, contre {fr(playCalc.roi)} ans pour le PLAY seul : {fr(EXTRA)} &euro; de plus pour une batterie de 700 Wh et une autonomie le soir, sans gain d&apos;&eacute;conomies.</p>
               </div>
             </section>
 
@@ -121,7 +146,7 @@ export default function PlayMaxAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Le kit + batterie complet le plus accessible', d: 'À 699€ panneau et batterie compris, c\'est la solution de stockage complète la moins chère que nous ayons analysée. La batterie ne coûte que 100€ de plus que le PLAY seul, alors que la VAULT vendue seule coûte 499€.' },
+                  { t: 'Un kit + batterie tout compris', d: `Panneau, micro-onduleur et batterie arrivent ensemble pour ${MAX_PRICE} (${PROMO_LABEL} en promotion jusqu'au ${PROMO_END}) : rien à assortir soi-même. Les batteries de balcon plus capacitaires (Zendure, Jackery, Bluetti) s'achètent sans panneaux.` },
                   { t: 'La VAULT est amovible', d: 'Contrairement aux batteries fixes (STOREY, Beem Battery), la VAULT se retire de la station : 3,7 kg, IP65, 4 ports de connexion. Vous pouvez l\'emmener en camping, en pique-nique, ou l\'utiliser comme batterie de secours.' },
                   { t: 'Garantie batterie claire', d: 'Sunology garantit la VAULT 10 ans ou 2 500 cycles à 100 % de charge et décharge, et le châssis de la station 25 ans.' },
                   { t: 'Installation identique au PLAY', d: 'La station s\'installe au sol ou au mur en quelques minutes et se branche sur une simple prise. La batterie est intégrée à la station : pas de câblage supplémentaire.' },
@@ -143,7 +168,7 @@ export default function PlayMaxAvisPage() {
                   { t: 'Capacité limitée (700 Wh)', d: 'La VAULT offre ~5 heures d\'autonomie pour un talon de consommation de 140W. Ce n\'est pas suffisant pour couvrir une nuit complète (10-12h). Si vous voulez une vraie autonomie le soir et la nuit, il faut la STOREY (2,2 kWh, 1 390€).' },
                   { t: 'Onduleur plafonné à 450 W', d: 'Le PLAY seul monte à 515 W. Avec 450 W en sortie, le PLAY MAX produit ~13 % de moins (459 contre 525 kWh/an à Lyon) : la batterie ne fait que compenser ce déficit en économies.' },
                   { t: 'Chimie lithium-ion, pas LFP', d: 'Sunology parle de cellules Li-Ion, sans préciser LFP. Les concurrents (Zendure, Jackery, Bluetti) annoncent du LFP, réputé plus durable. La garantie de 10 ans / 2 500 cycles reste correcte, mais la batterie pourrait devoir être remplacée avant le panneau.' },
-                  { t: 'Affichage du prix incohérent', d: 'Au 5 novembre 2026, la page produit Sunology affiche toujours 1 179 € alors que le panier indique 699 €. Tant que Sunology n\'a pas clarifié, vérifiez le montant final avant de payer.' },
+                  { t: 'Prix élevé pour 700 Wh', d: `À ${MAX_PRICE}, la batterie coûte ${fr(EXTRA)} € de plus que le PLAY seul, pour des économies à peu près équivalentes : le ROI passe de ${fr(playCalc.roi)} à ${fr(maxCalc.roi)} ans. Même au prix promotionnel (${PROMO_LABEL}), il reste à ${fr(maxPromo.roi)} ans.` },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h3 className="font-bold text-sm mb-1">{p.t}</h3>
@@ -167,7 +192,7 @@ export default function PlayMaxAvisPage() {
                 {[
                   'Consommation surtout en journée (télétravail)',
                   'Besoin d\'autonomie sur toute la nuit (700 Wh ne suffisent pas)',
-                  'ROI le plus court absolu recherché (le PLAY seul fait 6,2 ans)',
+                  `ROI le plus court recherché (le PLAY seul fait ${fr(playCalc.roi)} ans, le PLAY MAX ${fr(maxCalc.roi)} ans)`,
                   'Exposition est/ouest',
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
@@ -186,8 +211,8 @@ export default function PlayMaxAvisPage() {
                   <ul className="text-sm text-charcoal-light space-y-1">
                     <li>→ Vous travaillez la journée (consommation le soir)</li>
                     <li>→ Vous voulez aussi une batterie nomade</li>
-                    <li>→ Vous acceptez ~1 an de ROI en plus pour de l&apos;autonomie le soir</li>
-                    <li>→ Vous voulez le kit + batterie complet le moins cher</li>
+                    <li>→ Vous acceptez un ROI plus long ({fr(maxCalc.roi)} ans contre {fr(playCalc.roi)}) pour de l&apos;autonomie le soir</li>
+                    <li>→ Vous voulez un kit + batterie tout compris, sans assortir les composants</li>
                   </ul>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
@@ -196,7 +221,7 @@ export default function PlayMaxAvisPage() {
                     <li>→ Vous êtes chez vous la journée (télétravail)</li>
                     <li>→ Vous voulez le ROI le plus rapide possible</li>
                     <li>→ Votre talon de consommation est élevé (frigo + box + PC)</li>
-                    <li>→ Vous préférez économiser 100€</li>
+                    <li>→ Vous préférez économiser {fr(EXTRA)}&nbsp;&euro;</li>
                   </ul>
                 </div>
               </div>
@@ -204,9 +229,9 @@ export default function PlayMaxAvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le PLAY MAX est un produit bien pensé pour ceux qui veulent maximiser leur autoconsommation et/ou qui ont besoin d&apos;une batterie nomade. &Agrave; 699&euro;, c&apos;est le kit + batterie complet le plus accessible que nous ayons analysé.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">La baisse de prix change notre conclusion. &Agrave; 1 179&euro;, la batterie co&ucirc;tait 580&euro; de plus que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY seul à 599€</Link> pour un ROI de 11,6 ans. &Agrave; 699&euro;, l&apos;écart n&apos;est plus que de 100&euro; et le ROI tombe à 7,3 ans (contre 6,2 ans pour le PLAY). Si vous &ecirc;tes absent la journée, le PLAY MAX devient le choix logique chez Sunology. Si vous &ecirc;tes chez vous en journée, le PLAY seul reste un peu plus rentable.</p>
-              <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">8/10</span></strong> (7/10 avant la baisse de prix) — Le rapport prix/stockage est désormais très bon. Il manque le point restant pour la capacité limitée (700 Wh), la chimie Li-Ion non LFP et l&apos;onduleur plafonné à 450 W.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le PLAY MAX est un produit bien pens&eacute; pour ceux qui veulent maximiser leur autoconsommation et/ou qui ont besoin d&apos;une batterie nomade. Mais &agrave; {MAX_PRICE}, il co&ucirc;te {fr(EXTRA)}&nbsp;&euro; de plus que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY seul &agrave; {PLAY_PRICE}</Link> pour des &eacute;conomies &agrave; peu pr&egrave;s &eacute;quivalentes&nbsp;: ROI de {fr(maxCalc.roi)} ans contre {fr(playCalc.roi)} ans.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Pendant la promotion ({PROMO_LABEL} jusqu&apos;au {PROMO_END}), le ROI descend &agrave; {fr(maxPromo.roi)} ans&nbsp;: cela reste long. Si vous &ecirc;tes chez vous en journ&eacute;e, le PLAY seul est nettement plus rentable. Si vous &ecirc;tes absent la journ&eacute;e et tenez &agrave; un kit tout compris avec batterie amovible, le PLAY MAX se d&eacute;fend, mais comparez avec une batterie de balcon plus capacitaire.</p>
+              <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong> &mdash; Produit coh&eacute;rent et batterie amovible pratique, mais prix &eacute;lev&eacute; pour 700&nbsp;Wh, chimie Li-Ion non LFP et onduleur plafonn&eacute; &agrave; 450 W. (Une version pr&eacute;c&eacute;dente lui donnait 8/10 sur la base d&apos;un prix erron&eacute;.)</p>
               <a href="https://sunology.eu/products/playmax-station-solaire-batterie" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY MAX &rarr;</a>
             </section>
 
@@ -215,7 +240,7 @@ export default function PlayMaxAvisPage() {
               <Link href="/calculateur" className="btn-primary inline-flex mt-2">Calculer mes économies →</Link>
             </div>
 
-            <AffiliateCTA productName="Sunology PLAYMax" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/playmax-station-solaire-batterie" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="699 €" />
+            <AffiliateCTA productName="Sunology PLAYMax" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/playmax-station-solaire-batterie" label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price={MAX_PRICE} />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
@@ -256,7 +281,7 @@ export default function PlayMaxAvisPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Méthodologie ROI :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud, sortie 450 W retenue (plafond de l&apos;onduleur) &agrave; 699 &euro;. &Eacute;conomies : 87 &euro; la premi&egrave;re ann&eacute;e, ROI 7,3 ans, ~3 090 &euro; sur 25 ans. Prix : panier sunology.eu, v&eacute;rifi&eacute; le 5 novembre 2026.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Méthodologie ROI :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud, sortie {MAX_OUTPUT_W} W retenue (plafond de l&apos;onduleur) &agrave; {MAX_PRICE}. &Eacute;conomies : {maxCalc.savings} &euro; la premi&egrave;re ann&eacute;e, ROI {fr(maxCalc.roi)} ans ({fr(maxPromo.roi)} ans au prix promotionnel de {PROMO_LABEL}), ~{fr(maxCalc.total25)} &euro; sur 25 ans. Prix : page produit sunology.eu, v&eacute;rifi&eacute; le 5 novembre 2026.</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> avis indépendant. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>

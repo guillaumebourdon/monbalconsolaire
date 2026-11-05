@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
-import { PRODUCTS, SCHEMA_AVAILABILITY } from '@/data/products';
+import { PRODUCTS, SCHEMA_AVAILABILITY, priceLabel } from '@/data/products';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -168,7 +168,7 @@ export default function JackerySolarVault3ProAvisPage() {
                       ['Bluetti Balco 260', '2,56 kWh', '789 \u20ac', 'Non inclus (pack 2 \u00d7 450 W : 1 079 \u20ac)', '7/10', false],
                       ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539 \u20ac', 'Non inclus (pack 2 \u00d7 500 W : 719 \u20ac)', '8.5/10', false],
                       ['EcoFlow STREAM Ultra', '1,92 kWh', '659 \u20ac', 'Non inclus', '7.5/10', false],
-                      ['Sunology PLAY MAX', '0,7 kWh', '699 \u20ac', '460 W inclus', '8/10', false],
+                      ['Sunology PLAY MAX', '0,7 kWh', priceLabel('sunology-play-max'), '460 W inclus', '7/10', false],
                     ].map(([name, battery, price, panels, score, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>
                         <td className="py-2 px-3">{name as string}</td>

@@ -233,7 +233,7 @@ const ARTICLES: Article[] = [
     brands: ['Sunology'],
     powers: ['400-500'],
     publishedAt: '2026-04-02',
-    score: '8/10',
+    score: '7/10',
     price: avisPrice('sunology-play-max'),
   },
   {
@@ -244,7 +244,7 @@ const ARTICLES: Article[] = [
     badge: 'Arrêté',
     tags: ['marque', 'compact'],
     brands: ['Sunology'],
-    powers: ['400-500'],
+    powers: ['moins-400'],
     publishedAt: '2026-04-27',
     score: '7,5/10',
     price: avisPrice('sunology-city'),

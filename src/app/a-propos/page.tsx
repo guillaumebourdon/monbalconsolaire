@@ -82,7 +82,7 @@ export default function AProposPage() {
             <div className="card bg-cream/50 mt-3">
               <p className="text-sm font-semibold text-charcoal mb-2">Un kit peut-il &ecirc;tre bien not&eacute; sans partenariat ?</p>
               <p className="text-sm">
-                Oui. &Agrave; l&apos;inverse, certains kits avec lesquels nous avons un partenariat sont not&eacute;s moyennement (par exemple le Sunology PLAY MAX, not&eacute; 7/10 tant que son prix de 1&nbsp;179&nbsp;&euro; portait son ROI &agrave; 11,7 ans) parce que leur rentabilit&eacute; ne justifiait pas mieux. Quand le prix baisse, la note est revue.
+                Oui. &Agrave; l&apos;inverse, certains kits avec lesquels nous avons un partenariat sont not&eacute;s moyennement (par exemple le Sunology PLAY MAX, not&eacute; 7/10 parce que son prix allonge fortement son ROI) parce que leur rentabilit&eacute; ne justifiait pas mieux. Quand le prix change durablement, la note est revue.
               </p>
             </div>
           </section>

@@ -6,6 +6,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
 import { zendureUrl } from '@/lib/affiliate';
+import { PRODUCTS, priceLabel } from '@/data/products';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 // Setups complets : prix vérifiés le 05/11/2026 (src/data/products.ts), calculs via src/lib/pricing.ts
@@ -14,7 +15,7 @@ const fr = (n: number) => n.toLocaleString('fr-FR');
 const SETUP_DEFS = [
   { label: 'Zendure SolarFlow 800 Plus + 2 × 500 W (pack, sortie 800 W)', price: 719, power: 800, storage: '1,92 kWh', acStd: 0.95, acAbsent: 0.8 },
   { label: 'Sunology PLAY (ex-PLAY 2, 515 W)', price: 599, power: 515, storage: '—', acStd: 0.85, acAbsent: 0.45 },
-  { label: 'Sunology PLAY MAX (460 W)', price: 699, power: 460, storage: '0,7 kWh', acStd: 0.95, acAbsent: 0.65 },
+  { label: 'Sunology PLAY MAX (460 W, sortie 450 W retenue)', price: PRODUCTS['sunology-play-max'].priceEur, power: 450, storage: '0,7 kWh', acStd: 0.95, acAbsent: 0.65 },
   { label: 'Beem On 500 Wc (précommande)', price: 429, power: 500, storage: '—', acStd: 0.85, acAbsent: 0.45 },
   { label: 'Beem Kit 300W (rupture)', price: 199, power: 300, storage: '—', acStd: 0.85, acAbsent: 0.45 },
 ];
@@ -41,7 +42,7 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Zendure, Sunology ou Beem : lequel est le moins cher ?',
-    answer: 'Pour un kit complet sans batterie, le Beem On 500 Wc à 429 € (0,86 €/Wc) est le moins cher (prix vérifié le 5 novembre 2026), mais il est en précommande (expédition à partir de décembre 2026). Si on compare des systèmes avec stockage, le Zendure SolarFlow 800 Plus (539 € seul pour 1,92 kWh + onduleur 800 W, prix barré 599 €) est le moins cher au kWh stocké : le Sunology PLAY MAX (panneau 460 W + batterie 700 Wh) coûte 699 €, panneau inclus, mais avec 2,7 fois moins de stockage.',
+    answer: `Pour un kit complet sans batterie, le Beem On 500 Wc à 429 € (0,86 €/Wc) est le moins cher (prix vérifié le 5 novembre 2026), mais il est en précommande (expédition à partir de décembre 2026). Si on compare des systèmes avec stockage, le Zendure SolarFlow 800 Plus (539 € seul pour 1,92 kWh + onduleur 800 W, prix barré 599 €) est le moins cher au kWh stocké : le Sunology PLAY MAX (panneau 460 W + batterie 700 Wh) coûte ${priceLabel('sunology-play-max')} (1 079 € en promotion jusqu’au 4 décembre 2026), panneau inclus, mais avec 2,7 fois moins de stockage.`,
   },
   {
     question: 'Lequel a le meilleur retour sur investissement ?',
@@ -71,7 +72,7 @@ const tableauComparatif = [
   ['Disponibilité (05/11/2026)', 'En stock', 'En stock', 'Précommande, expédition à partir de décembre 2026'],
   ['Ce qui est inclus', 'Onduleur 800 W + batterie 1,92 kWh', 'Panneau 515 W + onduleur + châssis', 'Panneau 500 Wc + onduleur + support'],
   ['Panneaux inclus', 'Non (ou pack 2 × 500 W à 719 €, prix promotionnel)', 'Oui (1 panneau 515 W)', 'Oui (1 panneau 500 Wc)'],
-  ['Stockage batterie', '1,92 kWh (LiFePO4)', 'Non (PLAY MAX 460 W avec VAULT 700 Wh à 699 €)', 'Non (Beem Battery en option)'],
+  ['Stockage batterie', '1,92 kWh (LiFePO4)', `Non (PLAY MAX 460 W avec VAULT 700 Wh à ${priceLabel('sunology-play-max')})`, 'Non (Beem Battery en option)'],
   ['Puissance sortie AC', '800 W', '500 W', '500 W'],
   ['Entrée solaire max', '1 500 W (2 × 750 W MPPT)', '500 W (1 panneau)', '500 W (1 panneau)'],
   ['Rendement onduleur', '95-98 % (GaN)', '96,7 % (CEC, MX500)', '96,5 %'],
@@ -232,7 +233,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                 <strong>ROI standard</strong> (m&eacute;thodologie du site)&nbsp;: Lyon, exposition sud, 1&nbsp;200&nbsp;kWh/kWc, performance ratio 0,85, tarif EDF base {KWH_PRICE_LABEL} (en vigueur depuis le {KWH_PRICE_SINCE}), inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;% sans batterie et 95&nbsp;% avec batterie.
               </p>
               <p className="text-xs text-stone italic mt-2">
-                <strong>*Sc&eacute;nario &laquo;&nbsp;absent en journ&eacute;e&nbsp;&raquo;</strong> (foyer vide de 8h &agrave; 18h, peu de consommation de fond)&nbsp;: autoconsommation 45&nbsp;% sans batterie, 65&nbsp;% avec la batterie 700&nbsp;Wh du PLAY MAX, 80&nbsp;% avec les 1,92&nbsp;kWh du Zendure. Hypoth&egrave;ses indicatives, m&ecirc;mes param&egrave;tres par ailleurs.
+                <strong>*Sc&eacute;nario &laquo;&nbsp;absent en journ&eacute;e&nbsp;&raquo;</strong> (foyer vide de 8h &agrave; 18h, peu de consommation de fond)&nbsp;: autoconsommation 45&nbsp;% sans batterie, 65&nbsp;% avec la batterie 700&nbsp;Wh du PLAY MAX, 80&nbsp;% avec les 1,92&nbsp;kWh du Zendure. Hypoth&egrave;ses indicatives, m&ecirc;mes param&egrave;tres par ailleurs. PLAY MAX&nbsp;: prix courant {priceLabel('sunology-play-max')} sur sunology.eu (1&nbsp;079&nbsp;&euro; en promotion jusqu&apos;au 4 d&eacute;cembre 2026), sortie 450&nbsp;W retenue.
               </p>
             </section>
 
@@ -340,9 +341,9 @@ export default function ZendureVsSunologyVsBeemPage() {
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-2.5">Sunology PLAY MAX (VAULT)</td>
-                      <td className="text-center p-2.5 font-mono">699 €</td>
+                      <td className="text-center p-2.5 font-mono">{priceLabel('sunology-play-max')}</td>
                       <td className="text-center p-2.5 font-mono">0,7 kWh</td>
-                      <td className="text-center p-2.5 font-mono">999 €/kWh (panneau inclus)</td>
+                      <td className="text-center p-2.5 font-mono">{fr(Math.round(PRODUCTS['sunology-play-max'].priceEur / 0.7))} €/kWh (panneau inclus)</td>
                     </tr>
                     <tr className="bg-cream/50">
                       <td className="p-2.5">EcoFlow STREAM Ultra (successeur du PowerStream)</td>

@@ -180,7 +180,7 @@ export default function MeilleureBatterieBalconPage() {
                         price: '789 €',
                         pricePerKwh: '308 €/kWh',
                         autonomy: '~18h',
-                        warranty: '5 ans',
+                        warranty: '10 ans',
                         panels: 'Non inclus (pack 2 × 450 W : 1 079 €)',
                         best: false,
                         badge: '',
@@ -368,7 +368,7 @@ export default function MeilleureBatterieBalconPage() {
                     </div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">
-                    Le Jackery SolarVault 3 Pro se distingue par sa garantie de 10 ans, la plus longue du march&eacute; balcon.
+                    Le Jackery SolarVault 3 Pro se distingue par sa garantie de 10 ans, la plus longue du march&eacute; balcon (&agrave; &eacute;galit&eacute; avec le Bluetti Balco 260).
                     Ses 2,52&nbsp;kWh LFP (4 entr&eacute;es MPPT compatibles jusqu&apos;&agrave; 4&nbsp;000&nbsp;W de panneaux) en font une solution
                     solide pour un balcon avec plusieurs panneaux. En promo, &agrave; 719&nbsp;&euro; (prix barr&eacute; 1&nbsp;139&nbsp;&euro;, constat&eacute; le 5 novembre 2026), son prix/kWh (285&nbsp;&euro;/kWh) est quasi identique &agrave; celui du Zendure
                     mais avec une garantie double.
@@ -378,7 +378,7 @@ export default function MeilleureBatterieBalconPage() {
                     <div>
                       <h4 className="font-bold text-sm mb-2">Points forts</h4>
                       <ul className="space-y-1 text-sm text-charcoal-light">
-                        <li className="flex gap-2"><span className="text-green font-bold">+</span> Garantie 10 ans (meilleure du march&eacute;)</li>
+                        <li className="flex gap-2"><span className="text-green font-bold">+</span> Garantie 10 ans (comme le Bluetti Balco 260)</li>
                         <li className="flex gap-2"><span className="text-green font-bold">+</span> 4 MPPT, compatible jusqu&apos;&agrave; 4&nbsp;000&nbsp;W solaire</li>
                         <li className="flex gap-2"><span className="text-green font-bold">+</span> Rapport capacit&eacute;/prix excellent en promo</li>
                       </ul>
@@ -519,7 +519,7 @@ export default function MeilleureBatterieBalconPage() {
                 </div>
                 <div className="card-lg">
                   <h3 className="font-bold mb-1">Garantie maximale &rarr; Jackery SolarVault 3 Pro</h3>
-                  <p className="text-sm text-charcoal-light">10 ans de garantie, 2,52&nbsp;kWh LFP, 719&nbsp;&euro; en promo (5 novembre 2026). Pour ceux qui veulent installer et ne plus y penser pendant une d&eacute;cennie.</p>
+                  <p className="text-sm text-charcoal-light">10 ans de garantie (comme le Bluetti Balco 260), 2,52&nbsp;kWh LFP, 719&nbsp;&euro; en promo (5 novembre 2026). Pour ceux qui veulent installer et ne plus y penser pendant une d&eacute;cennie.</p>
                 </div>
                 <div className="card-lg">
                   <h3 className="font-bold mb-1">D&eacute;j&agrave; &eacute;quip&eacute; EcoFlow &rarr; PowerStream d&apos;occasion</h3>

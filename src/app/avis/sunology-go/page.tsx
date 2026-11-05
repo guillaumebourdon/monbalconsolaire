@@ -28,7 +28,7 @@ const faqData = [
   },
   {
     question: 'Quelle différence entre le Sunology GO et le Sunology CITY (arrêté) ?',
-    answer: 'Le CITY (400 W, 549 € au dernier relevé du 15/05/2026) était conçu exclusivement pour le garde-corps et n\'est plus commercialisé par Sunology depuis 2026. Le GO (270 W, 349 €) le remplace sur ce segment mais avec une puissance plus faible et un prix nettement inférieur. Contrairement au CITY, le GO se pose aussi bien au sol (avec ballasts) que sur un garde-corps, ce qui en fait un kit plus polyvalent, pas un simple remplaçant à l\'identique.',
+    answer: 'Le CITY (300 W au total en 2 panneaux, 599 € au dernier prix public relevé sur sunology.eu en octobre 2025) était conçu exclusivement pour le garde-corps et n\'est plus commercialisé par Sunology. Le GO (270 W, 349 €) le remplace sur ce segment mais avec une puissance plus faible et un prix nettement inférieur. Contrairement au CITY, le GO se pose aussi bien au sol (avec ballasts) que sur un garde-corps, ce qui en fait un kit plus polyvalent, pas un simple remplaçant à l\'identique.',
   },
   {
     question: 'Le GO peut-il se fixer sur un garde-corps sans percer ?',
@@ -196,7 +196,7 @@ export default function SunologyGoPage() {
                 La gamme Sunology s&apos;est jusqu&apos;ici construite autour du <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY</Link> (500 W, pose au sol) et de sa version batterie, le PLAY MAX. Le <Link href="/avis/sunology-city" className="text-green hover:underline">CITY</Link> occupait le segment des balcons étroits avec une fixation garde-corps dédiée, avant d&apos;être retiré du catalogue en 2026.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Le GO reprend ce rôle de kit d&apos;entrée pour petit espace, mais avec une approche différente&nbsp;: au lieu de se spécialiser uniquement sur le garde-corps comme le CITY, Sunology le présente comme un kit « passe-partout », compatible à la fois avec une pose au sol (ballasts) et une pose sur rambarde (cadre 30 mm, sans perçage). Sa puissance de 270 W et son prix de 349 &euro; en font surtout le ticket d&apos;entrée le plus bas de la marque, sous les 549-599 &euro; du PLAY et du CITY.
+                Le GO reprend ce rôle de kit d&apos;entrée pour petit espace, mais avec une approche différente&nbsp;: au lieu de se spécialiser uniquement sur le garde-corps comme le CITY, Sunology le présente comme un kit « passe-partout », compatible à la fois avec une pose au sol (ballasts) et une pose sur rambarde (cadre 30 mm, sans perçage). Sa puissance de 270 W et son prix de 349 &euro; en font surtout le ticket d&apos;entrée le plus bas de la marque, sous les 599 &euro; du PLAY (et de l&apos;ancien CITY, 300&nbsp;W).
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
