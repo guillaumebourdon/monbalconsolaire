@@ -3,7 +3,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Mentions légales',
-  description: 'Mentions légales du site MonBalconSolaire, édité par Beélevén SASU.',
+  description: 'Mentions légales du site MonBalconSolaire, édité par Beeleven SASU.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/mentions-legales',
   },
@@ -44,17 +44,24 @@ export default function MentionsLegalesPage() {
           <div>
             <h2 className="font-bold text-xl text-charcoal mb-3">Propriété intellectuelle</h2>
             <p>
-              L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, mise en page) est la propriété exclusive de Beélevén SASU, sauf mention contraire explicite. Toute reproduction, représentation, modification ou exploitation de tout ou partie du site sans autorisation écrite préalable est interdite.
+              L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, mise en page) est la propriété exclusive de Beeleven SASU, sauf mention contraire explicite. Toute reproduction, représentation, modification ou exploitation de tout ou partie du site sans autorisation écrite préalable est interdite.
             </p>
           </div>
 
           <div>
             <h2 className="font-bold text-xl text-charcoal mb-3">Liens d&apos;affiliation</h2>
             <p>
-              MonBalconSolaire participe à des programmes d'affiliation, notamment le programme partenaire Sunology (partner.sunology.eu) et le programme Amazon Partenaires. Cela signifie que nous pouvons recevoir une commission si vous effectuez un achat après avoir cliqué sur un lien affilié présent sur notre site.
+              MonBalconSolaire est financ&eacute; par l&apos;affiliation. Les programmes utilis&eacute;s &agrave; ce jour, avec des liens de suivi r&eacute;ellement pr&eacute;sents sur le site, sont&nbsp;:
+            </p>
+            <ul className="list-none space-y-2 mt-3 pl-0">
+              <li className="flex items-start gap-2"><span className="text-green font-bold mt-0.5">&rarr;</span><span><strong>Amazon Partenaires</strong> (Amazon.fr)&nbsp;: en tant que Partenaire Amazon, nous r&eacute;alisons un b&eacute;n&eacute;fice sur les achats remplissant les conditions requises.</span></li>
+              <li className="flex items-start gap-2"><span className="text-green font-bold mt-0.5">&rarr;</span><span><strong>Awin</strong>, pour les marques Zendure, EcoFlow et ALLPOWERS.</span></li>
+            </ul>
+            <p className="mt-3">
+              Les liens vers les autres marques (Sunology, Beem, Sunethic, Jackery, Bluetti, DualSun&hellip;) sont des liens simples, sans r&eacute;mun&eacute;ration &agrave; ce jour. Si un nouveau programme est ajout&eacute;, cette liste est mise &agrave; jour.
             </p>
             <p className="mt-2">
-              Cette commission ne modifie en aucun cas le prix que vous payez. Notre contenu éditorial est indépendant de ces partenariats commerciaux. Les produits recommandés le sont sur la base de critères objectifs (rapport qualité-prix, performances, avis utilisateurs).
+              Une commission peut nous &ecirc;tre vers&eacute;e si vous achetez apr&egrave;s avoir cliqu&eacute; sur un lien affili&eacute;. Elle ne change pas le prix que vous payez. Les notes et classements ne d&eacute;pendent pas de la commission&nbsp;: les kits sont analys&eacute;s sur leur documentation, leurs prix et les retours publics d&apos;utilisateurs, sans test physique.
             </p>
           </div>
 
@@ -82,7 +89,7 @@ export default function MentionsLegalesPage() {
             </p>
           </div>
 
-          <p className="text-sm text-stone pt-4">Dernière mise à jour : mars 2026</p>
+          <p className="text-sm text-stone pt-4">Dernière mise à jour : 5 novembre 2026</p>
         </div>
       </div>
     </section>

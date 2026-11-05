@@ -156,7 +156,7 @@ export default function MethodologiePage() {
           <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10">
             <h3 className="font-bold text-base mb-2">Une erreur ? Une hypoth&egrave;se &agrave; challenger ?</h3>
             <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-              Notre m&eacute;thodologie est ouverte &agrave; la critique constructive. Nous corrigeons sous 48h et publions les modifications dans cette page.
+              Notre m&eacute;thodologie est ouverte &agrave; la critique constructive. Nous corrigeons dans les meilleurs d&eacute;lais et publions les modifications dans cette page.
             </p>
             <a href="mailto:contact@monbalconsolaire.fr" className="btn-primary text-sm inline-flex">
               Nous contacter &rarr;

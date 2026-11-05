@@ -49,7 +49,7 @@ export default function AProposPage() {
             <ul className="list-none space-y-2 pl-0">
               {[
                 'Disponibilit\u00e9 r\u00e9elle en France (stock, SAV, garantie applicable)',
-                'Plus de 100 avis utilisateurs publics v\u00e9rifiables (Trustpilot, Amazon, Google)',
+                'Des avis d\u2019utilisateurs publics consultables (Trustpilot, Amazon, Google, forums)',
                 'Certification CE compl\u00e8te (panneau + onduleur + structure)',
                 'Garantie produit \u2265 10 ans, garantie performance panneaux \u2265 25 ans',
                 'Transparence du constructeur sur les specs techniques',
@@ -103,7 +103,7 @@ export default function AProposPage() {
 
           <div className="card-lg text-center bg-gradient-to-br from-amber-pale/50 to-green-pale/30 border-amber/10 mt-4">
             <p className="text-charcoal font-semibold mb-4">Une question ? Un retour ?</p>
-            <p className="text-stone text-sm mb-4">Nous lisons tous les messages et r&eacute;pondons dans les 48h.</p>
+            <p className="text-stone text-sm mb-4">Nous lisons tous les messages et r&eacute;pondons dans les meilleurs d&eacute;lais.</p>
             <a href="mailto:contact@monbalconsolaire.fr" className="btn-primary inline-flex">Nous contacter</a>
           </div>
 

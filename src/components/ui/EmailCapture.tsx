@@ -1,7 +1,7 @@
 'use client';
 
 import { track } from '@vercel/analytics';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
 interface EmailCaptureProps {
   endpoint: string;
@@ -22,6 +22,7 @@ export function EmailCapture({
 }: EmailCaptureProps) {
   const [email, setEmail] = useState('');
   const [honeypot, setHoneypot] = useState('');
+  const honeypotId = useId();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -68,18 +69,22 @@ export function EmailCapture({
 
   return (
     <form onSubmit={handleSubmit} className={`${compact ? 'flex items-center gap-2' : 'space-y-3'}`}>
-      {/* Honeypot — hidden from users */}
-      <input
-        type="text"
-        name="company_website"
-        value={honeypot}
-        onChange={e => setHoneypot(e.target.value)}
-        tabIndex={-1}
-        autoComplete="off"
-        style={{ position: 'absolute', left: '-9999px', opacity: 0 }}
-      />
+      {/* Honeypot — invisible et ignoré par les lecteurs d'écran ; seuls les robots le remplissent */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden', opacity: 0 }}>
+        <label htmlFor={honeypotId}>Ne pas remplir ce champ</label>
+        <input
+          id={honeypotId}
+          type="text"
+          name="company_website"
+          value={honeypot}
+          onChange={e => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <input
         type="email"
+        aria-label="Votre adresse email"
         placeholder="Votre adresse email"
         value={email}
         onChange={e => setEmail(e.target.value)}

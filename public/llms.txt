@@ -1,0 +1,34 @@
+# MonBalconSolaire
+
+> Site éditorial indépendant sur les kits solaires plug-and-play pour balcon en France : guides, avis, comparatifs et calculateur de rentabilité. Édité par Beeleven SASU (RCS Paris 102 307 345, 7 rue Curial, 75019 Paris). Fondateur et directeur de la publication : Guillaume Bourdon. Contact : contact@monbalconsolaire.fr
+
+## Éditeur et indépendance
+
+- Entité éditrice : Beeleven SASU, qui exploite la marque MonBalconSolaire.
+- Les kits sont analysés à partir de leur documentation (fiches techniques, garanties, prix relevés chez les marchands) et des retours publics d'utilisateurs. Ils ne sont pas testés physiquement.
+- Le site est financé par l'affiliation (Amazon Partenaires ; Awin pour Zendure, EcoFlow et ALLPOWERS). Une commission peut être perçue sur un achat ; elle ne change ni le prix payé ni les notes. Aucune marque ne paie pour être classée.
+
+## Méthodologie de calcul (résumé)
+
+- Prix du kWh : 0,2001 €/kWh TTC, Tarif Bleu EDF option Base 6 kVA, en vigueur depuis le 1er août 2026 (délibération CRE n° 2026-147).
+- Hausse du prix du kWh : 3,3 % par an (moyenne 2012-2026).
+- Dégradation des panneaux : 0,5 % par an, intégrée au calcul du retour sur investissement et du cumul sur 25 ans.
+- Autoconsommation : 85 % sans batterie, 95 % avec batterie (scénario d'un foyer qui décale ses usages en journée).
+- Performance Ratio : 0,85.
+- Référence : Lyon, exposition sud, 1 200 kWh/kWc/an (données PVGIS, Commission européenne, recalées de façon prudente).
+- Durée d'analyse : 25 ans. Au-delà de 12 ans de retour sur investissement, le calculateur déconseille l'achat.
+
+## Pages clés
+
+- [Méthodologie](https://monbalconsolaire.fr/methodologie) : hypothèses, formule et historique des mises à jour
+- [À propos](https://monbalconsolaire.fr/a-propos) : qui écrit, comment les kits sont choisis, modèle économique
+- [Calculateur de rentabilité](https://monbalconsolaire.fr/calculateur) : recommandation selon département, orientation, largeur, présence et budget
+- [Rentabilité par département](https://monbalconsolaire.fr/etude/rentabilite-kit-solaire-balcon-departement) : étude sur les 96 départements métropolitains
+- [Meilleur kit solaire 2026](https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026) : comparatif principal
+- [Kit solaire petit budget](https://monbalconsolaire.fr/comparatif/kit-solaire-petit-budget)
+- [Quel kit choisir](https://monbalconsolaire.fr/quel-kit-choisir) : hub des avis et comparatifs
+- [Réglementation 2026](https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026) : NF C 15-100, déclaration au gestionnaire de réseau, copropriété
+- [Déclaration CACSI Enedis](https://monbalconsolaire.fr/guide/declaration-cacsi-enedis-panneau-solaire)
+- [Installer un kit solaire de balcon](https://monbalconsolaire.fr/guide/installer-kit-solaire-balcon)
+- [Aides et TVA 2026](https://monbalconsolaire.fr/blog/aides-subventions-panneau-solaire-balcon-2026)
+- [Comment ça marche](https://monbalconsolaire.fr/comment-ca-marche)

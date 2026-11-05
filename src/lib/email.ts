@@ -66,6 +66,9 @@ export function getEmailQueue() { return [...emailQueue]; }
 export function clearEmailQueue() { emailQueue.length = 0; }
 
 // ─── Unsubscribe token ───────────────────────────────────
+// ATTENTION (05/11/2026) : UNSUBSCRIBE_SECRET n'existe pas dans les variables Vercel ; la production
+// utilise donc cette valeur par défaut. Ne pas la retirer sans créer la variable avec la MÊME valeur,
+// sinon les liens de désinscription déjà envoyés cesseraient de fonctionner.
 const SECRET = process.env.UNSUBSCRIBE_SECRET || 'mbs-unsub-2026';
 
 export function generateUnsubToken(email: string): string {

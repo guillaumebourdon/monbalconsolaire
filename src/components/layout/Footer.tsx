@@ -65,7 +65,7 @@ export function Footer() {
             <strong className="text-stone">Transparence affiliation :</strong> MonBalconSolaire est un guide ind&eacute;pendant. Nous ne vendons aucun produit.
             Certains liens pr&eacute;sents sur ce site sont des liens affili&eacute;s : si vous effectuez un achat via ces liens, nous recevons une commission sans surco&ucirc;t pour vous.
           </p>
-          <p className="text-xs text-stone-light mt-4" suppressHydrationWarning>&copy; {new Date().getFullYear()} MonBalconSolaire &mdash; Be&eacute;lev&eacute;n SASU &mdash; Tous droits r&eacute;serv&eacute;s.</p>
+          <p className="text-xs text-stone-light mt-4" suppressHydrationWarning>&copy; {new Date().getFullYear()} MonBalconSolaire &mdash; Beeleven SASU &mdash; Tous droits r&eacute;serv&eacute;s.</p>
         </div>
       </div>
     </footer>
