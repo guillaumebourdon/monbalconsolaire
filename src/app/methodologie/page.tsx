@@ -2,10 +2,39 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { withCanonicalOg } from '@/lib/metadata';
+import {
+  KWH_PRICE_LABEL,
+  KWH_PRICE_SOURCE,
+  KWH_PRICE_SOURCE_URL,
+  KWH_INFLATION_LABEL,
+  PANEL_DEGRADATION_LABEL,
+  calculateProductionKwh,
+  calculateFirstYearSavings,
+  calculateROIYears,
+  calculateTotalSavings25Years,
+  yearFactor,
+} from '@/lib/pricing';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Exemple chiffré calculé au build avec les fonctions du site (aucun chiffre écrit à la main).
+const EX_KIT = PRODUCTS['sunology-play'];
+const EX = { kitPriceEur: EX_KIT.priceEur, kitPowerWc: EX_KIT.powerWc };
+const exProduction = calculateProductionKwh(EX);
+const exSavings1 = calculateFirstYearSavings(EX);
+const exSavings5 = exSavings1 * yearFactor(5);
+const exRoi = calculateROIYears(EX);
+const exTotal25 = calculateTotalSavings25Years(EX);
+const exCumul = (years: number) => {
+  let c = 0;
+  for (let y = 1; y <= years; y++) c += exSavings1 * yearFactor(y);
+  return Math.round(c);
+};
+const roiYearFloor = Math.floor(exRoi);
+const fr = (n: number) => n.toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'M\u00e9thodologie de calcul ROI solaire balcon : sources et hypoth\u00e8ses',
-  description: 'Comment nous calculons le ROI d\'un kit solaire balcon. Sources PVGIS, CRE, inflation kWh 3,3%/an. Toutes nos hypoth\u00e8ses sont publiques et auditables.',
+  description: 'Comment nous calculons le ROI d\'un kit solaire balcon : PVGIS, tarif réglementé, inflation 3,3 %/an, dégradation 0,5 %/an. Hypothèses publiques et auditables.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/methodologie',
   },
@@ -69,8 +98,9 @@ export default function MethodologiePage() {
                 </thead>
                 <tbody>
                   {[
-                    ['Prix du kWh', '0,1940 \u20ac/kWh TTC', 'Tarif r\u00e9glement\u00e9 EDF, option Base, 6 kVA, mai 2026 (CRE)'],
-                    ['Inflation kWh', '3,3% par an', 'Moyenne historique CRE 2012-2026. Le tarif est pass\u00e9 de 0,1263 \u20ac en 2012 \u00e0 0,1940 \u20ac en 2026.'],
+                    ['Prix du kWh', `${KWH_PRICE_LABEL} TTC`, KWH_PRICE_SOURCE],
+                    ['Inflation kWh', KWH_INFLATION_LABEL, 'Moyenne annuelle du tarif r\u00e9glement\u00e9 Base 6 kVA : 0,1263 \u20ac en 2012, 0,2001 \u20ac en 2026, soit +58 % en 14 ans (\u2248 3,3 %/an). Une moyenne pass\u00e9e, pas une pr\u00e9vision.'],
+                    ['D\u00e9gradation des panneaux', PANEL_DEGRADATION_LABEL, 'M\u00e9diane des mesures de terrain (NREL, Jordan & Kurtz). Appliqu\u00e9e chaque ann\u00e9e \u00e0 la production, donc au ROI et au cumul sur 25 ans.'],
                     ['Performance Ratio', '0,85', 'Pertes syst\u00e8me : onduleur 4% + c\u00e2blage 2% + temp\u00e9rature 5% + salissure 3%. Valeur haute PVGIS (0,75-0,85).'],
                     ['Autoconsommation (sans batterie)', '85%', 'Foyer attentif qui d\u00e9cale ses usages diurnes. Sans adaptation : 40-60%.'],
                     ['Autoconsommation (avec batterie)', '95%', 'La batterie stocke l\u2019exc\u00e9dent diurne pour le soir. Pertes de cycle int\u00e9gr\u00e9es.'],
@@ -93,17 +123,17 @@ export default function MethodologiePage() {
             <h2 className="text-2xl font-extrabold mb-4">Notre formule</h2>
             <div className="card-lg bg-cream/50 font-mono text-sm space-y-2">
               <p>Production annuelle (kWh) = Puissance(kWc) &times; Productible PVGIS &times; Performance Ratio &times; Coef Orientation</p>
-              <p>&Eacute;conomie ann&eacute;e N (&euro;) = Production &times; Taux autoconso &times; Prix kWh &times; (1 + 3,3%)^(N-1)</p>
-              <p>ROI (ann&eacute;es) = Premi&egrave;re ann&eacute;e o&ugrave; le cumul des &eacute;conomies d&eacute;passe le prix du kit</p>
+              <p>&Eacute;conomie ann&eacute;e N (&euro;) = Production &times; Taux autoconso &times; Prix kWh &times; (1 + 3,3&nbsp;%)^(N-1) &times; (1 &minus; 0,5&nbsp;%)^(N-1)</p>
+              <p>ROI (ann&eacute;es) = moment o&ugrave; le cumul des &eacute;conomies d&eacute;passe le prix du kit</p>
             </div>
             <div className="card-lg mt-4">
-              <h3 className="font-bold text-sm mb-3">Exemple : Sunology PLAY (ex-PLAY 2, 500 Wc, 599 &euro;) &agrave; Lyon, sud</h3>
+              <h3 className="font-bold text-sm mb-3">Exemple : {EX_KIT.name} ({EX_KIT.powerWc} Wc, {priceLabel('sunology-play')}) &agrave; Lyon, sud</h3>
               <ul className="text-sm text-charcoal-light space-y-1.5">
-                <li>&bull; Production = 0,50 &times; 1 200 &times; 0,85 &times; 1,0 = <strong>510 kWh/an</strong></li>
-                <li>&bull; &Eacute;conomie ann&eacute;e 1 = 510 &times; 0,85 &times; 0,1940 = <strong>84 &euro;</strong></li>
-                <li>&bull; &Eacute;conomie ann&eacute;e 5 (avec inflation 3,3%) = 84 &times; 1,139 = <strong>96 &euro;</strong></li>
-                <li>&bull; Cumul ann&eacute;e 6 = 548 &euro;, ann&eacute;e 7 = 650 &euro; &rarr; <strong>ROI atteint &agrave; 6,5 ans</strong></li>
-                <li>&bull; Total &eacute;conomis&eacute; sur 25 ans = <strong>~3 190 &euro;</strong></li>
+                <li>&bull; Production = {fr(EX_KIT.powerWc / 1000)} &times; 1 200 &times; 0,85 &times; 1,0 = <strong>{fr(exProduction)} kWh/an</strong></li>
+                <li>&bull; &Eacute;conomie ann&eacute;e 1 = {fr(exProduction)} &times; 0,85 &times; {KWH_PRICE_LABEL.replace(' \u20ac/kWh', '')} = <strong>{fr(Math.round(exSavings1))} &euro;</strong></li>
+                <li>&bull; &Eacute;conomie ann&eacute;e 5 (inflation 3,3&nbsp;%, d&eacute;gradation 0,5&nbsp;%) = {fr(Math.round(exSavings1))} &times; {fr(Math.round(yearFactor(5) * 1000) / 1000)} = <strong>{fr(Math.round(exSavings5))} &euro;</strong></li>
+                <li>&bull; Cumul ann&eacute;e {roiYearFloor} = {fr(exCumul(roiYearFloor))} &euro;, ann&eacute;e {roiYearFloor + 1} = {fr(exCumul(roiYearFloor + 1))} &euro; &rarr; <strong>ROI atteint &agrave; {fr(exRoi)} ans</strong></li>
+                <li>&bull; Total &eacute;conomis&eacute; sur 25 ans = <strong>~{fr(Math.round(exTotal25 / 10) * 10)} &euro;</strong></li>
               </ul>
             </div>
           </section>
@@ -130,7 +160,6 @@ export default function MethodologiePage() {
                 'Ombres locales (immeuble voisin, arbre, garde-corps opaque)',
                 'Volatilit\u00e9 future du prix du kWh (l\u2019inflation 3,3% est une moyenne, pas une garantie)',
                 'Variations selon le contrat (HP/HC, Tempo, fournisseur alternatif)',
-                'D\u00e9gradation des panneaux (estim\u00e9e \u00e0 0,5%/an, n\u00e9glig\u00e9e car compens\u00e9e par l\u2019inflation kWh)',
                 'Vente du surplus \u00e0 EDF OA (les kits plug-and-play n\u2019ont g\u00e9n\u00e9ralement pas de contrat d\u2019injection r\u00e9mun\u00e9r\u00e9)',
                 'Co\u00fbts de remplacement \u00e9ventuels (onduleur apr\u00e8s 12-15 ans, batterie apr\u00e8s 8-10 ans)',
                 'Valeur de revente du kit en cas de d\u00e9m\u00e9nagement',
@@ -147,8 +176,9 @@ export default function MethodologiePage() {
             <h2 className="text-2xl font-extrabold mb-4">Historique des mises &agrave; jour</h2>
             <div className="card">
               <ul className="text-sm text-charcoal-light space-y-2">
+                <li>&bull; <strong>5 novembre 2026 :</strong> Prix du kWh port&eacute; &agrave; {KWH_PRICE_LABEL} TTC (Tarif Bleu Base 6 kVA en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026, d&eacute;lib&eacute;ration CRE n&deg;&nbsp;2026-147 du 15 juillet 2026, +2,51&nbsp;% TTC&nbsp;; <a href={KWH_PRICE_SOURCE_URL} target="_blank" rel="noopener noreferrer" className="text-green underline">grille EDF</a>). La d&eacute;gradation des panneaux (0,5&nbsp;%/an) est d&eacute;sormais int&eacute;gr&eacute;e au calcul au lieu d&apos;&ecirc;tre suppos&eacute;e compens&eacute;e par l&apos;inflation.</li>
                 <li>&bull; <strong>Mai 2026 :</strong> Int&eacute;gration de l&apos;inflation kWh historique (3,3%/an) dans le calcul du ROI. Distinction Performance Ratio (0,85) / autoconsommation (85%/95%).</li>
-                <li>&bull; <strong>F&eacute;vrier 2026 :</strong> Prix du kWh initial &agrave; 0,1940 &euro; (TRV).</li>
+                <li>&bull; <strong>F&eacute;vrier 2026 :</strong> Prix du kWh initial &agrave; 0,1940 &euro; (Tarif Bleu Base 6 kVA au 1<sup>er</sup> f&eacute;vrier 2026).</li>
               </ul>
             </div>
           </section>

@@ -8,7 +8,7 @@ import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Panneau solaire balcon débutants 2026 : guide complet (mis à jour août)',
+  title: 'Panneau solaire de balcon pour débutants : guide complet 2026',
   description: 'Panneau solaire balcon en 2026 : installation, réglementation, coût (dès 429€), rentabilité, droits des locataires. Guide complet mis à jour août 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant',

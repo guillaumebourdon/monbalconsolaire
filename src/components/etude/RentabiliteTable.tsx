@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { REFERENCE_KIT, ALTERNATIVE_KIT } from '@/lib/rentabilite-departements';
 
 export type TableRow = {
   code: string;
@@ -24,8 +25,8 @@ const COLUMNS: { key: SortKey; label: string; numeric?: boolean }[] = [
   { key: 'region', label: 'Région' },
   { key: 'productionKwh', label: 'kWh/an', numeric: true },
   { key: 'savingsYear1', label: '€/an', numeric: true },
-  { key: 'roiYears', label: 'ROI 599 €', numeric: true },
-  { key: 'roiYearsAlt', label: 'ROI 429 €', numeric: true },
+  { key: 'roiYears', label: `ROI ${REFERENCE_KIT.priceEur} €`, numeric: true },
+  { key: 'roiYearsAlt', label: `ROI ${ALTERNATIVE_KIT.priceEur} €`, numeric: true },
   { key: 'netGain25', label: 'Gain net 25 ans', numeric: true },
 ];
 
@@ -59,7 +60,7 @@ export function RentabiliteTable({ rows }: { rows: TableRow[] }) {
     <div className="overflow-x-auto -mx-5 md:mx-0 rounded-brand border border-border-light">
       <table className="w-full text-sm border-collapse min-w-[720px]">
         <caption className="sr-only">
-          Rentabilit&eacute; d&apos;un kit solaire de balcon 500 Wc par d&eacute;partement, tri&eacute;e par colonne
+          Rentabilit&eacute; d&apos;un kit solaire de balcon de {REFERENCE_KIT.powerWc} Wc par d&eacute;partement, tri&eacute;e par colonne
         </caption>
         <thead>
           <tr className="bg-green text-white">

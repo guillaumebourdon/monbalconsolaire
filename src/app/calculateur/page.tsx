@@ -15,6 +15,8 @@ import {
   type CalcInput,
 } from '@/lib/pricing';
 import { productibleSite } from '@/lib/rentabilite-departements';
+import { KITS } from '@/lib/calculateur-kits';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 export default function CalculateurWrapper() {
   return (
@@ -42,17 +44,7 @@ function CalculateurSkeleton() {
   );
 }
 
-// ─── Kit catalog ──────────────────────────────────────────
-const KITS = [
-  { id: 'beem-kit-300w', name: 'Beem Kit 300W', brand: 'Beem Energy', power: 300, price: 199, hasBattery: false, slug: '/avis/beem-kit-300w', affiliateUrl: 'https://beemenergy.fr/products/kit-beem', minWidth: 'narrow', maxBudget: 400, editorial: 'Actuellement en rupture de stock chez Beem (vérifié le 12/10/2026).' },
-  { id: 'sunology-play-2', name: 'Sunology PLAY (ex-PLAY 2)', trackingName: 'Sunology PLAY', brand: 'Sunology', power: 500, price: 599, hasBattery: false, slug: '/avis/sunology-play-2', affiliateUrl: 'https://sunology.eu/products/play-kit-solaire-plug-play', minWidth: 'medium', maxBudget: 800 },
-  { id: 'beem-on-500w', name: 'Beem On 500 Wc', brand: 'Beem Energy', power: 500, price: 429, hasBattery: false, slug: '/avis/beem-on-500w', affiliateUrl: 'https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge', minWidth: 'medium', maxBudget: 800 },
-  { id: 'sunethic-f500', name: 'Sunethic F500', brand: 'Sunethic', power: 500, price: 690, hasBattery: false, slug: '/avis/sunethic-f500', affiliateUrl: 'https://sunethic.fr/produits', minWidth: 'medium', maxBudget: 800 },
-  { id: 'zendure-solarflow', name: 'Zendure SolarFlow', brand: 'Zendure', power: 840, price: 900, hasBattery: true, slug: '/avis/zendure-solarflow', affiliateUrl: '', minWidth: 'wide', maxBudget: 1500 },
-  { id: 'sunology-play-max', name: 'Sunology PLAY MAX', trackingName: 'Sunology PLAYMax', brand: 'Sunology', power: 450, price: 699, hasBattery: true, slug: '/avis/sunology-play-max', affiliateUrl: 'https://sunology.eu/products/playmax-station-solaire-batterie', minWidth: 'medium', maxBudget: 800 },
-  { id: 'dualsun-preasy', name: 'DualSun PREASY', brand: 'DualSun', power: 420, price: 870, hasBattery: false, slug: '/avis/dualsun-preasy', affiliateUrl: '', minWidth: 'medium', maxBudget: 1500, editorial: 'ROI long (10,5 ans). Choix Made in France et design premium.' },
-  { id: 'bluetti-balco-260', name: 'Bluetti Balco 260', brand: 'Bluetti', power: 1000, price: 1100, hasBattery: true, slug: '/avis/bluetti-balco-260', affiliateUrl: 'https://fr.bluettipower.eu/pages/bluetti-balco-260', minWidth: 'wide', maxBudget: 1500, editorial: 'Tout-en-un onduleur + batterie 2,56 kWh. Panneaux non inclus (prix estim\u00e9 avec 2\u00d7500 Wc).' },
-];
+// ─── Kit catalog : src/lib/calculateur-kits.ts (prix et disponibilités issus de data/products.ts)
 
 // ─── Options ──────────────────────────────────────────────
 const ORIENTATIONS = [
@@ -90,6 +82,9 @@ const SURFACE_COMPAT: Record<string, string[]> = {
   wide: ['narrow', 'medium', 'wide'],
   unknown: ['narrow', 'medium'],
 };
+
+// Seuil d'honnêteté : aucun kit n'est recommandé au-delà de ce ROI (années)
+const HONEST_MAX_ROI = 12;
 
 // ─── GA4 helper ───────────────────────────────────────────
 // Début et fin du calculateur aussi envoyés à Vercel Web Analytics (sans cookies)
@@ -201,8 +196,9 @@ function CalculateurPage() {
     const budgetMax = budgetData.max;
     const budgetStretch = Math.round(budgetMax * 1.15);
 
+    // Ruptures et produits arrêtés exclus de tous les choix (meilleur choix, meilleur prix, seuil d'honnêteté)
     const scored = KITS
-      .filter(k => surfaceAllowed.includes(k.minWidth) && k.price <= budgetStretch)
+      .filter(k => k.buyable && surfaceAllowed.includes(k.minWidth) && k.price <= budgetStretch)
       .map(k => {
         const ac = forceAutoconso60 ? 0.60 : (k.hasBattery ? presenceData.autoconsoB : presenceData.autoconso);
         const input: CalcInput = {
@@ -226,7 +222,7 @@ function CalculateurPage() {
 
     // Check honesty threshold: if best ROI > 12, recommend against
     const bestRoi = scored.length > 0 ? scored[0].roi : 99;
-    const honestNo = bestRoi > 12;
+    const honestNo = bestRoi > HONEST_MAX_ROI;
 
     if (scored.length === 0 || honestNo) {
       return { picks: [], others: [], all: scored, honestNo: true, marginal: false, bestPickRoi: 99, orientation: orientData.label, presence: presenceData.label };
@@ -236,7 +232,7 @@ function CalculateurPage() {
     const used = new Set<string>();
 
     // Best choice = best ROI, non-editorial, within budget
-    const bestChoice = scored.find(k => !k.editorial && !k.overBudget && !used.has(k.id));
+    const bestChoice = scored.find(k => !k.editorial && !k.overBudget && !used.has(k.id) && k.roi <= HONEST_MAX_ROI);
     if (bestChoice) {
       used.add(bestChoice.id);
       const reasons: string[] = [];
@@ -249,7 +245,7 @@ function CalculateurPage() {
     }
 
     // Best price = cheapest NOT already used
-    const bestPrice = scored.filter(k => !used.has(k.id) && !k.overBudget).sort((a, b) => a.price - b.price)[0];
+    const bestPrice = scored.filter(k => !used.has(k.id) && !k.overBudget && k.roi <= HONEST_MAX_ROI).sort((a, b) => a.price - b.price)[0];
     if (bestPrice) {
       used.add(bestPrice.id);
       picks.push({ ...bestPrice, label: 'Meilleur prix', reasons: ['Le kit le moins cher pour votre profil', `ROI de ${bestPrice.roi} ans pour seulement ${bestPrice.price} \u20ac`] });
@@ -257,7 +253,7 @@ function CalculateurPage() {
     }
 
     // Best storage = best ROI among battery kits NOT already used (include stretch budget)
-    const bestStorage = scored.filter(k => k.hasBattery && !used.has(k.id)).sort((a, b) => a.roi - b.roi)[0];
+    const bestStorage = scored.filter(k => k.hasBattery && !used.has(k.id) && k.roi <= HONEST_MAX_ROI).sort((a, b) => a.roi - b.roi)[0];
     if (bestStorage) {
       used.add(bestStorage.id);
       const storageReasons = ['Batterie int\u00e9gr\u00e9e : consommez le soir', `Autoconsommation ${Math.round(bestStorage.autoconso * 100)}% vs ${Math.round((presenceData.autoconso) * 100)}% sans batterie`];
@@ -267,7 +263,7 @@ function CalculateurPage() {
     }
 
     // Others = editorial kits that match but not picked
-    const others = scored.filter(k => k.editorial && !used.has(k.id));
+    const others = scored.filter(k => k.editorial && !used.has(k.id) && k.roi <= HONEST_MAX_ROI);
 
     // If prefilled kit, put it first
     if (prefilledKit) {
@@ -358,7 +354,7 @@ function CalculateurPage() {
                 <button key={o.value} onClick={() => selectOrientation(o.value)} className="text-left p-4 rounded-brand border border-border bg-cream hover:border-green hover:bg-green-pale transition-all">
                   <span className="text-xl mb-1 block">{o.emoji}</span>
                   <span className="font-semibold text-sm block">{o.label}</span>
-                  <span className="text-[10px] text-stone mt-0.5 block">{o.coeff === 1.0 ? 'Optimal' : o.coeff >= 0.9 ? 'Tr\u00e8s bon' : o.coeff >= 0.8 ? 'Bon' : o.coeff >= 0.65 ? 'R\u00e9duit' : 'Limit\u00e9'}</span>
+                  <span className="text-xs text-stone mt-0.5 block">{o.coeff === 1.0 ? 'Optimal' : o.coeff >= 0.9 ? 'Tr\u00e8s bon' : o.coeff >= 0.8 ? 'Bon' : o.coeff >= 0.65 ? 'R\u00e9duit' : 'Limit\u00e9'}</span>
                 </button>
               ))}
             </div>
@@ -437,10 +433,10 @@ function CalculateurPage() {
                   <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> Comparer avec une batterie virtuelle EDF (sans investissement mat&eacute;riel)</li>
                   <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> <Link href="/blog/panneau-solaire-balcon-nord" className="text-green hover:underline">Lire notre guide sur les balcons nord et peu expos&eacute;s</Link></li>
                 </ul>
-                <p className="text-sm text-charcoal-light mb-4">
-                  Si vous voulez quand m&ecirc;me tester pour des raisons &eacute;cologiques, le Beem Kit 300W reste le plus accessible &agrave; 199 &euro; (actuellement en rupture chez Beem).
+<p className="text-sm text-charcoal-light mb-4">
+                  Si vous voulez quand m&ecirc;me vous lancer pour des raisons &eacute;cologiques, commencez petit&nbsp;: notre comparatif des kits &agrave; petit budget liste ceux qui sont disponibles aujourd&apos;hui.
                 </p>
-                <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="secondary" position="calculator_fallback" />
+                <Link href="/comparatif/kit-solaire-petit-budget" className="btn-secondary text-sm inline-flex">Voir les kits &agrave; petit budget &rarr;</Link>
               </div>
             )}
 
@@ -448,8 +444,8 @@ function CalculateurPage() {
             {recommendations.picks.length === 0 && !recommendations.honestNo && (
               <div className="card-lg text-center">
                 <p className="text-lg font-bold mb-2">Aucun kit ne correspond exactement</p>
-                <p className="text-sm text-charcoal-light mb-4">Votre combinaison surface/budget est tr&egrave;s contrainte. Le Beem Kit 300W (199 &euro;, actuellement en rupture chez Beem) est le point d&apos;entr&eacute;e le plus accessible.</p>
-                <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir le Beem Kit 300W" variant="primary" position="calculator_fallback" />
+                <p className="text-sm text-charcoal-light mb-4">Votre combinaison surface/budget est tr&egrave;s contrainte et aucun kit disponible aujourd&apos;hui n&apos;y entre. Essayez un budget un peu plus large, ou consultez notre comparatif des kits &agrave; petit budget.</p>
+                <Link href="/comparatif/kit-solaire-petit-budget" className="btn-primary text-sm inline-flex">Voir les kits &agrave; petit budget &rarr;</Link>
               </div>
             )}
 
@@ -475,16 +471,20 @@ function CalculateurPage() {
               <div className={`grid gap-5 ${recommendations.picks.length === 1 ? 'max-w-md mx-auto' : recommendations.picks.length === 2 ? 'md:grid-cols-2 max-w-2xl mx-auto' : 'md:grid-cols-3'}`}>
                 {recommendations.picks.map((kit, i) => (
                   <div key={kit.id} className={`card-lg flex flex-col ${i === 0 ? 'border-green/30 bg-green-pale/10' : ''}`}>
-                    <div className={`text-[10px] font-bold uppercase tracking-widest mb-3 ${i === 0 ? 'text-green' : 'text-amber-dark'}`}>
+                    <div className={`text-xs font-bold uppercase tracking-widest mb-3 ${i === 0 ? 'text-green' : 'text-amber-dark'}`}>
                       {i === 0 ? '\ud83e\udd47' : i === 1 ? '\ud83e\udd48' : '\ud83e\udd49'} {kit.label}
                     </div>
                     <h3 className="font-bold text-lg mb-0.5">{kit.name}</h3>
                     <p className="text-xs text-stone mb-3">{kit.brand}</p>
-                    {kit.overBudget && <p className="text-[10px] text-amber-dark font-semibold mb-2">L&eacute;g&egrave;rement au-dessus de votre budget</p>}
+                    {kit.availabilityBadge && <p className="text-xs text-amber-dark font-semibold mb-2"><span className="badge-amber">{kit.availabilityBadge}</span></p>}
+                    {kit.overBudget && <p className="text-xs text-amber-dark font-semibold mb-2">L&eacute;g&egrave;rement au-dessus de votre budget</p>}
 
                     <div className="flex items-baseline gap-2 mb-2">
                       <span className="font-mono font-extrabold text-3xl text-green whitespace-nowrap">{kit.roi} ans</span>
                       <span className="text-xs text-stone">de ROI</span>
+                    </div>
+                    <div className="text-sm text-charcoal-light mb-1">
+                      {kit.production.toLocaleString('fr-FR')} kWh/an &middot; autoconsommation {Math.round(kit.autoconso * 100)}&nbsp;%
                     </div>
                     <div className="text-sm text-charcoal-light mb-4">
                       {kit.firstYear} &euro;/an &middot; {kit.total25.toLocaleString('fr-FR')} &euro; sur 25 ans
@@ -526,7 +526,7 @@ function CalculateurPage() {
                     <Link key={k.id} href={k.slug} className="card flex items-center justify-between hover:shadow-brand-lg transition-all group py-3 px-5">
                       <div>
                         <span className="font-semibold text-sm group-hover:text-green transition-colors">{k.name}</span>
-                        <span className="text-xs text-stone ml-2">{k.price} &euro; &middot; ROI {k.roi} ans</span>
+                        <span className="text-xs text-stone ml-2">{k.price} &euro; &middot; ROI {k.roi} ans{k.availabilityBadge ? ` \u00b7 ${k.availabilityBadge}` : ''}</span>
                       </div>
                       <span className="text-xs text-amber-dark">{k.editorial}</span>
                     </Link>
@@ -575,8 +575,8 @@ function CalculateurPage() {
                   <input type="checkbox" checked={forceAutoconso60} onChange={e => setForceAutoconso60(e.target.checked)} className="w-4 h-4 rounded border-border text-green focus:ring-green" />
                   Forcer autoconsommation &agrave; 60% (pire sc&eacute;nario)
                 </label>
-                <p className="text-[10px] text-stone">
-                  Hypoth&egrave;ses par d&eacute;faut : inflation 3,3%/an (CRE 2012-2026), Performance Ratio 0,85, autoconsommation selon votre profil. <Link href="/methodologie" className="text-green hover:underline">Voir notre m&eacute;thodologie</Link>.
+                <p className="text-xs text-stone">
+                  Hypoth&egrave;ses par d&eacute;faut : tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, Performance Ratio 0,85, autoconsommation selon votre profil. <Link href="/methodologie" className="text-green hover:underline">Voir notre m&eacute;thodologie</Link>.
                 </p>
               </div>
             </details>
@@ -591,8 +591,8 @@ function CalculateurPage() {
               </Link>
             </div>
 
-            <p className="text-[10px] text-stone text-center mt-4">
-              Calcul bas&eacute; sur les donn&eacute;es PVGIS, tarif EDF 0,1940 &euro;/kWh, inflation 3,3%/an (CRE). <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie compl&egrave;te</Link> &middot; <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="text-green hover:underline">Carte de la rentabilit&eacute; par d&eacute;partement</Link>.
+            <p className="text-xs text-stone text-center mt-4">
+              Calcul bas&eacute; sur les donn&eacute;es PVGIS, tarif EDF {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}. Prix et disponibilit&eacute;s v&eacute;rifi&eacute;s sur les sites des fabricants. <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie compl&egrave;te</Link> &middot; <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="text-green hover:underline">Carte de la rentabilit&eacute; par d&eacute;partement</Link>.
             </p>
           </div>
         )}

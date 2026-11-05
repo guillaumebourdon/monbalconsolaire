@@ -1,47 +1,51 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, type CalcInput } from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { PRODUCTS, priceLabel } from '@/data/products';
 
-const MONTHLY_DATA = [
-  { month: 'Jan', kwh: 28 },
-  { month: 'Fév', kwh: 36 },
-  { month: 'Mar', kwh: 52 },
-  { month: 'Avr', kwh: 62 },
-  { month: 'Mai', kwh: 78 },
-  { month: 'Juin', kwh: 85 },
-  { month: 'Juil', kwh: 90 },
-  { month: 'Aoû', kwh: 82 },
-  { month: 'Sep', kwh: 60 },
-  { month: 'Oct', kwh: 42 },
-  { month: 'Nov', kwh: 30 },
-  { month: 'Déc', kwh: 22 },
+// Exemple affiché : Sunology PLAY, Lyon (Rhône), balcon sud-ouest, foyer présent en journée.
+// Tous les chiffres sont calculés avec lib/pricing.ts et le prix vient de data/products.ts.
+const KIT = PRODUCTS['sunology-play'];
+const EXAMPLE: CalcInput = {
+  kitPriceEur: KIT.priceEur,
+  kitPowerWc: KIT.powerWc,
+  productibleKwhPerKwc: productibleSite(1300), // Rhône, recalé sur la référence Lyon
+  orientationCoef: 0.95, // sud-ouest
+};
+const PRODUCTION = calculateProductionKwh(EXAMPLE);
+const SAVINGS = Math.round(calculateFirstYearSavings(EXAMPLE));
+const ROI = calculateROIYears(EXAMPLE);
+
+// Répartition mensuelle indicative (profil type d'un balcon à Lyon), ramenée à la production annuelle.
+const MONTHLY_SHAPE = [
+  { month: 'Jan', w: 28 },
+  { month: 'Fév', w: 36 },
+  { month: 'Mar', w: 52 },
+  { month: 'Avr', w: 62 },
+  { month: 'Mai', w: 78 },
+  { month: 'Juin', w: 85 },
+  { month: 'Juil', w: 90 },
+  { month: 'Aoû', w: 82 },
+  { month: 'Sep', w: 60 },
+  { month: 'Oct', w: 42 },
+  { month: 'Nov', w: 30 },
+  { month: 'Déc', w: 22 },
 ];
+const SHAPE_TOTAL = MONTHLY_SHAPE.reduce((s, m) => s + m.w, 0);
+const MONTHLY_DATA = MONTHLY_SHAPE.map((m) => ({ month: m.month, kwh: Math.round((m.w / SHAPE_TOTAL) * PRODUCTION) }));
+const MAX_KWH = Math.max(...MONTHLY_DATA.map((m) => m.kwh)) * 1.05;
 
-const MAX_KWH = 95;
+const fr = (n: number) => n.toLocaleString('fr-FR');
 
 export function HeroVisual() {
   const [animated, setAnimated] = useState(false);
-  const [scoreValue, setScoreValue] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimated(true), 300);
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    if (!animated) return;
-    let current = 0;
-    const target = 78;
-    const interval = setInterval(() => {
-      current += 1;
-      if (current >= target) {
-        current = target;
-        clearInterval(interval);
-      }
-      setScoreValue(current);
-    }, 30);
-    return () => clearInterval(interval);
-  }, [animated]);
 
   return (
     <div className="relative">
@@ -62,34 +66,20 @@ export function HeroVisual() {
 
         {/* Content */}
         <div className="p-5 md:p-6">
-          {/* Score section */}
+          {/* Exemple de simulation */}
           <div className="text-center mb-5">
-            <span className="inline-block px-3 py-1 bg-amber-pale text-amber-dark text-[11px] font-bold rounded-lg mb-3">
-              Votre score solaire
+            <span className="inline-block px-3 py-1 bg-amber-pale text-amber-dark text-xs font-bold rounded-lg mb-2">
+              Exemple de simulation
             </span>
-            <div className="flex items-baseline justify-center gap-1">
-              <span className="text-5xl md:text-[56px] font-extrabold text-amber-dark leading-none tabular-nums">
-                {scoreValue}
-              </span>
-              <span className="text-xl text-stone-light font-normal">/100</span>
-            </div>
-            <p className="text-xs text-stone mt-1.5">Balcon sud-ouest, Lyon 3e</p>
-          </div>
-
-          {/* Progress bar */}
-          <div className="h-2 bg-cream-dark rounded-full overflow-hidden mb-5">
-            <div
-              className="h-full bg-gradient-to-r from-amber to-amber-light rounded-full transition-all duration-1000 ease-out"
-              style={{ width: animated ? '78%' : '0%' }}
-            />
+            <p className="text-xs text-stone">Balcon sud-ouest, Lyon &middot; {KIT.name} {KIT.powerWc}&nbsp;Wc</p>
           </div>
 
           {/* Stats grid */}
           <div className="grid grid-cols-3 gap-2.5 mb-5">
             {[
-              { value: '487', unit: 'kWh/an', color: 'text-green' },
-              { value: '94 €', unit: "d'éco./an", color: 'text-amber-dark' },
-              { value: '4.2', unit: 'ans ROI', color: 'text-green' },
+              { value: fr(PRODUCTION), unit: 'kWh/an', color: 'text-green' },
+              { value: `${SAVINGS} €`, unit: "d'éco. la 1re année", color: 'text-amber-dark' },
+              { value: fr(ROI), unit: 'ans de ROI', color: 'text-green' },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -158,13 +148,13 @@ export function HeroVisual() {
           >
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-[11px] text-green font-semibold">Kit recommandé</div>
+                <div className="text-xs text-green-dark font-semibold">Kit de l&apos;exemple</div>
                 <div className="text-sm font-bold text-green-dark mt-0.5">
-                  Sunology PLAY
+                  {KIT.name}
                 </div>
               </div>
               <div className="text-right">
-                <div className="font-mono font-medium text-green-dark text-lg">599 €</div>
+                <div className="font-mono font-medium text-green-dark text-lg">{priceLabel('sunology-play')}</div>
               </div>
             </div>
           </div>

@@ -26,6 +26,7 @@ import {
   ANALYSIS_DURATION_YEARS,
   PVGIS_REFERENCE_LYON,
   calculateROIYears,
+  PANEL_DEGRADATION_LABEL,
 } from '@/lib/pricing';
 import { withCanonicalOg } from '@/lib/metadata';
 
@@ -33,8 +34,8 @@ const SLUG = 'rentabilite-kit-solaire-balcon-departement';
 const URL = `https://monbalconsolaire.fr/etude/${SLUG}`;
 const CSV_PATH = `/etude/${SLUG}/donnees.csv`;
 const PUBLISHED = '2026-10-12';
-const UPDATED = '2026-10-12';
-const UPDATED_LABEL = '12 octobre 2026';
+const UPDATED = '2026-11-05';
+const UPDATED_LABEL = '5 novembre 2026';
 const PAGE_TITLE = 'Carte de la rentabilité d’un kit solaire de balcon par département (2026)';
 
 export const metadata: Metadata = withCanonicalOg({
@@ -44,7 +45,7 @@ export const metadata: Metadata = withCanonicalOg({
   alternates: { canonical: URL },
   openGraph: {
     title: 'Carte de France de la rentabilité d’un kit solaire de balcon',
-    description: 'Production, économies et retour sur investissement d’un kit 500 Wc dans les 96 départements métropolitains.',
+    description: 'Production, économies et retour sur investissement d’un kit de 515 Wc dans les 96 départements métropolitains.',
     url: URL,
     type: 'article',
   },
@@ -137,7 +138,7 @@ const CHIFFRES_PRESSE = [
   `${stats.best.name} (${stats.best.code}) arrive en tête : ${eur(stats.best.productionKwh)} kWh produits par an, ${eur(stats.best.savingsYear1)} € d’économies la première année, rentabilisé en ${yrs(stats.best.roiYears)} ans.`,
   `${stats.worst.name} (${stats.worst.code}) ferme la marche : ${eur(stats.worst.productionKwh)} kWh/an, ${eur(stats.worst.savingsYear1)} €/an, rentabilisé en ${yrs(stats.worst.roiYears)} ans, soit ${yrs(stats.roiGapYears)} ans de plus.`,
   `Le même kit produit ${stats.productionGapPct} % d’électricité en plus en ${stats.best.name} que dans le ${stats.worst.name} ; sur ${ANALYSIS_DURATION_YEARS} ans, l’écart de gain net atteint ${eur(stats.gain25Gap)} €.`,
-  `${stats.under7} départements sur 96 rentabilisent le kit en moins de 7 ans ; ${stats.over8} seul${stats.over8 > 1 ? 's' : ''} dépasse${stats.over8 > 1 ? 'nt' : ''} 8 ans. Avec un kit 500 Wc à ${ALTERNATIVE_KIT.priceEur} €, la médiane tombe à ${yrs(stats.medianRoiAlt)} ans.`,
+  `${stats.under7} départements sur 96 rentabilisent le kit en moins de 7 ans ; ${stats.over8} seul${stats.over8 > 1 ? 's' : ''} dépasse${stats.over8 > 1 ? 'nt' : ''} 8 ans. Avec un kit de même puissance à ${ALTERNATIVE_KIT.priceEur} €, la médiane tombe à ${yrs(stats.medianRoiAlt)} ans.`,
 ];
 
 const faqData = [
@@ -150,7 +151,7 @@ const faqData = [
     answer: `Oui, mais plus lentement. Dans le ${stats.worst.name}, le département le moins ensoleillé de notre classement, le même kit produit ${stats.worst.productionKwh} kWh par an et se rembourse en ${yrs(stats.worst.roiYears)} ans, bien avant la fin de sa garantie de 25 ans. Le gain net sur ${ANALYSIS_DURATION_YEARS} ans y reste de ${eur(stats.worst.netGain25)} €, à condition d’autoconsommer l’essentiel de la production.`,
   },
   {
-    question: 'Combien produit un kit solaire de balcon de 500 Wc en France ?',
+    question: `Combien produit un kit solaire de balcon de ${REFERENCE_KIT.powerWc} Wc en France ?`,
     answer: `Entre ${stats.worst.productionKwh} et ${stats.best.productionKwh} kWh par an selon le département, avec une médiane de ${stats.medianProduction} kWh, pour un panneau orienté sud et non ombragé. À Paris, l’estimation est de ${paris.productionKwh} kWh/an ; dans le Rhône, de ${lyon.productionKwh} kWh/an. Une orientation est ou ouest ou une pose verticale réduisent ces chiffres.`,
   },
   {
@@ -168,7 +169,7 @@ export default function CarteRentabilitePage() {
     <>
       <SchemaArticle
         title={PAGE_TITLE}
-        description="Production, économies et retour sur investissement d'un kit solaire de balcon 500 Wc dans les 96 départements de France métropolitaine."
+        description="Production, économies et retour sur investissement d'un kit solaire de balcon de 515 Wc dans les 96 départements de France métropolitaine."
         url={URL}
         datePublished={PUBLISHED}
         dateModified={UPDATED}
@@ -337,7 +338,7 @@ export default function CarteRentabilitePage() {
                       );
                     })}
                   </ul>
-                  <p className="text-[11px] text-stone mt-3 leading-relaxed">Nombre de d&eacute;partements par classe. Inflation du tarif de {KWH_INFLATION_LABEL} incluse.</p>
+                  <p className="text-xs text-stone mt-3 leading-relaxed">Nombre de d&eacute;partements par classe. Inflation du tarif de {KWH_INFLATION_LABEL} incluse.</p>
                 </div>
               </div>
             </section>
@@ -558,12 +559,13 @@ export default function CarteRentabilitePage() {
                       {[
                         ['Ensoleillement', 'Productible moyen par département, sud, 30°', 'PVGIS 5.3 (Centre commun de recherche, Commission européenne)'],
                         ['Recalage', `Rhône (${PVGIS_RHONE} kWh/kWc PVGIS) = ${PVGIS_REFERENCE_LYON} kWh/kWc`, 'Référence prudente du site, Lyon'],
-                        ['Kit de référence', `Kit plug-and-play ${REFERENCE_KIT.powerWc} Wc, ${REFERENCE_KIT.priceEur} €`, 'Prix public courant d’un kit 500 Wc grand public, octobre 2026'],
-                        ['Kit alternatif', `Kit plug-and-play ${ALTERNATIVE_KIT.powerWc} Wc, ${ALTERNATIVE_KIT.priceEur} €`, 'Prix bas constaté pour la même puissance, octobre 2026'],
+                        ['Kit de référence', `${REFERENCE_KIT.name}, ${REFERENCE_KIT.powerWc} Wc, ${REFERENCE_KIT.priceEur} €`, `Prix et puissance relevés sur le site du fabricant le ${REFERENCE_KIT.verifiedOn.split('-').reverse().join('/')}`],
+                        ['Kit alternatif', `Kit plug-and-play de même puissance à ${ALTERNATIVE_KIT.priceEur} €`, `Prix du ${ALTERNATIVE_KIT.name} relevé le ${ALTERNATIVE_KIT.verifiedOn.split('-').reverse().join('/')}${ALTERNATIVE_KIT.availabilityLabel ? ` (${ALTERNATIVE_KIT.availabilityLabel.toLowerCase()})` : ''}`],
                         ['Performance ratio', String(PERFORMANCE_RATIO).replace('.', ','), 'Onduleur, câblage, température, salissure'],
                         ['Autoconsommation', pct(AUTOCONSO_STANDARD), 'Sans batterie, foyer présent en journée'],
                         ['Prix du kWh', KWH_PRICE_LABEL, KWH_PRICE_SOURCE],
                         ['Inflation du tarif', KWH_INFLATION_LABEL, 'Moyenne 2012-2026 du tarif réglementé (CRE)'],
+                        ['Dégradation des panneaux', PANEL_DEGRADATION_LABEL, 'Médiane des mesures de terrain (NREL), appliquée chaque année'],
                         ['Durée d’analyse', `${ANALYSIS_DURATION_YEARS} ans`, 'Durée de garantie usuelle des panneaux'],
                       ].map(([p, v, s], i) => (
                         <tr key={p} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>

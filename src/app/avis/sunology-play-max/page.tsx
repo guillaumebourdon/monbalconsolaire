@@ -8,7 +8,7 @@ import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Sunology PLAY MAX avis 2026 : kit solaire + batterie, ça vaut le coup ?',
+  title: 'Sunology PLAY MAX avis 2026 : kit + batterie, ça vaut le coup ?',
   description: 'Avis Sunology PLAY MAX (PLAYMax) : station 450 Wc + batterie VAULT 700 Wh, désormais 699 €. Production, stockage, ROI 7,4 ans. Faut-il la batterie ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-play-max',

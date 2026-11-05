@@ -14,21 +14,30 @@ import {
   calculateTotalSavings25Years,
   PVGIS_REFERENCE_LYON,
 } from '@/lib/pricing';
+import { PRODUCTS, availabilityBadge } from '@/data/products';
 
+const REF = PRODUCTS['sunology-play'];
 export const REFERENCE_KIT = {
-  name: 'Sunology PLAY',
-  brand: 'Sunology',
-  powerWc: 500,
-  priceEur: 599,
-  href: '/avis/sunology-play-2',
+  name: REF.name,
+  brand: REF.brand,
+  powerWc: REF.powerWc,
+  priceEur: REF.priceEur,
+  href: REF.reviewSlug!,
+  verifiedOn: REF.verifiedOn,
 };
 
+// Kit alternatif : même puissance de référence, prix bas constaté. Sa disponibilité est
+// affichée (précommande au 05/11/2026) : il ne doit pas être présenté comme achetable tout de suite.
+const ALT = PRODUCTS['beem-on-500w'];
 export const ALTERNATIVE_KIT = {
-  name: 'Beem On 500 Wc',
-  brand: 'Beem Energy',
-  powerWc: 500,
-  priceEur: 429,
-  href: '/avis/beem-on-500w',
+  name: ALT.name,
+  brand: ALT.brand,
+  powerWc: REF.powerWc,
+  priceEur: ALT.priceEur,
+  href: ALT.reviewSlug!,
+  availability: ALT.availability,
+  availabilityLabel: availabilityBadge('beem-on-500w'),
+  verifiedOn: ALT.verifiedOn,
 };
 
 /** Valeur PVGIS du Rhône dans data/departments.ts, utilisée pour le recalage sur Lyon. */

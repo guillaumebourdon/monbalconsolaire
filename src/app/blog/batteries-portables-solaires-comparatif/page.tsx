@@ -8,7 +8,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Batteries portables et balcon fixe 2026 : Bluetti Balco 260, EcoFlow, Jackery',
+  title: 'Batteries portables et batteries de balcon 2026 : comparatif',
   description: 'Comparatif batteries portables (EcoFlow, Bluetti, Jackery) et batteries balcon fixe 2026 (Bluetti Balco 260, Zendure SolarFlow). Prix mis à jour août 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif',
@@ -215,7 +215,7 @@ export default function BatteriesPortablesPage() {
   return (
     <>
       <SchemaArticle
-        title="Batteries portables et balcon fixe 2026 : Bluetti Balco 260, EcoFlow, Jackery"
+        title="Batteries portables et batteries de balcon 2026 : comparatif"
         description="Comparatif batteries portables et batteries balcon fixe 2026, prix mis à jour août 2026."
         url="https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif"
         datePublished="2026-04-21"

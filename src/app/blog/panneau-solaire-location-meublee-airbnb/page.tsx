@@ -7,7 +7,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Kit solaire balcon en location meublée et Airbnb : ce que la loi autorise',
+  title: 'Kit solaire balcon en location meublée et Airbnb : les règles',
   description: 'Locataire, propriétaire-hôte Airbnb : règles réelles, autorisations, CACSI et rentabilité chiffrée d\'un kit plug-and-play selon votre situation.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-location-meublee-airbnb',
@@ -45,7 +45,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
   return (
     <>
       <SchemaArticle
-        title="Kit solaire balcon en location meublée et Airbnb : ce que la loi autorise"
+        title="Kit solaire balcon en location meublée et Airbnb : les règles"
         description="Locataire, propriétaire-hôte Airbnb : règles réelles, autorisations, CACSI et rentabilité chiffrée."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-location-meublee-airbnb"
         datePublished="2026-09-22"

@@ -4,6 +4,42 @@ import dynamic from 'next/dynamic';
 import { siteStats } from '@/lib/stats';
 import { Parallax } from '@/components/ui/Parallax';
 import { withCanonicalOg } from '@/lib/metadata';
+import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, AUTOCONSO_BATTERY, AUTOCONSO_STANDARD } from '@/lib/pricing';
+import { productibleSite, getRentabiliteStats } from '@/lib/rentabilite-departements';
+import { DEPARTMENTS } from '@/data/departments';
+import { PRODUCTS, priceLabel, availabilityBadge, type ProductId } from '@/data/products';
+
+// Chiffres de la page d'accueil calculés au build (pricing.ts + products.ts), jamais écrits à la main.
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const pvgis = (code: string) => productibleSite(DEPARTMENTS.find((d) => d.code === code)!.irradiation);
+function simul(id: ProductId, opts: { code?: string; orientation?: number; battery?: boolean } = {}) {
+  const p = PRODUCTS[id];
+  const input = {
+    kitPriceEur: p.priceEur,
+    kitPowerWc: p.powerWc,
+    productibleKwhPerKwc: opts.code ? pvgis(opts.code) : undefined,
+    orientationCoef: opts.orientation,
+    hasBattery: opts.battery,
+  };
+  return {
+    production: calculateProductionKwh(input),
+    savings: Math.round(calculateFirstYearSavings(input)),
+    roi: fr(calculateROIYears(input)),
+  };
+}
+const HOME_KITS: { badge: string; id: ProductId; name?: string; battery?: boolean }[] = [
+  { badge: 'Meilleur choix', id: 'sunology-play', name: 'Sunology PLAY (ex-PLAY 2)' },
+  { badge: 'Avec batterie', id: 'sunology-play-max', battery: true },
+  { badge: 'Petit balcon', id: 'sunology-go' },
+  { badge: 'Meilleur prix', id: 'beem-on-500w' },
+];
+const caseLyon = simul('sunology-play');
+const deptStats = getRentabiliteStats();
+const KIT_RANGE_IDS: ProductId[] = ['sunology-go', 'sunology-play', 'beem-on-500w', 'sunethic-f500', 'sunology-play-max', 'dualsun-preasy'];
+const kitPrices = KIT_RANGE_IDS.filter((id) => PRODUCTS[id].availability !== 'outofstock' && PRODUCTS[id].availability !== 'discontinued').map((id) => PRODUCTS[id].priceEur);
+const roiRange = `${fr(Math.floor(deptStats.minRoi))}-${fr(Math.ceil(deptStats.maxRoi))} ans`;
+const caseMarseille = simul('sunology-play-max', { code: '13', battery: true });
+const caseLille = simul('sunology-go', { code: '59', orientation: 0.65 });
 
 const HeroVisual = dynamic(() => import('@/components/HeroVisual').then(m => m.HeroVisual), {
   ssr: false,
@@ -94,10 +130,10 @@ export default function HomePage() {
         <div className="container-brand">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 reveal-group">
             {[
-              { value: '80-130\u20ac/an', label: 'd\'\u00e9conomies selon votre r\u00e9gion' },
+              { value: `${deptStats.worst.savingsYear1}-${deptStats.best.savingsYear1}\u00a0\u20ac/an`, label: `d\'\u00e9conomies pour un kit ${PRODUCTS['sunology-play'].powerWc} Wc plein sud, selon la r\u00e9gion` },
               { value: '25 ans', label: 'Garantie des panneaux' },
-              { value: '199-900\u20ac', label: 'Prix d\'un kit solaire balcon' },
-              { value: '5-8 ans', label: 'Selon le kit et votre exposition' },
+              { value: `${Math.min(...kitPrices)}-${Math.max(...kitPrices)}\u00a0\u20ac`, label: 'Prix des kits complets que nous analysons' },
+              { value: roiRange, label: `de ROI pour ce kit plein sud, selon le d\u00e9partement` },
             ].map((item, i) => (
               <div key={i} className="text-center p-6 rounded-brand-lg bg-cream reveal">
                 <div className="font-mono font-medium text-amber-dark text-xl md:text-2xl mb-1">
@@ -172,48 +208,24 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 reveal-group">
-            {[
-              {
-                badge: 'Meilleur choix',
-                name: 'Sunology PLAY (ex-PLAY 2)',
-                brand: 'Sunology',
-                power: '500 Wc',
-                price: '599\u20ac',
-                roi: '6,5 ans',
-                slug: '/avis/sunology-play-2',
-              },
-              {
-                badge: 'Meilleur stockage',
-                name: 'Zendure SolarFlow',
-                brand: 'Zendure',
-                power: '840 W + batterie',
-                price: '900\u20ac',
-                roi: '5,3 ans',
-                slug: '/avis/zendure-solarflow',
-              },
-              {
-                badge: 'Petit budget',
-                name: 'Beem Kit 300W',
-                brand: 'Beem Energy',
-                power: '300 Wc',
-                price: '199\u20ac',
-                roi: '3,8 ans',
-                slug: '/avis/beem-kit-300w',
-              },
-              {
-                badge: 'Meilleur prix',
-                name: 'Beem On 500 Wc',
-                brand: 'Beem Energy',
-                power: '500 Wc',
-                price: '429\u20ac',
-                roi: '4,8 ans',
-                slug: '/avis/beem-on-500w',
-              },
-            ].map((kit, i) => (
+            {HOME_KITS.map(({ badge, id, name, battery }) => {
+              const p = PRODUCTS[id];
+              return {
+                badge,
+                name: name ?? p.name,
+                brand: p.brand,
+                power: `${p.powerWc} Wc${battery && p.batteryKwh ? ` + batterie ${fr(p.batteryKwh)} kWh` : ''}`,
+                price: priceLabel(id),
+                roi: `${simul(id, { battery }).roi} ans`,
+                slug: p.reviewSlug ?? '/avis',
+                availability: availabilityBadge(id),
+              };
+            }).map((kit, i) => (
               <Link key={i} href={kit.slug} className="card-lg group hover:shadow-brand-lg transition-all duration-300 reveal">
-                <div className="badge-green mb-3 text-[10px]">{kit.badge}</div>
+                <div className="badge-green mb-3">{kit.badge}</div>
                 <h3 className="font-bold text-lg mb-1 group-hover:text-green transition-colors">{kit.name}</h3>
                 <p className="text-xs text-stone mb-4">{kit.brand} &mdash; {kit.power}</p>
+                {kit.availability && <p className="text-xs text-amber-dark font-semibold -mt-2 mb-3">{kit.availability}</p>}
                 <div className="flex items-baseline justify-between mb-4">
                   <div className="font-mono font-bold text-green text-xl">{kit.price}</div>
                   <div className="text-xs text-stone">ROI {kit.roi}</div>
@@ -247,52 +259,52 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-8 reveal-group">
             <div className="card-lg reveal">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Lyon, balcon sud</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Lyon, balcon sud</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-                Appartement T3, actif en journ&eacute;e. Sunology PLAY (ex-PLAY 2, 500 Wc, 599 &euro;). Production estim&eacute;e : <strong>510 kWh/an</strong>. &Eacute;conomies : <strong>84 &euro;/an</strong>.
+                Appartement T3, foyer qui d&eacute;cale ses usages en journ&eacute;e. {PRODUCTS['sunology-play'].name} ({PRODUCTS['sunology-play'].powerWc} Wc, {priceLabel('sunology-play')}). Production estim&eacute;e&nbsp;: <strong>{fr(caseLyon.production)} kWh/an</strong>. &Eacute;conomies&nbsp;: <strong>{caseLyon.savings} &euro; la 1<sup>re</sup> ann&eacute;e</strong>.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-green">ROI 6,5 ans</span>
-                <span className="badge-green text-[9px]">&#10003; Rentable</span>
+                <span className="text-xs font-mono font-bold text-green">ROI {caseLyon.roi} ans</span>
+                <span className="badge-green">&#10003; Rentable</span>
               </div>
             </div>
 
             <div className="card-lg reveal">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Marseille, terrasse sud</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-green mb-3">Profil type &mdash; Marseille, balcon sud</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-                Maison, t&eacute;l&eacute;travail. Zendure SolarFlow + 2 &times; 420 W (900 &euro;). Production : <strong>1 083 kWh/an</strong>. Avec batterie (95 % autocons.) : <strong>200 &euro;/an</strong>.
+                Appartement, absent une partie de la journ&eacute;e. {PRODUCTS['sunology-play-max'].name} ({PRODUCTS['sunology-play-max'].powerWc} Wc + batterie, {priceLabel('sunology-play-max')}). Production&nbsp;: <strong>{fr(caseMarseille.production)} kWh/an</strong>. Avec batterie ({Math.round(AUTOCONSO_BATTERY * 100)}&nbsp;% autoconsomm&eacute;s)&nbsp;: <strong>{caseMarseille.savings} &euro; la 1<sup>re</sup> ann&eacute;e</strong>.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-green">ROI 4,3 ans</span>
-                <span className="badge-green text-[9px]">&#10003; Rentable</span>
+                <span className="text-xs font-mono font-bold text-green">ROI {caseMarseille.roi} ans</span>
+                <span className="badge-green">&#10003; Rentable</span>
               </div>
             </div>
 
             <div className="card-lg reveal">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-amber-dark mb-3">Profil type &mdash; Lille, balcon nord-est</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-amber-dark mb-3">Profil type &mdash; Lille, balcon nord-est</div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-                Appartement T2, balcon nord-est. Beem Kit 300W (199 &euro;, actuellement en rupture). Production estim&eacute;e : <strong>169 kWh/an</strong>. &Eacute;conomies : <strong>28 &euro;/an</strong>.
+                Appartement T2, balcon nord-est. {PRODUCTS['sunology-go'].name} ({PRODUCTS['sunology-go'].powerWc} Wc, {priceLabel('sunology-go')}). Production estim&eacute;e&nbsp;: <strong>{fr(caseLille.production)} kWh/an</strong>. &Eacute;conomies&nbsp;: <strong>{caseLille.savings} &euro; la 1<sup>re</sup> ann&eacute;e</strong>.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-amber-dark">ROI 6,5 ans</span>
-                <span className="badge-amber text-[9px]">&#9888; Marginal</span>
+                <span className="text-xs font-mono font-bold text-amber-dark">ROI {caseLille.roi} ans</span>
+                <span className="badge-amber">&#9888; Marginal</span>
               </div>
             </div>
           </div>
 
           <p className="text-xs text-stone text-center mb-8">
-            Simulations bas&eacute;es sur les donn&eacute;es PVGIS et le tarif r&eacute;glement&eacute; EDF en vigueur (0,1940 &euro;/kWh), autoconsommation 85 % sans batterie, inflation 3,3 %/an, coefficient nord-est 0,65. R&eacute;sultats indicatifs, variant selon votre situation r&eacute;elle.
+            Simulations bas&eacute;es sur les donn&eacute;es PVGIS et le tarif r&eacute;glement&eacute; EDF en vigueur ({KWH_PRICE_LABEL}), autoconsommation {Math.round(AUTOCONSO_STANDARD * 100)}&nbsp;% sans batterie, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}, coefficient nord-est 0,65. R&eacute;sultats indicatifs, variant selon votre situation r&eacute;elle.
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-stone pt-8 border-t border-border-light">
             <div className="text-center number-pop">
               <div className="font-mono text-2xl font-bold text-green">{siteStats.articlesPublies}</div>
-              <div className="text-xs mt-1">guides publi&eacute;s</div>
+              <div className="text-xs mt-1">articles publi&eacute;s</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
             <div className="text-center number-pop" style={{ animationDelay: '0.15s' }}>
               <div className="font-mono text-2xl font-bold text-green">{siteStats.kitsAnalyses}</div>
-              <div className="text-xs mt-1">kits analys&eacute;s</div>
+              <div className="text-xs mt-1">produits analys&eacute;s</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-border"></div>
             <div className="text-center number-pop" style={{ animationDelay: '0.3s' }}>

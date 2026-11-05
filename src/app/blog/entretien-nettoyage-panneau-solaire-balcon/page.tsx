@@ -7,7 +7,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Entretien et nettoyage d\'un panneau solaire de balcon : le guide complet',
+  title: 'Nettoyer et entretenir un panneau solaire de balcon',
   description: 'Comment nettoyer un panneau solaire de balcon ? Fréquence, produits, erreurs à éviter, impact sur la production. Guide pratique avec checklist saisonnière.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/entretien-nettoyage-panneau-solaire-balcon',

@@ -8,7 +8,7 @@ import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Prix de l\'électricité 2026 : pourquoi le solaire devient incontournable',
+  title: 'Prix de l\'électricité 2026 : ce que ça change pour le solaire',
   description: 'Analyse de l\'évolution du prix de l\'électricité en France en 2026 et impact sur la rentabilité du solaire de balcon. Données, projections, calculs.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/prix-electricite-2026-solaire',
