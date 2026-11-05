@@ -5,10 +5,11 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire avec batterie 2026 : comparatif stockage',
-  description: 'Comparatif des kits solaires plug-and-play avec batterie en 2026 : Sunology PLAY MAX, Beem Battery, EcoFlow PowerStream. Prix, capacité, rentabilité.',
+  description: 'Kits solaires plug-and-play avec batterie en 2026 : Sunology PLAY MAX, Zendure, Jackery, Bluetti, EcoFlow STREAM. Prix, capacité, rentabilité.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026',
   },
@@ -16,7 +17,7 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   { question: 'Faut-il une batterie avec un kit solaire de balcon ?', answer: 'Non, ce n\'est pas indispensable. Sans batterie, vous consommez l\'électricité en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coûte 100 à 1 400€ supplémentaires (100€ seulement entre le PLAY et le PLAY MAX), ce qui allonge le ROI si vous êtes présent en journée.' },
-  { question: 'Quelle est la batterie la moins chère pour un kit solaire ?', answer: 'La Sunology VAULT (700 Wh) coûte 499€ seule, mais le plus accessible est le PLAY MAX : station 450 Wc + VAULT pour 699€, soit 100€ de plus que le kit PLAY sans batterie. C\'est la solution de stockage complète (panneau inclus) la plus abordable du marché plug-and-play.' },
+  { question: 'Quelle est la batterie la moins chère pour un kit solaire ?', answer: 'La Sunology VAULT (700 Wh) coûtait 499€ seule (prix relevé en juin 2026), mais le plus accessible est le PLAY MAX : station 460 W + VAULT pour 699€ (prix du panier sur sunology.eu au 5 novembre 2026), soit 100€ de plus que le kit PLAY sans batterie. C\'est la solution de stockage complète (panneau inclus) la plus abordable du marché plug-and-play.' },
   { question: 'Combien d\'heures d\'autonomie offre une batterie solaire ?', answer: 'La VAULT de Sunology (700 Wh) offre environ 5 heures d\'autonomie pour le talon de consommation (frigo + box + veilles). La STOREY (2,2 kWh) peut couvrir une soirée complète.' },
   { question: 'Une batterie solaire est-elle rentable ?', answer: 'C\'est moins évident qu\'un kit seul. L\'investissement supplémentaire (100-1 400€) ne se rentabilise que si vous augmentez significativement votre taux d\'autoconsommation. En pratique, le gain supplémentaire est de 30-60€/an, soit un ROI de 8 à 20+ ans sur la batterie seule.' },
 ];
@@ -24,7 +25,7 @@ const faqData = [
 export default function BatteriePage() {
   return (
     <>
-      <SchemaArticle title="Kit solaire avec batterie 2026 : comparatif stockage" description="Comparatif des solutions de stockage solaire plug-and-play en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026" datePublished="2026-03-31" dateModified="2026-06-20" />
+      <SchemaArticle title="Kit solaire avec batterie 2026 : comparatif stockage" description="Comparatif des solutions de stockage solaire plug-and-play en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026" datePublished="2026-03-31" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Kits avec batterie' }]} />
       <article className="section-padding">
@@ -34,7 +35,7 @@ export default function BatteriePage() {
             <div className="badge-green mb-4 inline-block">Comparatif 2026</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Kit solaire avec batterie 2026 : comparatif stockage plug-and-play</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Stocker l&apos;énergie solaire pour le soir, c&apos;est tentant. Mais est-ce vraiment rentable ? Comparatif des solutions de stockage Sunology, Beem et EcoFlow.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>31 mars 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>31 mars 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
             <span className="text-stone text-sm mt-0.5">&#x2139;</span>
@@ -59,25 +60,25 @@ export default function BatteriePage() {
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h3 className="font-bold text-green mb-2">Sans batterie (kit seul)</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
-                    <p>Investissement : <span className="font-mono font-medium">599€</span> (PLAY 500 Wc)</p>
+                    <p>Investissement : <span className="font-mono font-medium">599€</span> (PLAY 515 W)</p>
                     <p>Autoconsommation : <span className="font-mono font-medium">~40%</span></p>
-                    <p>Économies/an : <span className="font-mono font-medium text-green">~40€</span></p>
-                    <p>ROI : <span className="font-mono font-medium">12,5 ans</span></p>
-                    <p>Éco. sur 25 ans : <span className="font-mono font-medium text-green">~1 500€</span></p>
+                    <p>Économies année 1 : <span className="font-mono font-medium text-green">~42€</span></p>
+                    <p>ROI : <span className="font-mono font-medium">12,2 ans</span></p>
+                    <p>Éco. sur 25 ans : <span className="font-mono font-medium text-green">~1 490€</span></p>
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
                   <h3 className="font-bold text-amber-dark mb-2">Avec batterie (kit + VAULT)</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
-                    <p>Investissement : <span className="font-mono font-medium">699€</span> (PLAY MAX 450 Wc)</p>
+                    <p>Investissement : <span className="font-mono font-medium">699€</span> (PLAY MAX 460 W)</p>
                     <p>Autoconsommation : <span className="font-mono font-medium">~70%</span></p>
-                    <p>Économies/an : <span className="font-mono font-medium text-amber-dark">~62€</span></p>
-                    <p>ROI : <span className="font-mono font-medium">9,7 ans</span></p>
-                    <p>Éco. sur 25 ans : <span className="font-mono font-medium text-amber-dark">~2 360€</span></p>
+                    <p>Économies année 1 : <span className="font-mono font-medium text-amber-dark">~66€</span></p>
+                    <p>ROI : <span className="font-mono font-medium">9,4 ans</span></p>
+                    <p>Éco. sur 25 ans : <span className="font-mono font-medium text-amber-dark">~2 330€</span></p>
                   </div>
                 </div>
               </div>
-              <p className="text-charcoal-light leading-relaxed">Dans ce scénario (foyer peu présent en journée, 1 200 kWh/kWc, PR 0,85, 0,1940 €/kWh, +3,3 %/an), la batterie ajoute ~22€/an d&apos;économies pour un surcoût de seulement 100€ depuis que le PLAY MAX est passé à 699€ : le ROI tombe de <span className="data-highlight">12,5 à 9,7 ans</span>. Si vous êtes présent en journée (85 % d&apos;autoconsommation sans batterie), l&apos;écart s&apos;inverse légèrement : 6,5 ans pour le PLAY seul contre 7,4 ans pour le PLAY MAX.</p>
+              <p className="text-charcoal-light leading-relaxed">Dans ce sc&eacute;nario (foyer peu pr&eacute;sent en journ&eacute;e, 1 200 kWh/kWc, PR 0,85, {KWH_PRICE_LABEL}, +{KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}), la batterie ajoute ~24€ d&apos;&eacute;conomies la premi&egrave;re ann&eacute;e pour un surco&ucirc;t de seulement 100€ depuis que le PLAY MAX est pass&eacute; &agrave; 699€ : le ROI tombe de <span className="data-highlight">12,2 &agrave; 9,4 ans</span>. Si vous &ecirc;tes pr&eacute;sent en journ&eacute;e (85 % d&apos;autoconsommation sans batterie), l&apos;&eacute;cart s&apos;inverse l&eacute;g&egrave;rement : 6,2 ans pour le PLAY seul contre 7,2 ans pour le PLAY MAX. Prix v&eacute;rifi&eacute;s le 5 novembre 2026 (la page produit Sunology affiche encore 1&nbsp;179&nbsp;&euro; pour le PLAY MAX, le panier 699&nbsp;&euro;).</p>
             </section>
 
             <section>
@@ -94,20 +95,23 @@ export default function BatteriePage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Sunology VAULT', '700 Wh', '499€', '713€/kWh', '~5h', 'Nomade + plug-and-play', true],
-                      ['Sunology STOREY', '2,2 kWh', '1 390€', '632€/kWh', '~15h', 'Fixe plug-and-play', false],
+                      ['Sunology VAULT', '700 Wh', '499€*****', '713€/kWh', '~5h', 'Nomade + plug-and-play', false],
+                      ['Sunology STOREY', '2,2 kWh', '1 390€*****', '632€/kWh', '~15h', 'Fixe plug-and-play', false],
                       ['Beem Battery', '2,2 kWh', '~5 500€**', '2 500€/kWh', '~15h', 'Fixe plug-and-play', false],
-                      ['EcoFlow PowerStream (arr\u00eat\u00e9)', '2 kWh', '~1 800\u20ac***', '900\u20ac/kWh', '~13h', 'Modulaire', false],
-                      ['Bluetti Balco 260', '2,56 kWh', '849\u20ac****', '332\u20ac/kWh', '~17h', 'Tout-en-un (sans panneaux)', false],
+                      ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539\u20ac***', '281\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', true],
+                      ['Jackery SolarVault 3 Pro', '2,52 kWh', '719\u20ac***', '285\u20ac/kWh', '~17h', 'Onduleur + batterie (sans panneaux)', false],
+                      ['EcoFlow STREAM Ultra', '1,92 kWh', '659\u20ac***', '343\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', false],
+                      ['Bluetti Balco 260', '2,56 kWh', '789\u20ac***', '308\u20ac/kWh', '~17h', 'Tout-en-un (sans panneaux)', false],
                     ].map(([n, c, p, r, a, t, best], i) => {
                       const thumbMap: Record<string, { src: string; href: string }> = {
-                        'EcoFlow PowerStream (arr\u00eat\u00e9)': { src: '/images/produits/ecoflow-powerstream-2.webp', href: '/avis/ecoflow-powerstream' },
+                        'Zendure SolarFlow 800 Plus': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
+                        'Jackery SolarVault 3 Pro': { src: '/images/produits/jackery-solarvault-3-pro-1.webp', href: '/avis/jackery-solarvault-3-pro' },
                         'Bluetti Balco 260': { src: '/images/produits/bluetti-balco-260-front.webp', href: '/avis/bluetti-balco-260' },
                       };
                       const thumb = thumbMap[n as string];
                       return (
                       <tr key={i} className={`border-b border-border-light ${best ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold"><div className="flex items-center gap-3">{thumb && <ProductThumb src={thumb.src} alt={n as string} href={thumb.href} size="sm" />}<span>{n} {best && <span className="badge-green ml-2 text-[10px]">Meilleur prix</span>}</span></div></td>
+                        <td className="p-3 font-semibold"><div className="flex items-center gap-3">{thumb && <ProductThumb src={thumb.src} alt={n as string} href={thumb.href} size="sm" />}<span>{n} {best && <span className="badge-green ml-2 text-xs">Meilleur prix/kWh</span>}</span></div></td>
                         <td className="text-center p-3 font-mono text-sm">{c}</td>
                         <td className="text-center p-3 font-mono text-sm text-amber-dark">{p}</td>
                         <td className="text-center p-3 font-mono text-sm">{r}</td>
@@ -118,7 +122,7 @@ export default function BatteriePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">* Autonomie estim&eacute;e pour un talon de consommation de 140W. ** Prix du bundle kit + batterie Beem (6 190&euro; - 690&euro; pour le kit seul estim&eacute;). *** Prix du bundle batterie + micro-onduleur EcoFlow, sans panneau. **** Bluetti Balco 260 : prix du bo&icirc;tier seul, panneaux non inclus.</p>
+              <p className="text-xs text-stone">* Autonomie estim&eacute;e pour un talon de consommation de 140W. ** Prix du bundle kit + batterie Beem (6 190&euro; - 690&euro; pour le kit seul estim&eacute;), non rev&eacute;rifi&eacute;. *** Prix du bo&icirc;tier seul (panneaux non inclus) relev&eacute; sur le site du fabricant le 5 novembre 2026, souvent promotionnel (prix barr&eacute;s&nbsp;: Zendure 599&nbsp;&euro;, Jackery 1&nbsp;139&nbsp;&euro;, EcoFlow 1&nbsp;299&nbsp;&euro;, Bluetti 1&nbsp;049&nbsp;&euro;). ***** Prix Sunology relev&eacute;s en juin 2026, non rev&eacute;rifi&eacute;s.</p>
             </section>
 
             <section>
@@ -126,10 +130,10 @@ export default function BatteriePage() {
               <div className="space-y-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/sunology-play-max-1.webp" alt="Sunology PLAY MAX" href="/avis/sunology-play-max" size="lg" /><div><div className="badge-green mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Station 450 Wc + batterie VAULT 700 Wh · Plug-and-play</p></div></div>
+                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/sunology-play-max-1.webp" alt="Sunology PLAY MAX" href="/avis/sunology-play-max" size="lg" /><div><div className="badge-green mb-2">Meilleur rapport qualité/prix</div><h3 className="font-bold text-xl">Sunology PLAY MAX</h3><p className="text-sm text-stone">Station 460 W + batterie VAULT 700 Wh · Plug-and-play</p></div></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-green">699 €</div></div>
                   </div>
-                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PLAY MAX est le kit + batterie le plus accessible du marché : une station Sunology de 450 Wc avec la batterie VAULT (700 Wh) intégrée pour 699€ (contre 1 179€ auparavant), soit 100€ de plus que le PLAY sans batterie. La VAULT est amovible (3,7 kg, IP65, utilisable en camping/pique-nique) et offre ~5 heures d&apos;autonomie sur le talon de consommation.</p>
+                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PLAY MAX est le kit + batterie le plus accessible du marché : une station Sunology de 460 W avec la batterie VAULT (700 Wh) intégrée pour 699€ au panier (la page produit affiche encore 1 179€, vérifié le 5 novembre 2026), soit 100€ de plus que le PLAY sans batterie. La VAULT est amovible (3,7 kg, IP65, utilisable en camping/pique-nique) et offre ~5 heures d&apos;autonomie sur le talon de consommation.</p>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points forts</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> Le bundle le moins cher du marché</li>
@@ -149,13 +153,13 @@ export default function BatteriePage() {
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">1 390 €</div><div className="text-xs text-stone">(batterie seule)</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">La STOREY est la solution fixe de Sunology : 2,2 kWh de capacité, branchée sur une prise, elle stocke le surplus solaire pour une utilisation le soir et la nuit. C&apos;est 3x la capacité de la VAULT, avec une gestion plus intelligente de la charge/décharge.</p>
-                  <p className="text-sm text-charcoal-light mt-2"><strong>Le calcul :</strong> kit PLAY 500&nbsp;W (ex-PLAY&nbsp;2, 599€) + STOREY (1 390€) = 1 989€ au total. Avec notre m&eacute;thodologie (510&nbsp;kWh/an, 95&nbsp;% d&apos;autoconsommation, Lyon sud), ~94€/an d&apos;économies la premi&egrave;re ann&eacute;e&nbsp;: ROI d&apos;environ 16 ans. C&apos;est rentable sur 25 ans (~3 565€ cumul&eacute;s) mais loin d&apos;un kit seul.</p>
+                  <p className="text-sm text-charcoal-light mt-2"><strong>Le calcul :</strong> kit PLAY 515&nbsp;W (ex-PLAY&nbsp;2, 599€) + STOREY (1 390€) = 1 989€ au total. Avec notre m&eacute;thodologie (525&nbsp;kWh/an, 95&nbsp;% d&apos;autoconsommation, Lyon sud), ~100€ d&apos;économies la premi&egrave;re ann&eacute;e&nbsp;: ROI d&apos;environ 16 ans. C&apos;est rentable sur 25 ans (~3 540€ cumul&eacute;s) mais loin d&apos;un kit seul.</p>
                 </div>
 
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
                     <div className="flex items-start gap-4"><ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="lg" /><div><div className="badge-amber mb-2">Arr&ecirc;t&eacute;</div><h3 className="font-bold text-xl">EcoFlow PowerStream</h3><p className="text-sm text-stone">Syst&egrave;me modulaire batterie + micro-onduleur</p></div></div>
-                    <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">~1 800 &euro;</div><div className="text-xs text-stone">(sans panneau)</div></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-stone">Arr&ecirc;t&eacute;</div><div className="text-xs text-stone">successeur&nbsp;: STREAM Ultra, 659&nbsp;&euro; seul</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PowerStream d&apos;EcoFlow &eacute;tait une approche diff&eacute;rente : un micro-onduleur intelligent qui g&egrave;re la charge/d&eacute;charge automatiquement selon votre consommation en temps r&eacute;el, mais compatible uniquement avec une batterie portable EcoFlow achet&eacute;e &agrave; part (DELTA, RIVER). <strong>Mise &agrave; jour 03/11/2026&nbsp;:</strong> le PowerStream n&apos;est plus vendu par EcoFlow France, remplac&eacute; par le <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">STREAM Ultra</Link>, qui int&egrave;gre directement sa batterie (1,92&nbsp;kWh, extensible &agrave; 11,52&nbsp;kWh) &mdash; voir notre <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">avis PowerStream</Link>.</p>
                 </div>
@@ -163,18 +167,18 @@ export default function BatteriePage() {
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
                     <div className="flex items-start gap-4"><ProductThumb src="/images/produits/bluetti-balco-260-front.webp" alt="Bluetti Balco 260" href="/avis/bluetti-balco-260" size="lg" /><div><div className="badge-amber mb-2">Tout-en-un</div><h3 className="font-bold text-xl">Bluetti Balco 260</h3><p className="text-sm text-stone">Onduleur SiC + batterie LFP 2,56 kWh int&eacute;gr&eacute;s &middot; IP65</p></div></div>
-                    <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">849 &euro;</div><div className="text-xs text-stone">(sans panneaux)</div></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">789 &euro;</div><div className="text-xs text-stone">(sans panneaux, prix promo au 05/11/2026)</div></div>
                   </div>
-                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le Balco 260 de Bluetti int&egrave;gre onduleur, batterie et 4 MPPT dans un seul bo&icirc;tier IP65. La batterie de 2,56&nbsp;kWh est extensible jusqu&apos;&agrave; 15&nbsp;kWh. C&apos;est le meilleur prix/kWh du march&eacute; (332&nbsp;&euro;/kWh), mais les panneaux ne sont pas inclus. <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
+                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le Balco 260 de Bluetti int&egrave;gre onduleur, batterie et 4 MPPT dans un seul bo&icirc;tier IP65. La batterie de 2,56&nbsp;kWh est extensible jusqu&apos;&agrave; 15&nbsp;kWh. &Agrave; 789&nbsp;&euro; seul (prix promotionnel constat&eacute; le 5 novembre 2026, barr&eacute; 1&nbsp;049&nbsp;&euro;), soit 308&nbsp;&euro;/kWh, il est proche des moins chers au kWh (Zendure SolarFlow 800 Plus&nbsp;: 281&nbsp;&euro;/kWh), mais les panneaux ne sont pas inclus&nbsp;: 1&nbsp;079&nbsp;&euro; en pack avec 2 panneaux de 450&nbsp;W. <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points forts</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">
-                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Meilleur prix/kWh du march&eacute; (332&nbsp;&euro;/kWh)</li>
+                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Bon prix/kWh (308&nbsp;&euro;/kWh au 5 novembre 2026)</li>
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> Secours &eacute;lectrique 1&nbsp;200&nbsp;W en cas de coupure</li>
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> Extensible jusqu&apos;&agrave; 15&nbsp;kWh</li>
                   </ul>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points faibles</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">
-                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Panneaux non inclus (co&ucirc;t total &gt;1&nbsp;100&nbsp;&euro;)</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Panneaux non inclus (1&nbsp;079&nbsp;&euro; en pack 2 &times; 450&nbsp;W)</li>
                     <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> App Bluetti historiquement faible (refonte en cours)</li>
                   </ul>
                 </div>
@@ -186,7 +190,7 @@ export default function BatteriePage() {
               <div className="space-y-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h3 className="font-bold text-green mb-1">Pour 80% des gens → Kit seul (sans batterie)</h3>
-                  <p className="text-sm text-charcoal-light">Le meilleur ROI, de loin. Commencez par un <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">kit Sunology PLAY (599€) ou Beem On 500 Wc (429€)</Link>. Vous pouvez toujours ajouter une batterie plus tard si le besoin se fait sentir.</p>
+                  <p className="text-sm text-charcoal-light">Le meilleur ROI, de loin. Commencez par un <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">kit Sunology PLAY (599€) ou Beem On 500 Wc (429€, en précommande)</Link>. Vous pouvez toujours ajouter une batterie plus tard si le besoin se fait sentir.</p>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
                   <h3 className="font-bold text-amber-dark mb-1">Pour les absents la journée → PLAY MAX (699€)</h3>
@@ -236,7 +240,7 @@ export default function BatteriePage() {
                 </Link>
                 <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Stockage LFP 2,52&nbsp;kWh &agrave; 839&nbsp;&euro; en promo</p>
+                  <p className="text-xs text-charcoal-light mt-1">Stockage LFP 2,52&nbsp;kWh &agrave; 719&nbsp;&euro; seul (prix promo au 05/11/2026)</p>
                 </Link>
                 <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow Mix</h3>

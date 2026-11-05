@@ -113,28 +113,28 @@ export default function ApplicationSuiviProductionSolairePage() {
               <div className="grid md:grid-cols-2 gap-3 my-6">
                 <div className="card border-l-4 border-l-green">
                   <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/beem-on-500-1.webp" alt="Beem On 500 Wc" href="/avis/beem-on-500w" size="sm" /><h3 className="font-bold text-sm text-green">Beem</h3></div>
-                  <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Suivi via boîtier dédié</p>
+                  <p className="text-xs text-stone uppercase tracking-wider font-semibold mb-2">Suivi via boîtier dédié</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     La Beembox (incluse) se place après l&apos;onduleur et transmet la production en Wi-Fi à l&apos;app Beem : production en direct, historique, économies estimées. L&apos;un des points les mieux notés par les clients, même négatifs sur le reste.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY" href="/avis/sunology-play-2" size="sm" /><h3 className="font-bold text-sm text-amber-dark">Sunology</h3></div>
-                  <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Suivi Wi-Fi natif, sans boîtier</p>
+                  <p className="text-xs text-stone uppercase tracking-wider font-semibold mb-2">Suivi Wi-Fi natif, sans boîtier</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Le micro-onduleur du PLAY communique directement en Wi-Fi avec l&apos;app STREAM, gratuite. Le Pack STREAM (228 €, optionnel) ajoute la mesure de consommation via Linky. Le point faible : le signal Wi-Fi 2,4 GHz doit porter jusqu&apos;au panneau.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="sm" /><h3 className="font-bold text-sm text-green">EcoFlow</h3></div>
-                  <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Pilotage batterie avancé</p>
+                  <p className="text-xs text-stone uppercase tracking-wider font-semibold mb-2">Pilotage batterie avancé</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     L&apos;app la plus complète du marché grand public selon notre analyse : W produits/consommés en direct, seuils de charge personnalisés, plages horaires, notifications. Pensée pour une batterie portable réutilisable au-delà du solaire.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="sm" /><h3 className="font-bold text-sm text-amber-dark">Zendure</h3></div>
-                  <p className="text-[11px] text-stone uppercase tracking-wider font-semibold mb-2">Automatisation HP/HC</p>
+                  <p className="text-xs text-stone uppercase tracking-wider font-semibold mb-2">Automatisation HP/HC</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
                     Programmation automatique des plages heures pleines/creuses, historique détaillé, compatibilité SmartMeter annoncée (Shelly). L&apos;IA Zenky, réservée au modèle Pro, apprend les habitudes de consommation du foyer.
                   </p>

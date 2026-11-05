@@ -5,10 +5,11 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
   title: '300W vs 400W vs 500W : quelle puissance pour son balcon ?',
-  description: 'Comparatif des puissances 300W, 400W et 500W pour un panneau solaire de balcon. Production, prix, ROI, profil adapte : le guide complet 2026.',
+  description: 'Comparatif des puissances 300 W, 400 W et 500 W pour un panneau solaire de balcon : production, prix, ROI et profil adapté. Guide 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance',
   },
@@ -16,8 +17,8 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   { question: 'Quelle puissance choisir pour un balcon ?', answer: 'Pour un balcon standard (8-15 m2), un kit de 400 a 500W offre le meilleur compromis rentabilite/espace. Les 300W conviennent aux très petits balcons ou aux budgets serres. Au-dela de 500W, il faut un espace plus grand et respecter le repere de 900W par prise recommande par l\'UFC-Que Choisir et les fabricants (la NF C 15-100 ne fixe pas de plafond en watts).' },
-  { question: '500W suffisent-ils pour un balcon ?', answer: 'Oui, pour la plupart des usages. Un kit 500 Wc produit ~470 kWh/an a Paris (sud) et jusqu\'a ~640 kWh/an a Marseille. Cela couvre environ 10-13% de la consommation annuelle moyenne d\'un foyer francais (4 800 kWh/an), soit 77 a 105 €/an d\'economies (85 % d\'autoconsommation, 0,1940 €/kWh). Un 500W couvre bien le frigo, l\'ordinateur, l\'eclairage LED et la TV durant la journee. Pour la lessive ou la cuisine, la production simultanee ne suffit pas seule. Si vous avez un grand balcon et une bonne orientation, le 500W (Beem On a 429€) est le meilleur choix.' },
-  { question: 'Un kit 500W produit-il plus qu\'un kit 300W ?', answer: 'Oui, proportionnellement. Un 500W produit environ 1,67 fois plus qu\'un 300W (a orientation egale). En Ile-de-France : ~468 kWh/an pour un 500W contre ~281 kWh/an pour un 300W. Mais le prix au watt est souvent meilleur sur les 300W d\'entree de gamme.' },
+  { question: '500W suffisent-ils pour un balcon ?', answer: `Oui, pour la plupart des usages. Un kit 500 Wc produit ~440 kWh/an à Paris (sud) et jusqu'à ~590 kWh/an à Marseille. Cela couvre environ 9 à 12 % de la consommation annuelle moyenne d'un foyer français (4 800 kWh/an), soit 75 à 100 €/an d'économies la première année (85 % d'autoconsommation, ${KWH_PRICE_LABEL}). Un 500W couvre bien le frigo, l\'ordinateur, l\'eclairage LED et la TV durant la journee. Pour la lessive ou la cuisine, la production simultanee ne suffit pas seule. Si vous avez un grand balcon et une bonne orientation, le 500 W (Beem On à 429 €, en précommande au 05/11/2026) est le meilleur rapport prix/puissance.` },
+  { question: 'Un kit 500W produit-il plus qu\'un kit 300W ?', answer: 'Oui, proportionnellement. Un 500W produit environ 1,67 fois plus qu\'un 300W (a orientation egale). En Ile-de-France : ~440 kWh/an pour un 500W contre ~265 kWh/an pour un 300W. Mais le prix au watt est souvent meilleur sur les 300W d\'entree de gamme.' },
   { question: 'Peut-on cumuler plusieurs kits ?', answer: 'Oui, en restant idealement sous 900W par circuit de prise : c\'est une recommandation (UFC-Que Choisir, fabricants), pas une limite de la norme NF C 15-100. Au-dela, une ligne dediee depuis le tableau est recommandee. Concretement : 2 kits 400W = 800W (ok), 2 kits 500W = 1000W (ligne dediee recommandee).' },
   { question: 'Le rendement est-il identique entre un 300W et un 500W ?', answer: 'Non. Les panneaux recents (2024-2026) affichent un rendement de 20-23% quel que soit la puissance totale. Le 500W n\'est pas plus "rentable au watt" par principe. La difference vient surtout de la taille du panneau (plus de surface = plus de watts).' },
   { question: 'Faut-il privilegier un gros kit ou plusieurs petits ?', answer: 'Un gros kit (500W) est plus simple a installer mais plus encombrant. Plusieurs petits (2 x 300W) offrent plus de flexibilite d\'orientation et d\'installation modulaire. A budget egal, le gros kit est souvent plus rentable au watt.' },
@@ -26,7 +27,7 @@ const faqData = [
 export default function PuissanceComparatif() {
   return (
     <>
-      <SchemaArticle title="300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?" description="Comparatif des puissances de panneaux solaires plug-and-play." url="https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance" datePublished="2026-04-19" dateModified="2026-07-02" />
+      <SchemaArticle title="300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?" description="Comparatif des puissances de panneaux solaires plug-and-play." url="https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance" datePublished="2026-04-19" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Quel kit choisir', href: '/quel-kit-choisir' }, { label: 'Puissance 300W vs 400W vs 500W' }]} />
       <article className="section-padding">
@@ -36,7 +37,7 @@ export default function PuissanceComparatif() {
             <div className="badge-green mb-4 inline-block">Comparatif puissance</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">300, 400 ou 500 watts ? Plus de puissance ne signifie pas toujours plus de rentabilité. Analyse des 3 paliers les plus vendus en 2026 : prix, production reelle, profil adapte.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 avril 2026</span><span>&middot;</span><span className="text-green font-medium">Mis &agrave; jour juillet 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 avril 2026</span><span>&middot;</span><span className="text-green font-medium">Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
             <span className="text-stone text-sm mt-0.5">&#x2139;</span>
@@ -69,13 +70,13 @@ export default function PuissanceComparatif() {
                     {[
                       ['Prix moyen', '280-350 \u20ac', '500-600 \u20ac', '429-690 \u20ac'],
                       ['Prix au watt', '~1,00 \u20ac/W', '~1,30 \u20ac/W', '~0,86-1,38 \u20ac/W'],
-                      ['Production Paris (sud)', '~281 kWh/an', '~374 kWh/an', '~468 kWh/an'],
-                      ['Production Marseille (sud)', '~383 kWh/an', '~510 kWh/an', '~638 kWh/an'],
-                      ['\u00c9conomies annuelles', '~46-63 \u20ac', '~62-84 \u20ac', '~77-105 \u20ac'],
-                      ['ROI (Lyon, sud)', '5-6 ans', '7-8 ans', '4,8-7,4 ans'],
+                      ['Production Paris (sud)', '~264 kWh/an', '~352 kWh/an', '~439 kWh/an'],
+                      ['Production Marseille (sud)', '~353 kWh/an', '~471 kWh/an', '~589 kWh/an'],
+                      ['\u00c9conomies 1re ann\u00e9e (Paris-Marseille)', '~45-60 \u20ac', '~60-80 \u20ac', '~75-100 \u20ac'],
+                      ['ROI (Lyon, sud)', '5,1-6,2 ans', '6,7-7,9 ans', '4,7-7,3 ans'],
                       ['Dimensions panneau', '~82 x 69 cm (x4)', '~175 x 100 cm', '~180 x 110 cm'],
                       ['Poids', '~15 kg total', '~20 kg', '~22 kg'],
-                      ['Exemple de kit', 'Beem Kit 300W', 'Sunology PLAY 2 (450-460W, fin de s\u00e9rie)', 'Beem On 500 Wc (429 \u20ac), Sunology PLAY (599 \u20ac)'],
+                      ['Exemple de kit', 'Beem Kit 300W (en rupture)', 'Sunology PLAY 2 (450-460W, fin de s\u00e9rie)', 'Beem On 500 Wc (429 \u20ac, pr\u00e9commande), Sunethic F500 (690 \u20ac)'],
                     ].map(([label, p300, p400, p500], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{label}</td>
@@ -87,7 +88,7 @@ export default function PuissanceComparatif() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2">Estimations bas&eacute;es sur une orientation sud, inclinaison 30&deg;, aucun ombrage. Variables selon r&eacute;gion, orientation et consommation.</p>
+              <p className="text-xs text-stone mt-2">Estimations bas&eacute;es sur une orientation sud, inclinaison 30&deg;, aucun ombrage, productible PVGIS recal&eacute; sur notre r&eacute;f&eacute;rence de Lyon, autoconsommation 85&nbsp;%, tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}. ROI calcul&eacute;s pour les bornes de prix indiqu&eacute;es. Prix v&eacute;rifi&eacute;s le 5 novembre 2026. Variables selon r&eacute;gion, orientation et consommation.</p>
             </section>
 
             <section>
@@ -98,7 +99,7 @@ export default function PuissanceComparatif() {
                   <h3 className="font-bold text-green mb-2">&#9989; Points forts</h3>
                   <ul className="text-sm text-charcoal-light space-y-2">
                     <li>Prix d&apos;entr&eacute;e tr&egrave;s bas (&lt; 350&euro;)</li>
-                    <li>ROI court (~3,8 ans pour le Beem Kit 300W &agrave; Lyon, actuellement en rupture)</li>
+                    <li>ROI court (~3,7 ans pour le Beem Kit 300W &agrave; 199&nbsp;&euro; &agrave; Lyon, mais en rupture au 5 novembre 2026)</li>
                     <li>Modulaire : facile &agrave; r&eacute;partir sur un balcon</li>
                     <li>L&eacute;ger (15 kg), id&eacute;al pour balcons fragiles</li>
                   </ul>
@@ -106,7 +107,7 @@ export default function PuissanceComparatif() {
                 <div className="card-lg border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-amber-dark mb-2">&#10060; Points faibles</h3>
                   <ul className="text-sm text-charcoal-light space-y-2">
-                    <li>Production limit&eacute;e (~281 kWh/an &agrave; Paris)</li>
+                    <li>Production limit&eacute;e (~264 kWh/an &agrave; Paris)</li>
                     <li>&Eacute;conomies annuelles moindres</li>
                     <li>Plus de c&acirc;blage (plusieurs panneaux)</li>
                     <li>Micro-onduleurs moins puissants</li>
@@ -118,7 +119,7 @@ export default function PuissanceComparatif() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le 400-450W : le sweet spot</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est longtemps &eacute;t&eacute; la puissance la plus vendue en France, domin&eacute;e par le Sunology PLAY 2 (450W). Depuis ao&ucirc;t 2026, Sunology vend le PLAY en <strong>500&nbsp;W au m&ecirc;me prix (599&nbsp;&euro;)</strong>&nbsp;: les PLAY 2 de 450-460&nbsp;W encore en rayon sont des fins de s&eacute;rie, &agrave; comparer au prix du Wc. Beem a lui aussi fait &eacute;voluer son mod&egrave;le vers le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429 &euro;</Link>, d&eacute;sormais dans la cat&eacute;gorie 500W. C&apos;est le <strong>meilleur compromis rentabilit&eacute;/encombrement</strong> pour un balcon standard.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">C&apos;est longtemps &eacute;t&eacute; la puissance la plus vendue en France, domin&eacute;e par le Sunology PLAY 2 (450W). Depuis ao&ucirc;t 2026, Sunology vend le PLAY dans une version plus puissante (<strong>515&nbsp;W au 5 novembre 2026, au m&ecirc;me prix de 599&nbsp;&euro;</strong>)&nbsp;: les PLAY 2 de 450-460&nbsp;W encore en rayon sont des fins de s&eacute;rie, &agrave; comparer au prix du Wc. Beem a lui aussi fait &eacute;voluer son mod&egrave;le vers le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429 &euro;</Link> (en pr&eacute;commande, exp&eacute;dition &agrave; partir de d&eacute;cembre 2026), d&eacute;sormais dans la cat&eacute;gorie 500W. C&apos;est le <strong>meilleur compromis rentabilit&eacute;/encombrement</strong> pour un balcon standard.</p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
                   <h3 className="font-bold text-green mb-2">&#9989; Points forts</h3>
@@ -143,7 +144,7 @@ export default function PuissanceComparatif() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le 500W : pour qui ?</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Les kits 500W repoussent la limite de production d&apos;un seul panneau. Le <strong>Beem On 500 Wc &agrave; 429 &euro;</strong> (0,86 &euro;/Wc, ROI ~4,8 ans) est d&eacute;sormais la meilleure affaire de ce segment. Le Sunethic F500 (690 &euro;) reste une alternative Made in France.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Les kits 500W repoussent la limite de production d&apos;un seul panneau. Le <strong>Beem On 500 Wc &agrave; 429 &euro;</strong> (0,86 &euro;/Wc, ROI ~4,7 ans &agrave; Lyon plein sud) est la meilleure affaire de ce segment, mais il est en pr&eacute;commande (exp&eacute;dition &agrave; partir de d&eacute;cembre 2026, v&eacute;rifi&eacute; le 5 novembre 2026). Le Sunethic F500 (690 &euro;) reste une alternative Made in France.</p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="card-lg border-l-4 border-l-green bg-green-pale/10">
                   <h3 className="font-bold text-green mb-2">&#9989; Points forts</h3>
@@ -187,10 +188,10 @@ export default function PuissanceComparatif() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation par profil</h2>
               <div className="space-y-3">
                 {[
-                  { profil: 'Petit budget (< 400€)', reco: '300W modulaire', detail: 'Le Beem Kit 300W (199€) est le meilleur choix sur le papier. ROI d\'environ 3,8 ans (Lyon, sud), mais il est actuellement en rupture de stock chez Beem.' },
-                  { profil: 'Balcon standard 10 m²', reco: '450-500W', detail: 'Sunology PLAY 500 W (ex-PLAY 2) ou Beem On 500 Wc : 1 panneau, installation en 2 min.' },
-                  { profil: 'Grand balcon ou terrasse', reco: '500W (Beem On 429\u20ac)', detail: 'Beem On 500 Wc : meilleur prix du march\u00e9 \u00e0 0,86 \u20ac/Wc, ROI ~4,8 ans.' },
-                  { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (450W + 700Wh), Zendure SolarFlow ou Bluetti Balco 260.' },
+                  { profil: 'Petit budget (< 400€)', reco: 'Kit compact 270-300 W', detail: 'Le Sunology GO (270 W, 349 €) est disponible ; le Beem Kit 300W (199 €) serait plus rentable sur le papier mais il est en rupture de stock chez Beem (vérifié le 5 novembre 2026).' },
+                  { profil: 'Balcon standard 10 m²', reco: '450-515 W', detail: 'Sunology PLAY 515 W (ex-PLAY 2) ou Beem On 500 Wc (en précommande) : 1 panneau, installation en 2 min.' },
+                  { profil: 'Grand balcon ou terrasse', reco: '500W (Beem On 429\u20ac)', detail: 'Beem On 500 Wc : meilleur prix au Wc \u00e0 0,86 \u20ac/Wc, ROI ~4,7 ans (Lyon, sud), en pr\u00e9commande (exp\u00e9dition \u00e0 partir de d\u00e9cembre 2026).' },
+                  { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (460 W + 700 Wh), Zendure SolarFlow 800 Plus ou Bluetti Balco 260.' },
                   { profil: 'Locataire', reco: '400-450W', detail: 'Un seul panneau se d\u00e9monte en 1 minute pour le d\u00e9m\u00e9nagement.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">

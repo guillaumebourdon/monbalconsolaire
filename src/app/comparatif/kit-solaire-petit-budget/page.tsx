@@ -5,25 +5,48 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
+import { PRODUCTS, priceLabel, type ProductId } from '@/data/products';
+
+// Chiffres calculés au build (Lyon, plein sud, méthodologie du site) — prix de src/data/products.ts.
+const fr = (n: number) => n.toLocaleString('fr-FR');
+function sim(id: ProductId, priceOverride?: number) {
+  const p = PRODUCTS[id];
+  const input = { kitPriceEur: priceOverride ?? p.priceEur, kitPowerWc: p.powerWc };
+  return {
+    production: calculateProductionKwh(input),
+    savings: Math.round(calculateFirstYearSavings(input)),
+    roi: fr(calculateROIYears(input)),
+    total25: fr(Math.round(calculateTotalSavings25Years(input) / 10) * 10),
+    eurWc: fr(Math.round((input.kitPriceEur / p.powerWc) * 100) / 100),
+  };
+}
+const GO = PRODUCTS['sunology-go'];
+const BEEM300 = PRODUCTS['beem-kit-300w'];
+const BEEM500 = PRODUCTS['beem-on-500w'];
+const PLAY = PRODUCTS['sunology-play'];
+const go = sim('sunology-go');
+const beem300 = sim('beem-kit-300w');
+const beem500 = sim('beem-on-500w');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleur kit solaire petit budget 2026 : moins de 400€',
-  description: 'Quel kit solaire de balcon acheter pour moins de 400€ en 2026 ? Comparatif des options les plus abordables : Beem Kit 300W, kits Amazon, alternatives.',
+  description: 'Quel kit solaire de balcon acheter pour moins de 400 € en 2026 ? Options disponibles (Sunology GO), Beem Kit 300W en rupture, kits Amazon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/comparatif/kit-solaire-petit-budget',
   },
 });
 
 const faqData = [
-  { question: 'Quel est le kit solaire le moins cher en 2026 ?', answer: 'Le Beem Kit 300W à 199€ est le kit de marque le moins cher avec une garantie de 25 ans, mais il est actuellement en rupture de stock chez Beem (vérifié le 12 octobre 2026). On trouve des kits sans marque sur Amazon entre 150 et 250€, mais la qualité et le SAV sont incertains.' },
-  { question: 'Un kit à 199€ est-il vraiment rentable ?', answer: 'Oui. À 199€ avec une production de ~306 kWh/an (région lyonnaise, sud), le ROI est atteint en 3,8 ans (+3,3%/an d\'inflation CRE). Sur 25 ans de garantie, les économies totales atteignent ~1 900€. Au prix revendeur de 299€ (quand le kit officiel est épuisé), le ROI remonte à 5,5 ans.' },
+  { question: 'Quel est le kit solaire de marque le moins cher en 2026 ?', answer: `Sur le papier, le ${BEEM300.name} à ${BEEM300.priceEur} € est le kit de marque le moins cher, mais il est en rupture de stock chez Beem (aucune variante disponible, vérifié le 5 novembre 2026). Parmi les kits disponibles, le ${GO.name} à ${GO.priceEur} € (${GO.powerWc} W) est le moins cher que nous ayons analysé. On trouve des kits sans marque sur Amazon entre 150 et 250 €, mais la qualité et le SAV sont incertains.` },
+  { question: 'Un kit à moins de 400 € est-il vraiment rentable ?', answer: `Oui, à condition de consommer ce qu'il produit. Le ${GO.name} (${GO.priceEur} €, ${GO.powerWc} W) produit environ ${go.production} kWh/an en région lyonnaise plein sud, soit ${go.savings} € d'économies la première année au tarif de ${KWH_PRICE_LABEL} : retour sur investissement en ${go.roi} ans (inflation ${KWH_INFLATION_LABEL}, dégradation ${PANEL_DEGRADATION_LABEL}).` },
   { question: 'Faut-il éviter les kits solaires pas chers sur Amazon ?', answer: 'Pas forcément, mais soyez vigilant : vérifiez la garantie, la certification CE, et la présence d\'un micro-onduleur de qualité. Les kits sans marque ont souvent un SAV inexistant et des performances en dessous des specs annoncées.' },
 ];
 
 export default function PetitBudgetPage() {
   return (
     <>
-      <SchemaArticle title="Meilleur kit solaire petit budget 2026 : moins de 400€" description="Comparatif des kits solaires les plus abordables en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-petit-budget" datePublished="2026-03-25" dateModified="2026-10-22" />
+      <SchemaArticle title="Meilleur kit solaire petit budget 2026 : moins de 400€" description="Comparatif des kits solaires les plus abordables en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-petit-budget" datePublished="2026-03-25" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Petit budget' }]} />
       <article className="section-padding">
@@ -33,7 +56,7 @@ export default function PetitBudgetPage() {
             <div className="badge-amber mb-4 inline-block">Petit budget</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Meilleur kit solaire petit budget : moins de 400€</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous voulez tester le solaire de balcon sans vous ruiner ? Voici les meilleures options à moins de 400€ en 2026.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>25 mars 2026 &middot; Mis &agrave; jour le 22 octobre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>25 mars 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
             <span className="text-stone text-sm mt-0.5">&#x2139;</span>
@@ -55,30 +78,40 @@ export default function PetitBudgetPage() {
               <div className="space-y-6">
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="lg" /><div><div className="badge-green mb-2">Notre choix n°1</div><h3 className="font-bold text-xl">Beem Kit 300W</h3><p className="text-sm text-stone">par Beem Energy · 4 panneaux modulaires · Garantie 25 ans</p></div></div>
-                    <div className="text-right"><div className="font-mono text-2xl font-bold text-green">199 €</div><div className="text-xs text-stone">0,66 €/Wc</div></div>
-                  </div>
-                  <div className="card bg-amber-pale/30 border-amber/10 mt-3">
-                    <p className="text-sm text-amber-dark"><strong>Actuellement en rupture de stock</strong> chez Beem (v&eacute;rifi&eacute; le 12 octobre 2026, sans date de r&eacute;assort). Reste notre choix n&deg;1 sur le papier : d&eacute;tails et alternatives dans notre <Link href="/avis/beem-kit-300w" className="text-green hover:underline">avis complet</Link>.</p>
+                    <div><div className="badge-green mb-2">Notre choix disponible</div><h3 className="font-bold text-xl">{GO.name}</h3><p className="text-sm text-stone">par Sunology &middot; {GO.powerWc} W &middot; garde-corps, sol ou mur</p></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-green">{priceLabel('sunology-go')}</div><div className="text-xs text-stone">{go.eurWc} &euro;/Wc</div></div>
                   </div>
                   <div className="mt-4 space-y-2 text-sm text-charcoal-light">
-                    <p>Le Beem Kit 300W est le meilleur kit de marque sous 400€. Ses 4 petits panneaux monocristallins (75W chacun) s&apos;adaptent aux espaces restreints et aux configurations inhabituelles. Le ratio de 0,66 €/Wc est le meilleur du marché toutes catégories.</p>
-                    <p>La production annuelle est d&apos;environ 306 kWh en région lyonnaise (orientation sud), soit ~50€ d&apos;économies/an. Le retour sur investissement est atteint en 3,8 ans.</p>
+                    <p>Le {GO.name} est le kit de marque le moins cher actuellement disponible parmi ceux que nous avons analys&eacute;s&nbsp;: un panneau de {GO.powerWc}&nbsp;W avec micro-onduleur, pens&eacute; pour les garde-corps et les petits espaces. Son ratio &euro;/Wc est moins bon que celui des kits 500&nbsp;W, c&apos;est le prix de la compacit&eacute;.</p>
+                    <p>Production estim&eacute;e&nbsp;: environ {go.production}&nbsp;kWh/an en r&eacute;gion lyonnaise plein sud, soit {go.savings}&nbsp;&euro; d&apos;&eacute;conomies la premi&egrave;re ann&eacute;e. Retour sur investissement en {go.roi}&nbsp;ans.</p>
+                    <p className="text-xs text-stone">Prix v&eacute;rifi&eacute; le 5 novembre 2026. &Agrave; cette date, la fiche du GO sur sunology.eu renvoyait vers l&apos;accueil du site&nbsp;: d&eacute;tails dans notre <Link href="/avis/sunology-go" className="text-green hover:underline">avis complet</Link>.</p>
                   </div>
-                  <h4 className="font-bold text-sm mt-4 mb-2">Points forts</h4>
-                  <ul className="space-y-1 text-sm text-charcoal-light">
-                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Meilleur ratio €/Wc du marché (0,66€)</li>
-                    <li className="flex gap-2"><span className="text-green font-bold">+</span> 4 panneaux = flexibilité d&apos;installation (mur, sol, angle)</li>
-                    <li className="flex gap-2"><span className="text-green font-bold">+</span> Marque française avec SAV, garantie 25 ans</li>
-                    <li className="flex gap-2"><span className="text-green font-bold">+</span> ROI court : 3,8 ans (Lyon, sud)</li>
-                  </ul>
-                  <h4 className="font-bold text-sm mt-4 mb-2">Points faibles</h4>
-                  <ul className="space-y-1 text-sm text-charcoal-light">
-                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Actuellement en rupture de stock chez Beem</li>
-                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Installation plus longue (~1h vs 1-5 min pour les mono-panneaux)</li>
-                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> 300 Wc = production limitée (ne couvre qu&apos;une partie du talon)</li>
-                    <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Esthétiquement moins élégant que les solutions mono-panneau</li>
-                  </ul>
+                </div>
+
+                <div className="card-lg">
+                  <div className="flex items-start justify-between flex-wrap gap-4">
+                    <div><div className="badge-amber mb-2">Juste au-dessus du budget</div><h3 className="font-bold text-xl">{BEEM500.name}</h3><p className="text-sm text-stone">par Beem Energy &middot; {BEEM500.powerWc} Wc</p></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-green">{priceLabel('beem-on-500w')}</div><div className="text-xs text-stone">{beem500.eurWc} &euro;/Wc</div></div>
+                  </div>
+                  <div className="mt-4 space-y-2 text-sm text-charcoal-light">
+                    <p>Pour {BEEM500.priceEur - GO.priceEur}&nbsp;&euro; de plus, le {BEEM500.name} produit pr&egrave;s de deux fois plus (environ {beem500.production}&nbsp;kWh/an &agrave; Lyon plein sud, {beem500.savings}&nbsp;&euro; d&apos;&eacute;conomies la premi&egrave;re ann&eacute;e, ROI {beem500.roi}&nbsp;ans). Il demande en revanche un balcon d&apos;au moins 1&nbsp;m de large.</p>
+                  </div>
+                  <div className="card bg-amber-pale/30 border-amber/10 mt-3">
+                    <p className="text-sm text-amber-dark"><strong>En pr&eacute;commande</strong> chez Beem&nbsp;: {BEEM500.availabilityNote} (v&eacute;rifi&eacute; le 5 novembre 2026). Voir notre <Link href="/avis/beem-on-500w" className="text-green hover:underline">avis complet</Link>.</p>
+                  </div>
+                </div>
+
+                <div className="card-lg">
+                  <div className="flex items-start justify-between flex-wrap gap-4">
+                    <div className="flex items-start gap-4"><ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="lg" /><div><div className="badge-amber mb-2">En rupture de stock</div><h3 className="font-bold text-xl">{BEEM300.name}</h3><p className="text-sm text-stone">par Beem Energy &middot; 4 panneaux modulaires</p></div></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-stone">{priceLabel('beem-kit-300w')}</div><div className="text-xs text-stone">{beem300.eurWc} &euro;/Wc</div></div>
+                  </div>
+                  <div className="card bg-amber-pale/30 border-amber/10 mt-3">
+                    <p className="text-sm text-amber-dark"><strong>Indisponible&nbsp;:</strong> aucune variante du Beem Kit n&apos;est en stock sur beemenergy.fr (v&eacute;rifi&eacute; le 5 novembre 2026, sans date de r&eacute;assort). Nous ne le recommandons donc pas &agrave; l&apos;achat aujourd&apos;hui.</p>
+                  </div>
+                  <div className="mt-4 space-y-2 text-sm text-charcoal-light">
+                    <p>Sur le papier, c&apos;&eacute;tait le meilleur ratio &euro;/Wc des kits de marque&nbsp;: 4 petits panneaux de 75&nbsp;W qui s&apos;adaptent aux espaces restreints, environ {beem300.production}&nbsp;kWh/an &agrave; Lyon plein sud ({beem300.savings}&nbsp;&euro; la premi&egrave;re ann&eacute;e, ROI {beem300.roi}&nbsp;ans au prix de {BEEM300.priceEur}&nbsp;&euro;). Installation plus longue (~1&nbsp;h) que les kits mono-panneau. D&eacute;tails dans notre <Link href="/avis/beem-kit-300w" className="text-green hover:underline">avis complet</Link>.</p>
+                  </div>
                 </div>
 
                 <div className="card-lg">
@@ -98,12 +131,13 @@ export default function PetitBudgetPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict petit budget</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le <strong>Beem Kit 300W à 199€</strong> est notre recommandation claire pour les petits budgets. Le prix est imbattable pour un kit de marque française avec garantie 25 ans et SAV. Les kits Amazon peuvent sembler moins chers, mais le risque de mauvaise qualité et l&apos;absence de SAV ne valent pas les 50-100€ d&apos;économie. Le kit étant actuellement en rupture, patientez pour le réassort ou regardez le <Link href="/avis/sunology-go" className="text-green hover:underline">Sunology GO (349€)</Link> en attendant.</p>
-              <p className="text-charcoal-light leading-relaxed">Si vous pouvez étendre votre budget à 429-599€, le <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">Beem On 500 Wc (429€) ou le Sunology PLAY 500 W (599€)</Link> offrent une puissance 67% supérieure à un kit 300 W et une installation beaucoup plus simple.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Aujourd&apos;hui, sous 400&nbsp;&euro;, notre recommandation est le <strong>{GO.name} &agrave; {priceLabel('sunology-go')}</strong>&nbsp;: c&apos;est le seul kit de marque disponible dans cette gamme parmi ceux que nous avons analys&eacute;s. Le {BEEM300.name} ({BEEM300.priceEur}&nbsp;&euro;) serait plus rentable, mais il est en rupture. Les kits Amazon peuvent sembler moins chers, mais le risque de mauvaise qualit&eacute; et l&apos;absence de SAV ne valent pas les quelques dizaines d&apos;euros d&apos;&eacute;cart.</p>
+              <p className="text-charcoal-light leading-relaxed">Si vous pouvez &eacute;tendre votre budget, le <Link href="/avis/beem-on-500w" className="text-green hover:underline">{BEEM500.name} ({priceLabel('beem-on-500w')}, en pr&eacute;commande)</Link> ou le <Link href="/avis/sunology-play-2" className="text-green hover:underline">{PLAY.name} {PLAY.powerWc}&nbsp;W ({priceLabel('sunology-play')})</Link> produisent pr&egrave;s de deux fois plus qu&apos;un kit de 270&nbsp;W et ont un meilleur ratio &euro;/Wc.</p>
+              <p className="text-xs text-stone mt-3">Calculs&nbsp;: Lyon, plein sud, 1&nbsp;200&nbsp;kWh/kWc, PR 0,85, autoconsommation 85&nbsp;%, tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}. <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>.</p>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
-              <p className="font-semibold mb-2">Combien pouvez-vous économiser avec un kit à 199€ ?</p>
+              <p className="font-semibold mb-2">Combien pouvez-vous économiser avec un petit kit ?</p>
               <Link href="/calculateur" className="btn-primary inline-flex mt-2">Calculer mes économies →</Link>
             </div>
 
@@ -121,9 +155,9 @@ export default function PetitBudgetPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
-                <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h3>
-                  <p className="text-xs text-charcoal-light mt-1">La meilleure option petit budget</p>
+                <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Le kit compact disponible sous 400&nbsp;&euro;</p>
                 </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
@@ -131,7 +165,7 @@ export default function PetitBudgetPage() {
                 </Link>
                 <Link href="/avis/anker-solix-rs40p" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Anker SOLIX RS40P</h3>
-                  <p className="text-xs text-charcoal-light mt-1">910 Wc IBC N-type &agrave; 799&nbsp;&euro; &mdash; si le budget n&rsquo;est pas une contrainte</p>
+                  <p className="text-xs text-charcoal-light mt-1">2 &times; 455&nbsp;W IBC &mdash; plus vendu sur la boutique Anker France (05/11/2026)</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>

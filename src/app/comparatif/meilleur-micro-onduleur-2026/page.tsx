@@ -5,10 +5,11 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 const PAGE_TITLE = 'Meilleur micro-onduleur 2026 : Hoymiles vs APsystems';
 const PAGE_DESCRIPTION =
-  'Micro-onduleur solaire 2026 : Hoymiles HMS-800W-2T (119€), APsystems EZ1-M, Enphase IQ8P, Deye comparés. Prix, MPPT, garantie, lequel choisir.';
+  'Micro-onduleur solaire 2026 : Hoymiles HMS-800W-2T, APsystems EZ1-M, Enphase IQ8P, Deye comparés. Prix, MPPT, garantie : lequel choisir ?';
 const PAGE_URL = 'https://monbalconsolaire.fr/comparatif/meilleur-micro-onduleur-2026';
 
 export const metadata: Metadata = withCanonicalOg({
@@ -23,12 +24,12 @@ const faqData = [
   {
     question: 'Quel est le meilleur micro-onduleur pour un kit solaire balcon en 2026 ?',
     answer:
-      'Pour un montage DIY à 2 panneaux, le Hoymiles HMS-800W-2T reste la référence : 2 MPPT indépendants, Wi-Fi intégré sans boîtier DTU, environ 119 € sur Amazon (notre avis complet). L\'APsystems EZ1-M (Wi-Fi + Bluetooth, 12 ans de garantie, ~189 €) est l\'alternative si vous voulez un monitoring local sans compte cloud. L\'Enphase IQ8P se distingue par sa garantie de 25 ans, mais à raison d\'un onduleur par panneau, la facture double vite.',
+      'Pour un montage DIY à 2 panneaux, le Hoymiles HMS-800W-2T reste la référence : 2 MPPT indépendants, Wi-Fi intégré sans boîtier DTU, environ 170 € (169,40 € chez Wattuneed le 5 novembre 2026 ; le prix Amazon n\'a pas pu être revérifié). L\'APsystems EZ1-M (Wi-Fi + Bluetooth, 12 ans de garantie, ~189 €) est l\'alternative si vous voulez un monitoring local sans compte cloud. L\'Enphase IQ8P se distingue par sa garantie de 25 ans, mais à raison d\'un onduleur par panneau, la facture double vite.',
   },
   {
     question: 'Combien coûte un micro-onduleur solaire ?',
     answer:
-      'De 100 à 200 € environ pour un modèle à 2 entrées (800 VA) : le Hoymiles HMS-800W-2T se trouve à partir de ~119 € sur Amazon et jusqu\'à ~170 € chez certains revendeurs spécialisés, l\'APsystems EZ1-M autour de 189 €. Les modèles mono-entrée Enphase IQ8P se vendent à l\'unité, environ 150 à 180 € selon le revendeur, soit 300 à 360 € pour 2 panneaux puisqu\'il en faut un par panneau.',
+      'De 100 à 200 € environ pour un modèle à 2 entrées (800 VA) : le Hoymiles HMS-800W-2T est à 169,40 € chez Wattuneed (5 novembre 2026 ; prix Amazon non revérifié), l\'APsystems EZ1-M autour de 189 €. Les modèles mono-entrée Enphase IQ8P se vendent à l\'unité, environ 150 à 180 € selon le revendeur, soit 300 à 360 € pour 2 panneaux puisqu\'il en faut un par panneau.',
   },
   {
     question: 'Hoymiles ou APsystems : lequel choisir ?',
@@ -67,7 +68,7 @@ type Row = {
 const rows: Row[] = [
   {
     nom: 'Hoymiles HMS-800W-2T',
-    prix: '~119 € (Amazon)',
+    prix: '~170 € (Wattuneed, 05/11/2026)',
     puissance: '800 VA',
     mppt: '2',
     com: 'Wi-Fi intégré',
@@ -122,7 +123,7 @@ export default function MeilleurMicroOnduleurPage() {
         description={PAGE_DESCRIPTION}
         url={PAGE_URL}
         datePublished="2026-10-16"
-        dateModified="2026-10-16"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Meilleur micro-onduleur 2026' }]} />
@@ -139,7 +140,7 @@ export default function MeilleurMicroOnduleurPage() {
               Vous montez votre propre kit solaire de balcon et devez choisir le micro-onduleur&nbsp;? Contrairement aux kits cl&eacute;-en-main (Sunology, Beem), un montage DIY vous laisse le choix de l&apos;onduleur &mdash; et donc du prix, de la garantie et du monitoring. Nous comparons les 5&nbsp;r&eacute;f&eacute;rences les plus vendues en France&nbsp;: lequel acheter selon votre budget et vos panneaux.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>Publi&eacute; le 16 octobre 2026</span>
+              <span>Publi&eacute; le 16 octobre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -155,7 +156,7 @@ export default function MeilleurMicroOnduleurPage() {
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Pour 2 panneaux, le <strong>Hoymiles HMS-800W-2T</strong> (~119&nbsp;&euro; sur Amazon) reste le meilleur rapport prix/fonctionnalit&eacute;s&nbsp;: 2&nbsp;MPPT ind&eacute;pendants, Wi-Fi int&eacute;gr&eacute;, 10&nbsp;ans de garantie. L&apos;<strong>APsystems&nbsp;EZ1-M</strong> (~189&nbsp;&euro;) ajoute le Bluetooth et 2&nbsp;ans de garantie suppl&eacute;mentaires. L&apos;<strong>Enphase&nbsp;IQ8P</strong> vise la dur&eacute;e (25&nbsp;ans) mais double la facture sur un kit &agrave; 2&nbsp;panneaux. Le <strong>Deye SUN-M80G4</strong> est une alternative th&eacute;orique dont nous n&apos;avons pas trouv&eacute; de prix fran&ccedil;ais fiable &agrave; ce jour.
+              Pour 2 panneaux, le <strong>Hoymiles HMS-800W-2T</strong> (~170&nbsp;&euro; chez Wattuneed au 5 novembre 2026) reste le meilleur rapport prix/fonctionnalit&eacute;s&nbsp;: 2&nbsp;MPPT ind&eacute;pendants, Wi-Fi int&eacute;gr&eacute;, 10&nbsp;ans de garantie. L&apos;<strong>APsystems&nbsp;EZ1-M</strong> (~189&nbsp;&euro;) ajoute le Bluetooth et 2&nbsp;ans de garantie suppl&eacute;mentaires. L&apos;<strong>Enphase&nbsp;IQ8P</strong> vise la dur&eacute;e (25&nbsp;ans) mais double la facture sur un kit &agrave; 2&nbsp;panneaux. Le <strong>Deye SUN-M80G4</strong> est une alternative th&eacute;orique dont nous n&apos;avons pas trouv&eacute; de prix fran&ccedil;ais fiable &agrave; ce jour.
             </p>
           </div>
 
@@ -176,7 +177,7 @@ export default function MeilleurMicroOnduleurPage() {
                       <tr key={r.nom} className={`border-b border-border-light ${r.highlight ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">
                           {r.href ? (<Link href={r.href} className="text-green hover:underline">{r.nom}</Link>) : r.nom}
-                          {r.highlight && <span className="badge-green ml-2 text-[10px]">Choix n&deg;1</span>}
+                          {r.highlight && <span className="badge-green ml-2 text-xs">Choix n&deg;1</span>}
                           <div className="text-xs text-stone font-normal mt-0.5">{r.verdict}</div>
                         </td>
                         <td className="text-center p-3 font-mono text-sm text-amber-dark">{r.prix}</td>
@@ -200,7 +201,7 @@ export default function MeilleurMicroOnduleurPage() {
                 C&apos;est le micro-onduleur le plus utilis&eacute; dans les montages DIY en Europe, et celui que nous recommandons par d&eacute;faut pour un kit &agrave; 2&nbsp;panneaux. 2&nbsp;MPPT ind&eacute;pendants (une ombre sur un panneau ne p&eacute;nalise pas l&apos;autre), Wi-Fi int&eacute;gr&eacute; sans bo&icirc;tier DTU s&eacute;par&eacute;, plage MPPT 16-60&nbsp;V, 96,7&nbsp;% de rendement (pic CEC). Compatible avec la quasi-totalit&eacute; des panneaux &agrave; connecteurs MC4 standard, de 300 &agrave; 700&nbsp;Wc selon le mod&egrave;le.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Sur Amazon, il se trouve &agrave; partir de <strong>119&nbsp;&euro;</strong> (lien v&eacute;rifi&eacute;, prix constat&eacute; sur la fiche produit que nous suivons depuis ao&ucirc;t 2026)&nbsp;; certains revendeurs sp&eacute;cialis&eacute;s l&apos;affichent plus cher (jusqu&apos;&agrave; ~170&nbsp;&euro; chez Wattuneed en octobre 2026). Comparez le prix TTC livr&eacute; avant d&apos;acheter.
+                Au 5 novembre 2026, il est affich&eacute; <strong>169,40&nbsp;&euro;</strong> chez Wattuneed (en stock). Le prix sur Amazon, longtemps plus bas, n&apos;a pas pu &ecirc;tre rev&eacute;rifi&eacute; &agrave; cette date. Comparez le prix TTC livr&eacute; avant d&apos;acheter.
               </p>
               <AffiliateCTA
                 productName="Hoymiles HMS-800W-2T"
@@ -228,7 +229,7 @@ export default function MeilleurMicroOnduleurPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Enphase IQ8P&nbsp;: la garantie 25&nbsp;ans, au prix du doublement</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                L&apos;argument d&apos;Enphase, c&apos;est la dur&eacute;e&nbsp;: 25&nbsp;ans de garantie contre 10-12&nbsp;ans chez Hoymiles et APsystems, et une r&eacute;putation de fiabilit&eacute; construite sur le march&eacute; am&eacute;ricain. Le revers&nbsp;: l&apos;IQ8P ne g&egrave;re qu&apos;un seul panneau (475-480&nbsp;VA, jusqu&apos;&agrave; 670&nbsp;Wc), il en faut donc deux pour un kit &agrave; 2&nbsp;panneaux &mdash; soit environ <strong>300 &agrave; 360&nbsp;&euro;</strong> au lieu de ~119 &agrave; 189&nbsp;&euro; pour un seul Hoymiles ou APsystems. Ajoutez une passerelle IQ&nbsp;Gateway (payante) n&eacute;cessaire pour activer le suivi ET faire valoir la garantie.
+                L&apos;argument d&apos;Enphase, c&apos;est la dur&eacute;e&nbsp;: 25&nbsp;ans de garantie contre 10-12&nbsp;ans chez Hoymiles et APsystems, et une r&eacute;putation de fiabilit&eacute; construite sur le march&eacute; am&eacute;ricain. Le revers&nbsp;: l&apos;IQ8P ne g&egrave;re qu&apos;un seul panneau (475-480&nbsp;VA, jusqu&apos;&agrave; 670&nbsp;Wc), il en faut donc deux pour un kit &agrave; 2&nbsp;panneaux &mdash; soit environ <strong>300 &agrave; 360&nbsp;&euro;</strong> au lieu d&apos;environ 170 &agrave; 189&nbsp;&euro; pour un seul Hoymiles ou APsystems. Ajoutez une passerelle IQ&nbsp;Gateway (payante) n&eacute;cessaire pour activer le suivi ET faire valoir la garantie.
               </p>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
@@ -250,14 +251,14 @@ export default function MeilleurMicroOnduleurPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Est-ce que &ccedil;a change vraiment la production&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Non, ou presque. Avec notre m&eacute;thodologie standard (2&nbsp;&times;&nbsp;400&nbsp;Wc, Lyon, exposition sud, PR&nbsp;0,85, tarif 0,1940&nbsp;&euro;/kWh), un kit DIY de 800&nbsp;Wc produit environ <strong>816&nbsp;kWh/an</strong>, pour des &eacute;conomies de premi&egrave;re ann&eacute;e d&apos;environ <strong>135&nbsp;&euro;</strong> (autoconsommation 85&nbsp;%). Le rendement des onduleurs compar&eacute;s ici va de 96 &agrave; 97,5&nbsp;%&nbsp;: un &eacute;cart qui repr&eacute;sente moins de 5&nbsp;kWh/an, soit moins d&apos;1&nbsp;&euro;/an. En comptant Hoymiles (119&nbsp;&euro;) et deux panneaux de 400&nbsp;Wc (~800&nbsp;&euro; au total), le retour sur investissement est d&apos;environ <strong>6,6&nbsp;ans</strong> (avec inflation du tarif EDF &agrave; 3,3&nbsp;%/an, m&eacute;thodologie CRE). Ce qui fait vraiment la diff&eacute;rence entre deux onduleurs, c&apos;est le prix d&apos;achat et la garantie &mdash; pas le rendement.
+                Non, ou presque. Avec notre m&eacute;thodologie standard (2&nbsp;&times;&nbsp;400&nbsp;Wc, Lyon, exposition sud, PR&nbsp;0,85, tarif {KWH_PRICE_LABEL}), un kit DIY de 800&nbsp;Wc produit environ <strong>816&nbsp;kWh/an</strong>, pour des &eacute;conomies de premi&egrave;re ann&eacute;e d&apos;environ <strong>139&nbsp;&euro;</strong> (autoconsommation 85&nbsp;%). Le rendement des onduleurs compar&eacute;s ici va de 96 &agrave; 97,5&nbsp;%&nbsp;: un &eacute;cart qui repr&eacute;sente moins de 5&nbsp;kWh/an, soit moins d&apos;1&nbsp;&euro;/an. En comptant le Hoymiles (~170&nbsp;&euro;) et deux panneaux de 400&nbsp;Wc (~850&nbsp;&euro; au total), le retour sur investissement est d&apos;environ <strong>5,7&nbsp;ans</strong> (inflation du tarif EDF de {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux de {PANEL_DEGRADATION_LABEL}). Ce qui fait vraiment la diff&eacute;rence entre deux onduleurs, c&apos;est le prix d&apos;achat et la garantie &mdash; pas le rendement.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {[
                   { v: '816 kWh', l: 'Production annuelle (800 Wc, Lyon sud)' },
-                  { v: '135 €', l: 'Économies 1ère année (autoconso 85 %)' },
+                  { v: '139 €', l: 'Économies 1ère année (autoconso 85 %)' },
                   { v: '< 1 €/an', l: 'Écart de rendement entre modèles' },
-                  { v: '6,6 ans', l: 'ROI avec Hoymiles + 2 panneaux 400 Wc' },
+                  { v: '5,7 ans', l: 'ROI avec Hoymiles + 2 panneaux 400 Wc (~850 €)' },
                 ].map((s) => (
                   <div key={s.l} className="card text-center bg-green-pale/30">
                     <div className="font-mono font-bold text-lg text-green">{s.v}</div>
@@ -271,7 +272,7 @@ export default function MeilleurMicroOnduleurPage() {
               <h2 className="text-2xl font-extrabold mb-4">Verdict&nbsp;: quel micro-onduleur choisir&nbsp;?</h2>
               <div className="space-y-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h3 className="font-bold text-green mb-1">Le choix par d&eacute;faut &rarr; Hoymiles HMS-800W-2T (~119&nbsp;&euro;)</h3>
+                  <h3 className="font-bold text-green mb-1">Le choix par d&eacute;faut &rarr; Hoymiles HMS-800W-2T (~170&nbsp;&euro;)</h3>
                   <p className="text-sm text-charcoal-light">Le meilleur rapport prix/fonctionnalit&eacute;s pour un kit DIY &agrave; 2&nbsp;panneaux. Wi-Fi int&eacute;gr&eacute;, 2&nbsp;MPPT, 10&nbsp;ans de garantie.</p>
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/10">
@@ -295,7 +296,6 @@ export default function MeilleurMicroOnduleurPage() {
                   label="Voir le prix actuel sur Amazon"
                   variant="box"
                   position="footer-box"
-                  price="~119 €"
                 />
               </div>
             </section>
@@ -341,7 +341,7 @@ export default function MeilleurMicroOnduleurPage() {
 
             <div className="pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> fiches techniques Hoymiles, APsystems, Enphase, Deye&nbsp;; prix relev&eacute;s chez des revendeurs fran&ccedil;ais et europ&eacute;ens en octobre 2026 (Wattuneed, 123Elec, HelloWatt, Offgridtec). Produits analys&eacute;s sur fiches techniques, pas test&eacute;s physiquement. Calculs de production et de ROI selon notre <Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link> (tarif 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an, PR&nbsp;0,85, Lyon, sud).
+                <strong>Sources&nbsp;:</strong> fiches techniques Hoymiles, APsystems, Enphase, Deye&nbsp;; prix relev&eacute;s chez des revendeurs fran&ccedil;ais et europ&eacute;ens en octobre 2026 (Wattuneed, 123Elec, HelloWatt, Offgridtec). Produits analys&eacute;s sur fiches techniques, pas test&eacute;s physiquement. Calculs de production et de ROI selon notre <Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link> (tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}, PR&nbsp;0,85, Lyon, sud). Prix du Hoymiles rev&eacute;rifi&eacute; le 5 novembre 2026 chez Wattuneed.
               </p>
               <p className="text-xs text-stone leading-relaxed mt-2">
                 <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.

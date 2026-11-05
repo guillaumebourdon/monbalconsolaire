@@ -5,6 +5,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon vs toiture : quelle rentabilité en 2026 ?',
@@ -17,11 +18,11 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Un kit solaire balcon est-il plus rentable qu’une installation en toiture ?',
-    answer: 'En termes de ROI, oui : un kit balcon de 500 Wc à 429€ se rentabilise en environ 4,8 ans (Lyon sud), contre 8–12 ans pour une installation toiture. En valeur absolue, la toiture génère 5 à 15 fois plus d’économies annuelles (400–1 400€/an vs 50–125€/an). Ce ne sont pas deux concurrents — ce sont deux marchés différents.',
+    answer: 'En termes de ROI, oui : un kit balcon de 500 Wc à 429 € se rentabilise en environ 4,7 ans (Lyon sud), contre 9 à 12 ans pour une installation toiture dans notre calcul. En valeur absolue, la toiture génère 3 à 10 fois plus d’économies annuelles (environ 480 à 1 430 €/an contre 50 à 140 €/an). Ce ne sont pas deux concurrents — ce sont deux marchés différents.',
   },
   {
     question: 'Quelles aides existe-t-il pour une installation toiture en 2026 ?',
-    answer: 'La prime à l’autoconsommation a été supprimée le 5 juin 2026. MaPrimeRénov’ ne finance pas les panneaux photovoltaïques, sauf dans le cadre d’une rénovation globale avec gain énergétique ≥ 35 %. La TVA réduite à 10 % s’applique sur la main-d’œuvre et les équipements pour les résidences principales. Aucune aide ne s’applique aux kits plug-and-play balcon.',
+    answer: 'La prime à l’autoconsommation a été supprimée le 5 juin 2026. MaPrimeRénov’ ne finance pas les panneaux photovoltaïques, sauf dans le cadre d’une rénovation globale avec gain énergétique ≥ 35 %. Depuis le 1er octobre 2025, la TVA à 5,5 % s’applique à la fourniture et à la pose d’une installation de 9 kWc au plus respectant les critères de l’arrêté du 8 septembre 2025, posée par un professionnel qualifié (article 278-0 bis du CGI) ; l’ancien taux de 10 % (3 kWc au plus) a pris fin le 31 décembre 2025. Aucune aide ne s’applique aux kits plug-and-play balcon.',
   },
   {
     question: 'Peut-on installer un kit balcon et une installation toiture en même temps ?',
@@ -37,7 +38,7 @@ const faqData = [
   },
   {
     question: 'Faut-il un installateur RGE pour les panneaux en toiture ?',
-    answer: 'Oui. L’installation doit être réalisée par un professionnel certifié RGE (Reconnu Garant de l’Environnement). L’installation par soi-même ou par un artisan non certifié entraîne la perte de toutes les aides publiques, y compris la TVA réduite.',
+    answer: 'En pratique, oui. Pour bénéficier de la TVA à 5,5 % (depuis le 1er octobre 2025, installations de 9 kWc au plus), la pose doit être faite par une entreprise disposant d’une qualification ou certification professionnelle en cours de validité (type RGE QualiPV), et le matériel doit respecter les critères de l’arrêté du 8 septembre 2025. L’installation par soi-même ou par un artisan non qualifié fait perdre ce taux réduit.',
   },
 ];
 
@@ -49,6 +50,7 @@ export default function ComparatifBalconVsToiturePage() {
         description="Balcon plug-and-play ou installation en toiture ? Comparatif complet sur prix, production, ROI réel et aides."
         url="https://monbalconsolaire.fr/comparatif/kit-solaire-balcon-vs-toiture"
         datePublished="2026-08-14"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb
@@ -74,10 +76,10 @@ export default function ComparatifBalconVsToiturePage() {
               Kit solaire balcon vs toiture&nbsp;: quelle diff&eacute;rence de rentabilit&eacute;&nbsp;?
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              300–6&nbsp;000&euro; d&apos;investissement d&apos;un c&ocirc;t&eacute;, 6&nbsp;750 à 14&nbsp;000&euro; de l&apos;autre. ROI de 4 ans contre 8–12 ans. Ce ne sont pas deux solutions concurrentes &mdash; ce sont deux march&eacute;s compl&egrave;tement diff&eacute;rents. Voici les chiffres honn&ecirc;tes pour choisir.
+              349&nbsp;&agrave; 1&nbsp;000&nbsp;&euro; environ d&apos;investissement d&apos;un c&ocirc;t&eacute;, 6&nbsp;750 &agrave; 14&nbsp;000&nbsp;&euro; de l&apos;autre. ROI de 5 &agrave; 7 ans contre 9 &agrave; 12 ans. Ce ne sont pas deux solutions concurrentes &mdash; ce sont deux march&eacute;s compl&egrave;tement diff&eacute;rents. Voici les chiffres honn&ecirc;tes pour choisir.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>14 ao&ucirc;t 2026</span>
+              <span>14 ao&ucirc;t 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -85,7 +87,7 @@ export default function ComparatifBalconVsToiturePage() {
             <div className="card bg-cream/50 border-border-light mt-6 py-3 px-5 flex items-start gap-3">
               <span className="text-stone text-sm mt-0.5">&#x2139;</span>
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie :</strong> calculs bas&eacute;s sur le tarif EDF 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an (CRE), autoconsommation 85&nbsp;%, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud, dur&eacute;e 25 ans. <Link href="/methodologie" className="text-green hover:underline">Voir le d&eacute;tail &rarr;</Link>
+                <strong>M&eacute;thodologie :</strong> calculs bas&eacute;s sur le tarif EDF {KWH_PRICE_LABEL} (en vigueur depuis le {KWH_PRICE_SINCE}), inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;%, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud, dur&eacute;e 25 ans. <Link href="/methodologie" className="text-green hover:underline">Voir le d&eacute;tail &rarr;</Link>
               </p>
             </div>
           </div>
@@ -94,8 +96,8 @@ export default function ComparatifBalconVsToiturePage() {
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En r&eacute;sum&eacute;</h2>
             <ul className="space-y-2 text-sm text-charcoal-light">
-              <li>&#x2714; <strong>Balcon (plug-and-play) :</strong> 199–6&nbsp;900&euro;, ROI 4&ndash;6 ans, &eacute;conomies 50–150&euro;/an. Id&eacute;al locataire, propri&eacute;taire en appartement.</li>
-              <li>&#x2714; <strong>Toiture (installation pro) :</strong> 6&nbsp;750–14&nbsp;000&euro;, ROI 8&ndash;12 ans, &eacute;conomies 460–1&nbsp;400&euro;/an. R&eacute;serv&eacute; aux propri&eacute;taires de maison.</li>
+              <li>&#x2714; <strong>Balcon (plug-and-play) :</strong> 349–1&nbsp;000&nbsp;&euro; environ, ROI 4,7&ndash;7 ans, &eacute;conomies 50–140&nbsp;&euro; la premi&egrave;re ann&eacute;e. Id&eacute;al locataire, propri&eacute;taire en appartement.</li>
+              <li>&#x2714; <strong>Toiture (installation pro) :</strong> 6&nbsp;750–14&nbsp;000&euro;, ROI 9&ndash;12 ans, &eacute;conomies 480–1&nbsp;430&nbsp;&euro; la premi&egrave;re ann&eacute;e. R&eacute;serv&eacute; aux propri&eacute;taires de maison.</li>
               <li>&#x26A0; <strong>Prime autoconsommation supprim&eacute;e</strong> depuis le 5 juin 2026. MaPrimeR&eacute;nov&apos; ne s&apos;applique pas au photovolta&iuml;que standard.</li>
               <li>&#x2192; Le balcon n&apos;est pas une alternative inf&eacute;rieure &mdash; c&apos;est la <em>seule</em> option pour un appartement, avec un ROI souvent <strong>deux fois plus court</strong>.</li>
             </ul>
@@ -143,44 +145,44 @@ export default function ComparatifBalconVsToiturePage() {
                 </thead>
                 <tbody>
                   <tr className="border border-border-light">
-                    <td className="p-3 border border-border-light">Beem Kit 300&nbsp;Wc (rupture)</td>
-                    <td className="p-3 text-right border border-border-light">199&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light">~306 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~50&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-semibold text-green">~3,8 ans</td>
+                    <td className="p-3 border border-border-light">Sunology GO 270&nbsp;W</td>
+                    <td className="p-3 text-right border border-border-light">349&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light">~275 kWh/an</td>
+                    <td className="p-3 text-right border border-border-light">~47&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-semibold text-green">~6,9 ans</td>
                   </tr>
                   <tr className="bg-green-pale/20 border border-border-light">
-                    <td className="p-3 border border-border-light font-semibold">Beem On 500&nbsp;Wc &#x2605; meilleur rapport</td>
+                    <td className="p-3 border border-border-light font-semibold">Beem On 500&nbsp;Wc &#x2605; meilleur rapport (pr&eacute;commande)</td>
                     <td className="p-3 text-right border border-border-light">429&nbsp;&euro;</td>
                     <td className="p-3 text-right border border-border-light">~510 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~84&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-bold text-green">~4,8 ans</td>
+                    <td className="p-3 text-right border border-border-light">~87&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-bold text-green">~4,7 ans</td>
                   </tr>
                   <tr className="border border-border-light">
-                    <td className="p-3 border border-border-light">Sunology PLAY 500&nbsp;Wc (ex-PLAY&nbsp;2)</td>
+                    <td className="p-3 border border-border-light">Sunology PLAY 515&nbsp;W (ex-PLAY&nbsp;2)</td>
                     <td className="p-3 text-right border border-border-light">599&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light">~510 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~84&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-semibold text-green">~6,5 ans</td>
+                    <td className="p-3 text-right border border-border-light">~525 kWh/an</td>
+                    <td className="p-3 text-right border border-border-light">~89&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-semibold text-green">~6,2 ans</td>
                   </tr>
                   <tr className="border border-border-light">
                     <td className="p-3 border border-border-light">Kit double 800&nbsp;Wc (max courant sur prise)</td>
                     <td className="p-3 text-right border border-border-light">~750&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light">~750 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~124&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-semibold text-green">~5 ans</td>
+                    <td className="p-3 text-right border border-border-light">~816 kWh/an</td>
+                    <td className="p-3 text-right border border-border-light">~139&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-semibold text-green">~5,1 ans</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-stone mb-6">Tarif 0,1940&nbsp;&euro;/kWh &middot; autoconsommation 85&nbsp;% &middot; inflation 3,3&nbsp;%/an &middot; Lyon sud &middot; ROI avec &eacute;volution annuelle du tarif.</p>
+            <p className="text-xs text-stone mb-6">Tarif {KWH_PRICE_LABEL} &middot; autoconsommation 85&nbsp;% &middot; inflation {KWH_INFLATION_LABEL} &middot; d&eacute;gradation {PANEL_DEGRADATION_LABEL} &middot; Lyon sud &middot; prix v&eacute;rifi&eacute;s le 5 novembre 2026 (Beem Kit 300W en rupture, non list&eacute;).</p>
 
             <div className="card bg-green-pale/20 border-l-4 border-l-green mb-4 p-4">
               <p className="text-sm font-semibold mb-1">&#x2714; Avantages du kit balcon</p>
               <ul className="text-sm text-charcoal-light space-y-1">
                 <li>&bull; Accessible aux <strong>locataires</strong> sans accord du propri&eacute;taire</li>
                 <li>&bull; Z&eacute;ro travaux, z&eacute;ro installateur</li>
-                <li>&bull; ROI 4 &agrave; 7 ans &mdash; le plus court du march&eacute; solaire r&eacute;sidentiel</li>
+                <li>&bull; ROI 4,7 &agrave; 7 ans &mdash; le plus court du march&eacute; solaire r&eacute;sidentiel</li>
                 <li>&bull; D&eacute;m&eacute;nageable (le kit part avec vous)</li>
                 <li>&bull; D&eacute;claration CACSI gratuite et simplifi&eacute;e</li>
               </ul>
@@ -189,7 +191,7 @@ export default function ComparatifBalconVsToiturePage() {
               <p className="text-sm font-semibold mb-1">&#9888; Limites du kit balcon</p>
               <ul className="text-sm text-charcoal-light space-y-1">
                 <li>&bull; Puissance limit&eacute;e en pratique &agrave; ~800-900&nbsp;W par circuit (rep&egrave;re de s&eacute;curit&eacute;) et par la place disponible</li>
-                <li>&bull; &Eacute;conomies maximales ~124&nbsp;&euro;/an : ne couvre pas toute la facture</li>
+                <li>&bull; &Eacute;conomies maximales ~140&nbsp;&euro;/an : ne couvre pas toute la facture</li>
                 <li>&bull; N&eacute;cessite une orientation correcte (pas plein nord)</li>
                 <li>&bull; Pas de revente du surplus (uniquement autoconsommation)</li>
               </ul>
@@ -226,7 +228,7 @@ export default function ComparatifBalconVsToiturePage() {
               <li><strong>9 kWc :</strong> environ 14&nbsp;000&nbsp;&euro; TTC</li>
             </ul>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              La main-d&apos;&oelig;uvre repr&eacute;sente 20 &agrave; 35&nbsp;% du budget total. L&apos;installateur doit obligatoirement &ecirc;tre certifi&eacute; RGE (Reconnu Garant de l&apos;Environnement) &mdash; sans quoi vous perdez la TVA r&eacute;duite et toutes les aides &eacute;ventuelles.
+              La main-d&apos;&oelig;uvre repr&eacute;sente 20 &agrave; 35&nbsp;% du budget total. L&apos;installateur doit disposer d&apos;une qualification ou certification professionnelle en cours de validit&eacute; (type RGE QualiPV) &mdash; sans quoi la TVA &agrave; 5,5&nbsp;% (fourniture + pose, 9&nbsp;kWc au plus, crit&egrave;res de l&apos;arr&ecirc;t&eacute; du 8 septembre 2025) ne s&apos;applique pas.
             </p>
 
             <h3 className="font-bold text-lg mb-3 mt-6">Ce que produit une installation toiture</h3>
@@ -250,27 +252,27 @@ export default function ComparatifBalconVsToiturePage() {
                     <td className="p-3 border border-border-light">3 kWc (6 panneaux)</td>
                     <td className="p-3 text-right border border-border-light">~6&nbsp;750&nbsp;&euro;</td>
                     <td className="p-3 text-right border border-border-light">~2&nbsp;800 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~462&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-semibold text-amber-dark">~11 ans</td>
+                    <td className="p-3 text-right border border-border-light">~477&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-semibold text-amber-dark">~12 ans</td>
                   </tr>
                   <tr className="bg-green-pale/20 border border-border-light">
                     <td className="p-3 border border-border-light font-semibold">6 kWc &#x2605; standard r&eacute;sidentiel</td>
                     <td className="p-3 text-right border border-border-light">~10&nbsp;900&nbsp;&euro;</td>
                     <td className="p-3 text-right border border-border-light">~5&nbsp;600 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~923&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-bold text-amber-dark">~9 ans</td>
+                    <td className="p-3 text-right border border-border-light">~954&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-bold text-amber-dark">~10 ans</td>
                   </tr>
                   <tr className="border border-border-light">
                     <td className="p-3 border border-border-light">9 kWc (grande maison)</td>
                     <td className="p-3 text-right border border-border-light">~14&nbsp;000&nbsp;&euro;</td>
                     <td className="p-3 text-right border border-border-light">~8&nbsp;400 kWh/an</td>
-                    <td className="p-3 text-right border border-border-light">~1&nbsp;385&nbsp;&euro;</td>
-                    <td className="p-3 text-right border border-border-light font-semibold text-amber-dark">~7,5 ans</td>
+                    <td className="p-3 text-right border border-border-light">~1&nbsp;431&nbsp;&euro;</td>
+                    <td className="p-3 text-right border border-border-light font-semibold text-amber-dark">~8,8 ans</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-stone mb-4">ROI calcul&eacute; avec inflation 3,3&nbsp;%/an sur le tarif EDF. L&apos;autoconsommation r&eacute;elle peut varier selon le profil du foyer &mdash; un 9&nbsp;kWc sur une maison consommant 4&nbsp;500 kWh/an ne valorise que 60&nbsp;% de sa production.</p>
+            <p className="text-xs text-stone mb-4">ROI calcul&eacute; avec inflation {KWH_INFLATION_LABEL} sur le tarif EDF et d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}. L&apos;autoconsommation r&eacute;elle peut varier selon le profil du foyer &mdash; un 9&nbsp;kWc sur une maison consommant 4&nbsp;500 kWh/an ne valorise que 60&nbsp;% de sa production (ROI alors proche de 12 ans).</p>
 
             <div className="bg-amber-pale/30 border border-amber/20 rounded-lg p-4 mb-6">
               <p className="text-sm font-semibold mb-2">&#x26A0; Aides toiture 2026&nbsp;: la r&eacute;alit&eacute;</p>
@@ -294,7 +296,7 @@ export default function ComparatifBalconVsToiturePage() {
               <p className="text-sm font-semibold mb-1">&#9888; Limites de la toiture</p>
               <ul className="text-sm text-charcoal-light space-y-1">
                 <li>&bull; R&eacute;serv&eacute;e aux propri&eacute;taires de maisons (toiture disponible, accord copropri&eacute;t&eacute; si collectif)</li>
-                <li>&bull; ROI 7 &agrave; 12 ans &mdash; capital immobilis&eacute; longtemps</li>
+                <li>&bull; ROI 9 &agrave; 12 ans &mdash; capital immobilis&eacute; longtemps</li>
                 <li>&bull; Installateur RGE obligatoire (d&eacute;marchage agressif dans ce secteur, vigilance)</li>
                 <li>&bull; Aides publiques quasi nulles en 2026</li>
               </ul>
@@ -316,7 +318,7 @@ export default function ComparatifBalconVsToiturePage() {
                 <tbody className="divide-y divide-border-light">
                   <tr>
                     <td className="p-3 font-medium">Prix d&apos;entr&eacute;e</td>
-                    <td className="p-3 text-center text-green font-bold">199&nbsp;&euro;</td>
+                    <td className="p-3 text-center text-green font-bold">349&nbsp;&euro;</td>
                     <td className="p-3 text-center text-charcoal-light">~6&nbsp;750&nbsp;&euro;</td>
                   </tr>
                   <tr className="bg-cream/40">
@@ -326,18 +328,18 @@ export default function ComparatifBalconVsToiturePage() {
                   </tr>
                   <tr>
                     <td className="p-3 font-medium">Production annuelle</td>
-                    <td className="p-3 text-center">280&ndash;750 kWh</td>
+                    <td className="p-3 text-center">275&ndash;816 kWh</td>
                     <td className="p-3 text-center text-green font-bold">2&nbsp;800&ndash;8&nbsp;400 kWh</td>
                   </tr>
                   <tr className="bg-cream/40">
                     <td className="p-3 font-medium">&Eacute;conomies annuelles</td>
-                    <td className="p-3 text-center">46&ndash;124&nbsp;&euro;</td>
-                    <td className="p-3 text-center text-green font-bold">462&ndash;1&nbsp;385&nbsp;&euro;</td>
+                    <td className="p-3 text-center">47&ndash;139&nbsp;&euro;</td>
+                    <td className="p-3 text-center text-green font-bold">477&ndash;1&nbsp;431&nbsp;&euro;</td>
                   </tr>
                   <tr>
                     <td className="p-3 font-medium">ROI estim&eacute;</td>
-                    <td className="p-3 text-center text-green font-bold">4,5&ndash;7 ans</td>
-                    <td className="p-3 text-center">7,5&ndash;12 ans</td>
+                    <td className="p-3 text-center text-green font-bold">4,7&ndash;7 ans</td>
+                    <td className="p-3 text-center">9&ndash;12 ans</td>
                   </tr>
                   <tr className="bg-cream/40">
                     <td className="p-3 font-medium">Installation</td>
@@ -393,11 +395,11 @@ export default function ComparatifBalconVsToiturePage() {
               </div>
               <div className="card border-l-4 border-l-green p-4">
                 <p className="font-semibold text-sm mb-2">&#x2714; Budget limit&eacute; (&lt; 1&nbsp;000&nbsp;&euro;)</p>
-                <p className="text-sm text-charcoal-light">L&apos;entr&eacute;e de gamme &agrave; 199&nbsp;&euro; (Beem Kit 300W, actuellement en rupture) se rentabilise en 3,8 ans. Impossible de trouver une installation toiture rentable sous 6&nbsp;000&nbsp;&euro;.</p>
+                <p className="text-sm text-charcoal-light">L&apos;entr&eacute;e de gamme disponible &agrave; 349&nbsp;&euro; (Sunology GO, 270&nbsp;W) se rentabilise en 6,9 ans &agrave; Lyon plein sud. Impossible de trouver une installation toiture rentable sous 6&nbsp;000&nbsp;&euro;.</p>
               </div>
               <div className="card border-l-4 border-l-green p-4">
                 <p className="font-semibold text-sm mb-2">&#x2714; Vous voulez le meilleur ROI</p>
-                <p className="text-sm text-charcoal-light">ROI 4,8 ans (Beem On 500&nbsp;Wc, Lyon sud) vs 8&ndash;12 ans pour la toiture. Si vous optimisez le retour sur investissement plut&ocirc;t que le volume d&apos;&eacute;conomies absolues, le balcon gagne.</p>
+                <p className="text-sm text-charcoal-light">ROI 4,7 ans (Beem On 500&nbsp;Wc, Lyon sud, en pr&eacute;commande) vs 9&ndash;12 ans pour la toiture. Si vous optimisez le retour sur investissement plut&ocirc;t que le volume d&apos;&eacute;conomies absolues, le balcon gagne.</p>
               </div>
             </div>
 
@@ -529,7 +531,7 @@ export default function ComparatifBalconVsToiturePage() {
 
           {/* Footer */}
           <footer className="mt-10 pt-6 border-t border-border-light text-xs text-stone space-y-2">
-            <p><strong>M&eacute;thodologie ROI :</strong> tarif EDF 0,1940&nbsp;&euro;/kWh, inflation &eacute;lectrique 3,3&nbsp;%/an (source&nbsp;: CRE), autoconsommation 85&nbsp;%, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud, dur&eacute;e 25 ans. Les prix toiture sont des prix march&eacute; constat&eacute;s en 2026 avec TVA 10&nbsp;% (source&nbsp;: potentielsolaire.com, adekwatts.fr). Les ROI sont des estimations bas&eacute;es sur la m&eacute;thodologie standard&nbsp;: votre situation r&eacute;elle peut varier selon l&apos;orientation, le d&eacute;partement et le profil de consommation.</p>
+            <p><strong>M&eacute;thodologie ROI :</strong> tarif EDF {KWH_PRICE_LABEL} (en vigueur depuis le {KWH_PRICE_SINCE}), inflation &eacute;lectrique {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;%, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud, dur&eacute;e 25 ans. Les prix toiture sont des prix march&eacute; relev&eacute;s en 2026 (source&nbsp;: potentielsolaire.com, adekwatts.fr), non rev&eacute;rifi&eacute;s apr&egrave;s le passage &agrave; la TVA &agrave; 5,5&nbsp;% (article 278-0 bis du CGI, arr&ecirc;t&eacute; du 8 septembre 2025). Les ROI sont des estimations bas&eacute;es sur la m&eacute;thodologie standard&nbsp;: votre situation r&eacute;elle peut varier selon l&apos;orientation, le d&eacute;partement et le profil de consommation.</p>
             <p><strong>Transparence affili&eacute;s :</strong> certains liens de cet article sont affili&eacute;s. Notre comparatif est ind&eacute;pendant&nbsp;: aucun fabricant ou installateur ne conditionne notre analyse. <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie compl&egrave;te &rarr;</Link></p>
           </footer>
         </div>
