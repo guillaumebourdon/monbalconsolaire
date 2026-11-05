@@ -154,7 +154,7 @@ export default function MeilleureBatterieBalconPage() {
                         price: '539 €',
                         pricePerKwh: '281 €/kWh',
                         autonomy: '~13h',
-                        warranty: '5 ans',
+                        warranty: '10 ans',
                         panels: 'Non inclus (pack 2 × 500 W : 719 €)',
                         best: true,
                         badge: 'Meilleur prix/kWh balcon',
