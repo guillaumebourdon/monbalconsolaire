@@ -21,7 +21,7 @@
 - **Pas de CMS, pas de DB** — tout le contenu est hardcodé en TSX
 
 ### Env vars (Vercel)
-- `BREVO_API_KEY`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `INDEXNOW_KEY`
+- `BREVO_API_KEY`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `INDEXNOW_KEY`, `UNSUBSCRIBE_SECRET` (créée le 05/11/2026, valeur à ne jamais changer : elle signe les liens de désinscription déjà envoyés)
 
 ### Design system (couleurs)
 - Vert `#3D7A4A` — principale, CTA, liens

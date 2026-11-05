@@ -245,7 +245,8 @@ function CalculateurPage() {
     }
 
     // Best price = cheapest NOT already used
-    const bestPrice = scored.filter(k => !used.has(k.id) && !k.overBudget && k.roi <= HONEST_MAX_ROI).sort((a, b) => a.price - b.price)[0];
+    // (seulement s'il coûte moins cher que le meilleur choix : sinon l'étiquette « Meilleur prix » serait fausse)
+    const bestPrice = scored.filter(k => !used.has(k.id) && !k.overBudget && k.roi <= HONEST_MAX_ROI && (!bestChoice || k.price < bestChoice.price)).sort((a, b) => a.price - b.price)[0];
     if (bestPrice) {
       used.add(bestPrice.id);
       picks.push({ ...bestPrice, label: 'Meilleur prix', reasons: ['Le kit le moins cher pour votre profil', `ROI de ${bestPrice.roi} ans pour seulement ${bestPrice.price} \u20ac`] });
