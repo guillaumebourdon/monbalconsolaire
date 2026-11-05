@@ -4,6 +4,11 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
+
+// Coût d'une consommation annuelle (kWh) au tarif réglementé en vigueur, en euros (2 décimales).
+const eur = (kwh: number) => (Math.round(kwh * KWH_PRICE_EUR * 100) / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const eur0 = (kwh: number) => Math.round(kwh * KWH_PRICE_EUR).toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Consommation veille kit solaire balcon : combien ça coûte vraiment ?',
@@ -16,7 +21,7 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Le micro-onduleur consomme-t-il de l’électricité la nuit ?',
-    answer: 'Oui, mais très peu. Un micro-onduleur avec WiFi absorbe en général entre 0,3 et 0,5 W côté secteur. Sur une année entière, cela représente 2,6–4,4 kWh, soit 0,50–0,85 € à 0,1940 €/kWh. Certains font beaucoup mieux : la fiche technique du MX500 du Sunology PLAY annonce moins de 50 mW la nuit, soit moins de 0,5 kWh et 0,09 € par an. C’est négligeable comparé à la production annuelle d’un kit 400–500 Wc (350–450 kWh).',
+    answer: `Oui, mais très peu. Un micro-onduleur avec WiFi absorbe en général entre 0,3 et 0,5 W côté secteur. Sur une année entière, cela représente 2,6–4,4 kWh, soit ${eur(2.6)}–${eur(4.4)} € à ${KWH_PRICE_LABEL}. Certains font beaucoup mieux : la fiche technique du MX500 du Sunology PLAY annonce moins de 50 mW la nuit, soit moins de 0,5 kWh et 0,09 € par an. C’est négligeable comparé à la production annuelle d’un kit 400–500 Wc (350–450 kWh).`,
   },
   {
     question: 'Faut-il débrancher son kit solaire la nuit ?',
@@ -24,7 +29,7 @@ const faqData = [
   },
   {
     question: 'La Beembox consomme-t-elle en permanence ?',
-    answer: 'Oui. La Beembox est alimentée 24h/24 pour surveiller votre consommation Linky et synchroniser les données en temps réel. Sa consommation est d’environ 1–2 W. Sur 8 760 h/an, cela fait 8–17 kWh, soit 1,55–3,30 €/an.',
+    answer: `Oui. La Beembox est alimentée 24h/24 pour surveiller votre consommation Linky et synchroniser les données en temps réel. Sa consommation est d’environ 1–2 W. Sur 8 760 h/an, cela fait 8–17 kWh, soit ${eur(8.76)}–${eur(17.5)} €/an.`,
   },
   {
     question: 'Le WiFi du micro-onduleur consomme plus que l’onduleur lui-même ?',
@@ -36,7 +41,7 @@ const faqData = [
   },
   {
     question: 'La consommation en veille impacte-t-elle le ROI du kit ?',
-    answer: 'Marginalement. Pour un kit à 500 € avec une consommation de 1 W en veille, le coût annuel est de 1,70 €. Sur 10 ans, c’est 17 €, soit 3,4 % du prix d’achat. Pour les systèmes avec hub (4 W), le coût cumulé monte à 68 € sur 10 ans — à prendre en compte dans le calcul de rentabilité réel.',
+    answer: `Marginalement. Pour un kit à 500 € avec une consommation de 1 W en veille, le coût annuel est de ${eur(8.76)} €. Sur 10 ans, c’est ${eur0(87.6)} €, soit ${(Math.round(87.6 * KWH_PRICE_EUR / 500 * 1000) / 10).toLocaleString('fr-FR')} % du prix d’achat. Pour les systèmes avec hub (4 W), le coût cumulé monte à ${eur0(350.4)} € sur 10 ans — à prendre en compte dans le calcul de rentabilité réel.`,
   },
 ];
 
@@ -47,7 +52,7 @@ const veilleData = [
     wifi: 'WiFi intégré',
     veilleW: '< 0,05 W',
     kwhAn: '< 0,5 kWh',
-    coutAn: '< 0,09 €',
+    coutAn: `< ${eur(0.44)} €`,
     note: 'Fiche technique MX500 (août 2026) : consommation nocturne < 50 mW',
   },
   {
@@ -56,7 +61,7 @@ const veilleData = [
     wifi: 'WiFi + Beembox',
     veilleW: '~1,5–2 W',
     kwhAn: '13–17 kWh',
-    coutAn: '2,50–3,30 €',
+    coutAn: `${eur(13)}–${eur(17)} €`,
     note: 'Beembox alimentée 24h/24 pour le monitoring Linky',
   },
   {
@@ -65,7 +70,7 @@ const veilleData = [
     wifi: 'WiFi intégré',
     veilleW: '~0,5 W',
     kwhAn: '4,4 kWh',
-    coutAn: '0,85 €',
+    coutAn: `${eur(4.4)} €`,
     note: 'Même onduleur que Beem, sans box externe',
   },
   {
@@ -74,7 +79,7 @@ const veilleData = [
     wifi: 'Non (gateway ~60 €)',
     veilleW: '~0,3 W + 1 W (gateway)',
     kwhAn: '11,4 kWh',
-    coutAn: '2,21 €',
+    coutAn: `${eur(11.4)} €`,
     note: 'La gateway DTU-Lite consomme ~1 W même sans soleil',
   },
   {
@@ -83,7 +88,7 @@ const veilleData = [
     wifi: 'WiFi intégré',
     veilleW: '~2–3 W',
     kwhAn: '17–26 kWh',
-    coutAn: '3,30–5,05 €',
+    coutAn: `${eur(17)}–${eur(26)} €`,
     note: 'Hub WiFi + port USB chargeur actifs en permanence',
   },
   {
@@ -92,7 +97,7 @@ const veilleData = [
     wifi: 'WiFi + IA Zenki',
     veilleW: '~3–4 W',
     kwhAn: '26–35 kWh',
-    coutAn: '5,05–6,79 €',
+    coutAn: `${eur(26)}–${eur(35)} €`,
     note: 'Système résidentiel : hub actif, IA de gestion énergie',
   },
 ];
@@ -104,7 +109,7 @@ export default function ConsommationVeillePage() {
         title="Consommation veille kit solaire balcon : combien ça coûte vraiment ?"
         description="Micro-onduleur, Beembox, app WiFi : consommation en veille chiffrée par kit, impact ROI et verdict sur le débranchement nocturne."
         url="https://monbalconsolaire.fr/blog/consommation-veille-kit-solaire"
-        datePublished="2026-07-07"
+        datePublished="2026-07-07" dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Consommation veille kit solaire' }]} />
@@ -121,7 +126,7 @@ export default function ConsommationVeillePage() {
               Votre kit solaire est branch&eacute; sur une prise. La nuit, quand il ne produit plus rien, il continue &agrave; consommer un peu d&apos;&eacute;lectricit&eacute; pour maintenir le WiFi, le monitoring et l&apos;&eacute;lectronique en vie. Combien exactement&nbsp;? Et est-ce que &ccedil;a vaut le coup de le d&eacute;brancher&nbsp;?
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>7 juillet 2026</span>
+              <span>7 juillet 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>8 min de lecture</span>
             </div>
@@ -131,7 +136,7 @@ export default function ConsommationVeillePage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">L&apos;essentiel en 30 secondes</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
-              <li>&bull; <strong>Micro-onduleur seul&nbsp;:</strong> 0,3&ndash;0,5&nbsp;W en veille &mdash; soit 0,50&ndash;0,85&nbsp;&euro;/an (moins de 0,05&nbsp;W et 0,09&nbsp;&euro;/an pour le MX500 du Sunology PLAY)</li>
+              <li>&bull; <strong>Micro-onduleur seul&nbsp;:</strong> 0,3&ndash;0,5&nbsp;W en veille &mdash; soit {eur(2.6)}&ndash;{eur(4.4)}&nbsp;&euro;/an (moins de 0,05&nbsp;W et {eur(0.44)}&nbsp;&euro;/an pour le MX500 du Sunology PLAY)</li>
               <li>&bull; <strong>WiFi int&eacute;gr&eacute; (APsystems, TSUN)&nbsp;:</strong> +0,3&ndash;0,5&nbsp;W &mdash; le module WiFi consomme plus que l&apos;onduleur</li>
               <li>&bull; <strong>Gateway externe (Hoymiles DTU)&nbsp;:</strong> +1&nbsp;W suppl&eacute;mentaire 24h/24</li>
               <li>&bull; <strong>Hub syst&egrave;me avec batterie (EcoFlow, Zendure)&nbsp;:</strong> 2&ndash;4&nbsp;W continus</li>
@@ -166,7 +171,7 @@ export default function ConsommationVeillePage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Tableau&nbsp;: consommation en veille par kit</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Mesures et donn&eacute;es techniques relev&eacute;es sur fiches fabricants et retours d&apos;utilisateurs (forum-photovoltaique.fr, tests avec prise connect&eacute;e Tapo P110). Tarif&nbsp;: 0,1940&nbsp;&euro;/kWh.
+                Mesures et donn&eacute;es techniques relev&eacute;es sur fiches fabricants et retours d&apos;utilisateurs (forum-photovoltaique.fr, tests avec prise connect&eacute;e Tapo P110). Tarif&nbsp;: {KWH_PRICE_LABEL}.
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse">
@@ -205,9 +210,9 @@ export default function ConsommationVeillePage() {
               </p>
               <div className="grid md:grid-cols-3 gap-4 mb-6">
                 {[
-                  { label: 'Kit simple (0,5 W)', cout: '0,85 €/an', ratio: '0,2–0,3 %', couleur: 'text-green' },
-                  { label: 'Kit + Beembox (2 W)', cout: '3,40 €/an', ratio: '1,0–1,5 %', couleur: 'text-amber-dark' },
-                  { label: 'Hub batterie (4 W)', cout: '6,79 €/an', ratio: '2,0–3,0 %', couleur: 'text-amber-dark' },
+                  { label: 'Kit simple (0,5 W)', cout: `${eur(4.4)} €/an`, ratio: '0,2–0,3 %', couleur: 'text-green' },
+                  { label: 'Kit + Beembox (2 W)', cout: `${eur(17.5)} €/an`, ratio: '1,0–1,5 %', couleur: 'text-amber-dark' },
+                  { label: 'Hub batterie (4 W)', cout: `${eur(35)} €/an`, ratio: '2,0–3,0 %', couleur: 'text-amber-dark' },
                 ].map((item, i) => (
                   <div key={i} className="card-lg text-center">
                     <div className={`text-2xl font-extrabold mb-1 font-mono ${item.couleur}`}>{item.cout}</div>
@@ -218,7 +223,7 @@ export default function ConsommationVeillePage() {
               </div>
               <div className="card-lg bg-amber-pale/20 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Sur 10 ans :</strong> entre 8,50&nbsp;&euro; (kit simple) et 68&nbsp;&euro; (hub batterie) de consommation parasite cumul&eacute;e. C&apos;est &agrave; prendre en compte dans le calcul de votre <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline">talon de consommation r&eacute;el</Link>, m&ecirc;me si &ccedil;a ne change pas la conclusion&nbsp;: un kit solaire reste largement rentable.
+                  <strong>Sur 10 ans :</strong> entre {eur(44)}&nbsp;&euro; (kit simple) et {eur0(350)}&nbsp;&euro; (hub batterie) de consommation parasite cumul&eacute;e. C&apos;est &agrave; prendre en compte dans le calcul de votre <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline">talon de consommation r&eacute;el</Link>, m&ecirc;me si &ccedil;a ne change pas la conclusion&nbsp;: un kit solaire reste largement rentable.
                 </p>
               </div>
             </section>
@@ -298,7 +303,7 @@ export default function ConsommationVeillePage() {
                 <div className="card-lg border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-2">EcoFlow PowerStream</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
-                    Le micro-onduleur PowerStream maintient un port USB en charge et le WiFi actifs. Consommation totale estim&eacute;e&nbsp;: <strong>2&ndash;3&nbsp;W</strong>. Sur une ann&eacute;e&nbsp;: 17&ndash;26&nbsp;kWh, soit 3,30&ndash;5,05&nbsp;&euro;.
+                    Le micro-onduleur PowerStream maintient un port USB en charge et le WiFi actifs. Consommation totale estim&eacute;e&nbsp;: <strong>2&ndash;3&nbsp;W</strong>. Sur une ann&eacute;e&nbsp;: 17&ndash;26&nbsp;kWh, soit {eur(17)}&ndash;{eur(26)}&nbsp;&euro;.
                   </p>
                   <Link href="/avis/ecoflow-powerstream" className="text-green text-xs hover:underline">Notre avis EcoFlow PowerStream &rarr;</Link>
                 </div>
@@ -399,7 +404,7 @@ export default function ConsommationVeillePage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> fiches techniques APsystems EZ1-H (fiche EMEA 2023), forum-photovoltaique.fr (discussions sur la consommation nocturne des micro-onduleurs), mesures utilisateurs avec Tapo P110, documentation Hoymiles DTU-Lite, Zendure SolarFlow Mix. Tarif EDF&nbsp;: 0,1940&nbsp;&euro;/kWh (juillet 2026).{' '}
+                <strong>Sources&nbsp;:</strong> fiches techniques APsystems EZ1-H (fiche EMEA 2023), forum-photovoltaique.fr (discussions sur la consommation nocturne des micro-onduleurs), mesures utilisateurs avec Tapo P110, documentation Hoymiles DTU-Lite, Zendure SolarFlow Mix. Tarif EDF&nbsp;: {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026).{' '}
                 <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
               </p>
             </div>

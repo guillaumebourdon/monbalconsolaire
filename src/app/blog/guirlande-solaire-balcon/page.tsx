@@ -5,6 +5,10 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
+
+// Coût d'une guirlande LED 5 W, 6 h/jour pendant 60 jours (1,8 kWh) au tarif réglementé en vigueur.
+const COUT_GUIRLANDE = (Math.round(1.8 * KWH_PRICE_EUR * 100) / 100).toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Guirlande solaire balcon : 8 modèles pour l\'hiver (2026)',
@@ -40,7 +44,7 @@ const faqData = [
   },
   {
     question: 'Guirlande solaire ou guirlande sur prise : laquelle est la plus économique ?',
-    answer: 'Une guirlande LED sur secteur consomme quelques watts. Allumée 6 heures par jour pendant 60 jours (période de Noël), une guirlande de 5 W consomme environ 1,8 kWh, soit environ 0,35 € au tarif de 0,1940 €/kWh. L\'argument du solaire n\'est donc pas l\'économie, mais l\'absence de câble et de prise extérieure.',
+    answer: `Une guirlande LED sur secteur consomme quelques watts. Allumée 6 heures par jour pendant 60 jours (période de Noël), une guirlande de 5 W consomme environ 1,8 kWh, soit environ ${COUT_GUIRLANDE} € au tarif de ${KWH_PRICE_LABEL}. L'argument du solaire n'est donc pas l'économie, mais l'absence de câble et de prise extérieure.`,
   },
 ];
 
@@ -303,7 +307,7 @@ export default function GuirlandeSolaireBalconPage() {
         title="Guirlande solaire balcon : 8 modèles qui tiennent l'hiver (sélection 2026)"
         description="Sélection de 8 guirlandes solaires pour balcon (guinguette, Noël, recharge USB) et analyse de leur autonomie en hiver à partir des données PVGIS."
         url="https://monbalconsolaire.fr/blog/guirlande-solaire-balcon"
-        datePublished="2026-09-27"
+        datePublished="2026-09-27" dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Guirlande solaire balcon' }]} />
@@ -319,7 +323,7 @@ export default function GuirlandeSolaireBalconPage() {
               Guinguette, fil de cuivre, guirlande de No&euml;l : les guirlandes solaires promettent 8 &agrave; 12 heures d&apos;&eacute;clairage. C&apos;est vrai en juin. En d&eacute;cembre, sur un balcon, c&apos;est une autre histoire. Voici ce que disent les chiffres, les crit&egrave;res qui comptent vraiment et 8 mod&egrave;les s&eacute;lectionn&eacute;s sur fiche technique et avis clients.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>27 septembre 2026</span>
+              <span>27 septembre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -366,7 +370,7 @@ export default function GuirlandeSolaireBalconPage() {
                     ))}
                   </tbody>
                 </table>
-                <p className="text-[11px] text-stone mt-2 px-5 md:px-0">
+                <p className="text-xs text-stone mt-2 px-5 md:px-0">
                   Source : PVGIS 5.3 (JRC, Commission europ&eacute;enne), irradiation moyenne journali&egrave;re sur le plan du panneau, Paris. Relev&eacute; septembre 2026.
                 </p>
               </div>
@@ -473,7 +477,7 @@ export default function GuirlandeSolaireBalconPage() {
                       </div>
                       <div className="text-right">
                         <div className="font-mono font-bold text-green text-lg">{g.prix}</div>
-                        <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-0.5">
+                        <div className="text-xs text-stone font-medium uppercase tracking-wider mt-0.5">
                           {g.avis}
                         </div>
                       </div>
@@ -481,15 +485,15 @@ export default function GuirlandeSolaireBalconPage() {
 
                     <div className="grid grid-cols-3 gap-2 mb-4 text-xs">
                       <div className="bg-cream/60 rounded-lg p-2 text-center">
-                        <div className="text-[9px] text-stone uppercase tracking-wider">Batterie</div>
+                        <div className="text-xs text-stone uppercase tracking-wider">Batterie</div>
                         <div className="font-mono font-semibold text-charcoal mt-1">{g.batterie}</div>
                       </div>
                       <div className="bg-cream/60 rounded-lg p-2 text-center">
-                        <div className="text-[9px] text-stone uppercase tracking-wider">Recharge</div>
+                        <div className="text-xs text-stone uppercase tracking-wider">Recharge</div>
                         <div className="font-mono font-semibold text-charcoal mt-1">{g.recharge}</div>
                       </div>
                       <div className="bg-cream/60 rounded-lg p-2 text-center">
-                        <div className="text-[9px] text-stone uppercase tracking-wider">&Eacute;tanch&eacute;it&eacute;</div>
+                        <div className="text-xs text-stone uppercase tracking-wider">&Eacute;tanch&eacute;it&eacute;</div>
                         <div className="font-mono font-semibold text-charcoal mt-1">{g.ip}</div>
                       </div>
                     </div>
@@ -543,7 +547,7 @@ export default function GuirlandeSolaireBalconPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Quand une guirlande USB ou sur prise est simplement meilleure</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Soyons honn&ecirc;tes : le solaire n&apos;est pas toujours la bonne r&eacute;ponse pour une guirlande de No&euml;l. Une guirlande LED sur secteur de 5 W allum&eacute;e 6 heures par soir pendant 60 jours consomme environ 1,8 kWh, soit <strong>environ 0,35 &euro;</strong> au tarif de 0,1940 &euro;/kWh. L&apos;argument du solaire n&apos;est pas l&apos;&eacute;conomie, c&apos;est l&apos;absence de c&acirc;ble.
+                Soyons honn&ecirc;tes : le solaire n&apos;est pas toujours la bonne r&eacute;ponse pour une guirlande de No&euml;l. Une guirlande LED sur secteur de 5 W allum&eacute;e 6 heures par soir pendant 60 jours consomme environ 1,8 kWh, soit <strong>environ {COUT_GUIRLANDE} &euro;</strong> au tarif de {KWH_PRICE_LABEL}. L&apos;argument du solaire n&apos;est pas l&apos;&eacute;conomie, c&apos;est l&apos;absence de c&acirc;ble.
               </p>
               <ul className="text-charcoal-light leading-relaxed space-y-2 mb-4 pl-5">
                 <li>&bull; <strong>Balcon nord ou masqu&eacute; par un immeuble</strong> : le panneau ne recevra presque rien de novembre &agrave; f&eacute;vrier.</li>
@@ -660,7 +664,7 @@ export default function GuirlandeSolaireBalconPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed mb-3">
-                <strong>M&eacute;thodologie :</strong> guirlandes analys&eacute;es et s&eacute;lectionn&eacute;es sur fiche technique, note moyenne et volume d&apos;avis Amazon.fr, sans test physique. Prix constat&eacute;s en septembre 2026 sur Amazon.fr, susceptibles de varier. Irradiation : PVGIS 5.3 (JRC), moyennes journali&egrave;res mensuelles. Estimations d&apos;autonomie hivernale : calculs d&apos;ordre de grandeur de la r&eacute;daction. Tarif &eacute;lectricit&eacute; de r&eacute;f&eacute;rence : 0,1940 &euro;/kWh.
+                <strong>M&eacute;thodologie :</strong> guirlandes analys&eacute;es et s&eacute;lectionn&eacute;es sur fiche technique, note moyenne et volume d&apos;avis Amazon.fr, sans test physique. Prix constat&eacute;s en septembre 2026 sur Amazon.fr, susceptibles de varier. Irradiation : PVGIS 5.3 (JRC), moyennes journali&egrave;res mensuelles. Estimations d&apos;autonomie hivernale : calculs d&apos;ordre de grandeur de la r&eacute;daction. Tarif &eacute;lectricit&eacute; de r&eacute;f&eacute;rence : {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; Base en vigueur).
               </p>
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Transparence :</strong> les liens vers Amazon sont des liens affili&eacute;s. Si vous achetez via ces liens, MonBalconSolaire touche une petite commission, sans surco&ucirc;t pour vous. Cela n&apos;influence pas notre s&eacute;lection.{' '}

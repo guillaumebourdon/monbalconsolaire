@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Mini kits solaires Amazon < 300 € : notre sélection 2026',
@@ -42,7 +43,7 @@ const pieges_amazon = [
 export default function MiniKitsAmazonPage() {
   return (
     <>
-      <SchemaArticle title="Mini kits solaires Amazon < 300 € : lesquels valent vraiment le coup ?" description="Analyse honnête des mini kits solaires Amazon à moins de 300 € en 2026." url="https://monbalconsolaire.fr/blog/mini-kits-solaires-amazon" datePublished="2026-04-20" dateModified="2026-09-27" />
+      <SchemaArticle title="Mini kits solaires Amazon < 300 € : lesquels valent vraiment le coup ?" description="Analyse honnête des mini kits solaires Amazon à moins de 300 € en 2026." url="https://monbalconsolaire.fr/blog/mini-kits-solaires-amazon" datePublished="2026-04-20" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Mini kits Amazon < 300 €' }]} />
       <article className="section-padding">
@@ -52,7 +53,7 @@ export default function MiniKitsAmazonPage() {
             <div className="badge-amber mb-4 inline-block">Sélection Amazon</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Mini kits solaires Amazon &lt; 300 € : lesquels valent vraiment le coup ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Amazon regorge de mini kits solaires « plug-and-play » sous 300 €. La majorité sont médiocres, quelques-uns valent vraiment leur prix. Analyse honnête et sélection des 5 kits qui tiennent leurs promesses.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 avril 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -63,7 +64,7 @@ export default function MiniKitsAmazonPage() {
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Pourquoi des mini kits Amazon plutôt qu&apos;un Sunology ou Beem ?</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">La question revient souvent : si un <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY 2</Link> coûte 599 € et performe mieux que la plupart des kits Amazon, pourquoi chercher un mini kit à 250 € ?</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">La question revient souvent : si un <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY</Link> coûte {priceLabel('sunology-play')} et performe mieux que la plupart des kits Amazon, pourquoi chercher un mini kit à 250 € ?</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Trois raisons valables :</p>
               <p className="text-charcoal-light leading-relaxed mb-4"><strong>1. Tester le solaire sans se ruiner.</strong> Un mini kit 300W à 250 € permet de mesurer le potentiel de votre balcon avant d&apos;investir 600 € dans un kit premium. Si vous êtes locataire, nordiste, ou incertain de votre exposition, c&apos;est une bonne idée.</p>
               <p className="text-charcoal-light leading-relaxed mb-4"><strong>2. Compléter un kit existant.</strong> Vous avez déjà un Beem On 460W mais il reste de la place sur votre balcon ? Un mini kit 200W supplémentaire coûte 200 € et ajoute 200 kWh/an. Au total (660W), vous restez sous le rep&egrave;re de s&eacute;curit&eacute; de ~900W par circuit.</p>
@@ -101,7 +102,7 @@ export default function MiniKitsAmazonPage() {
                       </div>
                       <div className="text-right">
                         <div className="font-mono font-bold text-green text-lg">{k.prix}</div>
-                        <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-0.5">Note : {k.note}</div>
+                        <div className="text-xs text-stone font-medium uppercase tracking-wider mt-0.5">Note : {k.note}</div>
                       </div>
                     </div>
 
@@ -139,7 +140,7 @@ export default function MiniKitsAmazonPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Mini kit Amazon ou kit français : le vrai comparatif</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Pour trancher, voici un tableau comparatif honnête entre un mini kit Amazon à 280 € (kit générique de marque peu connue) et un <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> à 199 € (actuellement en rupture de stock chez Beem, vérifié le 12 octobre 2026) :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Pour trancher, voici un tableau comparatif honnête entre un mini kit Amazon à 280 € (kit générique de marque peu connue) et un <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> à 199 € (en rupture de stock chez Beem, vérifié le 5 novembre 2026) :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Critère</th><th className="text-center p-3">Mini kit Amazon générique 300 W</th><th className="text-center p-3 rounded-tr-xl">Beem Kit 300W</th></tr></thead>
@@ -154,7 +155,7 @@ export default function MiniKitsAmazonPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-charcoal-light leading-relaxed">Sur 25 ans, la différence de 40 kWh/an (soit ~8 €/an) représente 200 € de production en plus côté Beem, qui est aussi moins cher à l&apos;achat (199 € contre 280 €) quand il est en stock. Avec la meilleure garantie et le SAV direct, le Beem Kit 300W reste le meilleur choix pour un usage permanent — mais il est actuellement indisponible. Si vous voulez <em>tester</em> le solaire tout de suite ou pour un usage mixte (balcon/camping), un Jackery reste une option valable.</p>
+              <p className="text-charcoal-light leading-relaxed">Sur 25 ans, la différence de 40 kWh/an (soit ~8 €/an) représente 200 € de production en plus côté Beem, qui est aussi moins cher à l&apos;achat (199 € contre 280 €) quand il est en stock. Avec la meilleure garantie et le SAV direct, le Beem Kit 300W serait le meilleur choix pour un usage permanent — mais il est indisponible (rupture chez Beem au 5 novembre 2026). Si vous voulez <em>tester</em> le solaire tout de suite ou pour un usage mixte (balcon/camping), un Jackery reste une option valable.</p>
             </section>
 
             <section>
@@ -165,8 +166,8 @@ export default function MiniKitsAmazonPage() {
                   <p className="text-xs text-charcoal-light leading-relaxed">Les deux seuls vrais bons choix sous 250 €. Jackery pour une pose fixe, Renogy pour surface courbe ou usage nomade.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
-                  <h3 className="font-bold text-sm mb-1">&#x26A0;&#xFE0F; Budget 250-299 € : vérifiez d&apos;abord le Beem Kit 300W</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">À 199 €, le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> offre une vraie qualité pro pour moins cher qu&apos;un mini kit Amazon à 280 €. Il est toutefois actuellement en rupture de stock chez Beem : si c&apos;est le cas, un mini kit Amazon avec micro-onduleur de marque reste la meilleure option immédiate.</p>
+                  <h3 className="font-bold text-sm mb-1">&#x26A0;&#xFE0F; Budget 250-350 € : comparez avec un kit de marque</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> (199 €) est en rupture chez Beem au 5 novembre 2026. Le <Link href="/avis/sunology-go" className="text-green hover:underline">Sunology GO</Link> (270 W, {priceLabel('sunology-go')}) offre une garantie et un SAV de marque pour un peu plus cher qu&apos;un mini kit Amazon. Sinon, un mini kit Amazon avec micro-onduleur de marque reste l&apos;option la moins chère.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/20">
                   <h3 className="font-bold text-sm mb-1">&#x274C; À éviter absolument</h3>
@@ -182,14 +183,11 @@ export default function MiniKitsAmazonPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA
-                productName="Beem Kit 300W"
-                merchantName="Beem Energy"
-                affiliateUrl="https://beemenergy.fr/products/kit-beem"
-                label="Voir le Beem Kit 300W"
-                variant="box"
-                position="article_bottom"
-              />
+              <div className="card-lg text-center">
+                <p className="font-semibold mb-2">Un kit de marque &agrave; petit budget&nbsp;?</p>
+                <p className="text-sm text-charcoal-light mb-4">Le Beem Kit 300W est en rupture. Notre avis sur le Sunology GO ({priceLabel('sunology-go')}) d&eacute;taille l&apos;alternative disponible.</p>
+                <Link href="/avis/sunology-go" className="btn-primary inline-flex">Lire l&apos;avis Sunology GO &rarr;</Link>
+              </div>
             </div>
 
             <section className="mb-10">

@@ -4,6 +4,20 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, calculateProductionKwh, calculateFirstYearSavings, calculateROIYears } from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { DEPARTMENTS } from '@/data/departments';
+
+// Exemples calculés avec la méthode du site (pricing.ts) : autoconsommation 85 %, inflation 3,3 %/an, dégradation 0,5 %/an.
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const KIT_400 = { kitPriceEur: 300, kitPowerWc: 400 };
+const KIT_800 = { kitPriceEur: 450, kitPowerWc: 800, productibleKwhPerKwc: productibleSite(DEPARTMENTS.find((d) => d.code === '33')!.irradiation) };
+const prod400 = calculateProductionKwh(KIT_400);
+const eco400 = Math.round(calculateFirstYearSavings(KIT_400));
+const roi400 = calculateROIYears(KIT_400);
+const prod800 = calculateProductionKwh(KIT_800);
+const eco800 = Math.round(calculateFirstYearSavings(KIT_800));
+const roi800 = calculateROIYears(KIT_800);
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Aides et subventions panneau solaire balcon 2026 : la vérité',
@@ -32,11 +46,11 @@ const faqData = [
   },
   {
     question: 'Un kit solaire de balcon est-il un bon investissement malgré l’absence d’aides ?',
-    answer: 'Oui, dans la plupart des cas. Le ROI se construit uniquement sur l’autoconsommation (kWh non achetés à EDF à 0,1940 €/kWh) et non sur des aides. Un kit 400 Wc à Lyon expo sud produit ~400 kWh/an, soit ~77 €/an d’économies. Pour un kit à 300 €, ROI en 4 ans. L’absence d’aides ne remet pas en cause la rentabilité.',
+    answer: `Oui, dans la plupart des cas. Le ROI se construit uniquement sur l’autoconsommation (kWh non achetés à EDF à ${KWH_PRICE_LABEL}) et non sur des aides. Un kit 400 Wc à Lyon expo sud produit ~${prod400} kWh/an, soit ~${eco400} €/an d’économies la première année (85 % autoconsommés). Pour un kit à 300 €, ROI en ${fr(roi400)} ans environ. L’absence d’aides ne remet pas en cause la rentabilité.`,
   },
   {
     question: 'Faut-il tout de même déclarer son kit même sans aides ?',
-    answer: 'Oui, la déclaration CACSI Enedis est obligatoire indépendamment des aides. C’est gratuit, ça prend 10 minutes sur enedis.fr, et ça vous met en conformité légale. Sans déclaration, votre assurance habitation peut refuser de couvrir un sinistre lié à l’installation.',
+    answer: 'Oui, une déclaration à Enedis est obligatoire indépendamment des aides : la CACSI si votre kit est réglé pour ne rien injecter (réglage « zéro injection », boîtier ou batterie), sinon la cession gratuite du surplus à Enedis. C’est gratuit et se fait en ligne sur Enedis-Connect. Sans déclaration, votre assurance habitation peut refuser de couvrir un sinistre lié à l’installation.',
   },
 ];
 
@@ -253,7 +267,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               <div className="space-y-3">
                 {[
                   { num: '1', title: 'Le système de certification RGE', text: 'Les aides publiques sont conditionnées à la certification pour garantir la qualité des travaux et éviter les fraudes. Un kit vendu sur Amazon ne peut pas être certifié RGE par définition.' },
-                  { num: '2', title: 'Le raccordement au réseau', text: 'La prime autoconsommation était conditionnée à un contrat avec EDF OA et une demande Enedis formelle. Les kits balcon fonctionnent en CACSI, sans contrat de vente.' },
+                  { num: '2', title: 'Le raccordement au réseau', text: 'La prime autoconsommation était conditionnée à un contrat avec EDF OA et une demande Enedis formelle. Les kits balcon sont déclarés à Enedis en CACSI (engagement à ne pas injecter) ou en cession gratuite du surplus, sans contrat de vente.' },
                   { num: '3', title: 'Le montant de la TVA à récupérer', text: 'La TVA réduite est une aide indirecte : l’État renonce à 14,5 points de TVA (5,5 % au lieu de 20 %) sur une facture de fourniture et pose. Sur un kit à 300 € TTC, l’écart serait d’environ 36 €, trop peu pour justifier un dispositif spécifique.' },
                 ].map((item) => (
                   <div key={item.num} className="card border-l-4 border-l-green">
@@ -280,8 +294,8 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 {[
-                  { title: 'Kit 400 Wc à Lyon (expo sud)', val1: '~400 kWh/an', label1: 'Production annuelle', val2: '~77 €/an', label2: 'Économies (0,1940 €/kWh)' },
-                  { title: 'Kit 800 Wc à Bordeaux (expo sud)', val1: '~830 kWh/an', label1: 'Production annuelle', val2: '~161 €/an', label2: 'Économies (0,1940 €/kWh)' },
+                  { title: 'Kit 400 Wc à Lyon (expo sud)', val1: `~${fr(prod400)} kWh/an`, label1: 'Production annuelle', val2: `~${eco400} €/an`, label2: `Économies la 1re année (${KWH_PRICE_LABEL})` },
+                  { title: 'Kit 800 Wc à Bordeaux (expo sud)', val1: `~${fr(prod800)} kWh/an`, label1: 'Production annuelle', val2: `~${eco800} €/an`, label2: `Économies la 1re année (${KWH_PRICE_LABEL})` },
                 ].map((item, i) => (
                   <div key={i} className="card-lg bg-green-pale/30 border-green/10 text-center">
                     <p className="font-bold text-sm mb-3 text-green">{item.title}</p>
@@ -293,7 +307,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed mb-3">
-                Un kit 400 Wc &agrave; 300&nbsp;&euro; se rembourse en <strong>~4 ans</strong> sur les seules &eacute;conomies d&apos;autoconsommation. Un kit 800 Wc &agrave; 450&nbsp;&euro; se rembourse en <strong>~3 ans</strong>. Ces calculs n&apos;incluent aucune aide.
+                Un kit 400 Wc &agrave; 300&nbsp;&euro; se rembourse en <strong>~{fr(roi400)} ans</strong> sur les seules &eacute;conomies d&apos;autoconsommation. Un kit 800 Wc &agrave; 450&nbsp;&euro; se rembourse en <strong>~{fr(roi800)} ans</strong> (autoconsommation 85&nbsp;%, inflation 3,3&nbsp;%/an, d&eacute;gradation des panneaux 0,5&nbsp;%/an). Ces calculs n&apos;incluent aucune aide.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 L&apos;inflation &eacute;nerg&eacute;tique (3,3&nbsp;%/an selon la CRE) am&eacute;liore m&ecirc;me les ROI futurs&nbsp;: chaque ann&eacute;e, vos kWh autoconsomm&eacute;s valent plus. La <Link href="/blog/prix-electricite-2026-solaire" className="text-green hover:underline font-semibold">trajectoire du prix de l&apos;&eacute;lectricit&eacute; en 2026</Link> renforce cet argument.
@@ -380,7 +394,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> Anah (MaPrimeR&eacute;nov&apos;, conditions 2026), arr&ecirc;t&eacute; du 1er juin 2026 (suppression prime autoconsommation), Code g&eacute;n&eacute;ral des imp&ocirc;ts (TVA travaux), France R&eacute;nov&apos;, r&egrave;glement Enedis CACSI (d&eacute;cret 2021-1301), sites des m&eacute;tropoles concern&eacute;es. Tarif EDF base&nbsp;: 0,1940&nbsp;&euro;/kWh (ao&ucirc;t 2026).{' '}
+                <strong>Sources&nbsp;:</strong> Anah (MaPrimeR&eacute;nov&apos;, conditions 2026), arr&ecirc;t&eacute; du 1er juin 2026 (suppression prime autoconsommation), Code g&eacute;n&eacute;ral des imp&ocirc;ts (TVA travaux), France R&eacute;nov&apos;, r&egrave;glement Enedis CACSI (d&eacute;cret 2021-1301), sites des m&eacute;tropoles concern&eacute;es. Tarif EDF base&nbsp;: {KWH_PRICE_LABEL} (en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.{' '}
                 <span className="italic">Contenu &agrave; vocation informative, pas de conseil financier ou fiscal. V&eacute;rifiez les aides locales aupr&egrave;s de votre mairie.</span>
               </p>

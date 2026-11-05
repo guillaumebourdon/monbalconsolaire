@@ -6,10 +6,11 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Batteries portables et batteries de balcon 2026 : comparatif',
-  description: 'Comparatif batteries portables (EcoFlow, Bluetti, Jackery) et batteries balcon fixe 2026 (Bluetti Balco 260, Zendure SolarFlow). Prix mis à jour août 2026.',
+  description: 'Comparatif 2026 des batteries portables (EcoFlow, Bluetti, Jackery) et des batteries de balcon fixes (Bluetti Balco 260, Zendure SolarFlow 800 Plus).',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif',
   },
@@ -34,7 +35,7 @@ const faqData = [
   },
   {
     question: 'Quelle marque est la plus fiable en 2026 ?',
-    answer: 'Les trois leaders — EcoFlow, Bluetti, Jackery — ont tous des SAV français opérationnels et des taux de panne inférieurs à 2%. EcoFlow a l\'écosystème le plus complet (panneaux, batteries additionnelles, onduleurs PowerStream). Bluetti offre généralement le meilleur rapport capacité/prix. Jackery reste la référence du nomade avec un design compact et une interface simple. Anker SOLIX est un nouveau venu sérieux (support Anker légendaire).',
+    answer: 'Les trois leaders — EcoFlow, Bluetti, Jackery — ont tous des SAV français opérationnels et des taux de panne inférieurs à 2%. EcoFlow a l\'écosystème le plus complet (panneaux, batteries additionnelles, micro-onduleurs STREAM, successeurs du PowerStream). Bluetti offre généralement le meilleur rapport capacité/prix. Jackery reste la référence du nomade avec un design compact et une interface simple. Anker SOLIX est un nouveau venu sérieux (support Anker légendaire).',
   },
   {
     question: 'Combien de temps tient une batterie portable en backup pour un appartement ?',
@@ -207,7 +208,7 @@ const cas_usage = [
   {
     titre: 'Stockage solaire balcon fixe',
     reco: 'Bluetti Balco 260 (2 560 Wh) — le nouveau choix 2026',
-    explication: 'Pour stocker l\'excédent d\'un kit solaire de balcon, une batterie fixe est bien plus efficace qu\'une portable. Le Balco 260 à 889 € offre 2,56 kWh avec 96,1 % de rendement. Extensible, garantie 5 ans.',
+    explication: `Pour stocker l'excédent d'un kit solaire de balcon, une batterie fixe est bien plus efficace qu'une portable. Le Balco 260 à ${priceLabel('bluetti-balco-260')} (sans panneaux, prix promotionnel constaté le 05/11/2026) offre 2,56 kWh avec 96,1 % de rendement. Extensible, garantie 5 ans.`,
   },
 ];
 
@@ -216,10 +217,10 @@ export default function BatteriesPortablesPage() {
     <>
       <SchemaArticle
         title="Batteries portables et batteries de balcon 2026 : comparatif"
-        description="Comparatif batteries portables et batteries balcon fixe 2026, prix mis à jour août 2026."
+        description="Comparatif 2026 des batteries portables et des batteries de balcon fixes."
         url="https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif"
         datePublished="2026-04-21"
-        dateModified="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Batteries portables' }]} />
@@ -229,18 +230,18 @@ export default function BatteriesPortablesPage() {
           <div className="mb-10">
             <div className="flex flex-wrap gap-2 mb-4">
               <div className="badge-amber inline-block">Comparatif 2026</div>
-              <div className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green text-white">Mis &agrave; jour ao&ucirc;t 2026</div>
+              <div className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green text-white">Mis &agrave; jour le 5 novembre 2026</div>
             </div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Batteries portables et balcon fixe 2026 : comparatif complet (Bluetti Balco 260, EcoFlow, Jackery)
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Deux familles, deux usages. Les <strong>batteries portables</strong> (EcoFlow, Bluetti, Jackery) pour le backup et le nomade. Les <strong>batteries balcon fixe</strong> (Bluetti Balco 260, Zendure SolarFlow) pour stocker l&apos;&eacute;nergie solaire au quotidien. Prix mis &agrave; jour ao&ucirc;t 2026.
+              Deux familles, deux usages. Les <strong>batteries portables</strong> (EcoFlow, Bluetti, Jackery) pour le backup et le nomade. Les <strong>batteries balcon fixe</strong> (Bluetti Balco 260, Zendure SolarFlow) pour stocker l&apos;&eacute;nergie solaire au quotidien. Prix Mis &agrave; jour le 5 novembre 2026.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>21 avril 2026</span>
               <span>&middot;</span>
-              <span>Mis &agrave; jour ao&ucirc;t 2026</span>
+              <span>Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -252,7 +253,7 @@ export default function BatteriesPortablesPage() {
               <strong>Batteries portables :</strong> l&apos;<strong>EcoFlow DELTA 2</strong> (569-699 &euro;) reste notre choix n&deg;1 en backup domestique. La <strong>Bluetti AC180</strong> (549-699 &euro;) offre le meilleur rapport capacit&eacute;/prix. Pour le nomade, la <strong>Jackery Explorer 1000 Plus</strong> (799-999 &euro;) est la r&eacute;f&eacute;rence compacte.
             </p>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              <strong>Batterie balcon fixe (nouveau) :</strong> le <strong>Bluetti Balco 260</strong> (889 &euro;, 2,56 kWh) est la nouveaut&eacute; qui change la donne depuis juillet 2026 &mdash; meilleur prix/Wh du march&eacute;, extensible, garantie 5 ans. &agrave; pr&eacute;f&eacute;rer au Zendure SolarFlow si vous partez sur du stockage fix&eacute;.
+              <strong>Batterie balcon fixe (nouveau) :</strong> le <strong>Bluetti Balco 260</strong> ({priceLabel('bluetti-balco-260')} sans panneaux, 2,56 kWh) est la nouveaut&eacute; qui change la donne depuis juillet 2026 &mdash; meilleur prix/Wh du march&eacute;, extensible, garantie 5 ans. &agrave; pr&eacute;f&eacute;rer au Zendure SolarFlow si vous partez sur du stockage fix&eacute;.
             </p>
           </div>
 
@@ -284,7 +285,7 @@ export default function BatteriesPortablesPage() {
                     Bo&icirc;tier branch&eacute; en permanence sur votre kit solaire de balcon. Stocke l&apos;exc&eacute;dent pour le soir. Pas transportable, mais bien plus efficace pour l&apos;autoconsommation.
                   </p>
                   <p className="text-xs text-stone">
-                    <strong>Exemples :</strong> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> (nouveau, 889 &euro;), Zendure SolarFlow, EcoFlow PowerStream. <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">Voir le comparatif d&eacute;di&eacute;</Link>.
+                    <strong>Exemples :</strong> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> ({priceLabel('bluetti-balco-260')}), Zendure SolarFlow 800 Plus, EcoFlow STREAM Ultra (successeur du PowerStream, arr&ecirc;t&eacute;). <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">Voir le comparatif d&eacute;di&eacute;</Link>.
                   </p>
                 </div>
               </div>
@@ -298,7 +299,7 @@ export default function BatteriesPortablesPage() {
               <h2 className="text-2xl font-extrabold mb-4">Batteries balcon fixe 2026 : Bluetti Balco 260 et alternatives</h2>
               <div className="bg-amber-pale/20 border border-amber/20 rounded-xl p-4 mb-5">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Juillet 2026 :</strong> Bluetti lance le <strong>Balco 260</strong>, sa premi&egrave;re batterie balcon fixe (2,56 kWh, 889 &euro;). Elle s&apos;impose d&apos;embl&eacute;e comme le meilleur rapport capacit&eacute;/prix du march&eacute; des batteries fix&eacute;es, devant le Zendure SolarFlow et l&apos;EcoFlow PowerStream.
+                  <strong>Juillet 2026 :</strong> Bluetti lance le <strong>Balco 260</strong>, sa premi&egrave;re batterie balcon fixe (2,56 kWh, lanc&eacute;e &agrave; 889 &euro;, {priceLabel('bluetti-balco-260')} le 5 novembre 2026). Elle s&apos;impose d&apos;embl&eacute;e comme le meilleur rapport capacit&eacute;/prix du march&eacute; des batteries fix&eacute;es, devant le Zendure SolarFlow et l&apos;EcoFlow PowerStream.
                 </p>
               </div>
 
@@ -322,14 +323,14 @@ export default function BatteriesPortablesPage() {
                       </td>
                       <td className="text-center p-3 font-mono text-xs">2 560 Wh</td>
                       <td className="text-center p-3 font-mono text-xs">2 400 W</td>
-                      <td className="text-center p-3 font-mono text-xs text-green font-bold">889 &euro;</td>
+                      <td className="text-center p-3 font-mono text-xs text-green font-bold">{priceLabel('bluetti-balco-260')}</td>
                       <td className="text-center p-3 text-xs font-semibold">5 ans</td>
                     </tr>
                     <tr className="bg-white border-b border-border-light">
-                      <td className="p-3 font-semibold">Zendure SolarFlow 800</td>
-                      <td className="text-center p-3 font-mono text-xs">960 Wh</td>
+                      <td className="p-3 font-semibold">Zendure SolarFlow 800 Plus</td>
+                      <td className="text-center p-3 font-mono text-xs">1 920 Wh</td>
                       <td className="text-center p-3 font-mono text-xs">800 W</td>
-                      <td className="text-center p-3 font-mono text-xs">&agrave; partir de 599 &euro;</td>
+                      <td className="text-center p-3 font-mono text-xs">{priceLabel('zendure-solarflow-800-plus')}</td>
                       <td className="text-center p-3 text-xs">2 ans</td>
                     </tr>
                     <tr className="bg-cream/50 border-b border-border-light">
@@ -350,7 +351,7 @@ export default function BatteriesPortablesPage() {
                     <ProductThumb src="/images/produits/bluetti-balco-260-front.webp" alt="Bluetti Balco 260" href="/avis/bluetti-balco-260" size="md" />
                   </div>
                   <div>
-                    <span className="badge-amber text-xs mb-2 inline-block">Nouveau juillet 2026</span>
+                    <span className="badge-amber text-xs mb-2 inline-block">Lanc&eacute; en juillet 2026</span>
                     <h3 className="font-bold text-lg">Bluetti Balco 260 — notre avis</h3>
                     <p className="text-xs text-stone mt-1">2 560 Wh &middot; LiFePO4 &middot; Garantie 5 ans &middot; Rendement 96,1&nbsp;%</p>
                   </div>
@@ -359,7 +360,7 @@ export default function BatteriesPortablesPage() {
                   <div className="bg-green-pale/30 rounded-lg p-3">
                     <p className="text-xs font-semibold text-green mb-2">&#10003; Ce qu&apos;on aime</p>
                     <ul className="text-xs text-charcoal-light leading-relaxed space-y-1">
-                      <li>&bull; 2,56 kWh pour 889 &euro; &mdash; meilleur prix/Wh du march&eacute;</li>
+                      <li>&bull; 2,56 kWh pour {priceLabel('bluetti-balco-260')} (sans panneaux) &mdash; parmi les meilleurs prix au Wh du march&eacute;</li>
                       <li>&bull; Extensible jusqu&apos;&agrave; 15,36 kWh (5 batteries BC-260 additionnelles)</li>
                       <li>&bull; Rendement 96,1 % &mdash; quasi pas de pertes</li>
                       <li>&bull; Garantie 5 ans (contre 2 ans pour la concurrence)</li>
@@ -377,8 +378,8 @@ export default function BatteriesPortablesPage() {
                 </div>
                 <div className="flex items-center justify-between flex-wrap gap-3">
                   <div>
-                    <div className="font-mono font-bold text-green text-xl">889 &euro;</div>
-                    <div className="text-xs text-stone">Prix de lancement (PPC 1 399 &euro;)</div>
+                    <div className="font-mono font-bold text-green text-xl">{priceLabel('bluetti-balco-260')}</div>
+                    <div className="text-xs text-stone">Sans panneaux, prix constat&eacute; le 5 novembre 2026 (prix barr&eacute; 1&nbsp;049&nbsp;&euro;)</div>
                   </div>
                   <Link href="/avis/bluetti-balco-260" className="btn-primary text-sm">
                     Lire notre avis complet &rarr;
@@ -453,7 +454,7 @@ export default function BatteriesPortablesPage() {
                       </div>
                       <div className="text-right">
                         <div className="font-mono font-bold text-green text-lg">{b.prix}</div>
-                        <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-0.5">
+                        <div className="text-xs text-stone font-medium uppercase tracking-wider mt-0.5">
                           Note : {b.note}
                         </div>
                       </div>
@@ -461,15 +462,15 @@ export default function BatteriesPortablesPage() {
 
                     <div className="grid md:grid-cols-3 gap-2 mb-4 pb-3 border-b border-border-light text-xs">
                       <div>
-                        <span className="text-stone uppercase tracking-wider text-[10px] font-semibold">Entrée solaire</span>
+                        <span className="text-stone uppercase tracking-wider text-xs font-semibold">Entrée solaire</span>
                         <div className="font-mono font-semibold">{b.entree_solaire}</div>
                       </div>
                       <div>
-                        <span className="text-stone uppercase tracking-wider text-[10px] font-semibold">Cycles</span>
+                        <span className="text-stone uppercase tracking-wider text-xs font-semibold">Cycles</span>
                         <div className="font-mono font-semibold">{b.cycles}</div>
                       </div>
                       <div>
-                        <span className="text-stone uppercase tracking-wider text-[10px] font-semibold">Poids</span>
+                        <span className="text-stone uppercase tracking-wider text-xs font-semibold">Poids</span>
                         <div className="font-mono font-semibold">{b.poids}</div>
                       </div>
                     </div>
@@ -586,7 +587,7 @@ export default function BatteriesPortablesPage() {
                     <span className="text-xs bg-amber text-white font-bold px-2 py-0.5 rounded-full">Nouveau</span>
                     <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Bluetti Balco 260</h3>
                   </div>
-                  <p className="text-xs text-charcoal-light">2,56 kWh fix&eacute; au balcon &mdash; 889 &euro; au lancement, meilleur prix/Wh du march&eacute;</p>
+                  <p className="text-xs text-charcoal-light">2,56 kWh fix&eacute; au balcon &mdash; {priceLabel('bluetti-balco-260')} sans panneaux</p>
                 </Link>
                 <Link href="/guide/batterie-solaire-balcon-guide" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Guide : quelle capacit&eacute; de batterie pour votre balcon ?</h3>
@@ -602,7 +603,7 @@ export default function BatteriesPortablesPage() {
                 </Link>
                 <Link href="/avis/jackery-solarvault-3-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Jackery SolarVault 3 Pro</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Batterie LFP 2,52&nbsp;kWh + onduleur &agrave; 839&nbsp;&euro; en promo</p>
+                  <p className="text-xs text-charcoal-light mt-1">Batterie LFP 2,52&nbsp;kWh + onduleur, {priceLabel('jackery-solarvault-3-pro')} sans panneaux</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment ça marche</h3>
@@ -630,7 +631,7 @@ export default function BatteriesPortablesPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Note :</strong> prix indicatifs constat&eacute;s en ao&ucirc;t 2026 (sites fabricants, Amazon, Cdiscount). Ils varient selon les promotions. Prix batteries portables : -15 &agrave; -25 % par rapport &agrave; avril 2026. Prix Bluetti Balco 260 : 889 &euro; (prix de lancement jusqu&apos;au 30 sept. 2026, PPC 1 399 &euro;). Mod&egrave;les s&eacute;lectionn&eacute;s et analys&eacute;s sur fiches techniques, non test&eacute;s physiquement. Liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous.{' '}
+                <strong>Note :</strong> prix des batteries portables constat&eacute;s en ao&ucirc;t 2026 (sites fabricants, Amazon, Cdiscount). Ils varient selon les promotions. Prix batteries portables : -15 &agrave; -25 % par rapport &agrave; avril 2026. Prix Bluetti Balco 260, Zendure SolarFlow 800 Plus et Jackery SolarVault 3 Pro v&eacute;rifi&eacute;s le 5 novembre 2026 sur les sites des fabricants (prix promotionnels sans date de fin annonc&eacute;e). Mod&egrave;les s&eacute;lectionn&eacute;s et analys&eacute;s sur fiches techniques, non test&eacute;s physiquement. Liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.
               </p>
             </div>

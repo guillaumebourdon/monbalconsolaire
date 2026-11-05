@@ -331,7 +331,7 @@ export default function LampesSolairesPage() {
                       </div>
                       <div className="text-right">
                         <div className="font-mono font-bold text-green text-lg">{l.prix}</div>
-                        <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-0.5">
+                        <div className="text-xs text-stone font-medium uppercase tracking-wider mt-0.5">
                           Note : {l.note}
                         </div>
                       </div>
@@ -339,15 +339,15 @@ export default function LampesSolairesPage() {
 
                     <div className="grid grid-cols-3 gap-2 mb-3 text-xs">
                       <div className="bg-cream/60 rounded-lg p-2 text-center">
-                        <div className="text-[9px] text-stone uppercase tracking-wider">Luminosité</div>
+                        <div className="text-xs text-stone uppercase tracking-wider">Luminosité</div>
                         <div className="font-mono font-semibold text-charcoal mt-1">{l.luminosite}</div>
                       </div>
                       <div className="bg-cream/60 rounded-lg p-2 text-center">
-                        <div className="text-[9px] text-stone uppercase tracking-wider">Autonomie</div>
+                        <div className="text-xs text-stone uppercase tracking-wider">Autonomie</div>
                         <div className="font-mono font-semibold text-charcoal mt-1">{l.autonomie}</div>
                       </div>
                       <div className="bg-cream/60 rounded-lg p-2 text-center">
-                        <div className="text-[9px] text-stone uppercase tracking-wider">Étanchéité</div>
+                        <div className="text-xs text-stone uppercase tracking-wider">Étanchéité</div>
                         <div className="font-mono font-semibold text-charcoal mt-1">{l.ip}</div>
                       </div>
                     </div>

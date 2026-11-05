@@ -5,6 +5,12 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, calculateROIYears } from '@/lib/pricing';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+const BEEM = PRODUCTS['beem-on-500w'];
+const ROI_BEEM = calculateROIYears({ kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM.powerWc }).toLocaleString('fr-FR');
+const EUR_WC_BEEM = (Math.round((BEEM.priceEur / BEEM.powerWc) * 100) / 100).toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon : avis et retours d\u2019exp\u00e9rience 2026',
@@ -17,7 +23,7 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Quel est le meilleur kit solaire de balcon en 2026 selon les avis ?',
-    answer: 'Le Sunology PLAY 2 et le Beem On 500 Wc se d\u00e9tachent nettement dans les avis utilisateurs. Le PLAY 2 s\u00e9duit par sa simplicit\u00e9 d\u2019installation et la fiabilit\u00e9 de l\u2019app. Le Beem On 500 Wc offre le meilleur rapport qualit\u00e9-prix du march\u00e9 \u00e0 0,86 \u20ac/Wc.',
+    answer: `Le Sunology PLAY (ex-PLAY 2) et le Beem On 500 Wc se détachent nettement dans les avis utilisateurs. Le PLAY séduit par sa simplicité d’installation et la fiabilité de l’app. Le Beem On 500 Wc offre le meilleur rapport qualité-prix à ${EUR_WC_BEEM} €/Wc, mais il est en précommande chez Beem (expédition à partir de décembre 2026, vérifié le 5 novembre 2026).`,
   },
   {
     question: 'Les kits solaires de balcon sont-ils fiables sur la dur\u00e9e ?',
@@ -29,7 +35,7 @@ const faqData = [
   },
   {
     question: 'Combien de temps pour rentabiliser un kit solaire de balcon ?',
-    answer: 'Selon les retours r\u00e9els, le ROI se situe entre 5 et 8 ans pour un balcon sud. Les kits les moins chers (Beem On 500 Wc \u00e0 429 \u20ac) peuvent \u00eatre rentabilis\u00e9s en 4-5 ans. Un balcon est/ouest ajoute 1-2 ans au ROI.',
+    answer: `Selon les retours réels, le ROI se situe entre 5 et 8 ans pour un balcon sud. Les kits les moins chers au watt (Beem On 500 Wc à ${priceLabel('beem-on-500w')}) peuvent être rentabilisés en ${ROI_BEEM} ans environ selon notre méthode (Lyon sud). Un balcon est/ouest ajoute 1 à 2 ans au ROI.`,
   },
   {
     question: 'Quels probl\u00e8mes reviennent le plus souvent dans les avis ?',
@@ -37,7 +43,7 @@ const faqData = [
   },
   {
     question: 'Zendure SolarFlow : les avis sont-ils aussi bons qu\u2019annonc\u00e9 ?',
-    answer: 'Le Zendure SolarFlow est plebiscit\u00e9 pour son stockage int\u00e9gr\u00e9 et son app tr\u00e8s compl\u00e8te. Les critiques portent sur le prix \u00e9lev\u00e9 (900 \u20ac+) et un ROI plus long. Les utilisateurs qui en tirent le plus profit sont ceux absents en journ\u00e9e, gr\u00e2ce au d\u00e9calage de la batterie.',
+    answer: 'Le Zendure SolarFlow 800 Plus est plébiscité pour son stockage intégré et son app très complète. Les critiques portent sur le prix (539 € sans panneaux, 719 € en pack avec 2 panneaux de 500 W au 5 novembre 2026, prix promotionnel) et un ROI plus long. Les utilisateurs qui en tirent le plus profit sont ceux absents en journée, grâce au décalage de la batterie.',
   },
 ];
 
@@ -48,7 +54,7 @@ export default function KitSolaireBalconAvisPage() {
         title="Kit solaire balcon : avis et retours d'exp\u00e9rience 2026"
         description="Avis et retours d\u2019exp\u00e9rience sur les kits solaires de balcon en 2026."
         url="https://monbalconsolaire.fr/blog/kit-solaire-balcon-avis-2026"
-        datePublished="2026-06-20"
+        datePublished="2026-06-20" dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Kit solaire balcon : avis 2026' }]} />
@@ -65,7 +71,7 @@ export default function KitSolaireBalconAvisPage() {
               Trustpilot, forums, Reddit, groupes Facebook : on a &eacute;pluch&eacute; les <strong>vrais retours utilisateurs</strong> sur les kits solaires de balcon les plus vendus en France. Sunology, Beem, Zendure, EcoFlow &mdash; voici ce qu&apos;en pensent ceux qui les utilisent au quotidien, <strong>sans filtre marketing</strong>.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>20 juin 2026</span>
+              <span>20 juin 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -114,7 +120,7 @@ export default function KitSolaireBalconAvisPage() {
               <p className="text-sm text-charcoal-light">Note stable depuis 12 mois. 82 % de 5 &eacute;toiles.</p>
             </div>
             <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-              Le <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link> (450 Wc, 599 &euro;) est le kit le plus vendu et le plus comment&eacute; en France. Sunology le vend d&eacute;sormais sous le nom <strong>PLAY</strong>, avec un panneau back-contact de 500&nbsp;Wc (lanc&eacute; en ao&ucirc;t 2026) au m&ecirc;me prix&nbsp;: les avis ci-dessous portent surtout sur le PLAY 2. Les retours convergent sur plusieurs points :
+              Le <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link> (450 Wc, 599 &euro;) est le kit le plus vendu et le plus comment&eacute; en France. Sunology le vend d&eacute;sormais sous le nom <strong>PLAY</strong>, avec un panneau list&eacute; &agrave; {PRODUCTS['sunology-play'].powerWc}&nbsp;W au m&ecirc;me prix ({priceLabel('sunology-play')} au 5 novembre 2026)&nbsp;: les avis ci-dessous portent surtout sur le PLAY 2. Les retours convergent sur plusieurs points :
             </p>
             <div className="space-y-2 mb-4">
               <div className="card border-l-4 border-l-green">
@@ -151,7 +157,7 @@ export default function KitSolaireBalconAvisPage() {
               <p className="text-sm text-charcoal-light">Tendance en hausse depuis le lancement du On 500 Wc.</p>
             </div>
             <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-              Le kit phare de Beem est d&eacute;sormais le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">On 500 Wc</Link> (429 &euro;, soit 0,86 &euro;/Wc). L&apos;ancien <Link href="/avis/beem-on-460w" className="text-green hover:underline font-semibold">On 460W</Link> n&apos;est plus vendu qu&apos;en extension (429 &euro;) pour agrandir une installation existante. Le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Kit 300W</Link> (199 &euro;) reste l&apos;entr&eacute;e de gamme, mais il est en rupture chez Beem au 12 octobre 2026.
+              Le kit phare de Beem est d&eacute;sormais le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">On 500 Wc</Link> ({priceLabel('beem-on-500w')}, soit {EUR_WC_BEEM} &euro;/Wc), en pr&eacute;commande avec une exp&eacute;dition annonc&eacute;e &agrave; partir de d&eacute;cembre 2026. L&apos;ancien <Link href="/avis/beem-on-460w" className="text-green hover:underline font-semibold">On 460W</Link> n&apos;appara&icirc;t plus au catalogue Beem. Le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Kit 300W</Link> (199 &euro;) est en rupture chez Beem (v&eacute;rifi&eacute; le 5 novembre 2026).
             </p>
             <div className="space-y-2 mb-4">
               <div className="card border-l-4 border-l-green">
@@ -174,7 +180,7 @@ export default function KitSolaireBalconAvisPage() {
             </div>
 
             <div className="my-6">
-              <AffiliateCTA productName="Beem On 500 Wc" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge" label="Voir le Beem On 500 Wc" position="after-beem" price="429 &euro;" />
+              <AffiliateCTA productName="Beem On 500 Wc" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge" label="Voir le Beem On 500 Wc (pr&eacute;commande)" position="after-beem" price={priceLabel('beem-on-500w')} />
             </div>
           </section>
 
@@ -189,7 +195,7 @@ export default function KitSolaireBalconAvisPage() {
               <p className="text-sm text-charcoal-light">Avis polaris&eacute;s : enthousiastes ou d&eacute;&ccedil;us du ROI.</p>
             </div>
             <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-              Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> (840W + batterie 1,92 kWh, &agrave; partir de 900 &euro;) est le syst&egrave;me avec stockage le plus populaire. Les avis sont plus nuanc&eacute;s que pour les kits simples :
+              Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> (onduleur 800 W + batterie 1,92 kWh, {priceLabel('zendure-solarflow-800-plus')} seul ou 719 &euro; avec 2 panneaux de 500 W au 5 novembre 2026) est le syst&egrave;me avec stockage le plus populaire. Les avis sont plus nuanc&eacute;s que pour les kits simples :
             </p>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="card border-l-4 border-l-green">
@@ -240,7 +246,7 @@ export default function KitSolaireBalconAvisPage() {
                   </tr>
                   <tr className="border-b border-border-light">
                     <td className="py-3"><Link href="/avis/sunology-city" className="text-green hover:underline font-semibold">Sunology CITY</Link> <span className="text-amber-dark text-xs">(arr&ecirc;t&eacute;)</span></td>
-                    <td className="py-3">Id&eacute;al balcons &eacute;troits, fixation sans per&ccedil;age. Production modeste (370 Wc)</td>
+                    <td className="py-3">Id&eacute;al balcons &eacute;troits, fixation sans per&ccedil;age. Production modeste (300 Wc). Remplac&eacute; par le Sunology GO</td>
                     <td className="py-3 text-center font-mono">7,5/10</td>
                   </tr>
                   <tr className="border-b border-border-light">
@@ -279,7 +285,7 @@ export default function KitSolaireBalconAvisPage() {
               </div>
               <div className="card border-l-4 border-l-amber">
                 <h3 className="font-bold text-sm">&#10007; N&eacute;gliger l&apos;autoconsommation</h3>
-                <p className="text-xs text-charcoal-light mt-1">Sans adapter ses habitudes, on autoconsomme seulement 30-40 % de sa production. Le reste est inject&eacute; gratuitement. Voir <Link href="/guide/optimiser-autoconsommation-solaire" className="text-green hover:underline">comment optimiser</Link>.</p>
+                <p className="text-xs text-charcoal-light mt-1">Sans adapter ses habitudes, on autoconsomme seulement 30-40 % de sa production. Le reste ne vous rapporte rien (bloqu&eacute; par un r&eacute;glage z&eacute;ro injection ou c&eacute;d&eacute; gratuitement &agrave; Enedis). Voir <Link href="/guide/optimiser-autoconsommation-solaire" className="text-green hover:underline">comment optimiser</Link>.</p>
               </div>
             </div>
           </section>
@@ -300,31 +306,31 @@ export default function KitSolaireBalconAvisPage() {
                 <tbody className="text-charcoal-light">
                   <tr className="border-b border-border-light bg-green-pale/20">
                     <td className="py-3 font-semibold">Meilleur rapport qualit&eacute;-prix</td>
-                    <td className="py-3"><Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link></td>
-                    <td className="py-3 text-center font-mono">429 &euro;</td>
+                    <td className="py-3"><Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> <span className="text-amber-dark text-xs">(pr&eacute;commande)</span></td>
+                    <td className="py-3 text-center font-mono">{priceLabel('beem-on-500w')}</td>
                     <td className="py-3 text-center font-mono font-bold text-green">8,5/10</td>
                   </tr>
                   <tr className="border-b border-border-light">
                     <td className="py-3 font-semibold">La simplicit&eacute; avant tout</td>
                     <td className="py-3"><Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY (ex-PLAY 2)</Link></td>
-                    <td className="py-3 text-center font-mono">599 &euro;</td>
+                    <td className="py-3 text-center font-mono">{priceLabel('sunology-play')}</td>
                     <td className="py-3 text-center font-mono font-bold text-green">8,5/10</td>
                   </tr>
                   <tr className="border-b border-border-light">
                     <td className="py-3 font-semibold">Stockage int&eacute;gr&eacute;</td>
-                    <td className="py-3"><Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link></td>
-                    <td className="py-3 text-center font-mono">900 &euro;</td>
+                    <td className="py-3"><Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 &times; 500 W</Link></td>
+                    <td className="py-3 text-center font-mono">719 &euro;</td>
                     <td className="py-3 text-center font-mono font-bold text-green">8,5/10</td>
                   </tr>
                   <tr className="border-b border-border-light">
                     <td className="py-3 font-semibold">Petit budget</td>
-                    <td className="py-3"><Link href="/avis/beem-kit-300w" className="text-green hover:underline font-semibold">Beem Kit 300W</Link></td>
-                    <td className="py-3 text-center font-mono">199 &euro;*</td>
-                    <td className="py-3 text-center font-mono font-bold text-green">7,5/10</td>
+                    <td className="py-3"><Link href="/avis/sunology-go" className="text-green hover:underline font-semibold">Sunology GO</Link></td>
+                    <td className="py-3 text-center font-mono">{priceLabel('sunology-go')}</td>
+                    <td className="py-3 text-center font-mono font-bold text-green">7/10</td>
                   </tr>
                 </tbody>
               </table>
-              <p className="text-xs text-stone mt-2">* Actuellement en rupture de stock chez Beem (v&eacute;rifi&eacute; le 12 octobre 2026).</p>
+              <p className="text-xs text-stone mt-2">Prix v&eacute;rifi&eacute;s le 5 novembre 2026 sur les sites des fabricants (Zendure&nbsp;: prix promotionnel sans date de fin annonc&eacute;e). Le Beem Kit 300W, en rupture chez Beem, n&apos;est plus list&eacute;.</p>
             </div>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/40 border-green/10 text-center py-8 mb-6">
@@ -335,7 +341,7 @@ export default function KitSolaireBalconAvisPage() {
             </div>
 
             <div className="my-6">
-              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 &euro;" />
+              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price={priceLabel('sunology-play')} />
             </div>
           </section>
 
@@ -382,7 +388,7 @@ export default function KitSolaireBalconAvisPage() {
 
           <div className="mt-10 pt-8 border-t border-border-light">
             <p className="text-xs text-stone leading-relaxed">
-              <strong>Sources :</strong> avis Trustpilot (consult&eacute;s le 18 juin 2026), forums r/france et GPPV (fils 2025-2026), retours Amazon v&eacute;rifi&eacute;s. Tarif EDF : 0,1940 &euro;/kWh. Les liens vers les sites marchands sont des liens affili&eacute;s &mdash; cela ne change pas nos avis. <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
+              <strong>Sources :</strong> avis Trustpilot (consult&eacute;s le 18 juin 2026), forums r/france et GPPV (fils 2025-2026), retours Amazon v&eacute;rifi&eacute;s. Tarif EDF : {KWH_PRICE_LABEL}. Les liens vers les sites marchands sont des liens affili&eacute;s &mdash; cela ne change pas nos avis. <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
             </p>
           </div>
         </div>

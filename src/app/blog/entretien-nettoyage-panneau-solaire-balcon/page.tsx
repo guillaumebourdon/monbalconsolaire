@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Nettoyer et entretenir un panneau solaire de balcon',
@@ -123,7 +124,7 @@ export default function EntretienNettoyagePage() {
         description="Comment nettoyer et entretenir un panneau solaire de balcon : fréquence, méthode, erreurs à éviter."
         url="https://monbalconsolaire.fr/blog/entretien-nettoyage-panneau-solaire-balcon"
         datePublished="2026-06-04"
-        dateModified="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Entretien et nettoyage' }]} />
@@ -140,7 +141,7 @@ export default function EntretienNettoyagePage() {
               Un panneau solaire de balcon demande <strong>tr&egrave;s peu d&apos;entretien</strong> &mdash; mais le peu qu&apos;il faut faire compte. Un panneau sale perd <strong>5 &agrave; 20 % de production</strong>. Voici comment le nettoyer correctement, &agrave; quelle fr&eacute;quence, et les erreurs qui co&ucirc;tent cher.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>4 juin 2026</span>
+              <span>4 juin 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -420,7 +421,7 @@ export default function EntretienNettoyagePage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources :</strong> NREL (National Renewable Energy Laboratory), retours terrain forum-photovoltaique.fr et Reddit r/solaire, fiches constructeurs Sunology/Beem/EcoFlow. Tarif EDF base juin 2026 : 0,1940 &euro;/kWh.{' '}
+                <strong>Sources :</strong> NREL (National Renewable Energy Laboratory), retours terrain forum-photovoltaique.fr et Reddit r/solaire, fiches constructeurs Sunology/Beem/EcoFlow. Tarif r&eacute;glement&eacute; Base en vigueur&nbsp;: {KWH_PRICE_LABEL}.{' '}
                 <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
               </p>
               <p className="text-xs text-stone leading-relaxed mt-2">

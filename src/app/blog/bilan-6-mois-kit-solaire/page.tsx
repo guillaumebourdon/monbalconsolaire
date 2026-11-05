@@ -17,6 +17,7 @@ import {
   calculateTotalSavings25Years,
 } from '@/lib/pricing';
 import { withCanonicalOg } from '@/lib/metadata';
+import { PRODUCTS, priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon : ce qu’il produit vraiment en 6 mois',
@@ -118,7 +119,7 @@ export default function Bilan6MoisPage() {
         description="Production mois par mois d'un kit solaire balcon 450 Wc (simulation PVGIS, Lyon sud), économies et retours d'utilisateurs publiés."
         url="https://monbalconsolaire.fr/blog/bilan-6-mois-kit-solaire"
         datePublished="2026-05-27"
-        dateModified="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Bilan sur 6 mois' }]} />
@@ -137,7 +138,7 @@ export default function Bilan6MoisPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>Publi&eacute; le 27 mai 2026</span>
               <span>&middot;</span>
-              <span>Mis &agrave; jour le 27 septembre 2026</span>
+              <span>Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -173,7 +174,7 @@ export default function Bilan6MoisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Les hypoth&egrave;ses de la simulation</h2>
               <div className="card-lg bg-cream/40">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Kit :</strong> 450 Wc, {KIT.kitPriceEur} &euro; (puissance et prix public du <Link href="/avis/sunology-play-2" className={extLink}>Sunology PLAY 2</Link>, pris comme exemple&nbsp;; son successeur, le PLAY 500&nbsp;Wc vendu au m&ecirc;me prix depuis ao&ucirc;t 2026, produit environ 11&nbsp;% de plus)</li>
+                  <li>&bull; <strong>Kit :</strong> 450 Wc, {KIT.kitPriceEur} &euro; (puissance et prix public du <Link href="/avis/sunology-play-2" className={extLink}>Sunology PLAY 2</Link>, pris comme exemple&nbsp;; son successeur, le PLAY, est list&eacute; &agrave; {PRODUCTS['sunology-play'].powerWc}&nbsp;W au m&ecirc;me prix au 5 novembre 2026, soit environ {Math.round((PRODUCTS['sunology-play'].powerWc / KIT.kitPowerWc - 1) * 100)}&nbsp;% de production en plus)</li>
                   <li>&bull; <strong>Lieu :</strong> Lyon, exposition plein sud, sans ombre</li>
                   <li>&bull; <strong>Production annuelle :</strong> 0,45 kWc &times; {fr(PVGIS_REFERENCE_LYON)} kWh/kWc &times; PR {fr(PERFORMANCE_RATIO)} = <strong>{PROD_ANNUELLE} kWh/an</strong> (r&eacute;f&eacute;rence prudente du site)</li>
                   <li>&bull; <strong>R&eacute;partition mensuelle :</strong> irradiation PVGIS 5.3 (SARAH3, moyenne 2005-2023), Lyon, sud, 35&deg;</li>
@@ -362,7 +363,7 @@ export default function Bilan6MoisPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price="599 €" />
+              <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play" label="Voir le Sunology PLAY" variant="box" position="article_bottom" price={priceLabel('sunology-play')} />
             </div>
 
             <section className="mb-10">

@@ -5,6 +5,28 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, KWH_INFLATION_RATE, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
+import { priceLabel } from '@/data/products';
+
+// Kit de référence : 500 Wc, 429 €, Lyon sud. Économies cumulées sur 25 ans selon le taux de dégradation,
+// avec la même base que pricing.ts (tarif réglementé, autoconsommation 85 %, inflation 3,3 %/an).
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const REF = { kitPriceEur: 429, kitPowerWc: 500 };
+const ECO1 = calculateFirstYearSavings(REF);
+const cumul25 = (rate: number) => Math.round(Array.from({ length: 25 }, (_, y) => ECO1 * Math.pow(1 + KWH_INFLATION_RATE, y) * Math.pow(1 - rate, y)).reduce((a, v) => a + v, 0));
+const SANS = cumul25(0);
+const ROWS = [
+  { label: 'Back-contact / HJT &mdash; 0,3 %/an', rate: 0.003 },
+  { label: 'TOPCon &mdash; 0,4 %/an', rate: 0.004 },
+  { label: 'PERC &mdash; 0,5 %/an (hypoth&egrave;se du site)', rate: 0.005 },
+].map((r) => {
+  const total = cumul25(r.rate);
+  return { ...r, power: Math.round(Math.pow(1 - r.rate, 25) * 100), total, gap: total - SANS, pct: Math.round(((total - SANS) / SANS) * 1000) / 10 };
+});
+const SITE_TOTAL = calculateTotalSavings25Years(REF); // = ligne 0,5 %/an
+const SITE_ROI = calculateROIYears(REF);
+const MIN_PCT = Math.abs(ROWS[0].pct);
+const MAX_PCT = Math.abs(ROWS[ROWS.length - 1].pct);
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Dégradation panneau solaire : que reste-t-il après 25 ans ?',
@@ -48,7 +70,7 @@ export default function DegradationPanneauSolairePage() {
         title="Dégradation panneau solaire : que reste-t-il après 25 ans ?"
         description="Taux de dégradation annuel (PERC, TOPCon, back-contact), garanties de puissance à 25-30 ans et impact réel sur la rentabilité d'un kit solaire balcon."
         url="https://monbalconsolaire.fr/blog/degradation-panneau-solaire-25-ans"
-        datePublished="2026-10-23"
+        datePublished="2026-10-23" dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'D&eacute;gradation panneau solaire 25 ans' }]} />
@@ -66,7 +88,7 @@ export default function DegradationPanneauSolairePage() {
               Un panneau solaire ne tombe pas en panne du jour au lendemain &mdash; il perd un peu de puissance chaque ann&eacute;e, de mani&egrave;re pr&eacute;visible. Taux r&eacute;els selon la technologie de cellule (PERC, TOPCon, back-contact), garanties constructeur et impact chiffr&eacute; sur la rentabilit&eacute; de votre kit balcon via <code className="text-sm bg-cream px-1.5 py-0.5 rounded">pricing.ts</code>.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>23 octobre 2026</span>
+              <span>23 octobre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -182,14 +204,14 @@ export default function DegradationPanneauSolairePage() {
               label="Voir le Sunology PLAY (garantie puissance 30 ans)"
               variant="inline"
               position="mid-article"
-              price="599 €"
+              price={priceLabel('sunology-play')}
             />
 
             {/* Section 5 — impact ROI via pricing.ts */}
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Impact r&eacute;el sur la rentabilit&eacute; (calcul via pricing.ts)</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Nos comparatifs calculent le ROI en supposant une production constante sur 25 ans (comme la quasi-totalit&eacute; des calculateurs en ligne) &mdash; c&apos;est l&apos;hypoth&egrave;se de <code className="text-sm bg-cream px-1.5 py-0.5 rounded">pricing.ts</code>. Pour mesurer l&apos;&eacute;cart r&eacute;el, nous avons recalcul&eacute; les &eacute;conomies cumul&eacute;es d&apos;un kit de r&eacute;f&eacute;rence (500&nbsp;Wc, 429&nbsp;&euro;, Lyon sud, tarif 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an) en appliquant une d&eacute;gradation constante selon chaque technologie.
+                Depuis le 5 novembre 2026, tous les calculs du site (<code className="text-sm bg-cream px-1.5 py-0.5 rounded">pricing.ts</code>, calculateur, comparatifs) int&egrave;grent une d&eacute;gradation de <strong>0,5&nbsp;%/an</strong>, la m&eacute;diane mesur&eacute;e sur le terrain. Auparavant, nous supposions une production constante, comme la plupart des calculateurs en ligne. Pour mesurer l&apos;effet de la technologie, voici les &eacute;conomies cumul&eacute;es d&apos;un kit de r&eacute;f&eacute;rence (500&nbsp;Wc, 429&nbsp;&euro;, Lyon sud, tarif {KWH_PRICE_LABEL}, autoconsommation 85&nbsp;%, inflation 3,3&nbsp;%/an) selon le taux de d&eacute;gradation.
               </p>
 
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
@@ -204,10 +226,8 @@ export default function DegradationPanneauSolairePage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Sans d&eacute;gradation (pricing.ts)', '100 %', '3&nbsp;190&nbsp;&euro;', '&mdash; (r&eacute;f&eacute;rence)', true],
-                      ['Back-contact / HJT &mdash; 0,3 %/an', '93 %', '3&nbsp;062&nbsp;&euro;', '&minus;128&nbsp;&euro; (&minus;4,0 %)', false],
-                      ['TOPCon &mdash; 0,4 %/an', '91 %', '3&nbsp;021&nbsp;&euro;', '&minus;169&nbsp;&euro; (&minus;5,3 %)', false],
-                      ['PERC &mdash; 0,5 %/an', '89 %', '2&nbsp;981&nbsp;&euro;', '&minus;209&nbsp;&euro; (&minus;6,6 %)', false],
+                      ['Sans d&eacute;gradation (ancienne hypoth&egrave;se)', '100 %', `${fr(SANS)}&nbsp;&euro;`, '&mdash; (r&eacute;f&eacute;rence)', true],
+                      ...ROWS.map((r) => [r.label, `${r.power} %`, `${fr(r.total)}&nbsp;&euro;`, `&minus;${fr(Math.abs(r.gap))}&nbsp;&euro; (&minus;${fr(Math.abs(r.pct))} %)`, false]),
                     ].map(([h, power, total, gap, ref], i) => (
                       <tr key={i} className={`border-b border-border-light ${ref ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 text-xs" dangerouslySetInnerHTML={{ __html: h as string }} />
@@ -220,7 +240,7 @@ export default function DegradationPanneauSolairePage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Conclusion chiffr&eacute;e&nbsp;: la d&eacute;gradation r&eacute;duit les &eacute;conomies totales sur 25 ans de <strong>4 &agrave; 7&nbsp;%</strong> selon la technologie &mdash; un &eacute;cart r&eacute;el mais marginal face au ROI global. Les ann&eacute;es de retour sur investissement annonc&eacute;es dans notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">comparatif des meilleurs kits 2026</Link> ou via le <Link href="/calculateur" className="text-green font-semibold hover:underline">calculateur de rentabilit&eacute;</Link> restent fiables &agrave; quelques mois pr&egrave;s.
+                Conclusion chiffr&eacute;e&nbsp;: la d&eacute;gradation r&eacute;duit les &eacute;conomies totales sur 25 ans de <strong>{fr(MIN_PCT)} &agrave; {fr(MAX_PCT)}&nbsp;%</strong> selon la technologie &mdash; un &eacute;cart r&eacute;el mais limit&eacute;. Nos ROI retiennent l&apos;hypoth&egrave;se prudente de 0,5&nbsp;%/an&nbsp;: pour ce kit, {fr(SITE_ROI)} ans et {fr(SITE_TOTAL)}&nbsp;&euro; sur 25 ans. Les ann&eacute;es de retour sur investissement de notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">comparatif des meilleurs kits 2026</Link> et du <Link href="/calculateur" className="text-green font-semibold hover:underline">calculateur de rentabilit&eacute;</Link> l&apos;incluent d&eacute;j&agrave;.
               </p>
             </section>
 
@@ -300,7 +320,7 @@ export default function DegradationPanneauSolairePage() {
             {/* Footer */}
             <footer className="text-xs text-stone border-t border-border-light pt-6 space-y-2">
               <p>
-                <strong>M&eacute;thodologie&nbsp;:</strong> taux de d&eacute;gradation issus de la revue NREL (Jordan &amp; Kurtz, m&eacute;diane 0,5&nbsp;%/an sur donn&eacute;es de terrain) et de fiches constructeurs 2026 par technologie de cellule. Garanties produit v&eacute;rifi&eacute;es sur les fiches des mod&egrave;les cit&eacute;s (sunology.eu, dualsun.com, beemenergy.fr). Calculs de rentabilit&eacute; via <code className="bg-cream px-1 py-0.5 rounded">src/lib/pricing.ts</code>&nbsp;: tarif 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an, performance ratio 0,85, r&eacute;f&eacute;rence Lyon sud, sur 25 ans.
+                <strong>M&eacute;thodologie&nbsp;:</strong> taux de d&eacute;gradation issus de la revue NREL (Jordan &amp; Kurtz, m&eacute;diane 0,5&nbsp;%/an sur donn&eacute;es de terrain) et de fiches constructeurs 2026 par technologie de cellule. Garanties produit v&eacute;rifi&eacute;es sur les fiches des mod&egrave;les cit&eacute;s (sunology.eu, dualsun.com, beemenergy.fr). Calculs de rentabilit&eacute; via <code className="bg-cream px-1 py-0.5 rounded">src/lib/pricing.ts</code>&nbsp;: tarif {KWH_PRICE_LABEL}, inflation 3,3&nbsp;%/an, d&eacute;gradation 0,5&nbsp;%/an, performance ratio 0,85, r&eacute;f&eacute;rence Lyon sud, sur 25 ans.
               </p>
               <p>
                 <strong>Transparence affili&eacute;&nbsp;:</strong> Certains liens de cet article sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela ne biaise pas nos recommandations techniques.

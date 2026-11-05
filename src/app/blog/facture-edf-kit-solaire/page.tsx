@@ -5,6 +5,21 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_PRICE_SHORT, KWH_PRICE_SINCE, calculateROIYears } from '@/lib/pricing';
+
+// Montants calculés au tarif réglementé en vigueur (pricing.ts).
+const eur = (v: number) => (Math.round(v * 100) / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const eur1 = (v: number) => (Math.round(v * 10) / 10).toLocaleString('fr-FR');
+// Tarif Bleu EDF option Heures Creuses 6 kVA, TTC, au 1er août 2026 (grille EDF vérifiée le 05/11/2026)
+const HP = 0.2142;
+const HC = 0.1589;
+const fr4 = (v: number) => v.toLocaleString('fr-FR', { minimumFractionDigits: 4 });
+const GAIN_HP = Math.round((HP / KWH_PRICE_EUR - 1) * 100);
+// Exemple : kit 600 €, 820 kWh/an (≈ 804 Wc à Lyon sud), 85 % autoconsommés
+const EX = { kitPriceEur: 600, kitPowerWc: 804 };
+const exEco = Math.round(820 * 0.85 * KWH_PRICE_EUR);
+const exRoiSans = calculateROIYears({ ...EX, includeInflation: false });
+const exRoi = calculateROIYears(EX);
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Facture EDF avec un kit solaire balcon : lire et mesurer ses économies',
@@ -17,19 +32,19 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Est-ce que ma facture EDF baisse automatiquement avec un kit solaire plug-and-play ?',
-    answer: 'Non, pas automatiquement au sens propre. EDF ne sait pas que vous avez un kit solaire — il n\'y a pas de compteur de production côté fournisseur pour une installation CACSI (sans injection valorisée). Votre facture reflète uniquement ce que vous soutirez du réseau. Si votre kit produit pendant que vous consommez, vous soutirez moins, donc la facture baisse. Mais l\'économie n\'est visible qu\'en comparant deux factures similaires (mêmes mois, même comportement de consommation).',
+    answer: 'Non, pas automatiquement au sens propre. EDF ne sait pas que vous avez un kit solaire — il n\'y a pas de compteur de production côté fournisseur pour un kit déclaré à Enedis en CACSI ou en cession gratuite du surplus. Votre facture reflète uniquement ce que vous soutirez du réseau. Si votre kit produit pendant que vous consommez, vous soutirez moins, donc la facture baisse. Mais l\'économie n\'est visible qu\'en comparant deux factures similaires (mêmes mois, même comportement de consommation).',
   },
   {
     question: 'Peut-on revendre son surplus à EDF avec un kit balcon plug-and-play ?',
-    answer: 'Non. Un kit plug-and-play (CACSI — Convention d\'Autoconsommation Sans Injection valorisée) injecte le surplus gratuitement dans le réseau. Il n\'y a pas de contrat de rachat. Pour revendre, il faudrait une installation ≥ 3 kWc installée par un professionnel RGE avec convention EDF OA — soit un investissement de 3 000 à 8 000 €. Les tarifs de rachat EDF OA en 2026 sont de 1,1 c€/kWh, ce qui est tellement bas que le rachat n\'est pas rentable de toute façon.',
+    answer: 'Non. Un kit plug-and-play n\'a pas de contrat de rachat. Soit il est déclaré en CACSI (convention d\'autoconsommation sans injection) : vous vous engagez à ne rien injecter, grâce à un réglage « zéro injection » de l\'onduleur, un compteur type Shelly, le boîtier du fabricant ou une batterie. Soit vous déclarez la cession gratuite de votre surplus à Enedis (installations de 3 kW maximum) : le surplus part sur le réseau sans rémunération. Pour revendre, il faudrait une installation posée par un professionnel avec un contrat d\'obligation d\'achat EDF OA, soit un tout autre budget.',
   },
   {
     question: 'Comment savoir combien j\'économise réellement avec mon kit solaire ?',
-    answer: 'La méthode la plus fiable est une prise connectée (Tapo P110, Shelly Plug S) sur la sortie du micro-onduleur. Elle mesure les kWh produits en temps réel. Multipliez par 0,1940 €/kWh (tarif EDF base 2026) et par votre taux d\'autoconsommation estimé (85 % sans batterie, 95 % avec batterie). Les apps natives des kits (Beem, Sunology, EcoFlow) donnent aussi une production cumulée, mais sans ajustement fin pour l\'autoconsommation.',
+    answer: `La méthode la plus fiable est une prise connectée (Tapo P110, Shelly Plug S) sur la sortie du micro-onduleur. Elle mesure les kWh produits en temps réel. Multipliez par ${KWH_PRICE_LABEL} (tarif réglementé Base en vigueur depuis le ${KWH_PRICE_SINCE}) et par votre taux d'autoconsommation estimé (85 % sans batterie, 95 % avec batterie). Les apps natives des kits (Beem, Sunology, EcoFlow) donnent aussi une production cumulée, mais sans ajustement fin pour l'autoconsommation.`,
   },
   {
     question: 'Que voit mon compteur Linky quand mon kit produit ?',
-    answer: 'Le Linky a deux index : le soutirage (ce que vous consommez depuis le réseau) et l\'injection (ce que vous envoyez sur le réseau). Quand votre kit produit plus que votre consommation instantanée, l\'excédent est injecté gratuitement — l\'index injection monte, mais ça ne vous rapporte rien. Quand votre kit produit moins que votre consommation, le Linky enregistre le soutirage normalement. Ce qui change sur votre facture, c\'est uniquement l\'index soutirage — moins il monte, moins vous payez.',
+    answer: 'Le Linky a deux index : le soutirage (ce que vous consommez depuis le réseau) et l\'injection (ce que vous envoyez sur le réseau). Si votre kit est déclaré en cession gratuite du surplus et qu\'il produit plus que votre consommation instantanée, l\'excédent part sur le réseau — l\'index injection monte, mais ça ne vous rapporte rien. En CACSI, vous vous êtes engagé à ne rien injecter (réglage « zéro injection », boîtier ou batterie) : cet index doit rester à zéro. Quand votre kit produit moins que votre consommation, le Linky enregistre le soutirage normalement. Ce qui change sur votre facture, c\'est uniquement l\'index soutirage — moins il monte, moins vous payez.',
   },
   {
     question: 'Mon abonnement EDF change-t-il avec un kit solaire ?',
@@ -37,7 +52,7 @@ const faqData = [
   },
   {
     question: 'Pourquoi mon économie mensuelle varie-t-elle autant ?',
-    answer: 'Parce que la production solaire est saisonnière et dépend de l\'ensoleillement. En juillet, un kit 800 Wc à Lyon peut produire 120 kWh (soit ~23 € d\'économies), contre 25 kWh en décembre (soit ~5 €). De plus, l\'autoconsommation dépend de votre comportement : si vous êtes absent en journée, une partie de la production est injectée gratuitement. En été, une partie de la production coïncide avec des moments où vous n\'êtes pas là — l\'économie réelle est moindre qu\'en hiver quand vous chauffez le matin et le soir.',
+    answer: `Parce que la production solaire est saisonnière et dépend de l'ensoleillement. En juillet, un kit 800 Wc à Lyon peut produire 120 kWh (soit ~${Math.round(120 * KWH_PRICE_EUR)} € d'économies), contre 25 kWh en décembre (soit ~${Math.round(25 * KWH_PRICE_EUR)} €). De plus, l'autoconsommation dépend de votre comportement : si vous êtes absent en journée, une partie de la production est injectée gratuitement. En été, une partie de la production coïncide avec des moments où vous n'êtes pas là — l'économie réelle est moindre qu'en hiver quand vous chauffez le matin et le soir.`,
   },
 ];
 
@@ -48,7 +63,7 @@ export default function FactureEdfKitSolairePage() {
         title="Facture EDF avec un kit solaire balcon : comment la lire et mesurer ses économies"
         description="Ce qui change sur votre facture EDF avec un kit solaire plug-and-play, comment mesurer vos économies réelles et comprendre le rôle du Linky."
         url="https://monbalconsolaire.fr/blog/facture-edf-kit-solaire"
-        datePublished="2026-08-25"
+        datePublished="2026-08-25" dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Facture EDF et kit solaire' }]} />
@@ -65,7 +80,7 @@ export default function FactureEdfKitSolairePage() {
               Votre kit est install&eacute;, il produit. Mais quand vous regardez votre facture EDF, vous ne voyez rien de sp&eacute;cial. Pas de ligne &laquo;&nbsp;production solaire&nbsp;&raquo;, pas de remise automatique. Voici <strong>ce qui se passe vraiment</strong>, comment mesurer vos &eacute;conomies r&eacute;elles, et ce que lit (ou ne lit pas) votre compteur Linky.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>25 ao&ucirc;t 2026</span>
+              <span>25 ao&ucirc;t 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>8 min de lecture</span>
             </div>
@@ -77,8 +92,8 @@ export default function FactureEdfKitSolairePage() {
             <ul className="text-sm text-charcoal-light space-y-2">
               <li>&bull; <strong>EDF ne sait pas</strong> que vous avez un kit solaire — aucune ligne sp&eacute;ciale n&apos;appara&icirc;t sur votre facture</li>
               <li>&bull; <strong>Vous &eacute;conomisez</strong> en consommant moins depuis le r&eacute;seau — l&apos;index soutirage du Linky monte moins vite</li>
-              <li>&bull; <strong>Le surplus</strong> inject&eacute; dans le r&eacute;seau est gratuit — vous ne le vendez pas, vous ne le remboursez pas non plus</li>
-              <li>&bull; <strong>Pour mesurer</strong> vos &eacute;conomies r&eacute;elles : une prise connect&eacute;e ou l&apos;app de votre kit (production &times; 0,1940 &euro;/kWh)</li>
+              <li>&bull; <strong>Le surplus</strong> ne vous rapporte rien&nbsp;: soit il est bloqu&eacute; (CACSI, r&eacute;glage z&eacute;ro injection), soit il est c&eacute;d&eacute; gratuitement &agrave; Enedis</li>
+              <li>&bull; <strong>Pour mesurer</strong> vos &eacute;conomies r&eacute;elles : une prise connect&eacute;e ou l&apos;app de votre kit (production &times; {KWH_PRICE_LABEL})</li>
             </ul>
           </div>
 
@@ -91,7 +106,7 @@ export default function FactureEdfKitSolairePage() {
                 C&apos;est le premier &eacute;tonnement de tous les propri&eacute;taires de kit solaire plug-and-play&nbsp;: la facture EDF ne mentionne pas le solaire. Pas de ligne &laquo;&nbsp;cr&eacute;dit production&nbsp;&raquo;, pas de remboursement, pas de mention de votre installation.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                La raison est simple&nbsp;: <strong>EDF ne sait pas que vous produisez de l&apos;&eacute;lectricit&eacute;</strong>. Votre kit plug-and-play fonctionne en <strong>CACSI</strong> (Convention d&apos;Autoconsommation Sans Injection valoaris&eacute;e). Cela signifie que vous avez sign&eacute; une convention avec Enedis (le gestionnaire du r&eacute;seau) pour injecter votre surplus gratuitement — mais EDF, lui, n&apos;est pas concern&eacute;.
+                La raison est simple&nbsp;: <strong>EDF ne sait pas que vous produisez de l&apos;&eacute;lectricit&eacute;</strong>. Votre kit plug-and-play est d&eacute;clar&eacute; aupr&egrave;s d&apos;Enedis (le gestionnaire du r&eacute;seau), pas d&apos;EDF&nbsp;: soit en <strong>CACSI</strong> (convention d&apos;autoconsommation sans injection, vous vous engagez &agrave; ne rien injecter), soit en <strong>cession gratuite du surplus</strong> &agrave; Enedis (article L315-5 du Code de l&apos;&eacute;nergie, 3&nbsp;kW maximum). Dans les deux cas, votre fournisseur n&apos;est pas concern&eacute;.
               </p>
               <div className="card-lg bg-green-pale/30 border-green/10 mb-4">
                 <p className="text-sm font-semibold text-green mb-2">La m&eacute;canique exacte</p>
@@ -126,7 +141,7 @@ export default function FactureEdfKitSolairePage() {
                   <tbody>
                     {[
                       ['Abonnement', 'Montant fixe mensuel selon votre puissance souscrite (6, 9 ou 12 kVA)', 'Aucun — vous gardez le même abonnement'],
-                      ['Consommation', 'Volume (kWh) soutiré du réseau × tarif (0,1952 €/kWh en base 2026)', 'C\'est ici que ça joue — vous soutirez moins de kWh'],
+                      ['Consommation', `Volume (kWh) soutiré du réseau × tarif (${KWH_PRICE_LABEL} en Base depuis le ${KWH_PRICE_SINCE})`, 'C\'est ici que ça joue — vous soutirez moins de kWh'],
                       ['Taxes fixes', 'CSPE, TDCFE, TCFE, TVA', 'Aucun impact direct (proportionnel à la consommation pour certaines)'],
                     ].map(([comp, desc, impact], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
@@ -139,7 +154,7 @@ export default function FactureEdfKitSolairePage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-2">
-                <strong>Ce qui compte vraiment&nbsp;:</strong> chaque kWh produit par votre kit et consomm&eacute; imm&eacute;diatement par vos appareils, c&apos;est un kWh que vous n&apos;achetez pas &agrave; EDF. &Agrave; 0,1940&nbsp;&euro;/kWh (notre r&eacute;f&eacute;rence constante), c&apos;est l&apos;&eacute;conomie directe.
+                <strong>Ce qui compte vraiment&nbsp;:</strong> chaque kWh produit par votre kit et consomm&eacute; imm&eacute;diatement par vos appareils, c&apos;est un kWh que vous n&apos;achetez pas &agrave; EDF. &Agrave; {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; Base en vigueur), c&apos;est l&apos;&eacute;conomie directe.
               </p>
             </section>
 
@@ -147,7 +162,7 @@ export default function FactureEdfKitSolairePage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le r&ocirc;le du Linky&nbsp;: soutirage et injection</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Votre compteur Linky mesure deux flux distincts depuis la d&eacute;claration CACSI (ou depuis son installation si vous en avez un r&eacute;cent)&nbsp;:
+                Votre compteur Linky mesure deux flux distincts&nbsp;:
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="card border-l-4 border-l-green">
@@ -160,7 +175,7 @@ export default function FactureEdfKitSolairePage() {
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-2">&#8593; Index injection (A10)</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
-                    Ce que vous injectez sur le r&eacute;seau. Survient quand votre kit produit plus que votre consommation instantan&eacute;e. <strong>N&apos;appara&icirc;t pas sur votre facture EDF</strong> — vous ne &ecirc;tes pas pay&eacute;, mais vous ne devez rien non plus.
+                    Ce que vous injectez sur le r&eacute;seau, si vous avez choisi la cession gratuite du surplus et que votre kit produit plus que votre consommation instantan&eacute;e (en CACSI, il doit rester &agrave; z&eacute;ro). <strong>N&apos;appara&icirc;t pas sur votre facture EDF</strong> — vous n&apos;&ecirc;tes pas pay&eacute;.
                   </p>
                   <p className="text-xs text-stone">Consultable dans votre espace Enedis en ligne</p>
                 </div>
@@ -186,7 +201,7 @@ export default function FactureEdfKitSolairePage() {
                     <div>
                       <h3 className="font-bold text-sm mb-1">Prise connect&eacute;e &mdash; la m&eacute;thode la plus fiable</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">
-                        Une Tapo P110 (~15&nbsp;&euro;) ou une Shelly Plug S (~15&nbsp;&euro;) branch&eacute;e sur la prise de sortie du micro-onduleur mesure exactement les kWh produits. Multipliez par votre taux d&apos;autoconsommation (85&nbsp;% sans batterie) et par 0,1940&nbsp;&euro;/kWh. Exemple&nbsp;: 80 kWh produits &times; 85&nbsp;% &times; 0,1940&nbsp;&euro; = <strong>13,17&nbsp;&euro; d&apos;&eacute;conomies</strong>. Notre article sur les <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">meilleures prises connect&eacute;es pour le suivi solaire</Link> compare les mod&egrave;les disponibles.
+                        Une Tapo P110 (~15&nbsp;&euro;) ou une Shelly Plug S (~15&nbsp;&euro;) branch&eacute;e sur la prise de sortie du micro-onduleur mesure exactement les kWh produits. Multipliez par votre taux d&apos;autoconsommation (85&nbsp;% sans batterie) et par {KWH_PRICE_LABEL}. Exemple&nbsp;: 80 kWh produits &times; 85&nbsp;% &times; {KWH_PRICE_SHORT} = <strong>{eur(80 * 0.85 * KWH_PRICE_EUR)}&nbsp;&euro; d&apos;&eacute;conomies</strong>. Notre article sur les <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">meilleures prises connect&eacute;es pour le suivi solaire</Link> compare les mod&egrave;les disponibles.
                       </p>
                     </div>
                   </div>
@@ -220,8 +235,8 @@ export default function FactureEdfKitSolairePage() {
                   {[
                     { val: '120 kWh', label: 'Production juillet' },
                     { val: '102 kWh', label: 'Autoconsomm&eacute;s (85&nbsp;%)' },
-                    { val: '18 kWh', label: 'Inject&eacute;s gratuits' },
-                    { val: '19,79 &euro;', label: 'Economies r&eacute;elles' },
+                    { val: '18 kWh', label: 'Non autoconsomm&eacute;s' },
+                    { val: `${eur(102 * KWH_PRICE_EUR)} &euro;`, label: '&Eacute;conomies r&eacute;elles' },
                   ].map((item, i) => (
                     <div key={i} className="text-center">
                       <div className="text-2xl font-extrabold text-amber-dark" dangerouslySetInnerHTML={{ __html: item.val }} />
@@ -230,7 +245,7 @@ export default function FactureEdfKitSolairePage() {
                   ))}
                 </div>
                 <p className="text-xs text-stone mt-4 leading-relaxed">
-                  Les 18 kWh inject&eacute;s gratuits repr&eacute;sentent 3,49&nbsp;&euro; &laquo;&nbsp;perdus&nbsp;&raquo; — l&apos;&eacute;conomie th&eacute;orique (si tout &eacute;tait autoconsomm&eacute;) aurait &eacute;t&eacute; 23,28&nbsp;&euro;. Le taux d&apos;autoconsommation est le facteur cl&eacute; de votre rentabilit&eacute; r&eacute;elle.
+                  Les 18 kWh non autoconsomm&eacute;s (bloqu&eacute;s par un r&eacute;glage z&eacute;ro injection, ou c&eacute;d&eacute;s gratuitement &agrave; Enedis) repr&eacute;sentent {eur(18 * KWH_PRICE_EUR)}&nbsp;&euro; &laquo;&nbsp;perdus&nbsp;&raquo; — l&apos;&eacute;conomie th&eacute;orique (si tout &eacute;tait autoconsomm&eacute;) aurait &eacute;t&eacute; {eur(120 * KWH_PRICE_EUR)}&nbsp;&euro;. Le taux d&apos;autoconsommation est le facteur cl&eacute; de votre rentabilit&eacute; r&eacute;elle.
                 </p>
               </div>
             </section>
@@ -245,10 +260,10 @@ export default function FactureEdfKitSolairePage() {
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-2">Production saisonni&egrave;re</h3>
                   <ul className="text-xs text-charcoal-light space-y-1.5 leading-relaxed">
-                    <li>&bull; D&eacute;cembre (Lyon)&nbsp;: ~25 kWh &rarr; ~4,9&nbsp;&euro;</li>
-                    <li>&bull; Mars&nbsp;: ~60 kWh &rarr; ~11,6&nbsp;&euro;</li>
-                    <li>&bull; Juin&nbsp;: ~110 kWh &rarr; ~21,3&nbsp;&euro;</li>
-                    <li>&bull; Juillet&nbsp;: ~120 kWh &rarr; ~23,3&nbsp;&euro;</li>
+                    <li>&bull; D&eacute;cembre (Lyon)&nbsp;: ~25 kWh &rarr; ~{eur1(25 * KWH_PRICE_EUR)}&nbsp;&euro;</li>
+                    <li>&bull; Mars&nbsp;: ~60 kWh &rarr; ~{eur1(60 * KWH_PRICE_EUR)}&nbsp;&euro;</li>
+                    <li>&bull; Juin&nbsp;: ~110 kWh &rarr; ~{eur1(110 * KWH_PRICE_EUR)}&nbsp;&euro;</li>
+                    <li>&bull; Juillet&nbsp;: ~120 kWh &rarr; ~{eur1(120 * KWH_PRICE_EUR)}&nbsp;&euro;</li>
                     <li>&bull; Pour un kit 800 Wc plein sud</li>
                   </ul>
                 </div>
@@ -263,7 +278,7 @@ export default function FactureEdfKitSolairePage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-3">
-                Le paradoxe de l&apos;&eacute;t&eacute;&nbsp;: c&apos;est quand votre kit produit le plus (juillet, ao&ucirc;t) que vous &ecirc;tes souvent le moins pr&eacute;sent (vacances). Une partie de la production estivale est inject&eacute;e gratuitement. C&apos;est pour cela qu&apos;une <Link href="/guide/batterie-solaire-balcon-guide" className="text-green hover:underline font-semibold">batterie solaire de balcon</Link> am&eacute;liore significativement le taux d&apos;autoconsommation.
+                Le paradoxe de l&apos;&eacute;t&eacute;&nbsp;: c&apos;est quand votre kit produit le plus (juillet, ao&ucirc;t) que vous &ecirc;tes souvent le moins pr&eacute;sent (vacances). Une partie de la production estivale n&apos;est pas consomm&eacute;e&nbsp;: elle est bloqu&eacute;e (z&eacute;ro injection) ou c&eacute;d&eacute;e gratuitement &agrave; Enedis. C&apos;est pour cela qu&apos;une <Link href="/guide/batterie-solaire-balcon-guide" className="text-green hover:underline font-semibold">batterie solaire de balcon</Link> am&eacute;liore significativement le taux d&apos;autoconsommation.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 Pour maximiser vos &eacute;conomies, lisez notre guide sur <Link href="/guide/optimiser-autoconsommation-solaire" className="text-green hover:underline font-semibold">comment optimiser l&apos;autoconsommation solaire</Link>.
@@ -274,7 +289,7 @@ export default function FactureEdfKitSolairePage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Pas de changement de contrat EDF n&eacute;cessaire</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Contrairement &agrave; une id&eacute;e re&ccedil;ue r&eacute;pandue sur les forums, <strong>vous n&apos;avez pas &agrave; pr&eacute;venir EDF</strong> pour installer un kit plug-and-play. Votre seule obligation est la d&eacute;claration CACSI aupr&egrave;s d&apos;Enedis (gratuite, en ligne, ~5 minutes). Notre guide sur la <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline font-semibold">d&eacute;claration CACSI Enedis</Link> d&eacute;taille chaque &eacute;tape.
+                Contrairement &agrave; une id&eacute;e re&ccedil;ue r&eacute;pandue sur les forums, <strong>vous n&apos;avez pas &agrave; pr&eacute;venir EDF</strong> pour installer un kit plug-and-play. Votre seule obligation est une d&eacute;claration aupr&egrave;s d&apos;Enedis, gratuite et en ligne&nbsp;: la CACSI si votre kit n&apos;injecte rien, sinon la cession gratuite du surplus. N&apos;injectez rien avant la mise en service par Enedis. Notre guide sur la <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline font-semibold">d&eacute;claration Enedis</Link> d&eacute;taille chaque &eacute;tape.
               </p>
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
@@ -291,13 +306,13 @@ export default function FactureEdfKitSolairePage() {
                   <ul className="text-xs text-charcoal-light space-y-1 leading-relaxed">
                     <li>&#10003; Votre consommation nette (index soutirage du Linky monte moins vite)</li>
                     <li>&#10003; Votre facture de consommation (partie variable uniquement)</li>
-                    <li>&#10003; Un index injection appara&icirc;t chez Enedis (mais pas sur la facture EDF)</li>
+                    <li>&#10003; En cession du surplus, un index injection appara&icirc;t chez Enedis (mais pas sur la facture EDF)</li>
                   </ul>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-1">Ce qui ne change pas du tout</h3>
                   <ul className="text-xs text-charcoal-light space-y-1 leading-relaxed">
-                    <li>&#10007; Pas de remboursement EDF pour le surplus inject&eacute;</li>
+                    <li>&#10007; Aucune r&eacute;mun&eacute;ration pour le surplus</li>
                     <li>&#10007; Pas de ligne &laquo;&nbsp;cr&eacute;dit solaire&nbsp;&raquo; sur la facture</li>
                     <li>&#10007; Pas de r&eacute;duction d&apos;abonnement</li>
                     <li>&#10007; Pas de changement de compteur (le Linky existant suffit)</li>
@@ -325,12 +340,12 @@ export default function FactureEdfKitSolairePage() {
                 <p className="text-sm font-semibold text-green mb-3">Formule de calcul ROI simplifi&eacute;e</p>
                 <div className="space-y-2 text-sm text-charcoal-light">
                   <p><strong>1.</strong> Production annuelle estim&eacute;e (PVGIS ou app du kit) &times; taux d&apos;autoconsommation</p>
-                  <p><strong>2.</strong> &times; tarif EDF base (0,1940&nbsp;&euro;/kWh en 2026)</p>
+                  <p><strong>2.</strong> &times; tarif EDF Base ({KWH_PRICE_LABEL} depuis le {KWH_PRICE_SINCE})</p>
                   <p><strong>3.</strong> = &eacute;conomies ann&eacute;es 1</p>
                   <p><strong>4.</strong> Appliquer l&apos;inflation tarifaire (3,3&nbsp;%/an, source CRE) sur 25 ans</p>
                   <p><strong>5.</strong> Diviser le prix du kit par les &eacute;conomies actualis&eacute;es = ROI en ann&eacute;es</p>
                 </div>
-                <p className="text-xs text-stone mt-3">Exemple&nbsp;: kit 600&nbsp;&euro;, 820 kWh/an, 85&nbsp;% autoconso &rarr; 137&nbsp;&euro;/an &rarr; ROI ~4,4 ans (sans inflation). Avec inflation 3,3&nbsp;%/an&nbsp;: ROI ~3,8 ans.</p>
+                <p className="text-xs text-stone mt-3">Exemple&nbsp;: kit 600&nbsp;&euro;, 820 kWh/an, 85&nbsp;% autoconso &rarr; {exEco}&nbsp;&euro;/an &rarr; ROI ~{eur1(exRoiSans)} ans (sans inflation, d&eacute;gradation des panneaux 0,5&nbsp;%/an incluse). Avec inflation 3,3&nbsp;%/an&nbsp;: ROI ~{eur1(exRoi)} ans.</p>
               </div>
               <p className="text-charcoal-light leading-relaxed">
                 Pour un calcul pr&eacute;cis selon votre d&eacute;partement, votre orientation et votre budget, utilisez notre <Link href="/calculateur" className="text-green hover:underline font-semibold">calculateur de rentabilit&eacute;</Link> — il int&egrave;gre les donn&eacute;es PVGIS par commune et la formule standard.
@@ -355,9 +370,9 @@ export default function FactureEdfKitSolairePage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Base (2026)', '0,1952 €', '~100 % sur ce tarif', '0,1952 €'],
-                      ['HP/HC — Heures pleines', '0,2065 €', '~90 % de la production', '0,2065 €'],
-                      ['HP/HC — Heures creuses', '0,1579 €', '~10 % (tôt le matin)', '0,1579 €'],
+                      ['Base (depuis le 1er août 2026)', KWH_PRICE_SHORT, '~100 % sur ce tarif', KWH_PRICE_SHORT],
+                      ['HP/HC — Heures pleines', `${fr4(HP)} €`, '~90 % de la production', `${fr4(HP)} €`],
+                      ['HP/HC — Heures creuses', `${fr4(HC)} €`, '~10 % (tôt le matin)', `${fr4(HC)} €`],
                     ].map(([tarif, prix, prod, eco], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold text-xs">{tarif}</td>
@@ -370,7 +385,7 @@ export default function FactureEdfKitSolairePage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-2">
-                En option HP/HC, chaque kWh solaire autoconsomm&eacute; vous &eacute;vite de payer 0,2065&nbsp;&euro; au lieu de 0,1952&nbsp;&euro;. C&apos;est un gain suppl&eacute;mentaire de ~6&nbsp;% par rapport &agrave; l&apos;option Base. Si vous &ecirc;tes en HP/HC et t&eacute;l&eacute;travaillez, c&apos;est la combinaison id&eacute;ale.
+                En option HP/HC, chaque kWh solaire autoconsomm&eacute; vous &eacute;vite de payer {fr4(HP)}&nbsp;&euro; au lieu de {KWH_PRICE_SHORT}. C&apos;est un gain suppl&eacute;mentaire de ~{GAIN_HP}&nbsp;% par rapport &agrave; l&apos;option Base. Si vous &ecirc;tes en HP/HC et t&eacute;l&eacute;travaillez, c&apos;est la combinaison id&eacute;ale.
               </p>
             </section>
 
@@ -415,7 +430,7 @@ export default function FactureEdfKitSolairePage() {
                 </Link>
                 <Link href="/blog/revendre-surplus-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon&nbsp;: peut-on revendre son surplus &agrave; EDF&nbsp;?</h3>
-                  <p className="text-xs text-charcoal-light mt-1">La r&eacute;ponse est non — les kits balcon fonctionnent en CACSI, pas en EDF OA.</p>
+                  <p className="text-xs text-charcoal-light mt-1">La r&eacute;ponse est non — les kits balcon sont d&eacute;clar&eacute;s en CACSI ou en cession gratuite du surplus, pas en EDF OA.</p>
                 </Link>
                 <Link href="/blog/talon-consommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation&nbsp;: comment le calculer et l&apos;effacer avec le solaire</h3>
@@ -428,7 +443,7 @@ export default function FactureEdfKitSolairePage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> Enedis (convention CACSI, fonctionnement Linky), EDF (grille tarifaire Tarif Bleu ao&ucirc;t 2026, 0,1952&nbsp;&euro;/kWh base 6 kVA), CRE (R&eacute;f&eacute;rence inflation tarifaire 3,3&nbsp;%/an), Selectra (comparatif tarifs HP/HC vs Base 2026). Tarif utilis&eacute; dans nos calculs&nbsp;: 0,1940&nbsp;&euro;/kWh (r&eacute;f&eacute;rence constante MonBalconSolaire pour coh&eacute;rence entre articles).{' '}
+                <strong>Sources&nbsp;:</strong> Enedis (convention CACSI, fonctionnement Linky), EDF (grille Tarif Bleu applicable au 1<sup>er</sup> ao&ucirc;t 2026, 6 kVA&nbsp;: Base {KWH_PRICE_LABEL}, Heures pleines {fr4(HP)}&nbsp;&euro;, Heures creuses {fr4(HC)}&nbsp;&euro;, d&eacute;lib&eacute;ration CRE n&deg;&nbsp;2026-147), CRE (R&eacute;f&eacute;rence inflation tarifaire 3,3&nbsp;%/an), Selectra (comparatif tarifs HP/HC vs Base 2026). Tarif utilis&eacute; dans nos calculs&nbsp;: {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; Base en vigueur, identique dans tous nos articles).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.{' '}
                 <span className="italic">Contenu &agrave; vocation informative. Les tarifs EDF peuvent &eacute;voluer.</span>
               </p>

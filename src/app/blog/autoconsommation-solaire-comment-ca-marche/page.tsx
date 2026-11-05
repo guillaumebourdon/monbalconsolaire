@@ -6,6 +6,15 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
+
+// Exemple calculé avec pricing.ts (tarif réglementé en vigueur, inflation 3,3 %/an, dégradation 0,5 %/an).
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const EX = { kitPriceEur: 599, kitPowerWc: 450 };
+const roi40 = calculateROIYears({ ...EX, autoconsoOverride: 0.4 });
+const roi85 = calculateROIYears({ ...EX, autoconsoOverride: 0.85 });
+const tot40 = Math.round(calculateTotalSavings25Years({ ...EX, autoconsoOverride: 0.4 }) / 10) * 10;
+const tot85 = Math.round(calculateTotalSavings25Years({ ...EX, autoconsoOverride: 0.85 }) / 10) * 10;
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Autoconsommation solaire : comment ca marche concretement ? (2026)',
@@ -18,7 +27,7 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   { question: 'L\'autoconsommation solaire, c\'est quoi ?', answer: 'C\'est le fait de consommer directement l\'électricité que vous produisez avec votre panneau solaire. Au lieu d\'acheter 100% de votre électricité a EDF, vous en produisez une partie vous-meme. Votre facture baisse d\'autant.' },
   { question: 'Que se passe-t-il la nuit ou par temps couvert ?', answer: 'Votre panneau ne produit pas (ou très peu). Votre logement bascule automatiquement sur le reseau EDF. Vous ne remarquez aucune difference — tout est transparent.' },
-  { question: 'Que devient le surplus d\'électricité ?', answer: 'Avec un kit plug-and-play en autoconsommation, le surplus est automatiquement et gratuitement injecte sur le reseau. Vous ne payez rien mais vous n\'etes pas remunere non plus. Pour valoriser le surplus, il faut une batterie.' },
+  { question: 'Que devient le surplus d\'électricité ?', answer: 'Deux cas. Si votre kit est déclaré en CACSI (convention d\'autoconsommation sans injection), vous vous engagez à ne rien injecter : l\'onduleur est réglé en « zéro injection » (réglage, compteur type Shelly, boîtier du fabricant) ou une batterie absorbe le surplus. Sinon, vous déclarez la cession gratuite de votre surplus à Enedis (installations de 3 kW maximum) : le surplus part sur le réseau sans rémunération. Pour valoriser le surplus, il faut le consommer au bon moment ou le stocker dans une batterie.' },
   { question: 'Faut-il un compteur Linky ?', answer: 'Pour un kit plug-and-play en autoconsommation sans injection (CACSI), le compteur Linky n\'est pas obligatoire mais il est utile pour suivre votre consommation. La plupart des foyers en sont déjà equipes.' },
   { question: 'C\'est quoi le talon de consommation ?', answer: 'C\'est la quantite minimale d\'électricité que votre logement consomme en permanence : frigo, box internet, veilles, chargeurs, VMC. En general entre 100 et 300W. C\'est ce que votre panneau solaire efface en premier.' },
 ];
@@ -26,7 +35,7 @@ const faqData = [
 export default function AutoconsommationPage() {
   return (
     <>
-      <SchemaArticle title="Autoconsommation solaire : comment ca marche concretement ?" description="L'autoconsommation solaire expliquee simplement." url="https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche" datePublished="2026-04-03" />
+      <SchemaArticle title="Autoconsommation solaire : comment ca marche concretement ?" description="L'autoconsommation solaire expliquee simplement." url="https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche" datePublished="2026-04-03" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Autoconsommation solaire' }]} />
       <article className="section-padding">
@@ -36,7 +45,7 @@ export default function AutoconsommationPage() {
             <div className="badge-green mb-4 inline-block">Comprendre</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Autoconsommation solaire : comment &ccedil;a marche concr&egrave;tement ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous branchez un panneau solaire sur une prise et votre facture baisse. Mais comment l&apos;&eacute;lectricit&eacute; sait-elle o&ugrave; aller ? Explication simple, sans jargon technique.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>3 avril 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>3 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -99,7 +108,7 @@ export default function AutoconsommationPage() {
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-2">En plein soleil</h3>
-                  <p className="text-xs text-charcoal-light">Votre panneau produit &agrave; pleine puissance. Vos appareils sont aliment&eacute;s par le soleil. Si la production d&eacute;passe votre consommation, le surplus est inject&eacute; gratuitement sur le r&eacute;seau.</p>
+                  <p className="text-xs text-charcoal-light">Votre panneau produit &agrave; pleine puissance. Vos appareils sont aliment&eacute;s par le soleil. Si la production d&eacute;passe votre consommation, le surplus est soit bloqu&eacute; (r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo;, d&eacute;claration CACSI), soit c&eacute;d&eacute; gratuitement &agrave; Enedis.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-2">Avec une batterie</h3>
@@ -110,7 +119,7 @@ export default function AutoconsommationPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le surplus : ce que vous &laquo; perdez &raquo;</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Avec un kit plug-and-play en autoconsommation (convention CACSI), le surplus d&apos;&eacute;lectricit&eacute; est inject&eacute; gratuitement sur le r&eacute;seau. Vous ne le facturez pas &agrave; EDF et vous n&apos;&ecirc;tes pas r&eacute;mun&eacute;r&eacute; pour cette injection.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Avec un kit plug-and-play sans contrat de vente, le surplus n&apos;est jamais pay&eacute;. Soit vous le bloquez&nbsp;: c&apos;est l&apos;engagement de la CACSI (convention d&apos;autoconsommation sans injection), tenu par un r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo; de l&apos;onduleur, un compteur type Shelly, le bo&icirc;tier du fabricant ou une batterie. Soit vous d&eacute;clarez la cession gratuite de votre surplus &agrave; Enedis (article L315-5 du Code de l&apos;&eacute;nergie, installations de 3&nbsp;kW maximum)&nbsp;: il part alors sur le r&eacute;seau sans r&eacute;mun&eacute;ration. Dans les deux cas, ce kWh ne vous fait rien &eacute;conomiser.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">En pratique, avec un kit de 450W et un talon de consommation de 150W, vous autoconsommez environ 30 &agrave; 50% de votre production. Le reste part sur le r&eacute;seau. C&apos;est &laquo; perdu &raquo; financi&egrave;rement, mais pas &eacute;cologiquement &mdash; vos voisins consomment votre &eacute;lectricit&eacute; verte.</p>
               <div className="card bg-green-pale/30 border-green/10">
                 <p className="text-sm text-green-dark"><strong>Comment r&eacute;duire le surplus ?</strong> Programmez vos appareils &eacute;nergivores (machine &agrave; laver, lave-vaisselle, chauffe-eau) entre 10h et 16h, quand votre panneau produit le plus. Ou ajoutez une <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">batterie de stockage</Link>.</p>
@@ -122,10 +131,10 @@ export default function AutoconsommationPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Avec un kit de 450W en r&eacute;gion lyonnaise, orientation sud :</p>
               <div className="grid grid-cols-3 gap-4 my-6">
                 {[{ v: '459 kWh', l: 'produits par an' }, { v: '~184 kWh', l: 'autoconsomm\u00e9s (40%)' }, { v: '~36 \u20ac', l: '\u00e9conomis\u00e9s par an' }].map((s, i) => (
-                  <div key={i} className="card text-center"><div className="font-mono font-medium text-xl text-green">{s.v}</div><div className="text-[11px] text-stone mt-1">{s.l}</div></div>
+                  <div key={i} className="card text-center"><div className="font-mono font-medium text-xl text-green">{s.v}</div><div className="text-xs text-stone mt-1">{s.l}</div></div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed">Pour un kit &agrave; 599&euro; de 450 Wc (Lyon, sud), le retour sur investissement d&eacute;pend surtout de ce taux : 13,6 ans &agrave; 40 % d&apos;autoconsommation, 7,1 ans &agrave; 85 % (notre hypoth&egrave;se standard, talon bien dimensionn&eacute;). Le panneau est garanti 25 ans. Sur sa dur&eacute;e de vie, vous &eacute;conomisez de 1 350&euro; &agrave; 2 870&euro; selon le cas.</p>
+              <p className="text-charcoal-light leading-relaxed">Pour un kit &agrave; 599&euro; de 450 Wc (Lyon, sud), le retour sur investissement d&eacute;pend surtout de ce taux : {fr(roi40)} ans &agrave; 40 % d&apos;autoconsommation, {fr(roi85)} ans &agrave; 85 % (notre hypoth&egrave;se standard, talon bien dimensionn&eacute;). Le panneau est garanti 25 ans. Sur 25 ans, vous &eacute;conomisez de {fr(tot40)}&nbsp;&euro; &agrave; {fr(tot85)}&nbsp;&euro; selon le cas (d&eacute;gradation des panneaux de 0,5&nbsp;%/an incluse).</p>
             </section>
 
             <section>
@@ -134,7 +143,7 @@ export default function AutoconsommationPage() {
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3">Kit plug-and-play</th><th className="text-center p-3 rounded-tr-xl">Installation toiture</th></tr></thead>
                   <tbody>
-                    {[['Prix', '199-690 \u20ac', '8 000-15 000 \u20ac'], ['Installation', 'Vous-m\u00eame, 1-60 min', 'Installateur RGE, 1-2 jours'], ['Puissance', '300-500 Wc', '3 000-9 000 Wc'], ['Couverture conso', '10-25%', '50-80%'], ['Revente surplus', 'Non (gratuit sur r\u00e9seau)', 'Oui (EDF OA, 0,13\u20ac/kWh)'], ['Aides de l\'\u00c9tat', 'Non', 'Oui (prime autoconso)'], ['Locataire ?', 'Oui', 'Non'], ['Amovible ?', 'Oui', 'Non']].map(([c, pp, t], i) => (
+                    {[['Prix', '349-699 \u20ac', '8 000-15 000 \u20ac'], ['Installation', 'Vous-m\u00eame, 1-60 min', 'Installateur RGE, 1-2 jours'], ['Puissance', '270-515 Wc', '3 000-9 000 Wc'], ['Couverture conso', '10-25%', '50-80%'], ['Revente surplus', 'Non (CACSI sans injection ou cession gratuite \u00e0 Enedis)', 'Oui (EDF OA, 0,13\u20ac/kWh)'], ['Aides de l\'\u00c9tat', 'Non', 'Oui (prime autoconso)'], ['Locataire ?', 'Oui', 'Non'], ['Amovible ?', 'Oui', 'Non']].map(([c, pp, t], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{c}</td><td className="text-center p-3">{pp}</td><td className="text-center p-3">{t}</td></tr>
                     ))}
                   </tbody>

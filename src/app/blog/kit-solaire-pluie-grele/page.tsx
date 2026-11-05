@@ -117,7 +117,7 @@ export default function KitSolairePluieGrelePage() {
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Valeurs pour un panneau 450 Wc (ancien Sunology PLAY 2, Beem On 460W)&nbsp;; ajoutez environ 10&nbsp;% pour un 500&nbsp;Wc comme l&apos;actuel Sunology PLAY. La puissance cr&ecirc;te (Wc) correspond aux conditions de test standard (1000 W/m&sup2;, 25&deg;C). En conditions r&eacute;elles, 70-85 % est d&eacute;j&agrave; excellent.
+                Valeurs pour un panneau 450 Wc (ancien Sunology PLAY 2, Beem On 460W)&nbsp;; ajoutez environ 14&nbsp;% pour le Sunology PLAY actuel (list&eacute; &agrave; 515&nbsp;W au 5 novembre 2026). La puissance cr&ecirc;te (Wc) correspond aux conditions de test standard (1000 W/m&sup2;, 25&deg;C). En conditions r&eacute;elles, 70-85 % est d&eacute;j&agrave; excellent.
               </p>
             </section>
 

@@ -5,6 +5,20 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, calculateProductionKwh, calculateFirstYearSavings, calculateROIYears } from '@/lib/pricing';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Chiffres calculés avec la méthode du site (pricing.ts) : Lyon sud, 1 200 kWh/kWc, PR 0,85.
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const prod500 = calculateProductionKwh({ kitPriceEur: 0, kitPowerWc: 500 });
+const eco500 = Math.round(calculateFirstYearSavings({ kitPriceEur: 0, kitPowerWc: 500 }));
+const prod800 = calculateProductionKwh({ kitPriceEur: 0, kitPowerWc: 800 });
+const eco800 = Math.round(calculateFirstYearSavings({ kitPriceEur: 0, kitPowerWc: 800 }));
+const eco800bas = Math.round(calculateFirstYearSavings({ kitPriceEur: 0, kitPowerWc: 800, autoconsoOverride: 0.6 }));
+const prod600 = calculateProductionKwh({ kitPriceEur: 0, kitPowerWc: 600 });
+const eco600 = Math.round(calculateFirstYearSavings({ kitPriceEur: 0, kitPowerWc: 600 }));
+const BEEM = PRODUCTS['beem-on-500w'];
+const roiBeem = calculateROIYears({ kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM.powerWc });
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Combien de panneaux solaires sur un balcon ? Règles et limites (2026)',
@@ -33,7 +47,7 @@ const faqData = [
   },
   {
     question: 'Plus de panneaux, est-ce toujours plus rentable ?',
-    answer: 'Non. Sans batterie, seule l\'électricité consommée au moment où elle est produite vous fait économiser ; le surplus part sur le réseau sans rémunération. Un panneau de 500 Wc produit ~510 kWh/an à Lyon sud (84 €/an à 85 % d\'autoconsommation). 800 Wc produisent ~816 kWh/an, soit 135 €/an si vous autoconsommez toujours 85 %, mais seulement ~95 €/an si votre talon de consommation ne suit pas et que l\'autoconsommation tombe à 60 %.',
+    answer: `Non. Sans batterie, seule l'électricité consommée au moment où elle est produite vous fait économiser ; le surplus ne vous rapporte rien. Un panneau de 500 Wc produit ~${prod500} kWh/an à Lyon sud (${eco500} €/an à 85 % d'autoconsommation, au tarif de ${KWH_PRICE_LABEL}). 800 Wc produisent ~${prod800} kWh/an, soit ${eco800} €/an si vous autoconsommez toujours 85 %, mais seulement ~${eco800bas} €/an si votre talon de consommation ne suit pas et que l'autoconsommation tombe à 60 %.`,
   },
   {
     question: 'Un micro-onduleur 800W peut-il gérer 2 panneaux de 400W ?',
@@ -49,7 +63,7 @@ export default function CombienPanneauxBalconPage() {
         description="Pas de plafond légal en France : place, poids, circuit électrique (repère 900 W), rentabilité et démarches fixent la vraie limite."
         url="https://monbalconsolaire.fr/blog/combien-panneaux-solaires-balcon"
         datePublished="2026-06-26"
-        dateModified="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Combien de panneaux sur un balcon ?' }]} />
@@ -67,7 +81,7 @@ export default function CombienPanneauxBalconPage() {
               Aucun texte fran&ccedil;ais ne fixe un nombre de panneaux ni un plafond en watts-cr&ecirc;te. Ce qui limite r&eacute;ellement votre kit&nbsp;: la place et le poids, le circuit &eacute;lectrique, votre consommation en journ&eacute;e et quelques d&eacute;marches. On fait le tour, chiffres &agrave; l&apos;appui.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>26 juin 2026 &middot; mis &agrave; jour le 27 septembre 2026</span>
+              <span>26 juin 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -223,7 +237,7 @@ export default function CombienPanneauxBalconPage() {
                 productName="Beem On 500 Wc"
                 merchantName="Beem Energy"
                 affiliateUrl="https://beemenergy.fr/"
-                label="Voir le Beem On 500 Wc — 429&nbsp;&euro;"
+                label={`Voir le Beem On 500 Wc — ${priceLabel('beem-on-500w')} (précommande)`}
                 variant="inline"
                 position="mid-article"
               />
@@ -247,9 +261,9 @@ export default function CombienPanneauxBalconPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['1 × 500 Wc', '510 kWh', '85 %', '84 €'],
-                      ['2 × 400 Wc (talon suffisant)', '816 kWh', '85 %', '135 €'],
-                      ['2 × 400 Wc (talon bas, hypothèse)', '816 kWh', '60 %', '95 €'],
+                      ['1 × 500 Wc', `${fr(prod500)} kWh`, '85 %', `${eco500} €`],
+                      ['2 × 400 Wc (talon suffisant)', `${fr(prod800)} kWh`, '85 %', `${eco800} €`],
+                      ['2 × 400 Wc (talon bas, hypothèse)', `${fr(prod800)} kWh`, '60 %', `${eco800bas} €`],
                     ].map(([inst, prod, auto, eco], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{inst}</td>
@@ -262,10 +276,10 @@ export default function CombienPanneauxBalconPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Dans le cas d&apos;un talon bas, passer de 500 &agrave; 800 Wc ne rapporte qu&apos;environ 11&nbsp;&euro; de plus par an, pour un kit nettement plus cher et encombrant. Avant d&apos;ajouter un second panneau, mesurez votre consommation de fond en journ&eacute;e (une prise connect&eacute;e ou l&apos;appli Linky suffit). Si elle reste faible, un seul panneau bien orient&eacute; ou une batterie seront plus rentables qu&apos;un panneau de plus.
+                Dans le cas d&apos;un talon bas, passer de 500 &agrave; 800 Wc ne rapporte qu&apos;environ {eco800bas - eco500}&nbsp;&euro; de plus par an, pour un kit nettement plus cher et encombrant. Avant d&apos;ajouter un second panneau, mesurez votre consommation de fond en journ&eacute;e (une prise connect&eacute;e ou l&apos;appli Linky suffit). Si elle reste faible, un seul panneau bien orient&eacute; ou une batterie seront plus rentables qu&apos;un panneau de plus.
               </p>
               <p className="text-xs text-stone">
-                M&eacute;thodologie standard du site&nbsp;: Lyon, exposition sud, 1&nbsp;200 kWh/kWc, performance ratio 0,85, tarif 0,1940&nbsp;&euro;/kWh. La ligne &agrave; 60&nbsp;% est une hypoth&egrave;se illustrative, pas une mesure.
+                M&eacute;thodologie standard du site&nbsp;: Lyon, exposition sud, 1&nbsp;200 kWh/kWc, performance ratio 0,85, tarif {KWH_PRICE_LABEL}. La ligne &agrave; 60&nbsp;% est une hypoth&egrave;se illustrative, pas une mesure.
               </p>
             </section>
 
@@ -346,23 +360,23 @@ export default function CombienPanneauxBalconPage() {
                   {
                     rank: '&#x1F947;',
                     title: '1 panneau 500 Wc — la solution simple',
-                    desc: 'Un seul panneau (Beem On 500 Wc &agrave; 429&nbsp;&euro;, Sunethic F500 &agrave; 690&nbsp;&euro;), un seul micro-onduleur, une seule prise. Bien adapt&eacute; &agrave; un talon de consommation modeste&nbsp;: l&apos;essentiel de la production est autoconsomm&eacute;. Retour sur investissement ~4,8 ans pour le Beem On.',
-                    prod: '~510 kWh/an &agrave; Lyon sud',
-                    economy: '~84&nbsp;&euro;/an',
+                    desc: `Un seul panneau (Beem On 500 Wc &agrave; ${priceLabel('beem-on-500w')} en pr&eacute;commande, Sunethic F500 &agrave; ${priceLabel('sunethic-f500')}), un seul micro-onduleur, une seule prise. Bien adapt&eacute; &agrave; un talon de consommation modeste&nbsp;: l&apos;essentiel de la production est autoconsomm&eacute;. Retour sur investissement ~${fr(roiBeem)} ans pour le Beem On.`,
+                    prod: `~${fr(prod500)} kWh/an &agrave; Lyon sud`,
+                    economy: `~${eco500}&nbsp;&euro;/an`,
                   },
                   {
                     rank: '&#x1F948;',
                     title: '2 panneaux 400 Wc — pour un foyer qui consomme en journ&eacute;e',
                     desc: '2 panneaux de 400 Wc avec un micro-onduleur bi-entr&eacute;e Hoymiles HM-800 (ou APsystems DS3). Sous le rep&egrave;re des 900 W par circuit. +60&nbsp;% de production vs un panneau 500 Wc seul, mais l&apos;&eacute;conomie ne suit que si vous consommez ce surplus (t&eacute;l&eacute;travail, ballon, lave-linge programm&eacute; &agrave; midi).',
-                    prod: '~816 kWh/an &agrave; Lyon sud',
-                    economy: '~135&nbsp;&euro;/an (&agrave; 85&nbsp;%)',
+                    prod: `~${fr(prod800)} kWh/an &agrave; Lyon sud`,
+                    economy: `~${eco800}&nbsp;&euro;/an (&agrave; 85&nbsp;%)`,
                   },
                   {
                     rank: '&#x1F949;',
                     title: '2 panneaux 300 Wc — pour petits balcons',
-                    desc: 'Deux panneaux plus petits si votre balcon est &eacute;troit. Le Beem Kit 300W est con&ccedil;u pour &ccedil;a. Encombrement et poids limit&eacute;s, installation simple.',
-                    prod: '~612 kWh/an &agrave; Lyon sud',
-                    economy: '~101&nbsp;&euro;/an',
+                    desc: 'Deux panneaux plus petits si votre balcon est &eacute;troit. Le Beem Kit 300W &eacute;tait con&ccedil;u pour &ccedil;a (en rupture chez Beem au 5 novembre 2026). Encombrement et poids limit&eacute;s, installation simple.',
+                    prod: `~${fr(prod600)} kWh/an &agrave; Lyon sud`,
+                    economy: `~${eco600}&nbsp;&euro;/an`,
                   },
                 ].map((c, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
@@ -381,7 +395,7 @@ export default function CombienPanneauxBalconPage() {
                 ))}
               </div>
               <p className="text-xs text-stone mt-3">
-                Production&nbsp;: Lyon, exposition sud, 1&nbsp;200&nbsp;kWh/kWc, performance ratio 0,85. &Eacute;conomies de premi&egrave;re ann&eacute;e &agrave; 0,1940&nbsp;&euro;/kWh, autoconsommation 85&nbsp;%&nbsp;; ROI avec inflation du tarif de 3,3&nbsp;%/an.
+                Production&nbsp;: Lyon, exposition sud, 1&nbsp;200&nbsp;kWh/kWc, performance ratio 0,85. &Eacute;conomies de premi&egrave;re ann&eacute;e &agrave; {KWH_PRICE_LABEL}, autoconsommation 85&nbsp;%&nbsp;; ROI avec inflation du tarif de 3,3&nbsp;%/an et d&eacute;gradation des panneaux de 0,5&nbsp;%/an. Prix v&eacute;rifi&eacute;s le 5 novembre 2026.
               </p>
             </section>
 
@@ -468,8 +482,8 @@ export default function CombienPanneauxBalconPage() {
                   <p className="text-xs text-charcoal-light mt-1">Hoymiles, APsystems, Enphase&nbsp;: lequel pour votre installation</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 vs Beem On 500 Wc (juillet 2026)</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Comparatif prix, puissance et ROI pour choisir votre kit 450-500&nbsp;Wc</p>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology PLAY vs Beem On 500 Wc : le comparatif</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Comparatif prix, puissance et ROI pour choisir votre kit de 500&nbsp;W environ</p>
                 </Link>
               </div>
             </section>
@@ -478,7 +492,7 @@ export default function CombienPanneauxBalconPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> Norme NF&nbsp;C&nbsp;15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2)&nbsp;; UFC-Que Choisir (rep&egrave;re des 900 W)&nbsp;; Enerplan&nbsp;; r&eacute;ponse minist&eacute;rielle &agrave; la question &eacute;crite n&deg;&nbsp;6574 (JO du 26 mai 2026)&nbsp;; Enedis (proc&eacute;dure CACSI)&nbsp;; arr&ecirc;t&eacute; du 9 mai 2017 (conditions d&apos;achat, L&eacute;gifrance)&nbsp;; Solarpaket&nbsp;I (Allemagne, 2024). Calculs&nbsp;: m&eacute;thodologie standard du site (Lyon sud, PR 0,85, 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an, autoconsommation 85&nbsp;%). Cet article contient des liens affili&eacute;s&nbsp;: nous per&ccedil;evons une commission si vous achetez via nos liens, sans surco&ucirc;t pour vous.{' '}
+                <strong>Sources&nbsp;:</strong> Norme NF&nbsp;C&nbsp;15-100 (AFNOR, version applicable au 1<sup>er</sup> septembre 2025, point 551.7.2)&nbsp;; UFC-Que Choisir (rep&egrave;re des 900 W)&nbsp;; Enerplan&nbsp;; r&eacute;ponse minist&eacute;rielle &agrave; la question &eacute;crite n&deg;&nbsp;6574 (JO du 26 mai 2026)&nbsp;; Enedis (proc&eacute;dure CACSI)&nbsp;; arr&ecirc;t&eacute; du 9 mai 2017 (conditions d&apos;achat, L&eacute;gifrance)&nbsp;; Solarpaket&nbsp;I (Allemagne, 2024). Calculs&nbsp;: m&eacute;thodologie standard du site (Lyon sud, PR 0,85, {KWH_PRICE_LABEL}, inflation 3,3&nbsp;%/an, d&eacute;gradation 0,5&nbsp;%/an, autoconsommation 85&nbsp;%). Cet article contient des liens affili&eacute;s&nbsp;: nous per&ccedil;evons une commission si vous achetez via nos liens, sans surco&ucirc;t pour vous.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
             </div>

@@ -6,6 +6,29 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_EUR, KWH_PRICE_LABEL, calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years, yearFactor } from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { DEPARTMENTS } from '@/data/departments';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Exemple calculé avec pricing.ts (tarif réglementé, inflation 3,3 %/an, dégradation 0,5 %/an) et products.ts.
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const PLAY = PRODUCTS['sunology-play'];
+const GO = PRODUCTS['sunology-go'];
+const prodSite = (code: string) => productibleSite(DEPARTMENTS.find((d) => d.code === code)!.irradiation);
+const EX = { kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc };
+const EX60 = { ...EX, autoconsoOverride: 0.6 };
+const exProd = calculateProductionKwh(EX);
+const exAuto60 = Math.round(exProd * 0.6);
+const exEco60 = Math.round(exAuto60 * KWH_PRICE_EUR);
+const exRoiSimple = Math.round((PLAY.priceEur / exEco60) * 10) / 10;
+const exRoi60 = calculateROIYears(EX60);
+const exEco60an5 = Math.round(calculateFirstYearSavings(EX60) * yearFactor(5));
+const exEco85 = Math.round(calculateFirstYearSavings(EX));
+const exNet60 = Math.round((calculateTotalSavings25Years(EX60) - PLAY.priceEur) / 100) * 100;
+const exNet85 = Math.round((calculateTotalSavings25Years(EX) - PLAY.priceEur) / 100) * 100;
+const roiGoMarseille = calculateROIYears({ kitPriceEur: GO.priceEur, kitPowerWc: GO.powerWc, productibleKwhPerKwc: prodSite('13') });
+const roiPlayLilleEst = calculateROIYears({ ...EX, productibleKwhPerKwc: prodSite('59'), orientationCoef: 0.8 });
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire plug-and-play : arnaque ou bon investissement ?',
@@ -19,7 +42,7 @@ const faqData = [
   { question: 'Un kit solaire plug-and-play est-il vraiment rentable ?', answer: 'Oui, mais pas partout. Au sud d\'une ligne Lyon-Bordeaux, un kit 450W exposé plein sud atteint la rentabilité en 5-7 ans. Au nord et à l\'ouest, il faut plutôt compter 7-10 ans. Sur une garantie de 25 ans, le bénéfice net reste largement positif dans 95% des cas.' },
   { question: 'Pourquoi certaines personnes disent que c\'est une arnaque ?', answer: 'Trois raisons principales. D\'abord, quelques fabricants (pas les leaders) surestiment la production avec des chiffres théoriques impossibles. Ensuite, des acheteurs mal conseillés installent leur kit à l\'ombre ou mal orienté et ne produisent rien. Enfin, certains attendent "l\'indépendance énergétique" alors qu\'un kit 450W ne couvre que 5-10% de la conso moyenne.' },
   { question: 'Y a-t-il des vraies arnaques sur le marché ?', answer: 'Oui, sur AliExpress et sur certaines annonces Leboncoin. Panneaux d\'occasion vendus neufs, puissances exagérées, micro-onduleurs non conformes CE. Les kits vendus par Sunology, Beem, Sunethic, DualSun et EcoFlow respectent les normes françaises. En cas de doute, exigez les certifications NF/CE.' },
-  { question: 'Combien de temps met-on pour rentabiliser son kit ?', answer: 'Entre 4 et 10 ans selon : la puissance du kit, votre exposition, votre ville, le prix payé. Un Beem Kit 300W à 199€ (actuellement en rupture chez Beem) installé plein sud à Marseille se rentabiliserait en 3 ans. Un Sunology PLAY (ex-PLAY 2, 500 Wc) à 599€ à Lille exposé est se rentabilise en 9 à 11 ans.' },
+  { question: 'Combien de temps met-on pour rentabiliser son kit ?', answer: `Entre 4 et 10 ans selon : la puissance du kit, votre exposition, votre ville, le prix payé. Un Sunology GO (${GO.powerWc} W, ${priceLabel('sunology-go')}) installé plein sud à Marseille se rentabilise en ${fr(roiGoMarseille)} ans environ. Un Sunology PLAY (${PLAY.powerWc} W, ${priceLabel('sunology-play')}) à Lille exposé est se rentabilise en ${fr(roiPlayLilleEst)} ans environ (autoconsommation 85 %, notre méthode standard).` },
   { question: 'Que se passe-t-il si je déménage avant la fin du retour sur investissement ?', answer: 'Vous pouvez emporter votre kit : c\'est un gros avantage du plug-and-play vs une installation classique. Démontage en 15 minutes. Vous pouvez aussi le revendre d\'occasion : le marché secondaire est actif (-40% à -50% du prix neuf selon l\'âge et l\'état).' },
   { question: 'Ai-je vraiment besoin d\'un professionnel pour installer ?', answer: 'Non. C\'est tout l\'intérêt du plug-and-play : installation en 15-60 minutes, pas d\'électricien, pas de déclaration fiscale, juste un CACSI gratuit à envoyer à Enedis. Certains fabricants tentent de vous vendre une "installation pro" à 200€ — inutile.' },
 ];
@@ -27,7 +50,7 @@ const faqData = [
 const idees_recues = [
   { titre: 'Idée reçue n°1 : Les puissances annoncées sont fausses', reponse: 'Vrai ET faux. Les 450W "crête" d\'un panneau, c\'est la puissance maximale théorique dans des conditions idéales (soleil à 1000 W/m², 25°C, orientation parfaite). En vrai, un panneau 450W produit plutôt 300-400W en crête réelle. Mais cela est normalisé par des tests standardisés (STC) et tous les fabricants sérieux jouent le jeu.' },
   { titre: 'Idée reçue n°2 : Les micro-onduleurs grillent vite', reponse: 'Faux. Les micro-onduleurs Enphase, Deye, TSUN utilisés par les fabricants sérieux sont garantis 12 à 25 ans. Le taux de panne réel est inférieur à 0,5% par an. Le vrai risque vient des surtensions EDF et de la foudre : un parafoudre à 30€ règle le problème.' },
-  { titre: 'Idée reçue n°3 : La production chute de moitié au bout de 5 ans', reponse: 'Faux. La dégradation réelle des panneaux silicium est de 0,5% par an, soit -12,5% au bout de 25 ans. Après 5 ans, votre panneau produit encore 97,5% de sa capacité d\'origine. Les fabricants sérieux garantissent 80-85% de performance à 25 ans.' },
+  { titre: 'Idée reçue n°3 : La production chute de moitié au bout de 5 ans', reponse: 'Faux. La dégradation réelle des panneaux silicium est de 0,5% par an, soit -12,5% au bout de 25 ans. Après 5 ans, votre panneau produit encore 97,5% de sa capacité d\'origine. Les fabricants sérieux garantissent 80-85% de performance à 25 ans. Nos calculs de rentabilité intègrent cette dégradation de 0,5 % par an.' },
   { titre: 'Idée reçue n°4 : Ça ne produit rien en hiver', reponse: 'Faux, mais nuancé. La production hivernale est de 20-30% de la production estivale, mais reste réelle. Un kit 450W produit 8-15 kWh par mois en janvier selon la région, ce qui compense quand même une partie de votre consommation hivernale (plus élevée qu\'en été).' },
   { titre: 'Idée reçue n°5 : Il faut une batterie sinon ça ne sert à rien', reponse: 'Faux. Sans batterie, l\'électricité produite est consommée en temps réel par vos appareils (frigo, box, veilles = "talon de consommation"). L\'autoconsommation directe représente 40-70% de la production. Une batterie améliore le ratio mais coûte 500-1400€, ce qui allonge le ROI.' },
 ];
@@ -52,7 +75,7 @@ const criteres_fiable = [
 export default function ArnaqueInvestissementPage() {
   return (
     <>
-      <SchemaArticle title="Kit solaire plug-and-play : arnaque ou bon investissement ?" description="Analyse honnête du marché des kits solaires plug-and-play en 2026 : arnaques, vrais risques, ROI réel, critères de choix." url="https://monbalconsolaire.fr/blog/kit-solaire-plug-and-play-arnaque" datePublished="2026-04-19" />
+      <SchemaArticle title="Kit solaire plug-and-play : arnaque ou bon investissement ?" description="Analyse honnête du marché des kits solaires plug-and-play en 2026 : arnaques, vrais risques, ROI réel, critères de choix." url="https://monbalconsolaire.fr/blog/kit-solaire-plug-and-play-arnaque" datePublished="2026-04-19" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Arnaque ou investissement ?' }]} />
       <article className="section-padding">
@@ -62,7 +85,7 @@ export default function ArnaqueInvestissementPage() {
             <div className="badge-green mb-4 inline-block">Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Kit solaire plug-and-play : arnaque ou bon investissement ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Les kits solaires de balcon font beaucoup parler, y compris en mal. Fausses promesses, sous-performance, revente douteuse : les critiques sont réelles. Mais s&apos;agit-il d&apos;une arnaque ou d&apos;un véritable investissement ? Analyse honnête, chiffres en main.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 avril 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -129,19 +152,19 @@ export default function ArnaqueInvestissementPage() {
               <h2 className="text-2xl font-extrabold mb-4">Le vrai calcul de rentabilité (sans blabla)</h2>
               <div className="flex items-start gap-3 mb-4">
                 <ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="md" />
-                <p className="text-charcoal-light leading-relaxed">Prenons un exemple concret pour couper court aux débats. Un ménage moyen en région lyonnaise qui achète un kit Sunology PLAY (ex-PLAY 2, 599€, 500 Wc) :</p>
+                <p className="text-charcoal-light leading-relaxed">Prenons un exemple concret pour couper court aux débats. Un ménage moyen en région lyonnaise qui achète un kit Sunology PLAY ({priceLabel('sunology-play')}, {PLAY.powerWc}&nbsp;W) :</p>
               </div>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production annuelle</strong> : environ 510 kWh (orientation sud, Lyon)</li>
-                  <li>&bull; <strong>Autoconsommation réelle</strong> : 60% soit 306 kWh directement économisés</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : 306 kWh &times; 0,1940 &euro;/kWh = <strong>59 &euro;/an</strong></li>
-                  <li>&bull; <strong>ROI simple</strong> : 599 &euro; / 59 &euro; = <strong>10,1 ans</strong></li>
+                  <li>&bull; <strong>Production annuelle</strong> : environ {fr(exProd)} kWh (orientation sud, Lyon)</li>
+                  <li>&bull; <strong>Autoconsommation réelle</strong> : 60% soit {fr(exAuto60)} kWh directement économisés</li>
+                  <li>&bull; <strong>Économies annuelles</strong> : {fr(exAuto60)} kWh &times; {KWH_PRICE_LABEL} = <strong>{exEco60} &euro;/an</strong></li>
+                  <li>&bull; <strong>ROI simple</strong> : {PLAY.priceEur} &euro; / {exEco60} &euro; = <strong>{fr(exRoiSimple)} ans</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">&laquo; Alors c&apos;est une arnaque, le ROI est long ! &raquo; pense peut-être un lecteur. Mais ce calcul ignore deux réalités.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°1 : le prix de l&apos;électricité augmente.</strong> Sur les 10 dernières années, le tarif EDF a augmenté de 4-5% par an. Avec cette tendance, les économies réelles passent à 90-110&euro;/an dès la 5ème année, et le ROI tombe à 6-7 ans au lieu de 10.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°2 : la durée de vie.</strong> Le kit est garanti 25 ans. Après le ROI atteint, chaque année produit entre 70 et 140&euro; d&apos;économies pures. Sur la durée totale, le gain net est de <strong>1 500 à 2 800&euro;</strong>. Ce n&apos;est pas révolutionnaire, mais ce n&apos;est clairement pas une arnaque.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°1 : le prix de l&apos;électricité augmente.</strong> Entre 2012 et 2026, le tarif r&eacute;glement&eacute; a augment&eacute; de 3,3&nbsp;% par an en moyenne. Avec cette tendance (et une d&eacute;gradation des panneaux de 0,5&nbsp;%/an), les &eacute;conomies passent &agrave; {exEco60an5}&nbsp;&euro; la 5<sup>e</sup> ann&eacute;e et le ROI tombe &agrave; {fr(exRoi60)} ans au lieu de {fr(exRoiSimple)}.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Réalité n°2 : la durée de vie.</strong> Le kit est garanti 25 ans. Une fois le kit rembours&eacute;, chaque ann&eacute;e rapporte des &eacute;conomies pures ({exEco60} &agrave; {exEco85}&nbsp;&euro; la premi&egrave;re ann&eacute;e selon que vous autoconsommez 60 ou 85&nbsp;%, puis davantage avec l&apos;inflation). Sur 25 ans, le gain net est d&apos;environ <strong>{fr(exNet60)} &agrave; {fr(exNet85)}&nbsp;&euro;</strong>. Ce n&apos;est pas révolutionnaire, mais ce n&apos;est clairement pas une arnaque.</p>
               <p className="text-charcoal-light leading-relaxed">Pour un calcul précis selon votre département et votre exposition, utilisez notre calculateur.</p>
             </section>
 

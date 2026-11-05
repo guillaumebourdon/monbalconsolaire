@@ -6,6 +6,14 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_EUR, KWH_PRICE_LABEL, calculateProductionKwh } from '@/lib/pricing';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Écart de rendement chiffré avec la méthode du site (2 × 400 Wc, Lyon sud, PR 0,85).
+const PROD_800 = calculateProductionKwh({ kitPriceEur: 0, kitPowerWc: 800 });
+const GAIN_KWH = Math.round((PROD_800 * (97.3 - 96.7)) / 96.7);
+const GAIN_EUR = Math.round(GAIN_KWH * KWH_PRICE_EUR * 100) / 100;
+const HOYMILES_PRIX = `~${priceLabel('hoymiles-hms-800w-2t')} (Wattuneed, ${PRODUCTS['hoymiles-hms-800w-2t'].verifiedOn.split('-').reverse().join('/')})`;
 
 const PAGE_TITLE = 'Micro-onduleur kit solaire balcon : rôle et choix (2026)';
 const PAGE_DESCRIPTION =
@@ -29,7 +37,7 @@ const faqData = [
   {
     question: 'Quel micro-onduleur choisir pour un kit balcon ?',
     answer:
-      'Pour 2 panneaux, un modèle 800 VA à 2 MPPT avec Wi-Fi intégré : Hoymiles HMS-800W-2T (le moins cher, ~100-130 €) ou APsystems EZ1-M (Wi-Fi + Bluetooth, 12 ans de garantie). Pour 1 panneau, un modèle 400-480 VA (Hoymiles HMS-400W-1T, ou Enphase IQ8P si vous voulez 25 ans de garantie). Pour stocker le surplus, un système hybride type EcoFlow PowerStream ou Zendure SolarFlow.',
+      'Pour 2 panneaux, un modèle 800 VA à 2 MPPT avec Wi-Fi intégré : Hoymiles HMS-800W-2T (environ 170 € chez Wattuneed le 5 novembre 2026) ou APsystems EZ1-M (Wi-Fi + Bluetooth, 12 ans de garantie). Pour 1 panneau, un modèle 400-480 VA (Hoymiles HMS-400W-1T, ou Enphase IQ8P si vous voulez 25 ans de garantie). Pour stocker le surplus, un système hybride type EcoFlow PowerStream ou Zendure SolarFlow.',
   },
   {
     question: 'Quel micro-onduleur pour un panneau de 400 W ?',
@@ -49,7 +57,7 @@ const faqData = [
   {
     question: 'Hoymiles ou EcoFlow : lequel choisir ?',
     answer:
-      'Ce ne sont pas les mêmes produits. Le Hoymiles HMS-800W-2T est un micro-onduleur réseau simple (~100-130 €) : il injecte ce que produisent les panneaux, point. L\'EcoFlow PowerStream est un micro-onduleur hybride qui peut piloter une station EcoFlow et restituer l\'énergie le soir, mais il n\'est plus vendu par EcoFlow France (septembre 2026), remplacé au catalogue par la gamme STREAM. Sans batterie, le Hoymiles est plus rentable ; avec une station EcoFlow déjà possédée, un PowerStream d\'occasion peut encore avoir du sens.',
+      'Ce ne sont pas les mêmes produits. Le Hoymiles HMS-800W-2T est un micro-onduleur réseau simple (environ 170 € chez Wattuneed le 5 novembre 2026) : il injecte ce que produisent les panneaux, point. L\'EcoFlow PowerStream est un micro-onduleur hybride qui peut piloter une station EcoFlow et restituer l\'énergie le soir, mais il n\'est plus vendu par EcoFlow France (septembre 2026), remplacé au catalogue par la gamme STREAM. Sans batterie, le Hoymiles est plus rentable ; avec une station EcoFlow déjà possédée, un PowerStream d\'occasion peut encore avoir du sens.',
   },
   {
     question: 'Quelle norme doit respecter un micro-onduleur en France ?',
@@ -80,8 +88,8 @@ const models: Model[] = [
     rendement: '96,7 % (pic CEC)',
     com: 'Wi-Fi intégré',
     garantie: '10-12 ans*',
-    prix: '~100-130 €',
-    pourQui: 'Kit DIY 2 panneaux au meilleur prix',
+    prix: HOYMILES_PRIX,
+    pourQui: 'Kit DIY 2 panneaux',
     href: '/avis/hoymiles-hms-800w',
   },
   {
@@ -171,7 +179,7 @@ export default function MicroOnduleurPage() {
         description={PAGE_DESCRIPTION}
         url={PAGE_URL}
         datePublished="2026-06-06"
-        dateModified="2026-10-20"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Micro-onduleur solaire' }]} />
@@ -190,7 +198,7 @@ export default function MicroOnduleurPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap">
               <span>Publi&eacute; le 6 juin 2026</span>
               <span>&middot;</span>
-              <span>Mis &agrave; jour le 20 octobre 2026</span>
+              <span>Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>14 min de lecture</span>
             </div>
@@ -214,7 +222,7 @@ export default function MicroOnduleurPage() {
             <h2 className="font-bold text-lg mb-3">L&apos;essentiel en 30 secondes</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
               <li>&bull; <strong>Pour 2 panneaux&nbsp;:</strong> un 800&nbsp;VA &agrave; 2 MPPT avec Wi-Fi int&eacute;gr&eacute; (Hoymiles HMS-800W-2T, APsystems EZ1-M, Deye SUN-M80G4)</li>
-              <li>&bull; <strong>Prix seul&nbsp;:</strong> d&apos;environ 100&nbsp;&euro; (Hoymiles) &agrave; ~370&nbsp;&euro; (EcoFlow PowerStream hybride, d&eacute;sormais arr&ecirc;t&eacute;)</li>
+              <li>&bull; <strong>Prix seul&nbsp;:</strong> d&apos;environ 170&nbsp;&euro; (Hoymiles HMS-800W-2T, Wattuneed, 5 novembre 2026) &agrave; ~370&nbsp;&euro; (EcoFlow PowerStream hybride, d&eacute;sormais arr&ecirc;t&eacute;)</li>
               <li>&bull; <strong>Rendement&nbsp;:</strong> 96 &agrave; 97,5&nbsp;% chez tous les grands &mdash; l&apos;&eacute;cart vaut moins de 1&nbsp;&euro;/an, ce n&apos;est pas un crit&egrave;re</li>
               <li>&bull; <strong>Vrais crit&egrave;res&nbsp;:</strong> nombre d&apos;entr&eacute;es MPPT, compatibilit&eacute; tension/courant du panneau, monitoring, garantie, certificat de d&eacute;couplage</li>
               <li>&bull; <strong>Hors r&eacute;seau&nbsp;:</strong> impossible &mdash; un micro-onduleur r&eacute;seau s&apos;arr&ecirc;te pendant une coupure</li>
@@ -422,7 +430,7 @@ export default function MicroOnduleurPage() {
               <div className="space-y-3">
                 {[
                   { cas: 'Vous avez 1 panneau de 300 à 500 Wc', reco: 'Un mono-entrée 400-480 VA : Hoymiles HMS-400W-1T pour le prix, Enphase IQ8P si la garantie 25 ans compte plus que le coût.' },
-                  { cas: 'Vous avez 2 panneaux (cas le plus courant)', reco: 'Un 800 VA à 2 MPPT avec Wi-Fi intégré. Hoymiles HMS-800W-2T si le prix prime, APsystems EZ1-M si vous voulez le Bluetooth local et 12 ans de garantie.' },
+                  { cas: 'Vous avez 2 panneaux (cas le plus courant)', reco: 'Un 800 VA à 2 MPPT avec Wi-Fi intégré. Hoymiles HMS-800W-2T si le prix prime (à comparer le jour de l’achat), APsystems EZ1-M si vous voulez le Bluetooth local et 12 ans de garantie.' },
                   { cas: 'Vos panneaux font plus de 500 Wc chacun', reco: 'APsystems EZ1-H (960 VA, bridable) ou un 800 VA avec écrêtage assumé. Vérifiez la tension Voc et le courant d’entrée.' },
                   { cas: 'Vous voulez stocker le surplus', reco: 'Un système avec batterie (Zendure SolarFlow, EcoFlow STREAM ; le PowerStream n’est plus vendu). Plus cher : utile surtout si votre consommation de journée est faible.' },
                   { cas: 'Vous voulez le moins cher possible', reco: 'Hoymiles HMS-800W-2T. Évitez les onduleurs sans marque des places de marché : certificat de découplage invérifiable, parfois pas de relais.' },
@@ -561,14 +569,14 @@ export default function MicroOnduleurPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le rendement compte-t-il vraiment&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Les marques mettent en avant un demi-point de rendement. Chiffrons-le avec notre m&eacute;thodologie standard (2 &times; 400&nbsp;Wc, Lyon, exposition sud, PR 0,85, tarif 0,1940&nbsp;&euro;/kWh)&nbsp;:
+                Les marques mettent en avant un demi-point de rendement. Chiffrons-le avec notre m&eacute;thodologie standard (2 &times; 400&nbsp;Wc, Lyon, exposition sud, PR 0,85, tarif {KWH_PRICE_LABEL})&nbsp;:
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {[
-                  { v: '~680 kWh', l: 'Production annuelle' },
+                  { v: `~${PROD_800.toLocaleString('fr-FR')} kWh`, l: 'Production annuelle' },
                   { v: '0,6 pt', l: 'Écart 96,7 % vs 97,3 %' },
-                  { v: '~4 kWh', l: 'Production en plus par an' },
-                  { v: '< 1 €/an', l: 'Gain sur la facture' },
+                  { v: `~${GAIN_KWH} kWh`, l: 'Production en plus par an' },
+                  { v: `${GAIN_EUR < 1 ? '< 1' : `~${Math.round(GAIN_EUR)}`} €/an`, l: 'Gain sur la facture' },
                 ].map((s) => (
                   <div key={s.l} className="card text-center bg-green-pale/30">
                     <div className="font-mono font-bold text-lg text-green">{s.v}</div>
@@ -640,7 +648,7 @@ export default function MicroOnduleurPage() {
 
             <div className="pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> fiches techniques Hoymiles, APsystems, Enphase, Deye, TSUN, EcoFlow&nbsp;; prix relev&eacute;s en septembre 2026 chez des revendeurs fran&ccedil;ais (Solaris Store, My Discount Solar, revendeurs Enphase)&nbsp;; photovoltaique.info (protection de d&eacute;couplage, NF EN 50549-1)&nbsp;; pv magazine Deutschland (affaire des relais Deye, 2023). Produits analys&eacute;s sur fiches techniques et retours d&apos;utilisateurs, pas test&eacute;s physiquement. Production calcul&eacute;e selon notre <Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link> (tarif 0,1940&nbsp;&euro;/kWh, PR 0,85, Lyon, sud).
+                <strong>Sources&nbsp;:</strong> fiches techniques Hoymiles, APsystems, Enphase, Deye, TSUN, EcoFlow&nbsp;; prix relev&eacute;s en septembre 2026 chez des revendeurs fran&ccedil;ais (Solaris Store, My Discount Solar, revendeurs EnphaseMy Discount Solar, revendeurs Enphase)nbsp;; Hoymiles HMS-800W-2T rev&eacute;rifi&eacute; le 5 novembre 2026 chez Wattuneed)&nbsp;; photovoltaique.info (protection de d&eacute;couplage, NF EN 50549-1)&nbsp;; pv magazine Deutschland (affaire des relais Deye, 2023). Produits analys&eacute;s sur fiches techniques et retours d&apos;utilisateurs, pas test&eacute;s physiquement. Production calcul&eacute;e selon notre <Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link> (tarif {KWH_PRICE_LABEL}, PR 0,85, Lyon, sud).
               </p>
               <p className="text-xs text-stone leading-relaxed mt-2">
                 <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.

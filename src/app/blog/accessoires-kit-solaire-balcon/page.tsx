@@ -108,7 +108,7 @@ export default function AccessoiresPage() {
                       </div>
                       <div className="text-right">
                         <div className="font-mono font-bold text-green text-lg">{a.prix}</div>
-                        <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-0.5">Prix moyen</div>
+                        <div className="text-xs text-stone font-medium uppercase tracking-wider mt-0.5">Prix moyen</div>
                       </div>
                     </div>
                     <p className="text-sm text-charcoal-light leading-relaxed mb-3">{a.description}</p>

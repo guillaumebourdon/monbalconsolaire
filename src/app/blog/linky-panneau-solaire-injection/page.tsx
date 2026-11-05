@@ -4,10 +4,16 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
+
+// Tarif de rachat EDF OA cité dans l'article (1,1 c€/kWh) comparé au tarif réglementé en vigueur.
+const RACHAT_OA = 0.011;
+const RATIO = Math.round(KWH_PRICE_EUR / RACHAT_OA);
+const TARIF_CTS = (Math.round(KWH_PRICE_EUR * 1000) / 10).toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Linky et panneau solaire : injection, index, surplus (2026)',
-  description: 'Que voit vraiment le Linky avec un kit solaire ? Index injection vs soutirage, compteur qui tourne à l’envers (mythe), surplus gratuit pour EDF : tout expliqué.',
+  description: 'Que voit vraiment le Linky avec un kit solaire ? Index injection vs soutirage, compteur qui tourne à l’envers (mythe), surplus cédé à Enedis : tout expliqué.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/linky-panneau-solaire-injection',
   },
@@ -20,7 +26,7 @@ const faqData = [
   },
   {
     question: 'C’est quoi l’index injection sur le Linky ?',
-    answer: 'L’index injection (parfois noté « index 2 » ou « EJPHN inj » sur certains modèles) est le compteur du surplus que vous envoyez sur le réseau. Il s’incrémente uniquement quand votre panneau produit plus que ce que vous consommez à l’instant T. En autoconsommation sans accord de revente (CACSI), cet index est relevé par Enedis mais vous n’êtes pas payé.',
+    answer: 'L’index injection (parfois noté « index 2 » ou « EJPHN inj » sur certains modèles) est le compteur du surplus que vous envoyez sur le réseau. Il s’incrémente uniquement quand votre panneau produit plus que ce que vous consommez à l’instant T. Si vous avez déclaré la cession gratuite de votre surplus à Enedis, cet index est relevé mais vous n’êtes pas payé. En CACSI (convention d’autoconsommation sans injection), vous vous êtes engagé à ne rien injecter : il doit rester à zéro.',
   },
   {
     question: 'Le compteur Linky tourne-t-il à l’envers avec le solaire ?',
@@ -28,11 +34,11 @@ const faqData = [
   },
   {
     question: 'Mon surplus part gratuitement chez EDF ?',
-    answer: 'En pratique, oui. Si vous avez une convention CACSI (autoconsommation sans injection), votre surplus est injecté sur le réseau sans compensation. Si vous avez signé un contrat de revente avec EDF OA, vous êtes payé 1,1 c€/kWh depuis l’arrêté du 1er juin 2026 — soit environ 15-25 €/an pour un kit 400 W. Dans les deux cas, le surplus a peu de valeur : l’objectif est d’autoconsommer un maximum.',
+    answer: 'Pas chez EDF : chez Enedis, et seulement si vous l’avez déclaré ainsi. En CACSI (convention d’autoconsommation sans injection), vous vous engagez à ne rien injecter, grâce à un réglage « zéro injection » de l’onduleur, un compteur type Shelly, le boîtier du fabricant ou une batterie. Si votre kit renvoie du surplus, vous le déclarez en cession gratuite à Enedis (article L315-5 du Code de l’énergie, 3 kW maximum) : il part sur le réseau sans rémunération. Avec un contrat de revente EDF OA (1,1 c€/kWh depuis l’arrêté du 1er juin 2026), un kit 400 W rapporterait moins d’un euro par an. Dans tous les cas, l’objectif est d’autoconsommer un maximum.',
   },
   {
     question: 'Faut-il déclarer son kit solaire à Enedis ?',
-    answer: 'Oui, c’est obligatoire dès que le kit est branché sur une prise du logement. La déclaration CACSI se fait gratuitement en ligne sur enedis.fr/raccordement-photovoltaique en environ 10 minutes. Sans déclaration, vous êtes hors la loi même si l’installation est physiquement sécurisée. Voir notre guide détaillé sur la déclaration CACSI.',
+    answer: 'Oui, une déclaration à Enedis est obligatoire dès que le kit est branché sur une prise du logement : la CACSI si votre kit n’injecte rien, sinon la cession gratuite du surplus. Elle se fait gratuitement en ligne. N’injectez rien avant la mise en service par Enedis. Voir notre guide détaillé sur la déclaration.',
   },
   {
     question: 'Comment lire les index injection et soutirage sur le Linky ?',
@@ -45,9 +51,9 @@ export default function LinkyPanneauSolaireInjectionPage() {
     <>
       <SchemaArticle
         title="Linky et panneau solaire : injection, index, surplus (2026)"
-        description="Que voit vraiment le Linky avec un kit solaire ? Index injection vs soutirage, surplus gratuit EDF, CACSI Enedis : tout compris en 10 minutes."
+        description="Que voit vraiment le Linky avec un kit solaire ? Index injection vs soutirage, CACSI ou cession du surplus à Enedis : tout compris en 10 minutes."
         url="https://monbalconsolaire.fr/blog/linky-panneau-solaire-injection"
-        datePublished="2026-07-24"
+        datePublished="2026-07-24" dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Linky et panneau solaire' }]} />
@@ -64,7 +70,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
               &laquo;&nbsp;Est-ce que mon Linky va tourner &agrave; l&apos;envers&nbsp;?&nbsp;&raquo; &laquo;&nbsp;Mon surplus part-il gratuitement chez EDF&nbsp;?&nbsp;&raquo; &laquo;&nbsp;C&apos;est quoi l&apos;index injection&nbsp;?&nbsp;&raquo; Ce sont les trois questions que pose chaque d&eacute;butant. R&eacute;ponses factuelles, sans jargon.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>24 juillet 2026</span>
+              <span>24 juillet 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -76,8 +82,8 @@ export default function LinkyPanneauSolaireInjectionPage() {
               <li>&bull; Le Linky <strong>ne voit pas votre production</strong> &mdash; il voit uniquement ce qui entre ou sort de votre r&eacute;seau domestique</li>
               <li>&bull; <strong>Index soutirage</strong> : ce que vous tirez du r&eacute;seau EDF &middot; <strong>Index injection</strong> : votre surplus envoy&eacute; sur le r&eacute;seau</li>
               <li>&bull; Le mythe du &laquo;&nbsp;compteur qui tourne &agrave; l&apos;envers&nbsp;&raquo; ne s&apos;applique pas au Linky (num&eacute;rique et bidirectionnel)</li>
-              <li>&bull; En CACSI, le surplus part sur le r&eacute;seau <strong>gratuitement</strong> &mdash; sans compensation</li>
-              <li>&bull; La d&eacute;claration <strong>CACSI Enedis est obligatoire</strong>, gratuite, 10 minutes en ligne</li>
+              <li>&bull; En CACSI, vous vous engagez &agrave; <strong>ne rien injecter</strong>&nbsp;; sinon, le surplus est <strong>c&eacute;d&eacute; gratuitement</strong> &agrave; Enedis, sans compensation</li>
+              <li>&bull; Une <strong>d&eacute;claration &agrave; Enedis est obligatoire</strong> (CACSI ou cession du surplus), gratuite, en ligne</li>
             </ul>
           </div>
 
@@ -174,18 +180,25 @@ export default function LinkyPanneauSolaireInjectionPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le surplus&nbsp;: gratuit pour EDF ou pay&eacute; ?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Deux sc&eacute;narios selon votre situation administrative&nbsp;:
+                Trois sc&eacute;narios selon votre d&eacute;claration&nbsp;:
               </p>
               <div className="space-y-4 mb-6">
                 <div className="card-lg border-l-4 border-l-green">
-                  <h3 className="font-bold text-base mb-2">Sc&eacute;nario 1 &mdash; CACSI (le cas de 95&nbsp;% des kits balcon)</h3>
+                  <h3 className="font-bold text-base mb-2">Sc&eacute;nario 1 &mdash; CACSI&nbsp;: z&eacute;ro injection</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
-                    Vous avez d&eacute;clar&eacute; votre kit en <strong>Convention d&apos;Autoconsommation Sans Injection</strong>. Votre surplus est inject&eacute; sur le r&eacute;seau mais vous n&apos;&ecirc;tes <strong>pas r&eacute;mun&eacute;r&eacute;</strong>. L&apos;index injection est relev&eacute; par Enedis mais ne donne lieu &agrave; aucun paiement.
+                    Vous avez d&eacute;clar&eacute; votre kit en <strong>Convention d&apos;Autoconsommation Sans Injection</strong>&nbsp;: vous vous engagez &agrave; <strong>ne rien injecter</strong> sur le r&eacute;seau. Selon Enedis, cela passe par un r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo; de l&apos;onduleur ou un dispositif anti-injection (facultatif)&nbsp;: compteur type Shelly, bo&icirc;tier du fabricant, ou batterie qui absorbe le surplus. L&apos;index injection doit rester &agrave; z&eacute;ro.
                   </p>
                   <p className="text-xs text-stone">Vos &eacute;conomies viennent <em>uniquement</em> de l&apos;autoconsommation &rarr; kWh non achet&eacute;s &agrave; EDF.</p>
                 </div>
+                <div className="card-lg border-l-4 border-l-green">
+                  <h3 className="font-bold text-base mb-2">Sc&eacute;nario 2 &mdash; Cession gratuite du surplus &agrave; Enedis (kits qui injectent)</h3>
+                  <p className="text-sm text-charcoal-light leading-relaxed mb-2">
+                    La plupart des kits simples, sans pilotage, renvoient leur surplus sur le r&eacute;seau. Dans ce cas, d&eacute;clarez la <strong>cession gratuite du surplus</strong> &agrave; Enedis (article L315-5 du Code de l&apos;&eacute;nergie, installations de 3&nbsp;kW maximum en sortie d&apos;onduleur selon l&apos;article D315-10)&nbsp;: sur Enedis-Connect, choisissez &laquo;&nbsp;injection du surplus&nbsp;&raquo; puis &laquo;&nbsp;je c&egrave;de mon surplus &agrave; Enedis&nbsp;&raquo;. Enedis passe alors un contrat d&apos;acc&egrave;s en injection avec vous. Le surplus n&apos;est pas r&eacute;mun&eacute;r&eacute;, et une part du tarif d&apos;acheminement (TURPE &laquo;&nbsp;autoproducteur&nbsp;&raquo;) peut s&apos;appliquer.
+                  </p>
+                  <p className="text-xs text-stone">L&apos;index injection est relev&eacute; par Enedis mais ne donne lieu &agrave; aucun paiement. N&apos;injectez rien avant la mise en service par Enedis.</p>
+                </div>
                 <div className="card-lg border-l-4 border-l-amber">
-                  <h3 className="font-bold text-base mb-2">Sc&eacute;nario 2 &mdash; Contrat de revente EDF OA</h3>
+                  <h3 className="font-bold text-base mb-2">Sc&eacute;nario 3 &mdash; Contrat de revente EDF OA</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
                     Vous avez sign&eacute; un contrat de vente de surplus avec <strong>EDF OA</strong>. D&egrave;s lors, chaque kWh inject&eacute; est pay&eacute; au tarif en vigueur&nbsp;: <strong>1,1&nbsp;c&euro;/kWh</strong> depuis l&apos;arr&ecirc;t&eacute; du 1er juin 2026 pour les nouvelles installations.
                   </p>
@@ -196,21 +209,21 @@ export default function LinkyPanneauSolaireInjectionPage() {
               </div>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Verdict&nbsp;:</strong> avec 1,1&nbsp;c&euro;/kWh de tarif de rachat contre 19,4&nbsp;c&euro;/kWh de tarif EDF base, chaque kWh autoconsomm&eacute; vaut <strong>17&times; plus</strong> qu&apos;un kWh revendu. Ne cherchez pas &agrave; maximiser l&apos;injection &mdash; maximisez l&apos;autoconsommation. C&apos;est l&agrave; que se construit la <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="text-green hover:underline">rentabilit&eacute; r&eacute;elle du kit</Link>.
+                  <strong>Verdict&nbsp;:</strong> avec 1,1&nbsp;c&euro;/kWh de tarif de rachat contre {TARIF_CTS}&nbsp;c&euro;/kWh de tarif EDF Base, chaque kWh autoconsomm&eacute; vaut <strong>{RATIO}&times; plus</strong> qu&apos;un kWh revendu. Ne cherchez pas &agrave; maximiser l&apos;injection &mdash; maximisez l&apos;autoconsommation. C&apos;est l&agrave; que se construit la <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="text-green hover:underline">rentabilit&eacute; r&eacute;elle du kit</Link>.
                 </p>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">La d&eacute;claration CACSI Enedis&nbsp;: obligatoire, gratuite, simple</h2>
+              <h2 className="text-2xl font-extrabold mb-4">La d&eacute;claration &agrave; Enedis (CACSI ou cession du surplus)&nbsp;: obligatoire, gratuite, simple</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Toute installation raccord&eacute;e au r&eacute;seau &mdash; m&ecirc;me via une simple prise &mdash; doit faire l&apos;objet d&apos;une d&eacute;claration aupr&egrave;s d&apos;Enedis. C&apos;est la loi depuis le d&eacute;cret du 6 octobre 2021, toujours en vigueur en 2026.
               </p>
               <div className="space-y-3 mb-4">
                 {[
-                  { step: '1', title: 'Rendez-vous sur enedis.fr/raccordement-photovoltaique', desc: 'Section « Autoconsommation sans injection ». Aucun compte n’est nécessaire pour commencer le formulaire.' },
+                  { step: '1', title: 'Rendez-vous sur Enedis-Connect (enedis.fr)', desc: 'Choisissez « autoconsommation sans injection » (CACSI) si votre kit n’injecte rien, sinon « injection du surplus » puis « je cède mon surplus à Enedis ».' },
                   { step: '2', title: 'Renseignez les infos de l’installation', desc: 'Puissance crête du kit (ex : 400 Wc), type de kit (mono ou bifacial), marque du micro-onduleur. Tout figure sur la fiche technique de votre kit.' },
-                  { step: '3', title: 'Validez et téléchargez la convention CACSI', desc: 'Enedis vous envoie une attestation de dépôt par e-mail sous 48h. Conservez-la : elle prouve votre conformité légale.' },
+                  { step: '3', title: 'Validez et conservez les documents Enedis', desc: 'Convention CACSI ou contrat d’accès en injection selon votre choix. Conservez-les : ils prouvent votre conformité. N’injectez rien avant la mise en service par Enedis.' },
                 ].map((s) => (
                   <div key={s.step} className="card border-l-4 border-l-green">
                     <div className="flex items-start gap-3">
@@ -224,7 +237,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Pour les kits pr&eacute;assembl&eacute;s en usine de moins de 3&nbsp;kVA, <strong>aucune validation Consuel n&apos;est requise</strong>. La proc&eacute;dure est 100&nbsp;% en ligne et gratuite. D&eacute;tail complet dans notre <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline font-semibold">guide CACSI pas &agrave; pas</Link>.
+                Selon Enedis, un kit d&eacute;j&agrave; assembl&eacute; et conforme &agrave; la norme NF EN 50549-1-4 peut &ecirc;tre <strong>dispens&eacute; de Consuel</strong>, sur attestation. La proc&eacute;dure est en ligne et gratuite. D&eacute;tail complet dans notre <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline font-semibold">guide CACSI pas &agrave; pas</Link>.
               </p>
             </section>
 
@@ -259,7 +272,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Si votre Linky n&apos;affiche pas EAIT, c&apos;est normal avant d&eacute;claration CACSI&nbsp;: Enedis active l&apos;index injection uniquement apr&egrave;s r&eacute;ception de votre d&eacute;claration. Vous pouvez aussi tout visualiser depuis l&apos;app <strong>Enedis &agrave; mes c&ocirc;t&eacute;s</strong> (iOS/Android).
+                En CACSI, l&apos;index EAIT doit rester &agrave; z&eacute;ro&nbsp;: s&apos;il augmente, votre r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo; ne fonctionne pas. Il ne bouge normalement que si vous avez choisi la cession du surplus. Vous pouvez aussi tout visualiser depuis l&apos;app <strong>Enedis &agrave; mes c&ocirc;t&eacute;s</strong> (iOS/Android).
               </p>
             </section>
 
@@ -279,7 +292,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-1">Lors d&apos;une vente immobili&egrave;re ou d&apos;un contr&ocirc;le</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Un diagnostic &eacute;lectrique peut r&eacute;v&eacute;ler l&apos;installation. La d&eacute;claration CACSI est alors exig&eacute;e, voire une mise en conformit&eacute;.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Un diagnostic &eacute;lectrique peut r&eacute;v&eacute;ler l&apos;installation. La d&eacute;claration &agrave; Enedis est alors exig&eacute;e, voire une mise en conformit&eacute;.</p>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
@@ -312,7 +325,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
               <div className="space-y-3">
                 <Link href="/blog/revendre-surplus-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h3>
-                  <p className="text-xs text-charcoal-light mt-1">CACSI vs EDF OA, tarif 1,1&nbsp;c&euro;/kWh, calcul r&eacute;el&nbsp;: la r&eacute;ponse d&eacute;taill&eacute;e</p>
+                  <p className="text-xs text-charcoal-light mt-1">CACSI, cession du surplus ou EDF OA, tarif 1,1&nbsp;c&euro;/kWh, calcul r&eacute;el&nbsp;: la r&eacute;ponse d&eacute;taill&eacute;e</p>
                 </Link>
                 <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h3>
@@ -360,7 +373,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> Enedis, documentation technique Linky (janvier 2026), arr&ecirc;t&eacute; tarifaire EDF OA du 1er juin 2026, d&eacute;cret n&deg; 2021-1301 du 6 octobre 2021 relatif &agrave; l&apos;autoconsommation. Tarif EDF base&nbsp;: 0,1940 &euro;/kWh.{' '}
+                <strong>Sources&nbsp;:</strong> Enedis, documentation technique Linky (janvier 2026), arr&ecirc;t&eacute; tarifaire EDF OA du 1er juin 2026, d&eacute;cret n&deg; 2021-1301 du 6 octobre 2021 relatif &agrave; l&apos;autoconsommation. Code de l&apos;&eacute;nergie, articles L315-5 et D315-10&nbsp;; Enedis, &laquo;&nbsp;Autoconsommer la totalit&eacute; de l&apos;&eacute;nergie produite par vos panneaux&nbsp;&raquo; (consult&eacute; le 5 novembre 2026). Tarif EDF Base&nbsp;: {KWH_PRICE_LABEL}.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.
               </p>
             </div>
