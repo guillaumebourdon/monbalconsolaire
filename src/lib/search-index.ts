@@ -53,7 +53,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: '300W vs 400W vs 500W : quelle puissance ?', description: 'Comparatif des 3 puissances les plus vendues.', url: '/comparatif/300w-vs-400w-vs-500w-puissance', category: 'Comparatif', badge: 'Puissance' },
   { title: 'Zendure vs Sunology vs Beem : le match 2026', description: 'Stockage vs simplicit\u00e9 vs flexibilit\u00e9 : comparatif complet.', url: '/comparatif/zendure-vs-sunology-vs-beem', category: 'Comparatif', badge: 'Match 2026' },
   { title: 'Meilleur kit solaire terrasse 2026', description: 'Pose au sol, multi-panneaux, 3 setups par budget.', url: '/comparatif/meilleur-kit-solaire-terrasse-2026', category: 'Comparatif', badge: 'Terrasse' },
-  { title: 'Meilleure batterie solaire balcon 2026 : Zendure vs Bluetti vs EcoFlow', description: 'Comparatif batteries dédiées balcon : prix/kWh, autonomie, verdict par profil. Zendure SolarFlow, Bluetti Balco 260, Jackery, EcoFlow PowerStream.', url: '/comparatif/meilleure-batterie-solaire-balcon-2026', category: 'Comparatif', badge: 'Nouveau' },
+  { title: 'Meilleure batterie solaire balcon 2026 : comparatif', description: 'Batteries de balcon : prix/kWh, autonomie, verdict par profil. Zendure SolarFlow 800 Plus, Jackery SolarVault 3 Pro, Bluetti Balco 260, EcoFlow STREAM Ultra.', url: '/comparatif/meilleure-batterie-solaire-balcon-2026', category: 'Comparatif', badge: 'Nouveau' },
 
   // ─── Guides ───
   { title: 'Déménager avec son kit solaire balcon', description: 'CACSI, résiliation du contrat d’électricité, démontage et transport : les démarches à refaire à chaque nouvelle adresse.', url: '/guide/demenager-kit-solaire-balcon', category: 'Guide', badge: 'Nouveau' },
