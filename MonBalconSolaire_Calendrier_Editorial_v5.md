@@ -96,8 +96,10 @@ Garanties de performance, taux annuels (TOPCon, back-contact, PERC), impact sur 
 ### Jeudi 05/11 — MISE À JOUR
 **Rafraîchir : codes-promo** (offres de novembre, annonces Black Friday).
 
-### Vendredi 06/11 — NOUVEL ARTICLE — COMPARATIF
-**Batterie solaire balcon : Zendure SolarFlow vs Sunology VAULT vs Beem Battery vs EcoFlow STREAM** — slug `batterie-zendure-vs-sunology-vs-beem-vs-ecoflow`
+### Vendredi 06/11 — ANNULÉ (décision de Guillaume le 05/11) — NE RIEN PUBLIER CE JOUR
+Remplacé par un avis ALLPOWERS publié à la main le 05/11. Ne pas prendre d'élément du pipeline à la place. Le comparatif batteries ci-dessous est reporté (date à fixer par Guillaume).
+
+**[REPORTÉ] Batterie solaire balcon : Zendure SolarFlow vs Sunology VAULT vs Beem Battery vs EcoFlow STREAM** — slug `batterie-zendure-vs-sunology-vs-beem-vs-ecoflow`
 Même format que comparatif/zendure-vs-sunology-vs-beem (notre page n°1) : tableau capacité / puissance / prix / €/kWh / compatibilité kits, verdict par profil, ROI avec batterie via pricing.ts (95 % d'autoconsommation). Ne pas dupliquer comparatif/meilleure-batterie-solaire-balcon-2026 (angle : les 4 marques des kits plug-and-play, pas les stations Bluetti/Jackery) ; lier les deux. Zendure : `zendureUrl()`.
 
 ## Semaine 46 — 10-13 nov.
