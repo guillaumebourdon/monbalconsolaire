@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -10,7 +11,7 @@ import { ecoflowUrl } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'EcoFlow STREAM Ultra avis : le successeur du PowerStream',
-  description: 'STREAM Ultra : batterie + micro-onduleur 800 W tout-en-un, extensible à 11,52 kWh. Specs, prix constatés et alternative au PowerStream arrêté.',
+  description: 'EcoFlow STREAM Ultra : batterie 1,92 kWh + micro-onduleur 800 W, 659 € en promotion. Specs, ROI et alternative au PowerStream arrêté.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/ecoflow-stream-ultra',
   },
@@ -31,15 +32,15 @@ const faqData = [
   },
   {
     question: 'STREAM Ultra ou Zendure SolarFlow : lequel choisir ?',
-    answer: 'Même capacité de départ (1,92 kWh) et même puissance d\'onduleur (800 W), mais deux philosophies différentes. Le Zendure SolarFlow (488 € avec 2 panneaux 420 W) est moins cher et suffit pour la grande majorité des balcons avec un ROI de 5,3 ans. Le STREAM Ultra se distingue par sa sortie de secours jusqu\'à 2 300 W (utile en cas de coupure réseau, ce que le SolarFlow ne propose pas) et par l\'application EcoFlow, plus aboutie. Si vous cherchez le meilleur ROI pur, Zendure gagne ; si le backup électrique en cas de coupure compte pour vous, le STREAM Ultra se justifie.',
+    answer: 'Même capacité de départ (1,92 kWh) et même puissance d\'onduleur (800 W), mais deux philosophies différentes. Le Zendure SolarFlow 800 Plus (539 € seul, 719 € en pack avec 2 panneaux de 500 W au 5 novembre 2026, prix promotionnel) est moins cher et suffit pour la grande majorité des balcons, avec un ROI de 3,6 ans pour ce pack. Le STREAM Ultra se distingue par sa sortie de secours jusqu\'à 2 300 W (utile en cas de coupure réseau, ce que le SolarFlow ne propose pas) et par l\'application EcoFlow, plus aboutie. Si vous cherchez le meilleur ROI pur, Zendure gagne ; si le backup électrique en cas de coupure compte pour vous, le STREAM Ultra se justifie.',
   },
   {
     question: 'Le STREAM Ultra est-il vendu en France et où l\'acheter ?',
-    answer: 'Oui, EcoFlow commercialise la gamme STREAM (dont le STREAM Ultra) sur sa boutique officielle fr.ecoflow.com depuis 2026, en remplacement du PowerStream. Important : au moment de la rédaction de cet article (3 novembre 2026), nous n\'avons pas pu accéder directement à fr.ecoflow.com depuis notre environnement de travail pour reconfirmer le prix affiché en France. Les prix et specs ci-dessous sont sourcés sur les boutiques EcoFlow voisines (Allemagne, Belgique, Autriche) et des comparatifs indépendants (Test-Achats, GIGA.de) : vérifiez le tarif exact sur fr.ecoflow.com avant tout achat.',
+    answer: 'Oui, EcoFlow commercialise la gamme STREAM (dont le STREAM Ultra) sur sa boutique officielle fr.ecoflow.com depuis 2026, en remplacement du PowerStream. Le 5 novembre 2026, fr.ecoflow.com affichait le STREAM Ultra seul à 659 € (prix barré 1 299 €), en stock. Les promotions changent souvent : vérifiez le tarif au moment de commander.',
   },
   {
     question: 'Combien coûte un setup complet avec panneaux ?',
-    answer: 'Le boîtier STREAM Ultra seul (1,92 kWh + micro-onduleur) se positionne autour de 1 000-1 100 € hors promotion sur les marchés européens voisins, avec des prix descendant à 700-800 € lors des opérations Black Friday ou Prime Day. En ajoutant 2 panneaux 400 W (environ 400-500 €) pour exploiter les 2 000 W d\'entrée solaire, un setup complet tourne autour de 1 500 €. C\'est sensiblement plus cher qu\'un Zendure SolarFlow (488 € tout compris pour une capacité équivalente).',
+    answer: 'Le 5 novembre 2026, le boîtier STREAM Ultra seul (1,92 kWh + micro-onduleur) était à 659 € sur fr.ecoflow.com (prix barré 1 299 €). Le pack avec 4 panneaux de 500 W était à 1 499 €. En ajoutant vous-même 2 panneaux de 400 W (environ 400 €, estimation), un setup complet tourne autour de 1 060 €, plus cher que le pack Zendure SolarFlow 800 Plus avec 2 panneaux de 500 W (719 € en promotion) pour une capacité équivalente.',
   },
 ];
 
@@ -68,12 +69,12 @@ const points_forts = [
 
 const points_faibles = [
   {
-    titre: 'Prix non reconfirmé sur le site officiel France',
-    detail: 'Nous n\'avons pas pu accéder à fr.ecoflow.com depuis notre environnement pour vérifier le tarif affiché en France au jour de la publication. Les montants de cet article viennent des boutiques EcoFlow voisines (zone euro) : à reconfirmer avant achat.',
+    titre: 'Un prix très dépendant des promotions',
+    detail: 'Le 5 novembre 2026, le STREAM Ultra était à 659 € contre un prix barré de 1 299 € : l\'écart est énorme. Hors promotion, il perd l\'essentiel de son intérêt face au Zendure SolarFlow 800 Plus.',
   },
   {
     titre: 'Panneaux vendus séparément',
-    detail: 'Comme pour le PowerStream, le STREAM Ultra est un boîtier batterie + onduleur. Il faut ajouter vos propres panneaux (2 × 400 W conseillés) pour un total qui dépasse souvent 1 500 €.',
+    detail: 'Comme pour le PowerStream, le STREAM Ultra est un boîtier batterie + onduleur. Il faut ajouter vos propres panneaux (2 × 400 W conseillés) pour un total d\'environ 1 060 € au prix promotionnel du 5 novembre 2026.',
   },
   {
     titre: 'Recul produit limité en France',
@@ -93,10 +94,10 @@ export default function EcoflowStreamUltraPage() {
         description="Avis complet du STREAM Ultra, successeur du PowerStream chez EcoFlow."
         url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra"
         datePublished="2026-11-03"
-        dateModified="2026-11-03"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="EcoFlow STREAM Ultra" brand="EcoFlow" description="Batterie LiFePO4 1,92 kWh avec micro-onduleur 800 W intégré, extensible à 11,52 kWh, 4 MPPT, sortie secours 2 300 W." price={1099} ratingValue={7.5} availability="InStock" url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra" />
+      <SchemaProduct name="EcoFlow STREAM Ultra" brand="EcoFlow" description="Batterie LiFePO4 1,92 kWh avec micro-onduleur 800 W intégré, extensible à 11,52 kWh, 4 MPPT, sortie secours 2 300 W." price={659} ratingValue={7.5} availability="InStock" url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow STREAM Ultra' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -111,17 +112,17 @@ export default function EcoflowStreamUltraPage() {
               EcoFlow a retiré le PowerStream de son catalogue France en 2026 au profit de la gamme <strong>STREAM</strong>. Le STREAM Ultra en est le modèle avec stockage&nbsp;: batterie et micro-onduleur 800&nbsp;W réunis dans un seul boîtier, extensible jusqu&apos;à 11,52&nbsp;kWh. Analyse compl&egrave;te des specs, du prix et de la rentabilit&eacute;.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>3 novembre 2026</span>
+              <span>3 novembre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
           </div>
 
           <div className="card-lg border-2 border-amber bg-amber-pale/40 mb-8" role="note">
-            <p className="badge-amber inline-block mb-3">Prix &agrave; reconfirmer</p>
-            <h2 className="font-extrabold text-lg mb-2">Site officiel France inaccessible au moment de la r&eacute;daction</h2>
+            <p className="badge-amber inline-block mb-3">Prix promotionnel</p>
+            <h2 className="font-extrabold text-lg mb-2">Prix v&eacute;rifi&eacute; sur fr.ecoflow.com le 5 novembre 2026</h2>
             <p className="text-sm text-charcoal-light leading-relaxed mb-3">
-              Nous n&apos;avons pas pu acc&eacute;der &agrave; fr.ecoflow.com depuis notre environnement de travail le 03/11/2026 pour reconfirmer le prix exact affich&eacute; en France. Les montants de cet article sont sourc&eacute;s sur les boutiques EcoFlow des pays voisins (Allemagne, Belgique, Autriche&nbsp;: m&ecirc;me zone euro) et des comparatifs ind&eacute;pendants (Test-Achats, GIGA.de). <strong>V&eacute;rifiez le tarif exact sur fr.ecoflow.com avant tout achat.</strong>
+              Le STREAM Ultra seul &eacute;tait affich&eacute; &agrave; <strong>659&nbsp;&euro;</strong> (prix barr&eacute; 1&nbsp;299&nbsp;&euro;), en stock. Aucune date de fin de promotion n&apos;est indiqu&eacute;e&nbsp;: <strong>v&eacute;rifiez le tarif au moment de commander</strong>. Les sp&eacute;cifications viennent des fiches EcoFlow et de comparatifs ind&eacute;pendants (Test-Achats, GIGA.de).
             </p>
           </div>
 
@@ -129,7 +130,7 @@ export default function EcoflowStreamUltraPage() {
             brand="EcoFlow"
             name="STREAM Ultra"
             power="800 W (sortie) / 2 000 W entrée PV"
-            price="~1 099 €"
+            price="659 €"
             score="7.5/10"
             tagline="Batterie 1,92 kWh et micro-onduleur 800 W intégrés dans un seul boîtier, extensible à 11,52 kWh."
             affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')}
@@ -141,7 +142,7 @@ export default function EcoflowStreamUltraPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Le STREAM Ultra corrige le principal défaut du PowerStream&nbsp;: il n&apos;impose plus d&apos;acheter une station EcoFlow séparée pour avoir du stockage. Batterie et micro-onduleur sont réunis dans un boîtier unique, extensible jusqu&apos;à 11,52&nbsp;kWh, avec une sortie de secours jusqu&apos;à 2 300&nbsp;W en cas de coupure. <strong>Mais</strong> à capacité et puissance équivalentes, le Zendure SolarFlow reste nettement moins cher (488&nbsp;€ contre ~1 500&nbsp;€ pour un setup complet avec panneaux). Le STREAM Ultra se justifie surtout si la sortie de secours ou l&apos;écosystème applicatif EcoFlow compte vraiment pour vous.
+              Le STREAM Ultra corrige le principal défaut du PowerStream&nbsp;: il n&apos;impose plus d&apos;acheter une station EcoFlow séparée pour avoir du stockage. Batterie et micro-onduleur sont réunis dans un boîtier unique, extensible jusqu&apos;à 11,52&nbsp;kWh, avec une sortie de secours jusqu&apos;à 2 300&nbsp;W en cas de coupure. <strong>Mais</strong> à capacité et puissance équivalentes, le Zendure SolarFlow 800 Plus reste moins cher (719&nbsp;€ en pack avec 2 panneaux de 500&nbsp;W, contre ~1 060&nbsp;€ pour un STREAM Ultra avec 2 panneaux achet&eacute;s &agrave; part, prix promotionnels du 5 novembre 2026). Le STREAM Ultra se justifie surtout si la sortie de secours ou l&apos;écosystème applicatif EcoFlow compte vraiment pour vous.
             </p>
           </div>
 
@@ -203,7 +204,7 @@ export default function EcoflowStreamUltraPage() {
                     </tr>
                     <tr className="bg-white">
                       <td className="p-3 font-semibold">Prix constaté (hors France)</td>
-                      <td className="p-3 font-mono font-bold text-green">~1 099 € (promotions dès ~700-800 €)</td>
+                      <td className="p-3 font-mono font-bold text-green">659 € en promotion (prix barré 1 299 €, 05/11/2026)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -230,7 +231,7 @@ export default function EcoflowStreamUltraPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Voir le prix actuel sur EcoFlow" variant="primary" position="after-pros" price="~1 099 €" />
+            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Voir le prix actuel sur EcoFlow" variant="primary" position="after-pros" price="659 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 4 points faibles à connaître</h2>
@@ -261,9 +262,9 @@ export default function EcoflowStreamUltraPage() {
                   <tbody>
                     <tr className="border-b border-border-light">
                       <td className="p-3 font-semibold bg-white">Prix (boîtier seul)</td>
-                      <td className="p-3 text-center bg-amber-pale/30 font-mono font-bold">~1 099 €<span className="block text-xs font-normal text-stone">(à reconfirmer FR)</span></td>
-                      <td className="p-3 text-center bg-green-pale/30 font-mono font-bold text-green">488 €<span className="block text-xs font-normal text-stone">(avec 2 panneaux)</span></td>
-                      <td className="p-3 text-center bg-cream/50 font-mono">849 €</td>
+                      <td className="p-3 text-center bg-amber-pale/30 font-mono font-bold">659 €<span className="block text-xs font-normal text-stone">(promotion)</span></td>
+                      <td className="p-3 text-center bg-green-pale/30 font-mono font-bold text-green">539 €<span className="block text-xs font-normal text-stone">(719 € avec 2 panneaux)</span></td>
+                      <td className="p-3 text-center bg-cream/50 font-mono">789 €</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-3 font-semibold bg-cream/50">Capacité</td>
@@ -292,7 +293,7 @@ export default function EcoflowStreamUltraPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2 italic">Prix Zendure et Bluetti v&eacute;rifi&eacute;s sur leurs pages officielles. Prix STREAM Ultra&nbsp;: boutiques EcoFlow zone euro, &agrave; reconfirmer sur fr.ecoflow.com (voir encadr&eacute; en haut de page).</p>
+              <p className="text-xs text-stone mt-2 italic">Prix EcoFlow, Zendure et Bluetti v&eacute;rifi&eacute;s sur leurs boutiques officielles fran&ccedil;aises le 5 novembre 2026 (prix promotionnels).</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
@@ -309,7 +310,7 @@ export default function EcoflowStreamUltraPage() {
                 {[
                   'Vous cherchez avant tout le meilleur ROI (préférez le Zendure SolarFlow)',
                   'Vous n\'avez pas besoin d\'une sortie de secours en cas de coupure',
-                  'Vous voulez un prix 100 % confirmé sans attendre une vérification sur fr.ecoflow.com',
+                  'Vous n\'achetez pas pendant une promotion (prix barré 1 299 €)',
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
                     <span className="text-amber-dark font-bold">&#10007;</span>
@@ -322,7 +323,7 @@ export default function EcoflowStreamUltraPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Rentabilité et production (setup STREAM Ultra + 2 panneaux 400 W)</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Setup représentatif&nbsp;: <strong>STREAM Ultra (~1 099 €) + 2 panneaux 400 W (~400 €)</strong>, soit environ <strong>1 500 €</strong>, installé à Lyon en exposition sud.
+                Setup représentatif&nbsp;: <strong>STREAM Ultra (659 € en promotion) + 2 panneaux 400 W (~400 €, estimation)</strong>, soit environ <strong>1 060 €</strong>, installé à Lyon en exposition sud.
               </p>
               <div className="grid sm:grid-cols-2 gap-4 my-6">
                 <div className="card-lg bg-green-pale/30 border-green/10 text-center">
@@ -330,20 +331,20 @@ export default function EcoflowStreamUltraPage() {
                   <p className="text-xs text-charcoal-light mt-1">Production (800 Wc, sud, Lyon, PR 0,85)</p>
                 </div>
                 <div className="card-lg bg-green-pale/30 border-green/10 text-center">
-                  <div className="font-mono text-2xl font-bold text-green">150 €/an</div>
-                  <p className="text-xs text-charcoal-light mt-1">Économies (95 % autoconso avec batterie)</p>
+                  <div className="font-mono text-2xl font-bold text-green">155 €</div>
+                  <p className="text-xs text-charcoal-light mt-1">Économies la 1re année (95 % autoconso avec batterie)</p>
                 </div>
                 <div className="card-lg bg-green-pale/30 border-green/10 text-center">
-                  <div className="font-mono text-2xl font-bold text-green">8,8 ans</div>
-                  <p className="text-xs text-charcoal-light mt-1">ROI (tarif 0,1940 €/kWh, inflation 3,3 %/an)</p>
+                  <div className="font-mono text-2xl font-bold text-green">6,3 ans</div>
+                  <p className="text-xs text-charcoal-light mt-1">ROI (tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, dégradation {PANEL_DEGRADATION_LABEL})</p>
                 </div>
                 <div className="card-lg bg-green-pale/30 border-green/10 text-center">
-                  <div className="font-mono text-2xl font-bold text-green">5 704 €</div>
+                  <div className="font-mono text-2xl font-bold text-green">~5 500 €</div>
                   <p className="text-xs text-charcoal-light mt-1">Économies cumulées sur 25 ans</p>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                Un ROI de 8,8 ans reste correct pour un système avec batterie et sortie de secours, mais moins performant que le Zendure SolarFlow (5,3 ans pour une capacité équivalente, sans backup coupure). Avec un STREAM Ultra X (4 panneaux 400 W, ~2 600 €), la production grimpe à 1 632 kWh/an pour un ROI de 7,7 ans et 11 408 € d&apos;économies sur 25 ans.
+                Un ROI de 6,3 ans est correct pour un système avec batterie et sortie de secours, mais moins performant que le Zendure SolarFlow 800 Plus en pack (3,6 ans au prix promotionnel de 719&nbsp;&euro;, sans backup coupure). Au prix barr&eacute; de 1&nbsp;299&nbsp;&euro;, le m&ecirc;me setup d&eacute;passerait 1&nbsp;700&nbsp;&euro; et 10 ans de ROI. Le STREAM Ultra X (3,84&nbsp;kWh) d&eacute;marre &agrave; 1&nbsp;099&nbsp;&euro; sur fr.ecoflow.com (5 novembre 2026).
               </p>
             </section>
 
@@ -353,13 +354,13 @@ export default function EcoflowStreamUltraPage() {
                 <div>
                   <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    Le STREAM Ultra est un vrai progr&egrave;s par rapport au PowerStream (tout-en-un, plus besoin de station s&eacute;par&eacute;e), mais &agrave; 8,8&nbsp;ans de ROI, il reste moins rentable que le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> (5,3&nbsp;ans). Il se justifie surtout si la sortie de secours 2 300&nbsp;W ou l&apos;&eacute;cosyst&egrave;me EcoFlow comptent pour vous &mdash; et sous r&eacute;serve de reconfirmer le prix sur fr.ecoflow.com.
+                    Le STREAM Ultra est un vrai progr&egrave;s par rapport au PowerStream (tout-en-un, plus besoin de station s&eacute;par&eacute;e), mais &agrave; 6,3&nbsp;ans de ROI (au prix promotionnel), il reste moins rentable que le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> (3,6&nbsp;ans en pack). Il se justifie surtout si la sortie de secours 2 300&nbsp;W ou l&apos;&eacute;cosyst&egrave;me EcoFlow comptent pour vous &mdash; et seulement en promotion.
                   </p>
                 </div>
               </div>
             </div>
 
-            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Voir le STREAM Ultra sur EcoFlow" variant="box" position="footer-box" price="~1 099 €" />
+            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Voir le STREAM Ultra sur EcoFlow" variant="box" position="footer-box" price="659 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
@@ -385,7 +386,7 @@ export default function EcoflowStreamUltraPage() {
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Même capacité (1,92 kWh), meilleur ROI (5,3 ans) mais sans sortie de secours</p>
+                  <p className="text-xs text-charcoal-light mt-1">Même capacité (1,92 kWh), meilleur ROI (3,6 ans en pack) mais sans sortie de secours</p>
                 </Link>
                 <Link href="/avis/allpowers-bs2500-pro" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis ALLPOWERS BS2500 PRO</h3>
@@ -406,7 +407,7 @@ export default function EcoflowStreamUltraPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Specs et prix recoup&eacute;s sur les boutiques EcoFlow zone euro (Allemagne, Belgique, Autriche) et comparatifs ind&eacute;pendants, le site fr.ecoflow.com &eacute;tant inaccessible depuis notre environnement de r&eacute;daction le 03/11/2026 &mdash; &agrave; reconfirmer avant achat. Article r&eacute;dig&eacute; sans r&eacute;mun&eacute;ration d&apos;EcoFlow.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Specs recoup&eacute;es sur les boutiques EcoFlow et des comparatifs ind&eacute;pendants&nbsp;; prix v&eacute;rifi&eacute; sur fr.ecoflow.com le 5 novembre 2026 (659&nbsp;&euro;, prix promotionnel). Article r&eacute;dig&eacute; sans r&eacute;mun&eacute;ration d&apos;EcoFlow.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

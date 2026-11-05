@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
-import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Anker SOLIX RS40P avis 2026 : kit balcon 910 Wc, vaut-il 799 € ?',
-  description: 'Avis complet Anker SOLIX RS40P : 2x455 W IBC N-type, onduleur 600 W WiFi (800 W), 799 €. Specs, ROI, comparatif Beem On 500W. Anker débarque sur le marché français.',
+  title: 'Anker SOLIX RS40P avis 2026 : kit 910 Wc, plus vendu en France',
+  description: 'Anker SOLIX RS40P : 2 × 455 W IBC N-type, onduleur 800 W. Plus vendu sur la boutique Anker France (novembre 2026). Specs, ROI et alternatives.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/anker-solix-rs40p',
   },
@@ -17,8 +17,8 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   {
-    question: 'L’Anker SOLIX RS40P vaut-il ses 799 € ?',
-    answer: 'Oui, à condition d’avoir la place pour 2 grands panneaux. À 0,88 €/Wc (sur la puissance effective 800 W onduleur), le RS40P reste moins rentable que le Beem On 500W (0,86 €/Wc à 429 €). Mais la marque Anker rassure, la garantie 15 ans panneaux + 12 ans onduleur est solide, et la technologie IBC N-type est parmi les meilleures du segment.',
+    question: 'L’Anker SOLIX RS40P est-il encore vendu ?',
+    answer: 'Plus sur la boutique officielle : au 5 novembre 2026, les fiches RS40P d’ankersolix.com/fr ne répondent plus (l’ancienne page renvoie vers un pack Solarbank 3) et Anker y met en avant un panneau de 500 W. Au dernier prix relevé (799 €, le 17 juillet 2026), il revenait à 0,88 €/W effectif, moins rentable que le Beem On 500 Wc (0,86 €/Wc à 429 €). Pour un achat aujourd’hui, voyez notre comparatif des meilleurs kits 2026.',
   },
   {
     question: 'Quelle est la différence entre 910 Wc installés et 800 W de production ?',
@@ -30,7 +30,7 @@ const faqData = [
   },
   {
     question: 'Combien produit l’Anker SOLIX RS40P par an ?',
-    answer: 'En région lyonnaise, exposition sud : environ 870 kWh par an selon notre calcul (800 W onduleur, PR 0,85, autoconsommation 85 %). Les économies représentent ~135 €/an au tarif de 0,1940 €/kWh. Le ROI est atteint en 5,9 ans.',
+    answer: 'En région lyonnaise, exposition sud : environ 816 kWh par an selon notre calcul (800 W onduleur, PR 0,85, autoconsommation 85 %). Les économies représentent ~139 € la première année au tarif réglementé en vigueur. Au dernier prix relevé (799 €), le ROI serait de 5,4 ans.',
   },
   {
     question: 'Quelle garantie pour l’Anker SOLIX RS40P ?',
@@ -46,10 +46,11 @@ export default function AnkerSolixRS40PAvisPage() {
   return (
     <>
       <SchemaArticle
-        title="Anker SOLIX RS40P avis : kit balcon 910 Wc, vaut-il 799 € ?"
+        title="Anker SOLIX RS40P avis 2026 : kit 910 Wc, plus vendu en France"
         description="Avis complet sur l'Anker SOLIX RS40P : panneaux IBC N-type 2x455 W, onduleur WiFi 600/800 W, garantie 15 ans. Analyse indépendante MonBalconSolaire."
         url="https://monbalconsolaire.fr/avis/anker-solix-rs40p"
         datePublished="2026-07-17"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct
@@ -57,6 +58,7 @@ export default function AnkerSolixRS40PAvisPage() {
         brand="Anker"
         description="Kit solaire balcon 2x455 W IBC N-type, micro-onduleur WiFi 600/800 W. Technologie premium, marque mondiale. Compatible Solarbank 2."
         price={799}
+        availability="Discontinued"
         ratingValue={7.5}
        
         url="https://monbalconsolaire.fr/avis/anker-solix-rs40p"
@@ -73,10 +75,10 @@ export default function AnkerSolixRS40PAvisPage() {
               Anker SOLIX RS40P avis 2026 : le kit balcon 910&nbsp;Wc d&rsquo;une marque mondiale
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Anker &mdash; la marque de charge et batteries connue du grand public &mdash; s&rsquo;attaque au march&eacute; du kit solaire balcon en France. Son RS40P embarque deux panneaux IBC N-type de 455&nbsp;Wc et un onduleur WiFi upgradable &agrave; 800&nbsp;W. Prix&nbsp;: 799&nbsp;&euro;. Est-ce que la marque justifie la prime par rapport au <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500&nbsp;Wc &agrave; 429&nbsp;&euro;</Link>&nbsp;? R&eacute;ponse.
+              Anker &mdash; la marque de charge et batteries connue du grand public &mdash; s&rsquo;attaque au march&eacute; du kit solaire balcon en France. Son RS40P embarque deux panneaux IBC N-type de 455&nbsp;Wc et un onduleur WiFi upgradable &agrave; 800&nbsp;W. Dernier prix relev&eacute;&nbsp;: 799&nbsp;&euro; (17 juillet 2026)&nbsp;; <strong>plus vendu sur la boutique Anker SOLIX France au 5 novembre 2026</strong>. Est-ce que la marque justifie la prime par rapport au <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500&nbsp;Wc &agrave; 429&nbsp;&euro;</Link>&nbsp;? R&eacute;ponse.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>17 juillet 2026</span>
+              <span>17 juillet 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -86,14 +88,14 @@ export default function AnkerSolixRS40PAvisPage() {
             brand="Anker SOLIX"
             name="RS40P"
             power="910 Wc (2&times;455 W)"
-            price="799 €"
+            price="Arrêté"
             score="7.5/10"
-            tagline="La puissance IBC N-type d&rsquo;une grande marque. Cher, mais rassuring."
-            affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
-            affiliateLabel="Voir sur Amazon.fr"
+            tagline="La puissance IBC N-type d&rsquo;une grande marque, mais plus vendu sur la boutique Anker France."
+            affiliateUrl="/comparatif/meilleur-kit-solaire-2026"
+            affiliateLabel="Voir les kits disponibles en 2026"
             accentColor="green"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 17/07/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Dernier prix relev&eacute; le 17/07/2026 &middot; Plus en vente sur ankersolix.com/fr au 05/11/2026</p>
 
           <div className="space-y-10">
 
@@ -114,7 +116,7 @@ export default function AnkerSolixRS40PAvisPage() {
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-cream rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-amber-dark">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -137,8 +139,8 @@ export default function AnkerSolixRS40PAvisPage() {
                       ['Certifications', 'TÜV Rheinland, CE, VDE'],
                       ['Compatibilité batterie', 'Anker SOLIX Solarbank 2 (E1600 Pro)'],
                       ['Fixation', 'Kit sans support ou avec support inclinable'],
-                      ['Prix kit sans support', '799 €'],
-                      ['Prix kit avec support', '849 €'],
+                      ['Prix kit sans support (dernier relevé 17/07/2026)', '799 €'],
+                      ['Prix kit avec support (dernier relevé 17/07/2026)', '849 €'],
                     ].map(([k, v], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold text-charcoal">{k}</td>
@@ -186,24 +188,15 @@ export default function AnkerSolixRS40PAvisPage() {
                 ))}
               </div>
             </section>
-
-            <AffiliateCTA
-              productName="Anker SOLIX RS40P"
-              merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
-              label="Voir l&rsquo;offre Anker SOLIX RS40P sur Amazon"
-              variant="secondary"
-              position="after-pros"
-              price="799 €"
-            />
+            <div className="text-center my-6"><Link href="/avis/sunology-play-2" className="btn-secondary text-sm inline-flex">Alternative disponible&nbsp;: lire l&rsquo;avis Sunology PLAY &rarr;</Link></div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&rsquo;on aime moins</h2>
               <div className="space-y-3">
                 {[
                   {
-                    t: 'Le prix : 799 € pour 800 W effectifs',
-                    d: 'À 0,88 €/Wc (sur la puissance effective), l’Anker RS40P est 2,3× plus cher que le Beem On 500 Wc (à 429 €, 0,86 €/Wc). Le ROI à Lyon s’allonge à 5,9 ans contre 4,8 ans pour le Beem On 500 Wc. La marque se paie.',
+                    t: 'Le prix : 799 € pour 800 W effectifs (dernier prix relevé)',
+                    d: 'À 0,88 €/Wc (sur la puissance effective), l’Anker RS40P est 2,3× plus cher que le Beem On 500 Wc (à 429 €, 0,86 €/Wc). Le ROI à Lyon s’allonge à 5,4 ans contre 4,7 ans pour le Beem On 500 Wc. La marque se paie.',
                   },
                   {
                     t: 'Clipping de l’onduleur (perte 5-8 %)',
@@ -229,15 +222,7 @@ export default function AnkerSolixRS40PAvisPage() {
                 ))}
               </div>
             </section>
-
-            <AffiliateCTA
-              productName="Anker SOLIX RS40P"
-              merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
-              label="Comparer les prix sur Amazon"
-              variant="secondary"
-              position="after-cons"
-            />
+            <div className="text-center my-6"><Link href="/comparatif/meilleur-kit-solaire-2026" className="btn-secondary text-sm inline-flex">Voir les meilleurs kits disponibles en 2026 &rarr;</Link></div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Anker SOLIX RS40P vs la concurrence</h2>
@@ -256,10 +241,10 @@ export default function AnkerSolixRS40PAvisPage() {
                       ['Prix', '799 €', '429 €', '599 €'],
                       ['Puissance panneaux', '910 Wc', '500 Wc', '500 Wc'],
                       ['Onduleur max', '800 W (MAJ)', '600 W', '500 W'],
-                      ['€/Wc effectif', '0,88 €', '0,86 €', '1,20 €'],
+                      ['€/Wc effectif', '0,88 €', '0,86 €', '1,16 €'],
                       ['Technologie', 'IBC N-type', 'TOPCon bifacial', 'Back Contact bifacial'],
                       ['Garantie panneaux', '15 ans', '25 ans', '30 ans'],
-                      ['ROI (Lyon)', '5,9 ans', '4,8 ans', '6,5 ans'],
+                      ['ROI (Lyon)', '5,4 ans', '4,7 ans', '6,2 ans'],
                       ['Batterie compatible', 'Solarbank 2', 'Beem Box', 'VAULT 700 Wh'],
                       ['SAV France', 'Non (international)', 'Oui (Nantes)', 'Oui (Paris)'],
                     ].map(([c, anker, beem, sun], i) => (
@@ -289,7 +274,7 @@ export default function AnkerSolixRS40PAvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Production estim&eacute;e et rentabilit&eacute;</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Calculs bas&eacute;s sur 800 W effectifs (onduleur apr&egrave;s MAJ), PR 0,85, autoconsommation 85 %, tarif 0,1940 &euro;/kWh&nbsp;:
+                Calculs bas&eacute;s sur 800 W effectifs (onduleur apr&egrave;s MAJ), PR 0,85, autoconsommation 85 %, tarif {KWH_PRICE_LABEL}, au dernier prix relev&eacute; (799&nbsp;&euro;)&nbsp;:
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
@@ -303,11 +288,11 @@ export default function AnkerSolixRS40PAvisPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Marseille / PACA', '1 010 kWh', '167 €', '4,8 ans'],
-                      ['Lyon / Rhône-Alpes', '870 kWh', '144 €', '5,5 ans'],
-                      ['Nantes / Ouest', '840 kWh', '139 €', '5,7 ans'],
-                      ['Paris / Île-de-France', '790 kWh', '130 €', '6,1 ans'],
-                      ['Lille / Nord', '710 kWh', '117 €', '6,8 ans'],
+                      ['Marseille / PACA', '942 kWh', '160 €', '4,7 ans'],
+                      ['Lyon / Rhône-Alpes', '816 kWh', '139 €', '5,4 ans'],
+                      ['Nantes / Ouest', '766 kWh', '130 €', '5,7 ans'],
+                      ['Paris / Île-de-France', '703 kWh', '120 €', '6,2 ans'],
+                      ['Lille / Nord', '641 kWh', '109 €', '6,8 ans'],
                     ].map(([r, p, e, roi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{r}</td>
@@ -320,10 +305,10 @@ export default function AnkerSolixRS40PAvisPage() {
                 </table>
               </div>
               <p className="text-xs text-stone">
-                ROI calcul&eacute; avec tarif 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an (CRE), autoconsommation 85&nbsp;%, Performance Ratio 0,85, orientation sud.
+                ROI calcul&eacute; avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;%, Performance Ratio 0,85, orientation sud, productibles PVGIS recal&eacute;s sur notre r&eacute;f&eacute;rence Lyon (Bouches-du-Rh&ocirc;ne, Rh&ocirc;ne, Loire-Atlantique, Paris, Nord).
               </p>
               <p className="text-xs text-stone mt-1">
-                Sur 25&nbsp;ans&nbsp;: <strong>~&nbsp;4&nbsp;200&nbsp;&euro;</strong> d&rsquo;&eacute;conomies cumul&eacute;es nettes (apr&egrave;s investissement de 799&nbsp;&euro;) au tarif actuel + inflation 3,3&nbsp;%/an.
+                Sur 25&nbsp;ans (Lyon)&nbsp;: <strong>~&nbsp;4&nbsp;120&nbsp;&euro;</strong> d&rsquo;&eacute;conomies cumul&eacute;es nettes (4&nbsp;920&nbsp;&euro; moins 799&nbsp;&euro; d&rsquo;investissement).
               </p>
             </section>
 
@@ -334,6 +319,7 @@ export default function AnkerSolixRS40PAvisPage() {
                   'Votre balcon est étroit ou difficile d’accès (2 panneaux de 22 kg chacun)',
                   'Vous voulez un SAV français dédié (préférez Beem ou Sunology)',
                   'Votre priorité est le ROI le plus rapide (Beem On 500 Wc est meilleur à 429 €)',
+                  'Vous voulez l’acheter neuf aujourd’hui : il n’est plus vendu sur la boutique Anker France',
                   'Vous cherchez 25 ans de garantie produit (Anker ne garantit que 15 ans)',
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
@@ -350,35 +336,21 @@ export default function AnkerSolixRS40PAvisPage() {
                 L&rsquo;Anker SOLIX RS40P est un kit bien construit, avec la technologie la plus pointue du segment (IBC N-type 22,7&nbsp;%). La marque Anker rassure sur la durabilit&eacute; et l&rsquo;&eacute;cosyst&egrave;me (Solarbank 2). Si vous &ecirc;tes d&eacute;j&agrave; dans l&rsquo;univers Anker ou si vous valorisez la marque mondiale, c&rsquo;est un excellent choix.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Mais soyons honnêtes&nbsp;: à 799&nbsp;€ pour 800&nbsp;W effectifs, le RS40P coûte 86&nbsp;% de plus que le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500&nbsp;Wc</Link> (à 429&nbsp;€) pour un ROI seulement 0,8 an moins bon. Vous payez essentiellement la marque, la technologie IBC et les 110&nbsp;Wc supplémentaires de capacité panneaux (partiellement &eacute;crêtés). Pour ceux qui cherchent le meilleur rapport qualité-prix, regardez aussi notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">comparatif kits petit budget</Link>.
+                Mais soyons honnêtes&nbsp;: à 799&nbsp;€ pour 800&nbsp;W effectifs, le RS40P coûte 86&nbsp;% de plus que le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500&nbsp;Wc</Link> (à 429&nbsp;€) pour un ROI seulement 0,7 an moins bon. Vous payez essentiellement la marque, la technologie IBC et les 110&nbsp;Wc supplémentaires de capacité panneaux (partiellement &eacute;crêtés). Pour ceux qui cherchent le meilleur rapport qualité-prix, regardez aussi notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">comparatif kits petit budget</Link>.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 <strong>Note finale&nbsp;: <span className="text-amber-dark text-xl font-extrabold">7.5/10</span></strong> &mdash; Technologie premium, marque fiable. Cher mais justifi&eacute; pour qui veut Anker.
               </p>
-              <a
-                href="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
-                target="_blank"
-                rel="sponsored noopener"
-                className="btn-affiliate inline-flex mt-4"
-              >
-                Voir l&rsquo;Anker SOLIX RS40P sur Amazon &rarr;
-              </a>
+              <Link href="/comparatif/meilleur-kit-solaire-2026" className="btn-secondary inline-flex mt-4">
+                Voir les kits disponibles &rarr;
+              </Link>
             </section>
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
               <p className="font-semibold mb-2">Combien pouvez-vous &eacute;conomiser avec 800 W sur votre balcon&nbsp;?</p>
               <Link href="/calculateur" className="btn-primary inline-flex mt-2">Calculer mes &eacute;conomies &rarr;</Link>
             </div>
-
-            <AffiliateCTA
-              productName="Anker SOLIX RS40P"
-              merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CB86F4LD?tag=monbalconsola-21"
-              label="Voir l&rsquo;offre actuelle sur Amazon"
-              variant="box"
-              position="footer-box"
-              price="799 €"
-            />
+            <div className="card-lg text-center my-8"><p className="font-semibold mb-2">L&rsquo;Anker SOLIX RS40P n&rsquo;est plus vendu sur la boutique Anker France</p><p className="text-sm text-charcoal-light mb-4">V&eacute;rifi&eacute; le 5 novembre 2026. Voici les kits disponibles que nous avons analys&eacute;s.</p><Link href="/comparatif/meilleur-kit-solaire-2026" className="btn-primary text-sm inline-flex">Voir le comparatif 2026 &rarr;</Link></div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>
@@ -404,7 +376,7 @@ export default function AnkerSolixRS40PAvisPage() {
                 </Link>
                 <Link href="/avis/beem-kit-300w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Kit 300W</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Le kit le moins cher du march&eacute; &mdash; 199 &euro;, ROI en 3,8 ans, actuellement en rupture</p>
+                  <p className="text-xs text-charcoal-light mt-1">Le kit le moins cher du march&eacute; &mdash; 199 &euro;, ROI en 3,7 ans, en rupture de stock</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-petit-budget" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif kits solaires petit budget</h3>
@@ -421,7 +393,7 @@ export default function AnkerSolixRS40PAvisPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie&nbsp;:</strong> calculs ROI bas&eacute;s sur 0,1940&nbsp;&euro;/kWh (tarif r&eacute;glement&eacute; EDF 2026), inflation 3,3&nbsp;%/an (CRE), autoconsommation 85&nbsp;% (sans batterie), Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud. <strong>Transparence&nbsp;:</strong> article ind&eacute;pendant avec liens affili&eacute;s Amazon (commission sans surco&ucirc;t pour vous). <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
+                <strong>M&eacute;thodologie&nbsp;:</strong> calculs ROI bas&eacute;s sur {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; EDF en vigueur), inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;% (sans batterie), Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud. <strong>Transparence&nbsp;:</strong> article ind&eacute;pendant avec liens affili&eacute;s Amazon (commission sans surco&ucirc;t pour vous). <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
             </div>
 

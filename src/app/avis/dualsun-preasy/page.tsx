@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
+
+const DUALSUN_URL = 'https://dualsun.com/produits/dualsun-preasy/';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -8,8 +11,8 @@ import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'DualSun PREASY avis : panneau pliable Made in France (870\u20ac)',
-  description: 'Avis complet sur le DualSun PREASY : panneau solaire pliable 420 Wc, Made in France, design aspect bois. Analyse, prix réel, comparaison et verdict honnête.',
+  title: 'DualSun PREASY avis : panneau pliable Made in France',
+  description: 'Avis DualSun PREASY : panneau pliable 420 Wc assemblé en France, design bois, vendu sur devis en 2026. Prix relevé, ROI indicatif et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/dualsun-preasy',
   },
@@ -68,7 +71,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Prix prohibitif : 870-900 € pour 420 Wc',
-    detail: 'C\'est LE problème du PREASY. Le prix officiel est de 680 € TTC, mais chez les revendeurs il monte à 870-900 €. Pour comparaison : le Sunology PLAY (ex-PLAY 2) offre 500 Wc pour 599 €, soit 80 Wc de plus pour 270 à 300 € de moins. Le ratio €/Wc du PREASY (2,07 €) est le pire du marché plug-and-play.',
+    detail: 'C\'est LE problème du PREASY. Au lancement, DualSun annonçait 680 € TTC ; chez les revendeurs, nous l\'avons relevé à 870-900 € (15 mai 2026). Au 5 novembre 2026, dualsun.com n\'affiche plus de prix : le PREASY se vend sur devis. Pour comparaison : le Sunology PLAY (ex-PLAY 2) offre 515 W pour 599 €. Le ratio €/Wc du PREASY (2,07 €) est le pire du marché plug-and-play.',
   },
   {
     titre: '36 kg : le plus lourd du marché',
@@ -89,9 +92,9 @@ const points_faibles = [
 ];
 
 const comparaison = [
-  ['Prix', '870-900 €', '599 €', '599 €'],
-  ['Puissance', '420 Wc', '500 Wc', '460 Wc'],
-  ['€/Wc', '2,07 €', '1,20 €', '1,30 €'],
+  ['Prix', '870-900 € (relevé 05/2026, sur devis depuis)', '599 €', 'Arrêté'],
+  ['Puissance', '420 Wc', '515 W', '460 Wc'],
+  ['€/Wc', '2,07 €', '1,16 €', '—'],
   ['Poids', '36 kg', '24,8 kg (30 kg station)', '~26 kg'],
   ['Installation', '~30 min', '1 minute', '5 minutes'],
   ['Micro-onduleur', 'Hoymiles 400 W', 'MX500 500 W', 'APSystems'],
@@ -114,6 +117,7 @@ export default function DualsunPreasyPage() {
         description="Avis complet sur le DualSun PREASY en 2026."
         url="https://monbalconsolaire.fr/avis/dualsun-preasy"
         datePublished="2026-05-09"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="DualSun PREASY" brand="DualSun" description="Panneau solaire pliable plug-and-play 420 Wc, TOPCon bifacial, assemblé en France, châssis aspect bois, micro-onduleur Hoymiles 400 W." price={870} ratingValue={6.5} url="https://monbalconsolaire.fr/avis/dualsun-preasy" />
@@ -128,10 +132,10 @@ export default function DualsunPreasyPage() {
               DualSun PREASY avis : le nouveau challenger du marché
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              DualSun, fabricant français reconnu pour ses panneaux hybrides, se lance dans le plug-and-play avec le <strong>PREASY</strong>. Un panneau pliable de 420 Wc, assemblé en France, avec un design soigné. Sur le papier, c&apos;est séduisant. Mais à <strong>870-900 €</strong> chez les revendeurs, est-ce que ça vaut le coup face à un Sunology PLAY (ex-PLAY 2, 500 Wc) à 599 € ?
+              DualSun, fabricant français reconnu pour ses panneaux hybrides, se lance dans le plug-and-play avec le <strong>PREASY</strong>. Un panneau pliable de 420 Wc, assemblé en France, avec un design soigné. Sur le papier, c&apos;est séduisant. Mais à <strong>870-900 €</strong> chez les revendeurs (relevé en mai 2026&nbsp;; vente sur devis depuis), est-ce que ça vaut le coup face à un Sunology PLAY (ex-PLAY 2, 515&nbsp;W) à 599 € ?
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 mai 2026 &middot; Mis &agrave; jour le 15 mai 2026</span>
+              <span>9 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -141,11 +145,11 @@ export default function DualsunPreasyPage() {
             brand="DualSun"
             name="PREASY"
             power="420 Wc"
-            price="870-900 €"
+            price="Sur devis"
             score="6.5/10"
             tagline="Le panneau pliable Made in France au design premium. Beau, mais cher."
-            affiliateUrl=""
-            affiliateLabel=""
+            affiliateUrl={DUALSUN_URL}
+            affiliateLabel="Voir la fiche DualSun (sur devis)"
             accentColor="amber"
           />
           <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 15/05/2026 &middot; Peut varier selon les promos</p>
@@ -163,7 +167,7 @@ export default function DualsunPreasyPage() {
               <div>
                 <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial : ROI long</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  Avec un ROI de 10,5 ans, le PREASY s&apos;adresse &agrave; un public attach&eacute; &agrave; la production fran&ccedil;aise et au design premium. Si la rentabilit&eacute; est votre crit&egrave;re principal, le Beem Kit 300W (3,8 ans, actuellement en rupture) ou le Sunology PLAY 500&nbsp;Wc (6,5 ans) sont de meilleurs choix.
+                  Avec un ROI de 10,5 ans, le PREASY s&apos;adresse &agrave; un public attach&eacute; &agrave; la production fran&ccedil;aise et au design premium. Si la rentabilit&eacute; est votre crit&egrave;re principal, le Sunology PLAY 515&nbsp;W (6,2 ans) ou le Sunethic F500 (7,3 ans, panneau assembl&eacute; en France) sont de meilleurs choix.
                 </p>
               </div>
             </div>
@@ -278,7 +282,7 @@ export default function DualsunPreasyPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="DualSun PREASY" merchantName="DualSun" affiliateUrl="" label="Voir sur DualSun" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="DualSun PREASY" merchantName="DualSun" affiliateUrl={DUALSUN_URL} label="Voir la fiche DualSun (vente sur devis)" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 5 points faibles à connaître</h2>
@@ -319,7 +323,7 @@ export default function DualsunPreasyPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Face à la concurrence : le tableau qui fait mal</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Le PREASY joue dans la même catégorie que le Sunology PLAY (ex-PLAY 2) et le Beem On 460W. Voici comment il se positionne :
+                Le PREASY joue dans la même catégorie que le Sunology PLAY (ex-PLAY 2) et l&apos;ancien Beem On 460W (arrêté). Voici comment il se positionne :
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-xs border-collapse min-w-[550px]">
@@ -327,7 +331,7 @@ export default function DualsunPreasyPage() {
                     <tr className="bg-charcoal text-cream">
                       <th className="text-left p-2.5 rounded-tl-xl font-semibold">Critère</th>
                       <th className="text-center p-2.5 font-semibold">DualSun PREASY</th>
-                      <th className="text-center p-2.5 font-semibold">Sunology PLAY (500 Wc)</th>
+                      <th className="text-center p-2.5 font-semibold">Sunology PLAY (515 W)</th>
                       <th className="text-center p-2.5 rounded-tr-xl font-semibold">Beem On 460W</th>
                     </tr>
                   </thead>
@@ -351,16 +355,16 @@ export default function DualsunPreasyPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité (et pourquoi il fait mal)</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Prenons le PREASY à 870 €, installé à Lyon en exposition sud :
+                Prenons le PREASY au dernier prix relevé (870 €, mai 2026), installé à Lyon en exposition sud. C&apos;est un calcul indicatif&nbsp;: le prix réel dépend désormais du devis.
               </p>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Production annuelle</strong> : 428 kWh/an (420 Wc, sud, Lyon, PR 0,85)</li>
                   <li>&bull; <strong>Autoconsommation sans batterie</strong> : 85%</li>
-                  <li>&bull; <strong>Tarif EDF mai 2026</strong> : 0,1940 &euro;/kWh (+3,3%/an d&apos;inflation CRE)</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : <strong>71 &euro;/an</strong></li>
+                  <li>&bull; <strong>Tarif EDF</strong> : {KWH_PRICE_LABEL} (inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL})</li>
+                  <li>&bull; <strong>Économies la première année</strong> : <strong>73 &euro;</strong></li>
                   <li>&bull; <strong>ROI</strong> : <strong>10,5 ans</strong></li>
-                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>2 677 &euro;</strong></li>
+                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>~2 580 &euro;</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
@@ -373,18 +377,18 @@ export default function DualsunPreasyPage() {
                   <div className="text-xs text-stone">(870 &euro;, 420 Wc)</div>
                 </div>
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-green text-xl">6,5 ans</div>
+                  <div className="font-mono font-bold text-green text-xl">6,2 ans</div>
                   <div className="text-xs text-stone mt-1">Sunology PLAY</div>
-                  <div className="text-xs text-stone">(599 &euro;, 500 Wc)</div>
+                  <div className="text-xs text-stone">(599 &euro;, 515 W)</div>
                 </div>
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-green text-xl">5,3 ans</div>
-                  <div className="text-xs text-stone mt-1">Zendure + 2 panneaux</div>
-                  <div className="text-xs text-stone">(900 &euro;, 840 W + batterie)</div>
+                  <div className="font-mono font-bold text-green text-xl">3,6 ans</div>
+                  <div className="text-xs text-stone mt-1">Zendure SolarFlow 800 Plus + 2 panneaux</div>
+                  <div className="text-xs text-stone">(719 &euro; en promotion, 1 000 W + batterie)</div>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
-                Pour le même budget que le PREASY (870 &euro;), le setup Zendure SolarFlow + 2 panneaux offre le double de puissance, du stockage, et un ROI 2x plus rapide (5,3 ans vs 10,5 ans). C&apos;est difficile à justifier économiquement.
+                Pour moins que le PREASY, le pack Zendure SolarFlow 800 Plus + 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) offre plus du double de puissance, du stockage, et un ROI presque 3 fois plus rapide (3,6 ans contre 10,5 ans). C&apos;est difficile à justifier économiquement.
               </p>
             </section>
 
@@ -411,11 +415,11 @@ export default function DualsunPreasyPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous cherchez la rentabilité</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 10,5 ans, le PREASY est l&apos;un des kits les moins rentables du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 500 Wc (ROI 6,5 ans) ou un Zendure SolarFlow (ROI 5,3 ans avec batterie).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 10,5 ans, le PREASY est l&apos;un des kits les moins rentables du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 515 W (ROI 6,2 ans) ou un Zendure SolarFlow 800 Plus en pack (ROI 3,6 ans avec batterie, au prix promotionnel).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est limité</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">870-900 € pour 420 Wc sans batterie, c&apos;est objectivement trop. Pour ce budget, le Zendure SolarFlow + 2 panneaux vous donne 840 W + 1,92 kWh de stockage. Ou deux Beem On pour 1 198 € et 920 Wc de puissance.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">870-900 € pour 420 Wc sans batterie, c&apos;est objectivement trop. Pour moins cher, le pack Zendure SolarFlow 800 Plus + 2 panneaux de 500 W vous donne 1 000 W + 1,92 kWh de stockage (719 € en promotion le 5 novembre 2026).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez du stockage</h3>
@@ -431,7 +435,7 @@ export default function DualsunPreasyPage() {
                   Le DualSun PREASY est un <strong>produit bien conçu par un fabricant sérieux</strong>. Le design est le plus beau du marché, l&apos;assemblage français est un vrai argument, et la qualité de fabrication est au rendez-vous. Mais <strong>le prix tue la proposition de valeur</strong>.
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
-                  À 680 € (prix officiel DualSun), le PREASY serait un concurrent crédible du Sunethic F500 (690 €, 500 Wc). À 870-900 € (prix revendeur réel), il est hors course face à un Sunology PLAY (500 Wc) à 599 € qui offre plus de puissance, moins de poids, et une installation en 1 minute.
+                  À 680 € (prix annoncé au lancement), le PREASY serait un concurrent crédible du Sunethic F500 (690 €, 500 Wc). À 870-900 € (prix revendeur relevé en mai 2026), il est hors course face à un Sunology PLAY (515 W) à 599 € qui offre plus de puissance, moins de poids, et une installation en 1 minute.
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
                   <strong>Notre conseil :</strong> si DualSun passe en vente directe et baisse le prix vers 600-650 €, le PREASY deviendra très intéressant. En attendant, c&apos;est un achat de conviction (Made in France, design) plutôt qu&apos;un achat rationnel.
@@ -462,7 +466,7 @@ export default function DualsunPreasyPage() {
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Le leader du marché : 450 Wc, 599 €, installation en 1 minute</p>
+                  <p className="text-xs text-charcoal-light mt-1">Le leader du marché : 515 W, 599 €, installation en 1 minute</p>
                 </Link>
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h3>
@@ -473,7 +477,7 @@ export default function DualsunPreasyPage() {
 
             <NewsletterBanner />
 
-            <AffiliateCTA productName="DualSun PREASY" merchantName="DualSun" affiliateUrl="" label="Voir l'offre actuelle sur DualSun" variant="box" position="footer-box" price="870 €" />
+            <AffiliateCTA productName="DualSun PREASY" merchantName="DualSun" affiliateUrl={DUALSUN_URL} label="Demander un devis sur DualSun" variant="box" position="footer-box" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
@@ -492,7 +496,7 @@ export default function DualsunPreasyPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur DualSun, fiche technique officielle PREASY, test Révolution Énergétique (sept. 2024 - jan. 2025), prix constatés chez revendeurs (mai 2026). Article rédigé sans rémunération de DualSun.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur DualSun, fiche technique officielle PREASY, test Révolution Énergétique (sept. 2024 - jan. 2025), prix constatés chez revendeurs (mai 2026). Article rédigé sans rémunération de DualSun.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

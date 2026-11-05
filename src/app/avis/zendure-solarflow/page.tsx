@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
+import { PRODUCTS, SCHEMA_AVAILABILITY } from '@/data/products';
+import { zendureUrl } from '@/lib/affiliate';
+
+const ZENDURE_URL = zendureUrl('https://zendure.fr/products/solarflow-800-plus');
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -8,8 +13,8 @@ import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Zendure SolarFlow avis 2026 : 840 W pour 488 €, trop beau ?',
-  description: 'Avis complet sur le Zendure SolarFlow 800 Plus : batterie 1,92 kWh intégrée, 800 W AC, plug-and-play pour 488 €. Analyse, specs, rentabilité et verdict honnête.',
+  title: 'Zendure SolarFlow 800 Plus avis 2026 : 539 €, trop beau ?',
+  description: 'Avis Zendure SolarFlow 800 Plus : batterie 1,92 kWh et onduleur 800 W pour 539 €, pack 2 panneaux dès 719 €. Specs, rentabilité et verdict honnête.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/zendure-solarflow',
   },
@@ -18,15 +23,15 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Quelle est la différence entre SolarFlow 800, 800 Plus et 800 Pro ?',
-    answer: 'Le SolarFlow 800 est le micro-onduleur seul (sans batterie intégrée), vendu avec des batteries AB2000 séparées. Le SolarFlow 800 Plus intègre la batterie 1,92 kWh dans le boîtier avec l\'onduleur : c\'est le tout-en-un plug-and-play à ~488 €. Le 800 Pro ajoute l\'IA Zenky pour l\'optimisation automatique heures pleines/creuses et une meilleure gestion multi-batteries. Prix : ~786 €.',
+    answer: 'Le SolarFlow 800 est le micro-onduleur seul (sans batterie intégrée), vendu avec des batteries AB2000 séparées. Le SolarFlow 800 Plus intègre la batterie 1,92 kWh dans le boîtier avec l\'onduleur : c\'est le tout-en-un plug-and-play à 539 € seul (prix vérifié sur zendure.fr le 5 novembre 2026). Le 800 Pro ajoute l\'IA Zenky pour l\'optimisation automatique heures pleines/creuses et une meilleure gestion multi-batteries, pour un prix plus élevé (non revérifié ici).',
   },
   {
     question: 'Le SolarFlow 800 Plus fonctionne-t-il en cas de coupure de courant ?',
-    answer: 'Non. C\'est le principal point faible : le SolarFlow 800 Plus n\'a pas de sortie hors réseau (EPS). En cas de coupure du réseau électrique, le système s\'arrête. Si vous voulez un backup en cas de panne, il faut regarder du côté de l\'EcoFlow PowerStream + batterie DELTA, qui offre cette fonctionnalité.',
+    answer: 'Non. C\'est le principal point faible : le SolarFlow 800 Plus n\'a pas de sortie hors réseau (EPS). En cas de coupure du réseau électrique, le système s\'arrête. Si vous voulez un backup en cas de panne, il faut regarder du côté de l\'EcoFlow STREAM Ultra (successeur du PowerStream, arrêté) ou du Bluetti Balco 260, qui offrent une sortie de secours.',
   },
   {
     question: 'Combien de panneaux solaires peut-on brancher ?',
-    answer: 'Le SolarFlow 800 Plus dispose de 2 entrées MPPT de 750 W chacune, soit 1 500 W max en entrée solaire. En pratique, 2 panneaux de 400-500 W couvrent largement les besoins. Pour un balcon, 2 panneaux de 420 W (840 W total) est la configuration optimale : assez pour remplir la batterie de 1,92 kWh en une demi-journée ensoleillée.',
+    answer: 'Le SolarFlow 800 Plus dispose de 2 entrées MPPT de 750 W chacune, soit 1 500 W max en entrée solaire. En pratique, 2 panneaux de 400-500 W couvrent largement les besoins. Pour un balcon, 2 panneaux de 450 à 500 W (les packs vendus par Zendure) suffisent à remplir la batterie de 1,92 kWh en une demi-journée ensoleillée.',
   },
   {
     question: 'Faut-il faire la déclaration CACSI à Enedis ?',
@@ -44,8 +49,8 @@ const faqData = [
 
 const points_forts = [
   {
-    titre: 'Prix imbattable : batterie + onduleur pour ~488 €',
-    detail: 'C\'est le point qui change tout. Pour moins de 500 €, vous avez un onduleur 800 W ET une batterie 1,92 kWh intégrée. À titre de comparaison, un Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 699 €, pour 2,7x moins de stockage. Le rapport €/kWh de stockage est sans équivalent sur le marché français.',
+    titre: 'Prix très bas : batterie + onduleur pour 539 €',
+    detail: 'C\'est le point qui change tout. Pour 539 € (prix barré 599 € sur zendure.fr au 5 novembre 2026), vous avez un onduleur 800 W ET une batterie 1,92 kWh intégrée. À titre de comparaison, un Sunology PLAY MAX (panneau + batterie 700 Wh) coûte 699 €, pour 2,7x moins de stockage. Le rapport €/kWh de stockage est sans équivalent sur le marché français.',
   },
   {
     titre: 'Vrai plug-and-play : batterie intégrée dans le boîtier',
@@ -68,7 +73,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Pas de sortie hors réseau (EPS)',
-    detail: 'C\'est LE défaut majeur. En cas de coupure de courant, le SolarFlow s\'arrête. Votre batterie chargée ne sert à rien. Si le backup est important pour vous, deux alternatives : l\'EcoFlow PowerStream + DELTA 2 (~1 800 €, plus vendu par EcoFlow France depuis 2026 : occasion uniquement) ou le Bluetti Balco 260 (~889 € avec promo BALNEO, disponible depuis juillet 2026) qui offre tous les deux un mode hors réseau. Pour la majorité des utilisateurs en France métropolitaine (coupures rares), ce n\'est pas un problème.',
+    detail: 'C\'est LE défaut majeur. En cas de coupure de courant, le SolarFlow s\'arrête. Votre batterie chargée ne sert à rien. Si le backup est important pour vous, deux alternatives : l\'EcoFlow STREAM Ultra (659 € seul en promotion au 5 novembre 2026, successeur du PowerStream) ou le Bluetti Balco 260 (789 € seul au 5 novembre 2026), qui offrent tous les deux une sortie de secours. Pour la majorité des utilisateurs en France métropolitaine (coupures rares), ce n\'est pas un problème.',
   },
   {
     titre: '800 W max en sortie : pas de gros consommateurs',
@@ -87,7 +92,7 @@ const points_faibles = [
 const comparaison = [
   {
     produit: 'Zendure SolarFlow 800 Plus',
-    prix: '~488 €',
+    prix: '539 € (seul)',
     stockage: '1,92 kWh',
     sortieAC: '800 W',
     backup: 'Non',
@@ -113,7 +118,7 @@ const comparaison = [
     note: '7/10',
   },
   {
-    produit: 'Sunology PLAY 500 Wc (sans batterie)',
+    produit: 'Sunology PLAY 515 W (sans batterie)',
     prix: '599 €',
     stockage: 'Aucun',
     sortieAC: '500 W',
@@ -122,8 +127,8 @@ const comparaison = [
     note: '8.5/10',
   },
   {
-    produit: 'Bluetti Balco 260 (juil. 2026)',
-    prix: '~889 €*',
+    produit: 'Bluetti Balco 260',
+    prix: '789 € (seul)*',
     stockage: '2,56 kWh',
     sortieAC: '800 W réseau + 2 300 W EPS',
     backup: 'Oui (EPS)',
@@ -136,14 +141,14 @@ export default function ZendureSolarflowPage() {
   return (
     <>
       <SchemaArticle
-        title="Zendure SolarFlow avis : 840 W pour 488 €, trop beau ?"
+        title="Zendure SolarFlow 800 Plus avis : 539 €, trop beau ?"
         description="Avis complet sur le Zendure SolarFlow 800 Plus en 2026."
         url="https://monbalconsolaire.fr/avis/zendure-solarflow"
         datePublished="2026-05-07"
-        dateModified="2026-07-30"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct image="/images/produits/zendure-solarflow-front.webp" name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={488} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
+      <SchemaProduct image="/images/produits/zendure-solarflow-front.webp" name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={PRODUCTS['zendure-solarflow-800-plus'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['zendure-solarflow-800-plus'].availability]} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -152,13 +157,13 @@ export default function ZendureSolarflowPage() {
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
-              Zendure SolarFlow avis : 840 W pour 488 €, trop beau ?
+              Zendure SolarFlow 800 Plus avis : 539 €, trop beau ?
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour moins de 500 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Analyse compl&egrave;te, calcul de rentabilité et verdict honnête.
+              Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour 539 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Analyse compl&egrave;te, calcul de rentabilité et verdict honnête.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>7 mai 2026 &middot; Mis &agrave; jour le 30 juillet 2026</span>
+              <span>7 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -167,12 +172,12 @@ export default function ZendureSolarflowPage() {
           <ProductHero
             brand="Zendure"
             name="SolarFlow 800 Plus"
-            power="840 W (2 panneaux)"
-            price="~488 €"
+            power="800 W + 1,92 kWh (sans panneaux)"
+            price="539 €"
             score="8.5/10"
             tagline="Batterie 1,92 kWh + onduleur 800 W tout-en-un : le meilleur rapport qualité-prix du marché."
-            affiliateUrl=""
-            affiliateLabel=""
+            affiliateUrl={ZENDURE_URL}
+            affiliateLabel="Voir le prix sur zendure.fr"
             accentColor="amber"
             image="/images/produits/zendure-solarflow-front.webp"
             imageAlt="Zendure SolarFlow - hub et batterie AB2000"
@@ -182,13 +187,13 @@ export default function ZendureSolarflowPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en 30 secondes</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Le Zendure SolarFlow 800 Plus est <strong>le meilleur rapport qualité-prix du marché en 2026</strong> pour qui veut du stockage solaire plug-and-play. Pour ~488 €, vous obtenez ce que les concurrents facturent 1 000 à 1 800 € : un onduleur 800 W et une batterie LFP de 1,92 kWh. Le compromis ? <strong>Pas de backup en cas de coupure réseau</strong> et 800 W max en sortie. Pour 80 % des foyers en appartement, c&apos;est largement suffisant.
+              Le Zendure SolarFlow 800 Plus est <strong>le meilleur rapport qualité-prix du marché en 2026</strong> pour qui veut du stockage solaire plug-and-play. Pour 539 €, vous obtenez ce que les concurrents facturaient 1 000 à 1 800 € il y a un an : un onduleur 800 W et une batterie LFP de 1,92 kWh. Le compromis ? <strong>Pas de backup en cas de coupure réseau</strong> et 800 W max en sortie. Pour 80 % des foyers en appartement, c&apos;est largement suffisant.
             </p>
           </div>
 
           <div className="space-y-10">
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">488 € pour 1,92 kWh : pourquoi c&apos;est disruptif</h2>
+              <h2 className="text-2xl font-extrabold mb-4">539 € pour 1,92 kWh : pourquoi c&apos;est disruptif</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Pour comprendre pourquoi le SolarFlow 800 Plus fait autant parler, il faut regarder ce que coûtait le stockage solaire plug-and-play <strong>avant</strong> son arrivée :
               </p>
@@ -205,9 +210,9 @@ export default function ZendureSolarflowPage() {
                   <tbody>
                     <tr className="border-b border-border-light bg-green-pale/20">
                       <td className="p-3 font-semibold">Zendure SolarFlow 800 Plus</td>
-                      <td className="p-3 font-mono">488 €</td>
+                      <td className="p-3 font-mono">539 €</td>
                       <td className="p-3 font-mono">1,92 kWh</td>
-                      <td className="p-3 font-mono font-bold text-green">254 €/kWh</td>
+                      <td className="p-3 font-mono font-bold text-green">281 €/kWh</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-3">Sunology PLAY MAX (VAULT)</td>
@@ -225,7 +230,7 @@ export default function ZendureSolarflowPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                <strong>254 €/kWh</strong> contre 1 684 €/kWh pour Sunology. Zendure divise le prix du stockage par <strong>6 à 7</strong>. C&apos;est la première fois qu&apos;une batterie plug-and-play avec onduleur intégré passe sous la barre des 300 €/kWh en France, un seuil psychologique qui change complètement le calcul de rentabilité.
+                <strong>281 €/kWh</strong> contre 999 €/kWh pour le PLAY MAX de Sunology (panneau inclus). Zendure divise le prix du stockage par <strong>plus de 3</strong>. Une batterie plug-and-play avec onduleur intégré sous la barre des 300 €/kWh change complètement le calcul de rentabilité.
               </p>
             </section>
 
@@ -284,7 +289,7 @@ export default function ZendureSolarflowPage() {
                     </tr>
                     <tr className="bg-white">
                       <td className="p-3 font-semibold">Prix constaté</td>
-                      <td className="p-3 font-mono font-bold text-green">~488 € (SolarFlow 800 Plus seul)</td>
+                      <td className="p-3 font-mono font-bold text-green">539 € (SolarFlow 800 Plus seul, 05/11/2026)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -292,26 +297,26 @@ export default function ZendureSolarflowPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Le setup optimal pour un balcon : 840 W pour ~900 €</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Le setup pour un balcon : le pack 2 panneaux de Zendure</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Le SolarFlow 800 Plus est vendu <strong>sans panneaux</strong>. Voici la configuration que nous recommandons pour un balcon standard :
+                Le SolarFlow 800 Plus seul est vendu <strong>sans panneaux</strong>. Zendure le propose aussi en pack&nbsp;: au 5 novembre 2026, 719&nbsp;&euro; avec 2 panneaux bifaciaux de 500&nbsp;W (prix barr&eacute; 999&nbsp;&euro;, promotion &laquo;&nbsp;avant-premi&egrave;re Black Friday&nbsp;&raquo; sans date de fin annonc&eacute;e) ou 839&nbsp;&euro; avec 2 panneaux de 450&nbsp;W.
               </p>
               <div className="space-y-4">
                 <div className="card-lg border-l-4 border-l-green">
                   <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
                     <div>
                       <h3 className="font-bold text-base">Setup balcon recommandé</h3>
-                      <p className="text-xs text-stone uppercase tracking-wider font-semibold mt-1">SolarFlow 800 Plus + 2 panneaux 420 W</p>
+                      <p className="text-xs text-stone uppercase tracking-wider font-semibold mt-1">SolarFlow 800 Plus + 2 panneaux bifaciaux 500 W (pack Zendure)</p>
                     </div>
                     <div className="text-right">
-                      <div className="font-mono font-bold text-green text-lg">~900 €</div>
+                      <div className="font-mono font-bold text-green text-lg">719 €</div>
                     </div>
                   </div>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-3">
-                    2 panneaux 420 W (marque au choix : Trina, JA Solar, Longi — comptez 180-220 € par panneau en connecteur MC4) + le SolarFlow 800 Plus (~488 €). Total : 840 W d&apos;entrée solaire, 1,92 kWh de stockage, 800 W de sortie AC.
+                    Le pack vendu par Zendure&nbsp;: 2 panneaux bifaciaux de 500&nbsp;W + le SolarFlow 800 Plus. Total&nbsp;: 1&nbsp;000&nbsp;W d&apos;entr&eacute;e solaire (face avant), 1,92 kWh de stockage, 800 W de sortie AC. Prix promotionnel constat&eacute; le 5 novembre 2026&nbsp;: v&eacute;rifiez-le au moment de commander.
                   </p>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    <strong>Production estimée :</strong> 800-950 kWh/an en exposition sud (Lyon). Avec la batterie, vous autoconsommez 70-85 % de cette production au lieu de 40-50 % sans stockage.
+                    <strong>Production estimée :</strong> environ 1 020 kWh/an en exposition sud &agrave; Lyon (notre m&eacute;thode, sans compter la face arri&egrave;re ni l&apos;&eacute;cr&ecirc;tage &agrave; 800 W en plein midi). Avec la batterie, vous autoconsommez 70-85 % de cette production au lieu de 40-50 % sans stockage.
                   </p>
                 </div>
 
@@ -416,31 +421,31 @@ export default function ZendureSolarflowPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;EcoFlow PowerStream reste supérieur si vous voulez le backup réseau et la polyvalence de la batterie portable. Le <strong>Bluetti Balco 260</strong> est le nouveau challenger direct : plus de stockage (2,56 kWh) et backup EPS 2 300 W, mais au double du prix. Le Sunology PLAY (ex-PLAY 2, 500 Wc) reste le choix le plus simple si vous ne voulez pas de batterie du tout.
+                Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;EcoFlow STREAM Ultra (successeur du PowerStream, arr&ecirc;t&eacute;) est &agrave; regarder si vous voulez une sortie de secours. Le <strong>Bluetti Balco 260</strong> est le nouveau challenger direct : plus de stockage (2,56 kWh) et backup EPS 2 300 W, mais plus cher. Le Sunology PLAY (ex-PLAY 2, 515 W) reste le choix le plus simple si vous ne voulez pas de batterie du tout.
               </p>
-              <p className="text-xs text-stone mt-3">* Bluetti Balco 260 : prix avec code promo BALNEO (-510 &euro;), valable jusqu&apos;au 30/09/2026. Prix catalogue : 1 399 &euro;. Derni&egrave;re v&eacute;rification : 30/07/2026.</p>
+              <p className="text-xs text-stone mt-3">* Bluetti Balco 260 : 789&nbsp;&euro; seul (prix barr&eacute; 1 049&nbsp;&euro;), 1 079&nbsp;&euro; avec 2 panneaux de 450&nbsp;W, sur fr.bluettipower.eu le 5 novembre 2026. Le code BALNEO a expir&eacute; le 30/09/2026.</p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité : ROI en 5,3 ans</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité : ROI de 3,6 à 4,9 ans</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Prenons le setup recommandé : <strong>SolarFlow 800 Plus + 2 panneaux 420 W</strong>, à environ 900 €, installé à Lyon en exposition sud.
+                Prenons le pack <strong>SolarFlow 800 Plus + 2 panneaux de 500 W</strong> &agrave; 719&nbsp;&euro; (prix promotionnel du 5 novembre 2026), install&eacute; &agrave; Lyon en exposition sud.
               </p>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Production annuelle</strong> : 857 kWh/an (2 &times; 420 W, sud, Lyon, PR 0,85)</li>
+                  <li>&bull; <strong>Production annuelle</strong> : 1 020 kWh/an (2 &times; 500 W, sud, Lyon, PR 0,85)</li>
                   <li>&bull; <strong>Autoconsommation avec batterie</strong> : 95%</li>
-                  <li>&bull; <strong>Tarif EDF 2026</strong> : 0,1940 &euro;/kWh (+3,3%/an d&apos;inflation CRE)</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : <strong>158 &euro;/an</strong></li>
-                  <li>&bull; <strong>ROI</strong> : <strong>5,3 ans</strong></li>
-                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>5 991 &euro;</strong></li>
+                  <li>&bull; <strong>Tarif EDF</strong> : {KWH_PRICE_LABEL} (inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL})</li>
+                  <li>&bull; <strong>Économies la première année</strong> : <strong>194 &euro;</strong></li>
+                  <li>&bull; <strong>ROI</strong> : <strong>3,6 ans</strong> &agrave; 719&nbsp;&euro; (4,9 ans au prix barr&eacute; de 999&nbsp;&euro;)</li>
+                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>~6 870 &euro;</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                <strong>5,3 ans de ROI pour un système avec batterie</strong>, c&apos;est du jamais vu. &Agrave; titre de comparaison, l&apos;EcoFlow PowerStream + DELTA 2 tourne autour de 10,2 ans de ROI, et le Sunology PLAY MAX autour de 7,4 ans depuis sa baisse de prix à 699 &euro;.
+                <strong>Moins de 5 ans de ROI pour un système avec batterie</strong>, m&ecirc;me au prix barr&eacute;. &Agrave; titre de comparaison, le Sunology PLAY MAX est autour de 7,3 ans depuis sa baisse de prix &agrave; 699 &euro;. Ce calcul suppose que vous consommiez 95&nbsp;% de 1 020 kWh&nbsp;: c&apos;est beaucoup pour un petit appartement, utilisez le <Link href="/calculateur" className="text-green hover:underline">calculateur</Link> avec votre profil.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                Avec l&apos;inflation tarifaire de 3,3%/an (CRE), les économies augmentent chaque année. Et la batterie LFP est garantie 6 000 cycles : vous avez <strong>10+ ans de bénéfice net</strong> après remboursement du système. Sur 25 ans : <strong>5 991 &euro;</strong> d&apos;économies cumulées.
+                Avec l&apos;inflation tarifaire de 3,3%/an (CRE), les économies augmentent chaque année. Et la batterie LFP est garantie 6 000 cycles : vous avez <strong>10+ ans de bénéfice net</strong> après remboursement du système. Sur 25 ans : <strong>~6 870 &euro;</strong> d&apos;économies cumulées (dégradation des panneaux comprise).
               </p>
             </section>
 
@@ -449,7 +454,7 @@ export default function ZendureSolarflowPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">Vous voulez du stockage sans vous ruiner</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow 800 Plus est le premier système qui rend le stockage solaire rentable pour un appartement. Avant, stocker l&apos;énergie solaire en plug-and-play coûtait 1 000-2 000 €. Maintenant, c&apos;est 488 €.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow 800 Plus est le premier système qui rend le stockage solaire rentable pour un appartement. Avant, stocker l&apos;énergie solaire en plug-and-play coûtait 1 000-2 000 €. Aujourd&apos;hui, c&apos;est 539 € sans panneaux (5 novembre 2026).</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">Vous consommez surtout le soir</h3>
@@ -475,7 +480,7 @@ export default function ZendureSolarflowPage() {
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est sous 500 € tout compris</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow seul coûte ~488 €, mais il faut ajouter les panneaux (~400 € pour 2 × 420 W). Budget total réaliste : 850-950 €. Si votre enveloppe est serrée, un Beem Kit 300W à 199 € (actuellement en rupture chez Beem) ou un Sunology PLAY 2 à 599 € sont plus adaptés.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow seul coûte 539 €, mais il faut des panneaux : le pack Zendure avec 2 × 500 W était à 719 € en promotion le 5 novembre 2026 (999 € hors promotion). Si votre enveloppe est serrée, un Beem Kit 300W à 199 € (actuellement en rupture chez Beem) ou un Sunology PLAY 2 à 599 € sont plus adaptés.</p>
                 </div>
               </div>
             </section>
@@ -483,7 +488,7 @@ export default function ZendureSolarflowPage() {
             <section className="card-lg border-l-4 border-l-green bg-green-pale/10 my-6">
               <h3 className="font-bold text-base mb-2 text-green">Et le successeur : Zendure SolarFlow Mix (avril 2026)</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">
-                Zendure a lanc&eacute; en avril 2026 la gamme <strong>SolarFlow Mix</strong>, con&ccedil;ue pour les maisons et les grandes consommations r&eacute;sidentielles — un cran au-dessus du 800 Plus. Trois mod&egrave;les disponibles&nbsp;: <strong>SolarFlow 3000 Mix AC+</strong> (2 039 &euro;), <strong>4000 Mix AC+</strong> (2 399 &euro;) et <strong>4000 Mix Pro</strong> (2 879 &euro;). Ces syst&egrave;mes incluent le backup hors r&eacute;seau et s&apos;adressent &agrave; qui veut couvrir 80-100&nbsp;% des besoins d&apos;une maison.{' '}
+                Zendure a lanc&eacute; en avril 2026 la gamme <strong>SolarFlow Mix</strong>, con&ccedil;ue pour les maisons et les grandes consommations r&eacute;sidentielles — un cran au-dessus du 800 Plus. Trois mod&egrave;les disponibles&nbsp;: <strong>SolarFlow 3000 Mix AC+</strong> (1 999 &euro;), <strong>4000 Mix AC+</strong> (2 399 &euro;) et <strong>4000 Mix Pro</strong> (2 899 &euro;, indisponible en ligne, &laquo;&nbsp;contacter un revendeur&nbsp;&raquo;), prix relev&eacute;s sur zendure.fr le 5 novembre 2026. Ces syst&egrave;mes incluent le backup hors r&eacute;seau et s&apos;adressent &agrave; qui veut couvrir 80-100&nbsp;% des besoins d&apos;une maison.{' '}
                 <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline">Notre avis sur le SolarFlow Mix &rarr;</Link>
               </p>
             </section>
@@ -495,7 +500,7 @@ export default function ZendureSolarflowPage() {
                   <strong>Non, ce n&apos;est pas trop beau.</strong> Le Zendure SolarFlow 800 Plus fait exactement ce qu&apos;il promet : du stockage solaire plug-and-play à un prix qui n&apos;existait pas avant. Le &laquo; piège &raquo;, si on peut appeler ça un piège, c&apos;est l&apos;absence de backup hors réseau et la limite à 800 W en sortie.
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
-                  Pour un appartement avec balcon, c&apos;est <strong>le meilleur investissement solaire en 2026</strong>. Le ROI de moins de 7 ans avec batterie était impensable il y a encore un an. Zendure a changé la donne.
+                  Pour un appartement avec balcon, c&apos;est <strong>le meilleur investissement solaire en 2026</strong>. Un ROI de moins de 5 ans avec batterie était impensable il y a encore un an. Zendure a changé la donne.
                 </p>
                 <p className="font-semibold text-lg text-center mt-6 mb-2">Notre verdict : 8.5/10</p>
                 <p className="text-sm text-charcoal-light text-center">
@@ -550,7 +555,7 @@ export default function ZendureSolarflowPage() {
 
             <NewsletterBanner />
 
-            <AffiliateCTA productName="Zendure SolarFlow 800 Plus" merchantName="Zendure" affiliateUrl="" label="Voir l'offre actuelle sur Zendure" variant="box" position="footer-box" price="488 €" />
+            <AffiliateCTA productName="Zendure SolarFlow 800 Plus" merchantName="Zendure" affiliateUrl={ZENDURE_URL} label="Voir l'offre actuelle sur Zendure" variant="box" position="footer-box" price="539 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
@@ -569,7 +574,7 @@ export default function ZendureSolarflowPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire. Mis &agrave; jour juillet 2026 : ajout Bluetti Balco 260 et mention SolarFlow Mix. Article rédigé sans rémunération de Zendure.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire. Mis &agrave; jour le 5 novembre 2026 : prix rev&eacute;rifi&eacute;s sur zendure.fr (539 &euro; seul, packs 719 et 839 &euro;), le prix de 488 &euro; n&apos;existe plus. Article rédigé sans rémunération de Zendure.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

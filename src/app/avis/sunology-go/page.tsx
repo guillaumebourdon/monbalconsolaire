@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
+import { PRODUCTS, SCHEMA_AVAILABILITY } from '@/data/products';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -15,16 +17,18 @@ export const metadata: Metadata = withCanonicalOg({
   },
 });
 
-const AFFILIATE_URL = 'https://sunology.eu/products/kit-solaire-1-station-go-balcon-garde-corps';
+// La fiche produit du GO (/products/kit-solaire-1-station-go-balcon-garde-corps) redirige vers l'accueil
+// de sunology.eu au 05/11/2026 : on renvoie donc vers l'accueil, avec un libellé qui le dit.
+const AFFILIATE_URL = 'https://sunology.eu/';
 
 const faqData = [
   {
     question: 'Le Sunology GO est-il rentable ?',
-    answer: 'Oui, mais modestement. Avec notre méthodologie (Lyon, plein sud, PR 0,85, autoconsommation 85 %, 0,1940 €/kWh), le GO produit environ 275 kWh/an pour environ 45 €/an d\'économies. Le retour sur investissement est de 7 ans avec l\'inflation tarifaire de 3,3 %/an (CRE), soit 7,7 ans sans inflation. Sur 25 ans, les économies cumulées atteignent 1 720 €. C\'est plus long que le Sunology PLAY (6,5 ans) et le Beem Kit 300W (3,8 ans, actuellement en rupture), car le GO coûte plus cher au watt-crête.',
+    answer: `Oui, mais modestement. Avec notre méthodologie (Lyon, plein sud, PR 0,85, autoconsommation 85 %, ${KWH_PRICE_LABEL}), le GO produit environ 275 kWh/an pour environ 47 € d\'économies la première année. Le retour sur investissement est de 6,9 ans avec l\'inflation tarifaire de 3,3 %/an et une dégradation des panneaux de 0,5 %/an, soit 7,6 ans sans inflation. Sur 25 ans, les économies cumulées atteignent environ 1 660 €. C\'est plus long que le Sunology PLAY (6,2 ans) et le Beem Kit 300W (3,7 ans, mais en rupture de stock), car le GO coûte plus cher au watt-crête.`,
   },
   {
     question: 'Quelle différence entre le Sunology GO et le Sunology CITY (arrêté) ?',
-    answer: 'Le CITY (400 W, 549 €) était conçu exclusivement pour le garde-corps et n\'est plus commercialisé par Sunology depuis 2026. Le GO (270 W, 349 €) le remplace sur ce segment mais avec une puissance plus faible et un prix nettement inférieur. Contrairement au CITY, le GO se pose aussi bien au sol (avec ballasts) que sur un garde-corps, ce qui en fait un kit plus polyvalent, pas un simple remplaçant à l\'identique.',
+    answer: 'Le CITY (400 W, 549 € au dernier relevé du 15/05/2026) était conçu exclusivement pour le garde-corps et n\'est plus commercialisé par Sunology depuis 2026. Le GO (270 W, 349 €) le remplace sur ce segment mais avec une puissance plus faible et un prix nettement inférieur. Contrairement au CITY, le GO se pose aussi bien au sol (avec ballasts) que sur un garde-corps, ce qui en fait un kit plus polyvalent, pas un simple remplaçant à l\'identique.',
   },
   {
     question: 'Le GO peut-il se fixer sur un garde-corps sans percer ?',
@@ -59,7 +63,7 @@ const points_forts = [
   },
   {
     titre: 'Pas de Consuel, juste une déclaration CACSI',
-    detail: 'Comme tous les kits plug-and-play Sunology, le GO est pré-assemblé et testé en usine : aucun contrôle Consuel. Seule la convention d\'autoconsommation sans injection (CACSI) auprès d\'Enedis reste obligatoire, gratuite et en ligne.',
+    detail: 'Comme tous les kits plug-and-play Sunology, le GO est pré-assemblé et testé en usine : aucun contrôle Consuel. Seule une déclaration auprès d\'Enedis reste obligatoire (CACSI si l\'installation est réglée en zéro injection, sinon cession gratuite du surplus), gratuite et en ligne.',
   },
   {
     titre: 'Garantie 25 ans et SAV français',
@@ -74,7 +78,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Prix au watt-crête élevé',
-    detail: 'À 1,29 €/Wc, le GO coûte plus cher au watt que le PLAY (1,20 €/Wc) et nettement plus que le Beem Kit 300W (0,66 €/Wc, actuellement en rupture). Vous payez la compacité et la polyvalence de pose.',
+    detail: 'À 1,29 €/Wc, le GO coûte plus cher au watt que le PLAY (1,16 €/W) et nettement plus que le Beem Kit 300W (0,66 €/Wc, en rupture de stock au 05/11/2026). Vous payez la compacité et la polyvalence de pose.',
   },
   {
     titre: 'Puissance modeste',
@@ -112,11 +116,11 @@ const cas_acheter = [
 const cas_pas_acheter = [
   {
     profil: 'Vous avez la place pour un kit posé au sol classique',
-    explication: 'Le Sunology PLAY (500 W, 599 €) produit davantage pour un ROI plus court (6,5 ans vs 7 ans) grâce à son inclinaison optimale.',
+    explication: 'Le Sunology PLAY (515 W, 599 €) produit davantage pour un ROI plus court (6,2 ans contre 6,9 ans) grâce à sa puissance et à son inclinaison.',
   },
   {
     profil: 'Votre budget est serré',
-    explication: 'Le Beem Kit 300W (199 €, 300 W) coûte moins cher à l\'achat, produit plus (300 W vs 270 W) et affiche un meilleur ROI (3,8 ans) — mais il est actuellement en rupture de stock chez Beem.',
+    explication: 'Le Beem Kit 300W (199 €, 300 W) coûte moins cher à l\'achat, produit plus (300 W contre 270 W) et affiche un meilleur ROI (3,7 ans) — mais il est en rupture de stock chez Beem (aucune variante disponible au 05/11/2026).',
   },
   {
     profil: 'Vous voulez du stockage dès le départ',
@@ -132,13 +136,15 @@ export default function SunologyGoPage() {
         description="Avis complet sur le Sunology GO en 2026 : fiche technique, rentabilité, comparatif avec le PLAY et le Beem Kit 300W."
         url="https://monbalconsolaire.fr/avis/sunology-go"
         datePublished="2026-10-09"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct
         name="Sunology GO"
         brand="Sunology"
         description="Kit solaire plug-and-play 270 Wc, compatible pose au sol ou garde-corps sans perçage, cellules N-type TOPCon, micro-onduleur 300 W."
-        price={349}
+        price={PRODUCTS['sunology-go'].priceEur}
+        availability={SCHEMA_AVAILABILITY[PRODUCTS['sunology-go'].availability]}
         ratingValue={7}
        
         url="https://monbalconsolaire.fr/avis/sunology-go"
@@ -157,7 +163,7 @@ export default function SunologyGoPage() {
               Le GO est le kit le plus petit et le moins cher du catalogue Sunology&nbsp;: 270&nbsp;W, 349&nbsp;&euro;, et surtout une pose possible au sol <strong>ou</strong> sur un garde-corps, sans perçage. Fiche technique, rentabilit&eacute; r&eacute;elle et comparatif avec le PLAY et le Beem Kit 300W.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 octobre 2026</span>
+              <span>9 octobre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -201,7 +207,7 @@ export default function SunologyGoPage() {
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-cream rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-amber-dark">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -270,7 +276,7 @@ export default function SunologyGoPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir le Sunology GO sur sunology.eu" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir le site Sunology (la fiche du GO renvoie vers l'accueil)" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -284,7 +290,7 @@ export default function SunologyGoPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Comparer les offres du moment" variant="secondary" position="after-cons" />
+            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir les offres du moment sur sunology.eu" variant="secondary" position="after-cons" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Sunology GO vs la concurrence</h2>
@@ -300,12 +306,12 @@ export default function SunologyGoPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Prix', '349 €', '599 €', '199 € (rupture)'],
-                      ['Puissance', '270 Wc', '500 Wc', '300 Wc'],
-                      ['€/Wc', '1,29 €', '1,20 €', '0,66 €'],
+                      ['Prix', '349 €', '599 €', '199 € (en rupture)'],
+                      ['Puissance', '270 Wc', '515 W', '300 Wc'],
+                      ['€/Wc', '1,29 €', '1,16 €', '0,66 €'],
                       ['Pose', 'Sol ou garde-corps', 'Sol ou mur', 'Modulaire (4 panneaux)'],
                       ['Installation', '~16 min', '~1 min', '~1 heure'],
-                      ['ROI (Lyon sud)', '7 ans', '6,5 ans', '3,8 ans'],
+                      ['ROI (Lyon sud)', '6,9 ans', '6,2 ans', '3,7 ans'],
                       ['Batterie', 'Non (VAULT en option)', 'Non (PLAY MAX avec batterie)', 'Non'],
                       ['Garantie', '25 ans', '25-30 ans', '25 ans'],
                     ].map(([c, go, play, beem], i) => (
@@ -333,23 +339,23 @@ export default function SunologyGoPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Rentabilité et production</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Avec notre méthodologie standard (Lyon, plein sud, Performance Ratio 0,85, autoconsommation 85 %, tarif 0,1940 &euro;/kWh, inflation CRE 3,3 %/an), un Sunology GO donne&nbsp;:
+                Avec notre méthodologie standard (Lyon, plein sud, Performance Ratio 0,85, autoconsommation 85 %, tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}), un Sunology GO donne&nbsp;:
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
                   { v: '275 kWh', l: 'Production/an' },
-                  { v: '45 €', l: 'Économies 1ère année' },
-                  { v: '7 ans', l: 'ROI (avec inflation)' },
-                  { v: '1 720 €', l: 'Économies sur 25 ans' },
+                  { v: '47 €', l: 'Économies 1ère année' },
+                  { v: '6,9 ans', l: 'ROI (avec inflation)' },
+                  { v: '1 660 €', l: 'Économies sur 25 ans' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-green-pale/30 rounded-brand-lg">
                     <div className="font-mono font-bold text-xl text-green">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                En orientation est ou ouest (coefficient 0,8), la production tombe à environ 220 kWh/an et le ROI passe à 8,5 ans. En pose sur garde-corps plutôt qu&apos;au sol, attendez-vous à 15-20 % de production en moins (même constat que sur le CITY), car la position verticale capte moins bien le soleil qu&apos;un panneau incliné.
+                En orientation est ou ouest (coefficient 0,8), la production tombe à environ 220 kWh/an et le ROI passe à 8,4 ans. En pose sur garde-corps plutôt qu&apos;au sol, attendez-vous à 15-20 % de production en moins (même constat que sur le CITY), car la position verticale capte moins bien le soleil qu&apos;un panneau incliné.
               </p>
             </section>
 
@@ -399,15 +405,16 @@ export default function SunologyGoPage() {
                 Le Sunology GO remplit bien son rôle de kit d&apos;entrée compact&nbsp;: 349 &euro;, 270 W, et la flexibilité de se poser au sol ou sur un garde-corps sans perçage. C&apos;est le choix logique pour un balcon vraiment exigu où ni un PLAY ni un kit modulaire ne trouveraient leur place.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Mais dès que vous avez un peu plus d&apos;espace, le calcul change&nbsp;: à 1,29 &euro;/Wc, le GO coûte plus cher au watt que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY</Link> (1,20 &euro;/Wc) et bien plus que le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> (0,66 &euro;/Wc, actuellement en rupture), avec un ROI plus long (7 ans contre 6,5 et 3,8 ans).
+                Mais dès que vous avez un peu plus d&apos;espace, le calcul change&nbsp;: à 1,29 &euro;/Wc, le GO coûte plus cher au watt que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY</Link> (1,16 &euro;/W) et bien plus que le <Link href="/avis/beem-kit-300w" className="text-green hover:underline">Beem Kit 300W</Link> (0,66 &euro;/Wc, en rupture de stock), avec un ROI plus long (6,9 ans contre 6,2 et 3,7 ans).
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 <strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong> — Un bon kit de niche pour les tout petits balcons, pas le meilleur rapport qualité-prix du marché.
               </p>
-              <a href={AFFILIATE_URL} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Sunology GO &rarr;</a>
+              <a href={AFFILIATE_URL} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le site Sunology &rarr;</a>
+              <p className="text-xs text-stone mt-2">Au 5 novembre 2026, la fiche produit du GO sur sunology.eu redirige vers la page d&apos;accueil&nbsp;: cherchez &laquo;&nbsp;GO&nbsp;&raquo; dans le menu Produits. Prix et disponibilit&eacute; (349&nbsp;&euro;, en stock) relev&eacute;s dans le catalogue Sunology le m&ecirc;me jour.</p>
             </section>
 
-            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir le prix actuel sur Sunology" variant="box" position="footer-box" price="349 €" />
+            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir le site Sunology" variant="box" position="footer-box" price="349 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
@@ -450,7 +457,7 @@ export default function SunologyGoPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud, via <code>src/lib/pricing.ts</code>. Fiche technique sourcée sur sunology.eu et chez le revendeur Hellowatt (09/10/2026). Article rédigé sans rémunération de Sunology.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud, via <code>src/lib/pricing.ts</code>. Fiche technique sourcée sur sunology.eu et chez le revendeur Hellowatt (09/10/2026). Article rédigé sans rémunération de Sunology.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

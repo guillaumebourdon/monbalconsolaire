@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -43,7 +44,7 @@ const faqData = [
   },
   {
     question: 'PowerStream ou Bluetti Balco 260 : lequel choisir ?',
-    answer: 'Ce sont deux approches très différentes. Le Bluetti Balco 260 (1 399 €, soit 889 € en promo de lancement jusqu\'au 30/09/2026) est un système tout-en-un avec batterie LiFePO4 de 2,56 kWh intégrée : installation simple, pas de composants à acheter séparément. Le PowerStream (599 €) est un micro-onduleur nu que vous combinez à vos propres panneaux et batterie EcoFlow — plus cher au total (~1 800 €) mais infiniment plus modulaire. Le Balco 260 gagne sur la simplicité et le stockage immédiat (2,56 kWh vs 1 kWh pour le DELTA 2). Le PowerStream gagne sur la flexibilité évolutive, l\'app mobile, et la batterie portable réutilisable hors solaire (camping, coupures de courant). Verdict : simplicité + stockage dès le départ → Bluetti Balco 260 ; évolutivité sur 10 ans + écosystème → PowerStream.',
+    answer: 'Ce sont deux approches très différentes. Le Bluetti Balco 260 (789 € sans panneaux, 1 079 € avec 2 panneaux de 450 W, prix promotionnels relevés le 5 novembre 2026) est un système tout-en-un avec batterie LiFePO4 de 2,56 kWh intégrée : installation simple, pas de composants à acheter séparément. Le PowerStream (599 €) est un micro-onduleur nu que vous combinez à vos propres panneaux et batterie EcoFlow — plus cher au total (~1 800 €) mais infiniment plus modulaire. Le Balco 260 gagne sur la simplicité et le stockage immédiat (2,56 kWh vs 1 kWh pour le DELTA 2). Le PowerStream gagne sur la flexibilité évolutive, l\'app mobile, et la batterie portable réutilisable hors solaire (camping, coupures de courant). Verdict : simplicité + stockage dès le départ → Bluetti Balco 260 ; évolutivité sur 10 ans + écosystème → PowerStream.',
   },
 ];
 
@@ -148,7 +149,7 @@ export default function EcoflowPowerstreamPage() {
         description="Avis complet sur le PowerStream EcoFlow en 2026."
         url="https://monbalconsolaire.fr/avis/ecoflow-powerstream"
         datePublished="2026-04-28"
-        dateModified="2026-07-23"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/ecoflow-powerstream-2.webp" name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} availability="Discontinued" url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
@@ -166,7 +167,7 @@ export default function EcoflowPowerstreamPage() {
               Le PowerStream n&apos;est pas un kit solaire classique, c&apos;est un <strong>écosystème modulaire</strong> qui articule panneaux, batterie et réseau domestique avec une intelligence rare sur le marché grand public. Analyse compl&egrave;te : ce qu&apos;il fait vraiment, son prix réel, et pour qui c&apos;est le bon choix.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>28 avril 2026 &middot; Mis &agrave; jour juillet 2026</span>
+              <span>28 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -185,7 +186,7 @@ export default function EcoflowPowerstreamPage() {
               <li>&bull; <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link>&nbsp;: tout-en-un onduleur + batterie 2,56&nbsp;kWh.</li>
               <li>&bull; <Link href="/avis/ikea-solstrale-balcon" className="text-green hover:underline font-semibold">IKEA Solstr&aring;le</Link>&nbsp;: kit balcon b&acirc;ti sur le micro-onduleur EcoFlow STREAM.</li>
             </ul>
-            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Voir le STREAM Ultra sur EcoFlow" variant="secondary" position="discontinued-notice" />
+            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Voir le successeur : EcoFlow STREAM Ultra" variant="secondary" position="discontinued-notice" />
           </div>
 
           <ProductHero
@@ -196,7 +197,7 @@ export default function EcoflowPowerstreamPage() {
             score="8/10"
             tagline="Le micro-onduleur intelligent qui transforme votre installation en système modulaire évolutif."
             affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')}
-            affiliateLabel="Voir l'alternative STREAM sur EcoFlow"
+            affiliateLabel="Voir le successeur : EcoFlow STREAM Ultra"
             accentColor="amber"
             image="/images/produits/ecoflow-powerstream-2.webp"
             imageAlt="EcoFlow PowerStream - système modulaire panneaux + batterie + onduleur"
@@ -216,7 +217,7 @@ export default function EcoflowPowerstreamPage() {
               <div>
                 <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial : ROI long</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  Avec un ROI de 10,2 ans, le PowerStream est pertinent si vous &ecirc;tes d&eacute;j&agrave; dans l&apos;&eacute;cosyst&egrave;me EcoFlow ou si le backup r&eacute;seau est important pour vous. Pour un premier achat orient&eacute; rentabilit&eacute;, le Zendure SolarFlow (5,3 ans) ou le Sunology PLAY 500&nbsp;Wc (6,5 ans) sont plus adapt&eacute;s.
+                  Avec un ROI de 10,2 ans, le PowerStream est pertinent si vous &ecirc;tes d&eacute;j&agrave; dans l&apos;&eacute;cosyst&egrave;me EcoFlow ou si le backup r&eacute;seau est important pour vous. Pour un premier achat orient&eacute; rentabilit&eacute;, le Zendure SolarFlow 800 Plus en pack (3,6 ans au prix promotionnel de 719&nbsp;&euro;) ou le Sunology PLAY 515&nbsp;W (6,2 ans) sont plus adapt&eacute;s.
                 </p>
               </div>
             </div>
@@ -412,8 +413,8 @@ export default function EcoflowPowerstreamPage() {
                     <tr className="border-b border-border-light">
                       <td className="p-3 font-semibold bg-white">Prix</td>
                       <td className="p-3 text-center bg-green-pale/30 font-mono font-bold text-green">~1 800 &euro;<br /><span className="text-xs font-normal text-stone">(PowerStream + pan. + DELTA 2)</span></td>
-                      <td className="p-3 text-center bg-cream/50 font-mono">1 399 &euro;<br /><span className="text-xs text-green font-semibold">889 &euro; (promo lancement)</span></td>
-                      <td className="p-3 text-center bg-white font-mono">2 039 &euro;</td>
+                      <td className="p-3 text-center bg-cream/50 font-mono">789 &euro;<br /><span className="text-xs text-stone">(sans panneaux, promo)</span></td>
+                      <td className="p-3 text-center bg-white font-mono">1 999 &euro;</td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-3 font-semibold bg-cream/50">Type</td>
@@ -460,7 +461,7 @@ export default function EcoflowPowerstreamPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s juillet 2026. Bluetti Balco 260&nbsp;: prix de lancement 889&nbsp;&euro; (code BALGNT, valable jusqu&apos;au 30/09/2026&nbsp;&mdash; prix normal 1&nbsp;399&nbsp;&euro;). Zendure SolarFlow Mix disponible depuis avril 2026.</p>
+              <p className="text-xs text-stone mt-2 italic">Prix Bluetti et Zendure v&eacute;rifi&eacute;s sur leurs boutiques officielles le 5 novembre 2026 (Bluetti Balco 260&nbsp;: 789&nbsp;&euro; seul, prix barr&eacute; 1&nbsp;049&nbsp;&euro;&nbsp;; le code de lancement a expir&eacute; le 30/09/2026). Setup PowerStream&nbsp;: derniers prix conseill&eacute;s connus, produit arr&ecirc;t&eacute;.</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
@@ -496,14 +497,14 @@ export default function EcoflowPowerstreamPage() {
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Production annuelle</strong> : 816 kWh/an (2 panneaux 400W, sud, Lyon, PR 0,85)</li>
                   <li>&bull; <strong>Autoconsommation avec batterie</strong> : 95%</li>
-                  <li>&bull; <strong>Tarif EDF 2026</strong> : 0,1940 &euro;/kWh (+3,3%/an d&apos;inflation CRE)</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : <strong>150 &euro;/an</strong></li>
+                  <li>&bull; <strong>Tarif EDF</strong> : {KWH_PRICE_LABEL} (inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL})</li>
+                  <li>&bull; <strong>Économies la première année</strong> : <strong>155 &euro;</strong></li>
                   <li>&bull; <strong>ROI</strong> : <strong>10,2 ans</strong></li>
-                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>5 704 &euro;</strong></li>
+                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>~5 500 &euro;</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Le ROI de 10,2 ans est correct pour un système avec batterie et backup réseau. La polyvalence de la batterie DELTA 2 (groupe électrogène portable, camping, coupures de courant) ajoute une valeur d&apos;usage hors solaire de l&apos;ordre de 300-500 &euro; sur 10 ans. Sur 25 ans : <strong>5 704 &euro;</strong> d&apos;économies cumulées.
+                Le ROI de 10,2 ans est correct pour un système avec batterie et backup réseau. La polyvalence de la batterie DELTA 2 (groupe électrogène portable, camping, coupures de courant) ajoute une valeur d&apos;usage hors solaire de l&apos;ordre de 300-500 &euro; sur 10 ans. Sur 25 ans : <strong>~5 500 &euro;</strong> d&apos;économies cumulées. Ce calcul garde les derniers prix conseill&eacute;s connus&nbsp;: le PowerStream n&apos;est plus vendu neuf par EcoFlow France.
               </p>
             </section>
 
@@ -582,7 +583,7 @@ export default function EcoflowPowerstreamPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données EcoFlow officielles, fiches techniques constructeur, retours utilisateurs Reddit r/EcoFlow et forum-photovoltaique.fr (avril 2026). Article rédigé sans rémunération d&apos;EcoFlow.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données EcoFlow officielles, fiches techniques constructeur, retours utilisateurs Reddit r/EcoFlow et forum-photovoltaique.fr (avril 2026). Article rédigé sans rémunération d&apos;EcoFlow.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

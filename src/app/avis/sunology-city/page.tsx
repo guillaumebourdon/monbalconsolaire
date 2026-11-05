@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
-import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -72,7 +72,7 @@ const points_faibles = [
   },
   {
     titre: 'Prix au kWc plus élevé',
-    detail: 'Le CITY coûte 549 € pour 400 W, soit 1,37 €/Wc. Un Sunology PLAY (500 Wc, 599 €) est à 1,20 €/Wc, un Beem Kit à 0,66 €/Wc (actuellement en rupture). Vous payez la spécialisation balcon étroit.',
+    detail: 'Le CITY coûte 549 € pour 400 W, soit 1,37 €/Wc. Un Sunology PLAY (515 W, 599 €) est à 1,16 €/W, un Beem Kit à 0,66 €/Wc (en rupture de stock). Vous payez la spécialisation balcon étroit.',
   },
   {
     titre: 'Pas de batterie compatible directement',
@@ -102,7 +102,7 @@ const cas_acheter = [
 const cas_pas_acheter = [
   {
     profil: 'Vous avez un balcon spacieux (> 3 m²)',
-    explication: 'Avec de la place au sol, le Sunology PLAY est plus rentable : 500 W à 599 € vs 400 W à 549 €, plus de production grâce à l\'inclinaison optimale (ROI 6,5 ans pour le PLAY, méthodologie Lyon sud).',
+    explication: 'Avec de la place au sol, le Sunology PLAY est plus rentable : 515 W à 599 € contre 400 W à 549 €, plus de production grâce à l\'inclinaison (ROI 6,2 ans pour le PLAY, méthodologie Lyon sud).',
   },
   {
     profil: 'Vous êtes orienté est, ouest ou nord',
@@ -122,7 +122,7 @@ export default function SunologyCityPage() {
         description="Avis complet sur le Sunology CITY en 2026."
         url="https://monbalconsolaire.fr/avis/sunology-city"
         datePublished="2026-04-27"
-        dateModified="2026-10-29"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Sunology CITY" brand="Sunology" description="Kit solaire 400 W conçu pour fixation sur garde-corps de balcon étroit, sans perçage, avec micro-onduleur Enphase IQ7." price={549} ratingValue={7.5} availability="Discontinued" url="https://monbalconsolaire.fr/avis/sunology-city" />
@@ -140,7 +140,7 @@ export default function SunologyCityPage() {
               Le CITY est le seul kit solaire plug-and-play du marché conçu spécifiquement pour s&apos;accrocher au garde-corps d&apos;un balcon urbain. Analyse compl&egrave;te : prix, production estim&eacute;e, installation, et les vrais cas où il vaut le coup.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>27 avril 2026 &middot; <strong>Mis &agrave; jour le 29 octobre 2026</strong></span>
+              <span>27 avril 2026 &middot; <strong>Mis &agrave; jour le 5 novembre 2026</strong></span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -158,7 +158,7 @@ export default function SunologyCityPage() {
               <li>&bull; <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">Sunology PLAY 2</Link>&nbsp;: plus rentable si vous avez la place de le poser au sol.</li>
               <li>&bull; <Link href="/avis/beem-kit-300w" className="text-green hover:underline font-semibold">Beem Kit 300W</Link>&nbsp;: panneaux modulaires, le plus petit budget du march&eacute;.</li>
             </ul>
-            <AffiliateCTA productName="Sunology GO (garde-corps)" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/kit-solaire-1-station-go-balcon-garde-corps" label="Voir le Sunology GO garde-corps" variant="secondary" position="discontinued-notice" />
+            <Link href="/avis/sunology-go" className="btn-secondary text-sm inline-flex">Voir le successeur&nbsp;: Sunology GO &rarr;</Link>
           </div>
 
           <ProductHero
@@ -168,8 +168,8 @@ export default function SunologyCityPage() {
             price="549 €"
             score="7,5/10"
             tagline="Le kit pensé pour s'accrocher au garde-corps des balcons urbains."
-            affiliateUrl="https://sunology.eu/products/kit-solaire-1-station-go-balcon-garde-corps"
-            affiliateLabel="Voir l'alternative GO sur Sunology"
+            affiliateUrl="/avis/sunology-go"
+            affiliateLabel="Voir le successeur : Sunology GO"
             accentColor="amber"
           />
           <p className="text-xs text-stone mt-2 italic">Dernier prix officiel constat&eacute; le 15/05/2026 &middot; Produit toujours retir&eacute; de la boutique Sunology (statut v&eacute;rifi&eacute; le 29/10/2026)</p>
@@ -344,20 +344,20 @@ export default function SunologyCityPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Prenons un cas type : Paris, balcon étroit exposé sud-ouest, kit Sunology CITY à 549 €.
+                Prenons notre cas type : Lyon, balcon étroit exposé sud, kit Sunology CITY au dernier prix relevé (549 €, mai 2026).
               </p>
               <div className="card-lg bg-cream/40 mb-4">
                 <ul className="text-sm text-charcoal-light space-y-2">
                   <li>&bull; <strong>Production annuelle</strong> : 408 kWh/an (400 Wc, Lyon sud, PR 0,85)</li>
                   <li>&bull; <strong>Autoconsommation</strong> : 85%</li>
                   <li>&bull; <strong>kWh économisés</strong> : 347 kWh/an</li>
-                  <li>&bull; <strong>Économies annuelles</strong> : <strong>68 &euro;/an</strong></li>
-                  <li>&bull; <strong>ROI</strong> : <strong>7,3 ans</strong> (+3,3%/an d&apos;inflation CRE)</li>
-                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>2 583 &euro;</strong></li>
+                  <li>&bull; <strong>Économies la première année</strong> : <strong>69 &euro;</strong></li>
+                  <li>&bull; <strong>ROI</strong> : <strong>7,2 ans</strong> (tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL})</li>
+                  <li>&bull; <strong>Économies sur 25 ans</strong> : <strong>~2 460 &euro;</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Avec l&apos;inflation tarifaire de 3,3%/an (CRE), le ROI est atteint en <strong>7,3 ans</strong>. Le CITY est garanti 25 ans. Une fois le ROI atteint, chaque année produit des économies pures. Sur la durée totale, le gain net est de <strong>2 583 &euro;</strong>. C&apos;est moins rentable qu&apos;un Sunology PLAY (ROI 6,5 ans), mais ça reste très positif.
+                Avec l&apos;inflation tarifaire de 3,3%/an (CRE), le ROI est atteint en <strong>7,2 ans</strong>. Le CITY est garanti 25 ans. Une fois le ROI atteint, chaque année produit des économies pures. Sur la durée totale, le gain net est d&apos;environ <strong>1 910 &euro;</strong> (2 460 &euro; d&apos;&eacute;conomies moins 549 &euro;). C&apos;est moins rentable qu&apos;un Sunology PLAY (ROI 6,2 ans), mais ça reste très positif.
               </p>
             </section>
 
@@ -432,7 +432,7 @@ export default function SunologyCityPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif 0,1940 &euro;/kWh, inflation 3,3%/an (CRE), autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données PVGIS, fiches techniques fabricant Sunology, retours utilisateurs Trustpilot et forums spécialisés (avril 2026). Article rédigé sans rémunération de Sunology.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données PVGIS, fiches techniques fabricant Sunology, retours utilisateurs Trustpilot et forums spécialisés (avril 2026). Article rédigé sans rémunération de Sunology.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

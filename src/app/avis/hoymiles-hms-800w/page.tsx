@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -9,7 +10,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Hoymiles HMS-800W-2T avis 2026 : micro-onduleur pour kit DIY',
-  description: 'Avis complet Hoymiles HMS-800W-2T : 2 MPPT indépendants, WiFi intégré, 96,7 % rendement. ~119 €. Le micro-onduleur le plus populaire pour les montages DIY balcon en France.',
+  description: 'Avis Hoymiles HMS-800W-2T : 2 MPPT indépendants, WiFi intégré, rendement 96,7 %, environ 170 €. Le micro-onduleur de référence des kits DIY balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/hoymiles-hms-800w',
   },
@@ -30,7 +31,7 @@ const faqData = [
   },
   {
     question: 'Combien produit un kit DIY avec le Hoymiles HMS-800W-2T ?',
-    answer: 'Avec 2 panneaux de 400 Wc (800 Wc total), en région lyonnaise, exposition sud : environ 680 kWh par an en production brute (PR 0,85). Avec 85 % d’autoconsommation, vous valorisez ~578 kWh, soit ~112 €/an économisés au tarif actuel de 0,1940 €/kWh. L\'investissement total DIY (³ 360 €) est récupéré en ~3,2 ans.',
+    answer: 'Avec 2 panneaux de 400 Wc (800 Wc total), en région lyonnaise, exposition sud : environ 816 kWh par an (productible 1 200 kWh/kWc, PR 0,85). Avec 85 % d’autoconsommation, vous valorisez ~694 kWh, soit ~139 € économisés la première année au tarif réglementé en vigueur. L\'investissement total DIY (environ 410 €) est récupéré en ~2,9 ans.',
   },
   {
     question: 'La déclaration CACSI est-elle obligatoire avec le HMS-800W-2T ?',
@@ -50,13 +51,14 @@ export default function HoymilesHMS800WAvisPage() {
         description="Avis complet sur le Hoymiles HMS-800W-2T : 2 MPPT indépendants, WiFi intégré sans DTU, rendement 96,7 %. Le micro-onduleur préféré des montages DIY balcon en France."
         url="https://monbalconsolaire.fr/avis/hoymiles-hms-800w"
         datePublished="2026-08-18"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct
         name="Hoymiles HMS-800W-2T"
         brand="Hoymiles"
         description="Micro-onduleur monophas&eacute; 800&nbsp;W, 2 entr&eacute;es MPPT ind&eacute;pendantes, WiFi int&eacute;gr&eacute; (sans DTU), IP67. Le choix de r&eacute;f&eacute;rence pour les kits solaires balcon DIY."
-        price={119}
+        price={169}
         ratingValue={8.5}
        
         url="https://monbalconsolaire.fr/avis/hoymiles-hms-800w"
@@ -73,10 +75,10 @@ export default function HoymilesHMS800WAvisPage() {
               Hoymiles HMS-800W-2T&nbsp;: avis du micro-onduleur de r&eacute;f&eacute;rence pour les kits DIY
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Vous voulez assembler votre propre kit solaire balcon plutôt qu&rsquo;acheter un kit complet&nbsp;? Le Hoymiles HMS-800W-2T est l&rsquo;onduleur que choisissent la majorit&eacute; des bricoleurs inform&eacute;s en Europe. 2&nbsp;MPPT ind&eacute;pendants, WiFi int&eacute;gr&eacute; sans DTU, 96,7&nbsp;% de rendement, ~119&nbsp;&euro;. On analyse tout, points forts, limites, et comment l&rsquo;int&eacute;grer dans un&nbsp;<Link href="/guide/installer-kit-solaire-balcon" className="text-green hover:underline">montage DIY</Link>&nbsp;rentable.
+              Vous voulez assembler votre propre kit solaire balcon plutôt qu&rsquo;acheter un kit complet&nbsp;? Le Hoymiles HMS-800W-2T est l&rsquo;onduleur que choisissent la majorit&eacute; des bricoleurs inform&eacute;s en Europe. 2&nbsp;MPPT ind&eacute;pendants, WiFi int&eacute;gr&eacute; sans DTU, 96,7&nbsp;% de rendement, environ 170&nbsp;&euro; (Wattuneed, 5 novembre 2026). On analyse tout, points forts, limites, et comment l&rsquo;int&eacute;grer dans un&nbsp;<Link href="/guide/installer-kit-solaire-balcon" className="text-green hover:underline">montage DIY</Link>&nbsp;rentable.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>18 ao&ucirc;t 2026</span>
+              <span>18 ao&ucirc;t 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -86,7 +88,7 @@ export default function HoymilesHMS800WAvisPage() {
             brand="Hoymiles"
             name="HMS-800W-2T"
             power="800 W (2 entr&eacute;es MPPT)"
-            price="~119 &euro;"
+            price="~170 &euro;"
             score="8.5/10"
             tagline="Le micro-onduleur le plus prim&eacute; du march&eacute; DIY europ&eacute;en. WiFi int&eacute;gr&eacute;, 2 MPPT, IP67."
             affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
@@ -104,7 +106,7 @@ export default function HoymilesHMS800WAvisPage() {
                 Un <Link href="/blog/micro-onduleur-solaire-fonctionnement" className="text-green hover:underline">micro-onduleur</Link> seul s&rsquo;adresse &agrave; un profil sp&eacute;cifique&nbsp;: celui qui poss&egrave;de d&eacute;j&agrave; des panneaux, qui en r&eacute;cup&egrave;re gratuitement, ou qui veut ach&eacute;ter les composants s&eacute;par&eacute;ment pour ma&icirc;triser chaque &eacute;tape. Contre-intuitivement, c&rsquo;est souvent l&rsquo;option la plus rentable.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Un kit DIY typique&nbsp;: 2 panneaux 400&nbsp;Wc (JA Solar, LONGi, Trina &mdash; ~80&ndash;120&nbsp;&euro; pi&egrave;ce chez les distributeurs solaires) + 1 HMS-800W-2T (~119&nbsp;&euro;) + c&acirc;bles MC4 et adaptateur schuko (~40&nbsp;&euro;) = <strong>~350&ndash;400&nbsp;&euro; au total</strong>, soit bien en dessous du <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500&nbsp;Wc &agrave; 429&nbsp;&euro;</Link> avec une puissance &eacute;quivalente.
+                Un kit DIY typique&nbsp;: 2 panneaux 400&nbsp;Wc (JA Solar, LONGi, Trina &mdash; ~80&ndash;120&nbsp;&euro; pi&egrave;ce chez les distributeurs solaires) + 1 HMS-800W-2T (169,40&nbsp;&euro; chez Wattuneed le 5 novembre 2026) + c&acirc;bles MC4 et adaptateur schuko (~40&nbsp;&euro;) = <strong>~370&ndash;450&nbsp;&euro; au total</strong>, soit proche du <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500&nbsp;Wc &agrave; 429&nbsp;&euro;</Link> pour une puissance bien sup&eacute;rieure (800 contre 500&nbsp;Wc).
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Le HMS-800W-2T est le mod&egrave;le le plus vendu de Hoymiles en Europe. Sa r&eacute;putation repose sur une fiabilit&eacute; &eacute;prouv&eacute;e, un rendement parmi les meilleurs du segment, et une communaut&eacute; d&rsquo;utilisateurs tr&egrave;s active sur les forums DIY.
@@ -118,7 +120,7 @@ export default function HoymilesHMS800WAvisPage() {
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-cream rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-amber-dark">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -266,7 +268,7 @@ export default function HoymilesHMS800WAvisPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Prix', '~119 €', '~95 €', '~185 €'],
+                      ['Prix', '~170 € (Wattuneed, 05/11/2026)', '~95 €', '~185 €'],
                       ['Puissance max AC', '800 W', '800 W', '300 W/panneau'],
                       ['Panneaux gérés', '2 (2 MPPT)', '2 (2 MPPT)', '1 par unité'],
                       ['WiFi intégré', '✓ (sans DTU)', '✓ (sans DTU)', '✗ (DTU à part ~80 €)'],
@@ -288,7 +290,7 @@ export default function HoymilesHMS800WAvisPage() {
                 </table>
               </div>
               <p className="text-sm text-charcoal-light mt-4 leading-relaxed">
-                <strong>Verdict rapide&nbsp;:</strong> l&rsquo;APsystems DS3 est l&eacute;g&egrave;rement moins cher mais la communaut&eacute; Hoymiles en France est plus large. L&rsquo;Enphase IQ8+ est la r&eacute;f&eacute;rence premium avec 25 ans de garantie, mais il faut 2 unit&eacute;s pour 2 panneaux + le DTU, soit ~450&nbsp;&euro; vs ~119&nbsp;&euro; pour le HMS. Pour un balcon standard, le rapport qualit&eacute;/prix du Hoymiles est imbattable.
+                <strong>Verdict rapide&nbsp;:</strong> l&rsquo;APsystems DS3 est l&eacute;g&egrave;rement moins cher mais la communaut&eacute; Hoymiles en France est plus large. L&rsquo;Enphase IQ8+ est la r&eacute;f&eacute;rence premium avec 25 ans de garantie, mais il faut 2 unit&eacute;s pour 2 panneaux + le DTU, soit ~450&nbsp;&euro; contre ~170&nbsp;&euro; pour le HMS. Pour un balcon standard, le rapport qualit&eacute;/prix du Hoymiles est imbattable.
               </p>
             </section>
 
@@ -307,23 +309,23 @@ export default function HoymilesHMS800WAvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Rentabilit&eacute; d&rsquo;un kit DIY avec le Hoymiles HMS-800W-2T</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Calcul de r&eacute;f&eacute;rence&nbsp;: 2 panneaux 400&nbsp;Wc (800&nbsp;Wc total), Lyon, exposition sud, <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green hover:underline">inclinaison 30&deg;</Link>. Tarif EDF 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an (CRE), autoconsommation 85&nbsp;%, Performance Ratio 0,85.
+                Calcul de r&eacute;f&eacute;rence&nbsp;: 2 panneaux 400&nbsp;Wc (800&nbsp;Wc total), Lyon, exposition sud, <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green hover:underline">inclinaison 30&deg;</Link>. Tarif EDF {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;%, Performance Ratio 0,85.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
-                  { v: '680 kWh', l: 'Production/an' },
-                  { v: '578 kWh', l: 'Autoconsommés (85 %)' },
-                  { v: '112 €', l: 'Économies année 1' },
-                  { v: '~3,2 ans', l: 'ROI (invest. ~360 €)' },
+                  { v: '816 kWh', l: 'Production/an' },
+                  { v: '694 kWh', l: 'Autoconsommés (85 %)' },
+                  { v: '139 €', l: 'Économies année 1' },
+                  { v: '~2,9 ans', l: 'ROI (invest. ~410 €)' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-green/10 rounded-brand-lg border border-green/20">
                     <div className="font-mono font-bold text-xl text-green">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Sur 25 ans, avec inflation tarifaire de 3,3&nbsp;%/an, les &eacute;conomies cumul&eacute;es d&rsquo;un kit DIY 800&nbsp;Wc atteignent <strong>~3&nbsp;800&nbsp;&euro;</strong> pour un investissement initial de ~360&nbsp;&euro;. C&rsquo;est le meilleur ROI accessible sur le march&eacute; du solaire balcon, justement parce que vous &eacute;conomisez la marge commerciale du fabricant de kit.
+                Sur 25 ans, avec inflation tarifaire de 3,3&nbsp;%/an, les &eacute;conomies cumul&eacute;es d&rsquo;un kit DIY 800&nbsp;Wc atteignent <strong>~4&nbsp;920&nbsp;&euro;</strong> pour un investissement initial d&apos;environ 410&nbsp;&euro; (d&eacute;gradation des panneaux comprise). C&rsquo;est le meilleur ROI accessible sur le march&eacute; du solaire balcon, justement parce que vous &eacute;conomisez la marge commerciale du fabricant de kit.
               </p>
             </section>
 
@@ -332,7 +334,7 @@ export default function HoymilesHMS800WAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
               <ul className="space-y-3">
                 {[
-                  'Vous &ecirc;tes d&eacute;butant absolu et pr&eacute;f&eacute;rez une solution tout-en-un sans bricolage&nbsp;&rarr; pr&eacute;f&eacute;rez le Sunology PLAY 2 ou le Beem On 500&nbsp;Wc',
+                  'Vous &ecirc;tes d&eacute;butant absolu et pr&eacute;f&eacute;rez une solution tout-en-un sans bricolage&nbsp;&rarr; pr&eacute;f&eacute;rez le Sunology PLAY ou le Beem On 500&nbsp;Wc',
                   'Vous n&rsquo;avez pas de panneaux et ne voulez pas chercher des composants s&eacute;par&eacute;ment&nbsp;&rarr; un kit complet sera plus simple',
                   'Vous voulez une garantie de 25 ans sur l&rsquo;onduleur&nbsp;&rarr; Enphase IQ8+ est la seule option (mais budget 4&times; plus &eacute;lev&eacute;)',
                   'Votre balcon est tr&egrave;s &eacute;loign&eacute; de la box et vous ne pouvez pas installer de r&eacute;p&eacute;teur WiFi',
@@ -433,7 +435,7 @@ export default function HoymilesHMS800WAvisPage() {
 
           <footer className="mt-10 pt-6 border-t border-stone/20 text-xs text-stone leading-relaxed space-y-2">
             <p>
-              <strong>M&eacute;thodologie</strong>&nbsp;: production calcul&eacute;e avec la formule ROI de r&eacute;f&eacute;rence MonBalconSolaire (tarif EDF 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an CRE, autoconsommation 85&nbsp;%, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud, dur&eacute;e 25 ans).
+              <strong>M&eacute;thodologie</strong>&nbsp;: production calcul&eacute;e avec la formule ROI de r&eacute;f&eacute;rence MonBalconSolaire (tarif EDF {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;%, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud, dur&eacute;e 25 ans).
             </p>
             <p>
               <strong>Transparence</strong>&nbsp;: cet article contient des liens affili&eacute;s Amazon. Si vous achetez via ces liens, nous per&ccedil;evons une commission sans surco&ucirc;t pour vous. Cela ne modifie pas nos &eacute;valuations.

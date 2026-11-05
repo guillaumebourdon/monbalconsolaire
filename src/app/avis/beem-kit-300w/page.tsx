@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
-import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
@@ -9,17 +9,17 @@ import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit Beem 300W avis 2026 : 199 €, rupture et avis négatifs',
-  description: 'Kit Beem 300W : avis 2026 à 199 €, mais en rupture. Avis négatifs Beem Energy (SAV, production), ROI 3,8 ans et alternatives. Verdict honnête.',
+  description: 'Kit Beem 300W : avis 2026 à 199 €, mais en rupture. Avis négatifs Beem Energy (SAV, production), ROI 3,7 ans et alternatives disponibles.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/beem-kit-300w',
   },
 });
 
 const faqData = [
-  { question: 'Le kit Beem 300W vaut-il le coup à 199 € ?', answer: 'Sur le papier, oui : à 199 € (prix affiché sur beemenergy.fr le 12 octobre 2026, contre 299 € auparavant), il revient à 0,66 €/Wc, le ratio le plus bas des kits de marque que nous suivons. Avec ~306 kWh/an en région lyonnaise, le retour sur investissement est atteint en 3,8 ans et les économies cumulées sur 25 ans atteignent 1 914 € (+3,3 %/an d\'inflation CRE). Problème : le kit est affiché « Indisponible » sur le site Beem au 12 octobre 2026.' },
-  { question: 'Où acheter le kit Beem 300W ?', answer: 'Le canal principal est le site du fabricant (beemenergy.fr, page Beem Kit), qui affiche le modèle 300W à partir de 199 € mais indisponible au 12 octobre 2026, comme toutes les autres configurations (420W, DUO 600 Wc, MAX 900 Wc). Le revendeur Hello Watt le référence à 299 € TTC avec la mention « Victime de son succès ». Nous n\'avons trouvé aucune offre du Beem Kit chez Amazon.fr, Leroy Merlin, Boulanger ou Castorama. Méfiez-vous des annonces d\'occasion sans facture : la garantie est liée à l\'achat.' },
+  { question: 'Le kit Beem 300W vaut-il le coup à 199 € ?', answer: 'Sur le papier, oui : à 199 € (prix affiché sur beemenergy.fr le 5 novembre 2026, contre 299 € auparavant), il revient à 0,66 €/Wc, le ratio le plus bas des kits de marque que nous suivons. Avec ~306 kWh/an en région lyonnaise, le retour sur investissement est atteint en 3,7 ans et les économies cumulées sur 25 ans atteignent environ 1 850 € (inflation 3,3 %/an, dégradation des panneaux 0,5 %/an). Problème : le kit est affiché « Indisponible » sur le site Beem au 5 novembre 2026.' },
+  { question: 'Où acheter le kit Beem 300W ?', answer: 'Le canal principal est le site du fabricant (beemenergy.fr, page Beem Kit), qui affiche le modèle 300W à partir de 199 € mais indisponible au 5 novembre 2026, comme toutes les autres configurations (420W, DUO 600 Wc, MAX 900 Wc). Le revendeur Hello Watt le référence à 299 € TTC avec la mention « Victime de son succès ». Nous n\'avons trouvé aucune offre du Beem Kit chez Amazon.fr, Leroy Merlin, Boulanger ou Castorama. Méfiez-vous des annonces d\'occasion sans facture : la garantie est liée à l\'achat.' },
   { question: 'Quels sont les avis négatifs les plus fréquents sur Beem Energy ?', answer: 'Sur Trustpilot (4,3/5, 1 821 avis au 12 octobre 2026), 8 % des avis sont à 1 ou 2 étoiles. Les reproches récurrents en 2026 : SAV difficile à joindre (téléphone, délais de plusieurs semaines), production réelle inférieure aux promesses (un client cite ~180 kWh/an avec un Beem Kit 300W après 3 ans), pannes ou défauts d\'onduleur/Beembox, remboursements lents. Beem ne répond qu\'à environ 12 % des avis négatifs.' },
-  { question: 'Beem Energy est-elle en faillite ? Que devient la garantie ?', answer: 'Non, pas à notre connaissance. Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde fin novembre 2025, avec un an pour se redresser. Aucune liquidation ni redressement judiciaire n\'a été annoncé au 12 octobre 2026. La procédure de sauvegarde protège l\'entreprise pendant sa restructuration, mais la garantie (25 ans annoncés) n\'a de valeur que si Beem reste en activité : c\'est le principal risque du kit.' },
+  { question: 'Beem Energy est-elle en faillite ? Que devient la garantie ?', answer: 'Non, pas à notre connaissance. Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde fin novembre 2025, avec un an pour se redresser. Aucune liquidation ni redressement judiciaire n\'a été annoncé au 5 novembre 2026. La procédure de sauvegarde protège l\'entreprise pendant sa restructuration, mais la garantie (25 ans annoncés) n\'a de valeur que si Beem reste en activité : c\'est le principal risque du kit.' },
   { question: 'Quelle différence entre le Beem Kit 300W, le Beem Kit 420W et le Beem On ?', answer: 'Le Beem Kit 300W compte 4 panneaux de 75 Wc (70 × 70 cm, 5,6 kg chacun) pour 199 €. Le Beem Kit 420W reprend le même format avec 4 panneaux de 105 Wc (80,5 × 80,5 cm, 6,5 kg) pour 359 €. Le Beem On 500 Wc est un panneau unique bifacial à 429 €, avec des expéditions annoncées à partir de décembre 2026. Le Kit est plus souple pour les espaces étroits, le Beem On plus rapide à poser.' },
   { question: 'Le Beem Kit 300W suffit-il pour alimenter un appartement ?', answer: 'Non. 300 W couvrent environ le talon de consommation : frigo, box internet et appareils en veille. En région lyonnaise, ~306 kWh/an représentent environ 6 % d\'une consommation de 5 000 kWh/an. Pour aller plus loin, il faut passer à un kit de 450-500 W ou combiner plusieurs Beem Kit (dans la limite des recommandations de l\'ADEME par circuit).' },
   { question: 'Le Beem Kit 300W est-il compatible avec une batterie ?', answer: 'Oui, Beem indique que les Beem Kit peuvent être associés à sa Beem Battery, vendue séparément. Sur un kit de 300 W, une batterie rallonge fortement le retour sur investissement : le surplus à stocker est faible, la plupart de la production étant consommée en direct par le talon.' },
@@ -29,7 +29,7 @@ const faqData = [
 export default function BeemKit300WAvisPage() {
   return (
     <>
-      <SchemaArticle title="Kit Beem 300W avis 2026 : prix, disponibilité et avis négatifs" description="Avis complet sur le Beem Kit 300W à 199 € : specs, ROI, disponibilité, avis négatifs Beem Energy et alternatives." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" dateModified="2026-10-12" />
+      <SchemaArticle title="Kit Beem 300W avis 2026 : prix, disponibilité et avis négatifs" description="Avis complet sur le Beem Kit 300W à 199 € : specs, ROI, disponibilité, avis négatifs Beem Energy et alternatives." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/beem-kit-300-1.webp" name="Beem Kit 300W" brand="Beem Energy" description="Kit solaire plug-and-play modulaire de 4 panneaux de 75 Wc, conçu et assemblé à Nantes." price={199} ratingValue={7.5} availability="OutOfStock" url="https://monbalconsolaire.fr/avis/beem-kit-300w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />
@@ -40,7 +40,7 @@ export default function BeemKit300WAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Kit Beem 300W avis 2026 : le panneau solaire &agrave; 199&nbsp;&euro; vaut-il le coup&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le prix du Beem Kit 300W est pass&eacute; de 299&nbsp;&euro; &agrave; 199&nbsp;&euro;, ce qui en fait le kit de marque le moins cher au watt. Mais il est actuellement indisponible, et les avis n&eacute;gatifs sur Beem Energy (SAV, production) se multiplient. Specs, rentabilit&eacute;, points faibles signal&eacute;s par les clients et alternatives.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 12 octobre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -51,12 +51,12 @@ export default function BeemKit300WAvisPage() {
             score="7.5/10"
             tagline="Le kit de marque le moins cher au watt, si vous arrivez à le trouver en stock."
             affiliateUrl="https://beemenergy.fr/products/kit-beem"
-            affiliateLabel="Vérifier la disponibilité chez Beem"
+            affiliateLabel="Voir la fiche officielle (en rupture)"
             accentColor="amber"
             image="/images/produits/beem-kit-300-1.webp"
             imageAlt="Kit Beem 300W - 4 panneaux solaires modulaires de 75 Wc"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 12/10/2026 sur beemenergy.fr (199&nbsp;&euro;, auparavant 299&nbsp;&euro;) &middot; Kit affich&eacute; &laquo;&nbsp;Indisponible&nbsp;&raquo; &agrave; cette date</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 05/11/2026 sur beemenergy.fr (199&nbsp;&euro;, auparavant 299&nbsp;&euro;) &middot; Kit affich&eacute; &laquo;&nbsp;Indisponible&nbsp;&raquo; &agrave; cette date</p>
 
           <div className="space-y-10">
             <section>
@@ -66,13 +66,13 @@ export default function BeemKit300WAvisPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
                   { v: '300 Wc', l: 'Puissance' },
-                  { v: '199 €', l: 'Prix (12/10/2026)' },
+                  { v: '199 €', l: 'Prix (05/11/2026)' },
                   { v: '0,66 €/Wc', l: 'Prix au watt' },
                   { v: '4 panneaux', l: 'Modulaire' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-cream rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-amber-dark">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -80,7 +80,7 @@ export default function BeemKit300WAvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Prix, disponibilit&eacute; et o&ugrave; acheter le kit Beem 300W (octobre 2026)</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Au 12 octobre 2026, la page Beem Kit de <strong>beemenergy.fr</strong> affiche le mod&egrave;le 300W &laquo;&nbsp;&agrave; partir de 199&nbsp;&euro;&nbsp;&raquo;, mais <strong>toutes les configurations sont indisponibles</strong> : 300W, 420W, DUO et MAX. Aucune date de r&eacute;assort n&apos;est indiqu&eacute;e. Les prix affich&eacute;s par Beem :</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Au 5 novembre 2026, la page Beem Kit de <strong>beemenergy.fr</strong> affiche le mod&egrave;le 300W &laquo;&nbsp;&agrave; partir de 199&nbsp;&euro;&nbsp;&raquo;, mais <strong>toutes les configurations sont indisponibles</strong> : 300W, 420W, DUO et MAX. Aucune date de r&eacute;assort n&apos;est indiqu&eacute;e. Les prix affich&eacute;s par Beem :</p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
@@ -88,10 +88,10 @@ export default function BeemKit300WAvisPage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Beem Kit SOLO 300 Wc', '199 €', '0,66 €', '3,8 ans', 'Indisponible'],
-                      ['Beem Kit SOLO 420 Wc', '359 € (au lieu de 599 €)', '0,85 €', '4,8 ans', 'Indisponible'],
-                      ['Beem Kit DUO 600 Wc (2 × 300)', '398 € (au lieu de 449 €)', '0,66 €', '3,8 ans', 'Indisponible'],
-                      ['Beem Kit MAX 900 Wc (3 × 300)', '597 € (au lieu de 649 €)', '0,66 €', '3,8 ans', 'Indisponible'],
+                      ['Beem Kit SOLO 300 Wc', '199 €', '0,66 €', '3,7 ans', 'Indisponible'],
+                      ['Beem Kit SOLO 420 Wc', '359 € (au lieu de 599 €)', '0,85 €', '4,7 ans', 'Indisponible'],
+                      ['Beem Kit DUO 600 Wc (2 × 300)', '398 € (au lieu de 449 €)', '0,66 €', '3,7 ans', 'Indisponible'],
+                      ['Beem Kit MAX 900 Wc (3 × 300)', '597 € (au lieu de 649 €)', '0,66 €', '3,7 ans', 'Indisponible'],
                     ].map(([c, p, w, roi, s], i) => (
                       <tr key={i} className={`border-b border-border-light ${i === 0 ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3">{c}</td>
@@ -125,7 +125,7 @@ export default function BeemKit300WAvisPage() {
                       ['Normes', 'Marquage CE, EN 61215 et EN 61730'],
                       ['Suivi', 'Application Beem (production en temps réel)'],
                       ['Fabrication', 'Conçu et assemblé à Nantes'],
-                      ['Prix', '199 € (beemenergy.fr, 12/10/2026)'],
+                      ['Prix', '199 € (beemenergy.fr, 05/11/2026)'],
                     ].map(([k, v], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold w-1/3">{k}</td>
@@ -135,14 +135,14 @@ export default function BeemKit300WAvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source : fiche produit beemenergy.fr, relev&eacute;e le 12 octobre 2026. Rendement des panneaux et du micro-onduleur non communiqu&eacute;s par Beem sur la page produit.</p>
+              <p className="text-xs text-stone">Source : fiche produit beemenergy.fr, relev&eacute;e le 5 novembre 2026. Rendement des panneaux et du micro-onduleur non communiqu&eacute;s par Beem sur la page produit.</p>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Le prix au watt le plus bas', d: 'À 199 € et 0,66 €/Wc, c\'est le kit de marque le moins cher que nous suivons. Le ROI est atteint en 3,8 ans en région lyonnaise, le plus rapide de notre sélection, devant le Beem On 500 Wc (4,8 ans).' },
+                  { t: 'Le prix au watt le plus bas', d: 'À 199 € et 0,66 €/Wc, c\'est le kit de marque le moins cher que nous suivons. Le ROI est atteint en 3,7 ans en région lyonnaise, le plus rapide de notre sélection, devant le Beem On 500 Wc (4,7 ans).' },
                   { t: 'La modularité', d: 'Les 4 panneaux de 70 × 70 cm se placent indépendamment : contre un mur, sur un garde-corps, dans un angle de balcon. Idéal pour les espaces atypiques où un grand panneau unique ne passerait pas.' },
                   { t: 'Le risque financier minimal', d: 'À 199 €, c\'est un investissement faible pour tester l\'autoconsommation. Le kit reste compatible avec un Beem On ou un second Beem Kit si vous voulez augmenter la puissance plus tard.' },
                   { t: 'Une marque française identifiable', d: 'Beem Energy est basée à Nantes et conçoit et assemble ses kits en France. Vous avez un interlocuteur et une garantie écrite, ce qui n\'est pas le cas des kits sans marque d\'Amazon. Le SAV, en revanche, est critiqué (voir plus bas).' },
@@ -156,17 +156,17 @@ export default function BeemKit300WAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Vérifier le stock chez Beem" variant="secondary" position="after-pros" />
+            <div className="card text-center my-6"><p className="text-sm text-charcoal-light mb-3">Le Beem Kit est en rupture de stock (aucune configuration disponible sur beemenergy.fr au 5 novembre 2026).</p><Link href="/comparatif/kit-solaire-petit-budget" className="btn-secondary text-sm inline-flex">Voir les petits kits disponibles &rarr;</Link></div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Indisponible au moment de notre mise à jour', d: 'Au 12 octobre 2026, toutes les configurations Beem Kit sont affichées « Indisponible » sur beemenergy.fr, sans date de réassort. Le meilleur prix du marché ne sert à rien si le kit ne peut pas être commandé.' },
+                  { t: 'Indisponible au moment de notre mise à jour', d: 'Au 5 novembre 2026, toutes les configurations Beem Kit sont affichées « Indisponible » sur beemenergy.fr, sans date de réassort. Le meilleur prix du marché ne sert à rien si le kit ne peut pas être commandé.' },
                   { t: 'Puissance limitée à 300 W', d: 'C\'est suffisant pour le talon de consommation (frigo + box + veilles) mais pas plus. Un Beem On 500 Wc ou un Sunology PLAY2 produit 67 % de plus.' },
                   { t: 'Installation plus longue (~1 h)', d: 'Là où un mono-panneau se pose en quelques minutes, le Beem Kit demande 45 min à 1 h : 4 panneaux à positionner, fixer et câbler entre eux. Pas compliqué, mais plus long.' },
                   { t: 'Esthétique et rendement plus basiques', d: '4 petits panneaux posés côte à côte, c\'est moins net qu\'un grand panneau unique, ce qui peut gêner en copropriété. Pas de gain bifacial, et une garantie de performance à 80 % après 23 ans, contre 25 ans sur le modèle 420W.' },
-                  { t: 'SAV Beem Energy critiqué et entreprise en sauvegarde', d: 'Beem Energy est en procédure de sauvegarde depuis fin novembre 2025 (tribunal de commerce de Nantes, un an pour se redresser). Aucune liquidation ni redressement judiciaire annoncé au 12 octobre 2026. Mais les avis clients de 2026 pointent un SAV difficile à joindre, et la garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
+                  { t: 'SAV Beem Energy critiqué et entreprise en sauvegarde', d: 'Beem Energy est en procédure de sauvegarde depuis fin novembre 2025 (tribunal de commerce de Nantes, un an pour se redresser). Aucune liquidation ni redressement judiciaire annoncé au 5 novembre 2026. Mais les avis clients de 2026 pointent un SAV difficile à joindre, et la garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
                     <h3 className="font-bold text-sm mb-1">{p.t}</h3>
@@ -182,7 +182,7 @@ export default function BeemKit300WAvisPage() {
               <div className="space-y-3">
                 {[
                   { t: '1. Un SAV difficile à joindre', d: 'C\'est le grief n°1 : téléphone injoignable, réponses qui tardent plusieurs semaines, interventions attendues pendant des mois. Plusieurs avis de juillet à septembre 2026 vont dans ce sens. C\'est cohérent avec une entreprise en restructuration.' },
-                  { t: '2. Une production inférieure aux promesses', d: 'Un client indique ~180 kWh/an après 3 ans avec un Beem Kit 300W, contre ~306 kWh/an dans notre estimation lyonnaise. Avec 180 kWh/an, le ROI passerait de 3,8 à 6,2 ans à 199 € (calcul pricing.ts). Ombrage, orientation et inclinaison expliquent souvent l\'écart, mais le simulateur de Beem (5 % d\'inflation/an, 0,20 €/kWh) est plus optimiste que nos hypothèses.' },
+                  { t: '2. Une production inférieure aux promesses', d: 'Un client indique ~180 kWh/an après 3 ans avec un Beem Kit 300W, contre ~306 kWh/an dans notre estimation lyonnaise. Avec 180 kWh/an, le ROI passerait de 3,7 à 6,1 ans à 199 € (calcul pricing.ts). Ombrage, orientation et inclinaison expliquent souvent l\'écart, mais le simulateur de Beem (5 % d\'inflation/an, 0,20 €/kWh) est plus optimiste que nos hypothèses.' },
                   { t: '3. Pannes d\'onduleur, coupures et bugs d\'application', d: 'Des clients signalent un onduleur en défaut avec un diagnostic à distance qui demande un multimètre, des installations qui disparaissent de l\'application, des mises à jour qui bloquent le système pendant des semaines.' },
                   { t: '4. Remboursements et retours lents', d: 'Remboursements en attente, retour refusé après le délai de 15 jours, colis endommagé sans suivi : ces avis concernent surtout les commandes plus grosses (Beem On, batteries), mais la logique de SAV est la même.' },
                   { t: '5. Notice et conseil commercial', d: 'Un client signale une erreur dans le manuel de montage, un autre un conseil commercial inadapté à sa consommation. Lisez la documentation technique avant de commander et vérifiez la compatibilité de votre support (un client Beem On n\'avait pas été prévenu que son toit en tuiles ne convenait pas).' },
@@ -196,7 +196,7 @@ export default function BeemKit300WAvisPage() {
               <p className="text-charcoal-light leading-relaxed mt-4"><strong>Notre lecture :</strong> la majorit&eacute; des clients reste satisfaite, et les avis n&eacute;gatifs concernent toute la gamme Beem, pas seulement le Kit 300W. Mais un SAV qui se d&eacute;grade pendant une proc&eacute;dure de sauvegarde, c&apos;est un signal &agrave; prendre au s&eacute;rieux sur un produit vendu avec une garantie de 25 ans. Si votre production vous semble trop faible, commencez par notre guide <Link href="/blog/panneau-solaire-produit-moins-que-prevu" className="text-green hover:underline">panneau solaire qui produit moins que pr&eacute;vu</Link>. Pour comparer les deux marques fran&ccedil;aises, voir <Link href="/comparatif/sunology-vs-beem" className="text-green hover:underline">Sunology vs Beem</Link>.</p>
             </section>
 
-            <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Voir la fiche officielle Beem Kit" variant="secondary" position="after-cons" />
+            <div className="card text-center my-6"><p className="text-sm text-charcoal-light mb-3">Alternative disponible chez Sunology&nbsp;: le GO, 270&nbsp;W &agrave; 349&nbsp;&euro;.</p><Link href="/avis/sunology-go" className="btn-secondary text-sm inline-flex">Lire l&apos;avis Sunology GO &rarr;</Link></div>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
               <p className="text-sm font-semibold mb-1">Pas s&ucirc;r que ce kit soit fait pour vous&nbsp;?</p>
@@ -210,7 +210,7 @@ export default function BeemKit300WAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
               <div className="space-y-2">
                 {[
-                  'Vous devez acheter maintenant : le kit est en rupture au 12 octobre 2026',
+                  'Vous devez acheter maintenant : le kit est en rupture au 5 novembre 2026',
                   'Vous cherchez une production importante (préférez 450-500 Wc)',
                   'Votre balcon est assez grand pour un panneau unique, plus rapide à poser',
                   'Vous comptez beaucoup sur le SAV : les avis 2026 sur Beem Energy sont mitigés',
@@ -230,13 +230,13 @@ export default function BeemKit300WAvisPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
                   { v: '306 kWh', l: 'Production/an (Lyon)' },
-                  { v: '50 €', l: 'Économies an 1' },
-                  { v: '3,8 ans', l: 'Retour sur investissement' },
-                  { v: '1 914 €', l: 'Économies sur 25 ans' },
+                  { v: '52 €', l: 'Économies an 1' },
+                  { v: '3,7 ans', l: 'Retour sur investissement' },
+                  { v: '1 850 €', l: 'Économies sur 25 ans' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-green-pale/40 rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-green">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -247,11 +247,11 @@ export default function BeemKit300WAvisPage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Marseille / PACA', '383 kWh', '63 €', '3,0 ans'],
-                      ['Lyon / Rhône-Alpes', '306 kWh', '50 €', '3,8 ans'],
-                      ['Nantes / Ouest', '306 kWh', '50 €', '3,8 ans'],
-                      ['Paris / Île-de-France', '281 kWh', '46 €', '4,1 ans'],
-                      ['Lille / Nord', '255 kWh', '42 €', '4,5 ans'],
+                      ['Marseille / PACA', '383 kWh', '65 €', '3,0 ans'],
+                      ['Lyon / Rhône-Alpes', '306 kWh', '52 €', '3,7 ans'],
+                      ['Nantes / Ouest', '306 kWh', '52 €', '3,7 ans'],
+                      ['Paris / Île-de-France', '281 kWh', '48 €', '4,0 ans'],
+                      ['Lille / Nord', '255 kWh', '43 €', '4,4 ans'],
                     ].map(([r, p, e, roi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{r}</td>
@@ -263,8 +263,8 @@ export default function BeemKit300WAvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">ROI calcul&eacute; pour un prix de 199&nbsp;&euro;, tarif 0,1940 &euro;/kWh, inflation 3,3&nbsp;%/an (CRE), autoconsommation 85&nbsp;%, Performance Ratio 0,85, exposition sud. Productible PVGIS arrondi : Marseille 1 500, Lyon et Nantes 1 200, Paris 1 100, Lille 1 000 kWh/kWc. Au prix revendeur de 299&nbsp;&euro;, le ROI lyonnais passe &agrave; 5,5 ans.</p>
-              <p className="text-xs text-stone mt-1">Sur 25 ans (Lyon) : <strong>1 914 &euro;</strong> d&apos;&eacute;conomies cumul&eacute;es (+3,3&nbsp;%/an d&apos;inflation). Le simulateur Beem affiche des chiffres plus &eacute;lev&eacute;s car il retient 5&nbsp;% d&apos;inflation annuelle.</p>
+              <p className="text-xs text-stone">ROI calcul&eacute; pour un prix de 199&nbsp;&euro;, tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;%, Performance Ratio 0,85, exposition sud. Productible PVGIS arrondi : Marseille 1 500, Lyon et Nantes 1 200, Paris 1 100, Lille 1 000 kWh/kWc. Au prix revendeur de 299&nbsp;&euro;, le ROI lyonnais passe &agrave; 5,4 ans.</p>
+              <p className="text-xs text-stone mt-1">Sur 25 ans (Lyon) : <strong>~1 850 &euro;</strong> d&apos;&eacute;conomies cumul&eacute;es (inflation 3,3&nbsp;%/an, d&eacute;gradation 0,5&nbsp;%/an). Le simulateur Beem affiche des chiffres plus &eacute;lev&eacute;s car il retient 5&nbsp;% d&apos;inflation annuelle.</p>
             </section>
 
             <section>
@@ -277,13 +277,13 @@ export default function BeemKit300WAvisPage() {
                   <tbody>
                     {[
                       ['Prix', '199 €', '429 €', '599 €'],
-                      ['Puissance', '300 Wc', '500 Wc', '500 Wc'],
-                      ['€/Wc', '0,66 €', '0,86 €', '1,20 €'],
+                      ['Puissance', '300 Wc', '500 Wc', '515 W'],
+                      ['€/Wc', '0,66 €', '0,86 €', '1,16 €'],
                       ['Format', '4 panneaux', '1 panneau', '1 panneau'],
                       ['Installation', '~1 heure', '5 minutes', '1 minute'],
                       ['Bifacial', 'Non', 'Oui', 'Oui'],
-                      ['ROI (Lyon)', '3,8 ans', '4,8 ans', '6,5 ans'],
-                      ['Disponibilité (12/10)', 'Indisponible', 'Expéditions à partir de décembre 2026', 'Non vérifiée'],
+                      ['ROI (Lyon)', '3,7 ans', '4,7 ans', '6,2 ans'],
+                      ['Disponibilité (05/11/2026)', 'En rupture', 'Précommande, expédition à partir de décembre 2026', 'En stock'],
                       ['Garantie annoncée', '25 ans', '25 ans', '25 ans'],
                     ].map(([c, bk, bo, sp], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
@@ -325,8 +325,8 @@ export default function BeemKit300WAvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">&Agrave; 199&nbsp;&euro;, le Beem Kit 300W devient le kit de marque le plus rentable de notre s&eacute;lection : 0,66&nbsp;&euro;/Wc et un retour sur investissement de 3,8 ans en r&eacute;gion lyonnaise. Pour d&eacute;couvrir l&apos;autoconsommation sans gros budget, le produit reste pertinent.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Trois r&eacute;serves p&egrave;sent pourtant plus lourd qu&apos;au printemps : le kit est <strong>indisponible</strong> au 12 octobre 2026, Beem Energy est en <strong>proc&eacute;dure de sauvegarde</strong> jusqu&apos;&agrave; fin 2026 environ, et les <strong>avis clients n&eacute;gatifs</strong> sur le SAV se multiplient. Si vous pouvez attendre et acceptez ce risque, guettez le r&eacute;assort. Sinon, le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (429&nbsp;&euro;, m&ecirc;me marque, donc m&ecirc;me risque) ou le <Link href="/avis/sunology-go" className="text-green hover:underline">Sunology GO</Link> (349&nbsp;&euro;, 270 W) sont les alternatives les plus proches.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">&Agrave; 199&nbsp;&euro;, le Beem Kit 300W devient le kit de marque le plus rentable de notre s&eacute;lection : 0,66&nbsp;&euro;/Wc et un retour sur investissement de 3,7 ans en r&eacute;gion lyonnaise. Pour d&eacute;couvrir l&apos;autoconsommation sans gros budget, le produit reste pertinent.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Trois r&eacute;serves p&egrave;sent pourtant plus lourd qu&apos;au printemps : le kit est <strong>indisponible</strong> au 5 novembre 2026, Beem Energy est en <strong>proc&eacute;dure de sauvegarde</strong> jusqu&apos;&agrave; fin 2026 environ, et les <strong>avis clients n&eacute;gatifs</strong> sur le SAV se multiplient. Si vous pouvez attendre et acceptez ce risque, guettez le r&eacute;assort. Sinon, le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (429&nbsp;&euro;, m&ecirc;me marque, donc m&ecirc;me risque) ou le <Link href="/avis/sunology-go" className="text-green hover:underline">Sunology GO</Link> (349&nbsp;&euro;, 270 W) sont les alternatives les plus proches.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7.5/10</span></strong> &mdash; Le meilleur rapport prix/puissance pour d&eacute;buter, plomb&eacute; par la disponibilit&eacute; et les incertitudes sur Beem Energy.</p>
               <a href="https://beemenergy.fr/products/kit-beem" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">V&eacute;rifier la disponibilit&eacute; du Beem Kit 300W &rarr;</a>
             </section>
@@ -336,7 +336,7 @@ export default function BeemKit300WAvisPage() {
               <Link href="/calculateur" className="btn-primary inline-flex mt-2">Calculer mes &eacute;conomies &rarr;</Link>
             </div>
 
-            <AffiliateCTA productName="Beem Kit 300W" merchantName="Beem Energy" affiliateUrl="https://beemenergy.fr/products/kit-beem" label="Vérifier la disponibilité sur Beem" variant="box" position="footer-box" price="199 €" />
+            <div className="card-lg text-center my-8"><p className="font-semibold mb-2">Le Beem Kit 300W est en rupture de stock</p><p className="text-sm text-charcoal-light mb-4">Aucune configuration n&apos;est commandable sur beemenergy.fr au 5 novembre 2026. Voici les petits kits disponibles aujourd&apos;hui.</p><Link href="/comparatif/kit-solaire-petit-budget" className="btn-primary text-sm inline-flex">Voir les kits petit budget disponibles &rarr;</Link></div>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>
@@ -377,7 +377,7 @@ export default function BeemKit300WAvisPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie :</strong> produit analys&eacute; (pas test&eacute; physiquement) &agrave; partir de la fiche technique Beem, des prix relev&eacute;s le 12 octobre 2026 et des avis clients publics (Trustpilot). Production et ROI calcul&eacute;s avec notre m&eacute;thode standard (0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an, autoconsommation 85&nbsp;%, PR 0,85, 25 ans).</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie :</strong> produit analys&eacute; (pas test&eacute; physiquement) &agrave; partir de la fiche technique Beem, des prix relev&eacute;s le 5 novembre 2026 et des avis clients publics (Trustpilot). Production et ROI calcul&eacute;s avec notre m&eacute;thode standard ({KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;%, PR 0,85, 25 ans).</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> avis ind&eacute;pendant. Certains liens marchands peuvent &ecirc;tre affili&eacute;s, sans incidence sur notre note. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>

@@ -6,10 +6,21 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
+import { PRODUCTS, priceLabel, SCHEMA_AVAILABILITY } from '@/data/products';
+
+// Chiffres calculés au build (pricing.ts + products.ts) : Lyon, plein sud, autoconsommation 85 %.
+const KIT = PRODUCTS['sunology-play'];
+const INPUT = { kitPriceEur: KIT.priceEur, kitPowerWc: KIT.powerWc };
+const PRODUCTION = calculateProductionKwh(INPUT);
+const SAVINGS = Math.round(calculateFirstYearSavings(INPUT));
+const ROI = calculateROIYears(INPUT).toLocaleString('fr-FR');
+const TOTAL25 = Math.round(calculateTotalSavings25Years(INPUT) / 10) * 10;
+const fr = (n: number) => n.toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Sunology PLAY 2 avis 2026 : devenu PLAY 500 W, prix et promo',
-  description: 'Sunology PLAY 2 avis : il est devenu le PLAY 500 W, même prix (599 €). Promo, ROI 6,5 ans, app STREAM, avis clients négatifs et verdict.',
+  title: 'Sunology PLAY 2 avis 2026 : devenu PLAY 515 W, prix et ROI',
+  description: 'Sunology PLAY 2 avis : il est devenu le PLAY 515 W, même prix (599 €). ROI 6,2 ans, app STREAM, avis clients négatifs et verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-play-2',
   },
@@ -18,72 +29,72 @@ export const metadata: Metadata = withCanonicalOg({
 const AFFILIATE_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
 
 const faqData = [
-  { question: 'Le Sunology PLAY 2 est-il encore vendu ?', answer: 'Plus sur le site de Sunology. Au 12 octobre 2026, la fiche sunology.eu s\'intitule « Sunology PLAY » et ne propose plus qu\'une seule version : la station 500 W recto-verso à 599 €. Les séries PLAY2 450 W et 460 W (et la série PLAY 480 W) n\'y sont plus listées. Des PLAY2 peuvent encore circuler chez des revendeurs ou en occasion : vérifiez la puissance exacte avant d\'acheter.' },
-  { question: 'Quelle différence entre le PLAY 2 et le nouveau PLAY ?', answer: 'Le PLAY2 embarquait un panneau bifacial de 450 Wc (puis 460 Wc sur les derniers lots). Le PLAY actuel passe à un panneau back-contact de 500 Wc (jusqu\'à 650 W cumulés recto-verso selon Sunology) et à un micro-onduleur 16 A au lieu de 14 A. Le prix catalogue reste 599 €, donc le prix par watt baisse de 1,33 €/Wc à 1,20 €/Wc et le ROI de 7,1 à 6,5 ans avec notre méthodologie.' },
-  { question: 'Y a-t-il une promo sur le Sunology PLAY 2 / PLAY ?', answer: 'Le prix public est de 599 €. Le 12 octobre 2026, la page produit prévoyait un prix de 533 € (-11 %) réservé aux visiteurs arrivant avec un code promotionnel temporaire ; sans code, c\'est 599 €. À 533 €, le ROI passe de 6,5 à 5,8 ans. Les offres changent souvent : consultez notre page codes promo, datée.' },
-  { question: 'Le Sunology PLAY est-il rentable ?', answer: 'Oui, dans une situation standard. À 599 € pour 500 Wc, notre méthodologie (Lyon, plein sud, PR 0,85, autoconsommation 85 %, 0,1940 €/kWh) donne 510 kWh/an, soit environ 84 €/an d\'économies. Le retour sur investissement est de 6,5 ans avec une inflation du tarif de 3,3 %/an (7,1 ans sans inflation), et les économies cumulées atteignent 3 190 € sur 25 ans.' },
+  { question: 'Le Sunology PLAY 2 est-il encore vendu ?', answer: 'Plus sur le site de Sunology. Au 5 novembre 2026, la fiche sunology.eu s\'intitule « Sunology PLAY » et ne propose plus qu\'une seule version : « 1 station PLAY - 515W Recto / Verso » à 599 €. Les séries PLAY2 450 W et 460 W (et la série PLAY 480 W) n\'y sont plus listées. Des PLAY2 peuvent encore circuler chez des revendeurs ou en occasion : vérifiez la puissance exacte avant d\'acheter.' },
+  { question: 'Quelle différence entre le PLAY 2 et le nouveau PLAY ?', answer: 'Le PLAY2 embarquait un panneau bifacial de 450 Wc (puis 460 Wc sur les derniers lots). Le PLAY actuel passe à un panneau back-contact annoncé 515 W sur sunology.eu au 5 novembre 2026 (la fiche technique d\'août 2026 indiquait 500 Wc ; « jusqu\'à 670 W » cumulés recto-verso selon Sunology) et à un micro-onduleur 16 A au lieu de 14 A. Le prix catalogue reste 599 €, donc le prix par watt baisse de 1,33 € à 1,16 € et le ROI de 7,0 à 6,2 ans avec notre méthodologie.' },
+  { question: 'Y a-t-il une promo sur le Sunology PLAY 2 / PLAY ?', answer: 'Le prix public est de 599 €, sans prix barré sur sunology.eu le 5 novembre 2026. Les offres changent souvent et nous ne citons pas de promotion sans date de fin vérifiée : consultez notre page codes promo, datée.' },
+  { question: 'Le Sunology PLAY est-il rentable ?', answer: 'Oui, dans une situation standard. À 599 € pour 515 W, notre méthodologie (Lyon, plein sud, PR 0,85, autoconsommation 85 %, ${KWH_PRICE_LABEL}) donne 525 kWh/an, soit environ 89 € d\'économies la première année. Le retour sur investissement est de 6,2 ans avec une inflation du tarif de 3,3 %/an et une dégradation des panneaux de 0,5 %/an (6,8 ans sans inflation), et les économies cumulées atteignent environ 3 170 € sur 25 ans.' },
   { question: 'Que vaut l\'application STREAM de Sunology ?', answer: 'L\'app STREAM est gratuite et affiche la production et les économies en temps réel : le micro-onduleur se connecte directement au Wi-Fi, sans boîtier. Le Pack STREAM (228 €, optionnel) ajoute la mesure de la consommation via le compteur Linky. Côté avis clients, les plaintes récurrentes portent sur des pertes de connexion Wi-Fi et une production qui disparaît de l\'app : prévoyez un bon signal Wi-Fi 2,4 GHz à l\'emplacement du panneau.' },
-  { question: 'Quelle différence entre le PLAY et le PLAY MAX ?', answer: 'Le PLAY MAX ajoute une batterie (699 € sur sunology.eu le 12/10/2026, en 460 W). Le PLAY seul ne stocke pas : l\'électricité est consommée en temps réel, le surplus part sur le réseau sans rémunération. Pour un talon de consommation diurne suffisant, le PLAY seul est plus rentable. Les avis négatifs récents visent d\'ailleurs surtout la Master box du PLAY MAX.' },
+  { question: 'Quelle différence entre le PLAY et le PLAY MAX ?', answer: 'Le PLAY MAX ajoute une batterie de 700 Wh (699 € dans le panier sur sunology.eu le 5/11/2026, en 460 W, alors que la page produit affiche encore 1 179 €). Le PLAY seul ne stocke pas : l\'électricité est consommée en temps réel, le surplus part sur le réseau sans rémunération. Pour un talon de consommation diurne suffisant, le PLAY seul est plus rentable. Les avis négatifs récents visent d\'ailleurs surtout la Master box du PLAY MAX.' },
 ];
 
 export default function AvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology PLAY 2 avis : devenu PLAY 500 W, prix, promo et verdict" description="Avis sur le Sunology PLAY 2, devenu PLAY 500 Wc en 2026 : ce qui a changé, prix, promo, rentabilité, app STREAM, avis clients." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-10-12" />
+      <SchemaArticle title="Sunology PLAY 2 avis : devenu PLAY 515 W, prix et verdict" description="Avis sur le Sunology PLAY 2, devenu PLAY 515 W en 2026 : ce qui a changé, prix, promo, rentabilité, app STREAM, avis clients." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct image="/images/produits/sunology-play-2-1.webp" name="Sunology PLAY" brand="Sunology" description="Station solaire plug-and-play 500 Wc (panneau back-contact bifacial, micro-onduleur MX500 500 W Wi-Fi), successeur du PLAY 2. Garantie intégrale 25 ans, garantie de puissance panneau 30 ans." price={599} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
+      <SchemaProduct image="/images/produits/sunology-play-2-1.webp" name="Sunology PLAY" brand="Sunology" description="Station solaire plug-and-play 515 W (panneau back-contact bifacial, micro-onduleur MX500 500 W Wi-Fi), successeur du PLAY 2. Garantie intégrale 25 ans, garantie de puissance panneau 30 ans." price={KIT.priceEur} availability={SCHEMA_AVAILABILITY[KIT.availability]} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
       <SchemaBreadcrumb items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY (ex-PLAY 2)" }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
           <Breadcrumbs items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY (ex-PLAY 2)" }]} />
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis&nbsp;: devenu PLAY 500&nbsp;W, prix, promo et verdict (2026)</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Vous cherchez le <strong>Sunology PLAY 2</strong>&nbsp;? Il n&apos;est plus vendu sous ce nom&nbsp;: Sunology l&apos;a remplac&eacute; par le <strong>PLAY</strong>, au m&ecirc;me prix (599&nbsp;&euro;) mais avec un panneau back-contact de <strong>500&nbsp;Wc</strong> au lieu de 450&nbsp;Wc. Ce qui a chang&eacute;, ce que &ccedil;a rapporte, l&apos;app STREAM, ce que reprochent les clients, et pourquoi se m&eacute;fier des PLAY2 encore en circulation.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; <strong>Mis &agrave; jour le 12 octobre 2026</strong></span><span>&middot;</span><span>13 min de lecture</span></div>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis&nbsp;: devenu PLAY 515&nbsp;W, prix et verdict (2026)</h1>
+            <p className="text-lg text-charcoal-light leading-relaxed">Vous cherchez le <strong>Sunology PLAY 2</strong>&nbsp;? Il n&apos;est plus vendu sous ce nom&nbsp;: Sunology l&apos;a remplac&eacute; par le <strong>PLAY</strong>, au m&ecirc;me prix (599&nbsp;&euro;) mais avec un panneau back-contact de <strong>515&nbsp;W</strong> (d&eacute;nomination sunology.eu au 5 novembre 2026) au lieu de 450&nbsp;Wc. Ce qui a chang&eacute;, ce que &ccedil;a rapporte, l&apos;app STREAM, ce que reprochent les clients, et pourquoi se m&eacute;fier des PLAY2 encore en circulation.</p>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; <strong>Mis &agrave; jour le 5 novembre 2026</strong></span><span>&middot;</span><span>13 min de lecture</span></div>
           </div>
 
           <ProductHero
             brand="Sunology"
             name="PLAY (successeur du PLAY 2)"
             trackingName="PLAY"
-            power="500 Wc"
-            price="599 €"
+            power={`${KIT.powerWc} W`}
+            price={priceLabel('sunology-play')}
             score="8.5/10"
-            tagline="Le kit tout-en-un le plus simple à poser, désormais en 500 Wc au même prix."
+            tagline="Le kit tout-en-un le plus simple à poser, désormais en 515 W au même prix."
             affiliateUrl={AFFILIATE_URL}
             affiliateLabel="Voir le PLAY sur Sunology"
             accentColor="green"
             image="/images/produits/sunology-play-2-1.webp"
             imageAlt="Station solaire Sunology PLAY sur son châssis intégré (photo génération PLAY 2)"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix catalogue v&eacute;rifi&eacute; sur sunology.eu le 12/10/2026 (533&nbsp;&euro; avec code promo temporaire) &middot; Peut varier selon les promotions</p>
+          <p className="text-xs text-stone mt-2 italic">Prix catalogue v&eacute;rifi&eacute; sur sunology.eu le 5 novembre 2026 &middot; Peut varier selon les promotions</p>
 
           <div className="space-y-10">
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Pr&eacute;sentation&nbsp;: du PLAY 2 au PLAY 500&nbsp;W</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Pr&eacute;sentation&nbsp;: du PLAY 2 au PLAY 515&nbsp;W</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le PLAY est la station solaire phare de Sunology, marque nantaise fond&eacute;e en 2019&nbsp;: un panneau, un micro-onduleur et un ch&acirc;ssis pr&eacute;-assembl&eacute;s, livr&eacute;s pr&ecirc;ts &agrave; poser et &agrave; brancher sur une prise. Sunology revendique 130&nbsp;000 foyers &eacute;quip&eacute;s toutes gammes confondues et indique assembler la station dans son usine de Rennes.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Pendant deux ans, le mod&egrave;le vendu s&apos;appelait <strong>PLAY2</strong>&nbsp;: panneau bifacial de 450&nbsp;Wc, puis 460&nbsp;Wc sur les derniers lots. La version 500&nbsp;W a &eacute;t&eacute; lanc&eacute;e en pr&eacute;vente jusqu&apos;au 17&nbsp;ao&ucirc;t 2026 &agrave; 539&nbsp;&euro; (888 exemplaires), puis au tarif normal de 599&nbsp;&euro;. Fin septembre, la fiche sunology.eu listait encore les s&eacute;ries successives (PLAY2 450&nbsp;W, PLAY2 460&nbsp;W, PLAY 480&nbsp;W, PLAY 500&nbsp;W).</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Pendant deux ans, le mod&egrave;le vendu s&apos;appelait <strong>PLAY2</strong>&nbsp;: panneau bifacial de 450&nbsp;Wc, puis 460&nbsp;Wc sur les derniers lots. La version 500&nbsp;W a &eacute;t&eacute; lanc&eacute;e en pr&eacute;vente jusqu&apos;au 17&nbsp;ao&ucirc;t 2026 &agrave; 539&nbsp;&euro; (888 exemplaires), puis au tarif normal de 599&nbsp;&euro;. Fin septembre, la fiche sunology.eu listait encore les s&eacute;ries successives (PLAY2 450&nbsp;W, PLAY2 460&nbsp;W, PLAY 480&nbsp;W, PLAY 500&nbsp;W)&nbsp;; au 5 novembre 2026, la seule variante s&apos;intitule &laquo;&nbsp;515W Recto / Verso&nbsp;&raquo;.</p>
               <div className="card border-l-4 border-l-green my-6">
-                <h3 className="font-bold text-sm mb-1">PLAY 2 ou PLAY&nbsp;: lequel est en vente au 12 octobre 2026&nbsp;?</h3>
-                <p className="text-xs text-charcoal-light leading-relaxed">Sur sunology.eu, <strong>uniquement le PLAY 500&nbsp;W</strong> (r&eacute;f&eacute;rence &laquo;&nbsp;1 station PLAY &ndash; 500W Recto / Verso&nbsp;&raquo;, 599&nbsp;&euro;). Le nom &laquo;&nbsp;PLAY 2&nbsp;&raquo; a disparu du site du fabricant&nbsp;: si vous le voyez encore affich&eacute; ailleurs, c&apos;est soit un stock de l&apos;ancienne g&eacute;n&eacute;ration (450 ou 460&nbsp;Wc), soit une fiche non mise &agrave; jour. Ce qui suit vaut pour les deux&nbsp;: m&ecirc;me concept, m&ecirc;me ch&acirc;ssis, m&ecirc;me app.</p>
+                <h3 className="font-bold text-sm mb-1">PLAY 2 ou PLAY&nbsp;: lequel est en vente au 5 novembre 2026&nbsp;?</h3>
+                <p className="text-xs text-charcoal-light leading-relaxed">Sur sunology.eu, <strong>uniquement le PLAY 515&nbsp;W</strong> (r&eacute;f&eacute;rence &laquo;&nbsp;1 station PLAY &ndash; 515W Recto / Verso&nbsp;&raquo;, 599&nbsp;&euro;, v&eacute;rifi&eacute; le 5 novembre 2026). Le nom &laquo;&nbsp;PLAY 2&nbsp;&raquo; a disparu du site du fabricant&nbsp;: si vous le voyez encore affich&eacute; ailleurs, c&apos;est soit un stock de l&apos;ancienne g&eacute;n&eacute;ration (450 ou 460&nbsp;Wc), soit une fiche non mise &agrave; jour. Ce qui suit vaut pour les deux&nbsp;: m&ecirc;me concept, m&ecirc;me ch&acirc;ssis, m&ecirc;me app.</p>
               </div>
 
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">&Eacute;volution</th><th className="text-center p-3">PLAY2 (450/460&nbsp;W)</th><th className="text-center p-3 bg-green-dark rounded-tr-xl">PLAY (500&nbsp;W)</th>
+                    <th className="text-left p-3 rounded-tl-xl">&Eacute;volution</th><th className="text-center p-3">PLAY2 (450/460&nbsp;W)</th><th className="text-center p-3 bg-green-dark rounded-tr-xl">PLAY (515&nbsp;W)</th>
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Panneau', 'Bifacial biverre 450 puis 460 Wc', 'Back-contact N-type HIBC, biverre bifacial, 500 Wc'],
+                      ['Panneau', 'Bifacial biverre 450 puis 460 Wc', 'Back-contact N-type HIBC, biverre bifacial, 515 W (500 Wc sur la fiche d\'août 2026)'],
                       ['Micro-onduleur', 'Tsun TSOL-MX450, entrée 14 A', 'MX500, 500 W AC, entrée 16 A'],
                       ['Dimensions panneau', '≈ 1,76 × 1,13 m', '1,80 × 1,134 m'],
-                      ['Statut (12/10/2026)', 'Retiré de sunology.eu', 'Seule version vendue'],
+                      ['Statut (05/11/2026)', 'Retiré de sunology.eu', 'Seule version vendue'],
                       ['Prix catalogue', '599 € (au lancement : 699 €)', '599 €'],
-                      ['Prix par watt-crête', '1,33 €/Wc (450) · 1,30 €/Wc (460)', '1,20 €/Wc'],
-                      ['Production (Lyon, sud)', '459 kWh/an (450 Wc)', '510 kWh/an'],
-                      ['ROI (inflation 3,3 %/an)', '7,1 ans (450 Wc)', '6,5 ans'],
+                      ['Prix par watt-crête', '1,33 €/Wc (450) · 1,30 €/Wc (460)', '1,16 €/W'],
+                      ['Production (Lyon, sud)', '459 kWh/an (450 Wc)', `${fr(PRODUCTION)} kWh/an`],
+                      ['ROI (inflation 3,3 %/an, dégradation 0,5 %/an)', '7,0 ans (450 Wc)', `${ROI} ans`],
                     ].map(([c, o, n], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{c}</td>
@@ -102,26 +113,26 @@ export default function AvisPage() {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
-                  { v: '500 Wc', l: 'Puissance' },
+                  { v: `${KIT.powerWc} W`, l: 'Puissance' },
                   { v: '599 €', l: 'Prix catalogue' },
-                  { v: '1,20 €/Wc', l: 'Prix par watt' },
+                  { v: '1,16 €/W', l: 'Prix par watt' },
                   { v: '25 ans', l: 'Garantie intégrale' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-cream rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-green">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">Fiche technique du Sunology PLAY 500&nbsp;W</h2>
+              <h2 className="text-2xl font-extrabold mb-4">Fiche technique du Sunology PLAY 515&nbsp;W</h2>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
                 <table className="w-full text-sm border-collapse">
                   <tbody>
                     {[
-                      ['Puissance crête', '500 Wc (STC)'],
+                      ['Puissance crête', '515 W selon sunology.eu (05/11/2026) ; 500 Wc STC sur la fiche technique d\'août 2026'],
                       ['Technologie', 'Back-contact, 108 demi-cellules N-type HIBC, biverre bifacial, aspect « ultra black »'],
                       ['Rendement module', '24,5 % (245 W/m²)'],
                       ['Gain face arrière annoncé', '5 % minimum, jusqu\'à 30 % en pic (selon l\'albédo)'],
@@ -132,7 +143,7 @@ export default function AvisPage() {
                       ['Châssis', 'Aluminium, inclinaison sol 27/35/42°, mur 48/55/63° (kit mural en option)'],
                       ['Connectique', 'Câble secteur 3 m fourni'],
                       ['Garanties', 'Intégrale 25 ans (panneau, micro-onduleur, châssis) · garantie de puissance panneau 30 ans'],
-                      ['Prix', '599 € (sunology.eu, 12/10/2026) · 533 € avec code promo temporaire'],
+                      ['Prix', '599 € (sunology.eu, 05/11/2026)'],
                     ].map(([k, v], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold w-1/3">{k}</td>
@@ -142,14 +153,14 @@ export default function AvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">Source&nbsp;: page caract&eacute;ristiques et fiche technique Sunology PLAY 500&nbsp;W (&eacute;dition ao&ucirc;t 2026), fiche produit sunology.eu (12/10/2026). Le fabricant du micro-onduleur MX500 n&apos;est pas pr&eacute;cis&eacute; par Sunology. La fiche produit actuelle annonce une garantie int&eacute;grale de 25 ans et une garantie de puissance de 30 ans sur le panneau.</p>
+              <p className="text-xs text-stone">Source&nbsp;: page caract&eacute;ristiques et fiche technique Sunology PLAY 500&nbsp;W (&eacute;dition ao&ucirc;t 2026), fiche produit sunology.eu (5/11/2026). Le fabricant du micro-onduleur MX500 n&apos;est pas pr&eacute;cis&eacute; par Sunology. La fiche produit actuelle annonce une garantie int&eacute;grale de 25 ans et une garantie de puissance de 30 ans sur le panneau.</p>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime</h2>
               <div className="space-y-3">
                 {[
-                  { t: '50 Wc de plus au même prix', d: 'Le passage de 450 à 500 Wc à 599 € fait baisser le prix par watt de 1,33 à 1,20 €/Wc, et le ROI de 7,1 à 6,5 ans avec notre méthodologie. C\'est l\'évolution la plus utile de cette génération.' },
+                  { t: '65 W de plus au même prix', d: 'Le passage de 450 Wc à 515 W à 599 € fait baisser le prix par watt de 1,33 € à 1,16 €, et le ROI de 7,0 à 6,2 ans avec notre méthodologie. C\'est l\'évolution la plus utile de cette génération.' },
                   { t: 'Installation la plus simple du marché', d: 'Le châssis est pré-assemblé en usine : on déplie, on leste, on branche. Aucun outil, aucune connaissance technique.' },
                   { t: 'Panneau back-contact soigné', d: 'Les contacts sont reportés à l\'arrière des cellules : pas de grille visible en face avant, meilleur rendement surfacique (24,5 %) et, selon Sunology, moins de pertes en ombrage partiel.' },
                   { t: 'Garanties parmi les plus longues', d: 'Garantie intégrale de 25 ans sur le panneau, le micro-onduleur et le châssis, plus 30 ans de garantie de puissance sur le panneau. Rare sur un kit plug-and-play à ce prix.' },
@@ -167,14 +178,14 @@ export default function AvisPage() {
               </p>
             </section>
 
-            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Vérifier le prix du PLAY 500 W" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Vérifier le prix du PLAY 515 W" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
                   { t: 'Encombrant et lourd', d: 'Le panneau mesure 1,80 × 1,13 m et la station pèse 30 kg. Sur un petit balcon, ça prend de la place ; pour un garde-corps étroit, préférez un kit en panneaux plus petits.' },
-                  { t: 'Toujours plus cher au watt que Beem', d: 'À 1,20 €/Wc, le PLAY reste nettement au-dessus du Beem On 500 Wc (429 €, 0,86 €/Wc). Vous payez la simplicité, le châssis et les garanties longues.' },
+                  { t: 'Toujours plus cher au watt que Beem', d: 'À 1,16 €/W, le PLAY reste nettement au-dessus du Beem On 500 Wc (429 €, 0,86 €/Wc, mais en précommande jusqu\'en décembre 2026). Vous payez la simplicité, le châssis et les garanties longues.' },
                   { t: 'Pas de batterie', d: 'À 599 €, rien n\'est stocké. Si vous consommez surtout le soir, l\'autoconsommation chute et la rentabilité avec.' },
                   { t: 'Gain bifacial à relativiser', d: 'Sunology annonce jusqu\'à 30 % de gain en pic. En moyenne annuelle, sur un sol ou un mur sombre, le gain réel est de quelques pour cent. Nos calculs ne l\'intègrent pas.' },
                   { t: 'Gammes et noms confus', d: 'PLAY2 450, PLAY2 460, PLAY 480, PLAY 500 : quatre séries au même prix se sont succédé en un an. Chez un revendeur ou en occasion, vérifiez la puissance exacte avant de payer.' },
@@ -195,14 +206,14 @@ export default function AvisPage() {
               <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
                 <table className="w-full text-sm border-collapse min-w-[500px]">
                   <thead><tr className="bg-green text-white">
-                    <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3 bg-green-dark">Sunology PLAY 500&nbsp;W &#9733;</th><th className="text-center p-3">Beem On 500 Wc</th><th className="text-center p-3 rounded-tr-xl">Sunethic F500</th>
+                    <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3 bg-green-dark">Sunology PLAY 515&nbsp;W &#9733;</th><th className="text-center p-3">Beem On 500 Wc</th><th className="text-center p-3 rounded-tr-xl">Sunethic F500</th>
                   </tr></thead>
                   <tbody>
                     {[
                       ['Prix', '599 €', '429 €', '690 €'],
-                      ['Puissance', '500 Wc', '500 Wc', '500 Wc'],
-                      ['Rapport €/Wc', '1,20 €/Wc', '0,86 €/Wc', '1,38 €/Wc'],
-                      ['ROI (méthodologie)', '6,5 ans', '4,8 ans', '7,4 ans'],
+                      ['Puissance', '515 W', '500 Wc', '500 Wc'],
+                      ['Rapport €/Wc', '1,16 €/W', '0,86 €/Wc', '1,38 €/Wc'],
+                      ['ROI (méthodologie)', `${ROI} ans`, '4,7 ans', '7,3 ans'],
                       ['Installation', 'Châssis pré-assemblé', '~5 min', '~10 min'],
                       ['App suivi', 'STREAM (Wi-Fi natif)', 'Beem (Beembox)', 'Non précisé'],
                       ['Garantie', '25 ans intégrale + 30 ans puissance', '25 ans', '25 ans'],
@@ -219,7 +230,7 @@ export default function AvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2 mb-3">&#9733; Notre recommandation pour la simplicit&eacute;. &Agrave; puissance &eacute;gale, le Beem On 500 Wc est 170&nbsp;&euro; moins cher, mais Beem Energy est en proc&eacute;dure de sauvegarde depuis novembre 2025 &mdash; SAV maintenu, risque long terme &agrave; peser.</p>
+              <p className="text-xs text-stone mt-2 mb-3">&#9733; Notre recommandation pour la simplicit&eacute;. &Agrave; puissance proche, le Beem On 500 Wc est 170&nbsp;&euro; moins cher (en pr&eacute;commande, exp&eacute;dition &agrave; partir de d&eacute;cembre 2026), mais Beem Energy est en proc&eacute;dure de sauvegarde depuis novembre 2025 &mdash; SAV maintenu, risque long terme &agrave; peser.</p>
               <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="text-green font-semibold text-sm hover:underline">&rarr; Le match d&eacute;taill&eacute; PLAY vs Beem On 500 Wc</Link>
               <p className="text-sm text-charcoal-light mt-2">Et si vous h&eacute;sitez entre les deux marques plut&ocirc;t qu&apos;entre deux kits&nbsp;: <Link href="/comparatif/sunology-vs-beem" className="text-green font-semibold hover:underline">Sunology vs Beem, le comparatif des gammes</Link>.</p>
             </section>
@@ -234,24 +245,24 @@ export default function AvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Rentabilit&eacute; et production</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Calcul standard du site&nbsp;: Lyon, plein sud, productible 1&nbsp;200&nbsp;kWh/kWc, PR 0,85, 85&nbsp;% d&apos;autoconsommation, 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Calcul standard du site&nbsp;: Lyon, plein sud, productible 1&nbsp;200&nbsp;kWh/kWc, PR 0,85, 85&nbsp;% d&apos;autoconsommation, {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}.</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
-                  { v: '510 kWh', l: 'Production/an' },
-                  { v: '84 €', l: 'Économies/an' },
-                  { v: '6,5 ans', l: 'Retour sur invest.' },
-                  { v: '3 190 €', l: 'Économies 25 ans' },
+                  { v: `${fr(PRODUCTION)} kWh`, l: 'Production/an' },
+                  { v: `${SAVINGS} €`, l: 'Économies 1re année' },
+                  { v: `${ROI} ans`, l: 'Retour sur invest.' },
+                  { v: `${fr(TOTAL25)} €`, l: 'Économies 25 ans' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-green-pale/40 rounded-brand-lg">
                     <div className="font-mono font-bold text-xl text-green">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed mb-4">Soit un gain net d&apos;environ 2&nbsp;591&nbsp;&euro; sur 25 ans. Sans inflation du tarif, le ROI serait de 7,1 ans. <strong>Avec le code promo &agrave; 533&nbsp;&euro;</strong>&nbsp;: ROI 5,8 ans (6,3 ans sans inflation). <strong>Pour un PLAY2 450&nbsp;Wc de stock</strong> au m&ecirc;me prix&nbsp;: 459&nbsp;kWh/an, 76&nbsp;&euro;/an, ROI 7,1 ans, 2&nbsp;871&nbsp;&euro; sur 25 ans (PLAY2 460&nbsp;Wc&nbsp;: 469&nbsp;kWh, 77&nbsp;&euro;/an, 7,0 ans).</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Selon le d&eacute;partement (plein sud, productibles PVGIS recal&eacute;s sur notre r&eacute;f&eacute;rence Lyon)&nbsp;: environ 589&nbsp;kWh/an dans les Bouches-du-Rh&ocirc;ne (ROI 5,7 ans), 439&nbsp;kWh/an &agrave; Paris (7,4 ans), 400&nbsp;kWh/an dans le Nord (8,1 ans). En exposition est ou ouest, comptez environ 20&nbsp;% de moins&nbsp;: 408&nbsp;kWh/an &agrave; Lyon, ROI 7,9 ans.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Soit un gain net d&apos;environ {fr(TOTAL25 - KIT.priceEur)}&nbsp;&euro; sur 25 ans. Sans inflation du tarif, le ROI serait de 6,8 ans. <strong>Pour un PLAY2 450&nbsp;Wc de stock</strong> au m&ecirc;me prix&nbsp;: 459&nbsp;kWh/an, 78&nbsp;&euro; la premi&egrave;re ann&eacute;e, ROI 7,0 ans, environ 2&nbsp;770&nbsp;&euro; sur 25 ans (PLAY2 460&nbsp;Wc&nbsp;: 469&nbsp;kWh, 80&nbsp;&euro;, 6,9 ans).</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Selon le d&eacute;partement (plein sud, productibles PVGIS recal&eacute;s sur notre r&eacute;f&eacute;rence Lyon)&nbsp;: environ 606&nbsp;kWh/an dans les Bouches-du-Rh&ocirc;ne (ROI 5,5 ans), 453&nbsp;kWh/an &agrave; Paris (7,1 ans), 412&nbsp;kWh/an dans le Nord (7,8 ans). En exposition est ou ouest, comptez environ 20&nbsp;% de moins&nbsp;: 420&nbsp;kWh/an &agrave; Lyon, ROI 7,6 ans.</p>
               <h3 className="font-bold text-base mb-3 mt-6">Retours d&apos;utilisateurs (g&eacute;n&eacute;ration PLAY2 450&nbsp;W)</h3>
-              <p className="text-sm text-charcoal-light leading-relaxed mb-3">Les retours publics portent encore sur le PLAY2 450&nbsp;W. Pour le PLAY 500&nbsp;W, ajoutez environ 11&nbsp;% &agrave; conditions &eacute;gales.</p>
+              <p className="text-sm text-charcoal-light leading-relaxed mb-3">Les retours publics portent encore sur le PLAY2 450&nbsp;W. Pour le PLAY 515&nbsp;W, ajoutez environ 14&nbsp;% &agrave; conditions &eacute;gales.</p>
               <div className="space-y-3 my-4">
                 {[
                   { loc: 'Marseille, exposition sud', prod: '650+ kWh/an', comment: 'Au-dessus de l\'estimation. 2,8-3,2 kWh/jour en été, ~1 kWh/jour en hiver.' },
@@ -303,7 +314,7 @@ export default function AvisPage() {
                   'Consommation concentrée le soir (pas de batterie)',
                   'Exposition nord ou très ombragée',
                   'Copropriété interdisant les installations visibles en façade',
-                  'Budget serré : le Beem On 500 Wc offre la même puissance pour 170 € de moins',
+                  'Budget serré : le Beem On 500 Wc offre une puissance proche pour 170 € de moins (en précommande, expédition à partir de décembre 2026)',
                   'Wi-Fi qui ne porte pas jusqu\'au balcon, si le suivi dans l\'app compte pour vous',
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-charcoal-light">
@@ -316,14 +327,14 @@ export default function AvisPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le passage &agrave; 500&nbsp;Wc corrige le principal reproche fait au PLAY2&nbsp;: un prix par watt &eacute;lev&eacute;. &Agrave; 599&nbsp;&euro;, le PLAY rapporte environ 84&nbsp;&euro;/an et se rembourse en 6,5 ans (3&nbsp;190&nbsp;&euro; d&apos;&eacute;conomies sur 25 ans), avec l&apos;installation la plus simple et les garanties les plus longues du segment.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Il reste plus cher au watt que le Beem On 500 Wc, encombrant, et sans stockage. Les avis clients pointent aussi un SAV lent quand il faut le solliciter. Si vous tombez sur un PLAY2 450/460&nbsp;W en magasin ou en occasion, ne l&apos;achetez que s&apos;il est nettement moins cher que le PLAY 500&nbsp;W.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le passage &agrave; 515&nbsp;W corrige le principal reproche fait au PLAY2&nbsp;: un prix par watt &eacute;lev&eacute;. &Agrave; 599&nbsp;&euro;, le PLAY rapporte environ {SAVINGS}&nbsp;&euro; la premi&egrave;re ann&eacute;e et se rembourse en {ROI}&nbsp;ans (~{fr(TOTAL25)}&nbsp;&euro; d&apos;&eacute;conomies sur 25 ans), avec l&apos;installation la plus simple et les garanties les plus longues du segment.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Il reste plus cher au watt que le Beem On 500 Wc, encombrant, et sans stockage. Les avis clients pointent aussi un SAV lent quand il faut le solliciter. Si vous tombez sur un PLAY2 450/460&nbsp;W en magasin ou en occasion, ne l&apos;achetez que s&apos;il est nettement moins cher que le PLAY 515&nbsp;W.</p>
               <p className="text-sm text-charcoal-light leading-relaxed mb-4">Pour payer moins cher&nbsp;: voir nos <Link href="/codes-promo" className="text-green font-semibold hover:underline">codes promo et parrainage Sunology</Link> (offres v&eacute;rifi&eacute;es et dat&eacute;es).</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale&nbsp;: <span className="text-amber-dark text-xl font-extrabold">8.5/10</span></strong></p>
-              <a href={AFFILIATE_URL} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY 500&nbsp;W &rarr;</a>
+              <a href={AFFILIATE_URL} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le PLAY 515&nbsp;W &rarr;</a>
             </section>
 
-            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price="599 €" />
+            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir l'offre actuelle sur Sunology" variant="box" position="footer-box" price={priceLabel('sunology-play')} />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>
@@ -341,7 +352,7 @@ export default function AvisPage() {
               <div className="space-y-3">
                 <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology PLAY vs Beem On 500 Wc</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Deux kits de 500 Wc, 170&nbsp;&euro; d&apos;&eacute;cart&nbsp;: lequel choisir</p>
+                  <p className="text-xs text-charcoal-light mt-1">Deux kits d&apos;environ 500&nbsp;W, 170&nbsp;&euro; d&apos;&eacute;cart&nbsp;: lequel choisir</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
@@ -368,8 +379,8 @@ export default function AvisPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie ROI&nbsp;:</strong> tarif 0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an (CRE), autoconsommation 85&nbsp;% (95&nbsp;% avec batterie), Performance Ratio 0,85, Lyon plein sud (1&nbsp;200&nbsp;kWh/kWc), 25 ans. Produit analys&eacute; sur fiche technique et retours d&apos;utilisateurs, pas test&eacute; physiquement. <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.</p>
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Sources&nbsp;:</strong> sunology.eu (fiche produit PLAY et variantes, page caract&eacute;ristiques, fiche technique PLAY 500&nbsp;W &eacute;dition ao&ucirc;t 2026), Selectra (lancement du PLAY 500&nbsp;W, 7 ao&ucirc;t 2026), Domo-blog (prise en main PLAY 2), Trustpilot Sunology (avis 1-2 &eacute;toiles, juin-octobre 2026). Prix et gamme relev&eacute;s sur sunology.eu le 12/10/2026.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie ROI&nbsp;:</strong> tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;% (95&nbsp;% avec batterie), Performance Ratio 0,85, Lyon plein sud (1&nbsp;200&nbsp;kWh/kWc), 25 ans. Produit analys&eacute; sur fiche technique et retours d&apos;utilisateurs, pas test&eacute; physiquement. <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>Sources&nbsp;:</strong> sunology.eu (fiche produit PLAY et variantes, page caract&eacute;ristiques, fiche technique PLAY 500&nbsp;W &eacute;dition ao&ucirc;t 2026), Selectra (lancement du PLAY 500&nbsp;W, 7 ao&ucirc;t 2026), Domo-blog (prise en main PLAY 2), Trustpilot Sunology (avis 1-2 &eacute;toiles, juin-octobre 2026). Prix et gamme relev&eacute;s sur sunology.eu le 5 novembre 2026.</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence&nbsp;:</strong> cet avis est ind&eacute;pendant. Les liens vers Sunology sont des liens d&apos;affiliation. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -48,7 +49,7 @@ const faqData = [
 const points_forts = [
   {
     titre: 'Grosse batterie pour le prix promo',
-    detail: '2,6 kWh pour 999 € en promotion, soit environ 384 € par kWh stocké. C\'est moins cher au kWh que l\'EcoFlow STREAM Ultra (1,92 kWh à ~1 099 €) et que le Bluetti Balco 260 (2,56 kWh à 849 €), à condition que la promo dure.',
+    detail: '2,6 kWh pour 999 € en promotion, soit environ 384 € par kWh stocké. Au 5 novembre 2026, c\'est pourtant plus cher au kWh que le Bluetti Balco 260 (2,56 kWh à 789 €, 308 €/kWh) et l\'EcoFlow STREAM Ultra (1,92 kWh à 659 €, 343 €/kWh), tous deux en promotion eux aussi.',
   },
   {
     titre: 'Vraie sortie de secours 2 400 W',
@@ -273,9 +274,9 @@ export default function AllpowersBs2500ProPage() {
                     <tr className="border-b border-border-light">
                       <td className="p-3 font-semibold bg-white">Prix</td>
                       <td className="p-3 text-center bg-green-pale/30 font-mono font-bold">999 &euro;<span className="block text-xs font-normal text-stone">(promo, sans panneaux)</span></td>
-                      <td className="p-3 text-center bg-white font-mono">488 &euro;<span className="block text-xs text-stone">(avec 2 panneaux)</span></td>
-                      <td className="p-3 text-center bg-cream/50 font-mono">~1 099 &euro;</td>
-                      <td className="p-3 text-center bg-white font-mono">849 &euro;</td>
+                      <td className="p-3 text-center bg-white font-mono">539 &euro;<span className="block text-xs text-stone">(719 &euro; avec 2 panneaux)</span></td>
+                      <td className="p-3 text-center bg-cream/50 font-mono">659 &euro;<span className="block text-xs text-stone">(promo)</span></td>
+                      <td className="p-3 text-center bg-white font-mono">789 &euro;<span className="block text-xs text-stone">(promo)</span></td>
                     </tr>
                     <tr className="border-b border-border-light">
                       <td className="p-3 font-semibold bg-cream/50">Capacit&eacute;</td>
@@ -337,15 +338,15 @@ export default function AllpowersBs2500ProPage() {
                   <p className="text-xs text-charcoal-light mt-1">Production (800 Wc, sud, Lyon, PR 0,85)</p>
                 </div>
                 <div className="card-lg bg-green-pale/30 border-green/10 text-center">
-                  <div className="font-mono text-2xl font-bold text-green">150 &euro;/an</div>
+                  <div className="font-mono text-2xl font-bold text-green">155 &euro;</div>
                   <p className="text-xs text-charcoal-light mt-1">&Eacute;conomies la 1re ann&eacute;e (95 % autoconsomm&eacute;s)</p>
                 </div>
                 <div className="card-lg bg-green-pale/30 border-green/10 text-center">
                   <div className="font-mono text-2xl font-bold text-green">8,2 ans</div>
-                  <p className="text-xs text-charcoal-light mt-1">Retour sur investissement (0,1940 &euro;/kWh, +3,3 %/an)</p>
+                  <p className="text-xs text-charcoal-light mt-1">Retour sur investissement ({KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL})</p>
                 </div>
                 <div className="card-lg bg-green-pale/30 border-green/10 text-center">
-                  <div className="font-mono text-2xl font-bold text-green">5 704 &euro;</div>
+                  <div className="font-mono text-2xl font-bold text-green">~5 500 &euro;</div>
                   <p className="text-xs text-charcoal-light mt-1">&Eacute;conomies cumul&eacute;es sur 25 ans</p>
                 </div>
               </div>
@@ -353,7 +354,7 @@ export default function AllpowersBs2500ProPage() {
                 Avec le pack officiel (bo&icirc;tier + un panneau pliable SP039 de 600&nbsp;W &agrave; 1&nbsp;499&nbsp;&euro;), la production tombe &agrave; 612&nbsp;kWh/an et le retour sur investissement passe &agrave; <strong>11,2&nbsp;ans</strong>&nbsp;: mieux vaut acheter deux panneaux rigides s&eacute;par&eacute;ment.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                Ces 8,2&nbsp;ans supposent que la batterie tient vraiment ses 2,6&nbsp;kWh et ses 6&nbsp;000 cycles, et que la garantie de 5&nbsp;ans couvre les premi&egrave;res ann&eacute;es. C&apos;est mieux que l&apos;EcoFlow STREAM Ultra (8,8&nbsp;ans dans les m&ecirc;mes conditions), mais moins bien que le Zendure SolarFlow (5,3&nbsp;ans).
+                Ces 8,2&nbsp;ans supposent que la batterie tient vraiment ses 2,6&nbsp;kWh et ses 6&nbsp;000 cycles, et que la garantie de 5&nbsp;ans couvre les premi&egrave;res ann&eacute;es. C&apos;est moins bien que l&apos;EcoFlow STREAM Ultra (6,3&nbsp;ans dans les m&ecirc;mes conditions, au prix promotionnel de 659&nbsp;&euro;) et que le Zendure SolarFlow 800 Plus en pack avec 2 panneaux de 500&nbsp;W (3,6&nbsp;ans &agrave; 719&nbsp;&euro;).
               </p>
             </section>
 
@@ -408,7 +409,7 @@ export default function AllpowersBs2500ProPage() {
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h3>
-                  <p className="text-xs text-charcoal-light mt-1">La batterie de balcon la plus rentable (5,3 ans), sans sortie de secours</p>
+                  <p className="text-xs text-charcoal-light mt-1">La batterie de balcon la plus rentable (3,6 ans en pack), sans sortie de secours</p>
                 </Link>
                 <Link href="/avis/ecoflow-stream-ultra" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h3>
@@ -429,7 +430,7 @@ export default function AllpowersBs2500ProPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie&nbsp;:</strong> ROI calcul&eacute; avec le tarif 0,1940&nbsp;&euro;/kWh, une inflation de 3,3&nbsp;%/an (CRE), 95&nbsp;% d&apos;autoconsommation avec batterie, Performance Ratio 0,85, Lyon plein sud. Fiche technique et prix relev&eacute;s sur iallpowers.fr le 05/11/2026. Produit non test&eacute; par nos soins. Cet article contient des liens affili&eacute;s ALLPOWERS (via Awin)&nbsp;: nous touchons une commission si vous achetez, sans surco&ucirc;t pour vous, et cela n&apos;a pas influenc&eacute; la note.{' '}
+                <strong>M&eacute;thodologie&nbsp;:</strong> ROI calcul&eacute; avec le tarif {KWH_PRICE_LABEL}, une inflation de {KWH_INFLATION_LABEL}, une d&eacute;gradation des panneaux de {PANEL_DEGRADATION_LABEL}, 95&nbsp;% d&apos;autoconsommation avec batterie, Performance Ratio 0,85, Lyon plein sud. Fiche technique et prix relev&eacute;s sur iallpowers.fr le 05/11/2026. Produit analys&eacute;, pas test&eacute; physiquement. Cet article contient des liens affili&eacute;s ALLPOWERS (via Awin)&nbsp;: nous touchons une commission si vous achetez, sans surco&ucirc;t pour vous, et cela n&apos;a pas influenc&eacute; la note.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.
               </p>
             </div>

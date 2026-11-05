@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
+import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
+import { PRODUCTS, SCHEMA_AVAILABILITY } from '@/data/products';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -20,10 +22,10 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   { question: 'Sunethic, c\'est une marque fiable ?', answer: 'Sunethic est une SAS française basée à Avignon (Vaucluse), société à mission fondée par Thomas Cautier, à l\'actionnariat familial. En octobre 2026, elle affiche 4,7/5 sur Trustpilot pour 1 234 avis (86 % de 5 étoiles). Les avis sont sollicités par la marque, comme chez la plupart des vendeurs en ligne. Les critiques récurrentes portent sur des délais de livraison et quelques e-mails restés sans réponse, pas sur la qualité du matériel.' },
   { question: 'Le Sunethic F500 est-il vraiment fabriqué en France ?', answer: 'Le panneau, oui : c\'est un module Voltec Solar de 500 Wc, assemblé à Dinsheim-sur-Bruche (Alsace). Le micro-onduleur, non : c\'est un APsystems EZ1, fabricant non français. Sunethic ne fabrique pas les panneaux lui-même : la marque conçoit et assemble les stations, et revend des modules français. « Panneau Made in France » est donc exact, « kit 100 % français » ne l\'est pas.' },
-  { question: 'Combien coûte le Sunethic F500 en 2026 ?', answer: '690 € TTC sur sunethic.fr (prix vérifié le 12 octobre 2026), livraison offerte, paiement en 3 ou 4 fois sans frais possible. Cela fait 1,38 €/Wc, contre 1,20 €/Wc pour le Sunology PLAY (599 €) et 0,86 €/Wc pour le Beem On 500 Wc (429 €).' },
+  { question: 'Combien coûte le Sunethic F500 en 2026 ?', answer: '690 € TTC sur sunethic.fr (prix vérifié le 5 novembre 2026), livraison offerte, paiement en 3 ou 4 fois sans frais possible. Cela fait 1,38 €/Wc, contre 1,16 €/W pour le Sunology PLAY (599 €, 515 W) et 0,86 €/Wc pour le Beem On 500 Wc (429 €, en précommande).' },
   { question: 'Quelle garantie offre Sunethic ?', answer: '25 ans sur le panneau et sur le micro-onduleur (pièces), plus 30 ans fabricant sur le panneau en parallèle. Câbles, connecteurs et gestionnaire de suivi : 2 ans. Points à connaître dans les conditions : réclamation écrite sous 15 jours après la découverte du défaut, main-d\'œuvre et déplacement exclus, et Sunethic peut remplacer un panneau par un modèle reconditionné.' },
-  { question: 'Sunethic F500 vs Sunology PLAY : lequel choisir ?', answer: 'Même puissance (500 Wc), donc même production estimée : 510 kWh/an à Lyon plein sud. Le Sunethic coûte 91 € de plus (690 € vs 599 €), d\'où un retour sur investissement de 7,4 ans contre 6,5 ans. Choisissez Sunethic si le panneau français compte pour vous, Sunology sinon. Si seul le prix compte, le Beem On 500 Wc (429 €, 4,8 ans) est loin devant.' },
-  { question: 'Le F500 est-il rentable en moins de 6 ans comme l\'annonce Sunethic ?', answer: 'Pas avec notre méthode standard. À Lyon, exposition sud, tarif 0,1940 €/kWh, 85 % d\'autoconsommation et inflation de 3,3 %/an, on obtient 7,4 ans (8,2 ans sans inflation). Moins de 6 ans est atteignable dans le Sud avec un fort taux d\'autoconsommation, pas dans le cas moyen.' },
+  { question: 'Sunethic F500 vs Sunology PLAY : lequel choisir ?', answer: 'Puissance proche (500 Wc contre 515 W) : 510 contre 525 kWh/an à Lyon plein sud. Le Sunethic coûte 91 € de plus (690 € contre 599 €), d\'où un retour sur investissement de 7,3 ans contre 6,2 ans. Choisissez Sunethic si le panneau français compte pour vous, Sunology sinon. Si seul le prix compte, le Beem On 500 Wc (429 €, 4,7 ans, en précommande jusqu\'en décembre 2026) est loin devant.' },
+  { question: 'Le F500 est-il rentable en moins de 6 ans comme l\'annonce Sunethic ?', answer: `Pas avec notre méthode standard. À Lyon, exposition sud, tarif ${KWH_PRICE_LABEL}, 85 % d\'autoconsommation, inflation de 3,3 %/an et dégradation des panneaux de 0,5 %/an, on obtient 7,3 ans (8,1 ans sans inflation). Moins de 6 ans est atteignable dans le Sud avec un fort taux d\'autoconsommation, pas dans le cas moyen.` },
 ];
 
 const specs = [
@@ -41,17 +43,17 @@ const specs = [
 ];
 
 const comparatif = [
-  { name: 'Sunethic F500', power: '500 Wc', price: '690 €', wc: '1,38 €', roi: '7,4 ans', origin: 'France (Voltec)', href: null, highlight: true },
-  { name: 'Sunology PLAY', power: '500 Wc', price: '599 €', wc: '1,20 €', roi: '6,5 ans', origin: 'Hors France', href: '/avis/sunology-play-2', highlight: false },
-  { name: 'Beem On 500 Wc', power: '500 Wc', price: '429 €', wc: '0,86 €', roi: '4,8 ans', origin: 'Hors France', href: '/avis/beem-on-500w', highlight: false },
+  { name: 'Sunethic F500', power: '500 Wc', price: '690 €', wc: '1,38 €', roi: '7,3 ans', origin: 'France (Voltec)', href: null, highlight: true },
+  { name: 'Sunology PLAY', power: '515 W', price: '599 €', wc: '1,16 €', roi: '6,2 ans', origin: 'Hors France', href: '/avis/sunology-play-2', highlight: false },
+  { name: 'Beem On 500 Wc (précommande)', power: '500 Wc', price: '429 €', wc: '0,86 €', roi: '4,7 ans', origin: 'Hors France', href: '/avis/beem-on-500w', highlight: false },
 ];
 
 export default function SunethicAvisPage() {
   return (
     <>
-      <SchemaArticle title="Avis Sunethic : la marque et le kit F500 Made in France analysés" description="Avis sur la marque Sunethic (Trustpilot, SAV, garanties) et analyse du kit solaire F500 500 Wc à 690 €." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" dateModified="2026-10-12" />
+      <SchemaArticle title="Avis Sunethic : la marque et le kit F500 Made in France analysés" description="Avis sur la marque Sunethic (Trustpilot, SAV, garanties) et analyse du kit solaire F500 500 Wc à 690 €." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct image="/images/produits/sunethic-f500-2.webp" name="Sunethic F500" brand="Sunethic" description="Station solaire plug-and-play 500 Wc avec panneau Voltec Solar assemblé en France, micro-onduleur APsystems EZ1, garantie 25 ans." price={690} ratingValue={7.5} url="https://monbalconsolaire.fr/avis/sunethic-f500" />
+      <SchemaProduct image="/images/produits/sunethic-f500-2.webp" name="Sunethic F500" brand="Sunethic" description="Station solaire plug-and-play 500 Wc avec panneau Voltec Solar assemblé en France, micro-onduleur APsystems EZ1, garantie 25 ans." price={PRODUCTS['sunethic-f500'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['sunethic-f500'].availability]} ratingValue={7.5} url="https://monbalconsolaire.fr/avis/sunethic-f500" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunethic F500' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -60,7 +62,7 @@ export default function SunethicAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Avis Sunethic : la marque et le kit F500 Made in France analys&eacute;s (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sunethic est l&apos;une des rares marques &agrave; vendre un kit plug-and-play avec un panneau fabriqu&eacute; en France. La marque est tr&egrave;s bien not&eacute;e, mais son F500 co&ucirc;te 690&nbsp;&euro;, soit 261&nbsp;&euro; de plus qu&apos;un Beem On de m&ecirc;me puissance. Qui est derri&egrave;re Sunethic, que disent les clients, et le surco&ucirc;t se justifie-t-il&nbsp;? Notre analyse, chiffres &agrave; l&apos;appui.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>27 mars 2026 &middot; Mis &agrave; jour le 12 octobre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>27 mars 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-cream/50 border-border mb-8">
@@ -68,7 +70,7 @@ export default function SunethicAvisPage() {
             <ul className="text-sm text-charcoal-light space-y-1">
               <li><strong>La marque&nbsp;:</strong> PME d&apos;Avignon, soci&eacute;t&eacute; &agrave; mission, 4,7/5 sur Trustpilot (1&nbsp;234 avis). Fiable, avec quelques retards de livraison signal&eacute;s.</li>
               <li><strong>Le F500&nbsp;:</strong> panneau Voltec Solar fran&ccedil;ais, micro-onduleur APsystems (non fran&ccedil;ais), 690&nbsp;&euro;.</li>
-              <li><strong>Rentabilit&eacute;&nbsp;:</strong> 7,4 ans &agrave; Lyon, contre 6,5 ans (Sunology PLAY) et 4,8 ans (Beem On 500 Wc).</li>
+              <li><strong>Rentabilit&eacute;&nbsp;:</strong> 7,3 ans &agrave; Lyon, contre 6,2 ans (Sunology PLAY) et 4,7 ans (Beem On 500 Wc, en pr&eacute;commande).</li>
               <li><strong>Pour qui&nbsp;:</strong> ceux qui paient volontiers ~90 &agrave; 260&nbsp;&euro; de plus pour un panneau fran&ccedil;ais.</li>
             </ul>
           </div>
@@ -106,7 +108,7 @@ export default function SunethicAvisPage() {
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-cream rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-green">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -174,9 +176,9 @@ export default function SunethicAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Le prix au Wc le plus élevé du segment 500 Wc', d: 'À 690 €, le F500 coûte 91 € de plus que le Sunology PLAY et 261 € de plus que le Beem On 500 Wc, pour la même production. Résultat : 7,4 ans de retour sur investissement, contre 6,5 et 4,8 ans.' },
+                  { t: 'Le prix au Wc le plus élevé du segment 500 Wc', d: 'À 690 €, le F500 coûte 91 € de plus que le Sunology PLAY et 261 € de plus que le Beem On 500 Wc, pour une production équivalente ou proche. Résultat : 7,3 ans de retour sur investissement, contre 6,2 et 4,7 ans.' },
                   { t: '« Made in France » à nuancer', d: 'Seul le panneau est français. Le micro-onduleur est un APsystems EZ1, comme chez de nombreux concurrents. L\'argument carbone reste réel sur le panneau (le composant le plus lourd), mais le kit n\'est pas 100 % français.' },
-                  { t: 'Une promesse de rentabilité optimiste', d: 'Sunethic annonce une « rentabilité en moins de 6 ans ». Avec notre méthode standard (Lyon, sud, 0,1940 €/kWh), on obtient 7,4 ans. Moins de 6 ans suppose un très bon ensoleillement et une autoconsommation élevée.' },
+                  { t: 'Une promesse de rentabilité optimiste', d: 'Sunethic annonce une « rentabilité en moins de 6 ans ». Avec notre méthode standard (Lyon, sud, tarif réglementé en vigueur), on obtient 7,3 ans. Moins de 6 ans suppose un très bon ensoleillement et une autoconsommation élevée.' },
                   { t: 'Des clauses de garantie restrictives', d: 'Réclamation écrite sous 15 jours, main-d\'œuvre exclue, remplacement possible par du matériel d\'occasion. La durée affichée est longue, les conditions moins généreuses.' },
                   { t: 'Panneau grand format', d: '1,87 × 1,17 m : c\'est un panneau de toiture. Sur un petit balcon ou un garde-corps étroit, il peut ne pas tenir. Le poids n\'est pas indiqué sur la fiche produit.' },
                 ].map((p, i) => (
@@ -218,7 +220,7 @@ export default function SunethicAvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2">ROI calcul&eacute; pour Lyon, exposition sud, 510 kWh/an pour les trois kits. Voir aussi notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">comparatif des meilleurs kits 2026</Link>.</p>
+              <p className="text-xs text-stone mt-2">ROI calcul&eacute; pour Lyon, exposition sud (510 kWh/an pour les kits de 500 Wc, 525 kWh/an pour le PLAY de 515 W). Voir aussi notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green hover:underline">comparatif des meilleurs kits 2026</Link>.</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
@@ -234,24 +236,24 @@ export default function SunethicAvisPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-4">
                 {[
                   { v: '510 kWh', l: 'Production / an' },
-                  { v: '84 €', l: 'Économies an 1' },
-                  { v: '7,4 ans', l: 'Retour sur invest.' },
-                  { v: '3 190 €', l: 'Économies 25 ans' },
+                  { v: '87 €', l: 'Économies an 1' },
+                  { v: '7,3 ans', l: 'Retour sur invest.' },
+                  { v: '3 070 €', l: 'Économies 25 ans' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-green-pale/30 rounded-brand-lg">
                     <div className="font-mono font-medium text-xl text-green">{s.v}</div>
-                    <div className="text-[11px] text-stone mt-1 font-medium">{s.l}</div>
+                    <div className="text-xs text-stone mt-1 font-medium">{s.l}</div>
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed">Sur 25 ans, le F500 &eacute;conomise environ 3&nbsp;190&nbsp;&euro; pour 690&nbsp;&euro; investis, soit un gain net d&apos;environ 2&nbsp;500&nbsp;&euro;. Sans inflation du tarif, le retour sur investissement passe &agrave; 8,2 ans. Si vous ajoutez l&apos;extension E500 (550&nbsp;&euro;, soit 1&nbsp;240&nbsp;&euro; au total pour 1&nbsp;000 Wc), le ROI descend &agrave; 6,7 ans, &agrave; condition de consommer 85&nbsp;% des 1&nbsp;020 kWh produits. Pour savoir quelle puissance vous convient, lisez notre <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="text-green hover:underline">comparatif 300 W vs 400 W vs 500 W</Link>.</p>
+              <p className="text-charcoal-light leading-relaxed">Sur 25 ans, le F500 &eacute;conomise environ 3&nbsp;070&nbsp;&euro; pour 690&nbsp;&euro; investis, soit un gain net d&apos;environ 2&nbsp;380&nbsp;&euro;. Sans inflation du tarif, le retour sur investissement passe &agrave; 8,1 ans. Si vous ajoutez l&apos;extension E500 (550&nbsp;&euro;, soit 1&nbsp;240&nbsp;&euro; au total pour 1&nbsp;000 Wc), le ROI descend &agrave; 6,6 ans, &agrave; condition de consommer 85&nbsp;% des 1&nbsp;020 kWh produits. Pour savoir quelle puissance vous convient, lisez notre <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="text-green hover:underline">comparatif 300 W vs 400 W vs 500 W</Link>.</p>
             </section>
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">&Agrave; &eacute;viter si&hellip;</h2>
               <div className="space-y-2">
                 {[
-                  'Votre critère principal est le prix : le Beem On 500 Wc produit autant pour 261 € de moins',
+                  'Votre critère principal est le prix : le Beem On 500 Wc produit autant pour 261 € de moins (en précommande, expédition à partir de décembre 2026)',
                   'Votre balcon est étroit : le panneau mesure 1,87 × 1,17 m',
                   'Vous voulez un kit 100 % français : le micro-onduleur ne l\'est pas',
                   'Vous êtes exposé nord ou très ombragé : le surcoût ne sera jamais amorti',
@@ -267,7 +269,7 @@ export default function SunethicAvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4"><strong>Sur la marque&nbsp;:</strong> Sunethic est une PME s&eacute;rieuse, bien not&eacute;e et joignable. Les critiques portent sur la logistique (d&eacute;lais, r&eacute;ponses aux e-mails), pas sur le mat&eacute;riel. Lisez simplement les conditions de garantie avant d&apos;acheter.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Sur le F500&nbsp;:</strong> c&apos;est un bon kit, avec un panneau fabriqu&eacute; en France et une garantie de 25 ans sur le micro-onduleur. Mais financi&egrave;rement, il ne gagne contre personne&nbsp;: 7,4 ans de ROI contre 6,5 ans pour le Sunology PLAY et 4,8 ans pour le Beem On 500 Wc. Vous payez l&apos;origine du panneau, pas de la production en plus.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4"><strong>Sur le F500&nbsp;:</strong> c&apos;est un bon kit, avec un panneau fabriqu&eacute; en France et une garantie de 25 ans sur le micro-onduleur. Mais financi&egrave;rement, il ne gagne contre personne&nbsp;: 7,3 ans de ROI contre 6,2 ans pour le Sunology PLAY et 4,7 ans pour le Beem On 500 Wc. Vous payez l&apos;origine du panneau, pas de la production en plus.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale&nbsp;: <span className="text-amber-dark text-xl font-extrabold">7.5/10</span></strong> &mdash; Le bon choix si le panneau fran&ccedil;ais est un crit&egrave;re pour vous. Sinon, le <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> fait le m&ecirc;me travail pour bien moins cher. <a href={PRODUCT_URL} target="_blank" rel="sponsored noopener" className="text-green hover:underline">Voir le F500 chez Sunethic</a>.</p>
             </section>
 
@@ -289,11 +291,11 @@ export default function SunethicAvisPage() {
               <div className="space-y-3">
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (500 Wc)</h3>
-                  <p className="text-xs text-charcoal-light mt-1">L&apos;alternative fran&ccedil;aise &agrave; 599&nbsp;&euro;</p>
+                  <p className="text-xs text-charcoal-light mt-1">L&apos;alternative de Sunology &agrave; 599&nbsp;&euro; (515&nbsp;W)</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem On 500 Wc</h3>
-                  <p className="text-xs text-charcoal-light mt-1">M&ecirc;me puissance, 429&nbsp;&euro;</p>
+                  <p className="text-xs text-charcoal-light mt-1">M&ecirc;me puissance, 429&nbsp;&euro; (pr&eacute;commande)</p>
                 </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
@@ -308,7 +310,7 @@ export default function SunethicAvisPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie&nbsp;:</strong> kit analys&eacute; &agrave; partir de la fiche produit et des conditions de garantie Sunethic, des mentions l&eacute;gales de l&apos;entreprise et des avis Trustpilot (relev&eacute;s le 12/10/2026). ROI calcul&eacute; avec tarif 0,1940 &euro;/kWh, inflation 3,3&nbsp;%/an (CRE), autoconsommation 85&nbsp;% (95&nbsp;% avec batterie), Performance Ratio 0,85, Lyon sud, sur 25 ans. &Eacute;conomies&nbsp;: 84 &euro;/an, ROI 7,4 ans, 3&nbsp;190 &euro; sur 25 ans.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie&nbsp;:</strong> kit analys&eacute; &agrave; partir de la fiche produit et des conditions de garantie Sunethic, des mentions l&eacute;gales de l&apos;entreprise et des avis Trustpilot (relev&eacute;s le 12/10/2026). ROI calcul&eacute; avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;% (95&nbsp;% avec batterie), Performance Ratio 0,85, Lyon sud, sur 25 ans. &Eacute;conomies&nbsp;: 87 &euro; la premi&egrave;re ann&eacute;e, ROI 7,3 ans, ~3&nbsp;070 &euro; sur 25 ans. Prix v&eacute;rifi&eacute; sur sunethic.fr le 5 novembre 2026.</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence&nbsp;:</strong> avis ind&eacute;pendant. Certains liens peuvent &ecirc;tre affili&eacute;s&nbsp;: si vous achetez via ces liens, nous pouvons percevoir une commission, sans surco&ucirc;t pour vous. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>
