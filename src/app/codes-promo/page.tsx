@@ -10,9 +10,11 @@ import { zendureUrl } from '@/lib/affiliate';
 // Regénérée toutes les 6 h : les offres datées basculent seules en « Terminée ».
 export const revalidate = 21600;
 
-const VERIFIED = '17/10/2026';
+const VERIFIED = '05/11/2026';
 const SUNOLOGY_PLAY_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
 const SUNOLOGY_PROMO_END = '2026-10-31';
+const SUNOLOGY_BLACKFRIDAY_CODE = 'BLACKSUN';
+const SUNOLOGY_BLACKFRIDAY_END = '2026-12-04';
 const ZENDURE_CODE = 'AF5E24';
 const ZENDURE_CODE_END = '2027-01-04';
 
@@ -26,13 +28,13 @@ function isOver(endsAt?: string): boolean {
 }
 
 export function generateMetadata(): Metadata {
-  const promo = !isOver(SUNOLOGY_PROMO_END);
+  const blackFriday = !isOver(SUNOLOGY_BLACKFRIDAY_END);
   return withCanonicalOg({
-    title: promo
-      ? 'Code promo Sunology : -11 à -13 % jusqu’au 31/10 (sans code)'
+    title: blackFriday
+      ? 'Code promo Sunology : -100 € avec BLACKSUN (Black Friday)'
       : 'Code promo Sunology 2026 : parrainage -7 %, offres vérifiées',
-    description: promo
-      ? 'Sunology : bonus -11 % dès le 1er euro, jusqu’à -13 %, jusqu’au 31/10. Parrainage -7 %, codes SUN_ décryptés. Beem, EcoFlow, Zendure vérifiés le 17/10.'
+    description: blackFriday
+      ? 'Sunology : code BLACKSUN, jusqu’à -640 € jusqu’au 4/12 (Black Friday). Zendure -8 % avec AF5E24. Beem, EcoFlow, Sunethic vérifiés le 05/11.'
       : 'Pas de code Sunology public : parrainage S-Club -7 %, codes SUN_ décryptés. Zendure : code AF5E24, -8 % en plus jusqu’au 04/01. Beem, EcoFlow vérifiés.',
     alternates: {
       canonical: 'https://monbalconsolaire.fr/codes-promo',
@@ -40,11 +42,11 @@ export function generateMetadata(): Metadata {
   });
 }
 
-const faqData = (sunologyPromo: boolean) => [
+const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Existe-t-il un code réduction Sunology ?',
     answer:
-      `Sunology ne publie pas de code promo public permanent. Deux leviers officiels existent : les opérations saisonnières affichées directement sur le site (${sunologyPromo ? 'par exemple le bonus Anti-Augmentation d’octobre 2026, -11 % dès le premier euro et jusqu’à -13 %, sans code' : 'comme le bonus Anti-Augmentation d’octobre 2026, -11 % à -13 % sans code'}) et le parrainage S-Club, qui donne 7% de remise sur la première commande. Les codes du type SUN_PRENOM que l’on voit sur les sites de coupons sont des codes de parrainage de particuliers.`,
+      `Sunology ne publie pas de code promo permanent, mais ${sunologyBlackFriday ? `une opération Black Friday est en cours : le code ${SUNOLOGY_BLACKFRIDAY_CODE} fait baisser le prix, avec une remise qui augmente selon la quantité achetée` : 'des opérations saisonnières (comme le Black Friday) sont affichées directement sur le site'}. Le parrainage S-Club donne 7% de remise sur la première commande, en plus. Les codes du type SUN_PRENOM que l’on voit sur les sites de coupons sont des codes de parrainage de particuliers.`,
   },
   {
     question: 'Comment fonctionne le parrainage Sunology ?',
@@ -59,12 +61,12 @@ const faqData = (sunologyPromo: boolean) => [
   {
     question: 'Y a-t-il un code promo Sunology pour le Black Friday ?',
     answer:
-      'Sunology fait chaque année une opération Black Friday, sans code : les remises s’affichent directement sur le site. En 2025, la marque annonçait jusqu’à 640 € de réduction, jusqu’au 3 décembre (source : Selectra). La remise parrainage n’est généralement pas cumulable avec ces opérations.',
+      `Oui, en 2026 : l'opération "Black Sun Weeks" (du 4 novembre au 4 décembre) donne jusqu'à 640 € de remise avec le code ${SUNOLOGY_BLACKFRIDAY_CODE}, avec un rabais qui augmente selon la quantité achetée (ex. le PLAY passe de 599 € à 499 € pour un panneau). -14 % sur le service d'installation HOME. La remise parrainage n'est généralement pas cumulable avec cette opération : vérifiez le montant au panier.`,
   },
   {
     question: 'Existe-t-il un code promo Beem Energy pour les kits plug-and-play ?',
     answer:
-      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 17/10/2026. Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
+      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 05/11/2026 (pas d’annonce Black Friday repérée à cette date). Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
   },
   {
     question: 'Existe-t-il un code promo Zendure ?',
@@ -74,7 +76,7 @@ const faqData = (sunologyPromo: boolean) => [
   {
     question: 'Existe-t-il un code promo Sunethic ?',
     answer:
-      'Sunethic ne publie pas de code public officiel. En octobre 2026, la marque met en avant des prix bas sur ses kits à panneaux français Voltec Solar et des promotions sur les batteries plug-and-play Anker et Zendure, sans montant de remise chiffré. La livraison est offerte, et le dossier mairie à partir des kits 6 panneaux.',
+      'Sunethic ne publie pas de code public officiel. Au 05/11/2026, la marque met toujours en avant des prix bas sur ses kits à panneaux français Voltec Solar et des promotions sur les batteries plug-and-play Anker et Zendure, sans montant de remise chiffré ni opération Black Friday spécifique. La livraison est offerte, et le dossier mairie à partir des kits 6 panneaux.',
   },
 ];
 
@@ -116,9 +118,19 @@ function OfferCard({ o: raw }: { o: Offer }) {
 
 const sunologyOffers: Offer[] = [
   {
-    label: 'Bonus Anti-Augmentation : -11 % à -13 %',
+    label: `Black Sun Weeks : code ${SUNOLOGY_BLACKFRIDAY_CODE}, jusqu’à -640 €`,
     detail:
-      'Sans code, jusqu’au 31 octobre 2026 : -11 % dès le premier euro, et jusqu’à -13 % quand le panier augmente (« plus vous vous équipez, moins c’est cher »), sans plafond. Le bonus s’active depuis le bandeau du site. Un PLAY seul à 599 € revient à environ 533 €.',
+      'Du 4 novembre au 4 décembre 2026 (les pages officielles hésitent entre le 3 et le 4 décembre pour la fin) : le code fait passer le PLAY de 599 € à 499 € et le PLAY Max de 1 179 € à 1 079 € pour un panneau, avec une remise qui augmente selon la quantité achetée (jusqu’à -640 € en multi-panneaux). -14 % sur le service d’installation HOME. Vérifiez le montant exact au panier.',
+    status: 'active',
+    endsAt: SUNOLOGY_BLACKFRIDAY_END,
+    verified: '05/11/2026',
+    source: 'black-friday.sunology.eu',
+    sourceUrl: 'https://black-friday.sunology.eu/',
+  },
+  {
+    label: 'Bonus Anti-Augmentation : -11 % à -13 % (terminé)',
+    detail:
+      'Opération d’octobre 2026, sans code : -11 % dès le premier euro, et jusqu’à -13 % quand le panier augmentait. Remplacée depuis le 4 novembre par l’opération Black Sun Weeks ci-dessus.',
     status: 'active',
     endsAt: SUNOLOGY_PROMO_END,
     source: 'sunology.eu (bandeau du site)',
@@ -143,7 +155,8 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     offers: [
       {
         label: 'Prix bas sur les kits Voltec Solar et les batteries Anker / Zendure',
-        detail: 'Mis en avant sur la page d’accueil au 17/10/2026, sans montant de remise chiffré ni code. L’opération SunPower de septembre (50 à 150 €) est terminée.',
+        detail: 'Mis en avant sur la page d’accueil au 05/11/2026, sans montant de remise chiffré ni code. Pas d’opération Black Friday spécifique repérée à cette date.',
+        verified: '05/11/2026',
         status: 'active',
         source: 'sunethic.fr',
         sourceUrl: 'https://sunethic.fr/',
@@ -163,7 +176,7 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     id: 'beem',
     brand: 'Beem Energy',
     intro:
-      'Aucun code officiel pour les kits plug-and-play au 17/10/2026. Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
+      'Aucun code officiel pour les kits plug-and-play au 05/11/2026, et pas d’opération Black Friday repérée à cette date (l’an dernier, Beem proposait un « Bright Friday » à -15 % sur toute la gamme). Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
     offers: [
       {
         label: 'Prime Beem : jusqu’à 1 000 € de remise',
@@ -185,10 +198,10 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
   {
     id: 'ecoflow',
     brand: 'EcoFlow',
-    intro: 'Pas de code public officiel. EcoFlow fonctionne par grosses opérations saisonnières affichées sur le site, avec des points EcoCredits pour les membres.',
+    intro: 'Pas de code public officiel. EcoFlow fonctionne par grosses opérations saisonnières affichées sur le site, avec des points EcoCredits pour les membres. Au 05/11/2026, aucune opération Black Friday 2026 n’est encore confirmée pour la France : nous mettrons cette page à jour dès l’annonce.',
     offers: [
       {
-        label: 'Opération d’automne : jusqu’à -40 %',
+        label: 'Opération d’automne : jusqu’à -40 % (terminée)',
         detail: 'Du 10 au 18 octobre 2026, avec des offres flash jusqu’à -57 % sur la gamme STREAM. Le PowerStream n’est plus vendu sur la boutique officielle : EcoFlow y propose désormais la gamme STREAM.',
         status: 'active',
         endsAt: '2026-10-18',
@@ -232,10 +245,10 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
 ];
 
 export default function CodesPromoPage() {
-  const sunologyPromo = !isOver(SUNOLOGY_PROMO_END);
+  const sunologyBlackFriday = !isOver(SUNOLOGY_BLACKFRIDAY_END);
   return (
     <section className="section-padding">
-      <SchemaFAQ questions={faqData(sunologyPromo)} />
+      <SchemaFAQ questions={faqData(sunologyBlackFriday)} />
       <div className="container-brand max-w-3xl">
         <Breadcrumbs items={[{ label: 'Codes promo' }]} />
 
@@ -246,7 +259,7 @@ export default function CodesPromoPage() {
           Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
         </p>
         <div className="card bg-cream/50 text-sm text-charcoal-light leading-relaxed mb-8">
-          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyPromo ? <>Sunology fait -11 % d&egrave;s le premier euro, jusqu&apos;&agrave; -13 %, jusqu&apos;au 31/10 (bonus Anti-Augmentation, sans code), et propose -7 % via son parrainage S-Club.</> : <>Le bonus Sunology d&apos;octobre (-11 % &agrave; -13 %) est termin&eacute; (31/10) ; reste le parrainage S-Club &agrave; -7 %.</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}Beem, Sunethic et EcoFlow n&apos;ont pas de code public officiel : leurs remises sont affich&eacute;es directement sur leur site.
+          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyBlackFriday ? <>Sunology lance sa <strong>Black Sun Weeks</strong> : code <strong>{SUNOLOGY_BLACKFRIDAY_CODE}</strong>, jusqu&apos;&agrave; -640 &euro;, du 4 novembre au 4 d&eacute;cembre, en plus du parrainage S-Club &agrave; -7 %.</> : <>Reste le parrainage S-Club Sunology &agrave; -7 % (pas d&apos;op&eacute;ration en cours).</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}Beem, Sunethic et EcoFlow n&apos;ont pas encore annonc&eacute; de code Black Friday officiel : leurs remises restent affich&eacute;es directement sur leur site.
         </div>
 
         <nav className="flex flex-wrap gap-2 text-sm mb-10" aria-label="Sommaire">
@@ -280,20 +293,20 @@ export default function CodesPromoPage() {
 
             <h3 className="text-xl font-bold mb-3">Code promo Sunology PLAY (ex-PLAY 2)</h3>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              {sunologyPromo ? (
-                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) co&ucirc;te 599 &euro;, soit <strong>environ 533 &euro;</strong> avec le bonus Anti-Augmentation (-11 % d&egrave;s le premier euro) jusqu&apos;au 31 octobre 2026.</>
+              {sunologyBlackFriday ? (
+                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) co&ucirc;te 599 &euro;, soit <strong>499 &euro;</strong> avec le code {SUNOLOGY_BLACKFRIDAY_CODE} (Black Sun Weeks) jusqu&apos;au 4 d&eacute;cembre 2026.</>
               ) : (
-                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>599 &euro;</strong> ; le bonus Anti-Augmentation s&apos;est termin&eacute; le 31 octobre 2026.</>
-              )}{' '}Il n&apos;existe pas de code sp&eacute;cifique au PLAY. Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;. Notre analyse compl&egrave;te :{' '}
+                <>Le PLAY (500 Wc, successeur du PLAY 2 de 450/460 Wc) est affich&eacute; &agrave; <strong>599 &euro;</strong>.</>
+              )}{' '}Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;, mais ne se cumule g&eacute;n&eacute;ralement pas avec le code Black Friday. Notre analyse compl&egrave;te :{' '}
               <Link href="/avis/sunology-play-2" className="text-green font-semibold hover:underline">avis Sunology PLAY (ex-PLAY 2)</Link>.
             </p>
-            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyPromo ? 'Voir le PLAY 500 W avec le bonus -11 % sur Sunology' : 'Voir le prix du PLAY 500 W sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyPromo ? '≈ 533 €' : '599 €'} />
+            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyBlackFriday ? 'Voir le PLAY 500 W avec le code BLACKSUN sur Sunology' : 'Voir le prix du PLAY 500 W sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyBlackFriday ? '499 €' : '599 €'} />
 
             <h3 className="text-xl font-bold mt-8 mb-3">Sunology et le Black Friday</h3>
             <p className="text-charcoal-light leading-relaxed">
-              Sunology ne donne pas de code Black Friday : les remises s&apos;affichent directement. En 2025, la marque annon&ccedil;ait jusqu&apos;&agrave; 640 &euro; de r&eacute;duction jusqu&apos;au 3 d&eacute;cembre (
+              Pour 2026, Sunology lance son op&eacute;ration &laquo; Black Sun Weeks &raquo; du 4 novembre au 4 d&eacute;cembre : le code <span className="font-mono">{SUNOLOGY_BLACKFRIDAY_CODE}</span> fait baisser le prix, avec une remise qui augmente selon la quantit&eacute; achet&eacute;e (jusqu&apos;&agrave; -640 &euro; en multi-panneaux), et -14 % sur le service d&apos;installation HOME. En 2025, la marque annon&ccedil;ait d&eacute;j&agrave; jusqu&apos;&agrave; 640 &euro; de r&eacute;duction jusqu&apos;au 3 d&eacute;cembre (
               <a href="https://selectra.info/energie/actualites/renovation-energetique/energie-moins-chere-sunology-propose-reduction-de-640-euros-pour-black-friday" target="_blank" rel="noopener" className="text-green hover:underline">source Selectra</a>
-              ). Si vous n&apos;&ecirc;tes pas press&eacute;, fin novembre reste la p&eacute;riode la plus probable pour la meilleure remise de l&apos;ann&eacute;e. Nous mettrons cette page &agrave; jour d&egrave;s l&apos;annonce 2026.
+              ). V&eacute;rifiez toujours le montant au panier : les pages officielles ne s&apos;accordent pas toutes sur la date de fin exacte (3 ou 4 d&eacute;cembre).
             </p>
           </section>
 
@@ -347,7 +360,7 @@ export default function CodesPromoPage() {
           <section id="faq" className="scroll-mt-24">
             <h2 className="text-2xl font-extrabold mb-4">Questions fr&eacute;quentes</h2>
             <div className="space-y-3">
-              {faqData(sunologyPromo).map((f, i) => (
+              {faqData(sunologyBlackFriday).map((f, i) => (
                 <details key={i} className="card group" open={i === 0}>
                   <summary className="font-bold text-sm cursor-pointer list-none">{f.question}</summary>
                   <p className="text-sm text-charcoal-light leading-relaxed mt-3">{f.answer}</p>
@@ -381,7 +394,7 @@ export default function CodesPromoPage() {
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone">
-            Offres v&eacute;rifi&eacute;es le 17 octobre 2026 &middot; <Link href="/a-propos" className="text-green hover:underline">&Agrave; propos</Link> &middot; <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>
+            Offres v&eacute;rifi&eacute;es le 5 novembre 2026 &middot; <Link href="/a-propos" className="text-green hover:underline">&Agrave; propos</Link> &middot; <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>
           </p>
         </div>
       </div>
