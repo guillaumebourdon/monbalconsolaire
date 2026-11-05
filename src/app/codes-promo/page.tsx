@@ -61,7 +61,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Y a-t-il un code promo Sunology pour le Black Friday ?',
     answer:
-      `Oui, en 2026 : l'opération "Black Sun Weeks" (du 4 novembre au 4 décembre) donne jusqu'à 640 € de remise avec le code ${SUNOLOGY_BLACKFRIDAY_CODE}, avec un rabais qui augmente selon la quantité achetée (ex. le PLAY passe de 599 € à 499 € pour un panneau). -14 % sur le service d'installation HOME. La remise parrainage n'est généralement pas cumulable avec cette opération : vérifiez le montant au panier.`,
+      `Oui, en 2026 : l'opération "Black Sun Weeks" (du 2 novembre au 4 décembre) donne jusqu'à 640 € de remise avec le code ${SUNOLOGY_BLACKFRIDAY_CODE}, avec un rabais qui augmente selon la quantité achetée (ex. le PLAY passe de 599 € à 499 € pour un panneau). -14 % sur le service d'installation HOME. La remise parrainage n'est généralement pas cumulable avec cette opération : vérifiez le montant au panier.`,
   },
   {
     question: 'Existe-t-il un code promo Beem Energy pour les kits plug-and-play ?',
@@ -120,7 +120,7 @@ const sunologyOffers: Offer[] = [
   {
     label: `Black Sun Weeks : code ${SUNOLOGY_BLACKFRIDAY_CODE}, jusqu’à -640 €`,
     detail:
-      'Du 4 novembre au 4 décembre 2026 (les pages officielles hésitent entre le 3 et le 4 décembre pour la fin) : le code fait passer le PLAY de 599 € à 499 € et le PLAY Max de 1 179 € à 1 079 € pour un panneau, avec une remise qui augmente selon la quantité achetée (jusqu’à -640 € en multi-panneaux). -14 % sur le service d’installation HOME. Vérifiez le montant exact au panier.',
+      'Du 2 novembre au 4 décembre 2026 (les pages officielles hésitent entre le 3 et le 4 décembre pour la fin) : le code fait passer le PLAY de 599 € à 499 € et le PLAY Max de 1 179 € à 1 079 € pour un panneau, avec une remise qui augmente selon la quantité achetée (jusqu’à -640 € en multi-panneaux). -14 % sur le service d’installation HOME. Vérifiez le montant exact au panier.',
     status: 'active',
     endsAt: SUNOLOGY_BLACKFRIDAY_END,
     verified: '05/11/2026',
@@ -130,7 +130,7 @@ const sunologyOffers: Offer[] = [
   {
     label: 'Bonus Anti-Augmentation : -11 % à -13 % (terminé)',
     detail:
-      'Opération d’octobre 2026, sans code : -11 % dès le premier euro, et jusqu’à -13 % quand le panier augmentait. Remplacée depuis le 4 novembre par l’opération Black Sun Weeks ci-dessus.',
+      'Opération d’octobre 2026, sans code : -11 % dès le premier euro, et jusqu’à -13 % quand le panier augmentait. Remplacée depuis le 2 novembre par l’opération Black Sun Weeks ci-dessus.',
     status: 'active',
     endsAt: SUNOLOGY_PROMO_END,
     source: 'sunology.eu (bandeau du site)',
@@ -259,7 +259,7 @@ export default function CodesPromoPage() {
           Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
         </p>
         <div className="card bg-cream/50 text-sm text-charcoal-light leading-relaxed mb-8">
-          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyBlackFriday ? <>Sunology lance sa <strong>Black Sun Weeks</strong> : code <strong>{SUNOLOGY_BLACKFRIDAY_CODE}</strong>, jusqu&apos;&agrave; -640 &euro;, du 4 novembre au 4 d&eacute;cembre, en plus du parrainage S-Club &agrave; -7 %.</> : <>Reste le parrainage S-Club Sunology &agrave; -7 % (pas d&apos;op&eacute;ration en cours).</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}Beem, Sunethic et EcoFlow n&apos;ont pas encore annonc&eacute; de code Black Friday officiel : leurs remises restent affich&eacute;es directement sur leur site.
+          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyBlackFriday ? <>Sunology lance sa <strong>Black Sun Weeks</strong> : code <strong>{SUNOLOGY_BLACKFRIDAY_CODE}</strong>, jusqu&apos;&agrave; -640 &euro;, du 2 novembre au 4 d&eacute;cembre, en plus du parrainage S-Club &agrave; -7 %.</> : <>Reste le parrainage S-Club Sunology &agrave; -7 % (pas d&apos;op&eacute;ration en cours).</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}Beem, Sunethic et EcoFlow n&apos;ont pas encore annonc&eacute; de code Black Friday officiel : leurs remises restent affich&eacute;es directement sur leur site.
         </div>
 
         <nav className="flex flex-wrap gap-2 text-sm mb-10" aria-label="Sommaire">
@@ -304,7 +304,7 @@ export default function CodesPromoPage() {
 
             <h3 className="text-xl font-bold mt-8 mb-3">Sunology et le Black Friday</h3>
             <p className="text-charcoal-light leading-relaxed">
-              Pour 2026, Sunology lance son op&eacute;ration &laquo; Black Sun Weeks &raquo; du 4 novembre au 4 d&eacute;cembre : le code <span className="font-mono">{SUNOLOGY_BLACKFRIDAY_CODE}</span> fait baisser le prix, avec une remise qui augmente selon la quantit&eacute; achet&eacute;e (jusqu&apos;&agrave; -640 &euro; en multi-panneaux), et -14 % sur le service d&apos;installation HOME. En 2025, la marque annon&ccedil;ait d&eacute;j&agrave; jusqu&apos;&agrave; 640 &euro; de r&eacute;duction jusqu&apos;au 3 d&eacute;cembre (
+              Pour 2026, Sunology lance son op&eacute;ration &laquo; Black Sun Weeks &raquo; du 2 novembre au 4 d&eacute;cembre : le code <span className="font-mono">{SUNOLOGY_BLACKFRIDAY_CODE}</span> fait baisser le prix, avec une remise qui augmente selon la quantit&eacute; achet&eacute;e (jusqu&apos;&agrave; -640 &euro; en multi-panneaux), et -14 % sur le service d&apos;installation HOME. En 2025, la marque annon&ccedil;ait d&eacute;j&agrave; jusqu&apos;&agrave; 640 &euro; de r&eacute;duction jusqu&apos;au 3 d&eacute;cembre (
               <a href="https://selectra.info/energie/actualites/renovation-energetique/energie-moins-chere-sunology-propose-reduction-de-640-euros-pour-black-friday" target="_blank" rel="noopener" className="text-green hover:underline">source Selectra</a>
               ). V&eacute;rifiez toujours le montant au panier : les pages officielles ne s&apos;accordent pas toutes sur la date de fin exacte (3 ou 4 d&eacute;cembre).
             </p>

@@ -206,7 +206,7 @@ export default function MeilleurMicroOnduleurPage() {
               <AffiliateCTA
                 productName="Hoymiles HMS-800W-2T"
                 merchantName="Amazon"
-                affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
+                affiliateUrl="https://www.amazon.fr/s?k=Hoymiles+HMS-800W-2T&tag=monbalconsola-21"
                 label="Voir le Hoymiles HMS-800W-2T sur Amazon"
                 variant="secondary"
                 position="after-hoymiles"
@@ -292,7 +292,7 @@ export default function MeilleurMicroOnduleurPage() {
                 <AffiliateCTA
                   productName="Hoymiles HMS-800W-2T"
                   merchantName="Amazon"
-                  affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
+                  affiliateUrl="https://www.amazon.fr/s?k=Hoymiles+HMS-800W-2T&tag=monbalconsola-21"
                   label="Voir le prix actuel sur Amazon"
                   variant="box"
                   position="footer-box"

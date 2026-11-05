@@ -91,7 +91,7 @@ export default function HoymilesHMS800WAvisPage() {
             price="~170 &euro;"
             score="8.5/10"
             tagline="Le micro-onduleur le plus prim&eacute; du march&eacute; DIY europ&eacute;en. WiFi int&eacute;gr&eacute;, 2 MPPT, IP67."
-            affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
+            affiliateUrl="https://www.amazon.fr/s?k=Hoymiles+HMS-800W-2T&tag=monbalconsola-21"
             affiliateLabel="Voir sur Amazon.fr"
             accentColor="green"
           />
@@ -201,7 +201,7 @@ export default function HoymilesHMS800WAvisPage() {
             <AffiliateCTA
               productName="Hoymiles HMS-800W-2T"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
+              affiliateUrl="https://www.amazon.fr/s?k=Hoymiles+HMS-800W-2T&tag=monbalconsola-21"
               label="Voir le Hoymiles HMS-800W-2T sur Amazon.fr"
               variant="inline"
               position="after-pros"
@@ -244,7 +244,7 @@ export default function HoymilesHMS800WAvisPage() {
             <AffiliateCTA
               productName="Hoymiles HMS-800W-2T"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
+              affiliateUrl="https://www.amazon.fr/s?k=Hoymiles+HMS-800W-2T&tag=monbalconsola-21"
               label="Commander le Hoymiles HMS-800W-2T"
               variant="inline"
               position="after-cons"
@@ -359,7 +359,7 @@ export default function HoymilesHMS800WAvisPage() {
                 Les quelques b&eacute;mols &mdash; app S-Miles moins aboutie qu&rsquo;EcoFlow, garantie 10 ans seulement, c&acirc;ble AC non fourni &mdash; ne remettent pas en question le choix sur ce segment. Si vous savez connecter deux fiches MC4 et configurer un WiFi, le HMS-800W-2T est votre micro-onduleur.
               </p>
               <a
-                href="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
+                href="https://www.amazon.fr/s?k=Hoymiles+HMS-800W-2T&tag=monbalconsola-21"
                 target="_blank"
                 rel="sponsored noopener"
                 className="btn-affiliate"
@@ -371,7 +371,7 @@ export default function HoymilesHMS800WAvisPage() {
             <AffiliateCTA
               productName="Hoymiles HMS-800W-2T"
               merchantName="Amazon"
-              affiliateUrl="https://www.amazon.fr/dp/B0CJGL65DS?tag=monbalconsola-21"
+              affiliateUrl="https://www.amazon.fr/s?k=Hoymiles+HMS-800W-2T&tag=monbalconsola-21"
               label="Commander le Hoymiles HMS-800W-2T"
               variant="box"
               position="footer-box"

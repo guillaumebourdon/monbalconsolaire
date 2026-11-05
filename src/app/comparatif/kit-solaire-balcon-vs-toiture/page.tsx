@@ -289,7 +289,7 @@ export default function ComparatifBalconVsToiturePage() {
                 <li>&bull; &Eacute;conomies annuelles 5 &agrave; 15 fois plus &eacute;lev&eacute;es qu&apos;un kit balcon</li>
                 <li>&bull; Peut couvrir 50&nbsp;% &agrave; 100&nbsp;% de la facture &eacute;lectrique</li>
                 <li>&bull; Valorise la propri&eacute;t&eacute; (DPE am&eacute;lior&eacute;)</li>
-                <li>&bull; Compatible avec la revente du surplus (tarif OA inject&eacute; si contrat S17)</li>
+                <li>&bull; Compatible avec la revente du surplus (contrat d&apos;achat EDF OA, arr&ecirc;t&eacute; S21)</li>
               </ul>
             </div>
             <div className="card bg-amber-pale/30 border-l-4 border-l-amber mb-6 p-4">
@@ -359,7 +359,7 @@ export default function ComparatifBalconVsToiturePage() {
                   <tr>
                     <td className="p-3 font-medium">Revente surplus</td>
                     <td className="p-3 text-center text-red-600">&#x2717; Non (CACSI ou cession gratuite)</td>
-                    <td className="p-3 text-center text-green font-bold">&#x2714; Possible (S17)</td>
+                    <td className="p-3 text-center text-green font-bold">&#x2714; Possible (EDF OA)</td>
                   </tr>
                   <tr className="bg-cream/40">
                     <td className="p-3 font-medium">Garantie</td>
@@ -476,7 +476,7 @@ export default function ComparatifBalconVsToiturePage() {
               Le kit balcon couvre imm&eacute;diatement le <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline">talon de consommation</Link> (r&eacute;frig&eacute;rateur, box internet, &eacute;lectronique en veille) avec le ROI le plus court du march&eacute;. L&apos;installation toiture optimise la production globale sur le long terme.
             </p>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              Techniquement, il n&apos;y a aucun conflit&nbsp;: le kit balcon fonctionne en CACSI (z&eacute;ro injection) ou c&egrave;de gratuitement son surplus &agrave; Enedis, l&apos;installation toiture peut &ecirc;tre en autoconsommation avec vente du surplus (contrat S17). Les deux syst&egrave;mes opèrent sur la m&ecirc;me installation &eacute;lectrique sans interf&eacute;rence.
+              Une limite &agrave; conna&icirc;tre&nbsp;: si votre installation toiture vend son surplus &agrave; EDF OA, ajouter un kit branch&eacute; sur une prise est en pratique incompatible, car on ne peut plus garantir que l&apos;&eacute;lectricit&eacute; vendue vient uniquement des panneaux du contrat (<a href="https://www.photovoltaique.info/fr/realiser-une-installation/choix-du-materiel/batteries-stockage-virtuel-et-autres-accesoires/les-kits-solaires-plug-and-play/" target="_blank" rel="noopener" className="text-green underline">photovoltaique.info</a>). Avec une installation toiture en autoconsommation sans vente, le kit peut s&apos;ajouter, d&eacute;clar&eacute; aupr&egrave;s d&apos;Enedis.
             </p>
             <div className="card bg-green-pale/20 border-l-4 border-l-green p-4 mb-4">
               <p className="text-sm font-semibold mb-2">Strat&eacute;gie double production pour propri&eacute;taires</p>
