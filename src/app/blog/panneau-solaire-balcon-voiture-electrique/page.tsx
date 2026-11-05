@@ -260,7 +260,7 @@ export default function VoitureElectriquePage() {
 
             <footer className="mt-10 pt-8 border-t border-border-light text-xs text-stone leading-relaxed space-y-2">
               <p>
-                <strong>M&eacute;thodologie&nbsp;:</strong> production solaire calcul&eacute;e via <code className="text-[10px] bg-cream px-1 rounded">src/lib/pricing.ts</code> (r&eacute;f&eacute;rence Lyon plein sud, performance ratio 0,85, productible PVGIS 1 200&nbsp;kWh/kWc). Consommation moyenne r&eacute;elle d&apos;un v&eacute;hicule &eacute;lectrique&nbsp;: 17&nbsp;kWh/100&nbsp;km (fourchette ADEME 12-20&nbsp;kWh/100&nbsp;km selon mod&egrave;le et usage, 2026). Puissances de wallbox sourc&eacute;es sur les limites r&eacute;glementaires fran&ccedil;aises (230&nbsp;V &times; 32&nbsp;A monophas&eacute;).{' '}
+                <strong>M&eacute;thodologie&nbsp;:</strong> production solaire calcul&eacute;e via <code className="text-xs bg-cream px-1 rounded">src/lib/pricing.ts</code> (r&eacute;f&eacute;rence Lyon plein sud, performance ratio 0,85, productible PVGIS 1 200&nbsp;kWh/kWc). Consommation moyenne r&eacute;elle d&apos;un v&eacute;hicule &eacute;lectrique&nbsp;: 17&nbsp;kWh/100&nbsp;km (fourchette ADEME 12-20&nbsp;kWh/100&nbsp;km selon mod&egrave;le et usage, 2026). Puissances de wallbox sourc&eacute;es sur les limites r&eacute;glementaires fran&ccedil;aises (230&nbsp;V &times; 32&nbsp;A monophas&eacute;).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
               <p>

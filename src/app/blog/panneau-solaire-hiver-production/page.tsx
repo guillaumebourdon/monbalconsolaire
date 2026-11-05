@@ -17,7 +17,7 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   { question: 'Un panneau solaire fonctionne-t-il en hiver ?', answer: 'Oui. Un panneau solaire produit de l\'électricité dès qu\'il reçoit de la lumière, même diffuse (ciel nuageux). En hiver, la production est réduite (20-40% de la production estivale) mais elle n\'est jamais nulle.' },
   { question: 'La neige abîme-t-elle un panneau solaire ?', answer: 'Non. Les panneaux solaires sont conçus pour résister aux intempéries (certifiés pour 550 kg/m² de charge neige). Une fine couche de neige fond rapidement grâce à la chaleur résiduelle du panneau. Une épaisse couche bloque la production temporairement mais ne cause aucun dommage.' },
-  { question: 'Faut-il changer l\'inclinaison en hiver ?', answer: 'C\'est recommandé si votre kit le permet. En hiver, le soleil est plus bas sur l\'horizon : une inclinaison de 40-42° est optimale (contre 27-30° en été). Les kits comme le Sunology PLAY2 proposent 3 angles ajustables.' },
+  { question: 'Faut-il changer l\'inclinaison en hiver ?', answer: 'C\'est recommandé si votre kit le permet. En hiver, le soleil est plus bas sur l\'horizon : une inclinaison de 40-42° est optimale (contre 27-30° en été). Les kits comme le Sunology PLAY (ex-PLAY 2) proposent 3 angles ajustables.' },
 ];
 
 export default function HiverProductionPage() {
@@ -107,7 +107,7 @@ export default function HiverProductionPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">L&apos;orientation et l&apos;inclinaison de votre panneau sont encore plus déterminantes en hiver qu&apos;en été. Consultez notre <Link href="/guide/orientation-panneau-solaire-balcon" className="text-green font-semibold hover:underline">guide sur l&apos;orientation optimale</Link> pour maximiser chaque rayon de soleil.</p>
               <div className="space-y-3">
                 {[
-                  { t: 'Augmentez l\'inclinaison', d: 'En hiver, le soleil est plus bas sur l\'horizon. Passez à 40-42° d\'inclinaison (au lieu de 27-30° en été). Le Sunology PLAY2 propose 3 angles ajustables pour ça.' },
+                  { t: 'Augmentez l\'inclinaison', d: 'En hiver, le soleil est plus bas sur l\'horizon. Passez à 40-42° d\'inclinaison (au lieu de 27-30° en été). Le Sunology PLAY (ex-PLAY 2) propose 3 angles ajustables pour ça.' },
                   { t: 'Nettoyez régulièrement', d: 'En automne/hiver, les feuilles mortes, la pluie et la poussière s\'accumulent plus vite. Un panneau sale perd 5-10% de rendement. Un coup de chiffon humide toutes les 2-3 semaines.' },
                   { t: 'Consommez au bon moment', d: 'En hiver, le pic de production est entre 11h et 14h (contre 10h-16h en été). Programmez vos appareils énergivores (machine à laver, lave-vaisselle) sur ce créneau.' },
                 ].map((a, i) => (
@@ -181,7 +181,7 @@ export default function HiverProductionPage() {
                   <p className="text-xs text-charcoal-light mt-1">Production sous la pluie, r&eacute;sistance, assurance</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 (mis &agrave; jour juillet 2026)</h3>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (ex-PLAY 2)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif vs Beem On 500 Wc, ROI r&eacute;el et verdict</p>
                 </Link>
               </div>

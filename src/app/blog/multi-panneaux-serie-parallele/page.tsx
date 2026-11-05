@@ -5,6 +5,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { PRODUCTS, priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Multi-panneaux solaires balcon : série ou parallèle ?',
@@ -48,7 +49,7 @@ export default function MultiPanneauxSeriePage() {
         title="Multi-panneaux solaires balcon : série ou parallèle ? Câblage et disjoncteur"
         description="Comment brancher 2 panneaux sur un balcon : série, parallèle DC ou AC, micro-onduleur double-MPPT, câbles MC4, disjoncteur 16A."
         url="https://monbalconsolaire.fr/blog/multi-panneaux-serie-parallele"
-        datePublished="2026-09-25"
+        datePublished="2026-09-25" dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Multi-panneaux : s&eacute;rie ou parall&egrave;le ?' }]} />
@@ -66,7 +67,7 @@ export default function MultiPanneauxSeriePage() {
               Vous avez un ou deux panneaux et vous vous demandez comment les brancher correctement&nbsp;? S&eacute;rie vs parall&egrave;le DC vs parall&egrave;le AC, micro-onduleur double-MPPT, c&acirc;bles MC4, disjoncteur&nbsp;: voici les r&egrave;gles concr&egrave;tes pour une installation plug-and-play l&eacute;gale et performante.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>25 septembre 2026</span>
+              <span>25 septembre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -112,7 +113,7 @@ export default function MultiPanneauxSeriePage() {
                   <tbody>
                     {[
                       ['APsystems EZ1-H', '960 VA (bridable 800W)', '2 MPPT ind.', '2 &times; 500 Wc max', '~199&nbsp;&euro;'],
-                      ['Hoymiles HMS-800-2T', '800 VA', '2 MPPT ind.', '2 &times; 430 Wc max', '~196&nbsp;&euro;'],
+                      ['Hoymiles HMS-800-2T', '800 VA', '2 MPPT ind.', '2 &times; 430 Wc max', `~${PRODUCTS['hoymiles-hms-800w-2t'].priceEur}&nbsp;&euro; (Wattuneed, 05/11/2026)`],
                       ['APsystems DS3-D', '730 VA', '2 MPPT ind.', '2 &times; 380 Wc max', '~160&nbsp;&euro;'],
                       ['Hoymiles HMS-600-2T', '600 VA', '2 MPPT ind.', '2 &times; 330 Wc max', '~165&nbsp;&euro;'],
                     ].map(([model, ac, inputs, panels, price], i) => (
@@ -185,10 +186,10 @@ export default function MultiPanneauxSeriePage() {
               productName="Beem On 500 Wc"
               merchantName="Beem Energy"
               affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge"
-              label="Voir le kit Beem On 500 Wc"
+              label="Voir le kit Beem On 500 Wc (précommande)"
               variant="inline"
               position="mid-article"
-              price="429 €"
+              price={priceLabel('beem-on-500w')}
             />
 
             {/* Section 4 — Les câbles MC4 */}
@@ -296,7 +297,7 @@ export default function MultiPanneauxSeriePage() {
               label="Voir le Sunology PLAY (stations cumulables)"
               variant="inline"
               position="after-pros"
-              price="599 € la station"
+              price={`${priceLabel('sunology-play')} la station`}
             />
 
             {/* Section 7 — Erreurs à éviter */}

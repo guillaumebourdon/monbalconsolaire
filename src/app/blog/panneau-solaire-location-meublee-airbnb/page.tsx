@@ -5,6 +5,47 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import {
+  KWH_PRICE_LABEL,
+  KWH_INFLATION_LABEL,
+  PANEL_DEGRADATION_LABEL,
+  calculateProductionKwh,
+  calculateFirstYearSavings,
+  calculateROIYears,
+  yearFactor,
+  type CalcInput,
+} from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { DEPARTMENTS } from '@/data/departments';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Chiffres calculés avec pricing.ts : Beem On 500 Wc (prix data/products.ts), exposition sud.
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const BEEM = PRODUCTS['beem-on-500w'];
+const base: CalcInput = { kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM.powerWc };
+const paris: CalcInput = { ...base, productibleKwhPerKwc: productibleSite(DEPARTMENTS.find((d) => d.code === '75')!.irradiation) };
+const prodParis = calculateProductionKwh(paris);
+const at = (input: CalcInput, autoconso: number) => ({
+  eco: Math.round(calculateFirstYearSavings({ ...input, autoconsoOverride: autoconso })),
+  roi: calculateROIYears({ ...input, autoconsoOverride: autoconso }),
+});
+// Airbnb : autoconsommation 40-60 % ; résidence principale : 70-85 %
+const parisAirbnb = [at(paris, 0.4), at(paris, 0.6)];
+const rp = [at(base, 0.7), at(base, 0.85)];
+const airbnb = [at(base, 0.4), at(base, 0.6)];
+// LMNP réel : amortissement sur 5 ans, tranche marginale 30 %
+const amort = Math.round((BEEM.priceEur / 5) * 100) / 100;
+const gainFiscal = Math.round(amort * 0.3);
+function roiAvecFiscal(eco1: number): number {
+  let cumul = 0;
+  for (let y = 1; y <= 25; y++) {
+    const gain = eco1 * yearFactor(y) + (y <= 5 ? amort * 0.3 : 0);
+    if (cumul + gain >= BEEM.priceEur) return Math.round((y - 1 + (BEEM.priceEur - cumul) / gain) * 10) / 10;
+    cumul += gain;
+  }
+  return 25;
+}
+const roiFiscal = [roiAvecFiscal(airbnb[1].eco), roiAvecFiscal(airbnb[0].eco)];
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon en location meublée et Airbnb : les règles',
@@ -21,7 +62,7 @@ const faqData = [
   },
   {
     question: 'En tant que propriétaire-hôte Airbnb, est-ce rentable d\'installer un kit solaire ?',
-    answer: 'Moins rentable que pour une résidence principale occupée. Un logement Airbnb est souvent inoccupé la nuit et parfois plusieurs jours par semaine. La production solaire couvre alors la consommation de base (frigo, veille, box) pendant ces absences, mais l\'autoconsommation directe par les voyageurs reste limitée. ROI réaliste : 10-14 ans contre 7-9 ans pour une RP pleinement occupée. L\'argument "éco-responsable" améliore l\'image mais ne change pas le calcul.',
+    answer: `Moins rentable que pour une résidence principale occupée. Un logement Airbnb est souvent inoccupé la nuit et parfois plusieurs jours par semaine. La production solaire couvre alors la consommation de base (frigo, veille, box) pendant ces absences, mais l'autoconsommation directe par les voyageurs reste limitée. Pour un kit de 500 Wc à ${priceLabel('beem-on-500w')} à Lyon plein sud : ROI d'environ ${fr(airbnb[1].roi)} à ${fr(airbnb[0].roi)} ans contre ${fr(rp[1].roi)} à ${fr(rp[0].roi)} ans pour une résidence principale bien occupée. L'argument « éco-responsable » améliore l'image mais ne change pas le calcul.`,
   },
   {
     question: 'Doit-on déclarer un kit solaire à Enedis même en location ?',
@@ -49,6 +90,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
         description="Locataire, propriétaire-hôte Airbnb : règles réelles, autorisations, CACSI et rentabilité chiffrée."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-location-meublee-airbnb"
         datePublished="2026-09-22"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Kit solaire en location et Airbnb' }]} />
@@ -65,7 +107,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               Locataire en r&eacute;sidence principale, propri&eacute;taire qui loue son logement sur Airbnb, ou les deux&nbsp;: les r&egrave;gles ne sont pas les m&ecirc;mes. Ce guide d&eacute;m&ecirc;le les autorisations r&eacute;elles, les obligations l&eacute;gales et la <strong>rentabilit&eacute; chiffr&eacute;e</strong> selon votre situation.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>22 septembre 2026</span>
+              <span>22 septembre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -146,13 +188,13 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
                 Vous &ecirc;tes propri&eacute;taire&nbsp;: vous avez les mains libres pour installer ce que vous voulez dans les limites du r&egrave;glement de copropri&eacute;t&eacute; (si vous &ecirc;tes en appartement). La question n&apos;est pas l&eacute;gale mais <strong>&eacute;conomique</strong>&nbsp;: est-ce rentable avec un logement souvent inoccup&eacute; ou occup&eacute; par des voyageurs de passage&nbsp;?
               </p>
 
-              <h3 className="text-lg font-bold mb-3">Ce que produit un kit 400 Wc dans un Airbnb parisien</h3>
+              <h3 className="text-lg font-bold mb-3">Ce que produit un kit de 500 Wc dans un Airbnb parisien</h3>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 {[
-                  { label: 'Production annuelle (Paris, plein sud)', val: '380&nbsp;kWh/an', color: 'text-green' },
+                  { label: 'Production annuelle (Paris, plein sud)', val: `${fr(prodParis)}&nbsp;kWh/an`, color: 'text-green' },
                   { label: 'Consommation de base (frigo + veille)', val: '350&ndash;450&nbsp;kWh/an', color: 'text-charcoal' },
-                  { label: '&Eacute;conomies annuelles estim&eacute;es', val: '65&ndash;74&nbsp;&euro;/an', color: 'text-green' },
-                  { label: 'ROI (kit 379&nbsp;&euro; Beem On 500 Wc)', val: '5&ndash;7 ans', color: 'text-amber-dark' },
+                  { label: '&Eacute;conomies annuelles estim&eacute;es (40 &agrave; 60&nbsp;% autoconsomm&eacute;s, 1<sup>re</sup> ann&eacute;e)', val: `${parisAirbnb[0].eco}&ndash;${parisAirbnb[1].eco}&nbsp;&euro;/an`, color: 'text-green' },
+                  { label: `ROI (Beem On 500 Wc &agrave; ${priceLabel('beem-on-500w')}, en pr&eacute;commande)`, val: `${fr(parisAirbnb[1].roi)}&ndash;${fr(parisAirbnb[0].roi)} ans`, color: 'text-amber-dark' },
                 ].map((item, i) => (
                   <div key={i} className="card-lg bg-green-pale/30 border-green/10 text-center">
                     <div className={`text-2xl font-extrabold mb-1 ${item.color}`} dangerouslySetInnerHTML={{ __html: item.val }} />
@@ -162,7 +204,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               </div>
 
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Le calcul est favorable car un logement Airbnb consomme en permanence&nbsp;: <strong>r&eacute;frig&eacute;rateur (220&ndash;300 kWh/an), box internet (70&ndash;100 kWh/an), veille des appareils (50&ndash;80 kWh/an)</strong>. Ces consommations nocturnes ne sont pas couvertes par le solaire, mais la production diurne compense enti&egrave;rement le talon de jour. R&eacute;sultat&nbsp;: un kit 400 Wc couvre pr&egrave;s de 100&nbsp;% de la consommation hors occupation.
+                Le calcul est favorable car un logement Airbnb consomme en permanence&nbsp;: <strong>r&eacute;frig&eacute;rateur (220&ndash;300 kWh/an), box internet (70&ndash;100 kWh/an), veille des appareils (50&ndash;80 kWh/an)</strong>. Ces consommations nocturnes ne sont pas couvertes par le solaire, mais la production diurne compense enti&egrave;rement le talon de jour. R&eacute;sultat&nbsp;: en journ&eacute;e, un kit de 500 Wc couvre l&apos;essentiel de la consommation hors occupation.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 Pour comprendre ce m&eacute;canisme en d&eacute;tail, lisez notre analyse du <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline font-semibold">talon de consommation &eacute;lectrique</Link>.
@@ -173,10 +215,10 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               productName="Beem On 500 Wc"
               merchantName="Beem"
               affiliateUrl="https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge"
-              label="Voir le Beem On 500 Wc"
+              label="Voir le Beem On 500 Wc (précommande)"
               variant="inline"
               position="mid-article"
-              price="429 €"
+              price={priceLabel('beem-on-500w')}
             />
 
             {/* ROI comparé */}
@@ -198,9 +240,9 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
                     {[
                       ['Taux d\'autoconsommation', '70–85 %', '40–60 %'],
                       ['Consommation de base couverte', 'Partielle (prise en charge)', '100 % (frigo + veille)'],
-                      ['Excédent non utilisé', 'Inject gratuit au réseau', 'Inject gratuit au réseau'],
-                      ['Économies annuelles (kit 400 Wc)', '65–80 €/an', '55–75 €/an'],
-                      ['ROI estimé', '5–7 ans', '7–10 ans'],
+                      ['Excédent non utilisé', 'Cédé gratuitement au réseau (ou bloqué en zéro injection)', 'Cédé gratuitement au réseau (ou bloqué en zéro injection)'],
+                      ['Économies 1re année (kit 500 Wc)', `${rp[0].eco}–${rp[1].eco} €/an`, `${airbnb[0].eco}–${airbnb[1].eco} €/an`],
+                      ['ROI estimé', `${fr(rp[1].roi)}–${fr(rp[0].roi)} ans`, `${fr(airbnb[1].roi)}–${fr(airbnb[0].roi)} ans`],
                       ['Argument marketing', 'Non applicable', 'Oui : "logement vert"'],
                     ].map(([crit, rp, airbnb], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
@@ -213,7 +255,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
                 </table>
               </div>
               <p className="text-sm text-stone mt-2">
-                Estimation bas&eacute;e sur un kit 400 Wc, Lyon, exposition sud, tarif 0,1940&nbsp;&euro;/kWh. Un kit avec batterie am&eacute;liore nettement l&apos;autoconsommation dans les deux cas.
+                Estimation pour un Beem On 500 Wc ({priceLabel('beem-on-500w')}), Lyon, exposition sud, tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}. Un kit avec batterie am&eacute;liore nettement l&apos;autoconsommation dans les deux cas.
               </p>
             </section>
 
@@ -265,11 +307,11 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               <div className="card-lg bg-green-pale/30 border-green/10 mb-4">
                 <p className="text-sm font-semibold text-green mb-2">Exemple en LMNP r&eacute;el</p>
                 <ul className="text-sm text-charcoal-light space-y-1">
-                  <li>&bull; Kit solaire&nbsp;: 429&nbsp;&euro;</li>
-                  <li>&bull; Amortissement sur 5 ans&nbsp;: 85,80&nbsp;&euro;/an en d&eacute;duction</li>
-                  <li>&bull; Tranche marginale &agrave; 30&nbsp;%&nbsp;: &eacute;conomie fiscale ~26&nbsp;&euro;/an</li>
-                  <li>&bull; Combin&eacute; aux &eacute;conomies &eacute;lectriques (55&ndash;70&nbsp;&euro;/an)&nbsp;: retour total ~80&ndash;95&nbsp;&euro;/an</li>
-                  <li>&bull; ROI r&eacute;el avec avantage fiscal&nbsp;: <strong>4&ndash;6 ans</strong></li>
+                  <li>&bull; Kit solaire&nbsp;: {priceLabel('beem-on-500w')}</li>
+                  <li>&bull; Amortissement sur 5 ans&nbsp;: {fr(amort)}&nbsp;&euro;/an en d&eacute;duction</li>
+                  <li>&bull; Tranche marginale &agrave; 30&nbsp;%&nbsp;: &eacute;conomie fiscale ~{gainFiscal}&nbsp;&euro;/an pendant 5 ans</li>
+                  <li>&bull; Combin&eacute; aux &eacute;conomies &eacute;lectriques ({airbnb[0].eco}&ndash;{airbnb[1].eco}&nbsp;&euro;/an)&nbsp;: retour total ~{airbnb[0].eco + gainFiscal}&ndash;{airbnb[1].eco + gainFiscal}&nbsp;&euro;/an les 5 premi&egrave;res ann&eacute;es</li>
+                  <li>&bull; ROI r&eacute;el avec avantage fiscal&nbsp;: <strong>{fr(roiFiscal[0])}&ndash;{fr(roiFiscal[1])} ans</strong></li>
                 </ul>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
@@ -310,7 +352,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               label="Voir le Sunology PLAY"
               variant="inline"
               position="after-content"
-              price="449 €"
+              price={priceLabel('sunology-play')}
             />
 
             {/* FAQ */}
@@ -350,7 +392,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
 
           {/* Footer méthodologie */}
           <footer className="mt-10 pt-6 border-t border-border-light text-xs text-stone space-y-2">
-            <p><strong>M&eacute;thodologie ROI</strong>&nbsp;: tarif EDF 0,1940&nbsp;&euro;/kWh (mai 2026), inflation &eacute;lectrique 3,3&nbsp;%/an (CRE), autoconsommation 85&nbsp;% sans batterie, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud sur 25 ans. Les chiffres Airbnb sont des estimations bas&eacute;es sur une consommation de base typ&icirc;que (frigo + veille + box internet) sans pr&eacute;sence de voyageurs. Votre situation r&eacute;elle peut diff&eacute;rer.</p>
+            <p><strong>M&eacute;thodologie ROI</strong>&nbsp;: tarif EDF {KWH_PRICE_LABEL}, inflation &eacute;lectrique {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85&nbsp;% sans batterie, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud sur 25 ans. Les chiffres Airbnb sont des estimations bas&eacute;es sur une consommation de base typ&icirc;que (frigo + veille + box internet) sans pr&eacute;sence de voyageurs. Votre situation r&eacute;elle peut diff&eacute;rer.</p>
             <p><strong>Transparence</strong>&nbsp;: certains liens de cet article sont des liens d&apos;affiliation (Beem, Sunology). Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Nos analyses restent ind&eacute;pendantes.</p>
           </footer>
 

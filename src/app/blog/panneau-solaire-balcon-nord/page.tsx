@@ -3,8 +3,63 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
-import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import {
+  AUTOCONSO_STANDARD,
+  KWH_PRICE_LABEL,
+  KWH_INFLATION_LABEL,
+  PANEL_DEGRADATION_LABEL,
+  calculateProductionKwh,
+  calculateFirstYearSavings,
+  calculateROIYears,
+  type CalcInput,
+} from '@/lib/pricing';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { DEPARTMENTS } from '@/data/departments';
+import { PRODUCTS, priceLabel } from '@/data/products';
+
+// Tous les chiffres de production, d'économies et de ROI sont calculés avec pricing.ts (méthode du site).
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const productible = (code: string) => productibleSite(DEPARTMENTS.find((d) => d.code === code)!.irradiation);
+const PLAY = PRODUCTS['sunology-play'];
+const GO = PRODUCTS['sunology-go'];
+const PLAYMAX = PRODUCTS['sunology-play-max'];
+const BEEMKIT = PRODUCTS['beem-kit-300w'];
+function sim(input: CalcInput) {
+  return {
+    prod: calculateProductionKwh(input),
+    eco: Math.round(calculateFirstYearSavings(input)),
+    roi: calculateROIYears(input),
+  };
+}
+/** Perte de production nord vs sud par ville (estimation PVGIS de l'article). */
+function cas(ville: string, latitude: string, code: string, perte: number, verdict: string) {
+  const base: CalcInput = { kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc, productibleKwhPerKwc: productible(code) };
+  const sud = sim(base);
+  const nord = sim({ ...base, orientationCoef: 1 - perte });
+  return {
+    ville,
+    latitude,
+    kit: `${PLAY.name} (${PLAY.powerWc} W)`,
+    prod_sud: `${fr(sud.prod)} kWh/an`,
+    prod_nord: `${fr(nord.prod)} kWh/an`,
+    reduction: `-${Math.round(perte * 100)}%`,
+    economie_sud: `${sud.eco} €/an`,
+    economie_nord: `${nord.eco} €/an`,
+    roi_sud: `${fr(sud.roi)} ans`,
+    roi_nord: `${fr(nord.roi)} ans`,
+    sud,
+    nord,
+    verdict,
+  };
+}
+// Petit kit au nord à Paris (Beem Kit 300W, en rupture) et dans le Sud (Sunology GO)
+const beemNordParis = sim({ kitPriceEur: BEEMKIT.priceEur, kitPowerWc: BEEMKIT.powerWc, productibleKwhPerKwc: productible('75'), orientationCoef: 0.5 });
+const goNordSud = sim({ kitPriceEur: GO.priceEur, kitPowerWc: GO.powerWc, productibleKwhPerKwc: productible('13'), orientationCoef: 0.6 });
+const playMaxNordLille = sim({ kitPriceEur: PLAYMAX.priceEur, kitPowerWc: PLAYMAX.powerWc, productibleKwhPerKwc: productible('59'), orientationCoef: 0.45, hasBattery: true });
+// Mini kit Amazon 200 W : production estimée de 90 kWh/an au nord à Paris (prix non suivi par le site)
+const renogyProd = 90;
+const renogy = sim({ kitPriceEur: 199, kitPowerWc: 200, productibleKwhPerKwc: renogyProd / (0.2 * 0.85) });
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire balcon nord : est-ce rentable en 2026 ?',
@@ -14,6 +69,17 @@ export const metadata: Metadata = withCanonicalOg({
   },
 });
 
+const cas_reels = [
+  cas('Marseille', '43°N', '13', 0.4, 'Acceptable. Le fort ensoleillement du Sud compense en partie l\'orientation nord.'),
+  cas('Lyon', '46°N', '69', 0.5, 'Limite. Réservé aux acheteurs convaincus qui mettent un kit petit budget.'),
+  cas('Paris', '49°N', '75', 0.5, 'Limite. Préférer un petit kit à petit prix pour limiter le risque.'),
+  cas('Lille', '51°N', '59', 0.55, 'Déconseillé. Investissez plutôt dans l\'isolation ou une pompe à chaleur.'),
+];
+const nordEco = cas_reels.map((c) => c.nord.eco);
+const sudEco = cas_reels.map((c) => c.sud.eco);
+const nordRoi = cas_reels.map((c) => c.nord.roi);
+const sudRoi = cas_reels.map((c) => c.sud.roi);
+
 const faqData = [
   {
     question: 'Un panneau solaire sur balcon nord produit-il vraiment de l\'électricité ?',
@@ -21,11 +87,11 @@ const faqData = [
   },
   {
     question: 'Quelle production attendre d\'un kit 450W sur balcon nord ?',
-    answer: 'Tout dépend de votre région. Dans le Sud (Marseille, Nice), comptez 280-320 kWh/an. En région parisienne, 200-240 kWh/an. Dans le Nord (Lille, Strasbourg), 160-200 kWh/an. C\'est entre 30 et 60 € d\'économies annuelles, contre 80-130 € au sud. Le retour sur investissement passe de 5-8 ans à 12-18 ans.',
+    answer: `Tout dépend de votre région. Pour un ${PLAY.name} (${PLAY.powerWc} W) plein nord, comptez environ ${fr(cas_reels[0].nord.prod)} kWh/an à Marseille, ${fr(cas_reels[2].nord.prod)} kWh/an à Paris et ${fr(cas_reels[3].nord.prod)} kWh/an à Lille. C'est entre ${Math.min(...nordEco)} et ${Math.max(...nordEco)} € d'économies la première année, contre ${Math.min(...sudEco)}-${Math.max(...sudEco)} € au sud. Le retour sur investissement passe de ${fr(Math.min(...sudRoi))}-${fr(Math.max(...sudRoi))} ans à ${fr(Math.min(...nordRoi))}-${fr(Math.max(...nordRoi))} ans.`,
   },
   {
     question: 'Y a-t-il des cas où un balcon nord devient intéressant ?',
-    answer: 'Trois cas précis. Premièrement, si le prix au kWc est très bas (Beem Kit 300W à 199€, actuellement en rupture, par exemple) : même avec 40% de production en moins, l\'investissement reste rentable sur 25 ans. Deuxièmement, si vous avez une consommation en journée importante (télétravail, climatisation été, piscine). Troisièmement, si votre balcon nord est en hauteur sans obstruction : la lumière diffuse est plus forte qu\'on ne croit.',
+    answer: 'Trois cas précis. Premièrement, si le prix au kWc est très bas (un kit de 300 W autour de 200 €, comme le Beem Kit 300W, en rupture au 5 novembre 2026) : même avec 40% de production en moins, l\'investissement reste rentable sur 25 ans. Deuxièmement, si vous avez une consommation en journée importante (télétravail, climatisation été, piscine). Troisièmement, si votre balcon nord est en hauteur sans obstruction : la lumière diffuse est plus forte qu\'on ne croit.',
   },
   {
     question: 'L\'inclinaison peut-elle compenser l\'orientation nord ?',
@@ -37,80 +103,27 @@ const faqData = [
   },
   {
     question: 'Quelle alternative si mon balcon est plein nord ?',
-    answer: 'Trois options plus rentables que le solaire balcon nord. Option 1 : louer un panneau en centrale solaire citoyenne (rendement garanti, 3-5% par an). Option 2 : investir dans l\'isolation ou une pompe à chaleur (ROI 4-8 ans). Option 3 : un simple kit 200W petit budget pour l\'expérience, sans attendre de rentabilité. Rarement une bonne idée de mettre 600€+ sur un plein nord.',
+    answer: 'Trois options plus rentables que le solaire balcon nord. Option 1 : louer un panneau en centrale solaire citoyenne (rendement annoncé de 3 à 5 % par an selon les projets, non garanti). Option 2 : investir dans l\'isolation ou une pompe à chaleur (ROI 4-8 ans). Option 3 : un simple kit 200W petit budget pour l\'expérience, sans attendre de rentabilité. Rarement une bonne idée de mettre 600€+ sur un plein nord.',
   },
 ];
 
-const cas_reels = [
-  {
-    ville: 'Marseille',
-    latitude: '43°N',
-    kit: 'Sunology PLAY (500 Wc)',
-    prod_sud: '567 kWh/an',
-    prod_nord: '344 kWh/an',
-    reduction: '-40%',
-    economie_sud: '110 €/an',
-    economie_nord: '67 €/an',
-    roi_sud: '5 ans',
-    roi_nord: '9 ans',
-    verdict: 'Acceptable. Le fort ensoleillement du Sud compense en partie l\'orientation nord.',
-  },
-  {
-    ville: 'Lyon',
-    latitude: '46°N',
-    kit: 'Sunology PLAY (500 Wc)',
-    prod_sud: '510 kWh/an',
-    prod_nord: '256 kWh/an',
-    reduction: '-50%',
-    economie_sud: '99 €/an',
-    economie_nord: '50 €/an',
-    roi_sud: '6 ans',
-    roi_nord: '12 ans',
-    verdict: 'Limite. Réservé aux acheteurs convaincus qui mettent un kit petit budget.',
-  },
-  {
-    ville: 'Paris',
-    latitude: '49°N',
-    kit: 'Sunology PLAY (500 Wc)',
-    prod_sud: '467 kWh/an',
-    prod_nord: '233 kWh/an',
-    reduction: '-50%',
-    economie_sud: '91 €/an',
-    economie_nord: '45 €/an',
-    roi_sud: '7 ans',
-    roi_nord: '13 ans',
-    verdict: 'Limite. Préférer un kit 300W à petit prix (Beem Kit) pour limiter le risque.',
-  },
-  {
-    ville: 'Lille',
-    latitude: '51°N',
-    kit: 'Sunology PLAY (500 Wc)',
-    prod_sud: '422 kWh/an',
-    prod_nord: '189 kWh/an',
-    reduction: '-55%',
-    economie_sud: '82 €/an',
-    economie_nord: '37 €/an',
-    roi_sud: '7 ans',
-    roi_nord: '16 ans',
-    verdict: 'Déconseillé. Investissez plutôt dans l\'isolation ou une pompe à chaleur.',
-  },
-];
+
 
 const alternatives = [
   {
     titre: 'Kit 300W petit budget type Beem',
-    prix: '199 € (rupture)',
-    production_nord_paris: '140 kWh/an',
-    economie: '27 €/an',
-    roi: '7,7 ans',
-    verdict: 'Le seul choix qui reste intéressant en plein nord, à condition d\'être en stock : il est actuellement épuisé chez Beem. Risque minimal (moins de 300€), retour acceptable sur 25 ans.',
+    prix: `${priceLabel('beem-kit-300w')} (rupture)`,
+    production_nord_paris: `${fr(beemNordParis.prod)} kWh/an`,
+    economie: `${beemNordParis.eco} €/an`,
+    roi: `${fr(beemNordParis.roi)} ans`,
+    verdict: 'Le seul choix qui reste intéressant en plein nord, à condition d\'être en stock : il est en rupture chez Beem (vérifié le 5 novembre 2026). Risque minimal (moins de 300 €), retour acceptable sur 25 ans.',
   },
   {
     titre: 'Mini kit Amazon Renogy 200W flexible',
     prix: '199 €',
-    production_nord_paris: '90 kWh/an',
-    economie: '17 €/an',
-    roi: '12 ans',
+    production_nord_paris: `${renogyProd} kWh/an`,
+    economie: `${renogy.eco} €/an`,
+    roi: `${fr(renogy.roi)} ans`,
     verdict: 'Option "test" pour moins de 200€. Panneau transportable, vous pourrez l\'emporter ailleurs si vous déménagez.',
   },
   {
@@ -119,7 +132,7 @@ const alternatives = [
     production_nord_paris: 'N/A (rendement fixe)',
     economie: '25-50 €/an (rendement 4-5%)',
     roi: 'Rendement constant 20 ans',
-    verdict: 'Vous possédez une part d\'une centrale solaire en toiture idéalement orientée, quelque part en France. Rendement garanti, aucun risque d\'exposition.',
+    verdict: 'Vous possédez une part d\'une centrale solaire en toiture idéalement orientée, quelque part en France. Rendement non garanti (il dépend du projet), mais aucun risque d\'exposition.',
   },
   {
     titre: 'Ne rien installer, investir ailleurs',
@@ -139,6 +152,7 @@ export default function BalconNordPage() {
         description="Analyse chiffrée de la rentabilité d'un panneau solaire sur balcon plein nord."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-balcon-nord"
         datePublished="2026-04-24"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Panneau solaire balcon nord' }]} />
@@ -154,7 +168,7 @@ export default function BalconNordPage() {
               Votre balcon est orienté plein nord et vous vous demandez si installer un kit solaire a un sens. La réponse est nuancée : parfois oui, souvent non. Voici l&apos;analyse chiffrée par ville, les alternatives, et les seuls cas où ça reste intéressant.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>24 avril 2026</span>
+              <span>24 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -163,7 +177,7 @@ export default function BalconNordPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Un balcon plein nord produit <strong>40 à 60 % moins</strong> qu&apos;un balcon plein sud selon votre région. En pratique, un kit 450 W coûtant 600 € met <strong>12 à 18 ans</strong> à être rentabilisé contre 5-8 ans au sud. Dans le Sud, ça reste acceptable avec un kit petit budget. En région parisienne ou au nord, mieux vaut investir dans un kit 300 W à moins de 300 €, ou envisager des alternatives comme une centrale solaire citoyenne ou de l&apos;isolation.
+              Un balcon plein nord produit <strong>40 à 60 % moins</strong> qu&apos;un balcon plein sud selon votre région. En pratique, un kit de {PLAY.powerWc}&nbsp;W à {priceLabel('sunology-play')} met <strong>{fr(Math.min(...nordRoi))} à {fr(Math.max(...nordRoi))} ans</strong> à être rentabilisé au nord, contre {fr(Math.min(...sudRoi))} à {fr(Math.max(...sudRoi))} ans au sud. Dans le Sud, ça reste acceptable avec un kit petit budget. En région parisienne ou au nord, mieux vaut un petit kit bon marché, ou envisager des alternatives comme une centrale solaire citoyenne ou de l&apos;isolation.
             </p>
           </div>
 
@@ -192,7 +206,7 @@ export default function BalconNordPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Production réelle par ville : sud vs nord</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Voici les chiffres concrets pour un kit Sunology PLAY (ex-PLAY 2, 500 Wc, 599 €) selon votre localisation, basés sur les données PVGIS officielles (production × 0,1940 €/kWh, retour simple sans inflation) :
+                Voici les chiffres pour un {PLAY.name} (ex-PLAY 2, {PLAY.powerWc}&nbsp;W, {priceLabel('sunology-play')}) selon votre localisation, avec la méthode du site&nbsp;: productible PVGIS du département, {Math.round(AUTOCONSO_STANDARD * 100)}&nbsp;% d&apos;autoconsommation, tarif {KWH_PRICE_LABEL}, hausse du tarif de {KWH_INFLATION_LABEL} et dégradation des panneaux de {PANEL_DEGRADATION_LABEL}. Économies indiquées pour la première année&nbsp;:
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[600px]">
@@ -235,7 +249,7 @@ export default function BalconNordPage() {
                       </div>
                       <div className="text-right">
                         <div className="font-mono font-bold text-amber-dark text-lg">{c.reduction}</div>
-                        <div className="text-[10px] text-stone font-medium uppercase tracking-wider mt-0.5">
+                        <div className="text-xs text-stone font-medium uppercase tracking-wider mt-0.5">
                           Perte Nord vs Sud
                         </div>
                       </div>
@@ -243,14 +257,14 @@ export default function BalconNordPage() {
 
                     <div className="grid grid-cols-2 gap-2 mb-3 text-xs">
                       <div className="bg-green-pale/30 rounded-lg p-2">
-                        <div className="text-[10px] text-green-dark uppercase tracking-wider font-semibold">Au Sud</div>
+                        <div className="text-xs text-green-dark uppercase tracking-wider font-semibold">Au Sud</div>
                         <div className="font-mono text-sm font-bold text-charcoal">{c.prod_sud}</div>
-                        <div className="text-[10px] text-stone">{c.economie_sud} · ROI {c.roi_sud}</div>
+                        <div className="text-xs text-stone">{c.economie_sud} · ROI {c.roi_sud}</div>
                       </div>
                       <div className="bg-amber-pale/30 rounded-lg p-2">
-                        <div className="text-[10px] text-amber-dark uppercase tracking-wider font-semibold">Au Nord</div>
+                        <div className="text-xs text-amber-dark uppercase tracking-wider font-semibold">Au Nord</div>
                         <div className="font-mono text-sm font-bold text-charcoal">{c.prod_nord}</div>
-                        <div className="text-[10px] text-stone">{c.economie_nord} · ROI {c.roi_nord}</div>
+                        <div className="text-xs text-stone">{c.economie_nord} · ROI {c.roi_nord}</div>
                       </div>
                     </div>
 
@@ -274,7 +288,7 @@ export default function BalconNordPage() {
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1">✅ Cas 1 : Kit petit budget dans le Sud</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Dans le Sud (PACA, Occitanie, Corse), même orienté nord, un kit 300 W à 199 € (Beem Kit, actuellement en rupture) produit ~200 kWh/an, soit 40 €/an d&apos;économies. ROI de 5-6 ans. Acceptable, surtout si le kit est évolutif (ajout batterie plus tard). Voir notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green font-semibold hover:underline">sélection de kits petit budget</Link>.
+                    Dans le Sud (PACA, Occitanie, Corse), même orienté nord, un petit kit comme le {GO.name} ({GO.powerWc}&nbsp;W, {priceLabel('sunology-go')}) produit environ {fr(goNordSud.prod)} kWh/an, soit {goNordSud.eco} €/an d&apos;économies la première année. ROI d&apos;environ {fr(goNordSud.roi)} ans. Un kit de 300 W autour de 200 € ferait mieux, mais le Beem Kit 300W est en rupture au 5 novembre 2026. Voir notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green font-semibold hover:underline">sélection de kits petit budget</Link>.
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
@@ -305,7 +319,7 @@ export default function BalconNordPage() {
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">❌ Nord France + kit premium</h3>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Acheter un Sunology PLAY MAX à 699€ (kit + batterie) pour un balcon nord à Lille ou Strasbourg : ROI de 13+ ans, là où un kit sans batterie fait mieux pour moins cher. Le coût du stockage s&apos;amortit sur des kWh qui ne seront jamais produits en masse. Mieux vaut un kit 300 W basique à 199 € (sous réserve de disponibilité) ou le Sunology GO (349 €) en attendant.
+                    Acheter un {PLAYMAX.name} à {priceLabel('sunology-play-max')} (kit + batterie) pour un balcon nord à Lille : ROI d&apos;environ {fr(playMaxNordLille.roi)} ans, là où un kit sans batterie fait mieux pour moins cher. Le coût du stockage s&apos;amortit sur des kWh qui ne seront jamais produits en masse. Mieux vaut un kit 300 W basique autour de 200 € (sous réserve de disponibilité) ou le {GO.name} ({priceLabel('sunology-go')}).
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
@@ -332,15 +346,15 @@ export default function BalconNordPage() {
                     </div>
                     <div className="grid grid-cols-3 gap-2 mb-2 text-xs text-charcoal-light">
                       <div>
-                        <span className="text-stone text-[10px] uppercase tracking-wider">Production</span>
+                        <span className="text-stone text-xs uppercase tracking-wider">Production</span>
                         <div className="font-mono font-semibold">{a.production_nord_paris}</div>
                       </div>
                       <div>
-                        <span className="text-stone text-[10px] uppercase tracking-wider">Économies</span>
+                        <span className="text-stone text-xs uppercase tracking-wider">Économies</span>
                         <div className="font-mono font-semibold">{a.economie}</div>
                       </div>
                       <div>
-                        <span className="text-stone text-[10px] uppercase tracking-wider">ROI</span>
+                        <span className="text-stone text-xs uppercase tracking-wider">ROI</span>
                         <div className="font-mono font-semibold">{a.roi}</div>
                       </div>
                     </div>
@@ -368,8 +382,8 @@ export default function BalconNordPage() {
                   <div>
                     <p className="font-bold mb-2">2. Quel est votre budget max ?</p>
                     <ul className="text-xs text-charcoal-light space-y-1 pl-4">
-                      <li>&bull; <strong>Moins de 300 €</strong> → Beem Kit 300W, acceptable</li>
-                      <li>&bull; <strong>300-600 €</strong> → kit 300-400W, acceptable si vous avez une forte conso journée</li>
+                      <li>&bull; <strong>Moins de 400 €</strong> → petit kit (Sunology GO, ou Beem Kit 300W s&apos;il revient en stock), acceptable</li>
+                      <li>&bull; <strong>400-600 €</strong> → kit 300-500 W, acceptable si vous avez une forte conso journée</li>
                       <li>&bull; <strong>Plus de 600 €</strong> → passer à autre chose (isolation, centrale citoyenne)</li>
                     </ul>
                   </div>
@@ -395,14 +409,11 @@ export default function BalconNordPage() {
             </div>
 
             <div className="my-8">
-              <AffiliateCTA
-                productName="Beem Kit 300W"
-                merchantName="Beem Energy"
-                affiliateUrl="https://beemenergy.fr/products/kit-beem"
-                label="Voir le Beem Kit 300W"
-                variant="box"
-                position="article_bottom"
-              />
+              <div className="card-lg text-center">
+                <p className="font-semibold mb-2">Les petits kits disponibles aujourd&apos;hui</p>
+                <p className="text-sm text-charcoal-light mb-4">Le Beem Kit 300W est en rupture (vérifié le 5 novembre 2026). Notre sélection petit budget liste les kits que vous pouvez commander.</p>
+                <Link href="/comparatif/kit-solaire-petit-budget" className="btn-primary inline-flex">Voir les kits petit budget →</Link>
+              </div>
             </div>
 
             <section className="mb-10">
@@ -446,7 +457,7 @@ export default function BalconNordPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources :</strong> données PVGIS (Joint Research Centre), tarifs EDF régulés, fiches techniques fabricants 2026.{' '}
+                <strong>Sources :</strong> données PVGIS (Joint Research Centre), tarif réglementé EDF ({KWH_PRICE_LABEL}), fiches techniques et prix fabricants vérifiés le 5 novembre 2026.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

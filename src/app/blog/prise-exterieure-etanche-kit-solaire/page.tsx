@@ -307,12 +307,12 @@ export default function PriseExterieureEtanchePage() {
                   <div key={p.asin} className="card-lg">
                     <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
                       <div>
-                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md ${i === 0 ? 'bg-green text-white' : 'bg-amber-pale text-amber-dark'}`}>{p.type}</span>
+                        <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-md ${i === 0 ? 'bg-green text-white' : 'bg-amber-pale text-amber-dark'}`}>{p.type}</span>
                         <h3 className="mt-2 font-bold text-lg">{i + 1}. {p.nom}</h3>
                       </div>
                       <div className="text-right">
                         <div className="font-mono font-bold text-lg">{p.prix}</div>
-                        <div className="text-[10px] text-stone">prix constat&eacute; septembre 2026</div>
+                        <div className="text-xs text-stone">prix constat&eacute; septembre 2026</div>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs mb-4">

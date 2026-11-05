@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL } from '@/lib/pricing';
+import { priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Mon panneau solaire produit moins que prévu : que faire ?',
@@ -46,7 +48,7 @@ const causes = [
     titre: 'Ombre partielle (la cause n°1)',
     impact: '30-50 % de perte',
     detail: 'Un garde-corps, un arbre, un mur voisin, même une antenne ou un fil à linge peuvent créer une ombre sur une partie du panneau. Le problème : une ombre sur 10 % de la surface peut réduire la production de 30 à 50 % à cause du fonctionnement en série des cellules.',
-    solution: 'Identifiez l\'ombre à différentes heures (matin, midi, après-midi) et différentes saisons. Si possible, déplacez le panneau. Si l\'ombre est inévitable, un panneau avec cellules half-cut ou bypass diodes (tous les kits récents : Sunology PLAY 2, Beem On) limite l\'impact.',
+    solution: 'Identifiez l\'ombre à différentes heures (matin, midi, après-midi) et différentes saisons. Si possible, déplacez le panneau. Si l\'ombre est inévitable, un panneau avec cellules half-cut ou bypass diodes (tous les kits récents : Sunology PLAY, Beem On) limite l\'impact.',
     lien: { href: '/blog/panneau-solaire-ombre-optimiser-production', label: 'Guide complet ombre et production' },
   },
   {
@@ -84,7 +86,7 @@ const causes = [
     titre: 'Température élevée',
     impact: '5-15 % de perte en été',
     detail: 'Paradoxalement, les panneaux solaires perdent en rendement quand il fait très chaud. Au-delà de 25°C, chaque degré supplémentaire réduit la production de ~0,3-0,4 %. Un panneau à 60°C (courant en été) perd 10-15 % de son rendement nominal.',
-    solution: 'Assurez une bonne ventilation derrière le panneau : ne le collez pas contre un mur. Un espace de 5-10 cm permet à l\'air de circuler et limite l\'échauffement. Les panneaux bifaciaux (Sunology PLAY 2, Beem On) gèrent mieux la chaleur.',
+    solution: 'Assurez une bonne ventilation derrière le panneau : ne le collez pas contre un mur. Un espace de 5-10 cm permet à l\'air de circuler et limite l\'échauffement. Les panneaux bifaciaux (Sunology PLAY, Beem On) gèrent mieux la chaleur.',
   },
   {
     num: '7',
@@ -104,6 +106,7 @@ export default function PanneauProduitMoinsPage() {
         description="Diagnostic et solutions quand un kit solaire de balcon ne produit pas assez."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-produit-moins-que-prevu"
         datePublished="2026-05-12"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Production inférieure aux prévisions' }]} />
@@ -120,7 +123,7 @@ export default function PanneauProduitMoinsPage() {
               Vous avez installé votre kit solaire de balcon, mais les chiffres de production sont décevants ? Avant de paniquer, suivez ce <strong>diagnostic en 7 points</strong>. Dans 80 % des cas, le problème est simple à identifier et à corriger.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>12 mai 2026</span>
+              <span>12 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -285,16 +288,16 @@ export default function PanneauProduitMoinsPage() {
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center justify-between mb-1">
                     <h3 className="font-bold text-sm text-amber-dark">Ajouter une batterie</h3>
-                    <span className="text-xs font-mono text-stone">488-900 €</span>
+                    <span className="text-xs font-mono text-stone">dès {priceLabel('zendure-solarflow-800-plus')}</span>
                   </div>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Ne produit pas plus, mais valorise mieux la production existante (autoconsommation 45 % → 80 %). Pertinent si votre talon de consommation dépasse la production. <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Voir le Zendure SolarFlow</Link>.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Ne produit pas plus, mais valorise mieux la production existante (autoconsommation 45 % → 80 %). Pertinent si votre talon de consommation dépasse la production. Exemple : Zendure SolarFlow 800 Plus, {priceLabel('zendure-solarflow-800-plus')} sans panneaux (prix vérifié le 5 novembre 2026). <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Voir l&apos;avis</Link>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center justify-between mb-1">
                     <h3 className="font-bold text-sm text-amber-dark">Ajouter un 2ème panneau</h3>
-                    <span className="text-xs font-mono text-stone">200-599 €</span>
+                    <span className="text-xs font-mono text-stone">selon le kit</span>
                   </div>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Si votre espace le permet (max 840 Wc recommandés par l&apos;ADEME). Double la production. Rentable si votre consommation le justifie. <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="text-green hover:underline">Comparatif puissances</Link>.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Si votre espace le permet (repère de 900 W par circuit, recommandé mais pas une limite légale). Double la production. Par exemple, un second Sunology PLAY coûte {priceLabel('sunology-play')}. Rentable si votre consommation le justifie. <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="text-green hover:underline">Comparatif puissances</Link>.</p>
                 </div>
               </div>
             </section>
@@ -366,7 +369,7 @@ export default function PanneauProduitMoinsPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données PVGIS (Commission européenne), fiches techniques constructeurs, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire (mai 2026). Tarif EDF base mai 2026 : 0,1940 €/kWh.{' '}
+                <strong>Méthodologie :</strong> données PVGIS (Commission européenne), fiches techniques constructeurs, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire (mai 2026). Tarif EDF Base 6 kVA : {KWH_PRICE_LABEL}.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

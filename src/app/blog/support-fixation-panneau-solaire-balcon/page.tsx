@@ -9,6 +9,8 @@ import {
   calculateFirstYearSavings,
   calculateTotalSavings25Years,
   KWH_PRICE_LABEL,
+  KWH_INFLATION_LABEL,
+  PANEL_DEGRADATION_LABEL,
 } from '@/lib/pricing';
 import { withCanonicalOg } from '@/lib/metadata';
 
@@ -252,6 +254,7 @@ export default function SupportFixationPanneauPage() {
         description="Crochets garde-corps, supports inclinables, pose sans perçage : 7 supports Amazon analysés, impact de l'inclinaison sur la production et règles de sécurité."
         url={PAGE_URL}
         datePublished="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Support et fixation panneau solaire balcon' }]} />
@@ -268,7 +271,7 @@ export default function SupportFixationPanneauPage() {
               Un panneau de 20 &agrave; 25&nbsp;kg accroch&eacute; au-dessus de la rue, ce n&apos;est pas un accessoire d&eacute;co. Le support d&eacute;cide de trois choses&nbsp;: la <strong>s&eacute;curit&eacute;</strong> (chute, vent), la <strong>production</strong> (jusqu&apos;&agrave; 30&nbsp;% d&apos;&eacute;cart selon l&apos;inclinaison) et la <strong>l&eacute;galit&eacute;</strong> (copropri&eacute;t&eacute;, bail). Nous avons analys&eacute; 7 supports disponibles sur Amazon, class&eacute;s par type de garde-corps.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>27 septembre 2026</span>
+              <span>27 septembre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -349,12 +352,12 @@ export default function SupportFixationPanneauPage() {
                   <div key={p.asin} className="card-lg">
                     <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
                       <div>
-                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md ${i === 0 ? 'bg-green text-white' : 'bg-amber-pale text-amber-dark'}`}>{p.type}</span>
+                        <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-md ${i === 0 ? 'bg-green text-white' : 'bg-amber-pale text-amber-dark'}`}>{p.type}</span>
                         <h3 className="mt-2 font-bold text-lg">{i + 1}. {p.nom}</h3>
                       </div>
                       <div className="text-right">
                         <div className="font-mono font-bold text-lg">{p.prix}</div>
-                        <div className="text-[10px] text-stone">prix constat&eacute; septembre 2026</div>
+                        <div className="text-xs text-stone">prix constat&eacute; septembre 2026</div>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs mb-4">
@@ -429,10 +432,10 @@ export default function SupportFixationPanneauPage() {
                 </table>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                <div className="card text-center bg-green-pale/30"><div className="font-mono font-extrabold text-green text-xl">{fmt(OPTIMUM.kwh)}</div><div className="text-[11px] text-stone">kWh/an &agrave; 35&deg;</div></div>
-                <div className="card text-center bg-green-pale/30"><div className="font-mono font-extrabold text-green text-xl">{fmt(VERTICAL.kwh)}</div><div className="text-[11px] text-stone">kWh/an en vertical</div></div>
-                <div className="card text-center bg-green-pale/30"><div className="font-mono font-extrabold text-green text-xl">{GAP_EUR}&nbsp;&euro;</div><div className="text-[11px] text-stone">d&apos;&eacute;cart la 1re ann&eacute;e</div></div>
-                <div className="card text-center bg-green-pale/30"><div className="font-mono font-extrabold text-green text-xl">~{fmt(Math.round(GAP_EUR_25 / 10) * 10)}&nbsp;&euro;</div><div className="text-[11px] text-stone">d&apos;&eacute;cart sur 25 ans</div></div>
+                <div className="card text-center bg-green-pale/30"><div className="font-mono font-extrabold text-green text-xl">{fmt(OPTIMUM.kwh)}</div><div className="text-xs text-stone">kWh/an &agrave; 35&deg;</div></div>
+                <div className="card text-center bg-green-pale/30"><div className="font-mono font-extrabold text-green text-xl">{fmt(VERTICAL.kwh)}</div><div className="text-xs text-stone">kWh/an en vertical</div></div>
+                <div className="card text-center bg-green-pale/30"><div className="font-mono font-extrabold text-green text-xl">{GAP_EUR}&nbsp;&euro;</div><div className="text-xs text-stone">d&apos;&eacute;cart la 1re ann&eacute;e</div></div>
+                <div className="card text-center bg-green-pale/30"><div className="font-mono font-extrabold text-green text-xl">~{fmt(Math.round(GAP_EUR_25 / 10) * 10)}&nbsp;&euro;</div><div className="text-xs text-stone">d&apos;&eacute;cart sur 25 ans</div></div>
               </div>
               <p className="text-sm text-charcoal-light leading-relaxed mb-3">
                 Conclusion honn&ecirc;te&nbsp;: un support inclinable &agrave; 40-100&nbsp;&euro; est rembours&eacute; en 1,5 &agrave; 4 ans par le gain de production, <strong>si</strong> votre balcon est expos&eacute; sud &agrave; ouest et que vous avez le droit d&apos;incliner. Entre 15&deg; et 60&deg;, l&apos;&eacute;cart avec l&apos;optimum reste sous 6&nbsp;%&nbsp;: inutile de chercher l&apos;angle parfait.
@@ -574,7 +577,7 @@ export default function SupportFixationPanneauPage() {
 
             <footer className="mt-10 pt-8 border-t border-border-light text-xs text-stone leading-relaxed space-y-2">
               <p>
-                <strong>M&eacute;thodologie&nbsp;:</strong> supports analys&eacute;s sur fiches techniques Amazon.fr et avis clients (septembre 2026), sans manipulation physique. Production calcul&eacute;e avec PVGIS v5.2 (Lyon, plein sud, pertes 14&nbsp;%) pour les ratios d&apos;inclinaison, puis m&eacute;thodologie du site&nbsp;: productible 1&nbsp;200&nbsp;kWh/kWc, ratio de performance 0,85, autoconsommation 85&nbsp;%, {KWH_PRICE_LABEL}, inflation 3,3&nbsp;%/an sur 25 ans. Pouss&eacute;e du vent&nbsp;: ordre de grandeur physique, pas un calcul de structure. Donn&eacute;es sangles Sunology&nbsp;: centre d&apos;aide Sunology.{' '}
+                <strong>M&eacute;thodologie&nbsp;:</strong> supports analys&eacute;s sur fiches techniques Amazon.fr et avis clients (septembre 2026), sans manipulation physique. Production calcul&eacute;e avec PVGIS v5.2 (Lyon, plein sud, pertes 14&nbsp;%) pour les ratios d&apos;inclinaison, puis m&eacute;thodologie du site&nbsp;: productible 1&nbsp;200&nbsp;kWh/kWc, ratio de performance 0,85, autoconsommation 85&nbsp;%, {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL} et d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL} sur 25 ans. Pouss&eacute;e du vent&nbsp;: ordre de grandeur physique, pas un calcul de structure. Donn&eacute;es sangles Sunology&nbsp;: centre d&apos;aide Sunology.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
               <p>

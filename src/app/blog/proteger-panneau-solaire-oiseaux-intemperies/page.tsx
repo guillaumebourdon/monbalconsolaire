@@ -5,6 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { KWH_PRICE_LABEL } from '@/lib/pricing';
+import { priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Protéger son panneau solaire balcon des oiseaux et intempéries',
@@ -49,7 +51,7 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
         description="Fientes, grêle, vent : solutions anti-oiseaux DIY, résistance certifiée et couverture assurance pour votre kit solaire de balcon."
         url="https://monbalconsolaire.fr/blog/proteger-panneau-solaire-oiseaux-intemperies"
         datePublished="2026-08-28"
-        dateModified="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Protéger panneau solaire oiseaux intempéries' }]} />
@@ -66,7 +68,7 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
               Fientes de pigeons, gr&ecirc;le, vent de temp&ecirc;te&nbsp;: votre kit solaire de balcon est expos&eacute; en permanence. Voici ce qui l&apos;abime vraiment, ce qui ne pose pas de probl&egrave;me, et les <strong>solutions concr&egrave;tes</strong> &mdash; chiffr&eacute;es et class&eacute;es par co&ucirc;t.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>28 ao&ucirc;t 2026</span>
+              <span>28 ao&ucirc;t 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -372,7 +374,7 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
               label="Voir le Sunology PLAY (ex-PLAY 2)"
               variant="inline"
               position="mid-article"
-              price="599 €"
+              price={priceLabel('sunology-play')}
             />
 
             <AffiliateCTA
@@ -446,7 +448,7 @@ export default function ProtegerPanneauSolaireOiseauxPage() {
             {/* Footer méthodologie */}
             <footer className="border-t border-border-light pt-6 mt-6 text-xs text-stone space-y-2">
               <p>
-                <strong>M&eacute;thodologie</strong>&nbsp;: les chiffres de production et de perte mentionn&eacute;s dans cet article sont bas&eacute;s sur les donn&eacute;es PVGIS (Lyon, exposition sud, PR&nbsp;0,85) et les fiches techniques fabricants. Tarif &eacute;lectrique r&eacute;f&eacute;rence&nbsp;: 0,1940&nbsp;&euro;/kWh (EDF TRV&nbsp;2026, option Base).
+                <strong>M&eacute;thodologie</strong>&nbsp;: les chiffres de production et de perte mentionn&eacute;s dans cet article sont bas&eacute;s sur les donn&eacute;es PVGIS (Lyon, exposition sud, PR&nbsp;0,85) et les fiches techniques fabricants. Tarif &eacute;lectrique r&eacute;f&eacute;rence&nbsp;: {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; EDF, option Base 6 kVA).
               </p>
               <p>
                 <strong>Transparence affiliés</strong>&nbsp;: certains liens de cet article sont des liens d&apos;affiliation. MonBalconSolaire per&ccedil;oit une commission si vous achetez via ces liens, sans co&ucirc;t suppl&eacute;mentaire pour vous. Liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous. Solutions s&eacute;lectionn&eacute;es et analys&eacute;es, non test&eacute;es physiquement ; prix indicatifs. Notre analyse reste ind&eacute;pendante.

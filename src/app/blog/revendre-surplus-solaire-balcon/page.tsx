@@ -6,10 +6,29 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
 import { zendureUrl } from '@/lib/affiliate';
+import { KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_PRICE_SHORT, AUTOCONSO_STANDARD, calculateProductionKwh } from '@/lib/pricing';
+
+// Calculs : méthode du site (Lyon, plein sud, PR 0,85) et tarif de pricing.ts.
+const RACHAT_EUR = 0.011; // tarif de rachat du surplus cité (arrêté du 1er juin 2026, 1,1 c€/kWh HT)
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const prod450 = calculateProductionKwh({ kitPriceEur: 0, kitPowerWc: 450 });
+const auto450 = Math.round(prod450 * AUTOCONSO_STANDARD);
+const surplus450 = prod450 - auto450;
+const eco450 = Math.round(auto450 * KWH_PRICE_EUR);
+const vente450 = Math.round(surplus450 * RACHAT_EUR * 100) / 100;
+const ratioTarifs = Math.round(KWH_PRICE_EUR / RACHAT_EUR);
+const kwhCts = fr(Math.round(KWH_PRICE_EUR * 1000) / 10);
+const rachatPct = fr(Math.round((RACHAT_EUR / KWH_PRICE_EUR) * 1000) / 10);
+const prod3k = calculateProductionKwh({ kitPriceEur: 0, kitPowerWc: 3000 });
+const auto3k = Math.round(prod3k * 0.3);
+const surplus3k = prod3k - auto3k;
+const vente3k = Math.round(surplus3k * RACHAT_EUR * 10) / 10;
+const eco3k = Math.round(auto3k * KWH_PRICE_EUR);
+const ansSurcout = Math.floor(5000 / vente3k / 10) * 10;
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Revendre surplus solaire à EDF depuis un balcon : possible ? (2026)',
-  description: 'Peut-on revendre son surplus à EDF avec un kit balcon ? Non — et à 1,1 c€/kWh, même une installation classique ne s\'y retrouve pas. Calculs et alternatives.',
+  description: 'Peut-on revendre le surplus d\'un kit solaire de balcon à EDF ? Non. CACSI ou cession gratuite à Enedis : ce qui s\'applique, calculs et alternatives.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/revendre-surplus-solaire-balcon',
   },
@@ -18,27 +37,27 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Peut-on revendre son surplus solaire à EDF avec un kit de balcon ?',
-    answer: 'Non. Les kits plug-and-play fonctionnent en régime CACSI (autoconsommation sans injection). L\'énergie excédentaire est injectée gratuitement sur le réseau Enedis, sans aucune compensation. Pour revendre, il faut une installation fixe avec raccordement producteur officiel (contrat d\'accès Enedis et contrat d\'achat).',
+    answer: 'Non. Un kit branché sur une prise n\'a pas de contrat d\'achat. Deux déclarations sont possibles : la CACSI (convention d\'autoconsommation sans injection), si le kit est réglé pour ne rien envoyer sur le réseau, ou la cession gratuite du surplus à Enedis (installations de 3 kW maximum en sortie d\'onduleur), si le kit renvoie du surplus. Dans les deux cas, rien n\'est payé. Pour revendre, il faut une installation raccordée comme producteur avec un contrat d\'achat.',
   },
   {
     question: 'Qu\'est-ce que l\'EDF OA et pourquoi les kits balcon n\'y sont pas éligibles ?',
     answer: 'EDF OA (Obligation d\'Achat) est le dispositif qui oblige EDF à racheter l\'électricité des producteurs. Il s\'applique aux installations de 0 à 9 kWc raccordées officiellement : installateur RGE, passage Consuel, compteur producteur. Un kit plug-and-play branché sur une prise n\'est pas un raccordement producteur — il reste dans le régime de l\'autoconsommation.',
   },
   {
-    question: 'Combien rapporte la revente de surplus à EDF en 2026 ?',
-    answer: 'Depuis l\'arrêté du 1er juin 2026, le tarif de rachat du surplus est fixé à 1,1 c€/kWh HT. Pour un kit 450 Wc à Lyon, cela représente environ 70-80 kWh de surplus annuel, soit 0,77 à 0,88 €/an. Les économies d\'autoconsommation sur le même kit atteignent 85-90 €/an. La revente rapporte 100 fois moins.',
+    question: 'Combien rapporterait la revente du surplus d\'un kit de balcon ?',
+    answer: `Presque rien. Au tarif de rachat du surplus de 1,1 c€/kWh HT cité par l'arrêté du 1er juin 2026, un kit de 450 W à Lyon (${prod450} kWh/an, ${surplus450} kWh de surplus avec ${Math.round(AUTOCONSO_STANDARD * 100)} % d'autoconsommation) rapporterait environ ${fr(vente450)} €/an. Les économies d'autoconsommation sur le même kit atteignent environ ${eco450} €/an au tarif de ${KWH_PRICE_LABEL}.`,
   },
   {
     question: 'Que devient concrètement le surplus d\'un kit balcon ?',
-    answer: 'Quand votre panneau produit plus que vous ne consommez à l\'instant, le surplus est injecté sur le réseau Enedis. Vos voisins consomment votre électricité verte. Vous ne payez pas cette injection, mais vous n\'êtes pas payé non plus. C\'est prévu dans la convention CACSI que vous signez en déclarant votre kit.',
+    answer: 'Cela dépend de votre déclaration. Avec la CACSI, vous vous engagez à ne pas injecter : le kit doit être réglé en « zéro injection » (réglage de l\'onduleur, compteur de type Shelly ou boîtier du fabricant, ou batterie qui absorbe le surplus). Si votre kit renvoie du surplus, la bonne démarche est la cession gratuite du surplus à Enedis (Code de l\'énergie, article L315-5) : le surplus part sur le réseau sans rémunération. Dans tous les cas, injecter avant la mise en service par Enedis est interdit.',
   },
   {
-    question: 'La déclaration CACSI est-elle obligatoire même si on ne revend rien ?',
-    answer: 'Oui. La CACSI (Convention d\'Autoconsommation Sans Injection) est obligatoire dès que le kit est branché sur une prise du logement, depuis le décret du 6 octobre 2021. Elle se fait gratuitement en ligne sur le site Enedis en 10 minutes. Ne pas la faire expose à des problèmes d\'assurance en cas de sinistre.',
+    question: 'Une déclaration est-elle obligatoire même si on ne revend rien ?',
+    answer: 'Oui. Une déclaration est obligatoire : la CACSI si votre kit ne renvoie rien sur le réseau, ou la cession gratuite du surplus à Enedis s\'il en renvoie. Les deux se font gratuitement en ligne sur Enedis-Connect. Pour la cession, choisissez « injection du surplus » puis « je cède mon surplus à Enedis » ; Enedis établit alors un contrat d\'accès en injection.',
   },
   {
     question: 'Comment valoriser son surplus au lieu de l\'injecter gratuitement ?',
-    answer: 'La seule solution efficace est une batterie de stockage. Elle capte le surplus en journée et le restitue le soir. L\'autoconsommation passe de 85 % à 95 %, et chaque kWh stocké vaut 0,194 € au lieu des 0,011 c€ de la revente. Les kits avec batterie (Sunology PLAY MAX, EcoFlow PowerStream, Zendure SolarFlow) rentrent dans cette logique.',
+    answer: `En le consommant : décaler les appareils en journée, ou ajouter une batterie qui capte le surplus et le restitue le soir. L'autoconsommation passe de 85 % à 95 % dans notre méthode, et chaque kWh stocké vaut ${KWH_PRICE_SHORT} au lieu de 0,011 € à la revente. Les kits avec batterie (Sunology PLAY MAX, EcoFlow STREAM Ultra, Zendure SolarFlow) rentrent dans cette logique.`,
   },
 ];
 
@@ -47,9 +66,10 @@ export default function RevendreSuplusSolaireBalconPage() {
     <>
       <SchemaArticle
         title="Revendre surplus solaire à EDF depuis un balcon : possible ? (2026)"
-        description="Les kits balcon ne peuvent pas revendre leur surplus à EDF. Et même une installation classique ne s'y retrouve pas à 1,1 c€/kWh. Explications et calculs."
+        description="Peut-on revendre le surplus d'un kit solaire de balcon à EDF ? Non. CACSI ou cession gratuite à Enedis : ce qui s'applique, calculs et alternatives."
         url="https://monbalconsolaire.fr/blog/revendre-surplus-solaire-balcon"
         datePublished="2026-07-31"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Revendre surplus solaire balcon' }]} />
@@ -64,10 +84,10 @@ export default function RevendreSuplusSolaireBalconPage() {
               Panneau solaire balcon&nbsp;: peut-on revendre son surplus &agrave; EDF&nbsp;?
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              C&apos;est la question que se posent 9 acheteurs sur 10 avant de commander. La r&eacute;ponse est non &mdash; et on va vous expliquer pourquoi. Mais aussi pourquoi, m&ecirc;me si c&apos;&eacute;tait possible, ce ne serait pas int&eacute;ressant.
+              C&apos;est une question fr&eacute;quente avant de commander. La r&eacute;ponse est non. Voici pourquoi, quelle d&eacute;claration faire pour votre surplus, et pourquoi, m&ecirc;me si c&apos;&eacute;tait possible, la revente ne rapporterait presque rien.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>31 juillet 2026</span>
+              <span>31 juillet 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -76,10 +96,11 @@ export default function RevendreSuplusSolaireBalconPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">L&apos;essentiel en 30 secondes</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
-              <li>&bull; Les kits balcon &le;&nbsp;800&nbsp;Wc <strong>ne peuvent pas revendre</strong> leur surplus &mdash; r&eacute;gime CACSI uniquement</li>
-              <li>&bull; L&apos;EDF OA (revente) concerne les installations &ge;&nbsp;3&nbsp;kWc avec raccordement producteur officiel</li>
-              <li>&bull; Tarif de rachat 2026&nbsp;: <strong>1,1&nbsp;c&euro;/kWh</strong> vs 19,4&nbsp;c&euro;/kWh pour l&apos;&eacute;lectricit&eacute; achet&eacute;e &mdash; rapport de 17x</li>
-              <li>&bull; Pour un kit 450&nbsp;Wc, la revente rapporterait &asymp;&nbsp;<strong>0,88&nbsp;&euro;/an</strong> vs <strong>88&nbsp;&euro;/an</strong> en autoconsommation</li>
+              <li>&bull; Un kit branch&eacute; sur une prise <strong>ne peut pas revendre</strong> son surplus&nbsp;: pas de contrat d&apos;achat</li>
+              <li>&bull; Deux d&eacute;clarations possibles&nbsp;: <strong>CACSI</strong> si le kit est r&eacute;gl&eacute; en z&eacute;ro injection, <strong>cession gratuite du surplus &agrave; Enedis</strong> (3&nbsp;kW maximum) s&apos;il en renvoie</li>
+              <li>&bull; L&apos;EDF OA (revente) suppose une installation raccord&eacute;e comme producteur avec contrat d&apos;achat</li>
+              <li>&bull; Tarif de rachat 2026&nbsp;: <strong>1,1&nbsp;c&euro;/kWh</strong> vs {kwhCts}&nbsp;c&euro;/kWh pour l&apos;&eacute;lectricit&eacute; achet&eacute;e &mdash; rapport de {ratioTarifs}x</li>
+              <li>&bull; Pour un kit 450&nbsp;W, la revente rapporterait &asymp;&nbsp;<strong>{fr(vente450)}&nbsp;&euro;/an</strong> vs <strong>{eco450}&nbsp;&euro;/an</strong> en autoconsommation</li>
               <li>&bull; Alternative&nbsp;: une batterie pour stocker le surplus et l&apos;utiliser le soir</li>
             </ul>
           </div>
@@ -89,14 +110,15 @@ export default function RevendreSuplusSolaireBalconPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">La r&eacute;ponse courte&nbsp;: non, c&apos;est impossible</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Un kit solaire plug-and-play branch&eacute; sur une prise de balcon ne peut pas revendre son &eacute;lectricit&eacute; &agrave; EDF. Ce n&apos;est pas une question de volont&eacute; ou de n&eacute;gociation&nbsp;: c&apos;est structurellement impossible dans le cadre r&eacute;glementaire fran&ccedil;ais.
+                Un kit solaire plug-and-play branch&eacute; sur une prise de balcon ne peut pas revendre son &eacute;lectricit&eacute; &agrave; EDF&nbsp;: il n&apos;a ni raccordement producteur ni contrat d&apos;achat. Il doit en revanche &ecirc;tre d&eacute;clar&eacute; &agrave; Enedis, de l&apos;une de ces deux fa&ccedil;ons&nbsp;:
               </p>
-              <p className="text-charcoal-light leading-relaxed mb-4">
-                Ces kits fonctionnent sous un r&eacute;gime sp&eacute;cifique&nbsp;: la <strong>convention CACSI</strong> (Convention d&apos;Autoconsommation Sans Injection). Le nom est explicit&apos;&nbsp;: &laquo;&nbsp;sans injection&nbsp;&raquo; signifie sans compensation pour l&apos;injection. Votre surplus part sur le r&eacute;seau Enedis, mais vous n&apos;&ecirc;tes pas pay&eacute;.
-              </p>
+              <ul className="text-charcoal-light leading-relaxed space-y-2 mb-4 pl-5">
+                <li>&bull; <strong>La CACSI</strong> (convention d&apos;autoconsommation sans injection)&nbsp;: vous vous engagez &agrave; <strong>ne rien injecter</strong> sur le r&eacute;seau. Enedis indique que cela passe par un dispositif anti-injection, s&apos;il est mis en place, ou par un r&eacute;glage de l&apos;onduleur en &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo;&nbsp;: compteur de type Shelly ou bo&icirc;tier du fabricant qui pilote l&apos;onduleur, ou batterie qui absorbe le surplus.</li>
+                <li>&bull; <strong>La cession gratuite du surplus &agrave; Enedis</strong> (Code de l&apos;&eacute;nergie, article L315-5)&nbsp;: si votre kit renvoie du surplus, ce qui est le cas de la plupart des kits simples sans pilotage, ce surplus est c&eacute;d&eacute; gratuitement au gestionnaire du r&eacute;seau. R&eacute;serv&eacute; aux installations de 3&nbsp;kW maximum en sortie d&apos;onduleur (article D.315-10). Sur Enedis-Connect&nbsp;: &laquo;&nbsp;injection du surplus&nbsp;&raquo; puis &laquo;&nbsp;je c&egrave;de mon surplus &agrave; Enedis&nbsp;&raquo;&nbsp;; Enedis &eacute;tablit un contrat d&apos;acc&egrave;s en injection.</li>
+              </ul>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Pourquoi &laquo;&nbsp;sans injection&nbsp;&raquo; alors que de l&apos;&eacute;lectricit&eacute; est inject&eacute;e&nbsp;?</strong> Le terme d&eacute;signe l&apos;absence de r&eacute;mun&eacute;ration pour l&apos;injection, pas l&apos;absence physique du flux. L&apos;&eacute;lectricit&eacute; excédentaire est bien inject&eacute;e sur le r&eacute;seau &mdash; elle n&apos;est juste pas pay&eacute;e. Vos voisins en profitent, vous non.
+                  <strong>&Agrave; savoir&nbsp;:</strong> la cession gratuite n&apos;est pas tout &agrave; fait sans frais&nbsp;: le producteur paie la part &laquo;&nbsp;autoproducteur&nbsp;&raquo; du tarif d&apos;utilisation du r&eacute;seau (TURPE). Nous n&apos;avons pas trouv&eacute; de montant officiel publi&eacute;, nous n&apos;en donnons donc pas. Et dans les deux cas, injecter avant la mise en service par Enedis est interdit.
                 </p>
               </div>
             </section>
@@ -111,18 +133,18 @@ export default function RevendreSuplusSolaireBalconPage() {
                   <thead>
                     <tr className="bg-green text-white">
                       <th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th>
-                      <th className="text-center p-3">CACSI &mdash; kit balcon</th>
+                      <th className="text-center p-3">Kit balcon (CACSI ou cession gratuite)</th>
                       <th className="text-center p-3 rounded-tr-xl">EDF OA &mdash; installation toiture</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      ['Puissance', '≤ 800 Wc', '3 000 – 9 000 Wc'],
+                      ['Puissance', 'Pas de plafond chiffré pour la CACSI ; 3 kW max en sortie d’onduleur pour la cession gratuite', 'Installation dimensionnée pour le toit'],
                       ['Raccordement', 'Prise 230 V domestique', 'Raccordement producteur Enedis'],
                       ['Installateur RGE', 'Non requis', 'Obligatoire'],
-                      ['Consuel', 'Non requis', 'Obligatoire (attestation)'],
-                      ['Démarche', 'CACSI en ligne, 10 min, gratuit', 'Dossier complet, 2–3 mois'],
-                      ['Surplus', 'Injecté gratuitement', 'Racheté 1,1 c€/kWh (2026)'],
+                      ['Consuel', 'Dispense possible pour un kit déjà assemblé conforme à la norme NF EN 50549-1-4 (attestation sur l’honneur)', 'Obligatoire (attestation)'],
+                      ['Démarche', 'Déclaration en ligne sur Enedis-Connect, gratuite', 'Dossier complet, 2–3 mois'],
+                      ['Surplus', 'Aucun (CACSI, zéro injection) ou cédé gratuitement à Enedis', 'Racheté 1,1 c€/kWh (2026)'],
                       ['Prime autoconso', 'Non éligible', 'Supprimée en juin 2026'],
                       ['Locataire ?', 'Oui (dans la majorité des cas)', 'Non (autorisation copro requise)'],
                     ].map(([c, cacsi, oa], i) => (
@@ -136,7 +158,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                Pour passer du r&eacute;gime CACSI au r&eacute;gime EDF OA, il faudrait multiplier la puissance install&eacute;e par au moins 4 (passer de 800&nbsp;Wc &agrave; 3&nbsp;000&nbsp;Wc minimum), ajouter un raccordement producteur officiel, faire appel &agrave; un installateur certifi&eacute; RGE, obtenir une attestation Consuel. On n&apos;est plus du tout dans le terrain du kit balcon.
+                Pour vendre son surplus, il faudrait une installation raccord&eacute;e comme producteur, pos&eacute;e par un installateur certifi&eacute; RGE, avec attestation Consuel et contrat d&apos;achat. On n&apos;est plus du tout dans le terrain du kit balcon.
               </p>
             </section>
 
@@ -149,25 +171,25 @@ export default function RevendreSuplusSolaireBalconPage() {
                 <div className="card-lg border-l-4 border-l-green">
                   <h3 className="font-bold text-base mb-3">Sc&eacute;nario 1 &mdash; Autoconsommation</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
-                    <div className="flex justify-between"><span>Production annuelle</span><span className="font-mono font-medium">535 kWh</span></div>
-                    <div className="flex justify-between"><span>Autoconsomm&eacute; (85&nbsp;%)</span><span className="font-mono font-medium">455 kWh</span></div>
-                    <div className="flex justify-between"><span>Tarif EDF &eacute;vit&eacute;</span><span className="font-mono font-medium">0,1940 &euro;/kWh</span></div>
-                    <div className="flex justify-between font-bold text-green pt-2 border-t border-border-light"><span>&Eacute;conomies annuelles</span><span className="font-mono text-xl">88 &euro;/an</span></div>
+                    <div className="flex justify-between"><span>Production annuelle</span><span className="font-mono font-medium">{prod450} kWh</span></div>
+                    <div className="flex justify-between"><span>Autoconsomm&eacute; ({Math.round(AUTOCONSO_STANDARD * 100)}&nbsp;%)</span><span className="font-mono font-medium">{auto450} kWh</span></div>
+                    <div className="flex justify-between"><span>Tarif EDF &eacute;vit&eacute;</span><span className="font-mono font-medium">{KWH_PRICE_LABEL}</span></div>
+                    <div className="flex justify-between font-bold text-green pt-2 border-t border-border-light"><span>&Eacute;conomies annuelles</span><span className="font-mono text-xl">{eco450} &euro;/an</span></div>
                   </div>
                 </div>
                 <div className="card-lg border-l-4 border-l-amber">
                   <h3 className="font-bold text-base mb-3">Sc&eacute;nario 2 &mdash; Revente surplus (si possible)</h3>
                   <div className="space-y-2 text-sm text-charcoal-light">
-                    <div className="flex justify-between"><span>Surplus inject&eacute; (15&nbsp;%)</span><span className="font-mono font-medium">80 kWh</span></div>
+                    <div className="flex justify-between"><span>Surplus inject&eacute; (15&nbsp;%)</span><span className="font-mono font-medium">{surplus450} kWh</span></div>
                     <div className="flex justify-between"><span>Tarif de rachat EDF OA</span><span className="font-mono font-medium">0,011 &euro;/kWh</span></div>
-                    <div className="flex justify-between"><span>Autoconsomm&eacute; réduit</span><span className="font-mono font-medium">455 kWh</span></div>
-                    <div className="flex justify-between font-bold text-amber-dark pt-2 border-t border-border-light"><span>Recette surplus</span><span className="font-mono text-xl">0,88 &euro;/an</span></div>
+                    <div className="flex justify-between"><span>Autoconsomm&eacute; (inchang&eacute;)</span><span className="font-mono font-medium">{auto450} kWh</span></div>
+                    <div className="flex justify-between font-bold text-amber-dark pt-2 border-t border-border-light"><span>Recette surplus</span><span className="font-mono text-xl">{fr(vente450)} &euro;/an</span></div>
                   </div>
                 </div>
               </div>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Conclusion&nbsp;:</strong> l&apos;autoconsommation rapporte <strong>100 fois plus</strong> que la revente du surplus au m&ecirc;me tarif. Chaque kWh autoconsomm&eacute; &eacute;conomise 19,4&nbsp;c&euro;. Chaque kWh revendu rapporte 1,1&nbsp;c&euro;. <strong>L&apos;objectif n&apos;est pas de maximaliser la production &mdash; c&apos;est de maximaliser l&apos;autoconsommation.</strong>
+                  <strong>Conclusion&nbsp;:</strong> l&apos;autoconsommation rapporte <strong>100 fois plus</strong> que la revente du surplus au m&ecirc;me tarif. Chaque kWh autoconsomm&eacute; &eacute;conomise {kwhCts}&nbsp;c&euro;. Chaque kWh revendu rapporte 1,1&nbsp;c&euro;. <strong>L&apos;objectif n&apos;est pas de maximaliser la production &mdash; c&apos;est de maximaliser l&apos;autoconsommation.</strong>
                 </p>
               </div>
             </section>
@@ -188,7 +210,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                &Agrave; titre de comparaison&nbsp;: en 2020, le tarif de rachat du surplus tournait autour de 6&nbsp;c&euro;/kWh. Aujourd&apos;hui &agrave; 1,1&nbsp;c&euro;/kWh, il ne repr&eacute;sente plus que 5,7&nbsp;% du tarif d&apos;achat EDF. La logique &eacute;conomique du solaire r&eacute;sidentiel s&apos;est enti&egrave;rement pivot&eacute;e vers l&apos;autoconsommation.
+                &Agrave; titre de comparaison&nbsp;: en 2020, le tarif de rachat du surplus tournait autour de 6&nbsp;c&euro;/kWh. Aujourd&apos;hui &agrave; 1,1&nbsp;c&euro;/kWh, il ne repr&eacute;sente plus que {rachatPct}&nbsp;% du tarif d&apos;achat EDF. La logique &eacute;conomique du solaire r&eacute;sidentiel s&apos;est enti&egrave;rement pivot&eacute;e vers l&apos;autoconsommation.
               </p>
             </section>
 
@@ -200,9 +222,9 @@ export default function RevendreSuplusSolaireBalconPage() {
               <div className="space-y-3 mb-4">
                 {[
                   { label: 'Puissance max', detail: 'Aucun plafond chiffré en France. 900 W par circuit 16 A (différentiel 30 mA) est un repère de sécurité recommandé, pas une limite légale.' },
-                  { label: 'Déclaration', detail: 'CACSI Enedis obligatoire, gratuite, 10 minutes en ligne. Pas de déclaration en mairie dans la plupart des cas.' },
+                  { label: 'Déclaration', detail: 'Obligatoire et gratuite sur Enedis-Connect : CACSI si le kit est réglé en zéro injection, sinon cession gratuite du surplus à Enedis (3 kW maximum en sortie d’onduleur). Pas de déclaration en mairie dans la plupart des cas.' },
                   { label: 'Raccordement', detail: 'Par prise standard 230 V. Aucun raccordement producteur, donc aucune éligibilité EDF OA.' },
-                  { label: 'Consuel', detail: 'Non requis pour les kits préassemblés < 3 kVA. Dès que vous passez par un installateur et demandez un raccordement producteur, c’est obligatoire.' },
+                  { label: 'Consuel', detail: 'Dispense possible pour un kit déjà assemblé et conforme à la norme NF EN 50549-1-4, sur attestation (Enedis). Dès que vous passez par un installateur et demandez un raccordement producteur, c’est obligatoire.' },
                 ].map((item, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
                     <div className="flex items-start gap-3">
@@ -213,7 +235,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                En clair&nbsp;: un kit balcon est une installation de confort et d&apos;autoconsommation, pas un outil de production d&apos;&eacute;nergie pour le march&eacute;. La <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline">convention CACSI</Link> est le seul cadre pr&eacute;vu, et elle exclut toute r&eacute;mun&eacute;ration du surplus.
+                En clair&nbsp;: un kit balcon est une installation de confort et d&apos;autoconsommation, pas un outil de production d&apos;&eacute;nergie pour le march&eacute;. Les deux d&eacute;clarations pr&eacute;vues (<Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline">CACSI ou cession gratuite du surplus</Link>) excluent toute r&eacute;mun&eacute;ration du surplus.
               </p>
             </section>
 
@@ -229,7 +251,7 @@ export default function RevendreSuplusSolaireBalconPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Que faire du surplus alors&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Si vous r&eacute;alisez que votre kit produit plus que ce que vous consommez en journ&eacute;e &mdash; et que ce surplus part sur le r&eacute;seau sans compensation &mdash; vous avez deux leviers&nbsp;:
+                Si vous r&eacute;alisez que votre kit produit plus que ce que vous consommez en journ&eacute;e &mdash; et que ce surplus est c&eacute;d&eacute; gratuitement au r&eacute;seau (ou bloqu&eacute; par un r&eacute;glage z&eacute;ro injection) &mdash; vous avez deux leviers&nbsp;:
               </p>
               <div className="space-y-4 mb-6">
                 <div className="card-lg border-l-4 border-l-green">
@@ -242,7 +264,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                 <div className="card-lg border-l-4 border-l-green">
                   <h3 className="font-bold text-base mb-2">Levier 2 &mdash; Ajouter une batterie</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
-                    Une batterie capture le surplus en journ&eacute;e et le restitue le soir. L&apos;autoconsommation passe de 85&nbsp;% &agrave; 95&nbsp;%. Chaque kWh stock&eacute; vaut 0,194&nbsp;&euro; &mdash; soit <strong>17 fois plus</strong> que si vous pouviez le vendre.
+                    Une batterie capture le surplus en journ&eacute;e et le restitue le soir. L&apos;autoconsommation passe de 85&nbsp;% &agrave; 95&nbsp;%. Chaque kWh stock&eacute; vaut {KWH_PRICE_SHORT} &mdash; soit <strong>{ratioTarifs} fois plus</strong> que si vous pouviez le vendre.
                   </p>
                   <p className="text-xs text-stone">Exemples&nbsp;: <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline">Zendure SolarFlow Mix</Link>, <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">comparatif kits avec batterie</Link>.</p>
                 </div>
@@ -261,11 +283,11 @@ export default function RevendreSuplusSolaireBalconPage() {
                 <div className="card">
                   <h3 className="font-bold text-sm mb-2">Pour une installation 3&nbsp;kWc &agrave; Lyon</h3>
                   <div className="text-xs text-charcoal-light space-y-1">
-                    <div>Production annuelle&nbsp;: &asymp; 3&nbsp;570&nbsp;kWh</div>
-                    <div>Autoconsomm&eacute; (&asymp; 30&nbsp;%&nbsp;typique)&nbsp;: &asymp; 1&nbsp;071&nbsp;kWh</div>
-                    <div>Surplus revendu&nbsp;: &asymp; 2&nbsp;499&nbsp;kWh</div>
-                    <div className="font-semibold pt-1">Recette surplus&nbsp;: <span className="font-mono">27,5&nbsp;&euro;/an</span></div>
-                    <div className="font-semibold">&Eacute;conomies autoconso&nbsp;: <span className="font-mono">207,8&nbsp;&euro;/an</span></div>
+                    <div>Production annuelle&nbsp;: &asymp; {fr(prod3k)}&nbsp;kWh</div>
+                    <div>Autoconsomm&eacute; (&asymp; 30&nbsp;%&nbsp;typique)&nbsp;: &asymp; {fr(auto3k)}&nbsp;kWh</div>
+                    <div>Surplus revendu&nbsp;: &asymp; {fr(surplus3k)}&nbsp;kWh</div>
+                    <div className="font-semibold pt-1">Recette surplus&nbsp;: <span className="font-mono">{fr(vente3k)}&nbsp;&euro;/an</span></div>
+                    <div className="font-semibold">&Eacute;conomies autoconso&nbsp;: <span className="font-mono">{eco3k}&nbsp;&euro;/an</span></div>
                   </div>
                 </div>
                 <div className="card">
@@ -275,13 +297,13 @@ export default function RevendreSuplusSolaireBalconPage() {
                     <div>D&eacute;marches raccordement Enedis&nbsp;: 2-3 mois</div>
                     <div>Attestation Consuel&nbsp;: &asymp; 150&nbsp;&euro;</div>
                     <div>Surco&ucirc;t vs kit plug-and-play&nbsp;: +5&nbsp;000 &agrave; 10&nbsp;000&nbsp;&euro;</div>
-                    <div className="font-semibold pt-1">Revente suppl&eacute;mentaire&nbsp;: <span className="font-mono">27,5&nbsp;&euro;/an</span></div>
+                    <div className="font-semibold pt-1">Revente suppl&eacute;mentaire&nbsp;: <span className="font-mono">{fr(vente3k)}&nbsp;&euro;/an</span></div>
                   </div>
                 </div>
               </div>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Verdict&nbsp;:</strong> pour rentabiliser le surco&ucirc;t du raccordement producteur sur la seule revente du surplus, il faudrait <strong>plus de 180 ans</strong> &agrave; 27,5&nbsp;&euro;/an. L&apos;int&eacute;r&ecirc;t d&apos;une installation 3&nbsp;kWc tient tout entier dans l&apos;autoconsommation &mdash; la revente du surplus n&apos;est qu&apos;une miette.
+                  <strong>Verdict&nbsp;:</strong> pour rentabiliser le surco&ucirc;t du raccordement producteur sur la seule revente du surplus, il faudrait <strong>plus de {ansSurcout} ans</strong> &agrave; {fr(vente3k)}&nbsp;&euro;/an. L&apos;int&eacute;r&ecirc;t d&apos;une installation 3&nbsp;kWc tient tout entier dans l&apos;autoconsommation &mdash; la revente du surplus n&apos;est qu&apos;une miette.
                 </p>
               </div>
             </section>
@@ -289,7 +311,7 @@ export default function RevendreSuplusSolaireBalconPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on r&eacute;pond souvent &agrave; cette question</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                En discutant avec des propri&eacute;taires de kits, on entend souvent deux mythes qu&apos;on veut d&eacute;monter.
+                Deux id&eacute;es re&ccedil;ues reviennent souvent sur le sujet.
               </p>
               <div className="space-y-4 mb-4">
                 <div className="card border-l-4 border-l-amber">
@@ -298,7 +320,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-2">Mythe 2 &mdash; &laquo;&nbsp;EDF est oblig&eacute; de racheter mon &eacute;lectricit&eacute;&nbsp;&raquo;</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Vrai, mais uniquement pour les producteurs &eacute;ligibles &agrave; l&apos;OA (Obligation d&apos;Achat). Un kit balcon n&apos;est pas un producteur au sens de la loi &eacute;lectrique. La CACSI ne cr&eacute;e aucune obligation de rachat pour EDF. L&apos;OA ne s&apos;applique qu&apos;aux installations raccord&eacute;es en producteur avec dossier officiel.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Vrai, mais uniquement pour les producteurs &eacute;ligibles &agrave; l&apos;OA (Obligation d&apos;Achat). Un kit balcon sans contrat d&apos;achat n&apos;y a pas acc&egrave;s&nbsp;: ni la CACSI ni la cession gratuite du surplus ne cr&eacute;ent d&apos;obligation de rachat pour EDF. L&apos;OA ne s&apos;applique qu&apos;aux installations raccord&eacute;es en producteur avec dossier officiel.</p>
                 </div>
               </div>
             </section>
@@ -345,7 +367,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                 </Link>
                 <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">D&eacute;claration CACSI Enedis&nbsp;: guide pas &agrave; pas</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Proc&eacute;dure compl&egrave;te pour d&eacute;clarer votre kit en 10 minutes</p>
+                  <p className="text-xs text-charcoal-light mt-1">CACSI ou cession gratuite du surplus&nbsp;: la proc&eacute;dure pour d&eacute;clarer votre kit</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-batterie-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires avec batterie 2026</h3>
@@ -362,7 +384,7 @@ export default function RevendreSuplusSolaireBalconPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie&nbsp;:</strong> productions calcul&eacute;es avec PVGIS (Lyon, orientation sud, Performance Ratio 0,85). Tarif EDF base&nbsp;: 0,1940&nbsp;&euro;/kWh. Tarif rachat EDF OA&nbsp;: arr&ecirc;t&eacute; du 1er juin 2026 (1,1&nbsp;c&euro;/kWh HT). Autoconsommation 85&nbsp;% sans batterie, 95&nbsp;% avec batterie (CRE).
+                <strong>M&eacute;thodologie&nbsp;:</strong> productions calcul&eacute;es avec PVGIS (Lyon, orientation sud, Performance Ratio 0,85). Tarif EDF Base 6 kVA&nbsp;: {KWH_PRICE_LABEL}. Tarif rachat EDF OA&nbsp;: arr&ecirc;t&eacute; du 1er juin 2026 (1,1&nbsp;c&euro;/kWh HT). Autoconsommation 85&nbsp;% sans batterie, 95&nbsp;% avec batterie. D&eacute;clarations&nbsp;: Code de l&apos;&eacute;nergie, articles <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034095202" target="_blank" rel="noopener noreferrer" className="text-green underline">L315-5</a> et D.315-10&nbsp;; Enedis, <a href="https://www.enedis.fr/autoconsommer-la-totalite-de-lenergie-produite-par-vos-panneaux" target="_blank" rel="noopener noreferrer" className="text-green underline">autoconsommer la totalit&eacute; de sa production</a> et <a href="https://www.enedis.fr/mon-contrat-dobligation-dachat-prend-fin" target="_blank" rel="noopener noreferrer" className="text-green underline">c&eacute;der son surplus</a> (consult&eacute;s le 5 novembre 2026).
                 {' '}<Link href="/methodologie" className="text-green hover:underline">Voir notre m&eacute;thodologie compl&egrave;te</Link>.
               </p>
               <p className="text-xs text-stone leading-relaxed mt-2">

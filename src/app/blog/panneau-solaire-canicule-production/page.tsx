@@ -5,6 +5,26 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import {
+  AUTOCONSO_STANDARD,
+  KWH_PRICE_EUR,
+  KWH_PRICE_LABEL,
+  KWH_INFLATION_LABEL,
+  PANEL_DEGRADATION_LABEL,
+  calculateProductionKwh,
+  calculateFirstYearSavings,
+  calculateROIYears,
+} from '@/lib/pricing';
+
+// Ordres de grandeur calculés avec pricing.ts : kit 800 Wc, Lyon plein sud, kit hypothétique à 450 €.
+const fr = (n: number) => n.toLocaleString('fr-FR');
+const euros = (kwh: number) => fr(Math.round(kwh * KWH_PRICE_EUR * 100) / 100);
+const KIT_800 = { kitPriceEur: 450, kitPowerWc: 800 };
+const prod800 = calculateProductionKwh(KIT_800);
+const PERTE_CANICULE_KWH = 28; // 20 jours à -17 % (panneau PERC)
+const kit800Canicule = { ...KIT_800, autoconsoOverride: (AUTOCONSO_STANDARD * (prod800 - PERTE_CANICULE_KWH)) / prod800 };
+const eco800 = Math.round(calculateFirstYearSavings(kit800Canicule));
+const roi800 = calculateROIYears(kit800Canicule);
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire et canicule : impact réel sur la production en été',
@@ -21,7 +41,7 @@ const faqData = [
   },
   {
     question: 'Quelle est la différence entre panneau PERC et N-type en canicule ?',
-    answer: 'Un panneau PERC standard a un coefficient de température de -0,35 à -0,45 %/°C. Les panneaux N-type (TOPCon, HJT ou back-contact comme celui du Sunology PLAY 500 Wc, ou EcoFlow) affichent -0,26 à -0,30 %/°C. À 70°C de cellule (canicule typique), la différence atteint 2 à 5 points de rendement, soit 16 à 40 Wh par heure en moins pour un panneau 400W PERC vs TOPCon.',
+    answer: 'Un panneau PERC standard a un coefficient de température de -0,35 à -0,45 %/°C. Les panneaux N-type (TOPCon, HJT ou back-contact comme celui du Sunology PLAY 515 W, ou EcoFlow) affichent -0,26 à -0,30 %/°C. À 70°C de cellule (canicule typique), la différence atteint 2 à 5 points de rendement, soit 16 à 40 Wh par heure en moins pour un panneau 400W PERC vs TOPCon.',
   },
   {
     question: 'Peut-on arroser ses panneaux solaires pour les refroidir ?',
@@ -37,7 +57,7 @@ const faqData = [
   },
   {
     question: 'Quel kit solaire de balcon résiste le mieux à la canicule ?',
-    answer: 'Les kits avec panneaux N-type TOPCon ou HJT résistent mieux à la chaleur. En 2026, les meilleurs coefficients sont : Sunology PLAY 500 Wc, ex-PLAY 2 (-0,26 %/°C, panneau back-contact ; -0,28 %/°C pour l\'ancien PLAY 2), EcoFlow PowerStream (-0,29 %/°C), Beem On 500 Wc (-0,30 %/°C). Les kits avec panneaux PERC génériques (certains kits Amazon) affichent -0,40 à -0,45 %/°C et souffrent davantage lors des canicules.',
+    answer: 'Les kits avec panneaux N-type TOPCon ou HJT résistent mieux à la chaleur. En 2026, les meilleurs coefficients sont : Sunology PLAY 515 W, ex-PLAY 2 (-0,26 %/°C, panneau back-contact ; -0,28 %/°C pour l\'ancien PLAY 2), kit EcoFlow PowerStream, désormais arrêté (-0,29 %/°C), Beem On 500 Wc (-0,30 %/°C). Les kits avec panneaux PERC génériques (certains kits Amazon) affichent -0,40 à -0,45 %/°C et souffrent davantage lors des canicules.',
   },
 ];
 
@@ -49,6 +69,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
         description="Canicule et kits solaires balcon : coefficient de température, pertes chiffrées, technologies et astuces pour limiter la casse."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-canicule-production"
         datePublished="2026-08-21"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Panneau solaire et canicule' }]} />
@@ -65,7 +86,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
               En pleine canicule, votre kit solaire produit moins qu&apos;attendu. Ce n&apos;est pas une panne&nbsp;: c&apos;est la physique des semi-conducteurs. Voici les <strong>pertes chiffr&eacute;es</strong>, les technologies qui s&apos;en sortent le mieux et ce que vous pouvez faire concr&egrave;tement.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>21 ao&ucirc;t 2026</span>
+              <span>21 ao&ucirc;t 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -167,7 +188,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed mb-3">
-                La diff&eacute;rence est de <strong>0,7 kWh par jour</strong>, soit ~0,14&nbsp;&euro; d&apos;&eacute;conomies en moins (au tarif 0,1940&nbsp;&euro;/kWh). Sur 20 jours de canicule dans l&apos;&eacute;t&eacute; 2026&nbsp;: environ <strong>14 kWh perdus, soit ~2,70&nbsp;&euro;</strong>. Pas de quoi paniquer.
+                La diff&eacute;rence est de <strong>0,7 kWh par jour</strong>, soit ~{euros(0.7)}&nbsp;&euro; d&apos;&eacute;conomies en moins (au tarif {KWH_PRICE_LABEL}). Sur 20 jours de canicule dans l&apos;&eacute;t&eacute; 2026&nbsp;: environ <strong>14 kWh perdus, soit ~{euros(14)}&nbsp;&euro;</strong>. Pas de quoi paniquer.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 L&apos;ensoleillement record de juillet (en heures de soleil) compense partiellement ces pertes thermiques. C&apos;est pourquoi <strong>juillet reste en g&eacute;n&eacute;ral le meilleur mois de l&apos;ann&eacute;e</strong> en kWh absolus, m&ecirc;me avec les pertes canicule. Pour plus de d&eacute;tails sur les courbes mensuelles, lisez notre analyse <Link href="/blog/production-solaire-ete-vs-hiver" className="text-green hover:underline font-semibold">production solaire &eacute;t&eacute; vs hiver</Link>.
@@ -186,7 +207,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
                   <p className="text-xs text-charcoal-light leading-relaxed mb-2">
                     Coefficient&nbsp;: <strong>&ndash;0,26 &agrave; &ndash;0,30&nbsp;%/&deg;C</strong>. Ces technologies utilisent des couches passivantes qui r&eacute;duisent la sensibilit&eacute; thermique. En canicule, elles perdent 12&nbsp;% au lieu de 18&nbsp;% pour le PERC. Sur un ann&eacute;e compl&egrave;te, l&apos;avantage se chiffre en quelques kWh suppl&eacute;mentaires.
                   </p>
-                  <p className="text-xs text-stone"><strong>Kits concern&eacute;s&nbsp;:</strong> Sunology PLAY 500&nbsp;Wc (&ndash;0,26&nbsp;%/&deg;C, ex-PLAY 2 &agrave; &ndash;0,28&nbsp;%/&deg;C), <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">EcoFlow PowerStream</Link> (&ndash;0,29&nbsp;%/&deg;C), <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (&ndash;0,30&nbsp;%/&deg;C)</p>
+                  <p className="text-xs text-stone"><strong>Kits concern&eacute;s&nbsp;:</strong> Sunology PLAY 515&nbsp;W (&ndash;0,26&nbsp;%/&deg;C, ex-PLAY 2 &agrave; &ndash;0,28&nbsp;%/&deg;C), <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">EcoFlow PowerStream</Link> (arr&ecirc;t&eacute;, &ndash;0,29&nbsp;%/&deg;C), <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc</Link> (&ndash;0,30&nbsp;%/&deg;C)</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-2">PERC mono-cristallin &mdash; le plus courant</h3>
@@ -314,10 +335,10 @@ export default function PanneauSolaireCaniuleProductionPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 {[
-                  { title: 'Production annuelle estim&eacute;e', val: '~820 kWh/an', sub: 'Base PVGIS, panneaux PERC' },
+                  { title: 'Production annuelle estim&eacute;e', val: `~${fr(prod800)} kWh/an`, sub: 'Base PVGIS, panneaux PERC' },
                   { title: 'Perte canicule (20 jours &agrave; &ndash;17&nbsp;%)', val: '~28 kWh/an', sub: 'Soit ~3,4&nbsp;% de la prod. annuelle' },
-                  { title: '&Eacute;conomies annuelles (0,1940&nbsp;&euro;/kWh)', val: '~159&nbsp;&euro;/an', sub: 'Apr&egrave;s d&eacute;duction pertes canicule' },
-                  { title: 'ROI estim&eacute; (kit &agrave; 450&nbsp;&euro;)', val: '~2,8 ans', sub: 'Sans aides, inflation 3,3&nbsp;%/an' },
+                  { title: `&Eacute;conomies annuelles (${KWH_PRICE_LABEL})`, val: `~${eco800}&nbsp;&euro;/an`, sub: `1<sup>re</sup> ann&eacute;e, ${Math.round(AUTOCONSO_STANDARD * 100)}&nbsp;% autoconsomm&eacute;s, apr&egrave;s pertes canicule` },
+                  { title: 'ROI estim&eacute; (kit &agrave; 450&nbsp;&euro;)', val: `~${fr(roi800)} ans`, sub: `Sans aides, inflation ${KWH_INFLATION_LABEL}, d&eacute;gradation ${PANEL_DEGRADATION_LABEL}` },
                 ].map((item, i) => (
                   <div key={i} className="card-lg bg-green-pale/30 border-green/10 text-center">
                     <div className="text-2xl font-extrabold text-amber-dark mb-1" dangerouslySetInnerHTML={{ __html: item.val }} />
@@ -327,7 +348,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                En d&apos;autres termes&nbsp;: la canicule co&ucirc;te environ 5,50&nbsp;&euro; par &eacute;t&eacute; en &eacute;conomies non r&eacute;alis&eacute;es. C&apos;est n&eacute;gligeable face aux <strong>159&nbsp;&euro;/an d&apos;&eacute;conomies annuelles</strong>. Vous pouvez <Link href="/calculateur" className="text-green hover:underline font-semibold">calculer vos &eacute;conomies r&eacute;elles</Link> selon votre d&eacute;partement.
+                En d&apos;autres termes&nbsp;: la canicule co&ucirc;te environ {euros(PERTE_CANICULE_KWH * AUTOCONSO_STANDARD)}&nbsp;&euro; par &eacute;t&eacute; en &eacute;conomies non r&eacute;alis&eacute;es. C&apos;est n&eacute;gligeable face aux <strong>{eco800}&nbsp;&euro;/an d&apos;&eacute;conomies annuelles</strong>. Vous pouvez <Link href="/calculateur" className="text-green hover:underline font-semibold">calculer vos &eacute;conomies r&eacute;elles</Link> selon votre d&eacute;partement.
               </p>
             </section>
 
@@ -357,7 +378,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
               <p className="font-semibold text-lg mb-2">Calculez votre production r&eacute;elle par mois</p>
               <p className="text-sm text-charcoal-light mb-4">
-                Notre calculateur int&egrave;gre les donn&eacute;es PVGIS et la m&eacute;thodologie standard (0,1940&nbsp;&euro;/kWh, inflation 3,3&nbsp;%/an) pour vous donner un ROI honn&ecirc;te selon votre situation.
+                Notre calculateur int&egrave;gre les donn&eacute;es PVGIS et la m&eacute;thodologie standard ({KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}) pour vous donner un ROI honn&ecirc;te selon votre situation.
               </p>
               <Link href="/calculateur" className="btn-primary inline-flex">
                 Calculer mes &eacute;conomies &rarr;
@@ -411,7 +432,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources&nbsp;:</strong> Hellio, AJ Solar, Selectra, Adekwatts, Artyseo, Serena Energy &mdash; articles sp&eacute;cialis&eacute;s sur l&apos;impact de la canicule sur les panneaux solaires (2025&ndash;2026). Physics des semi-conducteurs&nbsp;: standard IEC 61215 (conditions STC et NOCT). Coefficient de temp&eacute;rature&nbsp;: fiches techniques Sunology, Beem, EcoFlow, Hoymiles. Tarif EDF base&nbsp;: 0,1940&nbsp;&euro;/kWh (ao&ucirc;t 2026), inflation 3,3&nbsp;%/an (CRE).{' '}
+                <strong>Sources&nbsp;:</strong> Hellio, AJ Solar, Selectra, Adekwatts, Artyseo, Serena Energy &mdash; articles sp&eacute;cialis&eacute;s sur l&apos;impact de la canicule sur les panneaux solaires (2025&ndash;2026). Physique des semi-conducteurs&nbsp;: standard IEC 61215 (conditions STC et NOCT). Coefficient de temp&eacute;rature&nbsp;: fiches techniques Sunology, Beem, EcoFlow, Hoymiles. Tarif EDF Base 6 kVA&nbsp;: {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.{' '}
                 <span className="italic">Contenu &agrave; vocation informative. Les pertes thermiques varient selon l&apos;installation et les conditions locales.</span>
               </p>

@@ -10,6 +10,8 @@ import {
   calculateROIYears,
   AUTOCONSO_STANDARD,
   KWH_PRICE_LABEL,
+  KWH_INFLATION_LABEL,
+  PANEL_DEGRADATION_LABEL,
 } from '@/lib/pricing';
 import { withCanonicalOg } from '@/lib/metadata';
 
@@ -41,7 +43,7 @@ const amz = (asin: string) => `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_TAG
 const faqData = [
   {
     question: 'Comment fonctionne un wattmètre prise ?',
-    answer: 'Il se branche entre la prise murale et l’appareil. Il mesure en continu la tension et le courant qui traversent la prise, en déduit la puissance active (en watts) et l’intègre dans le temps pour afficher une consommation en kWh. La plupart affichent aussi un coût si vous saisissez votre tarif (0,1940 €/kWh au tarif réglementé Base).',
+    answer: `Il se branche entre la prise murale et l’appareil. Il mesure en continu la tension et le courant qui traversent la prise, en déduit la puissance active (en watts) et l’intègre dans le temps pour afficher une consommation en kWh. La plupart affichent aussi un coût si vous saisissez votre tarif (${KWH_PRICE_LABEL} au tarif réglementé Base).`,
   },
   {
     question: 'Un wattmètre est-il précis pour mesurer les veilles ?',
@@ -140,6 +142,7 @@ export default function WattmetrePrisePage() {
         description="Comment utiliser un wattmètre prise pour mesurer la consommation de ses appareils et son talon avant d'acheter un kit solaire de balcon."
         url="https://monbalconsolaire.fr/blog/wattmetre-prise-mesurer-consommation"
         datePublished="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Wattmètre prise' }]} />
@@ -156,7 +159,7 @@ export default function WattmetrePrisePage() {
               Avant de choisir entre un kit de 300, 450 ou 800 Wc, il y a un chiffre &agrave; conna&icirc;tre : votre <strong>talon de consommation</strong> en journ&eacute;e. Un wattm&egrave;tre &agrave; <strong>15-25 &euro;</strong> et une soir&eacute;e de mesures suffisent pour l&apos;obtenir. Voici la m&eacute;thode, les pi&egrave;ges de pr&eacute;cision, et les mod&egrave;les que nous avons analys&eacute;s.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>27 septembre 2026</span>
+              <span>27 septembre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -223,7 +226,7 @@ export default function WattmetrePrisePage() {
                 Le kit reste rentable, mais il rapporte pr&egrave;s d&apos;un tiers de moins que pr&eacute;vu. Avec un talon diurne de 300 W, l&apos;&eacute;cart dispara&icirc;t presque : quasiment toute la production est consomm&eacute;e. D&apos;o&ugrave; l&apos;int&eacute;r&ecirc;t de mesurer <strong>avant</strong> de choisir entre un kit de 300, 450 ou 800 Wc (<Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="text-green hover:underline">comparatif des puissances</Link>).
               </p>
               <p className="text-xs text-stone mt-3">
-                Calcul : formule du site (productible Lyon 1 200 kWh/kWc, PR 0,85, tarif {KWH_PRICE_LABEL}, inflation 3,3&nbsp;%/an). Le taux de 60&nbsp;% est une estimation obtenue avec un profil de production en cloche face &agrave; un talon constant ; il varie selon la saison et vos habitudes.
+                Calcul : formule du site (productible Lyon 1 200 kWh/kWc, PR 0,85, tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}). Le taux de 60&nbsp;% est une estimation obtenue avec un profil de production en cloche face &agrave; un talon constant ; il varie selon la saison et vos habitudes.
               </p>
             </section>
 

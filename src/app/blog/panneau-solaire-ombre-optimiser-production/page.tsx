@@ -29,7 +29,7 @@ const faqData = [
   },
   {
     question: 'Faut-il choisir un panneau demi-cellules (half-cut) ?',
-    answer: 'Oui, c\'est un vrai avantage en zone partiellement ombragée. Les panneaux demi-cellules (comme le Sunology PLAY 2 ou le Beem On 460W) divisent le panneau en 2 moitiés indépendantes. Si l\'ombre ne touche qu\'une moitié, l\'autre continue à produire normalement.',
+    answer: 'Oui, c\'est un vrai avantage en zone partiellement ombragée. Les panneaux demi-cellules (comme le Sunology PLAY ou le Beem On 500 Wc) divisent le panneau en 2 moitiés indépendantes. Si l\'ombre ne touche qu\'une moitié, l\'autre continue à produire normalement.',
   },
   {
     question: 'Peut-on déplacer un kit plug-and-play pour suivre le soleil ?',
@@ -110,7 +110,7 @@ const solutions = [
   },
   {
     titre: 'Passer à un kit bifacial',
-    desc: 'Les panneaux bifaciaux (Sunology PLAY 2, Beem On) captent aussi la lumière réfléchie par le sol, le mur ou le garde-corps. Ce gain de 5-10 % compense partiellement l\'ombre.',
+    desc: 'Les panneaux bifaciaux (Sunology PLAY, Beem On) captent aussi la lumière réfléchie par le sol, le mur ou le garde-corps. Ce gain de 5-10 % compense partiellement l\'ombre.',
     gain: '+5-10 % de production totale',
     cout: 'Inclus dans les kits récents',
     difficulte: 'Aucune',
@@ -348,7 +348,7 @@ export default function PanneauSolaireOmbrePage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Tous les kits récents des marques françaises (Sunology PLAY 2, Beem On 460W, Sunethic F500) utilisent la technologie demi-cellules. <strong>C&apos;est un critère essentiel si votre balcon a de l&apos;ombre partielle.</strong> Retrouvez ces modèles dans notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">comparatif des meilleurs kits solaires 2026</Link>.
+                Tous les kits récents des marques françaises (Sunology PLAY, Beem On 500 Wc, Sunethic F500) utilisent la technologie demi-cellules. <strong>C&apos;est un critère essentiel si votre balcon a de l&apos;ombre partielle.</strong> Retrouvez ces modèles dans notre <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">comparatif des meilleurs kits solaires 2026</Link>.
               </p>
             </section>
 
@@ -365,7 +365,7 @@ export default function PanneauSolaireOmbrePage() {
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-1">2-4h de soleil direct/jour → Étudiez bien</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">La rentabilité est possible mais plus longue (7-10 ans). Privilégiez un kit petit budget (Beem Kit 300W à 199 €, actuellement en rupture chez Beem) pour limiter le risque.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">La rentabilité est possible mais plus longue (7-10 ans). Privilégiez un kit petit budget pour limiter le risque (le Beem Kit 300W à 199 € est en rupture au 5 novembre 2026 ; voir notre <Link href="/comparatif/kit-solaire-petit-budget" className="text-green hover:underline">sélection petit budget</Link>).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber-dark">
                   <h3 className="font-bold text-sm mb-1">Moins de 2h de soleil direct/jour → Déconseillé</h3>

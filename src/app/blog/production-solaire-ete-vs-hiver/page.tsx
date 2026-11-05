@@ -5,6 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { AUTOCONSO_STANDARD, KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, yearFactor } from '@/lib/pricing';
+import { priceLabel, PRODUCTS } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Production solaire balcon : été vs hiver, données réelles 5 villes',
@@ -81,6 +83,7 @@ export default function ProductionSolaireEteHiverPage() {
         description="Courbes mensuelles PVGIS pour 5 villes françaises. Le paradoxe chaleur estivale et pourquoi mai/juin est souvent plus efficace que juillet."
         url="https://monbalconsolaire.fr/blog/production-solaire-ete-vs-hiver"
         datePublished="2026-07-14"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Production été vs hiver' }]} />
@@ -99,7 +102,7 @@ export default function ProductionSolaireEteHiverPage() {
               Tout le monde sait que l&apos;été produit plus. Ce qu&apos;on sait moins : juillet n&apos;est pas le mois le plus <em>efficace</em>, les cellules perdent 14 % de rendement quand il fait 35°C dehors, et le mois optimal est souvent mai ou juin. Voici les données brutes pour 5 villes françaises.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>14 juillet 2026</span><span>&middot;</span><span>9 min de lecture</span>
+              <span>14 juillet 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>9 min de lecture</span>
             </div>
           </div>
 
@@ -332,9 +335,10 @@ export default function ProductionSolaireEteHiverPage() {
                       { city: 'Paris', prod: totaux.paris, highlight: false },
                       { city: 'Lille', prod: totaux.lille, highlight: false },
                     ].map((r, i) => {
-                      const eco1 = Math.round(r.prod * 0.85 * 0.1940);
+                      // Économies via les constantes de pricing.ts (tarif, inflation, dégradation des panneaux)
+                      const eco1 = Math.round(r.prod * AUTOCONSO_STANDARD * KWH_PRICE_EUR);
                       const eco25 = Math.round(
-                        Array.from({ length: 25 }, (_, y) => r.prod * 0.85 * 0.1940 * Math.pow(1.033, y)).reduce((s, v) => s + v, 0)
+                        Array.from({ length: 25 }, (_, y) => r.prod * AUTOCONSO_STANDARD * KWH_PRICE_EUR * yearFactor(y + 1)).reduce((s, v) => s + v, 0)
                       );
                       return (
                         <tr key={i} className={`border-b border-border-light ${r.highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
@@ -348,7 +352,7 @@ export default function ProductionSolaireEteHiverPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">* Tarif 0,1940 €/kWh, autoconsommation 85%, inflation énergie 3,3%/an (CRE), PR 0,85, kit 450 Wc. Données PVGIS Commission européenne.</p>
+              <p className="text-xs text-stone">* Tarif {KWH_PRICE_LABEL}, autoconsommation {Math.round(AUTOCONSO_STANDARD * 100)}%, inflation énergie {KWH_INFLATION_LABEL}, dégradation des panneaux {PANEL_DEGRADATION_LABEL}, PR 0,85, kit 450 Wc. Données PVGIS Commission européenne.</p>
             </section>
 
             {/* === OPTIMISATION === */}
@@ -358,7 +362,7 @@ export default function ProductionSolaireEteHiverPage() {
                 {[
                   {
                     t: 'Varier l\'inclinaison été/hiver',
-                    d: 'En été, 27-30° est optimal. En hiver, passez à 40-42° pour capter le soleil bas. Les kits Sunology PLAY 2 proposent 3 positions réglables. Gain hivernal : +8 à 12 %.',
+                    d: 'En été, 27-30° est optimal. En hiver, passez à 40-42° pour capter le soleil bas. Les kits Sunology PLAY proposent 3 positions réglables. Gain hivernal : +8 à 12 %.',
                     icon: '&#9728;',
                   },
                   {
@@ -404,7 +408,7 @@ export default function ProductionSolaireEteHiverPage() {
                 productName="Sunology PLAY"
                 merchantName="Sunology"
                 affiliateUrl="https://sunology.eu/products/play-kit-solaire-plug-play"
-                label="Voir le kit le plus vendu (450 Wc, 599 €)"
+                label={`Voir le Sunology PLAY (${PRODUCTS['sunology-play'].powerWc} W, ${priceLabel('sunology-play')})`}
                 variant="inline"
                 position="mid_article"
               />
@@ -451,8 +455,8 @@ export default function ProductionSolaireEteHiverPage() {
                   <p className="text-xs text-charcoal-light mt-1">Calcul détaillé des économies réelles pour 7 villes françaises</p>
                 </Link>
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2 &mdash; mis &agrave; jour juillet 2026</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Nouveau comparatif vs Beem On 500 Wc (429&euro;) : qui gagne en &eacute;t&eacute; ?</p>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (ex-PLAY 2)</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Comparaison avec le Beem On 500 Wc ({priceLabel('beem-on-500w')}, en pr&eacute;commande)</p>
                 </Link>
               </div>
             </section>
@@ -461,7 +465,7 @@ export default function ProductionSolaireEteHiverPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources et méthodologie :</strong> données PVGIS (Commission européenne, 15 ans de données satellitaires), coefficient thermique -0,40 %/°C (norme IEC 61215), tarif EDF 0,1940 €/kWh (ATRD 2026), inflation énergie 3,3 %/an (CRE), autoconsommation 85 %, PR 0,85, référence Lyon plein sud. <Link href="/methodologie" className="text-green hover:underline">Voir la méthodologie complète</Link>. Cet article contient des liens d&apos;affiliation (Sunology) ; notre avis reste indépendant.
+                <strong>Sources et méthodologie :</strong> données PVGIS (Commission européenne, 15 ans de données satellitaires), coefficient thermique -0,40 %/°C (norme IEC 61215), tarif EDF {KWH_PRICE_LABEL} (tarif réglementé Base 6 kVA), inflation énergie {KWH_INFLATION_LABEL}, dégradation {PANEL_DEGRADATION_LABEL}, autoconsommation 85 %, PR 0,85, référence Lyon plein sud. <Link href="/methodologie" className="text-green hover:underline">Voir la méthodologie complète</Link>. Cet article contient des liens d&apos;affiliation (Sunology) ; notre avis reste indépendant.
               </p>
             </div>
           </div>
