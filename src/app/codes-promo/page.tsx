@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { EmailCapture } from '@/components/ui/EmailCapture';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
-import { zendureUrl } from '@/lib/affiliate';
+import { ecoflowUrl, zendureUrl } from '@/lib/affiliate';
 
 // Regénérée toutes les 6 h : les offres datées basculent seules en « Terminée ».
 export const revalidate = 21600;
@@ -216,7 +216,7 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
         sourceUrl: 'https://fr.ecoflow.com/',
       },
     ],
-    cta: { url: 'https://fr.ecoflow.com/products/stream-ultra-pro', product: 'EcoFlow STREAM Ultra', merchant: 'EcoFlow' },
+    cta: { url: ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro'), product: 'EcoFlow STREAM Ultra', merchant: 'EcoFlow' },
   },
   {
     id: 'zendure',

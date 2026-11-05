@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
+import { ecoflowUrl } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'EcoFlow STREAM Ultra avis : le successeur du PowerStream',
@@ -131,7 +132,7 @@ export default function EcoflowStreamUltraPage() {
             price="~1 099 €"
             score="7.5/10"
             tagline="Batterie 1,92 kWh et micro-onduleur 800 W intégrés dans un seul boîtier, extensible à 11,52 kWh."
-            affiliateUrl="https://fr.ecoflow.com/products/stream-ultra-pro"
+            affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')}
             affiliateLabel="Voir le STREAM Ultra sur EcoFlow"
             accentColor="amber"
           />
