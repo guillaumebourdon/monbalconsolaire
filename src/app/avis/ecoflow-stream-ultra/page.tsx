@@ -230,7 +230,7 @@ export default function EcoflowStreamUltraPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/stream-ultra-pro" label="Voir le prix actuel sur EcoFlow" variant="primary" position="after-pros" price="~1 099 €" />
+            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Voir le prix actuel sur EcoFlow" variant="primary" position="after-pros" price="~1 099 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Les 4 points faibles à connaître</h2>
@@ -244,7 +244,7 @@ export default function EcoflowStreamUltraPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/stream-ultra-pro" label="Comparer avec les autres batteries solaires" variant="secondary" position="after-cons" />
+            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Comparer avec les autres batteries solaires" variant="secondary" position="after-cons" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">STREAM Ultra vs concurrence (novembre 2026)</h2>
@@ -359,7 +359,7 @@ export default function EcoflowStreamUltraPage() {
               </div>
             </div>
 
-            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl="https://fr.ecoflow.com/products/stream-ultra-pro" label="Voir le STREAM Ultra sur EcoFlow" variant="box" position="footer-box" price="~1 099 €" />
+            <AffiliateCTA productName="EcoFlow STREAM Ultra" merchantName="EcoFlow" affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')} label="Voir le STREAM Ultra sur EcoFlow" variant="box" position="footer-box" price="~1 099 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

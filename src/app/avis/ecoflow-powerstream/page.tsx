@@ -195,7 +195,7 @@ export default function EcoflowPowerstreamPage() {
             price="599 €"
             score="8/10"
             tagline="Le micro-onduleur intelligent qui transforme votre installation en système modulaire évolutif."
-            affiliateUrl="https://fr.ecoflow.com/products/stream-ultra-pro"
+            affiliateUrl={ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro')}
             affiliateLabel="Voir l'alternative STREAM sur EcoFlow"
             accentColor="amber"
             image="/images/produits/ecoflow-powerstream-2.webp"
