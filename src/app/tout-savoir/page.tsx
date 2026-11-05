@@ -174,7 +174,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/blog/revendre-surplus-solaire-balcon',
     title: 'Panneau solaire balcon : peut-on revendre son surplus à EDF ?',
-    excerpt: 'La réponse est non — les kits balcon fonctionnent en CACSI, pas en EDF OA. Et même une installation classique ne s\'y retrouve pas à 1,1 c€/kWh. Calculs et alternatives.',
+    excerpt: 'Peut-on revendre le surplus d\'un kit solaire de balcon à EDF ? Non. CACSI ou cession gratuite à Enedis : ce qui s\'applique, calculs et alternatives.',
     type: 'analyse',
     badge: 'Réglementation',
     tags: ['debutant', 'reglementation'],
@@ -387,7 +387,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/blog/panneau-solaire-est-ouest',
     title: 'Panneau solaire balcon est/ouest : production et rentabilit\u00e9',
-    excerpt: '80 % du potentiel sud, ROI 8-10 ans, meilleure autoconsommation naturelle.',
+    excerpt: 'Votre balcon est orienté est ou ouest ? Environ 80 % de la production plein sud, un ROI à peine plus long, et une meilleure autoconsommation matin et soir.',
     type: 'analyse',
     badge: 'Orientation',
     tags: ['optimisation', 'rentabilite'],
@@ -457,7 +457,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/blog/prix-electricite-2026-solaire',
     title: 'Prix de l\'électricité 2026 : pourquoi le solaire devient incontournable',
-    excerpt: 'Les tarifs EDF en 2026, leur évolution, et l\'impact sur votre retour sur investissement.',
+    excerpt: 'Tarif réglementé : 0,1940 € au 1er février 2026, 0,2001 € depuis le 1er août 2026. Ce qui explique la hausse et ce que ça change pour un kit.',
     type: 'analyse',
     badge: 'Marché',
     tags: ['rentabilite'],
