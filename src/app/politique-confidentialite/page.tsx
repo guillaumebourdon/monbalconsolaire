@@ -12,7 +12,7 @@ export const metadata: Metadata = withCanonicalOg({
 export default function PolitiqueConfidentialitePage() {
   const subprocessors: [string, string, string, string][] = [
     ['Vercel Inc.', 'H\u00e9bergement du site, ex\u00e9cution des formulaires, mesure d\u2019audience sans cookie (Web Analytics) et mesure de performance (Speed Insights)', 'Donn\u00e9es techniques de connexion (adresse IP trait\u00e9e pour servir les pages), pages vues agr\u00e9g\u00e9es', '\u00c9tats-Unis'],
-    ['Upstash, Inc.', 'Stockage de votre adresse email et du profil envoy\u00e9 avec le rapport', 'Email, source de l\u2019inscription, profil du calculateur, date, statut de d\u00e9sinscription', '\u00c9tats-Unis (soci\u00e9t\u00e9)'],
+    ['Upstash, Inc.', 'Stockage de votre adresse email et du profil envoy\u00e9 avec le rapport', 'Email, source de l\u2019inscription, profil du calculateur, date, statut de d\u00e9sinscription', 'Donn\u00e9es h\u00e9berg\u00e9es en Irlande (AWS eu-west-1) ; soci\u00e9t\u00e9 am\u00e9ricaine'],
     ['Brevo (Sendinblue SAS)', 'Envoi des emails (rapport, guide PDF, alertes bons plans)', 'Email, contenu du message', 'France / Union europ\u00e9enne'],
     ['Google (Google Analytics 4)', 'Mesure d\u2019audience avec cookies, uniquement si vous acceptez', 'Identifiant de cookie, pages vues, appareil, provenance', '\u00c9tats-Unis possible'],
   ];
