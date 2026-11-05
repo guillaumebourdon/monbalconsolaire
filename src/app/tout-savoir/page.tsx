@@ -32,7 +32,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/etude/rentabilite-kit-solaire-balcon-departement',
     title: 'Carte : rentabilité d\'un kit solaire de balcon par département',
-    excerpt: 'Production, économies et années de retour sur investissement d\'un kit 500 Wc dans les 96 départements. Carte interactive, classement et données CC BY.',
+    excerpt: 'Production, économies et années de retour sur investissement d\'un kit d\'environ 500 Wc dans les 96 départements. Carte interactive, classement et données CC BY.',
     type: 'analyse',
     badge: 'Étude',
     tags: ['rentabilite', 'comprendre'],

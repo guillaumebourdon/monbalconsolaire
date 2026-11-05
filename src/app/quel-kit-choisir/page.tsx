@@ -1,6 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { cardPriceLabel, REVIEW_PRODUCT, PRODUCTS, priceLabel } from '@/data/products';
+import { calculateROIYears } from '@/lib/pricing';
+
+const avisPrice = (slug: string) => (REVIEW_PRODUCT[slug] ? cardPriceLabel(REVIEW_PRODUCT[slug]) : '');
+const BEEM = PRODUCTS['beem-on-500w'];
+const beemRoi = calculateROIYears({ kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM.powerWc }).toLocaleString('fr-FR');
 import Link from 'next/link';
 
 type ArticleType = 'comparatif' | 'avis';
@@ -56,7 +62,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/comparatif/kit-solaire-balcon-vs-toiture',
     title: 'Kit solaire balcon vs toiture : quelle différence de rentabilité ?',
-    excerpt: 'Plug-and-play (ROI 4–7 ans, 300–750€) vs toiture (ROI 7–12 ans, 6 750–14 000€). Tableau complet, quand choisir quoi.',
+    excerpt: 'Plug-and-play vs toiture (ROI 7–12 ans, 6 750–14 000€). Tableau complet, quand choisir quoi.',
     type: 'comparatif',
     badge: 'DIY vs toiture',
     tags: ['comparatif', 'best'],
@@ -66,7 +72,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/comparatif/sunology-play2-vs-beem-on-500w',
     title: 'Sunology PLAY (ex-PLAY 2) vs Beem On 500 Wc : le match 2026',
-    excerpt: 'PLAY 500 Wc (ex-PLAY 2, 599€) vs Beem On 500 Wc (429€) : même puissance, 12 critères, ROI comparé, verdict par profil.',
+    excerpt: `PLAY 515 W (ex-PLAY 2, ${priceLabel('sunology-play')}) vs Beem On 500 Wc (${priceLabel('beem-on-500w')}) : 12 critères, ROI comparé, verdict par profil.`,
     type: 'comparatif',
     badge: 'Match 2026',
     tags: ['best', 'comparatif', 'marque'],
@@ -133,7 +139,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/comparatif/kit-solaire-petit-budget',
     title: 'Meilleur kit solaire petit budget : moins de 400 €',
-    excerpt: 'Beem Kit 300W, kits Amazon : les meilleures options pour débuter.',
+    excerpt: 'Sunology GO, Beem On 500 Wc, kits Amazon : les options pour débuter (Beem Kit en rupture).',
     type: 'comparatif',
     badge: 'Petit budget',
     tags: ['budget', 'comparatif'],
@@ -175,12 +181,12 @@ const ARTICLES: Article[] = [
     powers: ['400-500'],
     publishedAt: '2026-03-19',
     score: '8.5/10',
-    price: '599 €',
+    price: avisPrice('sunology-play-2'),
   },
   {
     slug: '/avis/beem-on-500w',
     title: 'Beem On 500 Wc',
-    excerpt: '429 \u20ac, 500 Wc, 0,86 \u20ac/Wc : le meilleur rapport qualit\u00e9-prix du march\u00e9. ROI ~4,8 ans.',
+    excerpt: `${priceLabel('beem-on-500w')}, ${BEEM.powerWc} Wc : le meilleur prix au watt parmi les kits analysés. ROI ~${beemRoi} ans. En précommande (${BEEM.availabilityNote}).`,
     type: 'avis',
     badge: 'Meilleur rapport qualit\u00e9-prix',
     tags: ['marque', 'best', 'puissance', 'budget'],
@@ -189,7 +195,7 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-06-17',
     updatedAt: '2026-08-20',
     score: '8.5/10',
-    price: '429 \u20ac',
+    price: avisPrice('beem-on-500w'),
   },
   {
     slug: '/avis/sunethic-f500',
@@ -202,7 +208,7 @@ const ARTICLES: Article[] = [
     powers: ['400-500'],
     publishedAt: '2026-03-27',
     score: '7.5/10',
-    price: '690 €',
+    price: avisPrice('sunethic-f500'),
   },
   {
     slug: '/avis/beem-kit-300w',
@@ -215,7 +221,7 @@ const ARTICLES: Article[] = [
     powers: ['moins-400'],
     publishedAt: '2026-04-01',
     score: '7.5/10',
-    price: '199 €',
+    price: avisPrice('beem-kit-300w'),
   },
   {
     slug: '/avis/sunology-play-max',
@@ -228,7 +234,7 @@ const ARTICLES: Article[] = [
     powers: ['400-500'],
     publishedAt: '2026-04-02',
     score: '8/10',
-    price: '699 €',
+    price: avisPrice('sunology-play-max'),
   },
   {
     slug: '/avis/sunology-city',
@@ -241,7 +247,7 @@ const ARTICLES: Article[] = [
     powers: ['400-500'],
     publishedAt: '2026-04-27',
     score: '7,5/10',
-    price: 'Arrêté',
+    price: avisPrice('sunology-city'),
   },
   {
     slug: '/avis/sunology-go',
@@ -254,7 +260,7 @@ const ARTICLES: Article[] = [
     powers: ['moins-400'],
     publishedAt: '2026-10-09',
     score: '7/10',
-    price: '349 €',
+    price: avisPrice('sunology-go'),
   },
   {
     slug: '/avis/ecoflow-powerstream',
@@ -266,7 +272,7 @@ const ARTICLES: Article[] = [
     brands: ['EcoFlow'],
     publishedAt: '2026-04-28',
     score: '8/10',
-    price: 'Arrêté',
+    price: avisPrice('ecoflow-powerstream'),
   },
   {
     slug: '/avis/allpowers-bs2500-pro',
@@ -278,7 +284,7 @@ const ARTICLES: Article[] = [
     brands: ['ALLPOWERS'],
     publishedAt: '2026-11-05',
     score: '6/10',
-    price: '999 €',
+    price: avisPrice('allpowers-bs2500-pro'),
   },
   {
     slug: '/avis/ecoflow-stream-ultra',
@@ -290,12 +296,12 @@ const ARTICLES: Article[] = [
     brands: ['EcoFlow'],
     publishedAt: '2026-11-03',
     score: '7,5/10',
-    price: '~1 099 €',
+    price: avisPrice('ecoflow-stream-ultra'),
   },
   {
     slug: '/avis/ikea-solstrale-balcon',
-    title: 'IKEA Solstr\u00e5le balcon',
-    excerpt: 'Kit IKEA \u00d7 EcoFlow \u00e0 449 \u20ac (900 Wc). Pas encore disponible en France.',
+    title: 'Kit solaire balcon IKEA (STREAM)',
+    excerpt: 'En Allemagne, « STREAM Komplettset » vendu via Svea Solar (2 × 500 W + EcoFlow STREAM, 369,90 €). Pas disponible en France au 05/11/2026.',
     type: 'avis',
     badge: 'IKEA',
     tags: ['marque'],
@@ -303,7 +309,7 @@ const ARTICLES: Article[] = [
     powers: ['plus-500'],
     publishedAt: '2026-05-23',
     score: '\u2014',
-    price: '449 \u20ac (DE)',
+    price: '369,90 \u20ac (DE)',
   },
   {
     slug: '/avis/dualsun-preasy',
@@ -316,12 +322,12 @@ const ARTICLES: Article[] = [
     powers: ['400-500'],
     publishedAt: '2026-05-09',
     score: '6.5/10',
-    price: '870 €',
+    price: avisPrice('dualsun-preasy'),
   },
   {
     slug: '/avis/zendure-solarflow',
     title: 'Zendure SolarFlow 800 Plus',
-    excerpt: 'Batterie 1,92 kWh + onduleur 800 W intégrés pour ~488 €. Le meilleur rapport qualité-prix du marché.',
+    excerpt: `Batterie 1,92 kWh + onduleur 800 W intégrés : ${priceLabel('zendure-solarflow-800-plus')} sans panneaux, 719 € en pack 2 × 500 W (promo constatée le 05/11/2026).`,
     type: 'avis',
     badge: 'Rapport qualité/prix',
     tags: ['stockage', 'budget', 'marque'],
@@ -329,19 +335,19 @@ const ARTICLES: Article[] = [
     powers: ['plus-500'],
     publishedAt: '2026-05-07',
     score: '8.5/10',
-    price: '488 €',
+    price: avisPrice('zendure-solarflow'),
   },
   {
     slug: '/avis/jackery-solarvault-3-pro',
     title: 'Jackery SolarVault 3 Pro',
-    excerpt: 'Onduleur + batterie LFP 2,52 kWh, 4 MPPT pour 4 000 W d\u2019entrée solaire, IP65. 839 \u20ac en promo.',
+    excerpt: `Onduleur + batterie LFP 2,52 kWh, 4 MPPT pour 4 000 W d\u2019entrée solaire, IP65. ${priceLabel('jackery-solarvault-3-pro')} sans panneaux (promo constatée le 05/11/2026).`,
     type: 'avis',
     badge: 'Stockage LFP',
     tags: ['stockage', 'marque'],
     brands: ['Jackery'],
     publishedAt: '2026-06-23',
     score: '7/10',
-    price: '839 \u20ac',
+    price: avisPrice('jackery-solarvault-3-pro'),
   },
   {
     slug: '/avis/hoymiles-hms-800w',
@@ -353,7 +359,7 @@ const ARTICLES: Article[] = [
     brands: ['Hoymiles'],
     publishedAt: '2026-08-18',
     score: '8.5/10',
-    price: '~119 €',
+    price: avisPrice('hoymiles-hms-800w'),
   },
   {
     slug: '/avis/anker-solix-rs40p',
@@ -366,7 +372,7 @@ const ARTICLES: Article[] = [
     powers: ['plus-500'],
     publishedAt: '2026-07-17',
     score: '7.5/10',
-    price: '799 €',
+    price: avisPrice('anker-solix-rs40p'),
   },
   {
     slug: '/avis/zendure-solarflow-mix',
@@ -378,24 +384,24 @@ const ARTICLES: Article[] = [
     brands: ['Zendure'],
     publishedAt: '2026-06-30',
     score: '8/10',
-    price: '1 999 \u20ac',
+    price: avisPrice('zendure-solarflow-mix'),
   },
   {
     slug: '/avis/bluetti-balco-260',
     title: 'Bluetti Balco 260',
-    excerpt: 'Tout-en-un onduleur SiC + batterie LFP 2,56 kWh, sortie off-grid 1 200 W. 849 \u20ac sans panneaux.',
+    excerpt: `Tout-en-un onduleur SiC + batterie LFP 2,56 kWh, sortie off-grid 1 200 W. ${priceLabel('bluetti-balco-260')} sans panneaux (promo constatée le 05/11/2026).`,
     type: 'avis',
     badge: 'Tout-en-un',
     tags: ['stockage', 'marque'],
     brands: ['Bluetti'],
     publishedAt: '2026-06-20',
     score: '7/10',
-    price: '849 \u20ac',
+    price: avisPrice('bluetti-balco-260'),
   },
   {
     slug: '/avis/beem-on-460w',
     title: 'Beem On 460W',
-    excerpt: '460 Wc bifacial TOPCon, désormais vendu uniquement en extension (429 \u20ac). Pour un premier achat : Beem On 500 Wc.',
+    excerpt: 'Retiré du catalogue Beem (novembre 2026), remplacé par le Beem On 500 Wc. Notre analyse reste en ligne.',
     type: 'avis',
     badge: 'Ancien modèle',
     tags: ['marque'],
@@ -404,7 +410,7 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-03-26',
     updatedAt: '2026-06-20',
     score: '8/10',
-    price: '599 \u20ac',
+    price: avisPrice('beem-on-460w'),
   },
 ];
 
@@ -531,16 +537,16 @@ export default function QuelKitChoisirPage() {
           <div className="card bg-green-pale/40 border-green/20 mb-6 flex items-start gap-4 flex-wrap">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-green text-white">Recommandation ao&ucirc;t 2026</span>
+                <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-green-dark text-white">Recommandation novembre 2026</span>
                 <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-pale text-amber-dark">Meilleur rapport qualit&eacute;-prix</span>
               </div>
               <p className="font-bold text-base text-charcoal mb-1">
                 <Link href="/avis/beem-on-500w" className="hover:text-green transition-colors">
-                  Beem On 500 Wc &mdash; 429 &euro; &bull; 0,86 &euro;/Wc &bull; ROI ~4,8 ans
+                  {BEEM.name} &mdash; {priceLabel('beem-on-500w')} &bull; {(BEEM.priceEur / BEEM.powerWc).toLocaleString('fr-FR', { maximumFractionDigits: 2 })} &euro;/Wc &bull; ROI ~{beemRoi} ans
                 </Link>
               </p>
               <p className="text-sm text-charcoal-light leading-relaxed">
-                500 Wc bifacial TOPCon, micro-onduleur int&eacute;gr&eacute;, app Beem, garantie 25 ans syst&egrave;me. La r&eacute;f&eacute;rence &laquo;&thinsp;meilleur prix&thinsp;&raquo; en ao&ucirc;t 2026 pour un balcon standard.
+                500 Wc bifacial TOPCon, micro-onduleur int&eacute;gr&eacute;, app Beem, garantie 25 ans syst&egrave;me. La r&eacute;f&eacute;rence &laquo;&thinsp;meilleur prix&thinsp;&raquo; pour un balcon standard, mais en pr&eacute;commande&nbsp;: {BEEM.availabilityNote} (v&eacute;rifi&eacute; le 5 novembre 2026).
               </p>
             </div>
             <Link href="/avis/beem-on-500w" className="btn-primary text-sm flex-shrink-0">

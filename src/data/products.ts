@@ -328,3 +328,21 @@ export function availabilityBadge(id: ProductId): string | null {
       return null;
   }
 }
+
+/** Prix court pour les cartes et index : « 429 € (précommande) », « Arrêté », « 199 € (rupture) ». */
+export function cardPriceLabel(id: ProductId): string {
+  const p: Product = PRODUCTS[id];
+  if (p.availability === 'discontinued') return 'Arrêté';
+  if (p.availabilityNote?.startsWith('sur devis')) return 'Sur devis';
+  const base = p.priceNote === 'à partir de' ? `dès ${priceLabel(id)}` : priceLabel(id);
+  if (p.availability === 'outofstock') return `${base} (rupture)`;
+  if (p.availability === 'preorder') return `${base} (précommande)`;
+  return base;
+}
+
+/** Correspondance page d'avis → produit du catalogue. */
+export const REVIEW_PRODUCT: Record<string, ProductId> = Object.fromEntries(
+  (Object.values(PRODUCTS) as Product[])
+    .filter((p) => p.reviewSlug)
+    .map((p) => [p.reviewSlug!.replace('/avis/', ''), p.id as ProductId]),
+);
