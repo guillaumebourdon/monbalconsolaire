@@ -76,7 +76,7 @@ const points_faibles = [
   },
   {
     titre: 'Fiche produit encore imparfaite',
-    detail: 'Début novembre, la page française parlait par endroits du BS5000 PRO au lieu du BS2500 PRO, et ALLPOWERS l\'a corrigée. Au 6 novembre 2026, un paragraphe parle toujours d\'une batterie « semi-solide », alors que la fiche technique indique LiFePO4. Rien de grave en soi, mais on aimerait plus de rigueur sur les chiffres.',
+    detail: 'Au 6 novembre 2026, la page française parle encore d\'une batterie « semi-solide » dans un paragraphe, alors que la fiche technique indique LiFePO4. Rien de grave en soi, mais on aimerait plus de rigueur sur les chiffres.',
   },
   {
     titre: 'Service après-vente à surveiller',
