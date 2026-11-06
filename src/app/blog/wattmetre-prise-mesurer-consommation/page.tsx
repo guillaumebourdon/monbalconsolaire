@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { MANOMANO } from '@/lib/affiliate';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import {
@@ -75,6 +76,7 @@ type Wattmetre = {
   limite: string;
   prix: string;
   asin: string;
+  manomano?: string;
 };
 
 const produits: Wattmetre[] = [
@@ -122,6 +124,7 @@ const produits: Wattmetre[] = [
     limite: 'Nécessite WiFi 2,4 GHz et un compte TP-Link',
     prix: '~12-15 €',
     asin: 'B09J1497Y4',
+    manomano: MANOMANO.tapoP110,
   },
   {
     nom: 'Tapo P110M (FR, Matter)',
@@ -131,6 +134,7 @@ const produits: Wattmetre[] = [
     limite: 'Plus chère que la P110 pour un usage de mesure identique',
     prix: '~25-30 €',
     asin: 'B0CJCBN43P',
+    manomano: MANOMANO.tapoP110M,
   },
 ];
 
@@ -302,6 +306,9 @@ export default function WattmetrePrisePage() {
                       <tr key={p.asin} className={`border-b border-border-light ${i === 0 ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
                         <td className="p-2.5 font-semibold">
                           <a href={amz(p.asin)} target="_blank" rel="sponsored noopener" className="text-green hover:underline">{p.nom}</a>
+                          {p.manomano && (
+                            <a href={p.manomano} target="_blank" rel="sponsored noopener" className="block text-[11px] font-normal text-green hover:underline">aussi sur ManoMano</a>
+                          )}
                         </td>
                         <td className="text-center p-2.5">{p.type}</td>
                         <td className="text-center p-2.5 font-mono">{p.plage}</td>

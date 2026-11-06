@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { MANOMANO } from '@/lib/affiliate';
 
 const AMAZON_TAPO_P110 = 'https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsola-21';
 const AMAZON_TAPO_P410M = 'https://www.amazon.fr/dp/B0FZCP6BK7?tag=monbalconsola-21';
@@ -44,6 +45,7 @@ const prises = [
   {
     nom: 'TP-Link Tapo P110',
     lien: AMAZON_TAPO_P110,
+    lienManoMano: MANOMANO.tapoP110,
     prix: '12-15 \u20ac',
     puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi 2,4 GHz',
@@ -57,6 +59,7 @@ const prises = [
   {
     nom: 'Shelly Plug PM Gen3 (FR)',
     lien: 'https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21',
+    lienManoMano: MANOMANO.shellyPlugPMGen3,
     prix: '~33 \u20ac',
     puissanceMax: '3 680 W (16A)',
     connectivite: 'WiFi + Bluetooth',
@@ -142,11 +145,11 @@ export default function PrisesConnecteesPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre top 3 en bref</h2>
             <ul className="text-sm text-charcoal-light space-y-2">
-              <li><strong className="text-green">{'\u2713'} Tapo P110 (12-15 &euro;)</strong> &mdash; Le meilleur rapport qualit&eacute;-prix. Suivi kWh complet, app excellente. Le choix par d&eacute;faut. <a href={AMAZON_TAPO_P110} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
+              <li><strong className="text-green">{'\u2713'} Tapo P110 (12-15 &euro;)</strong> &mdash; Le meilleur rapport qualit&eacute;-prix. Suivi kWh complet, app excellente. Le choix par d&eacute;faut. <a href={AMAZON_TAPO_P110} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a> <a href={MANOMANO.tapoP110} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">ou sur ManoMano</a></li>
               <li><strong className="text-green">{'\u2713'} Tapo P410M (~25 &euro;)</strong> &mdash; Version ext&eacute;rieure IP54 + Matter. Pour les balcons/terrasses expos&eacute;s. <a href={AMAZON_TAPO_P410M} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
-              <li><strong className="text-green">{'\u2713'} Shelly Plug PM Gen3 FR (~33 &euro;)</strong> &mdash; Pour les fans de domotique. Compatible Home Assistant, API ouverte. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></li>
+              <li><strong className="text-green">{'\u2713'} Shelly Plug PM Gen3 FR (~33 &euro;)</strong> &mdash; Pour les fans de domotique. Compatible Home Assistant, API ouverte. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a> <a href={MANOMANO.shellyPlugPMGen3} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">ou sur ManoMano</a></li>
             </ul>
-            <p className="text-[11px] text-stone mt-3">Prix constat&eacute;s sur Amazon.fr en septembre 2026, susceptibles de varier.</p>
+            <p className="text-[11px] text-stone mt-3">Prix constat&eacute;s sur Amazon.fr en septembre 2026, susceptibles de varier. Sur ManoMano, nous ne renvoyons que vers les versions fran&ccedil;aises (type E) v&eacute;rifi&eacute;es en novembre 2026.</p>
           </div>
 
           <AffiliateCTA
@@ -235,6 +238,9 @@ export default function PrisesConnecteesPage() {
                   </div>
                   <div className="mt-4 text-sm">
                     <a href={p.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir la {p.nom} sur Amazon &rarr;</a>
+                    {p.lienManoMano && (
+                      <a href={p.lienManoMano} target="_blank" rel="sponsored noopener" className="ml-4 text-green font-semibold hover:underline">ou sur ManoMano &rarr;</a>
+                    )}
                   </div>
                 </div>
               </section>
@@ -253,7 +259,7 @@ export default function PrisesConnecteesPage() {
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous &ecirc;tes fan de domotique</h3>
-                  <p className="text-xs text-charcoal-light">Prenez la <strong>Shelly Plug PM Gen3</strong> en version fran&ccedil;aise (~33 &euro;). Compatible Home Assistant, MQTT, API ouverte. Le choix des geeks. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a></p>
+                  <p className="text-xs text-charcoal-light">Prenez la <strong>Shelly Plug PM Gen3</strong> en version fran&ccedil;aise (~33 &euro;). Compatible Home Assistant, MQTT, API ouverte. Le choix des geeks. <a href="https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21" target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir sur Amazon</a> <a href={MANOMANO.shellyPlugPMGen3} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">ou sur ManoMano</a></p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">Vous n&apos;avez pas de WiFi sur le balcon</h3>
