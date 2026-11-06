@@ -75,12 +75,12 @@ const points_faibles = [
     detail: 'Produit sorti en juin 2026, sans test presse ni laboratoire à ce jour. Or, sur un autre modèle de la marque (la station S2000 Pro), des testeurs indépendants ont mesuré une capacité et une puissance réelles nettement inférieures aux chiffres annoncés. Rien ne dit que le BS2500 PRO a le même défaut, mais rien ne prouve le contraire.',
   },
   {
-    titre: 'Fiche produit incohérente',
-    detail: 'La page française mentionne à la fois une batterie LiFePO4 et une batterie « semi-solide », et plusieurs paragraphes parlent du BS5000 PRO au lieu du BS2500 PRO. Rien de grave en soi, mais ce manque de rigueur n\'aide pas à faire confiance aux chiffres.',
+    titre: 'Fiche produit encore imparfaite',
+    detail: 'Début novembre, la page française parlait par endroits du BS5000 PRO au lieu du BS2500 PRO, et ALLPOWERS l\'a corrigée. Au 6 novembre 2026, un paragraphe parle toujours d\'une batterie « semi-solide », alors que la fiche technique indique LiFePO4. Rien de grave en soi, mais on aimerait plus de rigueur sur les chiffres.',
   },
   {
     titre: 'Service après-vente à surveiller',
-    detail: 'Sur la boutique ALLPOWERS, un acheteur vérifié (avis 3/5 du 12 octobre 2026) signale une application introuvable, un appairage qui ne marche pas, pas de manuel en français et pas de facture reçue. Un seul avis ne fait pas une règle, mais c\'est le seul retour d\'utilisateur que nous ayons trouvé.',
+    detail: 'Sur la boutique ALLPOWERS, un acheteur vérifié (avis 3/5 du 12 octobre 2026) signale une application introuvable, un appairage qui ne marche pas, pas de manuel en français et pas de facture reçue. Un seul avis ne fait pas une règle, mais c\'est le seul retour d\'utilisateur que nous ayons trouvé. ALLPOWERS nous a précisé que l\'application peut s\'afficher en français (dans ses réglages) et qu\'un manuel en français est prévu, sans date. À ce jour, le manuel téléchargeable est en anglais.',
   },
   {
     titre: 'Lourd et surdimensionné pour un petit balcon',
@@ -100,7 +100,7 @@ export default function AllpowersBs2500ProPage() {
         description="Avis prudent sur la batterie de balcon ALLPOWERS BS2500 PRO : fiche technique, rentabilité et réserves."
         url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro"
         datePublished="2026-11-05"
-        dateModified="2026-11-05"
+        dateModified="2026-11-06"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="ALLPOWERS BS2500 PRO" brand="ALLPOWERS" description="Batterie de balcon LiFePO4 2,6 kWh, onduleur 800 W (réglable jusqu'à 2 400 W), double MPPT 2 × 1 000 W, sortie de secours 2 400 W, IP65." price={999} ratingValue={6} availability="InStock" url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro" />
@@ -148,7 +148,7 @@ export default function AllpowersBs2500ProPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              &Agrave; 999&nbsp;&euro;, le BS2500 PRO offre beaucoup sur le papier&nbsp;: 2,6&nbsp;kWh, deux entr&eacute;es solaires, et surtout une sortie de secours de 2&nbsp;400&nbsp;W que peu de batteries de balcon proposent. Avec deux panneaux de 400&nbsp;W, l&apos;ensemble se rembourse en <strong>8,2&nbsp;ans</strong> selon nos calculs. <strong>Mais</strong> aucun test ind&eacute;pendant ne confirme ces chiffres, la fiche fran&ccedil;aise contient des erreurs, et le seul retour client trouv&eacute; parle d&apos;application introuvable et de manuel absent. Si vous voulez un achat s&ucirc;r, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> reste plus rentable et mieux connu. Le BS2500 PRO s&apos;adresse &agrave; ceux qui veulent du secours en cas de coupure et acceptent d&apos;essuyer les pl&acirc;tres.
+              &Agrave; 999&nbsp;&euro;, le BS2500 PRO offre beaucoup sur le papier&nbsp;: 2,6&nbsp;kWh, deux entr&eacute;es solaires, et surtout une sortie de secours de 2&nbsp;400&nbsp;W que peu de batteries de balcon proposent. Avec deux panneaux de 400&nbsp;W, l&apos;ensemble se rembourse en <strong>8,2&nbsp;ans</strong> selon nos calculs. <strong>Mais</strong> aucun test ind&eacute;pendant ne confirme ces chiffres, la fiche fran&ccedil;aise reste approximative, et le seul retour client trouv&eacute; parle d&apos;application introuvable et de manuel absent en fran&ccedil;ais. Si vous voulez un achat s&ucirc;r, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> reste plus rentable et mieux connu. Le BS2500 PRO s&apos;adresse &agrave; ceux qui veulent du secours en cas de coupure et acceptent d&apos;essuyer les pl&acirc;tres.
             </p>
           </div>
 
