@@ -75,10 +75,6 @@ const points_faibles = [
     detail: 'Produit sorti en juin 2026, sans test presse ni laboratoire à ce jour. Or, sur un autre modèle de la marque (la station S2000 Pro), des testeurs indépendants ont mesuré une capacité et une puissance réelles nettement inférieures aux chiffres annoncés. Rien ne dit que le BS2500 PRO a le même défaut, mais rien ne prouve le contraire.',
   },
   {
-    titre: 'Fiche produit encore imparfaite',
-    detail: 'Au 6 novembre 2026, la page française parle encore d\'une batterie « semi-solide » dans un paragraphe, alors que la fiche technique indique LiFePO4. Rien de grave en soi, mais on aimerait plus de rigueur sur les chiffres.',
-  },
-  {
     titre: 'Service après-vente à surveiller',
     detail: 'Sur la boutique ALLPOWERS, un acheteur vérifié (avis 3/5 du 12 octobre 2026) signale une application introuvable, un appairage qui ne marche pas, pas de manuel en français et pas de facture reçue. Un seul avis ne fait pas une règle, mais c\'est le seul retour d\'utilisateur que nous ayons trouvé. ALLPOWERS nous a précisé que l\'application peut s\'afficher en français (dans ses réglages) et qu\'un manuel en français est prévu, sans date. À ce jour, le manuel téléchargeable est en anglais.',
   },
@@ -148,7 +144,7 @@ export default function AllpowersBs2500ProPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              &Agrave; 999&nbsp;&euro;, le BS2500 PRO offre beaucoup sur le papier&nbsp;: 2,6&nbsp;kWh, deux entr&eacute;es solaires, et surtout une sortie de secours de 2&nbsp;400&nbsp;W que peu de batteries de balcon proposent. Avec deux panneaux de 400&nbsp;W, l&apos;ensemble se rembourse en <strong>8,2&nbsp;ans</strong> selon nos calculs. <strong>Mais</strong> aucun test ind&eacute;pendant ne confirme ces chiffres, la fiche fran&ccedil;aise reste approximative, et le seul retour client trouv&eacute; parle d&apos;application introuvable et de manuel absent en fran&ccedil;ais. Si vous voulez un achat s&ucirc;r, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> reste plus rentable et mieux connu. Le BS2500 PRO s&apos;adresse &agrave; ceux qui veulent du secours en cas de coupure et acceptent d&apos;essuyer les pl&acirc;tres.
+              &Agrave; 999&nbsp;&euro;, le BS2500 PRO offre beaucoup sur le papier&nbsp;: 2,6&nbsp;kWh, deux entr&eacute;es solaires, et surtout une sortie de secours de 2&nbsp;400&nbsp;W que peu de batteries de balcon proposent. Avec deux panneaux de 400&nbsp;W, l&apos;ensemble se rembourse en <strong>8,2&nbsp;ans</strong> selon nos calculs. <strong>Mais</strong> aucun test ind&eacute;pendant ne confirme ces chiffres, et le seul retour client trouv&eacute; parle d&apos;application introuvable et de manuel absent en fran&ccedil;ais. Si vous voulez un achat s&ucirc;r, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow</Link> reste plus rentable et mieux connu. Le BS2500 PRO s&apos;adresse &agrave; ceux qui veulent du secours en cas de coupure et acceptent d&apos;essuyer les pl&acirc;tres.
             </p>
           </div>
 
@@ -381,7 +377,7 @@ export default function AllpowersBs2500ProPage() {
                 <div>
                   <h3 className="font-bold text-sm text-amber-dark mb-2">Notre verdict&nbsp;: 6/10</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    Le BS2500 PRO coche beaucoup de cases sur le papier&nbsp;: grosse batterie, double entr&eacute;e solaire, secours 2&nbsp;400&nbsp;W, prix promo agressif. Mais c&apos;est un premier produit de balcon, sans test ind&eacute;pendant, avec une fiche fran&ccedil;aise brouillonne et une garantie plus courte que la concurrence. Nous ne le d&eacute;conseillons pas, mais nous ne le recommandons pas les yeux ferm&eacute;s&nbsp;: si vous l&apos;achetez, gardez votre preuve d&apos;achat, testez-le pendant les 30 jours de remboursement et v&eacute;rifiez que l&apos;application fonctionne avant de fixer quoi que ce soit.
+                    Le BS2500 PRO coche beaucoup de cases sur le papier&nbsp;: grosse batterie, double entr&eacute;e solaire, secours 2&nbsp;400&nbsp;W, prix promo agressif. Mais c&apos;est un premier produit de balcon, sans test ind&eacute;pendant et avec une garantie plus courte que la concurrence. Nous ne le d&eacute;conseillons pas, mais nous ne le recommandons pas les yeux ferm&eacute;s&nbsp;: si vous l&apos;achetez, gardez votre preuve d&apos;achat, testez-le pendant les 30 jours de remboursement et v&eacute;rifiez que l&apos;application fonctionne avant de fixer quoi que ce soit.
                   </p>
                 </div>
               </div>
