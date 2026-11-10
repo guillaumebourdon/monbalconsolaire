@@ -21,6 +21,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Solaire par d\u00e9partement', description: 'Production et rentabilit\u00e9 pour chacun des 96 d\u00e9partements fran\u00e7ais', url: '/solaire-balcon', category: 'Outil', badge: 'D\u00e9partements' },
 
   // ─── Avis produits ───
+  { title: 'Sunology VAULT : avis de la batterie 700 Wh à 499 €', description: 'Batterie nomade, IP65, intégrée de série au PLAY MAX. Compatibilité PLAY/GO non confirmée.', url: '/avis/sunology-vault', category: 'Avis', badge: '6/10' },
   { title: 'Sunology GO : avis du kit compact à 349 €', description: '270 W, sol ou garde-corps sans perçage. Remplace le CITY chez Sunology.', url: '/avis/sunology-go', category: 'Avis', badge: '7/10' },
   { title: 'Sunology PLAY (ex-PLAY 2) : avis et analyse complète', description: 'Version 515 W, 599 € (vérifié le 05/11/2026). Différences avec le PLAY 2 450/460 W.', url: '/avis/sunology-play-2', category: 'Avis', badge: '8.5/10' },
   { title: 'Beem On 460W : avis (retiré du catalogue)', description: 'Retiré du catalogue Beem en novembre 2026, remplacé par le Beem On 500 Wc.', url: '/avis/beem-on-460w', category: 'Avis', badge: '8/10' },

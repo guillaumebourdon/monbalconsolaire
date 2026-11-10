@@ -107,8 +107,9 @@ Même format que comparatif/zendure-vs-sunology-vs-beem (notre page n°1) : tabl
 
 ## Semaine 46 — 10-13 nov.
 
-### Mardi 10/11 — NOUVEL ARTICLE — AVIS
+### Mardi 10/11 — NOUVEL ARTICLE — AVIS — [x] publié
 **Sunology VAULT : avis** — slug `sunology-vault` (batterie seule, compatibilité PLAY / GO, prix vérifié sur sunology.eu). Citée sur 25 pages du site sans avis dédié : ajouter le lien vers l'avis depuis les pages qui la citent le plus (avis PLAY, PLAYMax, comparatif batteries du 06/11).
+**10/11 :** prix (499 €), capacité (700 Wh), poids (3,7 kg), chimie (lithium-ion), garantie (10 ans/2 500 cycles) confirmés par plusieurs pages déjà publiées sur le site (avis/sunology-play-max, comparatif/kit-solaire-batterie-2026), vérifiées en interne le 05/11/2026. sunology.eu inaccessible depuis cet environnement (même blocage réseau que les entrées précédentes) : impossible de revalider l'URL produit et les specs secondaires (dimensions, temps de charge) par curl ce jour — non affichées dans l'article pour éviter d'avancer un chiffre non confirmé en première source. Compatibilité avec le PLAY et le GO non documentée par Sunology (déjà noté dans l'avis PLAY MAX) : traitée honnêtement comme incertaine, ROI calculé via pricing.ts à titre indicatif en supposant la compatibilité. 3 backlinks ajoutés (avis/sunology-play-max, avis/sunology-go, comparatif/kit-solaire-batterie-2026).
 
 ### Jeudi 12/11 — MISE À JOUR SEO
 **Rafraîchir : comparatif/zendure-vs-sunology-vs-beem + avis/zendure-solarflow** — le comparatif est notre page n°1 : le garder irréprochable (prix, gammes 2026, Sunology GO, Beem On 500W/Duo, liens vers les avis du 03/11 et du 10/11). L'avis Zendure SolarFlow est en position ~24 : prix, versions (800 Pro), title. Liens Zendure : `zendureUrl()`.

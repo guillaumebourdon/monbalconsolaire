@@ -338,6 +338,18 @@ const ARTICLES: Article[] = [
     price: avisPrice('zendure-solarflow'),
   },
   {
+    slug: '/avis/sunology-vault',
+    title: 'Sunology VAULT',
+    excerpt: 'Batterie nomade 700 Wh vendue seule, intégrée de série au PLAY MAX. Compatibilité PLAY/GO non confirmée par Sunology.',
+    type: 'avis',
+    badge: 'Batterie nomade',
+    tags: ['stockage', 'marque'],
+    brands: ['Sunology'],
+    publishedAt: '2026-11-10',
+    score: '6/10',
+    price: avisPrice('sunology-vault'),
+  },
+  {
     slug: '/avis/jackery-solarvault-3-pro',
     title: 'Jackery SolarVault 3 Pro',
     excerpt: `Onduleur + batterie LFP 2,52 kWh, 4 MPPT pour 4 000 W d\u2019entrée solaire, IP65. ${priceLabel('jackery-solarvault-3-pro')} sans panneaux (promo constatée le 05/11/2026).`,
