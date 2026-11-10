@@ -127,10 +127,14 @@ export default function BatteriePage() {
                         'Jackery SolarVault 3 Pro': { src: '/images/produits/jackery-solarvault-3-pro-1.webp', href: '/avis/jackery-solarvault-3-pro' },
                         'Bluetti Balco 260': { src: '/images/produits/bluetti-balco-260-front.webp', href: '/avis/bluetti-balco-260' },
                       };
+                      const linkMap: Record<string, string> = {
+                        'Sunology VAULT': '/avis/sunology-vault',
+                      };
                       const thumb = thumbMap[n as string];
+                      const nameLink = linkMap[n as string];
                       return (
                       <tr key={i} className={`border-b border-border-light ${best ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold"><div className="flex items-center gap-3">{thumb && <ProductThumb src={thumb.src} alt={n as string} href={thumb.href} size="sm" />}<span>{n} {best && <span className="badge-green ml-2 text-xs">Meilleur prix/kWh</span>}</span></div></td>
+                        <td className="p-3 font-semibold"><div className="flex items-center gap-3">{thumb && <ProductThumb src={thumb.src} alt={n as string} href={thumb.href} size="sm" />}<span>{nameLink ? <Link href={nameLink} className="text-green hover:underline">{n}</Link> : n} {best && <span className="badge-green ml-2 text-xs">Meilleur prix/kWh</span>}</span></div></td>
                         <td className="text-center p-3 font-mono text-sm">{c}</td>
                         <td className="text-center p-3 font-mono text-sm text-amber-dark">{p}</td>
                         <td className="text-center p-3 font-mono text-sm">{r}</td>

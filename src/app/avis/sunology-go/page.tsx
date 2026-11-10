@@ -450,6 +450,10 @@ export default function SunologyGoPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleurs kits solaires 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet des kits du marché&nbsp;: Sunology, Beem, Sunethic, DualSun</p>
                 </Link>
+                <Link href="/avis/sunology-vault" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology VAULT</h3>
+                  <p className="text-xs text-charcoal-light mt-1">La batterie 700&nbsp;Wh vendue seule, pour qui veut ajouter du stockage</p>
+                </Link>
               </div>
             </section>
 
