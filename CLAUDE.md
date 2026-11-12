@@ -40,6 +40,7 @@
 | Guides | `src/app/guide/[slug]/` | ~9 | `guide/page.tsx` |
 | Comparatifs | `src/app/comparatif/[slug]/` | 7 | `comparatif/page.tsx` |
 | Départements | `src/app/solaire-balcon/[slug]/` | 96 | SSG programmatique |
+| Régions | `src/app/solaire-balcon/region/[region]/` | 13 | SSG, indexables (données PVGIS, ODRÉ, INSEE) |
 | Pages outils | calculateur, codes-promo, guide-gratuit | 3 | — |
 
 ### Fichiers transversaux à maintenir
@@ -280,6 +281,17 @@ node scripts/check-affiliate-links.mjs
 ```
 
 Vérifie que chaque article est bien référencé dans son index, le sitemap et le search-index.
+
+### Données locales, régions et départements (depuis le 12/11/2026)
+- Ensoleillement : **PVGIS 5.3 au point de chaque préfecture**, en cache versionné `src/data/pvgis-prefectures.json` (800 Wc, sud, 30° et 90°, production mensuelle), produit par `node scripts/pvgis-prefectures.mjs` (`--force` pour tout refaire, puis relire `src/data/regions-textes.ts`). `departments.ts` lit ce fichier : jamais de valeur d'ensoleillement en dur. Orientations (Lille, Paris, Lyon, Marseille) : `scripts/pvgis-orientations.mjs` → `pvgis-orientations.json`.
+- Installations < 36 kW (ODRÉ) et part d'appartements (INSEE RP 2023) : `node scripts/donnees-locales.mjs` → `src/data/donnees-locales.json`.
+- Pages régionales : textes propres à chaque région dans `src/data/regions-textes.ts` (chiffres lus dans les données). Similarité contrôlée par `node scripts/similarite-regions.mjs <url>` (objectif < 30 % de phrases communes entre deux régions).
+- Départements : **noindex** sauf achat groupé validé (`achats-groupes.ts`) ou pilote (`src/data/departements-pilotes.ts`, information locale vérifiée sur un site officiel, avec source et date). Un département indexable doit être ajouté au sitemap.
+- Articles fusionnés le 12/11 dans `/guide/orientation-panneau-solaire-balcon` (301 dans `next.config.js`) : est-ouest, balcon nord, ombre. Noindex (hors sujet, liens affiliés conservés) : lampes solaires, batteries portables, mini-kits Amazon — ne pas les remettre dans le sitemap.
+- Guide CACSI = « comment déclarer » ; guide réglementation = « faut-il déclarer ». Le kit se branche après acceptation de la convention (ou 15 jours sans réponse après un dossier complet), jamais « dès l'envoi ».
+
+### Sitemap : lastModified = vraie date de modification
+- `node scripts/sitemap-lastmod.mjs` contrôle que chaque date du sitemap correspond au dernier commit qui a touché la page ; `--write` corrige. Ne jamais changer toutes les dates d'un coup. Un commit qui ne change que des liens internes contient « maillage seul » dans son message et n'est pas compté.
 
 ### Garde-fous (erreurs relevées par la revue du 05/11/2026 — ne pas réintroduire)
 - `grep -rn "0,1940\|0,19[0-9][0-9] €/kWh" src` doit être vide hors `pricing.ts` (prix du kWh en dur)
