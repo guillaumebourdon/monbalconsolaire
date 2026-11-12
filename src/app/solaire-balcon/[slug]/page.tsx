@@ -1,12 +1,15 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { DEPARTMENTS, deptArticles } from '@/data/departments';
+import { DEPARTMENTS, deptArticles, PVGIS_META } from '@/data/departments';
+import { regionHref } from '@/data/regions';
+import { DEPARTEMENTS_PILOTES } from '@/data/departements-pilotes';
+import { prefStat, NATIONAL, NATIONAL_INST_1000, NATIONAL_PART_APPART, DONNEES_LOCALES, MOIS_COURT } from '@/lib/regions';
 import { achatsGroupesDuDepartement } from '@/data/achats-groupes';
 import { SchemaArticle, SchemaFAQ } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
-import { productibleSite, RENTABILITE_DEPARTEMENTS } from '@/lib/rentabilite-departements';
+import { productibleSite, productibleDepartement, RENTABILITE_DEPARTEMENTS } from '@/lib/rentabilite-departements';
 import { calculateROIYears, calculateProductionKwh, calculateFirstYearSavings, calculateTotalSavings25Years, KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY, PVGIS_REFERENCE_LYON } from '@/lib/pricing';
 import { PRODUCTS, availabilityBadge, type ProductId } from '@/data/products';
 import { withCanonicalOg } from '@/lib/metadata';
@@ -84,7 +87,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     // Pages programmatiques jugées trop minces par Google (crawlées, non indexées) :
     // retirées de l'index en attendant un enrichissement local page par page.
     // Une page qui présente un achat groupé local validé repasse en index.
-    robots: { index: achatsGroupesDuDepartement(dept.code).length > 0, follow: true },
+    // Exceptions indexables : achat groupé local validé, ou département pilote avec une
+    // information locale vérifiée sur un site officiel (data/departements-pilotes.ts).
+    robots: { index: achatsGroupesDuDepartement(dept.code).length > 0 || Boolean(DEPARTEMENTS_PILOTES[dept.code]), follow: true },
   });
 }
 
@@ -105,6 +110,11 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
   const irradiationEmoji = dept.irradiation >= 1400 ? '\u2600\ufe0f' : dept.irradiation >= 1200 ? '\ud83c\udf24\ufe0f' : '\u26c5';
 
   const achatsGroupes = achatsGroupesDuDepartement(dept.code);
+  const ps = prefStat(dept.code);
+  const pilote = DEPARTEMENTS_PILOTES[dept.code];
+  const regionUrl = regionHref(dept.region);
+  const fr = (x: number) => x.toLocaleString('fr-FR');
+  const pc = (x: number) => `${x > 0 ? '+' : x < 0 ? '−' : ''}${fr(Math.abs(x))} %`;
   const nearbyDepts = DEPARTMENTS
     .filter(d => d.region === dept.region && d.code !== dept.code)
     .slice(0, 4);
@@ -121,7 +131,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     },
     {
       question: `Quelle est l'irradiation solaire ${art.dans} ?`,
-      answer: `Selon PVGIS (Commission européenne), un panneau orienté sud et incliné à 30° produit en moyenne ${dept.irradiation} kWh par kWc et par an ${art.dans} (${dept.code}), pertes système incluses. C'est un potentiel ${irradiationLevel}. Pour nos calculs, nous retenons un productible prudent de ${productible} kWh/kWc (recalé sur notre référence Lyon de ${PVGIS_REFERENCE_LYON} kWh/kWc), auquel s'applique un coefficient de performance de 0,85. Pour comparaison, sur la même base : Bouches-du-Rhône ${productibleSite(1500)}, Nord ${productibleSite(1020)} kWh/kWc.`,
+      answer: `Selon PVGIS 5.3 (Commission européenne), au point de la préfecture (${dept.prefecture}), un panneau orienté sud et incliné à 30° produit ${dept.irradiation} kWh par kWc et par an, pertes système incluses. C'est un potentiel ${irradiationLevel}. Pour nos calculs, nous retenons un productible prudent de ${productible} kWh/kWc (recalé sur notre référence Lyon de ${PVGIS_REFERENCE_LYON} kWh/kWc), auquel s'applique un coefficient de performance de 0,85. Pour comparaison, sur la même base : Bouches-du-Rhône ${productibleDepartement('13')}, Nord ${productibleDepartement('59')} kWh/kWc.`,
     },
     {
       question: `Quel est le meilleur kit solaire pour un balcon ${art.dans} ?`,
@@ -140,14 +150,15 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
         description={`Guide solaire de balcon pour ${art.le} (${dept.code}).`}
         url={`https://monbalconsolaire.fr/solaire-balcon/${params.slug}`}
         datePublished="2026-05-10"
+        dateModified="2026-11-12"
       />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
-          <Breadcrumbs items={[{ label: 'Solaire par département', href: '/solaire-balcon' }, { label: dept.name }]} />
+          <Breadcrumbs items={[{ label: 'Solaire par département', href: '/solaire-balcon' }, { label: dept.region, href: regionUrl }, { label: dept.name }]} />
 
           <div className="mb-10">
-            <div className="badge-green mb-4 inline-block">{dept.region}</div>
+            <Link href={regionUrl} className="badge-green mb-4 inline-block hover:underline">{dept.region}</Link>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Kit solaire balcon {dept.name} ({dept.code}) : production et rentabilité 2026
             </h1>
@@ -286,6 +297,56 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
               </div>
             </section>
 
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Production mois par mois &agrave; {dept.prefecture}</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">
+                PVGIS 5.3 au point de la pr&eacute;fecture, kit de 800 W plein sud&nbsp;: <strong>{fr(ps.e30)} kWh par an</strong> inclin&eacute; &agrave; 30&deg; ({pc(ps.ecart30)} par rapport &agrave; la moyenne des 96 pr&eacute;fectures, {fr(NATIONAL.e30)} kWh) et <strong>{fr(ps.e90)} kWh</strong> fix&eacute; &agrave; la verticale sur un garde-corps ({pc(ps.ecart90)}). En d&eacute;cembre, le panneau vertical produit {fr(Math.round(ps.m90[11]))} kWh contre {fr(Math.round(ps.m30[11]))} kWh pour l&apos;inclin&eacute;.
+              </p>
+              <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
+                <table className="w-full text-xs border-collapse min-w-[680px]">
+                  <thead>
+                    <tr className="border-b-2 border-green/20 bg-cream/50">
+                      <th className="p-2 text-left font-semibold">kWh</th>
+                      {MOIS_COURT.map(m => <th key={m} className="p-2 text-right font-semibold">{m}</th>)}
+                      <th className="p-2 text-right font-semibold">Ann&eacute;e</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {([['Incliné 30°', ps.m30, ps.e30], ['Vertical 90°', ps.m90, ps.e90]] as [string, number[], number][]).map(([label, m, tot]) => (
+                      <tr key={label} className="border-b border-border-light">
+                        <td className="p-2 font-semibold whitespace-nowrap">{label}</td>
+                        {m.map((v, j) => <td key={j} className="p-2 text-right font-mono">{fr(Math.round(v))}</td>)}
+                        <td className="p-2 text-right font-mono font-bold text-green">{fr(tot)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-stone leading-relaxed">
+                Source&nbsp;: PVGIS 5.3 (JRC, Commission europ&eacute;enne), base PVGIS-SARAH3, pertes 14 %, interrog&eacute; le {new Date(`${PVGIS_META.interrogeLe}T12:00:00Z`).toLocaleDateString('fr-FR')}. Comparaison avec les autres pr&eacute;fectures&nbsp;: <Link href={regionUrl} className="text-green hover:underline">page {dept.region}</Link>.
+              </p>
+              {ps.local && (
+                <p className="text-charcoal-light leading-relaxed mt-4">
+                  {ps.local.installations != null && <>Le registre national des installations de production compte <strong>{fr(ps.local.installations)} installations photovolta&iuml;ques de moins de 36&nbsp;kW</strong> raccord&eacute;es {art.dans} (au 30/09/2026), soit {fr(ps.local.installationsPour1000Logements ?? 0)} pour 1 000 r&eacute;sidences principales (moyenne m&eacute;tropole&nbsp;: {fr(NATIONAL_INST_1000)}). </>}
+                  Les appartements repr&eacute;sentent {fr(ps.local.partAppartements)} % des r&eacute;sidences principales (INSEE, recensement {DONNEES_LOCALES.meta.logements.annee}&nbsp;; {fr(NATIONAL_PART_APPART)} % en m&eacute;tropole).
+                </p>
+              )}
+            </section>
+
+            {pilote && (
+              <section>
+                <h2 className="text-2xl font-extrabold mb-4">{pilote.titre}</h2>
+                {pilote.paragraphes.map((t, i) => (
+                  <p key={i} className="text-charcoal-light leading-relaxed mb-4">{t}</p>
+                ))}
+                <ul className="text-xs text-stone space-y-1">
+                  {pilote.sources.map(src => (
+                    <li key={src.url}>Source&nbsp;: <a href={src.url} target="_blank" rel="noopener" className="text-green hover:underline">{src.label}</a>, consult&eacute;e le {src.vu}.</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             {achatsGroupes.map(ag => (
               <section key={ag.slug}>
                 <h2 className="text-2xl font-extrabold mb-4">Acheter son kit en achat group&eacute; ({dept.name}) : {ag.nom}</h2>
@@ -317,6 +378,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
             {nearbyDepts.length > 0 && (
               <section>
                 <h2 className="text-2xl font-extrabold mb-4">Départements proches en {dept.region}</h2>
+                <p className="text-sm text-charcoal-light mb-3">Toutes les préfectures de la région, mois par mois&nbsp;: <Link href={regionUrl} className="text-green hover:underline font-semibold">solaire de balcon {dept.region} &rarr;</Link></p>
                 <div className="grid grid-cols-2 gap-3">
                   {nearbyDepts.map(d => {
                     const dSlug = slugify(d.name);
@@ -374,7 +436,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> productible PVGIS (Commission européenne) par département, orientation sud, inclinaison 30°, pertes système incluses, utilisé comme indice relatif et recalé sur notre référence Lyon (Rhône = 1 200 kWh/kWc), puis performance ratio 0,85 appliqué une seule fois. Tarif EDF Base en vigueur depuis le {KWH_PRICE_SINCE} : {KWH_PRICE_LABEL}. Autoconsommation 85 % sans batterie, 95 % avec batterie. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (moyenne CRE 2012-2026).{' '}
+                <strong>Méthodologie :</strong> productible PVGIS 5.3 (Commission européenne) au point de la préfecture ({dept.prefecture}), orientation sud, inclinaison 30°, pertes système incluses, utilisé comme indice relatif et recalé sur notre référence Lyon (Rhône = 1 200 kWh/kWc), puis performance ratio 0,85 appliqué une seule fois. Tarif EDF Base en vigueur depuis le {KWH_PRICE_SINCE} : {KWH_PRICE_LABEL}. Autoconsommation 85 % sans batterie, 95 % avec batterie. Retour sur investissement actualisé avec une inflation du tarif de 3,3 %/an (moyenne CRE 2012-2026).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
               </p>
             </div>

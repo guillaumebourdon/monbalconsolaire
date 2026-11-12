@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { DEPARTMENTS } from '@/data/departments';
+import { regionHref } from '@/data/regions';
+import { REGION_STATS } from '@/lib/regions';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { RENTABILITE_DEPARTEMENTS, REFERENCE_KIT } from '@/lib/rentabilite-departements';
 import { withCanonicalOg } from '@/lib/metadata';
@@ -8,7 +10,7 @@ import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATIO
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Solaire de balcon par département — Production et rentabilité 2026',
-  description: 'Trouvez la production solaire et la rentabilité d\'un kit solaire de balcon dans votre département. 96 départements français couverts avec données PVGIS.',
+  description: 'Production et rentabilité d\'un kit solaire de balcon dans votre département ou votre région : données PVGIS au point de chaque préfecture.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/solaire-balcon',
   },
@@ -49,12 +51,25 @@ export default function SolaireBalconIndexPage() {
           <p className="text-sm text-charcoal-light mt-1">Les 96 d&eacute;partements class&eacute;s par ann&eacute;es de retour sur investissement, avec tableau complet et donn&eacute;es t&eacute;l&eacute;chargeables &rarr;</p>
         </Link>
 
+        <section className="mb-10">
+          <h2 className="font-bold text-xl mb-2">Les 13 r&eacute;gions, mois par mois</h2>
+          <p className="text-sm text-charcoal-light mb-4">Production PVGIS d&apos;un kit de 800 W plein sud, inclin&eacute; ou vertical, au point de chaque pr&eacute;fecture (moyenne r&eacute;gionale, panneau inclin&eacute;).</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {REGION_STATS.map(s => (
+              <Link key={s.region.slug} href={`/solaire-balcon/region/${s.region.slug}`} className="card hover:shadow-brand-lg transition-all group flex items-center justify-between py-3 px-5">
+                <span className="font-semibold text-sm group-hover:text-green transition-colors">{s.region.nom}</span>
+                <span className="font-mono text-xs text-green">{s.e30.toLocaleString('fr-FR')} kWh/an &rarr;</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <div className="space-y-8">
           {regions.map(region => {
             const depts = DEPARTMENTS.filter(d => d.region === region).sort((a, b) => a.code.localeCompare(b.code));
             return (
               <div key={region}>
-                <h2 className="font-bold text-lg mb-3 text-charcoal">{region}</h2>
+                <h2 className="font-bold text-lg mb-3 text-charcoal"><Link href={regionHref(region)} className="hover:text-green">{region}</Link> <Link href={regionHref(region)} className="text-xs font-semibold text-green hover:underline ml-2">production mois par mois &rarr;</Link></h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {depts.map(d => {
                     const r = RENTABILITE_BY_CODE.get(d.code)!;
@@ -95,7 +110,7 @@ export default function SolaireBalconIndexPage() {
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone leading-relaxed">
-            <strong>Méthodologie :</strong> kit de référence {REFERENCE_KIT.name} ({REFERENCE_KIT.powerWc} Wc, {REFERENCE_KIT.priceEur} &euro;), orientation sud. Productible PVGIS (Commission européenne) par département, recalé sur notre référence prudente de Lyon (1 200 kWh/kWc), performance ratio 0,85, autoconsommation 85 %, tarif EDF {KWH_PRICE_LABEL} (en vigueur depuis le {KWH_PRICE_SINCE}). Retour sur investissement calculé avec une inflation du tarif de {KWH_INFLATION_LABEL} et une dégradation des panneaux de {PANEL_DEGRADATION_LABEL}. Montants affichés : économies la 1re année et années de retour sur investissement.{' '}
+            <strong>Méthodologie :</strong> kit de référence {REFERENCE_KIT.name} ({REFERENCE_KIT.powerWc} Wc, {REFERENCE_KIT.priceEur} &euro;), orientation sud. Productible PVGIS 5.3 (Commission européenne) au point de la préfecture de chaque département, recalé sur notre référence prudente de Lyon (1 200 kWh/kWc), performance ratio 0,85, autoconsommation 85 %, tarif EDF {KWH_PRICE_LABEL} (en vigueur depuis le {KWH_PRICE_SINCE}). Retour sur investissement calculé avec une inflation du tarif de {KWH_INFLATION_LABEL} et une dégradation des panneaux de {PANEL_DEGRADATION_LABEL}. Montants affichés : économies la 1re année et années de retour sur investissement.{' '}
             <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.
           </p>
         </div>

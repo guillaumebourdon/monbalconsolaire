@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { REGIONS, REGIONS_LASTMOD } from '@/data/regions';
 
 const BASE_URL = 'https://monbalconsolaire.fr';
 
@@ -95,15 +96,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/autoconsommation-solaire-comment-ca-marche`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/accessoires-kit-solaire-balcon`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/kit-solaire-plug-and-play-arnaque`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/panneau-solaire-balcon-nord`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/mini-kits-solaires-amazon`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/batteries-portables-solaires-comparatif`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/lampes-solaires-balcon-2026`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/panneau-solaire-ombre-optimiser-production`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/talon-consommation-solaire`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/panneau-solaire-produit-moins-que-prevu`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/bilan-6-mois-kit-solaire`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/panneau-solaire-est-ouest`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/prises-connectees-suivi-solaire`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/kit-solaire-pluie-grele`, lastModified: '2026-09-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/entretien-nettoyage-panneau-solaire-balcon`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
@@ -120,8 +115,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/mentions-legales`, lastModified: '2026-11-05', changeFrequency: 'yearly', priority: 0.1 },
     { url: `${BASE_URL}/politique-confidentialite`, lastModified: '2026-11-05', changeFrequency: 'yearly', priority: 0.1 },
 
-    // Hub départements (pages départementales en noindex, hors sitemap, sauf celles qui présentent un achat groupé validé)
+    // Pages régionales (données PVGIS par préfecture, ODRÉ, INSEE) — date commune : REGIONS_LASTMOD
+    ...REGIONS.map((r) => ({ url: `${BASE_URL}/solaire-balcon/region/${r.slug}`, lastModified: REGIONS_LASTMOD, changeFrequency: 'monthly' as const, priority: 0.7 })),
+
+    // Hub départements (pages départementales en noindex, hors sitemap, sauf achat groupé validé ou pilote de data/departements-pilotes.ts)
     { url: `${BASE_URL}/solaire-balcon`, lastModified: '2026-05-10', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/solaire-balcon/cotes-d-armor`, lastModified: '2026-11-02', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/solaire-balcon/haute-garonne`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/solaire-balcon/herault`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/solaire-balcon/nord`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.6 },
   ];
 }
