@@ -18,8 +18,8 @@ import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Zendure SolarFlow 800 Plus avis 2026 : 539 €, trop beau ?',
-  description: 'Avis Zendure SolarFlow 800 Plus : batterie 1,92 kWh et onduleur 800 W pour 539 €, pack 2 panneaux dès 719 €. Specs, rentabilité et verdict honnête.',
+  title: 'Zendure SolarFlow 800 Plus avis 2026 : prix, ROI, 800 Pro',
+  description: 'Avis Zendure SolarFlow 800 Plus (et 800 Pro) : prix, ROI, batterie 1,92 kWh, onduleur 800 W. Verdict honnête 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/zendure-solarflow',
   },
@@ -146,11 +146,11 @@ export default function ZendureSolarflowPage() {
   return (
     <>
       <SchemaArticle
-        title="Zendure SolarFlow 800 Plus avis : 539 €, trop beau ?"
-        description="Avis complet sur le Zendure SolarFlow 800 Plus en 2026."
+        title="Zendure SolarFlow 800 Plus avis 2026 : prix, ROI, 800 Pro"
+        description="Avis complet sur le Zendure SolarFlow 800 Plus (et la version 800 Pro) en 2026."
         url="https://monbalconsolaire.fr/avis/zendure-solarflow"
         datePublished="2026-05-07"
-        dateModified="2026-11-05"
+        dateModified="2026-11-12"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/zendure-solarflow-front.webp" name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={PRODUCTS['zendure-solarflow-800-plus'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['zendure-solarflow-800-plus'].availability]} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
@@ -162,13 +162,13 @@ export default function ZendureSolarflowPage() {
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
-              Zendure SolarFlow 800 Plus avis : 539 €, trop beau ?
+              Zendure SolarFlow 800 Plus avis 2026 : prix, ROI, 800 Pro
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour 539 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Analyse compl&egrave;te, calcul de rentabilité et verdict honnête.
+              Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour 539 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Analyse compl&egrave;te, calcul de rentabilité, diff&eacute;rence avec le 800 Pro et verdict honnête.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>7 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>7 mai 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -187,7 +187,7 @@ export default function ZendureSolarflowPage() {
             image="/images/produits/zendure-solarflow-front.webp"
             imageAlt="Zendure SolarFlow - hub et batterie AB2000"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 30/07/2026 &middot; Peut varier selon les promos</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute; le 5 novembre 2026, rev&eacute;rifi&eacute; le 12 novembre 2026 (zendure.fr inaccessible depuis notre environnement ce jour, aucune variation dat&eacute;e trouv&eacute;e) &middot; Peut varier selon les promos</p>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en 30 secondes</h2>
@@ -579,7 +579,7 @@ export default function ZendureSolarflowPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire. Mis &agrave; jour le 5 novembre 2026 : prix rev&eacute;rifi&eacute;s sur zendure.fr (539 &euro; seul, packs 719 et 839 &euro;), le prix de 488 &euro; n&apos;existe plus. Article rédigé sans rémunération de Zendure.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire. Mis &agrave; jour le 5 novembre 2026 : prix rev&eacute;rifi&eacute;s sur zendure.fr (539 &euro; seul, packs 719 et 839 &euro;), le prix de 488 &euro; n&apos;existe plus. Rev&eacute;rifi&eacute; le 12 novembre 2026 (zendure.fr inaccessible depuis notre environnement ce jour ; recherche web compl&eacute;mentaire, aucune variation de prix dat&eacute;e trouv&eacute;e pour le 800 Plus ou le 800 Pro ; valeurs du 5 novembre conserv&eacute;es). Article rédigé sans rémunération de Zendure.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

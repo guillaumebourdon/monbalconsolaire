@@ -98,7 +98,7 @@ export default function ZendureVsSunologyVsBeemPage() {
         description="Comparatif complet des 3 systèmes solaires plug-and-play les plus populaires en 2026."
         url="https://monbalconsolaire.fr/comparatif/zendure-vs-sunology-vs-beem"
         datePublished="2026-05-09"
-        dateModified="2026-11-05"
+        dateModified="2026-11-12"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Zendure vs Sunology vs Beem' }]} />
@@ -115,7 +115,7 @@ export default function ZendureVsSunologyVsBeemPage() {
               Trois approches radicalement différentes du solaire de balcon. Le <strong>Zendure SolarFlow 800 Plus</strong> mise sur le stockage à prix cassé. Le <strong>Sunology PLAY 2</strong> sur la simplicité absolue. Le <strong>Beem On 500 Wc</strong> sur le meilleur prix/Wc du march&eacute; (0,86 &euro;/Wc). On compare tout.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>9 mai 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -155,7 +155,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                   <div className="flex items-center gap-2 mb-1"><ProductThumb src="/images/produits/sunology-play-2-1.webp" alt="Sunology PLAY 2" href="/avis/sunology-play-2" size="sm" /><h3 className="font-bold text-sm text-amber-dark">Sunology</h3></div>
                   <p className="text-xs text-stone uppercase tracking-wider font-semibold mb-2">Simplicité d&apos;abord</p>
                   <p className="text-xs text-charcoal-light leading-relaxed">
-                    Marque française, pionnière du plug-and-play. Kit tout-en-un prêt en 1 minute. Pas de configuration, pas de choix à faire. Le &laquo; Apple &raquo; du solaire de balcon.
+                    Marque française, pionnière du plug-and-play. Kit tout-en-un prêt en 1 minute. Pas de configuration, pas de choix à faire. Le &laquo; Apple &raquo; du solaire de balcon. Budget plus serr&eacute; : la gamme descend jusqu&apos;&agrave; la <Link href="/avis/sunology-go" className="text-green hover:underline">Sunology GO</Link> (270 Wc, 349 &euro;).
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-green">
@@ -346,7 +346,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">{fr(Math.round(PRODUCTS['sunology-play-max'].priceEur / 0.7))} €/kWh (panneau inclus)</td>
                     </tr>
                     <tr className="bg-cream/50">
-                      <td className="p-2.5">EcoFlow STREAM Ultra (successeur du PowerStream)</td>
+                      <td className="p-2.5"><Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline">EcoFlow STREAM Ultra</Link> (successeur du PowerStream)</td>
                       <td className="text-center p-2.5 font-mono">659 €</td>
                       <td className="text-center p-2.5 font-mono">1,92 kWh</td>
                       <td className="text-center p-2.5 font-mono">343 €/kWh</td>
@@ -356,6 +356,9 @@ export default function ZendureVsSunologyVsBeemPage() {
               </div>
               <p className="text-charcoal-light leading-relaxed">
                 Le Zendure divise le coût du stockage par <strong>6 à 7</strong>. Si le stockage vous intéresse, il n&apos;y a pas photo en 2026.
+              </p>
+              <p className="text-charcoal-light leading-relaxed mt-3">
+                Dernier cas particulier : si vous avez d&eacute;j&agrave; un Sunology PLAY MAX, la batterie <Link href="/avis/sunology-vault" className="text-green hover:underline">Sunology VAULT</Link> seule co&ucirc;te 499 &euro; pour 0,7 kWh (713 &euro;/kWh) — document&eacute;e compatible uniquement avec le PLAY MAX par Sunology, pas avec le PLAY ou la GO.
               </p>
             </section>
 
@@ -415,6 +418,14 @@ export default function ZendureVsSunologyVsBeemPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem : le duel</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparaison point par point des deux leaders français</p>
                 </Link>
+                <Link href="/avis/ecoflow-stream-ultra" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Le successeur du PowerStream, avec sortie de secours en cas de coupure</p>
+                </Link>
+                <Link href="/avis/sunology-vault" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology VAULT</h3>
+                  <p className="text-xs text-charcoal-light mt-1">La batterie 700 Wh pour PLAY MAX, 499 &euro;</p>
+                </Link>
               </div>
             </section>
 
@@ -422,7 +433,7 @@ export default function ZendureVsSunologyVsBeemPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> données constructeurs, fiches techniques officielles (Zendure, Sunology, Beem), retours utilisateurs forum-photovoltaique.fr et Reddit (juin 2026). Tarif EDF base {KWH_PRICE_LABEL} (en vigueur depuis le {KWH_PRICE_SINCE}). Prix vérifiés le 5 novembre 2026. Production calculée pour Lyon, exposition sud, performance ratio 0,85 ; inflation {KWH_INFLATION_LABEL} ; dégradation {PANEL_DEGRADATION_LABEL} ; autoconsommation 85 % sans batterie, 95 % avec (scénario « absent en journée » : 45 % / 65-80 %).{' '}
+                <strong>Méthodologie :</strong> données constructeurs, fiches techniques officielles (Zendure, Sunology, Beem), retours utilisateurs forum-photovoltaique.fr et Reddit (juin 2026). Tarif EDF base {KWH_PRICE_LABEL} (en vigueur depuis le {KWH_PRICE_SINCE}). Prix vérifiés le 5 novembre 2026, revérifiés le 12 novembre 2026 (zendure.fr, sunology.eu et beemenergy.fr inaccessibles depuis notre environnement ce jour ; recherche web complémentaire, aucune variation datée trouvée ; valeurs du 5 novembre conservées). Production calculée pour Lyon, exposition sud, performance ratio 0,85 ; inflation {KWH_INFLATION_LABEL} ; dégradation {PANEL_DEGRADATION_LABEL} ; autoconsommation 85 % sans batterie, 95 % avec (scénario « absent en journée » : 45 % / 65-80 %).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>
