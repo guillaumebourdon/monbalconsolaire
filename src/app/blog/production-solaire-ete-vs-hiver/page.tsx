@@ -372,7 +372,7 @@ export default function ProductionSolaireEteHiverPage() {
                   },
                   {
                     t: 'Orienter si vous avez le choix est/ouest',
-                    d: 'Un balcon est-ouest avec deux panneaux en configuration séparée produit mieux en autoconsommation qu\'un seul panneau sud. Production étalée de 7h à 20h. Voir notre article sur <a href="/blog/panneau-solaire-est-ouest" class="text-green font-semibold hover:underline">les panneaux est/ouest</a>.',
+                    d: 'Un balcon est-ouest avec deux panneaux en configuration séparée produit mieux en autoconsommation qu\'un seul panneau sud. Production étalée de 7h à 20h. Voir notre article sur <a href="/guide/orientation-panneau-solaire-balcon#est-ouest" class="text-green font-semibold hover:underline">les panneaux est/ouest</a>.',
                     icon: '&#8635;',
                   },
                   {
@@ -442,7 +442,7 @@ export default function ProductionSolaireEteHiverPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire en hiver : combien ça produit vraiment ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Données mois par mois pour Marseille, Lyon et Lille, et 3 astuces pour maximiser la production hivernale</p>
                 </Link>
-                <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                <Link href="/guide/orientation-panneau-solaire-balcon#est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon est/ouest : production et rentabilité</h3>
                   <p className="text-xs text-charcoal-light mt-1">80 % du potentiel sud, avantage autoconsommation, et quand c&apos;est même mieux qu&apos;un panneau sud</p>
                 </Link>

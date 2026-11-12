@@ -99,7 +99,7 @@ export default function HiverProductionPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-charcoal-light leading-relaxed">C&apos;est logique : en hiver, les jours sont plus courts et le soleil est plus bas. Mais la production n&apos;est jamais nulle — même par temps couvert, un panneau produit 10 à 25% de sa capacité maximale grâce à la lumière diffuse. Si votre balcon reçoit peu de lumière directe, notre article sur <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green font-semibold hover:underline">l&apos;optimisation de la production en cas d&apos;ombre</Link> vous donnera des solutions concrètes.</p>
+              <p className="text-charcoal-light leading-relaxed">C&apos;est logique : en hiver, les jours sont plus courts et le soleil est plus bas. Mais la production n&apos;est jamais nulle — même par temps couvert, un panneau produit 10 à 25% de sa capacité maximale grâce à la lumière diffuse. Si votre balcon reçoit peu de lumière directe, notre article sur <Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="text-green font-semibold hover:underline">l&apos;optimisation de la production en cas d&apos;ombre</Link> vous donnera des solutions concrètes.</p>
             </section>
 
             <section>

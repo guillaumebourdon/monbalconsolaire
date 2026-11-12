@@ -170,7 +170,7 @@ export default function EntretienNettoyagePage() {
               </p>
               <div className="card-lg bg-amber-pale/30 border-amber/10">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Le pi&egrave;ge des fientes d&apos;oiseaux :</strong> une fiente sur une seule cellule peut r&eacute;duire la production de 20-30 % (pas seulement la cellule concern&eacute;e). C&apos;est le m&ecirc;me ph&eacute;nom&egrave;ne que l&apos;<Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green hover:underline">ombre partielle</Link> : les cellules en s&eacute;rie font que le maillon faible p&eacute;nalise toute la cha&icirc;ne.
+                  <strong>Le pi&egrave;ge des fientes d&apos;oiseaux :</strong> une fiente sur une seule cellule peut r&eacute;duire la production de 20-30 % (pas seulement la cellule concern&eacute;e). C&apos;est le m&ecirc;me ph&eacute;nom&egrave;ne que l&apos;<Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="text-green hover:underline">ombre partielle</Link> : les cellules en s&eacute;rie font que le maillon faible p&eacute;nalise toute la cha&icirc;ne.
                 </p>
               </div>
             </section>
@@ -296,7 +296,7 @@ export default function EntretienNettoyagePage() {
                 </div>
                 <div className="card-lg bg-cream/40">
                   <h3 className="font-bold text-base mb-2">Panneau sous un arbre</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">Le pire sc&eacute;nario pour la salissure : pollen au printemps, r&eacute;sine en &eacute;t&eacute;, feuilles en automne. Pr&eacute;voyez 4 nettoyages par an minimum. Si la r&eacute;sine colle, utilisez de l&apos;eau ti&egrave;de (40&deg;C) et un chiffon microfibre &mdash; ne grattez jamais. Envisagez de <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green hover:underline">d&eacute;placer le panneau</Link> si possible.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed">Le pire sc&eacute;nario pour la salissure : pollen au printemps, r&eacute;sine en &eacute;t&eacute;, feuilles en automne. Pr&eacute;voyez 4 nettoyages par an minimum. Si la r&eacute;sine colle, utilisez de l&apos;eau ti&egrave;de (40&deg;C) et un chiffon microfibre &mdash; ne grattez jamais. Envisagez de <Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="text-green hover:underline">d&eacute;placer le panneau</Link> si possible.</p>
                 </div>
                 <div className="card-lg bg-cream/40">
                   <h3 className="font-bold text-base mb-2">Zone bord de mer</h3>
@@ -387,7 +387,7 @@ export default function EntretienNettoyagePage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Diagnostic en 7 points &mdash; la salissure est la cause n&deg;3</p>
                 </Link>
-                <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                <Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : comment optimiser la production</h3>
                   <p className="text-xs text-charcoal-light mt-1">M&ecirc;me effet que la salissure &mdash; une cellule bloqu&eacute;e p&eacute;nalise tout</p>
                 </Link>

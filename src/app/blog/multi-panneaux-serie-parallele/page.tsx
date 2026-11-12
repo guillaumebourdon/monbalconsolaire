@@ -286,7 +286,7 @@ export default function MultiPanneauxSeriePage() {
                 </li>
               </ul>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Consultez notre comparatif pour savoir quel kit choisir selon votre balcon&nbsp;: <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">meilleur kit solaire balcon 2026</Link>. Pour les profils avec ombre partielle, notre guide <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green font-semibold hover:underline">optimiser sa production avec de l&apos;ombre</Link> est compl&eacute;mentaire.
+                Consultez notre comparatif pour savoir quel kit choisir selon votre balcon&nbsp;: <Link href="/comparatif/meilleur-kit-solaire-2026" className="text-green font-semibold hover:underline">meilleur kit solaire balcon 2026</Link>. Pour les profils avec ombre partielle, notre guide <Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="text-green font-semibold hover:underline">optimiser sa production avec de l&apos;ombre</Link> est compl&eacute;mentaire.
               </p>
             </section>
 
@@ -373,7 +373,7 @@ export default function MultiPanneauxSeriePage() {
                 {[
                   { href: '/blog/micro-onduleur-solaire-fonctionnement', label: 'Comment fonctionne un micro-onduleur&nbsp;?', badge: 'Blog' },
                   { href: '/blog/combien-panneaux-solaires-balcon', label: 'Combien de panneaux sur un balcon&nbsp;?', badge: 'R&eacute;glementation' },
-                  { href: '/blog/panneau-solaire-ombre-optimiser-production', label: 'Optimiser sa production avec de l&apos;ombre', badge: 'Blog' },
+                  { href: '/guide/orientation-panneau-solaire-balcon#ombre', label: 'Optimiser sa production avec de l&apos;ombre', badge: 'Blog' },
                   { href: '/guide/installer-kit-solaire-balcon', label: 'Installer son kit solaire balcon', badge: 'Guide' },
                 ].map((link, i) => (
                   <Link key={i} href={link.href} className="card border-l-4 border-l-green hover:shadow-md transition-shadow">

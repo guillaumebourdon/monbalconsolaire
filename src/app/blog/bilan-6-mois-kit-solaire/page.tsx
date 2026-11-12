@@ -294,7 +294,7 @@ export default function Bilan6MoisPage() {
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Ombres et WiFi</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Une ombre de garde-corps ou de balcon voisin, m&ecirc;me partielle, p&egrave;se sur la production (<Link href="/blog/panneau-solaire-ombre-optimiser-production" className={extLink}>guide ombre</Link>). Et les micro-onduleurs connect&eacute;s utilisent en g&eacute;n&eacute;ral le WiFi 2,4 GHz : si la box est loin du balcon, le suivi peut d&eacute;crocher (la production, elle, continue).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Une ombre de garde-corps ou de balcon voisin, m&ecirc;me partielle, p&egrave;se sur la production (<Link href="/guide/orientation-panneau-solaire-balcon#ombre" className={extLink}>guide ombre</Link>). Et les micro-onduleurs connect&eacute;s utilisent en g&eacute;n&eacute;ral le WiFi 2,4 GHz : si la box est loin du balcon, le suivi peut d&eacute;crocher (la production, elle, continue).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">L&apos;encrassement selon l&apos;environnement</h3>

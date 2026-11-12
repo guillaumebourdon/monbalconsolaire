@@ -273,11 +273,11 @@ export default function KitSolaireBalconAvisPage() {
             <div className="space-y-3">
               <div className="card border-l-4 border-l-amber">
                 <h3 className="font-bold text-sm">&#10007; Surestimer la production d&apos;un balcon nord ou est</h3>
-                <p className="text-xs text-charcoal-light mt-1">Un balcon nord produit 40-50 % de moins qu&apos;un balcon sud. Beaucoup de d&eacute;ceptions viennent de l&agrave;. Lire notre <Link href="/blog/panneau-solaire-balcon-nord" className="text-green hover:underline">analyse balcon nord</Link>.</p>
+                <p className="text-xs text-charcoal-light mt-1">Un balcon nord produit 40-50 % de moins qu&apos;un balcon sud. Beaucoup de d&eacute;ceptions viennent de l&agrave;. Lire notre <Link href="/guide/orientation-panneau-solaire-balcon#nord" className="text-green hover:underline">analyse balcon nord</Link>.</p>
               </div>
               <div className="card border-l-4 border-l-amber">
                 <h3 className="font-bold text-sm">&#10007; Ignorer l&apos;ombre sur le balcon</h3>
-                <p className="text-xs text-charcoal-light mt-1">Un arbre, un mur, un balcon au-dessus : l&apos;ombre r&eacute;duit drastiquement la production. Voir notre guide <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green hover:underline">panneau solaire et ombre</Link>.</p>
+                <p className="text-xs text-charcoal-light mt-1">Un arbre, un mur, un balcon au-dessus : l&apos;ombre r&eacute;duit drastiquement la production. Voir notre guide <Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="text-green hover:underline">panneau solaire et ombre</Link>.</p>
               </div>
               <div className="card border-l-4 border-l-amber">
                 <h3 className="font-bold text-sm">&#10007; Acheter un kit Amazon sans marque</h3>

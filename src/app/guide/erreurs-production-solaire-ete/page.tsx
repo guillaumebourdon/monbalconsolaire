@@ -192,7 +192,7 @@ export default function GuideErreursProdSolEte() {
                 Observez votre panneau <strong>en juillet entre 10 h et 14 h</strong>&nbsp;: c&rsquo;est la fen&ecirc;tre de production maximale. V&eacute;rifiez qu&rsquo;aucune ombre ne touche la surface. Si oui, ajustez la position du panneau&nbsp;: quelques centim&egrave;tres peuvent suffire.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                Pour aller plus loin&nbsp;: <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green underline underline-offset-2">notre guide complet sur l&rsquo;ombre et l&rsquo;optimisation de production</Link> d&eacute;taille les solutions selon chaque type d&rsquo;obstruction.
+                Pour aller plus loin&nbsp;: <Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="text-green underline underline-offset-2">notre guide complet sur l&rsquo;ombre et l&rsquo;optimisation de production</Link> d&eacute;taille les solutions selon chaque type d&rsquo;obstruction.
               </p>
             </section>
 
@@ -418,7 +418,7 @@ export default function GuideErreursProdSolEte() {
                     desc: 'Fréquence, produits, erreurs à éviter, impact sur la production. Checklist saisonnière.',
                   },
                   {
-                    href: '/blog/panneau-solaire-ombre-optimiser-production',
+                    href: '/guide/orientation-panneau-solaire-balcon#ombre',
                     badge: 'Blog',
                     title: 'Panneau solaire et ombre : optimiser la production',
                     desc: 'Ombre partielle, arbre, mur voisin : quel impact réel et solutions concrètes.',

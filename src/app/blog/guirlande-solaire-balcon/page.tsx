@@ -649,7 +649,7 @@ export default function GuirlandeSolaireBalconPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Tous nos accessoires solaires pour balcon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Prises connect&eacute;es, batteries, supports, &eacute;clairage : nos s&eacute;lections</p>
                 </Link>
-                <Link href="/blog/panneau-solaire-balcon-nord" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                <Link href="/guide/orientation-panneau-solaire-balcon#nord" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon nord : est-ce rentable ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Ce que produit vraiment une fa&ccedil;ade nord, chiffres &agrave; l&apos;appui</p>
                 </Link>

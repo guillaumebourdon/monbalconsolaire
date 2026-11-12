@@ -439,7 +439,7 @@ export default function TalonConsommationPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Mon panneau produit moins que pr&eacute;vu : que faire ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Pourquoi 0 W au Linky est souvent une bonne nouvelle</p>
                 </Link>
-                <Link href="/blog/panneau-solaire-est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                <Link href="/guide/orientation-panneau-solaire-balcon#est-ouest" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Balcon est/ouest : pourquoi c&apos;est mieux pour le talon</h3>
                   <p className="text-xs text-charcoal-light mt-1">Production &eacute;tal&eacute;e = autoconsommation naturelle 50-60 %</p>
                 </Link>
