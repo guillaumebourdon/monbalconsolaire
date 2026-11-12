@@ -26,7 +26,7 @@ const faqData = [
 export default function ReglementationPage() {
   return (
     <>
-      <SchemaArticle title="Réglementation panneau solaire balcon : faut-il déclarer ?" description="Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-11-05" />
+      <SchemaArticle title="Réglementation panneau solaire balcon : faut-il déclarer ?" description="Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-11-12" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />
       <article className="section-padding">
@@ -36,7 +36,7 @@ export default function ReglementationPage() {
             <div className="badge-green mb-4 inline-block">Guide juridique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon 2026 : faut-il le d&eacute;clarer&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Norme NF C 15-100, d&eacute;claration Enedis CACSI, copropri&eacute;t&eacute;, rep&egrave;re des 900 W : tout ce que dit la loi sur les kits solaires plug-and-play en France.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span><strong>Mis &agrave; jour le 5 novembre 2026</strong></span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span><strong>Mis &agrave; jour le 12 novembre 2026</strong></span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -65,21 +65,25 @@ export default function ReglementationPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-extrabold mb-4">D&eacute;claration Enedis : la CACSI</h2>
+              <h2 className="text-2xl font-extrabold mb-4">D&eacute;claration Enedis : faut-il d&eacute;clarer, et sous quelle forme&nbsp;?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Vous ne revendez rien, mais la d&eacute;claration reste obligatoire et gratuite. Deux voies&nbsp;: la <strong>Convention d&apos;Autoconsommation Sans Injection (CACSI)</strong>, engagement &agrave; ne pas injecter, si votre kit est r&eacute;gl&eacute; en z&eacute;ro injection (r&eacute;glage de l&apos;onduleur, compteur de pilotage ou batterie&nbsp;; le dispositif anti-injection est facultatif selon Enedis)&nbsp;; ou la <strong>cession gratuite du surplus &agrave; Enedis</strong> (Code de l&apos;&eacute;nergie, article L315-5, installations de 3&nbsp;kW maximum selon l&apos;article D315-10) si votre kit renvoie son surplus, cas de la plupart des kits simples. Le d&eacute;tail est dans notre <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline font-semibold">guide de la d&eacute;claration</Link>.</p>
               <div className="space-y-3">
                 {[
-                  { step: '1', title: 'Rendez-vous sur Enedis Connect', desc: 'connect-racco.enedis.fr \u2014 Cr\u00e9ez un compte ou connectez-vous.' },
-                  { step: '2', title: 'Choisissez la bonne voie', desc: 'Sans injection (CACSI) si votre kit est r\u00e9gl\u00e9 en z\u00e9ro injection ; sinon \u00ab injection du surplus \u00bb puis \u00ab je c\u00e8de mon surplus \u00e0 Enedis \u00bb.' },
-                  { step: '3', title: 'Remplissez les informations', desc: 'Adresse, puissance du kit (en kWc), type d\'installation (plug-and-play).' },
-                  { step: '4', title: 'Validez la convention', desc: 'Enedis vous envoie la convention \u00e0 signer \u00e9lectroniquement.' },
-                  { step: '5', title: 'Mise en service', desc: 'Attendez la mise en service par Enedis avant de faire fonctionner votre kit.' },
-                ].map((s) => (
-                  <div key={s.step} className="card border-l-4 border-l-green">
-                    <div className="flex items-center gap-3 mb-1"><div className="w-7 h-7 rounded-lg bg-green text-white flex items-center justify-center font-bold text-xs">{s.step}</div><h3 className="font-bold text-sm">{s.title}</h3></div>
-                    <p className="text-xs text-charcoal-light ml-10">{s.desc}</p>
+                  { cas: 'Kit réglé en zéro injection, ou kit avec batterie qui absorbe le surplus', voie: 'Déclaration obligatoire : CACSI (convention d\'autoconsommation sans injection).' },
+                  { cas: 'Kit simple qui renvoie son surplus sur le réseau (cas le plus courant)', voie: 'Déclaration obligatoire : cession gratuite du surplus à Enedis (article L315-5 du Code de l\'énergie).' },
+                  { cas: 'Vous voulez vendre votre surplus', voie: 'Hors plug-and-play : il faut un contrat d\'obligation d\'achat et, en pratique, une installation posée par un professionnel (voir plus bas).' },
+                ].map((c) => (
+                  <div key={c.cas} className="card border-l-4 border-l-green">
+                    <h3 className="font-bold text-sm mb-1">{c.cas}</h3>
+                    <p className="text-xs text-charcoal-light">{c.voie}</p>
                   </div>
                 ))}
+              </div>
+              <div className="card-lg border-l-4 border-l-green mt-4">
+                <p className="text-sm text-charcoal-light leading-relaxed">
+                  <strong>Comment d&eacute;clarer&nbsp;?</strong> Le formulaire Enedis-Connect, les pi&egrave;ces &agrave; fournir, le Consuel (et le cas de la batterie) et le moment o&ugrave; vous pouvez brancher le kit sont d&eacute;taill&eacute;s pas &agrave; pas dans notre{' '}
+                  <Link href="/guide/declaration-cacsi-enedis-panneau-solaire" className="text-green hover:underline font-semibold">guide de la d&eacute;claration CACSI &rarr;</Link>
+                </p>
               </div>
               <div className="card bg-amber-pale/30 border-amber/10 mt-4">
                 <p className="text-sm text-amber-dark"><strong>Important :</strong> si vous ne faites pas la d&eacute;claration CACSI, vous &ecirc;tes techniquement en infraction. Enedis ne vient pas contr&ocirc;ler, mais en cas de probl&egrave;me (&eacute;lectrique ou assurance), l&apos;absence de d&eacute;claration peut poser souci.</p>

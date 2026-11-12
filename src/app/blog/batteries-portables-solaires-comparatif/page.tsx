@@ -11,6 +11,9 @@ import { priceLabel } from '@/data/products';
 export const metadata: Metadata = withCanonicalOg({
   title: 'Batteries portables et batteries de balcon 2026 : comparatif',
   description: 'Comparatif 2026 des batteries portables (EcoFlow, Bluetti, Jackery) et des batteries de balcon fixes (Bluetti Balco 260, Zendure SolarFlow 800 Plus).',
+  // Hors du cœur du site (kit solaire de balcon) : noindex depuis le 12/11/2026, page conservée
+  // pour les lecteurs et les liens affiliés existants (voir diagnostic indexation du 12/11).
+  robots: { index: false, follow: true },
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif',
   },

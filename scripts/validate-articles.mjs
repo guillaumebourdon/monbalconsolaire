@@ -66,8 +66,12 @@ for (const section of SECTIONS) {
       articleOk = false;
     }
 
-    // Check sitemap
-    if (!SITEMAP.includes(slug)) {
+    // Check sitemap (sauf pages volontairement en noindex : elles ne doivent pas y être)
+    const noindex = /robots:\s*\{\s*index:\s*false/.test(readFileSync(pagePath, 'utf-8'));
+    if (noindex && SITEMAP.includes(`/${section}/${slug}\``)) {
+      error(`${slug} — en noindex mais présent dans sitemap.ts`);
+      articleOk = false;
+    } else if (!noindex && !SITEMAP.includes(slug)) {
       error(`${slug} — manquant dans sitemap.ts`);
       articleOk = false;
     }

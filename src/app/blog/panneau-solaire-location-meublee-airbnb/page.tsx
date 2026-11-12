@@ -66,7 +66,7 @@ const faqData = [
   },
   {
     question: 'Doit-on déclarer un kit solaire à Enedis même en location ?',
-    answer: 'Oui, obligatoirement. La déclaration auprès d\'Enedis (CACSI si le kit est réglé en zéro injection, sinon cession gratuite du surplus) s\'applique à toute installation raccordée au réseau, quelle que soit la situation locative. Elle est gratuite et prend 1 à 3 semaines. Sans cette déclaration, votre installation est techniquement illégale, même si le risque de contrôle est quasi nul en pratique.',
+    answer: 'Oui, obligatoirement. La déclaration auprès d\'Enedis (CACSI si le kit est réglé en zéro injection, sinon cession gratuite du surplus) s\'applique à toute installation raccordée au réseau, quelle que soit la situation locative. Elle est gratuite ; le kit se met en service une fois la convention acceptée, ou 15 jours après un dossier complet resté sans réponse. Sans cette déclaration, votre installation est techniquement illégale, même si le risque de contrôle est quasi nul en pratique.',
   },
   {
     question: 'Un kit solaire est-il compatible avec la sous-location Airbnb (locataire qui sous-loue) ?',
@@ -90,7 +90,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
         description="Locataire, propriétaire-hôte Airbnb : règles réelles, autorisations, CACSI et rentabilité chiffrée."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-location-meublee-airbnb"
         datePublished="2026-09-22"
-        dateModified="2026-11-05"
+        dateModified="2026-11-12"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Kit solaire en location et Airbnb' }]} />
@@ -107,7 +107,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
               Locataire en r&eacute;sidence principale, propri&eacute;taire qui loue son logement sur Airbnb, ou les deux&nbsp;: les r&egrave;gles ne sont pas les m&ecirc;mes. Ce guide d&eacute;m&ecirc;le les autorisations r&eacute;elles, les obligations l&eacute;gales et la <strong>rentabilit&eacute; chiffr&eacute;e</strong> selon votre situation.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>22 septembre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>22 septembre 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -168,7 +168,7 @@ export default function PanneauSolaireLocationMeubleeAirbnbPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">La d&eacute;claration &agrave; Enedis&nbsp;: obligatoire m&ecirc;me en location</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Tout kit solaire raccord&eacute; au r&eacute;seau &eacute;lectrique doit faire l&apos;objet d&apos;une <strong>d&eacute;claration aupr&egrave;s d&apos;Enedis</strong>&nbsp;: CACSI (convention d&apos;autoconsommation sans injection) si le kit est r&eacute;gl&eacute; en z&eacute;ro injection, sinon cession gratuite du surplus &agrave; Enedis. C&apos;est gratuit, ça prend 1 &agrave; 3 semaines, et ça n&apos;affecte pas votre contrat EDF.
+                Tout kit solaire raccord&eacute; au r&eacute;seau &eacute;lectrique doit faire l&apos;objet d&apos;une <strong>d&eacute;claration aupr&egrave;s d&apos;Enedis</strong>&nbsp;: CACSI (convention d&apos;autoconsommation sans injection) si le kit est r&eacute;gl&eacute; en z&eacute;ro injection, sinon cession gratuite du surplus &agrave; Enedis. C&apos;est gratuit, le kit se branche une fois la convention accept&eacute;e (ou 15 jours apr&egrave;s un dossier complet rest&eacute; sans r&eacute;ponse), et ça n&apos;affecte pas votre contrat EDF.
               </p>
               <div className="card-lg bg-green-pale/30 border-green/10 mb-4">
                 <p className="text-sm font-semibold text-green mb-2">Qui fait la d&eacute;claration&nbsp;?</p>

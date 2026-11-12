@@ -9,6 +9,9 @@ import { withCanonicalOg } from '@/lib/metadata';
 export const metadata: Metadata = withCanonicalOg({
   title: 'Lampes solaires balcon : 10 modèles sélectionnés (2026)',
   description: 'Lampes solaires pour balcon en 2026 : guirlandes, appliques, projecteurs, lanternes. 10 modèles sélectionnés et critères de choix.',
+  // Hors du cœur du site (kit solaire de balcon) : noindex depuis le 12/11/2026, page conservée
+  // pour les lecteurs et les liens affiliés existants (voir diagnostic indexation du 12/11).
+  robots: { index: false, follow: true },
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/lampes-solaires-balcon-2026',
   },
@@ -263,7 +266,7 @@ export default function LampesSolairesPage() {
                 Un balcon sans éclairage, c&apos;est un balcon inutilisable dès 20h en hiver. Deux solutions classiques s&apos;offrent à vous : tirer une rallonge depuis l&apos;intérieur (souvent peu pratique, parfois dangereux), ou opter pour des lampes solaires (zéro câble, zéro consommation, installation immédiate).
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Les avantages des lampes solaires sont évidents (à condition que votre balcon reçoive suffisamment de soleil -- si vous avez un doute, notre article sur <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="text-green font-semibold hover:underline">l&apos;impact de l&apos;ombre sur la production solaire</Link> vous aidera à évaluer votre situation) :
+                Les avantages des lampes solaires sont évidents (à condition que votre balcon reçoive suffisamment de soleil -- si vous avez un doute, notre article sur <Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="text-green font-semibold hover:underline">l&apos;impact de l&apos;ombre sur la production solaire</Link> vous aidera à évaluer votre situation) :
               </p>
               <ul className="text-charcoal-light leading-relaxed space-y-2 mb-4 pl-5">
                 <li>&bull; <strong>Pas d&apos;installation électrique</strong> : pas de tranchée, pas d&apos;électricien, pas d&apos;autorisation</li>

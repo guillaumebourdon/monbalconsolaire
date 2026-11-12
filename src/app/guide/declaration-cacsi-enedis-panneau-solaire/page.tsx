@@ -33,7 +33,7 @@ const faqData = [
   },
   {
     question: 'Combien de temps faut-il pour obtenir la validation ?',
-    answer: 'Enedis traite généralement les demandes en 2 à 4 semaines. Vous recevez un accusé de réception immédiat par email, puis un document officiel "Convention d\'autoconsommation sans injection" signé numériquement. Vous pouvez utiliser votre kit dès l\'envoi du dossier (pas besoin d\'attendre la validation pour commencer).',
+    answer: 'Enedis n\'annonce pas de délai de traitement. Le modèle de convention CACSI d\'Enedis (référence Enedis-MOP-RAC_042E) fixe en revanche le moment où vous pouvez brancher le kit : une fois la convention acceptée sur Enedis-Connect, ou 15 jours calendaires après l\'envoi d\'un dossier complet resté sans réponse, à condition que votre compteur soit électronique (Linky). N\'utilisez donc pas le kit dès l\'envoi du dossier : attendez la mise en service.',
   },
   {
     question: 'Que faire si mon logement n\'est pas raccordé à Enedis mais à une régie locale ?',
@@ -91,8 +91,8 @@ const etapes = [
   {
     num: 7,
     titre: 'Recevez votre convention signée',
-    duree: '2 à 4 semaines',
-    detail: 'Enedis vérifie votre dossier et vous envoie la "Convention d\'Autoconsommation Sans Injection" signée par leurs soins. Ce document officiel atteste que votre installation est déclarée et conforme. Conservez-le précieusement : c\'est la preuve à fournir à votre assurance habitation et, éventuellement, lors de la revente de votre logement.',
+    duree: 'Acceptation, ou 15 jours sans réponse',
+    detail: 'Enedis vérifie votre dossier et met à votre disposition la "Convention d\'Autoconsommation Sans Injection" à accepter sur Enedis-Connect. C\'est seulement à ce moment (ou 15 jours calendaires après un dossier complet resté sans réponse) que vous pouvez mettre le kit en service. Ce document officiel atteste que votre installation est déclarée et conforme. Conservez-le précieusement : c\'est la preuve à fournir à votre assurance habitation et, éventuellement, lors de la revente de votre logement.',
     pieges: 'Si Enedis vous demande des compléments (email du service "Raccordement"), répondez dans les 7 jours. Passé ce délai, votre dossier peut être archivé et vous devrez recommencer. Vérifiez bien vos spams : certains emails Enedis y atterrissent.',
   },
 ];
@@ -139,7 +139,7 @@ const erreurs_courantes = [
   },
   {
     erreur: 'Déclarer sans avoir installé',
-    detail: 'La CACSI doit être faite une fois l\'installation terminée. Ne déclarez pas avant d\'avoir le kit en main et branché. Les photos exigées montrent bien une installation finalisée.',
+    detail: 'Déclarez une fois le kit reçu et monté, mais avant de le brancher : selon Enedis, la convention « est à établir avant toute mise en service ». Ayez le kit en main pour relever les références du micro-onduleur et prendre les photos.',
   },
 ];
 
@@ -151,7 +151,7 @@ export default function DeclarationCacsiEnedisPage() {
         description="Guide pas à pas pour déclarer votre kit solaire de balcon à Enedis via la CACSI en 2026."
         url="https://monbalconsolaire.fr/guide/declaration-cacsi-enedis-panneau-solaire"
         datePublished="2026-04-23"
-        dateModified="2026-11-05"
+        dateModified="2026-11-12"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'Déclaration CACSI Enedis' }]} />
@@ -167,7 +167,7 @@ export default function DeclarationCacsiEnedisPage() {
               La CACSI (Convention d&apos;Autoconsommation Sans Injection) est l&apos;étape obligatoire mais simple pour être en règle avec Enedis. Voici la procédure complète en 7 étapes, 25 minutes au total, 100 % gratuite.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>23 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>23 avril 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -176,7 +176,14 @@ export default function DeclarationCacsiEnedisPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">En résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Une d&eacute;claration &agrave; Enedis est <strong>obligatoire et gratuite</strong>&nbsp;: la CACSI si votre kit est r&eacute;gl&eacute; en z&eacute;ro injection, ou la cession gratuite du surplus s&apos;il renvoie son surplus sur le r&eacute;seau. Elle se fait sur <strong>Enedis-Connect</strong>. Il vous faut votre PDL (sur la facture), l&apos;attestation CE du micro-onduleur, et 2-3 photos de l&apos;installation. Enedis valide en 2 à 4 semaines. Ne pas déclarer expose à l&apos;invalidation de votre assurance habitation en cas de sinistre.
+              Une d&eacute;claration &agrave; Enedis est <strong>obligatoire et gratuite</strong>&nbsp;: la CACSI si votre kit est r&eacute;gl&eacute; en z&eacute;ro injection, ou la cession gratuite du surplus s&apos;il renvoie son surplus sur le r&eacute;seau. Elle se fait sur <strong>Enedis-Connect</strong>. Il vous faut votre PDL (sur la facture), l&apos;attestation CE du micro-onduleur, et 2-3 photos de l&apos;installation. Branchez le kit seulement apr&egrave;s l&apos;acceptation de la convention (ou 15 jours sans r&eacute;ponse apr&egrave;s un dossier complet), pas d&egrave;s l&apos;envoi. Ne pas déclarer expose à l&apos;invalidation de votre assurance habitation en cas de sinistre.
+            </p>
+          </div>
+
+          <div className="card border-l-4 border-l-green mb-10">
+            <p className="text-sm text-charcoal-light leading-relaxed">
+              <strong>Ce guide r&eacute;pond &agrave; &laquo;&nbsp;comment d&eacute;clarer&nbsp;?&nbsp;&raquo;</strong> (formulaire, pi&egrave;ces, &eacute;tapes, mise en service). Pour savoir <strong>si</strong> vous devez d&eacute;clarer et quelles r&egrave;gles s&apos;appliquent (NF C 15-100, copropri&eacute;t&eacute;, urbanisme, assurance), lisez notre{' '}
+              <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="text-green font-semibold hover:underline">guide de la r&eacute;glementation&nbsp;: faut-il d&eacute;clarer&nbsp;?</Link>
             </p>
           </div>
 
@@ -200,13 +207,25 @@ export default function DeclarationCacsiEnedisPage() {
               <p className="text-charcoal-light leading-relaxed mt-3">
                 Dans les deux cas, la puissance d&apos;un kit reste modeste (en g&eacute;n&eacute;ral 300 &agrave; 900 W, sous le rep&egrave;re de 900 W par circuit recommand&eacute;, qui n&apos;est pas un plafond l&eacute;gal) et Enedis pr&eacute;voit une dispense de Consuel pour les &eacute;quipements &laquo;&nbsp;plug &amp; play&nbsp;&raquo; d&eacute;j&agrave; assembl&eacute;s et conformes &agrave; la norme NF EN 50549-1-4, sur attestation sur l&apos;honneur. Attendez la mise en service par Enedis avant de faire fonctionner l&apos;installation.
               </p>
+              <div id="consuel-batterie" className="card-lg bg-amber-pale/20 border-amber/20 mt-6">
+                <h3 className="font-bold text-base mb-2">Consuel&nbsp;: le cas de l&apos;ajout d&apos;une batterie</h3>
+                <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+                  Enedis demande de joindre au dossier &laquo;&nbsp;un consuel ou une attestation sur l&apos;honneur&nbsp;&raquo;. Sa page sur l&apos;autoconsommation pr&eacute;cise&nbsp;: le certificat Consuel est &laquo;&nbsp;exig&eacute; dans les cas de travaux &eacute;lectriques modifiant le circuit existant ou dans le cas d&apos;ajout de batterie. (Dispense possible pour les &eacute;quipements &quot;plug &amp; play&quot; d&eacute;j&agrave; assembl&eacute;s et conformes &agrave; la norme NF EN 50549-1-4).&nbsp;&raquo;
+                </p>
+                <p className="text-sm text-charcoal-light leading-relaxed mb-3">
+                  Le texte de la convention CACSI est plus strict sur la batterie&nbsp;: &laquo;&nbsp;pour les Installations comportant des batteries, c&apos;est obligatoirement une attestation de conformit&eacute; violette qui devra &ecirc;tre fournie&nbsp;&raquo;, et une attestation Consuel est demand&eacute;e &laquo;&nbsp;s&apos;il y a pose d&apos;une batterie, qui impose un dispositif de protection contre les surintensit&eacute;s&nbsp;&raquo;.
+                </p>
+                <p className="text-sm text-charcoal-light leading-relaxed">
+                  En pratique&nbsp;: un kit plug &amp; play sans batterie, assembl&eacute; en usine et conforme, se d&eacute;clare avec l&apos;attestation sur l&apos;honneur. Si vous ajoutez une batterie, pr&eacute;voyez un Consuel, ou faites confirmer par Enedis (au moment du d&eacute;p&ocirc;t sur Enedis-Connect) que votre &eacute;quipement tout-en-un rel&egrave;ve bien de la dispense. Sources&nbsp;: <a href="https://www.enedis.fr/autoconsommer-la-totalite-de-lenergie-produite-par-vos-panneaux" target="_blank" rel="noopener" className="text-green hover:underline">page Enedis &laquo;&nbsp;Autoconsommer la totalit&eacute; de l&apos;&eacute;nergie produite&nbsp;&raquo;</a> et <a href="https://www.enedis.fr/media/1955/download" target="_blank" rel="noopener" className="text-green hover:underline">mod&egrave;le de convention CACSI (Enedis-MOP-RAC_042E, articles 6 et 17, annexe 1)</a>, consult&eacute;s le 12 novembre 2026.
+                </p>
+              </div>
             </section>
 
             {/* Les 7 étapes */}
             <section>
               <h2 className="text-2xl font-extrabold mb-4">La procédure en 7 étapes</h2>
               <p className="text-charcoal-light leading-relaxed mb-6">
-                Comptez <strong>25 minutes au total</strong> pour remplir le dossier, puis 2 à 4 semaines d&apos;attente pour la validation par Enedis. Vous pouvez utiliser votre kit dès l&apos;envoi du dossier (pas besoin d&apos;attendre la validation).
+                Comptez <strong>25 minutes au total</strong> pour remplir le dossier. Ensuite, <strong>ne branchez pas encore le kit</strong>&nbsp;: selon la convention CACSI d&apos;Enedis, la mise en service se fait une fois la convention accept&eacute;e sur Enedis-Connect, ou 15 jours calendaires apr&egrave;s l&apos;envoi d&apos;un dossier complet si Enedis n&apos;a pas r&eacute;pondu (avec un compteur &eacute;lectronique). Enedis n&apos;annonce pas d&apos;autre d&eacute;lai de traitement.
               </p>
 
               <div className="space-y-5">
@@ -395,7 +414,7 @@ export default function DeclarationCacsiEnedisPage() {
                 <ul className="text-sm text-charcoal-light space-y-2 pl-5">
                   <li>&bull; <strong>Kit avec pilotage</strong> (r&eacute;glage z&eacute;ro injection, compteur de type Shelly, bo&icirc;tier du fabricant) ou <strong>avec batterie</strong>&nbsp;: la CACSI correspond.</li>
                   <li>&bull; <strong>Kit simple qui renvoie son surplus</strong> (cas le plus courant)&nbsp;: d&eacute;clarez plut&ocirc;t la cession gratuite du surplus &agrave; Enedis.</li>
-                  <li>&bull; <strong>Kits g&eacute;n&eacute;riques</strong>&nbsp;: v&eacute;rifiez la conformit&eacute; &agrave; la norme NF EN 50549-1-4, n&eacute;cessaire pour la dispense de Consuel.</li>
+                  <li>&bull; <strong>Kits g&eacute;n&eacute;riques</strong>&nbsp;: v&eacute;rifiez la conformit&eacute; &agrave; la norme NF EN 50549-1-4 (r&eacute;f&eacute;rence &eacute;crite par Enedis sur sa page&nbsp;; la convention CACSI cite la NF EN 50549-1), n&eacute;cessaire pour la dispense de Consuel. Avec une batterie, voir l&apos;encadr&eacute; Consuel plus haut.</li>
                 </ul>
               </div>
             </section>
@@ -448,14 +467,14 @@ Pièces jointes :
               <CopyableTemplate
                 trackingLabel="cacsi_email_enedis"
                 title="Email pour relancer Enedis (dossier en attente)"
-                description="Si votre dossier CACSI n'a pas reçu de retour après 4 semaines. À envoyer au service raccordement Enedis."
+                description="Si votre dossier CACSI n'a pas reçu de retour 15 jours après l'envoi. À envoyer au service raccordement Enedis."
                 recipient="raccordement-enedis@enedis.fr (ou via votre espace client Enedis Connect)"
                 subject="Relance dossier CACSI [VOTRE N° DE DOSSIER ENR-XXXX-XXXX]"
                 body={`Madame, Monsieur,
 
 Je vous contacte concernant ma demande de Convention d'Autoconsommation Sans Injection (CACSI) déposée le [DATE DE DÉPÔT INITIAL] sous le numéro de dossier [ENR-XXXX-XXXX-XXXX].
 
-Plus de 4 semaines se sont écoulées depuis le dépôt de mon dossier complet, sans retour de votre part. Je vous saurais gré de bien vouloir me confirmer la réception de ce dernier et m'indiquer le délai prévu pour la finalisation de la convention.
+Plus de 15 jours se sont écoulés depuis le dépôt de mon dossier complet, sans retour de votre part. Je vous saurais gré de bien vouloir me confirmer la réception de ce dernier et m'indiquer le délai prévu pour la finalisation de la convention.
 
 Mes informations :
 - PDL/PRM : [VOTRE NUMÉRO À 14 CHIFFRES]

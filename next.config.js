@@ -11,6 +11,10 @@ const nextConfig = {
     return [
       // Pas d'index /etude pour l'instant : on renvoie vers le hub éditorial
       { source: '/etude', destination: '/tout-savoir', permanent: false },
+      // 12/11/2026 : articles regroupés dans le guide de référence sur l'orientation (diagnostic indexation)
+      { source: '/blog/panneau-solaire-est-ouest', destination: '/guide/orientation-panneau-solaire-balcon#est-ouest', statusCode: 301 },
+      { source: '/blog/panneau-solaire-balcon-nord', destination: '/guide/orientation-panneau-solaire-balcon#nord', statusCode: 301 },
+      { source: '/blog/panneau-solaire-ombre-optimiser-production', destination: '/guide/orientation-panneau-solaire-balcon#ombre', statusCode: 301 },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'monbalconsolaire.vercel.app' }],
