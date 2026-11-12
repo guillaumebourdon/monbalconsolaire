@@ -432,7 +432,7 @@ function CalculateurPage() {
                 <ul className="text-sm text-charcoal-light space-y-2 mb-6">
                   <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> V&eacute;rifier si vous avez une exposition alternative exploitable</li>
                   <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> Comparer avec une batterie virtuelle EDF (sans investissement mat&eacute;riel)</li>
-                  <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> <Link href="/blog/panneau-solaire-balcon-nord" className="text-green hover:underline">Lire notre guide sur les balcons nord et peu expos&eacute;s</Link></li>
+                  <li className="flex items-start gap-2"><span className="text-amber-dark font-bold">&rarr;</span> <Link href="/guide/orientation-panneau-solaire-balcon#nord" className="text-green hover:underline">Lire notre guide sur les balcons nord et peu expos&eacute;s</Link></li>
                 </ul>
 <p className="text-sm text-charcoal-light mb-4">
                   Si vous voulez quand m&ecirc;me vous lancer pour des raisons &eacute;cologiques, commencez petit&nbsp;: notre comparatif des kits &agrave; petit budget liste ceux qui sont disponibles aujourd&apos;hui.
@@ -462,7 +462,7 @@ function CalculateurPage() {
                   {presence === 'away' && ' Absent en journée, vous ne profitez directement que d\'une petite partie de la production : sans batterie, le surplus part sur le réseau sans être payé.'}
                 </p>
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  Si vous h&eacute;sitez, mieux vaut ne pas acheter, ou commencer par un petit kit. <Link href="/blog/panneau-solaire-balcon-nord" className="text-green hover:underline">Lire notre guide sur les balcons nord et peu expos&eacute;s &rarr;</Link>
+                  Si vous h&eacute;sitez, mieux vaut ne pas acheter, ou commencer par un petit kit. <Link href="/guide/orientation-panneau-solaire-balcon#nord" className="text-green hover:underline">Lire notre guide sur les balcons nord et peu expos&eacute;s &rarr;</Link>
                 </p>
               </div>
             )}

@@ -5,7 +5,11 @@ import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { simDepartement } from '@/lib/rentabilite-departements';
 import { withCanonicalOg } from '@/lib/metadata';
+
+// Tableau régional : méthode du site (pricing.ts) sur le productible PVGIS du département.
+const KIT = { priceEur: 199, powerWc: 300 };
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit Beem 300W avis 2026 : 199 €, rupture et avis négatifs',
@@ -29,7 +33,7 @@ const faqData = [
 export default function BeemKit300WAvisPage() {
   return (
     <>
-      <SchemaArticle title="Kit Beem 300W avis 2026 : prix, disponibilité et avis négatifs" description="Avis complet sur le Beem Kit 300W à 199 € : specs, ROI, disponibilité, avis négatifs Beem Energy et alternatives." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" dateModified="2026-11-05" />
+      <SchemaArticle title="Kit Beem 300W avis 2026 : prix, disponibilité et avis négatifs" description="Avis complet sur le Beem Kit 300W à 199 € : specs, ROI, disponibilité, avis négatifs Beem Energy et alternatives." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" dateModified="2026-11-12" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/beem-kit-300-1.webp" name="Beem Kit 300W" brand="Beem Energy" description="Kit solaire plug-and-play modulaire de 4 panneaux de 75 Wc, conçu et assemblé à Nantes." price={199} ratingValue={7.5} availability="OutOfStock" url="https://monbalconsolaire.fr/avis/beem-kit-300w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />
@@ -40,7 +44,7 @@ export default function BeemKit300WAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Kit Beem 300W avis 2026 : le panneau solaire &agrave; 199&nbsp;&euro; vaut-il le coup&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le prix du Beem Kit 300W est pass&eacute; de 299&nbsp;&euro; &agrave; 199&nbsp;&euro;, ce qui en fait le kit de marque le moins cher au watt. Mais il est actuellement indisponible, et les avis n&eacute;gatifs sur Beem Energy (SAV, production) se multiplient. Specs, rentabilit&eacute;, points faibles signal&eacute;s par les clients et alternatives.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -247,12 +251,12 @@ export default function BeemKit300WAvisPage() {
                   </tr></thead>
                   <tbody>
                     {[
-                      ['Marseille / PACA', '383 kWh', '65 €', '3,0 ans'],
-                      ['Lyon / Rhône-Alpes', '306 kWh', '52 €', '3,7 ans'],
-                      ['Nantes / Ouest', '306 kWh', '52 €', '3,7 ans'],
-                      ['Paris / Île-de-France', '281 kWh', '48 €', '4,0 ans'],
-                      ['Lille / Nord', '255 kWh', '43 €', '4,4 ans'],
-                    ].map(([r, p, e, roi], i) => (
+                      ['Marseille / Provence-Alpes-Côte d\u2019Azur', '13'],
+                      ['Lyon / Rhône-Alpes', '69'],
+                      ['Nantes / Ouest', '44'],
+                      ['Paris / Île-de-France', '75'],
+                      ['Lille / Nord', '59'],
+                    ].map(([r, code]) => { const x = simDepartement(code, KIT); return [r, `${x.production} kWh`, `${x.savingsYear1} €`, `${x.roiYears.toLocaleString('fr-FR')} ans`]; }).map(([r, p, e, roi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{r}</td>
                         <td className="text-center p-3 font-mono text-sm text-green">{p}</td>

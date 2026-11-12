@@ -2,7 +2,7 @@
  * Rentabilité d'un kit solaire de balcon par département (96 départements métropolitains).
  * Calcul fait au build, exclusivement via les fonctions de lib/pricing.ts.
  *
- * Données d'entrée : productibles PVGIS par département (src/data/departments.ts),
+ * Données d'entrée : productibles PVGIS 5.3 au point de chaque préfecture (src/data/departments.ts),
  * recalés sur la référence prudente du site (Rhône = PVGIS_REFERENCE_LYON),
  * exactement comme la page solaire-balcon/[slug].
  */
@@ -40,8 +40,11 @@ export const ALTERNATIVE_KIT = {
   verifiedOn: ALT.verifiedOn,
 };
 
-/** Valeur PVGIS du Rhône dans data/departments.ts, utilisée pour le recalage sur Lyon. */
-export const PVGIS_RHONE = 1300;
+/**
+ * Valeur PVGIS du Rhône (Lyon, sud, 30°) dans data/departments.ts, utilisée pour le recalage :
+ * le Rhône vaut PVGIS_REFERENCE_LYON, les autres départements gardent leur écart relatif à Lyon.
+ */
+export const PVGIS_RHONE = DEPARTMENTS.find((d) => d.code === '69')!.irradiation;
 
 /** Productible retenu par le site (kWh/kWc/an) à partir de la valeur PVGIS du département. */
 export function productibleSite(pvgisDept: number): number {
@@ -166,4 +169,23 @@ export function getRentabiliteParRegion() {
       worst: rows[rows.length - 1],
     }))
     .sort((a, b) => a.medianRoi - b.medianRoi || b.medianProduction - a.medianProduction);
+}
+
+/** Productible retenu par le site pour un département (code INSEE), recalé sur Lyon. */
+export function productibleDepartement(code: string): number {
+  const d = DEPARTMENTS.find((x) => x.code === code);
+  if (!d) throw new Error(`Département inconnu : ${code}`);
+  return productibleSite(d.irradiation);
+}
+
+/** Simulation standard du site (pricing.ts) pour un kit dans un département, plein sud. */
+export function simDepartement(code: string, kit: { priceEur: number; powerWc: number; hasBattery?: boolean }) {
+  const input = { kitPriceEur: kit.priceEur, kitPowerWc: kit.powerWc, productibleKwhPerKwc: productibleDepartement(code), hasBattery: kit.hasBattery };
+  return {
+    productible: input.productibleKwhPerKwc,
+    production: calculateProductionKwh(input),
+    savingsYear1: Math.round(calculateFirstYearSavings(input)),
+    roiYears: calculateROIYears(input),
+    savings25: calculateTotalSavings25Years(input),
+  };
 }

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { REGIONS, regionHref } from '@/data/regions';
+import { PVGIS_META } from '@/data/departments';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb, SchemaDataset } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -34,8 +36,8 @@ const SLUG = 'rentabilite-kit-solaire-balcon-departement';
 const URL = `https://monbalconsolaire.fr/etude/${SLUG}`;
 const CSV_PATH = `/etude/${SLUG}/donnees.csv`;
 const PUBLISHED = '2026-10-12';
-const UPDATED = '2026-11-05';
-const UPDATED_LABEL = '5 novembre 2026';
+const UPDATED = '2026-11-12';
+const UPDATED_LABEL = '12 novembre 2026';
 const PAGE_TITLE = 'Carte de la rentabilité d’un kit solaire de balcon par département (2026)';
 
 export const metadata: Metadata = withCanonicalOg({
@@ -156,7 +158,7 @@ const faqData = [
   },
   {
     question: 'Comment ces chiffres sont-ils calculés ?',
-    answer: `Productible PVGIS (Commission européenne) moyen par département, recalé sur notre référence prudente de Lyon (${PVGIS_REFERENCE_LYON} kWh/kWc), performance ratio de ${String(PERFORMANCE_RATIO).replace('.', ',')}, autoconsommation de ${Math.round(AUTOCONSO_STANDARD * 100)} %, tarif EDF de ${KWH_PRICE_LABEL} et inflation de ${KWH_INFLATION_LABEL}. Le calcul est fait par la même formule que notre calculateur, pour les 96 départements.`,
+    answer: `Productible PVGIS 5.3 (Commission européenne) calculé au point de la préfecture de chaque département, recalé sur notre référence prudente de Lyon (${PVGIS_REFERENCE_LYON} kWh/kWc), performance ratio de ${String(PERFORMANCE_RATIO).replace('.', ',')}, autoconsommation de ${Math.round(AUTOCONSO_STANDARD * 100)} %, tarif EDF de ${KWH_PRICE_LABEL} et inflation de ${KWH_INFLATION_LABEL}. Le calcul est fait par la même formule que notre calculateur, pour les 96 départements.`,
   },
   {
     question: 'Puis-je reprendre cette carte ou ces données dans un article ?',
@@ -437,7 +439,7 @@ export default function CarteRentabilitePage() {
                   <tbody>
                     {regions.map((g, i) => (
                       <tr key={g.region} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold">{g.region === 'PACA' ? 'Provence-Alpes-Côte d’Azur' : g.region}</td>
+                        <td className="p-3 font-semibold"><Link href={regionHref(g.region)} className="text-green hover:underline">{g.region}</Link></td>
                         <td className="p-3 text-right font-mono font-bold">{yrs(g.medianRoi)} ans</td>
                         <td className="p-3 text-right font-mono">{g.medianProduction}</td>
                         <td className="p-3 text-charcoal-light">
@@ -451,6 +453,16 @@ export default function CarteRentabilitePage() {
                   </tbody>
                 </table>
               </div>
+              <p className="text-sm text-charcoal-light mt-4">
+                Production mois par mois, panneau inclin&eacute; ou vertical, pr&eacute;fecture par pr&eacute;fecture&nbsp;:{' '}
+                {REGIONS.map((r, i) => (
+                  <span key={r.slug}>
+                    {i > 0 && ' · '}
+                    <Link href={`/solaire-balcon/region/${r.slug}`} className="text-green hover:underline">{r.nom}</Link>
+                  </span>
+                ))}
+                .
+              </p>
             </section>
 
             {/* ─── CTA calculateur ─── */}
@@ -479,7 +491,7 @@ export default function CarteRentabilitePage() {
                 rows={rows.map((r) => ({
                   code: r.code,
                   name: r.name,
-                  region: r.region === 'PACA' ? 'Provence-Alpes-Côte d’Azur' : r.region,
+                  region: r.region,
                   productible: r.productible,
                   productionKwh: r.productionKwh,
                   savingsYear1: r.savingsYear1,
@@ -557,7 +569,7 @@ export default function CarteRentabilitePage() {
                     </thead>
                     <tbody>
                       {[
-                        ['Ensoleillement', 'Productible moyen par département, sud, 30°', 'PVGIS 5.3 (Centre commun de recherche, Commission européenne)'],
+                        ['Ensoleillement', 'Productible au point de la préfecture, sud, 30°, pertes 14 %, valeurs non arrondies', `PVGIS 5.3, API PVcalc (Centre commun de recherche, Commission européenne), base PVGIS-SARAH3, interrogée le ${PVGIS_META.interrogeLe.split('-').reverse().join('/')}`],
                         ['Recalage', `Rhône (${PVGIS_RHONE} kWh/kWc PVGIS) = ${PVGIS_REFERENCE_LYON} kWh/kWc`, 'Référence prudente du site, Lyon'],
                         ['Kit de référence', `${REFERENCE_KIT.name}, ${REFERENCE_KIT.powerWc} Wc, ${REFERENCE_KIT.priceEur} €`, `Prix et puissance relevés sur le site du fabricant le ${REFERENCE_KIT.verifiedOn.split('-').reverse().join('/')}`],
                         ['Kit alternatif', `Kit plug-and-play de même puissance à ${ALTERNATIVE_KIT.priceEur} €`, `Prix du ${ALTERNATIVE_KIT.name} relevé le ${ALTERNATIVE_KIT.verifiedOn.split('-').reverse().join('/')}${ALTERNATIVE_KIT.availabilityLabel ? ` (${ALTERNATIVE_KIT.availabilityLabel.toLowerCase()})` : ''}`],
@@ -593,11 +605,11 @@ export default function CarteRentabilitePage() {
                 <h3 className="font-bold text-lg text-charcoal pt-2">Limites</h3>
                 <ul className="space-y-2 list-none pl-0">
                   {[
-                    'Une seule valeur par département : un département de montagne ou très étendu (Isère, Gironde, Pyrénées) cache des écarts locaux importants. Les productibles sont arrondis à 10 kWh/kWc près, d’où de nombreux ex aequo.',
+                    'Une seule valeur par département, calculée au point de la préfecture : un département de montagne ou très étendu (Isère, Gironde, Pyrénées) cache des écarts locaux importants. Le détail mois par mois, incliné et vertical, est sur les pages régionales.',
                     `Orientation plein sud, sans ombre : un balcon est ou ouest produit environ ${Math.round((1 - EST_OUEST_COEF) * 100)} % de moins (coefficient de notre calculateur), un balcon nord beaucoup moins. Les ombres portées (immeuble, arbre, balcon du dessus) ne sont pas modélisées.`,
                     `Autoconsommation de ${pct(AUTOCONSO_STANDARD)} : c’est un scénario favorable, atteint par un foyer qui consomme en journée. Un logement vide de 8 h à 18 h autoconsomme moins, et le ROI s’allonge.`,
                     `Prix du kWh fixé au tarif réglementé EDF Base (${KWH_PRICE_LABEL}). Avec une offre heures creuses ou un tarif de marché plus bas, chaque kWh économisé vaut moins.`,
-                    'Pas de vente du surplus, pas de batterie, pas de dégradation annuelle des panneaux ni de remplacement du micro-onduleur dans le calcul.',
+                    `Pas de vente du surplus, pas de batterie, pas de remplacement du micro-onduleur dans le calcul. La dégradation des panneaux (${PANEL_DEGRADATION_LABEL}) est, elle, intégrée.`,
                     'Les 5 départements d’outre-mer ne sont pas couverts (données et tarifs différents).',
                   ].map((t) => (
                     <li key={t} className="flex gap-2 text-sm">
@@ -699,7 +711,7 @@ export default function CarteRentabilitePage() {
                 {[
                   { href: '/blog/combien-rapporte-panneau-solaire-balcon', title: 'Combien rapporte vraiment un panneau solaire de balcon', sub: 'Les économies réelles, kit par kit' },
                   { href: '/guide/orientation-panneau-solaire-balcon', title: 'Orientation d’un panneau de balcon : sud, est, ouest', sub: 'Ce que vous perdez hors plein sud' },
-                  { href: '/blog/panneau-solaire-balcon-nord', title: 'Panneau solaire de balcon au nord : est-ce rentable ?', sub: 'Le cas des balcons mal exposés' },
+                  { href: '/guide/orientation-panneau-solaire-balcon#nord', title: 'Panneau solaire de balcon au nord : est-ce rentable ?', sub: 'Le cas des balcons mal exposés' },
                   { href: '/guide/declaration-cacsi-enedis-panneau-solaire', title: 'Déclarer son kit à Enedis (CACSI)', sub: 'La démarche gratuite et obligatoire, pas à pas' },
                 ].map((a) => (
                   <Link key={a.href} href={a.href} className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
@@ -715,7 +727,7 @@ export default function CarteRentabilitePage() {
             {/* ─── Footer ─── */}
             <div className="pt-8 border-t border-border-light space-y-3">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie :</strong> productibles PVGIS 5.3 (Commission europ&eacute;enne) moyens par d&eacute;partement, sud, 30&deg;, recal&eacute;s sur
+                <strong>M&eacute;thodologie :</strong> productibles PVGIS 5.3 (Commission europ&eacute;enne) au point de la pr&eacute;fecture de chaque d&eacute;partement, sud, 30&deg;, recal&eacute;s sur
                 Rh&ocirc;ne = {PVGIS_REFERENCE_LYON}&nbsp;kWh/kWc ; performance ratio {String(PERFORMANCE_RATIO).replace('.', ',')} ; autoconsommation{' '}
                 {pct(AUTOCONSO_STANDARD)} ; tarif {KWH_PRICE_LABEL} ({KWH_PRICE_SOURCE}) ; inflation {KWH_INFLATION_LABEL} ; {ANALYSIS_DURATION_YEARS}&nbsp;ans. Calcul :{' '}
                 <code>src/lib/pricing.ts</code>, identique &agrave; l&apos;ensemble du site.{' '}

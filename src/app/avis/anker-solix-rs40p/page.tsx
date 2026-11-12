@@ -5,7 +5,11 @@ import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
+import { simDepartement } from '@/lib/rentabilite-departements';
 import { withCanonicalOg } from '@/lib/metadata';
+
+// Tableau régional : méthode du site (pricing.ts) sur le productible PVGIS du département.
+const KIT = { priceEur: 799, powerWc: 800 };
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Anker SOLIX RS40P avis 2026 : kit 910 Wc, plus vendu en France',
@@ -50,7 +54,7 @@ export default function AnkerSolixRS40PAvisPage() {
         description="Avis complet sur l'Anker SOLIX RS40P : panneaux IBC N-type 2x455 W, onduleur WiFi 600/800 W, garantie 15 ans. Analyse indépendante MonBalconSolaire."
         url="https://monbalconsolaire.fr/avis/anker-solix-rs40p"
         datePublished="2026-07-17"
-        dateModified="2026-11-05"
+        dateModified="2026-11-12"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct
@@ -78,7 +82,7 @@ export default function AnkerSolixRS40PAvisPage() {
               Anker &mdash; la marque de charge et batteries connue du grand public &mdash; s&rsquo;attaque au march&eacute; du kit solaire balcon en France. Son RS40P embarque deux panneaux IBC N-type de 455&nbsp;Wc et un onduleur WiFi upgradable &agrave; 800&nbsp;W. Dernier prix relev&eacute;&nbsp;: 799&nbsp;&euro; (17 juillet 2026)&nbsp;; <strong>plus vendu sur la boutique Anker SOLIX France au 5 novembre 2026</strong>. Est-ce que la marque justifie la prime par rapport au <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500&nbsp;Wc &agrave; 429&nbsp;&euro;</Link>&nbsp;? R&eacute;ponse.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>17 juillet 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>17 juillet 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -288,12 +292,12 @@ export default function AnkerSolixRS40PAvisPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Marseille / PACA', '942 kWh', '160 €', '4,7 ans'],
-                      ['Lyon / Rhône-Alpes', '816 kWh', '139 €', '5,4 ans'],
-                      ['Nantes / Ouest', '766 kWh', '130 €', '5,7 ans'],
-                      ['Paris / Île-de-France', '703 kWh', '120 €', '6,2 ans'],
-                      ['Lille / Nord', '641 kWh', '109 €', '6,8 ans'],
-                    ].map(([r, p, e, roi], i) => (
+                      ['Marseille / Provence-Alpes-Côte d\u2019Azur', '13'],
+                      ['Lyon / Rhône-Alpes', '69'],
+                      ['Nantes / Ouest', '44'],
+                      ['Paris / Île-de-France', '75'],
+                      ['Lille / Nord', '59'],
+                    ].map(([r, code]) => { const x = simDepartement(code, KIT); return [r, `${x.production} kWh`, `${x.savingsYear1} €`, `${x.roiYears.toLocaleString('fr-FR')} ans`]; }).map(([r, p, e, roi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{r}</td>
                         <td className="text-center p-3 font-mono text-sm text-green">{p}</td>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { PVGIS_RHONE, productibleDepartement } from '@/lib/rentabilite-departements';
 import { withCanonicalOg } from '@/lib/metadata';
 import {
   KWH_PRICE_LABEL,
@@ -104,7 +105,7 @@ export default function MethodologiePage() {
                     ['Performance Ratio', '0,85', 'Pertes syst\u00e8me : onduleur 4% + c\u00e2blage 2% + temp\u00e9rature 5% + salissure 3%. Valeur haute PVGIS (0,75-0,85).'],
                     ['Autoconsommation (sans batterie)', '85%', 'Foyer attentif qui d\u00e9cale ses usages diurnes. Sans adaptation : 40-60%.'],
                     ['Autoconsommation (avec batterie)', '95%', 'La batterie stocke l\u2019exc\u00e9dent diurne pour le soir. Pertes de cycle int\u00e9gr\u00e9es.'],
-                    ['Productible r\u00e9f\u00e9rence', '1 200 kWh/kWc/an', 'Lyon, m\u00e9diane fran\u00e7aise. Marseille : 1 450. Paris : 1 050. Lille : 1 000.'],
+                    ['Productible r\u00e9f\u00e9rence', '1 200 kWh/kWc/an', `Lyon (PVGIS 5.3 \u00e0 la pr\u00e9fecture : ${PVGIS_RHONE.toLocaleString('fr-FR')} kWh/kWc, ramen\u00e9 \u00e0 1 200). Sur la m\u00eame base : Marseille ${productibleDepartement('13').toLocaleString('fr-FR')}, Paris ${productibleDepartement('75').toLocaleString('fr-FR')}, Lille ${productibleDepartement('59').toLocaleString('fr-FR')}.`],
                     ['Orientation r\u00e9f\u00e9rence', 'Sud (coef 1,0)', 'SE/SO : 0,95 \u2022 E/O : 0,80 \u2022 NE/NO : 0,65 \u2022 N : 0,50'],
                     ['Dur\u00e9e d\u2019analyse', '25 ans', 'Garantie de production des panneaux constructeurs'],
                   ].map(([param, val, source], i) => (
@@ -176,6 +177,7 @@ export default function MethodologiePage() {
             <h2 className="text-2xl font-extrabold mb-4">Historique des mises &agrave; jour</h2>
             <div className="card">
               <ul className="text-sm text-charcoal-light space-y-2">
+                <li>&bull; <strong>12 novembre 2026 :</strong> Ensoleillement des 96 d&eacute;partements recalcul&eacute; avec l&apos;API PVGIS 5.3 (base PVGIS-SARAH3) au point de chaque pr&eacute;fecture, sans arrondi, pour un panneau inclin&eacute; &agrave; 30&deg; et un panneau vertical, avec la production mois par mois. Les anciennes valeurs, arrondies &agrave; 10 kWh/kWc pr&egrave;s et parfois &eacute;loign&eacute;es de PVGIS (Marseille, Lille), sont remplac&eacute;es partout (carte, calculateur, fiches). Le recalage sur Lyon (1 200 kWh/kWc) est inchang&eacute;.</li>
                 <li>&bull; <strong>5 novembre 2026 :</strong> Prix du kWh port&eacute; &agrave; {KWH_PRICE_LABEL} TTC (Tarif Bleu Base 6 kVA en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026, d&eacute;lib&eacute;ration CRE n&deg;&nbsp;2026-147 du 15 juillet 2026, +2,51&nbsp;% TTC&nbsp;; <a href={KWH_PRICE_SOURCE_URL} target="_blank" rel="noopener noreferrer" className="text-green underline">grille EDF</a>). La d&eacute;gradation des panneaux (0,5&nbsp;%/an) est d&eacute;sormais int&eacute;gr&eacute;e au calcul au lieu d&apos;&ecirc;tre suppos&eacute;e compens&eacute;e par l&apos;inflation.</li>
                 <li>&bull; <strong>Mai 2026 :</strong> Int&eacute;gration de l&apos;inflation kWh historique (3,3%/an) dans le calcul du ROI. Distinction Performance Ratio (0,85) / autoconsommation (85%/95%).</li>
                 <li>&bull; <strong>F&eacute;vrier 2026 :</strong> Prix du kWh initial &agrave; 0,1940 &euro; (Tarif Bleu Base 6 kVA au 1<sup>er</sup> f&eacute;vrier 2026).</li>

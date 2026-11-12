@@ -1,0 +1,1001 @@
+{
+ "meta": {
+  "interrogeLe": "2026-11-12",
+  "installations": {
+   "source": "ODRÉ (RTE, Enedis, EDF SEI, ELD), « Registre national des installations de production et de stockage d'électricité (au 30/09/2026) », licence ouverte Etalab",
+   "url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/",
+   "perimetre": "Installations photovoltaïques de moins de 36 kW (lignes « Agrégation des installations de moins de 36KW », filière Solaire), tous gestionnaires de réseau",
+   "miseAJourJeu": "2026-10-13T19:24:24+00:00"
+  },
+  "logements": {
+   "source": "INSEE, recensement de la population 2023, résidences principales selon le type de logement (API Melodi, DS_RP_LOGEMENT_PRINC)",
+   "url": "https://catalogue-donnees.insee.fr/fr/catalogue/recherche/DS_RP_LOGEMENT_PRINC",
+   "annee": 2023
+  }
+ },
+ "departements": {
+  "10": {
+   "residencesPrincipales": 145045,
+   "appartements": 47923,
+   "maisons": 96028,
+   "partAppartements": 33,
+   "installations": 5194,
+   "puissanceKw": 30481,
+   "installationsPour1000Logements": 35.8
+  },
+  "11": {
+   "residencesPrincipales": 183141,
+   "appartements": 45836,
+   "maisons": 136056,
+   "partAppartements": 25,
+   "installations": 14900,
+   "puissanceKw": 73173,
+   "installationsPour1000Logements": 81.4
+  },
+  "12": {
+   "residencesPrincipales": 134557,
+   "appartements": 36281,
+   "maisons": 97477,
+   "partAppartements": 27,
+   "installations": 9591,
+   "puissanceKw": 79565,
+   "installationsPour1000Logements": 71.3
+  },
+  "13": {
+   "residencesPrincipales": 959660,
+   "appartements": 592981,
+   "maisons": 359316,
+   "partAppartements": 61.8,
+   "installations": 35260,
+   "puissanceKw": 160356,
+   "installationsPour1000Logements": 36.7
+  },
+  "14": {
+   "residencesPrincipales": 333372,
+   "appartements": 115207,
+   "maisons": 214774,
+   "partAppartements": 34.6,
+   "installations": 7749,
+   "puissanceKw": 39006,
+   "installationsPour1000Logements": 23.2
+  },
+  "15": {
+   "residencesPrincipales": 70493,
+   "appartements": 17424,
+   "maisons": 52763,
+   "partAppartements": 24.7,
+   "installations": 3908,
+   "puissanceKw": 27143,
+   "installationsPour1000Logements": 55.4
+  },
+  "16": {
+   "residencesPrincipales": 170191,
+   "appartements": 28741,
+   "maisons": 140194,
+   "partAppartements": 16.9,
+   "installations": 10540,
+   "puissanceKw": 56169,
+   "installationsPour1000Logements": 61.9
+  },
+  "17": {
+   "residencesPrincipales": 329366,
+   "appartements": 69687,
+   "maisons": 257039,
+   "partAppartements": 21.2,
+   "installations": 22290,
+   "puissanceKw": 105049,
+   "installationsPour1000Logements": 67.7
+  },
+  "18": {
+   "residencesPrincipales": 144070,
+   "appartements": 27251,
+   "maisons": 115863,
+   "partAppartements": 18.9,
+   "installations": 6068,
+   "puissanceKw": 36750,
+   "installationsPour1000Logements": 42.1
+  },
+  "19": {
+   "residencesPrincipales": 117283,
+   "appartements": 25762,
+   "maisons": 90893,
+   "partAppartements": 22,
+   "installations": 5828,
+   "puissanceKw": 33140,
+   "installationsPour1000Logements": 49.7
+  },
+  "21": {
+   "residencesPrincipales": 261017,
+   "appartements": 121629,
+   "maisons": 137631,
+   "partAppartements": 46.6,
+   "installations": 9870,
+   "puissanceKw": 52105,
+   "installationsPour1000Logements": 37.8
+  },
+  "22": {
+   "residencesPrincipales": 290789,
+   "appartements": 48658,
+   "maisons": 240592,
+   "partAppartements": 16.7,
+   "installations": 9811,
+   "puissanceKw": 52386,
+   "installationsPour1000Logements": 33.7
+  },
+  "23": {
+   "residencesPrincipales": 58093,
+   "appartements": 8299,
+   "maisons": 49388,
+   "partAppartements": 14.3,
+   "installations": 3134,
+   "puissanceKw": 15666,
+   "installationsPour1000Logements": 53.9
+  },
+  "24": {
+   "residencesPrincipales": 203880,
+   "appartements": 31539,
+   "maisons": 170827,
+   "partAppartements": 15.5,
+   "installations": 12144,
+   "puissanceKw": 65931,
+   "installationsPour1000Logements": 59.6
+  },
+  "25": {
+   "residencesPrincipales": 254754,
+   "appartements": 117810,
+   "maisons": 135075,
+   "partAppartements": 46.2,
+   "installations": 12380,
+   "puissanceKw": 65943,
+   "installationsPour1000Logements": 48.6
+  },
+  "26": {
+   "residencesPrincipales": 241892,
+   "appartements": 84483,
+   "maisons": 155721,
+   "partAppartements": 34.9,
+   "installations": 21031,
+   "puissanceKw": 124050,
+   "installationsPour1000Logements": 86.9
+  },
+  "27": {
+   "residencesPrincipales": 263665,
+   "appartements": 57199,
+   "maisons": 204732,
+   "partAppartements": 21.7,
+   "installations": 7403,
+   "puissanceKw": 40116,
+   "installationsPour1000Logements": 28.1
+  },
+  "28": {
+   "residencesPrincipales": 191532,
+   "appartements": 49103,
+   "maisons": 141485,
+   "partAppartements": 25.6,
+   "installations": 5433,
+   "puissanceKw": 29863,
+   "installationsPour1000Logements": 28.4
+  },
+  "29": {
+   "residencesPrincipales": 451952,
+   "appartements": 120640,
+   "maisons": 328515,
+   "partAppartements": 26.7,
+   "installations": 13058,
+   "puissanceKw": 68167,
+   "installationsPour1000Logements": 28.9
+  },
+  "30": {
+   "residencesPrincipales": 357160,
+   "appartements": 121720,
+   "maisons": 232846,
+   "partAppartements": 34.1,
+   "installations": 31385,
+   "puissanceKw": 146555,
+   "installationsPour1000Logements": 87.9
+  },
+  "31": {
+   "residencesPrincipales": 706806,
+   "appartements": 355848,
+   "maisons": 346165,
+   "partAppartements": 50.3,
+   "installations": 38915,
+   "puissanceKw": 183047,
+   "installationsPour1000Logements": 55.1
+  },
+  "32": {
+   "residencesPrincipales": 92103,
+   "appartements": 15135,
+   "maisons": 76303,
+   "partAppartements": 16.4,
+   "installations": 8977,
+   "puissanceKw": 51216,
+   "installationsPour1000Logements": 97.5
+  },
+  "33": {
+   "residencesPrincipales": 800830,
+   "appartements": 314287,
+   "maisons": 480493,
+   "partAppartements": 39.2,
+   "installations": 41032,
+   "puissanceKw": 188614,
+   "installationsPour1000Logements": 51.2
+  },
+  "34": {
+   "residencesPrincipales": 594771,
+   "appartements": 290479,
+   "maisons": 299297,
+   "partAppartements": 48.8,
+   "installations": 41102,
+   "puissanceKw": 186823,
+   "installationsPour1000Logements": 69.1
+  },
+  "35": {
+   "residencesPrincipales": 513565,
+   "appartements": 204442,
+   "maisons": 305506,
+   "partAppartements": 39.8,
+   "installations": 16630,
+   "puissanceKw": 93717,
+   "installationsPour1000Logements": 32.4
+  },
+  "36": {
+   "residencesPrincipales": 106494,
+   "appartements": 17599,
+   "maisons": 88132,
+   "partAppartements": 16.5,
+   "installations": 4161,
+   "puissanceKw": 21533,
+   "installationsPour1000Logements": 39.1
+  },
+  "37": {
+   "residencesPrincipales": 295031,
+   "appartements": 108642,
+   "maisons": 184340,
+   "partAppartements": 36.8,
+   "installations": 7918,
+   "puissanceKw": 38083,
+   "installationsPour1000Logements": 26.8
+  },
+  "38": {
+   "residencesPrincipales": 580337,
+   "appartements": 277656,
+   "maisons": 297067,
+   "partAppartements": 47.8,
+   "installations": 35935,
+   "puissanceKw": 184808,
+   "installationsPour1000Logements": 61.9
+  },
+  "39": {
+   "residencesPrincipales": 122879,
+   "appartements": 39302,
+   "maisons": 82641,
+   "partAppartements": 32,
+   "installations": 7161,
+   "puissanceKw": 37368,
+   "installationsPour1000Logements": 58.3
+  },
+  "40": {
+   "residencesPrincipales": 205741,
+   "appartements": 47078,
+   "maisons": 157507,
+   "partAppartements": 22.9,
+   "installations": 24127,
+   "puissanceKw": 122934,
+   "installationsPour1000Logements": 117.3
+  },
+  "41": {
+   "residencesPrincipales": 153224,
+   "appartements": 28699,
+   "maisons": 123557,
+   "partAppartements": 18.7,
+   "installations": 5284,
+   "puissanceKw": 26510,
+   "installationsPour1000Logements": 34.5
+  },
+  "42": {
+   "residencesPrincipales": 354644,
+   "appartements": 167563,
+   "maisons": 184350,
+   "partAppartements": 47.2,
+   "installations": 21233,
+   "puissanceKw": 108514,
+   "installationsPour1000Logements": 59.9
+  },
+  "43": {
+   "residencesPrincipales": 107026,
+   "appartements": 24938,
+   "maisons": 81613,
+   "partAppartements": 23.3,
+   "installations": 8882,
+   "puissanceKw": 53325,
+   "installationsPour1000Logements": 83
+  },
+  "44": {
+   "residencesPrincipales": 684986,
+   "appartements": 259455,
+   "maisons": 420192,
+   "partAppartements": 37.9,
+   "installations": 27412,
+   "puissanceKw": 127694,
+   "installationsPour1000Logements": 40
+  },
+  "45": {
+   "residencesPrincipales": 310889,
+   "appartements": 95053,
+   "maisons": 213755,
+   "partAppartements": 30.6,
+   "installations": 9514,
+   "puissanceKw": 46133,
+   "installationsPour1000Logements": 30.6
+  },
+  "46": {
+   "residencesPrincipales": 88004,
+   "appartements": 14345,
+   "maisons": 72530,
+   "partAppartements": 16.3,
+   "installations": 6411,
+   "puissanceKw": 36573,
+   "installationsPour1000Logements": 72.8
+  },
+  "47": {
+   "residencesPrincipales": 158186,
+   "appartements": 29313,
+   "maisons": 127815,
+   "partAppartements": 18.5,
+   "installations": 13520,
+   "puissanceKw": 71015,
+   "installationsPour1000Logements": 85.5
+  },
+  "48": {
+   "residencesPrincipales": 36725,
+   "appartements": 9332,
+   "maisons": 27133,
+   "partAppartements": 25.4,
+   "installations": 1977,
+   "puissanceKw": 13432,
+   "installationsPour1000Logements": 53.8
+  },
+  "49": {
+   "residencesPrincipales": 375558,
+   "appartements": 107356,
+   "maisons": 264197,
+   "partAppartements": 28.6,
+   "installations": 19297,
+   "puissanceKw": 105614,
+   "installationsPour1000Logements": 51.4
+  },
+  "50": {
+   "residencesPrincipales": 237370,
+   "appartements": 44935,
+   "maisons": 190636,
+   "partAppartements": 18.9,
+   "installations": 7697,
+   "puissanceKw": 77912,
+   "installationsPour1000Logements": 32.4
+  },
+  "51": {
+   "residencesPrincipales": 265839,
+   "appartements": 113263,
+   "maisons": 149792,
+   "partAppartements": 42.6,
+   "installations": 7359,
+   "puissanceKw": 46206,
+   "installationsPour1000Logements": 27.7
+  },
+  "52": {
+   "residencesPrincipales": 80915,
+   "appartements": 19048,
+   "maisons": 61480,
+   "partAppartements": 23.5,
+   "installations": 3113,
+   "puissanceKw": 16293,
+   "installationsPour1000Logements": 38.5
+  },
+  "53": {
+   "residencesPrincipales": 138699,
+   "appartements": 25500,
+   "maisons": 112186,
+   "partAppartements": 18.4,
+   "installations": 7578,
+   "puissanceKw": 47120,
+   "installationsPour1000Logements": 54.6
+  },
+  "54": {
+   "residencesPrincipales": 344462,
+   "appartements": 151708,
+   "maisons": 189374,
+   "partAppartements": 44,
+   "installations": 11374,
+   "puissanceKw": 57162,
+   "installationsPour1000Logements": 33
+  },
+  "55": {
+   "residencesPrincipales": 83933,
+   "appartements": 18167,
+   "maisons": 65175,
+   "partAppartements": 21.6,
+   "installations": 3790,
+   "puissanceKw": 20133,
+   "installationsPour1000Logements": 45.2
+  },
+  "56": {
+   "residencesPrincipales": 373800,
+   "appartements": 93031,
+   "maisons": 277635,
+   "partAppartements": 24.9,
+   "installations": 13473,
+   "puissanceKw": 66450,
+   "installationsPour1000Logements": 36
+  },
+  "57": {
+   "residencesPrincipales": 478218,
+   "appartements": 207335,
+   "maisons": 267031,
+   "partAppartements": 43.4,
+   "installations": 14537,
+   "puissanceKw": 70428,
+   "installationsPour1000Logements": 30.4
+  },
+  "58": {
+   "residencesPrincipales": 101408,
+   "appartements": 22217,
+   "maisons": 78618,
+   "partAppartements": 21.9,
+   "installations": 3838,
+   "puissanceKw": 20922,
+   "installationsPour1000Logements": 37.8
+  },
+  "59": {
+   "residencesPrincipales": 1157844,
+   "appartements": 385922,
+   "maisons": 762702,
+   "partAppartements": 33.3,
+   "installations": 22722,
+   "puissanceKw": 105259,
+   "installationsPour1000Logements": 19.6
+  },
+  "60": {
+   "residencesPrincipales": 350520,
+   "appartements": 111926,
+   "maisons": 235537,
+   "partAppartements": 31.9,
+   "installations": 6646,
+   "puissanceKw": 29454,
+   "installationsPour1000Logements": 19
+  },
+  "61": {
+   "residencesPrincipales": 130839,
+   "appartements": 25208,
+   "maisons": 104571,
+   "partAppartements": 19.3,
+   "installations": 4517,
+   "puissanceKw": 26889,
+   "installationsPour1000Logements": 34.5
+  },
+  "62": {
+   "residencesPrincipales": 634567,
+   "appartements": 122528,
+   "maisons": 507549,
+   "partAppartements": 19.3,
+   "installations": 17248,
+   "puissanceKw": 76647,
+   "installationsPour1000Logements": 27.2
+  },
+  "63": {
+   "residencesPrincipales": 320881,
+   "appartements": 116162,
+   "maisons": 201670,
+   "partAppartements": 36.2,
+   "installations": 17851,
+   "puissanceKw": 85494,
+   "installationsPour1000Logements": 55.6
+  },
+  "64": {
+   "residencesPrincipales": 343946,
+   "appartements": 155551,
+   "maisons": 186541,
+   "partAppartements": 45.2,
+   "installations": 18732,
+   "puissanceKw": 103136,
+   "installationsPour1000Logements": 54.5
+  },
+  "65": {
+   "residencesPrincipales": 113916,
+   "appartements": 35300,
+   "maisons": 77828,
+   "partAppartements": 31,
+   "installations": 5404,
+   "puissanceKw": 26474,
+   "installationsPour1000Logements": 47.4
+  },
+  "66": {
+   "residencesPrincipales": 240478,
+   "appartements": 87401,
+   "maisons": 151594,
+   "partAppartements": 36.3,
+   "installations": 21417,
+   "puissanceKw": 100602,
+   "installationsPour1000Logements": 89.1
+  },
+  "67": {
+   "residencesPrincipales": 527218,
+   "appartements": 282441,
+   "maisons": 240159,
+   "partAppartements": 53.6,
+   "installations": 16400,
+   "puissanceKw": 94022,
+   "installationsPour1000Logements": 31.1
+  },
+  "68": {
+   "residencesPrincipales": 346437,
+   "appartements": 158116,
+   "maisons": 185593,
+   "partAppartements": 45.6,
+   "installations": 13809,
+   "puissanceKw": 75757,
+   "installationsPour1000Logements": 39.9
+  },
+  "69": {
+   "residencesPrincipales": 875314,
+   "appartements": 611919,
+   "maisons": 252008,
+   "partAppartements": 69.9,
+   "installations": 26886,
+   "puissanceKw": 143071,
+   "installationsPour1000Logements": 30.7
+  },
+  "70": {
+   "residencesPrincipales": 108986,
+   "appartements": 24408,
+   "maisons": 83832,
+   "partAppartements": 22.4,
+   "installations": 6209,
+   "puissanceKw": 35349,
+   "installationsPour1000Logements": 57
+  },
+  "71": {
+   "residencesPrincipales": 262568,
+   "appartements": 77895,
+   "maisons": 182317,
+   "partAppartements": 29.7,
+   "installations": 13998,
+   "puissanceKw": 73858,
+   "installationsPour1000Logements": 53.3
+  },
+  "72": {
+   "residencesPrincipales": 259592,
+   "appartements": 59855,
+   "maisons": 197096,
+   "partAppartements": 23.1,
+   "installations": 10392,
+   "puissanceKw": 53325,
+   "installationsPour1000Logements": 40
+  },
+  "73": {
+   "residencesPrincipales": 211123,
+   "appartements": 107320,
+   "maisons": 101637,
+   "partAppartements": 50.8,
+   "installations": 11273,
+   "puissanceKw": 60759,
+   "installationsPour1000Logements": 53.4
+  },
+  "74": {
+   "residencesPrincipales": 391689,
+   "appartements": 223668,
+   "maisons": 165234,
+   "partAppartements": 57.1,
+   "installations": 18985,
+   "puissanceKw": 95142,
+   "installationsPour1000Logements": 48.5
+  },
+  "75": {
+   "residencesPrincipales": 1124522,
+   "appartements": 1088275,
+   "maisons": 9605,
+   "partAppartements": 96.8,
+   "installations": 148,
+   "puissanceKw": 2060,
+   "installationsPour1000Logements": 0.1
+  },
+  "76": {
+   "residencesPrincipales": 586580,
+   "appartements": 250229,
+   "maisons": 332293,
+   "partAppartements": 42.7,
+   "installations": 9385,
+   "puissanceKw": 69299,
+   "installationsPour1000Logements": 16
+  },
+  "77": {
+   "residencesPrincipales": 597056,
+   "appartements": 255191,
+   "maisons": 334530,
+   "partAppartements": 42.7,
+   "installations": 11354,
+   "puissanceKw": 49096,
+   "installationsPour1000Logements": 19
+  },
+  "78": {
+   "residencesPrincipales": 620141,
+   "appartements": 356875,
+   "maisons": 254923,
+   "partAppartements": 57.5,
+   "installations": 6536,
+   "puissanceKw": 28536,
+   "installationsPour1000Logements": 10.5
+  },
+  "79": {
+   "residencesPrincipales": 173157,
+   "appartements": 21971,
+   "maisons": 150045,
+   "partAppartements": 12.7,
+   "installations": 10802,
+   "puissanceKw": 105462,
+   "installationsPour1000Logements": 62.4
+  },
+  "80": {
+   "residencesPrincipales": 259351,
+   "appartements": 65794,
+   "maisons": 191838,
+   "partAppartements": 25.4,
+   "installations": 5945,
+   "puissanceKw": 28405,
+   "installationsPour1000Logements": 22.9
+  },
+  "81": {
+   "residencesPrincipales": 186515,
+   "appartements": 38376,
+   "maisons": 147177,
+   "partAppartements": 20.6,
+   "installations": 16038,
+   "puissanceKw": 89248,
+   "installationsPour1000Logements": 86
+  },
+  "82": {
+   "residencesPrincipales": 117641,
+   "appartements": 23416,
+   "maisons": 93496,
+   "partAppartements": 19.9,
+   "installations": 9226,
+   "puissanceKw": 49078,
+   "installationsPour1000Logements": 78.4
+  },
+  "83": {
+   "residencesPrincipales": 533930,
+   "appartements": 271060,
+   "maisons": 258319,
+   "partAppartements": 50.8,
+   "installations": 30200,
+   "puissanceKw": 136373,
+   "installationsPour1000Logements": 56.6
+  },
+  "84": {
+   "residencesPrincipales": 263428,
+   "appartements": 92341,
+   "maisons": 168692,
+   "partAppartements": 35.1,
+   "installations": 17693,
+   "puissanceKw": 88241,
+   "installationsPour1000Logements": 67.2
+  },
+  "85": {
+   "residencesPrincipales": 326386,
+   "appartements": 40772,
+   "maisons": 283340,
+   "partAppartements": 12.5,
+   "installations": 28896,
+   "puissanceKw": 142065,
+   "installationsPour1000Logements": 88.5
+  },
+  "86": {
+   "residencesPrincipales": 209899,
+   "appartements": 51393,
+   "maisons": 156606,
+   "partAppartements": 24.5,
+   "installations": 9469,
+   "puissanceKw": 52332,
+   "installationsPour1000Logements": 45.1
+  },
+  "87": {
+   "residencesPrincipales": 186725,
+   "appartements": 63458,
+   "maisons": 122176,
+   "partAppartements": 34,
+   "installations": 8679,
+   "puissanceKw": 42333,
+   "installationsPour1000Logements": 46.5
+  },
+  "88": {
+   "residencesPrincipales": 171490,
+   "appartements": 55643,
+   "maisons": 115107,
+   "partAppartements": 32.4,
+   "installations": 9435,
+   "puissanceKw": 48352,
+   "installationsPour1000Logements": 55
+  },
+  "89": {
+   "residencesPrincipales": 156368,
+   "appartements": 35644,
+   "maisons": 119846,
+   "partAppartements": 22.8,
+   "installations": 5465,
+   "puissanceKw": 27815,
+   "installationsPour1000Logements": 34.9
+  },
+  "90": {
+   "residencesPrincipales": 65411,
+   "appartements": 32332,
+   "maisons": 32535,
+   "partAppartements": 49.4,
+   "installations": 2513,
+   "puissanceKw": 11436,
+   "installationsPour1000Logements": 38.4
+  },
+  "91": {
+   "residencesPrincipales": 549736,
+   "appartements": 292894,
+   "maisons": 250145,
+   "partAppartements": 53.3,
+   "installations": 7241,
+   "puissanceKw": 30054,
+   "installationsPour1000Logements": 13.2
+  },
+  "92": {
+   "residencesPrincipales": 754911,
+   "appartements": 660521,
+   "maisons": 84403,
+   "partAppartements": 87.5,
+   "installations": 1353,
+   "puissanceKw": 6123,
+   "installationsPour1000Logements": 1.8
+  },
+  "93": {
+   "residencesPrincipales": 673946,
+   "appartements": 506934,
+   "maisons": 151805,
+   "partAppartements": 75.2,
+   "installations": 2808,
+   "puissanceKw": 12577,
+   "installationsPour1000Logements": 4.2
+  },
+  "94": {
+   "residencesPrincipales": 622567,
+   "appartements": 479099,
+   "maisons": 130487,
+   "partAppartements": 77,
+   "installations": 2548,
+   "puissanceKw": 11397,
+   "installationsPour1000Logements": 4.1
+  },
+  "95": {
+   "residencesPrincipales": 504712,
+   "appartements": 282733,
+   "maisons": 214997,
+   "partAppartements": 56,
+   "installations": 4451,
+   "puissanceKw": 18047,
+   "installationsPour1000Logements": 8.8
+  },
+  "01": {
+   "residencesPrincipales": 294496,
+   "appartements": 105259,
+   "maisons": 187318,
+   "partAppartements": 35.7,
+   "installations": 21055,
+   "puissanceKw": 107406,
+   "installationsPour1000Logements": 71.5
+  },
+  "02": {
+   "residencesPrincipales": 233915,
+   "appartements": 54371,
+   "maisons": 178030,
+   "partAppartements": 23.2,
+   "installations": 5905,
+   "puissanceKw": 32156,
+   "installationsPour1000Logements": 25.2
+  },
+  "03": {
+   "residencesPrincipales": 164718,
+   "appartements": 41928,
+   "maisons": 121621,
+   "partAppartements": 25.5,
+   "installations": 8662,
+   "puissanceKw": 44367,
+   "installationsPour1000Logements": 52.6
+  },
+  "04": {
+   "residencesPrincipales": 82253,
+   "appartements": 26456,
+   "maisons": 55132,
+   "partAppartements": 32.2,
+   "installations": 6397,
+   "puissanceKw": 35889,
+   "installationsPour1000Logements": 77.8
+  },
+  "05": {
+   "residencesPrincipales": 69994,
+   "appartements": 31250,
+   "maisons": 38243,
+   "partAppartements": 44.6,
+   "installations": 5313,
+   "puissanceKw": 31295,
+   "installationsPour1000Logements": 75.9
+  },
+  "06": {
+   "residencesPrincipales": 543316,
+   "appartements": 400325,
+   "maisons": 138969,
+   "partAppartements": 73.7,
+   "installations": 11961,
+   "puissanceKw": 54298,
+   "installationsPour1000Logements": 22
+  },
+  "07": {
+   "residencesPrincipales": 156393,
+   "appartements": 39534,
+   "maisons": 115756,
+   "partAppartements": 25.3,
+   "installations": 14030,
+   "puissanceKw": 75445,
+   "installationsPour1000Logements": 89.7
+  },
+  "08": {
+   "residencesPrincipales": 122646,
+   "appartements": 32998,
+   "maisons": 89097,
+   "partAppartements": 26.9,
+   "installations": 3359,
+   "puissanceKw": 19717,
+   "installationsPour1000Logements": 27.4
+  },
+  "09": {
+   "residencesPrincipales": 75913,
+   "appartements": 14093,
+   "maisons": 61107,
+   "partAppartements": 18.6,
+   "installations": 5251,
+   "puissanceKw": 30928,
+   "installationsPour1000Logements": 69.2
+  },
+  "2A": {
+   "residencesPrincipales": 75184,
+   "appartements": 41336,
+   "maisons": 33242,
+   "partAppartements": 55,
+   "installations": 2903,
+   "puissanceKw": 19525,
+   "installationsPour1000Logements": 38.6
+  },
+  "2B": {
+   "residencesPrincipales": 87285,
+   "appartements": 45284,
+   "maisons": 41481,
+   "partAppartements": 51.9,
+   "installations": 2782,
+   "puissanceKw": 19642,
+   "installationsPour1000Logements": 31.9
+  }
+ },
+ "regions": {
+  "11": {
+   "residencesPrincipales": 5447592,
+   "appartements": 3922520,
+   "maisons": 1430894,
+   "partAppartements": 72,
+   "installations": 36439,
+   "puissanceKw": 157890,
+   "installationsPour1000Logements": 6.7
+  },
+  "24": {
+   "residencesPrincipales": 1201240,
+   "appartements": 326349,
+   "maisons": 867133,
+   "partAppartements": 27.2,
+   "installations": 38378,
+   "puissanceKw": 198872,
+   "installationsPour1000Logements": 31.9
+  },
+  "27": {
+   "residencesPrincipales": 1333389,
+   "appartements": 471237,
+   "maisons": 852494,
+   "partAppartements": 35.3,
+   "installations": 61434,
+   "puissanceKw": 324796,
+   "installationsPour1000Logements": 46.1
+  },
+  "28": {
+   "residencesPrincipales": 1551826,
+   "appartements": 492778,
+   "maisons": 1047006,
+   "partAppartements": 31.8,
+   "installations": 36766,
+   "puissanceKw": 253295,
+   "installationsPour1000Logements": 23.7
+  },
+  "32": {
+   "residencesPrincipales": 2636196,
+   "appartements": 740541,
+   "maisons": 1875655,
+   "partAppartements": 28.1,
+   "installations": 58480,
+   "puissanceKw": 271974,
+   "installationsPour1000Logements": 22.2
+  },
+  "44": {
+   "residencesPrincipales": 2566203,
+   "appartements": 1086643,
+   "maisons": 1458835,
+   "partAppartements": 42.3,
+   "installations": 88397,
+   "puissanceKw": 478749,
+   "installationsPour1000Logements": 34.4
+  },
+  "52": {
+   "residencesPrincipales": 1785221,
+   "appartements": 492939,
+   "maisons": 1277011,
+   "partAppartements": 27.6,
+   "installations": 93575,
+   "puissanceKw": 475818,
+   "installationsPour1000Logements": 52.4
+  },
+  "53": {
+   "residencesPrincipales": 1630106,
+   "appartements": 466771,
+   "maisons": 1152248,
+   "partAppartements": 28.6,
+   "installations": 52972,
+   "puissanceKw": 280720,
+   "installationsPour1000Logements": 32.5
+  },
+  "75": {
+   "residencesPrincipales": 2957297,
+   "appartements": 847081,
+   "maisons": 2089524,
+   "partAppartements": 28.6,
+   "installations": 180313,
+   "puissanceKw": 961857,
+   "installationsPour1000Logements": 61
+  },
+  "76": {
+   "residencesPrincipales": 2927731,
+   "appartements": 1087563,
+   "maisons": 1819008,
+   "partAppartements": 37.1,
+   "installations": 210632,
+   "puissanceKw": 1066908,
+   "installationsPour1000Logements": 71.9
+  },
+  "84": {
+   "residencesPrincipales": 3769007,
+   "appartements": 1817855,
+   "maisons": 1916758,
+   "partAppartements": 48.2,
+   "installations": 209731,
+   "puissanceKw": 1109524,
+   "installationsPour1000Logements": 55.6
+  },
+  "93": {
+   "residencesPrincipales": 2452581,
+   "appartements": 1414413,
+   "maisons": 1018671,
+   "partAppartements": 57.7,
+   "installations": 106839,
+   "puissanceKw": 506509,
+   "installationsPour1000Logements": 43.6
+  },
+  "94": {
+   "residencesPrincipales": 162470,
+   "appartements": 86620,
+   "maisons": 74723,
+   "partAppartements": 53.3,
+   "installations": 5701,
+   "puissanceKw": 39298,
+   "installationsPour1000Logements": 35.1
+  }
+ }
+}

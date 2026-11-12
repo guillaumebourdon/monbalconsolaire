@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, type CalcInput } from '@/lib/pricing';
-import { productibleSite } from '@/lib/rentabilite-departements';
+import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, PVGIS_REFERENCE_LYON, type CalcInput } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
 
 // Exemple affiché : Sunology PLAY, Lyon (Rhône), balcon sud-ouest, foyer présent en journée.
@@ -11,7 +10,7 @@ const KIT = PRODUCTS['sunology-play'];
 const EXAMPLE: CalcInput = {
   kitPriceEur: KIT.priceEur,
   kitPowerWc: KIT.powerWc,
-  productibleKwhPerKwc: productibleSite(1300), // Rhône, recalé sur la référence Lyon
+  productibleKwhPerKwc: PVGIS_REFERENCE_LYON, // Rhône = référence Lyon du site
   orientationCoef: 0.95, // sud-ouest
 };
 const PRODUCTION = calculateProductionKwh(EXAMPLE);

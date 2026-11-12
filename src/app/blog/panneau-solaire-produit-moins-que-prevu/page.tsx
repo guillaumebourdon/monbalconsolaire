@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
+import { PVGIS_PREFECTURES } from '@/data/departments';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL } from '@/lib/pricing';
 import { priceLabel } from '@/data/products';
@@ -49,7 +50,7 @@ const causes = [
     impact: '30-50 % de perte',
     detail: 'Un garde-corps, un arbre, un mur voisin, même une antenne ou un fil à linge peuvent créer une ombre sur une partie du panneau. Le problème : une ombre sur 10 % de la surface peut réduire la production de 30 à 50 % à cause du fonctionnement en série des cellules.',
     solution: 'Identifiez l\'ombre à différentes heures (matin, midi, après-midi) et différentes saisons. Si possible, déplacez le panneau. Si l\'ombre est inévitable, un panneau avec cellules half-cut ou bypass diodes (tous les kits récents : Sunology PLAY, Beem On) limite l\'impact.',
-    lien: { href: '/blog/panneau-solaire-ombre-optimiser-production', label: 'Guide complet ombre et production' },
+    lien: { href: '/guide/orientation-panneau-solaire-balcon#ombre', label: 'Guide complet ombre et production' },
   },
   {
     num: '2',
@@ -106,7 +107,7 @@ export default function PanneauProduitMoinsPage() {
         description="Diagnostic et solutions quand un kit solaire de balcon ne produit pas assez."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-produit-moins-que-prevu"
         datePublished="2026-05-12"
-        dateModified="2026-11-05"
+        dateModified="2026-11-12"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Production inférieure aux prévisions' }]} />
@@ -123,7 +124,7 @@ export default function PanneauProduitMoinsPage() {
               Vous avez installé votre kit solaire de balcon, mais les chiffres de production sont décevants ? Avant de paniquer, suivez ce <strong>diagnostic en 7 points</strong>. Dans 80 % des cas, le problème est simple à identifier et à corriger.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>12 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>12 mai 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -195,27 +196,27 @@ export default function PanneauProduitMoinsPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Production attendue par région</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Avant de conclure que votre panneau sous-performe, vérifiez que vos attentes sont réalistes. Voici la production annuelle moyenne d&apos;un kit 450 Wc en orientation sud :
+                Avant de conclure que votre panneau sous-performe, vérifiez que vos attentes sont réalistes. Voici la production estimée par PVGIS pour un kit 450 Wc en orientation sud :
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="border-b-2 border-green/20 bg-cream/50">
-                      <th className="p-3 text-left font-bold">Région</th>
+                      <th className="p-3 text-left font-bold">Ville (préfecture)</th>
                       <th className="p-3 text-right font-bold">kWh/an</th>
-                      <th className="p-3 text-right font-bold">kWh/mois (été)</th>
-                      <th className="p-3 text-right font-bold">kWh/mois (hiver)</th>
+                      <th className="p-3 text-right font-bold">kWh en juillet</th>
+                      <th className="p-3 text-right font-bold">kWh en décembre</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      ['Marseille / PACA', '574', '70-80', '20-30'],
-                      ['Lyon / Rhône-Alpes', '497', '60-70', '18-25'],
-                      ['Bordeaux / Nouvelle-Aquitaine', '490', '60-68', '18-24'],
-                      ['Paris / Île-de-France', '429', '52-60', '15-22'],
-                      ['Lille / Hauts-de-France', '390', '48-55', '12-18'],
-                      ['Strasbourg / Grand Est', '421', '50-58', '14-20'],
-                    ].map(([region, annuel, ete, hiver], i) => (
+                      ['Marseille', '13'],
+                      ['Lyon', '69'],
+                      ['Bordeaux', '33'],
+                      ['Paris', '75'],
+                      ['Lille', '59'],
+                      ['Strasbourg', '67'],
+                    ].map(([ville, code]) => { const p = PVGIS_PREFECTURES[code].incline30; const k = (v: number) => Math.round((v * 450) / 800).toLocaleString('fr-FR'); return [ville, k(p.E_y), k(p.E_m[6]), k(p.E_m[11])]; }).map(([region, annuel, ete, hiver], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">{region}</td>
                         <td className="p-3 text-right font-mono text-green">{annuel}</td>
@@ -227,7 +228,7 @@ export default function PanneauProduitMoinsPage() {
                 </table>
               </div>
               <p className="text-xs text-stone">
-                Kit 450 Wc, orientation sud, inclinaison 30°, coefficient de pertes 0,85. Source : PVGIS. <Link href="/calculateur" className="text-green hover:underline">Calculez pour votre département exact</Link>.
+                Kit 450 Wc, orientation sud, inclinaison 30°, pertes système 14 %. Source : PVGIS 5.3 au point de la préfecture (moyenne pluriannuelle), interrogé le 12/11/2026. <Link href="/calculateur" className="text-green hover:underline">Calculez pour votre département exact</Link>.
               </p>
             </section>
 
@@ -327,7 +328,7 @@ export default function PanneauProduitMoinsPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : que voit vraiment le compteur ?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Index injection vs soutirage, mythe du compteur à l'envers, CACSI</p>
                 </Link>
-                <Link href="/blog/panneau-solaire-ombre-optimiser-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                <Link href="/guide/orientation-panneau-solaire-balcon#ombre" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et ombre : comment optimiser la production</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le guide complet pour identifier et contourner les ombres</p>
                 </Link>

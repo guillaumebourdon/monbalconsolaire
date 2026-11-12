@@ -7,6 +7,7 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_PRICE_SHORT, KWH_INFLATION_RATE, PANEL_DEGRADATION_RATE, calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
+import { productibleDepartement } from '@/lib/rentabilite-departements';
 import { PRODUCTS, priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
@@ -23,14 +24,15 @@ export const metadata: Metadata = withCanonicalOg({
 const fr = (n: number) => n.toLocaleString('fr-FR');
 const PLAY = PRODUCTS['sunology-play'];
 const GO = PRODUCTS['sunology-go'];
+// Productible du département de la ville (PVGIS 5.3 à la préfecture, recalé sur la référence Lyon).
 const CITIES = [
-  { city: 'Marseille', region: 'PACA', irr: 1500 },
-  { city: 'Toulouse', region: 'Occitanie', irr: 1350 },
-  { city: 'Lyon', region: 'Auvergne-RA', irr: 1200 },
-  { city: 'Nantes', region: 'Pays de la Loire', irr: 1200 },
-  { city: 'Paris', region: 'Ile-de-France', irr: 1100 },
-  { city: 'Strasbourg', region: 'Grand Est', irr: 1100 },
-  { city: 'Lille', region: 'Hauts-de-France', irr: 1000 },
+  { city: 'Marseille', region: "Provence-Alpes-Côte d'Azur", irr: productibleDepartement('13') },
+  { city: 'Toulouse', region: 'Occitanie', irr: productibleDepartement('31') },
+  { city: 'Lyon', region: 'Auvergne-Rhône-Alpes', irr: productibleDepartement('69') },
+  { city: 'Nantes', region: 'Pays de la Loire', irr: productibleDepartement('44') },
+  { city: 'Paris', region: 'Île-de-France', irr: productibleDepartement('75') },
+  { city: 'Strasbourg', region: 'Grand Est', irr: productibleDepartement('67') },
+  { city: 'Lille', region: 'Hauts-de-France', irr: productibleDepartement('59') },
 ];
 function sim(kit: { priceEur: number; powerWc: number }, irr: number) {
   const input = { kitPriceEur: kit.priceEur, kitPowerWc: kit.powerWc, productibleKwhPerKwc: irr };
@@ -73,7 +75,7 @@ const faqData = [
 export default function CombienRapportePage() {
   return (
     <>
-      <SchemaArticle title="Combien rapporte un panneau solaire de balcon ? Calcul réel" description="Calcul réel de la rentabilité d'un panneau solaire de balcon par ville." url="https://monbalconsolaire.fr/blog/combien-rapporte-panneau-solaire-balcon" datePublished="2026-03-21" dateModified="2026-11-05" />
+      <SchemaArticle title="Combien rapporte un panneau solaire de balcon ? Calcul réel" description="Calcul réel de la rentabilité d'un panneau solaire de balcon par ville." url="https://monbalconsolaire.fr/blog/combien-rapporte-panneau-solaire-balcon" datePublished="2026-03-21" dateModified="2026-11-12" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: "Blog", href: "/blog" }, { label: "Combien rapporte un panneau solaire" }]} />
       <article className="section-padding">
@@ -83,7 +85,7 @@ export default function CombienRapportePage() {
             <div className="badge-amber mb-4 inline-block">Analyse chiffrée</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Combien rapporte un panneau solaire de balcon ? Calcul réel</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Pas de promesses marketing, pas d&apos;estimations floues. Voici les chiffres réels de production et d&apos;économies pour 7 villes françaises, bases sur les données officielles PVGIS et le tarif EDF 2026.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>21 mars 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>21 mars 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
