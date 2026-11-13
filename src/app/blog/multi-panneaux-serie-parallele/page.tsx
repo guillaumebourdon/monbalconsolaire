@@ -372,6 +372,7 @@ export default function MultiPanneauxSeriePage() {
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   { href: '/blog/micro-onduleur-solaire-fonctionnement', label: 'Comment fonctionne un micro-onduleur&nbsp;?', badge: 'Blog' },
+                  { href: '/comparatif/apsystems-ez1-vs-hoymiles-hms-800w', label: 'APsystems EZ1-M vs Hoymiles HMS-800W-2T&nbsp;: le duel', badge: 'Comparatif' },
                   { href: '/blog/combien-panneaux-solaires-balcon', label: 'Combien de panneaux sur un balcon&nbsp;?', badge: 'R&eacute;glementation' },
                   { href: '/guide/orientation-panneau-solaire-balcon#ombre', label: 'Optimiser sa production avec de l&apos;ombre', badge: 'Blog' },
                   { href: '/guide/installer-kit-solaire-balcon', label: 'Installer son kit solaire balcon', badge: 'Guide' },

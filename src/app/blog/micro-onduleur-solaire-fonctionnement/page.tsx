@@ -625,6 +625,10 @@ export default function MicroOnduleurPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Hoymiles HMS-800W-2T&nbsp;: avis complet du micro-onduleur DIY</h3>
                   <p className="text-xs text-charcoal-light mt-1">Analyse ind&eacute;pendante, specs et ROI d&apos;un kit DIY avec le HMS-800W-2T</p>
                 </Link>
+                <Link href="/comparatif/apsystems-ez1-vs-hoymiles-hms-800w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">APsystems EZ1-M vs Hoymiles HMS-800W-2T&nbsp;: le duel</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Les deux mod&egrave;les les plus vendus pour un kit DIY, face &agrave; face</p>
+                </Link>
                 <Link href="/blog/multi-panneaux-serie-parallele" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Multi-panneaux&nbsp;: s&eacute;rie ou parall&egrave;le&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Double MPPT, c&acirc;bles MC4, limites de tension&nbsp;: le guide de c&acirc;blage</p>

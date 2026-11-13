@@ -408,6 +408,12 @@ export default function HoymilesHMS800WAvisPage() {
                     desc: 'Guide pas-&agrave;-pas pour les montages DIY et kits plug-and-play.',
                   },
                   {
+                    href: '/comparatif/apsystems-ez1-vs-hoymiles-hms-800w',
+                    label: 'Comparatif',
+                    title: 'APsystems EZ1-M vs Hoymiles HMS-800W-2T&nbsp;: le duel',
+                    desc: 'Prix, rendement, WiFi/Bluetooth, garantie&nbsp;: les deux mod&egrave;les les plus vendus face &agrave; face.',
+                  },
+                  {
                     href: '/comparatif/meilleur-micro-onduleur-2026',
                     label: 'Comparatif',
                     title: 'Meilleur micro-onduleur 2026&nbsp;: Hoymiles, APsystems, Enphase, Deye',
