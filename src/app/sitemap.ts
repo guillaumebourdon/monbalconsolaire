@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog`, lastModified: '2026-11-12', changeFrequency: 'daily', priority: 0.7 },
 
     // Comparatifs
+    { url: `${BASE_URL}/comparatif/apsystems-ez1-vs-hoymiles-hms-800w`, lastModified: '2026-11-13', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/comparatif/application-suivi-production-solaire`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/comparatif/meilleur-micro-onduleur-2026`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/comparatif/kit-solaire-balcon-vs-toiture`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.8 },

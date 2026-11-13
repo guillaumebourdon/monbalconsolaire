@@ -38,11 +38,22 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/apsystems-ez1-vs-hoymiles-hms-800w',
+    title: 'APsystems EZ1-M vs Hoymiles HMS-800W-2T : le duel',
+    excerpt: 'Les deux micro-onduleurs les plus vendus pour un kit DIY balcon s\'affrontent : prix, rendement, WiFi/Bluetooth, garantie.',
+    type: 'comparatif',
+    badge: 'Nouveau',
+    tags: ['comparatif', 'diy', 'onduleur'],
+    brands: ['Hoymiles', 'APsystems'],
+    publishedAt: '2026-11-13',
+    readTime: '9 min',
+  },
+  {
     slug: '/comparatif/application-suivi-production-solaire',
     title: 'Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly',
     excerpt: 'Suivi de production ou pilotage de batterie en HP/HC ? Comparatif des 5 apps les plus utilisées, avec leurs points faibles réels.',
     type: 'comparatif',
-    badge: 'Nouveau',
+    badge: 'Applications',
     tags: ['comparatif', 'app', 'suivi'],
     brands: ['Beem', 'Sunology', 'EcoFlow', 'Zendure'],
     publishedAt: '2026-10-30',

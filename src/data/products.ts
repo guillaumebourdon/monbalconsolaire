@@ -212,6 +212,18 @@ const CATALOG = {
     url: 'https://www.wattuneed.com/fr/onduleurs-et-convertisseurs/27196-micro-onduleur-hoymiles-hms-800w-2t-800-w-0768563818981.html',
     reviewSlug: '/avis/hoymiles-hms-800w',
   },
+  'apsystems-ez1-m': {
+    id: 'apsystems-ez1-m',
+    name: 'APsystems EZ1-M',
+    brand: 'APsystems',
+    powerWc: 0,
+    inverterW: 799,
+    priceEur: 189,
+    priceNote: 'prix constaté chez La Centrale Eco (188,40 €) ; 123Elec affiche l\'EZ1-M en fin de commercialisation',
+    availability: 'instock',
+    verifiedOn: '2026-11-13',
+    url: 'https://lacentrale-eco.com/en/eau-chaude-sanitaire-fr/systemes-photovoltaiques/micro-onduleur-apsystems-ez1-m800w.html',
+  },
   'bluetti-balco-260': {
     id: 'bluetti-balco-260',
     name: 'Bluetti Balco 260',
