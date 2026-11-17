@@ -26,7 +26,7 @@ const faqData = [
   { question: 'Beem Energy est-elle en faillite ? Que devient la garantie ?', answer: 'Non, pas à notre connaissance. Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde fin novembre 2025, avec un an pour se redresser. Aucune liquidation ni redressement judiciaire n\'a été annoncé au 5 novembre 2026. La procédure de sauvegarde protège l\'entreprise pendant sa restructuration, mais la garantie (25 ans annoncés) n\'a de valeur que si Beem reste en activité : c\'est le principal risque du kit.' },
   { question: 'Quelle différence entre le Beem Kit 300W, le Beem Kit 420W et le Beem On ?', answer: 'Le Beem Kit 300W compte 4 panneaux de 75 Wc (70 × 70 cm, 5,6 kg chacun) pour 199 €. Le Beem Kit 420W reprend le même format avec 4 panneaux de 105 Wc (80,5 × 80,5 cm, 6,5 kg) pour 359 €. Le Beem On 500 Wc est un panneau unique bifacial à 429 €, avec des expéditions annoncées à partir de décembre 2026. Le Kit est plus souple pour les espaces étroits, le Beem On plus rapide à poser.' },
   { question: 'Le Beem Kit 300W suffit-il pour alimenter un appartement ?', answer: 'Non. 300 W couvrent environ le talon de consommation : frigo, box internet et appareils en veille. En région lyonnaise, ~306 kWh/an représentent environ 6 % d\'une consommation de 5 000 kWh/an. Pour aller plus loin, il faut passer à un kit de 450-500 W ou combiner plusieurs Beem Kit (dans la limite des recommandations de l\'ADEME par circuit).' },
-  { question: 'Le Beem Kit 300W est-il compatible avec une batterie ?', answer: 'Oui, Beem indique que les Beem Kit peuvent être associés à sa Beem Battery, vendue séparément. Sur un kit de 300 W, une batterie rallonge fortement le retour sur investissement : le surplus à stocker est faible, la plupart de la production étant consommée en direct par le talon.' },
+  { question: 'Le Beem Kit 300W est-il compatible avec une batterie ?', answer: 'Beem indique une compatibilité, mais la Beem Battery (à partir de 5 390 €, 6,6 kWh) n\'est pas pensée pour un kit de 300 W : elle se pose via un électricien (couplage AC), pas en plug-and-play, et un seul petit kit ne produit pas assez pour la remplir. Sur un kit de 300 W, elle rallonge très fortement le retour sur investissement : voir notre avis dédié à la Beem Battery.' },
   { question: 'Les 4 panneaux du Beem Kit sont-ils difficiles à installer ?', answer: 'L\'installation prend environ 45 minutes à 1 heure (Beem annonce « moins d\'une heure »), contre quelques minutes pour les kits mono-panneau. Chaque panneau se fixe individuellement, au mur ou au sol. Ce n\'est pas compliqué, mais un client signale sur Trustpilot une erreur dans le manuel de montage : lisez le guide jusqu\'au bout avant de percer.' },
 ];
 
@@ -375,6 +375,10 @@ export default function BeemKit300WAvisPage() {
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir pour votre balcon</p>
+                </Link>
+                <Link href="/avis/beem-battery" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Battery</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Pourquoi cette batterie domestique n&apos;a pas de sens avec un petit kit</p>
                 </Link>
               </div>
             </section>

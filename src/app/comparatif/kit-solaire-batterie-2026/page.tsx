@@ -116,7 +116,7 @@ export default function BatteriePage() {
                     {[
                       ['Sunology VAULT', '700 Wh', '499€*****', '713€/kWh', '~5h', 'Nomade + plug-and-play', false],
                       ['Sunology STOREY', '2,2 kWh', '1 390€*****', '632€/kWh', '~15h', 'Fixe plug-and-play', false],
-                      ['Beem Battery', '2,2 kWh', '~5 500€**', '2 500€/kWh', '~15h', 'Fixe plug-and-play', false],
+                      ['Beem Battery', '6,6 kWh', '5 390€**', '817€/kWh', '~47h', 'Fixe, pose par électricien', false],
                       ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539\u20ac***', '281\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', true],
                       ['Jackery SolarVault 3 Pro', '2,52 kWh', '719\u20ac***', '285\u20ac/kWh', '~17h', 'Onduleur + batterie (sans panneaux)', false],
                       ['EcoFlow STREAM Ultra', '1,92 kWh', '659\u20ac***', '343\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', false],
@@ -129,6 +129,7 @@ export default function BatteriePage() {
                       };
                       const linkMap: Record<string, string> = {
                         'Sunology VAULT': '/avis/sunology-vault',
+                        'Beem Battery': '/avis/beem-battery',
                       };
                       const thumb = thumbMap[n as string];
                       const nameLink = linkMap[n as string];
@@ -145,7 +146,7 @@ export default function BatteriePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">* Autonomie estim&eacute;e pour un talon de consommation de 140W. ** Prix du bundle kit + batterie Beem (6 190&euro; - 690&euro; pour le kit seul estim&eacute;), non rev&eacute;rifi&eacute;. *** Prix du bo&icirc;tier seul (panneaux non inclus) relev&eacute; sur le site du fabricant le 5 novembre 2026, souvent promotionnel (prix barr&eacute;s&nbsp;: Zendure 599&nbsp;&euro;, Jackery 1&nbsp;139&nbsp;&euro;, EcoFlow 1&nbsp;299&nbsp;&euro;, Bluetti 1&nbsp;049&nbsp;&euro;). ***** Prix Sunology relev&eacute;s en juin 2026, non rev&eacute;rifi&eacute;s.</p>
+              <p className="text-xs text-stone">* Autonomie estim&eacute;e pour un talon de consommation de 140W. ** Beem Battery&nbsp;: batterie seule la moins ch&egrave;re (6,6&nbsp;kWh), pos&eacute;e par un &eacute;lectricien (couplage AC, pas plug-and-play) ; existe aussi en 10 et 13,4&nbsp;kWh. Voir notre <Link href="/avis/beem-battery" className="text-green hover:underline">avis d&eacute;taill&eacute;</Link>. *** Prix du bo&icirc;tier seul (panneaux non inclus) relev&eacute; sur le site du fabricant le 5 novembre 2026, souvent promotionnel (prix barr&eacute;s&nbsp;: Zendure 599&nbsp;&euro;, Jackery 1&nbsp;139&nbsp;&euro;, EcoFlow 1&nbsp;299&nbsp;&euro;, Bluetti 1&nbsp;049&nbsp;&euro;). ***** Prix Sunology relev&eacute;s en juin 2026, non rev&eacute;rifi&eacute;s.</p>
             </section>
 
             <section>

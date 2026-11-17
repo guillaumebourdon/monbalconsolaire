@@ -435,6 +435,18 @@ const ARTICLES: Article[] = [
     score: '8/10',
     price: avisPrice('beem-on-460w'),
   },
+  {
+    slug: '/avis/beem-battery',
+    title: 'Beem Battery',
+    excerpt: 'Batterie domestique modulaire 6,6 à 13,4 kWh, pose par électricien (pas plug-and-play). Surdimensionnée et jamais rentable avec un kit de balcon.',
+    type: 'avis',
+    badge: 'Batterie domestique',
+    tags: ['stockage', 'marque'],
+    brands: ['Beem'],
+    publishedAt: '2026-11-17',
+    score: '6/10',
+    price: avisPrice('beem-battery'),
+  },
 ];
 
 const FILTERS = [

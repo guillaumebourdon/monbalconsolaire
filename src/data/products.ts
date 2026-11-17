@@ -306,6 +306,20 @@ const CATALOG = {
     url: 'https://iallpowers.eu/fr/products/bs2500',
     reviewSlug: '/avis/allpowers-bs2500-pro',
   },
+  'beem-battery': {
+    id: 'beem-battery',
+    name: 'Beem Battery',
+    brand: 'Beem Energy',
+    powerWc: 0,
+    batteryKwh: 6.6,
+    priceEur: 5390,
+    priceNote: 'à partir de',
+    availability: 'instock',
+    availabilityNote: 'vendue sur devis avec pose par un électricien partenaire (pas de vente en ligne directe comme le Beem On) ; existe aussi en 10 kWh (7 390 €) et 13,4 kWh (9 390 €)',
+    verifiedOn: '2026-11-17',
+    url: 'https://beemenergy.fr/',
+    reviewSlug: '/avis/beem-battery',
+  },
 } satisfies Record<string, Product>;
 
 export type ProductId = keyof typeof CATALOG;

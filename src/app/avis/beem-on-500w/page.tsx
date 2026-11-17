@@ -143,7 +143,7 @@ export default function BeemOn500WcAvisPage() {
                 {[
                   { t: 'Beembox obligatoire pour le suivi', d: 'Contrairement au Sunology PLAY2 dont le micro-onduleur embarque le WiFi, le Beem On nécessite un boîtier Beembox branché sur votre box internet. C\'est inclus dans le kit, mais c\'est un appareil supplémentaire à brancher et à maintenir.' },
                   { t: 'Panneau imposant : 1,95 m de haut', d: 'Avec ses 1 950 x 1 134 mm, c\'est le plus grand panneau mono du marché (le Sunology PLAY 500 Wc fait 1 800 x 1 134 mm). Sur un petit balcon, ça peut poser problème.' },
-                  { t: 'Pas de solution batterie abordable', d: `Beem propose la Beem Battery mais à partir de 6 190€ le kit complet. C'est 14x le prix du panneau seul. Sunology a le PLAY MAX à ${priceLabel('sunology-play-max')} (station + batterie VAULT 700 Wh), et Zendure le SolarFlow 800 Plus (batterie 1,92 kWh, sans panneaux). Si le stockage vous intéresse, regardez plutôt de ce côté.` },
+                  { t: 'Pas de solution batterie abordable', d: `Beem propose la Beem Battery, mais à partir de 5 390€ seule (6,6 kWh) et avec pose par un électricien, pas en plug-and-play. Associée à ce panneau de 500 Wc, elle n'est jamais rentable (voir notre avis dédié). Sunology a le PLAY MAX à ${priceLabel('sunology-play-max')} (station + batterie VAULT 700 Wh), et Zendure le SolarFlow 800 Plus (batterie 1,92 kWh, sans panneaux). Si le stockage vous intéresse, regardez plutôt de ce côté.` },
                   { t: 'SAV et délai de livraison à surveiller', d: 'Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde le 26 novembre 2025, après une chute de 42% du marché résidentiel du solaire (étude Enedis), avec un an pour redresser la barre (échéance autour de novembre 2026). Nous n\'avons trouvé aucune annonce de liquidation ni de plan de sauvegarde arrêté (recherche du 12 octobre 2026), mais la fiche produit affiche « Précommande - Expédition à partir de décembre 2026 », soit environ deux mois d\'attente, alors que le bas de la même page promet toujours une « expédition gratuite en 48h ». La garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">
@@ -333,6 +333,10 @@ export default function BeemOn500WcAvisPage() {
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY 2</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le concurrent direct &agrave; 599&nbsp;&euro; (515 W)</p>
+                </Link>
+                <Link href="/avis/beem-battery" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Beem Battery</h3>
+                  <p className="text-xs text-charcoal-light mt-1">La batterie domestique de Beem&nbsp;: pourquoi elle n&apos;est pas faite pour ce kit</p>
                 </Link>
                 <Link href="/comparatif/sunology-play2-vs-beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">PLAY 2 vs Beem On 500 Wc : le match juillet 2026</h3>
