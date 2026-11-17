@@ -95,3 +95,13 @@ export function buyFor(name: string): BuyLink | undefined {
   if (/Balco 260/.test(name)) return BUY.balco260;
   return undefined;
 }
+
+/**
+ * Liens affiliés Solarcoop (paramètre ?ref=monbalconsolaire), transmis par Louis Villard le 12/11/2026.
+ * Commission et suivi : voir l'échange avec Solarcoop du 16/11/2026.
+ */
+export const SOLARCOOP = {
+  essentiel1: 'https://www.solarcoop.fr/produit/kit-essentiel-1-panneau-paysage-sol/?ref=monbalconsolaire',
+  essentiel2: 'https://www.solarcoop.fr/produit/kit-essentiel-2-panneaux-paysage-sol/?ref=monbalconsolaire',
+  kitBalcon: 'https://www.solarcoop.fr/produit/kit-2-panneaux-souples-paysage-montage-sur-balcon-en-arrivage/?ref=monbalconsolaire',
+} as const;

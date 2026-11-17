@@ -5,6 +5,9 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { SOLARCOOP } from '@/lib/affiliate';
+import { productibleSite } from '@/lib/rentabilite-departements';
+import { prefStat, KIT_WC } from '@/lib/regions';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { PRODUCTS, priceLabel, type ProductId } from '@/data/products';
 
@@ -28,6 +31,14 @@ const PLAY = PRODUCTS['sunology-play'];
 const go = sim('sunology-go');
 const beem300 = sim('beem-kit-300w');
 const beem500 = sim('beem-on-500w');
+const SCOOP = PRODUCTS['solarcoop-kit-balcon'];
+const scoop = sim('solarcoop-kit-balcon');
+// Pose verticale contre la rambarde : productible PVGIS vertical 90° du Rhône, recalé comme le reste du site.
+const LYON = prefStat('69');
+const scoopVertical = {
+  lossPct: Math.round((1 - LYON.e90 / LYON.e30) * 100),
+  roi: fr(calculateROIYears({ kitPriceEur: SCOOP.priceEur, kitPowerWc: SCOOP.powerWc, productibleKwhPerKwc: productibleSite((LYON.e90 * 1000) / KIT_WC) })),
+};
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleur kit solaire petit budget 2026 : moins de 400€',
@@ -90,6 +101,20 @@ export default function PetitBudgetPage() {
 
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
+                    <div><div className="badge-green mb-2">Le plus puissant sous 400&nbsp;&euro;</div><h3 className="font-bold text-xl">{SCOOP.name}</h3><p className="text-sm text-stone">par Solarcoop (coop&eacute;rative citoyenne, Rh&ocirc;ne) &middot; 2 &times; 200&nbsp;Wc &middot; pose verticale sur la rambarde</p></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-green">{priceLabel('solarcoop-kit-balcon')}</div><div className="text-xs text-stone">{scoop.eurWc} &euro;/Wc</div></div>
+                  </div>
+                  <div className="mt-4 space-y-2 text-sm text-charcoal-light">
+                    <p>Pens&eacute; d&apos;abord pour les appartements&nbsp;: deux panneaux souples T-SUN noirs de 200&nbsp;Wc (1,27 &times; 0,90&nbsp;m chacun, 3,4&nbsp;kg pi&egrave;ce selon la fiche du fabricant) se fixent &agrave; la rambarde avec des colliers de serrage (serflex), sans per&ccedil;age ni bricolage. Micro-onduleur T-SUN MS-400 avec Wi-Fi et c&acirc;ble de 5&nbsp;m fournis. Garantie 12&nbsp;ans sur l&apos;ensemble du kit.</p>
+                    <p>Production estim&eacute;e avec la m&eacute;thode standard du site (Lyon, plein sud, panneau inclin&eacute;, comme pour les autres kits de cette page)&nbsp;: environ {scoop.production}&nbsp;kWh/an, soit {scoop.savings}&nbsp;&euro; d&apos;&eacute;conomies la premi&egrave;re ann&eacute;e et un retour sur investissement en {scoop.roi}&nbsp;ans. Ce kit se pose &agrave; la verticale&nbsp;: &agrave; Lyon, un panneau vertical produit environ {scoopVertical.lossPct}&nbsp;% de moins sur l&apos;ann&eacute;e (PVGIS), et le retour sur investissement passe alors &agrave; environ {scoopVertical.roi}&nbsp;ans.</p>
+                    <p>&Agrave; v&eacute;rifier avant d&apos;acheter&nbsp;: environ 2,5&nbsp;m de rambarde pour poser les deux panneaux c&ocirc;te &agrave; c&ocirc;te, une prise &agrave; port&eacute;e du c&acirc;ble de 5&nbsp;m pour brancher le kit et, en copropri&eacute;t&eacute;, le r&egrave;glement de copropri&eacute;t&eacute;. Livraison&nbsp;: 50&nbsp;&euro; par commande, en plus du prix du kit.</p>
+                    <p className="text-xs text-stone">Prix communiqu&eacute; par Solarcoop et v&eacute;rifi&eacute; sur solarcoop.fr le 17 novembre 2026&nbsp;; Solarcoop donne des conseils gratuits avant l&apos;achat et assure un SAV.</p>
+                  </div>
+                  <a href={SOLARCOOP.kitBalcon} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le kit balcon Solarcoop &rarr;</a>
+                </div>
+
+                <div className="card-lg">
+                  <div className="flex items-start justify-between flex-wrap gap-4">
                     <div><div className="badge-amber mb-2">Juste au-dessus du budget</div><h3 className="font-bold text-xl">{BEEM500.name}</h3><p className="text-sm text-stone">par Beem Energy &middot; {BEEM500.powerWc} Wc</p></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-green">{priceLabel('beem-on-500w')}</div><div className="text-xs text-stone">{beem500.eurWc} &euro;/Wc</div></div>
                   </div>
@@ -131,7 +156,7 @@ export default function PetitBudgetPage() {
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict petit budget</h2>
-              <p className="text-charcoal-light leading-relaxed mb-4">Aujourd&apos;hui, sous 400&nbsp;&euro;, notre recommandation est le <strong>{GO.name} &agrave; {priceLabel('sunology-go')}</strong>&nbsp;: c&apos;est le seul kit de marque disponible dans cette gamme parmi ceux que nous avons analys&eacute;s. Le {BEEM300.name} ({BEEM300.priceEur}&nbsp;&euro;) serait plus rentable, mais il est en rupture. Les kits Amazon peuvent sembler moins chers, mais le risque de mauvaise qualit&eacute; et l&apos;absence de SAV ne valent pas les quelques dizaines d&apos;euros d&apos;&eacute;cart.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Aujourd&apos;hui, sous 400&nbsp;&euro;, deux kits de marque disponibles r&eacute;pondent &agrave; deux besoins diff&eacute;rents&nbsp;: le <strong>{GO.name} &agrave; {priceLabel('sunology-go')}</strong> pour les balcons de moins de 1&nbsp;m de large, et le <strong>{SCOOP.name} &agrave; {priceLabel('solarcoop-kit-balcon')}</strong> si vous avez environ 2,5&nbsp;m de rambarde ({SCOOP.powerWc}&nbsp;Wc contre {GO.powerWc}&nbsp;Wc pour le GO, fixation par colliers sans bricolage). Le {BEEM300.name} ({BEEM300.priceEur}&nbsp;&euro;) serait plus rentable, mais il est en rupture. Les kits Amazon peuvent sembler moins chers, mais le risque de mauvaise qualit&eacute; et l&apos;absence de SAV ne valent pas les quelques dizaines d&apos;euros d&apos;&eacute;cart.</p>
               <p className="text-charcoal-light leading-relaxed">Si vous pouvez &eacute;tendre votre budget, le <Link href="/avis/beem-on-500w" className="text-green hover:underline">{BEEM500.name} ({priceLabel('beem-on-500w')}, en pr&eacute;commande)</Link> ou le <Link href="/avis/sunology-play-2" className="text-green hover:underline">{PLAY.name} {PLAY.powerWc}&nbsp;W ({priceLabel('sunology-play')})</Link> produisent pr&egrave;s de deux fois plus qu&apos;un kit de 270&nbsp;W et ont un meilleur ratio &euro;/Wc.</p>
               <p className="text-xs text-stone mt-3">Calculs&nbsp;: Lyon, plein sud, 1&nbsp;200&nbsp;kWh/kWc, PR 0,85, autoconsommation 85&nbsp;%, tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL}. <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>.</p>
             </section>

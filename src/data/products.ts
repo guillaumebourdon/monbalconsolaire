@@ -336,6 +336,42 @@ const CATALOG = {
     url: 'https://beemenergy.fr/',
     reviewSlug: '/avis/beem-battery',
   },
+  // Solarcoop (SCIC, Mornant, Rhône) : prix et composition transmis par Solarcoop le 12/11/2026,
+  // recoupés avec les fiches produit solarcoop.fr le 17/11/2026. Liens affiliés : SOLARCOOP dans src/lib/affiliate.ts.
+  // EN ATTENTE DE RELECTURE SOLARCOOP : ne pas fusionner dans main avant leur accord.
+  'solarcoop-essentiel-1': {
+    id: 'solarcoop-essentiel-1',
+    name: 'Solarcoop Kit Essentiel 1 panneau',
+    brand: 'Solarcoop',
+    powerWc: 500,
+    inverterW: 800,
+    priceEur: 430,
+    availability: 'instock',
+    verifiedOn: '2026-11-17',
+    url: 'https://www.solarcoop.fr/produit/kit-essentiel-1-panneau-paysage-sol/',
+  },
+  'solarcoop-essentiel-2': {
+    id: 'solarcoop-essentiel-2',
+    name: 'Solarcoop Kit Essentiel 2 panneaux',
+    brand: 'Solarcoop',
+    powerWc: 1000,
+    inverterW: 800,
+    priceEur: 690,
+    availability: 'instock',
+    verifiedOn: '2026-11-17',
+    url: 'https://www.solarcoop.fr/produit/kit-essentiel-2-panneaux-paysage-sol/',
+  },
+  'solarcoop-kit-balcon': {
+    id: 'solarcoop-kit-balcon',
+    name: 'Solarcoop Kit balcon',
+    brand: 'Solarcoop',
+    powerWc: 400,
+    inverterW: 400,
+    priceEur: 370,
+    availability: 'instock',
+    verifiedOn: '2026-11-17',
+    url: 'https://www.solarcoop.fr/produit/kit-2-panneaux-souples-paysage-montage-sur-balcon-en-arrivage/',
+  },
 } satisfies Record<string, Product>;
 
 export type ProductId = keyof typeof CATALOG;
