@@ -122,8 +122,9 @@ APsystems EZ1-M est cité sur 20 pages sans avis dédié ; s'appuyer sur avis/ho
 
 ## Semaine 47 — 17-20 nov.
 
-### Mardi 17/11 — NOUVEL ARTICLE — AVIS
+### Mardi 17/11 — NOUVEL ARTICLE — AVIS — [x] publié
 **Beem Battery : avis** — slug `beem-battery` (prix et compatibilité vérifiés sur beemenergy.fr ; situation de l'entreprise : procédure de sauvegarde). Affiliation : candidature Beem Energy envoyée sur Awin le 30/10 ; lien direct tant qu'elle n'est pas acceptée.
+**17/11 :** `beemenergy.fr` inaccessible depuis cet environnement (même blocage réseau que les entrées précédentes) : prix et capacités recoupés par recherche web (Mac4Ever, Neozone, Tom's Guide, Journal du Geek) — 6,6/10/13,4 kWh à partir de 5 390/7 390/9 390 €, vente sur devis, pose par électricien (couplage AC, pas plug-and-play). Correction importante : la capacité (2,2 kWh) et le prix au kWh (2 500 €/kWh) affichés jusqu'ici sur `comparatif/kit-solaire-batterie-2026` étaient une estimation non vérifiée et erronée — corrigés dans ce commit (6,6 kWh / 817 €/kWh) avec lien vers le nouvel avis. Situation Beem Energy mise à jour : procédure de sauvegarde ouverte le 26/11/2025 (tribunal de Nantes), période d'observation prolongée de 6 mois à compter du 20/05/2026 (échéance ~20/11/2026), dossier transféré au tribunal de commerce de Saint-Nazaire (arrêt CA Rennes du 29/05/2026), nouveau financement sécurisé auprès des investisseurs historiques (Alter Equity, 360 Capital, BNP Paribas Développement, Cathay Innovation) ; aucun plan de sauvegarde ni liquidation publiquement annoncé à ce jour. ROI calculé via `pricing.ts` (Beem On 500 Wc + Beem Battery 6,6 kWh : jamais rentable sur 25 ans, un seul panneau ne remplit pas une batterie de cette taille). Nouvelle entrée `beem-battery` dans `src/data/products.ts`. 4 backlinks ajoutés (avis/beem-on-500w, avis/beem-on-460w, avis/beem-kit-300w, comparatif/kit-solaire-batterie-2026), avec correction du prix/capacité dans les cards "con" des deux avis Beem On.
 
 ### Jeudi 19/11 — NOUVEL ARTICLE — BLOG (saison)
 **Black Friday 2026 : kits solaires et accessoires, les vraies bonnes affaires** — slug `black-friday-kit-solaire-2026`
