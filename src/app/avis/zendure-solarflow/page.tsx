@@ -8,7 +8,8 @@ import { PRODUCTS, SCHEMA_AVAILABILITY, priceLabel } from '@/data/products';
 const PLAYMAX_PRICE = priceLabel('sunology-play-max');
 const PLAYMAX_ROI = calculateROIYears({ kitPriceEur: PRODUCTS['sunology-play-max'].priceEur, kitPowerWc: 450, hasBattery: true }).toLocaleString('fr-FR');
 const PLAYMAX_EUR_KWH = `${Math.round(PRODUCTS['sunology-play-max'].priceEur / 0.7).toLocaleString('fr-FR')} €/kWh`;
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 const ZENDURE_URL = zendureUrl('https://zendure.fr/products/solarflow-800-plus');
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -426,7 +427,7 @@ export default function ZendureSolarflowPage() {
                 </table>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
-                Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;EcoFlow STREAM Ultra (successeur du PowerStream, arr&ecirc;t&eacute;) est &agrave; regarder si vous voulez une sortie de secours. Le <strong>Bluetti Balco 260</strong> est le nouveau challenger direct : plus de stockage (2,56 kWh) et backup EPS 2 300 W, mais plus cher. Le Sunology PLAY (ex-PLAY 2, 515 W) reste le choix le plus simple si vous ne voulez pas de batterie du tout.
+                Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;<AffLink item={BUY.streamUltra} position="comparison">EcoFlow STREAM Ultra</AffLink> (successeur du PowerStream, arr&ecirc;t&eacute;) est &agrave; regarder si vous voulez une sortie de secours. Le <strong>Bluetti Balco 260</strong> est le nouveau challenger direct : plus de stockage (2,56 kWh) et backup EPS 2 300 W, mais plus cher. Le Sunology PLAY (ex-PLAY 2, 515 W) reste le choix le plus simple si vous ne voulez pas de batterie du tout.
               </p>
               <p className="text-xs text-stone mt-3">* Bluetti Balco 260 : 789&nbsp;&euro; seul (prix barr&eacute; 1 049&nbsp;&euro;), 1 079&nbsp;&euro; avec 2 panneaux de 450&nbsp;W, sur fr.bluettipower.eu le 5 novembre 2026. Le code BALNEO a expir&eacute; le 30/09/2026.</p>
             </section>
@@ -493,7 +494,7 @@ export default function ZendureSolarflowPage() {
             <section className="card-lg border-l-4 border-l-green bg-green-pale/10 my-6">
               <h3 className="font-bold text-base mb-2 text-green">Et le successeur : Zendure SolarFlow Mix (avril 2026)</h3>
               <p className="text-sm text-charcoal-light leading-relaxed">
-                Zendure a lanc&eacute; en avril 2026 la gamme <strong>SolarFlow Mix</strong>, con&ccedil;ue pour les maisons et les grandes consommations r&eacute;sidentielles — un cran au-dessus du 800 Plus. Trois mod&egrave;les disponibles&nbsp;: <strong>SolarFlow 3000 Mix AC+</strong> (1 999 &euro;), <strong>4000 Mix AC+</strong> (2 399 &euro;) et <strong>4000 Mix Pro</strong> (2 899 &euro;, indisponible en ligne, &laquo;&nbsp;contacter un revendeur&nbsp;&raquo;), prix relev&eacute;s sur zendure.fr le 5 novembre 2026. Ces syst&egrave;mes incluent le backup hors r&eacute;seau et s&apos;adressent &agrave; qui veut couvrir 80-100&nbsp;% des besoins d&apos;une maison.{' '}
+                Zendure a lanc&eacute; en avril 2026 la gamme <strong>SolarFlow Mix</strong>, con&ccedil;ue pour les maisons et les grandes consommations r&eacute;sidentielles — un cran au-dessus du 800 Plus. Trois mod&egrave;les disponibles&nbsp;: <AffLink item={BUY.solarflowMix} position="successeur">SolarFlow 3000 Mix AC+</AffLink> (1 999 &euro;), <strong>4000 Mix AC+</strong> (2 399 &euro;) et <strong>4000 Mix Pro</strong> (2 899 &euro;, indisponible en ligne, &laquo;&nbsp;contacter un revendeur&nbsp;&raquo;), prix relev&eacute;s sur zendure.fr le 5 novembre 2026. Ces syst&egrave;mes incluent le backup hors r&eacute;seau et s&apos;adressent &agrave; qui veut couvrir 80-100&nbsp;% des besoins d&apos;une maison.{' '}
                 <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline">Notre avis sur le SolarFlow Mix &rarr;</Link>
               </p>
             </section>
@@ -579,7 +580,7 @@ export default function ZendureSolarflowPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire. Mis &agrave; jour le 5 novembre 2026 : prix rev&eacute;rifi&eacute;s sur zendure.fr (539 &euro; seul, packs 719 et 839 &euro;), le prix de 488 &euro; n&apos;existe plus. Rev&eacute;rifi&eacute; le 12 novembre 2026 (zendure.fr inaccessible depuis notre environnement ce jour ; recherche web compl&eacute;mentaire, aucune variation de prix dat&eacute;e trouv&eacute;e pour le 800 Plus ou le 800 Pro ; valeurs du 5 novembre conserv&eacute;es). Article rédigé sans rémunération de Zendure.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur Zendure, fiches techniques officielles, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire. Mis &agrave; jour le 5 novembre 2026 : prix rev&eacute;rifi&eacute;s sur zendure.fr (539 &euro; seul, packs 719 et 839 &euro;), le prix de 488 &euro; n&apos;existe plus. Rev&eacute;rifi&eacute; le 12 novembre 2026 (zendure.fr inaccessible depuis notre environnement ce jour ; recherche web compl&eacute;mentaire, aucune variation de prix dat&eacute;e trouv&eacute;e pour le 800 Plus ou le 800 Pro ; valeurs du 5 novembre conserv&eacute;es). Article rédigé sans rémunération de Zendure. <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

@@ -4,7 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, BUY } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateProductionKwh, KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
@@ -91,6 +91,7 @@ const astuces = [
     cout: '15 \u20ac',
     detail: 'Une Tapo P110 (15 \u20ac) branch\u00e9e entre le kit et la prise murale vous montre en temps r\u00e9el combien vous produisez. L\u2019app garde l\u2019historique jour/mois/ann\u00e9e. Sans mesure, vous ne savez pas si vos efforts fonctionnent.',
     lien: { href: '/blog/prises-connectees-suivi-solaire', label: 'Voir notre comparatif prises connect\u00e9es' },
+    achat: { url: BUY.tapoP110Amazon.url, produit: BUY.tapoP110Amazon.product, marchand: 'Amazon', label: 'Voir la Tapo P110 sur Amazon' },
   },
   {
     num: '6',

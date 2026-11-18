@@ -44,3 +44,37 @@ export const MANOMANO = {
   // Shelly Plug PM Gen3 version française, 36,10 € le 06/11/2026
   shellyPlugPMGen3: manomanoUrl('https://www.manomano.fr/p/shelly-plug-pm-gen3-blanc-prise-connectee-francaise-wi-fi-16-a-3680-w-pour-mesure-de-consommation-electrique-aucun-hub-requ-203580758'),
 } as const;
+
+/**
+ * Registre des liens d'achat réutilisés dans les articles (2e passe affiliation, 18/11/2026).
+ * Seulement des produits en stock chez le marchand (vérifié le 18/11/2026) :
+ * - Zendure SolarFlow 800 Plus et SolarFlow Mix (zendure.fr/products/<handle>.js : available = true).
+ *   PAS le SolarFlow 800 Pro (rupture), PAS le Hyper 2000 ni le SolarFlow 800 (indisponibles).
+ * - EcoFlow STREAM Ultra (fr.ecoflow.com). PAS le DELTA 2 chez EcoFlow (indisponible le 18/11).
+ * - ALLPOWERS BS2500 PRO (iallpowers.fr, même destination que l'avis).
+ * - Amazon et ManoMano : uniquement des références déjà présentes et vérifiées dans le dépôt.
+ */
+export type BuyLink = { product: string; merchant: string; url: string };
+
+export const BUY = {
+  solarflow800Plus: { product: 'Zendure SolarFlow 800 Plus', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/solarflow-800-plus') },
+  solarflowMix: { product: 'Zendure SolarFlow Mix', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/solarflow-mix-series') },
+  streamUltra: { product: 'EcoFlow STREAM Ultra', merchant: 'EcoFlow', url: ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro') },
+  bs2500Pro: { product: 'ALLPOWERS BS2500 PRO', merchant: 'ALLPOWERS', url: allpowersUrl('https://iallpowers.fr/products/bs2500') },
+  tapoP110Amazon: { product: 'Tapo P110 (FR)', merchant: 'Amazon', url: 'https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsola-21' },
+  tapoP110ManoMano: { product: 'Tapo P110 (FR)', merchant: 'ManoMano', url: MANOMANO.tapoP110 },
+  shellyPlugAmazon: { product: 'Shelly Plug PM Gen3 (FR)', merchant: 'Amazon', url: 'https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21' },
+  shellyPlugManoMano: { product: 'Shelly Plug PM Gen3 (FR)', merchant: 'ManoMano', url: MANOMANO.shellyPlugPMGen3 },
+  hoymilesAmazon: { product: 'Hoymiles HMS-800W-2T', merchant: 'Amazon', url: 'https://www.amazon.fr/s?k=Hoymiles+HMS-800W-2T&tag=monbalconsola-21' },
+  wattmetreAmazon: { product: 'Brennenstuhl PM 231 E (FR)', merchant: 'Amazon', url: 'https://www.amazon.fr/dp/B00DZ872B4?tag=monbalconsola-21' },
+} satisfies Record<string, BuyLink>;
+
+/** Lien d'achat correspondant à un nom de produit cité dans un tableau (produits en stock uniquement). */
+export function buyFor(name: string): BuyLink | undefined {
+  if (/SolarFlow 800 (Plus|\+)/.test(name)) return BUY.solarflow800Plus;
+  if (/Mix Pro/.test(name)) return undefined; // 4000 Mix Pro : indisponible en ligne
+  if (/SolarFlow (3000 |4000 )?Mix|\b(3000|4000) Mix AC\+/.test(name)) return BUY.solarflowMix;
+  if (/STREAM Ultra(?! X)/.test(name)) return BUY.streamUltra;
+  if (/BS2500/.test(name)) return BUY.bs2500Pro;
+  return undefined;
+}

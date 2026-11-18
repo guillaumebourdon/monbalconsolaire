@@ -5,7 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
-import { zendureUrl, ecoflowUrl } from '@/lib/affiliate';
+import { zendureUrl, ecoflowUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 import { PRODUCTS } from '@/data/products';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
@@ -296,6 +297,7 @@ export default function MeilleureBatterieBalconPage() {
                     le meilleur prix/kWh des batteries de balcon que nous suivons (281&nbsp;&euro;/kWh), au coude-&agrave;-coude avec le Jackery SolarVault 3 Pro (285&nbsp;&euro;/kWh). En pack avec 2 panneaux bifaciaux de 500&nbsp;W&nbsp;: 719&nbsp;&euro;. La batterie se charge via vos panneaux le jour et d&eacute;charge automatiquement le soir.
                     L&apos;application Zendure permet de programmer des plages horaires et de suivre la production en temps r&eacute;el.
                     <Link href="/avis/zendure-solarflow" className="text-green hover:underline ml-1">Lire notre avis complet &rarr;</Link>
+                    <span className="ml-3"><AffLink item={BUY.solarflow800Plus} position="product-card">Voir le prix chez Zendure &rarr;</AffLink></span>
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 mt-4">
                     <div>
@@ -425,7 +427,7 @@ export default function MeilleureBatterieBalconPage() {
                     station EcoFlow (DELTA, RIVER) au kWh pr&egrave;s. En 2026, la mise &agrave; jour logicielle permet d&apos;ajuster la puissance inject&eacute;e par paliers d&apos;1&nbsp;W.
                     Pertinent si vous avez d&eacute;j&agrave; une station EcoFlow ou si vous cherchez une solution polyvalente (camping + maison).
                     Sinon, le co&ucirc;t total d&apos;un PowerStream avec batterie DELTA est difficile &agrave; justifier face &agrave; Zendure, Jackery ou Bluetti.
-                    <strong> Mise &agrave; jour 03/11/2026&nbsp;:</strong> le PowerStream n&apos;est plus vendu par EcoFlow France, remplac&eacute; par le <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">STREAM Ultra</Link> (batterie + onduleur int&eacute;gr&eacute;s, extensible &agrave; 11,52&nbsp;kWh).
+                    <strong> Mise &agrave; jour 03/11/2026&nbsp;:</strong> le PowerStream n&apos;est plus vendu par EcoFlow France, remplac&eacute; par le <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">STREAM Ultra</Link> (batterie + onduleur int&eacute;gr&eacute;s, extensible &agrave; 11,52&nbsp;kWh&nbsp;; <AffLink item={BUY.streamUltra} position="product-card">voir le prix chez EcoFlow</AffLink>).
                     <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline ml-1">Lire notre avis PowerStream &rarr;</Link>
                   </p>
                 </div>
@@ -470,6 +472,7 @@ export default function MeilleureBatterieBalconPage() {
                     et la garantie 10 ans est s&eacute;duisante pour ceux qui prot&egrave;tent d&apos;ores et d&eacute;j&agrave; une installation compl&egrave;te
                     (multi-panneaux toiture ou grande terrasse avec 2&nbsp;kWc+).
                     <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline ml-1">Notre avis complet &rarr;</Link>
+                    <span className="ml-3"><AffLink item={BUY.solarflowMix} position="product-card">Voir le prix chez Zendure &rarr;</AffLink></span>
                   </p>
                 </div>
               </div>

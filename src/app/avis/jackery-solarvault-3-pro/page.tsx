@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BuyName } from '@/components/ui/AffLink';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
@@ -171,7 +172,7 @@ export default function JackerySolarVault3ProAvisPage() {
                       ['Sunology PLAY MAX', '0,7 kWh', priceLabel('sunology-play-max'), '460 W inclus', '7/10', false],
                     ].map(([name, battery, price, panels, score, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>
-                        <td className="py-2 px-3">{name as string}</td>
+                        <td className="py-2 px-3"><BuyName name={name as string} /></td>
                         <td className="py-2 px-3">{battery as string}</td>
                         <td className="py-2 px-3">{price as string}</td>
                         <td className="py-2 px-3">{panels as string}</td>

@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { AffLink } from '@/components/ui/AffLink';
+import { BUY } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL } from '@/lib/pricing';
 
@@ -340,7 +342,7 @@ export default function EntretienNettoyagePage() {
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1 text-green">Prise connect&eacute;e pour mesurer le gain</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Pour savoir si le nettoyage a vraiment servi (&eacute;tape 5), une prise &agrave; mesure de consommation comme la Tapo P110 (~12 &euro;, prix constat&eacute; septembre 2026) affiche la production avant/apr&egrave;s. <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">Notre comparatif des prises</Link>.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">Pour savoir si le nettoyage a vraiment servi (&eacute;tape 5), une prise &agrave; mesure de consommation comme la Tapo P110 (~12 &euro;, prix constat&eacute; septembre 2026) affiche la production avant/apr&egrave;s. <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">Notre comparatif des prises</Link>. <AffLink item={BUY.tapoP110ManoMano} position="mid_article">Voir la Tapo P110 (FR) chez ManoMano &rarr;</AffLink></p>
                 </div>
               </div>
               <AffiliateCTA
@@ -425,7 +427,7 @@ export default function EntretienNettoyagePage() {
                 <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
               </p>
               <p className="text-xs text-stone leading-relaxed mt-2">
-                <strong>Transparence :</strong> liens Amazon affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous.
+                <strong>Transparence :</strong> liens Amazon et ManoMano affili&eacute;s : nous touchons une commission sans surco&ucirc;t pour vous.
               </p>
             </div>
           </div>

@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { BUY } from '@/lib/affiliate';
+import { OuAcheter } from '@/components/ui/OuAcheter';
 import { withCanonicalOg } from '@/lib/metadata';
 
 const PAGE_URL = 'https://monbalconsolaire.fr/guide/installer-kit-solaire-balcon';
@@ -358,6 +360,15 @@ export default function InstallerKitPage() {
                 position="article_bottom"
               />
             </div>
+
+            <OuAcheter
+              title="Pour v&eacute;rifier la production apr&egrave;s la mise en service"
+              intro="Si votre kit n&rsquo;a pas d&rsquo;application de suivi, une prise connect&eacute;e branch&eacute;e entre le kit et la prise murale affiche la production en temps r&eacute;el et garde l&rsquo;historique pour la comparer &agrave; l&rsquo;estimation du calculateur."
+              rows={[
+                { item: BUY.tapoP110Amazon, note: 'prise française type E, mesure en temps réel' },
+                { item: BUY.tapoP110ManoMano },
+              ]}
+            />
 
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>

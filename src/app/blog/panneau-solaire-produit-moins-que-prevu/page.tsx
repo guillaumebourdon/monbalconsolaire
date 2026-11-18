@@ -5,6 +5,9 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { PVGIS_PREFECTURES } from '@/data/departments';
 import { withCanonicalOg } from '@/lib/metadata';
+import { AffLink } from '@/components/ui/AffLink';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 import { KWH_PRICE_LABEL } from '@/lib/pricing';
 import { priceLabel } from '@/data/products';
 
@@ -291,7 +294,7 @@ export default function PanneauProduitMoinsPage() {
                     <h3 className="font-bold text-sm text-amber-dark">Ajouter une batterie</h3>
                     <span className="text-xs font-mono text-stone">dès {priceLabel('zendure-solarflow-800-plus')}</span>
                   </div>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Ne produit pas plus, mais valorise mieux la production existante (autoconsommation 45 % → 80 %). Pertinent si votre talon de consommation dépasse la production. Exemple : Zendure SolarFlow 800 Plus, {priceLabel('zendure-solarflow-800-plus')} sans panneaux (prix vérifié le 5 novembre 2026). <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Voir l&apos;avis</Link>.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Ne produit pas plus, mais valorise mieux la production existante (autoconsommation 45 % → 80 %). Pertinent si votre talon de consommation dépasse la production. Exemple : Zendure SolarFlow 800 Plus, {priceLabel('zendure-solarflow-800-plus')} sans panneaux (prix vérifié le 5 novembre 2026). <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Voir l&apos;avis</Link> &middot; <AffLink item={BUY.solarflow800Plus} position="mid_article">Voir le prix chez Zendure</AffLink>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center justify-between mb-1">
@@ -312,6 +315,13 @@ export default function PanneauProduitMoinsPage() {
                 Calculer ma production théorique &rarr;
               </Link>
             </div>
+
+            <OuAcheter
+              title="Mesurer la production r&eacute;elle de votre kit"
+              intro="Pour comparer votre production &agrave; la th&eacute;orie sans d&eacute;pendre de l&rsquo;app du fabricant : une prise connect&eacute;e avec mesure de consommation, branch&eacute;e entre le kit et la prise murale (versions fran&ccedil;aises, prise type E)."
+              rows={[{ item: BUY.tapoP110Amazon }, { item: BUY.shellyPlugAmazon }]}
+              position="footer-box"
+            />
 
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
@@ -372,6 +382,7 @@ export default function PanneauProduitMoinsPage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Méthodologie :</strong> données PVGIS (Commission européenne), fiches techniques constructeurs, retours utilisateurs forum-photovoltaique.fr et Reddit r/solaire (mai 2026). Tarif EDF Base 6 kVA : {KWH_PRICE_LABEL}.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
+                {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
           </div>

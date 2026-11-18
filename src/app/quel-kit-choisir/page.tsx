@@ -8,6 +8,8 @@ const avisPrice = (slug: string) => (REVIEW_PRODUCT[slug] ? cardPriceLabel(REVIE
 const BEEM = PRODUCTS['beem-on-500w'];
 const beemRoi = calculateROIYears({ kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM.powerWc }).toLocaleString('fr-FR');
 import Link from 'next/link';
+import { BUY, type BuyLink } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 type ArticleType = 'comparatif' | 'avis';
 type PowerRange = 'moins-400' | '400-500' | 'plus-500';
@@ -31,6 +33,8 @@ interface Article {
   powers?: PowerRange[];
   score?: string;
   price?: string;
+  /** Lien marchand (affilié) du produit analysé, s'il est en stock */
+  buy?: BuyLink;
   readTime?: string;
   publishedAt: string;
   updatedAt?: string;
@@ -296,6 +300,7 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-11-05',
     score: '6/10',
     price: avisPrice('allpowers-bs2500-pro'),
+    buy: BUY.bs2500Pro,
   },
   {
     slug: '/avis/ecoflow-stream-ultra',
@@ -308,6 +313,7 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-11-03',
     score: '7,5/10',
     price: avisPrice('ecoflow-stream-ultra'),
+    buy: BUY.streamUltra,
   },
   {
     slug: '/avis/ikea-solstrale-balcon',
@@ -347,6 +353,7 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-05-07',
     score: '8.5/10',
     price: avisPrice('zendure-solarflow'),
+    buy: BUY.solarflow800Plus,
   },
   {
     slug: '/avis/sunology-vault',
@@ -383,6 +390,7 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-08-18',
     score: '8.5/10',
     price: avisPrice('hoymiles-hms-800w'),
+    buy: BUY.hoymilesAmazon,
   },
   {
     slug: '/avis/anker-solix-rs40p',
@@ -408,6 +416,7 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-06-30',
     score: '8/10',
     price: avisPrice('zendure-solarflow-mix'),
+    buy: BUY.solarflowMix,
   },
   {
     slug: '/avis/bluetti-balco-260',
@@ -597,8 +606,8 @@ export default function QuelKitChoisirPage() {
 
         <div className="space-y-4 mb-12">
           {filteredArticles.map((a) => (
+            <div key={a.slug}>
             <Link
-              key={a.slug}
               href={a.slug}
               className="card-lg block hover:shadow-brand-lg transition-all duration-300 group"
             >
@@ -648,6 +657,13 @@ export default function QuelKitChoisirPage() {
                 {a.type === 'comparatif' ? 'Lire le comparatif' : 'Lire l\'avis complet'} →
               </span>
             </Link>
+            {a.buy && (
+              <p className="text-sm mt-2 px-2">
+                <AffLink item={a.buy} position="quel-kit-choisir">Voir le prix chez {a.buy.merchant} &rarr;</AffLink>
+                <span className="text-[10px] text-stone ml-2">lien commercial</span>
+              </p>
+            )}
+            </div>
           ))}
         </div>
 

@@ -4,6 +4,9 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { AffLink } from '@/components/ui/AffLink';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 import { KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
 
 // Coût d'une consommation annuelle (kWh) au tarif réglementé en vigueur, en euros (2 décimales).
@@ -313,6 +316,7 @@ export default function ConsommationVeillePage() {
                     Le hub Zendure inclut l&apos;IA Zenki, qui tourne en tache de fond 24h/24. Consommation estim&eacute;e&nbsp;: <strong>3&ndash;4&nbsp;W</strong>. Le plus gourmand du march&eacute;, mais sur un syst&egrave;me &agrave; 1&nbsp;999&nbsp;&euro;+, &ccedil;a reste proportionnel.
                   </p>
                   <Link href="/avis/zendure-solarflow-mix" className="text-green text-xs hover:underline">Notre avis Zendure SolarFlow Mix &rarr;</Link>
+                  <span className="block text-xs mt-1"><AffLink item={BUY.solarflowMix} position="mid_article">Voir le prix chez Zendure &rarr;</AffLink></span>
                 </div>
               </div>
               <div className="card-lg bg-green-pale/20 border-green/10 mt-4">
@@ -349,6 +353,13 @@ export default function ConsommationVeillePage() {
                 Bonus&nbsp;: une prise connect&eacute;e permet aussi de <strong>d&eacute;tecter un mat&eacute;riel d&eacute;faillant</strong> qui consommerait anormalement (&gt;2&nbsp;W pour un kit simple = signe d&apos;un composant en panne). Plus d&apos;infos dans notre comparatif des <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">prises connect&eacute;es pour suivi solaire</Link>.
               </p>
             </section>
+
+            <OuAcheter
+              title="Pour mesurer votre kit : une prise connect&eacute;e"
+              intro="La Tapo P110 (version FR, prise type E) mesure la puissance instantan&eacute;e et l&rsquo;&eacute;nergie cumul&eacute;e : il suffit de la brancher entre le kit et la prise murale."
+              rows={[{ item: BUY.tapoP110Amazon }, { item: BUY.tapoP110ManoMano }]}
+              position="footer-box"
+            />
 
             {/* CTA Calculateur */}
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-10">
@@ -406,6 +417,7 @@ export default function ConsommationVeillePage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Sources&nbsp;:</strong> fiches techniques APsystems EZ1-H (fiche EMEA 2023), forum-photovoltaique.fr (discussions sur la consommation nocturne des micro-onduleurs), mesures utilisateurs avec Tapo P110, documentation Hoymiles DTU-Lite, Zendure SolarFlow Mix. Tarif EDF&nbsp;: {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026).{' '}
                 <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
+                {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
 

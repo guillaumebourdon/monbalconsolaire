@@ -9,6 +9,12 @@ import { calculateROIYears } from '@/lib/pricing';
 import { productibleSite } from '@/lib/rentabilite-departements';
 import { DEPARTMENTS } from '@/data/departments';
 import { PRODUCTS, priceLabel } from '@/data/products';
+import { BUY, type BuyLink } from '@/lib/affiliate';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+
+// Lien affilié dans une chaîne HTML (rendue via dangerouslySetInnerHTML), suivi par AffiliateTracker
+const affA = (b: BuyLink, text: string) =>
+  `<a href="${b.url}" target="_blank" rel="sponsored noopener" data-product="${b.product}" data-merchant="${b.merchant}" data-position="in-text" class="text-green font-semibold hover:underline">${text}</a>`;
 
 const PLAY = PRODUCTS['sunology-play'];
 // ROI du Sunology PLAY plein sud par département, calculé avec pricing.ts
@@ -145,7 +151,7 @@ const checklist = [
     num: 11,
     category: 'Budget',
     title: 'Décider si une batterie est nécessaire',
-    desc: 'Une batterie (plusieurs centaines d\'euros de surcoût) est utile si vous consommez principalement le soir. Sans batterie, un foyer absent en journée autoconsomme souvent 40 à 60 % de sa production. Avec batterie (Zendure SolarFlow 800 Plus 1,92 kWh, Bluetti Balco 260), l\'autoconsommation peut monter à 80-95 %. Le surcoût se justifie si vous rentrez tard et consommez surtout le soir.',
+    desc: `Une batterie (plusieurs centaines d'euros de surcoût) est utile si vous consommez principalement le soir. Sans batterie, un foyer absent en journée autoconsomme souvent 40 à 60 % de sa production. Avec batterie (${affA(BUY.solarflow800Plus, 'Zendure SolarFlow 800 Plus')} 1,92 kWh, Bluetti Balco 260), l\'autoconsommation peut monter à 80-95 %. Le surcoût se justifie si vous rentrez tard et consommez surtout le soir.`,
     verdict: 'Présent en journée : pas besoin de batterie. Absent en journée : batterie recommandée.',
     icon: '&#128267;',
     color: 'amber',
@@ -491,6 +497,15 @@ export default function ChecklistPage() {
                 ))}
               </div>
             </section>
+
+            <OuAcheter
+              title="Pour mesurer votre talon (point 6)"
+              intro="Un wattm&egrave;tre simple suffit pour mesurer un appareil &agrave; la fois ; une prise connect&eacute;e garde l&rsquo;historique dans une application et servira ensuite &agrave; suivre la production du kit."
+              rows={[
+                { item: BUY.wattmetreAmazon, note: 'wattmètre sans Wi-Fi, prise française' },
+                { item: BUY.tapoP110Amazon, note: 'prise connectée Wi-Fi avec mesure' },
+              ]}
+            />
 
             {/* Articles liés */}
             <section className="mb-10">

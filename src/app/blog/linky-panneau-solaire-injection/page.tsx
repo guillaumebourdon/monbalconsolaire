@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 import { KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
 
 // Tarif de rachat EDF OA cité dans l'article (1,1 c€/kWh) comparé au tarif réglementé en vigueur.
@@ -320,6 +322,13 @@ export default function LinkyPanneauSolaireInjectionPage() {
               </Link>
             </div>
 
+            <OuAcheter
+              title="Voir ce que le Linky ne montre pas : votre production"
+              intro="Le Linky ne mesure que les &eacute;changes avec le r&eacute;seau. Pour conna&icirc;tre la production brute de votre kit, branchez une prise connect&eacute;e avec mesure de consommation entre le kit et la prise murale (versions fran&ccedil;aises, prise type E)."
+              rows={[{ item: BUY.tapoP110Amazon }, { item: BUY.shellyPlugAmazon }]}
+              position="footer-box"
+            />
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
@@ -375,6 +384,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Sources&nbsp;:</strong> Enedis, documentation technique Linky (janvier 2026), arr&ecirc;t&eacute; tarifaire EDF OA du 1er juin 2026, d&eacute;cret n&deg; 2021-1301 du 6 octobre 2021 relatif &agrave; l&apos;autoconsommation. Code de l&apos;&eacute;nergie, articles L315-5 et D315-10&nbsp;; Enedis, &laquo;&nbsp;Autoconsommer la totalit&eacute; de l&apos;&eacute;nergie produite par vos panneaux&nbsp;&raquo; (consult&eacute; le 5 novembre 2026). Tarif EDF Base&nbsp;: {KWH_PRICE_LABEL}.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.
+                {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
           </div>

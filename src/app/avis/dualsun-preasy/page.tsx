@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { AffLink } from '@/components/ui/AffLink';
+import { BUY } from '@/lib/affiliate';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
@@ -388,7 +390,7 @@ export default function DualsunPreasyPage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
-                Pour moins que le PREASY, le pack Zendure SolarFlow 800 Plus + 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) offre plus du double de puissance, du stockage, et un ROI presque 3 fois plus rapide (3,6 ans contre 10,5 ans). C&apos;est difficile à justifier économiquement.
+                Pour moins que le PREASY, le pack <AffLink item={BUY.solarflow800Plus} position="alternative">Zendure SolarFlow 800 Plus + 2 panneaux de 500&nbsp;W</AffLink> (719&nbsp;&euro; en promotion le 5 novembre 2026) offre plus du double de puissance, du stockage, et un ROI presque 3 fois plus rapide (3,6 ans contre 10,5 ans). C&apos;est difficile à justifier économiquement.
               </p>
             </section>
 
@@ -498,6 +500,9 @@ export default function DualsunPreasyPage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données constructeur DualSun, fiche technique officielle PREASY, test Révolution Énergétique (sept. 2024 - jan. 2025), prix constatés chez revendeurs (mai 2026). Article rédigé sans rémunération de DualSun.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
+              </p>
+              <p className="text-xs text-stone leading-relaxed mt-2">
+                <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
           </div>

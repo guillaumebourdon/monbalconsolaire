@@ -5,6 +5,9 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { AffLink } from '@/components/ui/AffLink';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 import {
   KWH_PRICE_EUR,
   KWH_PRICE_LABEL,
@@ -327,7 +330,8 @@ export default function TalonConsommationPage() {
                     </div>
                   </div>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
-                    Visez 800-1 000 W de panneaux avec batterie : par exemple <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 panneaux 500 W</Link> ({ZEN_PACK.price}&nbsp;&euro; en pack, prix promotionnel constaté le 05/11/2026&nbsp;; {priceLabel('zendure-solarflow-800-plus')} sans panneaux). Avec la batterie de {fr(ZEN.batteryKwh!)}&nbsp;kWh, vous couvrez aussi une partie du talon de nuit.
+                    Visez 800-1 000 W de panneaux avec batterie : par exemple <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 panneaux 500 W</Link> ({ZEN_PACK.price}&nbsp;&euro; en pack, prix promotionnel constaté le 05/11/2026&nbsp;; {priceLabel('zendure-solarflow-800-plus')} sans panneaux). Avec la batterie de {fr(ZEN.batteryKwh!)}&nbsp;kWh, vous couvrez aussi une partie du talon de nuit.{' '}
+                    <AffLink item={BUY.solarflow800Plus} position="mid_article">Voir le prix chez Zendure &rarr;</AffLink>
                   </p>
                   <p className="text-xs text-stone">ROI estimé (Lyon, plein sud, {Math.round(AUTOCONSO_BATTERY * 100)} % autoconsommés grâce à la batterie) : {fr(roiZen)} ans · Économies : {ecoZen} €/an la 1<sup>re</sup> année</p>
                 </div>
@@ -408,6 +412,15 @@ export default function TalonConsommationPage() {
               </Link>
             </div>
 
+            <OuAcheter
+              intro="Pour mesurer puis r&eacute;duire votre talon&nbsp;: un wattm&egrave;tre (celui retenu dans notre comparatif des wattm&egrave;tres) et la batterie de balcon cit&eacute;e plus haut."
+              rows={[
+                { item: BUY.wattmetreAmazon, note: 'wattm\u00e8tre prise type E, pour mesurer chaque appareil' },
+                { item: BUY.solarflow800Plus, note: 'batterie de balcon pour couvrir une partie du talon de nuit' },
+              ]}
+              position="footer-box"
+            />
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
@@ -471,6 +484,7 @@ export default function TalonConsommationPage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Méthodologie :</strong> données de consommation ADEME, fiches techniques constructeurs, relevés Linky communautaires forum-photovoltaique.fr (mai 2026). Tarif EDF Base 6 kVA en vigueur : {KWH_PRICE_LABEL}. Prix des kits vérifiés le 5 novembre 2026.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
+                {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
           </div>

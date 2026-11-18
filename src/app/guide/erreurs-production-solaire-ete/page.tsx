@@ -5,6 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL } from '@/lib/pricing';
+import { BUY } from '@/lib/affiliate';
+import { OuAcheter } from '@/components/ui/OuAcheter';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire balcon en été : 5 erreurs qui tuent votre production',
@@ -400,6 +402,15 @@ export default function GuideErreursProdSolEte() {
               </div>
             </section>
 
+            <OuAcheter
+              title="Pour nettoyer et surveiller le panneau"
+              intro="Le protocole ci-dessus suffit avec de l&rsquo;eau claire et un chiffon microfibre doux. Pour rep&eacute;rer une baisse de production (ombre, salissure, coupure thermique), une prise connect&eacute;e entre le kit et la prise murale garde l&rsquo;historique jour par jour."
+              rows={[
+                { item: { product: 'Chiffons microfibre (lot)', merchant: 'Amazon', url: 'https://www.amazon.fr/s?k=chiffon+microfibre+lot&tag=monbalconsola-21' } },
+                { item: BUY.shellyPlugAmazon, note: 'prise française type E, mesure en temps réel' },
+              ]}
+            />
+
             {/* Articles liés */}
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Articles li&eacute;s</h2>
@@ -451,7 +462,7 @@ export default function GuideErreursProdSolEte() {
 
           <footer className="mt-10 pt-8 border-t border-border-light text-xs text-stone space-y-2">
             <p><strong>M&eacute;thodologie&nbsp;:</strong> productions calcul&eacute;es avec PVGIS (Commission europ&eacute;enne), latitude Lyon 45,7&deg;N, tarif EDF {KWH_PRICE_LABEL}, coefficient de pertes 0,85, autoconsommation 85&nbsp;%. Coefficient de temp&eacute;rature &minus;0,40&nbsp;%/&deg;C (typ. monocristallin).</p>
-            <p><strong>Transparence&nbsp;:</strong> MonBalconSolaire est un site &eacute;ditorial ind&eacute;pendant. Certains liens vers des produits sont des liens affili&eacute;s. Cela ne modifie ni notre m&eacute;thodologie ni nos recommandations.</p>
+            <p><strong>Transparence&nbsp;:</strong> MonBalconSolaire est un site &eacute;ditorial ind&eacute;pendant. Certains liens vers des produits sont des liens affili&eacute;s&nbsp;: si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela ne modifie ni notre m&eacute;thodologie ni nos recommandations.</p>
           </footer>
         </div>
       </article>

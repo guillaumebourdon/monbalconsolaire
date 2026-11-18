@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { EmailCapture } from '@/components/ui/EmailCapture';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
-import { ecoflowUrl, zendureUrl } from '@/lib/affiliate';
+import { ecoflowUrl, zendureUrl, BUY, type BuyLink } from '@/lib/affiliate';
 
 // Regénérée toutes les 6 h : les offres datées basculent seules en « Terminée ».
 export const revalidate = 21600;
@@ -146,7 +146,7 @@ const sunologyOffers: Offer[] = [
   },
 ];
 
-const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; cta?: { url: string; product: string; merchant: string } }[] = [
+const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; cta?: { url: string; product: string; merchant: string }; extra?: { link: BuyLink; label: string } }[] = [
   {
     id: 'sunethic',
     brand: 'Sunethic',
@@ -241,6 +241,7 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
       },
     ],
     cta: { url: zendureUrl('https://zendure.fr/pages/black-friday'), product: 'Zendure SolarFlow', merchant: 'Zendure' },
+    extra: { link: BUY.solarflowMix, label: 'Voir le prix du SolarFlow Mix (concerné par le code)' },
   },
 ];
 
@@ -322,6 +323,11 @@ export default function CodesPromoPage() {
               </div>
               {b.cta && (
                 <AffiliateCTA productName={b.cta.product} merchantName={b.cta.merchant} affiliateUrl={b.cta.url} label={`Voir les prix ${b.brand}`} variant="inline" position={`codes_promo_${b.id}`} />
+              )}
+              {b.extra && (
+                <span className="ml-4">
+                  <AffiliateCTA productName={b.extra.link.product} merchantName={b.extra.link.merchant} affiliateUrl={b.extra.link.url} label={b.extra.label} variant="inline" position={`codes_promo_${b.id}_produit`} />
+                </span>
               )}
             </section>
           ))}

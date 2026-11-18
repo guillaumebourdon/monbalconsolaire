@@ -5,6 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Panneau solaire en hiver : combien ça produit vraiment ? (2026)',
@@ -131,6 +133,13 @@ export default function HiverProductionPage() {
               <Link href="/calculateur" className="btn-primary inline-flex mt-2">Calculer mes économies →</Link>
             </div>
 
+            <OuAcheter
+              title="V&eacute;rifier votre production d&rsquo;hiver"
+              intro="Pour savoir si votre kit produit ce qu&rsquo;il devrait en hiver : une prise connect&eacute;e avec mesure de consommation, branch&eacute;e entre le kit et la prise murale, affiche la production jour par jour (versions fran&ccedil;aises, prise type E)."
+              rows={[{ item: BUY.tapoP110Amazon }, { item: BUY.shellyPlugAmazon }]}
+              position="footer-box"
+            />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
               <div className="space-y-4">
@@ -189,7 +198,7 @@ export default function HiverProductionPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> données PVGIS (Commission européenne), retours utilisateurs Trustpilot. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> données PVGIS (Commission européenne), retours utilisateurs Trustpilot. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>. {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.</p>
             </div>
           </div>
         </div>

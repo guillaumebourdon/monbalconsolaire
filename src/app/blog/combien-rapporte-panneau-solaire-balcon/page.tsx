@@ -6,6 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 import { KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_PRICE_SHORT, KWH_INFLATION_RATE, PANEL_DEGRADATION_RATE, calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
 import { productibleDepartement } from '@/lib/rentabilite-departements';
 import { PRODUCTS, priceLabel } from '@/data/products';
@@ -211,6 +213,13 @@ export default function CombienRapportePage() {
               <Link href="/calculateur" className="btn-primary inline-flex">Calculer MES économies &rarr;</Link>
             </div>
 
+            <OuAcheter
+              title="Mesurer ce que votre kit rapporte vraiment"
+              intro="Les chiffres ci-dessus sont des estimations. Pour conna&icirc;tre votre gain r&eacute;el, mesurez les kWh produits avec une prise connect&eacute;e branch&eacute;e entre le kit et la prise murale, puis multipliez par votre tarif et votre taux d&rsquo;autoconsommation (versions fran&ccedil;aises, prise type E)."
+              rows={[{ item: BUY.tapoP110Amazon }, { item: BUY.tapoP110ManoMano }]}
+              position="footer-box"
+            />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions frequentes</h2>
               <div className="space-y-4">
@@ -285,7 +294,7 @@ export default function CombienRapportePage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Methodologie :</strong> productions calculees a partir des données PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, coefficient de pertes 0,85, autoconsommation 85 %, inflation 3,3 %/an (ROI et cumul 25 ans), d&eacute;gradation des panneaux 0,5 %/an. Tarif {KWH_PRICE_LABEL} TTC (option Base 6 kVA, en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026). Ce contenu est indépendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Methodologie :</strong> productions calculees a partir des données PVGIS (Commission europeenne), orientation sud, inclinaison 30 degres, coefficient de pertes 0,85, autoconsommation 85 %, inflation 3,3 %/an (ROI et cumul 25 ans), d&eacute;gradation des panneaux 0,5 %/an. Tarif {KWH_PRICE_LABEL} TTC (option Base 6 kVA, en vigueur depuis le 1<sup>er</sup> ao&ucirc;t 2026). Ce contenu est indépendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus</Link>. {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.</p>
             </div>
           </div>
         </div>

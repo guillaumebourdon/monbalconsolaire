@@ -5,7 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years, AUTOCONSO_BATTERY, KWH_PRICE_LABEL, KWH_PRICE_SHORT, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
@@ -236,7 +237,7 @@ export default function MeilleurKitTerrasse2026Page() {
               <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité (setup 2 panneaux + batterie, Lyon)</h2>
               <div className="card-lg bg-cream/40">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Setup</strong> : Zendure SolarFlow 800 Plus + 2 panneaux 500 W = <strong>{zendure.price} €</strong> (prix promotionnel constat&eacute; le 5 novembre 2026)</li>
+                  <li>&bull; <strong>Setup</strong> : <AffLink item={BUY.solarflow800Plus} position="roi-example">Zendure SolarFlow 800 Plus + 2 panneaux 500 W</AffLink> = <strong>{zendure.price} €</strong> (prix promotionnel constat&eacute; le 5 novembre 2026)</li>
                   <li>&bull; <strong>Production</strong> : 1 000 W × 1 200 kWh/kWc (Lyon, sud) × 0,85 = <strong>{fr(zendure.production)} kWh/an</strong></li>
                   <li>&bull; <strong>Autoconsommation (avec batterie)</strong> : 95 % = <strong>{fr(Math.round(zendure.production * AUTOCONSO_BATTERY))} kWh valorisés</strong></li>
                   <li>&bull; <strong>Économies</strong> : {fr(Math.round(zendure.production * AUTOCONSO_BATTERY))} × {KWH_PRICE_SHORT} = <strong>{zendure.savings} €/an</strong> (1re année)</li>

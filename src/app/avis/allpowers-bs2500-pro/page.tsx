@@ -7,7 +7,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
-import { allpowersUrl } from '@/lib/affiliate';
+import { allpowersUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 const PRODUCT_URL = 'https://iallpowers.fr/products/bs2500';
 
@@ -308,6 +309,13 @@ export default function AllpowersBs2500ProPage() {
                       <td className="p-3 text-center bg-white text-xs">Meilleur ROI, achat s&ucirc;r</td>
                       <td className="p-3 text-center bg-cream/50 text-xs">Secours + appli aboutie</td>
                       <td className="p-3 text-center bg-white text-xs">Gros stockage simple</td>
+                    </tr>
+                    <tr className="border-t border-border-light">
+                      <td className="p-3 font-semibold bg-white">Prix / acheter</td>
+                      <td className="p-3 text-center bg-green-pale/30 text-xs">Liens plus haut</td>
+                      <td className="p-3 text-center bg-white text-xs"><AffLink item={BUY.solarflow800Plus} position="comparison-table">Voir le prix chez Zendure</AffLink></td>
+                      <td className="p-3 text-center bg-cream/50 text-xs"><AffLink item={BUY.streamUltra} position="comparison-table">Voir le prix chez EcoFlow</AffLink></td>
+                      <td className="p-3 text-center bg-white text-xs">&mdash;</td>
                     </tr>
                   </tbody>
                 </table>

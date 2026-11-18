@@ -5,6 +5,8 @@ import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, c
 import { productibleSite } from '@/lib/rentabilite-departements';
 import { DEPARTMENTS } from '@/data/departments';
 import { PRODUCTS, priceLabel } from '@/data/products';
+import { BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 // Ordres de grandeur calculés au build (pricing.ts + products.ts) : Sunology PLAY plein sud, de Lille à Marseille.
 const PLAY = PRODUCTS['sunology-play'];
@@ -62,6 +64,7 @@ export default function CommentCaMarchePage() {
             <div>
               <h3 className="font-bold text-sm text-amber-dark mb-1">La nuit</h3>
               <p className="text-sm text-charcoal-light">Le panneau ne produit pas. Votre logement bascule automatiquement sur le r&eacute;seau EDF. Aucune coupure, c&apos;est transparent.</p>
+              <p className="text-sm text-charcoal-light mt-2">Pour consommer le soir ce qui a &eacute;t&eacute; produit le jour, il faut une batterie de balcon, comme le <AffLink item={BUY.solarflow800Plus} position="comment-ca-marche">{PRODUCTS['zendure-solarflow-800-plus'].name}</AffLink> ({fr(PRODUCTS['zendure-solarflow-800-plus'].batteryKwh ?? 0)}&nbsp;kWh, {priceLabel('zendure-solarflow-800-plus')} sans panneaux). Elle ne se justifie que si vous &ecirc;tes absent en journ&eacute;e&nbsp;: voir notre <Link href="/guide/batterie-solaire-balcon-guide" className="text-green hover:underline">guide batterie</Link>.</p>
             </div>
             <div>
               <h3 className="font-bold text-sm text-amber-dark mb-1">Temps couvert / pluie</h3>
@@ -96,6 +99,10 @@ export default function CommentCaMarchePage() {
           <p className="text-sm text-stone mb-4">Vous savez d&eacute;j&agrave; comment &ccedil;a marche ?</p>
           <Link href="/quel-kit-choisir" className="text-green font-semibold hover:underline">Comparez les meilleurs kits 2026 &rarr;</Link>
         </div>
+
+        <p className="text-xs text-stone leading-relaxed mt-12">
+          <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
+        </p>
       </div>
     </section>
   );

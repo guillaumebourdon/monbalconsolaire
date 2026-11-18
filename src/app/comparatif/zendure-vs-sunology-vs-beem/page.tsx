@@ -5,7 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, BUY } from '@/lib/affiliate';
+import { AffLink, BuyName } from '@/components/ui/AffLink';
 import { PRODUCTS, priceLabel } from '@/data/products';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
@@ -334,7 +335,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                   </thead>
                   <tbody>
                     <tr className="border-b border-border-light bg-green-pale/20 font-semibold">
-                      <td className="p-2.5">Zendure SolarFlow 800 Plus</td>
+                      <td className="p-2.5"><BuyName name="Zendure SolarFlow 800 Plus" /></td>
                       <td className="text-center p-2.5 font-mono">539 €</td>
                       <td className="text-center p-2.5 font-mono">1,92 kWh</td>
                       <td className="text-center p-2.5 font-mono text-green">281 €/kWh</td>
@@ -346,7 +347,7 @@ export default function ZendureVsSunologyVsBeemPage() {
                       <td className="text-center p-2.5 font-mono">{fr(Math.round(PRODUCTS['sunology-play-max'].priceEur / 0.7))} €/kWh (panneau inclus)</td>
                     </tr>
                     <tr className="bg-cream/50">
-                      <td className="p-2.5"><Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline">EcoFlow STREAM Ultra</Link> (successeur du PowerStream)</td>
+                      <td className="p-2.5"><Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline">EcoFlow STREAM Ultra</Link> (successeur du PowerStream)<span className="block mt-0.5 text-xs"><AffLink item={BUY.streamUltra} position="comparison-table">Voir le prix chez EcoFlow &rarr;</AffLink></span></td>
                       <td className="text-center p-2.5 font-mono">659 €</td>
                       <td className="text-center p-2.5 font-mono">1,92 kWh</td>
                       <td className="text-center p-2.5 font-mono">343 €/kWh</td>

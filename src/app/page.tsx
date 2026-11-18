@@ -9,7 +9,7 @@ import { productibleSite, getRentabiliteStats } from '@/lib/rentabilite-departem
 import { DEPARTMENTS } from '@/data/departments';
 import { PRODUCTS, priceLabel, availabilityBadge, type ProductId } from '@/data/products';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, ecoflowUrl } from '@/lib/affiliate';
 
 // Chiffres de la page d'accueil calculés au build (pricing.ts + products.ts), jamais écrits à la main.
 const fr = (n: number) => n.toLocaleString('fr-FR');
@@ -241,7 +241,11 @@ export default function HomePage() {
           <p className="text-sm text-charcoal-light text-center max-w-2xl mx-auto mt-8">
             Vous cherchez surtout du stockage&nbsp;? Dans notre <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="text-green hover:underline">comparatif des batteries de balcon</Link>, le meilleur prix au kWh revient au {PRODUCTS['zendure-solarflow-800-plus'].name} ({priceLabel('zendure-solarflow-800-plus')} sans panneaux, {fr(PRODUCTS['zendure-solarflow-800-plus'].batteryKwh ?? 0)}&nbsp;kWh).{' '}
             <AffiliateCTA productName={PRODUCTS['zendure-solarflow-800-plus'].name} merchantName="Zendure" affiliateUrl={zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url)} label="Voir le prix chez Zendure" variant="inline" position="home-products" />
-            <span className="block text-[10px] text-stone mt-1">Lien commercial &middot; prix constat&eacute;, susceptible de varier</span>
+            <span className="block mt-2">
+              M&ecirc;me capacit&eacute; chez EcoFlow&nbsp;: l&apos;{PRODUCTS['ecoflow-stream-ultra'].name} ({priceLabel('ecoflow-stream-ultra')} sans panneaux, {fr(PRODUCTS['ecoflow-stream-ultra'].batteryKwh ?? 0)}&nbsp;kWh).{' '}
+              <AffiliateCTA productName={PRODUCTS['ecoflow-stream-ultra'].name} merchantName="EcoFlow" affiliateUrl={ecoflowUrl(PRODUCTS['ecoflow-stream-ultra'].url)} label="Voir le prix chez EcoFlow" variant="inline" position="home-products" />
+            </span>
+            <span className="block text-[10px] text-stone mt-1">Liens commerciaux &middot; prix constat&eacute;s, susceptibles de varier</span>
           </p>
           <div className="text-center mt-8">
             <Link href="/quel-kit-choisir" className="btn-secondary">

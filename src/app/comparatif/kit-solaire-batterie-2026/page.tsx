@@ -5,7 +5,9 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
-import { zendureUrl, ecoflowUrl } from '@/lib/affiliate';
+import { zendureUrl, ecoflowUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
+import { OuAcheter } from '@/components/ui/OuAcheter';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
@@ -190,7 +192,7 @@ export default function BatteriePage() {
                 <div className="card-lg">
                   <div className="flex items-start justify-between flex-wrap gap-4">
                     <div className="flex items-start gap-4"><ProductThumb src="/images/produits/ecoflow-powerstream-2.webp" alt="EcoFlow PowerStream" href="/avis/ecoflow-powerstream" size="lg" /><div><div className="badge-amber mb-2">Arr&ecirc;t&eacute;</div><h3 className="font-bold text-xl">EcoFlow PowerStream</h3><p className="text-sm text-stone">Syst&egrave;me modulaire batterie + micro-onduleur</p></div></div>
-                    <div className="text-right"><div className="font-mono text-2xl font-bold text-stone">Arr&ecirc;t&eacute;</div><div className="text-xs text-stone">successeur&nbsp;: STREAM Ultra, 659&nbsp;&euro; seul</div></div>
+                    <div className="text-right"><div className="font-mono text-2xl font-bold text-stone">Arr&ecirc;t&eacute;</div><div className="text-xs text-stone">successeur&nbsp;: <AffLink item={BUY.streamUltra} position="discontinued-card">STREAM Ultra</AffLink>, 659&nbsp;&euro; seul</div></div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le PowerStream d&apos;EcoFlow &eacute;tait une approche diff&eacute;rente : un micro-onduleur intelligent qui g&egrave;re la charge/d&eacute;charge automatiquement selon votre consommation en temps r&eacute;el, mais compatible uniquement avec une batterie portable EcoFlow achet&eacute;e &agrave; part (DELTA, RIVER). <strong>Mise &agrave; jour 03/11/2026&nbsp;:</strong> le PowerStream n&apos;est plus vendu par EcoFlow France, remplac&eacute; par le <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">STREAM Ultra</Link>, qui int&egrave;gre directement sa batterie (1,92&nbsp;kWh, extensible &agrave; 11,52&nbsp;kWh) &mdash; voir notre <Link href="/avis/ecoflow-powerstream" className="text-green hover:underline">avis PowerStream</Link>.</p>
                 </div>
@@ -287,6 +289,8 @@ export default function BatteriePage() {
                 </Link>
               </div>
             </section>
+
+            <OuAcheter rows={[{ item: BUY.solarflow800Plus, note: "le meilleur prix au kWh stocké de ce comparatif (sans panneaux)" }]} />
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">

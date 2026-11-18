@@ -2,7 +2,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
-import { zendureUrl, ecoflowUrl } from '@/lib/affiliate';
+import { zendureUrl, ecoflowUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
@@ -378,7 +379,7 @@ export default function MicroOnduleurPage() {
               <div className="grid md:grid-cols-2 gap-4 mt-6">
                 <div className="card-lg border-l-4 border-l-green">
                   <h3 className="font-bold text-base mb-2">Hoymiles HMS-800W-2T</h3>
-                  <p className="text-sm text-charcoal-light leading-relaxed">La r&eacute;f&eacute;rence des montages DIY&nbsp;: 2 MPPT ind&eacute;pendants, Wi-Fi int&eacute;gr&eacute; (c&apos;est le &laquo;&nbsp;W&nbsp;&raquo; du nom &mdash; la version HMS-800-2T sans W passe par une passerelle DTU), plage MPPT 16-60&nbsp;V, 65&nbsp;V DC max. Le moins cher des 800&nbsp;VA de marque. <Link href="/avis/hoymiles-hms-800w" className="text-green hover:underline">Notre avis complet</Link>.</p>
+                  <p className="text-sm text-charcoal-light leading-relaxed">La r&eacute;f&eacute;rence des montages DIY&nbsp;: 2 MPPT ind&eacute;pendants, Wi-Fi int&eacute;gr&eacute; (c&apos;est le &laquo;&nbsp;W&nbsp;&raquo; du nom &mdash; la version HMS-800-2T sans W passe par une passerelle DTU), plage MPPT 16-60&nbsp;V, 65&nbsp;V DC max. Le moins cher des 800&nbsp;VA de marque. <Link href="/avis/hoymiles-hms-800w" className="text-green hover:underline">Notre avis complet</Link> &middot; <AffLink item={BUY.hoymilesAmazon} position="mid_article">voir les prix sur Amazon</AffLink>.</p>
                 </div>
                 <div className="card-lg border-l-4 border-l-green">
                   <h3 className="font-bold text-base mb-2">APsystems EZ1-M / EZ1-H</h3>

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -191,7 +193,7 @@ export default function PuissanceComparatif() {
                   { profil: 'Petit budget (< 400€)', reco: 'Kit compact 270-300 W', detail: 'Le Sunology GO (270 W, 349 €) est disponible ; le Beem Kit 300W (199 €) serait plus rentable sur le papier mais il est en rupture de stock chez Beem (vérifié le 5 novembre 2026).' },
                   { profil: 'Balcon standard 10 m²', reco: '450-515 W', detail: 'Sunology PLAY 515 W (ex-PLAY 2) ou Beem On 500 Wc (en précommande) : 1 panneau, installation en 2 min.' },
                   { profil: 'Grand balcon ou terrasse', reco: '500W (Beem On 429\u20ac)', detail: 'Beem On 500 Wc : meilleur prix au Wc \u00e0 0,86 \u20ac/Wc, ROI ~4,7 ans (Lyon, sud), en pr\u00e9commande (exp\u00e9dition \u00e0 partir de d\u00e9cembre 2026).' },
-                  { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (460 W + 700 Wh), Zendure SolarFlow 800 Plus ou Bluetti Balco 260.' },
+                  { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (460 W + 700 Wh), Zendure SolarFlow 800 Plus ou Bluetti Balco 260.', achat: BUY.solarflow800Plus },
                   { profil: 'Locataire', reco: '400-450W', detail: 'Un seul panneau se d\u00e9monte en 1 minute pour le d\u00e9m\u00e9nagement.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
@@ -199,6 +201,7 @@ export default function PuissanceComparatif() {
                       <div>
                         <h3 className="font-bold text-sm mb-1">{p.profil}</h3>
                         <p className="text-xs text-charcoal-light">{p.detail}</p>
+                        {'achat' in p && p.achat && <p className="text-xs mt-1"><AffLink item={p.achat} position="profil">Voir le prix du SolarFlow 800 Plus chez Zendure &rarr;</AffLink></p>}
                       </div>
                       <span className="text-xs font-semibold px-3 py-1 rounded-lg whitespace-nowrap bg-green-pale text-green">{p.reco}</span>
                     </div>

@@ -7,7 +7,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Zendure SolarFlow Mix avis 2026 : le tout-en-un r\u00e9sidentiel',
@@ -206,7 +207,7 @@ export default function ZendureSolarFlowMixAvisPage() {
                       ['Zendure SolarFlow 800+', '1,92 kWh', '800 W', '539 \u20ac', '281 \u20ac', false],
                     ].map(([name, cap, power, price, ratio, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>
-                        <td className="py-2 px-3">{name as string}</td>
+                        <td className="py-2 px-3">{name === 'Zendure SolarFlow 800+' ? <AffLink item={BUY.solarflow800Plus} position="comparison-table">{name as string}</AffLink> : (name as string)}</td>
                         <td className="py-2 px-3">{cap as string}</td>
                         <td className="py-2 px-3">{power as string}</td>
                         <td className="py-2 px-3">{price as string}</td>
@@ -244,7 +245,7 @@ export default function ZendureSolarFlowMixAvisPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">Pour un foyer consommant 7&nbsp;000&nbsp;kWh/an avec tarif heures pleines/creuses, l&apos;optimisation IA Zenki peut r&eacute;duire la facture EDF de 70 &agrave; 90&nbsp;%. C&apos;est le sc&eacute;nario id&eacute;al de Zendure, et les chiffres sont plausibles &agrave; condition d&apos;avoir assez de panneaux.</p>
-              <p className="text-charcoal-light leading-relaxed">En comparaison, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">SolarFlow 800 Plus</Link> en pack avec 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) offre un ROI de 3,6 ans mais &eacute;conomise environ 190&nbsp;&euro; la premi&egrave;re ann&eacute;e. Le Mix joue dans une autre cat&eacute;gorie.</p>
+              <p className="text-charcoal-light leading-relaxed">En comparaison, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">SolarFlow 800 Plus</Link> en pack avec 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) offre un ROI de 3,6 ans mais &eacute;conomise environ 190&nbsp;&euro; la premi&egrave;re ann&eacute;e. Le Mix joue dans une autre cat&eacute;gorie. <AffLink item={BUY.solarflow800Plus} position="roi">Voir le prix du SolarFlow 800 Plus chez Zendure &rarr;</AffLink></p>
             </section>
 
             <section>
