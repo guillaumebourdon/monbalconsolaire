@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { zendureUrl, ecoflowUrl } from '@/lib/affiliate';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
@@ -432,13 +433,23 @@ export default function MicroOnduleurPage() {
                   { cas: 'Vous avez 1 panneau de 300 à 500 Wc', reco: 'Un mono-entrée 400-480 VA : Hoymiles HMS-400W-1T pour le prix, Enphase IQ8P si la garantie 25 ans compte plus que le coût.' },
                   { cas: 'Vous avez 2 panneaux (cas le plus courant)', reco: 'Un 800 VA à 2 MPPT avec Wi-Fi intégré. Hoymiles HMS-800W-2T si le prix prime (à comparer le jour de l’achat), APsystems EZ1-M si vous voulez le Bluetooth local et 12 ans de garantie.' },
                   { cas: 'Vos panneaux font plus de 500 Wc chacun', reco: 'APsystems EZ1-H (960 VA, bridable) ou un 800 VA avec écrêtage assumé. Vérifiez la tension Voc et le courant d’entrée.' },
-                  { cas: 'Vous voulez stocker le surplus', reco: 'Un système avec batterie (Zendure SolarFlow, EcoFlow STREAM ; le PowerStream n’est plus vendu). Plus cher : utile surtout si votre consommation de journée est faible.' },
+                  { cas: 'Vous voulez stocker le surplus', reco: 'Un système avec batterie (Zendure SolarFlow, EcoFlow STREAM ; le PowerStream n’est plus vendu). Plus cher : utile surtout si votre consommation de journée est faible.', achats: [
+                    { produit: 'Zendure SolarFlow 800 Plus', marchand: 'Zendure', url: zendureUrl('https://zendure.fr/products/solarflow-800-plus'), label: 'SolarFlow 800 Plus chez Zendure' },
+                    { produit: 'EcoFlow STREAM Ultra', marchand: 'EcoFlow', url: ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro'), label: 'STREAM Ultra chez EcoFlow' },
+                  ] },
                   { cas: 'Vous voulez le moins cher possible', reco: 'Hoymiles HMS-800W-2T. Évitez les onduleurs sans marque des places de marché : certificat de découplage invérifiable, parfois pas de relais.' },
                   { cas: 'Vous voulez du courant pendant une coupure', reco: 'Aucun micro-onduleur réseau ne le permet. Il faut une station avec sortie AC autonome (voir plus bas).' },
                 ].map((item) => (
                   <div key={item.cas} className="card border-l-4 border-l-green">
                     <h3 className="font-bold text-sm mb-1 text-green">{item.cas}</h3>
                     <p className="text-sm text-charcoal-light leading-relaxed">{item.reco}</p>
+                    {'achats' in item && item.achats && (
+                      <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                        {item.achats.map((x) => (
+                          <AffiliateCTA key={x.produit} productName={x.produit} merchantName={x.marchand} affiliateUrl={x.url} label={`Voir le prix : ${x.label}`} variant="inline" position="decision-guide" />
+                        ))}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>

@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { zendureUrl } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateProductionKwh, KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
@@ -113,6 +114,7 @@ const astuces = [
     cout: `\u00e0 partir de ${ZENDURE_PRICE}`,
     detail: `Si vous avez d\u00e9j\u00e0 optimis\u00e9 les gestes gratuits et que votre taux plafonne \u00e0 70 %, une batterie fait passer \u00e0 85-95 %. Le Zendure SolarFlow 800 Plus (${ZENDURE_PRICE} sans panneaux, 1,92 kWh, prix v\u00e9rifi\u00e9 le 5 novembre 2026) est le plus abordable de notre s\u00e9lection. Mais ne commencez pas par l\u00e0 \u2014 rentabilisez d\u2019abord les gestes gratuits.`,
     lien: { href: '/avis/zendure-solarflow', label: 'Voir le Zendure SolarFlow' },
+    achat: { url: zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url), produit: 'Zendure SolarFlow 800 Plus', marchand: 'Zendure', label: 'Voir le prix chez Zendure' },
   },
 ];
 
@@ -207,6 +209,11 @@ export default function OptimiserAutoconsommationPage() {
                         <Link href={a.lien.href} className="text-green text-sm font-semibold hover:underline inline-flex items-center gap-1 mt-2">
                           {a.lien.label} &rarr;
                         </Link>
+                      )}
+                      {'achat' in a && a.achat && (
+                        <span className="ml-4">
+                          <AffiliateCTA productName={a.achat.produit} merchantName={a.achat.marchand} affiliateUrl={a.achat.url} label={a.achat.label} variant="inline" position="mid_article" />
+                        </span>
                       )}
                     </div>
                   </div>
@@ -332,6 +339,7 @@ export default function OptimiserAutoconsommationPage() {
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
                 <strong>M&eacute;thodologie :</strong> donn&eacute;es PVGIS, retours utilisateurs forum-photovoltaique.fr, tarif EDF {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; Base 6 kVA), prix v&eacute;rifi&eacute;s le 5 novembre 2026. <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
+                {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
           </div>

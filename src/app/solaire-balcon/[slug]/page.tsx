@@ -13,6 +13,8 @@ import { productibleSite, productibleDepartement, RENTABILITE_DEPARTEMENTS } fro
 import { calculateROIYears, calculateProductionKwh, calculateFirstYearSavings, calculateTotalSavings25Years, KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, AUTOCONSO_STANDARD, AUTOCONSO_BATTERY, PVGIS_REFERENCE_LYON } from '@/lib/pricing';
 import { PRODUCTS, availabilityBadge, type ProductId } from '@/data/products';
 import { withCanonicalOg } from '@/lib/metadata';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { zendureUrl } from '@/lib/affiliate';
 
 
 // Productible recalé sur la référence Lyon : voir lib/rentabilite-departements.ts
@@ -295,6 +297,11 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                   </Link>
                 )}
               </div>
+              <p className="text-xs text-stone mt-3">
+                Le pack {bestBatterie.name} est vendu sur le site de Zendure&nbsp;:{' '}
+                <AffiliateCTA productName={bestBatterie.name} merchantName="Zendure" affiliateUrl={zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url)} label="voir le prix chez Zendure" variant="inline" position="dept-recommandation" />
+                {' '}(lien commercial, prix susceptible de varier).
+              </p>
             </section>
 
             <section>

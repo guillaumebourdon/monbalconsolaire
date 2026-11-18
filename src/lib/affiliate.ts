@@ -10,6 +10,9 @@ export const AWIN_MERCHANTS = {
   ecoflow: '51799', // EcoFlow FR (fr.ecoflow.com), accepté le 05/11/2026
   allpowers: '98667', // ALLPOWERS FR, accepté le 04/11/2026
   manomano: '17547', // ManoMano FR, accepté le 06/11/2026 (cookie 10 jours)
+  // Vatrer : accepté le 18/11/2026. 119703 = « Vatrer Affiliate Program » (profil public ui.awin.com/merchant-profile/119703,
+  // listé région US). À CONFIRMER dans Awin › Annonceurs › Mes programmes avant le premier lien : aucun lien Vatrer sur le site.
+  vatrer: '119703',
 } as const;
 
 export function awinUrl(merchantId: string, destination: string): string {

@@ -4,6 +4,9 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { zendureUrl, ecoflowUrl } from '@/lib/affiliate';
+import { PRODUCTS } from '@/data/products';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
@@ -148,6 +151,7 @@ export default function MeilleureBatterieBalconPage() {
                     {[
                       {
                         name: 'Zendure SolarFlow 800 Plus',
+                        buy: { url: zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url), merchant: 'Zendure' },
                         href: '/avis/zendure-solarflow',
                         img: '/images/produits/zendure-solarflow-front.webp',
                         capacity: '1,92 kWh',
@@ -187,6 +191,7 @@ export default function MeilleureBatterieBalconPage() {
                       },
                       {
                         name: 'EcoFlow STREAM Ultra',
+                        buy: { url: ecoflowUrl(PRODUCTS['ecoflow-stream-ultra'].url), merchant: 'EcoFlow' },
                         href: '/avis/ecoflow-stream-ultra',
                         img: null,
                         capacity: '1,92 kWh',
@@ -213,6 +218,7 @@ export default function MeilleureBatterieBalconPage() {
                       },
                       {
                         name: 'Zendure SolarFlow Mix 3000 AC+',
+                        buy: { url: zendureUrl(PRODUCTS['zendure-solarflow-mix'].url), merchant: 'Zendure' },
                         href: '/avis/zendure-solarflow-mix',
                         img: null,
                         capacity: '8 kWh',
@@ -239,6 +245,11 @@ export default function MeilleureBatterieBalconPage() {
                                 {row.name}
                               </Link>
                               {row.best && <span className="badge-green ml-2 text-xs">{row.badge}</span>}
+                              {'buy' in row && row.buy && (
+                                <span className="block mt-1 font-normal">
+                                  <AffiliateCTA productName={row.name} merchantName={row.buy.merchant} affiliateUrl={row.buy.url} label={`Voir le prix chez ${row.buy.merchant}`} variant="inline" position="comparison-table" />
+                                </span>
+                              )}
                             </span>
                           </div>
                         </td>

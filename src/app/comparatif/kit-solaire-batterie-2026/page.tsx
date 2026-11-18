@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { zendureUrl, ecoflowUrl } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
@@ -131,11 +133,16 @@ export default function BatteriePage() {
                         'Sunology VAULT': '/avis/sunology-vault',
                         'Beem Battery': '/avis/beem-battery',
                       };
+                      const buyMap: Record<string, { url: string; merchant: string }> = {
+                        'Zendure SolarFlow 800 Plus': { url: zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url), merchant: 'Zendure' },
+                        'EcoFlow STREAM Ultra': { url: ecoflowUrl(PRODUCTS['ecoflow-stream-ultra'].url), merchant: 'EcoFlow' },
+                      };
+                      const buy = buyMap[n as string];
                       const thumb = thumbMap[n as string];
                       const nameLink = linkMap[n as string];
                       return (
                       <tr key={i} className={`border-b border-border-light ${best ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3 font-semibold"><div className="flex items-center gap-3">{thumb && <ProductThumb src={thumb.src} alt={n as string} href={thumb.href} size="sm" />}<span>{nameLink ? <Link href={nameLink} className="text-green hover:underline">{n}</Link> : n} {best && <span className="badge-green ml-2 text-xs">Meilleur prix/kWh</span>}</span></div></td>
+                        <td className="p-3 font-semibold"><div className="flex items-center gap-3">{thumb && <ProductThumb src={thumb.src} alt={n as string} href={thumb.href} size="sm" />}<span>{nameLink ? <Link href={nameLink} className="text-green hover:underline">{n}</Link> : n} {best && <span className="badge-green ml-2 text-xs">Meilleur prix/kWh</span>}{buy && <span className="block mt-1 font-normal"><AffiliateCTA productName={n as string} merchantName={buy.merchant} affiliateUrl={buy.url} label={`Voir le prix chez ${buy.merchant}`} variant="inline" position="comparison-table" /></span>}</span></div></td>
                         <td className="text-center p-3 font-mono text-sm">{c}</td>
                         <td className="text-center p-3 font-mono text-sm text-amber-dark">{p}</td>
                         <td className="text-center p-3 font-mono text-sm">{r}</td>

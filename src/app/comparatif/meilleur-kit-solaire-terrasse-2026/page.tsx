@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { zendureUrl } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years, AUTOCONSO_BATTERY, KWH_PRICE_LABEL, KWH_PRICE_SHORT, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
@@ -252,6 +254,7 @@ export default function MeilleurKitTerrasse2026Page() {
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10">
                 <p className="text-charcoal-light leading-relaxed mb-4">
                   Si vous avez une terrasse, <strong>ne vous limitez pas à un seul panneau</strong>. L&apos;espace est votre atout principal. Au 5 novembre 2026, le pack <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 panneaux 500 W</Link> (719 €, prix promotionnel sans date de fin annoncée) offre le meilleur compromis : 1 000 Wc, batterie intégrée pour le soir, ROI d&apos;environ {fr(zendure.roi)} ans. V&eacute;rifiez le prix avant d&apos;acheter : hors promotion, le pack est affich&eacute; 999 €.
+                  {' '}<AffiliateCTA productName="Zendure SolarFlow 800 Plus + 2 × 500 W" merchantName="Zendure" affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow-800-plus')} label="Voir le prix du pack chez Zendure" variant="inline" position="verdict" />
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
                   Si le budget est serr&eacute;, le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc &agrave; 429 &euro;</Link> offre le meilleur rapport qualit&eacute;-prix (0,86 &euro;/Wc, ROI ~4,7 ans), mais il est en pr&eacute;commande (exp&eacute;dition &agrave; partir de d&eacute;cembre 2026). Si la simplicit&eacute; prime, <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">2 Sunology PLAY</Link> se posent et se branchent en 2 minutes.

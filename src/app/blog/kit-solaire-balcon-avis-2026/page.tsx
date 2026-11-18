@@ -4,6 +4,7 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { zendureUrl } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, calculateROIYears } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
@@ -209,6 +210,9 @@ export default function KitSolaireBalconAvisPage() {
             </div>
             <p className="text-sm text-charcoal-light leading-relaxed">
               Notre constat : le SolarFlow est id&eacute;al pour les profils absents la journ&eacute;e. Pour ceux qui sont en t&eacute;l&eacute;travail, un kit simple avec prise connect&eacute;e suffit souvent. Voir aussi les nouvelles options : <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Bluetti Balco 260</Link> et <Link href="/avis/jackery-solarvault-3-pro" className="text-green hover:underline">Jackery SolarVault 3 Pro</Link>.
+            </p>
+            <p className="mt-3">
+              <AffiliateCTA productName="Zendure SolarFlow 800 Plus" merchantName="Zendure" affiliateUrl={zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url)} label="Voir le prix du SolarFlow 800 Plus chez Zendure" variant="inline" position="mid_article" />
             </p>
           </section>
 
