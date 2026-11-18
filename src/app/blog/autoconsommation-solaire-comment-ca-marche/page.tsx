@@ -5,6 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
 
@@ -159,6 +161,13 @@ export default function AutoconsommationPage() {
               <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes &eacute;conomies &rarr;</Link>
             </div>
 
+            <OuAcheter
+              title="Stocker le surplus au lieu de le perdre"
+              intro="Les deux batteries de balcon de notre comparatif qui stockent la production de journ&eacute;e pour le soir (1,92 kWh chacune)."
+              rows={[{ item: BUY.solarflow800Plus }, { item: BUY.streamUltra }]}
+              position="footer-box"
+            />
+
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>
               <div className="space-y-4">
@@ -217,7 +226,7 @@ export default function AutoconsommationPage() {
             </section>
 
             <NewsletterBanner />
-            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Enedis, PVGIS, EDF tarifs 2026, <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054190669" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026</a> (prime et tarif d&apos;achat du surplus), <a href="https://www.photovoltaique.info/fr/realiser-une-installation/choix-du-materiel/batteries-stockage-virtuel-et-autres-accesoires/les-kits-solaires-plug-and-play/" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">photovoltaique.info</a>. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p></div>
+            <div className="mt-10 pt-8 border-t border-border-light"><p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> Enedis, PVGIS, EDF tarifs 2026, <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054190669" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026</a> (prime et tarif d&apos;achat du surplus), <a href="https://www.photovoltaique.info/fr/realiser-une-installation/choix-du-materiel/batteries-stockage-virtuel-et-autres-accesoires/les-kits-solaires-plug-and-play/" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">photovoltaique.info</a>. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>. {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.</p></div>
           </div>
         </div>
       </article>

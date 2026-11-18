@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { BUY, type BuyLink } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 interface Article {
   slug: string;
@@ -10,6 +12,8 @@ interface Article {
   badge: string;
   tags: string[];
   readTime: string;
+  /** Produits cités dans l'extrait, avec leur lien marchand (affilié) */
+  buys?: BuyLink[];
   priceRange?: string;
   publishedAt: string;
   updatedAt?: string;
@@ -55,16 +59,18 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-09-27',
     readTime: '9 min',
     priceRange: '13-30 \u20ac',
+    buys: [BUY.wattmetreAmazon],
   },
   {
     slug: '/blog/prises-connectees-suivi-solaire',
     title: 'Meilleures prises connect\u00e9es pour suivi solaire 2026',
-    excerpt: 'Tapo P110, Shelly Plug S, Tapo P410M : comparatif des prises pour mesurer votre production en temps r\u00e9el.',
+    excerpt: 'Tapo P110, Shelly Plug PM Gen3, Tapo P410M : comparatif des prises pour mesurer votre production en temps r\u00e9el.',
     badge: 'S\u00e9lection 2026',
     tags: ['essentiels'],
     publishedAt: '2026-05-20',
     readTime: '8 min',
     priceRange: '15-25 \u20ac',
+    buys: [BUY.tapoP110Amazon, BUY.shellyPlugAmazon],
   },
   {
     slug: '/blog/accessoires-kit-solaire-balcon',
@@ -172,7 +178,8 @@ export default function AccessoiresPage() {
 
         <div className="space-y-4 mb-12">
           {filteredArticles.map((a) => (
-            <Link key={a.slug} href={a.slug} className="card-lg block hover:shadow-brand-lg transition-all duration-300 group">
+            <div key={a.slug}>
+            <Link href={a.slug} className="card-lg block hover:shadow-brand-lg transition-all duration-300 group">
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -201,6 +208,15 @@ export default function AccessoiresPage() {
               </div>
               <span className="text-green font-semibold text-sm mt-3 inline-block">Lire l'article &rarr;</span>
             </Link>
+            {a.buys && (
+              <p className="text-sm mt-2 px-2 flex flex-wrap gap-x-4 gap-y-1 items-center">
+                {a.buys.map((b) => (
+                  <AffLink key={b.url} item={b} position="hub-accessoires">{b.product} sur {b.merchant} &rarr;</AffLink>
+                ))}
+                <span className="text-[10px] text-stone">liens commerciaux</span>
+              </p>
+            )}
+            </div>
           ))}
         </div>
 
@@ -216,6 +232,10 @@ export default function AccessoiresPage() {
           <p className="text-sm text-charcoal-light mb-4">Calculez votre production potentielle avant d'investir dans des accessoires.</p>
           <Link href="/calculateur" className="btn-primary inline-flex">Calculer mes économies &rarr;</Link>
         </div>
+
+        <p className="text-xs text-stone leading-relaxed mt-8">
+          <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s (Amazon). Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos s&eacute;lections.
+        </p>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { BUY } from '@/lib/affiliate';
+import { OuAcheter } from '@/components/ui/OuAcheter';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
@@ -278,6 +280,8 @@ export default function ApplicationSuiviProductionSolairePage() {
                 </Link>
               </div>
             </section>
+
+            <OuAcheter title="Suivre sa production sans app de marque" intro="Une prise connect&eacute;e avec mesure de consommation, branch&eacute;e entre le micro-onduleur et la prise murale, affiche la production en temps r&eacute;el quel que soit le kit." rows={[{ item: BUY.tapoP110Amazon, note: "prise fran\u00e7aise type E, app Tapo" }, { item: BUY.shellyPlugAmazon, note: "version fran\u00e7aise, app Shelly" }]} />
 
             <NewsletterBanner />
 

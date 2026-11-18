@@ -5,6 +5,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 import { AUTOCONSO_STANDARD, KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, yearFactor } from '@/lib/pricing';
 import { priceLabel, PRODUCTS } from '@/data/products';
 
@@ -414,6 +416,13 @@ export default function ProductionSolaireEteHiverPage() {
               />
             </div>
 
+            <OuAcheter
+              title="Suivre votre production mois par mois"
+              intro="Pour comparer votre propre production d&rsquo;&eacute;t&eacute; et d&rsquo;hiver aux chiffres PVGIS ci-dessus : une prise connect&eacute;e avec mesure de consommation, branch&eacute;e entre le kit et la prise murale (versions fran&ccedil;aises, prise type E)."
+              rows={[{ item: BUY.tapoP110Amazon }, { item: BUY.tapoP110ManoMano }]}
+              position="footer-box"
+            />
+
             {/* === FAQ === */}
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>
@@ -465,7 +474,7 @@ export default function ProductionSolaireEteHiverPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Sources et méthodologie :</strong> données PVGIS (Commission européenne, 15 ans de données satellitaires), coefficient thermique -0,40 %/°C (norme IEC 61215), tarif EDF {KWH_PRICE_LABEL} (tarif réglementé Base 6 kVA), inflation énergie {KWH_INFLATION_LABEL}, dégradation {PANEL_DEGRADATION_LABEL}, autoconsommation 85 %, PR 0,85, référence Lyon plein sud. <Link href="/methodologie" className="text-green hover:underline">Voir la méthodologie complète</Link>. Cet article contient des liens d&apos;affiliation (Sunology) ; notre avis reste indépendant.
+                <strong>Sources et méthodologie :</strong> données PVGIS (Commission européenne, 15 ans de données satellitaires), coefficient thermique -0,40 %/°C (norme IEC 61215), tarif EDF {KWH_PRICE_LABEL} (tarif réglementé Base 6 kVA), inflation énergie {KWH_INFLATION_LABEL}, dégradation {PANEL_DEGRADATION_LABEL}, autoconsommation 85 %, PR 0,85, référence Lyon plein sud. <Link href="/methodologie" className="text-green hover:underline">Voir la méthodologie complète</Link>. Cet article contient des liens d&apos;affiliation (Sunology, Amazon, ManoMano)&nbsp;: si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous ; notre avis reste indépendant.
               </p>
             </div>
           </div>

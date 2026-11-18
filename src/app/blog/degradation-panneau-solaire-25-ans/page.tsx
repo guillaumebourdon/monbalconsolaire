@@ -5,6 +5,8 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BUY } from '@/lib/affiliate';
 import { KWH_PRICE_LABEL, KWH_INFLATION_RATE, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
 import { priceLabel } from '@/data/products';
 
@@ -283,6 +285,13 @@ export default function DegradationPanneauSolairePage() {
                 Attention &agrave; ne pas confondre d&eacute;gradation et effet temp&eacute;rature&nbsp;: un panneau produit aussi moins par forte chaleur, de mani&egrave;re totalement r&eacute;versible (voir <Link href="/blog/panneau-solaire-canicule-production" className="text-green font-semibold hover:underline">panneau solaire et canicule</Link>). Pour isoler la vraie d&eacute;gradation, comparez des mois &agrave; m&eacute;t&eacute;o comparable, sur plusieurs ann&eacute;es.
               </p>
             </section>
+
+            <OuAcheter
+              title="Pas d&rsquo;application de suivi&nbsp;? Une prise connect&eacute;e"
+              intro="Si votre kit n&rsquo;a pas d&rsquo;application, une prise connect&eacute;e avec mesure de consommation, branch&eacute;e entre le kit et la prise murale, enregistre la production et permet de comparer un m&ecirc;me mois d&rsquo;une ann&eacute;e sur l&rsquo;autre (versions fran&ccedil;aises, prise type E)."
+              rows={[{ item: BUY.tapoP110Amazon }, { item: BUY.shellyPlugAmazon }]}
+              position="footer-box"
+            />
 
             {/* FAQ */}
             <section>

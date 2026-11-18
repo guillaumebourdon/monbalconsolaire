@@ -4,7 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, calculateROIYears } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
@@ -228,6 +229,9 @@ export default function KitSolaireBalconAvisPage() {
               <li>&bull; <strong>Point faible :</strong> prix total &eacute;lev&eacute; (1 200-2 000 &euro; selon la config)</li>
               <li>&bull; <strong>Point faible :</strong> SAV parfois lent (d&eacute;lais 2-3 semaines cit&eacute;s sur forums)</li>
             </ul>
+            <p className="text-sm text-charcoal-light">
+              Le successeur vendu aujourd&apos;hui par EcoFlow France est le <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">STREAM Ultra</Link>&nbsp;: <AffLink item={BUY.streamUltra} position="mid_article">voir le prix chez EcoFlow &rarr;</AffLink>
+            </p>
           </section>
 
           {/* Section 6 - Autres */}
@@ -323,7 +327,7 @@ export default function KitSolaireBalconAvisPage() {
                   <tr className="border-b border-border-light">
                     <td className="py-3 font-semibold">Stockage int&eacute;gr&eacute;</td>
                     <td className="py-3"><Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 &times; 500 W</Link></td>
-                    <td className="py-3 text-center font-mono">719 &euro;</td>
+                    <td className="py-3 text-center font-mono">719 &euro;<span className="block font-sans text-xs"><AffLink item={BUY.solarflow800Plus} position="comparison-table">Voir le prix</AffLink></span></td>
                     <td className="py-3 text-center font-mono font-bold text-green">8,5/10</td>
                   </tr>
                   <tr className="border-b border-border-light">

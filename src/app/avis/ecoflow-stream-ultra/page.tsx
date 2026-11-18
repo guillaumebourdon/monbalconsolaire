@@ -7,7 +7,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
-import { ecoflowUrl } from '@/lib/affiliate';
+import { ecoflowUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'EcoFlow STREAM Ultra avis : le successeur du PowerStream',
@@ -344,7 +345,7 @@ export default function EcoflowStreamUltraPage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                Un ROI de 6,3 ans est correct pour un système avec batterie et sortie de secours, mais moins performant que le Zendure SolarFlow 800 Plus en pack (3,6 ans au prix promotionnel de 719&nbsp;&euro;, sans backup coupure). Au prix barr&eacute; de 1&nbsp;299&nbsp;&euro;, le m&ecirc;me setup d&eacute;passerait 1&nbsp;700&nbsp;&euro; et 10 ans de ROI. Le STREAM Ultra X (3,84&nbsp;kWh) d&eacute;marre &agrave; 1&nbsp;099&nbsp;&euro; sur fr.ecoflow.com (5 novembre 2026).
+                Un ROI de 6,3 ans est correct pour un système avec batterie et sortie de secours, mais moins performant que le <AffLink item={BUY.solarflow800Plus} position="roi">Zendure SolarFlow 800 Plus</AffLink> en pack (3,6 ans au prix promotionnel de 719&nbsp;&euro;, sans backup coupure). Au prix barr&eacute; de 1&nbsp;299&nbsp;&euro;, le m&ecirc;me setup d&eacute;passerait 1&nbsp;700&nbsp;&euro; et 10 ans de ROI. Le STREAM Ultra X (3,84&nbsp;kWh) d&eacute;marre &agrave; 1&nbsp;099&nbsp;&euro; sur fr.ecoflow.com (5 novembre 2026).
               </p>
             </section>
 
@@ -407,7 +408,7 @@ export default function EcoflowStreamUltraPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Specs recoup&eacute;es sur les boutiques EcoFlow et des comparatifs ind&eacute;pendants&nbsp;; prix v&eacute;rifi&eacute; sur fr.ecoflow.com le 5 novembre 2026 (659&nbsp;&euro;, prix promotionnel). Article r&eacute;dig&eacute; sans r&eacute;mun&eacute;ration d&apos;EcoFlow.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Specs recoup&eacute;es sur les boutiques EcoFlow et des comparatifs ind&eacute;pendants&nbsp;; prix v&eacute;rifi&eacute; sur fr.ecoflow.com le 5 novembre 2026 (659&nbsp;&euro;, prix promotionnel). Article r&eacute;dig&eacute; sans r&eacute;mun&eacute;ration d&apos;EcoFlow. <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

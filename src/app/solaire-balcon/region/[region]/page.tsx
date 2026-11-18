@@ -21,6 +21,8 @@ import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_PRICE_SOURCE_URL, AUTOCONSO_STAND
 import { SchemaArticle, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { withCanonicalOg } from '@/lib/metadata';
+import { BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 const BASE = 'https://monbalconsolaire.fr';
 const n = (x: number) => x.toLocaleString('fr-FR');
@@ -320,6 +322,12 @@ export default function RegionPage({ params }: { params: { region: string } }) {
             </div>
 
           </section>
+
+          <p className="text-sm text-charcoal-light leading-relaxed mt-6">
+            Entre {s.best.prefecture} et {s.worst.prefecture}, l&apos;estimation PVGIS du m&ecirc;me kit varie de {n(s.spreadKwh)}&nbsp;kWh par an&nbsp;: pour savoir o&ugrave; se situe votre balcon, une prise connect&eacute;e comme la{' '}
+            <AffLink item={BUY.tapoP110Amazon} position="region-mesure">Tapo P110 (FR)</AffLink> ou la{' '}
+            <AffLink item={BUY.shellyPlugAmazon} position="region-mesure">Shelly Plug PM Gen3</AffLink>, branch&eacute;e entre le kit et la prise murale, mesure la production r&eacute;elle jour par jour (liens commerciaux&nbsp;: commission sans surco&ucirc;t pour vous).
+          </p>
 
           <div className="pt-8 border-t border-border-light">
             <p className="text-xs text-stone leading-relaxed">

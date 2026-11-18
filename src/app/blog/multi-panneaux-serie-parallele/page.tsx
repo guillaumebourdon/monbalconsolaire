@@ -5,6 +5,8 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
+import { AffLink } from '@/components/ui/AffLink';
+import { BUY } from '@/lib/affiliate';
 import { PRODUCTS, priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
@@ -118,7 +120,7 @@ export default function MultiPanneauxSeriePage() {
                       ['Hoymiles HMS-600-2T', '600 VA', '2 MPPT ind.', '2 &times; 330 Wc max', '~165&nbsp;&euro;'],
                     ].map(([model, ac, inputs, panels, price], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'} ${i === 0 ? 'bg-green-pale/30 font-semibold' : ''}`}>
-                        <td className="p-3 font-mono text-xs">{model}</td>
+                        <td className="p-3 font-mono text-xs">{model}{model === 'Hoymiles HMS-800-2T' && <span className="block mt-1 font-sans"><AffLink item={BUY.hoymilesAmazon} position="comparison-table">Voir les prix sur Amazon &rarr;</AffLink></span>}</td>
                         <td className="text-center p-3 font-mono text-xs" dangerouslySetInnerHTML={{ __html: ac }} />
                         <td className="text-center p-3 text-xs">{inputs}</td>
                         <td className="text-center p-3 text-xs" dangerouslySetInnerHTML={{ __html: panels }} />
@@ -150,7 +152,7 @@ export default function MultiPanneauxSeriePage() {
               </div>
 
               <p className="text-charcoal-light leading-relaxed text-sm">
-                <strong>Le Beem On 500 Wc</strong> et le <strong>Sunethic F500</strong> utilisent l&apos;APsystems EZ1-H en configuration bi-panneaux. L&apos;avis complet du micro-onduleur Hoymiles HMS-800W est disponible sur notre page d&eacute;di&eacute;e&nbsp;: <Link href="/avis/hoymiles-hms-800w" className="text-green font-semibold hover:underline">avis Hoymiles HMS-800W</Link>.
+                <strong>Le Beem On 500 Wc</strong> et le <strong>Sunethic F500</strong> utilisent l&apos;APsystems EZ1-H en configuration bi-panneaux. L&apos;avis complet du micro-onduleur Hoymiles HMS-800W est disponible sur notre page d&eacute;di&eacute;e&nbsp;: <Link href="/avis/hoymiles-hms-800w" className="text-green font-semibold hover:underline">avis Hoymiles HMS-800W</Link> (<AffLink item={BUY.hoymilesAmazon} position="mid_article">HMS-800W-2T sur Amazon</AffLink>).
               </p>
             </section>
 

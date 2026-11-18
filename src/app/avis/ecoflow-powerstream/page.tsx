@@ -8,7 +8,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
-import { ecoflowUrl } from '@/lib/affiliate';
+import { ecoflowUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'EcoFlow PowerStream avis (arrêté) : que choisir en 2026 ?',
@@ -183,7 +184,7 @@ export default function EcoflowPowerstreamPage() {
             <p className="text-sm font-semibold mb-2">Alternatives actuelles avec stockage&nbsp;:</p>
             <ul className="text-sm text-charcoal-light space-y-1.5 mb-4">
               <li>&bull; <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">EcoFlow STREAM Ultra</Link>&nbsp;: batterie de 1,92&nbsp;kWh avec onduleur 800&nbsp;W int&eacute;gr&eacute;, extensible &agrave; 11,52&nbsp;kWh, pilot&eacute; par la m&ecirc;me app EcoFlow &mdash; <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">notre avis complet</Link>.</li>
-              <li>&bull; <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link>&nbsp;: le meilleur ROI des syst&egrave;mes avec batterie que nous avons analys&eacute;s.</li>
+              <li>&bull; <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link>&nbsp;: le meilleur ROI des syst&egrave;mes avec batterie que nous avons analys&eacute;s (<AffLink item={BUY.solarflow800Plus} position="discontinued-notice">voir le prix chez Zendure</AffLink>).</li>
               <li>&bull; <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link>&nbsp;: tout-en-un onduleur + batterie 2,56&nbsp;kWh.</li>
               <li>&bull; <Link href="/avis/ikea-solstrale-balcon" className="text-green hover:underline font-semibold">IKEA Solstr&aring;le</Link>&nbsp;: kit balcon b&acirc;ti sur le micro-onduleur EcoFlow STREAM.</li>
             </ul>
@@ -398,7 +399,7 @@ export default function EcoflowPowerstreamPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">PowerStream vs concurrence : tableau comparatif (juillet 2026)</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Deux nouveaux syst&egrave;mes avec stockage arrivent sur le march&eacute; : le <strong>Bluetti Balco 260</strong> (tout-en-un lanc&eacute; le 13 juillet 2026) et le <strong>Zendure SolarFlow Mix 3000 AC+</strong> (batterie r&eacute;sidentielle, disponible depuis avril 2026). Voici la comparaison honn&ecirc;te.
+                Deux nouveaux syst&egrave;mes avec stockage arrivent sur le march&eacute; : le <strong>Bluetti Balco 260</strong> (tout-en-un lanc&eacute; le 13 juillet 2026) et le <AffLink item={BUY.solarflowMix} position="comparison">Zendure SolarFlow Mix 3000 AC+</AffLink> (batterie r&eacute;sidentielle, disponible depuis avril 2026). Voici la comparaison honn&ecirc;te.
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[560px]">
@@ -584,7 +585,7 @@ export default function EcoflowPowerstreamPage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données EcoFlow officielles, fiches techniques constructeur, retours utilisateurs Reddit r/EcoFlow et forum-photovoltaique.fr (avril 2026). Article rédigé sans rémunération d&apos;EcoFlow.{' '}
+                <strong>Méthodologie :</strong> ROI calculé avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 85% (95% avec batterie), Performance Ratio 0,85, Lyon sud. Données EcoFlow officielles, fiches techniques constructeur, retours utilisateurs Reddit r/EcoFlow et forum-photovoltaique.fr (avril 2026). Article rédigé sans rémunération d&apos;EcoFlow. <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre méthode</Link>.
               </p>
             </div>

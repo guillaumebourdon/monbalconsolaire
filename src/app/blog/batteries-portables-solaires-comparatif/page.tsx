@@ -49,7 +49,8 @@ const faqData = [
 const batteries = [
   {
     num: 1,
-    lien: 'https://www.amazon.fr/dp/B0BBLV8WJH?tag=monbalconsola-21',
+    // Lien Amazon retiré le 18/11/2026 : B0BBLV8WJH = batterie d'extension, pas la station (ASIN de la station non vérifié)
+    lien: '',
     nom: 'EcoFlow DELTA 2',
     marque: 'EcoFlow',
     prix: '569-699 €',
@@ -397,14 +398,6 @@ export default function BatteriesPortablesPage() {
             {/* Tableau comparatif */}
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Tableau comparatif rapide — batteries portables</h2>
-              <AffiliateCTA
-                productName="EcoFlow DELTA 2"
-                merchantName="Amazon"
-                affiliateUrl="https://www.amazon.fr/dp/B0BBLV8WJH?tag=monbalconsola-21"
-                label="Notre choix n°1 : voir l'EcoFlow DELTA 2 sur Amazon"
-                variant="secondary"
-                position="after-top-pick"
-              />
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[600px]">
                   <thead>
@@ -422,8 +415,12 @@ export default function BatteriesPortablesPage() {
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
                         <td className="p-3 font-semibold">
                           {b.nom}
-                          <br />
-                          <a href={b.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline text-xs">Voir sur Amazon</a>
+                          {b.lien && (
+                            <>
+                              <br />
+                              <a href={b.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline text-xs">Voir sur Amazon</a>
+                            </>
+                          )}
                         </td>
                         <td className="text-center p-3 font-mono text-xs">{b.capacite}</td>
                         <td className="text-center p-3 font-mono text-xs">{b.puissance}</td>
@@ -501,9 +498,11 @@ export default function BatteriesPortablesPage() {
                       <p className="text-xs font-semibold text-charcoal mb-1">💡 Notre verdict</p>
                       <p className="text-xs text-charcoal-light leading-relaxed">{b.verdict}</p>
                     </div>
-                    <div className="mt-3 text-sm">
-                      <a href={b.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir {b.nom} sur Amazon &rarr;</a>
-                    </div>
+                    {b.lien && (
+                      <div className="mt-3 text-sm">
+                        <a href={b.lien} target="_blank" rel="sponsored noopener" className="text-green font-semibold hover:underline">Voir {b.nom} sur Amazon &rarr;</a>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

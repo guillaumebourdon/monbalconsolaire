@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductThumb } from '@/components/ui/ProductThumb';
+import { AffLink } from '@/components/ui/AffLink';
+import { BUY } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { PRODUCTS, priceLabel, availabilityBadge, type ProductId } from '@/data/products';
@@ -357,6 +359,10 @@ export default function ComparatifPage() {
                 <div className="card-lg border-amber/20 bg-amber-pale/10">
                   <h3 className="font-bold text-amber-dark mb-1">Pour un balcon vraiment exigu &rarr; Sunology GO (349&euro;)</h3>
                   <p className="text-sm text-charcoal-light">Seul kit du march&eacute; pos&eacute; au sol ou sur garde-corps sans per&ccedil;age. ROI plus long ({GO.roi}), r&eacute;serv&eacute; aux balcons o&ugrave; aucun autre kit ne rentre.</p>
+                </div>
+                <div className="card-lg">
+                  <h3 className="font-bold mb-1">Si vous consommez surtout le soir &rarr; un syst&egrave;me avec batterie</h3>
+                  <p className="text-sm text-charcoal-light">Les kits de ce comparatif n&apos;ont pas de stockage (sauf le PLAY MAX). Dans notre <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="text-green hover:underline">comparatif des batteries de balcon</Link>, le meilleur prix au kWh revient au {PRODUCTS['zendure-solarflow-800-plus'].name} ({priceLabel('zendure-solarflow-800-plus')} sans panneaux, {PRODUCTS['zendure-solarflow-800-plus'].batteryKwh?.toLocaleString('fr-FR')}&nbsp;kWh).{' '}<AffLink item={BUY.solarflow800Plus} position="verdict">Voir le prix chez Zendure &rarr;</AffLink></p>
                 </div>
               </div>
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">

@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { AffLink } from '@/components/ui/AffLink';
+import { BUY } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import {
   AUTOCONSO_STANDARD,
@@ -303,6 +305,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
                     title: 'Surveillez la production avec une prise connectée',
                     text: 'Une prise connectée (Tapo P110, Shelly Plug S) mesure la production en temps réel et vous permet de corréler les baisses avec les vagues de chaleur. Vous saurez exactement combien vous perdez par degré — et vous pourrez vérifier que votre installation n’a pas de défaut par ailleurs.',
                     good: true,
+                    achat: BUY.tapoP110Amazon,
                   },
                 ].map((item) => (
                   <div key={item.num} className={`card border-l-4 ${item.good ? 'border-l-green' : 'border-l-amber'}`}>
@@ -311,6 +314,9 @@ export default function PanneauSolaireCaniuleProductionPage() {
                       <div>
                         <h3 className="font-bold text-sm mb-1">{item.title}</h3>
                         <p className="text-xs text-charcoal-light leading-relaxed">{item.text}</p>
+                        {'achat' in item && item.achat && (
+                          <p className="text-xs mt-1"><AffLink item={item.achat} position="mid_article">Voir la Tapo P110 (FR) sur Amazon &rarr;</AffLink></p>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -434,6 +440,7 @@ export default function PanneauSolaireCaniuleProductionPage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Sources&nbsp;:</strong> Hellio, AJ Solar, Selectra, Adekwatts, Artyseo, Serena Energy &mdash; articles sp&eacute;cialis&eacute;s sur l&apos;impact de la canicule sur les panneaux solaires (2025&ndash;2026). Physique des semi-conducteurs&nbsp;: standard IEC 61215 (conditions STC et NOCT). Coefficient de temp&eacute;rature&nbsp;: fiches techniques Sunology, Beem, EcoFlow, Hoymiles. Tarif EDF Base 6 kVA&nbsp;: {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}.{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.{' '}
+                {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.{' '}
                 <span className="italic">Contenu &agrave; vocation informative. Les pertes thermiques varient selon l&apos;installation et les conditions locales.</span>
               </p>
             </div>

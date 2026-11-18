@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { AffLink } from '@/components/ui/AffLink';
+import { BUY } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_PRICE_SHORT, KWH_PRICE_SINCE, calculateROIYears } from '@/lib/pricing';
 
@@ -201,7 +203,7 @@ export default function FactureEdfKitSolairePage() {
                     <div>
                       <h3 className="font-bold text-sm mb-1">Prise connect&eacute;e &mdash; la m&eacute;thode la plus fiable</h3>
                       <p className="text-xs text-charcoal-light leading-relaxed">
-                        Une Tapo P110 (~15&nbsp;&euro;) ou une Shelly Plug S (~15&nbsp;&euro;) branch&eacute;e sur la prise de sortie du micro-onduleur mesure exactement les kWh produits. Multipliez par votre taux d&apos;autoconsommation (85&nbsp;% sans batterie) et par {KWH_PRICE_LABEL}. Exemple&nbsp;: 80 kWh produits &times; 85&nbsp;% &times; {KWH_PRICE_SHORT} = <strong>{eur(80 * 0.85 * KWH_PRICE_EUR)}&nbsp;&euro; d&apos;&eacute;conomies</strong>. Notre article sur les <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">meilleures prises connect&eacute;es pour le suivi solaire</Link> compare les mod&egrave;les disponibles.
+                        Une <AffLink item={BUY.tapoP110Amazon} position="mid_article">Tapo P110</AffLink> (~15&nbsp;&euro;) ou une Shelly Plug S (~15&nbsp;&euro;) branch&eacute;e sur la prise de sortie du micro-onduleur mesure exactement les kWh produits. Multipliez par votre taux d&apos;autoconsommation (85&nbsp;% sans batterie) et par {KWH_PRICE_LABEL}. Exemple&nbsp;: 80 kWh produits &times; 85&nbsp;% &times; {KWH_PRICE_SHORT} = <strong>{eur(80 * 0.85 * KWH_PRICE_EUR)}&nbsp;&euro; d&apos;&eacute;conomies</strong>. Notre article sur les <Link href="/blog/prises-connectees-suivi-solaire" className="text-green hover:underline">meilleures prises connect&eacute;es pour le suivi solaire</Link> compare les mod&egrave;les disponibles.
                       </p>
                     </div>
                   </div>
@@ -329,6 +331,9 @@ export default function FactureEdfKitSolairePage() {
               variant="secondary"
               position="mid-article"
             />
+            <p className="text-xs text-stone -mt-4 mb-6 text-center">
+              Aussi vendue sur ManoMano&nbsp;: <AffLink item={BUY.tapoP110ManoMano} position="mid-article">Tapo P110 (FR) chez ManoMano</AffLink>
+            </p>
 
             {/* Section 7 : calculer son ROI via la facture */}
             <section>
@@ -445,6 +450,7 @@ export default function FactureEdfKitSolairePage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>Sources&nbsp;:</strong> Enedis (convention CACSI, fonctionnement Linky), EDF (grille Tarif Bleu applicable au 1<sup>er</sup> ao&ucirc;t 2026, 6 kVA&nbsp;: Base {KWH_PRICE_LABEL}, Heures pleines {fr4(HP)}&nbsp;&euro;, Heures creuses {fr4(HC)}&nbsp;&euro;, d&eacute;lib&eacute;ration CRE n&deg;&nbsp;2026-147), CRE (R&eacute;f&eacute;rence inflation tarifaire 3,3&nbsp;%/an), Selectra (comparatif tarifs HP/HC vs Base 2026). Tarif utilis&eacute; dans nos calculs&nbsp;: {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; Base en vigueur, identique dans tous nos articles).{' '}
                 <Link href="/a-propos" className="text-green hover:underline">En savoir plus sur notre m&eacute;thode</Link>.{' '}
+                {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.{' '}
                 <span className="italic">Contenu &agrave; vocation informative. Les tarifs EDF peuvent &eacute;voluer.</span>
               </p>
             </div>

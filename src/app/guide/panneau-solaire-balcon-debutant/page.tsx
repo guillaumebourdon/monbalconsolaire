@@ -10,6 +10,8 @@ import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, K
 import { productibleSite } from '@/lib/rentabilite-departements';
 import { DEPARTMENTS } from '@/data/departments';
 import { PRODUCTS, priceLabel } from '@/data/products';
+import { BUY } from '@/lib/affiliate';
+import { OuAcheter } from '@/components/ui/OuAcheter';
 
 // Chiffres calculés au build (pricing.ts + products.ts), jamais écrits à la main.
 const fr = (n: number) => n.toLocaleString('fr-FR');
@@ -106,7 +108,7 @@ export default function GuidePage() {
                 <ProductThumb src="/images/produits/beem-kit-300-1.webp" alt="Beem Kit 300W" href="/avis/beem-kit-300w" size="sm" />
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">Au 5 novembre 2026, les kits complets que nous suivons co&ucirc;tent de <span className="data-highlight">{priceLabel('sunology-go')}</span> (Sunology GO, {PRODUCTS['sunology-go'].powerWc}&nbsp;W, pour petit balcon) &agrave; <span className="data-highlight">{priceLabel('sunethic-f500')}</span> (Sunethic F500, 500&nbsp;Wc), et davantage avec une batterie. Le meilleur rapport prix/puissance&nbsp;: le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> &agrave; <span className="data-highlight">{priceLabel('beem-on-500w')}</span> ({BEEM_EUR_WC}&nbsp;&euro;/Wc), en pr&eacute;commande (exp&eacute;dition &agrave; partir de d&eacute;cembre 2026), devant le Sunology PLAY ({PLAY.powerWc}&nbsp;W) &agrave; <span className="data-highlight">{priceLabel('sunology-play')}</span>. Le Beem Kit 300W (199&nbsp;&euro;) est en rupture chez Beem.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> remplace le mod&egrave;le 460 Wc, retir&eacute; du catalogue Beem. Avec notre m&eacute;thode (Lyon, plein sud), son retour sur investissement est d&apos;environ {BEEM_ROI}&nbsp;ans. Pour stocker l&apos;&eacute;nergie, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> est vendu {priceLabel('zendure-solarflow-800-plus')} seul ou 719&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W (prix promotionnel constat&eacute; le 05/11/2026, sans date de fin annonc&eacute;e).</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc</Link> remplace le mod&egrave;le 460 Wc, retir&eacute; du catalogue Beem. Avec notre m&eacute;thode (Lyon, plein sud), son retour sur investissement est d&apos;environ {BEEM_ROI}&nbsp;ans. Pour stocker l&apos;&eacute;nergie, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> est vendu {priceLabel('zendure-solarflow-800-plus')} seul ou 719&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W (prix promotionnel constat&eacute; le 05/11/2026, sans date de fin annonc&eacute;e). <AffiliateCTA productName={BUY.solarflow800Plus.product} merchantName="Zendure" affiliateUrl={BUY.solarflow800Plus.url} label="Voir le prix actuel chez Zendure" variant="inline" position="mid_article" /></p>
               <p className="text-charcoal-light leading-relaxed mb-4">Pas de co&ucirc;ts cach&eacute;s : l&apos;h&eacute;bergement est gratuit (votre balcon), l&apos;installation est gratuite (vous le faites vous-m&ecirc;me en quelques minutes), et la maintenance est quasi-inexistante (un coup de chiffon sur le panneau de temps en temps).</p>
 
               <h3 className="font-bold text-lg mb-3 mt-6">La rentabilité réelle</h3>
@@ -231,6 +233,15 @@ export default function GuidePage() {
               />
             </div>
 
+            <OuAcheter
+              title="Pour suivre la production de votre kit"
+              intro="Une prise connect&eacute;e branch&eacute;e entre le kit et la prise murale affiche les watts produits et garde l&rsquo;historique : le moyen le plus simple de v&eacute;rifier que le kit produit ce qui &eacute;tait pr&eacute;vu. La Tapo P110 est celle que nous recommandons dans notre comparatif des prises connect&eacute;es."
+              rows={[
+                { item: BUY.tapoP110Amazon, note: 'prise française type E, mesure en temps réel' },
+                { item: BUY.tapoP110ManoMano },
+              ]}
+            />
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
@@ -267,7 +278,7 @@ export default function GuidePage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europ&eacute;enne), grille Tarif Bleu EDF au {KWH_PRICE_SINCE}, Enedis (CACSI et cession du surplus), Code de l&apos;&eacute;nergie (articles L315-5 et D.315-10), ADEME, sites fabricants (Sunology, Beem Energy, Sunethic, Zendure, prix v&eacute;rifi&eacute;s le 5 novembre 2026). Mis &agrave; jour le 5 novembre 2026. Ce guide est ind&eacute;pendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS (Commission europ&eacute;enne), grille Tarif Bleu EDF au {KWH_PRICE_SINCE}, Enedis (CACSI et cession du surplus), Code de l&apos;&eacute;nergie (articles L315-5 et D.315-10), ADEME, sites fabricants (Sunology, Beem Energy, Sunethic, Zendure, prix v&eacute;rifi&eacute;s le 5 novembre 2026). Mis &agrave; jour le 5 novembre 2026. Ce guide est ind&eacute;pendant — <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>. <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.</p>
             </div>
           </div>
         </div>

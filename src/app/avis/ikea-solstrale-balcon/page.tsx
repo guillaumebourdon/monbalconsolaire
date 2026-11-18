@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BuyName } from '@/components/ui/AffLink';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -132,7 +133,7 @@ export default function IkeaSolstralePage() {
                       ['Zendure SolarFlow 800 Plus + 2 \u00d7 500 W', '719 \u20ac (promo)', '1 000 Wc', '0,72 \u20ac', '1,92 kWh', 'Oui'],
                     ].map(([kit, prix, puiss, ratio, bat, dispo], i) => (
                       <tr key={i} className={`border-b border-border-light ${i < 1 ? 'bg-amber-pale/10' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
-                        <td className="p-2.5 font-semibold">{kit}</td>
+                        <td className="p-2.5 font-semibold"><BuyName name={kit} /></td>
                         <td className="text-center p-2.5 font-mono">{prix}</td>
                         <td className="text-center p-2.5 font-mono">{puiss}</td>
                         <td className="text-center p-2.5 font-mono">{ratio}</td>
@@ -254,6 +255,9 @@ export default function IkeaSolstralePage() {
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
                 <strong>M&eacute;thodologie :</strong> informations publiques IKEA Allemagne, fiches techniques EcoFlow, articles presse (T3, Heise, NeozOne, NoteBookCheck). Prix relev&eacute;s sur la boutique Svea Solar (Allemagne) le 5 novembre 2026&nbsp;; absence en France v&eacute;rifi&eacute;e sur ikea.com/fr le m&ecirc;me jour. Article ind&eacute;pendant, mis &agrave; jour d&egrave;s que le kit sera disponible en France. <Link href="/methodologie" className="text-green hover:underline">Notre m&eacute;thodologie</Link>.
+              </p>
+              <p className="text-xs text-stone leading-relaxed mt-2">
+                <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
           </div>

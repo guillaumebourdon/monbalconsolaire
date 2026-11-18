@@ -4,6 +4,8 @@ import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaM
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
+import { AffLink } from '@/components/ui/AffLink';
+import { BUY } from '@/lib/affiliate';
 import {
   KWH_PRICE_EUR,
   KWH_PRICE_LABEL,
@@ -308,7 +310,7 @@ export default function Bilan6MoisPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1">{'✓'} Mesurer d&egrave;s le premier jour</h3>
-                  <p className="text-xs text-charcoal-light">Une prise connect&eacute;e (~15 &euro;) ou l&apos;app du fabricant permet de comparer chaque mois &agrave; la pr&eacute;vision. Sans mesure, impossible de rep&eacute;rer un probl&egrave;me. <Link href="/blog/prises-connectees-suivi-solaire" className={extLink}>Comparatif des prises</Link>.</p>
+                  <p className="text-xs text-charcoal-light">Une prise connect&eacute;e (~15 &euro;) ou l&apos;app du fabricant permet de comparer chaque mois &agrave; la pr&eacute;vision. Sans mesure, impossible de rep&eacute;rer un probl&egrave;me. <Link href="/blog/prises-connectees-suivi-solaire" className={extLink}>Comparatif des prises</Link> &middot; notre choix&nbsp;: <AffLink item={BUY.tapoP110Amazon} position="mid_article">Tapo P110 (FR) sur Amazon</AffLink>.</p>
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1">{'✓'} Faire la d&eacute;claration CACSI avant de brancher</h3>
@@ -320,7 +322,7 @@ export default function Bilan6MoisPage() {
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1">{'✓'} &Eacute;valuer la batterie seulement si le surplus est important</h3>
-                  <p className="text-xs text-charcoal-light">Une batterie fait passer l&apos;autoconsommation vers 95 %, mais son co&ucirc;t allonge le retour sur investissement. <Link href="/avis/zendure-solarflow" className={extLink}>Voir l&apos;avis Zendure SolarFlow</Link>.</p>
+                  <p className="text-xs text-charcoal-light">Une batterie fait passer l&apos;autoconsommation vers 95 %, mais son co&ucirc;t allonge le retour sur investissement. <Link href="/avis/zendure-solarflow" className={extLink}>Voir l&apos;avis Zendure SolarFlow</Link> &middot; <AffLink item={BUY.solarflow800Plus} position="mid_article">prix du SolarFlow 800 Plus chez Zendure</AffLink>.</p>
                 </div>
               </div>
             </section>
@@ -421,7 +423,7 @@ export default function Bilan6MoisPage() {
                 <a href="https://www.hellowatt.fr/panneaux-solaires-photovoltaiques/sunology" target="_blank" rel="noopener noreferrer" className={extLink}>Hellowatt, avis Sunology</a>.
               </p>
               <p className="text-xs text-stone leading-relaxed">
-                <strong>Transparence :</strong> cet article contient un lien affili&eacute;. Si vous achetez via ce lien, nous pouvons percevoir une commission, sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
+                <strong>Transparence :</strong> cet article contient des liens affili&eacute;s. Si vous achetez via ces liens, nous pouvons percevoir une commission, sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
           </div>

@@ -6,6 +6,8 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_LABEL } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
+import { BUY } from '@/lib/affiliate';
+import { OuAcheter } from '@/components/ui/OuAcheter';
 import ORIENT from '@/data/pvgis-orientations.json';
 
 // PVGIS 5.3 par orientation (scripts/pvgis-orientations.mjs) : 800 Wc, 30° et 90°, 4 préfectures.
@@ -245,6 +247,15 @@ export default function OrientationPage() {
                 ))}
               </div>
             </section>
+            <OuAcheter
+              title="Pour mesurer ce que votre orientation produit vraiment"
+              intro="Les chiffres PVGIS sont des moyennes. Une prise connect&eacute;e branch&eacute;e entre le kit et la prise murale mesure la production r&eacute;elle de votre balcon, ombres comprises, et garde l&rsquo;historique jour par jour."
+              rows={[
+                { item: BUY.tapoP110Amazon, note: 'prise française type E, mesure en temps réel' },
+                { item: BUY.tapoP110ManoMano },
+              ]}
+            />
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
@@ -285,7 +296,7 @@ export default function OrientationPage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS 5.3 (Commission européenne), interrogé le {PVGIS_OR_DATE}, tarif réglementé EDF Base 6 kVA en vigueur ({KWH_PRICE_LABEL}). <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> PVGIS 5.3 (Commission européenne), interrogé le {PVGIS_OR_DATE}, tarif réglementé EDF Base 6 kVA en vigueur ({KWH_PRICE_LABEL}). <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>. <strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.</p>
             </div>
           </div>
         </div>

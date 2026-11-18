@@ -6,7 +6,9 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { ProductThumb } from '@/components/ui/ProductThumb';
 import { withCanonicalOg } from '@/lib/metadata';
-import { zendureUrl } from '@/lib/affiliate';
+import { BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
+import { OuAcheter } from '@/components/ui/OuAcheter';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
 
@@ -279,10 +281,10 @@ export default function GuideBatterieBalcon() {
             </section>
 
             <AffiliateCTA
-              productName="Zendure SolarFlow"
+              productName={BUY.solarflow800Plus.product}
               merchantName="Zendure"
-              affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow')}
-              label="Voir le Zendure SolarFlow"
+              affiliateUrl={BUY.solarflow800Plus.url}
+              label="Voir le prix du SolarFlow 800 Plus chez Zendure"
               variant="inline"
               position="mid_article"
             />
@@ -355,6 +357,7 @@ export default function GuideBatterieBalcon() {
                         panels: 'Non',
                         extensible: 'Oui (→ 50 kWh)',
                         highlight: false,
+                        buy: BUY.solarflowMix,
                       },
                     ].map((row, i) => (
                       <tr
@@ -364,6 +367,7 @@ export default function GuideBatterieBalcon() {
                         <td className="p-3 font-semibold">
                           <Link href={row.href} className="text-green hover:underline">{row.name}</Link>
                           {row.highlight && <span className="ml-2 text-xs bg-green text-white px-1.5 py-0.5 rounded">Recommand&eacute;</span>}
+                          {'buy' in row && row.buy && <span className="block mt-1 font-normal text-xs"><AffLink item={row.buy} position="comparison-table">Voir le prix chez Zendure &rarr;</AffLink></span>}
                         </td>
                         <td className="text-center p-3 font-mono text-sm">{row.capacity}</td>
                         <td className="text-center p-3 font-mono text-sm text-amber-dark">{row.price}</td>
@@ -520,6 +524,15 @@ export default function GuideBatterieBalcon() {
               </div>
             </section>
 
+            <OuAcheter
+              intro="Trois batteries de balcon de notre s&eacute;lection, en stock chez leur fabricant le 18 novembre 2026 et vendues sans panneaux. V&eacute;rifiez la compatibilit&eacute; avec vos panneaux avant d&rsquo;acheter."
+              rows={[
+                { item: BUY.solarflow800Plus, note: '1,92 kWh, onduleur 800 W intégré' },
+                { item: BUY.streamUltra, note: '1,92 kWh, onduleur 800 W intégré' },
+                { item: BUY.bs2500Pro, note: '2,6 kWh annoncés' },
+              ]}
+            />
+
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
@@ -555,6 +568,7 @@ export default function GuideBatterieBalcon() {
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
                 <strong>M&eacute;thodologie&nbsp;:</strong> calculs ROI bas&eacute;s sur {KWH_PRICE_LABEL} (tarif r&eacute;glement&eacute; EDF Base 6 kVA), inflation 3,3&nbsp;%/an, d&eacute;gradation des panneaux 0,5&nbsp;%/an, Performance Ratio 0,85, Lyon exposition sud (r&eacute;f&eacute;rence PVGIS). Taux d&rsquo;autoconsommation&nbsp;: 85&nbsp;% (pr&eacute;sent journ&eacute;e, sans batterie), 95&nbsp;% (pr&eacute;sent journ&eacute;e, avec batterie), 30&ndash;40&nbsp;% (absent journ&eacute;e, sans batterie), 75&ndash;80&nbsp;% (absent journ&eacute;e, avec batterie). Prix constat&eacute;s juillet 2026. Cet article est ind&eacute;pendant &mdash; <Link href="/a-propos" className="text-green hover:underline">en savoir plus sur notre m&eacute;thode</Link>.
+                {' '}<strong>Transparence&nbsp;:</strong> certains liens de cette page sont des liens affili&eacute;s. Si vous achetez via ces liens, nous percevons une commission sans surco&ucirc;t pour vous. Cela n&apos;influence pas nos analyses.
               </p>
             </div>
 

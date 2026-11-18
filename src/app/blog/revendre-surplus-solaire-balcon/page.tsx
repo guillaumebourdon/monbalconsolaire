@@ -5,7 +5,8 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { withCanonicalOg } from '@/lib/metadata';
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, BUY } from '@/lib/affiliate';
+import { AffLink } from '@/components/ui/AffLink';
 import { KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_PRICE_SHORT, AUTOCONSO_STANDARD, calculateProductionKwh } from '@/lib/pricing';
 
 // Calculs : méthode du site (Lyon, plein sud, PR 0,85) et tarif de pricing.ts.
@@ -257,7 +258,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                 <div className="card-lg border-l-4 border-l-green">
                   <h3 className="font-bold text-base mb-2">Levier 1 &mdash; D&eacute;caler vos appareils &eacute;nergivores</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
-                    Machine &agrave; laver, lave-vaisselle, chauffe-eau&nbsp;: programmez-les entre 10h et 16h pour consommer quand le panneau produit. Une prise connect&eacute;e (Tapo P110, Shelly) suffit pour automatiser &ccedil;a.
+                    Machine &agrave; laver, lave-vaisselle, chauffe-eau&nbsp;: programmez-les entre 10h et 16h pour consommer quand le panneau produit. Une prise connect&eacute;e (<AffLink item={BUY.tapoP110Amazon} position="mid_article">Tapo P110</AffLink>, Shelly) suffit pour automatiser &ccedil;a.
                   </p>
                   <p className="text-xs text-stone">Co&ucirc;t&nbsp;: 15-25 &euro;. Impact&nbsp;: +10 &agrave; 15 points d&apos;autoconsommation.</p>
                 </div>
@@ -266,7 +267,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
                     Une batterie capture le surplus en journ&eacute;e et le restitue le soir. L&apos;autoconsommation passe de 85&nbsp;% &agrave; 95&nbsp;%. Chaque kWh stock&eacute; vaut {KWH_PRICE_SHORT} &mdash; soit <strong>{ratioTarifs} fois plus</strong> que si vous pouviez le vendre.
                   </p>
-                  <p className="text-xs text-stone">Exemples&nbsp;: <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline">Zendure SolarFlow Mix</Link>, <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">comparatif kits avec batterie</Link>.</p>
+                  <p className="text-xs text-stone">Exemples&nbsp;: <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline">Zendure SolarFlow Mix</Link>, <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">comparatif kits avec batterie</Link>. Plus abordables (1,92 kWh)&nbsp;: <AffLink item={BUY.solarflow800Plus} position="mid_article">SolarFlow 800 Plus chez Zendure</AffLink> ou <AffLink item={BUY.streamUltra} position="mid_article">STREAM Ultra chez EcoFlow</AffLink>.</p>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">
