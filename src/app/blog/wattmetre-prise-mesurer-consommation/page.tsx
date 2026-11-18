@@ -75,7 +75,7 @@ type Wattmetre = {
   pointFort: string;
   limite: string;
   prix: string;
-  asin: string;
+  asin?: string;
   manomano?: string;
 };
 
@@ -133,7 +133,7 @@ const produits: Wattmetre[] = [
     pointFort: 'Mêmes mesures que la P110, compatible Apple Home via Matter',
     limite: 'Plus chère que la P110 pour un usage de mesure identique',
     prix: '~25-30 €',
-    asin: 'B0CJCBN43P',
+    // Lien Amazon retiré le 18/11/2026 : B0CJCBN43P renvoie vers une fiche titrée « Type F » (ASIN type E non vérifié)
     manomano: MANOMANO.tapoP110M,
   },
 ];
@@ -303,9 +303,13 @@ export default function WattmetrePrisePage() {
                   </thead>
                   <tbody>
                     {produits.map((p, i) => (
-                      <tr key={p.asin} className={`border-b border-border-light ${i === 0 ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
+                      <tr key={p.nom} className={`border-b border-border-light ${i === 0 ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
                         <td className="p-2.5 font-semibold">
-                          <a href={amz(p.asin)} target="_blank" rel="sponsored noopener" className="text-green hover:underline">{p.nom}</a>
+                          {p.asin ? (
+                            <a href={amz(p.asin)} target="_blank" rel="sponsored noopener" className="text-green hover:underline">{p.nom}</a>
+                          ) : (
+                            p.nom
+                          )}
                           {p.manomano && (
                             <a href={p.manomano} target="_blank" rel="sponsored noopener" className="block text-[11px] font-normal text-green hover:underline">aussi sur ManoMano</a>
                           )}
