@@ -61,6 +61,13 @@ export const BUY = {
   solarflowMix: { product: 'Zendure SolarFlow Mix', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/solarflow-mix-series') },
   streamUltra: { product: 'EcoFlow STREAM Ultra', merchant: 'EcoFlow', url: ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro') },
   bs2500Pro: { product: 'ALLPOWERS BS2500 PRO', merchant: 'ALLPOWERS', url: allpowersUrl('https://iallpowers.fr/products/bs2500') },
+  // Ajouts du 18/11/2026 (article Black Friday) : fiches en stock vérifiées le jour même.
+  solarflow800Pro2: { product: 'Zendure SolarFlow 800 Pro 2', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/zendure-solarflow-800-pro2') },
+  solarflow1600AcPlus: { product: 'Zendure SolarFlow 1600 AC+', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/zendure-solarflow-1600-ac') },
+  solarflow2400AcPlus: { product: 'Zendure SolarFlow 2400 AC+', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/zendure-solarflow-2400-ac-plus') },
+  zendureBlackFriday: { product: 'Zendure Black Friday', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/pages/black-friday') },
+  s2000Pro: { product: 'ALLPOWERS S2000 Pro', merchant: 'ALLPOWERS', url: allpowersUrl('https://iallpowers.fr/products/allpowers-s2000-pro-station-electrique-portable-2400w-1451wh') },
+  delta3Plus: { product: 'EcoFlow DELTA 3 Plus', merchant: 'EcoFlow', url: ecoflowUrl('https://fr.ecoflow.com/products/delta-3-series-portable-power-station') },
   tapoP110Amazon: { product: 'Tapo P110 (FR)', merchant: 'Amazon', url: 'https://www.amazon.fr/dp/B09J1497Y4?tag=monbalconsola-21' },
   tapoP110ManoMano: { product: 'Tapo P110 (FR)', merchant: 'ManoMano', url: MANOMANO.tapoP110 },
   shellyPlugAmazon: { product: 'Shelly Plug PM Gen3 (FR)', merchant: 'Amazon', url: 'https://www.amazon.fr/dp/B0GSBPYNQB?tag=monbalconsola-21' },

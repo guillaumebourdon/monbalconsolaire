@@ -6,6 +6,7 @@ import { EmailCapture } from '@/components/ui/EmailCapture';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
 import { ecoflowUrl, zendureUrl, BUY, type BuyLink } from '@/lib/affiliate';
+import { BF_ARTICLE_PATH } from '@/lib/black-friday';
 
 // Regénérée toutes les 6 h : les offres datées basculent seules en « Terminée ».
 export const revalidate = 21600;
@@ -61,7 +62,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Y a-t-il un code promo Sunology pour le Black Friday ?',
     answer:
-      `Oui, en 2026 : l'opération "Black Sun Weeks" (du 2 novembre au 4 décembre) donne jusqu'à 640 € de remise avec le code ${SUNOLOGY_BLACKFRIDAY_CODE}, avec un rabais qui augmente selon la quantité achetée (ex. le PLAY passe de 599 € à 499 € pour un panneau). -14 % sur le service d'installation HOME. La remise parrainage n'est généralement pas cumulable avec cette opération : vérifiez le montant au panier.`,
+      `Oui, en 2026 : l'opération "Black Sun Weeks" (du 4 novembre au 4 décembre) donne jusqu'à 640 € de remise avec le code ${SUNOLOGY_BLACKFRIDAY_CODE}, avec un rabais qui augmente selon la quantité achetée (ex. le PLAY passe de 599 € à 499 € pour un panneau). -14 % sur le service d'installation HOME. La remise parrainage n'est généralement pas cumulable avec cette opération : vérifiez le montant au panier.`,
   },
   {
     question: 'Existe-t-il un code promo Beem Energy pour les kits plug-and-play ?',
@@ -71,7 +72,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Existe-t-il un code promo Zendure ?',
     answer:
-      'Oui : du 2 novembre 2026 au 4 janvier 2027, le code AF5E24 donne 8 % de remise en plus des prix déjà baissés sur zendure.fr. Il fonctionne sur les SolarFlow MIX, SolarFlow 2400 AC, SolarFlow 1600 AC+, les batteries AB2000 et AB3000 et les accessoires, mais pas sur les SolarFlow 2400 AC+, 2400 Pro et MIX 4000 Pro.',
+      'Oui : du 2 novembre 2026 au 4 janvier 2027, le code AF5E24 donne 8 % de remise en plus des prix déjà baissés sur zendure.fr. Il fonctionne sur les SolarFlow MIX, SolarFlow 2400 AC, SolarFlow 1600 AC+, les batteries AB2000 et AB3000 et les accessoires, mais pas sur les SolarFlow 2400 AC+, 2400 Pro et MIX 4000 Pro. Testé au panier le 18 novembre 2026, il s’applique aussi aux SolarFlow 800 Plus (539 € → 495,88 €) et 800 Pro 2 (599 € → 551,08 €).',
   },
   {
     question: 'Existe-t-il un code promo Sunethic ?',
@@ -116,21 +117,60 @@ function OfferCard({ o: raw }: { o: Offer }) {
   );
 }
 
+const blackFridayOffers: Offer[] = [
+  {
+    label: `Sunology : code ${SUNOLOGY_BLACKFRIDAY_CODE} (Black Sun Weeks)`,
+    detail: 'Du 4 novembre au 4 décembre 2026. PLAY 599 € → 499 €, GO 349 € → 299 €, PLAY Max 1 179 € → 1 079 €, batterie STOREY 1 390 € → 1 190 €, -14 % sur l’installation HOME. Remise plus forte en multi-panneaux.',
+    status: 'active',
+    endsAt: SUNOLOGY_BLACKFRIDAY_END,
+    verified: '18/11/2026',
+    source: 'black-friday.sunology.eu',
+    sourceUrl: 'https://black-friday.sunology.eu/',
+  },
+  {
+    label: `Zendure : code ${ZENDURE_CODE}, -8 % testé au panier`,
+    detail: 'En plus des prix affichés, jusqu’au 4 janvier 2027. Testé au panier le 18/11/2026 : SolarFlow 800 Plus 539 € → 495,88 € (pack avec 2 panneaux de 500 W : 719 € → 661,48 €), SolarFlow 800 Pro 2 599 € → 551,08 €, SolarFlow 1600 AC+ avec batterie AB2000L 959 € → 882,28 €, batteries AB2000L 519 € → 477,48 € et AB3000L 659 € → 606,28 €. Refusé sur le SolarFlow 2400 AC+ (testé) ; Zendure exclut aussi le 2400 Pro.',
+    status: 'active',
+    endsAt: ZENDURE_CODE_END,
+    verified: '18/11/2026',
+    source: 'zendure.fr (panier)',
+    sourceUrl: 'https://zendure.fr/pages/black-friday',
+  },
+  {
+    label: 'EcoFlow : Black Friday du 10 au 30 novembre, sans code',
+    detail: 'Jusqu’à -50 % affichés sur la gamme STREAM. Attention : le STREAM Ultra est à 659 €, son prix du 5 novembre, avant le début de l’opération.',
+    status: 'active',
+    endsAt: '2026-11-30',
+    verified: '18/11/2026',
+    source: 'fr.ecoflow.com',
+    sourceUrl: 'https://fr.ecoflow.com/',
+  },
+  {
+    label: 'Sunethic : promotions Black Friday du 9 au 30 novembre, sans code',
+    detail: 'Annoncées sur la page d’accueil, sans montant de remise. La station F500 reste à 690 €, son prix du 5 novembre.',
+    status: 'active',
+    endsAt: '2026-11-30',
+    verified: '18/11/2026',
+    source: 'sunethic.fr',
+    sourceUrl: 'https://sunethic.fr/',
+  },
+];
+
 const sunologyOffers: Offer[] = [
   {
     label: `Black Sun Weeks : code ${SUNOLOGY_BLACKFRIDAY_CODE}, jusqu’à -640 €`,
     detail:
-      'Du 2 novembre au 4 décembre 2026 (les pages officielles hésitent entre le 3 et le 4 décembre pour la fin) : le code fait passer le PLAY de 599 € à 499 € et le PLAY Max de 1 179 € à 1 079 € pour un panneau, avec une remise qui augmente selon la quantité achetée (jusqu’à -640 € en multi-panneaux). -14 % sur le service d’installation HOME. Vérifiez le montant exact au panier.',
+      'Du 4 novembre au 4 décembre 2026 (dates de la page officielle de l’opération, vérifiées le 18/11/2026) : le code fait passer le PLAY de 599 € à 499 € et le PLAY Max de 1 179 € à 1 079 € pour un panneau, avec une remise qui augmente selon la quantité achetée (jusqu’à -640 € en multi-panneaux). -14 % sur le service d’installation HOME. Vérifiez le montant exact au panier.',
     status: 'active',
     endsAt: SUNOLOGY_BLACKFRIDAY_END,
-    verified: '05/11/2026',
+    verified: '18/11/2026',
     source: 'black-friday.sunology.eu',
     sourceUrl: 'https://black-friday.sunology.eu/',
   },
   {
     label: 'Bonus Anti-Augmentation : -11 % à -13 % (terminé)',
     detail:
-      'Opération d’octobre 2026, sans code : -11 % dès le premier euro, et jusqu’à -13 % quand le panier augmentait. Remplacée depuis le 2 novembre par l’opération Black Sun Weeks ci-dessus.',
+      'Opération d’octobre 2026, sans code : -11 % dès le premier euro, et jusqu’à -13 % quand le panier augmentait. Remplacée depuis le 4 novembre par l’opération Black Sun Weeks ci-dessus.',
     status: 'active',
     endsAt: SUNOLOGY_PROMO_END,
     source: 'sunology.eu (bandeau du site)',
@@ -198,7 +238,7 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
   {
     id: 'ecoflow',
     brand: 'EcoFlow',
-    intro: 'Pas de code public officiel. EcoFlow fonctionne par grosses opérations saisonnières affichées sur le site, avec des points EcoCredits pour les membres. Au 05/11/2026, aucune opération Black Friday 2026 n’est encore confirmée pour la France : nous mettrons cette page à jour dès l’annonce.',
+    intro: 'Pas de code public officiel. EcoFlow fonctionne par grosses opérations saisonnières affichées sur le site, avec des points EcoCredits pour les membres. Le Black Friday EcoFlow 2026 se déroule du 10 au 30 novembre (affiché sur fr.ecoflow.com, vérifié le 18/11/2026), sans code.',
     offers: [
       {
         label: 'Opération d’automne : jusqu’à -40 % (terminée)',
@@ -225,10 +265,10 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     offers: [
       {
         label: `Code ${ZENDURE_CODE} : -8 % en plus des remises du site`,
-        detail: `Valable du 2 novembre 2026 au 4 janvier 2027 sur zendure.fr. Produits concernés : SolarFlow MIX 3000 et 4000, SolarFlow 2400 AC, SolarFlow 1600 AC+, batteries AB2000 et AB3000, et tous les accessoires. Exclus : SolarFlow 2400 AC+, SolarFlow 2400 Pro et, selon Zendure (09/11), SolarFlow MIX 4000 Pro. Code transmis par Zendure à ses partenaires : vérifiez que la remise apparaît bien au panier avant de payer.`,
+        detail: `Valable du 2 novembre 2026 au 4 janvier 2027 sur zendure.fr. Produits concernés : SolarFlow MIX 3000 et 4000, SolarFlow 2400 AC, SolarFlow 1600 AC+, batteries AB2000 et AB3000, et tous les accessoires ; d’après notre test au panier du 18/11, aussi les SolarFlow 800 Plus et 800 Pro 2. Exclus : SolarFlow 2400 AC+, SolarFlow 2400 Pro et, selon Zendure (09/11), SolarFlow MIX 4000 Pro. Code transmis par Zendure à ses partenaires : vérifiez que la remise apparaît bien au panier avant de payer.`,
         status: 'active',
         endsAt: ZENDURE_CODE_END,
-        verified: '03/11/2026',
+        verified: '18/11/2026',
         source: 'Zendure (programme partenaires)',
         sourceUrl: 'https://zendure.fr/pages/black-friday',
       },
@@ -260,10 +300,11 @@ export default function CodesPromoPage() {
           Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
         </p>
         <div className="card bg-cream/50 text-sm text-charcoal-light leading-relaxed mb-8">
-          <strong className="text-charcoal">En bref ({VERIFIED}) :</strong> {sunologyBlackFriday ? <>Sunology lance sa <strong>Black Sun Weeks</strong> : code <strong>{SUNOLOGY_BLACKFRIDAY_CODE}</strong>, jusqu&apos;&agrave; -640 &euro;, du 2 novembre au 4 d&eacute;cembre, en plus du parrainage S-Club &agrave; -7 %.</> : <>Reste le parrainage S-Club Sunology &agrave; -7 % (pas d&apos;op&eacute;ration en cours).</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}Beem, Sunethic et EcoFlow n&apos;ont pas encore annonc&eacute; de code Black Friday officiel : leurs remises restent affich&eacute;es directement sur leur site.
+          <strong className="text-charcoal">En bref (18/11/2026) :</strong> {sunologyBlackFriday ? <>Sunology lance sa <strong>Black Sun Weeks</strong> : code <strong>{SUNOLOGY_BLACKFRIDAY_CODE}</strong>, jusqu&apos;&agrave; -640 &euro;, du 4 novembre au 4 d&eacute;cembre, en plus du parrainage S-Club &agrave; -7 %.</> : <>Reste le parrainage S-Club Sunology &agrave; -7 % (pas d&apos;op&eacute;ration en cours).</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}EcoFlow (10-30 novembre) et Sunethic (9-30 novembre) affichent un Black Friday sans code. Beem n&apos;affiche pas de remise sur ses kits.
         </div>
 
         <nav className="flex flex-wrap gap-2 text-sm mb-10" aria-label="Sommaire">
+          <a href="#black-friday" className="badge-green">Black Friday 2026</a>
           <a href="#sunology" className="badge-green">Sunology</a>
           <a href="#sunethic" className="badge-amber">Sunethic</a>
           <a href="#beem" className="badge-amber">Beem</a>
@@ -273,6 +314,23 @@ export default function CodesPromoPage() {
         </nav>
 
         <div className="space-y-12">
+          {/* BLACK FRIDAY 2026 : chaque offre bascule seule en « Terminée » après son endsAt (revalidate 6 h) */}
+          <section id="black-friday" className="scroll-mt-24">
+            <h2 className="text-2xl font-extrabold mb-4">Black Friday 2026 : codes et op&eacute;rations en cours</h2>
+            <p className="text-charcoal-light leading-relaxed mb-4">
+              Black Friday le vendredi 27 novembre 2026, Cyber Monday le lundi 30 novembre. Les marques du solaire de balcon ont lanc&eacute; leurs offres bien avant. Les codes ci-dessous ont &eacute;t&eacute; v&eacute;rifi&eacute;s le 18 novembre 2026, celui de Zendure directement au panier.
+            </p>
+            <div className="space-y-3 mb-4">
+              {blackFridayOffers.map((o) => (
+                <OfferCard key={o.label} o={o} />
+              ))}
+            </div>
+            <div className="card border-2 border-amber bg-amber-pale/40 text-sm text-charcoal-light leading-relaxed">
+              <strong className="text-charcoal">Une remise affich&eacute;e n&apos;est pas toujours une baisse :</strong> plusieurs batteries sont au m&ecirc;me prix qu&apos;en septembre ou en octobre malgr&eacute; des prix barr&eacute;s &agrave; -30 ou -50 %. Nous avons compar&eacute; chaque prix Black Friday au prix des trois derniers mois :{' '}
+              <Link href={BF_ARTICLE_PATH} className="text-green font-semibold hover:underline">Black Friday 2026 : les vraies bonnes affaires &rarr;</Link>
+            </div>
+          </section>
+
           {/* SUNOLOGY */}
           <section id="sunology" className="scroll-mt-24">
             <h2 className="text-2xl font-extrabold mb-4">Code promo Sunology</h2>
@@ -305,9 +363,9 @@ export default function CodesPromoPage() {
 
             <h3 className="text-xl font-bold mt-8 mb-3">Sunology et le Black Friday</h3>
             <p className="text-charcoal-light leading-relaxed">
-              Pour 2026, Sunology lance son op&eacute;ration &laquo; Black Sun Weeks &raquo; du 2 novembre au 4 d&eacute;cembre : le code <span className="font-mono">{SUNOLOGY_BLACKFRIDAY_CODE}</span> fait baisser le prix, avec une remise qui augmente selon la quantit&eacute; achet&eacute;e (jusqu&apos;&agrave; -640 &euro; en multi-panneaux), et -14 % sur le service d&apos;installation HOME. En 2025, la marque annon&ccedil;ait d&eacute;j&agrave; jusqu&apos;&agrave; 640 &euro; de r&eacute;duction jusqu&apos;au 3 d&eacute;cembre (
+              Pour 2026, Sunology lance son op&eacute;ration &laquo; Black Sun Weeks &raquo; du 4 novembre au 4 d&eacute;cembre : le code <span className="font-mono">{SUNOLOGY_BLACKFRIDAY_CODE}</span> fait baisser le prix, avec une remise qui augmente selon la quantit&eacute; achet&eacute;e (jusqu&apos;&agrave; -640 &euro; en multi-panneaux), et -14 % sur le service d&apos;installation HOME. En 2025, la marque annon&ccedil;ait d&eacute;j&agrave; jusqu&apos;&agrave; 640 &euro; de r&eacute;duction jusqu&apos;au 3 d&eacute;cembre (
               <a href="https://selectra.info/energie/actualites/renovation-energetique/energie-moins-chere-sunology-propose-reduction-de-640-euros-pour-black-friday" target="_blank" rel="noopener" className="text-green hover:underline">source Selectra</a>
-              ). V&eacute;rifiez toujours le montant au panier : les pages officielles ne s&apos;accordent pas toutes sur la date de fin exacte (3 ou 4 d&eacute;cembre).
+              ). V&eacute;rifiez toujours le montant au panier.
             </p>
           </section>
 

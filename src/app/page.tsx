@@ -10,6 +10,8 @@ import { DEPARTMENTS } from '@/data/departments';
 import { PRODUCTS, priceLabel, availabilityBadge, type ProductId } from '@/data/products';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { zendureUrl, ecoflowUrl } from '@/lib/affiliate';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
+import { isBlackFridayPromoActive } from '@/lib/black-friday';
 
 // Chiffres de la page d'accueil calculés au build (pricing.ts + products.ts), jamais écrits à la main.
 const fr = (n: number) => n.toLocaleString('fr-FR');
@@ -126,6 +128,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* BLACK FRIDAY 2026 : encadré visible jusqu'au 1er décembre (lib/black-friday.ts) */}
+      {isBlackFridayPromoActive() && <BlackFridayCallout variant="home" />}
 
       {/* KEY NUMBERS */}
       <section className="section-padding bg-white">

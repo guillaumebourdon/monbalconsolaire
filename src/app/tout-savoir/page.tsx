@@ -18,6 +18,16 @@ interface Article {
 }
 
 const ARTICLES: Article[] = [
+  {
+    slug: '/blog/black-friday-kit-solaire-2026',
+    title: 'Black Friday 2026 : kits solaires et batteries, les vraies bonnes affaires',
+    excerpt: 'Prix Black Friday des kits, batteries, stations et accessoires comparés à leur prix des 3 derniers mois, avec sources, rentabilité et pièges à éviter.',
+    type: 'analyse',
+    badge: 'Black Friday',
+    tags: ['achat', 'rentabilite'],
+    publishedAt: '2026-11-18',
+    readTime: '10 min',
+  },
   // Articles récents (octobre 2026)
   {
     slug: '/blog/degradation-panneau-solaire-25-ans',

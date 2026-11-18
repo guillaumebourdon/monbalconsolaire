@@ -6,7 +6,7 @@ const BASE_URL = 'https://monbalconsolaire.fr';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Pages principales
-    { url: BASE_URL, lastModified: '2026-11-05', changeFrequency: 'weekly', priority: 1.0 },
+    { url: BASE_URL, lastModified: '2026-11-18', changeFrequency: 'weekly', priority: 1.0 },
     { url: `${BASE_URL}/calculateur`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comment-ca-marche`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/quel-kit-choisir`, lastModified: '2026-11-10', changeFrequency: 'weekly', priority: 0.8 },
@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/comparatif`, lastModified: '2026-11-05', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/guide`, lastModified: '2026-11-05', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/avis`, lastModified: '2026-11-10', changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${BASE_URL}/blog`, lastModified: '2026-11-12', changeFrequency: 'daily', priority: 0.7 },
+    { url: `${BASE_URL}/blog`, lastModified: '2026-11-18', changeFrequency: 'daily', priority: 0.7 },
 
     // Comparatifs
     { url: `${BASE_URL}/comparatif/apsystems-ez1-vs-hoymiles-hms-800w`, lastModified: '2026-11-13', changeFrequency: 'monthly', priority: 0.7 },
@@ -83,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/prise-exterieure-etanche-kit-solaire`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/guirlande-solaire-balcon`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/support-fixation-panneau-solaire-balcon`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/blog/black-friday-kit-solaire-2026`, lastModified: '2026-11-18', changeFrequency: 'daily', priority: 0.9 },
     { url: `${BASE_URL}/blog/wattmetre-prise-mesurer-consommation`, lastModified: '2026-11-06', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/multi-panneaux-serie-parallele`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/panneau-solaire-location-meublee-airbnb`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.7 },
@@ -112,7 +113,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Pages secondaires
     { url: `${BASE_URL}/methodologie`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE_URL}/codes-promo`, lastModified: '2026-11-09', changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE_URL}/codes-promo`, lastModified: '2026-11-18', changeFrequency: 'daily', priority: 0.8 },
     { url: `${BASE_URL}/a-propos`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.3 },
     { url: `${BASE_URL}/mentions-legales`, lastModified: '2026-11-05', changeFrequency: 'yearly', priority: 0.1 },
     { url: `${BASE_URL}/politique-confidentialite`, lastModified: '2026-11-05', changeFrequency: 'yearly', priority: 0.1 },

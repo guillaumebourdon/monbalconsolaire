@@ -10,6 +10,8 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { VercelAnalytics } from '@/components/VercelAnalytics';
+import { BlackFridayBanner } from '@/components/ui/BlackFriday';
+import { isBlackFridayPromoActive } from '@/lib/black-friday';
 import { SITE_OPEN_GRAPH, withCanonicalOg } from '@/lib/metadata';
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -78,6 +80,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="skip-to-content">Aller au contenu principal</a>
         <SchemaOrganization />
         <SchemaWebSite />
+        {/* Bannière Black Friday : disparaît seule après le 1er décembre 2026 (lib/black-friday.ts) */}
+        {isBlackFridayPromoActive() && <BlackFridayBanner />}
         <Header />
         <main id="main-content" className="flex-1 page-enter">{children}</main>
         <Footer />
