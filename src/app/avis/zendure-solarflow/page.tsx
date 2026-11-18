@@ -17,6 +17,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Zendure SolarFlow 800 Plus avis 2026 : prix, ROI, 800 Pro',
@@ -196,6 +197,8 @@ export default function ZendureSolarflowPage() {
               Le Zendure SolarFlow 800 Plus est <strong>le meilleur rapport qualité-prix du marché en 2026</strong> pour qui veut du stockage solaire plug-and-play. Pour 539 €, vous obtenez ce que les concurrents facturaient 1 000 à 1 800 € il y a un an : un onduleur 800 W et une batterie LFP de 1,92 kWh. Le compromis ? <strong>Pas de backup en cas de coupure réseau</strong> et 800 W max en sortie. Pour 80 % des foyers en appartement, c&apos;est largement suffisant.
             </p>
           </div>
+
+          <BlackFridayCallout />
 
           <div className="space-y-10">
             <section>

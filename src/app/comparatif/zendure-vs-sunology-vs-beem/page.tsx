@@ -9,6 +9,7 @@ import { zendureUrl, BUY } from '@/lib/affiliate';
 import { AffLink, BuyName } from '@/components/ui/AffLink';
 import { PRODUCTS, priceLabel } from '@/data/products';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
 
 // Setups complets : prix vérifiés le 05/11/2026 (src/data/products.ts), calculs via src/lib/pricing.ts
 // (Lyon, sud, PR 0,85). Zendure : production plafonnée par la sortie 800 W (2 × 500 W en entrée).
@@ -137,6 +138,8 @@ export default function ZendureVsSunologyVsBeemPage() {
               <p><strong>Beem On 500 Wc</strong> — Le meilleur rapport qualit&eacute;-prix sans batterie. 429 &euro; pour 500 Wc (0,86 &euro;/Wc), le plus bas des kits que nous suivons. ROI ~{fr(BEEM.roiStd)} ans (m&eacute;thodologie standard). En pr&eacute;commande&nbsp;: exp&eacute;dition &agrave; partir de d&eacute;cembre 2026. Paiement en 10x, option d&eacute;marches Enedis. Le choix pragmatique.</p>
             </div>
           </div>
+
+          <BlackFridayCallout />
 
           <div className="space-y-10">
             <section>

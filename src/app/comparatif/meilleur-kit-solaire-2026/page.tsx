@@ -9,6 +9,7 @@ import { BUY } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { PRODUCTS, priceLabel, availabilityBadge, type ProductId } from '@/data/products';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleur kit solaire plug and play 2026 : 5 kits comparés',
@@ -116,6 +117,8 @@ export default function ComparatifPage() {
               ))}
             </nav>
           </div>
+
+          <BlackFridayCallout />
 
           <div className="space-y-10">
 

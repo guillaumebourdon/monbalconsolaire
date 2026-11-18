@@ -10,6 +10,7 @@ const beemRoi = calculateROIYears({ kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM
 import Link from 'next/link';
 import { BUY, type BuyLink } from '@/lib/affiliate';
 import { AffLink } from '@/components/ui/AffLink';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
 
 type ArticleType = 'comparatif' | 'avis';
 type PowerRange = 'moins-400' | '400-500' | 'plus-500';
@@ -527,6 +528,7 @@ export default function QuelKitChoisirPage() {
             </span>
           </p>
         </div>
+        <BlackFridayCallout />
 
         <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
           <span className="text-stone text-sm mt-0.5">&#8505;</span>

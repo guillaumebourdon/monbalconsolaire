@@ -11,6 +11,7 @@ import { OuAcheter } from '@/components/ui/OuAcheter';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
 
 // Scénario « avec / sans batterie » : prix lus dans products.ts, calcul via pricing.ts.
 const PLAY = PRODUCTS['sunology-play'];
@@ -72,6 +73,8 @@ export default function BatteriePage() {
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">Pour la majorité des utilisateurs, <strong>un kit sans batterie est le meilleur investissement</strong>. Le talon de consommation (frigo, box, veilles) absorbe une grande partie de la production en journée. Ajoutez une batterie uniquement si vous êtes souvent absent la journée et que vous consommez principalement le soir.</p>
           </div>
+
+          <BlackFridayCallout />
 
           <div className="space-y-10">
             <section>

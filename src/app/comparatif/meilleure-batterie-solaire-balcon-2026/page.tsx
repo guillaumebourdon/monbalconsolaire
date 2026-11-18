@@ -10,6 +10,7 @@ import { AffLink } from '@/components/ui/AffLink';
 import { PRODUCTS } from '@/data/products';
 import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Meilleure batterie solaire balcon 2026 : comparatif',
@@ -98,6 +99,8 @@ export default function MeilleureBatterieBalconPage() {
               <li className="flex gap-2"><span className="text-amber-dark font-bold flex-shrink-0">&#9888;</span><span><strong>Modulaire EcoFlow</strong> &rarr; pertinent uniquement si vous avez d&eacute;j&agrave; une station DELTA</span></li>
             </ul>
           </div>
+
+          <BlackFridayCallout />
 
           <div className="space-y-10">
 

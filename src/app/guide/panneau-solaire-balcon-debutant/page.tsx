@@ -12,6 +12,7 @@ import { DEPARTMENTS } from '@/data/departments';
 import { PRODUCTS, priceLabel } from '@/data/products';
 import { BUY } from '@/lib/affiliate';
 import { OuAcheter } from '@/components/ui/OuAcheter';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
 
 // Chiffres calculés au build (pricing.ts + products.ts), jamais écrits à la main.
 const fr = (n: number) => n.toLocaleString('fr-FR');
@@ -87,6 +88,8 @@ export default function GuidePage() {
               <li className="flex gap-2"><span className="text-green font-bold">&rarr;</span> Les 5 erreurs à éviter absolument</li>
             </ul>
           </div>
+
+          <BlackFridayCallout />
 
           <div className="space-y-10">
             <section>

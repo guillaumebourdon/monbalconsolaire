@@ -9,6 +9,7 @@ import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
 import { ecoflowUrl, BUY } from '@/lib/affiliate';
 import { AffLink } from '@/components/ui/AffLink';
+import { BlackFridayCallout } from '@/components/ui/BlackFriday';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'EcoFlow STREAM Ultra avis : le successeur du PowerStream',
@@ -146,6 +147,8 @@ export default function EcoflowStreamUltraPage() {
               Le STREAM Ultra corrige le principal défaut du PowerStream&nbsp;: il n&apos;impose plus d&apos;acheter une station EcoFlow séparée pour avoir du stockage. Batterie et micro-onduleur sont réunis dans un boîtier unique, extensible jusqu&apos;à 11,52&nbsp;kWh, avec une sortie de secours jusqu&apos;à 2 300&nbsp;W en cas de coupure. <strong>Mais</strong> à capacité et puissance équivalentes, le Zendure SolarFlow 800 Plus reste moins cher (719&nbsp;€ en pack avec 2 panneaux de 500&nbsp;W, contre ~1 060&nbsp;€ pour un STREAM Ultra avec 2 panneaux achet&eacute;s &agrave; part, prix promotionnels du 5 novembre 2026). Le STREAM Ultra se justifie surtout si la sortie de secours ou l&apos;écosystème applicatif EcoFlow compte vraiment pour vous.
             </p>
           </div>
+
+          <BlackFridayCallout />
 
           <div className="space-y-10">
             <section>
