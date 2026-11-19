@@ -242,6 +242,7 @@ const faqData = [
 
 // ItemList : les offres en vraie baisse (prix du jour < prix de référence)
 const TOP = DEALS.filter((d) => realDrop(d) < 0 && !('plain' in d.link)).concat(DEALS.filter((d) => realDrop(d) < 0 && 'plain' in d.link));
+const SECTION: Record<Category, string> = { kit: 'kits', stockage: 'batteries', station: 'stations', accessoire: 'accessoires' };
 function SchemaDeals() {
   const schema = {
     '@context': 'https://schema.org',
@@ -249,23 +250,14 @@ function SchemaDeals() {
     name: 'Black Friday 2026 : kits et batteries solaires en vraie baisse de prix',
     itemListOrder: 'https://schema.org/ItemListOrderAscending',
     numberOfItems: TOP.length,
+    // Pas de type Product ici : ce sont des offres de marchands, pas des fiches vendues sur ce site.
+    // Un Product + Offer déclenche les « fiches de marchand » de Google (image obligatoire,
+    // avis…) — erreurs Search Console du 19/11/2026. On garde une liste simple vers les sections.
     itemListElement: TOP.map((d, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      item: {
-        '@type': 'Product',
-        name: d.product,
-        brand: { '@type': 'Brand', name: d.product.split(' ')[0] },
-        description: `${d.spec}. Prix relevé le 18/11/2026${d.bfNote ? ` (${d.bfNote})` : ''}.`,
-        offers: {
-          '@type': 'Offer',
-          price: d.bf.toFixed(2),
-          priceCurrency: 'EUR',
-          availability: 'https://schema.org/InStock',
-          url: d.link.url,
-          ...(d.endsAt ? { priceValidUntil: d.endsAt } : {}),
-        },
-      },
+      name: `${d.product} : ${d.bf.toFixed(2).replace('.', ',')} € (relevé le 18/11/2026)`,
+      url: `${BF_ARTICLE_URL}#${SECTION[d.cat]}`,
     })),
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
