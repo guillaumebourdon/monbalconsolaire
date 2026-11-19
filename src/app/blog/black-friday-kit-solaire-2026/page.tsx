@@ -31,7 +31,7 @@ export const metadata: Metadata = withCanonicalOg({
 });
 
 const PUBLISHED = '2026-11-18';
-const MODIFIED = '2026-11-18';
+const MODIFIED = '2026-11-19';
 
 // ─── Sources des prix de référence (3 derniers mois) ───────────────────────────
 // Prix du jour : fiches officielles relevées le 18/11/2026 (Shopify /products/<handle>.js),
@@ -174,6 +174,27 @@ const DEALS: Deal[] = [
   },
 ];
 
+// ─── Notes des marchands (relevées le 19/11/2026 sur leurs fiches) ─────────────
+// Affichées en texte seulement, JAMAIS dans le JSON-LD : Google interdit de baliser
+// des avis collectés sur d'autres sites (risque d'action manuelle).
+// Pas de note quand le marchand n'en affiche pas pour ce produit (Beem, Sunethic : Trustpilot
+// de la boutique seulement ; 800 Pro 2 : 0 avis).
+type MerchantRating = { value: string; count: string; where: string };
+const SUNOLOGY_RATING: MerchantRating = { value: '4,7', count: 'plus de 2 600 avis', where: 'toutes stations, sunology.eu' };
+const RATINGS: Partial<Record<string, MerchantRating>> = {
+  play: SUNOLOGY_RATING,
+  go: SUNOLOGY_RATING,
+  'plus-pack': { value: '4,7', count: '27 avis', where: 'fiche 800 Plus, zendure.fr' },
+  plus: { value: '4,7', count: '27 avis', where: 'zendure.fr' },
+  '1600': { value: '4,6', count: '21 avis', where: 'fiche 1600 AC+, zendure.fr' },
+  '2400': { value: '4,8', count: '103 avis', where: 'zendure.fr' },
+  stream: { value: '4,8', count: '145 avis', where: 'fr.ecoflow.com' },
+  bs2500: { value: '3,0', count: '1 seul avis', where: 'iallpowers.fr' },
+  s2000: { value: '4,3', count: '249 avis', where: 'iallpowers.fr' },
+  tapo: { value: '4,5', count: '3 828 avis', where: 'Amazon.fr' },
+  brennenstuhl: { value: '4,0', count: '28 avis', where: 'Amazon.fr' },
+};
+
 // ─── Calculs ───────────────────────────────────────────────────────────────────
 const eur = (n: number) => `${n.toLocaleString('fr-FR', { minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 })} €`;
 const pct = (from: number, to: number) => Math.round(((to - from) / from) * 100);
@@ -299,6 +320,11 @@ function DealRow({ d }: { d: Deal }) {
       <td className="p-2.5 align-top">
         <span className="font-semibold">{d.product}</span>
         <span className="block text-stone">{d.spec}</span>
+        {RATINGS[d.id] && (
+          <span className="block text-stone">
+            &#9733; {RATINGS[d.id]!.value}/5 &middot; {RATINGS[d.id]!.count} ({RATINGS[d.id]!.where})
+          </span>
+        )}
         <span className="block mt-1"><Verdict d={d} /></span>
       </td>
       <td className="p-2.5 align-top">
@@ -410,7 +436,7 @@ export default function BlackFridayKitSolairePage() {
               </p>
               {(['kit', 'stockage', 'station', 'accessoire'] as Category[]).map((c) => <CategoryTable key={c} cat={c} />)}
               <p className="text-xs text-stone leading-relaxed">
-                Prix TTC relev&eacute;s le 18/11/2026 sur zendure.fr, fr.ecoflow.com, iallpowers.fr, sunology.eu, sunethic.fr, beemenergy.fr et amazon.fr. Codes Zendure test&eacute;s au panier le m&ecirc;me jour. Les prix changent souvent pendant le Black Friday : v&eacute;rifiez le montant au panier avant de payer.
+                Prix TTC relev&eacute;s le 18/11/2026 sur zendure.fr, fr.ecoflow.com, iallpowers.fr, sunology.eu, sunethic.fr, beemenergy.fr et amazon.fr. Codes Zendure test&eacute;s au panier le m&ecirc;me jour. Les notes (&#9733;) sont celles affich&eacute;es par chaque marchand sur sa fiche produit, relev&eacute;es le 19/11/2026 : ce sont les avis de leurs clients, pas les n&ocirc;tres. Les prix changent souvent pendant le Black Friday : v&eacute;rifiez le montant au panier avant de payer.
               </p>
             </section>
 
