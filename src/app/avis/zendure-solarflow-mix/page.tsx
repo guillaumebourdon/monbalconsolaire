@@ -33,7 +33,7 @@ export default function ZendureSolarFlowMixAvisPage() {
       <SchemaArticle title="Zendure SolarFlow Mix avis : le nouveau tout-en-un résidentiel 2026" description="Avis détaillé sur le Zendure SolarFlow Mix en 2026." url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" datePublished="2026-06-30" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
       {/* Modèle d'entrée de gamme : c'est le prix « dès 1 999 € » affiché sur la page (zendure.fr, en stock le 20/11/2026). */}
-      <SchemaProduct name="Zendure SolarFlow 3000 Mix AC+" brand="Zendure" description="Batterie résidentielle LFP 8 kWh, sortie AC 3 000 W, à coupler à un onduleur photovoltaïque existant (gamme SolarFlow Mix)." price={1999} availability="InStock" ratingValue={8} url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" />
+      <SchemaProduct image="/images/produits/zendure-solarflow-3000-mix-ac-front.webp" name="Zendure SolarFlow 3000 Mix AC+" brand="Zendure" description="Batterie résidentielle LFP 8 kWh, sortie AC 3 000 W, à coupler à un onduleur photovoltaïque existant (gamme SolarFlow Mix)." price={1999} availability="InStock" ratingValue={8} url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow Mix' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -46,6 +46,8 @@ export default function ZendureSolarFlowMixAvisPage() {
           </div>
 
           <ProductHero
+            image="/images/produits/zendure-solarflow-3000-mix-ac-front.webp"
+            imageAlt="Zendure SolarFlow 3000 Mix AC+ - batterie résidentielle vue de face"
             brand="Zendure"
             name="SolarFlow Mix (3000 / 4000)"
             power="8-50 kWh"

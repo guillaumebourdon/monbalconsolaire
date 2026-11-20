@@ -96,10 +96,10 @@ export default function EcoflowStreamUltraPage() {
         description="Avis complet du STREAM Ultra, successeur du PowerStream chez EcoFlow."
         url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra"
         datePublished="2026-11-03"
-        dateModified="2026-11-05"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="EcoFlow STREAM Ultra" brand="EcoFlow" description="Batterie LiFePO4 1,92 kWh avec micro-onduleur 800 W intégré, extensible à 11,52 kWh, 4 MPPT, sortie secours 2 300 W." price={659} ratingValue={7.5} availability="InStock" url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra" />
+      <SchemaProduct image="/images/produits/ecoflow-stream-ultra-front.webp" name="EcoFlow STREAM Ultra" brand="EcoFlow" description="Batterie LiFePO4 1,92 kWh avec micro-onduleur 800 W intégré, extensible à 11,52 kWh, 4 MPPT, sortie secours 2 300 W." price={659} ratingValue={7.5} availability="InStock" url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'EcoFlow STREAM Ultra' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -114,7 +114,7 @@ export default function EcoflowStreamUltraPage() {
               EcoFlow a retiré le PowerStream de son catalogue France en 2026 au profit de la gamme <strong>STREAM</strong>. Le STREAM Ultra en est le modèle avec stockage&nbsp;: batterie et micro-onduleur 800&nbsp;W réunis dans un seul boîtier, extensible jusqu&apos;à 11,52&nbsp;kWh. Analyse compl&egrave;te des specs, du prix et de la rentabilit&eacute;.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>3 novembre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>3 novembre 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -129,6 +129,8 @@ export default function EcoflowStreamUltraPage() {
           </div>
 
           <ProductHero
+            image="/images/produits/ecoflow-stream-ultra-front.webp"
+            imageAlt="EcoFlow STREAM Ultra - batterie avec micro-onduleur intégré"
             brand="EcoFlow"
             name="STREAM Ultra"
             power="800 W (sortie) / 2 000 W entrée PV"

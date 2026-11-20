@@ -292,6 +292,7 @@ const CATALOG = {
     url: 'https://fr.ecoflow.com/products/stream-ultra-pro',
     reviewSlug: '/avis/ecoflow-stream-ultra',
     priceNote: 'seul, sans panneaux',
+    image: '/images/produits/ecoflow-stream-ultra-front.webp',
   },
   'ecoflow-powerstream': {
     id: 'ecoflow-powerstream',
@@ -319,6 +320,7 @@ const CATALOG = {
     verifiedOn: '2026-11-18',
     url: 'https://iallpowers.eu/fr/products/bs2500',
     reviewSlug: '/avis/allpowers-bs2500-pro',
+    image: '/images/produits/allpowers-bs2500-pro-front.webp',
   },
   'beem-battery': {
     id: 'beem-battery',

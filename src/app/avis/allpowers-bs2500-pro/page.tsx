@@ -100,7 +100,7 @@ export default function AllpowersBs2500ProPage() {
         dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="ALLPOWERS BS2500 PRO" brand="ALLPOWERS" description="Batterie de balcon LiFePO4 2,6 kWh, onduleur 800 W (réglable jusqu'à 2 400 W), double MPPT 2 × 1 000 W, sortie de secours 2 400 W, IP65." price={999} ratingValue={6} availability="InStock" url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro" />
+      <SchemaProduct image="/images/produits/allpowers-bs2500-pro-front.webp" name="ALLPOWERS BS2500 PRO" brand="ALLPOWERS" description="Batterie de balcon LiFePO4 2,6 kWh, onduleur 800 W (réglable jusqu'à 2 400 W), double MPPT 2 × 1 000 W, sortie de secours 2 400 W, IP65." price={999} ratingValue={6} availability="InStock" url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'ALLPOWERS BS2500 PRO' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -130,6 +130,8 @@ export default function AllpowersBs2500ProPage() {
           </div>
 
           <ProductHero
+            image="/images/produits/allpowers-bs2500-pro-front.webp"
+            imageAlt="ALLPOWERS BS2500 PRO - batterie de balcon 2,6 kWh vue de trois quarts"
             brand="ALLPOWERS"
             name="BS2500 PRO"
             power="800 W réseau / 2 400 W secours / 2 × 1 000 W PV"
