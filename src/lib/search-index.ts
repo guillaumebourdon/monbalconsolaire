@@ -44,6 +44,7 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Hoymiles HMS-800W-2T : micro-onduleur DIY de référence', description: '2 MPPT, WiFi intégré, rendement 96,7 %. Environ 170 € (Wattuneed, 05/11/2026).', url: '/avis/hoymiles-hms-800w', category: 'Avis', badge: '8.5/10' },
 
   // ─── Comparatifs ───
+  { title: 'Kit solaire pas cher 2026 : Beem vs Sunethic vs Sunology GO', description: 'Beem Kit 300W (rupture), Sunethic F500 et Sunology GO compar\u00e9s : prix au watt, ROI, lequel acheter vraiment aujourd\u2019hui.', url: '/comparatif/kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go', category: 'Comparatif', badge: 'Nouveau' },
   { title: 'APsystems EZ1-M vs Hoymiles HMS-800W-2T', description: 'Les deux micro-onduleurs les plus vendus pour un kit DIY balcon compar\u00e9s : prix, rendement, WiFi/Bluetooth, garantie.', url: '/comparatif/apsystems-ez1-vs-hoymiles-hms-800w', category: 'Comparatif', badge: 'Nouveau' },
   { title: 'Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly', description: 'Quelle app pour suivre sa production ou piloter sa batterie en HP/HC. Comparatif et points faibles r\u00e9els.', url: '/comparatif/application-suivi-production-solaire', category: 'Comparatif', badge: 'Applications' },
   { title: 'Meilleur micro-onduleur solaire 2026', description: 'Hoymiles, APsystems, Enphase, Deye compar\u00e9s : prix, MPPT, garantie. Lequel choisir pour un kit DIY.', url: '/comparatif/meilleur-micro-onduleur-2026', category: 'Comparatif', badge: 'Nouveau' },

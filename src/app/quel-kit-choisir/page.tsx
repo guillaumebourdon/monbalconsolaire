@@ -43,6 +43,18 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go',
+    title: 'Kit solaire pas cher 2026 : Beem vs Sunethic vs Sunology GO',
+    excerpt: 'Beem Kit 300W (199 €, rupture), Sunethic F500 (690 €) et Sunology GO (349 €) comparés : lequel acheter vraiment aujourd\'hui.',
+    type: 'comparatif',
+    badge: 'Nouveau',
+    tags: ['budget', 'comparatif', 'pas cher'],
+    brands: ['Beem', 'Sunethic', 'Sunology'],
+    powers: ['moins-400', '400-500'],
+    publishedAt: '2026-11-20',
+    readTime: '9 min',
+  },
+  {
     slug: '/comparatif/apsystems-ez1-vs-hoymiles-hms-800w',
     title: 'APsystems EZ1-M vs Hoymiles HMS-800W-2T : le duel',
     excerpt: 'Les deux micro-onduleurs les plus vendus pour un kit DIY balcon s\'affrontent : prix, rendement, WiFi/Bluetooth, garantie.',
