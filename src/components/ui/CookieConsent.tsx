@@ -5,6 +5,22 @@ import Script from 'next/script';
 
 const GA_ID = 'G-7CXQTZXKCR';
 const CONSENT_KEY = 'mbs-cookie-consent';
+/** Événement envoyé par le lien « Gérer les cookies » du pied de page. */
+export const OPEN_COOKIE_SETTINGS = 'mbs-open-cookie-settings';
+
+/** Supprime les cookies Google Analytics (_ga, _ga_XXXX) sur le domaine courant et le domaine parent. */
+function clearAnalyticsCookies() {
+  const host = window.location.hostname;
+  const domains = ['', host, `.${host.replace(/^www\./, '')}`];
+  document.cookie.split(';').forEach((c) => {
+    const name = c.split('=')[0].trim();
+    if (name === '_ga' || name.startsWith('_ga_') || name === '_gid') {
+      domains.forEach((d) => {
+        document.cookie = `${name}=; Max-Age=0; path=/${d ? `; domain=${d}` : ''}`;
+      });
+    }
+  });
+}
 
 type ConsentState = 'pending' | 'accepted' | 'refused';
 
@@ -25,6 +41,9 @@ export function CookieConsent() {
     if (stored === 'pending') {
       setVisible(true);
     }
+    const open = () => setVisible(true);
+    window.addEventListener(OPEN_COOKIE_SETTINGS, open);
+    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS, open);
   }, []);
 
   const handleAccept = () => {
@@ -34,9 +53,15 @@ export function CookieConsent() {
   };
 
   const handleRefuse = () => {
+    const wasAccepted = consent === 'accepted';
     localStorage.setItem(CONSENT_KEY, 'refused');
     setConsent('refused');
     setVisible(false);
+    if (wasAccepted) {
+      // Retrait du consentement : on efface les cookies déposés et on recharge pour décharger le script GA.
+      clearAnalyticsCookies();
+      window.location.reload();
+    }
   };
 
   return (

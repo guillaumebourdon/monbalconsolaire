@@ -87,8 +87,8 @@ const setups = [
     production: '~920 kWh/an (Lyon, sud) + stockage pour le soir',
     ideal: 'Grande terrasse, autoconsommation maximale, consommation le soir',
     kits: [
-      { name: 'Jackery SolarVault 3 Pro + 2\u00d7450 W', power: '900 Wc + 2,52 kWh', price: '959 €', roi: '5,2 ans', avantage: 'Batterie LFP 2,52 kWh extensible, 4 MPPT ; prix promotionnel constaté le 05/11/2026', slug: '/avis/jackery-solarvault-3-pro' },
-      { name: 'Bluetti Balco 260 + 2\u00d7450 W', power: '900 Wc + 2,56 kWh', price: '1 079 €', roi: '5,8 ans', avantage: 'Tout-en-un IP65, batterie 2,56 kWh extensible ; prix promotionnel constaté le 05/11/2026', slug: '/avis/bluetti-balco-260' },
+      { name: 'Jackery SolarVault 3 Pro + 2\u00d7450 W', power: '900 Wc + 2,52 kWh', price: '839 €', roi: '4,6 ans', avantage: 'Batterie LFP 2,52 kWh extensible, 4 MPPT ; prix promotionnel constaté le 20/11/2026', slug: '/avis/jackery-solarvault-3-pro' },
+      { name: 'Bluetti Balco 260 + 2\u00d7450 W', power: '900 Wc + 2,56 kWh', price: '1 019 €', roi: '5,5 ans', avantage: 'Tout-en-un IP65, batterie 2,56 kWh extensible ; prix promotionnel constaté le 20/11/2026', slug: '/avis/bluetti-balco-260' },
     ],
   },
 ];
@@ -101,7 +101,7 @@ export default function MeilleurKitTerrasse2026Page() {
         description="Comparatif des meilleurs kits solaires plug-and-play pour terrasse en 2026."
         url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-terrasse-2026"
         datePublished="2026-05-13"
-        dateModified="2026-11-05"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Kit solaire terrasse 2026' }]} />
@@ -122,7 +122,7 @@ export default function MeilleurKitTerrasse2026Page() {
               <span>&middot;</span>
               <span>10 min de lecture</span>
               <span>&middot;</span>
-              <span className="inline-block bg-green/10 text-green text-xs font-semibold px-2 py-0.5 rounded">Mis &agrave; jour le 5 novembre 2026</span>
+              <span className="inline-block bg-green/10 text-green text-xs font-semibold px-2 py-0.5 rounded">Mis &agrave; jour le 20 novembre 2026</span>
             </div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
@@ -261,7 +261,7 @@ export default function MeilleurKitTerrasse2026Page() {
                   Si le budget est serr&eacute;, le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc &agrave; 429 &euro;</Link> offre le meilleur rapport qualit&eacute;-prix (0,86 &euro;/Wc, ROI ~4,7 ans), mais il est en pr&eacute;commande (exp&eacute;dition &agrave; partir de d&eacute;cembre 2026). Si la simplicit&eacute; prime, <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">2 Sunology PLAY</Link> se posent et se branchent en 2 minutes.
                 </p>
                 <p className="text-charcoal-light leading-relaxed">
-                  Pour stocker davantage, deux packs batterie de 2,5&nbsp;kWh avec 2 panneaux de 450&nbsp;W se distinguent au 5 novembre 2026&nbsp;: le <Link href="/avis/jackery-solarvault-3-pro" className="text-green hover:underline font-semibold">Jackery SolarVault 3 Pro (959&nbsp;&euro; en pack)</Link>, batterie LFP extensible (ROI ~5,2 ans) ; et le <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260 (1&nbsp;079&nbsp;&euro; en pack)</Link>, bo&icirc;tier tout-en-un IP65 (ROI ~5,8 ans). Les deux prix sont promotionnels&nbsp;: v&eacute;rifiez-les avant d&apos;acheter. L&apos;EcoFlow PowerStream, longtemps cit&eacute; ici, n&apos;est plus vendu par EcoFlow France (successeur&nbsp;: <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">EcoFlow STREAM Ultra</Link>, 659&nbsp;&euro; seul).
+                  Pour stocker davantage, deux packs batterie de 2,5&nbsp;kWh avec 2 panneaux de 450&nbsp;W se distinguent au 20 novembre 2026&nbsp;: le <Link href="/avis/jackery-solarvault-3-pro" className="text-green hover:underline font-semibold">Jackery SolarVault 3 Pro (839&nbsp;&euro; en pack)</Link>, batterie LFP extensible (ROI ~4,6 ans) ; et le <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260 (1&nbsp;019&nbsp;&euro; en pack)</Link>, bo&icirc;tier tout-en-un IP65 (ROI ~5,5 ans). Les deux prix sont promotionnels&nbsp;: v&eacute;rifiez-les avant d&apos;acheter. L&apos;EcoFlow PowerStream, longtemps cit&eacute; ici, n&apos;est plus vendu par EcoFlow France (successeur&nbsp;: <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">EcoFlow STREAM Ultra</Link>, 659&nbsp;&euro; seul).
                 </p>
               </div>
             </section>

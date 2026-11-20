@@ -40,7 +40,7 @@ const faqData = [
 export default function AvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology PLAY 2 avis : devenu PLAY 515 W, prix et verdict" description="Avis sur le Sunology PLAY 2, devenu PLAY 515 W en 2026 : ce qui a changé, prix, promo, rentabilité, app STREAM, avis clients." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-11-05" />
+      <SchemaArticle title="Sunology PLAY 2 avis : devenu PLAY 515 W, prix et verdict" description="Avis sur le Sunology PLAY 2, devenu PLAY 515 W en 2026 : ce qui a changé, prix, promo, rentabilité, app STREAM, avis clients." url="https://monbalconsolaire.fr/avis/sunology-play-2" datePublished="2026-03-19" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/sunology-play-2-1.webp" name="Sunology PLAY" brand="Sunology" description="Station solaire plug-and-play 515 W (panneau back-contact bifacial, micro-onduleur MX500 500 W Wi-Fi), successeur du PLAY 2. Garantie intégrale 25 ans, garantie de puissance panneau 30 ans." price={KIT.priceEur} availability={SCHEMA_AVAILABILITY[KIT.availability]} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/sunology-play-2" />
       <SchemaBreadcrumb items={[{ label: "Avis", href: "/avis" }, { label: "Sunology PLAY (ex-PLAY 2)" }]} />
@@ -51,7 +51,7 @@ export default function AvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY 2 avis&nbsp;: devenu PLAY 515&nbsp;W, prix et verdict (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous cherchez le <strong>Sunology PLAY 2</strong>&nbsp;? Il n&apos;est plus vendu sous ce nom&nbsp;: Sunology l&apos;a remplac&eacute; par le <strong>PLAY</strong>, au m&ecirc;me prix (599&nbsp;&euro;) mais avec un panneau back-contact de <strong>515&nbsp;W</strong> (d&eacute;nomination sunology.eu au 5 novembre 2026) au lieu de 450&nbsp;Wc. Ce qui a chang&eacute;, ce que &ccedil;a rapporte, l&apos;app STREAM, ce que reprochent les clients, et pourquoi se m&eacute;fier des PLAY2 encore en circulation.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; <strong>Mis &agrave; jour le 5 novembre 2026</strong></span><span>&middot;</span><span>13 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 mars 2026 &middot; <strong>Mis &agrave; jour le 20 novembre 2026</strong></span><span>&middot;</span><span>13 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -108,7 +108,7 @@ export default function AvisPage() {
 
               <div className="card border-l-4 border-l-amber my-6">
                 <h3 className="font-bold text-sm mb-1">Attention aux PLAY2 encore en circulation</h3>
-                <p className="text-xs text-charcoal-light leading-relaxed">Des distributeurs (grandes surfaces de bricolage, jardineries) ont longtemps vendu des PLAY2 &laquo;&nbsp;460W&nbsp;&raquo;, et on en trouve en occasion&nbsp;: c&apos;est l&apos;ancienne g&eacute;n&eacute;ration. Elle reste un bon produit, mais &agrave; prix &eacute;gal vous payez 40 &agrave; 50&nbsp;Wc de moins. <strong>Comparez le prix par watt-cr&ecirc;te</strong>&nbsp;: un PLAY2 460&nbsp;W n&apos;&eacute;gale le PLAY 500&nbsp;W &agrave; 599&nbsp;&euro; qu&apos;en dessous d&apos;environ 550&nbsp;&euro; (et du PLAY &agrave; 533&nbsp;&euro; avec code promo qu&apos;en dessous d&apos;environ 490&nbsp;&euro;).</p>
+                <p className="text-xs text-charcoal-light leading-relaxed">Des distributeurs (grandes surfaces de bricolage, jardineries) ont longtemps vendu des PLAY2 &laquo;&nbsp;460W&nbsp;&raquo;, et on en trouve en occasion&nbsp;: c&apos;est l&apos;ancienne g&eacute;n&eacute;ration. Elle reste un bon produit, mais &agrave; prix &eacute;gal vous payez 55 &agrave; 65&nbsp;Wc de moins. <strong>Comparez le prix par watt-cr&ecirc;te</strong>&nbsp;: un PLAY2 460&nbsp;W n&apos;&eacute;gale le PLAY 515&nbsp;W &agrave; 599&nbsp;&euro; qu&apos;en dessous d&apos;environ 535&nbsp;&euro; (et du PLAY &agrave; 533&nbsp;&euro; avec code promo qu&apos;en dessous d&apos;environ 475&nbsp;&euro;).</p>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">

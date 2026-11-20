@@ -46,7 +46,7 @@ const faqData = [
   },
   {
     question: 'PowerStream ou Bluetti Balco 260 : lequel choisir ?',
-    answer: 'Ce sont deux approches très différentes. Le Bluetti Balco 260 (789 € sans panneaux, 1 079 € avec 2 panneaux de 450 W, prix promotionnels relevés le 5 novembre 2026) est un système tout-en-un avec batterie LiFePO4 de 2,56 kWh intégrée : installation simple, pas de composants à acheter séparément. Le PowerStream (599 €) est un micro-onduleur nu que vous combinez à vos propres panneaux et batterie EcoFlow — plus cher au total (~1 800 €) mais infiniment plus modulaire. Le Balco 260 gagne sur la simplicité et le stockage immédiat (2,56 kWh vs 1 kWh pour le DELTA 2). Le PowerStream gagne sur la flexibilité évolutive, l\'app mobile, et la batterie portable réutilisable hors solaire (camping, coupures de courant). Verdict : simplicité + stockage dès le départ → Bluetti Balco 260 ; évolutivité sur 10 ans + écosystème → PowerStream.',
+    answer: 'Ce sont deux approches très différentes. Le Bluetti Balco 260 (729 € sans panneaux, 1 019 € avec 2 panneaux de 450 W, prix promotionnels relevés le 20 novembre 2026) est un système tout-en-un avec batterie LiFePO4 de 2,56 kWh intégrée : installation simple, pas de composants à acheter séparément. Le PowerStream (599 €) est un micro-onduleur nu que vous combinez à vos propres panneaux et batterie EcoFlow — plus cher au total (~1 800 €) mais infiniment plus modulaire. Le Balco 260 gagne sur la simplicité et le stockage immédiat (2,56 kWh vs 1 kWh pour le DELTA 2). Le PowerStream gagne sur la flexibilité évolutive, l\'app mobile, et la batterie portable réutilisable hors solaire (camping, coupures de courant). Verdict : simplicité + stockage dès le départ → Bluetti Balco 260 ; évolutivité sur 10 ans + écosystème → PowerStream.',
   },
 ];
 
@@ -76,7 +76,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Prix d\'entrée élevé',
-    detail: 'Le PowerStream seul coûte 599 €, sans panneaux ni batterie. Un setup minimal complet (PowerStream + 2 panneaux + batterie 1 kWh) tourne autour de 1 800 €. C\'est plus cher qu\'un Sunology PLAY (599 € tout compris pour 500 Wc).',
+    detail: 'Le PowerStream seul coûte 599 €, sans panneaux ni batterie. Un setup minimal complet (PowerStream + 2 panneaux + batterie 1 kWh) tourne autour de 1 800 €. C\'est plus cher qu\'un Sunology PLAY (599 € tout compris pour 515 Wc).',
   },
   {
     titre: 'Configuration plus complexe',
@@ -151,7 +151,7 @@ export default function EcoflowPowerstreamPage() {
         description="Avis complet sur le PowerStream EcoFlow en 2026."
         url="https://monbalconsolaire.fr/avis/ecoflow-powerstream"
         datePublished="2026-04-28"
-        dateModified="2026-11-05"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/ecoflow-powerstream-2.webp" name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} availability="Discontinued" url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
@@ -169,7 +169,7 @@ export default function EcoflowPowerstreamPage() {
               Le PowerStream n&apos;est pas un kit solaire classique, c&apos;est un <strong>écosystème modulaire</strong> qui articule panneaux, batterie et réseau domestique avec une intelligence rare sur le marché grand public. Analyse compl&egrave;te : ce qu&apos;il fait vraiment, son prix réel, et pour qui c&apos;est le bon choix.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>28 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>28 avril 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -463,7 +463,7 @@ export default function EcoflowPowerstreamPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2 italic">Prix Bluetti et Zendure v&eacute;rifi&eacute;s sur leurs boutiques officielles le 5 novembre 2026 (Bluetti Balco 260&nbsp;: 789&nbsp;&euro; seul, prix barr&eacute; 1&nbsp;049&nbsp;&euro;&nbsp;; le code de lancement a expir&eacute; le 30/09/2026). Setup PowerStream&nbsp;: derniers prix conseill&eacute;s connus, produit arr&ecirc;t&eacute;.</p>
+              <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s sur les boutiques officielles le 5 novembre 2026 pour Zendure et le 20 novembre pour Bluetti (Bluetti Balco 260&nbsp;: 729&nbsp;&euro; seul, prix barr&eacute; 1&nbsp;049&nbsp;&euro;&nbsp;; le code de lancement a expir&eacute; le 30/09/2026). Setup PowerStream&nbsp;: derniers prix conseill&eacute;s connus, produit arr&ecirc;t&eacute;.</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">

@@ -7,11 +7,14 @@ import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
 import { ecoflowUrl, zendureUrl, BUY, type BuyLink } from '@/lib/affiliate';
 import { BF_ARTICLE_PATH } from '@/lib/black-friday';
+import { PRODUCTS } from '@/data/products';
 
 // Regénérée toutes les 6 h : les offres datées basculent seules en « Terminée ».
 export const revalidate = 21600;
 
-const VERIFIED = '05/11/2026';
+const VERIFIED = '05/11/2026'; // date par défaut des offres sans date propre
+/** Dernier passage de vérification sur la page (titre). */
+const LAST_CHECK = '20/11/2026';
 const SUNOLOGY_PLAY_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
 const SUNOLOGY_PROMO_END = '2026-10-31';
 const SUNOLOGY_BLACKFRIDAY_CODE = 'BLACKSUN';
@@ -35,7 +38,7 @@ export function generateMetadata(): Metadata {
       ? 'Code promo Sunology : -100 € avec BLACKSUN (Black Friday)'
       : 'Code promo Sunology 2026 : parrainage -7 %, offres vérifiées',
     description: blackFriday
-      ? 'Sunology : code BLACKSUN, jusqu’à -640 € jusqu’au 4/12 (Black Friday). Zendure -8 % avec AF5E24. Beem, EcoFlow, Sunethic vérifiés le 05/11.'
+      ? 'Sunology : code BLACKSUN, jusqu’à -640 € jusqu’au 4/12 (Black Friday). Zendure -8 % avec AF5E24. Beem et Sunethic revérifiés le 20/11.'
       : 'Pas de code Sunology public : parrainage S-Club -7 %, codes SUN_ décryptés. Zendure : code AF5E24, -8 % en plus jusqu’au 04/01. Beem, EcoFlow vérifiés.',
     alternates: {
       canonical: 'https://monbalconsolaire.fr/codes-promo',
@@ -67,7 +70,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Existe-t-il un code promo Beem Energy pour les kits plug-and-play ?',
     answer:
-      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 05/11/2026 (pas d’annonce Black Friday repérée à cette date). Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
+      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 20/11/2026 (pas d’annonce Black Friday repérée sur beemenergy.fr à cette date). Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
   },
   {
     question: 'Existe-t-il un code promo Zendure ?',
@@ -77,7 +80,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Existe-t-il un code promo Sunethic ?',
     answer:
-      'Sunethic ne publie pas de code public officiel. Au 05/11/2026, la marque met toujours en avant des prix bas sur ses kits à panneaux français Voltec Solar et des promotions sur les batteries plug-and-play Anker et Zendure, sans montant de remise chiffré ni opération Black Friday spécifique. La livraison est offerte, et le dossier mairie à partir des kits 6 panneaux.',
+      'Sunethic ne publie pas de code public officiel. Au 20/11/2026, la marque annonce sur sa page d’accueil des « promotions Black Friday » du 9 au 30 novembre et des prix bas sur ses kits à panneaux français Voltec Solar, sans montant de remise chiffré ni code. La livraison est offerte, et le dossier mairie à partir des kits 6 panneaux.',
   },
 ];
 
@@ -129,7 +132,7 @@ const blackFridayOffers: Offer[] = [
   },
   {
     label: `Zendure : code ${ZENDURE_CODE}, -8 % testé au panier`,
-    detail: 'En plus des prix affichés, jusqu’au 4 janvier 2027. Testé au panier le 18/11/2026 : SolarFlow 800 Plus 539 € → 495,88 € (pack avec 2 panneaux de 500 W : 719 € → 661,48 €), SolarFlow 800 Pro 2 599 € → 551,08 €, SolarFlow 1600 AC+ avec batterie AB2000L 959 € → 882,28 €, batteries AB2000L 519 € → 477,48 € et AB3000L 659 € → 606,28 €. Refusé sur le SolarFlow 2400 AC+ (testé) ; Zendure exclut aussi le 2400 Pro.',
+    detail: 'En plus des prix affichés, jusqu’au 4 janvier 2027. Testé au panier le 18/11/2026 : SolarFlow 800 Plus 539 € → 495,88 € (pack avec 2 panneaux de 500 W : 719 € → 661,48 € ; épuisé sur zendure.fr le 20/11), SolarFlow 800 Pro 2 599 € → 551,08 €, SolarFlow 1600 AC+ avec batterie AB2000L 959 € → 882,28 €, batteries AB2000L 519 € → 477,48 € et AB3000L 659 € → 606,28 €. Refusé sur le SolarFlow 2400 AC+ (testé) ; Zendure exclut aussi le 2400 Pro.',
     status: 'active',
     endsAt: ZENDURE_CODE_END,
     verified: '18/11/2026',
@@ -195,8 +198,8 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     offers: [
       {
         label: 'Prix bas sur les kits Voltec Solar et les batteries Anker / Zendure',
-        detail: 'Mis en avant sur la page d’accueil au 05/11/2026, sans montant de remise chiffré ni code. Pas d’opération Black Friday spécifique repérée à cette date.',
-        verified: '05/11/2026',
+        detail: 'Mis en avant sur la page d’accueil, avec les « promotions Black Friday » annoncées du 9 au 30 novembre, sans montant de remise chiffré ni code.',
+        verified: '20/11/2026',
         status: 'active',
         source: 'sunethic.fr',
         sourceUrl: 'https://sunethic.fr/',
@@ -216,7 +219,7 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     id: 'beem',
     brand: 'Beem Energy',
     intro:
-      'Aucun code officiel pour les kits plug-and-play au 05/11/2026, et pas d’opération Black Friday repérée à cette date (l’an dernier, Beem proposait un « Bright Friday » à -15 % sur toute la gamme). Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
+      'Aucun code officiel pour les kits plug-and-play au 20/11/2026, et pas d’opération Black Friday repérée sur beemenergy.fr à cette date (l’an dernier, Beem proposait un « Bright Friday » à -15 % sur toute la gamme). Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
     offers: [
       {
         label: 'Prime Beem : jusqu’à 1 000 € de remise',
@@ -233,7 +236,8 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
         sourceUrl: 'https://beemenergy.fr/pages/ne-perdez-pas-de-temps-pour-parrainer-vos-proches',
       },
     ],
-    cta: { url: 'https://beemenergy.fr/products/kit-beem', product: 'Beem Kit 300W', merchant: 'Beem Energy' },
+    // Kit Beem 300 W en rupture : CTA vers le Beem On 500 Wc (précommande)
+    cta: { url: PRODUCTS['beem-on-500w'].url, product: 'Beem On 500 Wc', merchant: 'Beem Energy' },
   },
   {
     id: 'ecoflow',
@@ -294,7 +298,7 @@ export default function CodesPromoPage() {
         <Breadcrumbs items={[{ label: 'Codes promo' }]} />
 
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
-          Code promo Sunology, Beem, Sunethic, EcoFlow, Zendure &middot; Offres v&eacute;rifi&eacute;es le {VERIFIED}
+          Code promo Sunology, Beem, Sunethic, EcoFlow, Zendure &middot; Offres v&eacute;rifi&eacute;es le {LAST_CHECK}
         </h1>
         <p className="text-charcoal-light text-lg mb-4">
           Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
@@ -359,7 +363,7 @@ export default function CodesPromoPage() {
               )}{' '}Hors promotion, le parrainage (-7%) le ram&egrave;ne &agrave; environ 557 &euro;, mais ne se cumule g&eacute;n&eacute;ralement pas avec le code Black Friday. Notre analyse compl&egrave;te :{' '}
               <Link href="/avis/sunology-play-2" className="text-green font-semibold hover:underline">avis Sunology PLAY (ex-PLAY 2)</Link>.
             </p>
-            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyBlackFriday ? 'Voir le PLAY 500 W avec le code BLACKSUN sur Sunology' : 'Voir le prix du PLAY 500 W sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyBlackFriday ? '499 €' : '599 €'} />
+            <AffiliateCTA productName="Sunology PLAY" merchantName="Sunology" affiliateUrl={SUNOLOGY_PLAY_URL} label={sunologyBlackFriday ? 'Voir le PLAY 515 W avec le code BLACKSUN sur Sunology' : 'Voir le prix du PLAY 515 W sur Sunology'} variant="secondary" position="codes_promo_sunology" price={sunologyBlackFriday ? '499 €' : '599 €'} />
 
             <h3 className="text-xl font-bold mt-8 mb-3">Sunology et le Black Friday</h3>
             <p className="text-charcoal-light leading-relaxed">

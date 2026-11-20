@@ -23,7 +23,7 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Quelle est la meilleure batterie pour kit solaire de balcon en 2026 ?',
-    answer: 'Au 5 novembre 2026 (prix promotionnels constatés sur les sites des fabricants), le Zendure SolarFlow 800 Plus (539 €, 1,92 kWh, 281 €/kWh) et le Jackery SolarVault 3 Pro (719 €, 2,52 kWh, 285 €/kWh, garantie 10 ans) ont le meilleur prix au kWh. Pour un système tout-en-un IP65 avec secours, le Bluetti Balco 260 (789 €, 2,56 kWh) est le choix le plus polyvalent.',
+    answer: 'Au 5 novembre 2026 (prix promotionnels constatés sur les sites des fabricants), le Zendure SolarFlow 800 Plus (539 €, 1,92 kWh, 281 €/kWh) et le Jackery SolarVault 3 Pro (719 €, 2,52 kWh, 285 €/kWh, garantie 10 ans) ont le meilleur prix au kWh. Pour un système tout-en-un IP65 avec secours, le Bluetti Balco 260 (729 € au 20 novembre 2026, 2,56 kWh) est le choix le plus polyvalent.',
   },
   {
     question: 'Faut-il vraiment une batterie avec un kit solaire de balcon ?',
@@ -35,11 +35,11 @@ const faqData = [
   },
   {
     question: 'Quelle est la différence entre Zendure SolarFlow et Bluetti Balco 260 ?',
-    answer: 'Ce sont deux approches différentes. Le Zendure SolarFlow est un kit micro-onduleur + batterie 1,92 kWh : vous branchez vos panneaux et injectez sur le réseau domestique. Le Bluetti Balco 260 est un système tout-en-un (onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT) qui peut aussi alimenter directement des appareils en cas de coupure. Le Bluetti est plus cher (789 € contre 539 € au 5 novembre 2026, prix promotionnels) mais plus polyvalent.',
+    answer: 'Ce sont deux approches différentes. Le Zendure SolarFlow est un kit micro-onduleur + batterie 1,92 kWh : vous branchez vos panneaux et injectez sur le réseau domestique. Le Bluetti Balco 260 est un système tout-en-un (onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT) qui peut aussi alimenter directement des appareils en cas de coupure. Le Bluetti est plus cher (729 € au 20 novembre 2026 contre 539 € au 5 novembre, prix promotionnels) mais plus polyvalent.',
   },
   {
     question: 'La batterie solaire est-elle rentable pour un balcon ?',
-    answer: 'La batterie allonge le ROI global. Pour un foyer absent en journée (40 % d\'autoconsommation sans batterie), un kit de 450 W à 600 € rapporte environ 37 € la première année. Ajouter le Bluetti Balco 260 (789 €) fait monter l\'autoconsommation vers 75 % : environ 32 € de plus la première année, soit un ROI sur la batterie seule d\'environ 19 ans. C\'est rentable sur 25 ans, de justesse. La batterie est surtout justifiée pour l\'indépendance et le confort, pas pour les chiffres purs.',
+    answer: 'La batterie allonge le ROI global. Pour un foyer absent en journée (40 % d\'autoconsommation sans batterie), un kit de 450 W à 600 € rapporte environ 37 € la première année. Ajouter le Bluetti Balco 260 (729 €) fait monter l\'autoconsommation vers 75 % : environ 32 € de plus la première année, soit un ROI sur la batterie seule d\'environ 18 ans. C\'est rentable sur 25 ans, de justesse. La batterie est surtout justifiée pour l\'indépendance et le confort, pas pour les chiffres purs.',
   },
   {
     question: 'EcoFlow PowerStream est-il adapté au solaire de balcon ?',
@@ -55,7 +55,7 @@ export default function MeilleureBatterieBalconPage() {
         description="Comparatif complet des batteries solaires dédiées aux kits balcon en 2026."
         url="https://monbalconsolaire.fr/comparatif/meilleure-batterie-solaire-balcon-2026"
         datePublished="2026-07-10"
-        dateModified="2026-11-05"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Meilleure batterie balcon 2026' }]} />
@@ -74,7 +74,7 @@ export default function MeilleureBatterieBalconPage() {
               Tableau prix/kWh, autonomie r&eacute;elle et verdict honn&ecirc;te par profil&nbsp;: budget, tout-en-un, grande capacit&eacute;.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>10 juillet 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>10 juillet 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -94,7 +94,7 @@ export default function MeilleureBatterieBalconPage() {
             <h2 className="font-bold text-lg mb-3">Notre s&eacute;lection en bref</h2>
             <ul className="space-y-2 text-sm text-charcoal-light">
               <li className="flex gap-2"><span className="text-green font-bold flex-shrink-0">&#10003;</span><span><strong>Budget serr&eacute;</strong> &rarr; <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Zendure SolarFlow 800 Plus</Link> (539&nbsp;&euro;, 1,92&nbsp;kWh, 281&nbsp;&euro;/kWh)</span></li>
-              <li className="flex gap-2"><span className="text-green font-bold flex-shrink-0">&#10003;</span><span><strong>Tout-en-un plug-and-play</strong> &rarr; <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Bluetti Balco 260</Link> (789&nbsp;&euro;, 2,56&nbsp;kWh, IP65)</span></li>
+              <li className="flex gap-2"><span className="text-green font-bold flex-shrink-0">&#10003;</span><span><strong>Tout-en-un plug-and-play</strong> &rarr; <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Bluetti Balco 260</Link> (729&nbsp;&euro;, 2,56&nbsp;kWh, IP65)</span></li>
               <li className="flex gap-2"><span className="text-green font-bold flex-shrink-0">&#10003;</span><span><strong>Garantie 10 ans</strong> &rarr; <Link href="/avis/jackery-solarvault-3-pro" className="text-green hover:underline">Jackery SolarVault 3 Pro</Link> (719&nbsp;&euro; en promo, 2,52&nbsp;kWh)</span></li>
               <li className="flex gap-2"><span className="text-amber-dark font-bold flex-shrink-0">&#9888;</span><span><strong>Modulaire EcoFlow</strong> &rarr; pertinent uniquement si vous avez d&eacute;j&agrave; une station DELTA</span></li>
             </ul>
@@ -185,11 +185,11 @@ export default function MeilleureBatterieBalconPage() {
                         href: '/avis/bluetti-balco-260',
                         img: '/images/produits/bluetti-balco-260-front.webp',
                         capacity: '2,56 kWh',
-                        price: '789 €',
-                        pricePerKwh: '308 €/kWh',
+                        price: '729 €',
+                        pricePerKwh: '285 €/kWh',
                         autonomy: '~18h',
                         warranty: '10 ans',
-                        panels: 'Non inclus (pack 2 × 450 W : 1 079 €)',
+                        panels: 'Non inclus (pack 2 × 450 W : 1 019 €)',
                         best: false,
                         badge: '',
                       },
@@ -269,7 +269,7 @@ export default function MeilleureBatterieBalconPage() {
                 </table>
               </div>
               <p className="text-xs text-stone">
-                * Autonomie estim&eacute;e pour un talon de consommation de 140&nbsp;W (frigo + box + veilles). Prix TTC France relevés le 5 novembre 2026 (prix promotionnels pour Zendure, Jackery, Bluetti et EcoFlow).
+                * Autonomie estim&eacute;e pour un talon de consommation de 140&nbsp;W (frigo + box + veilles). Prix TTC France relevés le 5 novembre 2026, Bluetti le 20 novembre (prix promotionnels pour Zendure, Jackery, Bluetti et EcoFlow).
                 Zendure SolarFlow Mix 3000 : prix du coffret seul (panneaux et bo&icirc;tier ext&eacute;rieur en sus).
               </p>
             </section>
@@ -335,7 +335,7 @@ export default function MeilleureBatterieBalconPage() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="font-mono text-2xl font-bold text-amber-dark">789&nbsp;&euro;</div>
+                      <div className="font-mono text-2xl font-bold text-amber-dark">729&nbsp;&euro;</div>
                       <div className="text-xs text-stone">(panneaux non inclus)</div>
                     </div>
                   </div>
@@ -359,7 +359,7 @@ export default function MeilleureBatterieBalconPage() {
                     <div>
                       <h4 className="font-bold text-sm mb-2">Points faibles</h4>
                       <ul className="space-y-1 text-sm text-charcoal-light">
-                        <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Panneaux non inclus (1&nbsp;079&nbsp;&euro; en pack 2 &times; 450&nbsp;W)</li>
+                        <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> Panneaux non inclus (1&nbsp;019&nbsp;&euro; en pack 2 &times; 450&nbsp;W)</li>
                         <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> 28,5&nbsp;kg : installation non triviale</li>
                         <li className="flex gap-2"><span className="text-red-500 font-bold">-</span> App Bluetti en cours d&apos;am&eacute;lioration</li>
                       </ul>
@@ -510,13 +510,13 @@ export default function MeilleureBatterieBalconPage() {
                   <div className="space-y-1 text-sm text-charcoal-light font-mono">
                     <p>Autoconsommation&nbsp;: ~75&nbsp;%</p>
                     <p>&Eacute;conomies ann&eacute;e 1&nbsp;: <span className="text-amber-dark font-bold">~69&nbsp;&euro; (+32&nbsp;&euro;)</span></p>
-                    <p>ROI batterie seule (789&nbsp;&euro;)&nbsp;: <span className="text-amber-dark font-bold">~19 ans</span></p>
+                    <p>ROI batterie seule (729&nbsp;&euro;)&nbsp;: <span className="text-amber-dark font-bold">~18 ans</span></p>
                   </div>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed text-sm">
                 <strong>Conclusion&nbsp;:</strong> la batterie allonge significativement le ROI. Sur 25 ans avec une inflation tarifaire de {KWH_INFLATION_LABEL} et une d&eacute;gradation des panneaux de {PANEL_DEGRADATION_LABEL},
-                le gain cumul&eacute; reste positif, mais la batterie seule met 18 &agrave; 19 ans &agrave; se rentabiliser.
+                le gain cumul&eacute; reste positif, mais la batterie seule met environ 18 ans &agrave; se rentabiliser.
                 La justification est avant tout le confort et l&apos;ind&eacute;pendance, pas le calcul pur.
                 Lisez notre <Link href="/guide/batterie-solaire-balcon-guide" className="text-green hover:underline">guide complet batterie solaire balcon</Link> pour les d&eacute;tails.
               </p>
@@ -532,7 +532,7 @@ export default function MeilleureBatterieBalconPage() {
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h3 className="font-bold text-green mb-1">Tout-en-un sans installation complexe &rarr; Bluetti Balco 260</h3>
-                  <p className="text-sm text-charcoal-light">Un seul bo&icirc;tier IP65 qui fait tout. Pose en ext&eacute;rieur, 4 MPPT, secours &eacute;lectrique. Le choix le plus polyvalent si le budget permet 789&nbsp;&euro;.</p>
+                  <p className="text-sm text-charcoal-light">Un seul bo&icirc;tier IP65 qui fait tout. Pose en ext&eacute;rieur, 4 MPPT, secours &eacute;lectrique. Le choix le plus polyvalent si le budget permet 729&nbsp;&euro;.</p>
                 </div>
                 <div className="card-lg">
                   <h3 className="font-bold mb-1">Garantie maximale &rarr; Jackery SolarVault 3 Pro</h3>
@@ -617,7 +617,7 @@ export default function MeilleureBatterieBalconPage() {
               <p className="text-xs text-stone leading-relaxed">
                 <strong>M&eacute;thodologie&nbsp;:</strong> tarif &eacute;lectrique {KWH_PRICE_LABEL} (TRV EDF en vigueur depuis le {KWH_PRICE_SINCE}), inflation {KWH_INFLATION_LABEL}, d&eacute;gradation {PANEL_DEGRADATION_LABEL},
                 autoconsommation 85&nbsp;% sans batterie / 95&nbsp;% avec batterie, Performance Ratio 0,85, r&eacute;f&eacute;rence Lyon exposition sud, dur&eacute;e 25 ans.
-                Prix TTC constat&eacute;s le 5 novembre 2026 sur les sites officiels des marques (Sunology STOREY&nbsp;: juin 2026, non rev&eacute;rifi&eacute;).
+                Prix TTC constat&eacute;s le 5 novembre 2026 sur les sites officiels des marques (Bluetti&nbsp;: 20 novembre 2026&nbsp;; Sunology STOREY&nbsp;: juin 2026, non rev&eacute;rifi&eacute;).
                 Comparatif ind&eacute;pendant&nbsp;&mdash; <Link href="/a-propos" className="text-green hover:underline">en savoir plus</Link>.
               </p>
             </div>

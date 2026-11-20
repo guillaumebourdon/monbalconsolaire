@@ -80,7 +80,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Pas de sortie hors réseau (EPS)',
-    detail: 'C\'est LE défaut majeur. En cas de coupure de courant, le SolarFlow s\'arrête. Votre batterie chargée ne sert à rien. Si le backup est important pour vous, deux alternatives : l\'EcoFlow STREAM Ultra (659 € seul en promotion au 5 novembre 2026, successeur du PowerStream) ou le Bluetti Balco 260 (789 € seul au 5 novembre 2026), qui offrent tous les deux une sortie de secours. Pour la majorité des utilisateurs en France métropolitaine (coupures rares), ce n\'est pas un problème.',
+    detail: 'C\'est LE défaut majeur. En cas de coupure de courant, le SolarFlow s\'arrête. Votre batterie chargée ne sert à rien. Si le backup est important pour vous, deux alternatives : l\'EcoFlow STREAM Ultra (659 € seul en promotion au 5 novembre 2026, successeur du PowerStream) ou le Bluetti Balco 260 (729 € seul au 20 novembre 2026), qui offrent tous les deux une sortie de secours. Pour la majorité des utilisateurs en France métropolitaine (coupures rares), ce n\'est pas un problème.',
   },
   {
     titre: '800 W max en sortie : pas de gros consommateurs',
@@ -152,7 +152,7 @@ export default function ZendureSolarflowPage() {
         description="Avis complet sur le Zendure SolarFlow 800 Plus (et la version 800 Pro) en 2026."
         url="https://monbalconsolaire.fr/avis/zendure-solarflow"
         datePublished="2026-05-07"
-        dateModified="2026-11-12"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/zendure-solarflow-front.webp" name="Zendure SolarFlow 800 Plus" brand="Zendure" description="Batterie solaire plug-and-play 1,92 kWh avec onduleur 800 W intégré, 2 MPPT 750 W, LiFePO4 6000 cycles." price={PRODUCTS['zendure-solarflow-800-plus'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['zendure-solarflow-800-plus'].availability]} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/zendure-solarflow" />
@@ -170,7 +170,7 @@ export default function ZendureSolarflowPage() {
               Batterie 1,92 kWh + onduleur 800 W intégrés dans un seul boîtier pour 539 €. Le <strong>Zendure SolarFlow 800 Plus</strong> casse les prix du stockage solaire plug-and-play. Mais à ce tarif, où est le piège ? Analyse compl&egrave;te, calcul de rentabilité, diff&eacute;rence avec le 800 Pro et verdict honnête.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>7 mai 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span>
+              <span>7 mai 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -432,7 +432,7 @@ export default function ZendureSolarflowPage() {
               <p className="text-charcoal-light leading-relaxed text-sm">
                 Le SolarFlow 800 Plus domine en rapport qualité-prix brut. L&apos;<AffLink item={BUY.streamUltra} position="comparison">EcoFlow STREAM Ultra</AffLink> (successeur du PowerStream, arr&ecirc;t&eacute;) est &agrave; regarder si vous voulez une sortie de secours. Le <strong>Bluetti Balco 260</strong> est le nouveau challenger direct : plus de stockage (2,56 kWh) et backup EPS 2 300 W, mais plus cher. Le Sunology PLAY (ex-PLAY 2, 515 W) reste le choix le plus simple si vous ne voulez pas de batterie du tout.
               </p>
-              <p className="text-xs text-stone mt-3">* Bluetti Balco 260 : 789&nbsp;&euro; seul (prix barr&eacute; 1 049&nbsp;&euro;), 1 079&nbsp;&euro; avec 2 panneaux de 450&nbsp;W, sur fr.bluettipower.eu le 5 novembre 2026. Le code BALNEO a expir&eacute; le 30/09/2026.</p>
+              <p className="text-xs text-stone mt-3">* Bluetti Balco 260 : 729&nbsp;&euro; seul (prix barr&eacute; 1 049&nbsp;&euro;), 1 019&nbsp;&euro; avec 2 panneaux de 450&nbsp;W, sur fr.bluettipower.eu le 20 novembre 2026. Le code BALNEO a expir&eacute; le 30/09/2026.</p>
             </section>
 
             <section>

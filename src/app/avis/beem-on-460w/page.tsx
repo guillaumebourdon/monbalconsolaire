@@ -27,7 +27,7 @@ const faqData = [
 export default function BeemOnAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem On 460W avis : analyse complète et verdict" description="Avis détaillé sur le Beem On 460W, retiré du catalogue Beem, et son successeur." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" dateModified="2026-11-05" />
+      <SchemaArticle title="Beem On 460W avis : analyse complète et verdict" description="Avis détaillé sur le Beem On 460W, retiré du catalogue Beem, et son successeur." url="https://monbalconsolaire.fr/avis/beem-on-460w" datePublished="2026-03-26" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Beem On 460W" brand="Beem Energy" description="Panneau solaire bifacial TOPCon 460 Wc avec micro-onduleur APSystems, retiré du catalogue Beem (successeur : Beem On 500 Wc)." price={429} availability="Discontinued" ratingValue={8} url="https://monbalconsolaire.fr/avis/beem-on-460w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 460W' }]} />
@@ -38,7 +38,7 @@ export default function BeemOnAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 460W avis : analyse compl&egrave;te et verdict (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le Beem On 460W a été le concurrent direct du Sunology PLAY2. Beem l&apos;a d&apos;abord retir&eacute; de la vente comme station autonome, puis du catalogue&nbsp;: au 5 novembre 2026, son ancienne fiche renvoie vers le Beem On 500&nbsp;Wc. Ce qu&apos;il valait, et son successeur.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>26 mars 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg border-amber/30 bg-amber-pale/20 mb-6">
@@ -103,7 +103,7 @@ export default function BeemOnAvisPage() {
               <div className="space-y-3">
                 {[
                   { t: 'Plus disponible comme premier achat', d: 'C\'est le changement majeur : impossible d\'acheter un Beem On 460W « complet » (avec Beembox) comme station de départ. Il faut déjà posséder une Beembox Beem pour en profiter.' },
-                  { t: 'Panneau plus grand que le Sunology', d: 'Le Beem On mesure 189 x 113 cm contre 180 x 113 cm pour le Sunology PLAY 500 Wc actuel. Sur un petit balcon, ça peut poser problème.' },
+                  { t: 'Panneau plus grand que le Sunology', d: 'Le Beem On mesure 189 x 113 cm contre 180 x 113 cm pour le Sunology PLAY 515 Wc actuel. Sur un petit balcon, ça peut poser problème.' },
                   { t: 'Batterie Beem très chère et pas plug-and-play', d: `L'option stockage existe (Beem Battery) mais à partir de 5 390€ seule (6,6 kWh) et avec pose par un électricien. Le PLAY MAX de Sunology (${priceLabel('sunology-play-max')} station + batterie VAULT) est bien plus accessible.` },
                   { t: 'SAV et pérennité de l\'entreprise à surveiller', d: 'Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde le 26 novembre 2025, après une chute de 42% du marché résidentiel du solaire (étude Enedis), avec un an pour redresser la barre (échéance autour de novembre 2026). Aucune liquidation n\'est annoncée à ce jour (vérifié le 8 octobre 2026), mais la garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (

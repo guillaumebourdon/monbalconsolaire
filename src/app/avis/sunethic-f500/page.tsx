@@ -51,7 +51,7 @@ const comparatif = [
 export default function SunethicAvisPage() {
   return (
     <>
-      <SchemaArticle title="Avis Sunethic : la marque et le kit F500 Made in France analysés" description="Avis sur la marque Sunethic (Trustpilot, SAV, garanties) et analyse du kit solaire F500 500 Wc à 690 €." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" dateModified="2026-11-05" />
+      <SchemaArticle title="Avis Sunethic : la marque et le kit F500 Made in France analysés" description="Avis sur la marque Sunethic (Trustpilot, SAV, garanties) et analyse du kit solaire F500 500 Wc à 690 €." url="https://monbalconsolaire.fr/avis/sunethic-f500" datePublished="2026-03-27" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/sunethic-f500-2.webp" name="Sunethic F500" brand="Sunethic" description="Station solaire plug-and-play 500 Wc avec panneau Voltec Solar assemblé en France, micro-onduleur APsystems EZ1, garantie 25 ans." price={PRODUCTS['sunethic-f500'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['sunethic-f500'].availability]} ratingValue={7.5} url="https://monbalconsolaire.fr/avis/sunethic-f500" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunethic F500' }]} />
@@ -62,7 +62,7 @@ export default function SunethicAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Avis Sunethic : la marque et le kit F500 Made in France analys&eacute;s (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sunethic est l&apos;une des rares marques &agrave; vendre un kit plug-and-play avec un panneau fabriqu&eacute; en France. La marque est tr&egrave;s bien not&eacute;e, mais son F500 co&ucirc;te 690&nbsp;&euro;, soit 261&nbsp;&euro; de plus qu&apos;un Beem On de m&ecirc;me puissance. Qui est derri&egrave;re Sunethic, que disent les clients, et le surco&ucirc;t se justifie-t-il&nbsp;? Notre analyse, chiffres &agrave; l&apos;appui.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>27 mars 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>27 mars 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-cream/50 border-border mb-8">
@@ -290,7 +290,7 @@ export default function SunethicAvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
                 <Link href="/avis/sunology-play-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (500 Wc)</h3>
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology PLAY (515 Wc)</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;alternative de Sunology &agrave; 599&nbsp;&euro; (515&nbsp;W)</p>
                 </Link>
                 <Link href="/avis/beem-on-500w" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">

@@ -56,7 +56,7 @@ export default function KitSolaireBalconAvisPage() {
         title="Kit solaire balcon : avis et retours d'exp\u00e9rience 2026"
         description="Avis et retours d\u2019exp\u00e9rience sur les kits solaires de balcon en 2026."
         url="https://monbalconsolaire.fr/blog/kit-solaire-balcon-avis-2026"
-        datePublished="2026-06-20" dateModified="2026-11-05"
+        datePublished="2026-06-20" dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Kit solaire balcon : avis 2026' }]} />
@@ -73,7 +73,7 @@ export default function KitSolaireBalconAvisPage() {
               Trustpilot, forums, Reddit, groupes Facebook : on a &eacute;pluch&eacute; les <strong>vrais retours utilisateurs</strong> sur les kits solaires de balcon les plus vendus en France. Sunology, Beem, Zendure, EcoFlow &mdash; voici ce qu&apos;en pensent ceux qui les utilisent au quotidien, <strong>sans filtre marketing</strong>.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>20 juin 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>20 juin 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -137,7 +137,7 @@ export default function KitSolaireBalconAvisPage() {
               <div className="card border-l-4 border-l-amber">
                 <h3 className="font-bold text-sm text-amber-dark">Ce qui revient en n&eacute;gatif</h3>
                 <ul className="text-sm text-charcoal-light mt-2 space-y-1">
-                  <li>&bull; Prix au-dessus du march&eacute; (1,33 &euro;/Wc pour le PLAY 2, 1,20 &euro;/Wc pour le nouveau PLAY 500&nbsp;Wc, vs 0,86 pour Beem On 500)</li>
+                  <li>&bull; Prix au-dessus du march&eacute; (1,33 &euro;/Wc pour le PLAY 2, 1,16 &euro;/Wc pour le nouveau PLAY 515&nbsp;Wc, vs 0,86 pour Beem On 500)</li>
                   <li>&bull; WiFi du micro-onduleur instable si la box est loin</li>
                   <li>&bull; Pas de batterie int&eacute;gr&eacute;e (il faut passer au PLAY MAX &agrave; {priceLabel('sunology-play-max')}, batterie 700&nbsp;Wh incluse)</li>
                 </ul>

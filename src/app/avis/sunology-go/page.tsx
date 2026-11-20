@@ -17,9 +17,9 @@ export const metadata: Metadata = withCanonicalOg({
   },
 });
 
-// La fiche produit du GO (/products/kit-solaire-1-station-go-balcon-garde-corps) redirige vers l'accueil
-// de sunology.eu au 05/11/2026 : on renvoie donc vers l'accueil, avec un libellé qui le dit.
-const AFFILIATE_URL = 'https://sunology.eu/';
+// Fiche produit du GO de nouveau en ligne sur sunology.eu (vérifié le 20/11/2026 ; elle renvoyait
+// vers l'accueil le 05/11). Black Sun Weeks : 299 € avec le code BLACKSUN jusqu'au 4/12/2026.
+const AFFILIATE_URL = PRODUCTS['sunology-go'].url;
 
 const faqData = [
   {
@@ -82,7 +82,7 @@ const points_faibles = [
   },
   {
     titre: 'Puissance modeste',
-    detail: '270 W, c\'est 46 % de moins que le PLAY (500 W). Cela couvre un talon de consommation limité (frigo, box, veilles) mais ne remplacera pas un kit plus puissant si vous avez la place au sol.',
+    detail: '270 W, c\'est 48 % de moins que le PLAY (515 W). Cela couvre un talon de consommation limité (frigo, box, veilles) mais ne remplacera pas un kit plus puissant si vous avez la place au sol.',
   },
   {
     titre: 'Pas de batterie compatible nativement',
@@ -136,7 +136,7 @@ export default function SunologyGoPage() {
         description="Avis complet sur le Sunology GO en 2026 : fiche technique, rentabilité, comparatif avec le PLAY et le Beem Kit 300W."
         url="https://monbalconsolaire.fr/avis/sunology-go"
         datePublished="2026-10-09"
-        dateModified="2026-11-05"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct
@@ -163,7 +163,7 @@ export default function SunologyGoPage() {
               Le GO est le kit le plus petit et le moins cher du catalogue Sunology&nbsp;: 270&nbsp;W, 349&nbsp;&euro;, et surtout une pose possible au sol <strong>ou</strong> sur un garde-corps, sans perçage. Fiche technique, rentabilit&eacute; r&eacute;elle et comparatif avec le PLAY et le Beem Kit 300W.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 octobre 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>9 octobre 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -193,7 +193,7 @@ export default function SunologyGoPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Pourquoi un kit encore plus compact ?</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                La gamme Sunology s&apos;est jusqu&apos;ici construite autour du <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY</Link> (500 W, pose au sol) et de sa version batterie, le PLAY MAX. Le <Link href="/avis/sunology-city" className="text-green hover:underline">CITY</Link> occupait le segment des balcons étroits avec une fixation garde-corps dédiée, avant d&apos;être retiré du catalogue en 2026.
+                La gamme Sunology s&apos;est jusqu&apos;ici construite autour du <Link href="/avis/sunology-play-2" className="text-green hover:underline">PLAY</Link> (515 W, pose au sol) et de sa version batterie, le PLAY MAX. Le <Link href="/avis/sunology-city" className="text-green hover:underline">CITY</Link> occupait le segment des balcons étroits avec une fixation garde-corps dédiée, avant d&apos;être retiré du catalogue en 2026.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
                 Le GO reprend ce rôle de kit d&apos;entrée pour petit espace, mais avec une approche différente&nbsp;: au lieu de se spécialiser uniquement sur le garde-corps comme le CITY, Sunology le présente comme un kit « passe-partout », compatible à la fois avec une pose au sol (ballasts) et une pose sur rambarde (cadre 30 mm, sans perçage). Sa puissance de 270 W et son prix de 349 &euro; en font surtout le ticket d&apos;entrée le plus bas de la marque, sous les 599 &euro; du PLAY (et de l&apos;ancien CITY, 300&nbsp;W).
@@ -276,7 +276,7 @@ export default function SunologyGoPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir le site Sunology (la fiche du GO renvoie vers l'accueil)" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir le Sunology GO sur sunology.eu" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -410,11 +410,11 @@ export default function SunologyGoPage() {
               <p className="text-charcoal-light leading-relaxed">
                 <strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong> — Un bon kit de niche pour les tout petits balcons, pas le meilleur rapport qualité-prix du marché.
               </p>
-              <a href={AFFILIATE_URL} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le site Sunology &rarr;</a>
-              <p className="text-xs text-stone mt-2">Au 5 novembre 2026, la fiche produit du GO sur sunology.eu redirige vers la page d&apos;accueil&nbsp;: cherchez &laquo;&nbsp;GO&nbsp;&raquo; dans le menu Produits. Prix et disponibilit&eacute; (349&nbsp;&euro;, en stock) relev&eacute;s dans le catalogue Sunology le m&ecirc;me jour.</p>
+              <a href={AFFILIATE_URL} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Sunology GO &rarr;</a>
+              <p className="text-xs text-stone mt-2">Prix et disponibilit&eacute; (349&nbsp;&euro;, en stock) relev&eacute;s sur sunology.eu le 20 novembre 2026. Jusqu&apos;au 4 d&eacute;cembre 2026, le code BLACKSUN le fait passer &agrave; 299&nbsp;&euro; (page Black Friday de Sunology).</p>
             </section>
 
-            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir le site Sunology" variant="box" position="footer-box" price="349 €" />
+            <AffiliateCTA productName="Sunology GO" merchantName="Sunology" affiliateUrl={AFFILIATE_URL} label="Voir le Sunology GO" variant="box" position="footer-box" price="349 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fréquentes</h2>

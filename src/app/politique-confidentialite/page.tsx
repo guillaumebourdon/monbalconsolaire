@@ -113,10 +113,10 @@ export default function PolitiqueConfidentialitePage() {
           <div>
             <h2 className="font-bold text-xl text-charcoal mb-3">Cookies et stockage local</h2>
             <p>
-              Sans votre accord, aucun cookie de mesure d&apos;audience n&apos;est d&eacute;pos&eacute;. Votre choix (accepter ou refuser) est m&eacute;moris&eacute; dans le stockage local de votre navigateur. Pour le modifier, effacez les donn&eacute;es du site dans votre navigateur&nbsp;: le bandeau r&eacute;appara&icirc;t &agrave; la visite suivante. Aucun cookie publicitaire n&apos;est utilis&eacute; par le site.
+              Sans votre accord, aucun cookie de mesure d&apos;audience n&apos;est d&eacute;pos&eacute;. Votre choix (accepter ou refuser) est m&eacute;moris&eacute; dans le stockage local de votre navigateur. Pour le modifier ou retirer votre accord, cliquez sur &laquo;&nbsp;G&eacute;rer les cookies&nbsp;&raquo; en bas de chaque page&nbsp;: le bandeau r&eacute;appara&icirc;t, et si vous refusez, les cookies Google Analytics d&eacute;j&agrave; d&eacute;pos&eacute;s sont effac&eacute;s. Aucun cookie publicitaire n&apos;est utilis&eacute; par le site.
             </p>
             <p className="mt-2">
-              Quand vous cliquez sur un lien marchand (Amazon, ou un lien Awin vers Zendure, EcoFlow ou ALLPOWERS par exemple), le site du marchand ou la plateforme d&apos;affiliation peut d&eacute;poser ses propres cookies de suivi. Ils rel&egrave;vent de leurs politiques de confidentialit&eacute;.
+              Quand vous cliquez sur un lien marchand (Amazon, ou un lien Awin vers Zendure, EcoFlow, ALLPOWERS ou ManoMano par exemple), le site du marchand ou la plateforme d&apos;affiliation peut d&eacute;poser ses propres cookies de suivi. Ils rel&egrave;vent de leurs politiques de confidentialit&eacute;.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export default function PolitiqueConfidentialitePage() {
             <p>Le site est servi en HTTPS. Les acc&egrave;s &agrave; la base de donn&eacute;es et au service d&apos;envoi d&apos;emails sont prot&eacute;g&eacute;s par des cl&eacute;s priv&eacute;es stock&eacute;es chez l&apos;h&eacute;bergeur, jamais dans les pages du site.</p>
           </div>
 
-          <p className="text-sm text-stone pt-4">Derni&egrave;re mise &agrave; jour : 5 novembre 2026</p>
+          <p className="text-sm text-stone pt-4">Derni&egrave;re mise &agrave; jour : 20 novembre 2026</p>
         </div>
       </div>
     </section>

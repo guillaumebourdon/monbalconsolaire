@@ -88,7 +88,7 @@ export default function SunologyVaultAvisPage() {
             price={VAULT_PRICE}
             score="6/10"
             tagline="Batterie nomade lithium-ion 700 Wh, IP65, amovible. Vendue seule ou intégrée au PLAY MAX."
-            affiliateUrl="https://sunology.eu/products/sunology-vault"
+            affiliateUrl="https://sunology.eu/products/vault-batterie-solaire-maison"
             affiliateLabel="Voir sur Sunology"
             accentColor="amber"
           />
@@ -157,7 +157,7 @@ export default function SunologyVaultAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology VAULT" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/sunology-vault" label="Voir sur Sunology" variant="secondary" position="after-pros" price={VAULT_PRICE} />
+            <AffiliateCTA productName="Sunology VAULT" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/vault-batterie-solaire-maison" label="Voir sur Sunology" variant="secondary" position="after-pros" price={VAULT_PRICE} />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -176,7 +176,7 @@ export default function SunologyVaultAvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Sunology VAULT" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/sunology-vault" label="V&eacute;rifier le prix actuel" variant="secondary" position="after-cons" />
+            <AffiliateCTA productName="Sunology VAULT" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/vault-batterie-solaire-maison" label="V&eacute;rifier le prix actuel" variant="secondary" position="after-cons" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">VAULT vs les autres batteries de balcon</h2>
@@ -264,10 +264,10 @@ export default function SunologyVaultAvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Achet&eacute;e seule &agrave; {VAULT_PRICE}, en revanche, elle convainc moins&nbsp;: {EUR_PER_KWH}&nbsp;&euro;/kWh est cher face &agrave; la concurrence LFP, l&apos;autonomie reste limit&eacute;e &agrave; une soir&eacute;e, et surtout, Sunology ne confirme pas clairement sa compatibilit&eacute; avec un PLAY ou un GO d&eacute;j&agrave; install&eacute;s. Sans cette confirmation, l&apos;achat s&eacute;par&eacute; est un pari.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Notre conseil&nbsp;: si vous voulez du stockage Sunology, partez directement sur le PLAY MAX (compatibilit&eacute; garantie de s&eacute;rie). Si vous avez d&eacute;j&agrave; un kit Sunology et voulez ajouter du stockage, demandez une confirmation &eacute;crite au support avant de commander une VAULT seule &mdash; ou regardez une batterie de balcon ind&eacute;pendante comme le Zendure SolarFlow.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">6/10</span></strong></p>
-              <a href="https://sunology.eu/products/sunology-vault" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir la Sunology VAULT &rarr;</a>
+              <a href="https://sunology.eu/products/vault-batterie-solaire-maison" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir la Sunology VAULT &rarr;</a>
             </section>
 
-            <AffiliateCTA productName="Sunology VAULT" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/sunology-vault" label="Voir l&#39;offre sur Sunology" variant="box" position="footer-box" price={VAULT_PRICE} />
+            <AffiliateCTA productName="Sunology VAULT" merchantName="Sunology" affiliateUrl="https://sunology.eu/products/vault-batterie-solaire-maison" label="Voir l&#39;offre sur Sunology" variant="box" position="footer-box" price={VAULT_PRICE} />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>

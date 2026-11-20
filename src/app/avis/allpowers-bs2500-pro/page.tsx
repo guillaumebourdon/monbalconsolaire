@@ -50,7 +50,7 @@ const faqData = [
 const points_forts = [
   {
     titre: 'Grosse batterie pour le prix promo',
-    detail: '2,6 kWh pour 999 € en promotion, soit environ 384 € par kWh stocké. Au 5 novembre 2026, c\'est pourtant plus cher au kWh que le Bluetti Balco 260 (2,56 kWh à 789 €, 308 €/kWh) et l\'EcoFlow STREAM Ultra (1,92 kWh à 659 €, 343 €/kWh), tous deux en promotion eux aussi.',
+    detail: '2,6 kWh pour 999 € en promotion, soit environ 384 € par kWh stocké. Au 5 novembre 2026, c\'est pourtant plus cher au kWh que le Bluetti Balco 260 (2,56 kWh à 729 € le 20 novembre, 285 €/kWh) et l\'EcoFlow STREAM Ultra (1,92 kWh à 659 €, 343 €/kWh), tous deux en promotion eux aussi.',
   },
   {
     titre: 'Vraie sortie de secours 2 400 W',
@@ -97,7 +97,7 @@ export default function AllpowersBs2500ProPage() {
         description="Avis prudent sur la batterie de balcon ALLPOWERS BS2500 PRO : fiche technique, rentabilité et réserves."
         url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro"
         datePublished="2026-11-05"
-        dateModified="2026-11-06"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="ALLPOWERS BS2500 PRO" brand="ALLPOWERS" description="Batterie de balcon LiFePO4 2,6 kWh, onduleur 800 W (réglable jusqu'à 2 400 W), double MPPT 2 × 1 000 W, sortie de secours 2 400 W, IP65." price={999} ratingValue={6} availability="InStock" url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro" />
@@ -115,7 +115,7 @@ export default function AllpowersBs2500ProPage() {
               Connu pour ses stations portables, ALLPOWERS vend depuis juin 2026 en France une batterie pour balcon&nbsp;: le <strong>BS2500 PRO</strong>, 2,6&nbsp;kWh, onduleur 800&nbsp;W et vraie sortie de secours, affiché &agrave; 999&nbsp;&euro; pour le Black Friday. Sur le papier, c&apos;est l&apos;une des batteries les moins ch&egrave;res au kWh. Voici ce que dit la fiche, ce que &ccedil;a rapporte, et pourquoi nous restons prudents.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>5 novembre 2026</span>
+              <span>5 novembre 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>

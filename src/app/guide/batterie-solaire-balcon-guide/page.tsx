@@ -33,7 +33,7 @@ const fr = (n: number) => n.toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Batterie solaire balcon : choisir la bonne capacité (2026)',
-  description: 'Quelle capacité de batterie pour votre kit solaire balcon ? Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif des solutions disponibles en 2026.',
+  description: 'Quelle capacité de batterie pour votre kit solaire balcon ? Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif des solutions de 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/batterie-solaire-balcon-guide',
   },
@@ -62,7 +62,7 @@ const faqData = [
   },
   {
     question: 'Le Bluetti Balco 260 est-il extensible ?',
-    answer: 'Oui. Le Balco 260 embarque 2,56 kWh de base et peut être étendu jusqu\'à 15 kWh en ajoutant des modules batteries supplémentaires. C\'est une de ses forces principales, même si le coût total grimpe rapidement au-delà du modèle de base, vendu 789 € seul (prix promotionnel constaté le 5 novembre 2026).',
+    answer: 'Oui. Le Balco 260 embarque 2,56 kWh de base et peut être étendu jusqu\'à 15 kWh en ajoutant des modules batteries supplémentaires. C\'est une de ses forces principales, même si le coût total grimpe rapidement au-delà du modèle de base, vendu 729 € seul (prix promotionnel constaté le 20 novembre 2026).',
   },
 ];
 
@@ -74,7 +74,7 @@ export default function GuideBatterieBalcon() {
         description="Quelle capacité de batterie pour votre kit solaire balcon ? Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif 2026."
         url="https://monbalconsolaire.fr/guide/batterie-solaire-balcon-guide"
         datePublished="2026-07-03"
-        dateModified="2026-11-05"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Batterie solaire balcon' }]} />
@@ -92,7 +92,7 @@ export default function GuideBatterieBalcon() {
               700&nbsp;Wh, 2&nbsp;kWh, 5&nbsp;kWh&nbsp;&mdash; les fabricants jouent sur les chiffres. Ce guide vous dit ce qui compte vraiment&nbsp;: votre profil de consommation, le calcul de rentabilit&eacute; honn&ecirc;te, et les solutions disponibles en 2026.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>3 juillet 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>12 min de lecture</span>
+              <span>3 juillet 2026</span><span>&middot;</span><span>Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>12 min de lecture</span>
             </div>
           </div>
 
@@ -207,7 +207,7 @@ export default function GuideBatterieBalcon() {
               </div>
               <ul className="space-y-2 text-sm text-charcoal-light mb-4">
                 <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> &mdash; 1,92&nbsp;kWh + onduleur 800&nbsp;W int&eacute;gr&eacute;. {priceLabel('zendure-solarflow-800-plus')} (bo&icirc;tier seul, sans panneaux&nbsp;; 719&nbsp;&euro; avec 2 panneaux de 500&nbsp;W)</li>
-                <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> &mdash; 2,56&nbsp;kWh + 4&nbsp;MPPT + onduleur SiC. {priceLabel('bluetti-balco-260')} (bo&icirc;tier seul&nbsp;; 1&nbsp;079&nbsp;&euro; avec 2 panneaux de 450&nbsp;W)</li>
+                <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> &mdash; 2,56&nbsp;kWh + 4&nbsp;MPPT + onduleur SiC. {priceLabel('bluetti-balco-260')} (bo&icirc;tier seul&nbsp;; 1&nbsp;019&nbsp;&euro; avec 2 panneaux de 450&nbsp;W)</li>
                 <li className="flex gap-2"><span className="text-green">&#8250;</span> EcoFlow PowerStream + batterie &eacute;tanche &mdash; 2&nbsp;kWh. <span className="text-amber-dark">Plus vendu par EcoFlow France (successeur&nbsp;: gamme STREAM).</span></li>
               </ul>
               <p className="text-charcoal-light leading-relaxed mb-4">
@@ -327,7 +327,7 @@ export default function GuideBatterieBalcon() {
                         href: '/avis/bluetti-balco-260',
                         capacity: '2,56 kWh LFP',
                         price: `${priceLabel('bluetti-balco-260')} (seul)`,
-                        panels: 'Pack 2 × 450 W : 1 079 €',
+                        panels: 'Pack 2 × 450 W : 1 019 €',
                         extensible: 'Oui (→ 15 kWh)',
                         highlight: true,
                       },

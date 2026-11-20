@@ -31,7 +31,7 @@ export const metadata: Metadata = withCanonicalOg({
 });
 
 const PUBLISHED = '2026-11-18';
-const MODIFIED = '2026-11-19';
+const MODIFIED = '2026-11-20';
 
 // ─── Sources des prix de référence (3 derniers mois) ───────────────────────────
 // Prix du jour : fiches officielles relevées le 18/11/2026 (Shopify /products/<handle>.js),
@@ -45,6 +45,7 @@ const SRC = {
   wbS2000: { label: 'capture iallpowers.fr du 09/10/2026 (Wayback Machine)', url: 'https://web.archive.org/web/20261009105014/https://iallpowers.fr/products/allpowers-s2000-pro-station-electrique-portable-2400w-1451wh' },
   mbsStream: { label: 'notre relevé fr.ecoflow.com du 05/11/2026', url: '/avis/ecoflow-stream-ultra' },
   mbsBs2500: { label: 'notre relevé du 05/11/2026', url: '/avis/allpowers-bs2500-pro' },
+  mbsBluetti: { label: 'notre relevé fr.bluettipower.eu du 05/11/2026', url: '/avis/bluetti-balco-260' },
   mbsSunology: { label: 'sunology.eu, relevés du 05/11 et du 18/11/2026', url: '/codes-promo#sunology' },
   mbsSunethic: { label: 'notre relevé sunethic.fr du 05/11/2026', url: '/avis/sunethic-f500' },
   mbsBeem: { label: 'beemenergy.fr, relevés du 05/11 et du 18/11/2026', url: '/avis/beem-on-500w' },
@@ -78,6 +79,10 @@ type Deal = {
   endsAt?: string;
   endsLabel?: string;
   link: BuyLink | PlainLink;
+  /** Date du relevé du prix du jour, si ce n'est pas le 18/11/2026 (JJ/MM/AAAA). */
+  seen?: string;
+  /** Produit épuisé chez le marchand : date du constat (« 20 novembre »). */
+  soldOut?: string;
 };
 
 const P = PRODUCTS;
@@ -111,6 +116,7 @@ const DEALS: Deal[] = [
     id: 'plus-pack', cat: 'kit', product: 'Zendure SolarFlow 800 Plus + 2 × 500 W', spec: 'batterie 1,92 kWh + 2 panneaux bifaciaux',
     ref: 719, refLabel: 'depuis le 2 septembre au moins', refSource: SRC.wbPlus,
     bf: 661.48, bfNote: `avec ${ZENDURE_CODE} (719 € sans code)`, shown: 719, shownStrike: 999, endsAt: ZENDURE_CODE_END, endsLabel: '4 janvier 2027 (code)', link: BUY.solarflow800Plus,
+    soldOut: '20 novembre',
   },
   {
     id: 'beem', cat: 'kit', product: 'Beem On', spec: '500 Wc, sans batterie, en précommande',
@@ -139,6 +145,7 @@ const DEALS: Deal[] = [
     id: 'plus', cat: 'stockage', product: 'Zendure SolarFlow 800 Plus', spec: '1,92 kWh, sans panneaux',
     ref: P['zendure-solarflow-800-plus'].priceEur, refLabel: 'le 2 septembre et le 5 novembre', refSource: SRC.wbPlus,
     bf: 495.88, bfNote: `avec ${ZENDURE_CODE} (${P['zendure-solarflow-800-plus'].priceEur} € sans code)`, shown: P['zendure-solarflow-800-plus'].priceEur, shownStrike: 599, endsAt: ZENDURE_CODE_END, endsLabel: '4 janvier 2027 (code)', link: BUY.solarflow800Plus,
+    soldOut: '20 novembre',
   },
   {
     id: '2400', cat: 'stockage', product: 'Zendure SolarFlow 2400 AC+', spec: '2,4 kWh, sans batterie additionnelle',
@@ -154,6 +161,13 @@ const DEALS: Deal[] = [
     id: 'bs2500', cat: 'stockage', product: 'ALLPOWERS BS2500 PRO', spec: '2,6 kWh, sans panneaux',
     ref: P['allpowers-bs2500-pro'].priceEur, refLabel: 'le 5 novembre', refSource: SRC.mbsBs2500,
     bf: P['allpowers-bs2500-pro'].priceEur, bfNote: '1 149 € le 8 octobre', shownStrike: 1999, link: BUY.bs2500Pro,
+  },
+  {
+    // Ajouté le 20/11/2026 : seul relevé antérieur connu = le nôtre du 05/11 (pas de capture d'archive consultée).
+    id: 'balco', cat: 'stockage', product: 'Bluetti Balco 260', spec: '2,56 kWh, sans panneaux (1 019 € avec 2 × 450 W)',
+    ref: 789, refLabel: 'le 5 novembre (notre relevé)', refSource: SRC.mbsBluetti,
+    bf: P['bluetti-balco-260'].priceEur, bfNote: 'relevé le 20 novembre', shownStrike: 1049, seen: '20/11/2026',
+    link: { product: 'Bluetti Balco 260', merchant: 'Bluetti', url: P['bluetti-balco-260'].url, plain: true },
   },
   // ── Stations ──
   {
@@ -192,6 +206,7 @@ const RATINGS: Partial<Record<string, MerchantRating>> = {
   bs2500: { value: '3,0', count: '1 seul avis', where: 'iallpowers.fr' },
   s2000: { value: '4,3', count: '249 avis', where: 'iallpowers.fr' },
   tapo: { value: '4,5', count: '3 828 avis', where: 'Amazon.fr' },
+  balco: { value: '5,0', count: '7 avis', where: 'fr.bluettipower.eu, relevé le 20/11' },
   brennenstuhl: { value: '4,0', count: '28 avis', where: 'Amazon.fr' },
 };
 
@@ -257,7 +272,7 @@ const faqData = [
   },
   {
     question: 'Un kit solaire est-il rentable au prix du Black Friday ?',
-    answer: `Avec notre méthode standard (Lyon plein sud, ${KWH_PRICE_LABEL}, inflation ${KWH_INFLATION_LABEL}, dégradation ${PANEL_DEGRADATION_LABEL}), le Sunology PLAY à ${eur(rPlay.after)} se rembourse en ${fy(rPlay.roiAfter)} ans au lieu de ${fy(rPlay.roiBefore)} ans à ${eur(rPlay.before)}. Le pack Zendure 800 Pro 2 + 2 panneaux de 500 W passe de ${fy(rPro2.roiBefore)} à ${fy(rPro2.roiAfter)} ans. Le pack 800 Plus + 2 × 500 W reste le plus court : ${fy(rPlus.roiAfter)} ans avec le code AF5E24 (${fy(rPlus.roiBefore)} ans sans).`,
+    answer: `Avec notre méthode standard (Lyon plein sud, ${KWH_PRICE_LABEL}, inflation ${KWH_INFLATION_LABEL}, dégradation ${PANEL_DEGRADATION_LABEL}), le Sunology PLAY à ${eur(rPlay.after)} se rembourse en ${fy(rPlay.roiAfter)} ans au lieu de ${fy(rPlay.roiBefore)} ans à ${eur(rPlay.before)}. Le pack Zendure 800 Pro 2 + 2 panneaux de 500 W passe de ${fy(rPro2.roiBefore)} à ${fy(rPro2.roiAfter)} ans. Le pack 800 Plus + 2 × 500 W reste le plus court : ${fy(rPlus.roiAfter)} ans avec le code AF5E24 (${fy(rPlus.roiBefore)} ans sans), mais il est épuisé sur zendure.fr depuis le 20 novembre 2026.`,
   },
 ];
 
@@ -277,7 +292,7 @@ function SchemaDeals() {
     itemListElement: TOP.map((d, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      name: `${d.product} : ${d.bf.toFixed(2).replace('.', ',')} € (relevé le 18/11/2026)`,
+      name: `${d.product} : ${d.bf.toFixed(2).replace('.', ',')} € (relevé le ${d.seen ?? '18/11/2026'})`,
       url: `${BF_ARTICLE_URL}#${SECTION[d.cat]}`,
     })),
   };
@@ -306,6 +321,7 @@ function SourceLink({ s }: { s: Source }) {
 function Verdict({ d }: { d: Deal }) {
   const p = realDrop(d);
   const over = d.endsAt && !isActiveUntil(d.endsAt);
+  if (d.soldOut) return <span className="text-xs font-semibold px-2 py-0.5 rounded bg-cream text-stone">&Eacute;puis&eacute; le {d.soldOut}</span>;
   if (over) return <span className="text-xs font-semibold px-2 py-0.5 rounded bg-cream text-stone">Offre termin&eacute;e</span>;
   if (p <= -10) return <span className="text-xs font-semibold px-2 py-0.5 rounded bg-green-pale text-green">Vraie baisse</span>;
   if (p < 0) return <span className="text-xs font-semibold px-2 py-0.5 rounded bg-green-pale text-green">Petite baisse</span>;
@@ -398,7 +414,7 @@ export default function BlackFridayKitSolairePage() {
             </p>
             <div className="mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-brand border-2 border-green/20 bg-green-pale/40 px-4 py-2 text-sm">
               <span className="font-bold text-green">Prix v&eacute;rifi&eacute;s le 18 novembre 2026</span>
-              <span className="text-stone">Publi&eacute; le 18 novembre 2026 &middot; Mis &agrave; jour le 18 novembre 2026 &middot; prochaine mise &agrave; jour le 26 novembre</span>
+              <span className="text-stone">Publi&eacute; le 18 novembre 2026 &middot; Mis &agrave; jour le 20 novembre 2026 &middot; prochaine mise &agrave; jour le 26 novembre</span>
             </div>
           </div>
 
@@ -409,7 +425,8 @@ export default function BlackFridayKitSolairePage() {
               <li><strong className="text-green">✓ Batterie :</strong> le <AffLink item={BUY.solarflow800Pro2} position="bf-reponse">Zendure SolarFlow 800 Pro 2</AffLink> tombe &agrave; <strong>{eur(D.pro2.bf)}</strong> avec le code {ZENDURE_CODE} ({eur(D.pro2.ref)} le 2 septembre, <strong>{fmtPct(realDrop(D.pro2))}</strong>), ou {eur(D['pro2-pack'].bf)} avec 2 panneaux de 500 W ({fmtPct(realDrop(D['pro2-pack']))}).</li>
               <li><strong className="text-green">✓ Kit sans batterie :</strong> le Sunology PLAY &agrave; <strong>{eur(D.play.bf)}</strong> avec le code {SUNOLOGY_CODE} jusqu&apos;au 4 d&eacute;cembre ({eur(D.play.ref)} hors promotion, environ {eur(D.play.low!.price)} en octobre).</li>
               <li><strong className="text-green">✓ Station :</strong> l&apos;<AffLink item={BUY.s2000Pro} position="bf-reponse">ALLPOWERS S2000 Pro</AffLink> &agrave; <strong>{eur(D.s2000.bf)}</strong> ({eur(D.s2000.ref)} le 9 octobre, {fmtPct(realDrop(D.s2000))}).</li>
-              <li><strong className="text-green">✓ Le plus rentable :</strong> le pack <AffLink item={BUY.solarflow800Plus} position="bf-reponse">SolarFlow 800 Plus + 2 × 500 W</AffLink> n&apos;a pas baiss&eacute; (719 &euro; depuis septembre), mais le code {ZENDURE_CODE} le ram&egrave;ne &agrave; <strong>{eur(D['plus-pack'].bf)}</strong> : retour sur investissement de {fy(rPlus.roiAfter)} ans dans notre m&eacute;thode standard.</li>
+              <li><strong className="text-amber-dark">⚠ &Eacute;puis&eacute; :</strong> le pack <AffLink item={BUY.solarflow800Plus} position="bf-reponse">SolarFlow 800 Plus + 2 × 500 W</AffLink>, le plus rentable de notre s&eacute;lection ({eur(D['plus-pack'].bf)} avec le code {ZENDURE_CODE}, retour sur investissement de {fy(rPlus.roiAfter)} ans), est &eacute;puis&eacute; sur zendure.fr depuis le 20 novembre. Le pack 800 Pro 2 ci-dessus prend le relais.</li>
+              <li><strong className="text-green">✓ Bluetti :</strong> le Balco 260 est pass&eacute; de 789 &euro; le 5 novembre &agrave; <strong>{eur(D.balco.bf)}</strong> le 20 novembre ({fmtPct(realDrop(D.balco))}), sans code.</li>
               <li><strong className="text-amber-dark">✗ Pas de baisse :</strong> SolarFlow 2400 AC+ (code refus&eacute;), EcoFlow STREAM Ultra et ALLPOWERS BS2500 PRO sont au m&ecirc;me prix qu&apos;avant l&apos;op&eacute;ration, malgr&eacute; des prix barr&eacute;s de -34 &agrave; -50 %.</li>
             </ul>
           </div>

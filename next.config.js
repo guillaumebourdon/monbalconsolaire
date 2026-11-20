@@ -42,7 +42,7 @@ const nextConfig = {
         headers: [{ key: 'X-Frame-Options', value: 'SAMEORIGIN' }],
       },
       // Supports d'emails / lead magnets : accessibles par lien, pas dans Google
-      ...['/guide-7-erreurs.html', '/newsletter-exemple-juin-2026.html', '/bonus/5-erreurs-bonus.html'].map((source) => ({
+      ...['/guide-7-erreurs.html', '/newsletter-exemple-juin-2026.html', '/bonus/5-erreurs-bonus.html', '/guide-7-erreurs-kit-solaire.pdf', '/bonus/5-erreurs-bonus.pdf'].map((source) => ({
         source,
         headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
       })),

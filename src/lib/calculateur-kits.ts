@@ -20,16 +20,16 @@ type CalcKitConfig = {
 };
 
 const CALC_KITS: CalcKitConfig[] = [
-  // GO : en stock mais sa fiche renvoie vers l'accueil Sunology (05/11/2026) → bouton vers notre avis
-  { productId: 'sunology-go', hasBattery: false, affiliateUrl: '', minWidth: 'narrow' },
+  // GO : fiche sunology.eu de nouveau en ligne (20/11/2026)
+  { productId: 'sunology-go', hasBattery: false, affiliateUrl: 'https://sunology.eu/products/kit-solaire-1-station-go-balcon-garde-corps', minWidth: 'narrow' },
   { productId: 'beem-kit-300w', hasBattery: false, affiliateUrl: 'https://beemenergy.fr/products/kit-beem', minWidth: 'narrow' },
   { productId: 'sunology-play', name: 'Sunology PLAY (ex-PLAY 2)', trackingName: 'Sunology PLAY', hasBattery: false, affiliateUrl: 'https://sunology.eu/products/play-kit-solaire-plug-play', minWidth: 'medium' },
   { productId: 'beem-on-500w', hasBattery: false, affiliateUrl: 'https://beemenergy.fr/products/kit-solaire-plug-and-play-beem-on-solo-500w-sans-rallonge', minWidth: 'medium' },
   { productId: 'sunethic-f500', hasBattery: false, affiliateUrl: 'https://sunethic.fr/produits', minWidth: 'medium' },
   { productId: 'sunology-play-max', trackingName: 'Sunology PLAYMax', hasBattery: true, affiliateUrl: 'https://sunology.eu/products/playmax-station-solaire-batterie', minWidth: 'medium' },
-  // Packs batterie + 2 panneaux (prix du pack vérifié le 05/11/2026 sur le site du fabricant)
+  // Packs batterie + 2 panneaux (prix vérifiés sur le site du fabricant : Zendure 05/11/2026, Bluetti 20/11/2026)
   { productId: 'zendure-solarflow-800-plus', name: 'Zendure SolarFlow 800 Plus + 2 × 500 W', power: 1000, price: 719, hasBattery: true, affiliateUrl: zendureUrl('https://zendure.fr/products/solarflow-800-plus'), minWidth: 'wide' },
-  { productId: 'bluetti-balco-260', name: 'Bluetti Balco 260 + 2 × 450 W', power: 900, price: 1079, hasBattery: true, affiliateUrl: 'https://fr.bluettipower.eu/products/bluetti-balco-260', minWidth: 'wide' },
+  { productId: 'bluetti-balco-260', name: 'Bluetti Balco 260 + 2 × 450 W', power: 900, price: 1019, hasBattery: true, affiliateUrl: 'https://fr.bluettipower.eu/products/bluetti-balco-260', minWidth: 'wide' },
   // DualSun PREASY retiré : vendu sur devis uniquement, aucun prix public vérifiable (05/11/2026)
 ];
 

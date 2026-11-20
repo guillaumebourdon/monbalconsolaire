@@ -49,7 +49,7 @@ const faqData = [
 export default function BatteriePage() {
   return (
     <>
-      <SchemaArticle title="Kit solaire avec batterie 2026 : comparatif stockage" description="Comparatif des solutions de stockage solaire plug-and-play en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026" datePublished="2026-03-31" dateModified="2026-11-05" />
+      <SchemaArticle title="Kit solaire avec batterie 2026 : comparatif stockage" description="Comparatif des solutions de stockage solaire plug-and-play en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026" datePublished="2026-03-31" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Kits avec batterie' }]} />
       <article className="section-padding">
@@ -59,7 +59,7 @@ export default function BatteriePage() {
             <div className="badge-green mb-4 inline-block">Comparatif 2026</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Kit solaire avec batterie 2026 : comparatif stockage plug-and-play</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Stocker l&apos;énergie solaire pour le soir, c&apos;est tentant. Mais est-ce vraiment rentable ? Comparatif des solutions de stockage Sunology, Beem et EcoFlow.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>31 mars 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>31 mars 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
             <span className="text-stone text-sm mt-0.5">&#x2139;</span>
@@ -127,7 +127,7 @@ export default function BatteriePage() {
                       ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539\u20ac***', '281\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', true],
                       ['Jackery SolarVault 3 Pro', '2,52 kWh', '719\u20ac***', '285\u20ac/kWh', '~17h', 'Onduleur + batterie (sans panneaux)', false],
                       ['EcoFlow STREAM Ultra', '1,92 kWh', '659\u20ac***', '343\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', false],
-                      ['Bluetti Balco 260', '2,56 kWh', '789\u20ac***', '308\u20ac/kWh', '~17h', 'Tout-en-un (sans panneaux)', false],
+                      ['Bluetti Balco 260', '2,56 kWh', '729\u20ac***', '285\u20ac/kWh', '~17h', 'Tout-en-un (sans panneaux)', false],
                     ].map(([n, c, p, r, a, t, best], i) => {
                       const thumbMap: Record<string, { src: string; href: string }> = {
                         'Zendure SolarFlow 800 Plus': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
@@ -205,7 +205,7 @@ export default function BatteriePage() {
                     <div className="flex items-start gap-4"><ProductThumb src="/images/produits/bluetti-balco-260-front.webp" alt="Bluetti Balco 260" href="/avis/bluetti-balco-260" size="lg" /><div><div className="badge-amber mb-2">Tout-en-un</div><h3 className="font-bold text-xl">Bluetti Balco 260</h3><p className="text-sm text-stone">Onduleur SiC + batterie LFP 2,56 kWh int&eacute;gr&eacute;s &middot; IP65</p></div></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">789 &euro;</div><div className="text-xs text-stone">(sans panneaux, prix promo au 05/11/2026)</div></div>
                   </div>
-                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le Balco 260 de Bluetti int&egrave;gre onduleur, batterie et 4 MPPT dans un seul bo&icirc;tier IP65. La batterie de 2,56&nbsp;kWh est extensible jusqu&apos;&agrave; 15&nbsp;kWh. &Agrave; 789&nbsp;&euro; seul (prix promotionnel constat&eacute; le 5 novembre 2026, barr&eacute; 1&nbsp;049&nbsp;&euro;), soit 308&nbsp;&euro;/kWh, il est proche des moins chers au kWh (Zendure SolarFlow 800 Plus&nbsp;: 281&nbsp;&euro;/kWh), mais les panneaux ne sont pas inclus&nbsp;: 1&nbsp;079&nbsp;&euro; en pack avec 2 panneaux de 450&nbsp;W. <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
+                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le Balco 260 de Bluetti int&egrave;gre onduleur, batterie et 4 MPPT dans un seul bo&icirc;tier IP65. La batterie de 2,56&nbsp;kWh est extensible jusqu&apos;&agrave; 15&nbsp;kWh. &Agrave; 729&nbsp;&euro; seul (prix promotionnel constat&eacute; le 20 novembre 2026, barr&eacute; 1&nbsp;049&nbsp;&euro;), soit 285&nbsp;&euro;/kWh, il est au niveau des moins chers au kWh (Zendure SolarFlow 800 Plus&nbsp;: 281&nbsp;&euro;/kWh), mais les panneaux ne sont pas inclus&nbsp;: 1&nbsp;019&nbsp;&euro; en pack avec 2 panneaux de 450&nbsp;W. <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points forts</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> Bon prix/kWh (308&nbsp;&euro;/kWh au 5 novembre 2026)</li>

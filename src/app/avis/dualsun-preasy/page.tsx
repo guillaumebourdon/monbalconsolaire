@@ -27,7 +27,7 @@ const faqData = [
   },
   {
     question: 'Pourquoi le PREASY coûte-t-il plus cher que le Sunology PLAY (ex-PLAY 2) ?',
-    answer: 'Plusieurs facteurs : l\'assemblage en France (main-d\'œuvre plus coûteuse), le design premium avec châssis aspect bois, la distribution via réseau d\'installateurs (marge intermédiaire), et le boîtier de suivi PREASYBOX inclus. Le Sunology PLAY est vendu en direct, ce qui réduit les coûts. Pour 420 Wc, le PREASY est objectivement trop cher face à un PLAY à 500 Wc pour 599 €.',
+    answer: 'Plusieurs facteurs : l\'assemblage en France (main-d\'œuvre plus coûteuse), le design premium avec châssis aspect bois, la distribution via réseau d\'installateurs (marge intermédiaire), et le boîtier de suivi PREASYBOX inclus. Le Sunology PLAY est vendu en direct, ce qui réduit les coûts. Pour 420 Wc, le PREASY est objectivement trop cher face à un PLAY à 515 Wc pour 599 €.',
   },
   {
     question: 'Le PREASY est-il compatible avec une batterie ?',
@@ -77,7 +77,7 @@ const points_faibles = [
   },
   {
     titre: '36 kg : le plus lourd du marché',
-    detail: 'Le PREASY pèse 36 kg, contre 24,8 kg pour le panneau du Sunology PLAY 500 Wc (30 kg avec son châssis) et 26 kg pour le Beem On. C\'est nettement plus lourd. Sur un balcon en étage, c\'est un vrai sujet : il faut monter 36 kg + les ballasts de lestage (30-48 kg d\'eau ou sable). Prévoyez de l\'aide.',
+    detail: 'Le PREASY pèse 36 kg, contre 24,8 kg pour le panneau du Sunology PLAY 515 Wc (30 kg avec son châssis) et 26 kg pour le Beem On. C\'est nettement plus lourd. Sur un balcon en étage, c\'est un vrai sujet : il faut monter 36 kg + les ballasts de lestage (30-48 kg d\'eau ou sable). Prévoyez de l\'aide.',
   },
   {
     titre: 'Pas de vente en ligne directe',
@@ -89,7 +89,7 @@ const points_faibles = [
   },
   {
     titre: 'Micro-onduleur Hoymiles 400 W : bridé',
-    detail: 'Le micro-onduleur Hoymiles est limité à 400 W de sortie pour un panneau de 420 Wc. Vous perdez donc ~20 W en crête. C\'est un choix de DualSun pour rester sous les seuils réglementaires, alors que le Sunology PLAY associe son panneau 500 Wc à un micro-onduleur MX500 de 500 W, sans bridage de ce type.',
+    detail: 'Le micro-onduleur Hoymiles est limité à 400 W de sortie pour un panneau de 420 Wc. Vous perdez donc ~20 W en crête. C\'est un choix de DualSun pour rester sous les seuils réglementaires, alors que le Sunology PLAY associe son panneau 515 Wc à un micro-onduleur MX500 de 500 W, sans bridage de ce type.',
   },
 ];
 
@@ -119,10 +119,10 @@ export default function DualsunPreasyPage() {
         description="Avis complet sur le DualSun PREASY en 2026."
         url="https://monbalconsolaire.fr/avis/dualsun-preasy"
         datePublished="2026-05-09"
-        dateModified="2026-11-05"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="DualSun PREASY" brand="DualSun" description="Panneau solaire pliable plug-and-play 420 Wc, TOPCon bifacial, assemblé en France, châssis aspect bois, micro-onduleur Hoymiles 400 W." price={870} ratingValue={6.5} url="https://monbalconsolaire.fr/avis/dualsun-preasy" />
+      <SchemaProduct name="DualSun PREASY" brand="DualSun" description="Panneau solaire pliable plug-and-play 420 Wc, TOPCon bifacial, assemblé en France, châssis aspect bois, micro-onduleur Hoymiles 400 W." ratingValue={6.5} url="https://monbalconsolaire.fr/avis/dualsun-preasy" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'DualSun PREASY' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -137,7 +137,7 @@ export default function DualsunPreasyPage() {
               DualSun, fabricant français reconnu pour ses panneaux hybrides, se lance dans le plug-and-play avec le <strong>PREASY</strong>. Un panneau pliable de 420 Wc, assemblé en France, avec un design soigné. Sur le papier, c&apos;est séduisant. Mais à <strong>870-900 €</strong> chez les revendeurs (relevé en mai 2026&nbsp;; vente sur devis depuis), est-ce que ça vaut le coup face à un Sunology PLAY (ex-PLAY 2, 515&nbsp;W) à 599 € ?
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>9 mai 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>

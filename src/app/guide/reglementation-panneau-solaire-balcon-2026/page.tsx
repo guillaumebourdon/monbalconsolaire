@@ -26,7 +26,7 @@ const faqData = [
 export default function ReglementationPage() {
   return (
     <>
-      <SchemaArticle title="Réglementation panneau solaire balcon : faut-il déclarer ?" description="Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-11-12" />
+      <SchemaArticle title="Réglementation panneau solaire balcon : faut-il déclarer ?" description="Réglementation des panneaux solaires de balcon en 2026 : déclaration CACSI Enedis, norme NF C 15-100, repère 900 W, copropriété. Ce que dit la loi." url="https://monbalconsolaire.fr/guide/reglementation-panneau-solaire-balcon-2026" datePublished="2026-04-14" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Tout savoir', href: '/tout-savoir' }, { label: 'R\u00e9glementation 2026' }]} />
       <article className="section-padding">
@@ -36,7 +36,7 @@ export default function ReglementationPage() {
             <div className="badge-green mb-4 inline-block">Guide juridique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Panneau solaire balcon 2026 : faut-il le d&eacute;clarer&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Norme NF C 15-100, d&eacute;claration Enedis CACSI, copropri&eacute;t&eacute;, rep&egrave;re des 900 W : tout ce que dit la loi sur les kits solaires plug-and-play en France.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span><strong>Mis &agrave; jour le 12 novembre 2026</strong></span><span>&middot;</span><span>9 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>14 avril 2026</span><span>&middot;</span><span><strong>Mis &agrave; jour le 20 novembre 2026</strong></span><span>&middot;</span><span>9 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -56,7 +56,7 @@ export default function ReglementationPage() {
                 <table className="w-full text-sm border-collapse min-w-[400px]">
                   <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Configuration</th><th className="text-center p-3">Puissance</th><th className="text-center p-3 rounded-tr-xl">Rep&egrave;re 900 W</th></tr></thead>
                   <tbody>
-                    {[['1 kit Sunology PLAY (ex-PLAY 2)', '500W', '\u2705 En dessous'], ['1 kit Beem On 460W', '460W', '\u2705 En dessous'], ['2 kits Beem Kit 300W', '600W', '\u2705 En dessous'], ['1 PLAY + 1 Beem Kit', '800W', '\u2705 En dessous'], ['2 kits Beem On 460W', '920W', '\u26a0\ufe0f Circuit d\u00e9di\u00e9 recommand\u00e9']].map(([c, p, ok], i) => (
+                    {[['1 kit Sunology PLAY (ex-PLAY 2)', '515W', '\u2705 En dessous'], ['1 kit Beem On 460W', '460W', '\u2705 En dessous'], ['2 kits Beem Kit 300W', '600W', '\u2705 En dessous'], ['1 PLAY + 1 Beem Kit', '800W', '\u2705 En dessous'], ['2 kits Beem On 460W', '920W', '\u26a0\ufe0f Circuit d\u00e9di\u00e9 recommand\u00e9']].map(([c, p, ok], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{c}</td><td className="text-center p-3 font-mono">{p}</td><td className="text-center p-3">{ok}</td></tr>
                     ))}
                   </tbody>

@@ -22,17 +22,18 @@ const faqData = [
   { question: 'Quelle diff\u00e9rence entre les 3 mod\u00e8les SolarFlow Mix ?', answer: 'Le 4000 Mix Pro accepte des panneaux en direct (2 x 4 000 W DC) + un onduleur existant (5 000 W AC), soit 13 kW d\'entr\u00e9e totale. Le 4000 Mix AC+ se branche uniquement sur un onduleur existant (5 kW AC). Le 3000 Mix AC+ est le plus compact (3 kW, non extensible). Tous partagent la batterie LFP 8 kWh de base.' },
   { question: 'Le SolarFlow Mix remplace-t-il le SolarFlow 800 Plus ?', answer: 'Non. Le SolarFlow 800 Plus reste le mod\u00e8le plug-and-play pour balcon (539 \u20ac sans panneaux au 5 novembre 2026). Le SolarFlow Mix vise les maisons avec toiture ou grosses installations. Ce sont deux gammes compl\u00e9mentaires : le 800 Plus pour d\u00e9buter, le Mix pour passer \u00e0 l\'\u00e9chelle.' },
   { question: 'Peut-on utiliser le SolarFlow Mix en cas de coupure de courant ?', answer: 'Oui. Contrairement au SolarFlow 800 Plus, les mod\u00e8les Mix disposent d\'un mode off-grid. Le 4000 Mix Pro d\u00e9livre jusqu\'\u00e0 3 680 W continus (7,2 kW en cr\u00eate) hors r\u00e9seau. C\'est suffisant pour alimenter un r\u00e9frig\u00e9rateur, \u00e9clairage et box internet pendant plusieurs heures.' },
-  { question: 'Combien co\u00fbte le SolarFlow Mix en France ?', answer: 'Le SolarFlow 3000 Mix AC+ d\u00e9marre \u00e0 1 999 \u20ac TTC, le 4000 Mix AC+ \u00e0 2 399 \u20ac et le 4000 Mix Pro \u00e0 2 899 \u20ac (indisponible en ligne au 5 novembre 2026 : Zendure renvoie vers un revendeur). Les batteries d\'extension AB2000S co\u00fbtent environ 400-500 \u20ac par module de 2 kWh suppl\u00e9mentaires.' },
-  { question: 'Le SolarFlow Mix est-il rentable pour un appartement avec balcon ?', answer: 'Pas vraiment. \u00c0 partir de 1 999 \u20ac pour 8 kWh, c\'est surdimensionn\u00e9 pour un balcon avec 1-2 panneaux. Le SolarFlow 800 Plus (539 \u20ac) ou le Bluetti Balco 260 (789 \u20ac), prix sans panneaux du 5 novembre 2026, sont bien plus adapt\u00e9s. Le Mix cible les maisons avec panneaux en toiture et une consommation \u00e9lev\u00e9e (5 000-10 000 kWh/an).' },
+  { question: 'Combien co\u00fbte le SolarFlow Mix en France ?', answer: 'Le SolarFlow 3000 Mix AC+ d\u00e9marre \u00e0 1 999 \u20ac TTC, le 4000 Mix AC+ \u00e0 2 399 \u20ac et le 4000 Mix Pro \u00e0 2 899 \u20ac (prix relevés sur zendure.fr le 20 novembre 2026, les trois en vente en ligne). Les batteries d\'extension AB2000S co\u00fbtent environ 400-500 \u20ac par module de 2 kWh suppl\u00e9mentaires.' },
+  { question: 'Le SolarFlow Mix est-il rentable pour un appartement avec balcon ?', answer: 'Pas vraiment. \u00c0 partir de 1 999 \u20ac pour 8 kWh, c\'est surdimensionn\u00e9 pour un balcon avec 1-2 panneaux. Le SolarFlow 800 Plus (539 \u20ac) ou le Bluetti Balco 260 (729 \u20ac), prix sans panneaux relev\u00e9s en novembre 2026, sont bien plus adapt\u00e9s. Le Mix cible les maisons avec panneaux en toiture et une consommation \u00e9lev\u00e9e (5 000-10 000 kWh/an).' },
   { question: 'Quelle est la dur\u00e9e de vie des batteries SolarFlow Mix ?', answer: 'Les cellules LiFePO4 sont certifi\u00e9es pour 10 000 cycles, soit environ 15 ans d\'utilisation quotidienne. Zendure offre une garantie de 10 ans sur les batteries. Le rendement aller-retour est de 90 %, ce qui signifie que 10 % de l\'\u00e9nergie stock\u00e9e est perdue.' },
 ];
 
 export default function ZendureSolarFlowMixAvisPage() {
   return (
     <>
-      <SchemaArticle title="Zendure SolarFlow Mix avis : le nouveau tout-en-un résidentiel 2026" description="Avis détaillé sur le Zendure SolarFlow Mix en 2026." url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" datePublished="2026-06-30" dateModified="2026-11-05" />
+      <SchemaArticle title="Zendure SolarFlow Mix avis : le nouveau tout-en-un résidentiel 2026" description="Avis détaillé sur le Zendure SolarFlow Mix en 2026." url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" datePublished="2026-06-30" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
-      <SchemaProduct name="Zendure SolarFlow 4000 Mix Pro" brand="Zendure" description="Batterie résidentielle LFP 8-50 kWh, 4 kW bidirectionnel, double MPPT, IA Zenki, IP65." price={2899} availability="OutOfStock" ratingValue={8} url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" />
+      {/* Modèle d'entrée de gamme : c'est le prix « dès 1 999 € » affiché sur la page (zendure.fr, en stock le 20/11/2026). */}
+      <SchemaProduct name="Zendure SolarFlow 3000 Mix AC+" brand="Zendure" description="Batterie résidentielle LFP 8 kWh, sortie AC 3 000 W, à coupler à un onduleur photovoltaïque existant (gamme SolarFlow Mix)." price={1999} availability="InStock" ratingValue={8} url="https://monbalconsolaire.fr/avis/zendure-solarflow-mix" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Zendure SolarFlow Mix' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
@@ -41,7 +42,7 @@ export default function ZendureSolarFlowMixAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Zendure SolarFlow Mix avis : le tout-en-un r&eacute;sidentiel qui change la donne (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">3&nbsp;mod&egrave;les, 8&nbsp;&agrave;&nbsp;50&nbsp;kWh de stockage LFP, 4&nbsp;kW bidirectionnel, IA embarqu&eacute;e. Zendure quitte le balcon pour viser la maison enti&egrave;re. &Agrave; partir de 1&nbsp;999&nbsp;&euro;.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 juin 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 juin 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -55,7 +56,7 @@ export default function ZendureSolarFlowMixAvisPage() {
             affiliateLabel="Voir sur Zendure.fr"
             accentColor="amber"
           />
-          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s sur zendure.fr le 05/11/2026&nbsp;: 3000 Mix AC+ 1&nbsp;999&nbsp;&euro;, 4000 Mix AC+ 2&nbsp;399&nbsp;&euro; (en stock), 4000 Mix Pro 2&nbsp;899&nbsp;&euro; (indisponible en ligne)</p>
+          <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s sur zendure.fr le 20/11/2026&nbsp;: 3000 Mix AC+ 1&nbsp;999&nbsp;&euro;, 4000 Mix AC+ 2&nbsp;399&nbsp;&euro;, 4000 Mix Pro 2&nbsp;899&nbsp;&euro; (les trois en stock)</p>
 
           <div className="space-y-10">
             <section>
@@ -99,7 +100,7 @@ export default function ZendureSolarFlowMixAvisPage() {
                       ['Batterie de base', '8 kWh LFP', '8 kWh LFP', '8 kWh LFP'],
                       ['Extensible', 'Jusqu\'\u00e0 50 kWh', 'Jusqu\'\u00e0 50 kWh', 'Non'],
                       ['Mode off-grid', '3 680 W (7,2 kW cr\u00eate)', '3 680 W (7,2 kW cr\u00eate)', '3 000 W'],
-                      ['Prix TTC (05/11/2026)', '2 899 \u20ac (indisponible)', '2 399 \u20ac', '1 999 \u20ac'],
+                      ['Prix TTC (20/11/2026)', '2 899 \u20ac', '2 399 \u20ac', '1 999 \u20ac'],
                     ].map(([label, pro, ac, compact], i) => (
                       <tr key={i} className={i % 2 === 0 ? 'bg-cream/50' : ''}>
                         <td className="py-2 px-3 font-semibold text-charcoal whitespace-nowrap">{label}</td>
@@ -202,7 +203,7 @@ export default function ZendureSolarFlowMixAvisPage() {
                       ['Zendure 4000 Mix Pro', '8-50 kWh', '4 000 W', '2 899 \u20ac', '362 \u20ac', true],
                       ['Zendure 4000 Mix AC+', '8-50 kWh', '4 000 W', '2 399 \u20ac', '300 \u20ac', false],
                       ['Zendure 3000 Mix AC+', '8 kWh', '3 000 W', '1 999 \u20ac', '250 \u20ac', false],
-                      ['Bluetti Balco 260', '2,56 kWh', '1 200 W', '789 \u20ac', '308 \u20ac', false],
+                      ['Bluetti Balco 260', '2,56 kWh', '1 200 W', '729 \u20ac', '285 \u20ac', false],
                       ['Jackery SolarVault 3 Pro', '2,52 kWh', '1 200 W', '719 \u20ac', '285 \u20ac', false],
                       ['Zendure SolarFlow 800+', '1,92 kWh', '800 W', '539 \u20ac', '281 \u20ac', false],
                     ].map(([name, cap, power, price, ratio, highlight], i) => (
@@ -286,7 +287,7 @@ export default function ZendureSolarFlowMixAvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le SolarFlow Mix est le produit le plus ambitieux de Zendure &agrave; ce jour. Avec 8&nbsp;&agrave;&nbsp;50&nbsp;kWh de stockage LFP, 4&nbsp;kW bidirectionnel et une IA d&apos;optimisation, il se positionne comme une alternative cr&eacute;dible aux syst&egrave;mes Enphase ou SolarEdge &mdash; &agrave; un prix nettement inf&eacute;rieur.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le 4000 Mix Pro est le mod&egrave;le le plus int&eacute;ressant&nbsp;: avec 13&nbsp;kW d&apos;entr&eacute;e PV et le double MPPT, il fait office d&apos;onduleur + batterie + gestionnaire &eacute;nerg&eacute;tique en un seul appareil. &Agrave; 2&nbsp;899&nbsp;&euro;, le &euro;/kWh de 362&nbsp;&euro; est comp&eacute;titif pour du r&eacute;sidentiel, mais il n&apos;est pas commandable en ligne au 5 novembre 2026&nbsp;: le 4000 Mix AC+ (2&nbsp;399&nbsp;&euro;, en stock) est l&apos;alternative imm&eacute;diate.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le 4000 Mix Pro est le mod&egrave;le le plus int&eacute;ressant&nbsp;: avec 13&nbsp;kW d&apos;entr&eacute;e PV et le double MPPT, il fait office d&apos;onduleur + batterie + gestionnaire &eacute;nerg&eacute;tique en un seul appareil. &Agrave; 2&nbsp;899&nbsp;&euro;, le &euro;/kWh de 362&nbsp;&euro; est comp&eacute;titif pour du r&eacute;sidentiel. Il est de nouveau commandable en ligne (20 novembre 2026)&nbsp;; si vous avez d&eacute;j&agrave; un onduleur, le 4000 Mix AC+ (2&nbsp;399&nbsp;&euro;) co&ucirc;te 500&nbsp;&euro; de moins.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Les b&eacute;mols&nbsp;: c&apos;est une gamme toute neuve (avril 2026), le recul est nul, et le 3000 Mix AC+ non extensible est un faux pas. Pour les balcons, le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">SolarFlow 800 Plus</Link> reste imbattable. Mais pour les propri&eacute;taires avec panneaux en toiture, le Mix est la proposition la plus compl&egrave;te du march&eacute;.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">8/10</span></strong></p>
               <a href={zendureUrl('https://zendure.fr/products/solarflow-mix-series')} target="_blank" rel="sponsored noopener" data-merchant="Zendure" data-product="Zendure SolarFlow Mix" className="btn-affiliate inline-flex mt-4">Voir le SolarFlow Mix sur Zendure.fr &rarr;</a>

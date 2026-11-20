@@ -125,7 +125,8 @@ export function SchemaProduct({
   name: string;
   brand: string;
   description: string;
-  price: number;
+  /** Sans prix public vérifiable (vente sur devis), on omet l'offre : avis seul, sans fiche marchand. */
+  price?: number;
   currency?: string;
   ratingValue: number;
   ratingMax?: number;
@@ -149,13 +150,17 @@ export function SchemaProduct({
       name: brand,
     },
     description,
-    offers: {
-      '@type': 'Offer',
-      price,
-      priceCurrency: currency,
-      availability: `https://schema.org/${availability}`,
-      url,
-    },
+    ...(price !== undefined
+      ? {
+          offers: {
+            '@type': 'Offer',
+            price,
+            priceCurrency: currency,
+            availability: `https://schema.org/${availability}`,
+            url,
+          },
+        }
+      : {}),
     review: {
       '@type': 'Review',
       reviewRating: {

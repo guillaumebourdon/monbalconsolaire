@@ -147,7 +147,7 @@ const models: Model[] = [
     com: 'Wi-Fi intégré',
     garantie: '25 ans (via Sunology)',
     prix: 'Inclus kit',
-    pourQui: 'Livré dans le Sunology PLAY2 (450/460 W) ; le PLAY 500 W actuel embarque un micro-onduleur MX500 de 500 W',
+    pourQui: 'Livré dans le Sunology PLAY2 (450/460 W) ; le PLAY actuel (515 Wc) embarque un micro-onduleur MX500 de 500 W',
     href: '/avis/sunology-play-2',
   },
   {
@@ -181,7 +181,7 @@ export default function MicroOnduleurPage() {
         description={PAGE_DESCRIPTION}
         url={PAGE_URL}
         datePublished="2026-06-06"
-        dateModified="2026-11-05"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Micro-onduleur solaire' }]} />
@@ -200,7 +200,7 @@ export default function MicroOnduleurPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone flex-wrap">
               <span>Publi&eacute; le 6 juin 2026</span>
               <span>&middot;</span>
-              <span>Mis &agrave; jour le 5 novembre 2026</span>
+              <span>Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>14 min de lecture</span>
             </div>

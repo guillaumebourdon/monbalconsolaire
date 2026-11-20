@@ -48,6 +48,7 @@ export default function KitSolairePluieGrelePage() {
         description="Production sous la pluie, r\u00e9sistance \u00e0 la gr\u00eale, neige, assurance."
         url="https://monbalconsolaire.fr/blog/kit-solaire-pluie-grele"
         datePublished="2026-05-18"
+        dateModified="2026-11-20"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Pluie et gr\u00eale' }]} />
@@ -64,7 +65,7 @@ export default function KitSolairePluieGrelePage() {
               Votre kit solaire reste dehors 365 jours par an. Pluie, gr&ecirc;le, neige, vent : est-ce que &ccedil;a risque quelque chose ? Combien produit-il par mauvais temps ? Faut-il le rentrer ? R&eacute;ponses concr&egrave;tes et chiffr&eacute;es.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>18 mai 2026</span>
+              <span>18 mai 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -154,7 +155,7 @@ export default function KitSolairePluieGrelePage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                En pratique, les panneaux modernes utilisent du <strong>verre tremp&eacute; de 3,2 mm</strong> (Beem On, Sunethic F500) qui r&eacute;siste aux gr&ecirc;lons standard. Les panneaux bi-verre (DualSun PREASY) sont encore plus r&eacute;sistants. L&apos;actuel Sunology PLAY 500&nbsp;Wc est lui aussi un bi-verre (2 &times; 2,0&nbsp;mm de verre tremp&eacute;, charge de neige 5&nbsp;400&nbsp;Pa selon sa fiche technique).
+                En pratique, les panneaux modernes utilisent du <strong>verre tremp&eacute; de 3,2 mm</strong> (Beem On, Sunethic F500) qui r&eacute;siste aux gr&ecirc;lons standard. Les panneaux bi-verre (DualSun PREASY) sont encore plus r&eacute;sistants. L&apos;actuel Sunology PLAY 515&nbsp;Wc est lui aussi un bi-verre (2 &times; 2,0&nbsp;mm de verre tremp&eacute;, charge de neige 5&nbsp;400&nbsp;Pa selon sa fiche technique).
               </p>
               <div className="card-lg bg-amber-pale/20 border-amber/10">
                 <h3 className="font-bold text-sm mb-2 text-amber-dark">Quand faut-il s&apos;inqui&eacute;ter ?</h3>

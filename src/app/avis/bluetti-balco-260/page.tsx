@@ -11,8 +11,8 @@ import { ProductHero } from '@/components/ui/ProductHero';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Bluetti Balco 260 avis 2026 : le tout-en-un onduleur + batterie',
-  description: 'Avis détaillé sur le Bluetti Balco 260 : batterie LFP 2,56 kWh + onduleur intégré, 789 € sans panneaux, 1 079 € avec 2 panneaux. Specs, ROI et verdict.',
+  title: 'Bluetti Balco 260 avis 2026 : tout-en-un onduleur + batterie',
+  description: 'Avis détaillé sur le Bluetti Balco 260 : batterie LFP 2,56 kWh + onduleur intégré, 729 € sans panneaux, 1 019 € avec 2 panneaux. Specs, ROI et verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/bluetti-balco-260',
   },
@@ -29,7 +29,7 @@ const faqData = [
 export default function BluettiBalco260AvisPage() {
   return (
     <>
-      <SchemaArticle title="Bluetti Balco 260 avis : le tout-en-un onduleur + batterie" description="Avis détaillé sur le Bluetti Balco 260 en 2026." url="https://monbalconsolaire.fr/avis/bluetti-balco-260" datePublished="2026-06-20" dateModified="2026-11-05" />
+      <SchemaArticle title="Bluetti Balco 260 avis : le tout-en-un onduleur + batterie" description="Avis détaillé sur le Bluetti Balco 260 en 2026." url="https://monbalconsolaire.fr/avis/bluetti-balco-260" datePublished="2026-06-20" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/bluetti-balco-260-front.webp" name="Bluetti Balco 260" brand="Bluetti" description="Système solaire balcon tout-en-un : onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. IP65, extensible à 15 kWh." price={PRODUCTS['bluetti-balco-260'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['bluetti-balco-260'].availability]} ratingValue={7} url="https://monbalconsolaire.fr/avis/bluetti-balco-260" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Bluetti Balco 260' }]} />
@@ -39,15 +39,15 @@ export default function BluettiBalco260AvisPage() {
           <div className="mb-10">
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Bluetti Balco 260 avis : le tout-en-un onduleur + batterie (2026)</h1>
-            <p className="text-lg text-charcoal-light leading-relaxed">Bluetti d&eacute;barque sur le march&eacute; du solaire de balcon avec un concept diff&eacute;rent : un bo&icirc;tier unique qui int&egrave;gre onduleur, batterie 2,56&nbsp;kWh et 4&nbsp;MPPT. Vendu 789&nbsp;&euro; seul ou 1&nbsp;079&nbsp;&euro; avec 2 panneaux de 450&nbsp;W (prix promotionnels relev&eacute;s le 5 novembre 2026).</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 juin 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <p className="text-lg text-charcoal-light leading-relaxed">Bluetti d&eacute;barque sur le march&eacute; du solaire de balcon avec un concept diff&eacute;rent : un bo&icirc;tier unique qui int&egrave;gre onduleur, batterie 2,56&nbsp;kWh et 4&nbsp;MPPT. Vendu 729&nbsp;&euro; seul ou 1&nbsp;019&nbsp;&euro; avec 2 panneaux de 450&nbsp;W (prix promotionnels relev&eacute;s le 20 novembre 2026).</p>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 juin 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <ProductHero
             brand="Bluetti"
             name="Balco 260"
             power="2 400 W solaire"
-            price="789 €"
+            price="729 €"
             score="7/10"
             tagline="Tout-en-un onduleur + batterie 2,56 kWh. Panneaux non inclus."
             affiliateUrl="https://fr.bluettipower.eu/products/bluetti-balco-260"
@@ -62,11 +62,11 @@ export default function BluettiBalco260AvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Pr&eacute;sentation du Bluetti Balco 260</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Bluetti, g&eacute;ant chinois des stations d&apos;&eacute;nergie portables, arrive sur le solaire de balcon avec une approche originale. L&agrave; o&ugrave; Sunology, Beem ou Zendure vendent des kits &laquo;&nbsp;panneau + onduleur&nbsp;&raquo;, Bluetti propose un bo&icirc;tier tout-en-un qui combine onduleur SiC, batterie LFP 2,56&nbsp;kWh, 4&nbsp;MPPT et secours &eacute;lectrique. Vous branchez vos propres panneaux.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Le concept est s&eacute;duisant : un seul appareil compact (47,6 &times; 26 &times; 33,6&nbsp;cm) qui g&egrave;re tout. Mais &agrave; 789&nbsp;&euro; <strong>sans panneaux</strong> (prix barr&eacute; 1&nbsp;049&nbsp;&euro;), le co&ucirc;t total grimpe vite&nbsp;: le pack Bluetti avec 2 panneaux de 450&nbsp;W est &agrave; 1&nbsp;079&nbsp;&euro; (5 novembre 2026).</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le concept est s&eacute;duisant : un seul appareil compact (47,6 &times; 26 &times; 33,6&nbsp;cm) qui g&egrave;re tout. Mais &agrave; 729&nbsp;&euro; <strong>sans panneaux</strong> (prix barr&eacute; 1&nbsp;049&nbsp;&euro;), le co&ucirc;t total grimpe vite&nbsp;: le pack Bluetti avec 2 panneaux de 450&nbsp;W est &agrave; 1&nbsp;019&nbsp;&euro; (20 novembre 2026).</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
                   { v: '2,56 kWh', l: 'Batterie LFP' },
-                  { v: '789 €', l: 'Prix (sans panneaux)' },
+                  { v: '729 €', l: 'Prix (sans panneaux)' },
                   { v: '10 ans', l: 'Garantie' },
                   { v: 'IP65', l: 'Étanchéité' },
                 ].map((s, i) => (
@@ -132,7 +132,7 @@ export default function BluettiBalco260AvisPage() {
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
               <div className="space-y-3">
                 {[
-                  { t: 'Panneaux non inclus : le coût total grimpe vite', d: 'À 789 € sans panneaux, le pack avec 2 panneaux de 450 W passe à 1 079 €, soit 2,5 fois le prix d\'un kit Beem On 500 Wc (429 € tout compris, en précommande). La comparaison n\'est pas directe (ici vous avez une batterie), mais le ticket d\'entrée est élevé.' },
+                  { t: 'Panneaux non inclus : le coût total grimpe vite', d: 'À 729 € sans panneaux, le pack avec 2 panneaux de 450 W passe à 1 019 €, soit 2,4 fois le prix d\'un kit Beem On 500 Wc (429 € tout compris, en précommande). La comparaison n\'est pas directe (ici vous avez une batterie), mais le ticket d\'entrée est élevé.' },
                   { t: 'Injection réseau limitée à 800 W', d: 'En France, aucun texte ne fixe de plafond en watts ; 900 W par prise est une recommandation courante (UFC-Que Choisir, fabricants). Le Balco 260 s\'arrête à 800 W d\'injection. C\'est suffisant pour la plupart des usages, mais un peu en dessous de ce repère.' },
                   { t: 'App Bluetti historiquement faible', d: 'L\'application mobile Bluetti a longtemps été un point noir : interface datée, bugs fréquents. Bluetti annonce une refonte complète pour 2026, mais il faudra juger sur pièces. C\'est un point de vigilance.' },
                   { t: 'Arrivée tardive sur un marché mature', d: 'Zendure, EcoFlow et Anker sont sur le segment batterie + solaire depuis 2-3 ans. Bluetti arrive avec un produit solide mais sans écosystème installé en France (réseau de revendeurs, communauté, retours terrain).' },
@@ -163,7 +163,7 @@ export default function BluettiBalco260AvisPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Bluetti Balco 260', '2,56 kWh', '789 €', 'Non inclus (pack 2 × 450 W : 1 079 €)', '7/10', true],
+                      ['Bluetti Balco 260', '2,56 kWh', '729 €', 'Non inclus (pack 2 × 450 W : 1 019 €)', '7/10', true],
                       ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539 €', 'Non inclus (pack 2 × 500 W : 719 €)', '8.5/10', false],
                       ['EcoFlow STREAM Ultra', '1,92 kWh', '659 €', 'Non inclus', '7.5/10', false],
                       ['Sunology PLAY MAX', '0,7 kWh', priceLabel('sunology-play-max'), '460 W inclus', '7/10', false],
@@ -193,12 +193,12 @@ export default function BluettiBalco260AvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Rentabilit&eacute; : le calcul est serr&eacute;</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Avec le Balco 260, la rentabilit&eacute; d&eacute;pend fortement de votre usage. L&apos;avantage de la batterie : vous stockez le surplus du jour pour le consommer le soir, ce qui booste votre taux d&apos;autoconsommation de 85% &agrave; 95%+.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Prenons le pack Bluetti avec 2 panneaux de 450&nbsp;W (1&nbsp;079&nbsp;&euro; le 5 novembre 2026), &agrave; Lyon, plein sud, 95&nbsp;% d&apos;autoconsommation gr&acirc;ce &agrave; la batterie&nbsp;:</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Prenons le pack Bluetti avec 2 panneaux de 450&nbsp;W (1&nbsp;019&nbsp;&euro; le 20 novembre 2026), &agrave; Lyon, plein sud, 95&nbsp;% d&apos;autoconsommation gr&acirc;ce &agrave; la batterie&nbsp;:</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
                   { v: '~920 kWh', l: 'Production/an' },
                   { v: '~175 €', l: 'Économies 1re année' },
-                  { v: '~5,8 ans', l: 'ROI estimé' },
+                  { v: '~5,5 ans', l: 'ROI estimé' },
                   { v: '~6 190 €', l: 'Gains sur 25 ans' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-4 bg-green-pale/30 rounded-brand-lg">
@@ -231,13 +231,13 @@ export default function BluettiBalco260AvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Bluetti Balco 260 est un produit int&eacute;ressant sur le papier : tout-en-un, extensible, IP65, secours &eacute;lectrique. Bluetti apporte son exp&eacute;rience des stations d&apos;&eacute;nergie portables au solaire de balcon, et &ccedil;a se voit dans la fiche technique.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Mais &agrave; 789&nbsp;&euro; sans panneaux (1&nbsp;079&nbsp;&euro; en pack), le ticket d&apos;entr&eacute;e est &eacute;lev&eacute;. Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Zendure SolarFlow 800 Plus</Link> en pack avec 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) reste plus comp&eacute;titif pour la plupart des utilisateurs, sans sortie de secours. Et si vous n&apos;avez pas besoin de batterie, un simple <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429&nbsp;&euro;</Link> (en pr&eacute;commande) se rembourse plus vite.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Mais &agrave; 729&nbsp;&euro; sans panneaux (1&nbsp;019&nbsp;&euro; en pack), le ticket d&apos;entr&eacute;e est &eacute;lev&eacute;. Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Zendure SolarFlow 800 Plus</Link> en pack avec 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) reste plus comp&eacute;titif pour la plupart des utilisateurs, sans sortie de secours. Et si vous n&apos;avez pas besoin de batterie, un simple <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429&nbsp;&euro;</Link> (en pr&eacute;commande) se rembourse plus vite.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Balco 260 s&apos;adresse &agrave; un profil pr&eacute;cis : quelqu&apos;un qui veut du stockage cons&eacute;quent, un secours &eacute;lectrique, et la possibilit&eacute; d&apos;&eacute;voluer jusqu&apos;&agrave; 15&nbsp;kWh. Si c&apos;est votre cas, c&apos;est une option solide. Sinon, la concurrence fait mieux pour moins cher.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong></p>
               <a href="https://fr.bluettipower.eu/products/bluetti-balco-260" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Bluetti Balco 260 &rarr;</a>
             </section>
 
-            <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl="https://fr.bluettipower.eu/products/bluetti-balco-260" label="Voir l'offre sur Bluetti" variant="box" position="footer-box" price="789 €" />
+            <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl="https://fr.bluettipower.eu/products/bluetti-balco-260" label="Voir l'offre sur Bluetti" variant="box" position="footer-box" price="729 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>
@@ -292,7 +292,7 @@ export default function BluettiBalco260AvisPage() {
             <NewsletterBanner />
 
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie ROI :</strong> ROI calcul&eacute; avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 95% (avec batterie), Performance Ratio 0,85, Lyon sud, pack 2&times;450&nbsp;W &agrave; 1&nbsp;079&nbsp;&euro;. &Eacute;conomies : ~175&nbsp;&euro; la premi&egrave;re ann&eacute;e, ROI ~5,8&nbsp;ans, ~6&nbsp;190&nbsp;&euro; sur 25&nbsp;ans. Prix relev&eacute;s sur fr.bluettipower.eu le 5 novembre 2026.</p>
+              <p className="text-xs text-stone leading-relaxed mb-2"><strong>M&eacute;thodologie ROI :</strong> ROI calcul&eacute; avec tarif {KWH_PRICE_LABEL}, inflation {KWH_INFLATION_LABEL}, d&eacute;gradation des panneaux {PANEL_DEGRADATION_LABEL}, autoconsommation 95% (avec batterie), Performance Ratio 0,85, Lyon sud, pack 2&times;450&nbsp;W &agrave; 1&nbsp;019&nbsp;&euro;. &Eacute;conomies : ~175&nbsp;&euro; la premi&egrave;re ann&eacute;e, ROI ~5,5&nbsp;ans, ~6&nbsp;190&nbsp;&euro; sur 25&nbsp;ans. Prix relev&eacute;s sur fr.bluettipower.eu le 20 novembre 2026.</p>
               <p className="text-xs text-stone leading-relaxed"><strong>Transparence :</strong> avis ind&eacute;pendant. Les liens vers Bluetti sont des liens affili&eacute;s. <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>

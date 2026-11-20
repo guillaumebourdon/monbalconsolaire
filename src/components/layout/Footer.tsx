@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CookieSettingsLink } from '@/components/ui/CookieSettingsLink';
 
 export function Footer() {
   return (
@@ -56,6 +57,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/mentions-legales" className="text-sm text-stone hover:text-green transition-colors">Mentions l&eacute;gales</Link></li>
               <li><Link href="/politique-confidentialite" className="text-sm text-stone hover:text-green transition-colors">Confidentialit&eacute;</Link></li>
+              <li><CookieSettingsLink className="text-sm text-stone hover:text-green transition-colors" /></li>
             </ul>
           </div>
         </div>

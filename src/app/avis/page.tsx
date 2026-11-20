@@ -5,7 +5,7 @@ import { PRODUCTS, priceLabel, cardPriceLabel, type ProductId } from '@/data/pro
 import { calculateROIYears } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Avis kits solaires balcon 2026 — Analyses indépendantes et notes',
+  title: 'Avis kits solaires balcon 2026 : analyses indépendantes',
   description: 'Avis et analyses indépendantes des kits solaires plug-and-play : Sunology, Beem, Zendure, Sunethic, EcoFlow. Notes, specs et verdict.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis',
@@ -27,7 +27,7 @@ const reviews = [
   { slug: 'hoymiles-hms-800w', title: 'Hoymiles HMS-800W-2T\u00a0: le micro-onduleur de référence pour kits DIY', excerpt: '2 MPPT indépendants, WiFi intégré sans DTU, rendement 96,7\u00a0%. Environ 170\u00a0€ (Wattuneed, 05/11/2026). Le choix des bricoleurs informés.', badge: 'Micro-onduleur', score: '8.5/10', price: '~170 €' },
   { slug: 'anker-solix-rs40p', title: 'Anker SOLIX RS40P\u00a0: le kit balcon 910\u00a0Wc d\u2019Anker', excerpt: '2\u00d7455\u00a0W IBC N-type, onduleur WiFi 800\u00a0W. Plus vendu sur la boutique Anker SOLIX France au 05/11/2026.', badge: 'Plus vendu en France', score: '7.5/10', price: 'Arrêté (FR)' },
   { slug: 'zendure-solarflow-mix', title: 'Zendure SolarFlow Mix : le tout-en-un résidentiel 2026', excerpt: `3 modèles, stockage LFP extensible, 4\u00a0kW bidirectionnel. Zendure passe du balcon à la maison entière. À partir de ${priceLabel('zendure-solarflow-mix')}.`, badge: 'Premium', score: '8/10', price: cardPriceLabel('zendure-solarflow-mix') },
-  { slug: 'jackery-solarvault-3-pro', title: 'Jackery SolarVault 3 Pro : stockage 2,5\u00a0kWh LFP', excerpt: `Batterie LFP 2,52\u00a0kWh + 4\u00a0MPPT pour 4\u00a0000\u00a0W. Garantie 10\u00a0ans. ${priceLabel('jackery-solarvault-3-pro')} seul, 959\u00a0€ avec 2 panneaux de 450\u00a0W (promo constatée le 05/11/2026).`, badge: 'Stockage LFP', score: '8/10', price: cardPriceLabel('jackery-solarvault-3-pro') },
+  { slug: 'jackery-solarvault-3-pro', title: 'Jackery SolarVault 3 Pro : stockage 2,5\u00a0kWh LFP', excerpt: `Batterie LFP 2,52\u00a0kWh + 4\u00a0MPPT pour 4\u00a0000\u00a0W. Garantie 10\u00a0ans. ${priceLabel('jackery-solarvault-3-pro')} seul, 839\u00a0€ avec 2 panneaux de 450\u00a0W (promo constatée le 20/11/2026).`, badge: 'Stockage LFP', score: '8/10', price: cardPriceLabel('jackery-solarvault-3-pro') },
   { slug: 'bluetti-balco-260', title: 'Bluetti Balco 260 : le tout-en-un onduleur + batterie', excerpt: `Onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT dans un seul boîtier IP65. ${priceLabel('bluetti-balco-260')} sans panneaux (promo constatée le 05/11/2026).`, badge: 'Stockage tout-en-un', score: '7/10', price: cardPriceLabel('bluetti-balco-260') },
   { slug: 'beem-on-500w', title: 'Beem On 500 Wc : le meilleur prix au watt, en précommande', excerpt: `${priceLabel('beem-on-500w')} pour 500 Wc bifacial TOPCon, aussi chez Leroy Merlin. Précommande chez Beem, ${PRODUCTS['beem-on-500w'].availabilityNote}.`, badge: 'Qualité/prix', score: '8.5/10', price: cardPriceLabel('beem-on-500w') },
   { slug: 'ikea-solstrale-balcon', title: 'Kit solaire balcon IKEA (STREAM) : disponible en France ?', excerpt: 'En Allemagne, le « STREAM Komplettset » (2 × 500 W + EcoFlow STREAM) est vendu via Svea Solar à 369,90 €. Pas disponible en France au 05/11/2026.', badge: 'Analyse', score: '\u2014', price: 'Non vendu en France' },
