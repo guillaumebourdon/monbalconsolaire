@@ -11,7 +11,10 @@
  *   node scripts/sitemap-lastmod.mjs          # contrôle, code de sortie 1 si une date est fausse
  *   node scripts/sitemap-lastmod.mjs --write  # corrige les dates dans sitemap.ts
  *
- * Un commit dont le message contient « maillage seul » (seuls des liens internes changent) est ignoré.
+ * Un commit dont le message contient « maillage seul » (seuls des liens internes changent) ou
+ * « liens seuls » (seuls des liens d'affiliation changent) ou « métadonnées seules » (title, description,
+ * JSON-LD) est ignoré : le contenu visible est identique.
+ * Les commits d'affiliation du 18/11/2026 (avant cette convention) sont ignorés par leur message.
  * Ne jamais changer toutes les dates d'un coup « pour rafraîchir » : Google ignore alors le signal.
  */
 import fs from 'node:fs';
@@ -28,13 +31,26 @@ const EXTRA_SOURCES = {
   '/calculateur': ['src/data/departments.ts', 'src/lib/calculateur-kits.ts'],
 };
 
+// Commits sans changement du contenu visible (liens internes ou liens marchands seulement).
+const SKIP_GREPS = [
+  'maillage seul',
+  'liens seuls',
+  'métadonnées seules',
+  'maillage retour',
+  'Liens affiliés ManoMano',
+  'affiliation v2 - liens Awin et Amazon',
+  'liens Awin Zendure et EcoFlow',
+  'retrait de 2 liens Amazon',
+  "Merge affiliation-v2",
+].map((g) => `--grep="${g}"`).join(' ');
+
 function lastDate(files) {
   let best = '';
   for (const f of files) {
     if (!fs.existsSync(f)) continue;
     const dirty = execSync(`git status --porcelain -- "${f}"`).toString().trim();
     // Les commits « maillage seul » (liens internes changés, contenu identique) ne comptent pas.
-    const d = dirty ? today : execSync(`git log -1 --format=%cs --invert-grep --grep="maillage seul" -- "${f}"`).toString().trim();
+    const d = dirty ? today : execSync(`git log -1 --format=%cs --invert-grep ${SKIP_GREPS} -- "${f}"`).toString().trim();
     if (d > best) best = d;
   }
   return best;
