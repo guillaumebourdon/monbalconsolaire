@@ -38,7 +38,7 @@ const accessoires = [
 export default function AccessoiresPage() {
   return (
     <>
-      <SchemaArticle title="8 accessoires indispensables pour votre kit solaire de balcon" description="Les accessoires Amazon pour optimiser votre kit solaire de balcon : suivi, sécurité, nettoyage." url="https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon" datePublished="2026-04-04" dateModified="2026-09-27" />
+      <SchemaArticle title="8 accessoires indispensables pour votre kit solaire de balcon" description="Les accessoires Amazon pour optimiser votre kit solaire de balcon : suivi, sécurité, nettoyage." url="https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon" datePublished="2026-04-04" dateModified="2026-11-05" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: '8 accessoires indispensables' }]} />
       <article className="section-padding">
@@ -48,7 +48,7 @@ export default function AccessoiresPage() {
             <div className="badge-amber mb-4 inline-block">&Eacute;quipement</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">8 accessoires indispensables pour votre kit solaire de balcon</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Votre kit solaire fonctionne tout seul. Mais ces 8 accessoires &agrave; petit prix am&eacute;liorent le suivi, la s&eacute;curit&eacute; et la production. Budget total : 150 &agrave; 250 &euro; selon le niveau choisi.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>Mis &agrave; jour le 27 septembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">

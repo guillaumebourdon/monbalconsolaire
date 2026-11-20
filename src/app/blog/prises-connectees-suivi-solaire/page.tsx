@@ -119,7 +119,7 @@ export default function PrisesConnecteesPage() {
         description="Comparatif des prises connect\u00e9es pour mesurer la production solaire de balcon."
         url="https://monbalconsolaire.fr/blog/prises-connectees-suivi-solaire"
         datePublished="2026-05-20"
-        dateModified="2026-09-27"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Prises connect\u00e9es suivi solaire' }]} />
