@@ -59,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/beem-battery`, lastModified: '2026-11-17', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/sunology-vault`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/allpowers-bs2500-pro`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/avis/ecoflow-stream-ultra`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/avis/ecoflow-stream-ultra`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/sunology-play-2`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/beem-on-460w`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/sunethic-f500`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.7 },
