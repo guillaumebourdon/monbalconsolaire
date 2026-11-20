@@ -368,6 +368,10 @@ export default function BeemKit300WAvisPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kits solaires petit budget</h3>
                   <p className="text-xs text-charcoal-light mt-1">Les meilleurs choix sous 400&nbsp;&euro;</p>
                 </Link>
+                <Link href="/comparatif/kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire pas cher&nbsp;: Beem vs Sunethic vs Sunology GO</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Le duel des 3 kits les moins chers, avec le Beem Kit en rupture</p>
+                </Link>
                 <Link href="/avis/sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology GO</h3>
                   <p className="text-xs text-charcoal-light mt-1">349&nbsp;&euro;, 270 W : l&apos;alternative compacte chez Sunology</p>

@@ -454,6 +454,10 @@ export default function SunologyGoPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Sunology VAULT</h3>
                   <p className="text-xs text-charcoal-light mt-1">La batterie 700&nbsp;Wh vendue seule, pour qui veut ajouter du stockage</p>
                 </Link>
+                <Link href="/comparatif/kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire pas cher&nbsp;: Beem vs Sunethic vs Sunology GO</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Le GO face au Beem Kit (rupture) et au Sunethic F500</p>
+                </Link>
               </div>
             </section>
 
