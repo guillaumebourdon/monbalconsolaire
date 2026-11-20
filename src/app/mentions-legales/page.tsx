@@ -55,10 +55,10 @@ export default function MentionsLegalesPage() {
             </p>
             <ul className="list-none space-y-2 mt-3 pl-0">
               <li className="flex items-start gap-2"><span className="text-green font-bold mt-0.5">&rarr;</span><span><strong>Amazon Partenaires</strong> (Amazon.fr)&nbsp;: en tant que Partenaire Amazon, nous r&eacute;alisons un b&eacute;n&eacute;fice sur les achats remplissant les conditions requises.</span></li>
-              <li className="flex items-start gap-2"><span className="text-green font-bold mt-0.5">&rarr;</span><span><strong>Awin</strong>, pour les marques Zendure, EcoFlow et ALLPOWERS, et pour le site ManoMano.</span></li>
+              <li className="flex items-start gap-2"><span className="text-green font-bold mt-0.5">&rarr;</span><span><strong>Awin</strong>, pour les marques Zendure, EcoFlow, ALLPOWERS et Bluetti, et pour le site ManoMano.</span></li>
             </ul>
             <p className="mt-3">
-              Les liens vers les autres marques (Sunology, Beem, Sunethic, Jackery, Bluetti, DualSun&hellip;) sont des liens simples, sans r&eacute;mun&eacute;ration &agrave; ce jour. Si un nouveau programme est ajout&eacute;, cette liste est mise &agrave; jour.
+              Les liens vers les autres marques (Sunology, Beem, Sunethic, Jackery, DualSun&hellip;) sont des liens simples, sans r&eacute;mun&eacute;ration &agrave; ce jour. Si un nouveau programme est ajout&eacute;, cette liste est mise &agrave; jour.
             </p>
             <p className="mt-2">
               Une commission peut nous &ecirc;tre vers&eacute;e si vous achetez apr&egrave;s avoir cliqu&eacute; sur un lien affili&eacute;. Elle ne change pas le prix que vous payez. Les notes et classements ne d&eacute;pendent pas de la commission&nbsp;: les kits sont analys&eacute;s sur leur documentation, leurs prix et les retours publics d&apos;utilisateurs, sans test physique.

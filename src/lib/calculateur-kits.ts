@@ -2,7 +2,7 @@
  * Catalogue du calculateur. Prix, puissance et disponibilité viennent de src/data/products.ts.
  * Les produits en rupture ou arrêtés (buyable = false) sont exclus de TOUTES les recommandations.
  */
-import { zendureUrl } from '@/lib/affiliate';
+import { zendureUrl, bluettiUrl } from '@/lib/affiliate';
 import { PRODUCTS, availabilityBadge, isBuyable, type Product, type ProductId } from '@/data/products';
 
 type CalcKitConfig = {
@@ -29,7 +29,7 @@ const CALC_KITS: CalcKitConfig[] = [
   { productId: 'sunology-play-max', trackingName: 'Sunology PLAYMax', hasBattery: true, affiliateUrl: 'https://sunology.eu/products/playmax-station-solaire-batterie', minWidth: 'medium' },
   // Packs batterie + 2 panneaux (prix vérifiés sur le site du fabricant : Zendure 05/11/2026, Bluetti 20/11/2026)
   { productId: 'zendure-solarflow-800-plus', name: 'Zendure SolarFlow 800 Plus + 2 × 500 W', power: 1000, price: 719, hasBattery: true, affiliateUrl: zendureUrl('https://zendure.fr/products/solarflow-800-plus'), minWidth: 'wide' },
-  { productId: 'bluetti-balco-260', name: 'Bluetti Balco 260 + 2 × 450 W', power: 900, price: 1019, hasBattery: true, affiliateUrl: 'https://fr.bluettipower.eu/products/bluetti-balco-260', minWidth: 'wide' },
+  { productId: 'bluetti-balco-260', name: 'Bluetti Balco 260 + 2 × 450 W', power: 900, price: 1019, hasBattery: true, affiliateUrl: bluettiUrl('https://fr.bluettipower.eu/products/bluetti-balco-260'), minWidth: 'wide' },
   // DualSun PREASY retiré : vendu sur devis uniquement, aucun prix public vérifiable (05/11/2026)
 ];
 

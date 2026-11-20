@@ -167,7 +167,7 @@ const DEALS: Deal[] = [
     id: 'balco', cat: 'stockage', product: 'Bluetti Balco 260', spec: '2,56 kWh, sans panneaux (1 019 € avec 2 × 450 W)',
     ref: 789, refLabel: 'le 5 novembre (notre relevé)', refSource: SRC.mbsBluetti,
     bf: P['bluetti-balco-260'].priceEur, bfNote: 'relevé le 20 novembre', shownStrike: 1049, seen: '20/11/2026',
-    link: { product: 'Bluetti Balco 260', merchant: 'Bluetti', url: P['bluetti-balco-260'].url, plain: true },
+    link: BUY.balco260,
   },
   // ── Stations ──
   {
@@ -646,7 +646,7 @@ export default function BlackFridayKitSolairePage() {
                 <strong>M&eacute;thodologie :</strong> prix du jour relev&eacute;s le 18 novembre 2026 sur les fiches officielles (zendure.fr, fr.ecoflow.com, iallpowers.fr, sunology.eu, sunethic.fr, beemenergy.fr) et sur amazon.fr ; code Zendure {ZENDURE_CODE} test&eacute; au panier zendure.fr le m&ecirc;me jour. Prix de r&eacute;f&eacute;rence : captures dat&eacute;es de la Wayback Machine (2 septembre, 8 et 9 octobre 2026), article Tom&apos;s Guide du 26 octobre 2026, historiques camelcamelcamel et nos relev&eacute;s du 5 novembre 2026. Rentabilit&eacute; calcul&eacute;e avec la formule centralis&eacute;e du site (<Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link>). Produits analys&eacute;s sur documentation, pas test&eacute;s physiquement.
               </p>
               <p className="text-xs text-stone leading-relaxed mt-2">
-                <strong>Transparence :</strong> certains liens de cette page sont affili&eacute;s (Zendure, EcoFlow, ALLPOWERS et ManoMano via Awin, Amazon). Si vous achetez via ces liens, nous touchons une commission, sans surco&ucirc;t pour vous. Les liens Sunology, Sunethic et Beem ne sont pas affili&eacute;s. Cela n&apos;influence ni la s&eacute;lection ni le verdict : les produits sans baisse r&eacute;elle sont signal&eacute;s comme tels, affili&eacute;s ou non.
+                <strong>Transparence :</strong> certains liens de cette page sont affili&eacute;s (Zendure, EcoFlow, ALLPOWERS, Bluetti et ManoMano via Awin, Amazon). Si vous achetez via ces liens, nous touchons une commission, sans surco&ucirc;t pour vous. Les liens Sunology, Sunethic et Beem ne sont pas affili&eacute;s. Cela n&apos;influence ni la s&eacute;lection ni le verdict : les produits sans baisse r&eacute;elle sont signal&eacute;s comme tels, affili&eacute;s ou non.
               </p>
             </div>
           </div>

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaProduct, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { KWH_PRICE_LABEL, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 import { PRODUCTS, SCHEMA_AVAILABILITY, priceLabel } from '@/data/products';
+import { BUY } from '@/lib/affiliate';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
@@ -50,7 +51,7 @@ export default function BluettiBalco260AvisPage() {
             price="729 €"
             score="7/10"
             tagline="Tout-en-un onduleur + batterie 2,56 kWh. Panneaux non inclus."
-            affiliateUrl="https://fr.bluettipower.eu/products/bluetti-balco-260"
+            affiliateUrl={BUY.balco260.url}
             affiliateLabel="Voir sur le site Bluetti"
             accentColor="amber"
             image="/images/produits/bluetti-balco-260-front.webp"
@@ -126,7 +127,7 @@ export default function BluettiBalco260AvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl="https://fr.bluettipower.eu/products/bluetti-balco-260" label="Voir sur Bluetti" variant="secondary" position="after-pros" />
+            <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl={BUY.balco260.url} label="Voir sur Bluetti" variant="secondary" position="after-pros" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Ce qu&apos;on aime moins</h2>
@@ -146,7 +147,7 @@ export default function BluettiBalco260AvisPage() {
               </div>
             </section>
 
-            <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl="https://fr.bluettipower.eu/products/bluetti-balco-260" label="Voir le prix sur Bluetti" variant="secondary" position="after-cons" />
+            <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl={BUY.balco260.url} label="Voir le prix sur Bluetti" variant="secondary" position="after-cons" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Bluetti Balco 260 vs la concurrence (syst&egrave;mes avec batterie)</h2>
@@ -234,10 +235,10 @@ export default function BluettiBalco260AvisPage() {
               <p className="text-charcoal-light leading-relaxed mb-4">Mais &agrave; 729&nbsp;&euro; sans panneaux (1&nbsp;019&nbsp;&euro; en pack), le ticket d&apos;entr&eacute;e est &eacute;lev&eacute;. Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Zendure SolarFlow 800 Plus</Link> en pack avec 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) reste plus comp&eacute;titif pour la plupart des utilisateurs, sans sortie de secours. Et si vous n&apos;avez pas besoin de batterie, un simple <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429&nbsp;&euro;</Link> (en pr&eacute;commande) se rembourse plus vite.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Balco 260 s&apos;adresse &agrave; un profil pr&eacute;cis : quelqu&apos;un qui veut du stockage cons&eacute;quent, un secours &eacute;lectrique, et la possibilit&eacute; d&apos;&eacute;voluer jusqu&apos;&agrave; 15&nbsp;kWh. Si c&apos;est votre cas, c&apos;est une option solide. Sinon, la concurrence fait mieux pour moins cher.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong></p>
-              <a href="https://fr.bluettipower.eu/products/bluetti-balco-260" target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Bluetti Balco 260 &rarr;</a>
+              <a href={BUY.balco260.url} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Bluetti Balco 260 &rarr;</a>
             </section>
 
-            <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl="https://fr.bluettipower.eu/products/bluetti-balco-260" label="Voir l'offre sur Bluetti" variant="box" position="footer-box" price="729 €" />
+            <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl={BUY.balco260.url} label="Voir l'offre sur Bluetti" variant="box" position="footer-box" price="729 €" />
 
             <section>
               <h2 className="text-2xl font-extrabold mb-6">Questions fr&eacute;quentes</h2>

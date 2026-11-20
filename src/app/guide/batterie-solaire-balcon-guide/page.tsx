@@ -503,7 +503,7 @@ export default function GuideBatterieBalcon() {
             <AffiliateCTA
               productName="Bluetti Balco 260"
               merchantName="Bluetti"
-              affiliateUrl="https://fr.bluettipower.eu/pages/bluetti-balco-260"
+              affiliateUrl={BUY.balco260.url}
               label="Voir le Bluetti Balco 260"
               variant="box"
               position="footer-box"

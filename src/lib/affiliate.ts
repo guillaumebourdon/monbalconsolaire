@@ -10,6 +10,7 @@ export const AWIN_MERCHANTS = {
   ecoflow: '51799', // EcoFlow FR (fr.ecoflow.com), accepté le 05/11/2026
   allpowers: '98667', // ALLPOWERS FR, accepté le 04/11/2026
   manomano: '17547', // ManoMano FR, accepté le 06/11/2026 (cookie 10 jours)
+  bluetti: '32265', // BLUETTI FR (fr.bluettipower.eu), accepté le 19/11/2026
   // Vatrer : accepté le 18/11/2026. 119703 = « Vatrer Affiliate Program » (profil public ui.awin.com/merchant-profile/119703,
   // listé région US). À CONFIRMER dans Awin › Annonceurs › Mes programmes avant le premier lien : aucun lien Vatrer sur le site.
   vatrer: '119703',
@@ -27,6 +28,9 @@ export const ecoflowUrl = (destination: string) => awinUrl(AWIN_MERCHANTS.ecoflo
 
 /** Lien affilié vers une page ALLPOWERS FR. */
 export const allpowersUrl = (destination: string) => awinUrl(AWIN_MERCHANTS.allpowers, destination);
+
+/** Lien affilié vers une page de fr.bluettipower.eu. */
+export const bluettiUrl = (destination: string) => awinUrl(AWIN_MERCHANTS.bluetti, destination);
 
 /** Lien affilié vers une page de manomano.fr. */
 export const manomanoUrl = (destination: string) => awinUrl(AWIN_MERCHANTS.manomano, destination);
@@ -60,6 +64,7 @@ export const BUY = {
   solarflow800Plus: { product: 'Zendure SolarFlow 800 Plus', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/solarflow-800-plus') },
   solarflowMix: { product: 'Zendure SolarFlow Mix', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/solarflow-mix-series') },
   streamUltra: { product: 'EcoFlow STREAM Ultra', merchant: 'EcoFlow', url: ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro') },
+  balco260: { product: 'Bluetti Balco 260', merchant: 'Bluetti', url: bluettiUrl('https://fr.bluettipower.eu/products/bluetti-balco-260') },
   bs2500Pro: { product: 'ALLPOWERS BS2500 PRO', merchant: 'ALLPOWERS', url: allpowersUrl('https://iallpowers.fr/products/bs2500') },
   // Ajouts du 18/11/2026 (article Black Friday) : fiches en stock vérifiées le jour même.
   solarflow800Pro2: { product: 'Zendure SolarFlow 800 Pro 2', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/zendure-solarflow-800-pro2') },
@@ -83,5 +88,6 @@ export function buyFor(name: string): BuyLink | undefined {
   if (/SolarFlow (3000 |4000 )?Mix|\b(3000|4000) Mix AC\+/.test(name)) return BUY.solarflowMix;
   if (/STREAM Ultra(?! X)/.test(name)) return BUY.streamUltra;
   if (/BS2500/.test(name)) return BUY.bs2500Pro;
+  if (/Balco 260/.test(name)) return BUY.balco260;
   return undefined;
 }
