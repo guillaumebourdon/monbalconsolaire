@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE_URL, lastModified: '2026-11-18', changeFrequency: 'weekly', priority: 1.0 },
     { url: `${BASE_URL}/calculateur`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comment-ca-marche`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/quel-kit-choisir`, lastModified: '2026-11-17', changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/quel-kit-choisir`, lastModified: '2026-11-20', changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/tout-savoir`, lastModified: '2026-11-18', changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/accessoires`, lastModified: '2026-09-29', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/guide-gratuit`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },

@@ -159,7 +159,7 @@ export default function KitSolairePasCherPage() {
                 Le <span className="data-highlight">{GO.name}</span> ({priceLabel('sunology-go')}) est le seul des trois kits en stock avec un prix sous 400&nbsp;&euro;. Con&ccedil;u pour les tr&egrave;s petits balcons, il se pose au sol avec ballasts ou sur un garde-corps sans percer (cadre de 30&nbsp;mm, fixation jusqu&apos;&agrave; 60&nbsp;mm de diam&egrave;tre). Sa puissance reste modeste (270&nbsp;Wc), et son prix au watt (1,29&nbsp;&euro;/Wc) est plus &eacute;lev&eacute; que celui du Beem Kit &mdash; vous payez la compacit&eacute; et la disponibilit&eacute; immediate, pas le meilleur rapport puissance/prix brut.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                D&eacute;tail &agrave; conna&icirc;tre&nbsp;: la fiche produit du GO redirigeait vers l&apos;accueil de sunology.eu au 5&nbsp;novembre 2026. Notre <Link href="/avis/sunology-go" className="text-green hover:underline">avis complet du Sunology GO</Link> d&eacute;taille la fiche technique, les deux modes de pose et le comparatif avec le PLAY.
+                Bon &agrave; savoir&nbsp;: la fiche produit du GO, qui renvoyait vers l&apos;accueil de sunology.eu d&eacute;but novembre, est de nouveau en ligne (v&eacute;rifi&eacute; le 20&nbsp;novembre 2026). Notre <Link href="/avis/sunology-go" className="text-green hover:underline">avis complet du Sunology GO</Link> d&eacute;taille la fiche technique, les deux modes de pose et le comparatif avec le PLAY.
               </p>
             </section>
 
