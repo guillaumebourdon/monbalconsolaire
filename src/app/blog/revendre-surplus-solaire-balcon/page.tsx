@@ -28,7 +28,7 @@ const eco3k = Math.round(auto3k * KWH_PRICE_EUR);
 const ansSurcout = Math.floor(5000 / vente3k / 10) * 10;
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Revendre surplus solaire à EDF depuis un balcon : possible ? (2026)',
+  title: 'Revendre le surplus solaire d\'un balcon : possible en 2026 ?',
   description: 'Peut-on revendre le surplus d\'un kit solaire de balcon à EDF ? Non. CACSI ou cession gratuite à Enedis : ce qui s\'applique, calculs et alternatives.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/revendre-surplus-solaire-balcon',

@@ -12,7 +12,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 const KIT = { priceEur: 799, powerWc: 800 };
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Anker SOLIX RS40P avis 2026 : kit 910 Wc, plus vendu en France',
+  title: 'Anker SOLIX RS40P avis : kit 910 Wc, plus vendu en France',
   description: 'Anker SOLIX RS40P : 2 × 455 W IBC N-type, onduleur 800 W. Plus vendu sur la boutique Anker France (novembre 2026). Specs, ROI et alternatives.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/anker-solix-rs40p',

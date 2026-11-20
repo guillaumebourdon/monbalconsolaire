@@ -8,7 +8,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 import { MANOMANO } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: '8 accessoires indispensables pour votre kit solaire de balcon (2026)',
+  title: '8 accessoires indispensables pour un kit solaire de balcon',
   description: 'Wattmetre, rallonge etanche, prise connectee, support, protege-surtension : les accessoires Amazon pour optimiser votre installation solaire de balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/accessoires-kit-solaire-balcon',

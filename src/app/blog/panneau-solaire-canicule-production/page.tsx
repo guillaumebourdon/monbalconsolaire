@@ -29,7 +29,7 @@ const eco800 = Math.round(calculateFirstYearSavings(kit800Canicule));
 const roi800 = calculateROIYears(kit800Canicule);
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Panneau solaire et canicule : impact réel sur la production en été',
+  title: 'Panneau solaire et canicule : impact réel sur la production',
   description: 'Canicule et kit solaire de balcon : coefficient de température, pertes chiffrées, panneaux qui résistent le mieux et 5 astuces.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-canicule-production',

@@ -9,7 +9,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Solaire de balcon par département — Production et rentabilité 2026',
+  title: 'Solaire de balcon par département : production 2026',
   description: 'Production et rentabilité d\'un kit solaire de balcon dans votre département ou votre région : données PVGIS au point de chaque préfecture.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/solaire-balcon',

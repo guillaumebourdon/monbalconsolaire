@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Guides pratiques solaire de balcon 2026 — Installation et réglementation',
+  title: 'Guides solaire de balcon : installation et réglementation',
   description: 'Guides pas à pas pour un kit solaire de balcon : réglementation 2026, locataires, copropriété, déclaration Enedis, orientation.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide',

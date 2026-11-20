@@ -52,7 +52,7 @@ const KWH_FEB_2026 = 0.194;
 const kwhChangePct = Math.round(((KWH_PRICE_EUR - KWH_FEB_2026) / KWH_FEB_2026) * 1000) / 10;
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Prix de l\'électricité 2026 : ce que ça change pour le solaire',
+  title: 'Prix de l\'électricité 2026 : ce qu\'il change pour le solaire',
   description: 'Prix du kWh en 2026 (tarif réglementé au 1er août), ce qui a fait monter la facture et l\'effet sur la rentabilité d\'un kit solaire de balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/prix-electricite-2026-solaire',

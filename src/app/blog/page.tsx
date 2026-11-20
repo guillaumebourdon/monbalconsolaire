@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Blog solaire de balcon — Analyses, données et conseils pratiques',
-  description: 'Rentabilité réelle, production hivernale, prix de l\'électricité, autoconsommation : nos analyses chiffrées et indépendantes sur le solaire de balcon en France.',
+  title: 'Blog solaire de balcon : analyses, données et conseils',
+  description: 'Rentabilité réelle, production hivernale, prix de l\'électricité, autoconsommation : nos analyses chiffrées et indépendantes du solaire de balcon.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog',
   },

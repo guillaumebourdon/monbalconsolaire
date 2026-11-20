@@ -9,8 +9,8 @@ import { OuAcheter } from '@/components/ui/OuAcheter';
 import { BUY } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Panneau solaire en hiver : combien ça produit vraiment ? (2026)',
-  description: 'Un panneau solaire de balcon produit-il en hiver ? Données réelles de production hivernale par région, conseils pour optimiser, et impact sur la rentabilité.',
+  title: 'Panneau solaire en hiver : combien ça produit vraiment ?',
+  description: 'Un panneau solaire de balcon produit-il en hiver ? Production hivernale réelle par région, conseils pour optimiser et impact sur la rentabilité.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-hiver-production',
   },

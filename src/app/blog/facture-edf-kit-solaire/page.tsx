@@ -24,7 +24,7 @@ const exRoiSans = calculateROIYears({ ...EX, includeInflation: false });
 const exRoi = calculateROIYears(EX);
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Facture EDF avec un kit solaire balcon : lire et mesurer ses économies',
+  title: 'Facture EDF et kit solaire balcon : mesurer ses économies',
   description: 'Kit solaire et facture EDF : ce qui change, ce qui ne change pas, comment mesurer vos économies réelles avec Linky. Guide factuel.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/facture-edf-kit-solaire',

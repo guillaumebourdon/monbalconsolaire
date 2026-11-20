@@ -15,7 +15,7 @@ const TARIF_CTS = (Math.round(KWH_PRICE_EUR * 1000) / 10).toLocaleString('fr-FR'
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Linky et panneau solaire : injection, index, surplus (2026)',
-  description: 'Que voit vraiment le Linky avec un kit solaire ? Index injection vs soutirage, compteur qui tourne à l’envers (mythe), surplus cédé à Enedis : tout expliqué.',
+  description: 'Que voit vraiment le Linky avec un kit solaire ? Index injection vs soutirage, compteur qui tourne à l’envers (mythe), surplus cédé à Enedis : on explique.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/linky-panneau-solaire-injection',
   },

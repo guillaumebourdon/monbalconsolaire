@@ -13,7 +13,7 @@ import { productibleDepartement } from '@/lib/rentabilite-departements';
 import { PRODUCTS, priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Combien rapporte un panneau solaire de balcon ? Calcul réel (2026)',
+  title: 'Combien rapporte un panneau solaire de balcon ? Calcul 2026',
   description: 'Combien rapporte réellement un panneau solaire de balcon en 2026 ? Exemples chiffres par ville (Paris, Lyon, Marseille, Lille, Nantes). Calcul transparent.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/combien-rapporte-panneau-solaire-balcon',

@@ -45,7 +45,7 @@ const PLAY_EUR_WC = fr(Math.round((PLAY.priceEur / PLAY.powerWc) * 100) / 100);
 const BEEM_ROI = fr(calculateROIYears({ kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM.powerWc }));
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Panneau solaire de balcon pour débutants : guide complet 2026',
+  title: 'Panneau solaire de balcon pour débutants : guide 2026',
   description: 'Panneau solaire de balcon en 2026 : fonctionnement, réglementation, déclaration Enedis, prix, rentabilité et droits des locataires. Guide complet.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-debutant',

@@ -35,8 +35,8 @@ const EXTRA = MAX.priceEur - PLAY.priceEur;
 const EXTRA_PROMO = PROMO_EUR - PLAY.priceEur;
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Sunology PLAY MAX avis 2026 : kit + batterie, ça vaut le coup ?',
-  description: `Avis Sunology PLAY MAX (PLAYMax) : station 460 W + batterie VAULT 700 Wh à ${MAX_PRICE} (${PROMO_LABEL} en promo). Production, stockage, ROI ${fr(maxCalc.roi)} ans.`,
+  title: 'Sunology PLAY MAX avis : kit + batterie, ça vaut le coup ?',
+  description: `Avis Sunology PLAY MAX : station 460 W + batterie VAULT 700 Wh à ${MAX_PRICE} (${PROMO_LABEL} en promo). Production, stockage, ROI ${fr(maxCalc.roi)} ans.`,
   alternates: {
     canonical: 'https://monbalconsolaire.fr/avis/sunology-play-max',
   },

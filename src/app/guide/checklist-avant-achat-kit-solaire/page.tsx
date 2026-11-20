@@ -22,7 +22,7 @@ const roi = (code: string) =>
   calculateROIYears({ kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc, productibleKwhPerKwc: productibleSite(DEPARTMENTS.find((d) => d.code === code)!.irradiation) }).toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Checklist kit solaire balcon : 15 points avant d\'acheter (2026)',
+  title: 'Checklist kit solaire balcon : 15 points avant d\'acheter',
   description: 'Kit solaire balcon : 15 points à vérifier avant d\'acheter (orientation, Linky, prise, bail, copropriété, budget, CACSI, assurance).',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/checklist-avant-achat-kit-solaire',

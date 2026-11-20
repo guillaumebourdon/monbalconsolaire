@@ -14,7 +14,7 @@ const eur = (kwh: number) => (Math.round(kwh * KWH_PRICE_EUR * 100) / 100).toLoc
 const eur0 = (kwh: number) => Math.round(kwh * KWH_PRICE_EUR).toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Consommation veille kit solaire balcon : combien ça coûte vraiment ?',
+  title: 'Consommation en veille d\'un kit solaire : combien ça coûte ?',
   description: 'Micro-onduleur, Beembox, WiFi : combien consomme un kit solaire de balcon la nuit ? Tableau par kit, impact chiffré et faut-il débrancher ?',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/consommation-veille-kit-solaire',

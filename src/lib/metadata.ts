@@ -30,12 +30,21 @@ export function ogImageFor(url: string): string {
 
 /**
  * Titre affiché dans l'onglet. Les articles (avis, blog, guide, comparatif) n'ont
- * pas le suffixe « | MonBalconSolaire » (titres trop longs dans Google) ; l'accueil
- * et les pages hub le gardent via le gabarit du layout racine.
+ * pas le suffixe « | MonBalconSolaire » (titres trop longs dans Google) ; les pages
+ * hub le gardent via le gabarit du layout racine tant que le tout tient en 60 caractères.
  */
+const BRAND_SUFFIX = ' | MonBalconSolaire';
+/** Au-delà de 60 caractères, Google coupe le titre : le suffixe de marque saute alors. */
+const MAX_TITLE = 60;
+
+/** Le suffixe de marque est-il ajouté à ce titre (pages hub courtes seulement) ? */
+function keepsSuffix(title: string, isArticle: boolean): boolean {
+  return !isArticle && (title + BRAND_SUFFIX).length <= MAX_TITLE;
+}
+
 function fullTitle(title: Metadata['title'], isArticle: boolean): string | undefined {
   if (!title) return undefined;
-  if (typeof title === 'string') return isArticle ? title : `${title} | MonBalconSolaire`;
+  if (typeof title === 'string') return keepsSuffix(title, isArticle) ? title + BRAND_SUFFIX : title;
   if ('absolute' in title && title.absolute) return title.absolute;
   if ('default' in title && title.default) return title.default;
   return undefined;
@@ -72,8 +81,8 @@ export function withCanonicalOg(meta: Metadata): Metadata {
   const images = [{ url: image, width: 1200, height: 630, alt: title ?? SITE_OPEN_GRAPH.title }];
   return {
     ...meta,
-    // Articles : titre sans suffixe de marque (gabarit du layout ignoré).
-    ...(isArticle && typeof meta.title === 'string' ? { title: { absolute: meta.title } } : {}),
+    // Articles et titres longs : sans suffixe de marque (gabarit du layout ignoré).
+    ...(typeof meta.title === 'string' && !keepsSuffix(meta.title, isArticle) ? { title: { absolute: meta.title } } : {}),
     openGraph: { ...SITE_OPEN_GRAPH, images, ...fromPage, ...meta.openGraph, url } as Metadata['openGraph'],
     twitter: { card: 'summary_large_image', images: [image], ...fromPage, ...meta.twitter } as Metadata['twitter'],
   };

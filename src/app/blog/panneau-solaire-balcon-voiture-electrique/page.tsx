@@ -8,7 +8,7 @@ import { withCanonicalOg } from '@/lib/metadata';
 const PAGE_URL = 'https://monbalconsolaire.fr/blog/panneau-solaire-balcon-voiture-electrique';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Kit solaire balcon et voiture électrique : peut-on recharger ?',
+  title: 'Kit solaire et voiture électrique : peut-on la recharger ?',
   description:
     'Un kit solaire de 300 à 1 600 W peut-il recharger une voiture électrique ? Puissances, chiffres calculés et effet réel sur la facture.',
   alternates: { canonical: PAGE_URL },

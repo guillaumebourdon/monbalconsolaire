@@ -48,7 +48,7 @@ function roiAvecFiscal(eco1: number): number {
 const roiFiscal = [roiAvecFiscal(airbnb[1].eco), roiAvecFiscal(airbnb[0].eco)];
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Kit solaire balcon en location meublée et Airbnb : les règles',
+  title: 'Kit solaire balcon en location meublée et Airbnb : règles',
   description: 'Locataire, propriétaire-hôte Airbnb : règles réelles, autorisations, CACSI et rentabilité chiffrée d\'un kit plug-and-play selon votre situation.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/panneau-solaire-location-meublee-airbnb',

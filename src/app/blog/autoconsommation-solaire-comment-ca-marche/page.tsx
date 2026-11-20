@@ -19,7 +19,7 @@ const tot40 = Math.round(calculateTotalSavings25Years({ ...EX, autoconsoOverride
 const tot85 = Math.round(calculateTotalSavings25Years({ ...EX, autoconsoOverride: 0.85 }) / 10) * 10;
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Autoconsommation solaire : comment ca marche concretement ? (2026)',
+  title: 'Autoconsommation solaire : comment ça marche concrètement ?',
   description: 'L\'autoconsommation solaire expliquee simplement : comment votre panneau alimente vos appareils, le role du compteur Linky, et ce qui se passe la nuit.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche',

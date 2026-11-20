@@ -9,8 +9,8 @@ import { BUY } from '@/lib/affiliate';
 import { OuAcheter } from '@/components/ui/OuAcheter';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Kit solaire balcon en été : 5 erreurs qui tuent votre production',
-  description: 'Ventilation, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : 5 erreurs fréquentes qui coûtent jusqu\'à 35 % de production en juillet-août.',
+  title: 'Kit solaire en été : 5 erreurs qui tuent votre production',
+  description: 'Ventilation, ombre saisonnière, surchauffe onduleur, nettoyage, mauvais angle : 5 erreurs qui coûtent jusqu\'à 35 % de production en juillet-août.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/erreurs-production-solaire-ete',
   },

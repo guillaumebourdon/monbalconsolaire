@@ -34,8 +34,8 @@ const roiYearFloor = Math.floor(exRoi);
 const fr = (n: number) => n.toLocaleString('fr-FR');
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'M\u00e9thodologie de calcul ROI solaire balcon : sources et hypoth\u00e8ses',
-  description: 'Comment nous calculons le ROI d\'un kit solaire balcon : PVGIS, tarif réglementé, inflation 3,3 %/an, dégradation 0,5 %/an. Hypothèses publiques et auditables.',
+  title: 'Méthodologie de calcul du ROI solaire : sources, hypothèses',
+  description: 'Comment nous calculons le ROI d\'un kit solaire balcon : PVGIS, tarif réglementé, inflation 3,3 %/an, dégradation 0,5 %/an. Hypothèses publiques.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/methodologie',
   },

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { withCanonicalOg } from '@/lib/metadata';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: '\u00c0 propos de MonBalconSolaire \u2014 Guillaume Bourdon, \u00e9diteur ind\u00e9pendant',
+  title: 'À propos : Guillaume Bourdon, éditeur de MonBalconSolaire',
   description: '\u00c9dit\u00e9 par Guillaume Bourdon (Beeleven SASU). Guide ind\u00e9pendant des kits solaires balcon en France. Notre m\u00e9thode, nos sources, notre transparence.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/a-propos',

@@ -22,7 +22,7 @@ const ZENDURE_PRICE = priceLabel('zendure-solarflow-800-plus');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Comment optimiser son autoconsommation solaire au quotidien',
-  description: 'Guide pratique pour maximiser l\u2019autoconsommation de votre kit solaire de balcon : d\u00e9calage des usages, prise connect\u00e9e, talon, heures creuses. De 40 % \u00e0 85 %.',
+  description: 'Guide pour maximiser l\u2019autoconsommation de votre kit solaire de balcon : d\u00e9calage des usages, prise connect\u00e9e, talon, heures creuses. De 40 % \u00e0 85 %.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/optimiser-autoconsommation-solaire',
   },

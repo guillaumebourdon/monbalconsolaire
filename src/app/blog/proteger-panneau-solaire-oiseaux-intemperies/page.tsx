@@ -9,7 +9,7 @@ import { KWH_PRICE_LABEL } from '@/lib/pricing';
 import { priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Protéger son panneau solaire balcon des oiseaux et intempéries',
+  title: 'Protéger son panneau solaire des oiseaux et des intempéries',
   description: 'Fientes, grêle, vent : comment protéger un kit solaire de balcon. Solutions anti-oiseaux, résistance certifiée, assurance.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/proteger-panneau-solaire-oiseaux-intemperies',

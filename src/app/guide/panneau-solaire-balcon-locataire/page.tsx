@@ -9,8 +9,8 @@ import { withCanonicalOg } from '@/lib/metadata';
 import { PRODUCTS, priceLabel } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Panneau solaire balcon locataire : droits, règles et astuces (2026)',
-  description: 'Vous etes locataire et vous voulez un panneau solaire sur votre balcon ? Droits, réglementation copropriété, démarchés, et kits adaptés. Guide complet 2026.',
+  title: 'Panneau solaire balcon locataire : droits et règles (2026)',
+  description: 'Locataire et envie d\'un panneau solaire sur votre balcon ? Droits, règles de copropriété, démarches et kits adaptés : le guide complet 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/panneau-solaire-balcon-locataire',
   },

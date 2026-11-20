@@ -21,7 +21,7 @@ const BEEM = PRODUCTS['beem-on-500w'];
 const roiBeem = calculateROIYears({ kitPriceEur: BEEM.priceEur, kitPowerWc: BEEM.powerWc });
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Combien de panneaux solaires sur un balcon ? Règles et limites (2026)',
+  title: 'Combien de panneaux solaires sur un balcon ? Règles 2026',
   description: 'Combien de panneaux sur un balcon ? Pas de plafond légal en France : place, poids, circuit (repère 900 W), rentabilité et démarches fixent la vraie limite.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/combien-panneaux-solaires-balcon',

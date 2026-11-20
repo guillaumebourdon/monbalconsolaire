@@ -32,7 +32,7 @@ const roiPlayLilleEst = calculateROIYears({ ...EX, productibleKwhPerKwc: prodSit
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Kit solaire plug-and-play : arnaque ou bon investissement ?',
-  description: 'Les kits solaires plug-and-play sont-ils une arnaque ou un vrai investissement ? Analyse honnête des chiffres, des promesses, des pièges et du ROI réel en 2026.',
+  description: 'Les kits solaires plug-and-play sont-ils une arnaque ou un vrai investissement ? Analyse des chiffres, des promesses, des pièges et du ROI réel en 2026.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/kit-solaire-plug-and-play-arnaque',
   },

@@ -11,8 +11,8 @@ import { AUTOCONSO_STANDARD, KWH_PRICE_EUR, KWH_PRICE_LABEL, KWH_INFLATION_LABEL
 import { priceLabel, PRODUCTS } from '@/data/products';
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Production solaire balcon : été vs hiver, données réelles 5 villes',
-  description: 'Courbes mensuelles PVGIS pour Paris, Lyon, Marseille, Bordeaux et Lille. Le paradoxe chaleur estivale : pourquoi mai/juin est souvent plus efficace que juillet.',
+  title: 'Production solaire balcon été vs hiver : données de 5 villes',
+  description: 'Courbes mensuelles PVGIS pour Paris, Lyon, Marseille, Bordeaux et Lille. Le paradoxe de la chaleur : pourquoi mai-juin produit souvent mieux que juillet.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/blog/production-solaire-ete-vs-hiver',
   },
