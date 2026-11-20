@@ -67,7 +67,7 @@ const faqData = [
 export default function SunologyVaultAvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology VAULT avis 2026 : la batterie 700 Wh à 499 €" description="Avis indépendant de la batterie Sunology VAULT, vendue seule ou intégrée au PLAY MAX." url="https://monbalconsolaire.fr/avis/sunology-vault" datePublished="2026-11-10" dateModified="2026-11-10" />
+      <SchemaArticle title="Sunology VAULT avis 2026 : la batterie 700 Wh à 499 €" description="Avis indépendant de la batterie Sunology VAULT, vendue seule ou intégrée au PLAY MAX." url="https://monbalconsolaire.fr/avis/sunology-vault" datePublished="2026-11-10" dateModified="2026-11-20" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Sunology VAULT" brand="Sunology" description="Batterie nomade lithium-ion 700 Wh, IP65, amovible, conçue pour la station Sunology PLAY MAX." price={VAULT.priceEur} availability={SCHEMA_AVAILABILITY[VAULT.availability]} ratingValue={6} url="https://monbalconsolaire.fr/avis/sunology-vault" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology VAULT' }]} />

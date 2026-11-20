@@ -66,7 +66,7 @@ export default function ApplicationSuiviProductionSolairePage() {
         description="Comparatif des applications de suivi de production solaire des principales marques de kits plug-and-play, et de l'alternative générique Shelly."
         url="https://monbalconsolaire.fr/comparatif/application-suivi-production-solaire"
         datePublished="2026-10-30"
-        dateModified="2026-10-30"
+        dateModified="2026-11-05"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Applis de suivi solaire' }]} />

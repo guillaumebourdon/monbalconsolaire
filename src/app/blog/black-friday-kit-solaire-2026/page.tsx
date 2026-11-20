@@ -395,7 +395,7 @@ export default function BlackFridayKitSolairePage() {
         description="Prix Black Friday 2026 des kits solaires de balcon, batteries et stations compar&eacute;s &agrave; leur prix des trois derniers mois, avec sources, rentabilit&eacute; et pi&egrave;ges &agrave; &eacute;viter."
         url={BF_ARTICLE_URL}
         datePublished={PUBLISHED}
-        dateModified="2026-11-18"
+        dateModified={MODIFIED}
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Black Friday 2026' }]} />

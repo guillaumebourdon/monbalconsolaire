@@ -33,7 +33,7 @@ const faqData = [
 export default function BeemKit300WAvisPage() {
   return (
     <>
-      <SchemaArticle title="Kit Beem 300W avis 2026 : prix, disponibilité et avis négatifs" description="Avis complet sur le Beem Kit 300W à 199 € : specs, ROI, disponibilité, avis négatifs Beem Energy et alternatives." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" dateModified="2026-11-12" />
+      <SchemaArticle title="Kit Beem 300W avis 2026 : prix, disponibilité et avis négatifs" description="Avis complet sur le Beem Kit 300W à 199 € : specs, ROI, disponibilité, avis négatifs Beem Energy et alternatives." url="https://monbalconsolaire.fr/avis/beem-kit-300w" datePublished="2026-04-01" dateModified="2026-11-17" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/beem-kit-300-1.webp" name="Beem Kit 300W" brand="Beem Energy" description="Kit solaire plug-and-play modulaire de 4 panneaux de 75 Wc, conçu et assemblé à Nantes." price={199} ratingValue={7.5} availability="OutOfStock" url="https://monbalconsolaire.fr/avis/beem-kit-300w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Kit 300W' }]} />
@@ -44,7 +44,7 @@ export default function BeemKit300WAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Kit Beem 300W avis 2026 : le panneau solaire &agrave; 199&nbsp;&euro; vaut-il le coup&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le prix du Beem Kit 300W est pass&eacute; de 299&nbsp;&euro; &agrave; 199&nbsp;&euro;, ce qui en fait le kit de marque le moins cher au watt. Mais il est actuellement indisponible, et les avis n&eacute;gatifs sur Beem Energy (SAV, production) se multiplient. Specs, rentabilit&eacute;, points faibles signal&eacute;s par les clients et alternatives.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>1er avril 2026 &middot; Mis &agrave; jour le 17 novembre 2026</span><span>&middot;</span><span>11 min de lecture</span></div>
           </div>
 
           <ProductHero
