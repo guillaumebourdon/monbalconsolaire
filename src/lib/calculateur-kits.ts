@@ -28,7 +28,10 @@ const CALC_KITS: CalcKitConfig[] = [
   { productId: 'sunethic-f500', hasBattery: false, affiliateUrl: 'https://sunethic.fr/produits', minWidth: 'medium' },
   { productId: 'sunology-play-max', trackingName: 'Sunology PLAYMax', hasBattery: true, affiliateUrl: 'https://sunology.eu/products/playmax-station-solaire-batterie', minWidth: 'medium' },
   // Packs batterie + 2 panneaux (prix vérifiés sur le site du fabricant : Zendure 05/11/2026, Bluetti 20/11/2026)
+  // 800 Plus : épuisé chez Zendure au 23/11/2026, écarté automatiquement (buyable = false)
   { productId: 'zendure-solarflow-800-plus', name: 'Zendure SolarFlow 800 Plus + 2 × 500 W', power: 1000, price: 719, hasBattery: true, affiliateUrl: zendureUrl('https://zendure.fr/products/solarflow-800-plus'), minWidth: 'wide' },
+  // 800 Pro 2 + 2 × 500 W : 959 € (zendure.fr, vérifié le 23/11/2026)
+  { productId: 'zendure-solarflow-800-pro-2', name: 'Zendure SolarFlow 800 Pro 2 + 2 × 500 W', power: 1000, price: 959, hasBattery: true, affiliateUrl: zendureUrl('https://zendure.fr/products/zendure-solarflow-800-pro2'), minWidth: 'wide' },
   { productId: 'bluetti-balco-260', name: 'Bluetti Balco 260 + 2 × 450 W', power: 900, price: 1019, hasBattery: true, affiliateUrl: bluettiUrl('https://fr.bluettipower.eu/products/bluetti-balco-260'), minWidth: 'wide' },
   // DualSun PREASY retiré : vendu sur devis uniquement, aucun prix public vérifiable (05/11/2026)
 ];
