@@ -74,7 +74,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/bluetti-balco-260`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/jackery-solarvault-3-pro`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/zendure-solarflow-mix`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/avis/anker-solix-rs40p`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/hoymiles-hms-800w`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/sunology-go`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.7 },
 

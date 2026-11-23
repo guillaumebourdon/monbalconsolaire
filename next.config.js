@@ -17,6 +17,8 @@ const nextConfig = {
       { source: '/blog/panneau-solaire-ombre-optimiser-production', destination: '/guide/orientation-panneau-solaire-balcon#ombre', statusCode: 301 },
       // 23/11/2026 : article blog fusionné dans le guide autoconsommation (même intention de recherche)
       { source: '/blog/autoconsommation-solaire-comment-ca-marche', destination: '/guide/optimiser-autoconsommation-solaire', statusCode: 301 },
+      // 23/11/2026 : Anker SOLIX RS40P plus vendu en France (tous les packs RS40P « épuisés » sur ankersolix.com/fr) : vers le comparatif des kits disponibles
+      { source: '/avis/anker-solix-rs40p', destination: '/comparatif/meilleur-kit-solaire-2026', statusCode: 301 },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'monbalconsolaire.vercel.app' }],

@@ -40,7 +40,6 @@ export const SEARCH_INDEX: SearchResult[] = [
   { title: 'Bluetti Balco 260 : tout-en-un onduleur + batterie', description: 'Onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. 729 € sans panneaux (promo constatée le 20/11/2026).', url: '/avis/bluetti-balco-260', category: 'Avis', badge: '7/10' },
   { title: 'Jackery SolarVault 3 Pro : stockage 2,5 kWh LFP', description: 'Batterie LFP 2,52 kWh + 4 MPPT. 719 € seul, 839 € avec 2 × 450 W (promo constatée le 20/11/2026).', url: '/avis/jackery-solarvault-3-pro', category: 'Avis', badge: '8/10' },
   { title: 'Zendure SolarFlow Mix : le tout-en-un résidentiel', description: '3 modèles, stockage LFP extensible, 4 kW bidirectionnel. À partir de 1 999 €.', url: '/avis/zendure-solarflow-mix', category: 'Avis', badge: '8/10' },
-  { title: 'Anker SOLIX RS40P : kit balcon 910 Wc IBC N-type', description: '2 × 455 W IBC N-type, onduleur WiFi 800 W. Plus vendu sur la boutique Anker France au 05/11/2026.', url: '/avis/anker-solix-rs40p', category: 'Avis', badge: '7.5/10' },
   { title: 'Hoymiles HMS-800W-2T : micro-onduleur DIY de référence', description: '2 MPPT, WiFi intégré, rendement 96,7 %. Environ 170 € (Wattuneed, 05/11/2026).', url: '/avis/hoymiles-hms-800w', category: 'Avis', badge: '8.5/10' },
 
   // ─── Comparatifs ───

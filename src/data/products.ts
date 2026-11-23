@@ -209,9 +209,9 @@ const CATALOG = {
     availability: 'discontinued',
     verifiedOn: '2026-07-17',
     url: 'https://www.ankersolix.com/fr',
-    reviewSlug: '/avis/anker-solix-rs40p',
+    // Avis retiré le 23/11/2026 (301 vers /comparatif/meilleur-kit-solaire-2026)
     priceNote: 'dernier prix relevé le 17/07/2026',
-    availabilityNote: 'plus vendu sur la boutique Anker SOLIX France au 05/11/2026',
+    availabilityNote: 'plus vendu sur la boutique Anker SOLIX France (packs RS40P épuisés, constaté les 05/11 et 23/11/2026)',
   },
   'hoymiles-hms-800w-2t': {
     id: 'hoymiles-hms-800w-2t',
