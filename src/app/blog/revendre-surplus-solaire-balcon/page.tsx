@@ -70,7 +70,7 @@ export default function RevendreSuplusSolaireBalconPage() {
         description="Peut-on revendre le surplus d'un kit solaire de balcon à EDF ? Non. CACSI ou cession gratuite à Enedis : ce qui s'applique, calculs et alternatives."
         url="https://monbalconsolaire.fr/blog/revendre-surplus-solaire-balcon"
         datePublished="2026-07-31"
-        dateModified="2026-11-05"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Revendre surplus solaire balcon' }]} />
@@ -88,7 +88,7 @@ export default function RevendreSuplusSolaireBalconPage() {
               C&apos;est une question fr&eacute;quente avant de commander. La r&eacute;ponse est non. Voici pourquoi, quelle d&eacute;claration faire pour votre surplus, et pourquoi, m&ecirc;me si c&apos;&eacute;tait possible, la revente ne rapporterait presque rien.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>31 juillet 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>31 juillet 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -267,7 +267,7 @@ export default function RevendreSuplusSolaireBalconPage() {
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
                     Une batterie capture le surplus en journ&eacute;e et le restitue le soir. L&apos;autoconsommation passe de 85&nbsp;% &agrave; 95&nbsp;%. Chaque kWh stock&eacute; vaut {KWH_PRICE_SHORT} &mdash; soit <strong>{ratioTarifs} fois plus</strong> que si vous pouviez le vendre.
                   </p>
-                  <p className="text-xs text-stone">Exemples&nbsp;: <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline">Zendure SolarFlow Mix</Link>, <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">comparatif kits avec batterie</Link>. Plus abordables (1,92 kWh)&nbsp;: <AffLink item={BUY.solarflow800Plus} position="mid_article">SolarFlow 800 Plus chez Zendure</AffLink> ou <AffLink item={BUY.streamUltra} position="mid_article">STREAM Ultra chez EcoFlow</AffLink>.</p>
+                  <p className="text-xs text-stone">Exemples&nbsp;: <Link href="/avis/zendure-solarflow-mix" className="text-green hover:underline">Zendure SolarFlow Mix</Link>, <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">comparatif kits avec batterie</Link>. Plus abordables (1,92 kWh)&nbsp;: <AffLink item={BUY.solarflow800Pro2} position="mid_article">SolarFlow 800 Pro 2 chez Zendure</AffLink> ou <AffLink item={BUY.streamUltra} position="mid_article">STREAM Ultra chez EcoFlow</AffLink>.</p>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">

@@ -30,7 +30,7 @@ const faqData = [
 export default function JackerySolarVault3ProAvisPage() {
   return (
     <>
-      <SchemaArticle title="Jackery SolarVault 3 Pro avis 2026 : stockage 2,5 kWh LFP à 719 €" description="Avis détaillé sur le Jackery SolarVault 3 Pro en 2026." url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" datePublished="2026-06-23" dateModified="2026-11-20" />
+      <SchemaArticle title="Jackery SolarVault 3 Pro avis 2026 : stockage 2,5 kWh LFP à 719 €" description="Avis détaillé sur le Jackery SolarVault 3 Pro en 2026." url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" datePublished="2026-06-23" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/jackery-solarvault-3-pro-1.webp" name="Jackery SolarVault 3 Pro" brand="Jackery" description="Syst&egrave;me de stockage solaire plug-and-play : onduleur + batterie LFP 2,52 kWh + 4 MPPT. IP65, extensible &agrave; 15,12 kWh, gestion IA." price={PRODUCTS['jackery-solarvault-3-pro'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['jackery-solarvault-3-pro'].availability]} ratingValue={8} url="https://monbalconsolaire.fr/avis/jackery-solarvault-3-pro" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Jackery SolarVault 3 Pro' }]} />
@@ -41,7 +41,7 @@ export default function JackerySolarVault3ProAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Jackery SolarVault 3 Pro avis : le stockage domestique &agrave; prix cass&eacute; (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Jackery attaque le march&eacute; du stockage solaire de balcon avec le SolarVault 3 Pro : batterie LFP 2,52&nbsp;kWh, 4&nbsp;MPPT, gestion IA et syst&egrave;me anti-incendie. 719&nbsp;&euro; en promotion sans panneaux (prix relev&eacute; le 5 novembre 2026).</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>23 juin 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>23 juin 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -63,7 +63,7 @@ export default function JackerySolarVault3ProAvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Pr&eacute;sentation du Jackery SolarVault 3 Pro</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Jackery, r&eacute;f&eacute;rence mondiale des stations d&apos;&eacute;nergie portables, se lance sur le march&eacute; du stockage solaire domestique plug-and-play. Le SolarVault 3 Pro combine onduleur, batterie LFP 2,52&nbsp;kWh et 4 trackers MPPT dans un bo&icirc;tier compact IP65. Lanc&eacute; en France en mars 2026 au salon Open Energies de Lyon, il vise directement le <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Bluetti Balco 260</Link>.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">&Agrave; 719&nbsp;&euro; en promotion (prix barr&eacute; 1&nbsp;139&nbsp;&euro;), c&apos;est l&apos;un des stockages LFP les moins chers du march&eacute; fran&ccedil;ais (285&nbsp;&euro;/kWh, proche du Zendure SolarFlow 800 Plus &agrave; 281&nbsp;&euro;/kWh). Comme le Balco 260, les panneaux ne sont pas inclus. Jackery propose des packs&nbsp;: 839&nbsp;&euro; avec 2 panneaux de 450&nbsp;W, 959&nbsp;&euro; avec 2 panneaux de 500&nbsp;W (20 novembre 2026).</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">&Agrave; 719&nbsp;&euro; en promotion (prix barr&eacute; 1&nbsp;139&nbsp;&euro;), c&apos;est l&apos;un des stockages LFP les moins chers du march&eacute; fran&ccedil;ais (285&nbsp;&euro;/kWh, sous le Zendure SolarFlow 800 Pro 2 &agrave; 312&nbsp;&euro;/kWh le 23/11/2026&nbsp;; le 800 Plus, &agrave; 281&nbsp;&euro;/kWh, est &eacute;puis&eacute; chez Zendure). Comme le Balco 260, les panneaux ne sont pas inclus. Jackery propose des packs&nbsp;: 839&nbsp;&euro; avec 2 panneaux de 450&nbsp;W, 959&nbsp;&euro; avec 2 panneaux de 500&nbsp;W (20 novembre 2026).</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
                 {[
                   { v: '2,52 kWh', l: 'Batterie LFP' },
@@ -167,7 +167,8 @@ export default function JackerySolarVault3ProAvisPage() {
                     {[
                       ['Jackery SolarVault 3 Pro', '2,52 kWh', '719 \u20ac', 'Non inclus (pack 2 \u00d7 450 W : 839 \u20ac)', '8/10', true],
                       ['Bluetti Balco 260', '2,56 kWh', '729 \u20ac', 'Non inclus (pack 2 \u00d7 450 W : 1 019 \u20ac)', '7/10', false],
-                      ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539 \u20ac', 'Non inclus (pack 2 \u00d7 500 W : 719 \u20ac)', '8.5/10', false],
+                      ['Zendure SolarFlow 800 Plus (\u00e9puis\u00e9)', '1,92 kWh', '539 \u20ac', 'Non inclus (pack 2 \u00d7 500 W : 719 \u20ac)', '8.5/10', false],
+                      ['Zendure SolarFlow 800 Pro 2', '1,92 kWh', '599 \u20ac', 'Non inclus (pack 2 \u00d7 500 W : 959 \u20ac)', '\u2014', false],
                       ['EcoFlow STREAM Ultra', '1,92 kWh', '659 \u20ac', 'Non inclus', '7.5/10', false],
                       ['Sunology PLAY MAX', '0,7 kWh', priceLabel('sunology-play-max'), '460 W inclus', '7/10', false],
                     ].map(([name, battery, price, panels, score, highlight], i) => (
@@ -182,7 +183,7 @@ export default function JackerySolarVault3ProAvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s en juin 2026. Le SolarVault 3 Pro et le Balco 260 n&eacute;cessitent l&apos;achat de panneaux s&eacute;par&eacute;ment.</p>
+              <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s en juin 2026 (SolarFlow 800 Pro 2&nbsp;: 23/11/2026). Le SolarVault 3 Pro et le Balco 260 n&eacute;cessitent l&apos;achat de panneaux s&eacute;par&eacute;ment.</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">

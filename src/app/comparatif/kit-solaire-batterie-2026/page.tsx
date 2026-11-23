@@ -41,7 +41,7 @@ export const metadata: Metadata = withCanonicalOg({
 
 const faqData = [
   { question: 'Faut-il une batterie avec un kit solaire de balcon ?', answer: `Non, ce n'est pas indispensable. Sans batterie, vous consommez l'électricité en temps réel (talon de consommation : frigo, box, veilles). Une batterie permet de stocker pour le soir mais coûte quelques centaines à 1 400 € supplémentaires (${fr(EXTRA)} € entre le PLAY et le PLAY MAX), ce qui allonge le ROI si vous êtes présent en journée.` },
-  { question: 'Quelle est la batterie la moins chère pour un kit solaire ?', answer: `Au kWh stocké, ce sont les batteries de balcon vendues sans panneaux : le Zendure SolarFlow 800 Plus (1,92 kWh) est la moins chère de notre comparatif (voir le tableau). En kit tout compris, le Sunology PLAY MAX (station 460 W + VAULT 700 Wh) coûte ${MAX_PRICE} (${MAX_PROMO}), soit ${fr(EXTRA)} € de plus que le PLAY sans batterie ; la VAULT seule coûtait 499 € (prix relevé en juin 2026).` },
+  { question: 'Quelle est la batterie la moins chère pour un kit solaire ?', answer: `Au kWh stocké, ce sont les batteries de balcon vendues sans panneaux : le Zendure SolarFlow 800 Plus (1,92 kWh, 281 €/kWh au 5 novembre 2026) était la moins chère de notre comparatif, mais il est épuisé chez Zendure (constaté le 23/11/2026). Le Jackery SolarVault 3 Pro et le Bluetti Balco 260 suivent à 285 €/kWh, puis le SolarFlow 800 Pro 2 en stock à 312 €/kWh (599 €, voir le tableau). En kit tout compris, le Sunology PLAY MAX (station 460 W + VAULT 700 Wh) coûte ${MAX_PRICE} (${MAX_PROMO}), soit ${fr(EXTRA)} € de plus que le PLAY sans batterie ; la VAULT seule coûtait 499 € (prix relevé en juin 2026).` },
   { question: 'Combien d\'heures d\'autonomie offre une batterie solaire ?', answer: 'La VAULT de Sunology (700 Wh) offre environ 5 heures d\'autonomie pour le talon de consommation (frigo + box + veilles). La STOREY (2,2 kWh) peut couvrir une soirée complète.' },
   { question: 'Une batterie solaire est-elle rentable ?', answer: 'C\'est moins évident qu\'un kit seul. L\'investissement supplémentaire (quelques centaines à 1 400 €) ne se rentabilise que si vous augmentez significativement votre taux d\'autoconsommation. En pratique, le gain supplémentaire est de 30-60€/an, soit un ROI de 8 à 20+ ans sur la batterie seule.' },
 ];
@@ -49,7 +49,7 @@ const faqData = [
 export default function BatteriePage() {
   return (
     <>
-      <SchemaArticle title="Kit solaire avec batterie 2026 : comparatif stockage" description="Comparatif des solutions de stockage solaire plug-and-play en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026" datePublished="2026-03-31" dateModified="2026-11-20" />
+      <SchemaArticle title="Kit solaire avec batterie 2026 : comparatif stockage" description="Comparatif des solutions de stockage solaire plug-and-play en 2026." url="https://monbalconsolaire.fr/comparatif/kit-solaire-batterie-2026" datePublished="2026-03-31" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Kits avec batterie' }]} />
       <article className="section-padding">
@@ -59,7 +59,7 @@ export default function BatteriePage() {
             <div className="badge-green mb-4 inline-block">Comparatif 2026</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Kit solaire avec batterie 2026 : comparatif stockage plug-and-play</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Stocker l&apos;énergie solaire pour le soir, c&apos;est tentant. Mais est-ce vraiment rentable ? Comparatif des solutions de stockage Sunology, Beem et EcoFlow.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>31 mars 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>31 mars 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
             <span className="text-stone text-sm mt-0.5">&#x2139;</span>
@@ -124,13 +124,14 @@ export default function BatteriePage() {
                       ['Sunology VAULT', '700 Wh', '499€*****', '713€/kWh', '~5h', 'Nomade + plug-and-play', false],
                       ['Sunology STOREY', '2,2 kWh', '1 390€*****', '632€/kWh', '~15h', 'Fixe plug-and-play', false],
                       ['Beem Battery', '6,6 kWh', '5 390€**', '817€/kWh', '~47h', 'Fixe, pose par électricien', false],
-                      ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539\u20ac***', '281\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', true],
+                      ['Zendure SolarFlow 800 Plus (épuisé)', '1,92 kWh', '539\u20ac***', '281\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', false],
+                      ['Zendure SolarFlow 800 Pro 2', '1,92 kWh', '599\u20ac****', '312\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', false],
                       ['Jackery SolarVault 3 Pro', '2,52 kWh', '719\u20ac***', '285\u20ac/kWh', '~17h', 'Onduleur + batterie (sans panneaux)', false],
                       ['EcoFlow STREAM Ultra', '1,92 kWh', '659\u20ac***', '343\u20ac/kWh', '~13h', 'Onduleur + batterie (sans panneaux)', false],
                       ['Bluetti Balco 260', '2,56 kWh', '729\u20ac***', '285\u20ac/kWh', '~17h', 'Tout-en-un (sans panneaux)', false],
                     ].map(([n, c, p, r, a, t, best], i) => {
                       const thumbMap: Record<string, { src: string; href: string }> = {
-                        'Zendure SolarFlow 800 Plus': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
+                        'Zendure SolarFlow 800 Plus (épuisé)': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
                         'Jackery SolarVault 3 Pro': { src: '/images/produits/jackery-solarvault-3-pro-1.webp', href: '/avis/jackery-solarvault-3-pro' },
                         'Bluetti Balco 260': { src: '/images/produits/bluetti-balco-260-front.webp', href: '/avis/bluetti-balco-260' },
                       };
@@ -139,7 +140,7 @@ export default function BatteriePage() {
                         'Beem Battery': '/avis/beem-battery',
                       };
                       const buyMap: Record<string, { url: string; merchant: string }> = {
-                        'Zendure SolarFlow 800 Plus': { url: zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url), merchant: 'Zendure' },
+                        'Zendure SolarFlow 800 Pro 2': { url: zendureUrl(PRODUCTS['zendure-solarflow-800-pro-2'].url), merchant: 'Zendure' },
                         'EcoFlow STREAM Ultra': { url: ecoflowUrl(PRODUCTS['ecoflow-stream-ultra'].url), merchant: 'EcoFlow' },
                         'Bluetti Balco 260': { url: BUY.balco260.url, merchant: 'Bluetti' },
                       };
@@ -159,7 +160,7 @@ export default function BatteriePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone">* Autonomie estim&eacute;e pour un talon de consommation de 140W. ** Beem Battery&nbsp;: batterie seule la moins ch&egrave;re (6,6&nbsp;kWh), pos&eacute;e par un &eacute;lectricien (couplage AC, pas plug-and-play) ; existe aussi en 10 et 13,4&nbsp;kWh. Voir notre <Link href="/avis/beem-battery" className="text-green hover:underline">avis d&eacute;taill&eacute;</Link>. *** Prix du bo&icirc;tier seul (panneaux non inclus) relev&eacute; sur le site du fabricant le 5 novembre 2026, souvent promotionnel (prix barr&eacute;s&nbsp;: Zendure 599&nbsp;&euro;, Jackery 1&nbsp;139&nbsp;&euro;, EcoFlow 1&nbsp;299&nbsp;&euro;, Bluetti 1&nbsp;049&nbsp;&euro;). ***** Prix Sunology relev&eacute;s en juin 2026, non rev&eacute;rifi&eacute;s.</p>
+              <p className="text-xs text-stone">* Autonomie estim&eacute;e pour un talon de consommation de 140W. ** Beem Battery&nbsp;: batterie seule la moins ch&egrave;re (6,6&nbsp;kWh), pos&eacute;e par un &eacute;lectricien (couplage AC, pas plug-and-play) ; existe aussi en 10 et 13,4&nbsp;kWh. Voir notre <Link href="/avis/beem-battery" className="text-green hover:underline">avis d&eacute;taill&eacute;</Link>. *** Prix du bo&icirc;tier seul (panneaux non inclus) relev&eacute; sur le site du fabricant le 5 novembre 2026, souvent promotionnel (prix barr&eacute;s&nbsp;: Zendure 599&nbsp;&euro;, Jackery 1&nbsp;139&nbsp;&euro;, EcoFlow 1&nbsp;299&nbsp;&euro;, Bluetti 1&nbsp;049&nbsp;&euro;). Le SolarFlow 800 Plus est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026). **** SolarFlow 800 Pro 2&nbsp;: prix du bo&icirc;tier seul relev&eacute; sur zendure.fr le 23/11/2026 (barr&eacute; 979&nbsp;&euro;&nbsp;; 959&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W). ***** Prix Sunology relev&eacute;s en juin 2026, non rev&eacute;rifi&eacute;s.</p>
             </section>
 
             <section>
@@ -206,7 +207,7 @@ export default function BatteriePage() {
                     <div className="flex items-start gap-4"><ProductThumb src="/images/produits/bluetti-balco-260-front.webp" alt="Bluetti Balco 260" href="/avis/bluetti-balco-260" size="lg" /><div><div className="badge-amber mb-2">Tout-en-un</div><h3 className="font-bold text-xl">Bluetti Balco 260</h3><p className="text-sm text-stone">Onduleur SiC + batterie LFP 2,56 kWh int&eacute;gr&eacute;s &middot; IP65</p></div></div>
                     <div className="text-right"><div className="font-mono text-2xl font-bold text-amber-dark">789 &euro;</div><div className="text-xs text-stone">(sans panneaux, prix promo au 05/11/2026)</div></div>
                   </div>
-                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le Balco 260 de Bluetti int&egrave;gre onduleur, batterie et 4 MPPT dans un seul bo&icirc;tier IP65. La batterie de 2,56&nbsp;kWh est extensible jusqu&apos;&agrave; 15&nbsp;kWh. &Agrave; 729&nbsp;&euro; seul (prix promotionnel constat&eacute; le 20 novembre 2026, barr&eacute; 1&nbsp;049&nbsp;&euro;), soit 285&nbsp;&euro;/kWh, il est au niveau des moins chers au kWh (Zendure SolarFlow 800 Plus&nbsp;: 281&nbsp;&euro;/kWh), mais les panneaux ne sont pas inclus&nbsp;: 1&nbsp;019&nbsp;&euro; en pack avec 2 panneaux de 450&nbsp;W. <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
+                  <p className="text-sm text-charcoal-light mt-4 leading-relaxed">Le Balco 260 de Bluetti int&egrave;gre onduleur, batterie et 4 MPPT dans un seul bo&icirc;tier IP65. La batterie de 2,56&nbsp;kWh est extensible jusqu&apos;&agrave; 15&nbsp;kWh. &Agrave; 729&nbsp;&euro; seul (prix promotionnel constat&eacute; le 20 novembre 2026, barr&eacute; 1&nbsp;049&nbsp;&euro;), soit 285&nbsp;&euro;/kWh, il est au niveau des moins chers au kWh (Zendure SolarFlow 800 Plus&nbsp;: 281&nbsp;&euro;/kWh au 5 novembre, &eacute;puis&eacute; depuis&nbsp;; SolarFlow 800 Pro 2&nbsp;: 312&nbsp;&euro;/kWh), mais les panneaux ne sont pas inclus&nbsp;: 1&nbsp;019&nbsp;&euro; en pack avec 2 panneaux de 450&nbsp;W. <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Lire notre avis complet &rarr;</Link></p>
                   <h4 className="font-bold text-sm mt-4 mb-2">Points forts</h4>
                   <ul className="space-y-1 text-sm text-charcoal-light">
                     <li className="flex gap-2"><span className="text-green font-bold">+</span> Bon prix/kWh (308&nbsp;&euro;/kWh au 5 novembre 2026)</li>
@@ -294,7 +295,7 @@ export default function BatteriePage() {
               </div>
             </section>
 
-            <OuAcheter rows={[{ item: BUY.solarflow800Plus, note: "le meilleur prix au kWh stocké de ce comparatif (sans panneaux)" }]} />
+            <OuAcheter rows={[{ item: BUY.solarflow800Pro2, note: "599 € sans panneaux (1,92 kWh), en stock le 23/11/2026 ; remplace le SolarFlow 800 Plus épuisé" }]} />
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">

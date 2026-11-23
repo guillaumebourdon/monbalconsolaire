@@ -75,7 +75,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Existe-t-il un code promo Zendure ?',
     answer:
-      'Oui : du 2 novembre 2026 au 4 janvier 2027, le code AF5E24 donne 8 % de remise en plus des prix déjà baissés sur zendure.fr. Il fonctionne sur les SolarFlow MIX, SolarFlow 2400 AC, SolarFlow 1600 AC+, les batteries AB2000 et AB3000 et les accessoires, mais pas sur les SolarFlow 2400 AC+, 2400 Pro et MIX 4000 Pro. Testé au panier le 18 novembre 2026, il s’applique aussi aux SolarFlow 800 Plus (539 € → 495,88 €) et 800 Pro 2 (599 € → 551,08 €).',
+      'Oui : du 2 novembre 2026 au 4 janvier 2027, le code AF5E24 donne 8 % de remise en plus des prix déjà baissés sur zendure.fr. Il fonctionne sur les SolarFlow MIX, SolarFlow 2400 AC, SolarFlow 1600 AC+, les batteries AB2000 et AB3000 et les accessoires, mais pas sur les SolarFlow 2400 AC+, 2400 Pro et MIX 4000 Pro. Testé au panier le 18 novembre 2026, il s’applique aussi aux SolarFlow 800 Plus (539 € → 495,88 €, épuisé chez Zendure au 23/11/2026) et 800 Pro 2 (599 € → 551,08 €).',
   },
   {
     question: 'Existe-t-il un code promo Sunethic ?',

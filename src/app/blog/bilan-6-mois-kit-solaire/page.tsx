@@ -121,7 +121,7 @@ export default function Bilan6MoisPage() {
         description="Production mois par mois d'un kit solaire balcon 450 Wc (simulation PVGIS, Lyon sud), économies et retours d'utilisateurs publiés."
         url="https://monbalconsolaire.fr/blog/bilan-6-mois-kit-solaire"
         datePublished="2026-05-27"
-        dateModified="2026-11-05"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Bilan sur 6 mois' }]} />
@@ -140,7 +140,7 @@ export default function Bilan6MoisPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>Publi&eacute; le 27 mai 2026</span>
               <span>&middot;</span>
-              <span>Mis &agrave; jour le 5 novembre 2026</span>
+              <span>Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -322,7 +322,7 @@ export default function Bilan6MoisPage() {
                 </div>
                 <div className="card border-l-4 border-l-green">
                   <h3 className="font-bold text-sm mb-1">{'✓'} &Eacute;valuer la batterie seulement si le surplus est important</h3>
-                  <p className="text-xs text-charcoal-light">Une batterie fait passer l&apos;autoconsommation vers 95 %, mais son co&ucirc;t allonge le retour sur investissement. <Link href="/avis/zendure-solarflow" className={extLink}>Voir l&apos;avis Zendure SolarFlow</Link> &middot; <AffLink item={BUY.solarflow800Plus} position="mid_article">prix du SolarFlow 800 Plus chez Zendure</AffLink>.</p>
+                  <p className="text-xs text-charcoal-light">Une batterie fait passer l&apos;autoconsommation vers 95 %, mais son co&ucirc;t allonge le retour sur investissement. <Link href="/avis/zendure-solarflow" className={extLink}>Voir l&apos;avis Zendure SolarFlow</Link> &middot; <AffLink item={BUY.solarflow800Pro2} position="mid_article">prix du SolarFlow 800 Pro 2 chez Zendure</AffLink>.</p>
                 </div>
               </div>
             </section>

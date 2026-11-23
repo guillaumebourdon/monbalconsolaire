@@ -64,7 +64,7 @@ export default function CommentCaMarchePage() {
             <div>
               <h3 className="font-bold text-sm text-amber-dark mb-1">La nuit</h3>
               <p className="text-sm text-charcoal-light">Le panneau ne produit pas. Votre logement bascule automatiquement sur le r&eacute;seau EDF. Aucune coupure, c&apos;est transparent.</p>
-              <p className="text-sm text-charcoal-light mt-2">Pour consommer le soir ce qui a &eacute;t&eacute; produit le jour, il faut une batterie de balcon, comme le <AffLink item={BUY.solarflow800Plus} position="comment-ca-marche">{PRODUCTS['zendure-solarflow-800-plus'].name}</AffLink> ({fr(PRODUCTS['zendure-solarflow-800-plus'].batteryKwh ?? 0)}&nbsp;kWh, {priceLabel('zendure-solarflow-800-plus')} sans panneaux). Elle ne se justifie que si vous &ecirc;tes absent en journ&eacute;e&nbsp;: voir notre <Link href="/guide/batterie-solaire-balcon-guide" className="text-green hover:underline">guide batterie</Link>.</p>
+              <p className="text-sm text-charcoal-light mt-2">Pour consommer le soir ce qui a &eacute;t&eacute; produit le jour, il faut une batterie de balcon, comme le <AffLink item={BUY.solarflow800Pro2} position="comment-ca-marche">{PRODUCTS['zendure-solarflow-800-pro-2'].name}</AffLink> ({fr(PRODUCTS['zendure-solarflow-800-pro-2'].batteryKwh ?? 0)}&nbsp;kWh, {priceLabel('zendure-solarflow-800-pro-2')} sans panneaux). Elle ne se justifie que si vous &ecirc;tes absent en journ&eacute;e&nbsp;: voir notre <Link href="/guide/batterie-solaire-balcon-guide" className="text-green hover:underline">guide batterie</Link>.</p>
             </div>
             <div>
               <h3 className="font-bold text-sm text-amber-dark mb-1">Temps couvert / pluie</h3>

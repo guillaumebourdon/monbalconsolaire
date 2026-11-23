@@ -31,7 +31,7 @@ export const metadata: Metadata = withCanonicalOg({
 });
 
 const PUBLISHED = '2026-11-18';
-const MODIFIED = '2026-11-20';
+const MODIFIED = '2026-11-23';
 
 // ─── Sources des prix de référence (3 derniers mois) ───────────────────────────
 // Prix du jour : fiches officielles relevées le 18/11/2026 (Shopify /products/<handle>.js),
@@ -115,7 +115,9 @@ const DEALS: Deal[] = [
   {
     id: 'plus-pack', cat: 'kit', product: 'Zendure SolarFlow 800 Plus + 2 × 500 W', spec: 'batterie 1,92 kWh + 2 panneaux bifaciaux',
     ref: 719, refLabel: 'depuis le 2 septembre au moins', refSource: SRC.wbPlus,
-    bf: 661.48, bfNote: `avec ${ZENDURE_CODE} (719 € sans code)`, shown: 719, shownStrike: 999, endsAt: ZENDURE_CODE_END, endsLabel: '4 janvier 2027 (code)', link: BUY.solarflow800Plus,
+    bf: 661.48, bfNote: `avec ${ZENDURE_CODE} (719 € sans code)`, shown: 719, shownStrike: 999, endsAt: ZENDURE_CODE_END, endsLabel: '4 janvier 2027 (code)',
+    // Épuisé chez Zendure (constaté le 20/11 et le 23/11/2026) : le lien mène au remplaçant en stock, le 800 Pro 2.
+    link: BUY.solarflow800Pro2,
     soldOut: '20 novembre',
   },
   {
@@ -144,7 +146,9 @@ const DEALS: Deal[] = [
   {
     id: 'plus', cat: 'stockage', product: 'Zendure SolarFlow 800 Plus', spec: '1,92 kWh, sans panneaux',
     ref: P['zendure-solarflow-800-plus'].priceEur, refLabel: 'le 2 septembre et le 5 novembre', refSource: SRC.wbPlus,
-    bf: 495.88, bfNote: `avec ${ZENDURE_CODE} (${P['zendure-solarflow-800-plus'].priceEur} € sans code)`, shown: P['zendure-solarflow-800-plus'].priceEur, shownStrike: 599, endsAt: ZENDURE_CODE_END, endsLabel: '4 janvier 2027 (code)', link: BUY.solarflow800Plus,
+    bf: 495.88, bfNote: `avec ${ZENDURE_CODE} (${P['zendure-solarflow-800-plus'].priceEur} € sans code)`, shown: P['zendure-solarflow-800-plus'].priceEur, shownStrike: 599, endsAt: ZENDURE_CODE_END, endsLabel: '4 janvier 2027 (code)',
+    // Épuisé chez Zendure (constaté le 20/11 et le 23/11/2026) : le lien mène au remplaçant en stock, le 800 Pro 2.
+    link: BUY.solarflow800Pro2,
     soldOut: '20 novembre',
   },
   {
@@ -277,7 +281,8 @@ const faqData = [
 ];
 
 // ItemList : les offres en vraie baisse (prix du jour < prix de référence)
-const TOP = DEALS.filter((d) => realDrop(d) < 0 && !('plain' in d.link)).concat(DEALS.filter((d) => realDrop(d) < 0 && 'plain' in d.link));
+// Les produits épuisés (soldOut) sont exclus de la liste.
+const TOP = DEALS.filter((d) => !d.soldOut && realDrop(d) < 0 && !('plain' in d.link)).concat(DEALS.filter((d) => !d.soldOut && realDrop(d) < 0 && 'plain' in d.link));
 const SECTION: Record<Category, string> = { kit: 'kits', stockage: 'batteries', station: 'stations', accessoire: 'accessoires' };
 function SchemaDeals() {
   const schema = {
@@ -300,6 +305,13 @@ function SchemaDeals() {
 }
 
 function Where({ d, position }: { d: Deal; position: string }) {
+  if (d.soldOut && !('plain' in d.link)) {
+    return (
+      <span className="text-stone">
+        &Eacute;puis&eacute; &middot; <AffLink item={d.link} position={position}>800 Pro 2 en stock &rarr;</AffLink>
+      </span>
+    );
+  }
   if ('plain' in d.link) {
     return (
       <a href={d.link.url} target="_blank" rel="noopener" className="text-green font-semibold hover:underline">
@@ -414,7 +426,7 @@ export default function BlackFridayKitSolairePage() {
             </p>
             <div className="mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-brand border-2 border-green/20 bg-green-pale/40 px-4 py-2 text-sm">
               <span className="font-bold text-green">Prix v&eacute;rifi&eacute;s le 18 novembre 2026</span>
-              <span className="text-stone">Publi&eacute; le 18 novembre 2026 &middot; Mis &agrave; jour le 20 novembre 2026 &middot; prochaine mise &agrave; jour le 26 novembre</span>
+              <span className="text-stone">Publi&eacute; le 18 novembre 2026 &middot; Mis &agrave; jour le 23 novembre 2026 &middot; prochaine mise &agrave; jour le 26 novembre</span>
             </div>
           </div>
 
@@ -425,7 +437,7 @@ export default function BlackFridayKitSolairePage() {
               <li><strong className="text-green">✓ Batterie :</strong> le <AffLink item={BUY.solarflow800Pro2} position="bf-reponse">Zendure SolarFlow 800 Pro 2</AffLink> tombe &agrave; <strong>{eur(D.pro2.bf)}</strong> avec le code {ZENDURE_CODE} ({eur(D.pro2.ref)} le 2 septembre, <strong>{fmtPct(realDrop(D.pro2))}</strong>), ou {eur(D['pro2-pack'].bf)} avec 2 panneaux de 500 W ({fmtPct(realDrop(D['pro2-pack']))}).</li>
               <li><strong className="text-green">✓ Kit sans batterie :</strong> le Sunology PLAY &agrave; <strong>{eur(D.play.bf)}</strong> avec le code {SUNOLOGY_CODE} jusqu&apos;au 4 d&eacute;cembre ({eur(D.play.ref)} hors promotion, environ {eur(D.play.low!.price)} en octobre).</li>
               <li><strong className="text-green">✓ Station :</strong> l&apos;<AffLink item={BUY.s2000Pro} position="bf-reponse">ALLPOWERS S2000 Pro</AffLink> &agrave; <strong>{eur(D.s2000.bf)}</strong> ({eur(D.s2000.ref)} le 9 octobre, {fmtPct(realDrop(D.s2000))}).</li>
-              <li><strong className="text-amber-dark">⚠ &Eacute;puis&eacute; :</strong> le pack <AffLink item={BUY.solarflow800Plus} position="bf-reponse">SolarFlow 800 Plus + 2 × 500 W</AffLink>, le plus rentable de notre s&eacute;lection ({eur(D['plus-pack'].bf)} avec le code {ZENDURE_CODE}, retour sur investissement de {fy(rPlus.roiAfter)} ans), est &eacute;puis&eacute; sur zendure.fr depuis le 20 novembre. Le pack 800 Pro 2 ci-dessus prend le relais.</li>
+              <li><strong className="text-amber-dark">⚠ &Eacute;puis&eacute; :</strong> le pack SolarFlow 800 Plus + 2 × 500 W, le plus rentable de notre s&eacute;lection ({eur(D['plus-pack'].bf)} avec le code {ZENDURE_CODE}, retour sur investissement de {fy(rPlus.roiAfter)} ans), est &eacute;puis&eacute; sur zendure.fr depuis le 20 novembre (toujours &eacute;puis&eacute; le 23 novembre). Le pack 800 Pro 2 ci-dessus prend le relais.</li>
               <li><strong className="text-green">✓ Bluetti :</strong> le Balco 260 est pass&eacute; de 789 &euro; le 5 novembre &agrave; <strong>{eur(D.balco.bf)}</strong> le 20 novembre ({fmtPct(realDrop(D.balco))}), sans code.</li>
               <li><strong className="text-amber-dark">✗ Pas de baisse :</strong> SolarFlow 2400 AC+ (code refus&eacute;), EcoFlow STREAM Ultra et ALLPOWERS BS2500 PRO sont au m&ecirc;me prix qu&apos;avant l&apos;op&eacute;ration, malgr&eacute; des prix barr&eacute;s de -34 &agrave; -50 %.</li>
             </ul>
@@ -463,7 +475,7 @@ export default function BlackFridayKitSolairePage() {
                 <strong>Sunology</strong> affiche la baisse la plus simple &agrave; lire sur les kits sans batterie : avec le code {SUNOLOGY_CODE}, le PLAY (515 Wc) passe de {eur(D.play.ref)} &agrave; {eur(D.play.bf)} et le GO (270 Wc) de {eur(D.go.ref)} &agrave; {eur(D.go.bf)}, du 4 novembre au 4 d&eacute;cembre (page officielle de l&apos;op&eacute;ration consult&eacute;e le 18/11). Le PLAY Max passe de 1 179 &euro; &agrave; 1 079 &euro; et la batterie STOREY de 1 390 &euro; &agrave; 1 190 &euro;. Nuance : en octobre, Sunology faisait d&eacute;j&agrave; -11 % sans code ; par rapport &agrave; ce prix-l&agrave;, le PLAY ne gagne qu&apos;environ {eur(D.play.low!.price - D.play.bf)}, et le PLAY Max est un peu plus cher qu&apos;en octobre. Notre analyse : <Link href="/avis/sunology-play-2" className="text-green hover:underline">avis Sunology PLAY</Link>.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                C&ocirc;t&eacute; <strong>Zendure</strong>, le pack <AffLink item={BUY.solarflow800Pro2} position="bf-kits">SolarFlow 800 Pro 2 + 2 panneaux de 500 W</AffLink> est &agrave; {eur(959)}, contre {eur(D['pro2-pack'].ref)} le 2 septembre, et {eur(D['pro2-pack'].bf)} avec le code {ZENDURE_CODE}. Le pack <AffLink item={BUY.solarflow800Plus} position="bf-kits">SolarFlow 800 Plus + 2 × 500 W</AffLink> est affich&eacute; &agrave; 719 &euro;, exactement son prix depuis septembre ; le code {ZENDURE_CODE} fonctionne aussi dessus (test&eacute; au panier) et le fait passer &agrave; {eur(D['plus-pack'].bf)}. C&apos;est le kit avec batterie le moins cher que nous suivons (voir la <a href="#rentabilite" className="text-green hover:underline">rentabilit&eacute;</a>).
+                C&ocirc;t&eacute; <strong>Zendure</strong>, le pack <AffLink item={BUY.solarflow800Pro2} position="bf-kits">SolarFlow 800 Pro 2 + 2 panneaux de 500 W</AffLink> est &agrave; {eur(959)}, contre {eur(D['pro2-pack'].ref)} le 2 septembre, et {eur(D['pro2-pack'].bf)} avec le code {ZENDURE_CODE}. Le pack SolarFlow 800 Plus + 2 × 500 W &eacute;tait affich&eacute; &agrave; 719 &euro;, exactement son prix depuis septembre, et {eur(D['plus-pack'].bf)} avec le code {ZENDURE_CODE} (test&eacute; au panier le 18 novembre) : c&apos;&eacute;tait le kit avec batterie le moins cher que nous suivions (voir la <a href="#rentabilite" className="text-green hover:underline">rentabilit&eacute;</a>). Il est &eacute;puis&eacute; chez Zendure (constat&eacute; le 20 et le 23 novembre 2026) ; le pack 800 Pro 2 ci-dessus est l&apos;alternative en stock.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 <strong>Sunethic</strong> annonce des &laquo; promotions Black Friday &raquo; du 9 au 30 novembre, mais la station F500 (500 Wc) reste &agrave; {eur(D.f500.bf)}, son prix du 5 novembre. <strong>Beem</strong> n&apos;affiche pas de remise sur le Beem On 500 Wc ({eur(D.beem.bf)}, en pr&eacute;commande) au 18 novembre ; le Beem Kit 300 W est toujours en rupture.
@@ -474,10 +486,10 @@ export default function BlackFridayKitSolairePage() {
             <section id="batteries">
               <h2 className="text-2xl font-extrabold mb-4">Batteries et stockage : le code Zendure fait la diff&eacute;rence</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Le code <strong>{ZENDURE_CODE}</strong> (-8 %) est le seul levier v&eacute;rifi&eacute; qui baisse vraiment le prix des batteries Zendure : nous l&apos;avons test&eacute; au panier le 18 novembre. Il s&apos;ajoute aux prix affich&eacute;s : SolarFlow 800 Pro 2 seul {eur(P['zendure-solarflow-800-pro-2'].priceEur)} → <strong>{eur(D.pro2.bf)}</strong>, SolarFlow 800 Plus seul {eur(P['zendure-solarflow-800-plus'].priceEur)} → <strong>{eur(D.plus.bf)}</strong>, <AffLink item={BUY.solarflow1600AcPlus} position="bf-batteries">SolarFlow 1600 AC+</AffLink> avec une batterie AB2000L {eur(959)} → <strong>{eur(D['1600'].bf)}</strong>, batterie AB3000L 659 &euro; → 606,28 &euro;. Il est refus&eacute; sur le SolarFlow 2400 AC+ (test&eacute;), et Zendure exclut aussi le 2400 Pro.
+                Le code <strong>{ZENDURE_CODE}</strong> (-8 %) est le seul levier v&eacute;rifi&eacute; qui baisse vraiment le prix des batteries Zendure : nous l&apos;avons test&eacute; au panier le 18 novembre. Il s&apos;ajoute aux prix affich&eacute;s : SolarFlow 800 Pro 2 seul {eur(P['zendure-solarflow-800-pro-2'].priceEur)} → <strong>{eur(D.pro2.bf)}</strong>, SolarFlow 800 Plus seul {eur(P['zendure-solarflow-800-plus'].priceEur)} → <strong>{eur(D.plus.bf)}</strong> (&eacute;puis&eacute; depuis le 20 novembre), <AffLink item={BUY.solarflow1600AcPlus} position="bf-batteries">SolarFlow 1600 AC+</AffLink> avec une batterie AB2000L {eur(959)} → <strong>{eur(D['1600'].bf)}</strong>, batterie AB3000L 659 &euro; → 606,28 &euro;. Il est refus&eacute; sur le SolarFlow 2400 AC+ (test&eacute;), et Zendure exclut aussi le 2400 Pro.
               </p>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Sans code, les prix ne bougent pas : le <AffLink item={BUY.solarflow800Plus} position="bf-batteries">SolarFlow 800 Plus</AffLink> &eacute;tait affich&eacute; &agrave; {eur(D.plus.ref)} le 2 septembre comme aujourd&apos;hui, le <AffLink item={BUY.solarflow2400AcPlus} position="bf-batteries">SolarFlow 2400 AC+</AffLink> &agrave; {eur(D['2400'].ref)} le 2 septembre, en octobre et aujourd&apos;hui. L&apos;<AffLink item={BUY.streamUltra} position="bf-batteries">EcoFlow STREAM Ultra</AffLink> est &agrave; {eur(D.stream.bf)}, son prix du 5 novembre, avant le d&eacute;but de l&apos;op&eacute;ration EcoFlow (10 au 30 novembre). L&apos;<AffLink item={BUY.bs2500Pro} position="bf-batteries">ALLPOWERS BS2500 PRO</AffLink> co&ucirc;te {eur(D.bs2500.bf)} : c&apos;est 150 &euro; de moins que le 8 octobre (1 149 &euro;), mais le m&ecirc;me prix que le 5 novembre.
+                Sans code, les prix ne bougent pas : le SolarFlow 800 Plus &eacute;tait affich&eacute; &agrave; {eur(D.plus.ref)} le 2 septembre comme le 18 novembre, avant sa rupture, le <AffLink item={BUY.solarflow2400AcPlus} position="bf-batteries">SolarFlow 2400 AC+</AffLink> &agrave; {eur(D['2400'].ref)} le 2 septembre, en octobre et aujourd&apos;hui. L&apos;<AffLink item={BUY.streamUltra} position="bf-batteries">EcoFlow STREAM Ultra</AffLink> est &agrave; {eur(D.stream.bf)}, son prix du 5 novembre, avant le d&eacute;but de l&apos;op&eacute;ration EcoFlow (10 au 30 novembre). L&apos;<AffLink item={BUY.bs2500Pro} position="bf-batteries">ALLPOWERS BS2500 PRO</AffLink> co&ucirc;te {eur(D.bs2500.bf)} : c&apos;est 150 &euro; de moins que le 8 octobre (1 149 &euro;), mais le m&ecirc;me prix que le 5 novembre.
               </p>
               <p className="text-charcoal-light leading-relaxed">
                 Pour choisir la capacit&eacute; avant de regarder le prix : <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="text-green hover:underline">comparatif des batteries de balcon 2026</Link> et <Link href="/guide/batterie-solaire-balcon-guide" className="text-green hover:underline">guide batterie solaire</Link>.

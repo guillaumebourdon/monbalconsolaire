@@ -18,7 +18,7 @@ const AC70 = valo(0.7);
 const AC85 = valo(0.85);
 const pct = (a: number, b: number) => Math.round((a / b - 1) * 100);
 const fr = (n: number) => n.toLocaleString('fr-FR');
-const ZENDURE_PRICE = priceLabel('zendure-solarflow-800-plus');
+const ZENDURE_PRICE = priceLabel('zendure-solarflow-800-pro-2');
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Comment optimiser son autoconsommation solaire au quotidien',
@@ -39,7 +39,7 @@ const faqData = [
   },
   {
     question: 'Faut-il une batterie pour bien autoconsommer ?',
-    answer: `Non, c\u2019est le dernier recours. D\u00e9caler le lave-linge et le lave-vaisselle en journ\u00e9e est gratuit et fait passer de 40 % \u00e0 70 %. La batterie (Zendure SolarFlow 800 Plus \u00e0 ${ZENDURE_PRICE} sans panneaux, Sunology PLAY MAX avec batterie 700 Wh \u00e0 ${priceLabel('sunology-play-max')}) fait passer de 70 % \u00e0 90 %+ mais co\u00fbte cher. Rentabilisez d\u2019abord les gestes gratuits.`,
+    answer: `Non, c\u2019est le dernier recours. D\u00e9caler le lave-linge et le lave-vaisselle en journ\u00e9e est gratuit et fait passer de 40 % \u00e0 70 %. La batterie (Zendure SolarFlow 800 Pro 2 \u00e0 ${ZENDURE_PRICE} sans panneaux, Sunology PLAY MAX avec batterie 700 Wh \u00e0 ${priceLabel('sunology-play-max')}) fait passer de 70 % \u00e0 90 %+ mais co\u00fbte cher. Rentabilisez d\u2019abord les gestes gratuits.`,
   },
   {
     question: 'Comment savoir ce que j\u2019autoconsomme ?',
@@ -113,9 +113,9 @@ const astuces = [
     titre: 'Ajouter une batterie (dernier recours)',
     gain: '+20-30 %',
     cout: `\u00e0 partir de ${ZENDURE_PRICE}`,
-    detail: `Si vous avez d\u00e9j\u00e0 optimis\u00e9 les gestes gratuits et que votre taux plafonne \u00e0 70 %, une batterie fait passer \u00e0 85-95 %. Le Zendure SolarFlow 800 Plus (${ZENDURE_PRICE} sans panneaux, 1,92 kWh, prix v\u00e9rifi\u00e9 le 5 novembre 2026) est le plus abordable de notre s\u00e9lection. Mais ne commencez pas par l\u00e0 \u2014 rentabilisez d\u2019abord les gestes gratuits.`,
-    lien: { href: '/avis/zendure-solarflow', label: 'Voir le Zendure SolarFlow' },
-    achat: { url: zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url), produit: 'Zendure SolarFlow 800 Plus', marchand: 'Zendure', label: 'Voir le prix chez Zendure' },
+    detail: `Si vous avez d\u00e9j\u00e0 optimis\u00e9 les gestes gratuits et que votre taux plafonne \u00e0 70 %, une batterie fait passer \u00e0 85-95 %. Le Zendure SolarFlow 800 Pro 2 (${ZENDURE_PRICE} sans panneaux, 1,92 kWh, prix v\u00e9rifi\u00e9 le 23 novembre 2026) est le plus abordable de notre s\u00e9lection : le SolarFlow 800 Plus, qui tenait ce r\u00f4le, est \u00e9puis\u00e9 chez Zendure (constat\u00e9 le 23/11/2026). Mais ne commencez pas par l\u00e0 \u2014 rentabilisez d\u2019abord les gestes gratuits.`,
+    lien: { href: '/avis/zendure-solarflow', label: 'Voir l\u2019avis du SolarFlow 800 Plus' },
+    achat: { url: zendureUrl(PRODUCTS['zendure-solarflow-800-pro-2'].url), produit: 'Zendure SolarFlow 800 Pro 2', marchand: 'Zendure', label: 'Voir le prix du 800 Pro 2 chez Zendure' },
   },
 ];
 
@@ -127,7 +127,7 @@ export default function OptimiserAutoconsommationPage() {
         description="Guide pratique pour maximiser l\u2019autoconsommation de votre kit solaire."
         url="https://monbalconsolaire.fr/guide/optimiser-autoconsommation-solaire"
         datePublished="2026-05-25"
-        dateModified="2026-11-05"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Optimiser autoconsommation' }]} />
@@ -146,7 +146,7 @@ export default function OptimiserAutoconsommationPage() {
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>25 mai 2026</span>
               <span>&middot;</span>
-              <span>Mis &agrave; jour le 5 novembre 2026</span>
+              <span>Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>

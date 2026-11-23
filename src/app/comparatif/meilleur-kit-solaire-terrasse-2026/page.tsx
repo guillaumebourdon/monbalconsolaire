@@ -10,9 +10,10 @@ import { AffLink } from '@/components/ui/AffLink';
 import { withCanonicalOg } from '@/lib/metadata';
 import { calculateProductionKwh, calculateFirstYearSavings, calculateROIYears, calculateTotalSavings25Years, AUTOCONSO_BATTERY, KWH_PRICE_LABEL, KWH_PRICE_SHORT, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
-// Exemple de calcul : pack Zendure SolarFlow 800 Plus + 2 × 500 W (prix vérifié le 05/11/2026).
+// Exemple de calcul : pack Zendure SolarFlow 800 Pro 2 + 2 × 500 W (959 €, prix vérifié le 23/11/2026).
+// Le pack 800 Plus (719 € le 05/11/2026) est épuisé chez Zendure (constaté le 23/11/2026).
 const fr = (n: number) => n.toLocaleString('fr-FR');
-const ZENDURE_PACK = { kitPriceEur: 719, kitPowerWc: 1000, hasBattery: true };
+const ZENDURE_PACK = { kitPriceEur: 959, kitPowerWc: 1000, hasBattery: true };
 const zendure = {
   price: ZENDURE_PACK.kitPriceEur,
   production: calculateProductionKwh(ZENDURE_PACK),
@@ -44,7 +45,7 @@ const faqData = [
   },
   {
     question: 'Quel est le meilleur kit solaire pour une terrasse en 2026 ?',
-    answer: 'Au 5 novembre 2026, le pack Zendure SolarFlow 800 Plus + 2 panneaux de 500 W (719 €, prix promotionnel sans date de fin annoncée) offre le meilleur rapport qualité-prix : 1 000 Wc, batterie 1,92 kWh intégrée, ROI d\'environ 3,6 ans à Lyon plein sud. Si vous voulez la simplicité absolue, 2 Sunology PLAY (ex-PLAY 2, 515 W chacun, 1 198 €) sont aussi un bon choix : installation en 2 minutes, zéro configuration, ROI d\'environ 6,2 ans.',
+    answer: 'Le pack Zendure SolarFlow 800 Plus + 2 panneaux de 500 W (719 € au 5 novembre 2026) est épuisé chez Zendure (constaté le 23/11/2026). En stock, le pack SolarFlow 800 Pro 2 + 2 panneaux de 500 W (959 € au 23 novembre 2026) offre 1 000 W et une batterie de 1,92 kWh intégrée, pour un ROI d\'environ 4,7 ans à Lyon plein sud. Si vous voulez la simplicité absolue, 2 Sunology PLAY (ex-PLAY 2, 515 W chacun, 1 198 €) sont aussi un bon choix : installation en 2 minutes, zéro configuration, ROI d\'environ 6,2 ans.',
   },
   {
     question: 'La pose au sol est-elle aussi efficace que la fixation murale ?',
@@ -70,12 +71,12 @@ const setups = [
   },
   {
     titre: 'Setup optimal : 2 panneaux (1 000 Wc environ)',
-    budget: '719-1 198 €',
+    budget: '858-1 198 €',
     surface: '~4 m²',
     production: '1 020-1 050 kWh/an (Lyon, sud)',
     ideal: 'Terrasse standard, meilleur rapport production/investissement',
     kits: [
-      { name: 'Zendure SolarFlow 800 Plus + 2\u00d7500 W', power: '1 000 Wc + batterie 1,92 kWh', price: '719 €', roi: '3,6 ans', avantage: 'Batterie intégrée (autoconsommation 95 %) ; prix promotionnel constaté le 05/11/2026, sans date de fin annoncée', slug: '/avis/zendure-solarflow' },
+      { name: 'Zendure SolarFlow 800 Pro 2 + 2\u00d7500 W', power: '1 000 Wc + batterie 1,92 kWh', price: '959 €', roi: '4,7 ans', avantage: 'Batterie intégrée (autoconsommation 95 %) ; prix constaté le 23/11/2026 ; remplace le pack 800 Plus, épuisé chez Zendure', slug: '/comparatif/meilleure-batterie-solaire-balcon-2026' },
       { name: '2\u00d7 Beem On 500 Wc', power: '1 000 Wc', price: '858 €', roi: '4,7 ans', avantage: 'Meilleur ratio \u20ac/Wc (0,86 \u20ac/Wc) ; en précommande', slug: '/avis/beem-on-500w' },
       { name: '2\u00d7 Sunology PLAY (ex-PLAY 2)', power: '1 030 W', price: '1 198 €', roi: '6,2 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
     ],
@@ -101,7 +102,7 @@ export default function MeilleurKitTerrasse2026Page() {
         description="Comparatif des meilleurs kits solaires plug-and-play pour terrasse en 2026."
         url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-terrasse-2026"
         datePublished="2026-05-13"
-        dateModified="2026-11-20"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Kit solaire terrasse 2026' }]} />
@@ -122,7 +123,7 @@ export default function MeilleurKitTerrasse2026Page() {
               <span>&middot;</span>
               <span>10 min de lecture</span>
               <span>&middot;</span>
-              <span className="inline-block bg-green/10 text-green text-xs font-semibold px-2 py-0.5 rounded">Mis &agrave; jour le 20 novembre 2026</span>
+              <span className="inline-block bg-green/10 text-green text-xs font-semibold px-2 py-0.5 rounded">Mis &agrave; jour le 23 novembre 2026</span>
             </div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
@@ -185,7 +186,7 @@ export default function MeilleurKitTerrasse2026Page() {
                       'Beem On 500 Wc': { src: '/images/produits/beem-on-500-1.webp', href: '/avis/beem-on-500w' },
                       'Sunology PLAY': { src: '/images/produits/sunology-play-2-1.webp', href: '/avis/sunology-play-2' },
                       'Sunethic F500': { src: '/images/produits/sunethic-f500-2.webp', href: '/avis/sunethic-f500' },
-                      'Zendure SolarFlow': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
+                      'Zendure SolarFlow 800 Plus': { src: '/images/produits/zendure-solarflow-front.webp', href: '/avis/zendure-solarflow' },
                       'Jackery SolarVault': { src: '/images/produits/jackery-solarvault-3-pro-1.webp', href: '/avis/jackery-solarvault-3-pro' },
                       'Bluetti Balco': { src: '/images/produits/bluetti-balco-260-front.webp', href: '/avis/bluetti-balco-260' },
                     };
@@ -237,7 +238,7 @@ export default function MeilleurKitTerrasse2026Page() {
               <h2 className="text-2xl font-extrabold mb-4">Le calcul de rentabilité (setup 2 panneaux + batterie, Lyon)</h2>
               <div className="card-lg bg-cream/40">
                 <ul className="text-sm text-charcoal-light space-y-2">
-                  <li>&bull; <strong>Setup</strong> : <AffLink item={BUY.solarflow800Plus} position="roi-example">Zendure SolarFlow 800 Plus + 2 panneaux 500 W</AffLink> = <strong>{zendure.price} €</strong> (prix promotionnel constat&eacute; le 5 novembre 2026)</li>
+                  <li>&bull; <strong>Setup</strong> : <AffLink item={BUY.solarflow800Pro2} position="roi-example">Zendure SolarFlow 800 Pro 2 + 2 panneaux 500 W</AffLink> = <strong>{zendure.price} €</strong> (prix constat&eacute; le 23 novembre 2026&nbsp;; le pack 800 Plus, 719 € le 5 novembre, est &eacute;puis&eacute; chez Zendure)</li>
                   <li>&bull; <strong>Production</strong> : 1 000 W × 1 200 kWh/kWc (Lyon, sud) × 0,85 = <strong>{fr(zendure.production)} kWh/an</strong></li>
                   <li>&bull; <strong>Autoconsommation (avec batterie)</strong> : 95 % = <strong>{fr(Math.round(zendure.production * AUTOCONSO_BATTERY))} kWh valorisés</strong></li>
                   <li>&bull; <strong>Économies</strong> : {fr(Math.round(zendure.production * AUTOCONSO_BATTERY))} × {KWH_PRICE_SHORT} = <strong>{zendure.savings} €/an</strong> (1re année)</li>
@@ -254,8 +255,8 @@ export default function MeilleurKitTerrasse2026Page() {
               <h2 className="text-2xl font-extrabold mb-4">Notre recommandation</h2>
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10">
                 <p className="text-charcoal-light leading-relaxed mb-4">
-                  Si vous avez une terrasse, <strong>ne vous limitez pas à un seul panneau</strong>. L&apos;espace est votre atout principal. Au 5 novembre 2026, le pack <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 panneaux 500 W</Link> (719 €, prix promotionnel sans date de fin annoncée) offre le meilleur compromis : 1 000 Wc, batterie intégrée pour le soir, ROI d&apos;environ {fr(zendure.roi)} ans. V&eacute;rifiez le prix avant d&apos;acheter : hors promotion, le pack est affich&eacute; 999 €.
-                  {' '}<AffiliateCTA productName="Zendure SolarFlow 800 Plus + 2 × 500 W" merchantName="Zendure" affiliateUrl={zendureUrl('https://zendure.fr/products/solarflow-800-plus')} label="Voir le prix du pack chez Zendure" variant="inline" position="verdict" />
+                  Si vous avez une terrasse, <strong>ne vous limitez pas à un seul panneau</strong>. L&apos;espace est votre atout principal. Le pack <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 panneaux 500 W</Link> (719 € au 5 novembre 2026), notre choix jusqu&apos;ici, est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026). En stock, le pack SolarFlow 800 Pro 2 + 2 panneaux de 500 W (959 € au 23 novembre 2026) offre le meilleur compromis avec batterie : 1 000 W, batterie de 1,92 kWh int&eacute;gr&eacute;e pour le soir, ROI d&apos;environ {fr(zendure.roi)} ans. V&eacute;rifiez le prix avant d&apos;acheter.
+                  {' '}<AffiliateCTA productName="Zendure SolarFlow 800 Pro 2 + 2 × 500 W" merchantName="Zendure" affiliateUrl={zendureUrl('https://zendure.fr/products/zendure-solarflow-800-pro2')} label="Voir le prix du pack chez Zendure" variant="inline" position="verdict" />
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
                   Si le budget est serr&eacute;, le <Link href="/avis/beem-on-500w" className="text-green hover:underline font-semibold">Beem On 500 Wc &agrave; 429 &euro;</Link> offre le meilleur rapport qualit&eacute;-prix (0,86 &euro;/Wc, ROI ~4,7 ans), mais il est en pr&eacute;commande (exp&eacute;dition &agrave; partir de d&eacute;cembre 2026). Si la simplicit&eacute; prime, <Link href="/avis/sunology-play-2" className="text-green hover:underline font-semibold">2 Sunology PLAY</Link> se posent et se branchent en 2 minutes.

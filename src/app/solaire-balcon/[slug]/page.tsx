@@ -39,7 +39,8 @@ const KITS = [
   kitFrom('sunology-play', 'Meilleur choix'),
   kitFrom('sunology-go', 'Petit budget'),
   kitFrom('beem-on-500w', 'Meilleur prix'),
-  kitFrom('zendure-solarflow-800-plus', 'Avec batterie', { name: 'Zendure SolarFlow 800 Plus + 2 × 500 W', powerWc: 1000, price: 719, autocons: AUTOCONSO_BATTERY }),
+  // 800 Plus épuisé chez Zendure (constaté le 23/11/2026) : remplacé par le 800 Pro 2 en pack 2 × 500 W (959 €, vérifié le 23/11/2026)
+  kitFrom('zendure-solarflow-800-pro-2', 'Avec batterie', { name: 'Zendure SolarFlow 800 Pro 2 + 2 × 500 W', powerWc: 1000, price: 959, autocons: AUTOCONSO_BATTERY }),
   kitFrom('sunethic-f500', 'Made in France'),
 ];
 
@@ -105,7 +106,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
   const results = [...allResults].sort((a, b) => a.roi - b.roi);
   const best = results[0];
   const bestBudget = allResults.find(r => r.id === 'sunology-go')!;
-  const bestBatterie = allResults.find(r => r.id === 'zendure-solarflow-800-plus')!;
+  const bestBatterie = allResults.find(r => r.id === 'zendure-solarflow-800-pro-2')!;
   const bestFrance = allResults.find(r => r.id === 'sunethic-f500')!;
 
   const irradiationLevel = dept.irradiation >= 1400 ? 'excellent' : dept.irradiation >= 1200 ? 'bon' : dept.irradiation >= 1050 ? 'correct' : 'modéré';
@@ -152,7 +153,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
         description={`Guide solaire de balcon pour ${art.le} (${dept.code}).`}
         url={`https://monbalconsolaire.fr/solaire-balcon/${params.slug}`}
         datePublished="2026-05-10"
-        dateModified="2026-11-12"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <article className="section-padding">
@@ -299,7 +300,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
               </div>
               <p className="text-xs text-stone mt-3">
                 Le pack {bestBatterie.name} est vendu sur le site de Zendure&nbsp;:{' '}
-                <AffiliateCTA productName={bestBatterie.name} merchantName="Zendure" affiliateUrl={zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url)} label="voir le prix chez Zendure" variant="inline" position="dept-recommandation" />
+                <AffiliateCTA productName={bestBatterie.name} merchantName="Zendure" affiliateUrl={zendureUrl(PRODUCTS['zendure-solarflow-800-pro-2'].url)} label="voir le prix chez Zendure" variant="inline" position="dept-recommandation" />
                 {' '}(lien commercial, prix susceptible de varier).
               </p>
             </section>

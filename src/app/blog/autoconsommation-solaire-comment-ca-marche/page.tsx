@@ -38,7 +38,7 @@ const faqData = [
 export default function AutoconsommationPage() {
   return (
     <>
-      <SchemaArticle title="Autoconsommation solaire : comment ca marche concretement ?" description="L'autoconsommation solaire expliquee simplement." url="https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche" datePublished="2026-04-03" dateModified="2026-11-05" />
+      <SchemaArticle title="Autoconsommation solaire : comment ca marche concretement ?" description="L'autoconsommation solaire expliquee simplement." url="https://monbalconsolaire.fr/blog/autoconsommation-solaire-comment-ca-marche" datePublished="2026-04-03" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Autoconsommation solaire' }]} />
       <article className="section-padding">
@@ -48,7 +48,7 @@ export default function AutoconsommationPage() {
             <div className="badge-green mb-4 inline-block">Comprendre</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Autoconsommation solaire : comment &ccedil;a marche concr&egrave;tement ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Vous branchez un panneau solaire sur une prise et votre facture baisse. Mais comment l&apos;&eacute;lectricit&eacute; sait-elle o&ugrave; aller ? Explication simple, sans jargon technique.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>3 avril 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>3 avril 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
@@ -163,8 +163,8 @@ export default function AutoconsommationPage() {
 
             <OuAcheter
               title="Stocker le surplus au lieu de le perdre"
-              intro="Les deux batteries de balcon de notre comparatif qui stockent la production de journ&eacute;e pour le soir (1,92 kWh chacune)."
-              rows={[{ item: BUY.solarflow800Plus }, { item: BUY.streamUltra }]}
+              intro="Deux batteries de balcon en stock qui stockent la production de journ&eacute;e pour le soir (1,92 kWh chacune). Le SolarFlow 800 Plus de notre comparatif est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026)&nbsp;: le 800 Pro 2 prend le relais."
+              rows={[{ item: BUY.solarflow800Pro2 }, { item: BUY.streamUltra }]}
               position="footer-box"
             />
 

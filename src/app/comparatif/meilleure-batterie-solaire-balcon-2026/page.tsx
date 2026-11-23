@@ -23,7 +23,7 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   {
     question: 'Quelle est la meilleure batterie pour kit solaire de balcon en 2026 ?',
-    answer: 'Au 5 novembre 2026 (prix promotionnels constatés sur les sites des fabricants), le Zendure SolarFlow 800 Plus (539 €, 1,92 kWh, 281 €/kWh) et le Jackery SolarVault 3 Pro (719 €, 2,52 kWh, 285 €/kWh, garantie 10 ans) ont le meilleur prix au kWh. Pour un système tout-en-un IP65 avec secours, le Bluetti Balco 260 (729 € au 20 novembre 2026, 2,56 kWh) est le choix le plus polyvalent.',
+    answer: 'Au 5 novembre 2026 (prix promotionnels constatés sur les sites des fabricants), le Zendure SolarFlow 800 Plus (539 €, 1,92 kWh, 281 €/kWh) et le Jackery SolarVault 3 Pro (719 €, 2,52 kWh, 285 €/kWh, garantie 10 ans) avaient le meilleur prix au kWh. Le 800 Plus est épuisé chez Zendure (constaté le 23/11/2026) ; son remplaçant en stock, le SolarFlow 800 Pro 2, coûte 599 € pour 1,92 kWh (312 €/kWh). Pour un système tout-en-un IP65 avec secours, le Bluetti Balco 260 (729 € au 20 novembre 2026, 2,56 kWh) est le choix le plus polyvalent.',
   },
   {
     question: 'Faut-il vraiment une batterie avec un kit solaire de balcon ?',
@@ -55,7 +55,7 @@ export default function MeilleureBatterieBalconPage() {
         description="Comparatif complet des batteries solaires dédiées aux kits balcon en 2026."
         url="https://monbalconsolaire.fr/comparatif/meilleure-batterie-solaire-balcon-2026"
         datePublished="2026-07-10"
-        dateModified="2026-11-20"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Comparatifs', href: '/comparatif' }, { label: 'Meilleure batterie balcon 2026' }]} />
@@ -74,7 +74,7 @@ export default function MeilleureBatterieBalconPage() {
               Tableau prix/kWh, autonomie r&eacute;elle et verdict honn&ecirc;te par profil&nbsp;: budget, tout-en-un, grande capacit&eacute;.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>10 juillet 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
+              <span>10 juillet 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -93,7 +93,7 @@ export default function MeilleureBatterieBalconPage() {
           <div className="card-lg bg-amber-pale/30 border-amber/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre s&eacute;lection en bref</h2>
             <ul className="space-y-2 text-sm text-charcoal-light">
-              <li className="flex gap-2"><span className="text-green font-bold flex-shrink-0">&#10003;</span><span><strong>Budget serr&eacute;</strong> &rarr; <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Zendure SolarFlow 800 Plus</Link> (539&nbsp;&euro;, 1,92&nbsp;kWh, 281&nbsp;&euro;/kWh)</span></li>
+              <li className="flex gap-2"><span className="text-green font-bold flex-shrink-0">&#10003;</span><span><strong>Budget serr&eacute;</strong> &rarr; <AffLink item={BUY.solarflow800Pro2} position="summary">Zendure SolarFlow 800 Pro 2</AffLink> (599&nbsp;&euro;, 1,92&nbsp;kWh, 312&nbsp;&euro;/kWh), le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">800 Plus</Link> &eacute;tant &eacute;puis&eacute; chez Zendure au 23/11/2026</span></li>
               <li className="flex gap-2"><span className="text-green font-bold flex-shrink-0">&#10003;</span><span><strong>Tout-en-un plug-and-play</strong> &rarr; <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Bluetti Balco 260</Link> (729&nbsp;&euro;, 2,56&nbsp;kWh, IP65)</span></li>
               <li className="flex gap-2"><span className="text-green font-bold flex-shrink-0">&#10003;</span><span><strong>Garantie 10 ans</strong> &rarr; <Link href="/avis/jackery-solarvault-3-pro" className="text-green hover:underline">Jackery SolarVault 3 Pro</Link> (719&nbsp;&euro; en promo, 2,52&nbsp;kWh)</span></li>
               <li className="flex gap-2"><span className="text-amber-dark font-bold flex-shrink-0">&#9888;</span><span><strong>Modulaire EcoFlow</strong> &rarr; pertinent uniquement si vous avez d&eacute;j&agrave; une station DELTA</span></li>
@@ -154,8 +154,20 @@ export default function MeilleureBatterieBalconPage() {
                   <tbody>
                     {[
                       {
-                        name: 'Zendure SolarFlow 800 Plus',
-                        buy: { url: zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url), merchant: 'Zendure' },
+                        name: 'Zendure SolarFlow 800 Pro 2',
+                        buy: { url: zendureUrl(PRODUCTS['zendure-solarflow-800-pro-2'].url), merchant: 'Zendure' },
+                        href: '',
+                        capacity: '1,92 kWh',
+                        price: '599 €',
+                        pricePerKwh: '312 €/kWh',
+                        autonomy: '~13h',
+                        warranty: 'Non vérifiée',
+                        panels: 'Non inclus (pack 2 × 500 W : 959 €)',
+                        best: true,
+                        badge: 'En stock, remplace le 800 Plus',
+                      },
+                      {
+                        name: 'Zendure SolarFlow 800 Plus (épuisé)',
                         href: '/avis/zendure-solarflow',
                         img: '/images/produits/zendure-solarflow-front.webp',
                         capacity: '1,92 kWh',
@@ -164,8 +176,8 @@ export default function MeilleureBatterieBalconPage() {
                         autonomy: '~13h',
                         warranty: '10 ans',
                         panels: 'Non inclus (pack 2 × 500 W : 719 €)',
-                        best: true,
-                        badge: 'Meilleur prix/kWh balcon',
+                        best: false,
+                        badge: '',
                       },
                       {
                         name: 'Jackery SolarVault 3 Pro',
@@ -246,9 +258,11 @@ export default function MeilleureBatterieBalconPage() {
                               <ProductThumb src={row.img} alt={row.name} href={row.href} size="sm" />
                             )}
                             <span>
-                              <Link href={row.href} className="hover:text-green transition-colors">
-                                {row.name}
-                              </Link>
+                              {row.href ? (
+                                <Link href={row.href} className="hover:text-green transition-colors">
+                                  {row.name}
+                                </Link>
+                              ) : row.name}
                               {row.best && <span className="badge-green ml-2 text-xs">{row.badge}</span>}
                               {'buy' in row && row.buy && (
                                 <span className="block mt-1 font-normal">
@@ -270,7 +284,7 @@ export default function MeilleureBatterieBalconPage() {
                 </table>
               </div>
               <p className="text-xs text-stone">
-                * Autonomie estim&eacute;e pour un talon de consommation de 140&nbsp;W (frigo + box + veilles). Prix TTC France relevés le 5 novembre 2026, Bluetti le 20 novembre (prix promotionnels pour Zendure, Jackery, Bluetti et EcoFlow).
+                * Autonomie estim&eacute;e pour un talon de consommation de 140&nbsp;W (frigo + box + veilles). Prix TTC France relevés le 5 novembre 2026, Bluetti le 20 novembre, SolarFlow 800 Pro 2 le 23 novembre (prix promotionnels pour Zendure, Jackery, Bluetti et EcoFlow). Le SolarFlow 800 Plus est épuisé chez Zendure (constaté le 23/11/2026).
                 Zendure SolarFlow Mix 3000 : prix du coffret seul (panneaux et bo&icirc;tier ext&eacute;rieur en sus).
               </p>
             </section>
@@ -286,28 +300,29 @@ export default function MeilleureBatterieBalconPage() {
                     <div className="flex items-start gap-4">
                       <ProductThumb src="/images/produits/zendure-solarflow-front.webp" alt="Zendure SolarFlow" href="/avis/zendure-solarflow" size="lg" />
                       <div>
-                        <div className="badge-green mb-2">Meilleur rapport qualit&eacute;/prix</div>
-                        <h3 className="font-bold text-xl">Zendure SolarFlow</h3>
+                        <div className="badge-green mb-2">&Eacute;puis&eacute; chez Zendure (23/11/2026)</div>
+                        <h3 className="font-bold text-xl">Zendure SolarFlow 800 Plus</h3>
                         <p className="text-sm text-stone">Micro-onduleur 800&nbsp;W + batterie LFP 1,92&nbsp;kWh &middot; Kit complet</p>
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="font-mono text-2xl font-bold text-green">539&nbsp;&euro;</div>
-                      <div className="text-xs text-stone">onduleur + batterie (panneaux non inclus)</div>
+                      <div className="text-xs text-stone">onduleur + batterie (panneaux non inclus), prix du 05/11/2026</div>
                     </div>
                   </div>
                   <p className="text-sm text-charcoal-light mt-4 leading-relaxed">
-                    Le Zendure SolarFlow 800 Plus reste notre r&eacute;f&eacute;rence budget en 2026. Pour 539&nbsp;&euro; (prix promotionnel au 5 novembre 2026, barr&eacute; 599&nbsp;&euro;), vous obtenez un micro-onduleur 800&nbsp;W et une batterie LFP 1,92&nbsp;kWh&nbsp;:
+                    Le Zendure SolarFlow 800 Plus &eacute;tait notre r&eacute;f&eacute;rence budget en 2026, mais il est &eacute;puis&eacute; chez Zendure sur toutes ses versions (constat&eacute; le 23/11/2026). Son rempla&ccedil;ant en stock, le SolarFlow 800 Pro 2 (batterie 1&nbsp;920&nbsp;Wh int&eacute;gr&eacute;e, onduleur 800&nbsp;W), co&ucirc;te 599&nbsp;&euro; seul (barr&eacute; 979&nbsp;&euro;), soit 312&nbsp;&euro;/kWh, et 959&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W (prix du 23/11/2026).
+                    Pour m&eacute;moire, pour 539&nbsp;&euro; (prix promotionnel au 5 novembre 2026, barr&eacute; 599&nbsp;&euro;), vous obteniez un micro-onduleur 800&nbsp;W et une batterie LFP 1,92&nbsp;kWh&nbsp;:
                     le meilleur prix/kWh des batteries de balcon que nous suivons (281&nbsp;&euro;/kWh), au coude-&agrave;-coude avec le Jackery SolarVault 3 Pro (285&nbsp;&euro;/kWh). En pack avec 2 panneaux bifaciaux de 500&nbsp;W&nbsp;: 719&nbsp;&euro;. La batterie se charge via vos panneaux le jour et d&eacute;charge automatiquement le soir.
                     L&apos;application Zendure permet de programmer des plages horaires et de suivre la production en temps r&eacute;el.
                     <Link href="/avis/zendure-solarflow" className="text-green hover:underline ml-1">Lire notre avis complet &rarr;</Link>
-                    <span className="ml-3"><AffLink item={BUY.solarflow800Plus} position="product-card">Voir le prix chez Zendure &rarr;</AffLink></span>
+                    <span className="ml-3"><AffLink item={BUY.solarflow800Pro2} position="product-card">Voir le 800 Pro 2 chez Zendure &rarr;</AffLink></span>
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 mt-4">
                     <div>
                       <h4 className="font-bold text-sm mb-2">Points forts</h4>
                       <ul className="space-y-1 text-sm text-charcoal-light">
-                        <li className="flex gap-2"><span className="text-green font-bold">+</span> Meilleur prix/kWh des batteries de balcon suivies (281&nbsp;&euro;/kWh)</li>
+                        <li className="flex gap-2"><span className="text-green font-bold">+</span> Meilleur prix/kWh des batteries de balcon suivies (281&nbsp;&euro;/kWh au 05/11/2026)</li>
                         <li className="flex gap-2"><span className="text-green font-bold">+</span> Kit complet avec micro-onduleur 800&nbsp;W inclus</li>
                         <li className="flex gap-2"><span className="text-green font-bold">+</span> Batterie extensible (jusqu&apos;&agrave; 3 modules)</li>
                         <li className="flex gap-2"><span className="text-green font-bold">+</span> App Zendure fiable et compl&egrave;te</li>
@@ -504,7 +519,7 @@ export default function MeilleureBatterieBalconPage() {
                   <div className="space-y-1 text-sm text-charcoal-light font-mono">
                     <p>Autoconsommation&nbsp;: ~65&nbsp;%</p>
                     <p>&Eacute;conomies ann&eacute;e 1&nbsp;: <span className="text-amber-dark font-bold">~60&nbsp;&euro; (+23&nbsp;&euro;)</span></p>
-                    <p>ROI batterie seule (539&nbsp;&euro;)&nbsp;: <span className="text-amber-dark font-bold">~18 ans</span></p>
+                    <p>ROI batterie seule (539&nbsp;&euro;, prix du 05/11/2026)&nbsp;: <span className="text-amber-dark font-bold">~18 ans</span></p>
                   </div>
                 </div>
                 <div className="card-lg border-amber/20 bg-amber-pale/20">
@@ -529,8 +544,8 @@ export default function MeilleureBatterieBalconPage() {
               <h2 className="text-2xl font-extrabold mb-4">Verdict par profil</h2>
               <div className="space-y-4">
                 <div className="card-lg border-green/20 bg-green-pale/20">
-                  <h3 className="font-bold text-green mb-1">Budget &lt;500&nbsp;&euro; &rarr; Zendure SolarFlow</h3>
-                  <p className="text-sm text-charcoal-light">Meilleur prix/kWh du march&eacute;. Kit complet avec micro-onduleur inclus. Id&eacute;al pour un premier pas dans le stockage solaire sans surpayer.</p>
+                  <h3 className="font-bold text-green mb-1">Budget serr&eacute; &rarr; Zendure SolarFlow 800 Pro 2</h3>
+                  <p className="text-sm text-charcoal-light">Le SolarFlow 800 Plus, notre choix budget (539&nbsp;&euro;, 281&nbsp;&euro;/kWh au 05/11/2026), est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026). En stock, le 800 Pro 2 co&ucirc;te 599&nbsp;&euro; (312&nbsp;&euro;/kWh), micro-onduleur 800&nbsp;W inclus&nbsp;: un premier pas dans le stockage solaire sans surpayer. <AffLink item={BUY.solarflow800Pro2} position="verdict">Voir le prix chez Zendure &rarr;</AffLink></p>
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h3 className="font-bold text-green mb-1">Tout-en-un sans installation complexe &rarr; Bluetti Balco 260</h3>
@@ -592,7 +607,7 @@ export default function MeilleureBatterieBalconPage() {
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Batterie 1,92&nbsp;kWh + onduleur 800&nbsp;W &agrave; 539&nbsp;&euro; (281&nbsp;&euro;/kWh)</p>
+                  <p className="text-xs text-charcoal-light mt-1">Batterie 1,92&nbsp;kWh + onduleur 800&nbsp;W &agrave; 539&nbsp;&euro; (281&nbsp;&euro;/kWh), &eacute;puis&eacute; chez Zendure au 23/11/2026</p>
                 </Link>
                 <Link href="/avis/ecoflow-stream-ultra" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h3>

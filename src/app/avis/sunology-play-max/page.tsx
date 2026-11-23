@@ -52,7 +52,7 @@ const faqData = [
 export default function PlayMaxAvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology PLAY MAX avis : kit + batterie, ça vaut le coup ?" description="Avis complet sur le Sunology PLAY MAX avec batterie VAULT." url="https://monbalconsolaire.fr/avis/sunology-play-max" datePublished="2026-04-02" dateModified="2026-11-05" />
+      <SchemaArticle title="Sunology PLAY MAX avis : kit + batterie, ça vaut le coup ?" description="Avis complet sur le Sunology PLAY MAX avec batterie VAULT." url="https://monbalconsolaire.fr/avis/sunology-play-max" datePublished="2026-04-02" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/sunology-play-max-1.webp" name="Sunology PLAY MAX" brand="Sunology" description="Station solaire 460 W (sortie onduleur 450 W) avec batterie VAULT 700 Wh intégrée pour stocker le surplus et consommer le soir." price={PRODUCTS['sunology-play-max'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['sunology-play-max'].availability]} ratingValue={7} url="https://monbalconsolaire.fr/avis/sunology-play-max" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology PLAY MAX' }]} />
@@ -63,7 +63,7 @@ export default function PlayMaxAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology PLAY MAX avis : kit solaire + batterie, ça vaut le coup ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le PLAY MAX (vendu sous le nom &laquo;&nbsp;PLAYMax&nbsp;&raquo;), c&apos;est une station solaire Sunology de 460&nbsp;W (sortie plafonn&eacute;e &agrave; 450&nbsp;W) avec une batterie VAULT de 700 Wh int&eacute;gr&eacute;e. Prix officiel&nbsp;: {MAX_PRICE}, affich&eacute; {PROMO_LABEL} en promotion jusqu&apos;au {PROMO_END} (v&eacute;rifi&eacute; le 5 novembre 2026), soit {fr(EXTRA)}&nbsp;&euro; de plus que le <Link href="/avis/sunology-play-2" className="text-green hover:underline">Sunology PLAY</Link> sans batterie ({fr(EXTRA_PROMO)}&nbsp;&euro; pendant la promotion). La promesse : stocker le solaire pour le soir. Analyse honnête.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>2 avril 2026 &middot; <strong>Mis &agrave; jour le 5 novembre 2026</strong></span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>2 avril 2026 &middot; <strong>Mis &agrave; jour le 23 novembre 2026</strong></span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -108,7 +108,7 @@ export default function PlayMaxAvisPage() {
                 <div>
                   <h3 className="font-bold text-sm text-amber-dark mb-2">Correction du 5 novembre 2026&nbsp;: le prix courant est {MAX_PRICE}</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    Une version pr&eacute;c&eacute;dente de cet avis reprenait un prix de panier plus bas, que la page officielle ne confirme pas. Celle-ci affiche {MAX_PRICE}, ramen&eacute; &agrave; {PROMO_LABEL} pendant la promotion Black Friday (du 2 novembre au {PROMO_END}). &Agrave; ce prix, le PLAY MAX se rentabilise en {fr(maxCalc.roi)} ans ({fr(maxPromo.roi)} ans au prix promotionnel), contre {fr(playCalc.roi)} ans pour le PLAY seul&nbsp;: la batterie co&ucirc;te {fr(EXTRA)}&nbsp;&euro; de plus pour des &eacute;conomies &agrave; peu pr&egrave;s &eacute;quivalentes. Pour le pur ROI, le Sunology PLAY ou le Zendure SolarFlow 800 Plus en pack 2 &times; 500&nbsp;W (3,6 ans au prix promotionnel de 719&nbsp;&euro; constat&eacute; le 05/11/2026) restent devant.
+                    Une version pr&eacute;c&eacute;dente de cet avis reprenait un prix de panier plus bas, que la page officielle ne confirme pas. Celle-ci affiche {MAX_PRICE}, ramen&eacute; &agrave; {PROMO_LABEL} pendant la promotion Black Friday (du 2 novembre au {PROMO_END}). &Agrave; ce prix, le PLAY MAX se rentabilise en {fr(maxCalc.roi)} ans ({fr(maxPromo.roi)} ans au prix promotionnel), contre {fr(playCalc.roi)} ans pour le PLAY seul&nbsp;: la batterie co&ucirc;te {fr(EXTRA)}&nbsp;&euro; de plus pour des &eacute;conomies &agrave; peu pr&egrave;s &eacute;quivalentes. Pour le pur ROI, le Sunology PLAY ou le Zendure SolarFlow 800 Pro 2 en pack avec 2 panneaux de 500&nbsp;W (4,7 ans &agrave; 959&nbsp;&euro; le 23/11/2026&nbsp;; le pack 800 Plus est &eacute;puis&eacute; chez Zendure) restent devant.
                   </p>
                 </div>
               </div>

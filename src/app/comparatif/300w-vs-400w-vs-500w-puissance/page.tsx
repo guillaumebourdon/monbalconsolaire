@@ -29,7 +29,7 @@ const faqData = [
 export default function PuissanceComparatif() {
   return (
     <>
-      <SchemaArticle title="300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?" description="Comparatif des puissances de panneaux solaires plug-and-play." url="https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance" datePublished="2026-04-19" dateModified="2026-11-05" />
+      <SchemaArticle title="300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?" description="Comparatif des puissances de panneaux solaires plug-and-play." url="https://monbalconsolaire.fr/comparatif/300w-vs-400w-vs-500w-puissance" datePublished="2026-04-19" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Quel kit choisir', href: '/quel-kit-choisir' }, { label: 'Puissance 300W vs 400W vs 500W' }]} />
       <article className="section-padding">
@@ -39,7 +39,7 @@ export default function PuissanceComparatif() {
             <div className="badge-green mb-4 inline-block">Comparatif puissance</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">300W vs 400W vs 500W : quelle puissance choisir pour son balcon ?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">300, 400 ou 500 watts ? Plus de puissance ne signifie pas toujours plus de rentabilité. Analyse des 3 paliers les plus vendus en 2026 : prix, production reelle, profil adapte.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 avril 2026</span><span>&middot;</span><span className="text-green font-medium">Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>19 avril 2026</span><span>&middot;</span><span className="text-green font-medium">Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
 
           <div className="card bg-cream/50 border-border-light mb-6 py-3 px-5 flex items-start gap-3">
             <span className="text-stone text-sm mt-0.5">&#x2139;</span>
@@ -193,7 +193,7 @@ export default function PuissanceComparatif() {
                   { profil: 'Petit budget (< 400€)', reco: 'Kit compact 270-300 W', detail: 'Le Sunology GO (270 W, 349 €) est disponible ; le Beem Kit 300W (199 €) serait plus rentable sur le papier mais il est en rupture de stock chez Beem (vérifié le 5 novembre 2026).' },
                   { profil: 'Balcon standard 10 m²', reco: '450-515 W', detail: 'Sunology PLAY 515 W (ex-PLAY 2) ou Beem On 500 Wc (en précommande) : 1 panneau, installation en 2 min.' },
                   { profil: 'Grand balcon ou terrasse', reco: '500W (Beem On 429\u20ac)', detail: 'Beem On 500 Wc : meilleur prix au Wc \u00e0 0,86 \u20ac/Wc, ROI ~4,7 ans (Lyon, sud), en pr\u00e9commande (exp\u00e9dition \u00e0 partir de d\u00e9cembre 2026).' },
-                  { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (460 W + 700 Wh), Zendure SolarFlow 800 Plus ou Bluetti Balco 260.', achat: BUY.solarflow800Plus },
+                  { profil: 'Consommation le soir', reco: 'Kit avec batterie', detail: 'PLAY MAX (460 W + 700 Wh), Zendure SolarFlow 800 Pro 2 (599 €, le 800 Plus étant épuisé chez Zendure au 23/11/2026) ou Bluetti Balco 260.', achat: BUY.solarflow800Pro2 },
                   { profil: 'Locataire', reco: '400-450W', detail: 'Un seul panneau se d\u00e9monte en 1 minute pour le d\u00e9m\u00e9nagement.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
@@ -201,7 +201,7 @@ export default function PuissanceComparatif() {
                       <div>
                         <h3 className="font-bold text-sm mb-1">{p.profil}</h3>
                         <p className="text-xs text-charcoal-light">{p.detail}</p>
-                        {'achat' in p && p.achat && <p className="text-xs mt-1"><AffLink item={p.achat} position="profil">Voir le prix du SolarFlow 800 Plus chez Zendure &rarr;</AffLink></p>}
+                        {'achat' in p && p.achat && <p className="text-xs mt-1"><AffLink item={p.achat} position="profil">Voir le prix du SolarFlow 800 Pro 2 chez Zendure &rarr;</AffLink></p>}
                       </div>
                       <span className="text-xs font-semibold px-3 py-1 rounded-lg whitespace-nowrap bg-green-pale text-green">{p.reco}</span>
                     </div>

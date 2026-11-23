@@ -74,7 +74,7 @@ export default function GuideBatterieBalcon() {
         description="Quelle capacité de batterie pour votre kit solaire balcon ? Seuils 700 Wh, 2 kWh, 5 kWh, rentabilité réelle et comparatif 2026."
         url="https://monbalconsolaire.fr/guide/batterie-solaire-balcon-guide"
         datePublished="2026-07-03"
-        dateModified="2026-11-20"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Batterie solaire balcon' }]} />
@@ -92,7 +92,7 @@ export default function GuideBatterieBalcon() {
               700&nbsp;Wh, 2&nbsp;kWh, 5&nbsp;kWh&nbsp;&mdash; les fabricants jouent sur les chiffres. Ce guide vous dit ce qui compte vraiment&nbsp;: votre profil de consommation, le calcul de rentabilit&eacute; honn&ecirc;te, et les solutions disponibles en 2026.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>3 juillet 2026</span><span>&middot;</span><span>Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>12 min de lecture</span>
+              <span>3 juillet 2026</span><span>&middot;</span><span>Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>12 min de lecture</span>
             </div>
           </div>
 
@@ -206,7 +206,8 @@ export default function GuideBatterieBalcon() {
                 <ProductThumb src="/images/produits/bluetti-balco-260-1.webp" alt="Bluetti Balco 260" href="/avis/bluetti-balco-260" size="sm" />
               </div>
               <ul className="space-y-2 text-sm text-charcoal-light mb-4">
-                <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> &mdash; 1,92&nbsp;kWh + onduleur 800&nbsp;W int&eacute;gr&eacute;. {priceLabel('zendure-solarflow-800-plus')} (bo&icirc;tier seul, sans panneaux&nbsp;; 719&nbsp;&euro; avec 2 panneaux de 500&nbsp;W)</li>
+                <li className="flex gap-2"><span className="text-green">&#8250;</span> <strong>Zendure SolarFlow 800 Pro 2</strong> &mdash; batterie 1&nbsp;920&nbsp;Wh + onduleur 800&nbsp;W int&eacute;gr&eacute;s. {priceLabel('zendure-solarflow-800-pro-2')} (bo&icirc;tier seul, sans panneaux&nbsp;; 959&nbsp;&euro; avec 2 panneaux de 500&nbsp;W, prix du 23/11/2026)</li>
+                <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> &mdash; 1,92&nbsp;kWh + onduleur 800&nbsp;W int&eacute;gr&eacute;. <span className="text-amber-dark">&Eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026)</span>&nbsp;; il valait {priceLabel('zendure-solarflow-800-plus')} seul et 719&nbsp;&euro; avec 2 panneaux de 500&nbsp;W (prix du 05/11/2026, avant rupture).</li>
                 <li className="flex gap-2"><span className="text-green">&#8250;</span> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> &mdash; 2,56&nbsp;kWh + 4&nbsp;MPPT + onduleur SiC. {priceLabel('bluetti-balco-260')} (bo&icirc;tier seul&nbsp;; 1&nbsp;019&nbsp;&euro; avec 2 panneaux de 450&nbsp;W)</li>
                 <li className="flex gap-2"><span className="text-green">&#8250;</span> EcoFlow PowerStream + batterie &eacute;tanche &mdash; 2&nbsp;kWh. <span className="text-amber-dark">Plus vendu par EcoFlow France (successeur&nbsp;: gamme STREAM).</span></li>
               </ul>
@@ -281,10 +282,10 @@ export default function GuideBatterieBalcon() {
             </section>
 
             <AffiliateCTA
-              productName={BUY.solarflow800Plus.product}
+              productName={BUY.solarflow800Pro2.product}
               merchantName="Zendure"
-              affiliateUrl={BUY.solarflow800Plus.url}
-              label="Voir le prix du SolarFlow 800 Plus chez Zendure"
+              affiliateUrl={BUY.solarflow800Pro2.url}
+              label="Voir le prix du SolarFlow 800 Pro 2 chez Zendure"
               variant="inline"
               position="mid_article"
             />
@@ -314,13 +315,22 @@ export default function GuideBatterieBalcon() {
                         highlight: false,
                       },
                       {
-                        name: 'Zendure SolarFlow 800 Plus',
+                        name: 'Zendure SolarFlow 800 Pro 2',
+                        capacity: '1,92 kWh',
+                        price: `${priceLabel('zendure-solarflow-800-pro-2')} (seul)`,
+                        panels: 'Pack 2 × 500 W : 959 €',
+                        extensible: 'Non vérifié',
+                        highlight: true,
+                        buy: BUY.solarflow800Pro2,
+                      },
+                      {
+                        name: 'Zendure SolarFlow 800 Plus (épuisé au 23/11/2026)',
                         href: '/avis/zendure-solarflow',
                         capacity: '1,92 kWh LFP',
-                        price: `${priceLabel('zendure-solarflow-800-plus')} (seul)`,
-                        panels: 'Pack 2 × 500 W : 719 €',
+                        price: `${priceLabel('zendure-solarflow-800-plus')} (seul, prix du 05/11/2026)`,
+                        panels: 'Pack 2 × 500 W : 719 € (avant rupture)',
                         extensible: 'Oui (+2,4 kWh)',
-                        highlight: true,
+                        highlight: false,
                       },
                       {
                         name: 'Bluetti Balco 260',
@@ -365,7 +375,7 @@ export default function GuideBatterieBalcon() {
                         className={`border-b border-border-light ${row.highlight ? 'bg-green-pale/30' : i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}
                       >
                         <td className="p-3 font-semibold">
-                          <Link href={row.href} className="text-green hover:underline">{row.name}</Link>
+                          {row.href ? <Link href={row.href} className="text-green hover:underline">{row.name}</Link> : row.name}
                           {row.highlight && <span className="ml-2 text-xs bg-green text-white px-1.5 py-0.5 rounded">Recommand&eacute;</span>}
                           {'buy' in row && row.buy && <span className="block mt-1 font-normal text-xs"><AffLink item={row.buy} position="comparison-table">Voir le prix chez Zendure &rarr;</AffLink></span>}
                         </td>
@@ -525,9 +535,9 @@ export default function GuideBatterieBalcon() {
             </section>
 
             <OuAcheter
-              intro="Trois batteries de balcon de notre s&eacute;lection, en stock chez leur fabricant le 18 novembre 2026 et vendues sans panneaux. V&eacute;rifiez la compatibilit&eacute; avec vos panneaux avant d&rsquo;acheter."
+              intro="Trois batteries de balcon de notre s&eacute;lection, en stock chez leur fabricant (v&eacute;rifi&eacute; le 18 novembre 2026, le 23 pour Zendure) et vendues sans panneaux. V&eacute;rifiez la compatibilit&eacute; avec vos panneaux avant d&rsquo;acheter."
               rows={[
-                { item: BUY.solarflow800Plus, note: '1,92 kWh, onduleur 800 W intégré' },
+                { item: BUY.solarflow800Pro2, note: 'batterie 1 920 Wh, onduleur 800 W intégré' },
                 { item: BUY.streamUltra, note: '1,92 kWh, onduleur 800 W intégré' },
                 { item: BUY.bs2500Pro, note: '2,6 kWh annoncés' },
               ]}
@@ -546,7 +556,7 @@ export default function GuideBatterieBalcon() {
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus &mdash; 1,92&nbsp;kWh pour {priceLabel('zendure-solarflow-800-plus')}</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Le meilleur rapport qualit&eacute;-prix du stockage balcon</p>
+                  <p className="text-xs text-charcoal-light mt-1">Notre analyse du mod&egrave;le, &eacute;puis&eacute; chez Zendure au 23/11/2026</p>
                 </Link>
                 <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Optimiser son autoconsommation solaire</h3>

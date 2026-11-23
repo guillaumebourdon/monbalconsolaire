@@ -40,7 +40,7 @@ const faqData = [
 export default function BeemOn500WcAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem On 500 Wc avis : le nouveau rapport qualité-prix du marché" description="Avis détaillé sur le Beem On 500 Wc en 2026." url="https://monbalconsolaire.fr/avis/beem-on-500w" datePublished="2026-06-15" dateModified="2026-11-20" />
+      <SchemaArticle title="Beem On 500 Wc avis : le nouveau rapport qualité-prix du marché" description="Avis détaillé sur le Beem On 500 Wc en 2026." url="https://monbalconsolaire.fr/avis/beem-on-500w" datePublished="2026-06-15" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/beem-on-500-1.webp" name="Beem On 500 Wc" brand="Beem Energy" description="Kit solaire plug-and-play 500 Wc bifacial TOPCon avec micro-onduleur 550W et suivi via app Beem." price={KIT.priceEur} availability={SCHEMA_AVAILABILITY[KIT.availability]} ratingValue={8.5} url="https://monbalconsolaire.fr/avis/beem-on-500w" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem On 500 Wc' }]} />
@@ -51,7 +51,7 @@ export default function BeemOn500WcAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem On 500W avis : prix chez Leroy Merlin et Beem, points n&eacute;gatifs et verdict</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">429&nbsp;&euro; pour 500&nbsp;Wc bifacial TOPCon, soit 0,86&nbsp;&euro;/Wc&nbsp;: le Beem On reste le kit premium le moins cher au watt en France. M&ecirc;me prix chez Beem, Leroy Merlin et Boulanger, mais deux r&eacute;serves &agrave; conna&icirc;tre avant d&apos;acheter&nbsp;: la pr&eacute;commande (exp&eacute;dition &agrave; partir de d&eacute;cembre 2026 chez Beem) et la proc&eacute;dure de sauvegarde de Beem Energy.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>15 juin 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>15 juin 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -143,7 +143,7 @@ export default function BeemOn500WcAvisPage() {
                 {[
                   { t: 'Beembox obligatoire pour le suivi', d: 'Contrairement au Sunology PLAY2 dont le micro-onduleur embarque le WiFi, le Beem On nécessite un boîtier Beembox branché sur votre box internet. C\'est inclus dans le kit, mais c\'est un appareil supplémentaire à brancher et à maintenir.' },
                   { t: 'Panneau imposant : 1,95 m de haut', d: 'Avec ses 1 950 x 1 134 mm, c\'est le plus grand panneau mono du marché (le Sunology PLAY 515 Wc fait 1 800 x 1 134 mm). Sur un petit balcon, ça peut poser problème.' },
-                  { t: 'Pas de solution batterie abordable', d: `Beem propose la Beem Battery, mais à partir de 5 390€ seule (6,6 kWh) et avec pose par un électricien, pas en plug-and-play. Associée à ce panneau de 500 Wc, elle n'est jamais rentable (voir notre avis dédié). Sunology a le PLAY MAX à ${priceLabel('sunology-play-max')} (station + batterie VAULT 700 Wh), et Zendure le SolarFlow 800 Plus (batterie 1,92 kWh, sans panneaux). Si le stockage vous intéresse, regardez plutôt de ce côté.` },
+                  { t: 'Pas de solution batterie abordable', d: `Beem propose la Beem Battery, mais à partir de 5 390€ seule (6,6 kWh) et avec pose par un électricien, pas en plug-and-play. Associée à ce panneau de 500 Wc, elle n'est jamais rentable (voir notre avis dédié). Sunology a le PLAY MAX à ${priceLabel('sunology-play-max')} (station + batterie VAULT 700 Wh), et Zendure le SolarFlow 800 Pro 2 (599 €, batterie 1 920 Wh intégrée, sans panneaux ; le 800 Plus est épuisé chez Zendure, constaté le 23/11/2026). Si le stockage vous intéresse, regardez plutôt de ce côté.` },
                   { t: 'SAV et délai de livraison à surveiller', d: 'Le tribunal de commerce de Nantes a placé Beem Energy en procédure de sauvegarde le 26 novembre 2025, après une chute de 42% du marché résidentiel du solaire (étude Enedis), avec un an pour redresser la barre (échéance autour de novembre 2026). Nous n\'avons trouvé aucune annonce de liquidation ni de plan de sauvegarde arrêté (recherche du 12 octobre 2026), mais la fiche produit affiche « Précommande - Expédition à partir de décembre 2026 », soit environ deux mois d\'attente, alors que le bas de la même page promet toujours une « expédition gratuite en 48h ». La garantie 25 ans ne vaut que si l\'entreprise est toujours là pour l\'honorer.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-amber">

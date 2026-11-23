@@ -119,7 +119,7 @@ export default function DualsunPreasyPage() {
         description="Avis complet sur le DualSun PREASY en 2026."
         url="https://monbalconsolaire.fr/avis/dualsun-preasy"
         datePublished="2026-05-09"
-        dateModified="2026-11-20"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="DualSun PREASY" brand="DualSun" description="Panneau solaire pliable plug-and-play 420 Wc, TOPCon bifacial, assemblé en France, châssis aspect bois, micro-onduleur Hoymiles 400 W." ratingValue={6.5} url="https://monbalconsolaire.fr/avis/dualsun-preasy" />
@@ -137,7 +137,7 @@ export default function DualsunPreasyPage() {
               DualSun, fabricant français reconnu pour ses panneaux hybrides, se lance dans le plug-and-play avec le <strong>PREASY</strong>. Un panneau pliable de 420 Wc, assemblé en France, avec un design soigné. Sur le papier, c&apos;est séduisant. Mais à <strong>870-900 €</strong> chez les revendeurs (relevé en mai 2026&nbsp;; vente sur devis depuis), est-ce que ça vaut le coup face à un Sunology PLAY (ex-PLAY 2, 515&nbsp;W) à 599 € ?
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>9 mai 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
+              <span>9 mai 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -384,13 +384,13 @@ export default function DualsunPreasyPage() {
                   <div className="text-xs text-stone">(599 &euro;, 515 W)</div>
                 </div>
                 <div className="card text-center">
-                  <div className="font-mono font-bold text-green text-xl">3,6 ans</div>
-                  <div className="text-xs text-stone mt-1">Zendure SolarFlow 800 Plus + 2 panneaux</div>
-                  <div className="text-xs text-stone">(719 &euro; en promotion, 1 000 W + batterie)</div>
+                  <div className="font-mono font-bold text-green text-xl">4,7 ans</div>
+                  <div className="text-xs text-stone mt-1">Zendure SolarFlow 800 Pro 2 + 2 panneaux</div>
+                  <div className="text-xs text-stone">(959 &euro;, 1 000 W + batterie)</div>
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed mt-4 text-sm">
-                Pour moins que le PREASY, le pack <AffLink item={BUY.solarflow800Plus} position="alternative">Zendure SolarFlow 800 Plus + 2 panneaux de 500&nbsp;W</AffLink> (719&nbsp;&euro; en promotion le 5 novembre 2026) offre plus du double de puissance, du stockage, et un ROI presque 3 fois plus rapide (3,6 ans contre 10,5 ans). C&apos;est difficile à justifier économiquement.
+                Le pack Zendure SolarFlow 800 Plus + 2 panneaux de 500&nbsp;W (719&nbsp;&euro; le 5 novembre 2026, ROI 3,6 ans) est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026). Pour &agrave; peine plus que le PREASY, le pack <AffLink item={BUY.solarflow800Pro2} position="alternative">Zendure SolarFlow 800 Pro 2 + 2 panneaux de 500&nbsp;W</AffLink> (959&nbsp;&euro; le 23/11/2026, batterie de 1&nbsp;920&nbsp;Wh int&eacute;gr&eacute;e) offre plus du double de puissance, du stockage, et un ROI plus de deux fois plus rapide (4,7 ans contre 10,5 ans). C&apos;est difficile à justifier économiquement.
               </p>
             </section>
 
@@ -417,11 +417,11 @@ export default function DualsunPreasyPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous cherchez la rentabilité</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 10,5 ans, le PREASY est l&apos;un des kits les moins rentables du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 515 W (ROI 6,2 ans) ou un Zendure SolarFlow 800 Plus en pack (ROI 3,6 ans avec batterie, au prix promotionnel).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Avec un ROI de 10,5 ans, le PREASY est l&apos;un des kits les moins rentables du marché. Si votre objectif est de réduire votre facture EDF efficacement, prenez un Sunology PLAY 515 W (ROI 6,2 ans) ou un Zendure SolarFlow 800 Pro 2 en pack avec 2 panneaux de 500 W (ROI 4,7 ans avec batterie, à 959 € le 23/11/2026).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Votre budget est limité</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">870-900 € pour 420 Wc sans batterie, c&apos;est objectivement trop. Pour moins cher, le pack Zendure SolarFlow 800 Plus + 2 panneaux de 500 W vous donne 1 000 W + 1,92 kWh de stockage (719 € en promotion le 5 novembre 2026).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">870-900 € pour 420 Wc sans batterie, c&apos;est objectivement trop. Pour à peine plus, le pack Zendure SolarFlow 800 Pro 2 + 2 panneaux de 500 W vous donne 1 000 W + 1,92 kWh de stockage (959 € le 23/11/2026 ; le pack 800 Plus à 719 € est épuisé chez Zendure).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez du stockage</h3>

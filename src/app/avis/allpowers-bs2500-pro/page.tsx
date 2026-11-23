@@ -97,7 +97,7 @@ export default function AllpowersBs2500ProPage() {
         description="Avis prudent sur la batterie de balcon ALLPOWERS BS2500 PRO : fiche technique, rentabilité et réserves."
         url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro"
         datePublished="2026-11-05"
-        dateModified="2026-11-20"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/allpowers-bs2500-pro-front.webp" name="ALLPOWERS BS2500 PRO" brand="ALLPOWERS" description="Batterie de balcon LiFePO4 2,6 kWh, onduleur 800 W (réglable jusqu'à 2 400 W), double MPPT 2 × 1 000 W, sortie de secours 2 400 W, IP65." price={999} ratingValue={6} availability="InStock" url="https://monbalconsolaire.fr/avis/allpowers-bs2500-pro" />
@@ -115,7 +115,7 @@ export default function AllpowersBs2500ProPage() {
               Connu pour ses stations portables, ALLPOWERS vend depuis juin 2026 en France une batterie pour balcon&nbsp;: le <strong>BS2500 PRO</strong>, 2,6&nbsp;kWh, onduleur 800&nbsp;W et vraie sortie de secours, affiché &agrave; 999&nbsp;&euro; pour le Black Friday. Sur le papier, c&apos;est l&apos;une des batteries les moins ch&egrave;res au kWh. Voici ce que dit la fiche, ce que &ccedil;a rapporte, et pourquoi nous restons prudents.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>5 novembre 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
+              <span>5 novembre 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -264,7 +264,7 @@ export default function AllpowersBs2500ProPage() {
                     <tr className="bg-charcoal text-cream">
                       <th className="p-3 text-left font-semibold">Crit&egrave;re</th>
                       <th className="p-3 text-center font-semibold">ALLPOWERS BS2500 PRO</th>
-                      <th className="p-3 text-center font-semibold">Zendure SolarFlow</th>
+                      <th className="p-3 text-center font-semibold">Zendure SolarFlow 800 Plus</th>
                       <th className="p-3 text-center font-semibold">EcoFlow STREAM Ultra</th>
                       <th className="p-3 text-center font-semibold">Bluetti Balco 260</th>
                     </tr>
@@ -273,7 +273,7 @@ export default function AllpowersBs2500ProPage() {
                     <tr className="border-b border-border-light">
                       <td className="p-3 font-semibold bg-white">Prix</td>
                       <td className="p-3 text-center bg-green-pale/30 font-mono font-bold">999 &euro;<span className="block text-xs font-normal text-stone">(promo, sans panneaux)</span></td>
-                      <td className="p-3 text-center bg-white font-mono">539 &euro;<span className="block text-xs text-stone">(719 &euro; avec 2 panneaux)</span></td>
+                      <td className="p-3 text-center bg-white font-mono">539 &euro;<span className="block text-xs text-stone">(719 &euro; avec 2 panneaux, prix du 05/11/2026 ; &eacute;puis&eacute; chez Zendure au 23/11/2026)</span></td>
                       <td className="p-3 text-center bg-cream/50 font-mono">659 &euro;<span className="block text-xs text-stone">(promo)</span></td>
                       <td className="p-3 text-center bg-white font-mono">789 &euro;<span className="block text-xs text-stone">(promo)</span></td>
                     </tr>
@@ -315,7 +315,7 @@ export default function AllpowersBs2500ProPage() {
                     <tr className="border-t border-border-light">
                       <td className="p-3 font-semibold bg-white">Prix / acheter</td>
                       <td className="p-3 text-center bg-green-pale/30 text-xs">Liens plus haut</td>
-                      <td className="p-3 text-center bg-white text-xs"><AffLink item={BUY.solarflow800Plus} position="comparison-table">Voir le prix chez Zendure</AffLink></td>
+                      <td className="p-3 text-center bg-white text-xs">&Eacute;puis&eacute;. En stock&nbsp;: <AffLink item={BUY.solarflow800Pro2} position="comparison-table">SolarFlow 800 Pro 2 (599&nbsp;&euro;)</AffLink></td>
                       <td className="p-3 text-center bg-cream/50 text-xs"><AffLink item={BUY.streamUltra} position="comparison-table">Voir le prix chez EcoFlow</AffLink></td>
                       <td className="p-3 text-center bg-white text-xs">&mdash;</td>
                     </tr>
@@ -360,7 +360,7 @@ export default function AllpowersBs2500ProPage() {
                 Avec le pack officiel (bo&icirc;tier + un panneau pliable SP039 de 600&nbsp;W &agrave; 1&nbsp;499&nbsp;&euro;), la production tombe &agrave; 612&nbsp;kWh/an et le retour sur investissement passe &agrave; <strong>11,2&nbsp;ans</strong>&nbsp;: mieux vaut acheter deux panneaux rigides s&eacute;par&eacute;ment.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                Ces 8,2&nbsp;ans supposent que la batterie tient vraiment ses 2,6&nbsp;kWh et ses 6&nbsp;000 cycles, et que la garantie de 5&nbsp;ans couvre les premi&egrave;res ann&eacute;es. C&apos;est moins bien que l&apos;EcoFlow STREAM Ultra (6,3&nbsp;ans dans les m&ecirc;mes conditions, au prix promotionnel de 659&nbsp;&euro;) et que le Zendure SolarFlow 800 Plus en pack avec 2 panneaux de 500&nbsp;W (3,6&nbsp;ans &agrave; 719&nbsp;&euro;).
+                Ces 8,2&nbsp;ans supposent que la batterie tient vraiment ses 2,6&nbsp;kWh et ses 6&nbsp;000 cycles, et que la garantie de 5&nbsp;ans couvre les premi&egrave;res ann&eacute;es. C&apos;est moins bien que l&apos;EcoFlow STREAM Ultra (6,3&nbsp;ans dans les m&ecirc;mes conditions, au prix promotionnel de 659&nbsp;&euro;) et que le Zendure SolarFlow 800 Plus en pack avec 2 panneaux de 500&nbsp;W (3,6&nbsp;ans &agrave; 719&nbsp;&euro;, prix du 05/11/2026, avant rupture). Ce dernier est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026)&nbsp;; le SolarFlow 800 Pro 2, en stock, co&ucirc;te 959&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W, soit 4,7&nbsp;ans de retour sur investissement.
               </p>
             </section>
 
@@ -415,7 +415,7 @@ export default function AllpowersBs2500ProPage() {
               <div className="space-y-3">
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow</h3>
-                  <p className="text-xs text-charcoal-light mt-1">La batterie de balcon la plus rentable (3,6 ans en pack), sans sortie de secours</p>
+                  <p className="text-xs text-charcoal-light mt-1">Le 800 Plus (3,6 ans en pack au prix du 05/11/2026), &eacute;puis&eacute; chez Zendure au 23/11/2026</p>
                 </Link>
                 <Link href="/avis/ecoflow-stream-ultra" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis EcoFlow STREAM Ultra</h3>

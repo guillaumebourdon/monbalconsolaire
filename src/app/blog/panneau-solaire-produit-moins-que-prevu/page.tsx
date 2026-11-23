@@ -110,7 +110,7 @@ export default function PanneauProduitMoinsPage() {
         description="Diagnostic et solutions quand un kit solaire de balcon ne produit pas assez."
         url="https://monbalconsolaire.fr/blog/panneau-solaire-produit-moins-que-prevu"
         datePublished="2026-05-12"
-        dateModified="2026-11-12"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Production inférieure aux prévisions' }]} />
@@ -127,7 +127,7 @@ export default function PanneauProduitMoinsPage() {
               Vous avez installé votre kit solaire de balcon, mais les chiffres de production sont décevants ? Avant de paniquer, suivez ce <strong>diagnostic en 7 points</strong>. Dans 80 % des cas, le problème est simple à identifier et à corriger.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>12 mai 2026 &middot; Mis &agrave; jour le 12 novembre 2026</span>
+              <span>12 mai 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -292,9 +292,9 @@ export default function PanneauProduitMoinsPage() {
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center justify-between mb-1">
                     <h3 className="font-bold text-sm text-amber-dark">Ajouter une batterie</h3>
-                    <span className="text-xs font-mono text-stone">dès {priceLabel('zendure-solarflow-800-plus')}</span>
+                    <span className="text-xs font-mono text-stone">dès {priceLabel('zendure-solarflow-800-pro-2')}</span>
                   </div>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Ne produit pas plus, mais valorise mieux la production existante (autoconsommation 45 % → 80 %). Pertinent si votre talon de consommation dépasse la production. Exemple : Zendure SolarFlow 800 Plus, {priceLabel('zendure-solarflow-800-plus')} sans panneaux (prix vérifié le 5 novembre 2026). <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Voir l&apos;avis</Link> &middot; <AffLink item={BUY.solarflow800Plus} position="mid_article">Voir le prix chez Zendure</AffLink>.</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Ne produit pas plus, mais valorise mieux la production existante (autoconsommation 45 % → 80 %). Pertinent si votre talon de consommation dépasse la production. Exemple : Zendure SolarFlow 800 Pro 2, {priceLabel('zendure-solarflow-800-pro-2')} sans panneaux, batterie 1 920 Wh intégrée (prix vérifié le 23 novembre 2026 ; le SolarFlow 800 Plus, dont nous avons publié l&apos;<Link href="/avis/zendure-solarflow" className="text-green hover:underline">avis</Link>, est épuisé chez Zendure). <AffLink item={BUY.solarflow800Pro2} position="mid_article">Voir le prix chez Zendure</AffLink>.</p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <div className="flex items-center justify-between mb-1">

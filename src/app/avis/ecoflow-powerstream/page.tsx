@@ -151,7 +151,7 @@ export default function EcoflowPowerstreamPage() {
         description="Avis complet sur le PowerStream EcoFlow en 2026."
         url="https://monbalconsolaire.fr/avis/ecoflow-powerstream"
         datePublished="2026-04-28"
-        dateModified="2026-11-20"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/ecoflow-powerstream-2.webp" name="EcoFlow PowerStream" brand="EcoFlow" description="Micro-onduleur intelligent 800 W modulaire avec gestion batterie, optimisation autoconsommation et app avancée." price={599} ratingValue={8} availability="Discontinued" url="https://monbalconsolaire.fr/avis/ecoflow-powerstream" />
@@ -169,7 +169,7 @@ export default function EcoflowPowerstreamPage() {
               Le PowerStream n&apos;est pas un kit solaire classique, c&apos;est un <strong>écosystème modulaire</strong> qui articule panneaux, batterie et réseau domestique avec une intelligence rare sur le marché grand public. Analyse compl&egrave;te : ce qu&apos;il fait vraiment, son prix réel, et pour qui c&apos;est le bon choix.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>28 avril 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
+              <span>28 avril 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>11 min de lecture</span>
             </div>
@@ -184,7 +184,7 @@ export default function EcoflowPowerstreamPage() {
             <p className="text-sm font-semibold mb-2">Alternatives actuelles avec stockage&nbsp;:</p>
             <ul className="text-sm text-charcoal-light space-y-1.5 mb-4">
               <li>&bull; <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">EcoFlow STREAM Ultra</Link>&nbsp;: batterie de 1,92&nbsp;kWh avec onduleur 800&nbsp;W int&eacute;gr&eacute;, extensible &agrave; 11,52&nbsp;kWh, pilot&eacute; par la m&ecirc;me app EcoFlow &mdash; <Link href="/avis/ecoflow-stream-ultra" className="text-green hover:underline font-semibold">notre avis complet</Link>.</li>
-              <li>&bull; <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link>&nbsp;: le meilleur ROI des syst&egrave;mes avec batterie que nous avons analys&eacute;s (<AffLink item={BUY.solarflow800Plus} position="discontinued-notice">voir le prix chez Zendure</AffLink>).</li>
+              <li>&bull; <AffLink item={BUY.solarflow800Pro2} position="discontinued-notice">Zendure SolarFlow 800 Pro 2</AffLink>&nbsp;: batterie de 1&nbsp;920&nbsp;Wh avec onduleur 800&nbsp;W int&eacute;gr&eacute;, 599&nbsp;&euro; seul ou 959&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W (23/11/2026). Il prend la suite du <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">SolarFlow 800 Plus</Link>, &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026).</li>
               <li>&bull; <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link>&nbsp;: tout-en-un onduleur + batterie 2,56&nbsp;kWh.</li>
               <li>&bull; <Link href="/avis/ikea-solstrale-balcon" className="text-green hover:underline font-semibold">IKEA Solstr&aring;le</Link>&nbsp;: kit balcon b&acirc;ti sur le micro-onduleur EcoFlow STREAM.</li>
             </ul>
@@ -219,7 +219,7 @@ export default function EcoflowPowerstreamPage() {
               <div>
                 <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial : ROI long</h3>
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  Avec un ROI de 10,2 ans, le PowerStream est pertinent si vous &ecirc;tes d&eacute;j&agrave; dans l&apos;&eacute;cosyst&egrave;me EcoFlow ou si le backup r&eacute;seau est important pour vous. Pour un premier achat orient&eacute; rentabilit&eacute;, le Zendure SolarFlow 800 Plus en pack (3,6 ans au prix promotionnel de 719&nbsp;&euro;) ou le Sunology PLAY 515&nbsp;W (6,2 ans) sont plus adapt&eacute;s.
+                  Avec un ROI de 10,2 ans, le PowerStream est pertinent si vous &ecirc;tes d&eacute;j&agrave; dans l&apos;&eacute;cosyst&egrave;me EcoFlow ou si le backup r&eacute;seau est important pour vous. Pour un premier achat orient&eacute; rentabilit&eacute;, le Zendure SolarFlow 800 Pro 2 en pack avec 2 panneaux de 500&nbsp;W (4,7 ans &agrave; 959&nbsp;&euro;) ou le Sunology PLAY 515&nbsp;W (6,2 ans) sont plus adapt&eacute;s.
                 </p>
               </div>
             </div>

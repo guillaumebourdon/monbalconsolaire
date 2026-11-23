@@ -290,7 +290,7 @@ export default function BatteriesPortablesPage() {
                     Bo&icirc;tier branch&eacute; en permanence sur votre kit solaire de balcon. Stocke l&apos;exc&eacute;dent pour le soir. Pas transportable, mais bien plus efficace pour l&apos;autoconsommation.
                   </p>
                   <p className="text-xs text-stone">
-                    <strong>Exemples :</strong> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> ({priceLabel('bluetti-balco-260')}), Zendure SolarFlow 800 Plus, EcoFlow STREAM Ultra (successeur du PowerStream, arr&ecirc;t&eacute;). <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">Voir le comparatif d&eacute;di&eacute;</Link>.
+                    <strong>Exemples :</strong> <Link href="/avis/bluetti-balco-260" className="text-green hover:underline font-semibold">Bluetti Balco 260</Link> ({priceLabel('bluetti-balco-260')}), Zendure SolarFlow 800 Pro 2 (le 800 Plus est &eacute;puis&eacute; chez Zendure au 23/11/2026), EcoFlow STREAM Ultra (successeur du PowerStream, arr&ecirc;t&eacute;). <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">Voir le comparatif d&eacute;di&eacute;</Link>.
                   </p>
                 </div>
               </div>
@@ -332,7 +332,7 @@ export default function BatteriesPortablesPage() {
                       <td className="text-center p-3 text-xs font-semibold">10 ans</td>
                     </tr>
                     <tr className="bg-white border-b border-border-light">
-                      <td className="p-3 font-semibold">Zendure SolarFlow 800 Plus</td>
+                      <td className="p-3 font-semibold">Zendure SolarFlow 800 Plus <span className="font-normal text-xs text-stone">(&eacute;puis&eacute; au 23/11/2026)</span></td>
                       <td className="text-center p-3 font-mono text-xs">1 920 Wh</td>
                       <td className="text-center p-3 font-mono text-xs">800 W</td>
                       <td className="text-center p-3 font-mono text-xs">{priceLabel('zendure-solarflow-800-plus')}</td>

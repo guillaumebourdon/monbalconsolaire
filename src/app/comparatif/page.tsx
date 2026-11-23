@@ -24,7 +24,7 @@ const articles = [
   { slug: '300w-vs-400w-vs-500w-puissance', title: '300W vs 400W vs 500W : quelle puissance choisir ?', excerpt: 'Comparatif des 3 puissances les plus vendues : prix au Wc, production réelle, profil adapté à chaque gamme.', badge: 'Puissance', date: '18 avril 2026', readTime: '8 min' },
   { slug: 'zendure-vs-sunology-vs-beem', title: 'Zendure vs Sunology vs Beem : le match 2026', excerpt: 'Stockage à prix cassé vs simplicité absolue vs flexibilité : comparatif complet des 3 approches du solaire de balcon.', badge: 'Match 2026', date: '9 mai 2026', readTime: '12 min' },
   { slug: 'meilleur-kit-solaire-terrasse-2026', title: 'Meilleur kit solaire pour terrasse 2026', excerpt: 'Plus d\'espace, pose au sol, multi-panneaux : les meilleurs setups solaires pour terrasse selon votre budget.', badge: 'Terrasse', date: '13 mai 2026', readTime: '10 min' },
-  { slug: 'meilleure-batterie-solaire-balcon-2026', title: 'Meilleure batterie solaire balcon 2026 : comparatif', excerpt: 'Zendure SolarFlow 800 Plus (539 €), Jackery SolarVault 3 Pro (719 €), Bluetti Balco 260 (729 €), EcoFlow STREAM Ultra (659 €) : prix/kWh, autonomie, verdict.', badge: 'Nouveau', date: '10 juillet 2026', readTime: '10 min' },
+  { slug: 'meilleure-batterie-solaire-balcon-2026', title: 'Meilleure batterie solaire balcon 2026 : comparatif', excerpt: 'Zendure SolarFlow 800 Pro 2 (599 €), Jackery SolarVault 3 Pro (719 €), Bluetti Balco 260 (729 €), EcoFlow STREAM Ultra (659 €) : prix/kWh, autonomie, verdict.', badge: 'Nouveau', date: '10 juillet 2026', readTime: '10 min' },
 ];
 
 const comingSoon: { title: string; desc: string }[] = [];

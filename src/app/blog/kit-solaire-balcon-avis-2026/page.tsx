@@ -45,7 +45,7 @@ const faqData = [
   },
   {
     question: 'Zendure SolarFlow : les avis sont-ils aussi bons qu\u2019annonc\u00e9 ?',
-    answer: 'Le Zendure SolarFlow 800 Plus est plébiscité pour son stockage intégré et son app très complète. Les critiques portent sur le prix (539 € sans panneaux, 719 € en pack avec 2 panneaux de 500 W au 5 novembre 2026, prix promotionnel) et un ROI plus long. Les utilisateurs qui en tirent le plus profit sont ceux absents en journée, grâce au décalage de la batterie.',
+    answer: 'Le Zendure SolarFlow 800 Plus est plébiscité pour son stockage intégré et son app très complète. Les critiques portent sur le prix (539 € sans panneaux, 719 € en pack avec 2 panneaux de 500 W au 5 novembre 2026, prix promotionnel) et un ROI plus long. Les utilisateurs qui en tirent le plus profit sont ceux absents en journée, grâce au décalage de la batterie. Il est épuisé chez Zendure (constaté le 23/11/2026) : le SolarFlow 800 Pro 2, en stock, coûte 599 € seul et 959 € en pack avec 2 panneaux de 500 W.',
   },
 ];
 
@@ -56,7 +56,7 @@ export default function KitSolaireBalconAvisPage() {
         title="Kit solaire balcon : avis et retours d'exp\u00e9rience 2026"
         description="Avis et retours d\u2019exp\u00e9rience sur les kits solaires de balcon en 2026."
         url="https://monbalconsolaire.fr/blog/kit-solaire-balcon-avis-2026"
-        datePublished="2026-06-20" dateModified="2026-11-20"
+        datePublished="2026-06-20" dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Kit solaire balcon : avis 2026' }]} />
@@ -73,7 +73,7 @@ export default function KitSolaireBalconAvisPage() {
               Trustpilot, forums, Reddit, groupes Facebook : on a &eacute;pluch&eacute; les <strong>vrais retours utilisateurs</strong> sur les kits solaires de balcon les plus vendus en France. Sunology, Beem, Zendure, EcoFlow &mdash; voici ce qu&apos;en pensent ceux qui les utilisent au quotidien, <strong>sans filtre marketing</strong>.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>20 juin 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
+              <span>20 juin 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -197,7 +197,7 @@ export default function KitSolaireBalconAvisPage() {
               <p className="text-sm text-charcoal-light">Avis polaris&eacute;s : enthousiastes ou d&eacute;&ccedil;us du ROI.</p>
             </div>
             <p className="text-sm text-charcoal-light leading-relaxed mb-4">
-              Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> (onduleur 800 W + batterie 1,92 kWh, {priceLabel('zendure-solarflow-800-plus')} seul ou 719 &euro; avec 2 panneaux de 500 W au 5 novembre 2026) est le syst&egrave;me avec stockage le plus populaire. Les avis sont plus nuanc&eacute;s que pour les kits simples :
+              Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> (onduleur 800 W + batterie 1,92 kWh, {priceLabel('zendure-solarflow-800-plus')} seul ou 719 &euro; avec 2 panneaux de 500 W au 5 novembre 2026) est le syst&egrave;me avec stockage le plus populaire. Il est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026)&nbsp;; son rempla&ccedil;ant en stock, le SolarFlow 800 Pro 2 (batterie 1&nbsp;920&nbsp;Wh, onduleur 800&nbsp;W), co&ucirc;te 599&nbsp;&euro; seul ou 959&nbsp;&euro; avec 2 panneaux de 500&nbsp;W. Les avis ci-dessous portent sur le 800 Plus et sont plus nuanc&eacute;s que pour les kits simples :
             </p>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="card border-l-4 border-l-green">
@@ -213,7 +213,7 @@ export default function KitSolaireBalconAvisPage() {
               Notre constat : le SolarFlow est id&eacute;al pour les profils absents la journ&eacute;e. Pour ceux qui sont en t&eacute;l&eacute;travail, un kit simple avec prise connect&eacute;e suffit souvent. Voir aussi les nouvelles options : <Link href="/avis/bluetti-balco-260" className="text-green hover:underline">Bluetti Balco 260</Link> et <Link href="/avis/jackery-solarvault-3-pro" className="text-green hover:underline">Jackery SolarVault 3 Pro</Link>.
             </p>
             <p className="mt-3">
-              <AffiliateCTA productName="Zendure SolarFlow 800 Plus" merchantName="Zendure" affiliateUrl={zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url)} label="Voir le prix du SolarFlow 800 Plus chez Zendure" variant="inline" position="mid_article" />
+              <AffiliateCTA productName="Zendure SolarFlow 800 Pro 2" merchantName="Zendure" affiliateUrl={zendureUrl(PRODUCTS['zendure-solarflow-800-pro-2'].url)} label="Voir le prix du SolarFlow 800 Pro 2 chez Zendure" variant="inline" position="mid_article" />
             </p>
           </section>
 
@@ -326,9 +326,9 @@ export default function KitSolaireBalconAvisPage() {
                   </tr>
                   <tr className="border-b border-border-light">
                     <td className="py-3 font-semibold">Stockage int&eacute;gr&eacute;</td>
-                    <td className="py-3"><Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 &times; 500 W</Link></td>
-                    <td className="py-3 text-center font-mono">719 &euro;<span className="block font-sans text-xs"><AffLink item={BUY.solarflow800Plus} position="comparison-table">Voir le prix</AffLink></span></td>
-                    <td className="py-3 text-center font-mono font-bold text-green">8,5/10</td>
+                    <td className="py-3">Zendure SolarFlow 800 Pro 2 + 2 &times; 500 W <span className="text-stone text-xs">(le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">800 Plus</Link> est &eacute;puis&eacute;)</span></td>
+                    <td className="py-3 text-center font-mono">959 &euro;<span className="block font-sans text-xs"><AffLink item={BUY.solarflow800Pro2} position="comparison-table">Voir le prix</AffLink></span></td>
+                    <td className="py-3 text-center font-mono font-bold text-green">&mdash;</td>
                   </tr>
                   <tr className="border-b border-border-light">
                     <td className="py-3 font-semibold">Petit budget</td>

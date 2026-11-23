@@ -78,7 +78,7 @@ const sunologySpecs = [
 export default function ComparatifPage() {
   return (
     <>
-      <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-17" dateModified="2026-11-05" />
+      <SchemaArticle title="Meilleur kit solaire plug and play 2026 : comparatif complet" description="Comparatif indépendant des meilleurs kits solaires plug-and-play pour balcon en 2026." url="https://monbalconsolaire.fr/comparatif/meilleur-kit-solaire-2026" datePublished="2026-03-17" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: "Comparatifs", href: "/comparatif" }, { label: "Meilleur kit solaire 2026" }]} />
       <article className="section-padding">
@@ -90,7 +90,7 @@ export default function ComparatifPage() {
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Meilleur kit solaire plug and play 2026 : comparatif complet</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Sunology PLAY, Beem On, Sunethic F500 : quel kit choisir pour votre balcon ? Nous avons analyse les prix, les performances réelles et la rentabilité de chaque kit. Verdict indépendant.</p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>Mis &agrave; jour le 5 novembre 2026</span>
+              <span>Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -365,7 +365,7 @@ export default function ComparatifPage() {
                 </div>
                 <div className="card-lg">
                   <h3 className="font-bold mb-1">Si vous consommez surtout le soir &rarr; un syst&egrave;me avec batterie</h3>
-                  <p className="text-sm text-charcoal-light">Les kits de ce comparatif n&apos;ont pas de stockage (sauf le PLAY MAX). Dans notre <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="text-green hover:underline">comparatif des batteries de balcon</Link>, le meilleur prix au kWh revient au {PRODUCTS['zendure-solarflow-800-plus'].name} ({priceLabel('zendure-solarflow-800-plus')} sans panneaux, {PRODUCTS['zendure-solarflow-800-plus'].batteryKwh?.toLocaleString('fr-FR')}&nbsp;kWh).{' '}<AffLink item={BUY.solarflow800Plus} position="verdict">Voir le prix chez Zendure &rarr;</AffLink></p>
+                  <p className="text-sm text-charcoal-light">Les kits de ce comparatif n&apos;ont pas de stockage (sauf le PLAY MAX). Dans notre <Link href="/comparatif/meilleure-batterie-solaire-balcon-2026" className="text-green hover:underline">comparatif des batteries de balcon</Link>, le meilleur prix au kWh revenait au {PRODUCTS['zendure-solarflow-800-plus'].name}, &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026). En stock, le {PRODUCTS['zendure-solarflow-800-pro-2'].name} co&ucirc;te {priceLabel('zendure-solarflow-800-pro-2')} sans panneaux pour {PRODUCTS['zendure-solarflow-800-pro-2'].batteryKwh?.toLocaleString('fr-FR')}&nbsp;kWh.{' '}<AffLink item={BUY.solarflow800Pro2} position="verdict">Voir le 800 Pro 2 chez Zendure &rarr;</AffLink></p>
                 </div>
               </div>
               <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center mt-8">

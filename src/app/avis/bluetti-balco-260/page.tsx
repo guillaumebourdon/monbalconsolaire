@@ -23,14 +23,14 @@ const faqData = [
   { question: 'Le Bluetti Balco 260 inclut-il des panneaux solaires ?', answer: 'Non. Le Balco 260 est un boîtier onduleur + batterie. Les panneaux solaires sont à acheter séparément. Il accepte jusqu\'à 2 400 W d\'entrée solaire via 4 MPPT, soit 4 à 6 panneaux classiques de 400-500 Wc.' },
   { question: 'Quelle est la capacité de la batterie du Balco 260 ?', answer: 'La batterie intégrée est de 2,56 kWh en LFP (lithium fer phosphate). Elle est extensible jusqu\'à 15 kWh avec des modules BC260 supplémentaires empilables.' },
   { question: 'Le Balco 260 est-il étanche ?', answer: 'Oui. Il est certifié IP65, donc résistant à la pluie et à la poussière. Il peut rester en extérieur toute l\'année, y compris sur un balcon exposé. La batterie intègre un chauffage pour fonctionner en hiver.' },
-  { question: 'Bluetti Balco 260 vs Zendure SolarFlow : lequel choisir ?', answer: 'Le Zendure SolarFlow 800 Plus reste plus abordable (539 € seul, 719 € en pack avec 2 panneaux de 500 W au 5 novembre 2026, prix promotionnel) et a une app plus mature. Le Balco 260 a une plus grosse batterie (2,56 vs 1,92 kWh) et accepte plus de solaire (2 400 W vs 1 200 W). Si le budget est serré : Zendure. Si vous voulez de la capacité et de l\'évolutivité : Bluetti.' },
+  { question: 'Bluetti Balco 260 vs Zendure SolarFlow : lequel choisir ?', answer: 'Le Zendure SolarFlow 800 Plus (539 € seul, 719 € en pack avec 2 panneaux de 500 W au 5 novembre 2026, prix promotionnel) est épuisé chez Zendure (constaté le 23/11/2026). En stock, le SolarFlow 800 Pro 2 coûte 599 € seul et 959 € en pack avec 2 panneaux de 500 W (23/11/2026), moins que le Balco 260 (729 € seul, 1 019 € en pack). Le Balco 260 a une plus grosse batterie (2,56 kWh contre 1,92 kWh pour les deux Zendure). Si le budget est serré : Zendure. Si vous voulez de la capacité et de l\'évolutivité : Bluetti.' },
   { question: 'Peut-on utiliser le Balco 260 en cas de coupure de courant ?', answer: 'Oui. Le Balco 260 dispose d\'une sortie off-grid de 1 200 W (bypass 2 300 W). En cas de coupure, il peut alimenter directement vos appareils via sa prise de secours, ce que ne font pas les onduleurs classiques plug-and-play.' },
 ];
 
 export default function BluettiBalco260AvisPage() {
   return (
     <>
-      <SchemaArticle title="Bluetti Balco 260 avis : le tout-en-un onduleur + batterie" description="Avis détaillé sur le Bluetti Balco 260 en 2026." url="https://monbalconsolaire.fr/avis/bluetti-balco-260" datePublished="2026-06-20" dateModified="2026-11-20" />
+      <SchemaArticle title="Bluetti Balco 260 avis : le tout-en-un onduleur + batterie" description="Avis détaillé sur le Bluetti Balco 260 en 2026." url="https://monbalconsolaire.fr/avis/bluetti-balco-260" datePublished="2026-06-20" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/bluetti-balco-260-front.webp" name="Bluetti Balco 260" brand="Bluetti" description="Système solaire balcon tout-en-un : onduleur SiC + batterie LFP 2,56 kWh + 4 MPPT. IP65, extensible à 15 kWh." price={PRODUCTS['bluetti-balco-260'].priceEur} availability={SCHEMA_AVAILABILITY[PRODUCTS['bluetti-balco-260'].availability]} ratingValue={7} url="https://monbalconsolaire.fr/avis/bluetti-balco-260" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Bluetti Balco 260' }]} />
@@ -41,7 +41,7 @@ export default function BluettiBalco260AvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Bluetti Balco 260 avis : le tout-en-un onduleur + batterie (2026)</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Bluetti d&eacute;barque sur le march&eacute; du solaire de balcon avec un concept diff&eacute;rent : un bo&icirc;tier unique qui int&egrave;gre onduleur, batterie 2,56&nbsp;kWh et 4&nbsp;MPPT. Vendu 729&nbsp;&euro; seul ou 1&nbsp;019&nbsp;&euro; avec 2 panneaux de 450&nbsp;W (prix promotionnels relev&eacute;s le 20 novembre 2026).</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 juin 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>20 juin 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -165,7 +165,8 @@ export default function BluettiBalco260AvisPage() {
                   <tbody>
                     {[
                       ['Bluetti Balco 260', '2,56 kWh', '729 €', 'Non inclus (pack 2 × 450 W : 1 019 €)', '7/10', true],
-                      ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539 €', 'Non inclus (pack 2 × 500 W : 719 €)', '8.5/10', false],
+                      ['Zendure SolarFlow 800 Plus (épuisé)', '1,92 kWh', '539 €', 'Non inclus (pack 2 × 500 W : 719 €)', '8.5/10', false],
+                      ['Zendure SolarFlow 800 Pro 2', '1,92 kWh', '599 €', 'Non inclus (pack 2 × 500 W : 959 €)', '—', false],
                       ['EcoFlow STREAM Ultra', '1,92 kWh', '659 €', 'Non inclus', '7.5/10', false],
                       ['Sunology PLAY MAX', '0,7 kWh', priceLabel('sunology-play-max'), '460 W inclus', '7/10', false],
                     ].map(([name, battery, price, panels, score, highlight], i) => (
@@ -180,7 +181,7 @@ export default function BluettiBalco260AvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s en juin 2026. Le Balco 260 n&eacute;cessite l&apos;achat de panneaux s&eacute;par&eacute;ment.</p>
+              <p className="text-xs text-stone mt-2 italic">Prix v&eacute;rifi&eacute;s en juin 2026 (SolarFlow 800 Pro 2&nbsp;: 23/11/2026). Le Balco 260 n&eacute;cessite l&apos;achat de panneaux s&eacute;par&eacute;ment.</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
@@ -232,7 +233,7 @@ export default function BluettiBalco260AvisPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Notre verdict</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Bluetti Balco 260 est un produit int&eacute;ressant sur le papier : tout-en-un, extensible, IP65, secours &eacute;lectrique. Bluetti apporte son exp&eacute;rience des stations d&apos;&eacute;nergie portables au solaire de balcon, et &ccedil;a se voit dans la fiche technique.</p>
-              <p className="text-charcoal-light leading-relaxed mb-4">Mais &agrave; 729&nbsp;&euro; sans panneaux (1&nbsp;019&nbsp;&euro; en pack), le ticket d&apos;entr&eacute;e est &eacute;lev&eacute;. Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Zendure SolarFlow 800 Plus</Link> en pack avec 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) reste plus comp&eacute;titif pour la plupart des utilisateurs, sans sortie de secours. Et si vous n&apos;avez pas besoin de batterie, un simple <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429&nbsp;&euro;</Link> (en pr&eacute;commande) se rembourse plus vite.</p>
+              <p className="text-charcoal-light leading-relaxed mb-4">Mais &agrave; 729&nbsp;&euro; sans panneaux (1&nbsp;019&nbsp;&euro; en pack), le ticket d&apos;entr&eacute;e est &eacute;lev&eacute;. Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Zendure SolarFlow 800 Plus</Link> en pack avec 2 panneaux de 500&nbsp;W (719&nbsp;&euro; en promotion le 5 novembre 2026) &eacute;tait plus comp&eacute;titif pour la plupart des utilisateurs, sans sortie de secours, mais il est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026). Son remplaçant en stock, le SolarFlow 800 Pro 2, co&ucirc;te 959&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W, toujours sous les 1&nbsp;019&nbsp;&euro; du pack Balco 260. Et si vous n&apos;avez pas besoin de batterie, un simple <Link href="/avis/beem-on-500w" className="text-green hover:underline">Beem On 500 Wc &agrave; 429&nbsp;&euro;</Link> (en pr&eacute;commande) se rembourse plus vite.</p>
               <p className="text-charcoal-light leading-relaxed mb-4">Le Balco 260 s&apos;adresse &agrave; un profil pr&eacute;cis : quelqu&apos;un qui veut du stockage cons&eacute;quent, un secours &eacute;lectrique, et la possibilit&eacute; d&apos;&eacute;voluer jusqu&apos;&agrave; 15&nbsp;kWh. Si c&apos;est votre cas, c&apos;est une option solide. Sinon, la concurrence fait mieux pour moins cher.</p>
               <p className="text-charcoal-light leading-relaxed"><strong>Note finale : <span className="text-amber-dark text-xl font-extrabold">7/10</span></strong></p>
               <a href={BUY.balco260.url} target="_blank" rel="sponsored noopener" className="btn-affiliate inline-flex mt-4">Voir le Bluetti Balco 260 &rarr;</a>

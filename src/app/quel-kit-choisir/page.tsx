@@ -112,7 +112,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/comparatif/meilleure-batterie-solaire-balcon-2026',
     title: 'Meilleure batterie solaire balcon 2026 : comparatif',
-    excerpt: 'Comparatif dédié batteries balcon : prix/kWh, autonomie, verdict par profil. Zendure SolarFlow 800 Plus, Jackery SolarVault 3 Pro, Bluetti Balco 260, EcoFlow STREAM Ultra.',
+    excerpt: 'Comparatif dédié batteries balcon : prix/kWh, autonomie, verdict par profil. Zendure SolarFlow 800 Pro 2, Jackery SolarVault 3 Pro, Bluetti Balco 260, EcoFlow STREAM Ultra.',
     type: 'comparatif',
     badge: 'Batteries',
     tags: ['stockage', 'comparatif', 'best'],
@@ -357,7 +357,7 @@ const ARTICLES: Article[] = [
   {
     slug: '/avis/zendure-solarflow',
     title: 'Zendure SolarFlow 800 Plus',
-    excerpt: `Batterie 1,92 kWh + onduleur 800 W intégrés : ${priceLabel('zendure-solarflow-800-plus')} sans panneaux, 719 € en pack 2 × 500 W (promo constatée le 05/11/2026).`,
+    excerpt: `Batterie 1,92 kWh + onduleur 800 W intégrés. Épuisé chez Zendure au 23/11/2026 (${priceLabel('zendure-solarflow-800-plus')} sans panneaux, 719 € en pack 2 × 500 W le 05/11/2026) ; le 800 Pro 2 prend le relais.`,
     type: 'avis',
     badge: 'Rapport qualité/prix',
     tags: ['stockage', 'budget', 'marque'],
@@ -366,7 +366,7 @@ const ARTICLES: Article[] = [
     publishedAt: '2026-05-07',
     score: '8.5/10',
     price: avisPrice('zendure-solarflow'),
-    buy: BUY.solarflow800Plus,
+    buy: BUY.solarflow800Pro2,
   },
   {
     slug: '/avis/sunology-vault',
@@ -673,7 +673,7 @@ export default function QuelKitChoisirPage() {
             </Link>
             {a.buy && (
               <p className="text-sm mt-2 px-2">
-                <AffLink item={a.buy} position="quel-kit-choisir">Voir le prix chez {a.buy.merchant} &rarr;</AffLink>
+                <AffLink item={a.buy} position="quel-kit-choisir">{a.buy.product === 'Zendure SolarFlow 800 Pro 2' && a.slug === '/avis/zendure-solarflow' ? 'Voir le 800 Pro 2 en stock chez Zendure' : `Voir le prix chez ${a.buy.merchant}`} &rarr;</AffLink>
                 <span className="text-[10px] text-stone ml-2">lien commercial</span>
               </p>
             )}

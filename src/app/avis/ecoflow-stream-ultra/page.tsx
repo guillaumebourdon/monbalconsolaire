@@ -34,7 +34,7 @@ const faqData = [
   },
   {
     question: 'STREAM Ultra ou Zendure SolarFlow : lequel choisir ?',
-    answer: 'Même capacité de départ (1,92 kWh) et même puissance d\'onduleur (800 W), mais deux philosophies différentes. Le Zendure SolarFlow 800 Plus (539 € seul, 719 € en pack avec 2 panneaux de 500 W au 5 novembre 2026, prix promotionnel) est moins cher et suffit pour la grande majorité des balcons, avec un ROI de 3,6 ans pour ce pack. Le STREAM Ultra se distingue par sa sortie de secours jusqu\'à 2 300 W (utile en cas de coupure réseau, ce que le SolarFlow ne propose pas) et par l\'application EcoFlow, plus aboutie. Si vous cherchez le meilleur ROI pur, Zendure gagne ; si le backup électrique en cas de coupure compte pour vous, le STREAM Ultra se justifie.',
+    answer: 'Même capacité de départ (1,92 kWh) et même puissance d\'onduleur (800 W), mais deux philosophies différentes. Le Zendure SolarFlow 800 Plus (539 € seul, 719 € en pack avec 2 panneaux de 500 W au 5 novembre 2026) est épuisé chez Zendure (constaté le 23/11/2026). En stock, le SolarFlow 800 Pro 2 (batterie 1 920 Wh, onduleur 800 W) coûte 599 € seul et 959 € en pack avec 2 panneaux de 500 W, avec un ROI de 4,7 ans pour ce pack : il reste moins cher qu\'un STREAM Ultra équipé et suffit pour la grande majorité des balcons. Le STREAM Ultra se distingue par sa sortie de secours jusqu\'à 2 300 W (utile en cas de coupure réseau, ce que le SolarFlow 800 Plus ne proposait pas) et par l\'application EcoFlow, plus aboutie. Si vous cherchez le meilleur ROI pur, Zendure gagne ; si le backup électrique en cas de coupure compte pour vous, le STREAM Ultra se justifie.',
   },
   {
     question: 'Le STREAM Ultra est-il vendu en France et où l\'acheter ?',
@@ -42,7 +42,7 @@ const faqData = [
   },
   {
     question: 'Combien coûte un setup complet avec panneaux ?',
-    answer: 'Le 5 novembre 2026, le boîtier STREAM Ultra seul (1,92 kWh + micro-onduleur) était à 659 € sur fr.ecoflow.com (prix barré 1 299 €). Le pack avec 4 panneaux de 500 W était à 1 499 €. En ajoutant vous-même 2 panneaux de 400 W (environ 400 €, estimation), un setup complet tourne autour de 1 060 €, plus cher que le pack Zendure SolarFlow 800 Plus avec 2 panneaux de 500 W (719 € en promotion) pour une capacité équivalente.',
+    answer: 'Le 5 novembre 2026, le boîtier STREAM Ultra seul (1,92 kWh + micro-onduleur) était à 659 € sur fr.ecoflow.com (prix barré 1 299 €). Le pack avec 4 panneaux de 500 W était à 1 499 €. En ajoutant vous-même 2 panneaux de 400 W (environ 400 €, estimation), un setup complet tourne autour de 1 060 €, plus cher que le pack Zendure SolarFlow 800 Pro 2 avec 2 panneaux de 500 W (959 € le 23/11/2026, le pack 800 Plus à 719 € étant épuisé) pour une capacité équivalente.',
   },
 ];
 
@@ -72,7 +72,7 @@ const points_forts = [
 const points_faibles = [
   {
     titre: 'Un prix très dépendant des promotions',
-    detail: 'Le 5 novembre 2026, le STREAM Ultra était à 659 € contre un prix barré de 1 299 € : l\'écart est énorme. Hors promotion, il perd l\'essentiel de son intérêt face au Zendure SolarFlow 800 Plus.',
+    detail: 'Le 5 novembre 2026, le STREAM Ultra était à 659 € contre un prix barré de 1 299 € : l\'écart est énorme. Hors promotion, il perd l\'essentiel de son intérêt face au Zendure SolarFlow 800 Pro 2 (599 € le 23/11/2026).',
   },
   {
     titre: 'Panneaux vendus séparément',
@@ -96,7 +96,7 @@ export default function EcoflowStreamUltraPage() {
         description="Avis complet du STREAM Ultra, successeur du PowerStream chez EcoFlow."
         url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra"
         datePublished="2026-11-03"
-        dateModified="2026-11-20"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct image="/images/produits/ecoflow-stream-ultra-front.webp" name="EcoFlow STREAM Ultra" brand="EcoFlow" description="Batterie LiFePO4 1,92 kWh avec micro-onduleur 800 W intégré, extensible à 11,52 kWh, 4 MPPT, sortie secours 2 300 W." price={659} ratingValue={7.5} availability="InStock" url="https://monbalconsolaire.fr/avis/ecoflow-stream-ultra" />
@@ -114,7 +114,7 @@ export default function EcoflowStreamUltraPage() {
               EcoFlow a retiré le PowerStream de son catalogue France en 2026 au profit de la gamme <strong>STREAM</strong>. Le STREAM Ultra en est le modèle avec stockage&nbsp;: batterie et micro-onduleur 800&nbsp;W réunis dans un seul boîtier, extensible jusqu&apos;à 11,52&nbsp;kWh. Analyse compl&egrave;te des specs, du prix et de la rentabilit&eacute;.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>3 novembre 2026 &middot; Mis &agrave; jour le 20 novembre 2026</span>
+              <span>3 novembre 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -146,7 +146,7 @@ export default function EcoflowStreamUltraPage() {
           <div className="card-lg bg-green-pale/30 border-green/10 mb-10">
             <h2 className="font-bold text-lg mb-3">Notre avis en résumé</h2>
             <p className="text-charcoal-light text-sm leading-relaxed">
-              Le STREAM Ultra corrige le principal défaut du PowerStream&nbsp;: il n&apos;impose plus d&apos;acheter une station EcoFlow séparée pour avoir du stockage. Batterie et micro-onduleur sont réunis dans un boîtier unique, extensible jusqu&apos;à 11,52&nbsp;kWh, avec une sortie de secours jusqu&apos;à 2 300&nbsp;W en cas de coupure. <strong>Mais</strong> à capacité et puissance équivalentes, le Zendure SolarFlow 800 Plus reste moins cher (719&nbsp;€ en pack avec 2 panneaux de 500&nbsp;W, contre ~1 060&nbsp;€ pour un STREAM Ultra avec 2 panneaux achet&eacute;s &agrave; part, prix promotionnels du 5 novembre 2026). Le STREAM Ultra se justifie surtout si la sortie de secours ou l&apos;écosystème applicatif EcoFlow compte vraiment pour vous.
+              Le STREAM Ultra corrige le principal défaut du PowerStream&nbsp;: il n&apos;impose plus d&apos;acheter une station EcoFlow séparée pour avoir du stockage. Batterie et micro-onduleur sont réunis dans un boîtier unique, extensible jusqu&apos;à 11,52&nbsp;kWh, avec une sortie de secours jusqu&apos;à 2 300&nbsp;W en cas de coupure. <strong>Mais</strong> à capacité et puissance équivalentes, le Zendure SolarFlow 800 Pro 2 reste moins cher (959&nbsp;€ en pack avec 2 panneaux de 500&nbsp;W le 23/11/2026, contre ~1 060&nbsp;€ pour un STREAM Ultra avec 2 panneaux achet&eacute;s &agrave; part au prix promotionnel du 5 novembre 2026). Le SolarFlow 800 Plus, qui tenait ce r&ocirc;le &agrave; 719&nbsp;&euro;, est &eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026). Le STREAM Ultra se justifie surtout si la sortie de secours ou l&apos;écosystème applicatif EcoFlow compte vraiment pour vous.
             </p>
           </div>
 
@@ -350,7 +350,7 @@ export default function EcoflowStreamUltraPage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                Un ROI de 6,3 ans est correct pour un système avec batterie et sortie de secours, mais moins performant que le <AffLink item={BUY.solarflow800Plus} position="roi">Zendure SolarFlow 800 Plus</AffLink> en pack (3,6 ans au prix promotionnel de 719&nbsp;&euro;, sans backup coupure). Au prix barr&eacute; de 1&nbsp;299&nbsp;&euro;, le m&ecirc;me setup d&eacute;passerait 1&nbsp;700&nbsp;&euro; et 10 ans de ROI. Le STREAM Ultra X (3,84&nbsp;kWh) d&eacute;marre &agrave; 1&nbsp;099&nbsp;&euro; sur fr.ecoflow.com (5 novembre 2026).
+                Un ROI de 6,3 ans est correct pour un système avec batterie et sortie de secours, mais moins performant que le <AffLink item={BUY.solarflow800Pro2} position="roi">Zendure SolarFlow 800 Pro 2</AffLink> en pack avec 2 panneaux de 500&nbsp;W (4,7 ans &agrave; 959&nbsp;&euro; le 23/11/2026). Au prix barr&eacute; de 1&nbsp;299&nbsp;&euro;, le m&ecirc;me setup d&eacute;passerait 1&nbsp;700&nbsp;&euro; et 10 ans de ROI. Le STREAM Ultra X (3,84&nbsp;kWh) d&eacute;marre &agrave; 1&nbsp;099&nbsp;&euro; sur fr.ecoflow.com (5 novembre 2026).
               </p>
             </section>
 
@@ -360,7 +360,7 @@ export default function EcoflowStreamUltraPage() {
                 <div>
                   <h3 className="font-bold text-sm text-amber-dark mb-2">Verdict &eacute;ditorial</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    Le STREAM Ultra est un vrai progr&egrave;s par rapport au PowerStream (tout-en-un, plus besoin de station s&eacute;par&eacute;e), mais &agrave; 6,3&nbsp;ans de ROI (au prix promotionnel), il reste moins rentable que le <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus</Link> (3,6&nbsp;ans en pack). Il se justifie surtout si la sortie de secours 2 300&nbsp;W ou l&apos;&eacute;cosyst&egrave;me EcoFlow comptent pour vous &mdash; et seulement en promotion.
+                    Le STREAM Ultra est un vrai progr&egrave;s par rapport au PowerStream (tout-en-un, plus besoin de station s&eacute;par&eacute;e), mais &agrave; 6,3&nbsp;ans de ROI (au prix promotionnel), il reste moins rentable que le <AffLink item={BUY.solarflow800Pro2} position="verdict">Zendure SolarFlow 800 Pro 2</AffLink> (4,7&nbsp;ans en pack avec 2 panneaux de 500&nbsp;W, 959&nbsp;&euro; le 23/11/2026), qui prend la suite du SolarFlow 800 Plus &eacute;puis&eacute;. Il se justifie surtout si la sortie de secours 2 300&nbsp;W ou l&apos;&eacute;cosyst&egrave;me EcoFlow comptent pour vous &mdash; et seulement en promotion.
                   </p>
                 </div>
               </div>

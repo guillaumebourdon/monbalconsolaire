@@ -151,7 +151,7 @@ const checklist = [
     num: 11,
     category: 'Budget',
     title: 'Décider si une batterie est nécessaire',
-    desc: `Une batterie (plusieurs centaines d'euros de surcoût) est utile si vous consommez principalement le soir. Sans batterie, un foyer absent en journée autoconsomme souvent 40 à 60 % de sa production. Avec batterie (${affA(BUY.solarflow800Plus, 'Zendure SolarFlow 800 Plus')} 1,92 kWh, Bluetti Balco 260), l\'autoconsommation peut monter à 80-95 %. Le surcoût se justifie si vous rentrez tard et consommez surtout le soir.`,
+    desc: `Une batterie (plusieurs centaines d'euros de surcoût) est utile si vous consommez principalement le soir. Sans batterie, un foyer absent en journée autoconsomme souvent 40 à 60 % de sa production. Avec batterie (${affA(BUY.solarflow800Pro2, 'Zendure SolarFlow 800 Pro 2')} 1,92 kWh, Bluetti Balco 260), l\'autoconsommation peut monter à 80-95 %. Le surcoût se justifie si vous rentrez tard et consommez surtout le soir.`,
     verdict: 'Présent en journée : pas besoin de batterie. Absent en journée : batterie recommandée.',
     icon: '&#128267;',
     color: 'amber',
@@ -202,7 +202,7 @@ export default function ChecklistPage() {
         description="Avant d'acheter un kit solaire pour balcon, vérifiez ces 15 points clés : orientation, surface, Linky, prise, bail, copropriété, budget, CACSI, assurance."
         url="https://monbalconsolaire.fr/guide/checklist-avant-achat-kit-solaire"
         datePublished="2026-08-07"
-        dateModified="2026-11-05"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Checklist avant achat' }]} />
@@ -220,7 +220,7 @@ export default function ChecklistPage() {
               15 points &agrave; v&eacute;rifier avant de commander un kit solaire plug-and-play pour votre balcon. Orientation, prise &eacute;lectrique, Linky, bail, copropri&eacute;t&eacute;, budget, CACSI, assurance&hellip; Ne ratez aucune &eacute;tape.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>7 ao&ucirc;t 2026</span><span>&middot;</span><span>Mis &agrave; jour le 5 novembre 2026</span>
+              <span>7 ao&ucirc;t 2026</span><span>&middot;</span><span>Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>

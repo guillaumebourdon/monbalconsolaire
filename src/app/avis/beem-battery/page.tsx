@@ -71,7 +71,7 @@ const faqData = [
 export default function BeemBatteryAvisPage() {
   return (
     <>
-      <SchemaArticle title="Beem Battery avis 2026 : prix, capacités, pose électricien" description="Avis indépendant de la batterie domestique Beem Battery : prix, capacités, installation et situation de l'entreprise." url="https://monbalconsolaire.fr/avis/beem-battery" datePublished="2026-11-17" dateModified="2026-11-17" />
+      <SchemaArticle title="Beem Battery avis 2026 : prix, capacités, pose électricien" description="Avis indépendant de la batterie domestique Beem Battery : prix, capacités, installation et situation de l'entreprise." url="https://monbalconsolaire.fr/avis/beem-battery" datePublished="2026-11-17" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Beem Battery" brand="Beem Energy" description="Batterie domestique modulaire 6,6 à 13,4 kWh, couplage AC, posée par un électricien partenaire." price={BATTERY.priceEur} availability={SCHEMA_AVAILABILITY[BATTERY.availability]} ratingValue={6} url="https://monbalconsolaire.fr/avis/beem-battery" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Beem Battery' }]} />
@@ -82,7 +82,7 @@ export default function BeemBatteryAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Beem Battery avis : la batterie domestique de Beem, vraiment faite pour un balcon&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">La Beem Battery est cit&eacute;e sur des dizaines de pages du site comme option de stockage pour les kits Beem, sans avis d&eacute;di&eacute;. En la regardant de pr&egrave;s&nbsp;: ce n&apos;est pas une batterie de balcon, mais une v&eacute;ritable batterie domestique, avec une installation et un prix qui n&apos;ont rien &agrave; voir avec un Beem On ou un Beem Kit.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>17 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>17 novembre 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>8 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -198,7 +198,8 @@ export default function BeemBatteryAvisPage() {
                     {[
                       ['Beem Battery 6,6 kWh', '6,6 kWh', BATTERY_PRICE, `${fr(EUR_PER_KWH_66)} €`, 'Électricien (couplage AC)', true],
                       ['Beem Battery 13,4 kWh', '13,4 kWh', '9 390 €', `${fr(EUR_PER_KWH_134)} €`, 'Électricien (couplage AC)', false],
-                      ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539 €', '281 €', 'Plug-and-play', false],
+                      ['Zendure SolarFlow 800 Plus (épuisé)', '1,92 kWh', '539 €', '281 €', 'Plug-and-play', false],
+                      ['Zendure SolarFlow 800 Pro 2', '1,92 kWh', '599 €', '312 €', 'Plug-and-play', false],
                       ['Jackery SolarVault 3 Pro', '2,52 kWh', priceLabel('jackery-solarvault-3-pro'), '285 €', 'Plug-and-play', false],
                       ['Sunology VAULT', '0,7 kWh', priceLabel('sunology-vault'), '713 €', 'Plug-and-play', false],
                     ].map(([name, cap, price, eurkwh, install, highlight], i) => (
@@ -213,7 +214,7 @@ export default function BeemBatteryAvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2 italic">Comparaison entre deux cat&eacute;gories diff&eacute;rentes&nbsp;: la Beem Battery est une batterie domestique pos&eacute;e par un &eacute;lectricien, les autres sont des batteries de balcon plug-and-play. Prix v&eacute;rifi&eacute;s le 05/11/2026 pour les batteries de balcon, le 17/11/2026 (sources tierces) pour la Beem Battery.</p>
+              <p className="text-xs text-stone mt-2 italic">Comparaison entre deux cat&eacute;gories diff&eacute;rentes&nbsp;: la Beem Battery est une batterie domestique pos&eacute;e par un &eacute;lectricien, les autres sont des batteries de balcon plug-and-play. Prix v&eacute;rifi&eacute;s le 05/11/2026 pour les batteries de balcon (le 23/11/2026 pour le SolarFlow 800 Pro 2&nbsp;; le 800 Plus est &eacute;puis&eacute; chez Zendure &agrave; cette date), le 17/11/2026 (sources tierces) pour la Beem Battery.</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
@@ -302,7 +303,7 @@ export default function BeemBatteryAvisPage() {
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Une vraie batterie de balcon, plug-and-play</p>
+                  <p className="text-xs text-charcoal-light mt-1">Une vraie batterie de balcon, plug-and-play (&eacute;puis&eacute;e chez Zendure au 23/11/2026)</p>
                 </Link>
                 <Link href="/comparatif/kit-solaire-balcon-vs-toiture" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire balcon vs toiture</h3>

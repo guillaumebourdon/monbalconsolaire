@@ -45,7 +45,7 @@ export default function IkeaSolstralePage() {
         description="Le kit solaire balcon IKEA × EcoFlow (STREAM Komplettset), vendu en Allemagne via Svea Solar : prix, contenu, disponibilité en France."
         url="https://monbalconsolaire.fr/avis/ikea-solstrale-balcon"
         datePublished="2026-05-23"
-        dateModified="2026-11-05"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Kit solaire IKEA balcon' }]} />
@@ -62,7 +62,7 @@ export default function IkeaSolstralePage() {
               En Allemagne, IKEA propose un kit solaire de balcon avec EcoFlow, vendu par Svea Solar sous le nom <strong>STREAM Komplettset</strong>. R&eacute;ponse courte&nbsp;: <strong>il n&apos;est pas vendu en France</strong> au 5 novembre 2026. Ce qu&apos;il contient, ce qu&apos;il co&ucirc;te en Allemagne, et pourquoi ce prix ne se transpose pas tel quel.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>23 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>23 mai 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>9 min de lecture</span>
             </div>
@@ -130,7 +130,8 @@ export default function IkeaSolstralePage() {
                       ['Sunology PLAY (ex-PLAY 2)', '599 \u20ac', '515 W', '1,16 \u20ac', 'Non', 'Oui'],
                       ['Beem On 500 Wc', '429 \u20ac', '500 Wc', '0,86 \u20ac', 'Non', 'Pr\u00e9commande'],
                       
-                      ['Zendure SolarFlow 800 Plus + 2 \u00d7 500 W', '719 \u20ac (promo)', '1 000 Wc', '0,72 \u20ac', '1,92 kWh', 'Oui'],
+                      ['Zendure SolarFlow 800 Pro 2 + 2 \u00d7 500 W', '959 \u20ac', '1 000 Wc', '0,96 \u20ac', '1,92 kWh', 'Oui'],
+                      ['Zendure SolarFlow 800 Plus + 2 \u00d7 500 W', '719 \u20ac (05/11)', '1 000 Wc', '0,72 \u20ac', '1,92 kWh', '\u00c9puis\u00e9'],
                     ].map(([kit, prix, puiss, ratio, bat, dispo], i) => (
                       <tr key={i} className={`border-b border-border-light ${i < 1 ? 'bg-amber-pale/10' : i % 2 === 0 ? 'bg-cream/50' : ''}`}>
                         <td className="p-2.5 font-semibold"><BuyName name={kit} /></td>
@@ -155,7 +156,7 @@ export default function IkeaSolstralePage() {
                 {[
                   { t: 'Prix bas en Allemagne : 369,90 \u20ac pour 1 000 Wc', d: 'Le set S revient \u00e0 0,37 \u20ac/Wc, mais avec la TVA allemande \u00e0 0 % sur le photovolta\u00efque (jusqu\u2019au 31/12/2026). Le m\u00eame calcul n\u2019est pas transposable en France.' },
                   { t: 'Mat\u00e9riel EcoFlow', d: 'Le micro-onduleur est l\u2019EcoFlow STREAM, la gamme qui a remplac\u00e9 le PowerStream. L\u2019app EcoFlow est l\u2019une des plus abouties du march\u00e9.' },
-                  { t: 'Version avec grosse batterie', d: 'Le set L (d\u00e8s 1 649,90 \u20ac) ajoute une batterie EcoFlow STREAM 5000 de 5,024 kWh. En France, l\u2019option batterie la plus proche est le Zendure SolarFlow 800 Plus (1,92 kWh, 719 \u20ac en pack avec 2 panneaux, prix promotionnel du 5 novembre 2026).' },
+                  { t: 'Version avec grosse batterie', d: 'Le set L (d\u00e8s 1 649,90 \u20ac) ajoute une batterie EcoFlow STREAM 5000 de 5,024 kWh. En France, l\u2019option batterie la plus proche est le Zendure SolarFlow 800 Pro 2 (1,92 kWh, 959 \u20ac en pack avec 2 panneaux de 500 W au 23 novembre 2026), le 800 Plus \u00e9tant \u00e9puis\u00e9 chez Zendure (constat\u00e9 le 23/11/2026).' },
                   { t: 'Distribution IKEA = accessibilit\u00e9 grand public', d: 'Acheter un kit solaire chez IKEA rend le produit visible pour des millions de personnes qui n\'auraient jamais visit\u00e9 le site de Sunology.' },
                 ].map((p, i) => (
                   <div key={i} className="card border-l-4 border-l-green">
@@ -223,9 +224,9 @@ export default function IkeaSolstralePage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow 800 Plus</h3>
-                      <p className="text-xs text-charcoal-light mt-1">Avec batterie 1,92 kWh. 719 &euro; en pack avec 2 panneaux de 500 W (prix promotionnel du 5 novembre 2026).</p>
+                      <p className="text-xs text-charcoal-light mt-1">Avec batterie 1,92 kWh. &Eacute;puis&eacute; chez Zendure au 23/11/2026&nbsp;; le 800 Pro 2 en stock co&ucirc;te 959 &euro; en pack avec 2 panneaux de 500 W.</p>
                     </div>
-                    <span className="font-mono font-bold text-green">ROI 3,6 ans</span>
+                    <span className="font-mono font-bold text-green">Pro 2&nbsp;: ROI 4,7 ans</span>
                   </div>
                 </Link>
               </div>

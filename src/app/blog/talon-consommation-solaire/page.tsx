@@ -30,9 +30,11 @@ const kwhCost = (kwh: number) => Math.round(kwh * KWH_PRICE_EUR);
 
 const PLAY = PRODUCTS['sunology-play'];
 const BEEM = PRODUCTS['beem-on-500w'];
-const ZEN = PRODUCTS['zendure-solarflow-800-plus'];
-// Pack Zendure SolarFlow 800 Plus + 2 × 500 W bifaciaux : 719 € constaté le 05/11/2026 (promo sans date de fin)
-const ZEN_PACK = { price: 719, power: 1000 };
+// SolarFlow 800 Plus épuisé chez Zendure (constaté le 23/11/2026) : exemple refait avec le SolarFlow 800 Pro 2.
+// Ancien pack 800 Plus + 2 × 500 W : 719 € (prix du 05/11/2026, avant rupture).
+const ZEN = PRODUCTS['zendure-solarflow-800-pro-2'];
+// Pack Zendure SolarFlow 800 Pro 2 + 2 panneaux de 500 W : 959 € sur zendure.fr (vérifié le 23/11/2026)
+const ZEN_PACK = { price: 959, power: 1000 };
 const lyon = (price: number, power: number, extra: Record<string, unknown> = {}) => ({ kitPriceEur: price, kitPowerWc: power, ...extra });
 const playStd = lyon(PLAY.priceEur, PLAY.powerWc);
 const beemStd = lyon(BEEM.priceEur, BEEM.powerWc);
@@ -77,7 +79,7 @@ const faqData = [
   },
   {
     question: 'Quelle puissance de kit pour effacer mon talon ?',
-    answer: 'Règle simple : un kit de 400-500 W couvre un talon de 150-250 W (le plus courant). Si votre talon dépasse 300 W (congélateur + chauffe-eau + VMC + box), visez environ 800-1 000 W de panneaux avec une batterie de balcon (par exemple Zendure SolarFlow 800 Plus + 2 panneaux). La batterie couvre aussi une partie de la nuit.',
+    answer: 'Règle simple : un kit de 400-500 W couvre un talon de 150-250 W (le plus courant). Si votre talon dépasse 300 W (congélateur + chauffe-eau + VMC + box), visez environ 800-1 000 W de panneaux avec une batterie de balcon (par exemple Zendure SolarFlow 800 Pro 2 + 2 panneaux ; le 800 Plus est épuisé chez Zendure au 23/11/2026). La batterie couvre aussi une partie de la nuit.',
   },
   {
     question: 'Pourquoi le talon est-il important pour la rentabilité solaire ?',
@@ -85,7 +87,7 @@ const faqData = [
   },
   {
     question: 'Le talon existe-t-il la nuit aussi ?',
-    answer: 'Oui, c\'est même là qu\'il est le plus visible : frigo, congélateur, box internet, VMC, veilles. Votre Linky montre la consommation la plus basse entre 2h et 5h du matin. Sans batterie, un panneau solaire ne couvre pas ce talon nocturne. Avec une batterie de balcon (Zendure SolarFlow 800 Plus, EcoFlow STREAM Ultra…), vous stockez le surplus du jour pour alimenter le talon de nuit.',
+    answer: 'Oui, c\'est même là qu\'il est le plus visible : frigo, congélateur, box internet, VMC, veilles. Votre Linky montre la consommation la plus basse entre 2h et 5h du matin. Sans batterie, un panneau solaire ne couvre pas ce talon nocturne. Avec une batterie de balcon (Zendure SolarFlow 800 Pro 2, EcoFlow STREAM Ultra…), vous stockez le surplus du jour pour alimenter le talon de nuit.',
   },
 ];
 
@@ -108,7 +110,7 @@ export default function TalonConsommationPage() {
         description="Guide complet sur le talon de consommation et comment un kit solaire de balcon peut le couvrir."
         url="https://monbalconsolaire.fr/blog/talon-consommation-solaire"
         datePublished="2026-05-10"
-        dateModified="2026-11-05"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Talon de consommation' }]} />
@@ -125,7 +127,7 @@ export default function TalonConsommationPage() {
               Le talon de consommation, c&apos;est l&apos;électricité que votre foyer brûle <strong>en permanence</strong>, même quand vous dormez. Frigo, box internet, VMC, veilles : ça tourne 24h/24 et ça vous coûte <strong>environ {kwhCost(1300)} à {kwhCost(3500)} € par an</strong> sans que vous le voyiez. Bonne nouvelle : c&apos;est exactement ce qu&apos;un kit solaire de balcon peut couvrir.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>10 mai 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>10 mai 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>10 min de lecture</span>
             </div>
@@ -330,8 +332,8 @@ export default function TalonConsommationPage() {
                     </div>
                   </div>
                   <p className="text-sm text-charcoal-light leading-relaxed mb-2">
-                    Visez 800-1 000 W de panneaux avec batterie : par exemple <Link href="/avis/zendure-solarflow" className="text-green hover:underline font-semibold">Zendure SolarFlow 800 Plus + 2 panneaux 500 W</Link> ({ZEN_PACK.price}&nbsp;&euro; en pack, prix promotionnel constaté le 05/11/2026&nbsp;; {priceLabel('zendure-solarflow-800-plus')} sans panneaux). Avec la batterie de {fr(ZEN.batteryKwh!)}&nbsp;kWh, vous couvrez aussi une partie du talon de nuit.{' '}
-                    <AffLink item={BUY.solarflow800Plus} position="mid_article">Voir le prix chez Zendure &rarr;</AffLink>
+                    Visez 800-1 000 W de panneaux avec batterie : par exemple le <strong>Zendure SolarFlow 800 Pro 2 + 2 panneaux de 500 W</strong> ({ZEN_PACK.price}&nbsp;&euro; en pack, prix relevé le 23/11/2026&nbsp;; {priceLabel('zendure-solarflow-800-pro-2')} sans panneaux). Le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">SolarFlow 800 Plus</Link> que nous citions ici est épuisé chez Zendure (constaté le 23/11/2026). Avec la batterie de {fr(ZEN.batteryKwh!)}&nbsp;kWh, vous couvrez aussi une partie du talon de nuit.{' '}
+                    <AffLink item={BUY.solarflow800Pro2} position="mid_article">Voir le prix du SolarFlow 800 Pro 2 chez Zendure &rarr;</AffLink>
                   </p>
                   <p className="text-xs text-stone">ROI estimé (Lyon, plein sud, {Math.round(AUTOCONSO_BATTERY * 100)} % autoconsommés grâce à la batterie) : {fr(roiZen)} ans · Économies : {ecoZen} €/an la 1<sup>re</sup> année</p>
                 </div>
@@ -371,7 +373,7 @@ export default function TalonConsommationPage() {
                   <ul className="text-xs text-charcoal-light space-y-1.5">
                     <li>&bull; Vous couvrez le talon <strong>jour ET nuit</strong></li>
                     <li>&bull; Taux d&apos;autoconsommation : 70-85 %</li>
-                    <li>&bull; Budget : à partir de {ZEN_PACK.price} € (SolarFlow 800 Plus + 2 panneaux, prix promo du 05/11/2026)</li>
+                    <li>&bull; Budget : à partir de {ZEN_PACK.price} € (SolarFlow 800 Pro 2 + 2 panneaux, prix du 23/11/2026)</li>
                     <li>&bull; ROI : {fr(roiZen)} ans à Lyon plein sud</li>
                     <li>&bull; <strong>Intéressant si talon &gt; 200 W</strong></li>
                   </ul>
@@ -393,7 +395,7 @@ export default function TalonConsommationPage() {
                   <li>&bull; <strong>Coût sans solaire</strong> : {fr(talonKwh)} × {KWH_PRICE_SHORT.replace(' €', '')} = <strong className="font-mono text-amber-dark">{kwhCost(talonKwh)} €/an</strong></li>
                   <li>&bull; <strong>Kit Sunology PLAY</strong> (ex-PLAY 2, {PLAY.powerWc}&nbsp;W, {priceLabel('sunology-play')}) → produit {fr(prodPlay)} kWh/an</li>
                   <li>&bull; <strong>Autoconsommation à 45 %</strong> = {fr(valPlay)} kWh valorisés → <strong className="font-mono text-green">{kwhCost(valPlay)} €/an</strong> d&apos;économies</li>
-                  <li>&bull; <strong>Zendure SolarFlow 800 Plus + 2 × 500 W</strong> ({ZEN_PACK.price} €) → {fr(prodZen)} kWh/an, 80 % autoconsommé</li>
+                  <li>&bull; <strong>Zendure SolarFlow 800 Pro 2 + 2 × 500 W</strong> ({ZEN_PACK.price} €) → {fr(prodZen)} kWh/an, 80 % autoconsommé</li>
                   <li>&bull; <strong>{fr(valZen)} kWh valorisés</strong> → <strong className="font-mono text-green">{ecoZenEx} €/an</strong> d&apos;économies</li>
                 </ul>
               </div>
@@ -416,7 +418,7 @@ export default function TalonConsommationPage() {
               intro="Pour mesurer puis r&eacute;duire votre talon&nbsp;: un wattm&egrave;tre (celui retenu dans notre comparatif des wattm&egrave;tres) et la batterie de balcon cit&eacute;e plus haut."
               rows={[
                 { item: BUY.wattmetreAmazon, note: 'wattm\u00e8tre prise type E, pour mesurer chaque appareil' },
-                { item: BUY.solarflow800Plus, note: 'batterie de balcon pour couvrir une partie du talon de nuit' },
+                { item: BUY.solarflow800Pro2, note: 'batterie de balcon pour couvrir une partie du talon de nuit' },
               ]}
               position="footer-box"
             />

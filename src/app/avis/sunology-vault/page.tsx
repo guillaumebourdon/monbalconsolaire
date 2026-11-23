@@ -44,7 +44,7 @@ const faqData = [
   },
   {
     question: 'Quelle est la capacité et l’autonomie de la VAULT ?',
-    answer: `700 Wh (0,7 kWh) en lithium-ion, pour 3,7 kg. C’est environ 5 heures d’autonomie pour un talon de consommation de 140 W (frigo + box + veilles) : de quoi couvrir une soirée, pas une nuit complète. Au ${EUR_PER_KWH} €/kWh stocké, c’est cher comparé à une batterie de balcon sans panneaux comme le Zendure SolarFlow 800 Plus (281 €/kWh) ou la Sunology STOREY (632 €/kWh, 2,2 kWh).`,
+    answer: `700 Wh (0,7 kWh) en lithium-ion, pour 3,7 kg. C’est environ 5 heures d’autonomie pour un talon de consommation de 140 W (frigo + box + veilles) : de quoi couvrir une soirée, pas une nuit complète. Au ${EUR_PER_KWH} €/kWh stocké, c’est cher comparé à une batterie de balcon sans panneaux comme le Zendure SolarFlow 800 Pro 2 (312 €/kWh) ou la Sunology STOREY (632 €/kWh, 2,2 kWh).`,
   },
   {
     question: 'La VAULT est-elle compatible avec le PLAY, le PLAY2 ou le GO ?',
@@ -67,7 +67,7 @@ const faqData = [
 export default function SunologyVaultAvisPage() {
   return (
     <>
-      <SchemaArticle title="Sunology VAULT avis 2026 : la batterie 700 Wh à 499 €" description="Avis indépendant de la batterie Sunology VAULT, vendue seule ou intégrée au PLAY MAX." url="https://monbalconsolaire.fr/avis/sunology-vault" datePublished="2026-11-10" dateModified="2026-11-20" />
+      <SchemaArticle title="Sunology VAULT avis 2026 : la batterie 700 Wh à 499 €" description="Avis indépendant de la batterie Sunology VAULT, vendue seule ou intégrée au PLAY MAX." url="https://monbalconsolaire.fr/avis/sunology-vault" datePublished="2026-11-10" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaProduct name="Sunology VAULT" brand="Sunology" description="Batterie nomade lithium-ion 700 Wh, IP65, amovible, conçue pour la station Sunology PLAY MAX." price={VAULT.priceEur} availability={SCHEMA_AVAILABILITY[VAULT.availability]} ratingValue={6} url="https://monbalconsolaire.fr/avis/sunology-vault" />
       <SchemaBreadcrumb items={[{ label: 'Avis', href: '/avis' }, { label: 'Sunology VAULT' }]} />
@@ -78,7 +78,7 @@ export default function SunologyVaultAvisPage() {
             <div className="badge-amber mb-4 inline-block">Avis &middot; Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Sunology VAULT avis : la batterie 700&nbsp;Wh vendue seule, vraiment utile&nbsp;?</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">La VAULT est la batterie nomade de Sunology, int&eacute;gr&eacute;e de s&eacute;rie au PLAY MAX mais aussi vendue seule &agrave; {VAULT_PRICE}. Elle est cit&eacute;e sur des dizaines de pages du site sans avis d&eacute;di&eacute; : voici ce qu&apos;elle vaut, seule.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>10 novembre 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>10 novembre 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
           </div>
 
           <ProductHero
@@ -164,7 +164,7 @@ export default function SunologyVaultAvisPage() {
               <div className="space-y-3">
                 {[
                   { t: 'Compatibilité floue hors PLAY MAX', d: 'Sunology ne documente pas clairement si la VAULT fonctionne avec un PLAY, un PLAY2 ou un GO déjà installés. C’est le point le plus bloquant pour qui voudrait ajouter du stockage à un kit existant : contactez le support avant d’acheter.' },
-                  { t: `Prix élevé au kWh stocké (${EUR_PER_KWH} €/kWh)`, d: `À ${VAULT_PRICE} pour 700 Wh, c’est nettement plus cher au kWh qu’une batterie de balcon sans panneaux comme le Zendure SolarFlow 800 Plus (281 €/kWh) ou même la Sunology STOREY (632 €/kWh, 2,2 kWh).` },
+                  { t: `Prix élevé au kWh stocké (${EUR_PER_KWH} €/kWh)`, d: `À ${VAULT_PRICE} pour 700 Wh, c’est nettement plus cher au kWh qu’une batterie de balcon sans panneaux comme le Zendure SolarFlow 800 Pro 2 (312 €/kWh) ou même la Sunology STOREY (632 €/kWh, 2,2 kWh).` },
                   { t: 'Autonomie limitée à une soirée', d: '700 Wh, c’est environ 5 heures sur un talon de consommation de 140 W : pas de quoi couvrir une nuit complète si vous voulez une vraie indépendance du réseau le soir et la nuit.' },
                   { t: 'Chimie lithium-ion, pas LFP', d: 'Les meilleures batteries concurrentes (Jackery SolarVault 3 Pro, Bluetti Balco 260) utilisent du LFP, plus stable thermiquement et offrant plus de cycles (6 000 contre 2 500 pour la VAULT).' },
                 ].map((p, i) => (
@@ -194,7 +194,8 @@ export default function SunologyVaultAvisPage() {
                   <tbody>
                     {[
                       ['Sunology VAULT', '0,7 kWh', VAULT_PRICE, `${EUR_PER_KWH} €`, 'Lithium-ion', true],
-                      ['Zendure SolarFlow 800 Plus', '1,92 kWh', '539 €', '281 €', 'LFP', false],
+                      ['Zendure SolarFlow 800 Plus (épuisé)', '1,92 kWh', '539 €', '281 €', 'LFP', false],
+                      ['Zendure SolarFlow 800 Pro 2', '1,92 kWh', '599 €', '312 €', 'LFP', false],
                       ['EcoFlow STREAM Ultra', '1,92 kWh', priceLabel('ecoflow-stream-ultra'), '343 €', 'LFP', false],
                       ['Sunology STOREY', '2,2 kWh', '1 390 €', '632 €', 'LFP', false],
                       ['Jackery SolarVault 3 Pro', '2,52 kWh', priceLabel('jackery-solarvault-3-pro'), '285 €', 'LFP', false],
@@ -210,7 +211,7 @@ export default function SunologyVaultAvisPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-stone mt-2 italic">Prix vérifiés le 05/11/2026 (05/06/2026 pour le Jackery, promotion en cours). €/kWh calculé sur le prix de la batterie seule, sans panneaux.</p>
+              <p className="text-xs text-stone mt-2 italic">Prix vérifiés le 05/11/2026 (05/06/2026 pour le Jackery, promotion en cours ; 23/11/2026 pour le SolarFlow 800 Pro 2, le 800 Plus étant épuisé chez Zendure à cette date). €/kWh calculé sur le prix de la batterie seule, sans panneaux.</p>
             </section>
 
             <div className="card-lg bg-cream/50 border-border text-center my-8">
@@ -238,7 +239,7 @@ export default function SunologyVaultAvisPage() {
                 ))}
               </div>
               <p className="text-charcoal-light leading-relaxed mb-4">Le PLAY seul se rentabilise en {fr(playAlone.roi)}&nbsp;ans ({fr(playAlone.savings)}&nbsp;&euro; la premi&egrave;re ann&eacute;e). En ajoutant la VAULT ({fr(VAULT.priceEur)}&nbsp;&euro; de plus), l&apos;autoconsommation passe de 85&nbsp;% &agrave; 95&nbsp;%, mais le surco&ucirc;t n&apos;est pas rentabilis&eacute; par le gain d&apos;&eacute;conomies&nbsp;: le ROI s&apos;allonge &agrave; {fr(playPlusVault.roi)}&nbsp;ans. C&apos;est le m&ecirc;me constat que sur la page du <Link href="/avis/sunology-play-max" className="text-green hover:underline">PLAY MAX</Link>&nbsp;: la VAULT se justifie par le confort d&apos;usage (stocker pour le soir, batterie nomade), pas par le calcul financier pur.</p>
-              <p className="text-charcoal-light leading-relaxed">Pour du stockage rentable, une batterie de balcon LFP comme le <Link href="/avis/zendure-solarflow" className="text-green hover:underline">Zendure SolarFlow 800 Plus</Link> (281&nbsp;&euro;/kWh) reste bien plus efficace au kWh stock&eacute;.</p>
+              <p className="text-charcoal-light leading-relaxed">Pour du stockage rentable, une batterie de balcon LFP comme le Zendure SolarFlow 800 Pro 2 (312&nbsp;&euro;/kWh, en stock le 23/11/2026, qui prend la suite du <Link href="/avis/zendure-solarflow" className="text-green hover:underline">SolarFlow 800 Plus</Link> &eacute;puis&eacute;) reste bien plus efficace au kWh stock&eacute;.</p>
             </section>
 
             <section>
@@ -246,7 +247,7 @@ export default function SunologyVaultAvisPage() {
               <div className="space-y-2">
                 {[
                   'Vous n’avez pas de PLAY MAX et n’avez pas obtenu de confirmation écrite de Sunology sur la compatibilité avec votre station',
-                  'Vous cherchez le meilleur prix au kWh stocké (le Zendure SolarFlow 800 Plus ou le Jackery SolarVault 3 Pro font mieux)',
+                  'Vous cherchez le meilleur prix au kWh stocké (le Zendure SolarFlow 800 Pro 2 ou le Jackery SolarVault 3 Pro font mieux)',
                   'Vous voulez une autonomie sur toute la nuit (700 Wh ne suffisent pas)',
                   'Vous privilégiez une chimie LFP pour la longévité et la sécurité thermique',
                 ].map((point, i) => (
@@ -298,7 +299,7 @@ export default function SunologyVaultAvisPage() {
                 </Link>
                 <Link href="/avis/zendure-solarflow" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Zendure SolarFlow 800 Plus</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Une batterie de balcon LFP bien plus efficace au kWh</p>
+                  <p className="text-xs text-charcoal-light mt-1">Une batterie de balcon LFP bien plus efficace au kWh (&eacute;puis&eacute;e chez Zendure au 23/11/2026)</p>
                 </Link>
               </div>
             </section>
