@@ -6,7 +6,7 @@ import { NewsletterBanner } from '@/components/ui/NewsletterBanner';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { zendureUrl, BUY } from '@/lib/affiliate';
 import { withCanonicalOg } from '@/lib/metadata';
-import { calculateProductionKwh, KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
+import { calculateProductionKwh, calculateROIYears, calculateTotalSavings25Years, KWH_PRICE_EUR, KWH_PRICE_LABEL } from '@/lib/pricing';
 import { PRODUCTS, priceLabel } from '@/data/products';
 
 // Exemple calculé au build : Sunology PLAY à Lyon, plein sud (pricing.ts + products.ts).
@@ -19,16 +19,30 @@ const AC85 = valo(0.85);
 const pct = (a: number, b: number) => Math.round((a / b - 1) * 100);
 const fr = (n: number) => n.toLocaleString('fr-FR');
 const ZENDURE_PRICE = priceLabel('zendure-solarflow-800-pro-2');
+// Retour sur investissement selon le taux d'autoconsommation (même kit, pricing.ts : inflation et dégradation incluses).
+const KIT_PLAY = { kitPriceEur: PLAY.priceEur, kitPowerWc: PLAY.powerWc };
+const ROI40 = calculateROIYears({ ...KIT_PLAY, autoconsoOverride: 0.4 });
+const ROI85 = calculateROIYears({ ...KIT_PLAY, autoconsoOverride: 0.85 });
+const TOT40 = Math.round(calculateTotalSavings25Years({ ...KIT_PLAY, autoconsoOverride: 0.4 }) / 10) * 10;
+const TOT85 = Math.round(calculateTotalSavings25Years({ ...KIT_PLAY, autoconsoOverride: 0.85 }) / 10) * 10;
 
 export const metadata: Metadata = withCanonicalOg({
-  title: 'Comment optimiser son autoconsommation solaire au quotidien',
-  description: 'Guide pour maximiser l\u2019autoconsommation de votre kit solaire de balcon : d\u00e9calage des usages, prise connect\u00e9e, talon, heures creuses. De 40 % \u00e0 85 %.',
+  title: 'Autoconsommation solaire : fonctionnement et 8 astuces',
+  description: 'Autoconsommation solaire : comment un kit de balcon alimente vos appareils, ce que devient le surplus, et 8 astuces pour passer de 40 % à 85 %.',
   alternates: {
     canonical: 'https://monbalconsolaire.fr/guide/optimiser-autoconsommation-solaire',
   },
 });
 
 const faqData = [
+  {
+    question: 'L’autoconsommation solaire, c’est quoi ?',
+    answer: 'C’est le fait de consommer directement l’électricité que produit votre panneau. Au lieu d’acheter toute votre électricité à votre fournisseur, vous en produisez une partie vous-même, et votre facture baisse d’autant. La nuit ou quand le panneau produit moins que vos besoins, le réseau prend le relais automatiquement, sans coupure.',
+  },
+  {
+    question: 'Que devient le surplus d’électricité ?',
+    answer: 'Deux cas. Si votre kit est déclaré en CACSI (convention d’autoconsommation sans injection), vous vous engagez à ne rien injecter : l’onduleur est réglé en « zéro injection » (réglage, compteur type Shelly, boîtier du fabricant) ou une batterie absorbe le surplus. Sinon, vous déclarez la cession gratuite de votre surplus à Enedis (installations de 3 kW maximum) : le surplus part sur le réseau sans rémunération. Dans les deux cas, il ne vous fait rien économiser.',
+  },
   {
     question: 'C\u2019est quoi le taux d\u2019autoconsommation ?',
     answer: 'C\u2019est le pourcentage de votre production solaire que vous consommez r\u00e9ellement au lieu de l\u2019injecter gratuitement sur le r\u00e9seau. \u00c0 40 %, vous perdez 60 % de votre production. \u00c0 85 %, vous valorisez presque tout. Plus ce taux est \u00e9lev\u00e9, plus votre kit est rentable.',
@@ -123,32 +137,32 @@ export default function OptimiserAutoconsommationPage() {
   return (
     <>
       <SchemaArticle
-        title="Comment optimiser son autoconsommation solaire au quotidien"
-        description="Guide pratique pour maximiser l\u2019autoconsommation de votre kit solaire."
+        title="Autoconsommation solaire : fonctionnement et 8 astuces"
+        description="Comment un kit solaire de balcon alimente vos appareils, ce que devient le surplus, et 8 astuces pour passer de 40 % à 85 % d’autoconsommation."
         url="https://monbalconsolaire.fr/guide/optimiser-autoconsommation-solaire"
         datePublished="2026-05-25"
         dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
-      <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Optimiser autoconsommation' }]} />
+      <SchemaBreadcrumb items={[{ label: 'Guides', href: '/guide' }, { label: 'Autoconsommation solaire' }]} />
       <article className="section-padding">
         <div className="container-brand max-w-3xl">
-          <Breadcrumbs items={[{ label: 'Guides', href: '/guide' }, { label: 'Optimiser autoconsommation' }]} />
+          <Breadcrumbs items={[{ label: 'Guides', href: '/guide' }, { label: 'Autoconsommation solaire' }]} />
 
           <div className="mb-10">
             <div className="badge-green mb-4 inline-block">Guide pratique</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
-              Comment optimiser son autoconsommation solaire au quotidien
+              Autoconsommation solaire&nbsp;: comment &ccedil;a marche et comment l&apos;optimiser
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Votre kit solaire produit de l&apos;&eacute;lectricit&eacute;, mais <strong>combien en utilisez-vous vraiment ?</strong> Sans adaptation, un foyer autoconsomme seulement 40-50 % de sa production. Le reste part sur le r&eacute;seau sans &ecirc;tre pay&eacute;, ou n&apos;est pas produit si le kit est r&eacute;gl&eacute; en z&eacute;ro injection. Voici <strong>8 astuces</strong> class&eacute;es par impact pour passer de 40 % &agrave; 85 % &mdash; dont 6 sont enti&egrave;rement gratuites.
+              Vous branchez un panneau sur une prise et votre facture baisse. Comment l&apos;&eacute;lectricit&eacute; sait-elle o&ugrave; aller, et que devient celle que vous ne consommez pas&nbsp;? Ce guide explique d&apos;abord le principe, puis comment en tirer le maximum. Votre kit solaire produit de l&apos;&eacute;lectricit&eacute;, mais <strong>combien en utilisez-vous vraiment ?</strong> Sans adaptation, un foyer autoconsomme seulement 40-50 % de sa production. Le reste part sur le r&eacute;seau sans &ecirc;tre pay&eacute;, ou n&apos;est pas produit si le kit est r&eacute;gl&eacute; en z&eacute;ro injection. Voici <strong>8 astuces</strong> class&eacute;es par impact pour passer de 40 % &agrave; 85 % &mdash; dont 6 sont enti&egrave;rement gratuites.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>25 mai 2026</span>
               <span>&middot;</span>
               <span>Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
-              <span>10 min de lecture</span>
+              <span>14 min de lecture</span>
             </div>
           </div>
 
@@ -172,6 +186,57 @@ export default function OptimiserAutoconsommationPage() {
           </div>
 
           <div className="space-y-10">
+            <section id="principe">
+              <h2 className="text-2xl font-extrabold mb-4">Le principe en 3 &eacute;tapes</h2>
+              <div className="space-y-4">
+                {[
+                  { step: '1', title: 'Le panneau produit de l\'\u00e9lectricit\u00e9', desc: 'Les cellules photovolta\u00efques captent la lumi\u00e8re et la transforment en courant continu. Le micro-onduleur du kit le convertit en courant alternatif 230 V, le m\u00eame que celui de vos prises.' },
+                  { step: '2', title: 'Vos appareils consomment en priorit\u00e9', desc: 'L\'\u00e9lectricit\u00e9 produite circule dans votre installation et alimente les appareils qui fonctionnent \u00e0 ce moment-l\u00e0 : frigo, box internet, veilles, \u00e9clairage. C\'est automatique et instantan\u00e9.' },
+                  { step: '3', title: 'Le compteur voit moins de courant arriver', desc: 'Chaque kWh produit et consomm\u00e9 chez vous est un kWh que vous n\'achetez pas. Votre compteur Linky enregistre moins de soutirage sur le r\u00e9seau, et votre facture baisse d\'autant.' },
+                ].map((st) => (
+                  <div key={st.step} className="card-lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-green text-white flex items-center justify-center font-extrabold">{st.step}</div>
+                      <h3 className="font-bold text-lg">{st.title}</h3>
+                    </div>
+                    <p className="text-sm text-charcoal-light leading-relaxed">{st.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-charcoal-light leading-relaxed mt-4">
+                Ce que le panneau efface en premier, c&apos;est votre <strong>talon de consommation</strong>&nbsp;: les appareils qui tournent en permanence (frigo, box, VMC, veilles). Pour le mesurer avec votre Linky&nbsp;: <Link href="/blog/talon-consommation-solaire" className="text-green hover:underline">notre article sur le talon</Link>.
+              </p>
+            </section>
+
+            <section id="nuit">
+              <h2 className="text-2xl font-extrabold mb-4">La nuit, par temps couvert, en plein soleil</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="card border-l-4 border-l-amber">
+                  <h3 className="font-bold text-sm mb-2">La nuit</h3>
+                  <p className="text-xs text-charcoal-light">Le panneau ne produit pas. Votre logement est aliment&eacute; par le r&eacute;seau, comme avant&nbsp;: pas de coupure, rien &agrave; faire.</p>
+                </div>
+                <div className="card border-l-4 border-l-amber">
+                  <h3 className="font-bold text-sm mb-2">Par temps couvert</h3>
+                  <p className="text-xs text-charcoal-light">Le panneau produit moins, mais il produit. Le r&eacute;seau compl&egrave;te automatiquement ce qui manque.</p>
+                </div>
+                <div className="card border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm mb-2">En plein soleil</h3>
+                  <p className="text-xs text-charcoal-light">Vos appareils sont aliment&eacute;s par le panneau. Si la production d&eacute;passe votre consommation, le surplus est soit bloqu&eacute; (r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo;, d&eacute;claration CACSI), soit c&eacute;d&eacute; gratuitement &agrave; Enedis.</p>
+                </div>
+                <div className="card border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm mb-2">Avec une batterie</h3>
+                  <p className="text-xs text-charcoal-light">Le surplus est stock&eacute; au lieu d&apos;&ecirc;tre perdu, et vous le consommez le soir. <Link href="/comparatif/kit-solaire-batterie-2026" className="text-green hover:underline">Notre comparatif des kits avec batterie &rarr;</Link></p>
+                </div>
+              </div>
+            </section>
+
+            <section id="surplus">
+              <h2 className="text-2xl font-extrabold mb-4">Le surplus&nbsp;: ce que vous ne valorisez pas</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">
+                Avec un kit plug-and-play, le surplus n&apos;est jamais pay&eacute;. Soit vous le bloquez&nbsp;: c&apos;est l&apos;engagement de la CACSI (convention d&apos;autoconsommation sans injection), tenu par un r&eacute;glage &laquo;&nbsp;z&eacute;ro injection&nbsp;&raquo; de l&apos;onduleur, un compteur type Shelly, le bo&icirc;tier du fabricant ou une batterie. Soit vous d&eacute;clarez la cession gratuite de votre surplus &agrave; Enedis (article L315-5 du Code de l&apos;&eacute;nergie, installations de 3&nbsp;kW maximum)&nbsp;: il part alors sur le r&eacute;seau sans r&eacute;mun&eacute;ration. Revendre ce surplus &agrave; EDF OA suppose une autre installation et un contrat&nbsp;: <Link href="/blog/revendre-surplus-solaire-balcon" className="text-green hover:underline">pourquoi ce n&apos;est pas int&eacute;ressant depuis un balcon</Link>.
+              </p>
+            </section>
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Pourquoi l&apos;autoconsommation est la cl&eacute; de la rentabilit&eacute;</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
@@ -187,6 +252,9 @@ export default function OptimiserAutoconsommationPage() {
                 </ul>
                 <p className="text-xs text-stone mt-3">Le m&ecirc;me kit, la m&ecirc;me production, mais <strong>2x plus d&apos;&eacute;conomies</strong> juste en changeant vos habitudes.</p>
               </div>
+              <p className="text-charcoal-light leading-relaxed mt-4">
+                Sur le retour sur investissement, l&apos;&eacute;cart est aussi net&nbsp;: pour ce kit &agrave; {priceLabel('sunology-play')}, {fr(ROI40)} ans &agrave; 40&nbsp;% d&apos;autoconsommation contre {fr(ROI85)} ans &agrave; 85&nbsp;% (notre hypoth&egrave;se standard). Sur 25 ans, les &eacute;conomies cumul&eacute;es vont de {fr(TOT40)}&nbsp;&euro; &agrave; {fr(TOT85)}&nbsp;&euro; (inflation du tarif et d&eacute;gradation des panneaux de 0,5&nbsp;%/an incluses).
+              </p>
             </section>
 
             <section>
@@ -256,6 +324,29 @@ export default function OptimiserAutoconsommationPage() {
               </p>
             </section>
 
+            <section id="kit-vs-toiture">
+              <h2 className="text-2xl font-extrabold mb-4">Autoconsommation&nbsp;: kit de balcon ou installation en toiture</h2>
+              <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
+                <table className="w-full text-sm border-collapse min-w-[500px]">
+                  <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Crit&egrave;re</th><th className="text-center p-3">Kit plug-and-play</th><th className="text-center p-3 rounded-tr-xl">Installation en toiture</th></tr></thead>
+                  <tbody>
+                    {[
+                      ['Installation', 'Vous-m\u00eame, sur une prise', 'Installateur, raccordement Enedis'],
+                      ['Surplus', 'Non pay\u00e9 (CACSI sans injection ou cession gratuite \u00e0 Enedis)', 'Vendable (contrat EDF OA, 1,1 c\u20ac/kWh HT pour les demandes depuis le 5 juin 2026)'],
+                      ['Aides de l\'\u00c9tat', 'Aucune (jamais \u00e9ligible \u00e0 la prime \u00e0 l\'autoconsommation)', 'TVA 5,5 % sous conditions ; prime \u00e0 l\'autoconsommation supprim\u00e9e pour les demandes d\u00e9pos\u00e9es \u00e0 partir du 5 juin 2026'],
+                      ['Locataire ?', 'Oui', 'Non'],
+                      ['Amovible ?', 'Oui', 'Non'],
+                    ].map(([c, k, t], i) => (
+                      <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{c}</td><td className="text-center p-3">{k}</td><td className="text-center p-3">{t}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-charcoal-light leading-relaxed">
+                Le kit ne remplace pas une installation en toiture&nbsp;: il sert quand elle n&apos;est pas possible (appartement, location, petit budget). Comparaison compl&egrave;te&nbsp;: <Link href="/comparatif/kit-solaire-balcon-vs-toiture" className="text-green hover:underline">kit de balcon ou toiture</Link>.
+              </p>
+            </section>
+
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Batterie : quand est-ce que &ccedil;a vaut le coup ?</h2>
               <div className="grid md:grid-cols-2 gap-4">
@@ -305,9 +396,9 @@ export default function OptimiserAutoconsommationPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Talon de consommation : le calculer et l&apos;effacer</h3>
                   <p className="text-xs text-charcoal-light mt-1">Mesurez votre consommation permanente avec le Linky</p>
                 </Link>
-                <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire : comment &ccedil;a marche</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Le principe technique du talon, du surplus et de l&apos;injection</p>
+                <Link href="/blog/linky-panneau-solaire-injection" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire : injection, index, surplus</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Ce que voit exactement le Linky, index injection vs soutirage, CACSI</p>
                 </Link>
                 <Link href="/blog/prises-connectees-suivi-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Meilleures prises connect&eacute;es pour suivi solaire</h3>

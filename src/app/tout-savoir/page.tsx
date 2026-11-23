@@ -386,13 +386,13 @@ const ARTICLES: Article[] = [
   },
   {
     slug: '/guide/optimiser-autoconsommation-solaire',
-    title: 'Comment optimiser son autoconsommation solaire au quotidien',
-    excerpt: '8 astuces pour passer de 40 % \u00e0 85 % d\u2019autoconsommation, dont 6 gratuites.',
+    title: 'Autoconsommation solaire : comment \u00e7a marche et comment l\u2019optimiser',
+    excerpt: 'Le principe (talon, surplus, CACSI), puis 8 astuces pour passer de 40 % \u00e0 85 % d\u2019autoconsommation.',
     type: 'guide',
     badge: 'Optimisation',
     tags: ['optimisation'],
     publishedAt: '2026-05-25',
-    readTime: '10 min',
+    readTime: '14 min',
   },
   {
     slug: '/blog/prises-connectees-suivi-solaire',
@@ -463,16 +463,6 @@ const ARTICLES: Article[] = [
     tags: ['optimisation'],
     publishedAt: '2026-03-31',
     readTime: '7 min',
-  },
-  {
-    slug: '/blog/autoconsommation-solaire-comment-ca-marche',
-    title: 'Autoconsommation solaire : comment ça marche concrètement ?',
-    excerpt: 'Le principe technique expliqué simplement : talon, surplus, injection réseau.',
-    type: 'analyse',
-    badge: 'Comprendre',
-    tags: ['debutant'],
-    publishedAt: '2026-04-03',
-    readTime: '8 min',
   },
   {
     slug: '/blog/accessoires-kit-solaire-balcon',

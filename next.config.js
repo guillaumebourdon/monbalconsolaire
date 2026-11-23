@@ -15,6 +15,8 @@ const nextConfig = {
       { source: '/blog/panneau-solaire-est-ouest', destination: '/guide/orientation-panneau-solaire-balcon#est-ouest', statusCode: 301 },
       { source: '/blog/panneau-solaire-balcon-nord', destination: '/guide/orientation-panneau-solaire-balcon#nord', statusCode: 301 },
       { source: '/blog/panneau-solaire-ombre-optimiser-production', destination: '/guide/orientation-panneau-solaire-balcon#ombre', statusCode: 301 },
+      // 23/11/2026 : article blog fusionné dans le guide autoconsommation (même intention de recherche)
+      { source: '/blog/autoconsommation-solaire-comment-ca-marche', destination: '/guide/optimiser-autoconsommation-solaire', statusCode: 301 },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'monbalconsolaire.vercel.app' }],

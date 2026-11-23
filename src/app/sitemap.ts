@@ -10,15 +10,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/calculateur`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comment-ca-marche`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/quel-kit-choisir`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/tout-savoir`, lastModified: '2026-11-18', changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/tout-savoir`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/accessoires`, lastModified: '2026-09-29', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/guide-gratuit`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
 
     // Index de sections
     { url: `${BASE_URL}/comparatif`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${BASE_URL}/guide`, lastModified: '2026-11-05', changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE_URL}/guide`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/avis`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${BASE_URL}/blog`, lastModified: '2026-11-18', changeFrequency: 'daily', priority: 0.7 },
+    { url: `${BASE_URL}/blog`, lastModified: '2026-11-23', changeFrequency: 'daily', priority: 0.7 },
 
     // Comparatifs
     { url: `${BASE_URL}/comparatif/kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.8 },
@@ -97,7 +97,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/combien-rapporte-panneau-solaire-balcon`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/prix-electricite-2026-solaire`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/panneau-solaire-hiver-production`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/autoconsommation-solaire-comment-ca-marche`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/accessoires-kit-solaire-balcon`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/kit-solaire-plug-and-play-arnaque`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/talon-consommation-solaire`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },

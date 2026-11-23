@@ -61,11 +61,11 @@ const articles = [
   },
   {
     slug: 'optimiser-autoconsommation-solaire',
-    title: 'Comment optimiser son autoconsommation solaire au quotidien',
-    excerpt: '8 astuces class\u00e9es par impact pour passer de 40 % \u00e0 85 % d\u2019autoconsommation, dont 6 gratuites.',
+    title: 'Autoconsommation solaire : comment \u00e7a marche et comment l\u2019optimiser',
+    excerpt: 'Le principe (talon, surplus, CACSI), puis 8 astuces class\u00e9es par impact pour passer de 40 % \u00e0 85 % d\u2019autoconsommation.',
     badge: 'Optimisation',
     date: '25 mai 2026',
-    readTime: '10 min',
+    readTime: '14 min',
   },
   {
     slug: 'declaration-cacsi-enedis-panneau-solaire',
