@@ -81,9 +81,18 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const dept = getDeptBySlug(params.slug);
   if (!dept) return {};
   const art = deptArticles(dept.name);
+  // Fiches indexables : title et description centrés sur l'information locale vérifiée.
+  const piloteMeta = DEPARTEMENTS_PILOTES[dept.code];
+  const agMeta = achatsGroupesDuDepartement(dept.code)[0];
+  const title = piloteMeta?.titreSeo
+    ?? (agMeta ? `Kit solaire balcon ${dept.name} : l'achat groupé ${agMeta.nom}` : `Kit solaire balcon ${dept.name} (${dept.code}) : production et rentabilité 2026`);
+  const description = piloteMeta?.descriptionSeo
+    ?? (agMeta
+      ? `${dept.name} (${dept.code}) : l'achat groupé de kits solaires ${agMeta.nom} (${agMeta.ville}), son déroulé et ses prix constatés. Production PVGIS et rentabilité.`
+      : `Combien produit un kit solaire sur un balcon ${art.dans} (${dept.code}) ? Productible ${productibleSite(dept.irradiation)} kWh/kWc, calcul de rentabilité et meilleur kit recommandé.`);
   return withCanonicalOg({
-    title: `Kit solaire balcon ${dept.name} (${dept.code}) : production et rentabilité 2026`,
-    description: `Combien produit un kit solaire sur un balcon ${art.dans} (${dept.code}) ? Productible ${productibleSite(dept.irradiation)} kWh/kWc, calcul de rentabilité et meilleur kit recommandé.`,
+    title,
+    description,
     alternates: {
       canonical: `https://monbalconsolaire.fr/solaire-balcon/${params.slug}`,
     },
@@ -189,6 +198,45 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
               </div>
             ))}
           </div>
+
+          {(pilote || achatsGroupes.length > 0) && (
+            <div className="space-y-10 mb-10">
+              {pilote && (
+                <section>
+                  <h2 className="text-2xl font-extrabold mb-4">{pilote.titre}</h2>
+                  {pilote.paragraphes.map((t, i) => (
+                    <p key={i} className="text-charcoal-light leading-relaxed mb-4">{t}</p>
+                  ))}
+                  <ul className="text-xs text-stone space-y-1 mb-4">
+                    {pilote.sources.map(src => (
+                      <li key={src.url}>Source&nbsp;: <a href={src.url} target="_blank" rel="noopener" className="text-green hover:underline">{src.label}</a>, consult&eacute;e le {src.vu}.</li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-charcoal-light leading-relaxed">{pilote.apport}</p>
+                </section>
+              )}
+
+              {achatsGroupes.map(ag => (
+                <section key={ag.slug}>
+                  <h2 className="text-2xl font-extrabold mb-4">Acheter son kit en achat group&eacute; ({dept.name}) : {ag.nom}</h2>
+                  <p className="text-charcoal-light leading-relaxed mb-4">Plut&ocirc;t que d&apos;acheter un kit seul en ligne, vous pouvez passer par un achat group&eacute;. La soci&eacute;t&eacute; r&eacute;gionale {ag.nom}, bas&eacute;e &agrave; {ag.ville}, en organise en Bretagne, et notamment dans {ag.zone}, et a d&eacute;j&agrave; vendu {ag.kitsVendus} kits. Le d&eacute;roul&eacute; :</p>
+                  <ol className="list-decimal pl-6 space-y-1 text-sm text-charcoal-light leading-relaxed mb-4">
+                    {ag.deroule.map((etape, i) => <li key={i}>{etape}</li>)}
+                  </ol>
+                  <p className="text-charcoal-light leading-relaxed mb-4">Le kit comprend {ag.contenuKit}. Du fait d&apos;une &eacute;volution constante des produits dans le photovolta&iuml;que, le mat&eacute;riel change d&apos;une op&eacute;ration &agrave; l&apos;autre (derniers kits : {ag.puissanceDernierKitWc} Wc) ; les prix constat&eacute;s sont all&eacute;s de {ag.prixConstates.min} &agrave; {ag.prixConstates.max} &euro;. Dans ce d&eacute;partement, un kit de {ag.puissanceDernierKitWc} Wc &agrave; {ag.prixConstates.max} &euro; se rembourse en {calculateROIYears({ kitPriceEur: ag.prixConstates.max, kitPowerWc: ag.puissanceDernierKitWc, productibleKwhPerKwc: productible }).toLocaleString('fr-FR')} ans.</p>
+                  {ag.interesses && <p className="text-charcoal-light leading-relaxed mb-4">{ag.interesses.charAt(0).toUpperCase() + ag.interesses.slice(1)} de personnes se sont d&eacute;j&agrave; manifest&eacute;es pour la prochaine op&eacute;ration{ag.rechercheSalle ? <>, et {ag.nom} cherche {ag.rechercheSalle}</> : null}.</p>}
+                  <p className="text-sm font-semibold mb-2">
+                    Pour vous faire conna&icirc;tre&nbsp;: {ag.inscription.href
+                      ? <a href={ag.inscription.href} className="text-green hover:underline">{ag.inscription.label}</a>
+                      : ag.inscription.label}
+                  </p>
+                  <p className="text-sm text-charcoal-light mb-4">Comment fonctionne un achat group&eacute; : <Link href="/guide/achat-groupe-kit-solaire" className="text-green hover:underline">notre guide complet &rarr;</Link></p>
+                  <p className="text-sm text-charcoal-light leading-relaxed">Ce que cette fiche ajoute &agrave; notre carte nationale&nbsp;: un achat group&eacute; local, avec son d&eacute;roul&eacute; et ses prix constat&eacute;s, et la production mois par mois &agrave; {dept.prefecture}.</p>
+                </section>
+              ))}
+
+            </div>
+          )}
 
           <div className="relative overflow-hidden rounded-brand-xl border border-green/10 bg-gradient-to-br from-green-pale/40 via-white to-cream p-8 shadow-brand mb-10">
             <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-green to-green-light rounded-l-brand-xl" />
@@ -340,38 +388,6 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                 </p>
               )}
             </section>
-
-            {pilote && (
-              <section>
-                <h2 className="text-2xl font-extrabold mb-4">{pilote.titre}</h2>
-                {pilote.paragraphes.map((t, i) => (
-                  <p key={i} className="text-charcoal-light leading-relaxed mb-4">{t}</p>
-                ))}
-                <ul className="text-xs text-stone space-y-1">
-                  {pilote.sources.map(src => (
-                    <li key={src.url}>Source&nbsp;: <a href={src.url} target="_blank" rel="noopener" className="text-green hover:underline">{src.label}</a>, consult&eacute;e le {src.vu}.</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {achatsGroupes.map(ag => (
-              <section key={ag.slug}>
-                <h2 className="text-2xl font-extrabold mb-4">Acheter son kit en achat group&eacute; ({dept.name}) : {ag.nom}</h2>
-                <p className="text-charcoal-light leading-relaxed mb-4">Plut&ocirc;t que d&apos;acheter un kit seul en ligne, vous pouvez passer par un achat group&eacute;. La soci&eacute;t&eacute; r&eacute;gionale {ag.nom}, bas&eacute;e &agrave; {ag.ville}, en organise en Bretagne, et notamment dans {ag.zone}, et a d&eacute;j&agrave; vendu {ag.kitsVendus} kits. Le d&eacute;roul&eacute; :</p>
-                <ol className="list-decimal pl-6 space-y-1 text-sm text-charcoal-light leading-relaxed mb-4">
-                  {ag.deroule.map((etape, i) => <li key={i}>{etape}</li>)}
-                </ol>
-                <p className="text-charcoal-light leading-relaxed mb-4">Le kit comprend {ag.contenuKit}. Du fait d&apos;une &eacute;volution constante des produits dans le photovolta&iuml;que, le mat&eacute;riel change d&apos;une op&eacute;ration &agrave; l&apos;autre (derniers kits : {ag.puissanceDernierKitWc} Wc) ; les prix constat&eacute;s sont all&eacute;s de {ag.prixConstates.min} &agrave; {ag.prixConstates.max} &euro;. Dans ce d&eacute;partement, un kit de {ag.puissanceDernierKitWc} Wc &agrave; {ag.prixConstates.max} &euro; se rembourse en {calculateROIYears({ kitPriceEur: ag.prixConstates.max, kitPowerWc: ag.puissanceDernierKitWc, productibleKwhPerKwc: productible }).toLocaleString('fr-FR')} ans.</p>
-                {ag.interesses && <p className="text-charcoal-light leading-relaxed mb-4">{ag.interesses.charAt(0).toUpperCase() + ag.interesses.slice(1)} de personnes se sont d&eacute;j&agrave; manifest&eacute;es pour la prochaine op&eacute;ration{ag.rechercheSalle ? <>, et {ag.nom} cherche {ag.rechercheSalle}</> : null}.</p>}
-                <p className="text-sm font-semibold mb-2">
-                  Pour vous faire conna&icirc;tre&nbsp;: {ag.inscription.href
-                    ? <a href={ag.inscription.href} className="text-green hover:underline">{ag.inscription.label}</a>
-                    : ag.inscription.label}
-                </p>
-                <p className="text-sm text-charcoal-light">Comment fonctionne un achat group&eacute; : <Link href="/guide/achat-groupe-kit-solaire" className="text-green hover:underline">notre guide complet &rarr;</Link></p>
-              </section>
-            ))}
 
             <div className="card-lg bg-gradient-to-br from-green-pale via-white to-amber-pale/30 border-green/10 text-center">
               <p className="font-semibold text-lg mb-2">Affinez votre calcul</p>
