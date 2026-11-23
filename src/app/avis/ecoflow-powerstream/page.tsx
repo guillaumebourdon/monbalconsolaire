@@ -399,7 +399,7 @@ export default function EcoflowPowerstreamPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">PowerStream vs concurrence : tableau comparatif (juillet 2026)</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                Deux nouveaux syst&egrave;mes avec stockage arrivent sur le march&eacute; : le <strong>Bluetti Balco 260</strong> (tout-en-un lanc&eacute; le 13 juillet 2026) et le <AffLink item={BUY.solarflowMix} position="comparison">Zendure SolarFlow Mix 3000 AC+</AffLink> (batterie r&eacute;sidentielle, disponible depuis avril 2026). Voici la comparaison honn&ecirc;te.
+                Deux nouveaux syst&egrave;mes avec stockage arrivent sur le march&eacute; : le <AffLink item={BUY.balco260} position="comparison">Bluetti Balco 260</AffLink> (tout-en-un lanc&eacute; le 13 juillet 2026) et le <AffLink item={BUY.solarflowMix} position="comparison">Zendure SolarFlow Mix 3000 AC+</AffLink> (batterie r&eacute;sidentielle, disponible depuis avril 2026). Voici la comparaison honn&ecirc;te.
               </p>
               <div className="overflow-x-auto -mx-5 md:mx-0 my-6">
                 <table className="w-full text-sm border-collapse min-w-[560px]">

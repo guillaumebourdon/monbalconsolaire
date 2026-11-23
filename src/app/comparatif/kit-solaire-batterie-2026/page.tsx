@@ -141,6 +141,7 @@ export default function BatteriePage() {
                       const buyMap: Record<string, { url: string; merchant: string }> = {
                         'Zendure SolarFlow 800 Plus': { url: zendureUrl(PRODUCTS['zendure-solarflow-800-plus'].url), merchant: 'Zendure' },
                         'EcoFlow STREAM Ultra': { url: ecoflowUrl(PRODUCTS['ecoflow-stream-ultra'].url), merchant: 'EcoFlow' },
+                        'Bluetti Balco 260': { url: BUY.balco260.url, merchant: 'Bluetti' },
                       };
                       const buy = buyMap[n as string];
                       const thumb = thumbMap[n as string];

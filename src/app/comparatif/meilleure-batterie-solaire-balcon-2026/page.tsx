@@ -182,6 +182,7 @@ export default function MeilleureBatterieBalconPage() {
                       },
                       {
                         name: 'Bluetti Balco 260',
+                        buy: { url: BUY.balco260.url, merchant: 'Bluetti' },
                         href: '/avis/bluetti-balco-260',
                         img: '/images/produits/bluetti-balco-260-front.webp',
                         capacity: '2,56 kWh',
@@ -345,6 +346,7 @@ export default function MeilleureBatterieBalconPage() {
                     Il peut alimenter jusqu&apos;&agrave; 2&nbsp;300&nbsp;W en mode bypass et secourir votre logement en cas de coupure.
                     Capacit&eacute; extensible jusqu&apos;&agrave; 15&nbsp;kWh.
                     <Link href="/avis/bluetti-balco-260" className="text-green hover:underline ml-1">Lire notre avis complet &rarr;</Link>
+                    <span className="ml-3"><AffLink item={BUY.balco260} position="product-card">Voir le prix chez Bluetti &rarr;</AffLink></span>
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 mt-4">
                     <div>
@@ -532,7 +534,7 @@ export default function MeilleureBatterieBalconPage() {
                 </div>
                 <div className="card-lg border-green/20 bg-green-pale/20">
                   <h3 className="font-bold text-green mb-1">Tout-en-un sans installation complexe &rarr; Bluetti Balco 260</h3>
-                  <p className="text-sm text-charcoal-light">Un seul bo&icirc;tier IP65 qui fait tout. Pose en ext&eacute;rieur, 4 MPPT, secours &eacute;lectrique. Le choix le plus polyvalent si le budget permet 729&nbsp;&euro;.</p>
+                  <p className="text-sm text-charcoal-light">Un seul bo&icirc;tier IP65 qui fait tout. Pose en ext&eacute;rieur, 4 MPPT, secours &eacute;lectrique. Le choix le plus polyvalent si le budget permet 729&nbsp;&euro;. <AffLink item={BUY.balco260} position="verdict">Voir le prix chez Bluetti &rarr;</AffLink></p>
                 </div>
                 <div className="card-lg">
                   <h3 className="font-bold mb-1">Garantie maximale &rarr; Jackery SolarVault 3 Pro</h3>

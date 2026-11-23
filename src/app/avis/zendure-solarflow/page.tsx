@@ -481,7 +481,7 @@ export default function ZendureSolarflowPage() {
               <div className="space-y-3">
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous avez besoin d&apos;un backup en cas de coupure</h3>
-                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow ne fonctionne pas hors réseau. Si la sécurité énergétique est votre priorité, prenez un Bluetti Balco 260, qui dispose d&apos;une sortie de secours (l&apos;EcoFlow PowerStream, autre option avec backup, n&apos;est plus vendu par EcoFlow France depuis 2026).</p>
+                  <p className="text-xs text-charcoal-light leading-relaxed">Le SolarFlow ne fonctionne pas hors réseau. Si la sécurité énergétique est votre priorité, prenez un <AffLink item={BUY.balco260} position="alternative">Bluetti Balco 260</AffLink>, qui dispose d&apos;une sortie de secours (l&apos;EcoFlow PowerStream, autre option avec backup, n&apos;est plus vendu par EcoFlow France depuis 2026).</p>
                 </div>
                 <div className="card border-l-4 border-l-amber bg-amber-pale/10">
                   <h3 className="font-bold text-sm mb-1 text-amber-dark">Vous voulez la simplicité absolue d&apos;un kit tout-en-un</h3>

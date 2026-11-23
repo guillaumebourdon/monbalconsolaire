@@ -210,7 +210,7 @@ export default function ZendureSolarFlowMixAvisPage() {
                       ['Zendure SolarFlow 800+', '1,92 kWh', '800 W', '539 \u20ac', '281 \u20ac', false],
                     ].map(([name, cap, power, price, ratio, highlight], i) => (
                       <tr key={i} className={highlight ? 'bg-green-pale/30 font-semibold' : i % 2 === 0 ? 'bg-cream/50' : ''}>
-                        <td className="py-2 px-3">{name === 'Zendure SolarFlow 800+' ? <AffLink item={BUY.solarflow800Plus} position="comparison-table">{name as string}</AffLink> : (name as string)}</td>
+                        <td className="py-2 px-3">{name === 'Zendure SolarFlow 800+' ? <AffLink item={BUY.solarflow800Plus} position="comparison-table">{name as string}</AffLink> : name === 'Bluetti Balco 260' ? <AffLink item={BUY.balco260} position="comparison-table">{name as string}</AffLink> : (name as string)}</td>
                         <td className="py-2 px-3">{cap as string}</td>
                         <td className="py-2 px-3">{power as string}</td>
                         <td className="py-2 px-3">{price as string}</td>
