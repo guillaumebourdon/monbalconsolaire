@@ -42,7 +42,7 @@ const faqData = [
   },
   {
     question: 'Y a-t-il des aides locales pour les panneaux de balcon ?',
-    answer: 'Rarement. Exemple vérifié le 23 novembre 2026 : Cœur de Flandre Agglo (Nord) finance 30 % du prix TTC d’un panneau prêt à brancher, 200 € au plus, pour un seul panneau, sous conditions (résidence principale, convention d’autoconsommation sans injection avec Enedis). À l’inverse, la prime solaire de Toulouse Métropole exclut explicitement les kits, et l’ALEC Montpellier Métropole indique qu’il n’y a pas d’aide financière pour un kit plug and play. Vérifiez auprès de votre mairie ou de votre intercommunalité, pas d’un vendeur.',
+    answer: 'Rarement. Exemple vérifié le 23 novembre 2026 : Cœur de Flandre Agglo (Nord) finance 30 % du prix TTC d’un panneau prêt à brancher, 200 € au plus, pour un seul panneau, sous conditions (résidence principale, convention d’autoconsommation sans injection avec Enedis). La Métropole Rouen Normandie (Seine-Maritime) paie 80 % d’un kit plug and play, 800 € au plus, jusqu’au 31 décembre 2026, mais seulement pour les maisons individuelles : pas pour un balcon d’appartement. À l’inverse, la prime solaire de Toulouse Métropole exclut explicitement les kits, et l’ALEC Montpellier Métropole indique qu’il n’y a pas d’aide financière pour un kit plug and play. Vérifiez auprès de votre mairie ou de votre intercommunalité, pas d’un vendeur.',
   },
   {
     question: 'Un kit solaire de balcon est-il un bon investissement malgré l’absence d’aides ?',
@@ -92,7 +92,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               <li>&bull; <strong>MaPrimeR&eacute;nov&apos;</strong>&nbsp;: non &eacute;ligible (installation DIY, pas de professionnel RGE)</li>
               <li>&bull; <strong>Prime &agrave; l&apos;autoconsommation</strong>&nbsp;: supprim&eacute;e (0-100&nbsp;kWc) pour les demandes compl&egrave;tes de raccordement d&eacute;pos&eacute;es &agrave; partir du 5 juin 2026 (arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026)&nbsp;; un kit branch&eacute; sur une prise n&apos;y a jamais &eacute;t&eacute; &eacute;ligible</li>
               <li>&bull; <strong>TVA r&eacute;duite</strong>&nbsp;: 5,5&nbsp;% depuis le 1<sup>er</sup> octobre 2025 pour la fourniture + pose par un professionnel qualifi&eacute; d&apos;un &eacute;quipement conforme&nbsp;; un kit achet&eacute; seul reste &agrave; 20&nbsp;% dans la plupart des cas</li>
-              <li>&bull; <strong>Aides locales</strong>&nbsp;: rares. Exemple v&eacute;rifi&eacute;&nbsp;: C&oelig;ur de Flandre Agglo (Nord) paie 30&nbsp;% d&apos;un panneau, 200&nbsp;&euro; au plus. D&apos;autres primes locales excluent les kits</li>
+              <li>&bull; <strong>Aides locales</strong>&nbsp;: rares. Exemple v&eacute;rifi&eacute;&nbsp;: C&oelig;ur de Flandre Agglo (Nord) paie 30&nbsp;% d&apos;un panneau, 200&nbsp;&euro; au plus&nbsp;; la M&eacute;tropole Rouen Normandie paie 80&nbsp;% d&apos;un kit, 800&nbsp;&euro; au plus, jusqu&apos;au 31/12/2026, maisons individuelles seulement. D&apos;autres primes locales excluent les kits</li>
               <li>&bull; <strong>Rentabilit&eacute;</strong>&nbsp;: le ROI reste positif sans aides, uniquement sur l&apos;autoconsommation</li>
             </ul>
           </div>
@@ -117,7 +117,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                       ['MaPrimeRénov’', 'Jusqu’à 4 000 €', '&#10007; Non', 'Exige pro RGE + installation toiture'],
                       ['Prime autoconsommation', 'Supprimée (0-100 kWc)', '&#10007; Non', 'Supprimée pour les demandes de raccordement complètes déposées à partir du 5/06/2026 ; jamais valable pour un kit sur prise'],
                       ['TVA réduite 5,5 %', 'Sur la facture pro', '&#10007; Rarement', 'Fourniture + pose par un pro qualifié, critères de l’arrêté du 8/09/2025 ; kit seul : 20 % dans la plupart des cas'],
-                      ['Aides locales (agglos, métropoles)', '30 %, 200 € max (Cœur de Flandre)', '✔ Rarement', 'Rares ; certaines primes locales excluent les kits (Toulouse Métropole)'],
+                      ['Aides locales (agglos, métropoles)', '30 %, 200 € max (Cœur de Flandre) ; 80 %, 800 € max (Métropole de Rouen, maisons, jusqu’au 31/12/2026)', '✔ Rarement', 'Rares ; certaines primes locales excluent les kits (Toulouse Métropole)'],
                       ['Éco-Rénovons Paris+', '25 % des travaux (plaf. 4 000 €)', '&#10007; Non', 'Copropriété seulement, pas balcon individuel'],
                     ].map(([aide, montant, eligible, pourquoi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
@@ -224,7 +224,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Aides locales&nbsp;: le seul filon qui existe</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                C&apos;est la seule cat&eacute;gorie d&apos;aides o&ugrave; un kit plug-and-play <strong>peut</strong> &ecirc;tre aid&eacute;. Mais ces aides sont rares, et une prime solaire locale ne couvre pas forc&eacute;ment les kits&nbsp;: il faut lire le r&egrave;glement. Voici trois cas que nous avons v&eacute;rifi&eacute;s sur les sites officiels le 23&nbsp;novembre 2026&nbsp;: une aide qui existe, une prime qui exclut les kits, un territoire sans aide.
+                C&apos;est la seule cat&eacute;gorie d&apos;aides o&ugrave; un kit plug-and-play <strong>peut</strong> &ecirc;tre aid&eacute;. Mais ces aides sont rares, et une prime solaire locale ne couvre pas forc&eacute;ment les kits&nbsp;: il faut lire le r&egrave;glement. Voici quatre cas que nous avons v&eacute;rifi&eacute;s sur les sites officiels le 23&nbsp;novembre 2026&nbsp;: deux aides qui existent (dont une r&eacute;serv&eacute;e aux maisons), une prime qui exclut les kits, un territoire sans aide.
               </p>
               <div className="space-y-3 mb-6">
                 <div className="card border-l-4 border-l-green">
@@ -234,6 +234,15 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                   </p>
                   <p className="text-xs text-stone">
                     Source&nbsp;: <a href="https://www.ca-coeurdeflandre.fr/aide-lachat-de-panneaux-solaires-prets-brancher" target="_blank" rel="noopener" className="text-green hover:underline">C&oelig;ur de Flandre Agglo, &laquo;&nbsp;Aide &agrave; l&apos;achat de panneaux solaires pr&ecirc;ts &agrave; brancher&nbsp;&raquo;</a> (consult&eacute;e le 23/11/2026) &middot; <Link href="/solaire-balcon/nord" className="text-green hover:underline">Kit solaire de balcon dans le Nord</Link>
+                  </p>
+                </div>
+                <div className="card border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm mb-1">Seine-Maritime&nbsp;: la M&eacute;tropole Rouen Normandie paie 80&nbsp;% d&apos;un kit, 800&nbsp;&euro; au plus (maisons seulement)</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">
+                    Jusqu&apos;au <strong>31&nbsp;d&eacute;cembre 2026</strong>, la M&eacute;tropole Rouen Normandie finance 80&nbsp;% de la d&eacute;pense (achat, livraison et installation) d&apos;un kit &laquo;&nbsp;plug and play&nbsp;&raquo; de 300 &agrave; 550&nbsp;Wc, dans la limite de 800&nbsp;&euro; d&apos;aide. Limite importante&nbsp;: l&apos;aide vise les occupants de <strong>maisons individuelles</strong> (propri&eacute;taires ou locataires, en r&eacute;sidence principale dans la M&eacute;tropole). La page officielle ne mentionne pas les appartements&nbsp;: elle ne concerne donc pas un kit pos&eacute; sur un balcon d&apos;appartement. Autres conditions&nbsp;: plafonds de ressources index&eacute;s sur ceux de l&apos;Anah, convention d&apos;autoconsommation avec Enedis (ou la R&eacute;gie d&apos;&eacute;lectricit&eacute; d&apos;Elbeuf), branchement sur une prise ext&eacute;rieure &eacute;tanche (IP44).
+                  </p>
+                  <p className="text-xs text-stone">
+                    Source&nbsp;: <a href="https://energies.metropole-rouen-normandie.fr/votre-projet/particuliers/kit-solaire/" target="_blank" rel="noopener" className="text-green hover:underline">&Eacute;nergies M&eacute;tropole (M&eacute;tropole Rouen Normandie), &laquo;&nbsp;Kit solaire&nbsp;&raquo;</a> (page mise &agrave; jour le 16/11/2026, consult&eacute;e le 23/11/2026) &middot; <Link href="/solaire-balcon/seine-maritime" className="text-green hover:underline">Kit solaire de balcon en Seine-Maritime</Link>
                   </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
@@ -392,6 +401,10 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                 <Link href="/solaire-balcon/nord" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire de balcon dans le Nord</h3>
                   <p className="text-xs text-charcoal-light mt-1">L&apos;aide de C&oelig;ur de Flandre Agglo &agrave; l&apos;achat d&apos;un panneau &laquo;&nbsp;pr&ecirc;t &agrave; brancher&nbsp;&raquo;</p>
+                </Link>
+                <Link href="/solaire-balcon/seine-maritime" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire de balcon en Seine-Maritime</h3>
+                  <p className="text-xs text-charcoal-light mt-1">L&apos;aide de la M&eacute;tropole Rouen Normandie aux kits plug and play, pour les maisons seulement</p>
                 </Link>
                 <Link href="/solaire-balcon/haute-garonne" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire de balcon en Haute-Garonne</h3>
