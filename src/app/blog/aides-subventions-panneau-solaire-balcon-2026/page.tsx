@@ -42,7 +42,7 @@ const faqData = [
   },
   {
     question: 'Y a-t-il des aides locales pour les panneaux de balcon ?',
-    answer: 'Oui, quelques-unes, mais c’est rare et variable selon la commune. Certaines collectivités (métropoles, communautés d’agglomération) proposent des chèques énergie de 100 à 300 € pour l’achat d’un kit plug-and-play. D’autres (comme Paris avec Éco-Rénovons Paris+) proposent des aides en copropriété mais pas pour les installations individuelles de balcon. Vérifiez sur le site de votre mairie ou de votre intercommunalité.',
+    answer: 'Rarement. Exemple vérifié le 23 novembre 2026 : Cœur de Flandre Agglo (Nord) finance 30 % du prix TTC d’un panneau prêt à brancher, 200 € au plus, pour un seul panneau, sous conditions (résidence principale, convention d’autoconsommation sans injection avec Enedis). À l’inverse, la prime solaire de Toulouse Métropole exclut explicitement les kits, et l’ALEC Montpellier Métropole indique qu’il n’y a pas d’aide financière pour un kit plug and play. Vérifiez auprès de votre mairie ou de votre intercommunalité, pas d’un vendeur.',
   },
   {
     question: 'Un kit solaire de balcon est-il un bon investissement malgré l’absence d’aides ?',
@@ -62,7 +62,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
         description="MaPrimeRénov, TVA réduite, prime autoconsommation : ce qui s’applique vraiment aux kits balcon en 2026. Réponse honnête et chiffrée."
         url="https://monbalconsolaire.fr/blog/aides-subventions-panneau-solaire-balcon-2026"
         datePublished="2026-08-11"
-        dateModified="2026-11-05"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Aides solaire balcon 2026' }]} />
@@ -79,7 +79,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               MaPrimeR&eacute;nov&apos;, TVA r&eacute;duite, prime &agrave; l&apos;autoconsommation, aides locales&hellip; On nous pose ces questions chaque semaine. La r&eacute;ponse courte&nbsp;: <strong>quasi rien ne s&apos;applique aux kits plug-and-play</strong>. Voici le d&eacute;tail complet, honnêtement.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
-              <span>11 ao&ucirc;t 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span>
+              <span>11 ao&ucirc;t 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>8 min de lecture</span>
             </div>
@@ -92,7 +92,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
               <li>&bull; <strong>MaPrimeR&eacute;nov&apos;</strong>&nbsp;: non &eacute;ligible (installation DIY, pas de professionnel RGE)</li>
               <li>&bull; <strong>Prime &agrave; l&apos;autoconsommation</strong>&nbsp;: supprim&eacute;e (0-100&nbsp;kWc) pour les demandes compl&egrave;tes de raccordement d&eacute;pos&eacute;es &agrave; partir du 5 juin 2026 (arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026)&nbsp;; un kit branch&eacute; sur une prise n&apos;y a jamais &eacute;t&eacute; &eacute;ligible</li>
               <li>&bull; <strong>TVA r&eacute;duite</strong>&nbsp;: 5,5&nbsp;% depuis le 1<sup>er</sup> octobre 2025 pour la fourniture + pose par un professionnel qualifi&eacute; d&apos;un &eacute;quipement conforme&nbsp;; un kit achet&eacute; seul reste &agrave; 20&nbsp;% dans la plupart des cas</li>
-              <li>&bull; <strong>Aides locales</strong>&nbsp;: existent dans <em>certaines</em> communes, de 100 &agrave; 300&nbsp;&euro; &mdash; &agrave; v&eacute;rifier</li>
+              <li>&bull; <strong>Aides locales</strong>&nbsp;: rares. Exemple v&eacute;rifi&eacute;&nbsp;: C&oelig;ur de Flandre Agglo (Nord) paie 30&nbsp;% d&apos;un panneau, 200&nbsp;&euro; au plus. D&apos;autres primes locales excluent les kits</li>
               <li>&bull; <strong>Rentabilit&eacute;</strong>&nbsp;: le ROI reste positif sans aides, uniquement sur l&apos;autoconsommation</li>
             </ul>
           </div>
@@ -117,7 +117,7 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                       ['MaPrimeRénov’', 'Jusqu’à 4 000 €', '&#10007; Non', 'Exige pro RGE + installation toiture'],
                       ['Prime autoconsommation', 'Supprimée (0-100 kWc)', '&#10007; Non', 'Supprimée pour les demandes de raccordement complètes déposées à partir du 5/06/2026 ; jamais valable pour un kit sur prise'],
                       ['TVA réduite 5,5 %', 'Sur la facture pro', '&#10007; Rarement', 'Fourniture + pose par un pro qualifié, critères de l’arrêté du 8/09/2025 ; kit seul : 20 % dans la plupart des cas'],
-                      ['Céé locales / métropoles', '100–300 €', '✔ Parfois', 'Variable selon commune, à vérifier'],
+                      ['Aides locales (agglos, métropoles)', '30 %, 200 € max (Cœur de Flandre)', '✔ Rarement', 'Rares ; certaines primes locales excluent les kits (Toulouse Métropole)'],
                       ['Éco-Rénovons Paris+', '25 % des travaux (plaf. 4 000 €)', '&#10007; Non', 'Copropriété seulement, pas balcon individuel'],
                     ].map(([aide, montant, eligible, pourquoi], i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
@@ -224,16 +224,35 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
             <section>
               <h2 className="text-2xl font-extrabold mb-4">Aides locales&nbsp;: le seul filon qui existe</h2>
               <p className="text-charcoal-light leading-relaxed mb-4">
-                C&apos;est la seule cat&eacute;gorie d&apos;aides o&ugrave; des <strong>kits plug-and-play peuvent &ecirc;tre &eacute;ligibles</strong>. Certaines collectivit&eacute;s locales &mdash; souvent des m&eacute;tropoles ou des agglom&eacute;rations &mdash; ont mis en place des dispositifs sp&eacute;cifiques pour encourager le solaire citoyen, y compris les kits de balcon accessibles aux locataires.
+                C&apos;est la seule cat&eacute;gorie d&apos;aides o&ugrave; un kit plug-and-play <strong>peut</strong> &ecirc;tre aid&eacute;. Mais ces aides sont rares, et une prime solaire locale ne couvre pas forc&eacute;ment les kits&nbsp;: il faut lire le r&egrave;glement. Voici trois cas que nous avons v&eacute;rifi&eacute;s sur les sites officiels le 23&nbsp;novembre 2026&nbsp;: une aide qui existe, une prime qui exclut les kits, un territoire sans aide.
               </p>
               <div className="space-y-3 mb-6">
                 <div className="card border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm mb-1">Ce que proposent certaines communes</h3>
-                  <ul className="text-xs text-charcoal-light space-y-1.5 leading-relaxed">
-                    <li>&bull; <strong>Ch&egrave;ques &eacute;nergie solaire</strong>&nbsp;: 100 &agrave; 300&nbsp;&euro; pour l&apos;achat d&apos;un kit plug-and-play</li>
-                    <li>&bull; <strong>Pr&ecirc;ts &agrave; taux z&eacute;ro locaux</strong>&nbsp;: pour le financement du mat&eacute;riel</li>
-                    <li>&bull; <strong>Permanences d&apos;accompagnement</strong>&nbsp;: conseil gratuit installation et d&eacute;claration CACSI</li>
-                  </ul>
+                  <h3 className="font-bold text-sm mb-1">Nord&nbsp;: C&oelig;ur de Flandre Agglo paie 30&nbsp;% d&apos;un panneau, 200&nbsp;&euro; au plus</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">
+                    Dans les 50 communes de C&oelig;ur de Flandre Agglo (autour d&apos;Hazebrouck), l&apos;agglom&eacute;ration finance 30&nbsp;% du prix TTC d&apos;un panneau &laquo;&nbsp;pr&ecirc;t &agrave; brancher&nbsp;&raquo;, dans la limite de 200&nbsp;&euro;, pour un seul panneau (fixations, batterie et accessoires exclus). Conditions&nbsp;: r&eacute;sidence principale, aucune installation solaire d&eacute;j&agrave; en place, 3&nbsp;kWc au plus en autoconsommation sans revente, pas de pose en front de rue, panneau et onduleur garantis 20&nbsp;ans, convention d&apos;autoconsommation sans injection avec Enedis. Les locataires ne sont aid&eacute;s que pour un panneau pos&eacute; au sol. Le r&egrave;glement date du 23&nbsp;mai 2025 et la page n&apos;indique pas de date de cl&ocirc;ture.
+                  </p>
+                  <p className="text-xs text-stone">
+                    Source&nbsp;: <a href="https://www.ca-coeurdeflandre.fr/aide-lachat-de-panneaux-solaires-prets-brancher" target="_blank" rel="noopener" className="text-green hover:underline">C&oelig;ur de Flandre Agglo, &laquo;&nbsp;Aide &agrave; l&apos;achat de panneaux solaires pr&ecirc;ts &agrave; brancher&nbsp;&raquo;</a> (consult&eacute;e le 23/11/2026) &middot; <Link href="/solaire-balcon/nord" className="text-green hover:underline">Kit solaire de balcon dans le Nord</Link>
+                  </p>
+                </div>
+                <div className="card border-l-4 border-l-amber">
+                  <h3 className="font-bold text-sm mb-1">Haute-Garonne&nbsp;: la prime solaire de Toulouse M&eacute;tropole exclut les kits</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">
+                    Toulouse M&eacute;tropole verse une prime de 25&nbsp;% du montant hors taxe d&apos;une installation photovolta&iuml;que, plafonn&eacute;e &agrave; 15&nbsp;000&nbsp;&euro; par projet. Mais sa page officielle pr&eacute;cise que &laquo;&nbsp;le tiers financement ou les kits solaires ne sont pas &eacute;ligibles &agrave; cette aide&nbsp;&raquo;. Un vendeur qui promet cette prime pour un kit de balcon se trompe.
+                  </p>
+                  <p className="text-xs text-stone">
+                    Source&nbsp;: <a href="https://metropole.toulouse.fr/demarches/demander-la-prime-solaire" target="_blank" rel="noopener" className="text-green hover:underline">Toulouse M&eacute;tropole, &laquo;&nbsp;Demander la prime solaire&nbsp;&raquo;</a> (page mise &agrave; jour le 13/10/2026, consult&eacute;e le 23/11/2026) &middot; <Link href="/solaire-balcon/haute-garonne" className="text-green hover:underline">Kit solaire de balcon en Haute-Garonne</Link>
+                  </p>
+                </div>
+                <div className="card border-l-4 border-l-amber">
+                  <h3 className="font-bold text-sm mb-1">H&eacute;rault&nbsp;: aucune aide &agrave; Montpellier, selon l&apos;ALEC</h3>
+                  <p className="text-xs text-charcoal-light leading-relaxed mb-2">
+                    L&apos;ALEC Montpellier M&eacute;tropole, qui conseille gratuitement les habitants, &eacute;crit qu&apos;&laquo;&nbsp;il n&apos;y a pas d&apos;aides financi&egrave;res pour l&apos;installation d&apos;un kit solaire Plug &amp; Play&nbsp;&raquo;. La M&eacute;tropole propose en revanche un cadastre solaire public qui calcule aussi la rentabilit&eacute; d&apos;un kit.
+                  </p>
+                  <p className="text-xs text-stone">
+                    Source&nbsp;: <a href="http://alec-montpellier.org/actualites/installer-un-kit-solaire-plug-and-play-est-ce-une-bonne-idee/" target="_blank" rel="noopener" className="text-green hover:underline">ALEC Montpellier M&eacute;tropole, &laquo;&nbsp;Installer un kit solaire plug and play, est-ce une bonne id&eacute;e&nbsp;?&nbsp;&raquo;</a> (23/04/2025, consult&eacute;e le 23/11/2026) &middot; <Link href="/solaire-balcon/herault" className="text-green hover:underline">Kit solaire de balcon dans l&apos;H&eacute;rault</Link>
+                  </p>
                 </div>
                 <div className="card border-l-4 border-l-amber">
                   <h3 className="font-bold text-sm mb-1">Ce qui n&apos;existe plus ou reste limit&eacute;</h3>
@@ -244,6 +263,9 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
                   </ul>
                 </div>
               </div>
+              <p className="text-charcoal-light leading-relaxed mb-4">
+                Ailleurs, et notamment dans la M&eacute;tropole europ&eacute;enne de Lille, nous n&apos;avons pas trouv&eacute; d&apos;aide officielle pour les kits de balcon. Les dispositifs locaux s&apos;ouvrent et se ferment sans pr&eacute;avis&nbsp;: avant d&apos;acheter, v&eacute;rifiez que l&apos;aide est toujours ouverte aupr&egrave;s de la collectivit&eacute; elle-m&ecirc;me, pas d&apos;un vendeur. Toutes nos fiches par d&eacute;partement sont sur la page <Link href="/solaire-balcon" className="text-green hover:underline">solaire de balcon par d&eacute;partement</Link>.
+              </p>
               <div className="card-lg bg-green-pale/30 border-green/10">
                 <h3 className="font-bold text-sm mb-2">Comment trouver les aides de votre commune</h3>
                 <ul className="text-xs text-charcoal-light space-y-2 leading-relaxed">
