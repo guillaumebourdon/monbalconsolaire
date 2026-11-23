@@ -6,6 +6,8 @@ import { REGION_STATS } from '@/lib/regions';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { RENTABILITE_DEPARTEMENTS, REFERENCE_KIT } from '@/lib/rentabilite-departements';
 import { withCanonicalOg } from '@/lib/metadata';
+import { DEPARTEMENTS_PILOTES } from '@/data/departements-pilotes';
+import { ACHATS_GROUPES } from '@/data/achats-groupes';
 import { KWH_PRICE_LABEL, KWH_PRICE_SINCE, KWH_INFLATION_LABEL, PANEL_DEGRADATION_LABEL } from '@/lib/pricing';
 
 export const metadata: Metadata = withCanonicalOg({
@@ -29,6 +31,17 @@ function slugify(name: string): string {
 
 const regions = [...new Set(DEPARTMENTS.map(d => d.region))].sort();
 
+// Fiches indexables : information locale vérifiée (pilotes) ou achat groupé validé.
+const FICHES_LOCALES = DEPARTMENTS
+  .map(d => {
+    const pilote = DEPARTEMENTS_PILOTES[d.code];
+    const ag = ACHATS_GROUPES.find(a => a.valide && a.codeDepartement === d.code);
+    const info = pilote ? pilote.titre : ag ? `Achat groupé de kits avec ${ag.nom} (${ag.ville})` : null;
+    return info ? { code: d.code, name: d.name, slug: slugify(d.name), info } : null;
+  })
+  .filter((x): x is { code: string; name: string; slug: string; info: string } => x !== null)
+  .sort((a, b) => a.code.localeCompare(b.code));
+
 export default function SolaireBalconIndexPage() {
   return (
     <section className="section-padding">
@@ -41,6 +54,24 @@ export default function SolaireBalconIndexPage() {
             Économies annuelles et retour sur investissement d&apos;un kit solaire de balcon de {REFERENCE_KIT.powerWc} Wc ({REFERENCE_KIT.priceEur} &euro;) dans chaque département. Données PVGIS, mêmes calculs que notre carte de France.
           </p>
         </div>
+
+        <section className="card-lg mb-10 border-l-4 border-l-amber">
+          <h2 className="font-bold text-xl mb-2">Fiches avec une information locale v&eacute;rifi&eacute;e</h2>
+          <p className="text-sm text-charcoal-light mb-4">
+            Toutes les fiches donnent la production PVGIS et la rentabilit&eacute; d&apos;un kit. Ces {FICHES_LOCALES.length} d&eacute;partements ont en plus une information locale v&eacute;rifi&eacute;e sur un site officiel ou aupr&egrave;s de l&apos;organisateur&nbsp;: aide d&apos;une collectivit&eacute;, prime qui exclut les kits, outil public ou achat group&eacute;.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {FICHES_LOCALES.map(f => (
+              <Link key={f.code} href={`/solaire-balcon/${f.slug}`} className="card hover:shadow-brand-lg transition-all group py-3 px-4">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-xs text-amber-dark font-semibold">{f.code}</span>
+                  <span className="font-semibold text-sm group-hover:text-green transition-colors">{f.name}</span>
+                </div>
+                <p className="text-xs text-charcoal-light mt-1">{f.info}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         <Link
           href="/etude/rentabilite-kit-solaire-balcon-departement"

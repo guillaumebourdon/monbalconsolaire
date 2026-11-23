@@ -123,7 +123,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...REGIONS.map((r) => ({ url: `${BASE_URL}/solaire-balcon/region/${r.slug}`, lastModified: REGIONS_LASTMOD, changeFrequency: 'monthly' as const, priority: 0.7 })),
 
     // Hub départements (pages départementales en noindex, hors sitemap, sauf achat groupé validé ou pilote de data/departements-pilotes.ts)
-    { url: `${BASE_URL}/solaire-balcon`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/solaire-balcon`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/solaire-balcon/cotes-d-armor`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/solaire-balcon/haute-garonne`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/solaire-balcon/herault`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.6 },
