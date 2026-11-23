@@ -52,7 +52,9 @@ export const MANOMANO = {
 /**
  * Registre des liens d'achat réutilisés dans les articles (2e passe affiliation, 18/11/2026).
  * Seulement des produits en stock chez le marchand (vérifié le 18/11/2026) :
- * - Zendure SolarFlow 800 Plus et SolarFlow Mix (zendure.fr/products/<handle>.js : available = true).
+ * - Zendure SolarFlow Mix et SolarFlow 800 Pro 2 (zendure.fr/products/<handle>.js : available = true, revérifié le 23/11/2026).
+ *   PAS le SolarFlow 800 Plus (épuisé sur toutes ses versions, constaté le 20/11 et le 23/11/2026) :
+ *   l'entrée `solarflow800Plus` reste pour l'historique mais ne doit plus servir de bouton d'achat.
  *   PAS le SolarFlow 800 Pro (rupture), PAS le Hyper 2000 ni le SolarFlow 800 (indisponibles).
  * - EcoFlow STREAM Ultra (fr.ecoflow.com). PAS le DELTA 2 chez EcoFlow (indisponible le 18/11).
  * - ALLPOWERS BS2500 PRO (iallpowers.fr, même destination que l'avis).
@@ -61,6 +63,7 @@ export const MANOMANO = {
 export type BuyLink = { product: string; merchant: string; url: string };
 
 export const BUY = {
+  // Épuisé chez Zendure au 23/11/2026 : ne plus l'utiliser comme lien d'achat (remplaçant : solarflow800Pro2).
   solarflow800Plus: { product: 'Zendure SolarFlow 800 Plus', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/solarflow-800-plus') },
   solarflowMix: { product: 'Zendure SolarFlow Mix', merchant: 'Zendure', url: zendureUrl('https://zendure.fr/products/solarflow-mix-series') },
   streamUltra: { product: 'EcoFlow STREAM Ultra', merchant: 'EcoFlow', url: ecoflowUrl('https://fr.ecoflow.com/products/stream-ultra-pro') },
@@ -83,7 +86,8 @@ export const BUY = {
 
 /** Lien d'achat correspondant à un nom de produit cité dans un tableau (produits en stock uniquement). */
 export function buyFor(name: string): BuyLink | undefined {
-  if (/SolarFlow 800 (Plus|\+)/.test(name)) return BUY.solarflow800Plus;
+  if (/SolarFlow 800 (Plus|\+)/.test(name)) return undefined; // épuisé chez Zendure au 23/11/2026
+  if (/800 Pro 2/.test(name)) return BUY.solarflow800Pro2;
   if (/Mix Pro/.test(name)) return undefined; // 4000 Mix Pro : indisponible en ligne
   if (/SolarFlow (3000 |4000 )?Mix|\b(3000|4000) Mix AC\+/.test(name)) return BUY.solarflowMix;
   if (/STREAM Ultra(?! X)/.test(name)) return BUY.streamUltra;
