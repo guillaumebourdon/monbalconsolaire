@@ -367,6 +367,18 @@ export default function AidesSubventionsPanneauSolaireBalconPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
+                <Link href="/solaire-balcon/nord" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire de balcon dans le Nord</h3>
+                  <p className="text-xs text-charcoal-light mt-1">L&apos;aide de C&oelig;ur de Flandre Agglo &agrave; l&apos;achat d&apos;un panneau &laquo;&nbsp;pr&ecirc;t &agrave; brancher&nbsp;&raquo;</p>
+                </Link>
+                <Link href="/solaire-balcon/haute-garonne" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire de balcon en Haute-Garonne</h3>
+                  <p className="text-xs text-charcoal-light mt-1">La prime solaire de Toulouse M&eacute;tropole exclut les kits</p>
+                </Link>
+                <Link href="/solaire-balcon/herault" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Kit solaire de balcon dans l&apos;H&eacute;rault</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Montpellier&nbsp;: un cadastre solaire qui calcule aussi les kits plug &amp; play</p>
+                </Link>
                 <Link href="/guide/reglementation-panneau-solaire-balcon-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">R&eacute;glementation panneau solaire balcon 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">NF C 15-100, rep&egrave;re des 900&nbsp;W, d&eacute;claration CACSI Enedis&nbsp;: ce que dit la loi</p>

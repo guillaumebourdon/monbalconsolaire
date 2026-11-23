@@ -713,6 +713,7 @@ export default function CarteRentabilitePage() {
                   { href: '/guide/orientation-panneau-solaire-balcon', title: 'Orientation d’un panneau de balcon : sud, est, ouest', sub: 'Ce que vous perdez hors plein sud' },
                   { href: '/guide/orientation-panneau-solaire-balcon#nord', title: 'Panneau solaire de balcon au nord : est-ce rentable ?', sub: 'Le cas des balcons mal exposés' },
                   { href: '/guide/declaration-cacsi-enedis-panneau-solaire', title: 'Déclarer son kit à Enedis (CACSI)', sub: 'La démarche gratuite et obligatoire, pas à pas' },
+                  { href: '/solaire-balcon', title: 'Solaire de balcon par département et par région', sub: 'Production mois par mois de chaque préfecture, incliné et vertical' },
                 ].map((a) => (
                   <Link key={a.href} href={a.href} className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                     <h3 className="font-bold text-sm group-hover:text-green transition-colors">{a.title}</h3>

@@ -443,6 +443,10 @@ export default function ProductionSolaireEteHiverPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Production par d&eacute;partement et par r&eacute;gion</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Production mois par mois de chaque pr&eacute;fecture (PVGIS), panneau inclin&eacute; ou vertical</p>
+                </Link>
                 <Link href="/blog/panneau-solaire-canicule-production" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire et canicule&nbsp;: impact r&eacute;el sur la production</h3>
                   <p className="text-xs text-charcoal-light mt-1">Coefficient de temp&eacute;rature, pertes chiffr&eacute;es, PERC vs TOPCon/HJT et 5 astuces pour limiter la casse en &eacute;t&eacute;</p>

@@ -48,6 +48,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/quel-kit-choisir" className="text-sm text-stone hover:text-green transition-colors">Quel kit choisir ?</Link></li>
               <li><Link href="/tout-savoir" className="text-sm text-stone hover:text-green transition-colors">Tout savoir</Link></li>
+              <li><Link href="/solaire-balcon" className="text-sm text-stone hover:text-green transition-colors">Solaire par d&eacute;partement</Link></li>
               <li><Link href="/codes-promo" className="text-sm text-stone hover:text-green transition-colors">Codes promo</Link></li>
             </ul>
           </div>
