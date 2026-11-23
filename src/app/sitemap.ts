@@ -94,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/revendre-surplus-solaire-balcon`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/linky-panneau-solaire-injection`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/combien-rapporte-panneau-solaire-balcon`, lastModified: '2026-11-12', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog/prix-electricite-2026-solaire`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/blog/prix-electricite-2026-solaire`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/panneau-solaire-hiver-production`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/accessoires-kit-solaire-balcon`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog/kit-solaire-plug-and-play-arnaque`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },

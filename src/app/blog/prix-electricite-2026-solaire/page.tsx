@@ -12,6 +12,7 @@ import {
   KWH_PRICE_SINCE,
   KWH_PRICE_SOURCE_URL,
   KWH_INFLATION_LABEL,
+  KWH_INFLATION_SOURCE,
   PANEL_DEGRADATION_LABEL,
   PANEL_DEGRADATION_RATE,
   AUTOCONSO_STANDARD,
@@ -51,6 +52,14 @@ const savings2030High = Math.round(savings1 * Math.pow(1.05, 4) * Math.pow(1 - P
 const KWH_FEB_2026 = 0.194;
 const kwhChangePct = Math.round(((KWH_PRICE_EUR - KWH_FEB_2026) / KWH_FEB_2026) * 1000) / 10;
 
+// Abonnement Base 6 kVA TTC au 1er août 2026 (grille EDF Tarif Bleu) : un kit ne le fait pas baisser.
+const ABO_MOIS = 15.86;
+const aboAn = Math.round(ABO_MOIS * 12 * 100) / 100;
+const fr2 = (n: number) => n.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+// Tarif d'achat du surplus (installations sous contrat, arrêté du 1er juin 2026) : 1,1 c€/kWh HT.
+const OA_SURPLUS_EUR_HT = 0.011;
+const ratioAutoconsoVsVente = Math.round(KWH_PRICE_EUR / OA_SURPLUS_EUR_HT);
+
 export const metadata: Metadata = withCanonicalOg({
   title: 'Prix de l\'électricité 2026 : ce qu\'il change pour le solaire',
   description: 'Prix du kWh en 2026 (tarif réglementé au 1er août), ce qui a fait monter la facture et l\'effet sur la rentabilité d\'un kit solaire de balcon.',
@@ -62,13 +71,14 @@ export const metadata: Metadata = withCanonicalOg({
 const faqData = [
   { question: 'Quel est le prix du kWh en 2026 ?', answer: `Le tarif réglementé EDF (Tarif Bleu, option Base, 6 kVA) est de ${KWH_PRICE_LABEL} TTC depuis le ${KWH_PRICE_SINCE}. Il était de 0,1940 €/kWh au 1er février 2026 (tarif historique), soit +${fr(kwhChangePct)} % sur le prix du kWh. En moyenne, les tarifs bleus résidentiels ont augmenté de 2,51 % TTC au 1er août 2026 (délibération CRE n° 2026-147).` },
   { question: 'Le prix de l\'électricité va-t-il augmenter en 2026-2027 ?', answer: `Personne ne peut le garantir. La hausse du 1er août 2026 vient surtout du tarif d'utilisation des réseaux (TURPE) et du nouveau mécanisme de capacité, qui finance la disponibilité des centrales depuis la fin de l'ARENH le 31 décembre 2025 (CRE). Nos calculs supposent ${KWH_INFLATION_LABEL}, la moyenne passée du tarif réglementé, pas une prévision.` },
+  { question: 'Les nouvelles heures creuses changent-elles quelque chose pour un kit solaire ?', answer: 'Seulement si vous avez l’option heures pleines / heures creuses. Enedis déplace progressivement une partie des 8 heures creuses en journée (entre 11 h et 17 h en hiver, entre 10 h et 18 h en été) : la deuxième phase commence le 1er décembre 2026 pour 9,3 millions de clients et s’étale jusqu’à fin octobre 2027. Pendant ces heures creuses de l’après-midi, chaque kWh produit par votre kit remplace un kWh acheté moins cher, donc vous fait économiser un peu moins. En option Base, rien ne change.' },
   { question: 'Combien le solaire fait-il économiser face aux hausses ?', answer: `Chaque hausse du tarif augmente d'autant la valeur des kWh que vous produisez et consommez. Un ${KIT.name} (${KIT.powerWc} W, ${priceLabel('sunology-play')}) économise environ ${Math.round(savings1)} € la première année à Lyon, plein sud. Avec une hausse de 5 %/an, ce serait environ ${savings2030High} € en 2030.` },
 ];
 
 export default function PrixElectricitePage() {
   return (
     <>
-      <SchemaArticle title="Prix de l'électricité 2026 : ce que ça change pour le solaire" description="Prix du kWh en 2026 (tarif réglementé au 1er août), ce qui a fait monter la facture et l'effet sur la rentabilité d'un kit solaire de balcon." url="https://monbalconsolaire.fr/blog/prix-electricite-2026-solaire" datePublished="2026-03-30" dateModified="2026-11-05" />
+      <SchemaArticle title="Prix de l'électricité 2026 : ce que ça change pour le solaire" description="Prix du kWh en 2026 (tarif réglementé au 1er août), ce qui a fait monter la facture et l'effet sur la rentabilité d'un kit solaire de balcon." url="https://monbalconsolaire.fr/blog/prix-electricite-2026-solaire" datePublished="2026-03-30" dateModified="2026-11-23" />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: 'Prix de l\'électricité 2026' }]} />
       <article className="section-padding">
@@ -78,7 +88,7 @@ export default function PrixElectricitePage() {
             <div className="badge-amber mb-4 inline-block">Analyse</div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">Prix de l&apos;électricité 2026 : ce que ça change pour le solaire de balcon</h1>
             <p className="text-lg text-charcoal-light leading-relaxed">Le tarif réglementé a augmenté au 1<sup>er</sup> août 2026. Ce qui explique cette hausse, et ce qu&apos;elle change pour la rentabilité d&apos;un kit solaire de balcon, chiffres à l&apos;appui.</p>
-            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026 &middot; Mis &agrave; jour le 5 novembre 2026</span><span>&middot;</span><span>7 min de lecture</span></div>
+            <div className="flex items-center gap-4 mt-4 text-sm text-stone"><span>30 mars 2026 &middot; Mis &agrave; jour le 23 novembre 2026</span><span>&middot;</span><span>10 min de lecture</span></div>
           </div>
 
           <div className="space-y-10">
@@ -105,6 +115,7 @@ export default function PrixElectricitePage() {
                 </table>
               </div>
               <p className="text-xs text-stone">Source&nbsp;: <a href={KWH_PRICE_SOURCE_URL} target="_blank" rel="noopener noreferrer" className="text-green underline">grille EDF &laquo;&nbsp;Tarif Bleu&nbsp;&raquo; applicable au 1<sup>er</sup> ao&ucirc;t 2026</a> (consult&eacute;e le 5 novembre 2026). L&apos;abonnement 6 kVA passe &agrave; 15,86&nbsp;&euro; TTC par mois.</p>
+              <p className="text-charcoal-light leading-relaxed mt-4">Sur une plus longue p&eacute;riode, la hausse est nette ({KWH_INFLATION_SOURCE.charAt(0).toLowerCase() + KWH_INFLATION_SOURCE.slice(1)}, environ {KWH_INFLATION_LABEL}). C&apos;est cette moyenne pass&eacute;e que nous utilisons pour projeter les &eacute;conomies, pas une pr&eacute;vision.</p>
             </section>
 
             <section>
@@ -116,7 +127,7 @@ export default function PrixElectricitePage() {
                 <li>&bull; en sens inverse, la baisse des co&ucirc;ts des certificats d&apos;&eacute;conomies d&apos;&eacute;nergie et des co&ucirc;ts commerciaux (&minus;0,32&nbsp;% TTC) et une l&eacute;g&egrave;re baisse de l&apos;accise sur l&apos;&eacute;lectricit&eacute; (de 30,85 &agrave; 30,62&nbsp;&euro;/MWh).</li>
               </ul>
               <div className="card bg-amber-pale/30 border-amber/10">
-                <p className="text-sm text-charcoal-light"><strong>Et ensuite&nbsp;?</strong> Personne ne conna&icirc;t le tarif de 2030. Nos calculs supposent {KWH_INFLATION_LABEL}, la moyenne pass&eacute;e du tarif r&eacute;glement&eacute; (voir notre <Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link>), et nous montrons ci-dessous ce que donnent un tarif fig&eacute; et une hausse plus forte.</p>
+                <p className="text-sm text-charcoal-light"><strong>Et ensuite&nbsp;?</strong> Le prochain mouvement possible est le 1<sup>er</sup> f&eacute;vrier 2027. Au 23 novembre 2026, la CRE n&apos;a publi&eacute; aucune proposition pour cette date&nbsp;: les chiffres qui circulent sont des estimations. Pour le mouvement de f&eacute;vrier 2026, sa d&eacute;lib&eacute;ration date du 14 janvier 2026 (n&deg;&nbsp;2026-06). Personne ne conna&icirc;t le tarif de 2030. Nos calculs supposent {KWH_INFLATION_LABEL}, la moyenne pass&eacute;e du tarif r&eacute;glement&eacute; (voir notre <Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link>), et nous montrons ci-dessous ce que donnent un tarif fig&eacute; et une hausse plus forte.</p>
               </div>
             </section>
 
@@ -145,6 +156,43 @@ export default function PrixElectricitePage() {
               <p className="text-sm text-charcoal-light mt-2">
                 → Lire aussi : <Link href="/blog/combien-rapporte-panneau-solaire-balcon" className="text-green font-semibold hover:underline">Combien rapporte un panneau solaire de balcon ? Calcul réel par ville</Link>
               </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Ce que le kit fait baisser, et ce qu&apos;il ne touche pas</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">Votre facture a deux parties. Le kit ne r&eacute;duit que la premi&egrave;re&nbsp;:</p>
+              <ul className="text-charcoal-light leading-relaxed space-y-2 mb-4 pl-5">
+                <li>&bull; <strong>les kWh consomm&eacute;s</strong>, factur&eacute;s {KWH_PRICE_LABEL} TTC en option Base&nbsp;: chaque kWh produit et consomm&eacute; chez vous est un kWh en moins sur la facture&nbsp;;</li>
+                <li>&bull; <strong>l&apos;abonnement</strong>, {fr2(ABO_MOIS)}&nbsp;&euro; TTC par mois en 6 kVA, soit {fr2(aboAn)}&nbsp;&euro; par an&nbsp;: il ne d&eacute;pend pas de votre consommation et ne bouge pas avec un kit.</li>
+              </ul>
+              <p className="text-charcoal-light leading-relaxed">C&apos;est pour cela qu&apos;une hausse du prix du kWh profite au kit, alors qu&apos;une hausse de l&apos;abonnement ne change rien &agrave; sa rentabilit&eacute;. Pour v&eacute;rifier sur votre propre facture&nbsp;: <Link href="/blog/facture-edf-kit-solaire" className="text-green hover:underline">comment lire sa facture avec un kit solaire</Link>.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Autoconsommer rapporte bien plus que vendre</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">Le prix qui compte pour un kit est celui que vous &eacute;vitez de payer, pas celui auquel on vous ach&egrave;terait votre surplus. Une installation sous contrat d&apos;achat revend son surplus 1,1&nbsp;c&euro;/kWh HT, tarif unique pour les demandes d&eacute;pos&eacute;es depuis le 5 juin 2026 (<a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054190669" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">arr&ecirc;t&eacute; du 1<sup>er</sup> juin 2026</a>). Un kWh consomm&eacute; chez vous vaut {KWH_PRICE_LABEL} TTC, soit environ {ratioAutoconsoVsVente} fois plus.</p>
+              <p className="text-charcoal-light leading-relaxed">Et un kit branch&eacute; sur une prise ne vend rien du tout&nbsp;: son surplus est bloqu&eacute; (convention d&apos;autoconsommation sans injection) ou c&eacute;d&eacute; gratuitement &agrave; Enedis. Plus le kWh est cher, plus il vaut la peine de consommer pendant que le panneau produit&nbsp;: voir <Link href="/guide/optimiser-autoconsommation-solaire" className="text-green hover:underline">comment optimiser son autoconsommation</Link>.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Heures creuses l&apos;apr&egrave;s-midi&nbsp;: ce qui change &agrave; partir du 1<sup>er</sup> d&eacute;cembre 2026</h2>
+              <p className="text-charcoal-light leading-relaxed mb-4">Si vous avez l&apos;option heures pleines / heures creuses, vos horaires vont peut-&ecirc;tre changer. Chaque client garde 8 heures creuses par jour, mais Enedis peut d&eacute;sormais en placer une partie en journ&eacute;e&nbsp;:</p>
+              <div className="overflow-x-auto -mx-5 md:mx-0 my-4">
+                <table className="w-full text-sm border-collapse min-w-[400px]">
+                  <thead><tr className="bg-green text-white"><th className="text-left p-3 rounded-tl-xl">Saison</th><th className="text-center p-3">Plage possible en journ&eacute;e</th><th className="text-center p-3 rounded-tr-xl">Plage possible la nuit</th></tr></thead>
+                  <tbody>
+                    {[
+                      ['Hiver (1er novembre – 31 mars)', '11 h – 17 h', '21 h – 7 h'],
+                      ['Été (1er avril – 31 octobre)', '10 h – 18 h', '23 h – 7 h'],
+                    ].map(([saison, jour, nuit], i) => (
+                      <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}><td className="p-3 font-semibold">{saison}</td><td className="text-center p-3 font-mono">{jour}</td><td className="text-center p-3 font-mono">{nuit}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-charcoal-light leading-relaxed mb-4">Ce sont des fen&ecirc;tres, pas vos horaires&nbsp;: Enedis les fixe selon le r&eacute;seau local, et votre fournisseur vous pr&eacute;vient environ un mois avant. La deuxi&egrave;me phase commence le 1<sup>er</sup> d&eacute;cembre 2026 pour 9,3 millions de clients et s&apos;&eacute;tale jusqu&apos;&agrave; fin octobre 2027. Enedis la justifie notamment par la production solaire, abondante l&apos;apr&egrave;s-midi en &eacute;t&eacute;.</p>
+              <p className="text-charcoal-light leading-relaxed">Pour un kit de balcon, l&apos;effet est simple&nbsp;: pendant des heures creuses plac&eacute;es l&apos;apr&egrave;s-midi, chaque kWh produit remplace un kWh achet&eacute; moins cher, donc vous fait &eacute;conomiser un peu moins. En option Base, rien ne change. Nos calculs utilisent l&apos;option Base.</p>
+              <p className="text-xs text-stone mt-3">Source&nbsp;: <a href="https://www.enedis.fr/magazine/modification-des-heures-creuses-comprendre-ce-qui-change-partir-du-1er-novembre-2025" target="_blank" rel="noopener noreferrer" className="text-green hover:underline">Enedis, &laquo;&nbsp;Heures creuses&nbsp;: ce qui change &agrave; partir du 1<sup>er</sup> d&eacute;cembre 2026&nbsp;&raquo;</a> (9 novembre 2026, consult&eacute;e le 23 novembre 2026).</p>
             </section>
 
             <section>
@@ -205,7 +253,7 @@ export default function PrixElectricitePage() {
 
             <NewsletterBanner />
             <div className="mt-10 pt-8 border-t border-border-light">
-              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> CRE, délibération n° 2026-147 du 15 juillet 2026 portant proposition des tarifs réglementés de vente d&apos;électricité ; grille EDF Tarif Bleu applicable au 1<sup>er</sup> août 2026 (consultées le 5 novembre 2026). Calculs : méthode du site (PR 0,85, Lyon 1 200 kWh/kWc, {Math.round(AUTOCONSO_STANDARD * 100)} % d&apos;autoconsommation, dégradation {PANEL_DEGRADATION_LABEL}). <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
+              <p className="text-xs text-stone leading-relaxed"><strong>Sources :</strong> CRE, délibération n° 2026-147 du 15 juillet 2026 portant proposition des tarifs réglementés de vente d&apos;électricité ; grille EDF Tarif Bleu applicable au 1<sup>er</sup> août 2026 (consultées le 5 novembre 2026) ; arrêté du 1<sup>er</sup> juin 2026 (tarif d&apos;achat du surplus) ; Enedis, réforme des heures creuses (consultée le 23 novembre 2026). Calculs : méthode du site (PR 0,85, Lyon 1 200 kWh/kWc, {Math.round(AUTOCONSO_STANDARD * 100)} % d&apos;autoconsommation, dégradation {PANEL_DEGRADATION_LABEL}). <Link href="/a-propos" className="text-green hover:underline">En savoir plus</Link>.</p>
             </div>
           </div>
         </div>
