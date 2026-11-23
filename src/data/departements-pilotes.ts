@@ -54,4 +54,17 @@ export const DEPARTEMENTS_PILOTES: Record<string, InfoLocale> = {
     ],
     sources: [{ label: 'Cœur de Flandre Agglo, « Aide à l’achat de panneaux solaires prêts à brancher »', url: 'https://www.ca-coeurdeflandre.fr/aide-lachat-de-panneaux-solaires-prets-brancher', vu: '23/11/2026' }],
   },
+  '76': {
+    // Ajouté le 23/11/2026. Le dispositif se termine le 31/12/2026 : à revérifier et réécrire début janvier 2027.
+    titre: 'Métropole Rouen Normandie : une aide aux kits plug and play, pour les maisons seulement',
+    titreSeo: 'Kit solaire Seine-Maritime : l’aide de Rouen (maisons)',
+    descriptionSeo: 'Seine-Maritime (76) : la Métropole de Rouen paie 80 % d’un kit plug and play, 800 € max, jusqu’au 31/12/2026, maisons seulement. Production PVGIS.',
+    paragraphes: [
+      "Jusqu'au 31 décembre 2026, la Métropole Rouen Normandie finance 80 % de la dépense (achat, livraison et installation) d'un kit solaire « plug and play » de 300 à 550 Wc, dans la limite de 800 € d'aide.",
+      "Point important sur un site consacré au balcon : l'aide s'adresse aux occupants de maisons individuelles (propriétaires ou locataires, en résidence principale sur le territoire de la Métropole). La page officielle ne mentionne pas les appartements. Elle est aussi soumise à des plafonds de ressources, indexés sur ceux de l'Anah (44 518 € de revenu fiscal de référence pour une personne au 1er janvier 2026).",
+      "Autres conditions indiquées par la Métropole : signer une convention d'autoconsommation avec Enedis (ou avec la Régie d'électricité d'Elbeuf), brancher le kit sur une prise extérieure étanche (IP44) et faire une déclaration préalable en mairie si les panneaux sont fixés à plus de 1,80 m. La facture doit indiquer la marque, le modèle, la puissance et la mention « plug and play ». La page, mise à jour le 16 novembre 2026, indique que le dispositif prend fin le 31 décembre 2026.",
+    ],
+    apport: "Ce que cette fiche ajoute à notre carte nationale : le détail d'une aide locale aux kits, avec sa principale limite (maisons individuelles seulement) et sa date de fin, et la production mois par mois à Rouen.",
+    sources: [{ label: 'Énergies Métropole (Métropole Rouen Normandie), « Kit solaire » (page mise à jour le 16 novembre 2026)', url: 'https://energies.metropole-rouen-normandie.fr/votre-projet/particuliers/kit-solaire/', vu: '23/11/2026' }],
+  },
 };

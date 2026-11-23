@@ -128,5 +128,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/solaire-balcon/haute-garonne`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/solaire-balcon/herault`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/solaire-balcon/nord`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/solaire-balcon/seine-maritime`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.6 },
   ];
 }
