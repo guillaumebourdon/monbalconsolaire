@@ -7,6 +7,7 @@ import { ProductThumb } from '@/components/ui/ProductThumb';
 import { AffiliateCTA } from '@/components/ui/AffiliateCTA';
 import { withCanonicalOg } from '@/lib/metadata';
 import { priceLabel } from '@/data/products';
+import { BUY } from '@/lib/affiliate';
 
 export const metadata: Metadata = withCanonicalOg({
   title: 'Batteries portables et batteries de balcon 2026 : comparatif',
@@ -212,7 +213,7 @@ const cas_usage = [
   {
     titre: 'Stockage solaire balcon fixe',
     reco: 'Bluetti Balco 260 (2 560 Wh) — le nouveau choix 2026',
-    explication: `Pour stocker l'excédent d'un kit solaire de balcon, une batterie fixe est bien plus efficace qu'une portable. Le Balco 260 à ${priceLabel('bluetti-balco-260')} (sans panneaux, prix promotionnel constaté le 05/11/2026) offre 2,56 kWh avec 96,1 % de rendement. Extensible, garantie 10 ans.`,
+    explication: `Pour stocker l'excédent d'un kit solaire de balcon, une batterie fixe est bien plus efficace qu'une portable. Le Balco 260 à ${priceLabel('bluetti-balco-260')} (sans panneaux, prix promotionnel constaté le 20/11/2026) offre 2,56 kWh avec 96,1 % de rendement. Extensible, garantie 10 ans.`,
   },
 ];
 
@@ -224,7 +225,7 @@ export default function BatteriesPortablesPage() {
         description="Comparatif 2026 des batteries portables et des batteries de balcon fixes."
         url="https://monbalconsolaire.fr/blog/batteries-portables-solaires-comparatif"
         datePublished="2026-04-21"
-        dateModified="2026-11-05"
+        dateModified="2026-11-23"
       />
       <SchemaFAQ questions={faqData} />
       <SchemaBreadcrumb items={[{ label: 'Accessoires', href: '/accessoires' }, { label: 'Batteries portables' }]} />
@@ -234,18 +235,18 @@ export default function BatteriesPortablesPage() {
           <div className="mb-10">
             <div className="flex flex-wrap gap-2 mb-4">
               <div className="badge-amber inline-block">Comparatif 2026</div>
-              <div className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green text-white">Mis &agrave; jour le 5 novembre 2026</div>
+              <div className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green text-white">Mis &agrave; jour le 23 novembre 2026</div>
             </div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Batteries portables et balcon fixe 2026 : comparatif complet (Bluetti Balco 260, EcoFlow, Jackery)
             </h1>
             <p className="text-lg text-charcoal-light leading-relaxed">
-              Deux familles, deux usages. Les <strong>batteries portables</strong> (EcoFlow, Bluetti, Jackery) pour le backup et le nomade. Les <strong>batteries balcon fixe</strong> (Bluetti Balco 260, Zendure SolarFlow) pour stocker l&apos;&eacute;nergie solaire au quotidien. Prix Mis &agrave; jour le 5 novembre 2026.
+              Deux familles, deux usages. Les <strong>batteries portables</strong> (EcoFlow, Bluetti, Jackery) pour le backup et le nomade. Les <strong>batteries balcon fixe</strong> (Bluetti Balco 260, Zendure SolarFlow) pour stocker l&apos;&eacute;nergie solaire au quotidien. Prix Mis &agrave; jour le 23 novembre 2026.
             </p>
             <div className="flex items-center gap-4 mt-4 text-sm text-stone">
               <span>21 avril 2026</span>
               <span>&middot;</span>
-              <span>Mis &agrave; jour le 5 novembre 2026</span>
+              <span>Mis &agrave; jour le 23 novembre 2026</span>
               <span>&middot;</span>
               <span>12 min de lecture</span>
             </div>
@@ -303,7 +304,7 @@ export default function BatteriesPortablesPage() {
               <h2 className="text-2xl font-extrabold mb-4">Batteries balcon fixe 2026 : Bluetti Balco 260 et alternatives</h2>
               <div className="bg-amber-pale/20 border border-amber/20 rounded-xl p-4 mb-5">
                 <p className="text-sm text-charcoal-light leading-relaxed">
-                  <strong>Juillet 2026 :</strong> Bluetti lance le <strong>Balco 260</strong>, sa premi&egrave;re batterie balcon fixe (2,56 kWh, lanc&eacute;e &agrave; 889 &euro;, {priceLabel('bluetti-balco-260')} le 5 novembre 2026). Elle s&apos;impose d&apos;embl&eacute;e comme le meilleur rapport capacit&eacute;/prix du march&eacute; des batteries fix&eacute;es, devant le Zendure SolarFlow et l&apos;EcoFlow PowerStream.
+                  <strong>Juillet 2026 :</strong> Bluetti lance le <strong>Balco 260</strong>, sa premi&egrave;re batterie balcon fixe (2,56 kWh, lanc&eacute;e &agrave; 889 &euro;, {priceLabel('bluetti-balco-260')} le 20 novembre 2026). Elle s&apos;impose d&apos;embl&eacute;e comme le meilleur rapport capacit&eacute;/prix du march&eacute; des batteries fix&eacute;es, devant le Zendure SolarFlow et l&apos;EcoFlow PowerStream.
                 </p>
               </div>
 
@@ -383,11 +384,14 @@ export default function BatteriesPortablesPage() {
                 <div className="flex items-center justify-between flex-wrap gap-3">
                   <div>
                     <div className="font-mono font-bold text-green text-xl">{priceLabel('bluetti-balco-260')}</div>
-                    <div className="text-xs text-stone">Sans panneaux, prix constat&eacute; le 5 novembre 2026 (prix barr&eacute; 1&nbsp;049&nbsp;&euro;)</div>
+                    <div className="text-xs text-stone">Sans panneaux, prix constat&eacute; le 20 novembre 2026 (prix barr&eacute; 1&nbsp;049&nbsp;&euro;)</div>
                   </div>
-                  <Link href="/avis/bluetti-balco-260" className="btn-primary text-sm">
-                    Lire notre avis complet &rarr;
-                  </Link>
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <Link href="/avis/bluetti-balco-260" className="btn-primary text-sm">
+                      Lire notre avis complet &rarr;
+                    </Link>
+                    <AffiliateCTA productName="Bluetti Balco 260" merchantName="Bluetti" affiliateUrl={BUY.balco260.url} label="Voir le prix chez Bluetti" variant="inline" position="product-card" />
+                  </div>
                 </div>
               </div>
               <p className="text-xs text-stone mt-3">
