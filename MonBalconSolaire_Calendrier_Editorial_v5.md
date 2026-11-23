@@ -139,7 +139,8 @@ Les 3 avis existent et ont des impressions (Beem 300W, Sunethic F500) : cette pa
 ## Semaine 48 — 24-27 nov.
 
 ### Mardi 24/11 — NOUVEL ARTICLE — AVIS
-**Zendure SolarFlow 800 Pro : avis** — slug `zendure-solarflow-800-pro` (successeur du SolarFlow ; fiche zendure.fr). Liens : `zendureUrl()`. Lien croisé avec avis/zendure-solarflow (bandeau « nouvelle version »).
+**Zendure SolarFlow 800 Pro 2 : avis** — slug `zendure-solarflow-800-pro-2` (fiche zendure.fr : `/products/zendure-solarflow-800-pro2`). Liens : `BUY.solarflow800Pro2` / `zendureUrl()`. Produit déjà dans `src/data/products.ts` (`zendure-solarflow-800-pro-2`).
+**Changement du 23/11 (décision de Guillaume) :** sujet initial « 800 Pro » abandonné : le SolarFlow 800 Pro est épuisé sur toutes ses versions (zendure.fr `/products/solarflow-800-pro.js` → available false le 23/11), et le 800 Plus aussi (depuis le 20/11). Le 800 Pro 2 est en stock. Relevé du 23/11 sur la fiche officielle : 599 € seul (batterie 1 920 Wh, prix barré 979 €), pack 2 × 500 W (1 300 Wc) 959 €, pack 2 × 450 W 899 €, avec batterie AB2000L (3 840 Wh) 1 118 €, version + Smart Meter 3CT-S 728 € ; code AF5E24 : 551,08 € au panier le 18/11 ; prix du 02/09 : 779 €. Revérifier tous les prix le 24/11 avant publication, ne citer aucune caractéristique non trouvée sur la fiche officielle. ROI avec `src/lib/pricing.ts`. Positionner l'avis comme l'alternative en stock au 800 Plus épuisé ; lien croisé avec avis/zendure-solarflow (bandeau « épuisé, voir le 800 Pro 2 »). Photo : flux Awin Zendure FR (comme les avis du 20/11).
 
 ### Jeudi 26/11 — MISE À JOUR (toujours prévue)
 **Rafraîchir : black-friday-kit-solaire-2026 + codes-promo** (offres réelles du jour).
