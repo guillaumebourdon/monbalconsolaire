@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { regionHref } from '@/data/regions';
 import type { Metadata } from 'next';
 import { SchemaArticle, SchemaFAQ, SchemaBreadcrumb } from '@/components/SchemaMarkup';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -121,7 +122,7 @@ export default function CombienRapportePage() {
                   <tbody>
                     {cityData.map((c, i) => (
                       <tr key={i} className={`border-b border-border-light ${i % 2 === 0 ? 'bg-white' : 'bg-cream/50'}`}>
-                        <td className="p-3"><span className="font-semibold">{c.city}</span><br/><span className="text-xs text-stone">{c.region}</span></td>
+                        <td className="p-3"><span className="font-semibold">{c.city}</span><br/><Link href={regionHref(c.region)} className="text-xs text-green hover:underline">{c.region}</Link></td>
                         <td className="text-center p-3 font-mono text-xs">{c.irrLabel}</td>
                         <td className="text-center p-3 font-mono text-sm text-green">{c.prodBig}</td>
                         <td className="text-center p-3 font-mono text-sm font-medium text-amber-dark">{c.ecoBig}</td>
