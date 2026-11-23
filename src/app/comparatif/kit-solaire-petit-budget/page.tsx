@@ -163,10 +163,6 @@ export default function PetitBudgetPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir</p>
                 </Link>
-                <Link href="/avis/anker-solix-rs40p" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Anker SOLIX RS40P</h3>
-                  <p className="text-xs text-charcoal-light mt-1">2 &times; 455&nbsp;W IBC &mdash; plus vendu sur la boutique Anker France (05/11/2026)</p>
-                </Link>
                 <Link href="/comparatif/meilleur-kit-solaire-2026" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Comparatif des meilleurs kits 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le comparatif complet</p>

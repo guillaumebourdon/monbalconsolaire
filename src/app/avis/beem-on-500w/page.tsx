@@ -350,10 +350,6 @@ export default function BeemOn500WcAvisPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Sunology vs Beem</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le match des deux leaders sur 12 crit&egrave;res</p>
                 </Link>
-                <Link href="/avis/anker-solix-rs40p" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Avis Anker SOLIX RS40P</h3>
-                  <p className="text-xs text-charcoal-light mt-1">910 Wc IBC N-type, plus vendu sur la boutique Anker France</p>
-                </Link>
                 <Link href="/comparatif/300w-vs-400w-vs-500w-puissance" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">300W vs 400W vs 500W</h3>
                   <p className="text-xs text-charcoal-light mt-1">Quelle puissance choisir pour votre balcon</p>
