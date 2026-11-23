@@ -146,7 +146,7 @@ export default function GuideBatterieBalcon() {
                 Le <strong>talon de consommation</strong> d&rsquo;un appartement typique (frigo, box internet, Livebox, veilles TV, VMC) tourne autour de <span className="data-highlight">150 &agrave; 250&nbsp;W en permanence</span>. C&rsquo;est ce que votre batterie doit alimenter en priorit&eacute;.
               </p>
               <p className="text-charcoal-light leading-relaxed">
-                Pour en savoir plus sur l&rsquo;autoconsommation, lisez notre guide&nbsp;: <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="text-green hover:underline font-semibold">comment fonctionne l&rsquo;autoconsommation solaire</Link>.
+                Pour en savoir plus sur l&rsquo;autoconsommation, lisez notre guide&nbsp;: <Link href="/guide/optimiser-autoconsommation-solaire" className="text-green hover:underline font-semibold">comment fonctionne l&rsquo;autoconsommation solaire</Link>.
               </p>
             </section>
 

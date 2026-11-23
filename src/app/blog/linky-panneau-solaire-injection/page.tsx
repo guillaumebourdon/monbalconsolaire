@@ -117,7 +117,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
                 </div>
               </div>
               <p className="text-charcoal-light leading-relaxed">
-                Concr&egrave;tement&nbsp;: si votre panneau produit 300&nbsp;W et que vous consommez 250&nbsp;W &agrave; cet instant, le Linky enregistre un <strong>surplus de 50&nbsp;W inject&eacute;</strong> sur le r&eacute;seau. Les 250&nbsp;W autoconsomm&eacute;s sont &laquo;&nbsp;invisibles&nbsp;&raquo; pour lui. C&apos;est en cela que le solaire de balcon est si int&eacute;ressant&nbsp;: <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="text-green hover:underline font-semibold">l&apos;autoconsommation directe n&apos;est pas tax&eacute;e, ni mesur&eacute;e, ni comptabilis&eacute;e</Link>.
+                Concr&egrave;tement&nbsp;: si votre panneau produit 300&nbsp;W et que vous consommez 250&nbsp;W &agrave; cet instant, le Linky enregistre un <strong>surplus de 50&nbsp;W inject&eacute;</strong> sur le r&eacute;seau. Les 250&nbsp;W autoconsomm&eacute;s sont &laquo;&nbsp;invisibles&nbsp;&raquo; pour lui. C&apos;est en cela que le solaire de balcon est si int&eacute;ressant&nbsp;: <Link href="/guide/optimiser-autoconsommation-solaire" className="text-green hover:underline font-semibold">l&apos;autoconsommation directe n&apos;est pas tax&eacute;e, ni mesur&eacute;e, ni comptabilis&eacute;e</Link>.
               </p>
             </section>
 
@@ -336,7 +336,7 @@ export default function LinkyPanneauSolaireInjectionPage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Peut-on revendre son surplus &agrave; EDF depuis un balcon&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">CACSI, cession du surplus ou EDF OA, tarif 1,1&nbsp;c&euro;/kWh, calcul r&eacute;el&nbsp;: la r&eacute;ponse d&eacute;taill&eacute;e</p>
                 </Link>
-                <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                <Link href="/guide/optimiser-autoconsommation-solaire" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le principe complet&nbsp;: talon, surplus, compteur &mdash; sans jargon</p>
                 </Link>

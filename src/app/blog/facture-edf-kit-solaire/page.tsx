@@ -429,10 +429,6 @@ export default function FactureEdfKitSolairePage() {
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Linky et panneau solaire&nbsp;: injection, index, surplus (2026)</h3>
                   <p className="text-xs text-charcoal-light mt-1">Que voit vraiment le Linky&nbsp;? Index injection vs soutirage, mythe du compteur &agrave; l&apos;envers, surplus gratuit EDF expliqu&eacute; clairement.</p>
                 </Link>
-                <Link href="/blog/autoconsommation-solaire-comment-ca-marche" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
-                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Autoconsommation solaire&nbsp;: comment &ccedil;a marche concr&egrave;tement&nbsp;?</h3>
-                  <p className="text-xs text-charcoal-light mt-1">Le principe expliqu&eacute; simplement&nbsp;: talon de consommation, surplus, compteur Linky.</p>
-                </Link>
                 <Link href="/blog/revendre-surplus-solaire-balcon" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Panneau solaire balcon&nbsp;: peut-on revendre son surplus &agrave; EDF&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">La r&eacute;ponse est non — les kits balcon sont d&eacute;clar&eacute;s en CACSI ou en cession gratuite du surplus, pas en EDF OA.</p>
