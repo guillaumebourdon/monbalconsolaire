@@ -2,7 +2,7 @@
  * Catalogue du calculateur. Prix, puissance et disponibilité viennent de src/data/products.ts.
  * Les produits en rupture ou arrêtés (buyable = false) sont exclus de TOUTES les recommandations.
  */
-import { zendureUrl, bluettiUrl } from '@/lib/affiliate';
+import { SOLARCOOP, zendureUrl, bluettiUrl } from '@/lib/affiliate';
 import { PRODUCTS, availabilityBadge, isBuyable, type Product, type ProductId } from '@/data/products';
 
 type CalcKitConfig = {
@@ -33,6 +33,11 @@ const CALC_KITS: CalcKitConfig[] = [
   // 800 Pro 2 + 2 × 500 W : 959 € (zendure.fr, vérifié le 23/11/2026)
   { productId: 'zendure-solarflow-800-pro-2', name: 'Zendure SolarFlow 800 Pro 2 + 2 × 500 W', power: 1000, price: 959, hasBattery: true, affiliateUrl: zendureUrl('https://zendure.fr/products/zendure-solarflow-800-pro2'), minWidth: 'wide' },
   { productId: 'bluetti-balco-260', name: 'Bluetti Balco 260 + 2 × 450 W', power: 900, price: 1019, hasBattery: true, affiliateUrl: bluettiUrl('https://fr.bluettipower.eu/products/bluetti-balco-260'), minWidth: 'wide' },
+  // Solarcoop (prix transmis le 12/11/2026, vérifiés sur solarcoop.fr le 17/11/2026)
+  // Largeurs en pose paysage (fiches Solarcoop) : kit balcon 2 × 1,27 m, Essentiel 1 = 1,9 m, Essentiel 2 = 3,8 m
+  { productId: 'solarcoop-kit-balcon', hasBattery: false, affiliateUrl: SOLARCOOP.kitBalcon, minWidth: 'wide' },
+  { productId: 'solarcoop-essentiel-1', hasBattery: false, affiliateUrl: SOLARCOOP.essentiel1, minWidth: 'medium' },
+  { productId: 'solarcoop-essentiel-2', hasBattery: false, affiliateUrl: SOLARCOOP.essentiel2, minWidth: 'wide' },
   // DualSun PREASY retiré : vendu sur devis uniquement, aucun prix public vérifiable (05/11/2026)
 ];
 
