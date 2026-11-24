@@ -338,7 +338,7 @@ const CATALOG = {
   },
   // Solarcoop (SCIC, Mornant, Rhône) : prix et composition transmis par Solarcoop le 12/11/2026,
   // recoupés avec les fiches produit solarcoop.fr le 17/11/2026. Liens affiliés : SOLARCOOP dans src/lib/affiliate.ts.
-  // EN ATTENTE DE RELECTURE SOLARCOOP : ne pas fusionner dans main avant leur accord.
+  // Relu par Solarcoop (Elisa Forgeard 19/11, Louis Villard 23/11 : panneau JAM60D41-500/LB, 2 panneaux en série sur le HiFlow 800, lest 80 kg/panneau si pas de fixation au sol).
   'solarcoop-essentiel-1': {
     id: 'solarcoop-essentiel-1',
     name: 'Solarcoop Kit Essentiel 1 panneau',

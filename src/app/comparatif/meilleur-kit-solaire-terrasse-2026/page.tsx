@@ -70,7 +70,7 @@ const setups = [
     ideal: 'Petite terrasse, premier achat, budget limité',
     kits: [
       { name: 'Beem On 500 Wc', power: '500 Wc', price: '429 €', roi: '4,7 ans', avantage: 'Meilleur prix (0,86 €/Wc) ; en précommande, expédition à partir de décembre 2026', slug: '/avis/beem-on-500w' },
-      { name: 'Solarcoop Kit Essentiel 1 panneau', power: '500 Wc', price: priceLabel('solarcoop-essentiel-1'), roi: roiLabel('solarcoop-essentiel-1'), avantage: 'Panneau JA Solar bifacial biverre, support réglable 20-36° (inclinaison à adapter selon la saison), micro-onduleur Hoymiles HiFlow 800 ; coopérative citoyenne, livraison 50 € par commande', slug: SOLARCOOP.essentiel1, external: true },
+      { name: 'Solarcoop Kit Essentiel 1 panneau', power: '500 Wc', price: priceLabel('solarcoop-essentiel-1'), roi: roiLabel('solarcoop-essentiel-1'), avantage: 'Panneau JA Solar JAM60D41-500/LB bifacial biverre, support réglable 20-36° (inclinaison à adapter selon la saison) à fixer au sol, ou à lester d\'au moins 80 kg ; micro-onduleur Hoymiles HiFlow 800 ; coopérative citoyenne, livraison 50 € par commande', slug: SOLARCOOP.essentiel1, external: true },
       { name: 'Sunology PLAY (ex-PLAY 2)', power: '515 W', price: '599 €', roi: '6,2 ans', avantage: 'Installation 1 min, WiFi natif, en stock', slug: '/avis/sunology-play-2' },
       { name: 'Sunethic F500', power: '500 Wc', price: '690 €', roi: '7,3 ans', avantage: 'Made in France, bifacial', slug: '/avis/sunethic-f500' },
     ],
@@ -83,7 +83,7 @@ const setups = [
     ideal: 'Foyer qui consomme beaucoup en journée (talon de consommation élevé) : sinon, un seul panneau est souvent plus rentable',
     kits: [
       { name: 'Zendure SolarFlow 800 Pro 2 + 2\u00d7500 W', power: '1 000 Wc + batterie 1,92 kWh', price: '959 €', roi: '4,7 ans', avantage: 'Batterie intégrée (autoconsommation 95 %) ; prix constaté le 23/11/2026 ; remplace le pack 800 Plus, épuisé chez Zendure', slug: '/comparatif/meilleure-batterie-solaire-balcon-2026' },
-      { name: 'Solarcoop Kit Essentiel 2 panneaux', power: '1 000 Wc (sortie 800 VA)', price: priceLabel('solarcoop-essentiel-2'), roi: roiLabel('solarcoop-essentiel-2'), avantage: 'Version 2 panneaux du kit Essentiel : 2 panneaux JA Solar bifaciaux, un micro-onduleur Hoymiles HiFlow 800, supports réglables 20-36° ; livraison 50 € par commande', slug: SOLARCOOP.essentiel2, external: true },
+      { name: 'Solarcoop Kit Essentiel 2 panneaux', power: '1 000 Wc (micro-onduleur 800 VA)', price: priceLabel('solarcoop-essentiel-2'), roi: roiLabel('solarcoop-essentiel-2'), avantage: 'Version 2 panneaux du kit Essentiel : 2 panneaux JA Solar JAM60D41-500/LB bifaciaux, branchés en série sur un micro-onduleur Hoymiles HiFlow 800, supports réglables 20-36° à fixer au sol ou à lester (au moins 80 kg par panneau) ; livraison 50 € par commande', slug: SOLARCOOP.essentiel2, external: true },
       { name: '2\u00d7 Beem On 500 Wc', power: '1 000 Wc', price: '858 €', roi: '4,7 ans', avantage: 'Meilleur ratio \u20ac/Wc (0,86 \u20ac/Wc) ; en précommande', slug: '/avis/beem-on-500w' },
       { name: '2\u00d7 Sunology PLAY (ex-PLAY 2)', power: '1 030 W', price: '1 198 €', roi: '6,2 ans', avantage: 'Simplicité absolue, 2 prises, zéro config', slug: '/avis/sunology-play-2' },
     ],
