@@ -184,7 +184,7 @@ export default function ZendureSolarflowPage() {
           <div className="card-lg border-l-4 border-l-amber bg-amber-pale/10 mb-8">
             <h2 className="font-bold text-base mb-2 text-amber-dark">&Eacute;puis&eacute; chez Zendure (constat&eacute; le 23/11/2026)</h2>
             <p className="text-sm text-charcoal-light leading-relaxed">
-              Le SolarFlow 800 Plus n&apos;est plus disponible sur zendure.fr, ni seul ni en pack. L&apos;analyse ci-dessous reste valable pour qui l&apos;a d&eacute;j&agrave; ou en trouve un, mais ses prix (539&nbsp;&euro; seul, 719&nbsp;&euro; en pack) datent du 5 novembre 2026, avant la rupture. Le mod&egrave;le en stock le plus proche chez Zendure est le <AffLink item={BUY.solarflow800Pro2} position="out-of-stock-notice">SolarFlow 800 Pro 2</AffLink>&nbsp;: batterie 1&nbsp;920&nbsp;Wh int&eacute;gr&eacute;e, onduleur 800&nbsp;W, 599&nbsp;&euro; seul (prix barr&eacute; 979&nbsp;&euro;) ou 959&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W (prix relev&eacute;s sur zendure.fr le 23 novembre 2026).
+              Le SolarFlow 800 Plus n&apos;est plus disponible sur zendure.fr, ni seul ni en pack. L&apos;analyse ci-dessous reste valable pour qui l&apos;a d&eacute;j&agrave; ou en trouve un, mais ses prix (539&nbsp;&euro; seul, 719&nbsp;&euro; en pack) datent du 5 novembre 2026, avant la rupture. Le mod&egrave;le en stock le plus proche chez Zendure est le <Link href="/avis/zendure-solarflow-800-pro-2" className="text-green hover:underline font-semibold">SolarFlow 800 Pro 2</Link>&nbsp;: batterie 1&nbsp;920&nbsp;Wh int&eacute;gr&eacute;e, onduleur 800&nbsp;W, en plus une sortie de secours 1000&nbsp;W que le 800 Plus n&apos;avait pas &mdash; 599&nbsp;&euro; seul (prix barr&eacute; 979&nbsp;&euro;) ou 959&nbsp;&euro; en pack avec 2 panneaux de 500&nbsp;W (prix relev&eacute;s sur zendure.fr le 23 novembre 2026, <Link href="/avis/zendure-solarflow-800-pro-2" className="text-green hover:underline">notre avis complet ici</Link>).
             </p>
           </div>
 
@@ -550,6 +550,10 @@ export default function ZendureSolarflowPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/avis/zendure-solarflow-800-pro-2" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow 800 Pro 2 : avis, prix, ROI</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Le successeur en stock : m&ecirc;me batterie, + sortie de secours 1000&nbsp;W et 4&nbsp;MPPT</p>
+                </Link>
                 <Link href="/avis/zendure-solarflow-mix" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure SolarFlow Mix : le tout-en-un r&eacute;sidentiel 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Le successeur pour maison : 8-50&nbsp;kWh, 4&nbsp;kW, IA Zenki. &Agrave; partir de 1&nbsp;999&nbsp;&euro;</p>

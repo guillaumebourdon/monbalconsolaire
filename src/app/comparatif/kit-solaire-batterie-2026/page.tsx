@@ -138,6 +138,7 @@ export default function BatteriePage() {
                       const linkMap: Record<string, string> = {
                         'Sunology VAULT': '/avis/sunology-vault',
                         'Beem Battery': '/avis/beem-battery',
+                        'Zendure SolarFlow 800 Pro 2': '/avis/zendure-solarflow-800-pro-2',
                       };
                       const buyMap: Record<string, { url: string; merchant: string }> = {
                         'Zendure SolarFlow 800 Pro 2': { url: zendureUrl(PRODUCTS['zendure-solarflow-800-pro-2'].url), merchant: 'Zendure' },
