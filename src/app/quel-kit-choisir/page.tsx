@@ -355,18 +355,31 @@ const ARTICLES: Article[] = [
     price: avisPrice('dualsun-preasy'),
   },
   {
-    slug: '/avis/zendure-solarflow',
-    title: 'Zendure SolarFlow 800 Plus',
-    excerpt: `Batterie 1,92 kWh + onduleur 800 W intégrés. Épuisé chez Zendure au 23/11/2026 (${priceLabel('zendure-solarflow-800-plus')} sans panneaux, 719 € en pack 2 × 500 W le 05/11/2026) ; le 800 Pro 2 prend le relais.`,
+    slug: '/avis/zendure-solarflow-800-pro-2',
+    title: 'Zendure SolarFlow 800 Pro 2',
+    excerpt: `Successeur du 800 Plus (épuisé) : même batterie 1,92 kWh et onduleur 800 W, + sortie de secours 1000 W et 4 MPPT. ${priceLabel('zendure-solarflow-800-pro-2')} seul (23/11/2026).`,
     type: 'avis',
     badge: 'Rapport qualité/prix',
+    tags: ['stockage', 'budget', 'marque'],
+    brands: ['Zendure'],
+    powers: ['plus-500'],
+    publishedAt: '2026-11-24',
+    score: '8/10',
+    price: avisPrice('zendure-solarflow-800-pro-2'),
+    buy: BUY.solarflow800Pro2,
+  },
+  {
+    slug: '/avis/zendure-solarflow',
+    title: 'Zendure SolarFlow 800 Plus (épuisé)',
+    excerpt: `Batterie 1,92 kWh + onduleur 800 W intégrés. Épuisé chez Zendure au 23/11/2026 (${priceLabel('zendure-solarflow-800-plus')} sans panneaux, 719 € en pack 2 × 500 W le 05/11/2026) ; le 800 Pro 2 prend le relais.`,
+    type: 'avis',
+    badge: 'Épuisé',
     tags: ['stockage', 'budget', 'marque'],
     brands: ['Zendure'],
     powers: ['plus-500'],
     publishedAt: '2026-05-07',
     score: '8.5/10',
     price: avisPrice('zendure-solarflow'),
-    buy: BUY.solarflow800Pro2,
   },
   {
     slug: '/avis/sunology-vault',
@@ -660,7 +673,7 @@ export default function QuelKitChoisirPage() {
             </Link>
             {a.buy && (
               <p className="text-sm mt-2 px-2">
-                <AffLink item={a.buy} position="quel-kit-choisir">{a.buy.product === 'Zendure SolarFlow 800 Pro 2' && a.slug === '/avis/zendure-solarflow' ? 'Voir le 800 Pro 2 en stock chez Zendure' : `Voir le prix chez ${a.buy.merchant}`} &rarr;</AffLink>
+                <AffLink item={a.buy} position="quel-kit-choisir">Voir le prix chez {a.buy.merchant} &rarr;</AffLink>
                 <span className="text-[10px] text-stone ml-2">lien commercial</span>
               </p>
             )}

@@ -68,6 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/avis/sunology-city`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/ecoflow-powerstream`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/zendure-solarflow`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/avis/zendure-solarflow-800-pro-2`, lastModified: '2026-11-24', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/avis/ikea-solstrale-balcon`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/dualsun-preasy`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/avis/beem-on-500w`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },

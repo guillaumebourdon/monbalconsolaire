@@ -182,10 +182,11 @@ const CATALOG = {
     inverterW: 800,
     batteryKwh: 1.92,
     priceEur: 599,
-    priceNote: 'sans panneaux ni batterie additionnelle, prix Black Friday (779 € le 02/09/2026) ; 551,08 € avec le code AF5E24 vérifié au panier le 18/11/2026',
+    priceNote: 'sans panneaux (prix barré 979 € ; pack 2 × 500 W bifaciaux : 959 € ; pack 2 × 450 W : 899 €) ; 551,08 € seul avec le code AF5E24 vérifié au panier le 18/11/2026',
     availability: 'instock',
-    verifiedOn: '2026-11-18',
+    verifiedOn: '2026-11-23',
     url: 'https://zendure.fr/products/zendure-solarflow-800-pro2',
+    reviewSlug: '/avis/zendure-solarflow-800-pro-2',
   },
   'zendure-solarflow-mix': {
     id: 'zendure-solarflow-mix',
