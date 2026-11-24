@@ -7,9 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Pages principales
     { url: BASE_URL, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${BASE_URL}/calculateur`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/calculateur`, lastModified: '2026-11-24', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comment-ca-marche`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/quel-kit-choisir`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/quel-kit-choisir`, lastModified: '2026-11-24', changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/tout-savoir`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/accessoires`, lastModified: '2026-09-29', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/guide-gratuit`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Index de sections
     { url: `${BASE_URL}/comparatif`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/guide`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${BASE_URL}/avis`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE_URL}/avis`, lastModified: '2026-11-24', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/blog`, lastModified: '2026-11-23', changeFrequency: 'daily', priority: 0.7 },
 
     // Comparatifs
@@ -28,11 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/comparatif/kit-solaire-balcon-vs-toiture`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-2026`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comparatif/sunology-vs-beem`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/comparatif/kit-solaire-petit-budget`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/kit-solaire-petit-budget`, lastModified: '2026-11-24', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/kit-solaire-batterie-2026`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/300w-vs-400w-vs-500w-puissance`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/zendure-vs-sunology-vs-beem`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-terrasse-2026`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/comparatif/meilleur-kit-solaire-terrasse-2026`, lastModified: '2026-11-24', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/sunology-play2-vs-beem-on-500w`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/meilleure-batterie-solaire-balcon-2026`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
 
