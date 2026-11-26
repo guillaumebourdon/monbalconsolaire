@@ -14,7 +14,7 @@ export const revalidate = 21600;
 
 const VERIFIED = '05/11/2026'; // date par défaut des offres sans date propre
 /** Dernier passage de vérification sur la page (titre). */
-const LAST_CHECK = '20/11/2026';
+const LAST_CHECK = '26/11/2026';
 const SUNOLOGY_PLAY_URL = 'https://sunology.eu/products/play-kit-solaire-plug-play';
 const SUNOLOGY_PROMO_END = '2026-10-31';
 const SUNOLOGY_BLACKFRIDAY_CODE = 'BLACKSUN';
@@ -38,7 +38,7 @@ export function generateMetadata(): Metadata {
       ? 'Code promo Sunology : -100 € avec BLACKSUN (Black Friday)'
       : 'Code promo Sunology 2026 : parrainage -7 %, offres vérifiées',
     description: blackFriday
-      ? 'Sunology : code BLACKSUN, jusqu’à -640 € jusqu’au 4/12 (Black Friday). Zendure -8 % avec AF5E24. Beem et Sunethic revérifiés le 20/11.'
+      ? 'Sunology : code BLACKSUN, jusqu’à -640 € jusqu’au 4/12 (Black Friday). Zendure -8 % avec AF5E24. Beem et Sunethic revérifiés le 26/11.'
       : 'Pas de code Sunology public : parrainage S-Club -7 %, codes SUN_ décryptés. Zendure : code AF5E24, -8 % en plus jusqu’au 04/01. Beem, EcoFlow vérifiés.',
     alternates: {
       canonical: 'https://monbalconsolaire.fr/codes-promo',
@@ -70,7 +70,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Existe-t-il un code promo Beem Energy pour les kits plug-and-play ?',
     answer:
-      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 20/11/2026 (pas d’annonce Black Friday repérée sur beemenergy.fr à cette date). Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
+      'Nous n’avons pas trouvé de code officiel Beem pour les kits balcon au 26/11/2026 (pas d’annonce Black Friday repérée sur beemenergy.fr ni ailleurs à cette date). Le parrainage officiel Beem (250 € pour le filleul et le parrain) concerne uniquement les projets Beem Roof et Beem Battery, pas les kits plug-and-play. Les codes PART-XXX diffusés par des sites partenaires ne sont pas vérifiables publiquement.',
   },
   {
     question: 'Existe-t-il un code promo Zendure ?',
@@ -80,7 +80,7 @@ const faqData = (sunologyBlackFriday: boolean) => [
   {
     question: 'Existe-t-il un code promo Sunethic ?',
     answer:
-      'Sunethic ne publie pas de code public officiel. Au 20/11/2026, la marque annonce sur sa page d’accueil des « promotions Black Friday » du 9 au 30 novembre et des prix bas sur ses kits à panneaux français Voltec Solar, sans montant de remise chiffré ni code. La livraison est offerte, et le dossier mairie à partir des kits 6 panneaux.',
+      'Sunethic ne publie pas de code public officiel. Au 26/11/2026, la marque annonce sur sa page d’accueil des « promotions Black Friday » du 9 au 30 novembre et des prix bas sur ses kits à panneaux français Voltec Solar, sans montant de remise chiffré ni code. La livraison est offerte, et le dossier mairie à partir des kits 6 panneaux.',
   },
 ];
 
@@ -199,7 +199,7 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
       {
         label: 'Prix bas sur les kits Voltec Solar et les batteries Anker / Zendure',
         detail: 'Mis en avant sur la page d’accueil, avec les « promotions Black Friday » annoncées du 9 au 30 novembre, sans montant de remise chiffré ni code.',
-        verified: '20/11/2026',
+        verified: '26/11/2026',
         status: 'active',
         source: 'sunethic.fr',
         sourceUrl: 'https://sunethic.fr/',
@@ -219,7 +219,7 @@ const otherBrands: { id: string; brand: string; intro: string; offers: Offer[]; 
     id: 'beem',
     brand: 'Beem Energy',
     intro:
-      'Aucun code officiel pour les kits plug-and-play au 20/11/2026, et pas d’opération Black Friday repérée sur beemenergy.fr à cette date (l’an dernier, Beem proposait un « Bright Friday » à -15 % sur toute la gamme). Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
+      'Aucun code officiel pour les kits plug-and-play au 26/11/2026, et pas d’opération Black Friday repérée sur beemenergy.fr à cette date (l’an dernier, Beem proposait un « Bright Friday » à -15 % sur toute la gamme). Les promotions en cours visent les batteries et les projets toiture. Rappel : Beem Energy est en procédure de sauvegarde depuis novembre 2025 (SAV maintenu).',
     offers: [
       {
         label: 'Prime Beem : jusqu’à 1 000 € de remise',
@@ -304,7 +304,7 @@ export default function CodesPromoPage() {
           Uniquement des offres v&eacute;rifi&eacute;es sur les sites officiels, avec leur date de v&eacute;rification. Quand une marque n&apos;a pas de code, on le dit, et on indique la meilleure fa&ccedil;on l&eacute;gale de payer moins cher.
         </p>
         <div className="card bg-cream/50 text-sm text-charcoal-light leading-relaxed mb-8">
-          <strong className="text-charcoal">En bref (18/11/2026) :</strong> {sunologyBlackFriday ? <>Sunology lance sa <strong>Black Sun Weeks</strong> : code <strong>{SUNOLOGY_BLACKFRIDAY_CODE}</strong>, jusqu&apos;&agrave; -640 &euro;, du 4 novembre au 4 d&eacute;cembre, en plus du parrainage S-Club &agrave; -7 %.</> : <>Reste le parrainage S-Club Sunology &agrave; -7 % (pas d&apos;op&eacute;ration en cours).</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}EcoFlow (10-30 novembre) et Sunethic (9-30 novembre) affichent un Black Friday sans code. Beem n&apos;affiche pas de remise sur ses kits.
+          <strong className="text-charcoal">En bref (26/11/2026) :</strong> {sunologyBlackFriday ? <>Sunology lance sa <strong>Black Sun Weeks</strong> : code <strong>{SUNOLOGY_BLACKFRIDAY_CODE}</strong>, jusqu&apos;&agrave; -640 &euro;, du 4 novembre au 4 d&eacute;cembre, en plus du parrainage S-Club &agrave; -7 %.</> : <>Reste le parrainage S-Club Sunology &agrave; -7 % (pas d&apos;op&eacute;ration en cours).</>} {!isOver(ZENDURE_CODE_END) && <>Zendure donne <strong>-8 % de plus avec le code {ZENDURE_CODE}</strong>, jusqu&apos;au 4 janvier 2027 (hors SolarFlow 2400 AC+ et 2400 Pro). </>}EcoFlow (10-30 novembre) et Sunethic (9-30 novembre) affichent un Black Friday sans code. Beem n&apos;affiche pas de remise sur ses kits. Montants inchang&eacute;s depuis le 18 novembre (nouvelle v&eacute;rification le 26/11, sites marchands inaccessibles depuis cet environnement, aucune &eacute;volution dat&eacute;e trouv&eacute;e par ailleurs).
         </div>
 
         <nav className="flex flex-wrap gap-2 text-sm mb-10" aria-label="Sommaire">
@@ -322,7 +322,7 @@ export default function CodesPromoPage() {
           <section id="black-friday" className="scroll-mt-24">
             <h2 className="text-2xl font-extrabold mb-4">Black Friday 2026 : codes et op&eacute;rations en cours</h2>
             <p className="text-charcoal-light leading-relaxed mb-4">
-              Black Friday le vendredi 27 novembre 2026, Cyber Monday le lundi 30 novembre. Les marques du solaire de balcon ont lanc&eacute; leurs offres bien avant. Les codes ci-dessous ont &eacute;t&eacute; v&eacute;rifi&eacute;s le 18 novembre 2026, celui de Zendure directement au panier.
+              Black Friday le vendredi 27 novembre 2026, Cyber Monday le lundi 30 novembre. Les marques du solaire de balcon ont lanc&eacute; leurs offres bien avant. Les codes ci-dessous ont &eacute;t&eacute; v&eacute;rifi&eacute;s le 18 novembre 2026, celui de Zendure directement au panier. Nouvelle tentative de v&eacute;rification le 26 novembre 2026 (panier Zendure inclus) : zendure.fr, fr.ecoflow.com, sunology.eu, sunethic.fr et beemenergy.fr restent inaccessibles depuis cet environnement ; aucune &eacute;volution dat&eacute;e trouv&eacute;e par recherche web, valeurs du 18 novembre conserv&eacute;es.
             </p>
             <div className="space-y-3 mb-4">
               {blackFridayOffers.map((o) => (
@@ -462,7 +462,7 @@ export default function CodesPromoPage() {
 
         <div className="mt-10 pt-8 border-t border-border-light">
           <p className="text-xs text-stone">
-            Offres v&eacute;rifi&eacute;es le 5 novembre 2026 &middot; <Link href="/a-propos" className="text-green hover:underline">&Agrave; propos</Link> &middot; <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>
+            Offres v&eacute;rifi&eacute;es le 26 novembre 2026 &middot; <Link href="/a-propos" className="text-green hover:underline">&Agrave; propos</Link> &middot; <Link href="/methodologie" className="text-green hover:underline">M&eacute;thodologie</Link>
           </p>
         </div>
       </div>

@@ -31,7 +31,7 @@ export const metadata: Metadata = withCanonicalOg({
 });
 
 const PUBLISHED = '2026-11-18';
-const MODIFIED = '2026-11-23';
+const MODIFIED = '2026-11-26';
 
 // ─── Sources des prix de référence (3 derniers mois) ───────────────────────────
 // Prix du jour : fiches officielles relevées le 18/11/2026 (Shopify /products/<handle>.js),
@@ -268,7 +268,7 @@ const faqData = [
   },
   {
     question: 'Faut-il attendre le Cyber Monday pour acheter un kit solaire ?',
-    answer: 'Rien ne l’indique dans nos relevés : les prix Zendure, EcoFlow et ALLPOWERS du 18 novembre sont les mêmes que début novembre, et les opérations Sunology et EcoFlow couvrent déjà le Cyber Monday (30 novembre). Si le produit voulu est en vraie baisse aujourd’hui, attendre n’apporte rien de garanti. Nous mettrons cette page à jour le 26 novembre.',
+    answer: 'Rien ne l’indique dans nos relevés : au 26 novembre 2026, les prix Zendure, EcoFlow et ALLPOWERS restent ceux du 18 novembre (aucune baisse supplémentaire confirmée), et les opérations Sunology et EcoFlow couvrent déjà le Cyber Monday (30 novembre). Si le produit voulu est en vraie baisse aujourd’hui, attendre n’apporte rien de garanti.',
   },
   {
     question: 'Quelles garanties pour un kit solaire acheté pendant le Black Friday ?',
@@ -426,7 +426,7 @@ export default function BlackFridayKitSolairePage() {
             </p>
             <div className="mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-brand border-2 border-green/20 bg-green-pale/40 px-4 py-2 text-sm">
               <span className="font-bold text-green">Prix v&eacute;rifi&eacute;s le 18 novembre 2026</span>
-              <span className="text-stone">Publi&eacute; le 18 novembre 2026 &middot; Mis &agrave; jour le 23 novembre 2026 &middot; prochaine mise &agrave; jour le 26 novembre</span>
+              <span className="text-stone">Publi&eacute; le 18 novembre 2026 &middot; Mis &agrave; jour le 26 novembre 2026 &middot; prochaine mise &agrave; jour avant le Cyber Monday (30 novembre)</span>
             </div>
           </div>
 
@@ -655,7 +655,7 @@ export default function BlackFridayKitSolairePage() {
 
             <div className="mt-10 pt-8 border-t border-border-light">
               <p className="text-xs text-stone leading-relaxed">
-                <strong>M&eacute;thodologie :</strong> prix du jour relev&eacute;s le 18 novembre 2026 sur les fiches officielles (zendure.fr, fr.ecoflow.com, iallpowers.fr, sunology.eu, sunethic.fr, beemenergy.fr) et sur amazon.fr ; code Zendure {ZENDURE_CODE} test&eacute; au panier zendure.fr le m&ecirc;me jour. Prix de r&eacute;f&eacute;rence : captures dat&eacute;es de la Wayback Machine (2 septembre, 8 et 9 octobre 2026), article Tom&apos;s Guide du 26 octobre 2026, historiques camelcamelcamel et nos relev&eacute;s du 5 novembre 2026. Rentabilit&eacute; calcul&eacute;e avec la formule centralis&eacute;e du site (<Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link>). Produits analys&eacute;s sur documentation, pas test&eacute;s physiquement.
+                <strong>M&eacute;thodologie :</strong> prix du jour relev&eacute;s le 18 novembre 2026 sur les fiches officielles (zendure.fr, fr.ecoflow.com, iallpowers.fr, sunology.eu, sunethic.fr, beemenergy.fr) et sur amazon.fr ; code Zendure {ZENDURE_CODE} test&eacute; au panier zendure.fr le m&ecirc;me jour. Prix de r&eacute;f&eacute;rence : captures dat&eacute;es de la Wayback Machine (2 septembre, 8 et 9 octobre 2026), article Tom&apos;s Guide du 26 octobre 2026, historiques camelcamelcamel et nos relev&eacute;s du 5 novembre 2026. Rentabilit&eacute; calcul&eacute;e avec la formule centralis&eacute;e du site (<Link href="/methodologie" className="text-green hover:underline">m&eacute;thodologie</Link>). Produits analys&eacute;s sur documentation, pas test&eacute;s physiquement. Nouvelle tentative de v&eacute;rification le 26 novembre 2026 : zendure.fr, fr.ecoflow.com, iallpowers.fr, sunology.eu, sunethic.fr et beemenergy.fr restent inaccessibles depuis cet environnement (m&ecirc;me blocage r&eacute;seau que les entr&eacute;es pr&eacute;c&eacute;dentes depuis le 02/10) ; recherche web compl&eacute;mentaire sans &eacute;l&eacute;ment dat&eacute; contredisant les prix du 18 novembre conserv&eacute;s ci-dessus.
               </p>
               <p className="text-xs text-stone leading-relaxed mt-2">
                 <strong>Transparence :</strong> certains liens de cette page sont affili&eacute;s (Zendure, EcoFlow, ALLPOWERS, Bluetti et ManoMano via Awin, Amazon). Si vous achetez via ces liens, nous touchons une commission, sans surco&ucirc;t pour vous. Les liens Sunology, Sunethic et Beem ne sont pas affili&eacute;s. Cela n&apos;influence ni la s&eacute;lection ni le verdict : les produits sans baisse r&eacute;elle sont signal&eacute;s comme tels, affili&eacute;s ou non.
