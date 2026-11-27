@@ -236,6 +236,13 @@ export default function IkeaSolstralePage() {
               <div className="card-lg text-center"><p className="text-sm text-charcoal-light mb-4">Pour choisir parmi les kits vendus en France&nbsp;:</p><Link href="/comparatif/meilleur-kit-solaire-2026" className="btn-primary text-sm inline-flex">Voir le comparatif des kits 2026 &rarr;</Link></div>
             </div>
 
+            <section>
+              <h2 className="text-2xl font-extrabold mb-4">Et Leroy Merlin&nbsp;?</h2>
+              <p className="text-charcoal-light leading-relaxed">
+                Contrairement &agrave; IKEA, Leroy Merlin r&eacute;f&eacute;rence bien des kits solaires &laquo;&nbsp;plug and play&nbsp;&raquo; en France &mdash; mais ce n&apos;est pas un fabricant&nbsp;: c&apos;est une marketplace qui m&eacute;lange marques connues et marques sans historique ind&eacute;pendant. Notre <Link href="/comparatif/kit-solaire-leroy-merlin-ikea-vs-specialiste" className="text-green hover:underline font-semibold">comparatif Leroy Merlin, IKEA ou marque sp&eacute;cialis&eacute;e</Link> d&eacute;taille ce que &ccedil;a change pour le prix et le SAV.
+              </p>
+            </section>
+
             <NewsletterBanner />
 
             <section>

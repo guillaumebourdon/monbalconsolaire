@@ -389,6 +389,10 @@ export default function ComparatifPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles liés</h2>
               <div className="space-y-3">
+                <Link href="/comparatif/kit-solaire-leroy-merlin-ikea-vs-specialiste" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Leroy Merlin, IKEA ou marque spécialisée : lequel choisir ?</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Pourquoi Leroy Merlin n'est pas un fabricant, et ce que ça change pour le SAV</p>
+                </Link>
                 <Link href="/etude/rentabilite-kit-solaire-balcon-departement" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Carte&nbsp;: o&ugrave; un kit solaire de balcon est-il le plus rentable&nbsp;?</h3>
                   <p className="text-xs text-charcoal-light mt-1">Classement des 96 d&eacute;partements, du sud-est au nord, avec le kit 500&nbsp;Wc de r&eacute;f&eacute;rence</p>

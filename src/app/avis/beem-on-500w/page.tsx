@@ -326,6 +326,10 @@ export default function BeemOn500WcAvisPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-extrabold mb-4">Articles li&eacute;s</h2>
               <div className="space-y-3">
+                <Link href="/comparatif/kit-solaire-leroy-merlin-ikea-vs-specialiste" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
+                  <h3 className="font-bold text-sm group-hover:text-green transition-colors">Leroy Merlin, IKEA ou marque sp&eacute;cialis&eacute;e&nbsp;: lequel choisir&nbsp;?</h3>
+                  <p className="text-xs text-charcoal-light mt-1">Pourquoi l&apos;achat direct reste le choix par d&eacute;faut pour un balcon</p>
+                </Link>
                 <Link href="/comparatif/zendure-vs-sunology-vs-beem" className="card block hover:shadow-brand-lg transition-all group border-l-4 border-l-green">
                   <h3 className="font-bold text-sm group-hover:text-green transition-colors">Zendure vs Sunology vs Beem : le match 2026</h3>
                   <p className="text-xs text-charcoal-light mt-1">Comparatif complet des 3 syst&egrave;mes &mdash; avec le tableau prix/Wc mis &agrave; jour juin 2026</p>
