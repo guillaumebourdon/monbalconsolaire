@@ -9,13 +9,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE_URL, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 1.0 },
     { url: `${BASE_URL}/calculateur`, lastModified: '2026-11-24', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/comment-ca-marche`, lastModified: '2026-11-23', changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/quel-kit-choisir`, lastModified: '2026-11-24', changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/quel-kit-choisir`, lastModified: '2026-11-27', changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/tout-savoir`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/accessoires`, lastModified: '2026-09-29', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/guide-gratuit`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
 
     // Index de sections
-    { url: `${BASE_URL}/comparatif`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE_URL}/comparatif`, lastModified: '2026-11-27', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/guide`, lastModified: '2026-11-23', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/avis`, lastModified: '2026-11-24', changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/blog`, lastModified: '2026-11-23', changeFrequency: 'daily', priority: 0.7 },
