@@ -11,6 +11,7 @@ export const metadata: Metadata = withCanonicalOg({
 });
 
 const articles = [
+  { slug: 'kit-solaire-leroy-merlin-ikea-vs-specialiste', title: 'Kit solaire Leroy Merlin ou IKEA : que choisir en 2026 ?', excerpt: 'IKEA ne vend pas de kit solaire balcon en France. Leroy Merlin, oui : une marketplace à comparer aux marques spécialisées. Prix, ROI, SAV.', badge: 'Nouveau', date: '27 novembre 2026', readTime: '9 min' },
   { slug: 'kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go', title: 'Kit solaire pas cher 2026 : Beem vs Sunethic vs Sunology GO', excerpt: 'Beem Kit 300W (199 €, rupture), Sunethic F500 (690 €) et Sunology GO (349 €) comparés : prix au watt, ROI, et lequel acheter vraiment aujourd\'hui.', badge: 'Nouveau', date: '20 novembre 2026', readTime: '9 min' },
   { slug: 'apsystems-ez1-vs-hoymiles-hms-800w', title: 'APsystems EZ1-M vs Hoymiles HMS-800W-2T : le duel', excerpt: 'Les deux micro-onduleurs les plus vendus pour un kit DIY balcon s\'affrontent : prix, rendement, WiFi/Bluetooth, garantie. Lequel choisir ?', badge: 'Micro-onduleurs', date: '13 novembre 2026', readTime: '9 min' },
   { slug: 'application-suivi-production-solaire', title: 'Applis de suivi solaire : Beem vs Sunology vs EcoFlow vs Zendure vs Shelly', excerpt: 'Suivi de production ou pilotage de batterie ? Comparatif des 5 apps les plus utilisées pour un kit solaire de balcon, avec leurs points faibles réels.', badge: 'Applications', date: '30 octobre 2026', readTime: '9 min' },

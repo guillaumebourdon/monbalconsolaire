@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog`, lastModified: '2026-11-23', changeFrequency: 'daily', priority: 0.7 },
 
     // Comparatifs
+    { url: `${BASE_URL}/comparatif/kit-solaire-leroy-merlin-ikea-vs-specialiste`, lastModified: '2026-11-27', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/comparatif/kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go`, lastModified: '2026-11-20', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/comparatif/apsystems-ez1-vs-hoymiles-hms-800w`, lastModified: '2026-11-13', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/comparatif/application-suivi-production-solaire`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },

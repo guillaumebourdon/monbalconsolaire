@@ -43,6 +43,18 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
+    slug: '/comparatif/kit-solaire-leroy-merlin-ikea-vs-specialiste',
+    title: 'Kit solaire Leroy Merlin ou IKEA : que choisir en 2026 ?',
+    excerpt: 'IKEA ne vend pas de kit solaire balcon en France. Leroy Merlin, oui : une marketplace à comparer aux marques spécialisées.',
+    type: 'comparatif',
+    badge: 'Nouveau',
+    tags: ['leroy merlin', 'ikea', 'comparatif', 'marketplace'],
+    brands: ['Leroy Merlin', 'IKEA', 'Beem', 'Sunethic', 'Sunology', 'Zendure'],
+    powers: ['400-500', 'plus-500'],
+    publishedAt: '2026-11-27',
+    readTime: '9 min',
+  },
+  {
     slug: '/comparatif/kit-solaire-pas-cher-beem-vs-sunethic-vs-sunology-go',
     title: 'Kit solaire pas cher 2026 : Beem vs Sunethic vs Sunology GO',
     excerpt: 'Beem Kit 300W (199 €, rupture), Sunethic F500 (690 €) et Sunology GO (349 €) comparés : lequel acheter vraiment aujourd\'hui.',
